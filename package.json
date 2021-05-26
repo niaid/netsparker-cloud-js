@@ -2,7 +2,7 @@
   "name": "netsparker-cloud",
   "version": "0.0.1",
   "description": "JavaScript client for consuming the Netsparker Cloud API.",
-  "main": "src/index.js",
+  "main": "src/api.js",
   "scripts": {
     "genclient": "scripts/genclient.sh",
     "compile": "tsc",
