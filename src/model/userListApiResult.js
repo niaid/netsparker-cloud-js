@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserListApiResult = void 0;
 /**
 * Represents a model for carrying out a paged user list.
 */
@@ -20,7 +19,6 @@ class UserListApiResult {
         return UserListApiResult.attributeTypeMap;
     }
 }
-exports.UserListApiResult = UserListApiResult;
 UserListApiResult.discriminator = undefined;
 UserListApiResult.attributeTypeMap = [
     {
@@ -79,4 +77,5 @@ UserListApiResult.attributeTypeMap = [
         "type": "number"
     }
 ];
+exports.UserListApiResult = UserListApiResult;
 //# sourceMappingURL=userListApiResult.js.map

@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.NewScheduledWithProfileApiModel = void 0;
 /**
 * Contains properties that required to start a scheduled scan according to profile specified.
 */
@@ -20,7 +19,6 @@ class NewScheduledWithProfileApiModel {
         return NewScheduledWithProfileApiModel.attributeTypeMap;
     }
 }
-exports.NewScheduledWithProfileApiModel = NewScheduledWithProfileApiModel;
 NewScheduledWithProfileApiModel.discriminator = undefined;
 NewScheduledWithProfileApiModel.attributeTypeMap = [
     {
@@ -54,6 +52,7 @@ NewScheduledWithProfileApiModel.attributeTypeMap = [
         "type": "ScheduledScanRecurrenceApiModel"
     }
 ];
+exports.NewScheduledWithProfileApiModel = NewScheduledWithProfileApiModel;
 (function (NewScheduledWithProfileApiModel) {
     let ScheduleRunTypeEnum;
     (function (ScheduleRunTypeEnum) {

@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AgentGroupApiDeleteModel = void 0;
 /**
 * Represents a model for deleting a agent group.
 */
@@ -20,7 +19,6 @@ class AgentGroupApiDeleteModel {
         return AgentGroupApiDeleteModel.attributeTypeMap;
     }
 }
-exports.AgentGroupApiDeleteModel = AgentGroupApiDeleteModel;
 AgentGroupApiDeleteModel.discriminator = undefined;
 AgentGroupApiDeleteModel.attributeTypeMap = [
     {
@@ -29,4 +27,5 @@ AgentGroupApiDeleteModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.AgentGroupApiDeleteModel = AgentGroupApiDeleteModel;
 //# sourceMappingURL=agentGroupApiDeleteModel.js.map

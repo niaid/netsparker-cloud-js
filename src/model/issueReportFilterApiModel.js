@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.IssueReportFilterApiModel = void 0;
 /**
 * Represent a filter model of {Netsparker.Cloud.Infrastructure.Models.IssueReportFilterApiModel} type.
 */
@@ -20,7 +19,6 @@ class IssueReportFilterApiModel {
         return IssueReportFilterApiModel.attributeTypeMap;
     }
 }
-exports.IssueReportFilterApiModel = IssueReportFilterApiModel;
 IssueReportFilterApiModel.discriminator = undefined;
 IssueReportFilterApiModel.attributeTypeMap = [
     {
@@ -44,6 +42,7 @@ IssueReportFilterApiModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.IssueReportFilterApiModel = IssueReportFilterApiModel;
 (function (IssueReportFilterApiModel) {
     let CsvSeparatorEnum;
     (function (CsvSeparatorEnum) {

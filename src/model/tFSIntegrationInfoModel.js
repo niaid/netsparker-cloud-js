@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TFSIntegrationInfoModel = void 0;
 /**
 * The TFS integration info
 */
@@ -20,7 +19,6 @@ class TFSIntegrationInfoModel {
         return TFSIntegrationInfoModel.attributeTypeMap;
     }
 }
-exports.TFSIntegrationInfoModel = TFSIntegrationInfoModel;
 TFSIntegrationInfoModel.discriminator = undefined;
 TFSIntegrationInfoModel.attributeTypeMap = [
     {
@@ -124,6 +122,7 @@ TFSIntegrationInfoModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.TFSIntegrationInfoModel = TFSIntegrationInfoModel;
 (function (TFSIntegrationInfoModel) {
     let TypeEnum;
     (function (TypeEnum) {

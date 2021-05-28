@@ -11,13 +11,11 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AsanaUser = void 0;
 class AsanaUser {
     static getAttributeTypeMap() {
         return AsanaUser.attributeTypeMap;
     }
 }
-exports.AsanaUser = AsanaUser;
 AsanaUser.discriminator = undefined;
 AsanaUser.attributeTypeMap = [
     {
@@ -41,4 +39,5 @@ AsanaUser.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.AsanaUser = AsanaUser;
 //# sourceMappingURL=asanaUser.js.map

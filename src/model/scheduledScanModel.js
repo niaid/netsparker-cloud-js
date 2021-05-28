@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ScheduledScanModel = void 0;
 /**
 * Represents a model that carries out scheduled scan data.
 */
@@ -20,7 +19,6 @@ class ScheduledScanModel {
         return ScheduledScanModel.attributeTypeMap;
     }
 }
-exports.ScheduledScanModel = ScheduledScanModel;
 ScheduledScanModel.discriminator = undefined;
 ScheduledScanModel.attributeTypeMap = [
     {
@@ -314,6 +312,7 @@ ScheduledScanModel.attributeTypeMap = [
         "type": "OAuth2SettingModel"
     }
 ];
+exports.ScheduledScanModel = ScheduledScanModel;
 (function (ScheduledScanModel) {
     let LastExecutionStatusEnum;
     (function (LastExecutionStatusEnum) {

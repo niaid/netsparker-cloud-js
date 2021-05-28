@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ScanProfilesListApiResult = void 0;
 /**
 * Represents a model for carrying out a paged scan profile list.
 */
@@ -20,7 +19,6 @@ class ScanProfilesListApiResult {
         return ScanProfilesListApiResult.attributeTypeMap;
     }
 }
-exports.ScanProfilesListApiResult = ScanProfilesListApiResult;
 ScanProfilesListApiResult.discriminator = undefined;
 ScanProfilesListApiResult.attributeTypeMap = [
     {
@@ -79,4 +77,5 @@ ScanProfilesListApiResult.attributeTypeMap = [
         "type": "number"
     }
 ];
+exports.ScanProfilesListApiResult = ScanProfilesListApiResult;
 //# sourceMappingURL=scanProfilesListApiResult.js.map

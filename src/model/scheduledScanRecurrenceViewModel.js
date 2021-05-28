@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ScheduledScanRecurrenceViewModel = void 0;
 /**
 * Scheduled scan recurrence view model.
 */
@@ -20,7 +19,6 @@ class ScheduledScanRecurrenceViewModel {
         return ScheduledScanRecurrenceViewModel.attributeTypeMap;
     }
 }
-exports.ScheduledScanRecurrenceViewModel = ScheduledScanRecurrenceViewModel;
 ScheduledScanRecurrenceViewModel.discriminator = undefined;
 ScheduledScanRecurrenceViewModel.attributeTypeMap = [
     {
@@ -84,6 +82,7 @@ ScheduledScanRecurrenceViewModel.attributeTypeMap = [
         "type": "ScheduledScanRecurrenceViewModel.DayOfWeekEnum"
     }
 ];
+exports.ScheduledScanRecurrenceViewModel = ScheduledScanRecurrenceViewModel;
 (function (ScheduledScanRecurrenceViewModel) {
     let RepeatTypeEnum;
     (function (RepeatTypeEnum) {

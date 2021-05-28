@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.OAuth2SettingModel = void 0;
 /**
 * Represents oauth2 model.
 */
@@ -20,7 +19,6 @@ class OAuth2SettingModel {
         return OAuth2SettingModel.attributeTypeMap;
     }
 }
-exports.OAuth2SettingModel = OAuth2SettingModel;
 OAuth2SettingModel.discriminator = undefined;
 OAuth2SettingModel.attributeTypeMap = [
     {
@@ -79,6 +77,7 @@ OAuth2SettingModel.attributeTypeMap = [
         "type": "ThreeLeggedFields"
     }
 ];
+exports.OAuth2SettingModel = OAuth2SettingModel;
 (function (OAuth2SettingModel) {
     let SelectedFlowTypeEnum;
     (function (SelectedFlowTypeEnum) {

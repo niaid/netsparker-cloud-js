@@ -11,13 +11,11 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CvssScoreValue = void 0;
 class CvssScoreValue {
     static getAttributeTypeMap() {
         return CvssScoreValue.attributeTypeMap;
     }
 }
-exports.CvssScoreValue = CvssScoreValue;
 CvssScoreValue.discriminator = undefined;
 CvssScoreValue.attributeTypeMap = [
     {
@@ -31,6 +29,7 @@ CvssScoreValue.attributeTypeMap = [
         "type": "number"
     }
 ];
+exports.CvssScoreValue = CvssScoreValue;
 (function (CvssScoreValue) {
     let SeverityEnum;
     (function (SeverityEnum) {

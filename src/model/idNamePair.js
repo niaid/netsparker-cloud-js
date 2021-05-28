@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.IdNamePair = void 0;
 /**
 * Represents the Id and Name pair
 */
@@ -20,7 +19,6 @@ class IdNamePair {
         return IdNamePair.attributeTypeMap;
     }
 }
-exports.IdNamePair = IdNamePair;
 IdNamePair.discriminator = undefined;
 IdNamePair.attributeTypeMap = [
     {
@@ -34,4 +32,5 @@ IdNamePair.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.IdNamePair = IdNamePair;
 //# sourceMappingURL=idNamePair.js.map

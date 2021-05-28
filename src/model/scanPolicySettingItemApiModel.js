@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ScanPolicySettingItemApiModel = void 0;
 /**
 * Represents a from for carrying out scan policy setting data.
 */
@@ -20,7 +19,6 @@ class ScanPolicySettingItemApiModel {
         return ScanPolicySettingItemApiModel.attributeTypeMap;
     }
 }
-exports.ScanPolicySettingItemApiModel = ScanPolicySettingItemApiModel;
 ScanPolicySettingItemApiModel.discriminator = undefined;
 ScanPolicySettingItemApiModel.attributeTypeMap = [
     {
@@ -59,4 +57,5 @@ ScanPolicySettingItemApiModel.attributeTypeMap = [
         "type": "ScanPolicyOptimizerOptions"
     }
 ];
+exports.ScanPolicySettingItemApiModel = ScanPolicySettingItemApiModel;
 //# sourceMappingURL=scanPolicySettingItemApiModel.js.map

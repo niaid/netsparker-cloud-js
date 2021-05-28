@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LicenseBaseModel = void 0;
 /**
 * Base subscription license model for carrying out license data.
 */
@@ -20,7 +19,6 @@ class LicenseBaseModel {
         return LicenseBaseModel.attributeTypeMap;
     }
 }
-exports.LicenseBaseModel = LicenseBaseModel;
 LicenseBaseModel.discriminator = undefined;
 LicenseBaseModel.attributeTypeMap = [
     {
@@ -44,4 +42,5 @@ LicenseBaseModel.attributeTypeMap = [
         "type": "boolean"
     }
 ];
+exports.LicenseBaseModel = LicenseBaseModel;
 //# sourceMappingURL=licenseBaseModel.js.map

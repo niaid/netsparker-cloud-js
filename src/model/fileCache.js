@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FileCache = void 0;
 /**
 * An utility class that helps to caching files with {Netsparker.Cloud.Infrastructure.Attributes.UploadedFileAttribute}.
 */
@@ -20,7 +19,6 @@ class FileCache {
         return FileCache.attributeTypeMap;
     }
 }
-exports.FileCache = FileCache;
 FileCache.discriminator = undefined;
 FileCache.attributeTypeMap = [
     {
@@ -49,6 +47,7 @@ FileCache.attributeTypeMap = [
         "type": "FileCache.ImporterTypeEnum"
     }
 ];
+exports.FileCache = FileCache;
 (function (FileCache) {
     let ImporterTypeEnum;
     (function (ImporterTypeEnum) {

@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SlackIntegrationInfoModel = void 0;
 /**
 * The Slack integration info
 */
@@ -20,7 +19,6 @@ class SlackIntegrationInfoModel {
         return SlackIntegrationInfoModel.attributeTypeMap;
     }
 }
-exports.SlackIntegrationInfoModel = SlackIntegrationInfoModel;
 SlackIntegrationInfoModel.discriminator = undefined;
 SlackIntegrationInfoModel.attributeTypeMap = [
     {
@@ -94,6 +92,7 @@ SlackIntegrationInfoModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.SlackIntegrationInfoModel = SlackIntegrationInfoModel;
 (function (SlackIntegrationInfoModel) {
     let TypeEnum;
     (function (TypeEnum) {

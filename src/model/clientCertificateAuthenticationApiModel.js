@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ClientCertificateAuthenticationApiModel = void 0;
 /**
 * Represents a model for carrying out client certificate authentication settings.
 */
@@ -20,7 +19,6 @@ class ClientCertificateAuthenticationApiModel {
         return ClientCertificateAuthenticationApiModel.attributeTypeMap;
     }
 }
-exports.ClientCertificateAuthenticationApiModel = ClientCertificateAuthenticationApiModel;
 ClientCertificateAuthenticationApiModel.discriminator = undefined;
 ClientCertificateAuthenticationApiModel.attributeTypeMap = [
     {
@@ -39,4 +37,5 @@ ClientCertificateAuthenticationApiModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.ClientCertificateAuthenticationApiModel = ClientCertificateAuthenticationApiModel;
 //# sourceMappingURL=clientCertificateAuthenticationApiModel.js.map

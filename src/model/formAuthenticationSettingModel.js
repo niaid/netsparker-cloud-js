@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FormAuthenticationSettingModel = void 0;
 /**
 * Represents a model for carrying out form authentication settings.
 */
@@ -20,7 +19,6 @@ class FormAuthenticationSettingModel {
         return FormAuthenticationSettingModel.attributeTypeMap;
     }
 }
-exports.FormAuthenticationSettingModel = FormAuthenticationSettingModel;
 FormAuthenticationSettingModel.discriminator = undefined;
 FormAuthenticationSettingModel.attributeTypeMap = [
     {
@@ -99,4 +97,5 @@ FormAuthenticationSettingModel.attributeTypeMap = [
         "type": "boolean"
     }
 ];
+exports.FormAuthenticationSettingModel = FormAuthenticationSettingModel;
 //# sourceMappingURL=formAuthenticationSettingModel.js.map

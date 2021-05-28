@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DiscoverySettingsApiModel = void 0;
 /**
 * Discovery Settings api model.
 */
@@ -20,7 +19,6 @@ class DiscoverySettingsApiModel {
         return DiscoverySettingsApiModel.attributeTypeMap;
     }
 }
-exports.DiscoverySettingsApiModel = DiscoverySettingsApiModel;
 DiscoverySettingsApiModel.discriminator = undefined;
 DiscoverySettingsApiModel.attributeTypeMap = [
     {
@@ -84,4 +82,5 @@ DiscoverySettingsApiModel.attributeTypeMap = [
         "type": "boolean"
     }
 ];
+exports.DiscoverySettingsApiModel = DiscoverySettingsApiModel;
 //# sourceMappingURL=discoverySettingsApiModel.js.map

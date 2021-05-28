@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ProxySettingsModel = void 0;
 /**
 * Represents a model for carrying out authentication proxy settings.
 */
@@ -20,7 +19,6 @@ class ProxySettingsModel {
         return ProxySettingsModel.attributeTypeMap;
     }
 }
-exports.ProxySettingsModel = ProxySettingsModel;
 ProxySettingsModel.discriminator = undefined;
 ProxySettingsModel.attributeTypeMap = [
     {
@@ -59,4 +57,5 @@ ProxySettingsModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.ProxySettingsModel = ProxySettingsModel;
 //# sourceMappingURL=proxySettingsModel.js.map

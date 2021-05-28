@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SslTlsSettingModel = void 0;
 /**
 * Represents SSL/TLS settings.
 */
@@ -20,7 +19,6 @@ class SslTlsSettingModel {
         return SslTlsSettingModel.attributeTypeMap;
     }
 }
-exports.SslTlsSettingModel = SslTlsSettingModel;
 SslTlsSettingModel.discriminator = undefined;
 SslTlsSettingModel.attributeTypeMap = [
     {
@@ -54,6 +52,7 @@ SslTlsSettingModel.attributeTypeMap = [
         "type": "boolean"
     }
 ];
+exports.SslTlsSettingModel = SslTlsSettingModel;
 (function (SslTlsSettingModel) {
     let ExternalDomainInvalidCertificateActionEnum;
     (function (ExternalDomainInvalidCertificateActionEnum) {

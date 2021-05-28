@@ -11,13 +11,11 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DiscoveryServiceListApiResult = void 0;
 class DiscoveryServiceListApiResult {
     static getAttributeTypeMap() {
         return DiscoveryServiceListApiResult.attributeTypeMap;
     }
 }
-exports.DiscoveryServiceListApiResult = DiscoveryServiceListApiResult;
 DiscoveryServiceListApiResult.discriminator = undefined;
 DiscoveryServiceListApiResult.attributeTypeMap = [
     {
@@ -76,4 +74,5 @@ DiscoveryServiceListApiResult.attributeTypeMap = [
         "type": "number"
     }
 ];
+exports.DiscoveryServiceListApiResult = DiscoveryServiceListApiResult;
 //# sourceMappingURL=discoveryServiceListApiResult.js.map

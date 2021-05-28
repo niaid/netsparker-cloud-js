@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TimezoneApiModel = void 0;
 /**
 * Represents a model for carrying out time zone data.
 */
@@ -20,7 +19,6 @@ class TimezoneApiModel {
         return TimezoneApiModel.attributeTypeMap;
     }
 }
-exports.TimezoneApiModel = TimezoneApiModel;
 TimezoneApiModel.discriminator = undefined;
 TimezoneApiModel.attributeTypeMap = [
     {
@@ -34,4 +32,5 @@ TimezoneApiModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.TimezoneApiModel = TimezoneApiModel;
 //# sourceMappingURL=timezoneApiModel.js.map

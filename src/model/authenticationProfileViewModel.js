@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AuthenticationProfileViewModel = void 0;
 /**
 * Represents the of a Authentication Profile Model.
 */
@@ -20,7 +19,6 @@ class AuthenticationProfileViewModel {
         return AuthenticationProfileViewModel.attributeTypeMap;
     }
 }
-exports.AuthenticationProfileViewModel = AuthenticationProfileViewModel;
 AuthenticationProfileViewModel.discriminator = undefined;
 AuthenticationProfileViewModel.attributeTypeMap = [
     {
@@ -49,4 +47,5 @@ AuthenticationProfileViewModel.attributeTypeMap = [
         "type": "Array<CustomScriptPageViewModel>"
     }
 ];
+exports.AuthenticationProfileViewModel = AuthenticationProfileViewModel;
 //# sourceMappingURL=authenticationProfileViewModel.js.map

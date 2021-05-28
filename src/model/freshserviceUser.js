@@ -11,13 +11,11 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FreshserviceUser = void 0;
 class FreshserviceUser {
     static getAttributeTypeMap() {
         return FreshserviceUser.attributeTypeMap;
     }
 }
-exports.FreshserviceUser = FreshserviceUser;
 FreshserviceUser.discriminator = undefined;
 FreshserviceUser.attributeTypeMap = [
     {
@@ -36,4 +34,5 @@ FreshserviceUser.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.FreshserviceUser = FreshserviceUser;
 //# sourceMappingURL=freshserviceUser.js.map

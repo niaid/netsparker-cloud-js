@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ReducedScanTaskProfile = void 0;
 /**
 * Represents a class that carries out basic scan task profile data.
 */
@@ -20,7 +19,6 @@ class ReducedScanTaskProfile {
         return ReducedScanTaskProfile.attributeTypeMap;
     }
 }
-exports.ReducedScanTaskProfile = ReducedScanTaskProfile;
 ReducedScanTaskProfile.discriminator = undefined;
 ReducedScanTaskProfile.attributeTypeMap = [
     {
@@ -59,4 +57,5 @@ ReducedScanTaskProfile.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.ReducedScanTaskProfile = ReducedScanTaskProfile;
 //# sourceMappingURL=reducedScanTaskProfile.js.map

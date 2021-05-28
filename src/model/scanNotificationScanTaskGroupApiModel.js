@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ScanNotificationScanTaskGroupApiModel = void 0;
 /**
 * Represents a model for scan notification api model
 */
@@ -20,7 +19,6 @@ class ScanNotificationScanTaskGroupApiModel {
         return ScanNotificationScanTaskGroupApiModel.attributeTypeMap;
     }
 }
-exports.ScanNotificationScanTaskGroupApiModel = ScanNotificationScanTaskGroupApiModel;
 ScanNotificationScanTaskGroupApiModel.discriminator = undefined;
 ScanNotificationScanTaskGroupApiModel.attributeTypeMap = [
     {
@@ -39,4 +37,5 @@ ScanNotificationScanTaskGroupApiModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.ScanNotificationScanTaskGroupApiModel = ScanNotificationScanTaskGroupApiModel;
 //# sourceMappingURL=scanNotificationScanTaskGroupApiModel.js.map

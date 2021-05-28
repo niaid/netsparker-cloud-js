@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.NewScanNotificationApiModel = void 0;
 /**
 * Represents a model for carrying out a new scan notification data
 */
@@ -20,7 +19,6 @@ class NewScanNotificationApiModel {
         return NewScanNotificationApiModel.attributeTypeMap;
     }
 }
-exports.NewScanNotificationApiModel = NewScanNotificationApiModel;
 NewScanNotificationApiModel.discriminator = undefined;
 NewScanNotificationApiModel.attributeTypeMap = [
     {
@@ -84,6 +82,7 @@ NewScanNotificationApiModel.attributeTypeMap = [
         "type": "NewScanNotificationApiModel.ScopeEnum"
     }
 ];
+exports.NewScanNotificationApiModel = NewScanNotificationApiModel;
 (function (NewScanNotificationApiModel) {
     let EventEnum;
     (function (EventEnum) {

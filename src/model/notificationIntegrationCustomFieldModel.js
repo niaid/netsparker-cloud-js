@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.NotificationIntegrationCustomFieldModel = void 0;
 /**
 * Represents a model for carrying out notification integration custom field.
 */
@@ -20,7 +19,6 @@ class NotificationIntegrationCustomFieldModel {
         return NotificationIntegrationCustomFieldModel.attributeTypeMap;
     }
 }
-exports.NotificationIntegrationCustomFieldModel = NotificationIntegrationCustomFieldModel;
 NotificationIntegrationCustomFieldModel.discriminator = undefined;
 NotificationIntegrationCustomFieldModel.attributeTypeMap = [
     {
@@ -44,6 +42,7 @@ NotificationIntegrationCustomFieldModel.attributeTypeMap = [
         "type": "NotificationIntegrationCustomFieldModel.InputTypeEnum"
     }
 ];
+exports.NotificationIntegrationCustomFieldModel = NotificationIntegrationCustomFieldModel;
 (function (NotificationIntegrationCustomFieldModel) {
     let InputTypeEnum;
     (function (InputTypeEnum) {

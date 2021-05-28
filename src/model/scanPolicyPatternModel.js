@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ScanPolicyPatternModel = void 0;
 /**
 * Represents a model for carrying out pattern settings.
 */
@@ -20,7 +19,6 @@ class ScanPolicyPatternModel {
         return ScanPolicyPatternModel.attributeTypeMap;
     }
 }
-exports.ScanPolicyPatternModel = ScanPolicyPatternModel;
 ScanPolicyPatternModel.discriminator = undefined;
 ScanPolicyPatternModel.attributeTypeMap = [
     {
@@ -49,4 +47,5 @@ ScanPolicyPatternModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.ScanPolicyPatternModel = ScanPolicyPatternModel;
 //# sourceMappingURL=scanPolicyPatternModel.js.map

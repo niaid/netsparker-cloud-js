@@ -1,47 +1,39 @@
 "use strict";
-var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    Object.defineProperty(o, k2, { enumerable: true, get: function() { return m[k]; } });
-}) : (function(o, m, k, k2) {
-    if (k2 === undefined) k2 = k;
-    o[k2] = m[k];
-}));
-var __exportStar = (this && this.__exportStar) || function(m, exports) {
-    for (var p in m) if (p !== "default" && !Object.prototype.hasOwnProperty.call(exports, p)) __createBinding(exports, m, p);
-};
+function __export(m) {
+    for (var p in m) if (!exports.hasOwnProperty(p)) exports[p] = m[p];
+}
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.APIS = exports.HttpError = void 0;
-__exportStar(require("./accountApi"), exports);
+__export(require("./accountApi"));
 const accountApi_1 = require("./accountApi");
-__exportStar(require("./agentGroupsApi"), exports);
+__export(require("./agentGroupsApi"));
 const agentGroupsApi_1 = require("./agentGroupsApi");
-__exportStar(require("./agentsApi"), exports);
+__export(require("./agentsApi"));
 const agentsApi_1 = require("./agentsApi");
-__exportStar(require("./auditLogsApi"), exports);
+__export(require("./auditLogsApi"));
 const auditLogsApi_1 = require("./auditLogsApi");
-__exportStar(require("./authenticationProfilesApi"), exports);
+__export(require("./authenticationProfilesApi"));
 const authenticationProfilesApi_1 = require("./authenticationProfilesApi");
-__exportStar(require("./discoveryApi"), exports);
+__export(require("./discoveryApi"));
 const discoveryApi_1 = require("./discoveryApi");
-__exportStar(require("./issuesApi"), exports);
+__export(require("./issuesApi"));
 const issuesApi_1 = require("./issuesApi");
-__exportStar(require("./notificationsApi"), exports);
+__export(require("./notificationsApi"));
 const notificationsApi_1 = require("./notificationsApi");
-__exportStar(require("./scanPoliciesApi"), exports);
+__export(require("./scanPoliciesApi"));
 const scanPoliciesApi_1 = require("./scanPoliciesApi");
-__exportStar(require("./scanProfilesApi"), exports);
+__export(require("./scanProfilesApi"));
 const scanProfilesApi_1 = require("./scanProfilesApi");
-__exportStar(require("./scansApi"), exports);
+__export(require("./scansApi"));
 const scansApi_1 = require("./scansApi");
-__exportStar(require("./teamMembersApi"), exports);
+__export(require("./teamMembersApi"));
 const teamMembersApi_1 = require("./teamMembersApi");
-__exportStar(require("./technologiesApi"), exports);
+__export(require("./technologiesApi"));
 const technologiesApi_1 = require("./technologiesApi");
-__exportStar(require("./vulnerabilityApi"), exports);
+__export(require("./vulnerabilityApi"));
 const vulnerabilityApi_1 = require("./vulnerabilityApi");
-__exportStar(require("./websiteGroupsApi"), exports);
+__export(require("./websiteGroupsApi"));
 const websiteGroupsApi_1 = require("./websiteGroupsApi");
-__exportStar(require("./websitesApi"), exports);
+__export(require("./websitesApi"));
 const websitesApi_1 = require("./websitesApi");
 class HttpError extends Error {
     constructor(response, body, statusCode) {

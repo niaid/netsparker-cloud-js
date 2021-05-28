@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PciScanTaskViewModel = void 0;
 /**
 * Pci Scan Task view model
 */
@@ -20,7 +19,6 @@ class PciScanTaskViewModel {
         return PciScanTaskViewModel.attributeTypeMap;
     }
 }
-exports.PciScanTaskViewModel = PciScanTaskViewModel;
 PciScanTaskViewModel.discriminator = undefined;
 PciScanTaskViewModel.attributeTypeMap = [
     {
@@ -49,6 +47,7 @@ PciScanTaskViewModel.attributeTypeMap = [
         "type": "Date"
     }
 ];
+exports.PciScanTaskViewModel = PciScanTaskViewModel;
 (function (PciScanTaskViewModel) {
     let ScanStateEnum;
     (function (ScanStateEnum) {

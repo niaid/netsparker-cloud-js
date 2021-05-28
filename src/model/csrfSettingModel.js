@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CsrfSettingModel = void 0;
 /**
 * Provides the settings for Cross-site Request Forgery checks.
 */
@@ -20,7 +19,6 @@ class CsrfSettingModel {
         return CsrfSettingModel.attributeTypeMap;
     }
 }
-exports.CsrfSettingModel = CsrfSettingModel;
 CsrfSettingModel.discriminator = undefined;
 CsrfSettingModel.attributeTypeMap = [
     {
@@ -49,4 +47,5 @@ CsrfSettingModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.CsrfSettingModel = CsrfSettingModel;
 //# sourceMappingURL=csrfSettingModel.js.map

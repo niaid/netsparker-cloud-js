@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ScanNotificationListApiResult = void 0;
 /**
 * Represents a model for carrying out a paged scan notification list.
 */
@@ -20,7 +19,6 @@ class ScanNotificationListApiResult {
         return ScanNotificationListApiResult.attributeTypeMap;
     }
 }
-exports.ScanNotificationListApiResult = ScanNotificationListApiResult;
 ScanNotificationListApiResult.discriminator = undefined;
 ScanNotificationListApiResult.attributeTypeMap = [
     {
@@ -79,4 +77,5 @@ ScanNotificationListApiResult.attributeTypeMap = [
         "type": "number"
     }
 ];
+exports.ScanNotificationListApiResult = ScanNotificationListApiResult;
 //# sourceMappingURL=scanNotificationListApiResult.js.map

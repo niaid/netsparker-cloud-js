@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CustomHttpHeaderModel = void 0;
 /**
 * Represents a model for carrying out custom headers.
 */
@@ -20,7 +19,6 @@ class CustomHttpHeaderModel {
         return CustomHttpHeaderModel.attributeTypeMap;
     }
 }
-exports.CustomHttpHeaderModel = CustomHttpHeaderModel;
 CustomHttpHeaderModel.discriminator = undefined;
 CustomHttpHeaderModel.attributeTypeMap = [
     {
@@ -44,4 +42,5 @@ CustomHttpHeaderModel.attributeTypeMap = [
         "type": "boolean"
     }
 ];
+exports.CustomHttpHeaderModel = CustomHttpHeaderModel;
 //# sourceMappingURL=customHttpHeaderModel.js.map

@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.NameValuePair = void 0;
 /**
 * Represents a name / value pair model
 */
@@ -20,7 +19,6 @@ class NameValuePair {
         return NameValuePair.attributeTypeMap;
     }
 }
-exports.NameValuePair = NameValuePair;
 NameValuePair.discriminator = undefined;
 NameValuePair.attributeTypeMap = [
     {
@@ -39,4 +37,5 @@ NameValuePair.attributeTypeMap = [
         "type": "boolean"
     }
 ];
+exports.NameValuePair = NameValuePair;
 //# sourceMappingURL=nameValuePair.js.map

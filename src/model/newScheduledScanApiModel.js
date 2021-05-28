@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.NewScheduledScanApiModel = void 0;
 /**
 * Contains properties that required to start scheduled scan.
 */
@@ -20,7 +19,6 @@ class NewScheduledScanApiModel {
         return NewScheduledScanApiModel.attributeTypeMap;
     }
 }
-exports.NewScheduledScanApiModel = NewScheduledScanApiModel;
 NewScheduledScanApiModel.discriminator = undefined;
 NewScheduledScanApiModel.attributeTypeMap = [
     {
@@ -229,6 +227,7 @@ NewScheduledScanApiModel.attributeTypeMap = [
         "type": "boolean"
     }
 ];
+exports.NewScheduledScanApiModel = NewScheduledScanApiModel;
 (function (NewScheduledScanApiModel) {
     let ScheduleRunTypeEnum;
     (function (ScheduleRunTypeEnum) {

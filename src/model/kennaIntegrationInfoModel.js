@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.KennaIntegrationInfoModel = void 0;
 /**
 * The Kenna integration info
 */
@@ -20,7 +19,6 @@ class KennaIntegrationInfoModel {
         return KennaIntegrationInfoModel.attributeTypeMap;
     }
 }
-exports.KennaIntegrationInfoModel = KennaIntegrationInfoModel;
 KennaIntegrationInfoModel.discriminator = undefined;
 KennaIntegrationInfoModel.attributeTypeMap = [
     {
@@ -124,6 +122,7 @@ KennaIntegrationInfoModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.KennaIntegrationInfoModel = KennaIntegrationInfoModel;
 (function (KennaIntegrationInfoModel) {
     let AssetApplicationIdentifierTypeEnum;
     (function (AssetApplicationIdentifierTypeEnum) {

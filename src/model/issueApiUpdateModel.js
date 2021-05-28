@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.IssueApiUpdateModel = void 0;
 /**
 * Represents a class that carries vulnerability information.
 */
@@ -20,7 +19,6 @@ class IssueApiUpdateModel {
         return IssueApiUpdateModel.attributeTypeMap;
     }
 }
-exports.IssueApiUpdateModel = IssueApiUpdateModel;
 IssueApiUpdateModel.discriminator = undefined;
 IssueApiUpdateModel.attributeTypeMap = [
     {
@@ -49,4 +47,5 @@ IssueApiUpdateModel.attributeTypeMap = [
         "type": "Array<string>"
     }
 ];
+exports.IssueApiUpdateModel = IssueApiUpdateModel;
 //# sourceMappingURL=issueApiUpdateModel.js.map

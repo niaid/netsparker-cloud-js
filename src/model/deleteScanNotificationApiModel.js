@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteScanNotificationApiModel = void 0;
 /**
 * Represents a model for carrying out a delete scan notification data
 */
@@ -20,7 +19,6 @@ class DeleteScanNotificationApiModel {
         return DeleteScanNotificationApiModel.attributeTypeMap;
     }
 }
-exports.DeleteScanNotificationApiModel = DeleteScanNotificationApiModel;
 DeleteScanNotificationApiModel.discriminator = undefined;
 DeleteScanNotificationApiModel.attributeTypeMap = [
     {
@@ -29,4 +27,5 @@ DeleteScanNotificationApiModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.DeleteScanNotificationApiModel = DeleteScanNotificationApiModel;
 //# sourceMappingURL=deleteScanNotificationApiModel.js.map

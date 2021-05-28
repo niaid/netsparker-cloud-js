@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UrlRewriteRuleModel = void 0;
 /**
 * Represents an URL Rewrite rule.
 */
@@ -20,7 +19,6 @@ class UrlRewriteRuleModel {
         return UrlRewriteRuleModel.attributeTypeMap;
     }
 }
-exports.UrlRewriteRuleModel = UrlRewriteRuleModel;
 UrlRewriteRuleModel.discriminator = undefined;
 UrlRewriteRuleModel.attributeTypeMap = [
     {
@@ -34,4 +32,5 @@ UrlRewriteRuleModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.UrlRewriteRuleModel = UrlRewriteRuleModel;
 //# sourceMappingURL=urlRewriteRuleModel.js.map

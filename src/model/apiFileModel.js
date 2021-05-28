@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ApiFileModel = void 0;
 /**
 * Represents a model for file.
 */
@@ -20,7 +19,6 @@ class ApiFileModel {
         return ApiFileModel.attributeTypeMap;
     }
 }
-exports.ApiFileModel = ApiFileModel;
 ApiFileModel.discriminator = undefined;
 ApiFileModel.attributeTypeMap = [
     {
@@ -39,6 +37,7 @@ ApiFileModel.attributeTypeMap = [
         "type": "ApiFileModel.ImporterTypeEnum"
     }
 ];
+exports.ApiFileModel = ApiFileModel;
 (function (ApiFileModel) {
     let ImporterTypeEnum;
     (function (ImporterTypeEnum) {

@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FormAuthenticationVerificationApiModel = void 0;
 /**
 * Represents a form authentication verification model.
 */
@@ -20,7 +19,6 @@ class FormAuthenticationVerificationApiModel {
         return FormAuthenticationVerificationApiModel.attributeTypeMap;
     }
 }
-exports.FormAuthenticationVerificationApiModel = FormAuthenticationVerificationApiModel;
 FormAuthenticationVerificationApiModel.discriminator = undefined;
 FormAuthenticationVerificationApiModel.attributeTypeMap = [
     {
@@ -49,4 +47,5 @@ FormAuthenticationVerificationApiModel.attributeTypeMap = [
         "type": "OtpSettings"
     }
 ];
+exports.FormAuthenticationVerificationApiModel = FormAuthenticationVerificationApiModel;
 //# sourceMappingURL=formAuthenticationVerificationApiModel.js.map

@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WebhookIntegrationInfoModel = void 0;
 /**
 * The Webhook integration info
 */
@@ -20,7 +19,6 @@ class WebhookIntegrationInfoModel {
         return WebhookIntegrationInfoModel.attributeTypeMap;
     }
 }
-exports.WebhookIntegrationInfoModel = WebhookIntegrationInfoModel;
 WebhookIntegrationInfoModel.discriminator = undefined;
 WebhookIntegrationInfoModel.attributeTypeMap = [
     {
@@ -134,6 +132,7 @@ WebhookIntegrationInfoModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.WebhookIntegrationInfoModel = WebhookIntegrationInfoModel;
 (function (WebhookIntegrationInfoModel) {
     let HttpMethodTypeEnum;
     (function (HttpMethodTypeEnum) {

@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ApiScanStatusModel = void 0;
 /**
 * Represents a model for carrying out scan status data for API.
 */
@@ -20,7 +19,6 @@ class ApiScanStatusModel {
         return ApiScanStatusModel.attributeTypeMap;
     }
 }
-exports.ApiScanStatusModel = ApiScanStatusModel;
 ApiScanStatusModel.discriminator = undefined;
 ApiScanStatusModel.attributeTypeMap = [
     {
@@ -44,6 +42,7 @@ ApiScanStatusModel.attributeTypeMap = [
         "type": "ApiScanStatusModel.StateEnum"
     }
 ];
+exports.ApiScanStatusModel = ApiScanStatusModel;
 (function (ApiScanStatusModel) {
     let StateEnum;
     (function (StateEnum) {

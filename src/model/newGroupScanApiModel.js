@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.NewGroupScanApiModel = void 0;
 /**
 * Contains properties that required to start group scan.
 */
@@ -20,7 +19,6 @@ class NewGroupScanApiModel {
         return NewGroupScanApiModel.attributeTypeMap;
     }
 }
-exports.NewGroupScanApiModel = NewGroupScanApiModel;
 NewGroupScanApiModel.discriminator = undefined;
 NewGroupScanApiModel.attributeTypeMap = [
     {
@@ -54,6 +52,7 @@ NewGroupScanApiModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.NewGroupScanApiModel = NewGroupScanApiModel;
 (function (NewGroupScanApiModel) {
     let AuthenticationProfileOptionEnum;
     (function (AuthenticationProfileOptionEnum) {

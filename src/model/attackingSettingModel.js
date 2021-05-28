@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AttackingSettingModel = void 0;
 /**
 * Represents a model for carrying out attacking settings.
 */
@@ -20,7 +19,6 @@ class AttackingSettingModel {
         return AttackingSettingModel.attributeTypeMap;
     }
 }
-exports.AttackingSettingModel = AttackingSettingModel;
 AttackingSettingModel.discriminator = undefined;
 AttackingSettingModel.attributeTypeMap = [
     {
@@ -79,4 +77,5 @@ AttackingSettingModel.attributeTypeMap = [
         "type": "boolean"
     }
 ];
+exports.AttackingSettingModel = AttackingSettingModel;
 //# sourceMappingURL=attackingSettingModel.js.map

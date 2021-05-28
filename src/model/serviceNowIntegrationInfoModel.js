@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ServiceNowIntegrationInfoModel = void 0;
 /**
 * The ServiceNow integration info
 */
@@ -20,7 +19,6 @@ class ServiceNowIntegrationInfoModel {
         return ServiceNowIntegrationInfoModel.attributeTypeMap;
     }
 }
-exports.ServiceNowIntegrationInfoModel = ServiceNowIntegrationInfoModel;
 ServiceNowIntegrationInfoModel.discriminator = undefined;
 ServiceNowIntegrationInfoModel.attributeTypeMap = [
     {
@@ -164,6 +162,7 @@ ServiceNowIntegrationInfoModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.ServiceNowIntegrationInfoModel = ServiceNowIntegrationInfoModel;
 (function (ServiceNowIntegrationInfoModel) {
     let ServiceNowCategoryTypesEnum;
     (function (ServiceNowCategoryTypesEnum) {

@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MattermostIntegrationInfoModel = void 0;
 /**
 * The Mattermost integration info
 */
@@ -20,7 +19,6 @@ class MattermostIntegrationInfoModel {
         return MattermostIntegrationInfoModel.attributeTypeMap;
     }
 }
-exports.MattermostIntegrationInfoModel = MattermostIntegrationInfoModel;
 MattermostIntegrationInfoModel.discriminator = undefined;
 MattermostIntegrationInfoModel.attributeTypeMap = [
     {
@@ -94,6 +92,7 @@ MattermostIntegrationInfoModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.MattermostIntegrationInfoModel = MattermostIntegrationInfoModel;
 (function (MattermostIntegrationInfoModel) {
     let TypeEnum;
     (function (TypeEnum) {

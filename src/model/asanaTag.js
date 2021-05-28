@@ -11,13 +11,11 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AsanaTag = void 0;
 class AsanaTag {
     static getAttributeTypeMap() {
         return AsanaTag.attributeTypeMap;
     }
 }
-exports.AsanaTag = AsanaTag;
 AsanaTag.discriminator = undefined;
 AsanaTag.attributeTypeMap = [
     {
@@ -31,4 +29,5 @@ AsanaTag.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.AsanaTag = AsanaTag;
 //# sourceMappingURL=asanaTag.js.map

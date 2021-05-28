@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.NewScheduledIncrementalScanApiModel = void 0;
 /**
 * Contains properties that required to start incremental scheduled scan.
 */
@@ -20,7 +19,6 @@ class NewScheduledIncrementalScanApiModel {
         return NewScheduledIncrementalScanApiModel.attributeTypeMap;
     }
 }
-exports.NewScheduledIncrementalScanApiModel = NewScheduledIncrementalScanApiModel;
 NewScheduledIncrementalScanApiModel.discriminator = undefined;
 NewScheduledIncrementalScanApiModel.attributeTypeMap = [
     {
@@ -59,6 +57,7 @@ NewScheduledIncrementalScanApiModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.NewScheduledIncrementalScanApiModel = NewScheduledIncrementalScanApiModel;
 (function (NewScheduledIncrementalScanApiModel) {
     let ScheduleRunTypeEnum;
     (function (ScheduleRunTypeEnum) {

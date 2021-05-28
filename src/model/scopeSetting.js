@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ScopeSetting = void 0;
 /**
 * Represents a class that carries out scope settings.
 */
@@ -20,7 +19,6 @@ class ScopeSetting {
         return ScopeSetting.attributeTypeMap;
     }
 }
-exports.ScopeSetting = ScopeSetting;
 ScopeSetting.discriminator = undefined;
 ScopeSetting.attributeTypeMap = [
     {
@@ -59,6 +57,7 @@ ScopeSetting.attributeTypeMap = [
         "type": "boolean"
     }
 ];
+exports.ScopeSetting = ScopeSetting;
 (function (ScopeSetting) {
     let DisallowedHttpMethodsEnum;
     (function (DisallowedHttpMethodsEnum) {

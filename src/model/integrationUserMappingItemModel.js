@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.IntegrationUserMappingItemModel = void 0;
 /**
 * Represents a model that carrying user mapping data.
 */
@@ -20,7 +19,6 @@ class IntegrationUserMappingItemModel {
         return IntegrationUserMappingItemModel.attributeTypeMap;
     }
 }
-exports.IntegrationUserMappingItemModel = IntegrationUserMappingItemModel;
 IntegrationUserMappingItemModel.discriminator = undefined;
 IntegrationUserMappingItemModel.attributeTypeMap = [
     {
@@ -69,6 +67,7 @@ IntegrationUserMappingItemModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.IntegrationUserMappingItemModel = IntegrationUserMappingItemModel;
 (function (IntegrationUserMappingItemModel) {
     let IntegrationSystemEnum;
     (function (IntegrationSystemEnum) {

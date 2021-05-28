@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CustomFieldModel = void 0;
 /**
 * Represents a key/value pair of custom data associated with a vulnerability.
 */
@@ -20,7 +19,6 @@ class CustomFieldModel {
         return CustomFieldModel.attributeTypeMap;
     }
 }
-exports.CustomFieldModel = CustomFieldModel;
 CustomFieldModel.discriminator = undefined;
 CustomFieldModel.attributeTypeMap = [
     {
@@ -34,4 +32,5 @@ CustomFieldModel.attributeTypeMap = [
         "type": "Array<string>"
     }
 ];
+exports.CustomFieldModel = CustomFieldModel;
 //# sourceMappingURL=customFieldModel.js.map

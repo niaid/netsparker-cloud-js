@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.EmailPatternSetting = void 0;
 /**
 * Represents an email address pattern which is used to ignore email disclosure issues.
 */
@@ -20,7 +19,6 @@ class EmailPatternSetting {
         return EmailPatternSetting.attributeTypeMap;
     }
 }
-exports.EmailPatternSetting = EmailPatternSetting;
 EmailPatternSetting.discriminator = undefined;
 EmailPatternSetting.attributeTypeMap = [
     {
@@ -29,4 +27,5 @@ EmailPatternSetting.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.EmailPatternSetting = EmailPatternSetting;
 //# sourceMappingURL=emailPatternSetting.js.map

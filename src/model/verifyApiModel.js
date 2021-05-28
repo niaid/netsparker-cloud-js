@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.VerifyApiModel = void 0;
 /**
 * Represents a model for verifying website.
 */
@@ -20,7 +19,6 @@ class VerifyApiModel {
         return VerifyApiModel.attributeTypeMap;
     }
 }
-exports.VerifyApiModel = VerifyApiModel;
 VerifyApiModel.discriminator = undefined;
 VerifyApiModel.attributeTypeMap = [
     {
@@ -39,6 +37,7 @@ VerifyApiModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.VerifyApiModel = VerifyApiModel;
 (function (VerifyApiModel) {
     let VerificationMethodEnum;
     (function (VerificationMethodEnum) {

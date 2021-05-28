@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SharkModel = void 0;
 /**
 * Represents a model for shark setting
 */
@@ -20,7 +19,6 @@ class SharkModel {
         return SharkModel.attributeTypeMap;
     }
 }
-exports.SharkModel = SharkModel;
 SharkModel.discriminator = undefined;
 SharkModel.attributeTypeMap = [
     {
@@ -39,6 +37,7 @@ SharkModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.SharkModel = SharkModel;
 (function (SharkModel) {
     let SharkPlatformTypeEnum;
     (function (SharkPlatformTypeEnum) {

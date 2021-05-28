@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AgentListApiModel = void 0;
 /**
 * Initializes a new instance of the {Netsparker.Cloud.Infrastructure.Models.AgentListApiModel} class.
 */
@@ -20,7 +19,6 @@ class AgentListApiModel {
         return AgentListApiModel.attributeTypeMap;
     }
 }
-exports.AgentListApiModel = AgentListApiModel;
 AgentListApiModel.discriminator = undefined;
 AgentListApiModel.attributeTypeMap = [
     {
@@ -99,6 +97,7 @@ AgentListApiModel.attributeTypeMap = [
         "type": "boolean"
     }
 ];
+exports.AgentListApiModel = AgentListApiModel;
 (function (AgentListApiModel) {
     let StateEnum;
     (function (StateEnum) {

@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.JiraIntegrationInfoModel = void 0;
 /**
 * The Jira integration info
 */
@@ -20,7 +19,6 @@ class JiraIntegrationInfoModel {
         return JiraIntegrationInfoModel.attributeTypeMap;
     }
 }
-exports.JiraIntegrationInfoModel = JiraIntegrationInfoModel;
 JiraIntegrationInfoModel.discriminator = undefined;
 JiraIntegrationInfoModel.attributeTypeMap = [
     {
@@ -199,6 +197,7 @@ JiraIntegrationInfoModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.JiraIntegrationInfoModel = JiraIntegrationInfoModel;
 (function (JiraIntegrationInfoModel) {
     let ReopenStatusJiraEnum;
     (function (ReopenStatusJiraEnum) {

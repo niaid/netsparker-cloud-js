@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ScanTaskModel = void 0;
 /**
 * Represents a model for carrying {Invicti.Cloud.Core.Models.ScanTask} content.
 */
@@ -20,7 +19,6 @@ class ScanTaskModel {
         return ScanTaskModel.attributeTypeMap;
     }
 }
-exports.ScanTaskModel = ScanTaskModel;
 ScanTaskModel.discriminator = undefined;
 ScanTaskModel.attributeTypeMap = [
     {
@@ -424,6 +422,7 @@ ScanTaskModel.attributeTypeMap = [
         "type": "Date"
     }
 ];
+exports.ScanTaskModel = ScanTaskModel;
 (function (ScanTaskModel) {
     let AuthenticationProfileOptionEnum;
     (function (AuthenticationProfileOptionEnum) {

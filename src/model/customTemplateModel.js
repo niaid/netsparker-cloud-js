@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CustomTemplateModel = void 0;
 /**
 * Vulnerability template extended model.
 */
@@ -20,7 +19,6 @@ class CustomTemplateModel {
         return CustomTemplateModel.attributeTypeMap;
     }
 }
-exports.CustomTemplateModel = CustomTemplateModel;
 CustomTemplateModel.discriminator = undefined;
 CustomTemplateModel.attributeTypeMap = [
     {
@@ -54,4 +52,5 @@ CustomTemplateModel.attributeTypeMap = [
         "type": "CustomTemplateContentModel"
     }
 ];
+exports.CustomTemplateModel = CustomTemplateModel;
 //# sourceMappingURL=customTemplateModel.js.map

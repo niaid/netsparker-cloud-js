@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateScheduledScanModel = void 0;
 /**
 * Contains properties that required to update scheduled scan.
 */
@@ -20,7 +19,6 @@ class UpdateScheduledScanModel {
         return UpdateScheduledScanModel.attributeTypeMap;
     }
 }
-exports.UpdateScheduledScanModel = UpdateScheduledScanModel;
 UpdateScheduledScanModel.discriminator = undefined;
 UpdateScheduledScanModel.attributeTypeMap = [
     {
@@ -299,6 +297,7 @@ UpdateScheduledScanModel.attributeTypeMap = [
         "type": "OAuth2SettingModel"
     }
 ];
+exports.UpdateScheduledScanModel = UpdateScheduledScanModel;
 (function (UpdateScheduledScanModel) {
     let ScanTypeEnum;
     (function (ScanTypeEnum) {

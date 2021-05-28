@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.VcsCommitInfo = void 0;
 /**
 * Represents optional commit info comes from Netsparker continuous integration plugins.
 */
@@ -20,7 +19,6 @@ class VcsCommitInfo {
         return VcsCommitInfo.attributeTypeMap;
     }
 }
-exports.VcsCommitInfo = VcsCommitInfo;
 VcsCommitInfo.discriminator = undefined;
 VcsCommitInfo.attributeTypeMap = [
     {
@@ -104,6 +102,7 @@ VcsCommitInfo.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.VcsCommitInfo = VcsCommitInfo;
 (function (VcsCommitInfo) {
     let IntegrationSystemEnum;
     (function (IntegrationSystemEnum) {

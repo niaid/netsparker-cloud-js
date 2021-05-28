@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UrlRewriteSetting = void 0;
 /**
 * Represents a class that carries out url rewrite settings.
 */
@@ -20,7 +19,6 @@ class UrlRewriteSetting {
         return UrlRewriteSetting.attributeTypeMap;
     }
 }
-exports.UrlRewriteSetting = UrlRewriteSetting;
 UrlRewriteSetting.discriminator = undefined;
 UrlRewriteSetting.attributeTypeMap = [
     {
@@ -64,6 +62,7 @@ UrlRewriteSetting.attributeTypeMap = [
         "type": "Array<UrlRewriteExcludedPathModel>"
     }
 ];
+exports.UrlRewriteSetting = UrlRewriteSetting;
 (function (UrlRewriteSetting) {
     let UrlRewriteModeEnum;
     (function (UrlRewriteModeEnum) {

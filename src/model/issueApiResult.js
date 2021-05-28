@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.IssueApiResult = void 0;
 /**
 * Paged list api model.
 */
@@ -20,7 +19,6 @@ class IssueApiResult {
         return IssueApiResult.attributeTypeMap;
     }
 }
-exports.IssueApiResult = IssueApiResult;
 IssueApiResult.discriminator = undefined;
 IssueApiResult.attributeTypeMap = [
     {
@@ -79,4 +77,5 @@ IssueApiResult.attributeTypeMap = [
         "type": "number"
     }
 ];
+exports.IssueApiResult = IssueApiResult;
 //# sourceMappingURL=issueApiResult.js.map

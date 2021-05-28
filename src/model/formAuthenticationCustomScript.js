@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FormAuthenticationCustomScript = void 0;
 /**
 * Represents form authentication custom script.
 */
@@ -20,7 +19,6 @@ class FormAuthenticationCustomScript {
         return FormAuthenticationCustomScript.attributeTypeMap;
     }
 }
-exports.FormAuthenticationCustomScript = FormAuthenticationCustomScript;
 FormAuthenticationCustomScript.discriminator = undefined;
 FormAuthenticationCustomScript.attributeTypeMap = [
     {
@@ -29,4 +27,5 @@ FormAuthenticationCustomScript.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.FormAuthenticationCustomScript = FormAuthenticationCustomScript;
 //# sourceMappingURL=formAuthenticationCustomScript.js.map

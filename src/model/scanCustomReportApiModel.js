@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ScanCustomReportApiModel = void 0;
 /**
 * Represents a model for carrying scan custom report parameters.
 */
@@ -20,7 +19,6 @@ class ScanCustomReportApiModel {
         return ScanCustomReportApiModel.attributeTypeMap;
     }
 }
-exports.ScanCustomReportApiModel = ScanCustomReportApiModel;
 ScanCustomReportApiModel.discriminator = undefined;
 ScanCustomReportApiModel.attributeTypeMap = [
     {
@@ -54,6 +52,7 @@ ScanCustomReportApiModel.attributeTypeMap = [
         "type": "ScanCustomReportApiModel.ReportFormatEnum"
     }
 ];
+exports.ScanCustomReportApiModel = ScanCustomReportApiModel;
 (function (ScanCustomReportApiModel) {
     let ReportFormatEnum;
     (function (ReportFormatEnum) {

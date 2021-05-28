@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AutoCompleteSettingModel = void 0;
 /**
 * Represents a model for carrying out input auto complete settings.
 */
@@ -20,7 +19,6 @@ class AutoCompleteSettingModel {
         return AutoCompleteSettingModel.attributeTypeMap;
     }
 }
-exports.AutoCompleteSettingModel = AutoCompleteSettingModel;
 AutoCompleteSettingModel.discriminator = undefined;
 AutoCompleteSettingModel.attributeTypeMap = [
     {
@@ -29,4 +27,5 @@ AutoCompleteSettingModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.AutoCompleteSettingModel = AutoCompleteSettingModel;
 //# sourceMappingURL=autoCompleteSettingModel.js.map

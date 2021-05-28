@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.KafkaIntegrationInfoModel = void 0;
 /**
 * The Kafka integration info
 */
@@ -20,7 +19,6 @@ class KafkaIntegrationInfoModel {
         return KafkaIntegrationInfoModel.attributeTypeMap;
     }
 }
-exports.KafkaIntegrationInfoModel = KafkaIntegrationInfoModel;
 KafkaIntegrationInfoModel.discriminator = undefined;
 KafkaIntegrationInfoModel.attributeTypeMap = [
     {
@@ -104,6 +102,7 @@ KafkaIntegrationInfoModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.KafkaIntegrationInfoModel = KafkaIntegrationInfoModel;
 (function (KafkaIntegrationInfoModel) {
     let DataSerializationEnum;
     (function (DataSerializationEnum) {

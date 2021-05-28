@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FormAuthenticationCyberArkVaultSetting = void 0;
 /**
 * Settings of user\'s cyberark vault
 */
@@ -20,7 +19,6 @@ class FormAuthenticationCyberArkVaultSetting {
         return FormAuthenticationCyberArkVaultSetting.attributeTypeMap;
     }
 }
-exports.FormAuthenticationCyberArkVaultSetting = FormAuthenticationCyberArkVaultSetting;
 FormAuthenticationCyberArkVaultSetting.discriminator = undefined;
 FormAuthenticationCyberArkVaultSetting.attributeTypeMap = [
     {
@@ -49,4 +47,5 @@ FormAuthenticationCyberArkVaultSetting.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.FormAuthenticationCyberArkVaultSetting = FormAuthenticationCyberArkVaultSetting;
 //# sourceMappingURL=formAuthenticationCyberArkVaultSetting.js.map

@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CrawlingSettingModel = void 0;
 /**
 * Represents a model for carrying out crawling settings.
 */
@@ -20,7 +19,6 @@ class CrawlingSettingModel {
         return CrawlingSettingModel.attributeTypeMap;
     }
 }
-exports.CrawlingSettingModel = CrawlingSettingModel;
 CrawlingSettingModel.discriminator = undefined;
 CrawlingSettingModel.attributeTypeMap = [
     {
@@ -104,4 +102,5 @@ CrawlingSettingModel.attributeTypeMap = [
         "type": "boolean"
     }
 ];
+exports.CrawlingSettingModel = CrawlingSettingModel;
 //# sourceMappingURL=crawlingSettingModel.js.map

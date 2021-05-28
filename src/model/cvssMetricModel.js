@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CvssMetricModel = void 0;
 /**
 * Represents base model for a CVSS entity.
 */
@@ -20,7 +19,6 @@ class CvssMetricModel {
         return CvssMetricModel.attributeTypeMap;
     }
 }
-exports.CvssMetricModel = CvssMetricModel;
 CvssMetricModel.discriminator = undefined;
 CvssMetricModel.attributeTypeMap = [
     {
@@ -34,4 +32,5 @@ CvssMetricModel.attributeTypeMap = [
         "type": "{ [key: string]: string; }"
     }
 ];
+exports.CvssMetricModel = CvssMetricModel;
 //# sourceMappingURL=cvssMetricModel.js.map

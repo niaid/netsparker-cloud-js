@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BasicAuthenticationCredentialModel = void 0;
 /**
 * Represents credentials for Basic, NTML, Kerberos, Digest or Negotiate authentication.
 */
@@ -20,7 +19,6 @@ class BasicAuthenticationCredentialModel {
         return BasicAuthenticationCredentialModel.attributeTypeMap;
     }
 }
-exports.BasicAuthenticationCredentialModel = BasicAuthenticationCredentialModel;
 BasicAuthenticationCredentialModel.discriminator = undefined;
 BasicAuthenticationCredentialModel.attributeTypeMap = [
     {
@@ -64,6 +62,7 @@ BasicAuthenticationCredentialModel.attributeTypeMap = [
         "type": "boolean"
     }
 ];
+exports.BasicAuthenticationCredentialModel = BasicAuthenticationCredentialModel;
 (function (BasicAuthenticationCredentialModel) {
     let AuthenticationTypeEnum;
     (function (AuthenticationTypeEnum) {

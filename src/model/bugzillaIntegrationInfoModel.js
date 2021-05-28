@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BugzillaIntegrationInfoModel = void 0;
 /**
 * The Bugzilla integration info
 */
@@ -20,7 +19,6 @@ class BugzillaIntegrationInfoModel {
         return BugzillaIntegrationInfoModel.attributeTypeMap;
     }
 }
-exports.BugzillaIntegrationInfoModel = BugzillaIntegrationInfoModel;
 BugzillaIntegrationInfoModel.discriminator = undefined;
 BugzillaIntegrationInfoModel.attributeTypeMap = [
     {
@@ -154,6 +152,7 @@ BugzillaIntegrationInfoModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.BugzillaIntegrationInfoModel = BugzillaIntegrationInfoModel;
 (function (BugzillaIntegrationInfoModel) {
     let TypeEnum;
     (function (TypeEnum) {

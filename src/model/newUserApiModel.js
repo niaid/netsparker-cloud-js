@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.NewUserApiModel = void 0;
 /**
 * Represents a model for carrying out user data.
 */
@@ -20,7 +19,6 @@ class NewUserApiModel {
         return NewUserApiModel.attributeTypeMap;
     }
 }
-exports.NewUserApiModel = NewUserApiModel;
 NewUserApiModel.discriminator = undefined;
 NewUserApiModel.attributeTypeMap = [
     {
@@ -109,4 +107,5 @@ NewUserApiModel.attributeTypeMap = [
         "type": "number"
     }
 ];
+exports.NewUserApiModel = NewUserApiModel;
 //# sourceMappingURL=newUserApiModel.js.map

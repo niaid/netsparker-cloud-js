@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TechnologyApiModel = void 0;
 /**
 * Represents a model for carrying out technology.
 */
@@ -20,7 +19,6 @@ class TechnologyApiModel {
         return TechnologyApiModel.attributeTypeMap;
     }
 }
-exports.TechnologyApiModel = TechnologyApiModel;
 TechnologyApiModel.discriminator = undefined;
 TechnologyApiModel.attributeTypeMap = [
     {
@@ -114,4 +112,5 @@ TechnologyApiModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.TechnologyApiModel = TechnologyApiModel;
 //# sourceMappingURL=technologyApiModel.js.map

@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GitLabIntegrationInfoModel = void 0;
 /**
 * The GitLab integration info
 */
@@ -20,7 +19,6 @@ class GitLabIntegrationInfoModel {
         return GitLabIntegrationInfoModel.attributeTypeMap;
     }
 }
-exports.GitLabIntegrationInfoModel = GitLabIntegrationInfoModel;
 GitLabIntegrationInfoModel.discriminator = undefined;
 GitLabIntegrationInfoModel.attributeTypeMap = [
     {
@@ -129,6 +127,7 @@ GitLabIntegrationInfoModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.GitLabIntegrationInfoModel = GitLabIntegrationInfoModel;
 (function (GitLabIntegrationInfoModel) {
     let TypeEnum;
     (function (TypeEnum) {

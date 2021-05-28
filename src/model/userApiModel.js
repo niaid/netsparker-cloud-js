@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserApiModel = void 0;
 /**
 * Represents a model for carrying out user data.
 */
@@ -20,7 +19,6 @@ class UserApiModel {
         return UserApiModel.attributeTypeMap;
     }
 }
-exports.UserApiModel = UserApiModel;
 UserApiModel.discriminator = undefined;
 UserApiModel.attributeTypeMap = [
     {
@@ -144,6 +142,7 @@ UserApiModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.UserApiModel = UserApiModel;
 (function (UserApiModel) {
     let RoleEnum;
     (function (RoleEnum) {

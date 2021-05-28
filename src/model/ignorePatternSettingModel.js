@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.IgnorePatternSettingModel = void 0;
 /**
 * Represents a model for carrying out ignored parameter patterns.
 */
@@ -20,7 +19,6 @@ class IgnorePatternSettingModel {
         return IgnorePatternSettingModel.attributeTypeMap;
     }
 }
-exports.IgnorePatternSettingModel = IgnorePatternSettingModel;
 IgnorePatternSettingModel.discriminator = undefined;
 IgnorePatternSettingModel.attributeTypeMap = [
     {
@@ -39,6 +37,7 @@ IgnorePatternSettingModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.IgnorePatternSettingModel = IgnorePatternSettingModel;
 (function (IgnorePatternSettingModel) {
     let ParameterTypeEnum;
     (function (ParameterTypeEnum) {

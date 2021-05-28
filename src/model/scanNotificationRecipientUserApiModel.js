@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ScanNotificationRecipientUserApiModel = void 0;
 /**
 * Represents a model for carrying out a scan notification recipient user data
 */
@@ -20,7 +19,6 @@ class ScanNotificationRecipientUserApiModel {
         return ScanNotificationRecipientUserApiModel.attributeTypeMap;
     }
 }
-exports.ScanNotificationRecipientUserApiModel = ScanNotificationRecipientUserApiModel;
 ScanNotificationRecipientUserApiModel.discriminator = undefined;
 ScanNotificationRecipientUserApiModel.attributeTypeMap = [
     {
@@ -39,4 +37,5 @@ ScanNotificationRecipientUserApiModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.ScanNotificationRecipientUserApiModel = ScanNotificationRecipientUserApiModel;
 //# sourceMappingURL=scanNotificationRecipientUserApiModel.js.map

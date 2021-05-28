@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SecurityCheckGroupParentModel = void 0;
 /**
 * Represents a model for carrying out security check groups.
 */
@@ -20,7 +19,6 @@ class SecurityCheckGroupParentModel {
         return SecurityCheckGroupParentModel.attributeTypeMap;
     }
 }
-exports.SecurityCheckGroupParentModel = SecurityCheckGroupParentModel;
 SecurityCheckGroupParentModel.discriminator = undefined;
 SecurityCheckGroupParentModel.attributeTypeMap = [
     {
@@ -34,4 +32,5 @@ SecurityCheckGroupParentModel.attributeTypeMap = [
         "type": "Array<SecurityCheckGroupModel>"
     }
 ];
+exports.SecurityCheckGroupParentModel = SecurityCheckGroupParentModel;
 //# sourceMappingURL=securityCheckGroupParentModel.js.map

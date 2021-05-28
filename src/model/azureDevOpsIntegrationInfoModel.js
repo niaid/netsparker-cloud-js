@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AzureDevOpsIntegrationInfoModel = void 0;
 /**
 * The Azure DevOps integration info
 */
@@ -20,7 +19,6 @@ class AzureDevOpsIntegrationInfoModel {
         return AzureDevOpsIntegrationInfoModel.attributeTypeMap;
     }
 }
-exports.AzureDevOpsIntegrationInfoModel = AzureDevOpsIntegrationInfoModel;
 AzureDevOpsIntegrationInfoModel.discriminator = undefined;
 AzureDevOpsIntegrationInfoModel.attributeTypeMap = [
     {
@@ -124,6 +122,7 @@ AzureDevOpsIntegrationInfoModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.AzureDevOpsIntegrationInfoModel = AzureDevOpsIntegrationInfoModel;
 (function (AzureDevOpsIntegrationInfoModel) {
     let TypeEnum;
     (function (TypeEnum) {

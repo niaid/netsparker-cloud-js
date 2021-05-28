@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UnfuddleIntegrationInfoModel = void 0;
 /**
 * The Unfuddle integration info
 */
@@ -20,7 +19,6 @@ class UnfuddleIntegrationInfoModel {
         return UnfuddleIntegrationInfoModel.attributeTypeMap;
     }
 }
-exports.UnfuddleIntegrationInfoModel = UnfuddleIntegrationInfoModel;
 UnfuddleIntegrationInfoModel.discriminator = undefined;
 UnfuddleIntegrationInfoModel.attributeTypeMap = [
     {
@@ -129,6 +127,7 @@ UnfuddleIntegrationInfoModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.UnfuddleIntegrationInfoModel = UnfuddleIntegrationInfoModel;
 (function (UnfuddleIntegrationInfoModel) {
     let TypeEnum;
     (function (TypeEnum) {

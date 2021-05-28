@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteWebsiteGroupApiModel = void 0;
 /**
 * Represents a model for deleting a website group.
 */
@@ -20,7 +19,6 @@ class DeleteWebsiteGroupApiModel {
         return DeleteWebsiteGroupApiModel.attributeTypeMap;
     }
 }
-exports.DeleteWebsiteGroupApiModel = DeleteWebsiteGroupApiModel;
 DeleteWebsiteGroupApiModel.discriminator = undefined;
 DeleteWebsiteGroupApiModel.attributeTypeMap = [
     {
@@ -29,4 +27,5 @@ DeleteWebsiteGroupApiModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.DeleteWebsiteGroupApiModel = DeleteWebsiteGroupApiModel;
 //# sourceMappingURL=deleteWebsiteGroupApiModel.js.map

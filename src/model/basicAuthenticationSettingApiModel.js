@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BasicAuthenticationSettingApiModel = void 0;
 /**
 * Provides credentials for NTLM, Basic, Kerberos, Digest or Negotiate authentication schemes.
 */
@@ -20,7 +19,6 @@ class BasicAuthenticationSettingApiModel {
         return BasicAuthenticationSettingApiModel.attributeTypeMap;
     }
 }
-exports.BasicAuthenticationSettingApiModel = BasicAuthenticationSettingApiModel;
 BasicAuthenticationSettingApiModel.discriminator = undefined;
 BasicAuthenticationSettingApiModel.attributeTypeMap = [
     {
@@ -34,4 +32,5 @@ BasicAuthenticationSettingApiModel.attributeTypeMap = [
         "type": "Array<BasicAuthenticationCredentialApiModel>"
     }
 ];
+exports.BasicAuthenticationSettingApiModel = BasicAuthenticationSettingApiModel;
 //# sourceMappingURL=basicAuthenticationSettingApiModel.js.map

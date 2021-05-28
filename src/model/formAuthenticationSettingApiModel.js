@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FormAuthenticationSettingApiModel = void 0;
 /**
 * Provides credentials for form authentication.
 */
@@ -20,7 +19,6 @@ class FormAuthenticationSettingApiModel {
         return FormAuthenticationSettingApiModel.attributeTypeMap;
     }
 }
-exports.FormAuthenticationSettingApiModel = FormAuthenticationSettingApiModel;
 FormAuthenticationSettingApiModel.discriminator = undefined;
 FormAuthenticationSettingApiModel.attributeTypeMap = [
     {
@@ -99,6 +97,7 @@ FormAuthenticationSettingApiModel.attributeTypeMap = [
         "type": "FormAuthenticationCyberArkVaultSetting"
     }
 ];
+exports.FormAuthenticationSettingApiModel = FormAuthenticationSettingApiModel;
 (function (FormAuthenticationSettingApiModel) {
     let FormAuthTypeEnum;
     (function (FormAuthTypeEnum) {

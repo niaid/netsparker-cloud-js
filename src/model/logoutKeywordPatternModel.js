@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.LogoutKeywordPatternModel = void 0;
 /**
 * Represents a model for carrying out a logout keyword pattern.
 */
@@ -20,7 +19,6 @@ class LogoutKeywordPatternModel {
         return LogoutKeywordPatternModel.attributeTypeMap;
     }
 }
-exports.LogoutKeywordPatternModel = LogoutKeywordPatternModel;
 LogoutKeywordPatternModel.discriminator = undefined;
 LogoutKeywordPatternModel.attributeTypeMap = [
     {
@@ -34,4 +32,5 @@ LogoutKeywordPatternModel.attributeTypeMap = [
         "type": "boolean"
     }
 ];
+exports.LogoutKeywordPatternModel = LogoutKeywordPatternModel;
 //# sourceMappingURL=logoutKeywordPatternModel.js.map

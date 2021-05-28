@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ExcludeFilter = void 0;
 /**
 * Exclude filter.
 */
@@ -20,7 +19,6 @@ class ExcludeFilter {
         return ExcludeFilter.attributeTypeMap;
     }
 }
-exports.ExcludeFilter = ExcludeFilter;
 ExcludeFilter.discriminator = undefined;
 ExcludeFilter.attributeTypeMap = [
     {
@@ -49,4 +47,5 @@ ExcludeFilter.attributeTypeMap = [
         "type": "Array<string>"
     }
 ];
+exports.ExcludeFilter = ExcludeFilter;
 //# sourceMappingURL=excludeFilter.js.map

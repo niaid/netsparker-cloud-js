@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AuthVerificationApiResult = void 0;
 /**
 * Represents a form authentication verification result.
 */
@@ -20,7 +19,6 @@ class AuthVerificationApiResult {
         return AuthVerificationApiResult.attributeTypeMap;
     }
 }
-exports.AuthVerificationApiResult = AuthVerificationApiResult;
 AuthVerificationApiResult.discriminator = undefined;
 AuthVerificationApiResult.attributeTypeMap = [
     {
@@ -54,6 +52,7 @@ AuthVerificationApiResult.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.AuthVerificationApiResult = AuthVerificationApiResult;
 (function (AuthVerificationApiResult) {
     let LogoutSignatureTypeEnum;
     (function (LogoutSignatureTypeEnum) {

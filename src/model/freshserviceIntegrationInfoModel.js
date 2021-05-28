@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FreshserviceIntegrationInfoModel = void 0;
 /**
 * The Freshservice integration info
 */
@@ -20,7 +19,6 @@ class FreshserviceIntegrationInfoModel {
         return FreshserviceIntegrationInfoModel.attributeTypeMap;
     }
 }
-exports.FreshserviceIntegrationInfoModel = FreshserviceIntegrationInfoModel;
 FreshserviceIntegrationInfoModel.discriminator = undefined;
 FreshserviceIntegrationInfoModel.attributeTypeMap = [
     {
@@ -144,6 +142,7 @@ FreshserviceIntegrationInfoModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.FreshserviceIntegrationInfoModel = FreshserviceIntegrationInfoModel;
 (function (FreshserviceIntegrationInfoModel) {
     let TypeEnum;
     (function (TypeEnum) {

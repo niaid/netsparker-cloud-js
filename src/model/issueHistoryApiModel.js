@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.IssueHistoryApiModel = void 0;
 /**
 * Model for issue api history prop
 */
@@ -20,7 +19,6 @@ class IssueHistoryApiModel {
         return IssueHistoryApiModel.attributeTypeMap;
     }
 }
-exports.IssueHistoryApiModel = IssueHistoryApiModel;
 IssueHistoryApiModel.discriminator = undefined;
 IssueHistoryApiModel.attributeTypeMap = [
     {
@@ -44,4 +42,5 @@ IssueHistoryApiModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.IssueHistoryApiModel = IssueHistoryApiModel;
 //# sourceMappingURL=issueHistoryApiModel.js.map

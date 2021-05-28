@@ -11,13 +11,11 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DiscoveryApiModel = void 0;
 class DiscoveryApiModel {
     static getAttributeTypeMap() {
         return DiscoveryApiModel.attributeTypeMap;
     }
 }
-exports.DiscoveryApiModel = DiscoveryApiModel;
 DiscoveryApiModel.discriminator = undefined;
 DiscoveryApiModel.attributeTypeMap = [
     {
@@ -111,6 +109,7 @@ DiscoveryApiModel.attributeTypeMap = [
         "type": "DiscoveryApiModel.StatusEnum"
     }
 ];
+exports.DiscoveryApiModel = DiscoveryApiModel;
 (function (DiscoveryApiModel) {
     let StatusEnum;
     (function (StatusEnum) {

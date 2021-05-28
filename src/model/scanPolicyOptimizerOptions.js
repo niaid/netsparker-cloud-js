@@ -11,13 +11,11 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ScanPolicyOptimizerOptions = void 0;
 class ScanPolicyOptimizerOptions {
     static getAttributeTypeMap() {
         return ScanPolicyOptimizerOptions.attributeTypeMap;
     }
 }
-exports.ScanPolicyOptimizerOptions = ScanPolicyOptimizerOptions;
 ScanPolicyOptimizerOptions.discriminator = undefined;
 ScanPolicyOptimizerOptions.attributeTypeMap = [
     {
@@ -81,6 +79,7 @@ ScanPolicyOptimizerOptions.attributeTypeMap = [
         "type": "ScanPolicyOptimizerOptions.WebServerEnum"
     }
 ];
+exports.ScanPolicyOptimizerOptions = ScanPolicyOptimizerOptions;
 (function (ScanPolicyOptimizerOptions) {
     let AppServerEnum;
     (function (AppServerEnum) {

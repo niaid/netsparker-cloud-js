@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateScheduledIncrementalScanApiModel = void 0;
 /**
 * Represents a model for carrying out an update incremental scan notification data
 */
@@ -20,7 +19,6 @@ class UpdateScheduledIncrementalScanApiModel {
         return UpdateScheduledIncrementalScanApiModel.attributeTypeMap;
     }
 }
-exports.UpdateScheduledIncrementalScanApiModel = UpdateScheduledIncrementalScanApiModel;
 UpdateScheduledIncrementalScanApiModel.discriminator = undefined;
 UpdateScheduledIncrementalScanApiModel.attributeTypeMap = [
     {
@@ -69,6 +67,7 @@ UpdateScheduledIncrementalScanApiModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.UpdateScheduledIncrementalScanApiModel = UpdateScheduledIncrementalScanApiModel;
 (function (UpdateScheduledIncrementalScanApiModel) {
     let ScheduleRunTypeEnum;
     (function (ScheduleRunTypeEnum) {

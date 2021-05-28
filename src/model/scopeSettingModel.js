@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ScopeSettingModel = void 0;
 /**
 * Represents a model for carrying out scope settings.
 */
@@ -20,7 +19,6 @@ class ScopeSettingModel {
         return ScopeSettingModel.attributeTypeMap;
     }
 }
-exports.ScopeSettingModel = ScopeSettingModel;
 ScopeSettingModel.discriminator = undefined;
 ScopeSettingModel.attributeTypeMap = [
     {
@@ -54,4 +52,5 @@ ScopeSettingModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.ScopeSettingModel = ScopeSettingModel;
 //# sourceMappingURL=scopeSettingModel.js.map

@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FogBugzIntegrationInfoModel = void 0;
 /**
 * The FogBugz integration info
 */
@@ -20,7 +19,6 @@ class FogBugzIntegrationInfoModel {
         return FogBugzIntegrationInfoModel.attributeTypeMap;
     }
 }
-exports.FogBugzIntegrationInfoModel = FogBugzIntegrationInfoModel;
 FogBugzIntegrationInfoModel.discriminator = undefined;
 FogBugzIntegrationInfoModel.attributeTypeMap = [
     {
@@ -129,6 +127,7 @@ FogBugzIntegrationInfoModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.FogBugzIntegrationInfoModel = FogBugzIntegrationInfoModel;
 (function (FogBugzIntegrationInfoModel) {
     let TypeEnum;
     (function (TypeEnum) {

@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AgentSelectionModel = void 0;
 /**
 * Represents a container for agent choices of a website.
 */
@@ -20,7 +19,6 @@ class AgentSelectionModel {
         return AgentSelectionModel.attributeTypeMap;
     }
 }
-exports.AgentSelectionModel = AgentSelectionModel;
 AgentSelectionModel.discriminator = undefined;
 AgentSelectionModel.attributeTypeMap = [
     {
@@ -34,4 +32,5 @@ AgentSelectionModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.AgentSelectionModel = AgentSelectionModel;
 //# sourceMappingURL=agentSelectionModel.js.map

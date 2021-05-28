@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.HashicorpVaultIntegrationInfoModel = void 0;
 /**
 * The Vault integration info
 */
@@ -20,7 +19,6 @@ class HashicorpVaultIntegrationInfoModel {
         return HashicorpVaultIntegrationInfoModel.attributeTypeMap;
     }
 }
-exports.HashicorpVaultIntegrationInfoModel = HashicorpVaultIntegrationInfoModel;
 HashicorpVaultIntegrationInfoModel.discriminator = undefined;
 HashicorpVaultIntegrationInfoModel.attributeTypeMap = [
     {
@@ -99,6 +97,7 @@ HashicorpVaultIntegrationInfoModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.HashicorpVaultIntegrationInfoModel = HashicorpVaultIntegrationInfoModel;
 (function (HashicorpVaultIntegrationInfoModel) {
     let TypeEnum;
     (function (TypeEnum) {

@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserApiTokenModel = void 0;
 /**
 * Represents a model for carrying out user token model.
 */
@@ -20,7 +19,6 @@ class UserApiTokenModel {
         return UserApiTokenModel.attributeTypeMap;
     }
 }
-exports.UserApiTokenModel = UserApiTokenModel;
 UserApiTokenModel.discriminator = undefined;
 UserApiTokenModel.attributeTypeMap = [
     {
@@ -34,4 +32,5 @@ UserApiTokenModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.UserApiTokenModel = UserApiTokenModel;
 //# sourceMappingURL=userApiTokenModel.js.map

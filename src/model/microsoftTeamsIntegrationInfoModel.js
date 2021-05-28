@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MicrosoftTeamsIntegrationInfoModel = void 0;
 /**
 * The Microsoft Teams integration info
 */
@@ -20,7 +19,6 @@ class MicrosoftTeamsIntegrationInfoModel {
         return MicrosoftTeamsIntegrationInfoModel.attributeTypeMap;
     }
 }
-exports.MicrosoftTeamsIntegrationInfoModel = MicrosoftTeamsIntegrationInfoModel;
 MicrosoftTeamsIntegrationInfoModel.discriminator = undefined;
 MicrosoftTeamsIntegrationInfoModel.attributeTypeMap = [
     {
@@ -94,6 +92,7 @@ MicrosoftTeamsIntegrationInfoModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.MicrosoftTeamsIntegrationInfoModel = MicrosoftTeamsIntegrationInfoModel;
 (function (MicrosoftTeamsIntegrationInfoModel) {
     let TypeEnum;
     (function (TypeEnum) {

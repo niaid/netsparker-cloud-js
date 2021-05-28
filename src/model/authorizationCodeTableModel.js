@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AuthorizationCodeTableModel = void 0;
 /**
 * Represents authorization code table model for oauth2.
 */
@@ -20,7 +19,6 @@ class AuthorizationCodeTableModel {
         return AuthorizationCodeTableModel.attributeTypeMap;
     }
 }
-exports.AuthorizationCodeTableModel = AuthorizationCodeTableModel;
 AuthorizationCodeTableModel.discriminator = undefined;
 AuthorizationCodeTableModel.attributeTypeMap = [
     {
@@ -34,4 +32,5 @@ AuthorizationCodeTableModel.attributeTypeMap = [
         "type": "Array<NameValuePair>"
     }
 ];
+exports.AuthorizationCodeTableModel = AuthorizationCodeTableModel;
 //# sourceMappingURL=authorizationCodeTableModel.js.map

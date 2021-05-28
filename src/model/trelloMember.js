@@ -11,13 +11,11 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TrelloMember = void 0;
 class TrelloMember {
     static getAttributeTypeMap() {
         return TrelloMember.attributeTypeMap;
     }
 }
-exports.TrelloMember = TrelloMember;
 TrelloMember.discriminator = undefined;
 TrelloMember.attributeTypeMap = [
     {
@@ -51,4 +49,5 @@ TrelloMember.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.TrelloMember = TrelloMember;
 //# sourceMappingURL=trelloMember.js.map

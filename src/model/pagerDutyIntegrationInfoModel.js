@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PagerDutyIntegrationInfoModel = void 0;
 /**
 * The PagerDuty integration info
 */
@@ -20,7 +19,6 @@ class PagerDutyIntegrationInfoModel {
         return PagerDutyIntegrationInfoModel.attributeTypeMap;
     }
 }
-exports.PagerDutyIntegrationInfoModel = PagerDutyIntegrationInfoModel;
 PagerDutyIntegrationInfoModel.discriminator = undefined;
 PagerDutyIntegrationInfoModel.attributeTypeMap = [
     {
@@ -144,6 +142,7 @@ PagerDutyIntegrationInfoModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.PagerDutyIntegrationInfoModel = PagerDutyIntegrationInfoModel;
 (function (PagerDutyIntegrationInfoModel) {
     let ServiceTypeEnum;
     (function (ServiceTypeEnum) {

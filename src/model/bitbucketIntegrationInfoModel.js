@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BitbucketIntegrationInfoModel = void 0;
 /**
 * The Bitbucket integration info
 */
@@ -20,7 +19,6 @@ class BitbucketIntegrationInfoModel {
         return BitbucketIntegrationInfoModel.attributeTypeMap;
     }
 }
-exports.BitbucketIntegrationInfoModel = BitbucketIntegrationInfoModel;
 BitbucketIntegrationInfoModel.discriminator = undefined;
 BitbucketIntegrationInfoModel.attributeTypeMap = [
     {
@@ -114,6 +112,7 @@ BitbucketIntegrationInfoModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.BitbucketIntegrationInfoModel = BitbucketIntegrationInfoModel;
 (function (BitbucketIntegrationInfoModel) {
     let TypeEnum;
     (function (TypeEnum) {

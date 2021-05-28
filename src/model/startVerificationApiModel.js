@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.StartVerificationApiModel = void 0;
 /**
 * Represents a model to start verification.
 */
@@ -20,7 +19,6 @@ class StartVerificationApiModel {
         return StartVerificationApiModel.attributeTypeMap;
     }
 }
-exports.StartVerificationApiModel = StartVerificationApiModel;
 StartVerificationApiModel.discriminator = undefined;
 StartVerificationApiModel.attributeTypeMap = [
     {
@@ -34,6 +32,7 @@ StartVerificationApiModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.StartVerificationApiModel = StartVerificationApiModel;
 (function (StartVerificationApiModel) {
     let VerificationMethodEnum;
     (function (VerificationMethodEnum) {

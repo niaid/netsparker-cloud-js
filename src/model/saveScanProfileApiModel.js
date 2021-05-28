@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SaveScanProfileApiModel = void 0;
 /**
 * Contains properties that required to save scan profile.
 */
@@ -20,7 +19,6 @@ class SaveScanProfileApiModel {
         return SaveScanProfileApiModel.attributeTypeMap;
     }
 }
-exports.SaveScanProfileApiModel = SaveScanProfileApiModel;
 SaveScanProfileApiModel.discriminator = undefined;
 SaveScanProfileApiModel.attributeTypeMap = [
     {
@@ -254,6 +252,7 @@ SaveScanProfileApiModel.attributeTypeMap = [
         "type": "boolean"
     }
 ];
+exports.SaveScanProfileApiModel = SaveScanProfileApiModel;
 (function (SaveScanProfileApiModel) {
     let CreateTypeEnum;
     (function (CreateTypeEnum) {

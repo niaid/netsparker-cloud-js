@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CustomTemplateContentModel = void 0;
 /**
 * Sentinel vulnerability template model.
 */
@@ -20,7 +19,6 @@ class CustomTemplateContentModel {
         return CustomTemplateContentModel.attributeTypeMap;
     }
 }
-exports.CustomTemplateContentModel = CustomTemplateContentModel;
 CustomTemplateContentModel.discriminator = undefined;
 CustomTemplateContentModel.attributeTypeMap = [
     {
@@ -59,4 +57,5 @@ CustomTemplateContentModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.CustomTemplateContentModel = CustomTemplateContentModel;
 //# sourceMappingURL=customTemplateContentModel.js.map

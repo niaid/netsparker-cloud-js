@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BruteForceSettingModel = void 0;
 /**
 * Represents a model for carrying out authentication brute force settings.
 */
@@ -20,7 +19,6 @@ class BruteForceSettingModel {
         return BruteForceSettingModel.attributeTypeMap;
     }
 }
-exports.BruteForceSettingModel = BruteForceSettingModel;
 BruteForceSettingModel.discriminator = undefined;
 BruteForceSettingModel.attributeTypeMap = [
     {
@@ -34,4 +32,5 @@ BruteForceSettingModel.attributeTypeMap = [
         "type": "number"
     }
 ];
+exports.BruteForceSettingModel = BruteForceSettingModel;
 //# sourceMappingURL=bruteForceSettingModel.js.map

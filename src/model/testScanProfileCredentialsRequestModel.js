@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TestScanProfileCredentialsRequestModel = void 0;
 /**
 * The test scan profile credentials request model.
 */
@@ -20,7 +19,6 @@ class TestScanProfileCredentialsRequestModel {
         return TestScanProfileCredentialsRequestModel.attributeTypeMap;
     }
 }
-exports.TestScanProfileCredentialsRequestModel = TestScanProfileCredentialsRequestModel;
 TestScanProfileCredentialsRequestModel.discriminator = undefined;
 TestScanProfileCredentialsRequestModel.attributeTypeMap = [
     {
@@ -34,4 +32,5 @@ TestScanProfileCredentialsRequestModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.TestScanProfileCredentialsRequestModel = TestScanProfileCredentialsRequestModel;
 //# sourceMappingURL=testScanProfileCredentialsRequestModel.js.map

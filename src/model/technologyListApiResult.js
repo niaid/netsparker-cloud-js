@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TechnologyListApiResult = void 0;
 /**
 * Represents a model for carrying out a paged technology list.
 */
@@ -20,7 +19,6 @@ class TechnologyListApiResult {
         return TechnologyListApiResult.attributeTypeMap;
     }
 }
-exports.TechnologyListApiResult = TechnologyListApiResult;
 TechnologyListApiResult.discriminator = undefined;
 TechnologyListApiResult.attributeTypeMap = [
     {
@@ -79,4 +77,5 @@ TechnologyListApiResult.attributeTypeMap = [
         "type": "number"
     }
 ];
+exports.TechnologyListApiResult = TechnologyListApiResult;
 //# sourceMappingURL=technologyListApiResult.js.map

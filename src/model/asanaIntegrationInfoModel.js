@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AsanaIntegrationInfoModel = void 0;
 /**
 * The Asana integration info
 */
@@ -20,7 +19,6 @@ class AsanaIntegrationInfoModel {
         return AsanaIntegrationInfoModel.attributeTypeMap;
     }
 }
-exports.AsanaIntegrationInfoModel = AsanaIntegrationInfoModel;
 AsanaIntegrationInfoModel.discriminator = undefined;
 AsanaIntegrationInfoModel.attributeTypeMap = [
     {
@@ -159,6 +157,7 @@ AsanaIntegrationInfoModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.AsanaIntegrationInfoModel = AsanaIntegrationInfoModel;
 (function (AsanaIntegrationInfoModel) {
     let TypeEnum;
     (function (TypeEnum) {

@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.YouTrackIntegrationInfoModel = void 0;
 /**
 * The YouTrack integration info
 */
@@ -20,7 +19,6 @@ class YouTrackIntegrationInfoModel {
         return YouTrackIntegrationInfoModel.attributeTypeMap;
     }
 }
-exports.YouTrackIntegrationInfoModel = YouTrackIntegrationInfoModel;
 YouTrackIntegrationInfoModel.discriminator = undefined;
 YouTrackIntegrationInfoModel.attributeTypeMap = [
     {
@@ -109,6 +107,7 @@ YouTrackIntegrationInfoModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.YouTrackIntegrationInfoModel = YouTrackIntegrationInfoModel;
 (function (YouTrackIntegrationInfoModel) {
     let TypeEnum;
     (function (TypeEnum) {

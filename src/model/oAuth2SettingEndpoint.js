@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.OAuth2SettingEndpoint = void 0;
 /**
 * Provides inputs for OAuth 2.0 Flow End Point.
 */
@@ -20,7 +19,6 @@ class OAuth2SettingEndpoint {
         return OAuth2SettingEndpoint.attributeTypeMap;
     }
 }
-exports.OAuth2SettingEndpoint = OAuth2SettingEndpoint;
 OAuth2SettingEndpoint.discriminator = undefined;
 OAuth2SettingEndpoint.attributeTypeMap = [
     {
@@ -39,4 +37,5 @@ OAuth2SettingEndpoint.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.OAuth2SettingEndpoint = OAuth2SettingEndpoint;
 //# sourceMappingURL=oAuth2SettingEndpoint.js.map

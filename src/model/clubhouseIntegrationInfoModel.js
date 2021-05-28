@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ClubhouseIntegrationInfoModel = void 0;
 /**
 * The Clubhouse integration info
 */
@@ -20,7 +19,6 @@ class ClubhouseIntegrationInfoModel {
         return ClubhouseIntegrationInfoModel.attributeTypeMap;
     }
 }
-exports.ClubhouseIntegrationInfoModel = ClubhouseIntegrationInfoModel;
 ClubhouseIntegrationInfoModel.discriminator = undefined;
 ClubhouseIntegrationInfoModel.attributeTypeMap = [
     {
@@ -139,6 +137,7 @@ ClubhouseIntegrationInfoModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.ClubhouseIntegrationInfoModel = ClubhouseIntegrationInfoModel;
 (function (ClubhouseIntegrationInfoModel) {
     let ClubhouseStoryTypeEnum;
     (function (ClubhouseStoryTypeEnum) {

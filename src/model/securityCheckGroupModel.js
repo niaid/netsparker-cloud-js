@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SecurityCheckGroupModel = void 0;
 /**
 * Represents a model for carrying out security check groups.
 */
@@ -20,7 +19,6 @@ class SecurityCheckGroupModel {
         return SecurityCheckGroupModel.attributeTypeMap;
     }
 }
-exports.SecurityCheckGroupModel = SecurityCheckGroupModel;
 SecurityCheckGroupModel.discriminator = undefined;
 SecurityCheckGroupModel.attributeTypeMap = [
     {
@@ -64,6 +62,7 @@ SecurityCheckGroupModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.SecurityCheckGroupModel = SecurityCheckGroupModel;
 (function (SecurityCheckGroupModel) {
     let TypeEnum;
     (function (TypeEnum) {

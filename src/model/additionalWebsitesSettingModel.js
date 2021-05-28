@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AdditionalWebsitesSettingModel = void 0;
 /**
 * Represents a model for carrying out additional websites.
 */
@@ -20,7 +19,6 @@ class AdditionalWebsitesSettingModel {
         return AdditionalWebsitesSettingModel.attributeTypeMap;
     }
 }
-exports.AdditionalWebsitesSettingModel = AdditionalWebsitesSettingModel;
 AdditionalWebsitesSettingModel.discriminator = undefined;
 AdditionalWebsitesSettingModel.attributeTypeMap = [
     {
@@ -29,4 +27,5 @@ AdditionalWebsitesSettingModel.attributeTypeMap = [
         "type": "Array<AdditionalWebsiteModel>"
     }
 ];
+exports.AdditionalWebsitesSettingModel = AdditionalWebsitesSettingModel;
 //# sourceMappingURL=additionalWebsitesSettingModel.js.map

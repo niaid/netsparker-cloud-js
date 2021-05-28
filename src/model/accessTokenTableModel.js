@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AccessTokenTableModel = void 0;
 /**
 * Represents access token table model for oauth2.
 */
@@ -20,7 +19,6 @@ class AccessTokenTableModel {
         return AccessTokenTableModel.attributeTypeMap;
     }
 }
-exports.AccessTokenTableModel = AccessTokenTableModel;
 AccessTokenTableModel.discriminator = undefined;
 AccessTokenTableModel.attributeTypeMap = [
     {
@@ -34,4 +32,5 @@ AccessTokenTableModel.attributeTypeMap = [
         "type": "{ [key: string]: Array<NameValuePair>; }"
     }
 ];
+exports.AccessTokenTableModel = AccessTokenTableModel;
 //# sourceMappingURL=accessTokenTableModel.js.map

@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ContentTypeModel = void 0;
 /**
 * Represents a model for carrying out input auto complete settings.
 */
@@ -20,7 +19,6 @@ class ContentTypeModel {
         return ContentTypeModel.attributeTypeMap;
     }
 }
-exports.ContentTypeModel = ContentTypeModel;
 ContentTypeModel.discriminator = undefined;
 ContentTypeModel.attributeTypeMap = [
     {
@@ -29,4 +27,5 @@ ContentTypeModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.ContentTypeModel = ContentTypeModel;
 //# sourceMappingURL=contentTypeModel.js.map

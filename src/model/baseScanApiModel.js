@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BaseScanApiModel = void 0;
 /**
 * Contains properties for the base scan.
 */
@@ -20,7 +19,6 @@ class BaseScanApiModel {
         return BaseScanApiModel.attributeTypeMap;
     }
 }
-exports.BaseScanApiModel = BaseScanApiModel;
 BaseScanApiModel.discriminator = undefined;
 BaseScanApiModel.attributeTypeMap = [
     {
@@ -34,4 +32,5 @@ BaseScanApiModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.BaseScanApiModel = BaseScanApiModel;
 //# sourceMappingURL=baseScanApiModel.js.map

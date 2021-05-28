@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.DeleteAgentModel = void 0;
 /**
 * Represents a model for deleting a agent.
 */
@@ -20,7 +19,6 @@ class DeleteAgentModel {
         return DeleteAgentModel.attributeTypeMap;
     }
 }
-exports.DeleteAgentModel = DeleteAgentModel;
 DeleteAgentModel.discriminator = undefined;
 DeleteAgentModel.attributeTypeMap = [
     {
@@ -29,4 +27,5 @@ DeleteAgentModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.DeleteAgentModel = DeleteAgentModel;
 //# sourceMappingURL=deleteAgentModel.js.map

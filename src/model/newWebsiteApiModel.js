@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.NewWebsiteApiModel = void 0;
 /**
 * Represents a model for creating a new website.
 */
@@ -20,7 +19,6 @@ class NewWebsiteApiModel {
         return NewWebsiteApiModel.attributeTypeMap;
     }
 }
-exports.NewWebsiteApiModel = NewWebsiteApiModel;
 NewWebsiteApiModel.discriminator = undefined;
 NewWebsiteApiModel.attributeTypeMap = [
     {
@@ -59,6 +57,7 @@ NewWebsiteApiModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.NewWebsiteApiModel = NewWebsiteApiModel;
 (function (NewWebsiteApiModel) {
     let AgentModeEnum;
     (function (AgentModeEnum) {

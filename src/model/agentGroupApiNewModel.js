@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AgentGroupApiNewModel = void 0;
 /**
 * Represents a model for creating a agent group.
 */
@@ -20,7 +19,6 @@ class AgentGroupApiNewModel {
         return AgentGroupApiNewModel.attributeTypeMap;
     }
 }
-exports.AgentGroupApiNewModel = AgentGroupApiNewModel;
 AgentGroupApiNewModel.discriminator = undefined;
 AgentGroupApiNewModel.attributeTypeMap = [
     {
@@ -34,4 +32,5 @@ AgentGroupApiNewModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.AgentGroupApiNewModel = AgentGroupApiNewModel;
 //# sourceMappingURL=agentGroupApiNewModel.js.map

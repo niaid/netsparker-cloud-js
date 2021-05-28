@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SendVerificationEmailModel = void 0;
 /**
 * Represents a verification result model.
 */
@@ -20,7 +19,6 @@ class SendVerificationEmailModel {
         return SendVerificationEmailModel.attributeTypeMap;
     }
 }
-exports.SendVerificationEmailModel = SendVerificationEmailModel;
 SendVerificationEmailModel.discriminator = undefined;
 SendVerificationEmailModel.attributeTypeMap = [
     {
@@ -34,4 +32,5 @@ SendVerificationEmailModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.SendVerificationEmailModel = SendVerificationEmailModel;
 //# sourceMappingURL=sendVerificationEmailModel.js.map

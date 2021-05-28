@@ -11,13 +11,11 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CyberArkVaultIntegrationInfoModel = void 0;
 class CyberArkVaultIntegrationInfoModel {
     static getAttributeTypeMap() {
         return CyberArkVaultIntegrationInfoModel.attributeTypeMap;
     }
 }
-exports.CyberArkVaultIntegrationInfoModel = CyberArkVaultIntegrationInfoModel;
 CyberArkVaultIntegrationInfoModel.discriminator = undefined;
 CyberArkVaultIntegrationInfoModel.attributeTypeMap = [
     {
@@ -101,6 +99,7 @@ CyberArkVaultIntegrationInfoModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.CyberArkVaultIntegrationInfoModel = CyberArkVaultIntegrationInfoModel;
 (function (CyberArkVaultIntegrationInfoModel) {
     let TypeEnum;
     (function (TypeEnum) {

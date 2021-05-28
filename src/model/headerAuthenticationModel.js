@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.HeaderAuthenticationModel = void 0;
 /**
 * Represents a model for carrying out header authentication setttings.
 */
@@ -20,7 +19,6 @@ class HeaderAuthenticationModel {
         return HeaderAuthenticationModel.attributeTypeMap;
     }
 }
-exports.HeaderAuthenticationModel = HeaderAuthenticationModel;
 HeaderAuthenticationModel.discriminator = undefined;
 HeaderAuthenticationModel.attributeTypeMap = [
     {
@@ -34,4 +32,5 @@ HeaderAuthenticationModel.attributeTypeMap = [
         "type": "boolean"
     }
 ];
+exports.HeaderAuthenticationModel = HeaderAuthenticationModel;
 //# sourceMappingURL=headerAuthenticationModel.js.map

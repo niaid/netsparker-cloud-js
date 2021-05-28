@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SelectOptionModel = void 0;
 /**
 * Represents a name / value pair model.
 */
@@ -20,7 +19,6 @@ class SelectOptionModel {
         return SelectOptionModel.attributeTypeMap;
     }
 }
-exports.SelectOptionModel = SelectOptionModel;
 SelectOptionModel.discriminator = undefined;
 SelectOptionModel.attributeTypeMap = [
     {
@@ -34,4 +32,5 @@ SelectOptionModel.attributeTypeMap = [
         "type": "object"
     }
 ];
+exports.SelectOptionModel = SelectOptionModel;
 //# sourceMappingURL=selectOptionModel.js.map

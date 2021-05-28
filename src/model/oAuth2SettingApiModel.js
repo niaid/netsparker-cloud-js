@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.OAuth2SettingApiModel = void 0;
 /**
 * Provides an inputs for OAuth 2.0 Flow.
 */
@@ -20,7 +19,6 @@ class OAuth2SettingApiModel {
         return OAuth2SettingApiModel.attributeTypeMap;
     }
 }
-exports.OAuth2SettingApiModel = OAuth2SettingApiModel;
 OAuth2SettingApiModel.discriminator = undefined;
 OAuth2SettingApiModel.attributeTypeMap = [
     {
@@ -84,6 +82,7 @@ OAuth2SettingApiModel.attributeTypeMap = [
         "type": "BasicAuthenticationSettingApiModel"
     }
 ];
+exports.OAuth2SettingApiModel = OAuth2SettingApiModel;
 (function (OAuth2SettingApiModel) {
     let FlowTypeEnum;
     (function (FlowTypeEnum) {

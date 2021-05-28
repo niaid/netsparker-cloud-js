@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateWebsiteGroupApiModel = void 0;
 /**
 * Represents a model for updating a new website group.
 */
@@ -20,7 +19,6 @@ class UpdateWebsiteGroupApiModel {
         return UpdateWebsiteGroupApiModel.attributeTypeMap;
     }
 }
-exports.UpdateWebsiteGroupApiModel = UpdateWebsiteGroupApiModel;
 UpdateWebsiteGroupApiModel.discriminator = undefined;
 UpdateWebsiteGroupApiModel.attributeTypeMap = [
     {
@@ -39,4 +37,5 @@ UpdateWebsiteGroupApiModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.UpdateWebsiteGroupApiModel = UpdateWebsiteGroupApiModel;
 //# sourceMappingURL=updateWebsiteGroupApiModel.js.map

@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.IncrementalApiModel = void 0;
 /**
 * Contains properties for the incremantal scan.
 */
@@ -20,7 +19,6 @@ class IncrementalApiModel {
         return IncrementalApiModel.attributeTypeMap;
     }
 }
-exports.IncrementalApiModel = IncrementalApiModel;
 IncrementalApiModel.discriminator = undefined;
 IncrementalApiModel.attributeTypeMap = [
     {
@@ -44,4 +42,5 @@ IncrementalApiModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.IncrementalApiModel = IncrementalApiModel;
 //# sourceMappingURL=incrementalApiModel.js.map

@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PreRequestScriptSettingModel = void 0;
 /**
 * Represents a model that carries out pre-request script settings.
 */
@@ -20,7 +19,6 @@ class PreRequestScriptSettingModel {
         return PreRequestScriptSettingModel.attributeTypeMap;
     }
 }
-exports.PreRequestScriptSettingModel = PreRequestScriptSettingModel;
 PreRequestScriptSettingModel.discriminator = undefined;
 PreRequestScriptSettingModel.attributeTypeMap = [
     {
@@ -34,4 +32,5 @@ PreRequestScriptSettingModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.PreRequestScriptSettingModel = PreRequestScriptSettingModel;
 //# sourceMappingURL=preRequestScriptSettingModel.js.map

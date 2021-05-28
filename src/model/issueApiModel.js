@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.IssueApiModel = void 0;
 /**
 * Represents a class that carries vulnerability information.
 */
@@ -20,7 +19,6 @@ class IssueApiModel {
         return IssueApiModel.attributeTypeMap;
     }
 }
-exports.IssueApiModel = IssueApiModel;
 IssueApiModel.discriminator = undefined;
 IssueApiModel.attributeTypeMap = [
     {
@@ -224,6 +222,7 @@ IssueApiModel.attributeTypeMap = [
         "type": "Array<string>"
     }
 ];
+exports.IssueApiModel = IssueApiModel;
 (function (IssueApiModel) {
     let SeverityEnum;
     (function (SeverityEnum) {

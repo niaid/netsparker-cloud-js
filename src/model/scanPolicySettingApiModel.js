@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ScanPolicySettingApiModel = void 0;
 /**
 * Represents a model for carrying out scan policy settings.
 */
@@ -20,7 +19,6 @@ class ScanPolicySettingApiModel {
         return ScanPolicySettingApiModel.attributeTypeMap;
     }
 }
-exports.ScanPolicySettingApiModel = ScanPolicySettingApiModel;
 ScanPolicySettingApiModel.discriminator = undefined;
 ScanPolicySettingApiModel.attributeTypeMap = [
     {
@@ -169,4 +167,5 @@ ScanPolicySettingApiModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.ScanPolicySettingApiModel = ScanPolicySettingApiModel;
 //# sourceMappingURL=scanPolicySettingApiModel.js.map

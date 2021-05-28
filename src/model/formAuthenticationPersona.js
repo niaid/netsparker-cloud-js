@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FormAuthenticationPersona = void 0;
 /**
 * Represents a Form Authentication persona.
 */
@@ -20,7 +19,6 @@ class FormAuthenticationPersona {
         return FormAuthenticationPersona.attributeTypeMap;
     }
 }
-exports.FormAuthenticationPersona = FormAuthenticationPersona;
 FormAuthenticationPersona.discriminator = undefined;
 FormAuthenticationPersona.attributeTypeMap = [
     {
@@ -139,6 +137,7 @@ FormAuthenticationPersona.attributeTypeMap = [
         "type": "boolean"
     }
 ];
+exports.FormAuthenticationPersona = FormAuthenticationPersona;
 (function (FormAuthenticationPersona) {
     let OtpTypeEnum;
     (function (OtpTypeEnum) {

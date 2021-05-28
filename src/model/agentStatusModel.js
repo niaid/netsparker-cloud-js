@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AgentStatusModel = void 0;
 /**
 * Represents a model for update state a agent.
 */
@@ -20,7 +19,6 @@ class AgentStatusModel {
         return AgentStatusModel.attributeTypeMap;
     }
 }
-exports.AgentStatusModel = AgentStatusModel;
 AgentStatusModel.discriminator = undefined;
 AgentStatusModel.attributeTypeMap = [
     {
@@ -34,4 +32,5 @@ AgentStatusModel.attributeTypeMap = [
         "type": "boolean"
     }
 ];
+exports.AgentStatusModel = AgentStatusModel;
 //# sourceMappingURL=agentStatusModel.js.map

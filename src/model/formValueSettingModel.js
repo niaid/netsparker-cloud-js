@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FormValueSettingModel = void 0;
 /**
 * Represents a model for carrying out form value settings.
 */
@@ -20,7 +19,6 @@ class FormValueSettingModel {
         return FormValueSettingModel.attributeTypeMap;
     }
 }
-exports.FormValueSettingModel = FormValueSettingModel;
 FormValueSettingModel.discriminator = undefined;
 FormValueSettingModel.attributeTypeMap = [
     {
@@ -64,6 +62,7 @@ FormValueSettingModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.FormValueSettingModel = FormValueSettingModel;
 (function (FormValueSettingModel) {
     let MatchEnum;
     (function (MatchEnum) {

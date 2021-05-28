@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UserHealthCheckApiModel = void 0;
 /**
 * The health check model for user
 */
@@ -20,7 +19,6 @@ class UserHealthCheckApiModel {
         return UserHealthCheckApiModel.attributeTypeMap;
     }
 }
-exports.UserHealthCheckApiModel = UserHealthCheckApiModel;
 UserHealthCheckApiModel.discriminator = undefined;
 UserHealthCheckApiModel.attributeTypeMap = [
     {
@@ -44,4 +42,5 @@ UserHealthCheckApiModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.UserHealthCheckApiModel = UserHealthCheckApiModel;
 //# sourceMappingURL=userHealthCheckApiModel.js.map

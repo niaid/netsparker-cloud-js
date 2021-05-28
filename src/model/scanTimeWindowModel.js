@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ScanTimeWindowModel = void 0;
 /**
 * Represents a model for carrying out scan time window settings.
 */
@@ -20,7 +19,6 @@ class ScanTimeWindowModel {
         return ScanTimeWindowModel.attributeTypeMap;
     }
 }
-exports.ScanTimeWindowModel = ScanTimeWindowModel;
 ScanTimeWindowModel.discriminator = undefined;
 ScanTimeWindowModel.attributeTypeMap = [
     {
@@ -29,4 +27,5 @@ ScanTimeWindowModel.attributeTypeMap = [
         "type": "Array<ScanTimeWindowItemModel>"
     }
 ];
+exports.ScanTimeWindowModel = ScanTimeWindowModel;
 //# sourceMappingURL=scanTimeWindowModel.js.map

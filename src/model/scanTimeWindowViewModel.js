@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ScanTimeWindowViewModel = void 0;
 /**
 * Represents a model for carrying out scan time window settings.
 */
@@ -20,7 +19,6 @@ class ScanTimeWindowViewModel {
         return ScanTimeWindowViewModel.attributeTypeMap;
     }
 }
-exports.ScanTimeWindowViewModel = ScanTimeWindowViewModel;
 ScanTimeWindowViewModel.discriminator = undefined;
 ScanTimeWindowViewModel.attributeTypeMap = [
     {
@@ -54,6 +52,7 @@ ScanTimeWindowViewModel.attributeTypeMap = [
         "type": "ScanTimeWindowViewModel.ScanCreateTypeEnum"
     }
 ];
+exports.ScanTimeWindowViewModel = ScanTimeWindowViewModel;
 (function (ScanTimeWindowViewModel) {
     let ScanCreateTypeEnum;
     (function (ScanCreateTypeEnum) {

@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ThreeLeggedFields = void 0;
 /**
 * Represents 3-legged model for oauth2.
 */
@@ -20,7 +19,6 @@ class ThreeLeggedFields {
         return ThreeLeggedFields.attributeTypeMap;
     }
 }
-exports.ThreeLeggedFields = ThreeLeggedFields;
 ThreeLeggedFields.discriminator = undefined;
 ThreeLeggedFields.attributeTypeMap = [
     {
@@ -49,4 +47,5 @@ ThreeLeggedFields.attributeTypeMap = [
         "type": "Array<string>"
     }
 ];
+exports.ThreeLeggedFields = ThreeLeggedFields;
 //# sourceMappingURL=threeLeggedFields.js.map

@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ExtensionSettingModel = void 0;
 /**
 * Scan policy\'s Extension Setting
 */
@@ -20,7 +19,6 @@ class ExtensionSettingModel {
         return ExtensionSettingModel.attributeTypeMap;
     }
 }
-exports.ExtensionSettingModel = ExtensionSettingModel;
 ExtensionSettingModel.discriminator = undefined;
 ExtensionSettingModel.attributeTypeMap = [
     {
@@ -39,6 +37,7 @@ ExtensionSettingModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.ExtensionSettingModel = ExtensionSettingModel;
 (function (ExtensionSettingModel) {
     let AttackOptionEnum;
     (function (AttackOptionEnum) {

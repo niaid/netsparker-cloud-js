@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.NewScanTaskWithProfileApiModel = void 0;
 /**
 * Contains properties that required to start a scan according to profile specified.
 */
@@ -20,7 +19,6 @@ class NewScanTaskWithProfileApiModel {
         return NewScanTaskWithProfileApiModel.attributeTypeMap;
     }
 }
-exports.NewScanTaskWithProfileApiModel = NewScanTaskWithProfileApiModel;
 NewScanTaskWithProfileApiModel.discriminator = undefined;
 NewScanTaskWithProfileApiModel.attributeTypeMap = [
     {
@@ -34,4 +32,5 @@ NewScanTaskWithProfileApiModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.NewScanTaskWithProfileApiModel = NewScanTaskWithProfileApiModel;
 //# sourceMappingURL=newScanTaskWithProfileApiModel.js.map

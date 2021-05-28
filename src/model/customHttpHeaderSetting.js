@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CustomHttpHeaderSetting = void 0;
 /**
 * Represents a model for carrying out custom HTTP header settings.
 */
@@ -20,7 +19,6 @@ class CustomHttpHeaderSetting {
         return CustomHttpHeaderSetting.attributeTypeMap;
     }
 }
-exports.CustomHttpHeaderSetting = CustomHttpHeaderSetting;
 CustomHttpHeaderSetting.discriminator = undefined;
 CustomHttpHeaderSetting.attributeTypeMap = [
     {
@@ -44,6 +42,7 @@ CustomHttpHeaderSetting.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.CustomHttpHeaderSetting = CustomHttpHeaderSetting;
 (function (CustomHttpHeaderSetting) {
     let AttackModeEnum;
     (function (AttackModeEnum) {

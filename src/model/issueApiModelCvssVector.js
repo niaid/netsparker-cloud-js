@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.IssueApiModelCvssVector = void 0;
 /**
 * Gets the parsed cvss vector
 */
@@ -20,7 +19,6 @@ class IssueApiModelCvssVector {
         return IssueApiModelCvssVector.attributeTypeMap;
     }
 }
-exports.IssueApiModelCvssVector = IssueApiModelCvssVector;
 IssueApiModelCvssVector.discriminator = undefined;
 IssueApiModelCvssVector.attributeTypeMap = [
     {
@@ -39,4 +37,5 @@ IssueApiModelCvssVector.attributeTypeMap = [
         "type": "CvssMetricModel"
     }
 ];
+exports.IssueApiModelCvssVector = IssueApiModelCvssVector;
 //# sourceMappingURL=issueApiModelCvssVector.js.map

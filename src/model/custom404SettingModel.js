@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.Custom404SettingModel = void 0;
 /**
 * Represents a model for carrying out custom 404 settings.
 */
@@ -20,7 +19,6 @@ class Custom404SettingModel {
         return Custom404SettingModel.attributeTypeMap;
     }
 }
-exports.Custom404SettingModel = Custom404SettingModel;
 Custom404SettingModel.discriminator = undefined;
 Custom404SettingModel.attributeTypeMap = [
     {
@@ -44,4 +42,5 @@ Custom404SettingModel.attributeTypeMap = [
         "type": "number"
     }
 ];
+exports.Custom404SettingModel = Custom404SettingModel;
 //# sourceMappingURL=custom404SettingModel.js.map

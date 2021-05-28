@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ContentTypeTemplate = void 0;
 /**
 * Represents a content type model for oauth2 endpoint.
 */
@@ -20,7 +19,6 @@ class ContentTypeTemplate {
         return ContentTypeTemplate.attributeTypeMap;
     }
 }
-exports.ContentTypeTemplate = ContentTypeTemplate;
 ContentTypeTemplate.discriminator = undefined;
 ContentTypeTemplate.attributeTypeMap = [
     {
@@ -29,4 +27,5 @@ ContentTypeTemplate.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.ContentTypeTemplate = ContentTypeTemplate;
 //# sourceMappingURL=contentTypeTemplate.js.map

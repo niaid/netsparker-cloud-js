@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ScheduledScanListApiResult = void 0;
 /**
 * Represents a model for carrying out a paged scheduled scan list.
 */
@@ -20,7 +19,6 @@ class ScheduledScanListApiResult {
         return ScheduledScanListApiResult.attributeTypeMap;
     }
 }
-exports.ScheduledScanListApiResult = ScheduledScanListApiResult;
 ScheduledScanListApiResult.discriminator = undefined;
 ScheduledScanListApiResult.attributeTypeMap = [
     {
@@ -79,4 +77,5 @@ ScheduledScanListApiResult.attributeTypeMap = [
         "type": "number"
     }
 ];
+exports.ScheduledScanListApiResult = ScheduledScanListApiResult;
 //# sourceMappingURL=scheduledScanListApiResult.js.map

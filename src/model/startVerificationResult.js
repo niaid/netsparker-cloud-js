@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.StartVerificationResult = void 0;
 /**
 * Represents a model that carries out result of attempt to start verification.
 */
@@ -20,7 +19,6 @@ class StartVerificationResult {
         return StartVerificationResult.attributeTypeMap;
     }
 }
-exports.StartVerificationResult = StartVerificationResult;
 StartVerificationResult.discriminator = undefined;
 StartVerificationResult.attributeTypeMap = [
     {
@@ -39,6 +37,7 @@ StartVerificationResult.attributeTypeMap = [
         "type": "StartVerificationResult.VerifyOwnershipResultEnum"
     }
 ];
+exports.StartVerificationResult = StartVerificationResult;
 (function (StartVerificationResult) {
     let VerifyOwnershipResultEnum;
     (function (VerifyOwnershipResultEnum) {

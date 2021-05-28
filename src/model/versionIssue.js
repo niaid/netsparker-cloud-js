@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.VersionIssue = void 0;
 /**
 * Stores the characteristics of a version-related issue type.
 */
@@ -20,7 +19,6 @@ class VersionIssue {
         return VersionIssue.attributeTypeMap;
     }
 }
-exports.VersionIssue = VersionIssue;
 VersionIssue.discriminator = undefined;
 VersionIssue.attributeTypeMap = [
     {
@@ -99,6 +97,7 @@ VersionIssue.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.VersionIssue = VersionIssue;
 (function (VersionIssue) {
     let SeverityEnum;
     (function (SeverityEnum) {

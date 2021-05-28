@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WebsiteGroupListApiResult = void 0;
 /**
 * Represents a model for carrying out a paged website group list.
 */
@@ -20,7 +19,6 @@ class WebsiteGroupListApiResult {
         return WebsiteGroupListApiResult.attributeTypeMap;
     }
 }
-exports.WebsiteGroupListApiResult = WebsiteGroupListApiResult;
 WebsiteGroupListApiResult.discriminator = undefined;
 WebsiteGroupListApiResult.attributeTypeMap = [
     {
@@ -79,4 +77,5 @@ WebsiteGroupListApiResult.attributeTypeMap = [
         "type": "number"
     }
 ];
+exports.WebsiteGroupListApiResult = WebsiteGroupListApiResult;
 //# sourceMappingURL=websiteGroupListApiResult.js.map

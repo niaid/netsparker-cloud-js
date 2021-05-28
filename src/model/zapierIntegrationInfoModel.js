@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ZapierIntegrationInfoModel = void 0;
 /**
 * The Zapier integration info
 */
@@ -20,7 +19,6 @@ class ZapierIntegrationInfoModel {
         return ZapierIntegrationInfoModel.attributeTypeMap;
     }
 }
-exports.ZapierIntegrationInfoModel = ZapierIntegrationInfoModel;
 ZapierIntegrationInfoModel.discriminator = undefined;
 ZapierIntegrationInfoModel.attributeTypeMap = [
     {
@@ -89,6 +87,7 @@ ZapierIntegrationInfoModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.ZapierIntegrationInfoModel = ZapierIntegrationInfoModel;
 (function (ZapierIntegrationInfoModel) {
     let TypeEnum;
     (function (TypeEnum) {

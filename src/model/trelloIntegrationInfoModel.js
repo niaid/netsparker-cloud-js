@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TrelloIntegrationInfoModel = void 0;
 /**
 * The Trello integration info
 */
@@ -20,7 +19,6 @@ class TrelloIntegrationInfoModel {
         return TrelloIntegrationInfoModel.attributeTypeMap;
     }
 }
-exports.TrelloIntegrationInfoModel = TrelloIntegrationInfoModel;
 TrelloIntegrationInfoModel.discriminator = undefined;
 TrelloIntegrationInfoModel.attributeTypeMap = [
     {
@@ -154,6 +152,7 @@ TrelloIntegrationInfoModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.TrelloIntegrationInfoModel = TrelloIntegrationInfoModel;
 (function (TrelloIntegrationInfoModel) {
     let TypeEnum;
     (function (TypeEnum) {

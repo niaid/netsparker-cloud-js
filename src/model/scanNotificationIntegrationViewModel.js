@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ScanNotificationIntegrationViewModel = void 0;
 /**
 * The scan notification integration view model.
 */
@@ -20,7 +19,6 @@ class ScanNotificationIntegrationViewModel {
         return ScanNotificationIntegrationViewModel.attributeTypeMap;
     }
 }
-exports.ScanNotificationIntegrationViewModel = ScanNotificationIntegrationViewModel;
 ScanNotificationIntegrationViewModel.discriminator = undefined;
 ScanNotificationIntegrationViewModel.attributeTypeMap = [
     {
@@ -189,6 +187,7 @@ ScanNotificationIntegrationViewModel.attributeTypeMap = [
         "type": "CyberArkVaultIntegrationInfoModel"
     }
 ];
+exports.ScanNotificationIntegrationViewModel = ScanNotificationIntegrationViewModel;
 (function (ScanNotificationIntegrationViewModel) {
     let CategoryEnum;
     (function (CategoryEnum) {

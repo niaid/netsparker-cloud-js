@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.IssueRequestContentParametersApiModel = void 0;
 /**
 * Issue request content parameters api response mapping class.
 */
@@ -20,7 +19,6 @@ class IssueRequestContentParametersApiModel {
         return IssueRequestContentParametersApiModel.attributeTypeMap;
     }
 }
-exports.IssueRequestContentParametersApiModel = IssueRequestContentParametersApiModel;
 IssueRequestContentParametersApiModel.discriminator = undefined;
 IssueRequestContentParametersApiModel.attributeTypeMap = [
     {
@@ -44,6 +42,7 @@ IssueRequestContentParametersApiModel.attributeTypeMap = [
         "type": "IssueRequestContentParametersApiModel.InputTypeEnum"
     }
 ];
+exports.IssueRequestContentParametersApiModel = IssueRequestContentParametersApiModel;
 (function (IssueRequestContentParametersApiModel) {
     let InputTypeEnum;
     (function (InputTypeEnum) {

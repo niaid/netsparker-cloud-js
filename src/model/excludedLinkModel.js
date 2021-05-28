@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ExcludedLinkModel = void 0;
 /**
 * Represents a model for exclude/include link setting.
 */
@@ -20,7 +19,6 @@ class ExcludedLinkModel {
         return ExcludedLinkModel.attributeTypeMap;
     }
 }
-exports.ExcludedLinkModel = ExcludedLinkModel;
 ExcludedLinkModel.discriminator = undefined;
 ExcludedLinkModel.attributeTypeMap = [
     {
@@ -29,4 +27,5 @@ ExcludedLinkModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.ExcludedLinkModel = ExcludedLinkModel;
 //# sourceMappingURL=excludedLinkModel.js.map

@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.RedmineIntegrationInfoModel = void 0;
 /**
 * The Redmine integration info
 */
@@ -20,7 +19,6 @@ class RedmineIntegrationInfoModel {
         return RedmineIntegrationInfoModel.attributeTypeMap;
     }
 }
-exports.RedmineIntegrationInfoModel = RedmineIntegrationInfoModel;
 RedmineIntegrationInfoModel.discriminator = undefined;
 RedmineIntegrationInfoModel.attributeTypeMap = [
     {
@@ -139,6 +137,7 @@ RedmineIntegrationInfoModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.RedmineIntegrationInfoModel = RedmineIntegrationInfoModel;
 (function (RedmineIntegrationInfoModel) {
     let TypeEnum;
     (function (TypeEnum) {

@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.OAuth2SettingEndPointModel = void 0;
 /**
 * Represents a oauth2 endpoint model.
 */
@@ -20,7 +19,6 @@ class OAuth2SettingEndPointModel {
         return OAuth2SettingEndPointModel.attributeTypeMap;
     }
 }
-exports.OAuth2SettingEndPointModel = OAuth2SettingEndPointModel;
 OAuth2SettingEndPointModel.discriminator = undefined;
 OAuth2SettingEndPointModel.attributeTypeMap = [
     {
@@ -49,4 +47,5 @@ OAuth2SettingEndPointModel.attributeTypeMap = [
         "type": "Array<SelectOptionModel>"
     }
 ];
+exports.OAuth2SettingEndPointModel = OAuth2SettingEndPointModel;
 //# sourceMappingURL=oAuth2SettingEndPointModel.js.map

@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ExcludedUsageTrackerModel = void 0;
 /**
 * Represents a model for exclude/include link setting.
 */
@@ -20,7 +19,6 @@ class ExcludedUsageTrackerModel {
         return ExcludedUsageTrackerModel.attributeTypeMap;
     }
 }
-exports.ExcludedUsageTrackerModel = ExcludedUsageTrackerModel;
 ExcludedUsageTrackerModel.discriminator = undefined;
 ExcludedUsageTrackerModel.attributeTypeMap = [
     {
@@ -29,4 +27,5 @@ ExcludedUsageTrackerModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.ExcludedUsageTrackerModel = ExcludedUsageTrackerModel;
 //# sourceMappingURL=excludedUsageTrackerModel.js.map

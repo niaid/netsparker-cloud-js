@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ResponseFields = void 0;
 /**
 * Represents a oauth2 response model.
 */
@@ -20,7 +19,6 @@ class ResponseFields {
         return ResponseFields.attributeTypeMap;
     }
 }
-exports.ResponseFields = ResponseFields;
 ResponseFields.discriminator = undefined;
 ResponseFields.attributeTypeMap = [
     {
@@ -49,4 +47,5 @@ ResponseFields.attributeTypeMap = [
         "type": "boolean"
     }
 ];
+exports.ResponseFields = ResponseFields;
 //# sourceMappingURL=responseFields.js.map

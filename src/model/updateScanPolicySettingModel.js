@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateScanPolicySettingModel = void 0;
 /**
 * Represents a model for carrying out update scan policy settings.
 */
@@ -20,7 +19,6 @@ class UpdateScanPolicySettingModel {
         return UpdateScanPolicySettingModel.attributeTypeMap;
     }
 }
-exports.UpdateScanPolicySettingModel = UpdateScanPolicySettingModel;
 UpdateScanPolicySettingModel.discriminator = undefined;
 UpdateScanPolicySettingModel.attributeTypeMap = [
     {
@@ -164,4 +162,5 @@ UpdateScanPolicySettingModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.UpdateScanPolicySettingModel = UpdateScanPolicySettingModel;
 //# sourceMappingURL=updateScanPolicySettingModel.js.map

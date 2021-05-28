@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.OutsiderRecipient = void 0;
 /**
 * Defines a type for outsider recipient needs.
 */
@@ -20,7 +19,6 @@ class OutsiderRecipient {
         return OutsiderRecipient.attributeTypeMap;
     }
 }
-exports.OutsiderRecipient = OutsiderRecipient;
 OutsiderRecipient.discriminator = undefined;
 OutsiderRecipient.attributeTypeMap = [
     {
@@ -29,4 +27,5 @@ OutsiderRecipient.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.OutsiderRecipient = OutsiderRecipient;
 //# sourceMappingURL=outsiderRecipient.js.map

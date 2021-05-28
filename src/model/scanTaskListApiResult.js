@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ScanTaskListApiResult = void 0;
 /**
 * Represents a model for carrying out a paged scan task list.
 */
@@ -20,7 +19,6 @@ class ScanTaskListApiResult {
         return ScanTaskListApiResult.attributeTypeMap;
     }
 }
-exports.ScanTaskListApiResult = ScanTaskListApiResult;
 ScanTaskListApiResult.discriminator = undefined;
 ScanTaskListApiResult.attributeTypeMap = [
     {
@@ -79,4 +77,5 @@ ScanTaskListApiResult.attributeTypeMap = [
         "type": "number"
     }
 ];
+exports.ScanTaskListApiResult = ScanTaskListApiResult;
 //# sourceMappingURL=scanTaskListApiResult.js.map

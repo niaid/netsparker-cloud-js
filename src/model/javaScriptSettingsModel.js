@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.JavaScriptSettingsModel = void 0;
 /**
 * Represents a model for carrying out javascript settings.
 */
@@ -20,7 +19,6 @@ class JavaScriptSettingsModel {
         return JavaScriptSettingsModel.attributeTypeMap;
     }
 }
-exports.JavaScriptSettingsModel = JavaScriptSettingsModel;
 JavaScriptSettingsModel.discriminator = undefined;
 JavaScriptSettingsModel.attributeTypeMap = [
     {
@@ -124,4 +122,5 @@ JavaScriptSettingsModel.attributeTypeMap = [
         "type": "number"
     }
 ];
+exports.JavaScriptSettingsModel = JavaScriptSettingsModel;
 //# sourceMappingURL=javaScriptSettingsModel.js.map

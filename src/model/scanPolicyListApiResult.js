@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ScanPolicyListApiResult = void 0;
 /**
 * Represents a model for carrying out a paged scan policy list.
 */
@@ -20,7 +19,6 @@ class ScanPolicyListApiResult {
         return ScanPolicyListApiResult.attributeTypeMap;
     }
 }
-exports.ScanPolicyListApiResult = ScanPolicyListApiResult;
 ScanPolicyListApiResult.discriminator = undefined;
 ScanPolicyListApiResult.attributeTypeMap = [
     {
@@ -79,4 +77,5 @@ ScanPolicyListApiResult.attributeTypeMap = [
         "type": "number"
     }
 ];
+exports.ScanPolicyListApiResult = ScanPolicyListApiResult;
 //# sourceMappingURL=scanPolicyListApiResult.js.map

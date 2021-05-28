@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.PivotalTrackerIntegrationInfoModel = void 0;
 /**
 * The Pivotal integration info
 */
@@ -20,7 +19,6 @@ class PivotalTrackerIntegrationInfoModel {
         return PivotalTrackerIntegrationInfoModel.attributeTypeMap;
     }
 }
-exports.PivotalTrackerIntegrationInfoModel = PivotalTrackerIntegrationInfoModel;
 PivotalTrackerIntegrationInfoModel.discriminator = undefined;
 PivotalTrackerIntegrationInfoModel.attributeTypeMap = [
     {
@@ -114,6 +112,7 @@ PivotalTrackerIntegrationInfoModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.PivotalTrackerIntegrationInfoModel = PivotalTrackerIntegrationInfoModel;
 (function (PivotalTrackerIntegrationInfoModel) {
     let TypeEnum;
     (function (TypeEnum) {

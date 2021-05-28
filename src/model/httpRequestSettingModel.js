@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.HttpRequestSettingModel = void 0;
 /**
 * Represents a model for carrying out HTTP request settings.
 */
@@ -20,7 +19,6 @@ class HttpRequestSettingModel {
         return HttpRequestSettingModel.attributeTypeMap;
     }
 }
-exports.HttpRequestSettingModel = HttpRequestSettingModel;
 HttpRequestSettingModel.discriminator = undefined;
 HttpRequestSettingModel.attributeTypeMap = [
     {
@@ -89,4 +87,5 @@ HttpRequestSettingModel.attributeTypeMap = [
         "type": "boolean"
     }
 ];
+exports.HttpRequestSettingModel = HttpRequestSettingModel;
 //# sourceMappingURL=httpRequestSettingModel.js.map

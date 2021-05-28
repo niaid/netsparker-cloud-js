@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.SecurityCheckSetting = void 0;
 /**
 * Represents a scan policy setting, either general or specific to an engine.
 */
@@ -20,7 +19,6 @@ class SecurityCheckSetting {
         return SecurityCheckSetting.attributeTypeMap;
     }
 }
-exports.SecurityCheckSetting = SecurityCheckSetting;
 SecurityCheckSetting.discriminator = undefined;
 SecurityCheckSetting.attributeTypeMap = [
     {
@@ -34,4 +32,5 @@ SecurityCheckSetting.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.SecurityCheckSetting = SecurityCheckSetting;
 //# sourceMappingURL=securityCheckSetting.js.map

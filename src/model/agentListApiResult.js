@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AgentListApiResult = void 0;
 /**
 * Represents a model for carrying out a paged Agent list.
 */
@@ -20,7 +19,6 @@ class AgentListApiResult {
         return AgentListApiResult.attributeTypeMap;
     }
 }
-exports.AgentListApiResult = AgentListApiResult;
 AgentListApiResult.discriminator = undefined;
 AgentListApiResult.attributeTypeMap = [
     {
@@ -79,4 +77,5 @@ AgentListApiResult.attributeTypeMap = [
         "type": "number"
     }
 ];
+exports.AgentListApiResult = AgentListApiResult;
 //# sourceMappingURL=agentListApiResult.js.map

@@ -11,13 +11,11 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.FormAuthenticationHashicorpVaultSetting = void 0;
 class FormAuthenticationHashicorpVaultSetting {
     static getAttributeTypeMap() {
         return FormAuthenticationHashicorpVaultSetting.attributeTypeMap;
     }
 }
-exports.FormAuthenticationHashicorpVaultSetting = FormAuthenticationHashicorpVaultSetting;
 FormAuthenticationHashicorpVaultSetting.discriminator = undefined;
 FormAuthenticationHashicorpVaultSetting.attributeTypeMap = [
     {
@@ -61,6 +59,7 @@ FormAuthenticationHashicorpVaultSetting.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.FormAuthenticationHashicorpVaultSetting = FormAuthenticationHashicorpVaultSetting;
 (function (FormAuthenticationHashicorpVaultSetting) {
     let VersionEnum;
     (function (VersionEnum) {

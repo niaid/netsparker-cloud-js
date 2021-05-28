@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.NewScanTaskApiModel = void 0;
 /**
 * Contains properties that required to start scan.
 */
@@ -20,7 +19,6 @@ class NewScanTaskApiModel {
         return NewScanTaskApiModel.attributeTypeMap;
     }
 }
-exports.NewScanTaskApiModel = NewScanTaskApiModel;
 NewScanTaskApiModel.discriminator = undefined;
 NewScanTaskApiModel.attributeTypeMap = [
     {
@@ -209,6 +207,7 @@ NewScanTaskApiModel.attributeTypeMap = [
         "type": "boolean"
     }
 ];
+exports.NewScanTaskApiModel = NewScanTaskApiModel;
 (function (NewScanTaskApiModel) {
     let DisallowedHttpMethodsEnum;
     (function (DisallowedHttpMethodsEnum) {

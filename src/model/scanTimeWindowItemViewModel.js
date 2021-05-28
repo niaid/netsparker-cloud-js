@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ScanTimeWindowItemViewModel = void 0;
 /**
 * Represents a scan time window item.
 */
@@ -20,7 +19,6 @@ class ScanTimeWindowItemViewModel {
         return ScanTimeWindowItemViewModel.attributeTypeMap;
     }
 }
-exports.ScanTimeWindowItemViewModel = ScanTimeWindowItemViewModel;
 ScanTimeWindowItemViewModel.discriminator = undefined;
 ScanTimeWindowItemViewModel.attributeTypeMap = [
     {
@@ -44,6 +42,7 @@ ScanTimeWindowItemViewModel.attributeTypeMap = [
         "type": "number"
     }
 ];
+exports.ScanTimeWindowItemViewModel = ScanTimeWindowItemViewModel;
 (function (ScanTimeWindowItemViewModel) {
     let DayEnum;
     (function (DayEnum) {

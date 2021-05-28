@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ClientCertificateAuthenticationViewModel = void 0;
 /**
 * Represents a model for carrying out client certificate authentication settings.
 */
@@ -20,7 +19,6 @@ class ClientCertificateAuthenticationViewModel {
         return ClientCertificateAuthenticationViewModel.attributeTypeMap;
     }
 }
-exports.ClientCertificateAuthenticationViewModel = ClientCertificateAuthenticationViewModel;
 ClientCertificateAuthenticationViewModel.discriminator = undefined;
 ClientCertificateAuthenticationViewModel.attributeTypeMap = [
     {
@@ -44,4 +42,5 @@ ClientCertificateAuthenticationViewModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.ClientCertificateAuthenticationViewModel = ClientCertificateAuthenticationViewModel;
 //# sourceMappingURL=clientCertificateAuthenticationViewModel.js.map

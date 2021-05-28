@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AccountLicenseApiModel = void 0;
 /**
 * Provides information about user\'s account license.
 */
@@ -20,7 +19,6 @@ class AccountLicenseApiModel {
         return AccountLicenseApiModel.attributeTypeMap;
     }
 }
-exports.AccountLicenseApiModel = AccountLicenseApiModel;
 AccountLicenseApiModel.discriminator = undefined;
 AccountLicenseApiModel.attributeTypeMap = [
     {
@@ -79,4 +77,5 @@ AccountLicenseApiModel.attributeTypeMap = [
         "type": "Array<LicenseBaseModel>"
     }
 ];
+exports.AccountLicenseApiModel = AccountLicenseApiModel;
 //# sourceMappingURL=accountLicenseApiModel.js.map

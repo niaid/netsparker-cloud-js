@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.IntegrationWizardResultModel = void 0;
 /**
 * Retrieves the authentication status and all error messages from other integration processes.
 */
@@ -20,7 +19,6 @@ class IntegrationWizardResultModel {
         return IntegrationWizardResultModel.attributeTypeMap;
     }
 }
-exports.IntegrationWizardResultModel = IntegrationWizardResultModel;
 IntegrationWizardResultModel.discriminator = undefined;
 IntegrationWizardResultModel.attributeTypeMap = [
     {
@@ -34,4 +32,5 @@ IntegrationWizardResultModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.IntegrationWizardResultModel = IntegrationWizardResultModel;
 //# sourceMappingURL=integrationWizardResultModel.js.map

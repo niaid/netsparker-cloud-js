@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.WebStorageSetting = void 0;
 /**
 * Scan Policy web storage settings
 */
@@ -20,7 +19,6 @@ class WebStorageSetting {
         return WebStorageSetting.attributeTypeMap;
     }
 }
-exports.WebStorageSetting = WebStorageSetting;
 WebStorageSetting.discriminator = undefined;
 WebStorageSetting.attributeTypeMap = [
     {
@@ -44,6 +42,7 @@ WebStorageSetting.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.WebStorageSetting = WebStorageSetting;
 (function (WebStorageSetting) {
     let TypeEnum;
     (function (TypeEnum) {

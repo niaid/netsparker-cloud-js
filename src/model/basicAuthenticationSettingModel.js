@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.BasicAuthenticationSettingModel = void 0;
 /**
 * Represents a model for carrying out basic authentication settings.
 */
@@ -20,7 +19,6 @@ class BasicAuthenticationSettingModel {
         return BasicAuthenticationSettingModel.attributeTypeMap;
     }
 }
-exports.BasicAuthenticationSettingModel = BasicAuthenticationSettingModel;
 BasicAuthenticationSettingModel.discriminator = undefined;
 BasicAuthenticationSettingModel.attributeTypeMap = [
     {
@@ -39,4 +37,5 @@ BasicAuthenticationSettingModel.attributeTypeMap = [
         "type": "boolean"
     }
 ];
+exports.BasicAuthenticationSettingModel = BasicAuthenticationSettingModel;
 //# sourceMappingURL=basicAuthenticationSettingModel.js.map

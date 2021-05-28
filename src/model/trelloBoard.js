@@ -11,13 +11,11 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TrelloBoard = void 0;
 class TrelloBoard {
     static getAttributeTypeMap() {
         return TrelloBoard.attributeTypeMap;
     }
 }
-exports.TrelloBoard = TrelloBoard;
 TrelloBoard.discriminator = undefined;
 TrelloBoard.attributeTypeMap = [
     {
@@ -46,4 +44,5 @@ TrelloBoard.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.TrelloBoard = TrelloBoard;
 //# sourceMappingURL=trelloBoard.js.map

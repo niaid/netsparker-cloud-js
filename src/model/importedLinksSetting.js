@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ImportedLinksSetting = void 0;
 /**
 * Represents a class that carries out imported links.
 */
@@ -20,7 +19,6 @@ class ImportedLinksSetting {
         return ImportedLinksSetting.attributeTypeMap;
     }
 }
-exports.ImportedLinksSetting = ImportedLinksSetting;
 ImportedLinksSetting.discriminator = undefined;
 ImportedLinksSetting.attributeTypeMap = [
     {
@@ -34,4 +32,5 @@ ImportedLinksSetting.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.ImportedLinksSetting = ImportedLinksSetting;
 //# sourceMappingURL=importedLinksSetting.js.map

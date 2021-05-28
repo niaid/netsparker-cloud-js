@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.OtpSettings = void 0;
 /**
 * Represents otp settings
 */
@@ -20,7 +19,6 @@ class OtpSettings {
         return OtpSettings.attributeTypeMap;
     }
 }
-exports.OtpSettings = OtpSettings;
 OtpSettings.discriminator = undefined;
 OtpSettings.attributeTypeMap = [
     {
@@ -49,6 +47,7 @@ OtpSettings.attributeTypeMap = [
         "type": "OtpSettings.AlgorithmEnum"
     }
 ];
+exports.OtpSettings = OtpSettings;
 (function (OtpSettings) {
     let OtpTypeEnum;
     (function (OtpTypeEnum) {

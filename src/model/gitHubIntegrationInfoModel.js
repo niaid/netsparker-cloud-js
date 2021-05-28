@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GitHubIntegrationInfoModel = void 0;
 /**
 * The GitHub integration info
 */
@@ -20,7 +19,6 @@ class GitHubIntegrationInfoModel {
         return GitHubIntegrationInfoModel.attributeTypeMap;
     }
 }
-exports.GitHubIntegrationInfoModel = GitHubIntegrationInfoModel;
 GitHubIntegrationInfoModel.discriminator = undefined;
 GitHubIntegrationInfoModel.attributeTypeMap = [
     {
@@ -119,6 +117,7 @@ GitHubIntegrationInfoModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.GitHubIntegrationInfoModel = GitHubIntegrationInfoModel;
 (function (GitHubIntegrationInfoModel) {
     let TypeEnum;
     (function (TypeEnum) {

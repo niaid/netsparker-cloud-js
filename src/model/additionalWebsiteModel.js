@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AdditionalWebsiteModel = void 0;
 /**
 * Represents a website for additional scan targets.
 */
@@ -20,7 +19,6 @@ class AdditionalWebsiteModel {
         return AdditionalWebsiteModel.attributeTypeMap;
     }
 }
-exports.AdditionalWebsiteModel = AdditionalWebsiteModel;
 AdditionalWebsiteModel.discriminator = undefined;
 AdditionalWebsiteModel.attributeTypeMap = [
     {
@@ -34,4 +32,5 @@ AdditionalWebsiteModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.AdditionalWebsiteModel = AdditionalWebsiteModel;
 //# sourceMappingURL=additionalWebsiteModel.js.map

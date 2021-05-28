@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CustomScriptPageViewModel = void 0;
 /**
 * The custom script page model
 */
@@ -20,7 +19,6 @@ class CustomScriptPageViewModel {
         return CustomScriptPageViewModel.attributeTypeMap;
     }
 }
-exports.CustomScriptPageViewModel = CustomScriptPageViewModel;
 CustomScriptPageViewModel.discriminator = undefined;
 CustomScriptPageViewModel.attributeTypeMap = [
     {
@@ -34,4 +32,5 @@ CustomScriptPageViewModel.attributeTypeMap = [
         "type": "string"
     }
 ];
+exports.CustomScriptPageViewModel = CustomScriptPageViewModel;
 //# sourceMappingURL=customScriptPageViewModel.js.map

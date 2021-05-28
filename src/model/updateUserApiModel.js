@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UpdateUserApiModel = void 0;
 /**
 * Represents a model for carrying out user data.
 */
@@ -20,7 +19,6 @@ class UpdateUserApiModel {
         return UpdateUserApiModel.attributeTypeMap;
     }
 }
-exports.UpdateUserApiModel = UpdateUserApiModel;
 UpdateUserApiModel.discriminator = undefined;
 UpdateUserApiModel.attributeTypeMap = [
     {
@@ -104,6 +102,7 @@ UpdateUserApiModel.attributeTypeMap = [
         "type": "number"
     }
 ];
+exports.UpdateUserApiModel = UpdateUserApiModel;
 (function (UpdateUserApiModel) {
     let UserStateEnum;
     (function (UserStateEnum) {

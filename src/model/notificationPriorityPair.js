@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.NotificationPriorityPair = void 0;
 /**
 * Represents a notification priority pair
 */
@@ -20,7 +19,6 @@ class NotificationPriorityPair {
         return NotificationPriorityPair.attributeTypeMap;
     }
 }
-exports.NotificationPriorityPair = NotificationPriorityPair;
 NotificationPriorityPair.discriminator = undefined;
 NotificationPriorityPair.attributeTypeMap = [
     {
@@ -34,4 +32,5 @@ NotificationPriorityPair.attributeTypeMap = [
         "type": "number"
     }
 ];
+exports.NotificationPriorityPair = NotificationPriorityPair;
 //# sourceMappingURL=notificationPriorityPair.js.map

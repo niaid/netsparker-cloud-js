@@ -11,7 +11,6 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.UrlRewriteExcludedPathModel = void 0;
 /**
 * Represents an URL Rewrite Exclude Path rule
 */
@@ -20,7 +19,6 @@ class UrlRewriteExcludedPathModel {
         return UrlRewriteExcludedPathModel.attributeTypeMap;
     }
 }
-exports.UrlRewriteExcludedPathModel = UrlRewriteExcludedPathModel;
 UrlRewriteExcludedPathModel.discriminator = undefined;
 UrlRewriteExcludedPathModel.attributeTypeMap = [
     {
@@ -34,4 +32,5 @@ UrlRewriteExcludedPathModel.attributeTypeMap = [
         "type": "boolean"
     }
 ];
+exports.UrlRewriteExcludedPathModel = UrlRewriteExcludedPathModel;
 //# sourceMappingURL=urlRewriteExcludedPathModel.js.map
