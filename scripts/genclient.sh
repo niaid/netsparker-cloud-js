@@ -5,10 +5,10 @@ GENERATOR_CMD=node_modules/.bin/openapi-generator
 CLIENT_SPEC=specs/netsparker.json
 CLIENT_OUT=src
 
-# if [ ! -f ${GENERATOR_CMD} ]; then
-#   echo "ERROR: Cannot locate swagger client generator. Did you run 'npm install'?"
-#   exit 1
-# fi
+if [ ! -x "$(command -v docker)" ]; then
+  echo "ERROR: Generation requires Docker to be installed"
+  exit 1
+fi
 
 echo "downloading latest swagger spec from: ${NETSPARKER_CLOUD_SWAGGER}"
 if [ ! -f ${CLIENT_SPEC} ]; then
@@ -18,10 +18,10 @@ else
   curl ${NETSPARKER_CLOUD_SWAGGER} > ${CLIENT_SPEC}
 fi
 
+# https://github.com/OpenAPITools/openapi-generator/issues/3516
 sed -i .bak "s/uuid/string/g" ${CLIENT_SPEC}
 
-# echo "generating updated client in: ${CLIENT_OUT}"
-# ${GENERATOR_CMD} config ${CLIENT_SPEC} -d ${CLIENT_OUT}
+echo "generating updated client in: ${CLIENT_OUT}"
 
 docker run --rm -v "${PWD}:/local" openapitools/openapi-generator-cli generate \
     -i /local/${CLIENT_SPEC} \
