@@ -1,0 +1,42 @@
+/// <reference types="node" />
+export * from './accountApi';
+import { AccountApi } from './accountApi';
+export * from './agentGroupsApi';
+import { AgentGroupsApi } from './agentGroupsApi';
+export * from './agentsApi';
+import { AgentsApi } from './agentsApi';
+export * from './auditLogsApi';
+import { AuditLogsApi } from './auditLogsApi';
+export * from './authenticationProfilesApi';
+import { AuthenticationProfilesApi } from './authenticationProfilesApi';
+export * from './discoveryApi';
+import { DiscoveryApi } from './discoveryApi';
+export * from './issuesApi';
+import { IssuesApi } from './issuesApi';
+export * from './notificationsApi';
+import { NotificationsApi } from './notificationsApi';
+export * from './scanPoliciesApi';
+import { ScanPoliciesApi } from './scanPoliciesApi';
+export * from './scanProfilesApi';
+import { ScanProfilesApi } from './scanProfilesApi';
+export * from './scansApi';
+import { ScansApi } from './scansApi';
+export * from './teamMembersApi';
+import { TeamMembersApi } from './teamMembersApi';
+export * from './technologiesApi';
+import { TechnologiesApi } from './technologiesApi';
+export * from './vulnerabilityApi';
+import { VulnerabilityApi } from './vulnerabilityApi';
+export * from './websiteGroupsApi';
+import { WebsiteGroupsApi } from './websiteGroupsApi';
+export * from './websitesApi';
+import { WebsitesApi } from './websitesApi';
+import * as http from 'http';
+export declare class HttpError extends Error {
+    response: http.IncomingMessage;
+    body: any;
+    statusCode?: number | undefined;
+    constructor(response: http.IncomingMessage, body: any, statusCode?: number | undefined);
+}
+export { RequestFile } from '../model/models';
+export declare const APIS: (typeof AccountApi | typeof AgentGroupsApi | typeof AgentsApi | typeof AuditLogsApi | typeof AuthenticationProfilesApi | typeof DiscoveryApi | typeof IssuesApi | typeof NotificationsApi | typeof ScanPoliciesApi | typeof ScanProfilesApi | typeof ScansApi | typeof TeamMembersApi | typeof TechnologiesApi | typeof VulnerabilityApi | typeof WebsiteGroupsApi | typeof WebsitesApi)[];

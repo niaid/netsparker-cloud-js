@@ -1,1 +1,0 @@
-{"version":3,"file":"excludedLinkModel.js","sourceRoot":"","sources":["excludedLinkModel.ts"],"names":[],"mappings":";AAAA;;;;;;;;;;GAUG;;AAIH;;EAEE;AACF,MAAa,iBAAiB;IAe1B,MAAM,CAAC,mBAAmB;QACtB,OAAO,iBAAiB,CAAC,gBAAgB,CAAC;IAC9C,CAAC;;AAXM,+BAAa,GAAuB,SAAS,CAAC;AAE9C,kCAAgB,GAA0D;IAC7E;QACI,MAAM,EAAE,cAAc;QACtB,UAAU,EAAE,cAAc;QAC1B,MAAM,EAAE,QAAQ;KACnB;CAAK,CAAC;AAbf,8CAkBC"}

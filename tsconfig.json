@@ -15,10 +15,11 @@
     "sourceMap": true,
     "target": "ES2019",
     "baseUrl": "./",
-    "outDir": "./src",
+    "outDir": "./dist",
     "rootDir": "./src",
     "typeRoots": [],
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "declaration": true
   },
   "include": [
     "./src/**/*"
