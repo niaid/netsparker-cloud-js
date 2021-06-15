@@ -13,16 +13,20 @@ export * from './discoveryApi';
 import { DiscoveryApi } from './discoveryApi';
 export * from './issuesApi';
 import { IssuesApi } from './issuesApi';
+export * from './membersApi';
+import { MembersApi } from './membersApi';
 export * from './notificationsApi';
 import { NotificationsApi } from './notificationsApi';
+export * from './rolesApi';
+import { RolesApi } from './rolesApi';
 export * from './scanPoliciesApi';
 import { ScanPoliciesApi } from './scanPoliciesApi';
 export * from './scanProfilesApi';
 import { ScanProfilesApi } from './scanProfilesApi';
 export * from './scansApi';
 import { ScansApi } from './scansApi';
-export * from './teamMembersApi';
-import { TeamMembersApi } from './teamMembersApi';
+export * from './teamApi';
+import { TeamApi } from './teamApi';
 export * from './technologiesApi';
 import { TechnologiesApi } from './technologiesApi';
 export * from './vulnerabilityApi';
@@ -39,4 +43,4 @@ export declare class HttpError extends Error {
     constructor(response: http.IncomingMessage, body: any, statusCode?: number | undefined);
 }
 export { RequestFile } from '../model/models';
-export declare const APIS: (typeof AccountApi | typeof AgentGroupsApi | typeof AgentsApi | typeof AuditLogsApi | typeof AuthenticationProfilesApi | typeof DiscoveryApi | typeof IssuesApi | typeof NotificationsApi | typeof ScanPoliciesApi | typeof ScanProfilesApi | typeof ScansApi | typeof TeamMembersApi | typeof TechnologiesApi | typeof VulnerabilityApi | typeof WebsiteGroupsApi | typeof WebsitesApi)[];
+export declare const APIS: (typeof AccountApi | typeof AgentGroupsApi | typeof AgentsApi | typeof AuditLogsApi | typeof AuthenticationProfilesApi | typeof DiscoveryApi | typeof IssuesApi | typeof MembersApi | typeof NotificationsApi | typeof RolesApi | typeof ScanPoliciesApi | typeof ScanProfilesApi | typeof ScansApi | typeof TeamApi | typeof TechnologiesApi | typeof VulnerabilityApi | typeof WebsiteGroupsApi | typeof WebsitesApi)[];

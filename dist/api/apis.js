@@ -25,16 +25,20 @@ __exportStar(require("./discoveryApi"), exports);
 const discoveryApi_1 = require("./discoveryApi");
 __exportStar(require("./issuesApi"), exports);
 const issuesApi_1 = require("./issuesApi");
+__exportStar(require("./membersApi"), exports);
+const membersApi_1 = require("./membersApi");
 __exportStar(require("./notificationsApi"), exports);
 const notificationsApi_1 = require("./notificationsApi");
+__exportStar(require("./rolesApi"), exports);
+const rolesApi_1 = require("./rolesApi");
 __exportStar(require("./scanPoliciesApi"), exports);
 const scanPoliciesApi_1 = require("./scanPoliciesApi");
 __exportStar(require("./scanProfilesApi"), exports);
 const scanProfilesApi_1 = require("./scanProfilesApi");
 __exportStar(require("./scansApi"), exports);
 const scansApi_1 = require("./scansApi");
-__exportStar(require("./teamMembersApi"), exports);
-const teamMembersApi_1 = require("./teamMembersApi");
+__exportStar(require("./teamApi"), exports);
+const teamApi_1 = require("./teamApi");
 __exportStar(require("./technologiesApi"), exports);
 const technologiesApi_1 = require("./technologiesApi");
 __exportStar(require("./vulnerabilityApi"), exports);
@@ -53,5 +57,5 @@ class HttpError extends Error {
     }
 }
 exports.HttpError = HttpError;
-exports.APIS = [accountApi_1.AccountApi, agentGroupsApi_1.AgentGroupsApi, agentsApi_1.AgentsApi, auditLogsApi_1.AuditLogsApi, authenticationProfilesApi_1.AuthenticationProfilesApi, discoveryApi_1.DiscoveryApi, issuesApi_1.IssuesApi, notificationsApi_1.NotificationsApi, scanPoliciesApi_1.ScanPoliciesApi, scanProfilesApi_1.ScanProfilesApi, scansApi_1.ScansApi, teamMembersApi_1.TeamMembersApi, technologiesApi_1.TechnologiesApi, vulnerabilityApi_1.VulnerabilityApi, websiteGroupsApi_1.WebsiteGroupsApi, websitesApi_1.WebsitesApi];
+exports.APIS = [accountApi_1.AccountApi, agentGroupsApi_1.AgentGroupsApi, agentsApi_1.AgentsApi, auditLogsApi_1.AuditLogsApi, authenticationProfilesApi_1.AuthenticationProfilesApi, discoveryApi_1.DiscoveryApi, issuesApi_1.IssuesApi, membersApi_1.MembersApi, notificationsApi_1.NotificationsApi, rolesApi_1.RolesApi, scanPoliciesApi_1.ScanPoliciesApi, scanProfilesApi_1.ScanProfilesApi, scansApi_1.ScansApi, teamApi_1.TeamApi, technologiesApi_1.TechnologiesApi, vulnerabilityApi_1.VulnerabilityApi, websiteGroupsApi_1.WebsiteGroupsApi, websitesApi_1.WebsitesApi];
 //# sourceMappingURL=apis.js.map

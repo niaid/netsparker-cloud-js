@@ -12,7 +12,6 @@
 /// <reference types="node" />
 import http from 'http';
 import { SaveScanProfileApiModel } from '../model/saveScanProfileApiModel';
-import { ScanProfilesListApiResult } from '../model/scanProfilesListApiResult';
 import { Authentication, Interceptor } from '../model/models';
 export declare enum ScanProfilesApiApiKeys {
 }
@@ -84,7 +83,7 @@ export declare class ScanProfilesApi {
         };
     }): Promise<{
         response: http.IncomingMessage;
-        body: ScanProfilesListApiResult;
+        body: SaveScanProfileApiModel;
     }>;
     /**
      *

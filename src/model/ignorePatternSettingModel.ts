@@ -58,6 +58,7 @@ export namespace IgnorePatternSettingModel {
         Post = <any> 'POST',
         Get = <any> 'GET',
         Cookie = <any> 'COOKIE',
+        Webstorage = <any> 'WEBSTORAGE',
         All = <any> 'ALL'
     }
 }

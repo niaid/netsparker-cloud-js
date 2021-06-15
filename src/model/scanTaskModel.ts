@@ -208,6 +208,10 @@ export class ScanTaskModel {
     'scanTaskProfileId'?: string;
     'scanTaskProfile'?: ReducedScanTaskProfile;
     /**
+    * The group ids of website in it
+    */
+    'websiteGroupIds'?: Array<string>;
+    /**
     * Gets or sets the number of steps (HTTP requests) completed thus far.
     */
     'completedSteps'?: number;
@@ -581,6 +585,11 @@ export class ScanTaskModel {
             "type": "ReducedScanTaskProfile"
         },
         {
+            "name": "websiteGroupIds",
+            "baseName": "WebsiteGroupIds",
+            "type": "Array<string>"
+        },
+        {
             "name": "completedSteps",
             "baseName": "CompletedSteps",
             "type": "number"
@@ -774,7 +783,9 @@ export namespace ScanTaskModel {
         ErrorOccurredOnPause = <any> 'ErrorOccurredOnPause',
         ErrorOccurredOnCancel = <any> 'ErrorOccurredOnCancel',
         ErrorOccurredOnScanCompleted = <any> 'ErrorOccurredOnScanCompleted',
-        SevenZipNotFoundOrInstalled = <any> 'SevenZipNotFoundOrInstalled'
+        SevenZipNotFoundOrInstalled = <any> 'SevenZipNotFoundOrInstalled',
+        SecurityProtocolTypeNotSupported = <any> 'SecurityProtocolTypeNotSupported',
+        ErrorOccurredOnLaunchScan = <any> 'ErrorOccurredOnLaunchScan'
     }
     export enum GlobalThreatLevelEnum {
         Unknown = <any> 'Unknown',

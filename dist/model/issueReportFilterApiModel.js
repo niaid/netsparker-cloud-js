@@ -42,6 +42,16 @@ IssueReportFilterApiModel.attributeTypeMap = [
         "name": "webSiteName",
         "baseName": "WebSiteName",
         "type": "string"
+    },
+    {
+        "name": "startDate",
+        "baseName": "StartDate",
+        "type": "Date"
+    },
+    {
+        "name": "endDate",
+        "baseName": "EndDate",
+        "type": "Date"
     }
 ];
 (function (IssueReportFilterApiModel) {

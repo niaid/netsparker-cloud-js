@@ -82,7 +82,7 @@ class IssuesApi {
         const localVarPath = this.basePath + '/api/1.0/issues/addressedissues';
         let localVarQueryParameters = {};
         let localVarHeaderParams = Object.assign({}, this._defaultHeaders);
-        const produces = ['application/json', 'text/json', 'application/xml', 'text/xml', 'multipart/form-data'];
+        const produces = ['application/json', 'text/json', 'application/scim+json', 'application/xml', 'text/xml', 'multipart/form-data'];
         // give precedence to 'application/json'
         if (produces.indexOf('application/json') >= 0) {
             localVarHeaderParams.Accept = 'application/json';
@@ -165,7 +165,7 @@ class IssuesApi {
         const localVarPath = this.basePath + '/api/1.0/issues/allissues';
         let localVarQueryParameters = {};
         let localVarHeaderParams = Object.assign({}, this._defaultHeaders);
-        const produces = ['application/json', 'text/json', 'application/xml', 'text/xml', 'multipart/form-data'];
+        const produces = ['application/json', 'text/json', 'application/scim+json', 'application/xml', 'text/xml', 'multipart/form-data'];
         // give precedence to 'application/json'
         if (produces.indexOf('application/json') >= 0) {
             localVarHeaderParams.Accept = 'application/json';
@@ -251,7 +251,7 @@ class IssuesApi {
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
         let localVarQueryParameters = {};
         let localVarHeaderParams = Object.assign({}, this._defaultHeaders);
-        const produces = ['application/json', 'text/json', 'application/xml', 'text/xml', 'multipart/form-data'];
+        const produces = ['application/json', 'text/json', 'application/scim+json', 'application/xml', 'text/xml', 'multipart/form-data'];
         // give precedence to 'application/json'
         if (produces.indexOf('application/json') >= 0) {
             localVarHeaderParams.Accept = 'application/json';
@@ -317,7 +317,7 @@ class IssuesApi {
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
         let localVarQueryParameters = {};
         let localVarHeaderParams = Object.assign({}, this._defaultHeaders);
-        const produces = ['application/json', 'text/json', 'application/xml', 'text/xml', 'multipart/form-data'];
+        const produces = ['application/json', 'text/json', 'application/scim+json', 'application/xml', 'text/xml', 'multipart/form-data'];
         // give precedence to 'application/json'
         if (produces.indexOf('application/json') >= 0) {
             localVarHeaderParams.Accept = 'application/json';
@@ -380,8 +380,10 @@ class IssuesApi {
      * @param severity Gets or sets the vulnerability\&#39;s severity.
      * @param websiteGroupName Gets or sets the website group\&#39;s name.
      * @param webSiteName Gets or sets the website\&#39;s name.
+     * @param startDate Start date identify the starting point for date range. It is less than or equal to Date field. Format: MM/dd/yyyy 00:00:00
+     * @param endDate End date identify the end point for date range. It is greater than or equal to Date field. Format: MM/dd/yyyy 23:59:59
      */
-    async issuesReport(csvSeparator, severity, websiteGroupName, webSiteName, options = { headers: {} }) {
+    async issuesReport(csvSeparator, severity, websiteGroupName, webSiteName, startDate, endDate, options = { headers: {} }) {
         const localVarPath = this.basePath + '/api/1.0/issues/report';
         let localVarQueryParameters = {};
         let localVarHeaderParams = Object.assign({}, this._defaultHeaders);
@@ -397,6 +399,12 @@ class IssuesApi {
         }
         if (webSiteName !== undefined) {
             localVarQueryParameters['webSiteName'] = models_1.ObjectSerializer.serialize(webSiteName, "string");
+        }
+        if (startDate !== undefined) {
+            localVarQueryParameters['startDate'] = models_1.ObjectSerializer.serialize(startDate, "Date");
+        }
+        if (endDate !== undefined) {
+            localVarQueryParameters['endDate'] = models_1.ObjectSerializer.serialize(endDate, "Date");
         }
         Object.assign(localVarHeaderParams, options.headers);
         let localVarUseFormData = false;
@@ -453,7 +461,7 @@ class IssuesApi {
         const localVarPath = this.basePath + '/api/1.0/issues/todo';
         let localVarQueryParameters = {};
         let localVarHeaderParams = Object.assign({}, this._defaultHeaders);
-        const produces = ['application/json', 'text/json', 'application/xml', 'text/xml', 'multipart/form-data'];
+        const produces = ['application/json', 'text/json', 'application/scim+json', 'application/xml', 'text/xml', 'multipart/form-data'];
         // give precedence to 'application/json'
         if (produces.indexOf('application/json') >= 0) {
             localVarHeaderParams.Accept = 'application/json';
@@ -590,7 +598,7 @@ class IssuesApi {
         const localVarPath = this.basePath + '/api/1.0/issues/waitingforretest';
         let localVarQueryParameters = {};
         let localVarHeaderParams = Object.assign({}, this._defaultHeaders);
-        const produces = ['application/json', 'text/json', 'application/xml', 'text/xml', 'multipart/form-data'];
+        const produces = ['application/json', 'text/json', 'application/scim+json', 'application/xml', 'text/xml', 'multipart/form-data'];
         // give precedence to 'application/json'
         if (produces.indexOf('application/json') >= 0) {
             localVarHeaderParams.Accept = 'application/json';

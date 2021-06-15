@@ -24,11 +24,6 @@ exports.ScanPolicySettingApiModel = ScanPolicySettingApiModel;
 ScanPolicySettingApiModel.discriminator = undefined;
 ScanPolicySettingApiModel.attributeTypeMap = [
     {
-        "name": "isReadonly",
-        "baseName": "IsReadonly",
-        "type": "boolean"
-    },
-    {
         "name": "id",
         "baseName": "Id",
         "type": "string"

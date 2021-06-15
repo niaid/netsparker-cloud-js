@@ -269,6 +269,11 @@ ScanTaskModel.attributeTypeMap = [
         "type": "ReducedScanTaskProfile"
     },
     {
+        "name": "websiteGroupIds",
+        "baseName": "WebsiteGroupIds",
+        "type": "Array<string>"
+    },
+    {
         "name": "completedSteps",
         "baseName": "CompletedSteps",
         "type": "number"
@@ -462,6 +467,8 @@ ScanTaskModel.attributeTypeMap = [
         FailureReasonEnum[FailureReasonEnum["ErrorOccurredOnCancel"] = 'ErrorOccurredOnCancel'] = "ErrorOccurredOnCancel";
         FailureReasonEnum[FailureReasonEnum["ErrorOccurredOnScanCompleted"] = 'ErrorOccurredOnScanCompleted'] = "ErrorOccurredOnScanCompleted";
         FailureReasonEnum[FailureReasonEnum["SevenZipNotFoundOrInstalled"] = 'SevenZipNotFoundOrInstalled'] = "SevenZipNotFoundOrInstalled";
+        FailureReasonEnum[FailureReasonEnum["SecurityProtocolTypeNotSupported"] = 'SecurityProtocolTypeNotSupported'] = "SecurityProtocolTypeNotSupported";
+        FailureReasonEnum[FailureReasonEnum["ErrorOccurredOnLaunchScan"] = 'ErrorOccurredOnLaunchScan'] = "ErrorOccurredOnLaunchScan";
     })(FailureReasonEnum = ScanTaskModel.FailureReasonEnum || (ScanTaskModel.FailureReasonEnum = {}));
     let GlobalThreatLevelEnum;
     (function (GlobalThreatLevelEnum) {

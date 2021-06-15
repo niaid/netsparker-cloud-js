@@ -205,6 +205,10 @@ export declare class ScanTaskModel {
     'scanTaskProfileId'?: string;
     'scanTaskProfile'?: ReducedScanTaskProfile;
     /**
+    * The group ids of website in it
+    */
+    'websiteGroupIds'?: Array<string>;
+    /**
     * Gets or sets the number of steps (HTTP requests) completed thus far.
     */
     'completedSteps'?: number;
@@ -373,7 +377,9 @@ export declare namespace ScanTaskModel {
         ErrorOccurredOnPause,
         ErrorOccurredOnCancel,
         ErrorOccurredOnScanCompleted,
-        SevenZipNotFoundOrInstalled
+        SevenZipNotFoundOrInstalled,
+        SecurityProtocolTypeNotSupported,
+        ErrorOccurredOnLaunchScan
     }
     enum GlobalThreatLevelEnum {
         Unknown,

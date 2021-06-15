@@ -38,6 +38,7 @@ __exportStar(require("./authenticationProfileViewModel"), exports);
 __exportStar(require("./authorizationCodeTableModel"), exports);
 __exportStar(require("./autoCompleteSettingModel"), exports);
 __exportStar(require("./azureDevOpsIntegrationInfoModel"), exports);
+__exportStar(require("./baseResponseApiModel"), exports);
 __exportStar(require("./baseScanApiModel"), exports);
 __exportStar(require("./basicAuthenticationCredentialApiModel"), exports);
 __exportStar(require("./basicAuthenticationCredentialModel"), exports);
@@ -113,9 +114,16 @@ __exportStar(require("./kennaIntegrationInfoModel"), exports);
 __exportStar(require("./licenseBaseModel"), exports);
 __exportStar(require("./logoutKeywordPatternModel"), exports);
 __exportStar(require("./mattermostIntegrationInfoModel"), exports);
+__exportStar(require("./memberApiModelListApiResult"), exports);
+__exportStar(require("./memberApiViewModel"), exports);
+__exportStar(require("./memberInvitationApiModelListApiResult"), exports);
+__exportStar(require("./memberInvitationApiViewModel"), exports);
 __exportStar(require("./microsoftTeamsIntegrationInfoModel"), exports);
 __exportStar(require("./nameValuePair"), exports);
 __exportStar(require("./newGroupScanApiModel"), exports);
+__exportStar(require("./newMemberApiModel"), exports);
+__exportStar(require("./newMemberInvitationApiModel"), exports);
+__exportStar(require("./newRoleApiModel"), exports);
 __exportStar(require("./newScanNotificationApiModel"), exports);
 __exportStar(require("./newScanNotificationRecipientApiModel"), exports);
 __exportStar(require("./newScanPolicySettingModel"), exports);
@@ -124,7 +132,7 @@ __exportStar(require("./newScanTaskWithProfileApiModel"), exports);
 __exportStar(require("./newScheduledIncrementalScanApiModel"), exports);
 __exportStar(require("./newScheduledScanApiModel"), exports);
 __exportStar(require("./newScheduledWithProfileApiModel"), exports);
-__exportStar(require("./newUserApiModel"), exports);
+__exportStar(require("./newTeamApiModel"), exports);
 __exportStar(require("./newWebsiteApiModel"), exports);
 __exportStar(require("./newWebsiteGroupApiModel"), exports);
 __exportStar(require("./notificationIntegrationCustomFieldModel"), exports);
@@ -137,12 +145,19 @@ __exportStar(require("./otpSettings"), exports);
 __exportStar(require("./outsiderRecipient"), exports);
 __exportStar(require("./pagerDutyIntegrationInfoModel"), exports);
 __exportStar(require("./pciScanTaskViewModel"), exports);
+__exportStar(require("./permissionApiModel"), exports);
 __exportStar(require("./pivotalTrackerIntegrationInfoModel"), exports);
 __exportStar(require("./preRequestScriptSettingModel"), exports);
 __exportStar(require("./proxySettingsModel"), exports);
 __exportStar(require("./redmineIntegrationInfoModel"), exports);
+__exportStar(require("./reducedMemberApiViewModel"), exports);
 __exportStar(require("./reducedScanTaskProfile"), exports);
+__exportStar(require("./reducedTeamApiViewModel"), exports);
 __exportStar(require("./responseFields"), exports);
+__exportStar(require("./roleApiModelListApiResult"), exports);
+__exportStar(require("./roleApiViewModel"), exports);
+__exportStar(require("./roleWebsiteGroupMappingApiModel"), exports);
+__exportStar(require("./roleWebsiteGroupMappingApiViewModel"), exports);
 __exportStar(require("./saveScanProfileApiModel"), exports);
 __exportStar(require("./scanCustomReportApiModel"), exports);
 __exportStar(require("./scanNotificationApiModel"), exports);
@@ -156,7 +171,6 @@ __exportStar(require("./scanPolicyOptimizerOptions"), exports);
 __exportStar(require("./scanPolicyPatternModel"), exports);
 __exportStar(require("./scanPolicySettingApiModel"), exports);
 __exportStar(require("./scanPolicySettingItemApiModel"), exports);
-__exportStar(require("./scanProfilesListApiResult"), exports);
 __exportStar(require("./scanReportApiModel"), exports);
 __exportStar(require("./scanTaskListApiResult"), exports);
 __exportStar(require("./scanTaskModel"), exports);
@@ -183,6 +197,8 @@ __exportStar(require("./sslTlsSettingModel"), exports);
 __exportStar(require("./startVerificationApiModel"), exports);
 __exportStar(require("./startVerificationResult"), exports);
 __exportStar(require("./tFSIntegrationInfoModel"), exports);
+__exportStar(require("./teamApiModelListApiResult"), exports);
+__exportStar(require("./teamApiViewModel"), exports);
 __exportStar(require("./technologyApiModel"), exports);
 __exportStar(require("./technologyListApiResult"), exports);
 __exportStar(require("./testScanProfileCredentialsRequestModel"), exports);
@@ -194,21 +210,21 @@ __exportStar(require("./trelloLabel"), exports);
 __exportStar(require("./trelloList"), exports);
 __exportStar(require("./trelloMember"), exports);
 __exportStar(require("./unfuddleIntegrationInfoModel"), exports);
+__exportStar(require("./updateMemberApiModel"), exports);
+__exportStar(require("./updateRoleApiModel"), exports);
 __exportStar(require("./updateScanNotificationApiModel"), exports);
 __exportStar(require("./updateScanPolicySettingModel"), exports);
 __exportStar(require("./updateScheduledIncrementalScanApiModel"), exports);
 __exportStar(require("./updateScheduledScanApiModel"), exports);
 __exportStar(require("./updateScheduledScanModel"), exports);
-__exportStar(require("./updateUserApiModel"), exports);
+__exportStar(require("./updateTeamApiModel"), exports);
 __exportStar(require("./updateWebsiteApiModel"), exports);
 __exportStar(require("./updateWebsiteGroupApiModel"), exports);
 __exportStar(require("./urlRewriteExcludedPathModel"), exports);
 __exportStar(require("./urlRewriteRuleModel"), exports);
 __exportStar(require("./urlRewriteSetting"), exports);
-__exportStar(require("./userApiModel"), exports);
 __exportStar(require("./userApiTokenModel"), exports);
 __exportStar(require("./userHealthCheckApiModel"), exports);
-__exportStar(require("./userListApiResult"), exports);
 __exportStar(require("./vcsCommitInfo"), exports);
 __exportStar(require("./verifyApiModel"), exports);
 __exportStar(require("./versionIssue"), exports);
@@ -254,6 +270,7 @@ const authenticationProfileViewModel_1 = require("./authenticationProfileViewMod
 const authorizationCodeTableModel_1 = require("./authorizationCodeTableModel");
 const autoCompleteSettingModel_1 = require("./autoCompleteSettingModel");
 const azureDevOpsIntegrationInfoModel_1 = require("./azureDevOpsIntegrationInfoModel");
+const baseResponseApiModel_1 = require("./baseResponseApiModel");
 const baseScanApiModel_1 = require("./baseScanApiModel");
 const basicAuthenticationCredentialApiModel_1 = require("./basicAuthenticationCredentialApiModel");
 const basicAuthenticationCredentialModel_1 = require("./basicAuthenticationCredentialModel");
@@ -329,9 +346,16 @@ const kennaIntegrationInfoModel_1 = require("./kennaIntegrationInfoModel");
 const licenseBaseModel_1 = require("./licenseBaseModel");
 const logoutKeywordPatternModel_1 = require("./logoutKeywordPatternModel");
 const mattermostIntegrationInfoModel_1 = require("./mattermostIntegrationInfoModel");
+const memberApiModelListApiResult_1 = require("./memberApiModelListApiResult");
+const memberApiViewModel_1 = require("./memberApiViewModel");
+const memberInvitationApiModelListApiResult_1 = require("./memberInvitationApiModelListApiResult");
+const memberInvitationApiViewModel_1 = require("./memberInvitationApiViewModel");
 const microsoftTeamsIntegrationInfoModel_1 = require("./microsoftTeamsIntegrationInfoModel");
 const nameValuePair_1 = require("./nameValuePair");
 const newGroupScanApiModel_1 = require("./newGroupScanApiModel");
+const newMemberApiModel_1 = require("./newMemberApiModel");
+const newMemberInvitationApiModel_1 = require("./newMemberInvitationApiModel");
+const newRoleApiModel_1 = require("./newRoleApiModel");
 const newScanNotificationApiModel_1 = require("./newScanNotificationApiModel");
 const newScanNotificationRecipientApiModel_1 = require("./newScanNotificationRecipientApiModel");
 const newScanPolicySettingModel_1 = require("./newScanPolicySettingModel");
@@ -340,7 +364,7 @@ const newScanTaskWithProfileApiModel_1 = require("./newScanTaskWithProfileApiMod
 const newScheduledIncrementalScanApiModel_1 = require("./newScheduledIncrementalScanApiModel");
 const newScheduledScanApiModel_1 = require("./newScheduledScanApiModel");
 const newScheduledWithProfileApiModel_1 = require("./newScheduledWithProfileApiModel");
-const newUserApiModel_1 = require("./newUserApiModel");
+const newTeamApiModel_1 = require("./newTeamApiModel");
 const newWebsiteApiModel_1 = require("./newWebsiteApiModel");
 const newWebsiteGroupApiModel_1 = require("./newWebsiteGroupApiModel");
 const notificationIntegrationCustomFieldModel_1 = require("./notificationIntegrationCustomFieldModel");
@@ -353,12 +377,19 @@ const otpSettings_1 = require("./otpSettings");
 const outsiderRecipient_1 = require("./outsiderRecipient");
 const pagerDutyIntegrationInfoModel_1 = require("./pagerDutyIntegrationInfoModel");
 const pciScanTaskViewModel_1 = require("./pciScanTaskViewModel");
+const permissionApiModel_1 = require("./permissionApiModel");
 const pivotalTrackerIntegrationInfoModel_1 = require("./pivotalTrackerIntegrationInfoModel");
 const preRequestScriptSettingModel_1 = require("./preRequestScriptSettingModel");
 const proxySettingsModel_1 = require("./proxySettingsModel");
 const redmineIntegrationInfoModel_1 = require("./redmineIntegrationInfoModel");
+const reducedMemberApiViewModel_1 = require("./reducedMemberApiViewModel");
 const reducedScanTaskProfile_1 = require("./reducedScanTaskProfile");
+const reducedTeamApiViewModel_1 = require("./reducedTeamApiViewModel");
 const responseFields_1 = require("./responseFields");
+const roleApiModelListApiResult_1 = require("./roleApiModelListApiResult");
+const roleApiViewModel_1 = require("./roleApiViewModel");
+const roleWebsiteGroupMappingApiModel_1 = require("./roleWebsiteGroupMappingApiModel");
+const roleWebsiteGroupMappingApiViewModel_1 = require("./roleWebsiteGroupMappingApiViewModel");
 const saveScanProfileApiModel_1 = require("./saveScanProfileApiModel");
 const scanCustomReportApiModel_1 = require("./scanCustomReportApiModel");
 const scanNotificationApiModel_1 = require("./scanNotificationApiModel");
@@ -372,7 +403,6 @@ const scanPolicyOptimizerOptions_1 = require("./scanPolicyOptimizerOptions");
 const scanPolicyPatternModel_1 = require("./scanPolicyPatternModel");
 const scanPolicySettingApiModel_1 = require("./scanPolicySettingApiModel");
 const scanPolicySettingItemApiModel_1 = require("./scanPolicySettingItemApiModel");
-const scanProfilesListApiResult_1 = require("./scanProfilesListApiResult");
 const scanReportApiModel_1 = require("./scanReportApiModel");
 const scanTaskListApiResult_1 = require("./scanTaskListApiResult");
 const scanTaskModel_1 = require("./scanTaskModel");
@@ -399,6 +429,8 @@ const sslTlsSettingModel_1 = require("./sslTlsSettingModel");
 const startVerificationApiModel_1 = require("./startVerificationApiModel");
 const startVerificationResult_1 = require("./startVerificationResult");
 const tFSIntegrationInfoModel_1 = require("./tFSIntegrationInfoModel");
+const teamApiModelListApiResult_1 = require("./teamApiModelListApiResult");
+const teamApiViewModel_1 = require("./teamApiViewModel");
 const technologyApiModel_1 = require("./technologyApiModel");
 const technologyListApiResult_1 = require("./technologyListApiResult");
 const testScanProfileCredentialsRequestModel_1 = require("./testScanProfileCredentialsRequestModel");
@@ -410,21 +442,21 @@ const trelloLabel_1 = require("./trelloLabel");
 const trelloList_1 = require("./trelloList");
 const trelloMember_1 = require("./trelloMember");
 const unfuddleIntegrationInfoModel_1 = require("./unfuddleIntegrationInfoModel");
+const updateMemberApiModel_1 = require("./updateMemberApiModel");
+const updateRoleApiModel_1 = require("./updateRoleApiModel");
 const updateScanNotificationApiModel_1 = require("./updateScanNotificationApiModel");
 const updateScanPolicySettingModel_1 = require("./updateScanPolicySettingModel");
 const updateScheduledIncrementalScanApiModel_1 = require("./updateScheduledIncrementalScanApiModel");
 const updateScheduledScanApiModel_1 = require("./updateScheduledScanApiModel");
 const updateScheduledScanModel_1 = require("./updateScheduledScanModel");
-const updateUserApiModel_1 = require("./updateUserApiModel");
+const updateTeamApiModel_1 = require("./updateTeamApiModel");
 const updateWebsiteApiModel_1 = require("./updateWebsiteApiModel");
 const updateWebsiteGroupApiModel_1 = require("./updateWebsiteGroupApiModel");
 const urlRewriteExcludedPathModel_1 = require("./urlRewriteExcludedPathModel");
 const urlRewriteRuleModel_1 = require("./urlRewriteRuleModel");
 const urlRewriteSetting_1 = require("./urlRewriteSetting");
-const userApiModel_1 = require("./userApiModel");
 const userApiTokenModel_1 = require("./userApiTokenModel");
 const userHealthCheckApiModel_1 = require("./userHealthCheckApiModel");
-const userListApiResult_1 = require("./userListApiResult");
 const vcsCommitInfo_1 = require("./vcsCommitInfo");
 const verifyApiModel_1 = require("./verifyApiModel");
 const versionIssue_1 = require("./versionIssue");
@@ -506,6 +538,7 @@ let enumsMap = {
     "KennaIntegrationInfoModel.AssetApplicationIdentifierTypeEnum": kennaIntegrationInfoModel_1.KennaIntegrationInfoModel.AssetApplicationIdentifierTypeEnum,
     "KennaIntegrationInfoModel.TypeEnum": kennaIntegrationInfoModel_1.KennaIntegrationInfoModel.TypeEnum,
     "MattermostIntegrationInfoModel.TypeEnum": mattermostIntegrationInfoModel_1.MattermostIntegrationInfoModel.TypeEnum,
+    "MemberApiViewModel.StateEnum": memberApiViewModel_1.MemberApiViewModel.StateEnum,
     "MicrosoftTeamsIntegrationInfoModel.TypeEnum": microsoftTeamsIntegrationInfoModel_1.MicrosoftTeamsIntegrationInfoModel.TypeEnum,
     "NewGroupScanApiModel.AuthenticationProfileOptionEnum": newGroupScanApiModel_1.NewGroupScanApiModel.AuthenticationProfileOptionEnum,
     "NewScanNotificationApiModel.EventEnum": newScanNotificationApiModel_1.NewScanNotificationApiModel.EventEnum,
@@ -628,13 +661,10 @@ let enumsMap = {
     "UpdateScheduledScanModel.ScheduleRunTypeEnum": updateScheduledScanModel_1.UpdateScheduledScanModel.ScheduleRunTypeEnum,
     "UpdateScheduledScanModel.CustomScriptTemplateTypeEnum": updateScheduledScanModel_1.UpdateScheduledScanModel.CustomScriptTemplateTypeEnum,
     "UpdateScheduledScanModel.CreateTypeEnum": updateScheduledScanModel_1.UpdateScheduledScanModel.CreateTypeEnum,
-    "UpdateUserApiModel.UserStateEnum": updateUserApiModel_1.UpdateUserApiModel.UserStateEnum,
     "UpdateWebsiteApiModel.DefaultProtocolEnum": updateWebsiteApiModel_1.UpdateWebsiteApiModel.DefaultProtocolEnum,
     "UpdateWebsiteApiModel.AgentModeEnum": updateWebsiteApiModel_1.UpdateWebsiteApiModel.AgentModeEnum,
     "UpdateWebsiteApiModel.LicenseTypeEnum": updateWebsiteApiModel_1.UpdateWebsiteApiModel.LicenseTypeEnum,
     "UrlRewriteSetting.UrlRewriteModeEnum": urlRewriteSetting_1.UrlRewriteSetting.UrlRewriteModeEnum,
-    "UserApiModel.RoleEnum": userApiModel_1.UserApiModel.RoleEnum,
-    "UserApiModel.UserStateEnum": userApiModel_1.UserApiModel.UserStateEnum,
     "VcsCommitInfo.IntegrationSystemEnum": vcsCommitInfo_1.VcsCommitInfo.IntegrationSystemEnum,
     "VerifyApiModel.VerificationMethodEnum": verifyApiModel_1.VerifyApiModel.VerificationMethodEnum,
     "VersionIssue.SeverityEnum": versionIssue_1.VersionIssue.SeverityEnum,
@@ -679,6 +709,7 @@ let typeMap = {
     "AuthorizationCodeTableModel": authorizationCodeTableModel_1.AuthorizationCodeTableModel,
     "AutoCompleteSettingModel": autoCompleteSettingModel_1.AutoCompleteSettingModel,
     "AzureDevOpsIntegrationInfoModel": azureDevOpsIntegrationInfoModel_1.AzureDevOpsIntegrationInfoModel,
+    "BaseResponseApiModel": baseResponseApiModel_1.BaseResponseApiModel,
     "BaseScanApiModel": baseScanApiModel_1.BaseScanApiModel,
     "BasicAuthenticationCredentialApiModel": basicAuthenticationCredentialApiModel_1.BasicAuthenticationCredentialApiModel,
     "BasicAuthenticationCredentialModel": basicAuthenticationCredentialModel_1.BasicAuthenticationCredentialModel,
@@ -754,9 +785,16 @@ let typeMap = {
     "LicenseBaseModel": licenseBaseModel_1.LicenseBaseModel,
     "LogoutKeywordPatternModel": logoutKeywordPatternModel_1.LogoutKeywordPatternModel,
     "MattermostIntegrationInfoModel": mattermostIntegrationInfoModel_1.MattermostIntegrationInfoModel,
+    "MemberApiModelListApiResult": memberApiModelListApiResult_1.MemberApiModelListApiResult,
+    "MemberApiViewModel": memberApiViewModel_1.MemberApiViewModel,
+    "MemberInvitationApiModelListApiResult": memberInvitationApiModelListApiResult_1.MemberInvitationApiModelListApiResult,
+    "MemberInvitationApiViewModel": memberInvitationApiViewModel_1.MemberInvitationApiViewModel,
     "MicrosoftTeamsIntegrationInfoModel": microsoftTeamsIntegrationInfoModel_1.MicrosoftTeamsIntegrationInfoModel,
     "NameValuePair": nameValuePair_1.NameValuePair,
     "NewGroupScanApiModel": newGroupScanApiModel_1.NewGroupScanApiModel,
+    "NewMemberApiModel": newMemberApiModel_1.NewMemberApiModel,
+    "NewMemberInvitationApiModel": newMemberInvitationApiModel_1.NewMemberInvitationApiModel,
+    "NewRoleApiModel": newRoleApiModel_1.NewRoleApiModel,
     "NewScanNotificationApiModel": newScanNotificationApiModel_1.NewScanNotificationApiModel,
     "NewScanNotificationRecipientApiModel": newScanNotificationRecipientApiModel_1.NewScanNotificationRecipientApiModel,
     "NewScanPolicySettingModel": newScanPolicySettingModel_1.NewScanPolicySettingModel,
@@ -765,7 +803,7 @@ let typeMap = {
     "NewScheduledIncrementalScanApiModel": newScheduledIncrementalScanApiModel_1.NewScheduledIncrementalScanApiModel,
     "NewScheduledScanApiModel": newScheduledScanApiModel_1.NewScheduledScanApiModel,
     "NewScheduledWithProfileApiModel": newScheduledWithProfileApiModel_1.NewScheduledWithProfileApiModel,
-    "NewUserApiModel": newUserApiModel_1.NewUserApiModel,
+    "NewTeamApiModel": newTeamApiModel_1.NewTeamApiModel,
     "NewWebsiteApiModel": newWebsiteApiModel_1.NewWebsiteApiModel,
     "NewWebsiteGroupApiModel": newWebsiteGroupApiModel_1.NewWebsiteGroupApiModel,
     "NotificationIntegrationCustomFieldModel": notificationIntegrationCustomFieldModel_1.NotificationIntegrationCustomFieldModel,
@@ -778,12 +816,19 @@ let typeMap = {
     "OutsiderRecipient": outsiderRecipient_1.OutsiderRecipient,
     "PagerDutyIntegrationInfoModel": pagerDutyIntegrationInfoModel_1.PagerDutyIntegrationInfoModel,
     "PciScanTaskViewModel": pciScanTaskViewModel_1.PciScanTaskViewModel,
+    "PermissionApiModel": permissionApiModel_1.PermissionApiModel,
     "PivotalTrackerIntegrationInfoModel": pivotalTrackerIntegrationInfoModel_1.PivotalTrackerIntegrationInfoModel,
     "PreRequestScriptSettingModel": preRequestScriptSettingModel_1.PreRequestScriptSettingModel,
     "ProxySettingsModel": proxySettingsModel_1.ProxySettingsModel,
     "RedmineIntegrationInfoModel": redmineIntegrationInfoModel_1.RedmineIntegrationInfoModel,
+    "ReducedMemberApiViewModel": reducedMemberApiViewModel_1.ReducedMemberApiViewModel,
     "ReducedScanTaskProfile": reducedScanTaskProfile_1.ReducedScanTaskProfile,
+    "ReducedTeamApiViewModel": reducedTeamApiViewModel_1.ReducedTeamApiViewModel,
     "ResponseFields": responseFields_1.ResponseFields,
+    "RoleApiModelListApiResult": roleApiModelListApiResult_1.RoleApiModelListApiResult,
+    "RoleApiViewModel": roleApiViewModel_1.RoleApiViewModel,
+    "RoleWebsiteGroupMappingApiModel": roleWebsiteGroupMappingApiModel_1.RoleWebsiteGroupMappingApiModel,
+    "RoleWebsiteGroupMappingApiViewModel": roleWebsiteGroupMappingApiViewModel_1.RoleWebsiteGroupMappingApiViewModel,
     "SaveScanProfileApiModel": saveScanProfileApiModel_1.SaveScanProfileApiModel,
     "ScanCustomReportApiModel": scanCustomReportApiModel_1.ScanCustomReportApiModel,
     "ScanNotificationApiModel": scanNotificationApiModel_1.ScanNotificationApiModel,
@@ -797,7 +842,6 @@ let typeMap = {
     "ScanPolicyPatternModel": scanPolicyPatternModel_1.ScanPolicyPatternModel,
     "ScanPolicySettingApiModel": scanPolicySettingApiModel_1.ScanPolicySettingApiModel,
     "ScanPolicySettingItemApiModel": scanPolicySettingItemApiModel_1.ScanPolicySettingItemApiModel,
-    "ScanProfilesListApiResult": scanProfilesListApiResult_1.ScanProfilesListApiResult,
     "ScanReportApiModel": scanReportApiModel_1.ScanReportApiModel,
     "ScanTaskListApiResult": scanTaskListApiResult_1.ScanTaskListApiResult,
     "ScanTaskModel": scanTaskModel_1.ScanTaskModel,
@@ -824,6 +868,8 @@ let typeMap = {
     "StartVerificationApiModel": startVerificationApiModel_1.StartVerificationApiModel,
     "StartVerificationResult": startVerificationResult_1.StartVerificationResult,
     "TFSIntegrationInfoModel": tFSIntegrationInfoModel_1.TFSIntegrationInfoModel,
+    "TeamApiModelListApiResult": teamApiModelListApiResult_1.TeamApiModelListApiResult,
+    "TeamApiViewModel": teamApiViewModel_1.TeamApiViewModel,
     "TechnologyApiModel": technologyApiModel_1.TechnologyApiModel,
     "TechnologyListApiResult": technologyListApiResult_1.TechnologyListApiResult,
     "TestScanProfileCredentialsRequestModel": testScanProfileCredentialsRequestModel_1.TestScanProfileCredentialsRequestModel,
@@ -835,21 +881,21 @@ let typeMap = {
     "TrelloList": trelloList_1.TrelloList,
     "TrelloMember": trelloMember_1.TrelloMember,
     "UnfuddleIntegrationInfoModel": unfuddleIntegrationInfoModel_1.UnfuddleIntegrationInfoModel,
+    "UpdateMemberApiModel": updateMemberApiModel_1.UpdateMemberApiModel,
+    "UpdateRoleApiModel": updateRoleApiModel_1.UpdateRoleApiModel,
     "UpdateScanNotificationApiModel": updateScanNotificationApiModel_1.UpdateScanNotificationApiModel,
     "UpdateScanPolicySettingModel": updateScanPolicySettingModel_1.UpdateScanPolicySettingModel,
     "UpdateScheduledIncrementalScanApiModel": updateScheduledIncrementalScanApiModel_1.UpdateScheduledIncrementalScanApiModel,
     "UpdateScheduledScanApiModel": updateScheduledScanApiModel_1.UpdateScheduledScanApiModel,
     "UpdateScheduledScanModel": updateScheduledScanModel_1.UpdateScheduledScanModel,
-    "UpdateUserApiModel": updateUserApiModel_1.UpdateUserApiModel,
+    "UpdateTeamApiModel": updateTeamApiModel_1.UpdateTeamApiModel,
     "UpdateWebsiteApiModel": updateWebsiteApiModel_1.UpdateWebsiteApiModel,
     "UpdateWebsiteGroupApiModel": updateWebsiteGroupApiModel_1.UpdateWebsiteGroupApiModel,
     "UrlRewriteExcludedPathModel": urlRewriteExcludedPathModel_1.UrlRewriteExcludedPathModel,
     "UrlRewriteRuleModel": urlRewriteRuleModel_1.UrlRewriteRuleModel,
     "UrlRewriteSetting": urlRewriteSetting_1.UrlRewriteSetting,
-    "UserApiModel": userApiModel_1.UserApiModel,
     "UserApiTokenModel": userApiTokenModel_1.UserApiTokenModel,
     "UserHealthCheckApiModel": userHealthCheckApiModel_1.UserHealthCheckApiModel,
-    "UserListApiResult": userListApiResult_1.UserListApiResult,
     "VcsCommitInfo": vcsCommitInfo_1.VcsCommitInfo,
     "VerifyApiModel": verifyApiModel_1.VerifyApiModel,
     "VersionIssue": versionIssue_1.VersionIssue,
