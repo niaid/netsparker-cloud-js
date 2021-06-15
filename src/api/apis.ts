@@ -12,16 +12,20 @@ export * from './discoveryApi';
 import { DiscoveryApi } from './discoveryApi';
 export * from './issuesApi';
 import { IssuesApi } from './issuesApi';
+export * from './membersApi';
+import { MembersApi } from './membersApi';
 export * from './notificationsApi';
 import { NotificationsApi } from './notificationsApi';
+export * from './rolesApi';
+import { RolesApi } from './rolesApi';
 export * from './scanPoliciesApi';
 import { ScanPoliciesApi } from './scanPoliciesApi';
 export * from './scanProfilesApi';
 import { ScanProfilesApi } from './scanProfilesApi';
 export * from './scansApi';
 import { ScansApi } from './scansApi';
-export * from './teamMembersApi';
-import { TeamMembersApi } from './teamMembersApi';
+export * from './teamApi';
+import { TeamApi } from './teamApi';
 export * from './technologiesApi';
 import { TechnologiesApi } from './technologiesApi';
 export * from './vulnerabilityApi';
@@ -41,4 +45,4 @@ export class HttpError extends Error {
 
 export { RequestFile } from '../model/models';
 
-export const APIS = [AccountApi, AgentGroupsApi, AgentsApi, AuditLogsApi, AuthenticationProfilesApi, DiscoveryApi, IssuesApi, NotificationsApi, ScanPoliciesApi, ScanProfilesApi, ScansApi, TeamMembersApi, TechnologiesApi, VulnerabilityApi, WebsiteGroupsApi, WebsitesApi];
+export const APIS = [AccountApi, AgentGroupsApi, AgentsApi, AuditLogsApi, AuthenticationProfilesApi, DiscoveryApi, IssuesApi, MembersApi, NotificationsApi, RolesApi, ScanPoliciesApi, ScanProfilesApi, ScansApi, TeamApi, TechnologiesApi, VulnerabilityApi, WebsiteGroupsApi, WebsitesApi];

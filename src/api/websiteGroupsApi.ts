@@ -99,7 +99,7 @@ export class WebsiteGroupsApi {
         const localVarPath = this.basePath + '/api/1.0/websitegroups/delete';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
-        const produces = ['application/json', 'text/json', 'application/xml', 'text/xml', 'multipart/form-data'];
+        const produces = ['application/json', 'text/json', 'application/scim+json', 'application/xml', 'text/xml', 'multipart/form-data'];
         // give precedence to 'application/json'
         if (produces.indexOf('application/json') >= 0) {
             localVarHeaderParams.Accept = 'application/json';
@@ -169,7 +169,7 @@ export class WebsiteGroupsApi {
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
-        const produces = ['application/json', 'text/json', 'application/xml', 'text/xml', 'multipart/form-data'];
+        const produces = ['application/json', 'text/json', 'application/scim+json', 'application/xml', 'text/xml', 'multipart/form-data'];
         // give precedence to 'application/json'
         if (produces.indexOf('application/json') >= 0) {
             localVarHeaderParams.Accept = 'application/json';
@@ -237,7 +237,7 @@ export class WebsiteGroupsApi {
         const localVarPath = this.basePath + '/api/1.0/websitegroups/get';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
-        const produces = ['application/json', 'text/json', 'application/xml', 'text/xml', 'multipart/form-data'];
+        const produces = ['application/json', 'text/json', 'application/scim+json', 'application/xml', 'text/xml', 'multipart/form-data'];
         // give precedence to 'application/json'
         if (produces.indexOf('application/json') >= 0) {
             localVarHeaderParams.Accept = 'application/json';
@@ -310,7 +310,7 @@ export class WebsiteGroupsApi {
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
-        const produces = ['application/json', 'text/json', 'application/xml', 'text/xml', 'multipart/form-data'];
+        const produces = ['application/json', 'text/json', 'application/scim+json', 'application/xml', 'text/xml', 'multipart/form-data'];
         // give precedence to 'application/json'
         if (produces.indexOf('application/json') >= 0) {
             localVarHeaderParams.Accept = 'application/json';
@@ -379,7 +379,7 @@ export class WebsiteGroupsApi {
         const localVarPath = this.basePath + '/api/1.0/websitegroups/list';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
-        const produces = ['application/json', 'text/json', 'application/xml', 'text/xml', 'multipart/form-data'];
+        const produces = ['application/json', 'text/json', 'application/scim+json', 'application/xml', 'text/xml', 'multipart/form-data'];
         // give precedence to 'application/json'
         if (produces.indexOf('application/json') >= 0) {
             localVarHeaderParams.Accept = 'application/json';
@@ -450,7 +450,7 @@ export class WebsiteGroupsApi {
         const localVarPath = this.basePath + '/api/1.0/websitegroups/new';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
-        const produces = ['application/json', 'text/json', 'application/xml', 'text/xml', 'multipart/form-data'];
+        const produces = ['application/json', 'text/json', 'application/scim+json', 'application/xml', 'text/xml', 'multipart/form-data'];
         // give precedence to 'application/json'
         if (produces.indexOf('application/json') >= 0) {
             localVarHeaderParams.Accept = 'application/json';
@@ -519,7 +519,7 @@ export class WebsiteGroupsApi {
         const localVarPath = this.basePath + '/api/1.0/websitegroups/update';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
-        const produces = ['application/json', 'text/json', 'application/xml', 'text/xml', 'multipart/form-data'];
+        const produces = ['application/json', 'text/json', 'application/scim+json', 'application/xml', 'text/xml', 'multipart/form-data'];
         // give precedence to 'application/json'
         if (produces.indexOf('application/json') >= 0) {
             localVarHeaderParams.Accept = 'application/json';

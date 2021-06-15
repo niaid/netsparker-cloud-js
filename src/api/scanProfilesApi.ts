@@ -16,7 +16,6 @@ import http from 'http';
 
 /* tslint:disable:no-unused-locals */
 import { SaveScanProfileApiModel } from '../model/saveScanProfileApiModel';
-import { ScanProfilesListApiResult } from '../model/scanProfilesListApiResult';
 
 import { ObjectSerializer, Authentication, VoidAuth, Interceptor } from '../model/models';
 
@@ -96,7 +95,7 @@ export class ScanProfilesApi {
         const localVarPath = this.basePath + '/api/1.0/scanprofiles/delete';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
-        const produces = ['application/json', 'text/json', 'application/xml', 'text/xml', 'multipart/form-data'];
+        const produces = ['application/json', 'text/json', 'application/scim+json', 'application/xml', 'text/xml', 'multipart/form-data'];
         // give precedence to 'application/json'
         if (produces.indexOf('application/json') >= 0) {
             localVarHeaderParams.Accept = 'application/json';
@@ -165,7 +164,7 @@ export class ScanProfilesApi {
         const localVarPath = this.basePath + '/api/1.0/scanprofiles/get';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
-        const produces = ['application/json', 'text/json', 'application/xml', 'text/xml', 'multipart/form-data'];
+        const produces = ['application/json', 'text/json', 'application/scim+json', 'application/xml', 'text/xml', 'multipart/form-data'];
         // give precedence to 'application/json'
         if (produces.indexOf('application/json') >= 0) {
             localVarHeaderParams.Accept = 'application/json';
@@ -238,7 +237,7 @@ export class ScanProfilesApi {
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
-        const produces = ['application/json', 'text/json', 'application/xml', 'text/xml', 'multipart/form-data'];
+        const produces = ['application/json', 'text/json', 'application/scim+json', 'application/xml', 'text/xml', 'multipart/form-data'];
         // give precedence to 'application/json'
         if (produces.indexOf('application/json') >= 0) {
             localVarHeaderParams.Accept = 'application/json';
@@ -303,11 +302,11 @@ export class ScanProfilesApi {
      * @param page The page index.
      * @param pageSize The page size. Page size can be any value between 1 and 200.
      */
-    public async scanProfilesList (page?: number, pageSize?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: ScanProfilesListApiResult;  }> {
+    public async scanProfilesList (page?: number, pageSize?: number, options: {headers: {[name: string]: string}} = {headers: {}}) : Promise<{ response: http.IncomingMessage; body: SaveScanProfileApiModel;  }> {
         const localVarPath = this.basePath + '/api/1.0/scanprofiles/list';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
-        const produces = ['application/json', 'text/json', 'application/xml', 'text/xml', 'multipart/form-data'];
+        const produces = ['application/json', 'text/json', 'application/scim+json', 'application/xml', 'text/xml', 'multipart/form-data'];
         // give precedence to 'application/json'
         if (produces.indexOf('application/json') >= 0) {
             localVarHeaderParams.Accept = 'application/json';
@@ -353,12 +352,12 @@ export class ScanProfilesApi {
                     localVarRequestOptions.form = localVarFormParams;
                 }
             }
-            return new Promise<{ response: http.IncomingMessage; body: ScanProfilesListApiResult;  }>((resolve, reject) => {
+            return new Promise<{ response: http.IncomingMessage; body: SaveScanProfileApiModel;  }>((resolve, reject) => {
                 localVarRequest(localVarRequestOptions, (error, response, body) => {
                     if (error) {
                         reject(error);
                     } else {
-                        body = ObjectSerializer.deserialize(body, "ScanProfilesListApiResult");
+                        body = ObjectSerializer.deserialize(body, "SaveScanProfileApiModel");
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
                             resolve({ response: response, body: body });
                         } else {
@@ -378,7 +377,7 @@ export class ScanProfilesApi {
         const localVarPath = this.basePath + '/api/1.0/scanprofiles/new';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
-        const produces = ['application/json', 'text/json', 'application/xml', 'text/xml', 'multipart/form-data'];
+        const produces = ['application/json', 'text/json', 'application/scim+json', 'application/xml', 'text/xml', 'multipart/form-data'];
         // give precedence to 'application/json'
         if (produces.indexOf('application/json') >= 0) {
             localVarHeaderParams.Accept = 'application/json';
@@ -447,7 +446,7 @@ export class ScanProfilesApi {
         const localVarPath = this.basePath + '/api/1.0/scanprofiles/update';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
-        const produces = ['application/json', 'text/json', 'application/xml', 'text/xml', 'multipart/form-data'];
+        const produces = ['application/json', 'text/json', 'application/scim+json', 'application/xml', 'text/xml', 'multipart/form-data'];
         // give precedence to 'application/json'
         if (produces.indexOf('application/json') >= 0) {
             localVarHeaderParams.Accept = 'application/json';

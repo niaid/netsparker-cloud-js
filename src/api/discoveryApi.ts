@@ -97,7 +97,7 @@ export class DiscoveryApi {
         const localVarPath = this.basePath + '/api/1.0/discovery/exclude';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
-        const produces = ['application/json', 'text/json', 'application/xml', 'text/xml', 'multipart/form-data'];
+        const produces = ['application/json', 'text/json', 'application/scim+json', 'application/xml', 'text/xml', 'multipart/form-data'];
         // give precedence to 'application/json'
         if (produces.indexOf('application/json') >= 0) {
             localVarHeaderParams.Accept = 'application/json';
@@ -166,7 +166,7 @@ export class DiscoveryApi {
         const localVarPath = this.basePath + '/api/1.0/discovery/export';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
-        const produces = ['application/json', 'text/json', 'multipart/form-data'];
+        const produces = ['application/json', 'text/json', 'application/scim+json', 'multipart/form-data'];
         // give precedence to 'application/json'
         if (produces.indexOf('application/json') >= 0) {
             localVarHeaderParams.Accept = 'application/json';
@@ -233,7 +233,7 @@ export class DiscoveryApi {
         const localVarPath = this.basePath + '/api/1.0/discovery/ignore';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
-        const produces = ['application/json', 'text/json', 'application/xml', 'text/xml', 'multipart/form-data'];
+        const produces = ['application/json', 'text/json', 'application/scim+json', 'application/xml', 'text/xml', 'multipart/form-data'];
         // give precedence to 'application/json'
         if (produces.indexOf('application/json') >= 0) {
             localVarHeaderParams.Accept = 'application/json';
@@ -308,7 +308,7 @@ export class DiscoveryApi {
         const localVarPath = this.basePath + '/api/1.0/discovery/ignorebyfilter';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
-        const produces = ['application/json', 'text/json', 'application/xml', 'text/xml', 'multipart/form-data'];
+        const produces = ['application/json', 'text/json', 'application/scim+json', 'application/xml', 'text/xml', 'multipart/form-data'];
         // give precedence to 'application/json'
         if (produces.indexOf('application/json') >= 0) {
             localVarHeaderParams.Accept = 'application/json';
@@ -400,7 +400,7 @@ export class DiscoveryApi {
         const localVarPath = this.basePath + '/api/1.0/discovery/list';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
-        const produces = ['application/json', 'text/json', 'application/xml', 'text/xml', 'multipart/form-data'];
+        const produces = ['application/json', 'text/json', 'application/scim+json', 'application/xml', 'text/xml', 'multipart/form-data'];
         // give precedence to 'application/json'
         if (produces.indexOf('application/json') >= 0) {
             localVarHeaderParams.Accept = 'application/json';
@@ -480,7 +480,7 @@ export class DiscoveryApi {
         const localVarPath = this.basePath + '/api/1.0/discovery/listbyfilter';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
-        const produces = ['application/json', 'text/json', 'application/xml', 'text/xml', 'multipart/form-data'];
+        const produces = ['application/json', 'text/json', 'application/scim+json', 'application/xml', 'text/xml', 'multipart/form-data'];
         // give precedence to 'application/json'
         if (produces.indexOf('application/json') >= 0) {
             localVarHeaderParams.Accept = 'application/json';
@@ -582,7 +582,7 @@ export class DiscoveryApi {
         const localVarPath = this.basePath + '/api/1.0/discovery/settings';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
-        const produces = ['application/json', 'text/json', 'application/xml', 'text/xml', 'multipart/form-data'];
+        const produces = ['application/json', 'text/json', 'application/scim+json', 'application/xml', 'text/xml', 'multipart/form-data'];
         // give precedence to 'application/json'
         if (produces.indexOf('application/json') >= 0) {
             localVarHeaderParams.Accept = 'application/json';
@@ -645,7 +645,7 @@ export class DiscoveryApi {
         const localVarPath = this.basePath + '/api/1.0/discovery/update-settings';
         let localVarQueryParameters: any = {};
         let localVarHeaderParams: any = (<any>Object).assign({}, this._defaultHeaders);
-        const produces = ['application/json', 'text/json', 'application/xml', 'text/xml', 'multipart/form-data'];
+        const produces = ['application/json', 'text/json', 'application/scim+json', 'application/xml', 'text/xml', 'multipart/form-data'];
         // give precedence to 'application/json'
         if (produces.indexOf('application/json') >= 0) {
             localVarHeaderParams.Accept = 'application/json';

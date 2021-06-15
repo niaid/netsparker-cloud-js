@@ -33,10 +33,6 @@ import { WebStorageSetting } from './webStorageSetting';
 */
 export declare class ScanPolicySettingApiModel {
     /**
-    * Gets or sets a value indicating whether this instance is readonly.
-    */
-    'isReadonly'?: boolean;
-    /**
     * Gets or sets the identifier.
     */
     'id'?: string;

@@ -78,7 +78,7 @@ class ScanProfilesApi {
         const localVarPath = this.basePath + '/api/1.0/scanprofiles/delete';
         let localVarQueryParameters = {};
         let localVarHeaderParams = Object.assign({}, this._defaultHeaders);
-        const produces = ['application/json', 'text/json', 'application/xml', 'text/xml', 'multipart/form-data'];
+        const produces = ['application/json', 'text/json', 'application/scim+json', 'application/xml', 'text/xml', 'multipart/form-data'];
         // give precedence to 'application/json'
         if (produces.indexOf('application/json') >= 0) {
             localVarHeaderParams.Accept = 'application/json';
@@ -144,7 +144,7 @@ class ScanProfilesApi {
         const localVarPath = this.basePath + '/api/1.0/scanprofiles/get';
         let localVarQueryParameters = {};
         let localVarHeaderParams = Object.assign({}, this._defaultHeaders);
-        const produces = ['application/json', 'text/json', 'application/xml', 'text/xml', 'multipart/form-data'];
+        const produces = ['application/json', 'text/json', 'application/scim+json', 'application/xml', 'text/xml', 'multipart/form-data'];
         // give precedence to 'application/json'
         if (produces.indexOf('application/json') >= 0) {
             localVarHeaderParams.Accept = 'application/json';
@@ -213,7 +213,7 @@ class ScanProfilesApi {
             .replace('{' + 'id' + '}', encodeURIComponent(String(id)));
         let localVarQueryParameters = {};
         let localVarHeaderParams = Object.assign({}, this._defaultHeaders);
-        const produces = ['application/json', 'text/json', 'application/xml', 'text/xml', 'multipart/form-data'];
+        const produces = ['application/json', 'text/json', 'application/scim+json', 'application/xml', 'text/xml', 'multipart/form-data'];
         // give precedence to 'application/json'
         if (produces.indexOf('application/json') >= 0) {
             localVarHeaderParams.Accept = 'application/json';
@@ -279,7 +279,7 @@ class ScanProfilesApi {
         const localVarPath = this.basePath + '/api/1.0/scanprofiles/list';
         let localVarQueryParameters = {};
         let localVarHeaderParams = Object.assign({}, this._defaultHeaders);
-        const produces = ['application/json', 'text/json', 'application/xml', 'text/xml', 'multipart/form-data'];
+        const produces = ['application/json', 'text/json', 'application/scim+json', 'application/xml', 'text/xml', 'multipart/form-data'];
         // give precedence to 'application/json'
         if (produces.indexOf('application/json') >= 0) {
             localVarHeaderParams.Accept = 'application/json';
@@ -325,7 +325,7 @@ class ScanProfilesApi {
                         reject(error);
                     }
                     else {
-                        body = models_1.ObjectSerializer.deserialize(body, "ScanProfilesListApiResult");
+                        body = models_1.ObjectSerializer.deserialize(body, "SaveScanProfileApiModel");
                         if (response.statusCode && response.statusCode >= 200 && response.statusCode <= 299) {
                             resolve({ response: response, body: body });
                         }
@@ -346,7 +346,7 @@ class ScanProfilesApi {
         const localVarPath = this.basePath + '/api/1.0/scanprofiles/new';
         let localVarQueryParameters = {};
         let localVarHeaderParams = Object.assign({}, this._defaultHeaders);
-        const produces = ['application/json', 'text/json', 'application/xml', 'text/xml', 'multipart/form-data'];
+        const produces = ['application/json', 'text/json', 'application/scim+json', 'application/xml', 'text/xml', 'multipart/form-data'];
         // give precedence to 'application/json'
         if (produces.indexOf('application/json') >= 0) {
             localVarHeaderParams.Accept = 'application/json';
@@ -412,7 +412,7 @@ class ScanProfilesApi {
         const localVarPath = this.basePath + '/api/1.0/scanprofiles/update';
         let localVarQueryParameters = {};
         let localVarHeaderParams = Object.assign({}, this._defaultHeaders);
-        const produces = ['application/json', 'text/json', 'application/xml', 'text/xml', 'multipart/form-data'];
+        const produces = ['application/json', 'text/json', 'application/scim+json', 'application/xml', 'text/xml', 'multipart/form-data'];
         // give precedence to 'application/json'
         if (produces.indexOf('application/json') >= 0) {
             localVarHeaderParams.Accept = 'application/json';

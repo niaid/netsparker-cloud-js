@@ -36,10 +36,6 @@ import { WebStorageSetting } from './webStorageSetting';
 */
 export class ScanPolicySettingApiModel {
     /**
-    * Gets or sets a value indicating whether this instance is readonly.
-    */
-    'isReadonly'?: boolean;
-    /**
     * Gets or sets the identifier.
     */
     'id'?: string;
@@ -125,11 +121,6 @@ export class ScanPolicySettingApiModel {
     static discriminator: string | undefined = undefined;
 
     static attributeTypeMap: Array<{name: string, baseName: string, type: string}> = [
-        {
-            "name": "isReadonly",
-            "baseName": "IsReadonly",
-            "type": "boolean"
-        },
         {
             "name": "id",
             "baseName": "Id",

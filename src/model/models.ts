@@ -27,6 +27,7 @@ export * from './authenticationProfileViewModel';
 export * from './authorizationCodeTableModel';
 export * from './autoCompleteSettingModel';
 export * from './azureDevOpsIntegrationInfoModel';
+export * from './baseResponseApiModel';
 export * from './baseScanApiModel';
 export * from './basicAuthenticationCredentialApiModel';
 export * from './basicAuthenticationCredentialModel';
@@ -102,9 +103,16 @@ export * from './kennaIntegrationInfoModel';
 export * from './licenseBaseModel';
 export * from './logoutKeywordPatternModel';
 export * from './mattermostIntegrationInfoModel';
+export * from './memberApiModelListApiResult';
+export * from './memberApiViewModel';
+export * from './memberInvitationApiModelListApiResult';
+export * from './memberInvitationApiViewModel';
 export * from './microsoftTeamsIntegrationInfoModel';
 export * from './nameValuePair';
 export * from './newGroupScanApiModel';
+export * from './newMemberApiModel';
+export * from './newMemberInvitationApiModel';
+export * from './newRoleApiModel';
 export * from './newScanNotificationApiModel';
 export * from './newScanNotificationRecipientApiModel';
 export * from './newScanPolicySettingModel';
@@ -113,7 +121,7 @@ export * from './newScanTaskWithProfileApiModel';
 export * from './newScheduledIncrementalScanApiModel';
 export * from './newScheduledScanApiModel';
 export * from './newScheduledWithProfileApiModel';
-export * from './newUserApiModel';
+export * from './newTeamApiModel';
 export * from './newWebsiteApiModel';
 export * from './newWebsiteGroupApiModel';
 export * from './notificationIntegrationCustomFieldModel';
@@ -126,12 +134,19 @@ export * from './otpSettings';
 export * from './outsiderRecipient';
 export * from './pagerDutyIntegrationInfoModel';
 export * from './pciScanTaskViewModel';
+export * from './permissionApiModel';
 export * from './pivotalTrackerIntegrationInfoModel';
 export * from './preRequestScriptSettingModel';
 export * from './proxySettingsModel';
 export * from './redmineIntegrationInfoModel';
+export * from './reducedMemberApiViewModel';
 export * from './reducedScanTaskProfile';
+export * from './reducedTeamApiViewModel';
 export * from './responseFields';
+export * from './roleApiModelListApiResult';
+export * from './roleApiViewModel';
+export * from './roleWebsiteGroupMappingApiModel';
+export * from './roleWebsiteGroupMappingApiViewModel';
 export * from './saveScanProfileApiModel';
 export * from './scanCustomReportApiModel';
 export * from './scanNotificationApiModel';
@@ -145,7 +160,6 @@ export * from './scanPolicyOptimizerOptions';
 export * from './scanPolicyPatternModel';
 export * from './scanPolicySettingApiModel';
 export * from './scanPolicySettingItemApiModel';
-export * from './scanProfilesListApiResult';
 export * from './scanReportApiModel';
 export * from './scanTaskListApiResult';
 export * from './scanTaskModel';
@@ -172,6 +186,8 @@ export * from './sslTlsSettingModel';
 export * from './startVerificationApiModel';
 export * from './startVerificationResult';
 export * from './tFSIntegrationInfoModel';
+export * from './teamApiModelListApiResult';
+export * from './teamApiViewModel';
 export * from './technologyApiModel';
 export * from './technologyListApiResult';
 export * from './testScanProfileCredentialsRequestModel';
@@ -183,21 +199,21 @@ export * from './trelloLabel';
 export * from './trelloList';
 export * from './trelloMember';
 export * from './unfuddleIntegrationInfoModel';
+export * from './updateMemberApiModel';
+export * from './updateRoleApiModel';
 export * from './updateScanNotificationApiModel';
 export * from './updateScanPolicySettingModel';
 export * from './updateScheduledIncrementalScanApiModel';
 export * from './updateScheduledScanApiModel';
 export * from './updateScheduledScanModel';
-export * from './updateUserApiModel';
+export * from './updateTeamApiModel';
 export * from './updateWebsiteApiModel';
 export * from './updateWebsiteGroupApiModel';
 export * from './urlRewriteExcludedPathModel';
 export * from './urlRewriteRuleModel';
 export * from './urlRewriteSetting';
-export * from './userApiModel';
 export * from './userApiTokenModel';
 export * from './userHealthCheckApiModel';
-export * from './userListApiResult';
 export * from './vcsCommitInfo';
 export * from './verifyApiModel';
 export * from './versionIssue';
@@ -257,6 +273,7 @@ import { AuthenticationProfileViewModel } from './authenticationProfileViewModel
 import { AuthorizationCodeTableModel } from './authorizationCodeTableModel';
 import { AutoCompleteSettingModel } from './autoCompleteSettingModel';
 import { AzureDevOpsIntegrationInfoModel } from './azureDevOpsIntegrationInfoModel';
+import { BaseResponseApiModel } from './baseResponseApiModel';
 import { BaseScanApiModel } from './baseScanApiModel';
 import { BasicAuthenticationCredentialApiModel } from './basicAuthenticationCredentialApiModel';
 import { BasicAuthenticationCredentialModel } from './basicAuthenticationCredentialModel';
@@ -332,9 +349,16 @@ import { KennaIntegrationInfoModel } from './kennaIntegrationInfoModel';
 import { LicenseBaseModel } from './licenseBaseModel';
 import { LogoutKeywordPatternModel } from './logoutKeywordPatternModel';
 import { MattermostIntegrationInfoModel } from './mattermostIntegrationInfoModel';
+import { MemberApiModelListApiResult } from './memberApiModelListApiResult';
+import { MemberApiViewModel } from './memberApiViewModel';
+import { MemberInvitationApiModelListApiResult } from './memberInvitationApiModelListApiResult';
+import { MemberInvitationApiViewModel } from './memberInvitationApiViewModel';
 import { MicrosoftTeamsIntegrationInfoModel } from './microsoftTeamsIntegrationInfoModel';
 import { NameValuePair } from './nameValuePair';
 import { NewGroupScanApiModel } from './newGroupScanApiModel';
+import { NewMemberApiModel } from './newMemberApiModel';
+import { NewMemberInvitationApiModel } from './newMemberInvitationApiModel';
+import { NewRoleApiModel } from './newRoleApiModel';
 import { NewScanNotificationApiModel } from './newScanNotificationApiModel';
 import { NewScanNotificationRecipientApiModel } from './newScanNotificationRecipientApiModel';
 import { NewScanPolicySettingModel } from './newScanPolicySettingModel';
@@ -343,7 +367,7 @@ import { NewScanTaskWithProfileApiModel } from './newScanTaskWithProfileApiModel
 import { NewScheduledIncrementalScanApiModel } from './newScheduledIncrementalScanApiModel';
 import { NewScheduledScanApiModel } from './newScheduledScanApiModel';
 import { NewScheduledWithProfileApiModel } from './newScheduledWithProfileApiModel';
-import { NewUserApiModel } from './newUserApiModel';
+import { NewTeamApiModel } from './newTeamApiModel';
 import { NewWebsiteApiModel } from './newWebsiteApiModel';
 import { NewWebsiteGroupApiModel } from './newWebsiteGroupApiModel';
 import { NotificationIntegrationCustomFieldModel } from './notificationIntegrationCustomFieldModel';
@@ -356,12 +380,19 @@ import { OtpSettings } from './otpSettings';
 import { OutsiderRecipient } from './outsiderRecipient';
 import { PagerDutyIntegrationInfoModel } from './pagerDutyIntegrationInfoModel';
 import { PciScanTaskViewModel } from './pciScanTaskViewModel';
+import { PermissionApiModel } from './permissionApiModel';
 import { PivotalTrackerIntegrationInfoModel } from './pivotalTrackerIntegrationInfoModel';
 import { PreRequestScriptSettingModel } from './preRequestScriptSettingModel';
 import { ProxySettingsModel } from './proxySettingsModel';
 import { RedmineIntegrationInfoModel } from './redmineIntegrationInfoModel';
+import { ReducedMemberApiViewModel } from './reducedMemberApiViewModel';
 import { ReducedScanTaskProfile } from './reducedScanTaskProfile';
+import { ReducedTeamApiViewModel } from './reducedTeamApiViewModel';
 import { ResponseFields } from './responseFields';
+import { RoleApiModelListApiResult } from './roleApiModelListApiResult';
+import { RoleApiViewModel } from './roleApiViewModel';
+import { RoleWebsiteGroupMappingApiModel } from './roleWebsiteGroupMappingApiModel';
+import { RoleWebsiteGroupMappingApiViewModel } from './roleWebsiteGroupMappingApiViewModel';
 import { SaveScanProfileApiModel } from './saveScanProfileApiModel';
 import { ScanCustomReportApiModel } from './scanCustomReportApiModel';
 import { ScanNotificationApiModel } from './scanNotificationApiModel';
@@ -375,7 +406,6 @@ import { ScanPolicyOptimizerOptions } from './scanPolicyOptimizerOptions';
 import { ScanPolicyPatternModel } from './scanPolicyPatternModel';
 import { ScanPolicySettingApiModel } from './scanPolicySettingApiModel';
 import { ScanPolicySettingItemApiModel } from './scanPolicySettingItemApiModel';
-import { ScanProfilesListApiResult } from './scanProfilesListApiResult';
 import { ScanReportApiModel } from './scanReportApiModel';
 import { ScanTaskListApiResult } from './scanTaskListApiResult';
 import { ScanTaskModel } from './scanTaskModel';
@@ -402,6 +432,8 @@ import { SslTlsSettingModel } from './sslTlsSettingModel';
 import { StartVerificationApiModel } from './startVerificationApiModel';
 import { StartVerificationResult } from './startVerificationResult';
 import { TFSIntegrationInfoModel } from './tFSIntegrationInfoModel';
+import { TeamApiModelListApiResult } from './teamApiModelListApiResult';
+import { TeamApiViewModel } from './teamApiViewModel';
 import { TechnologyApiModel } from './technologyApiModel';
 import { TechnologyListApiResult } from './technologyListApiResult';
 import { TestScanProfileCredentialsRequestModel } from './testScanProfileCredentialsRequestModel';
@@ -413,21 +445,21 @@ import { TrelloLabel } from './trelloLabel';
 import { TrelloList } from './trelloList';
 import { TrelloMember } from './trelloMember';
 import { UnfuddleIntegrationInfoModel } from './unfuddleIntegrationInfoModel';
+import { UpdateMemberApiModel } from './updateMemberApiModel';
+import { UpdateRoleApiModel } from './updateRoleApiModel';
 import { UpdateScanNotificationApiModel } from './updateScanNotificationApiModel';
 import { UpdateScanPolicySettingModel } from './updateScanPolicySettingModel';
 import { UpdateScheduledIncrementalScanApiModel } from './updateScheduledIncrementalScanApiModel';
 import { UpdateScheduledScanApiModel } from './updateScheduledScanApiModel';
 import { UpdateScheduledScanModel } from './updateScheduledScanModel';
-import { UpdateUserApiModel } from './updateUserApiModel';
+import { UpdateTeamApiModel } from './updateTeamApiModel';
 import { UpdateWebsiteApiModel } from './updateWebsiteApiModel';
 import { UpdateWebsiteGroupApiModel } from './updateWebsiteGroupApiModel';
 import { UrlRewriteExcludedPathModel } from './urlRewriteExcludedPathModel';
 import { UrlRewriteRuleModel } from './urlRewriteRuleModel';
 import { UrlRewriteSetting } from './urlRewriteSetting';
-import { UserApiModel } from './userApiModel';
 import { UserApiTokenModel } from './userApiTokenModel';
 import { UserHealthCheckApiModel } from './userHealthCheckApiModel';
-import { UserListApiResult } from './userListApiResult';
 import { VcsCommitInfo } from './vcsCommitInfo';
 import { VerifyApiModel } from './verifyApiModel';
 import { VersionIssue } from './versionIssue';
@@ -511,6 +543,7 @@ let enumsMap: {[index: string]: any} = {
         "KennaIntegrationInfoModel.AssetApplicationIdentifierTypeEnum": KennaIntegrationInfoModel.AssetApplicationIdentifierTypeEnum,
         "KennaIntegrationInfoModel.TypeEnum": KennaIntegrationInfoModel.TypeEnum,
         "MattermostIntegrationInfoModel.TypeEnum": MattermostIntegrationInfoModel.TypeEnum,
+        "MemberApiViewModel.StateEnum": MemberApiViewModel.StateEnum,
         "MicrosoftTeamsIntegrationInfoModel.TypeEnum": MicrosoftTeamsIntegrationInfoModel.TypeEnum,
         "NewGroupScanApiModel.AuthenticationProfileOptionEnum": NewGroupScanApiModel.AuthenticationProfileOptionEnum,
         "NewScanNotificationApiModel.EventEnum": NewScanNotificationApiModel.EventEnum,
@@ -633,13 +666,10 @@ let enumsMap: {[index: string]: any} = {
         "UpdateScheduledScanModel.ScheduleRunTypeEnum": UpdateScheduledScanModel.ScheduleRunTypeEnum,
         "UpdateScheduledScanModel.CustomScriptTemplateTypeEnum": UpdateScheduledScanModel.CustomScriptTemplateTypeEnum,
         "UpdateScheduledScanModel.CreateTypeEnum": UpdateScheduledScanModel.CreateTypeEnum,
-        "UpdateUserApiModel.UserStateEnum": UpdateUserApiModel.UserStateEnum,
         "UpdateWebsiteApiModel.DefaultProtocolEnum": UpdateWebsiteApiModel.DefaultProtocolEnum,
         "UpdateWebsiteApiModel.AgentModeEnum": UpdateWebsiteApiModel.AgentModeEnum,
         "UpdateWebsiteApiModel.LicenseTypeEnum": UpdateWebsiteApiModel.LicenseTypeEnum,
         "UrlRewriteSetting.UrlRewriteModeEnum": UrlRewriteSetting.UrlRewriteModeEnum,
-        "UserApiModel.RoleEnum": UserApiModel.RoleEnum,
-        "UserApiModel.UserStateEnum": UserApiModel.UserStateEnum,
         "VcsCommitInfo.IntegrationSystemEnum": VcsCommitInfo.IntegrationSystemEnum,
         "VerifyApiModel.VerificationMethodEnum": VerifyApiModel.VerificationMethodEnum,
         "VersionIssue.SeverityEnum": VersionIssue.SeverityEnum,
@@ -685,6 +715,7 @@ let typeMap: {[index: string]: any} = {
     "AuthorizationCodeTableModel": AuthorizationCodeTableModel,
     "AutoCompleteSettingModel": AutoCompleteSettingModel,
     "AzureDevOpsIntegrationInfoModel": AzureDevOpsIntegrationInfoModel,
+    "BaseResponseApiModel": BaseResponseApiModel,
     "BaseScanApiModel": BaseScanApiModel,
     "BasicAuthenticationCredentialApiModel": BasicAuthenticationCredentialApiModel,
     "BasicAuthenticationCredentialModel": BasicAuthenticationCredentialModel,
@@ -760,9 +791,16 @@ let typeMap: {[index: string]: any} = {
     "LicenseBaseModel": LicenseBaseModel,
     "LogoutKeywordPatternModel": LogoutKeywordPatternModel,
     "MattermostIntegrationInfoModel": MattermostIntegrationInfoModel,
+    "MemberApiModelListApiResult": MemberApiModelListApiResult,
+    "MemberApiViewModel": MemberApiViewModel,
+    "MemberInvitationApiModelListApiResult": MemberInvitationApiModelListApiResult,
+    "MemberInvitationApiViewModel": MemberInvitationApiViewModel,
     "MicrosoftTeamsIntegrationInfoModel": MicrosoftTeamsIntegrationInfoModel,
     "NameValuePair": NameValuePair,
     "NewGroupScanApiModel": NewGroupScanApiModel,
+    "NewMemberApiModel": NewMemberApiModel,
+    "NewMemberInvitationApiModel": NewMemberInvitationApiModel,
+    "NewRoleApiModel": NewRoleApiModel,
     "NewScanNotificationApiModel": NewScanNotificationApiModel,
     "NewScanNotificationRecipientApiModel": NewScanNotificationRecipientApiModel,
     "NewScanPolicySettingModel": NewScanPolicySettingModel,
@@ -771,7 +809,7 @@ let typeMap: {[index: string]: any} = {
     "NewScheduledIncrementalScanApiModel": NewScheduledIncrementalScanApiModel,
     "NewScheduledScanApiModel": NewScheduledScanApiModel,
     "NewScheduledWithProfileApiModel": NewScheduledWithProfileApiModel,
-    "NewUserApiModel": NewUserApiModel,
+    "NewTeamApiModel": NewTeamApiModel,
     "NewWebsiteApiModel": NewWebsiteApiModel,
     "NewWebsiteGroupApiModel": NewWebsiteGroupApiModel,
     "NotificationIntegrationCustomFieldModel": NotificationIntegrationCustomFieldModel,
@@ -784,12 +822,19 @@ let typeMap: {[index: string]: any} = {
     "OutsiderRecipient": OutsiderRecipient,
     "PagerDutyIntegrationInfoModel": PagerDutyIntegrationInfoModel,
     "PciScanTaskViewModel": PciScanTaskViewModel,
+    "PermissionApiModel": PermissionApiModel,
     "PivotalTrackerIntegrationInfoModel": PivotalTrackerIntegrationInfoModel,
     "PreRequestScriptSettingModel": PreRequestScriptSettingModel,
     "ProxySettingsModel": ProxySettingsModel,
     "RedmineIntegrationInfoModel": RedmineIntegrationInfoModel,
+    "ReducedMemberApiViewModel": ReducedMemberApiViewModel,
     "ReducedScanTaskProfile": ReducedScanTaskProfile,
+    "ReducedTeamApiViewModel": ReducedTeamApiViewModel,
     "ResponseFields": ResponseFields,
+    "RoleApiModelListApiResult": RoleApiModelListApiResult,
+    "RoleApiViewModel": RoleApiViewModel,
+    "RoleWebsiteGroupMappingApiModel": RoleWebsiteGroupMappingApiModel,
+    "RoleWebsiteGroupMappingApiViewModel": RoleWebsiteGroupMappingApiViewModel,
     "SaveScanProfileApiModel": SaveScanProfileApiModel,
     "ScanCustomReportApiModel": ScanCustomReportApiModel,
     "ScanNotificationApiModel": ScanNotificationApiModel,
@@ -803,7 +848,6 @@ let typeMap: {[index: string]: any} = {
     "ScanPolicyPatternModel": ScanPolicyPatternModel,
     "ScanPolicySettingApiModel": ScanPolicySettingApiModel,
     "ScanPolicySettingItemApiModel": ScanPolicySettingItemApiModel,
-    "ScanProfilesListApiResult": ScanProfilesListApiResult,
     "ScanReportApiModel": ScanReportApiModel,
     "ScanTaskListApiResult": ScanTaskListApiResult,
     "ScanTaskModel": ScanTaskModel,
@@ -830,6 +874,8 @@ let typeMap: {[index: string]: any} = {
     "StartVerificationApiModel": StartVerificationApiModel,
     "StartVerificationResult": StartVerificationResult,
     "TFSIntegrationInfoModel": TFSIntegrationInfoModel,
+    "TeamApiModelListApiResult": TeamApiModelListApiResult,
+    "TeamApiViewModel": TeamApiViewModel,
     "TechnologyApiModel": TechnologyApiModel,
     "TechnologyListApiResult": TechnologyListApiResult,
     "TestScanProfileCredentialsRequestModel": TestScanProfileCredentialsRequestModel,
@@ -841,21 +887,21 @@ let typeMap: {[index: string]: any} = {
     "TrelloList": TrelloList,
     "TrelloMember": TrelloMember,
     "UnfuddleIntegrationInfoModel": UnfuddleIntegrationInfoModel,
+    "UpdateMemberApiModel": UpdateMemberApiModel,
+    "UpdateRoleApiModel": UpdateRoleApiModel,
     "UpdateScanNotificationApiModel": UpdateScanNotificationApiModel,
     "UpdateScanPolicySettingModel": UpdateScanPolicySettingModel,
     "UpdateScheduledIncrementalScanApiModel": UpdateScheduledIncrementalScanApiModel,
     "UpdateScheduledScanApiModel": UpdateScheduledScanApiModel,
     "UpdateScheduledScanModel": UpdateScheduledScanModel,
-    "UpdateUserApiModel": UpdateUserApiModel,
+    "UpdateTeamApiModel": UpdateTeamApiModel,
     "UpdateWebsiteApiModel": UpdateWebsiteApiModel,
     "UpdateWebsiteGroupApiModel": UpdateWebsiteGroupApiModel,
     "UrlRewriteExcludedPathModel": UrlRewriteExcludedPathModel,
     "UrlRewriteRuleModel": UrlRewriteRuleModel,
     "UrlRewriteSetting": UrlRewriteSetting,
-    "UserApiModel": UserApiModel,
     "UserApiTokenModel": UserApiTokenModel,
     "UserHealthCheckApiModel": UserHealthCheckApiModel,
-    "UserListApiResult": UserListApiResult,
     "VcsCommitInfo": VcsCommitInfo,
     "VerifyApiModel": VerifyApiModel,
     "VersionIssue": VersionIssue,

@@ -45,6 +45,7 @@ IgnorePatternSettingModel.attributeTypeMap = [
         ParameterTypeEnum[ParameterTypeEnum["Post"] = 'POST'] = "Post";
         ParameterTypeEnum[ParameterTypeEnum["Get"] = 'GET'] = "Get";
         ParameterTypeEnum[ParameterTypeEnum["Cookie"] = 'COOKIE'] = "Cookie";
+        ParameterTypeEnum[ParameterTypeEnum["Webstorage"] = 'WEBSTORAGE'] = "Webstorage";
         ParameterTypeEnum[ParameterTypeEnum["All"] = 'ALL'] = "All";
     })(ParameterTypeEnum = IgnorePatternSettingModel.ParameterTypeEnum || (IgnorePatternSettingModel.ParameterTypeEnum = {}));
 })(IgnorePatternSettingModel = exports.IgnorePatternSettingModel || (exports.IgnorePatternSettingModel = {}));

@@ -105,8 +105,10 @@ export declare class IssuesApi {
      * @param severity Gets or sets the vulnerability\&#39;s severity.
      * @param websiteGroupName Gets or sets the website group\&#39;s name.
      * @param webSiteName Gets or sets the website\&#39;s name.
+     * @param startDate Start date identify the starting point for date range. It is less than or equal to Date field. Format: MM/dd/yyyy 00:00:00
+     * @param endDate End date identify the end point for date range. It is greater than or equal to Date field. Format: MM/dd/yyyy 23:59:59
      */
-    issuesReport(csvSeparator?: 'Comma' | 'Semicolon' | 'Pipe' | 'Tab', severity?: 'BestPractice' | 'Information' | 'Low' | 'Medium' | 'High' | 'Critical', websiteGroupName?: string, webSiteName?: string, options?: {
+    issuesReport(csvSeparator?: 'Comma' | 'Semicolon' | 'Pipe' | 'Tab', severity?: 'BestPractice' | 'Information' | 'Low' | 'Medium' | 'High' | 'Critical', websiteGroupName?: string, webSiteName?: string, startDate?: Date, endDate?: Date, options?: {
         headers: {
             [name: string]: string;
         };

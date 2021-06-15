@@ -32,6 +32,14 @@ export class IssueReportFilterApiModel {
     * Gets or sets the website\'s name.
     */
     'webSiteName'?: string;
+    /**
+    * Start date identify the starting point for date range. It is less than or equal to Date field. Format: MM/dd/yyyy 00:00:00
+    */
+    'startDate'?: Date;
+    /**
+    * End date identify the end point for date range. It is greater than or equal to Date field. Format: MM/dd/yyyy 23:59:59
+    */
+    'endDate'?: Date;
 
     static discriminator: string | undefined = undefined;
 
@@ -55,6 +63,16 @@ export class IssueReportFilterApiModel {
             "name": "webSiteName",
             "baseName": "WebSiteName",
             "type": "string"
+        },
+        {
+            "name": "startDate",
+            "baseName": "StartDate",
+            "type": "Date"
+        },
+        {
+            "name": "endDate",
+            "baseName": "EndDate",
+            "type": "Date"
         }    ];
 
     static getAttributeTypeMap() {

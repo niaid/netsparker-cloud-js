@@ -42,6 +42,7 @@ export declare namespace IgnorePatternSettingModel {
         Post,
         Get,
         Cookie,
+        Webstorage,
         All
     }
 }
