@@ -14,6 +14,7 @@ export * from './agentListApiModel';
 export * from './agentListApiResult';
 export * from './agentSelectionModel';
 export * from './agentStatusModel';
+export * from './allIssuesApiModel';
 export * from './apiFileModel';
 export * from './apiScanStatusModel';
 export * from './asanaIntegrationInfoModel';
@@ -22,6 +23,8 @@ export * from './asanaTag';
 export * from './asanaUser';
 export * from './asanaWorkspace';
 export * from './attackingSettingModel';
+export * from './auditLogListApiResult';
+export * from './auditLogViewModel';
 export * from './authVerificationApiResult';
 export * from './authenticationProfileViewModel';
 export * from './authorizationCodeTableModel';
@@ -34,6 +37,7 @@ export * from './basicAuthenticationCredentialModel';
 export * from './basicAuthenticationSettingApiModel';
 export * from './basicAuthenticationSettingModel';
 export * from './bitbucketIntegrationInfoModel';
+export * from './browserSetting';
 export * from './bruteForceSettingModel';
 export * from './bugzillaIntegrationInfoModel';
 export * from './clientCertificateAuthenticationApiModel';
@@ -53,10 +57,12 @@ export * from './customTemplateModel';
 export * from './cvssMetricModel';
 export * from './cvssScoreValue';
 export * from './cyberArkVaultIntegrationInfoModel';
+export * from './defectDojoIntegrationInfoModel';
 export * from './deleteAgentModel';
 export * from './deleteScanNotificationApiModel';
 export * from './deleteWebsiteApiModel';
 export * from './deleteWebsiteGroupApiModel';
+export * from './deleteWebsiteGroupResponse';
 export * from './discoveryApiModel';
 export * from './discoveryServiceListApiResult';
 export * from './discoverySettingsApiModel';
@@ -97,6 +103,7 @@ export * from './issueHistoryApiModel';
 export * from './issueReportFilterApiModel';
 export * from './issueRequestContentParametersApiModel';
 export * from './javaScriptSettingsModel';
+export * from './jazzTeamIntegrationInfoModel';
 export * from './jiraIntegrationInfoModel';
 export * from './kafkaIntegrationInfoModel';
 export * from './kennaIntegrationInfoModel';
@@ -124,7 +131,9 @@ export * from './newScheduledWithProfileApiModel';
 export * from './newTeamApiModel';
 export * from './newWebsiteApiModel';
 export * from './newWebsiteGroupApiModel';
+export * from './notificationEmailSmsFilterApi';
 export * from './notificationIntegrationCustomFieldModel';
+export * from './notificationIntegrationFilterApi';
 export * from './notificationPriorityPair';
 export * from './oAuth2SettingApiModel';
 export * from './oAuth2SettingEndPointModel';
@@ -160,6 +169,7 @@ export * from './scanPolicyOptimizerOptions';
 export * from './scanPolicyPatternModel';
 export * from './scanPolicySettingApiModel';
 export * from './scanPolicySettingItemApiModel';
+export * from './scanProfilesListApiResult';
 export * from './scanReportApiModel';
 export * from './scanTaskListApiResult';
 export * from './scanTaskModel';
@@ -186,6 +196,7 @@ export * from './sslTlsSettingModel';
 export * from './startVerificationApiModel';
 export * from './startVerificationResult';
 export * from './tFSIntegrationInfoModel';
+export * from './tagViewModel';
 export * from './teamApiModelListApiResult';
 export * from './teamApiViewModel';
 export * from './technologyApiModel';
@@ -260,6 +271,7 @@ import { AgentListApiModel } from './agentListApiModel';
 import { AgentListApiResult } from './agentListApiResult';
 import { AgentSelectionModel } from './agentSelectionModel';
 import { AgentStatusModel } from './agentStatusModel';
+import { AllIssuesApiModel } from './allIssuesApiModel';
 import { ApiFileModel } from './apiFileModel';
 import { ApiScanStatusModel } from './apiScanStatusModel';
 import { AsanaIntegrationInfoModel } from './asanaIntegrationInfoModel';
@@ -268,6 +280,8 @@ import { AsanaTag } from './asanaTag';
 import { AsanaUser } from './asanaUser';
 import { AsanaWorkspace } from './asanaWorkspace';
 import { AttackingSettingModel } from './attackingSettingModel';
+import { AuditLogListApiResult } from './auditLogListApiResult';
+import { AuditLogViewModel } from './auditLogViewModel';
 import { AuthVerificationApiResult } from './authVerificationApiResult';
 import { AuthenticationProfileViewModel } from './authenticationProfileViewModel';
 import { AuthorizationCodeTableModel } from './authorizationCodeTableModel';
@@ -280,6 +294,7 @@ import { BasicAuthenticationCredentialModel } from './basicAuthenticationCredent
 import { BasicAuthenticationSettingApiModel } from './basicAuthenticationSettingApiModel';
 import { BasicAuthenticationSettingModel } from './basicAuthenticationSettingModel';
 import { BitbucketIntegrationInfoModel } from './bitbucketIntegrationInfoModel';
+import { BrowserSetting } from './browserSetting';
 import { BruteForceSettingModel } from './bruteForceSettingModel';
 import { BugzillaIntegrationInfoModel } from './bugzillaIntegrationInfoModel';
 import { ClientCertificateAuthenticationApiModel } from './clientCertificateAuthenticationApiModel';
@@ -299,10 +314,12 @@ import { CustomTemplateModel } from './customTemplateModel';
 import { CvssMetricModel } from './cvssMetricModel';
 import { CvssScoreValue } from './cvssScoreValue';
 import { CyberArkVaultIntegrationInfoModel } from './cyberArkVaultIntegrationInfoModel';
+import { DefectDojoIntegrationInfoModel } from './defectDojoIntegrationInfoModel';
 import { DeleteAgentModel } from './deleteAgentModel';
 import { DeleteScanNotificationApiModel } from './deleteScanNotificationApiModel';
 import { DeleteWebsiteApiModel } from './deleteWebsiteApiModel';
 import { DeleteWebsiteGroupApiModel } from './deleteWebsiteGroupApiModel';
+import { DeleteWebsiteGroupResponse } from './deleteWebsiteGroupResponse';
 import { DiscoveryApiModel } from './discoveryApiModel';
 import { DiscoveryServiceListApiResult } from './discoveryServiceListApiResult';
 import { DiscoverySettingsApiModel } from './discoverySettingsApiModel';
@@ -343,6 +360,7 @@ import { IssueHistoryApiModel } from './issueHistoryApiModel';
 import { IssueReportFilterApiModel } from './issueReportFilterApiModel';
 import { IssueRequestContentParametersApiModel } from './issueRequestContentParametersApiModel';
 import { JavaScriptSettingsModel } from './javaScriptSettingsModel';
+import { JazzTeamIntegrationInfoModel } from './jazzTeamIntegrationInfoModel';
 import { JiraIntegrationInfoModel } from './jiraIntegrationInfoModel';
 import { KafkaIntegrationInfoModel } from './kafkaIntegrationInfoModel';
 import { KennaIntegrationInfoModel } from './kennaIntegrationInfoModel';
@@ -370,7 +388,9 @@ import { NewScheduledWithProfileApiModel } from './newScheduledWithProfileApiMod
 import { NewTeamApiModel } from './newTeamApiModel';
 import { NewWebsiteApiModel } from './newWebsiteApiModel';
 import { NewWebsiteGroupApiModel } from './newWebsiteGroupApiModel';
+import { NotificationEmailSmsFilterApi } from './notificationEmailSmsFilterApi';
 import { NotificationIntegrationCustomFieldModel } from './notificationIntegrationCustomFieldModel';
+import { NotificationIntegrationFilterApi } from './notificationIntegrationFilterApi';
 import { NotificationPriorityPair } from './notificationPriorityPair';
 import { OAuth2SettingApiModel } from './oAuth2SettingApiModel';
 import { OAuth2SettingEndPointModel } from './oAuth2SettingEndPointModel';
@@ -406,6 +426,7 @@ import { ScanPolicyOptimizerOptions } from './scanPolicyOptimizerOptions';
 import { ScanPolicyPatternModel } from './scanPolicyPatternModel';
 import { ScanPolicySettingApiModel } from './scanPolicySettingApiModel';
 import { ScanPolicySettingItemApiModel } from './scanPolicySettingItemApiModel';
+import { ScanProfilesListApiResult } from './scanProfilesListApiResult';
 import { ScanReportApiModel } from './scanReportApiModel';
 import { ScanTaskListApiResult } from './scanTaskListApiResult';
 import { ScanTaskModel } from './scanTaskModel';
@@ -432,6 +453,7 @@ import { SslTlsSettingModel } from './sslTlsSettingModel';
 import { StartVerificationApiModel } from './startVerificationApiModel';
 import { StartVerificationResult } from './startVerificationResult';
 import { TFSIntegrationInfoModel } from './tFSIntegrationInfoModel';
+import { TagViewModel } from './tagViewModel';
 import { TeamApiModelListApiResult } from './teamApiModelListApiResult';
 import { TeamApiViewModel } from './teamApiViewModel';
 import { TechnologyApiModel } from './technologyApiModel';
@@ -493,39 +515,61 @@ let primitives = [
 
 let enumsMap: {[index: string]: any} = {
         "AgentListApiModel.StateEnum": AgentListApiModel.StateEnum,
+        "AllIssuesApiModel.SeverityEnum": AllIssuesApiModel.SeverityEnum,
+        "AllIssuesApiModel.TypeEnum": AllIssuesApiModel.TypeEnum,
         "ApiFileModel.ImporterTypeEnum": ApiFileModel.ImporterTypeEnum,
         "ApiScanStatusModel.StateEnum": ApiScanStatusModel.StateEnum,
         "AsanaIntegrationInfoModel.TypeEnum": AsanaIntegrationInfoModel.TypeEnum,
+        "AsanaIntegrationInfoModel.TemplateTypeEnum": AsanaIntegrationInfoModel.TemplateTypeEnum,
+        "AuditLogViewModel.EndpointTypeEnum": AuditLogViewModel.EndpointTypeEnum,
+        "AuditLogViewModel.TypeEnum": AuditLogViewModel.TypeEnum,
         "AuthVerificationApiResult.LogoutSignatureTypeEnum": AuthVerificationApiResult.LogoutSignatureTypeEnum,
         "AzureDevOpsIntegrationInfoModel.TypeEnum": AzureDevOpsIntegrationInfoModel.TypeEnum,
+        "AzureDevOpsIntegrationInfoModel.TemplateTypeEnum": AzureDevOpsIntegrationInfoModel.TemplateTypeEnum,
         "BasicAuthenticationCredentialApiModel.AuthenticationTypeEnum": BasicAuthenticationCredentialApiModel.AuthenticationTypeEnum,
         "BasicAuthenticationCredentialModel.AuthenticationTypeEnum": BasicAuthenticationCredentialModel.AuthenticationTypeEnum,
         "BitbucketIntegrationInfoModel.TypeEnum": BitbucketIntegrationInfoModel.TypeEnum,
+        "BitbucketIntegrationInfoModel.TemplateTypeEnum": BitbucketIntegrationInfoModel.TemplateTypeEnum,
         "BugzillaIntegrationInfoModel.TypeEnum": BugzillaIntegrationInfoModel.TypeEnum,
+        "BugzillaIntegrationInfoModel.TemplateTypeEnum": BugzillaIntegrationInfoModel.TemplateTypeEnum,
         "ClubhouseIntegrationInfoModel.ClubhouseStoryTypeEnum": ClubhouseIntegrationInfoModel.ClubhouseStoryTypeEnum,
         "ClubhouseIntegrationInfoModel.TypeEnum": ClubhouseIntegrationInfoModel.TypeEnum,
+        "ClubhouseIntegrationInfoModel.TemplateTypeEnum": ClubhouseIntegrationInfoModel.TemplateTypeEnum,
         "CustomHttpHeaderSetting.AttackModeEnum": CustomHttpHeaderSetting.AttackModeEnum,
         "CvssScoreValue.SeverityEnum": CvssScoreValue.SeverityEnum,
         "CyberArkVaultIntegrationInfoModel.TypeEnum": CyberArkVaultIntegrationInfoModel.TypeEnum,
+        "CyberArkVaultIntegrationInfoModel.AgentModeEnum": CyberArkVaultIntegrationInfoModel.AgentModeEnum,
+        "CyberArkVaultIntegrationInfoModel.TemplateTypeEnum": CyberArkVaultIntegrationInfoModel.TemplateTypeEnum,
+        "DefectDojoIntegrationInfoModel.TypeEnum": DefectDojoIntegrationInfoModel.TypeEnum,
+        "DefectDojoIntegrationInfoModel.TemplateTypeEnum": DefectDojoIntegrationInfoModel.TemplateTypeEnum,
+        "DeleteWebsiteGroupResponse.ResultEnum": DeleteWebsiteGroupResponse.ResultEnum,
         "DiscoveryApiModel.StatusEnum": DiscoveryApiModel.StatusEnum,
         "ExtensionSettingModel.AttackOptionEnum": ExtensionSettingModel.AttackOptionEnum,
         "ExtensionSettingModel.CrawlOptionEnum": ExtensionSettingModel.CrawlOptionEnum,
         "FileCache.ImporterTypeEnum": FileCache.ImporterTypeEnum,
         "FogBugzIntegrationInfoModel.TypeEnum": FogBugzIntegrationInfoModel.TypeEnum,
+        "FogBugzIntegrationInfoModel.TemplateTypeEnum": FogBugzIntegrationInfoModel.TemplateTypeEnum,
+        "FormAuthenticationCyberArkVaultSetting.AgentModeEnum": FormAuthenticationCyberArkVaultSetting.AgentModeEnum,
         "FormAuthenticationHashicorpVaultSetting.VersionEnum": FormAuthenticationHashicorpVaultSetting.VersionEnum,
+        "FormAuthenticationHashicorpVaultSetting.AgentModeEnum": FormAuthenticationHashicorpVaultSetting.AgentModeEnum,
         "FormAuthenticationPersona.OtpTypeEnum": FormAuthenticationPersona.OtpTypeEnum,
-        "FormAuthenticationPersona.DigitEnum": FormAuthenticationPersona.DigitEnum,
         "FormAuthenticationPersona.AlgorithmEnum": FormAuthenticationPersona.AlgorithmEnum,
         "FormAuthenticationPersona.FormAuthTypeEnum": FormAuthenticationPersona.FormAuthTypeEnum,
         "FormAuthenticationPersona.VersionEnum": FormAuthenticationPersona.VersionEnum,
         "FormAuthenticationSettingApiModel.FormAuthTypeEnum": FormAuthenticationSettingApiModel.FormAuthTypeEnum,
+        "FormAuthenticationSettingApiModel.FormAuthIntegrationTypeEnum": FormAuthenticationSettingApiModel.FormAuthIntegrationTypeEnum,
         "FormValueSettingModel.MatchEnum": FormValueSettingModel.MatchEnum,
         "FormValueSettingModel.MatchTargetEnum": FormValueSettingModel.MatchTargetEnum,
         "FormValueSettingModel.MatchTargetValueEnum": FormValueSettingModel.MatchTargetValueEnum,
         "FreshserviceIntegrationInfoModel.TypeEnum": FreshserviceIntegrationInfoModel.TypeEnum,
+        "FreshserviceIntegrationInfoModel.TemplateTypeEnum": FreshserviceIntegrationInfoModel.TemplateTypeEnum,
         "GitHubIntegrationInfoModel.TypeEnum": GitHubIntegrationInfoModel.TypeEnum,
+        "GitHubIntegrationInfoModel.TemplateTypeEnum": GitHubIntegrationInfoModel.TemplateTypeEnum,
         "GitLabIntegrationInfoModel.TypeEnum": GitLabIntegrationInfoModel.TypeEnum,
+        "GitLabIntegrationInfoModel.TemplateTypeEnum": GitLabIntegrationInfoModel.TemplateTypeEnum,
         "HashicorpVaultIntegrationInfoModel.TypeEnum": HashicorpVaultIntegrationInfoModel.TypeEnum,
+        "HashicorpVaultIntegrationInfoModel.AgentModeEnum": HashicorpVaultIntegrationInfoModel.AgentModeEnum,
+        "HashicorpVaultIntegrationInfoModel.TemplateTypeEnum": HashicorpVaultIntegrationInfoModel.TemplateTypeEnum,
         "IgnorePatternSettingModel.ParameterTypeEnum": IgnorePatternSettingModel.ParameterTypeEnum,
         "IntegrationUserMappingItemModel.IntegrationSystemEnum": IntegrationUserMappingItemModel.IntegrationSystemEnum,
         "IntegrationUserMappingItemModel.ResultEnum": IntegrationUserMappingItemModel.ResultEnum,
@@ -534,21 +578,28 @@ let enumsMap: {[index: string]: any} = {
         "IssueReportFilterApiModel.CsvSeparatorEnum": IssueReportFilterApiModel.CsvSeparatorEnum,
         "IssueReportFilterApiModel.SeverityEnum": IssueReportFilterApiModel.SeverityEnum,
         "IssueRequestContentParametersApiModel.InputTypeEnum": IssueRequestContentParametersApiModel.InputTypeEnum,
+        "JazzTeamIntegrationInfoModel.TypeEnum": JazzTeamIntegrationInfoModel.TypeEnum,
+        "JazzTeamIntegrationInfoModel.SeverityEnum": JazzTeamIntegrationInfoModel.SeverityEnum,
+        "JazzTeamIntegrationInfoModel.PriorityEnum": JazzTeamIntegrationInfoModel.PriorityEnum,
+        "JazzTeamIntegrationInfoModel.WorkItemTypeEnum": JazzTeamIntegrationInfoModel.WorkItemTypeEnum,
+        "JazzTeamIntegrationInfoModel.TemplateTypeEnum": JazzTeamIntegrationInfoModel.TemplateTypeEnum,
         "JiraIntegrationInfoModel.ReopenStatusJiraEnum": JiraIntegrationInfoModel.ReopenStatusJiraEnum,
         "JiraIntegrationInfoModel.TypeEnum": JiraIntegrationInfoModel.TypeEnum,
         "JiraIntegrationInfoModel.TemplateTypeEnum": JiraIntegrationInfoModel.TemplateTypeEnum,
         "JiraIntegrationInfoModel.EpicSelectionTypeEnum": JiraIntegrationInfoModel.EpicSelectionTypeEnum,
         "KafkaIntegrationInfoModel.DataSerializationEnum": KafkaIntegrationInfoModel.DataSerializationEnum,
         "KafkaIntegrationInfoModel.TypeEnum": KafkaIntegrationInfoModel.TypeEnum,
+        "KafkaIntegrationInfoModel.TemplateTypeEnum": KafkaIntegrationInfoModel.TemplateTypeEnum,
         "KennaIntegrationInfoModel.AssetApplicationIdentifierTypeEnum": KennaIntegrationInfoModel.AssetApplicationIdentifierTypeEnum,
         "KennaIntegrationInfoModel.TypeEnum": KennaIntegrationInfoModel.TypeEnum,
+        "KennaIntegrationInfoModel.TemplateTypeEnum": KennaIntegrationInfoModel.TemplateTypeEnum,
         "MattermostIntegrationInfoModel.TypeEnum": MattermostIntegrationInfoModel.TypeEnum,
+        "MattermostIntegrationInfoModel.TemplateTypeEnum": MattermostIntegrationInfoModel.TemplateTypeEnum,
         "MemberApiViewModel.StateEnum": MemberApiViewModel.StateEnum,
         "MicrosoftTeamsIntegrationInfoModel.TypeEnum": MicrosoftTeamsIntegrationInfoModel.TypeEnum,
+        "MicrosoftTeamsIntegrationInfoModel.TemplateTypeEnum": MicrosoftTeamsIntegrationInfoModel.TemplateTypeEnum,
         "NewGroupScanApiModel.AuthenticationProfileOptionEnum": NewGroupScanApiModel.AuthenticationProfileOptionEnum,
         "NewScanNotificationApiModel.EventEnum": NewScanNotificationApiModel.EventEnum,
-        "NewScanNotificationApiModel.SeverityEnum": NewScanNotificationApiModel.SeverityEnum,
-        "NewScanNotificationApiModel.StateEnum": NewScanNotificationApiModel.StateEnum,
         "NewScanNotificationApiModel.ScopeEnum": NewScanNotificationApiModel.ScopeEnum,
         "NewScanNotificationRecipientApiModel.SpecificEmailRecipientsEnum": NewScanNotificationRecipientApiModel.SpecificEmailRecipientsEnum,
         "NewScanNotificationRecipientApiModel.SpecificSmsRecipientsEnum": NewScanNotificationRecipientApiModel.SpecificSmsRecipientsEnum,
@@ -565,22 +616,28 @@ let enumsMap: {[index: string]: any} = {
         "NewScheduledWithProfileApiModel.ScheduleRunTypeEnum": NewScheduledWithProfileApiModel.ScheduleRunTypeEnum,
         "NewWebsiteApiModel.AgentModeEnum": NewWebsiteApiModel.AgentModeEnum,
         "NewWebsiteApiModel.LicenseTypeEnum": NewWebsiteApiModel.LicenseTypeEnum,
+        "NotificationEmailSmsFilterApi.SeverityEnum": NotificationEmailSmsFilterApi.SeverityEnum,
+        "NotificationEmailSmsFilterApi.StateEnum": NotificationEmailSmsFilterApi.StateEnum,
         "NotificationIntegrationCustomFieldModel.InputTypeEnum": NotificationIntegrationCustomFieldModel.InputTypeEnum,
+        "NotificationIntegrationFilterApi.SeverityEnum": NotificationIntegrationFilterApi.SeverityEnum,
+        "NotificationIntegrationFilterApi.StateEnum": NotificationIntegrationFilterApi.StateEnum,
         "OAuth2SettingApiModel.FlowTypeEnum": OAuth2SettingApiModel.FlowTypeEnum,
         "OAuth2SettingApiModel.AuthenticationTypeEnum": OAuth2SettingApiModel.AuthenticationTypeEnum,
         "OAuth2SettingModel.SelectedFlowTypeEnum": OAuth2SettingModel.SelectedFlowTypeEnum,
         "OAuth2SettingModel.SelectedAuthenticationTypeEnum": OAuth2SettingModel.SelectedAuthenticationTypeEnum,
         "OtpSettings.OtpTypeEnum": OtpSettings.OtpTypeEnum,
-        "OtpSettings.DigitEnum": OtpSettings.DigitEnum,
         "OtpSettings.AlgorithmEnum": OtpSettings.AlgorithmEnum,
         "PagerDutyIntegrationInfoModel.ServiceTypeEnum": PagerDutyIntegrationInfoModel.ServiceTypeEnum,
         "PagerDutyIntegrationInfoModel.TypeEnum": PagerDutyIntegrationInfoModel.TypeEnum,
         "PagerDutyIntegrationInfoModel.UrgencyEnum": PagerDutyIntegrationInfoModel.UrgencyEnum,
+        "PagerDutyIntegrationInfoModel.TemplateTypeEnum": PagerDutyIntegrationInfoModel.TemplateTypeEnum,
         "PciScanTaskViewModel.ScanStateEnum": PciScanTaskViewModel.ScanStateEnum,
         "PciScanTaskViewModel.ComplianceStatusEnum": PciScanTaskViewModel.ComplianceStatusEnum,
         "PivotalTrackerIntegrationInfoModel.TypeEnum": PivotalTrackerIntegrationInfoModel.TypeEnum,
         "PivotalTrackerIntegrationInfoModel.StoryTypeEnum": PivotalTrackerIntegrationInfoModel.StoryTypeEnum,
+        "PivotalTrackerIntegrationInfoModel.TemplateTypeEnum": PivotalTrackerIntegrationInfoModel.TemplateTypeEnum,
         "RedmineIntegrationInfoModel.TypeEnum": RedmineIntegrationInfoModel.TypeEnum,
+        "RedmineIntegrationInfoModel.TemplateTypeEnum": RedmineIntegrationInfoModel.TemplateTypeEnum,
         "SaveScanProfileApiModel.CreateTypeEnum": SaveScanProfileApiModel.CreateTypeEnum,
         "SaveScanProfileApiModel.DisallowedHttpMethodsEnum": SaveScanProfileApiModel.DisallowedHttpMethodsEnum,
         "SaveScanProfileApiModel.AuthenticationProfileOptionEnum": SaveScanProfileApiModel.AuthenticationProfileOptionEnum,
@@ -588,8 +645,6 @@ let enumsMap: {[index: string]: any} = {
         "SaveScanProfileApiModel.UrlRewriteModeEnum": SaveScanProfileApiModel.UrlRewriteModeEnum,
         "ScanCustomReportApiModel.ReportFormatEnum": ScanCustomReportApiModel.ReportFormatEnum,
         "ScanNotificationApiModel.EventEnum": ScanNotificationApiModel.EventEnum,
-        "ScanNotificationApiModel.SeverityEnum": ScanNotificationApiModel.SeverityEnum,
-        "ScanNotificationApiModel.StateEnum": ScanNotificationApiModel.StateEnum,
         "ScanNotificationApiModel.ScopeEnum": ScanNotificationApiModel.ScopeEnum,
         "ScanNotificationIntegrationViewModel.CategoryEnum": ScanNotificationIntegrationViewModel.CategoryEnum,
         "ScanNotificationIntegrationViewModel.TypeEnum": ScanNotificationIntegrationViewModel.TypeEnum,
@@ -645,16 +700,19 @@ let enumsMap: {[index: string]: any} = {
         "ServiceNowIntegrationInfoModel.TemplateTypeEnum": ServiceNowIntegrationInfoModel.TemplateTypeEnum,
         "SharkModel.SharkPlatformTypeEnum": SharkModel.SharkPlatformTypeEnum,
         "SlackIntegrationInfoModel.TypeEnum": SlackIntegrationInfoModel.TypeEnum,
+        "SlackIntegrationInfoModel.TemplateTypeEnum": SlackIntegrationInfoModel.TemplateTypeEnum,
         "SslTlsSettingModel.ExternalDomainInvalidCertificateActionEnum": SslTlsSettingModel.ExternalDomainInvalidCertificateActionEnum,
         "SslTlsSettingModel.TargetUrlInvalidCertificateActionEnum": SslTlsSettingModel.TargetUrlInvalidCertificateActionEnum,
         "StartVerificationApiModel.VerificationMethodEnum": StartVerificationApiModel.VerificationMethodEnum,
         "StartVerificationResult.VerifyOwnershipResultEnum": StartVerificationResult.VerifyOwnershipResultEnum,
         "TFSIntegrationInfoModel.TypeEnum": TFSIntegrationInfoModel.TypeEnum,
+        "TFSIntegrationInfoModel.TemplateTypeEnum": TFSIntegrationInfoModel.TemplateTypeEnum,
         "TrelloIntegrationInfoModel.TypeEnum": TrelloIntegrationInfoModel.TypeEnum,
+        "TrelloIntegrationInfoModel.TemplateTypeEnum": TrelloIntegrationInfoModel.TemplateTypeEnum,
         "UnfuddleIntegrationInfoModel.TypeEnum": UnfuddleIntegrationInfoModel.TypeEnum,
+        "UnfuddleIntegrationInfoModel.TemplateTypeEnum": UnfuddleIntegrationInfoModel.TemplateTypeEnum,
+        "UpdateMemberApiModel.StateEnum": UpdateMemberApiModel.StateEnum,
         "UpdateScanNotificationApiModel.EventEnum": UpdateScanNotificationApiModel.EventEnum,
-        "UpdateScanNotificationApiModel.SeverityEnum": UpdateScanNotificationApiModel.SeverityEnum,
-        "UpdateScanNotificationApiModel.StateEnum": UpdateScanNotificationApiModel.StateEnum,
         "UpdateScanNotificationApiModel.ScopeEnum": UpdateScanNotificationApiModel.ScopeEnum,
         "UpdateScheduledIncrementalScanApiModel.ScheduleRunTypeEnum": UpdateScheduledIncrementalScanApiModel.ScheduleRunTypeEnum,
         "UpdateScheduledScanApiModel.ScheduleRunTypeEnum": UpdateScheduledScanApiModel.ScheduleRunTypeEnum,
@@ -673,6 +731,7 @@ let enumsMap: {[index: string]: any} = {
         "VcsCommitInfo.IntegrationSystemEnum": VcsCommitInfo.IntegrationSystemEnum,
         "VerifyApiModel.VerificationMethodEnum": VerifyApiModel.VerificationMethodEnum,
         "VersionIssue.SeverityEnum": VersionIssue.SeverityEnum,
+        "VersionIssue.OwnerVulnerabilityTypeEnum": VersionIssue.OwnerVulnerabilityTypeEnum,
         "VulnerabilityModel.TypeEnum": VulnerabilityModel.TypeEnum,
         "VulnerabilityTemplate.TypeEnum": VulnerabilityTemplate.TypeEnum,
         "VulnerabilityTemplate.SeverityEnum": VulnerabilityTemplate.SeverityEnum,
@@ -681,10 +740,13 @@ let enumsMap: {[index: string]: any} = {
         "WebhookIntegrationInfoModel.HttpMethodTypeEnum": WebhookIntegrationInfoModel.HttpMethodTypeEnum,
         "WebhookIntegrationInfoModel.ParameterTypeEnum": WebhookIntegrationInfoModel.ParameterTypeEnum,
         "WebhookIntegrationInfoModel.TypeEnum": WebhookIntegrationInfoModel.TypeEnum,
+        "WebhookIntegrationInfoModel.TemplateTypeEnum": WebhookIntegrationInfoModel.TemplateTypeEnum,
         "WebsiteApiModel.LicenseTypeEnum": WebsiteApiModel.LicenseTypeEnum,
         "WebsiteApiModel.AgentModeEnum": WebsiteApiModel.AgentModeEnum,
         "YouTrackIntegrationInfoModel.TypeEnum": YouTrackIntegrationInfoModel.TypeEnum,
+        "YouTrackIntegrationInfoModel.TemplateTypeEnum": YouTrackIntegrationInfoModel.TemplateTypeEnum,
         "ZapierIntegrationInfoModel.TypeEnum": ZapierIntegrationInfoModel.TypeEnum,
+        "ZapierIntegrationInfoModel.TemplateTypeEnum": ZapierIntegrationInfoModel.TemplateTypeEnum,
 }
 
 let typeMap: {[index: string]: any} = {
@@ -702,6 +764,7 @@ let typeMap: {[index: string]: any} = {
     "AgentListApiResult": AgentListApiResult,
     "AgentSelectionModel": AgentSelectionModel,
     "AgentStatusModel": AgentStatusModel,
+    "AllIssuesApiModel": AllIssuesApiModel,
     "ApiFileModel": ApiFileModel,
     "ApiScanStatusModel": ApiScanStatusModel,
     "AsanaIntegrationInfoModel": AsanaIntegrationInfoModel,
@@ -710,6 +773,8 @@ let typeMap: {[index: string]: any} = {
     "AsanaUser": AsanaUser,
     "AsanaWorkspace": AsanaWorkspace,
     "AttackingSettingModel": AttackingSettingModel,
+    "AuditLogListApiResult": AuditLogListApiResult,
+    "AuditLogViewModel": AuditLogViewModel,
     "AuthVerificationApiResult": AuthVerificationApiResult,
     "AuthenticationProfileViewModel": AuthenticationProfileViewModel,
     "AuthorizationCodeTableModel": AuthorizationCodeTableModel,
@@ -722,6 +787,7 @@ let typeMap: {[index: string]: any} = {
     "BasicAuthenticationSettingApiModel": BasicAuthenticationSettingApiModel,
     "BasicAuthenticationSettingModel": BasicAuthenticationSettingModel,
     "BitbucketIntegrationInfoModel": BitbucketIntegrationInfoModel,
+    "BrowserSetting": BrowserSetting,
     "BruteForceSettingModel": BruteForceSettingModel,
     "BugzillaIntegrationInfoModel": BugzillaIntegrationInfoModel,
     "ClientCertificateAuthenticationApiModel": ClientCertificateAuthenticationApiModel,
@@ -741,10 +807,12 @@ let typeMap: {[index: string]: any} = {
     "CvssMetricModel": CvssMetricModel,
     "CvssScoreValue": CvssScoreValue,
     "CyberArkVaultIntegrationInfoModel": CyberArkVaultIntegrationInfoModel,
+    "DefectDojoIntegrationInfoModel": DefectDojoIntegrationInfoModel,
     "DeleteAgentModel": DeleteAgentModel,
     "DeleteScanNotificationApiModel": DeleteScanNotificationApiModel,
     "DeleteWebsiteApiModel": DeleteWebsiteApiModel,
     "DeleteWebsiteGroupApiModel": DeleteWebsiteGroupApiModel,
+    "DeleteWebsiteGroupResponse": DeleteWebsiteGroupResponse,
     "DiscoveryApiModel": DiscoveryApiModel,
     "DiscoveryServiceListApiResult": DiscoveryServiceListApiResult,
     "DiscoverySettingsApiModel": DiscoverySettingsApiModel,
@@ -785,6 +853,7 @@ let typeMap: {[index: string]: any} = {
     "IssueReportFilterApiModel": IssueReportFilterApiModel,
     "IssueRequestContentParametersApiModel": IssueRequestContentParametersApiModel,
     "JavaScriptSettingsModel": JavaScriptSettingsModel,
+    "JazzTeamIntegrationInfoModel": JazzTeamIntegrationInfoModel,
     "JiraIntegrationInfoModel": JiraIntegrationInfoModel,
     "KafkaIntegrationInfoModel": KafkaIntegrationInfoModel,
     "KennaIntegrationInfoModel": KennaIntegrationInfoModel,
@@ -812,7 +881,9 @@ let typeMap: {[index: string]: any} = {
     "NewTeamApiModel": NewTeamApiModel,
     "NewWebsiteApiModel": NewWebsiteApiModel,
     "NewWebsiteGroupApiModel": NewWebsiteGroupApiModel,
+    "NotificationEmailSmsFilterApi": NotificationEmailSmsFilterApi,
     "NotificationIntegrationCustomFieldModel": NotificationIntegrationCustomFieldModel,
+    "NotificationIntegrationFilterApi": NotificationIntegrationFilterApi,
     "NotificationPriorityPair": NotificationPriorityPair,
     "OAuth2SettingApiModel": OAuth2SettingApiModel,
     "OAuth2SettingEndPointModel": OAuth2SettingEndPointModel,
@@ -848,6 +919,7 @@ let typeMap: {[index: string]: any} = {
     "ScanPolicyPatternModel": ScanPolicyPatternModel,
     "ScanPolicySettingApiModel": ScanPolicySettingApiModel,
     "ScanPolicySettingItemApiModel": ScanPolicySettingItemApiModel,
+    "ScanProfilesListApiResult": ScanProfilesListApiResult,
     "ScanReportApiModel": ScanReportApiModel,
     "ScanTaskListApiResult": ScanTaskListApiResult,
     "ScanTaskModel": ScanTaskModel,
@@ -874,6 +946,7 @@ let typeMap: {[index: string]: any} = {
     "StartVerificationApiModel": StartVerificationApiModel,
     "StartVerificationResult": StartVerificationResult,
     "TFSIntegrationInfoModel": TFSIntegrationInfoModel,
+    "TagViewModel": TagViewModel,
     "TeamApiModelListApiResult": TeamApiModelListApiResult,
     "TeamApiViewModel": TeamApiViewModel,
     "TechnologyApiModel": TechnologyApiModel,
