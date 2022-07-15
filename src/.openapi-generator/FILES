@@ -34,6 +34,7 @@ model/agentListApiModel.ts
 model/agentListApiResult.ts
 model/agentSelectionModel.ts
 model/agentStatusModel.ts
+model/allIssuesApiModel.ts
 model/apiFileModel.ts
 model/apiScanStatusModel.ts
 model/asanaIntegrationInfoModel.ts
@@ -42,6 +43,8 @@ model/asanaTag.ts
 model/asanaUser.ts
 model/asanaWorkspace.ts
 model/attackingSettingModel.ts
+model/auditLogListApiResult.ts
+model/auditLogViewModel.ts
 model/authVerificationApiResult.ts
 model/authenticationProfileViewModel.ts
 model/authorizationCodeTableModel.ts
@@ -54,6 +57,7 @@ model/basicAuthenticationCredentialModel.ts
 model/basicAuthenticationSettingApiModel.ts
 model/basicAuthenticationSettingModel.ts
 model/bitbucketIntegrationInfoModel.ts
+model/browserSetting.ts
 model/bruteForceSettingModel.ts
 model/bugzillaIntegrationInfoModel.ts
 model/clientCertificateAuthenticationApiModel.ts
@@ -73,10 +77,12 @@ model/customTemplateModel.ts
 model/cvssMetricModel.ts
 model/cvssScoreValue.ts
 model/cyberArkVaultIntegrationInfoModel.ts
+model/defectDojoIntegrationInfoModel.ts
 model/deleteAgentModel.ts
 model/deleteScanNotificationApiModel.ts
 model/deleteWebsiteApiModel.ts
 model/deleteWebsiteGroupApiModel.ts
+model/deleteWebsiteGroupResponse.ts
 model/discoveryApiModel.ts
 model/discoveryServiceListApiResult.ts
 model/discoverySettingsApiModel.ts
@@ -117,6 +123,7 @@ model/issueHistoryApiModel.ts
 model/issueReportFilterApiModel.ts
 model/issueRequestContentParametersApiModel.ts
 model/javaScriptSettingsModel.ts
+model/jazzTeamIntegrationInfoModel.ts
 model/jiraIntegrationInfoModel.ts
 model/kafkaIntegrationInfoModel.ts
 model/kennaIntegrationInfoModel.ts
@@ -145,7 +152,9 @@ model/newScheduledWithProfileApiModel.ts
 model/newTeamApiModel.ts
 model/newWebsiteApiModel.ts
 model/newWebsiteGroupApiModel.ts
+model/notificationEmailSmsFilterApi.ts
 model/notificationIntegrationCustomFieldModel.ts
+model/notificationIntegrationFilterApi.ts
 model/notificationPriorityPair.ts
 model/oAuth2SettingApiModel.ts
 model/oAuth2SettingEndPointModel.ts
@@ -181,6 +190,7 @@ model/scanPolicyOptimizerOptions.ts
 model/scanPolicyPatternModel.ts
 model/scanPolicySettingApiModel.ts
 model/scanPolicySettingItemApiModel.ts
+model/scanProfilesListApiResult.ts
 model/scanReportApiModel.ts
 model/scanTaskListApiResult.ts
 model/scanTaskModel.ts
@@ -207,6 +217,7 @@ model/sslTlsSettingModel.ts
 model/startVerificationApiModel.ts
 model/startVerificationResult.ts
 model/tFSIntegrationInfoModel.ts
+model/tagViewModel.ts
 model/teamApiModelListApiResult.ts
 model/teamApiViewModel.ts
 model/technologyApiModel.ts
