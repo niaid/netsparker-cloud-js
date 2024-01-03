@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,30 +12,35 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.CustomHttpHeaderModelToJSON = exports.CustomHttpHeaderModelFromJSONTyped = exports.CustomHttpHeaderModelFromJSON = exports.instanceOfCustomHttpHeaderModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the CustomHttpHeaderModel interface.
  */
-export function instanceOfCustomHttpHeaderModel(value) {
+function instanceOfCustomHttpHeaderModel(value) {
     let isInstance = true;
     isInstance = isInstance && "name" in value;
     return isInstance;
 }
-export function CustomHttpHeaderModelFromJSON(json) {
+exports.instanceOfCustomHttpHeaderModel = instanceOfCustomHttpHeaderModel;
+function CustomHttpHeaderModelFromJSON(json) {
     return CustomHttpHeaderModelFromJSONTyped(json, false);
 }
-export function CustomHttpHeaderModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.CustomHttpHeaderModelFromJSON = CustomHttpHeaderModelFromJSON;
+function CustomHttpHeaderModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
         'name': json['Name'],
-        'value': !exists(json, 'Value') ? undefined : json['Value'],
-        'originalName': !exists(json, 'OriginalName') ? undefined : json['OriginalName'],
-        'isReplacedCredentials': !exists(json, 'IsReplacedCredentials') ? undefined : json['IsReplacedCredentials'],
+        'value': !(0, runtime_1.exists)(json, 'Value') ? undefined : json['Value'],
+        'originalName': !(0, runtime_1.exists)(json, 'OriginalName') ? undefined : json['OriginalName'],
+        'isReplacedCredentials': !(0, runtime_1.exists)(json, 'IsReplacedCredentials') ? undefined : json['IsReplacedCredentials'],
     };
 }
-export function CustomHttpHeaderModelToJSON(value) {
+exports.CustomHttpHeaderModelFromJSONTyped = CustomHttpHeaderModelFromJSONTyped;
+function CustomHttpHeaderModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -48,4 +54,5 @@ export function CustomHttpHeaderModelToJSON(value) {
         'IsReplacedCredentials': value.isReplacedCredentials,
     };
 }
+exports.CustomHttpHeaderModelToJSON = CustomHttpHeaderModelToJSON;
 //# sourceMappingURL=CustomHttpHeaderModel.js.map

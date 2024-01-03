@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,11 +12,13 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.BasicAuthenticationCredentialModelToJSON = exports.BasicAuthenticationCredentialModelFromJSONTyped = exports.BasicAuthenticationCredentialModelFromJSON = exports.instanceOfBasicAuthenticationCredentialModel = exports.BasicAuthenticationCredentialModelAuthenticationTypeEnum = void 0;
+const runtime_1 = require("../runtime");
 /**
  * @export
  */
-export const BasicAuthenticationCredentialModelAuthenticationTypeEnum = {
+exports.BasicAuthenticationCredentialModelAuthenticationTypeEnum = {
     Basic: 'Basic',
     Ntlm: 'Ntlm',
     Kerberos: 'Kerberos',
@@ -25,33 +28,36 @@ export const BasicAuthenticationCredentialModelAuthenticationTypeEnum = {
 /**
  * Check if a given object implements the BasicAuthenticationCredentialModel interface.
  */
-export function instanceOfBasicAuthenticationCredentialModel(value) {
+function instanceOfBasicAuthenticationCredentialModel(value) {
     let isInstance = true;
     isInstance = isInstance && "password" in value;
     isInstance = isInstance && "uriPrefix" in value;
     isInstance = isInstance && "userName" in value;
     return isInstance;
 }
-export function BasicAuthenticationCredentialModelFromJSON(json) {
+exports.instanceOfBasicAuthenticationCredentialModel = instanceOfBasicAuthenticationCredentialModel;
+function BasicAuthenticationCredentialModelFromJSON(json) {
     return BasicAuthenticationCredentialModelFromJSONTyped(json, false);
 }
-export function BasicAuthenticationCredentialModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.BasicAuthenticationCredentialModelFromJSON = BasicAuthenticationCredentialModelFromJSON;
+function BasicAuthenticationCredentialModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'authenticationType': !exists(json, 'AuthenticationType') ? undefined : json['AuthenticationType'],
-        'domain': !exists(json, 'Domain') ? undefined : json['Domain'],
+        'authenticationType': !(0, runtime_1.exists)(json, 'AuthenticationType') ? undefined : json['AuthenticationType'],
+        'domain': !(0, runtime_1.exists)(json, 'Domain') ? undefined : json['Domain'],
         'password': json['Password'],
         'uriPrefix': json['UriPrefix'],
         'userName': json['UserName'],
-        'originalUriPrefix': !exists(json, 'OriginalUriPrefix') ? undefined : json['OriginalUriPrefix'],
-        'originalUserName': !exists(json, 'OriginalUserName') ? undefined : json['OriginalUserName'],
-        'originalPassword': !exists(json, 'OriginalPassword') ? undefined : json['OriginalPassword'],
-        'isReplacedCredentials': !exists(json, 'IsReplacedCredentials') ? undefined : json['IsReplacedCredentials'],
+        'originalUriPrefix': !(0, runtime_1.exists)(json, 'OriginalUriPrefix') ? undefined : json['OriginalUriPrefix'],
+        'originalUserName': !(0, runtime_1.exists)(json, 'OriginalUserName') ? undefined : json['OriginalUserName'],
+        'originalPassword': !(0, runtime_1.exists)(json, 'OriginalPassword') ? undefined : json['OriginalPassword'],
+        'isReplacedCredentials': !(0, runtime_1.exists)(json, 'IsReplacedCredentials') ? undefined : json['IsReplacedCredentials'],
     };
 }
-export function BasicAuthenticationCredentialModelToJSON(value) {
+exports.BasicAuthenticationCredentialModelFromJSONTyped = BasicAuthenticationCredentialModelFromJSONTyped;
+function BasicAuthenticationCredentialModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -70,4 +76,5 @@ export function BasicAuthenticationCredentialModelToJSON(value) {
         'IsReplacedCredentials': value.isReplacedCredentials,
     };
 }
+exports.BasicAuthenticationCredentialModelToJSON = BasicAuthenticationCredentialModelToJSON;
 //# sourceMappingURL=BasicAuthenticationCredentialModel.js.map

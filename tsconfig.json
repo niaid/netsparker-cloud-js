@@ -9,7 +9,7 @@
     "esModuleInterop": true,
     "noImplicitAny": true,
     "noImplicitThis": true,
-    "module": "ES2022",
+    "module": "commonJS",
     "moduleResolution": "node",
     "pretty": true,
     "sourceMap": true,

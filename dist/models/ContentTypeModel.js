@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,18 +12,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ContentTypeModelToJSON = exports.ContentTypeModelFromJSONTyped = exports.ContentTypeModelFromJSON = exports.instanceOfContentTypeModel = void 0;
 /**
  * Check if a given object implements the ContentTypeModel interface.
  */
-export function instanceOfContentTypeModel(value) {
+function instanceOfContentTypeModel(value) {
     let isInstance = true;
     isInstance = isInstance && "value" in value;
     return isInstance;
 }
-export function ContentTypeModelFromJSON(json) {
+exports.instanceOfContentTypeModel = instanceOfContentTypeModel;
+function ContentTypeModelFromJSON(json) {
     return ContentTypeModelFromJSONTyped(json, false);
 }
-export function ContentTypeModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.ContentTypeModelFromJSON = ContentTypeModelFromJSON;
+function ContentTypeModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
@@ -30,7 +35,8 @@ export function ContentTypeModelFromJSONTyped(json, ignoreDiscriminator) {
         'value': json['Value'],
     };
 }
-export function ContentTypeModelToJSON(value) {
+exports.ContentTypeModelFromJSONTyped = ContentTypeModelFromJSONTyped;
+function ContentTypeModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -41,4 +47,5 @@ export function ContentTypeModelToJSON(value) {
         'Value': value.value,
     };
 }
+exports.ContentTypeModelToJSON = ContentTypeModelToJSON;
 //# sourceMappingURL=ContentTypeModel.js.map

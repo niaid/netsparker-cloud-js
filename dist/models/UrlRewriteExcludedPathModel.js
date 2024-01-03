@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,27 +12,32 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.UrlRewriteExcludedPathModelToJSON = exports.UrlRewriteExcludedPathModelFromJSONTyped = exports.UrlRewriteExcludedPathModelFromJSON = exports.instanceOfUrlRewriteExcludedPathModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the UrlRewriteExcludedPathModel interface.
  */
-export function instanceOfUrlRewriteExcludedPathModel(value) {
+function instanceOfUrlRewriteExcludedPathModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function UrlRewriteExcludedPathModelFromJSON(json) {
+exports.instanceOfUrlRewriteExcludedPathModel = instanceOfUrlRewriteExcludedPathModel;
+function UrlRewriteExcludedPathModelFromJSON(json) {
     return UrlRewriteExcludedPathModelFromJSONTyped(json, false);
 }
-export function UrlRewriteExcludedPathModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.UrlRewriteExcludedPathModelFromJSON = UrlRewriteExcludedPathModelFromJSON;
+function UrlRewriteExcludedPathModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'excludedPath': !exists(json, 'ExcludedPath') ? undefined : json['ExcludedPath'],
-        'isRegex': !exists(json, 'IsRegex') ? undefined : json['IsRegex'],
+        'excludedPath': !(0, runtime_1.exists)(json, 'ExcludedPath') ? undefined : json['ExcludedPath'],
+        'isRegex': !(0, runtime_1.exists)(json, 'IsRegex') ? undefined : json['IsRegex'],
     };
 }
-export function UrlRewriteExcludedPathModelToJSON(value) {
+exports.UrlRewriteExcludedPathModelFromJSONTyped = UrlRewriteExcludedPathModelFromJSONTyped;
+function UrlRewriteExcludedPathModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -43,4 +49,5 @@ export function UrlRewriteExcludedPathModelToJSON(value) {
         'IsRegex': value.isRegex,
     };
 }
+exports.UrlRewriteExcludedPathModelToJSON = UrlRewriteExcludedPathModelToJSON;
 //# sourceMappingURL=UrlRewriteExcludedPathModel.js.map

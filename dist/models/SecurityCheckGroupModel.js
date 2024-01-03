@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,20 +12,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { ScanPolicyPatternModelFromJSON, ScanPolicyPatternModelToJSON, } from './ScanPolicyPatternModel';
-import { SecurityCheckSettingFromJSON, SecurityCheckSettingToJSON, } from './SecurityCheckSetting';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.SecurityCheckGroupModelToJSON = exports.SecurityCheckGroupModelFromJSONTyped = exports.SecurityCheckGroupModelFromJSON = exports.instanceOfSecurityCheckGroupModel = exports.SecurityCheckGroupModelEngineGroupEnum = exports.SecurityCheckGroupModelTypeEnum = void 0;
+const runtime_1 = require("../runtime");
+const ScanPolicyPatternModel_1 = require("./ScanPolicyPatternModel");
+const SecurityCheckSetting_1 = require("./SecurityCheckSetting");
 /**
  * @export
  */
-export const SecurityCheckGroupModelTypeEnum = {
+exports.SecurityCheckGroupModelTypeEnum = {
     Engine: 'Engine',
     ResourceModifier: 'ResourceModifier'
 };
 /**
  * @export
  */
-export const SecurityCheckGroupModelEngineGroupEnum = {
+exports.SecurityCheckGroupModelEngineGroupEnum = {
     SqlInjection: 'SqlInjection',
     Xss: 'Xss',
     CommandInjection: 'CommandInjection',
@@ -43,29 +46,32 @@ export const SecurityCheckGroupModelEngineGroupEnum = {
 /**
  * Check if a given object implements the SecurityCheckGroupModel interface.
  */
-export function instanceOfSecurityCheckGroupModel(value) {
+function instanceOfSecurityCheckGroupModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function SecurityCheckGroupModelFromJSON(json) {
+exports.instanceOfSecurityCheckGroupModel = instanceOfSecurityCheckGroupModel;
+function SecurityCheckGroupModelFromJSON(json) {
     return SecurityCheckGroupModelFromJSONTyped(json, false);
 }
-export function SecurityCheckGroupModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.SecurityCheckGroupModelFromJSON = SecurityCheckGroupModelFromJSON;
+function SecurityCheckGroupModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'patterns': !exists(json, 'Patterns') ? undefined : (json['Patterns'].map(ScanPolicyPatternModelFromJSON)),
-        'settings': !exists(json, 'Settings') ? undefined : (json['Settings'].map(SecurityCheckSettingFromJSON)),
-        'type': !exists(json, 'Type') ? undefined : json['Type'],
-        'engineGroup': !exists(json, 'EngineGroup') ? undefined : json['EngineGroup'],
-        'description': !exists(json, 'Description') ? undefined : json['Description'],
-        'enabled': !exists(json, 'Enabled') ? undefined : json['Enabled'],
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
+        'patterns': !(0, runtime_1.exists)(json, 'Patterns') ? undefined : (json['Patterns'].map(ScanPolicyPatternModel_1.ScanPolicyPatternModelFromJSON)),
+        'settings': !(0, runtime_1.exists)(json, 'Settings') ? undefined : (json['Settings'].map(SecurityCheckSetting_1.SecurityCheckSettingFromJSON)),
+        'type': !(0, runtime_1.exists)(json, 'Type') ? undefined : json['Type'],
+        'engineGroup': !(0, runtime_1.exists)(json, 'EngineGroup') ? undefined : json['EngineGroup'],
+        'description': !(0, runtime_1.exists)(json, 'Description') ? undefined : json['Description'],
+        'enabled': !(0, runtime_1.exists)(json, 'Enabled') ? undefined : json['Enabled'],
+        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
+        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
     };
 }
-export function SecurityCheckGroupModelToJSON(value) {
+exports.SecurityCheckGroupModelFromJSONTyped = SecurityCheckGroupModelFromJSONTyped;
+function SecurityCheckGroupModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -73,8 +79,8 @@ export function SecurityCheckGroupModelToJSON(value) {
         return null;
     }
     return {
-        'Patterns': value.patterns === undefined ? undefined : (value.patterns.map(ScanPolicyPatternModelToJSON)),
-        'Settings': value.settings === undefined ? undefined : (value.settings.map(SecurityCheckSettingToJSON)),
+        'Patterns': value.patterns === undefined ? undefined : (value.patterns.map(ScanPolicyPatternModel_1.ScanPolicyPatternModelToJSON)),
+        'Settings': value.settings === undefined ? undefined : (value.settings.map(SecurityCheckSetting_1.SecurityCheckSettingToJSON)),
         'Type': value.type,
         'EngineGroup': value.engineGroup,
         'Description': value.description,
@@ -83,4 +89,5 @@ export function SecurityCheckGroupModelToJSON(value) {
         'Name': value.name,
     };
 }
+exports.SecurityCheckGroupModelToJSON = SecurityCheckGroupModelToJSON;
 //# sourceMappingURL=SecurityCheckGroupModel.js.map

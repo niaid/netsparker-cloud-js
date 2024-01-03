@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,30 +12,35 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ResponseFieldsToJSON = exports.ResponseFieldsFromJSONTyped = exports.ResponseFieldsFromJSON = exports.instanceOfResponseFields = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the ResponseFields interface.
  */
-export function instanceOfResponseFields(value) {
+function instanceOfResponseFields(value) {
     let isInstance = true;
     return isInstance;
 }
-export function ResponseFieldsFromJSON(json) {
+exports.instanceOfResponseFields = instanceOfResponseFields;
+function ResponseFieldsFromJSON(json) {
     return ResponseFieldsFromJSONTyped(json, false);
 }
-export function ResponseFieldsFromJSONTyped(json, ignoreDiscriminator) {
+exports.ResponseFieldsFromJSON = ResponseFieldsFromJSON;
+function ResponseFieldsFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'accessToken': !exists(json, 'AccessToken') ? undefined : json['AccessToken'],
-        'refreshToken': !exists(json, 'RefreshToken') ? undefined : json['RefreshToken'],
-        'expire': !exists(json, 'Expire') ? undefined : json['Expire'],
-        'tokenType': !exists(json, 'TokenType') ? undefined : json['TokenType'],
-        'isTokenTypeFixed': !exists(json, 'IsTokenTypeFixed') ? undefined : json['IsTokenTypeFixed'],
+        'accessToken': !(0, runtime_1.exists)(json, 'AccessToken') ? undefined : json['AccessToken'],
+        'refreshToken': !(0, runtime_1.exists)(json, 'RefreshToken') ? undefined : json['RefreshToken'],
+        'expire': !(0, runtime_1.exists)(json, 'Expire') ? undefined : json['Expire'],
+        'tokenType': !(0, runtime_1.exists)(json, 'TokenType') ? undefined : json['TokenType'],
+        'isTokenTypeFixed': !(0, runtime_1.exists)(json, 'IsTokenTypeFixed') ? undefined : json['IsTokenTypeFixed'],
     };
 }
-export function ResponseFieldsToJSON(value) {
+exports.ResponseFieldsFromJSONTyped = ResponseFieldsFromJSONTyped;
+function ResponseFieldsToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -49,4 +55,5 @@ export function ResponseFieldsToJSON(value) {
         'IsTokenTypeFixed': value.isTokenTypeFixed,
     };
 }
+exports.ResponseFieldsToJSON = ResponseFieldsToJSON;
 //# sourceMappingURL=ResponseFields.js.map

@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,24 +12,26 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { AuthorizationTokenRuleFromJSON, AuthorizationTokenRuleToJSON, } from './AuthorizationTokenRule';
-import { FormAuthenticationAzureKeyVaultSettingFromJSON, FormAuthenticationAzureKeyVaultSettingToJSON, } from './FormAuthenticationAzureKeyVaultSetting';
-import { FormAuthenticationCustomScriptFromJSON, FormAuthenticationCustomScriptToJSON, } from './FormAuthenticationCustomScript';
-import { FormAuthenticationCyberArkVaultSettingFromJSON, FormAuthenticationCyberArkVaultSettingToJSON, } from './FormAuthenticationCyberArkVaultSetting';
-import { FormAuthenticationHashicorpVaultSettingFromJSON, FormAuthenticationHashicorpVaultSettingToJSON, } from './FormAuthenticationHashicorpVaultSetting';
-import { OtpSettingsFromJSON, OtpSettingsToJSON, } from './OtpSettings';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.FormAuthenticationSettingApiModelToJSON = exports.FormAuthenticationSettingApiModelFromJSONTyped = exports.FormAuthenticationSettingApiModelFromJSON = exports.instanceOfFormAuthenticationSettingApiModel = exports.FormAuthenticationSettingApiModelFormAuthIntegrationTypeEnum = exports.FormAuthenticationSettingApiModelFormAuthTypeEnum = void 0;
+const runtime_1 = require("../runtime");
+const AuthorizationTokenRule_1 = require("./AuthorizationTokenRule");
+const FormAuthenticationAzureKeyVaultSetting_1 = require("./FormAuthenticationAzureKeyVaultSetting");
+const FormAuthenticationCustomScript_1 = require("./FormAuthenticationCustomScript");
+const FormAuthenticationCyberArkVaultSetting_1 = require("./FormAuthenticationCyberArkVaultSetting");
+const FormAuthenticationHashicorpVaultSetting_1 = require("./FormAuthenticationHashicorpVaultSetting");
+const OtpSettings_1 = require("./OtpSettings");
 /**
  * @export
  */
-export const FormAuthenticationSettingApiModelFormAuthTypeEnum = {
+exports.FormAuthenticationSettingApiModelFormAuthTypeEnum = {
     Manual: 'Manual',
     Integration: 'Integration'
 };
 /**
  * @export
  */
-export const FormAuthenticationSettingApiModelFormAuthIntegrationTypeEnum = {
+exports.FormAuthenticationSettingApiModelFormAuthIntegrationTypeEnum = {
     HashiCorp: 'HashiCorp',
     CyberArk: 'CyberArk',
     AzureKeyVault: 'AzureKeyVault'
@@ -36,39 +39,42 @@ export const FormAuthenticationSettingApiModelFormAuthIntegrationTypeEnum = {
 /**
  * Check if a given object implements the FormAuthenticationSettingApiModel interface.
  */
-export function instanceOfFormAuthenticationSettingApiModel(value) {
+function instanceOfFormAuthenticationSettingApiModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function FormAuthenticationSettingApiModelFromJSON(json) {
+exports.instanceOfFormAuthenticationSettingApiModel = instanceOfFormAuthenticationSettingApiModel;
+function FormAuthenticationSettingApiModelFromJSON(json) {
     return FormAuthenticationSettingApiModelFromJSONTyped(json, false);
 }
-export function FormAuthenticationSettingApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.FormAuthenticationSettingApiModelFromJSON = FormAuthenticationSettingApiModelFromJSON;
+function FormAuthenticationSettingApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'customScripts': !exists(json, 'CustomScripts') ? undefined : (json['CustomScripts'].map(FormAuthenticationCustomScriptFromJSON)),
-        'detectBearerToken': !exists(json, 'DetectBearerToken') ? undefined : json['DetectBearerToken'],
-        'detectAuthorizationTokens': !exists(json, 'DetectAuthorizationTokens') ? undefined : json['DetectAuthorizationTokens'],
-        'authorizationTokenRules': !exists(json, 'AuthorizationTokenRules') ? undefined : (json['AuthorizationTokenRules'].map(AuthorizationTokenRuleFromJSON)),
-        'disableLogoutDetection': !exists(json, 'DisableLogoutDetection') ? undefined : json['DisableLogoutDetection'],
-        'loginFormUrl': !exists(json, 'LoginFormUrl') ? undefined : json['LoginFormUrl'],
-        'loginRequiredUrl': !exists(json, 'LoginRequiredUrl') ? undefined : json['LoginRequiredUrl'],
-        'logoutKeywordPatterns': !exists(json, 'LogoutKeywordPatterns') ? undefined : json['LogoutKeywordPatterns'],
-        'logoutRedirectPattern': !exists(json, 'LogoutRedirectPattern') ? undefined : json['LogoutRedirectPattern'],
-        'overrideTargetUrlWithAuthenticatedPage': !exists(json, 'OverrideTargetUrlWithAuthenticatedPage') ? undefined : json['OverrideTargetUrlWithAuthenticatedPage'],
-        'password': !exists(json, 'Password') ? undefined : json['Password'],
-        'userName': !exists(json, 'UserName') ? undefined : json['UserName'],
-        'formAuthType': !exists(json, 'FormAuthType') ? undefined : json['FormAuthType'],
-        'formAuthIntegrationType': !exists(json, 'FormAuthIntegrationType') ? undefined : json['FormAuthIntegrationType'],
-        'otpSettings': !exists(json, 'OtpSettings') ? undefined : OtpSettingsFromJSON(json['OtpSettings']),
-        'hashicorpVaultSetting': !exists(json, 'HashicorpVaultSetting') ? undefined : FormAuthenticationHashicorpVaultSettingFromJSON(json['HashicorpVaultSetting']),
-        'cyberArkVaultSetting': !exists(json, 'CyberArkVaultSetting') ? undefined : FormAuthenticationCyberArkVaultSettingFromJSON(json['CyberArkVaultSetting']),
-        'azureKeyVaultSetting': !exists(json, 'AzureKeyVaultSetting') ? undefined : FormAuthenticationAzureKeyVaultSettingFromJSON(json['AzureKeyVaultSetting']),
+        'customScripts': !(0, runtime_1.exists)(json, 'CustomScripts') ? undefined : (json['CustomScripts'].map(FormAuthenticationCustomScript_1.FormAuthenticationCustomScriptFromJSON)),
+        'detectBearerToken': !(0, runtime_1.exists)(json, 'DetectBearerToken') ? undefined : json['DetectBearerToken'],
+        'detectAuthorizationTokens': !(0, runtime_1.exists)(json, 'DetectAuthorizationTokens') ? undefined : json['DetectAuthorizationTokens'],
+        'authorizationTokenRules': !(0, runtime_1.exists)(json, 'AuthorizationTokenRules') ? undefined : (json['AuthorizationTokenRules'].map(AuthorizationTokenRule_1.AuthorizationTokenRuleFromJSON)),
+        'disableLogoutDetection': !(0, runtime_1.exists)(json, 'DisableLogoutDetection') ? undefined : json['DisableLogoutDetection'],
+        'loginFormUrl': !(0, runtime_1.exists)(json, 'LoginFormUrl') ? undefined : json['LoginFormUrl'],
+        'loginRequiredUrl': !(0, runtime_1.exists)(json, 'LoginRequiredUrl') ? undefined : json['LoginRequiredUrl'],
+        'logoutKeywordPatterns': !(0, runtime_1.exists)(json, 'LogoutKeywordPatterns') ? undefined : json['LogoutKeywordPatterns'],
+        'logoutRedirectPattern': !(0, runtime_1.exists)(json, 'LogoutRedirectPattern') ? undefined : json['LogoutRedirectPattern'],
+        'overrideTargetUrlWithAuthenticatedPage': !(0, runtime_1.exists)(json, 'OverrideTargetUrlWithAuthenticatedPage') ? undefined : json['OverrideTargetUrlWithAuthenticatedPage'],
+        'password': !(0, runtime_1.exists)(json, 'Password') ? undefined : json['Password'],
+        'userName': !(0, runtime_1.exists)(json, 'UserName') ? undefined : json['UserName'],
+        'formAuthType': !(0, runtime_1.exists)(json, 'FormAuthType') ? undefined : json['FormAuthType'],
+        'formAuthIntegrationType': !(0, runtime_1.exists)(json, 'FormAuthIntegrationType') ? undefined : json['FormAuthIntegrationType'],
+        'otpSettings': !(0, runtime_1.exists)(json, 'OtpSettings') ? undefined : (0, OtpSettings_1.OtpSettingsFromJSON)(json['OtpSettings']),
+        'hashicorpVaultSetting': !(0, runtime_1.exists)(json, 'HashicorpVaultSetting') ? undefined : (0, FormAuthenticationHashicorpVaultSetting_1.FormAuthenticationHashicorpVaultSettingFromJSON)(json['HashicorpVaultSetting']),
+        'cyberArkVaultSetting': !(0, runtime_1.exists)(json, 'CyberArkVaultSetting') ? undefined : (0, FormAuthenticationCyberArkVaultSetting_1.FormAuthenticationCyberArkVaultSettingFromJSON)(json['CyberArkVaultSetting']),
+        'azureKeyVaultSetting': !(0, runtime_1.exists)(json, 'AzureKeyVaultSetting') ? undefined : (0, FormAuthenticationAzureKeyVaultSetting_1.FormAuthenticationAzureKeyVaultSettingFromJSON)(json['AzureKeyVaultSetting']),
     };
 }
-export function FormAuthenticationSettingApiModelToJSON(value) {
+exports.FormAuthenticationSettingApiModelFromJSONTyped = FormAuthenticationSettingApiModelFromJSONTyped;
+function FormAuthenticationSettingApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -76,10 +82,10 @@ export function FormAuthenticationSettingApiModelToJSON(value) {
         return null;
     }
     return {
-        'CustomScripts': value.customScripts === undefined ? undefined : (value.customScripts.map(FormAuthenticationCustomScriptToJSON)),
+        'CustomScripts': value.customScripts === undefined ? undefined : (value.customScripts.map(FormAuthenticationCustomScript_1.FormAuthenticationCustomScriptToJSON)),
         'DetectBearerToken': value.detectBearerToken,
         'DetectAuthorizationTokens': value.detectAuthorizationTokens,
-        'AuthorizationTokenRules': value.authorizationTokenRules === undefined ? undefined : (value.authorizationTokenRules.map(AuthorizationTokenRuleToJSON)),
+        'AuthorizationTokenRules': value.authorizationTokenRules === undefined ? undefined : (value.authorizationTokenRules.map(AuthorizationTokenRule_1.AuthorizationTokenRuleToJSON)),
         'DisableLogoutDetection': value.disableLogoutDetection,
         'LoginFormUrl': value.loginFormUrl,
         'LoginRequiredUrl': value.loginRequiredUrl,
@@ -90,10 +96,11 @@ export function FormAuthenticationSettingApiModelToJSON(value) {
         'UserName': value.userName,
         'FormAuthType': value.formAuthType,
         'FormAuthIntegrationType': value.formAuthIntegrationType,
-        'OtpSettings': OtpSettingsToJSON(value.otpSettings),
-        'HashicorpVaultSetting': FormAuthenticationHashicorpVaultSettingToJSON(value.hashicorpVaultSetting),
-        'CyberArkVaultSetting': FormAuthenticationCyberArkVaultSettingToJSON(value.cyberArkVaultSetting),
-        'AzureKeyVaultSetting': FormAuthenticationAzureKeyVaultSettingToJSON(value.azureKeyVaultSetting),
+        'OtpSettings': (0, OtpSettings_1.OtpSettingsToJSON)(value.otpSettings),
+        'HashicorpVaultSetting': (0, FormAuthenticationHashicorpVaultSetting_1.FormAuthenticationHashicorpVaultSettingToJSON)(value.hashicorpVaultSetting),
+        'CyberArkVaultSetting': (0, FormAuthenticationCyberArkVaultSetting_1.FormAuthenticationCyberArkVaultSettingToJSON)(value.cyberArkVaultSetting),
+        'AzureKeyVaultSetting': (0, FormAuthenticationAzureKeyVaultSetting_1.FormAuthenticationAzureKeyVaultSettingToJSON)(value.azureKeyVaultSetting),
     };
 }
+exports.FormAuthenticationSettingApiModelToJSON = FormAuthenticationSettingApiModelToJSON;
 //# sourceMappingURL=FormAuthenticationSettingApiModel.js.map

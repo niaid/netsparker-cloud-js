@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,27 +12,32 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.CustomFieldModelToJSON = exports.CustomFieldModelFromJSONTyped = exports.CustomFieldModelFromJSON = exports.instanceOfCustomFieldModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the CustomFieldModel interface.
  */
-export function instanceOfCustomFieldModel(value) {
+function instanceOfCustomFieldModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function CustomFieldModelFromJSON(json) {
+exports.instanceOfCustomFieldModel = instanceOfCustomFieldModel;
+function CustomFieldModelFromJSON(json) {
     return CustomFieldModelFromJSONTyped(json, false);
 }
-export function CustomFieldModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.CustomFieldModelFromJSON = CustomFieldModelFromJSON;
+function CustomFieldModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'values': !exists(json, 'Values') ? undefined : json['Values'],
+        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
+        'values': !(0, runtime_1.exists)(json, 'Values') ? undefined : json['Values'],
     };
 }
-export function CustomFieldModelToJSON(value) {
+exports.CustomFieldModelFromJSONTyped = CustomFieldModelFromJSONTyped;
+function CustomFieldModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -43,4 +49,5 @@ export function CustomFieldModelToJSON(value) {
         'Values': value.values,
     };
 }
+exports.CustomFieldModelToJSON = CustomFieldModelToJSON;
 //# sourceMappingURL=CustomFieldModel.js.map

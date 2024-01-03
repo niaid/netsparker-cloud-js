@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,28 +12,33 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { SecurityCheckGroupModelFromJSON, SecurityCheckGroupModelToJSON, } from './SecurityCheckGroupModel';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.SecurityCheckGroupParentModelToJSON = exports.SecurityCheckGroupParentModelFromJSONTyped = exports.SecurityCheckGroupParentModelFromJSON = exports.instanceOfSecurityCheckGroupParentModel = void 0;
+const runtime_1 = require("../runtime");
+const SecurityCheckGroupModel_1 = require("./SecurityCheckGroupModel");
 /**
  * Check if a given object implements the SecurityCheckGroupParentModel interface.
  */
-export function instanceOfSecurityCheckGroupParentModel(value) {
+function instanceOfSecurityCheckGroupParentModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function SecurityCheckGroupParentModelFromJSON(json) {
+exports.instanceOfSecurityCheckGroupParentModel = instanceOfSecurityCheckGroupParentModel;
+function SecurityCheckGroupParentModelFromJSON(json) {
     return SecurityCheckGroupParentModelFromJSONTyped(json, false);
 }
-export function SecurityCheckGroupParentModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.SecurityCheckGroupParentModelFromJSON = SecurityCheckGroupParentModelFromJSON;
+function SecurityCheckGroupParentModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'title': !exists(json, 'Title') ? undefined : json['Title'],
-        'securityCheckGroups': !exists(json, 'SecurityCheckGroups') ? undefined : (json['SecurityCheckGroups'].map(SecurityCheckGroupModelFromJSON)),
+        'title': !(0, runtime_1.exists)(json, 'Title') ? undefined : json['Title'],
+        'securityCheckGroups': !(0, runtime_1.exists)(json, 'SecurityCheckGroups') ? undefined : (json['SecurityCheckGroups'].map(SecurityCheckGroupModel_1.SecurityCheckGroupModelFromJSON)),
     };
 }
-export function SecurityCheckGroupParentModelToJSON(value) {
+exports.SecurityCheckGroupParentModelFromJSONTyped = SecurityCheckGroupParentModelFromJSONTyped;
+function SecurityCheckGroupParentModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -41,7 +47,8 @@ export function SecurityCheckGroupParentModelToJSON(value) {
     }
     return {
         'Title': value.title,
-        'SecurityCheckGroups': value.securityCheckGroups === undefined ? undefined : (value.securityCheckGroups.map(SecurityCheckGroupModelToJSON)),
+        'SecurityCheckGroups': value.securityCheckGroups === undefined ? undefined : (value.securityCheckGroups.map(SecurityCheckGroupModel_1.SecurityCheckGroupModelToJSON)),
     };
 }
+exports.SecurityCheckGroupParentModelToJSON = SecurityCheckGroupParentModelToJSON;
 //# sourceMappingURL=SecurityCheckGroupParentModel.js.map

@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,37 +12,42 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { AwsConnectionInfoModelFromJSON, AwsConnectionInfoModelToJSON, } from './AwsConnectionInfoModel';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.DiscoveryConnectionsViewModelToJSON = exports.DiscoveryConnectionsViewModelFromJSONTyped = exports.DiscoveryConnectionsViewModelFromJSON = exports.instanceOfDiscoveryConnectionsViewModel = exports.DiscoveryConnectionsViewModelTypeEnum = void 0;
+const runtime_1 = require("../runtime");
+const AwsConnectionInfoModel_1 = require("./AwsConnectionInfoModel");
 /**
  * @export
  */
-export const DiscoveryConnectionsViewModelTypeEnum = {
+exports.DiscoveryConnectionsViewModelTypeEnum = {
     Aws: 'Aws'
 };
 /**
  * Check if a given object implements the DiscoveryConnectionsViewModel interface.
  */
-export function instanceOfDiscoveryConnectionsViewModel(value) {
+function instanceOfDiscoveryConnectionsViewModel(value) {
     let isInstance = true;
     isInstance = isInstance && "name" in value;
     return isInstance;
 }
-export function DiscoveryConnectionsViewModelFromJSON(json) {
+exports.instanceOfDiscoveryConnectionsViewModel = instanceOfDiscoveryConnectionsViewModel;
+function DiscoveryConnectionsViewModelFromJSON(json) {
     return DiscoveryConnectionsViewModelFromJSONTyped(json, false);
 }
-export function DiscoveryConnectionsViewModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.DiscoveryConnectionsViewModelFromJSON = DiscoveryConnectionsViewModelFromJSON;
+function DiscoveryConnectionsViewModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
         'name': json['Name'],
-        'type': !exists(json, 'Type') ? undefined : json['Type'],
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'awsConnectionInfo': !exists(json, 'AwsConnectionInfo') ? undefined : AwsConnectionInfoModelFromJSON(json['AwsConnectionInfo']),
+        'type': !(0, runtime_1.exists)(json, 'Type') ? undefined : json['Type'],
+        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
+        'awsConnectionInfo': !(0, runtime_1.exists)(json, 'AwsConnectionInfo') ? undefined : (0, AwsConnectionInfoModel_1.AwsConnectionInfoModelFromJSON)(json['AwsConnectionInfo']),
     };
 }
-export function DiscoveryConnectionsViewModelToJSON(value) {
+exports.DiscoveryConnectionsViewModelFromJSONTyped = DiscoveryConnectionsViewModelFromJSONTyped;
+function DiscoveryConnectionsViewModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -52,7 +58,8 @@ export function DiscoveryConnectionsViewModelToJSON(value) {
         'Name': value.name,
         'Type': value.type,
         'Id': value.id,
-        'AwsConnectionInfo': AwsConnectionInfoModelToJSON(value.awsConnectionInfo),
+        'AwsConnectionInfo': (0, AwsConnectionInfoModel_1.AwsConnectionInfoModelToJSON)(value.awsConnectionInfo),
     };
 }
+exports.DiscoveryConnectionsViewModelToJSON = DiscoveryConnectionsViewModelToJSON;
 //# sourceMappingURL=DiscoveryConnectionsViewModel.js.map

@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,27 +12,32 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.FreshserviceEntityToJSON = exports.FreshserviceEntityFromJSONTyped = exports.FreshserviceEntityFromJSON = exports.instanceOfFreshserviceEntity = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the FreshserviceEntity interface.
  */
-export function instanceOfFreshserviceEntity(value) {
+function instanceOfFreshserviceEntity(value) {
     let isInstance = true;
     return isInstance;
 }
-export function FreshserviceEntityFromJSON(json) {
+exports.instanceOfFreshserviceEntity = instanceOfFreshserviceEntity;
+function FreshserviceEntityFromJSON(json) {
     return FreshserviceEntityFromJSONTyped(json, false);
 }
-export function FreshserviceEntityFromJSONTyped(json, ignoreDiscriminator) {
+exports.FreshserviceEntityFromJSON = FreshserviceEntityFromJSON;
+function FreshserviceEntityFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'id': !exists(json, 'id') ? undefined : json['id'],
-        'name': !exists(json, 'name') ? undefined : json['name'],
+        'id': !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
+        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
     };
 }
-export function FreshserviceEntityToJSON(value) {
+exports.FreshserviceEntityFromJSONTyped = FreshserviceEntityFromJSONTyped;
+function FreshserviceEntityToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -43,4 +49,5 @@ export function FreshserviceEntityToJSON(value) {
         'name': value.name,
     };
 }
+exports.FreshserviceEntityToJSON = FreshserviceEntityToJSON;
 //# sourceMappingURL=FreshserviceEntity.js.map

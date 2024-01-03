@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,11 +12,13 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AuditLogDtoToJSON = exports.AuditLogDtoFromJSONTyped = exports.AuditLogDtoFromJSON = exports.instanceOfAuditLogDto = exports.AuditLogDtoTypeEnum = exports.AuditLogDtoEndpointTypeEnum = void 0;
+const runtime_1 = require("../runtime");
 /**
  * @export
  */
-export const AuditLogDtoEndpointTypeEnum = {
+exports.AuditLogDtoEndpointTypeEnum = {
     Web: 'Web',
     Api: 'Api',
     BackgroundTask: 'BackgroundTask'
@@ -23,7 +26,7 @@ export const AuditLogDtoEndpointTypeEnum = {
 /**
  * @export
  */
-export const AuditLogDtoTypeEnum = {
+exports.AuditLogDtoTypeEnum = {
     Signin: 'Signin',
     Signout: 'Signout',
     Signup: 'Signup',
@@ -134,31 +137,34 @@ export const AuditLogDtoTypeEnum = {
 /**
  * Check if a given object implements the AuditLogDto interface.
  */
-export function instanceOfAuditLogDto(value) {
+function instanceOfAuditLogDto(value) {
     let isInstance = true;
     return isInstance;
 }
-export function AuditLogDtoFromJSON(json) {
+exports.instanceOfAuditLogDto = instanceOfAuditLogDto;
+function AuditLogDtoFromJSON(json) {
     return AuditLogDtoFromJSONTyped(json, false);
 }
-export function AuditLogDtoFromJSONTyped(json, ignoreDiscriminator) {
+exports.AuditLogDtoFromJSON = AuditLogDtoFromJSON;
+function AuditLogDtoFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'accountId': !exists(json, 'AccountId') ? undefined : json['AccountId'],
-        'createdAt': !exists(json, 'CreatedAt') ? undefined : (new Date(json['CreatedAt'])),
-        'endpointType': !exists(json, 'EndpointType') ? undefined : json['EndpointType'],
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'type': !exists(json, 'Type') ? undefined : json['Type'],
-        'userEmail': !exists(json, 'UserEmail') ? undefined : json['UserEmail'],
-        'userId': !exists(json, 'UserId') ? undefined : json['UserId'],
-        'userName': !exists(json, 'UserName') ? undefined : json['UserName'],
-        'message': !exists(json, 'Message') ? undefined : json['Message'],
-        'requestData': !exists(json, 'RequestData') ? undefined : json['RequestData'],
+        'accountId': !(0, runtime_1.exists)(json, 'AccountId') ? undefined : json['AccountId'],
+        'createdAt': !(0, runtime_1.exists)(json, 'CreatedAt') ? undefined : (new Date(json['CreatedAt'])),
+        'endpointType': !(0, runtime_1.exists)(json, 'EndpointType') ? undefined : json['EndpointType'],
+        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
+        'type': !(0, runtime_1.exists)(json, 'Type') ? undefined : json['Type'],
+        'userEmail': !(0, runtime_1.exists)(json, 'UserEmail') ? undefined : json['UserEmail'],
+        'userId': !(0, runtime_1.exists)(json, 'UserId') ? undefined : json['UserId'],
+        'userName': !(0, runtime_1.exists)(json, 'UserName') ? undefined : json['UserName'],
+        'message': !(0, runtime_1.exists)(json, 'Message') ? undefined : json['Message'],
+        'requestData': !(0, runtime_1.exists)(json, 'RequestData') ? undefined : json['RequestData'],
     };
 }
-export function AuditLogDtoToJSON(value) {
+exports.AuditLogDtoFromJSONTyped = AuditLogDtoFromJSONTyped;
+function AuditLogDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -178,4 +184,5 @@ export function AuditLogDtoToJSON(value) {
         'RequestData': value.requestData,
     };
 }
+exports.AuditLogDtoToJSON = AuditLogDtoToJSON;
 //# sourceMappingURL=AuditLogDto.js.map

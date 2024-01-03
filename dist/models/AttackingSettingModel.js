@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,38 +12,43 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AttackingSettingModelToJSON = exports.AttackingSettingModelFromJSONTyped = exports.AttackingSettingModelFromJSON = exports.instanceOfAttackingSettingModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the AttackingSettingModel interface.
  */
-export function instanceOfAttackingSettingModel(value) {
+function instanceOfAttackingSettingModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function AttackingSettingModelFromJSON(json) {
+exports.instanceOfAttackingSettingModel = instanceOfAttackingSettingModel;
+function AttackingSettingModelFromJSON(json) {
     return AttackingSettingModelFromJSONTyped(json, false);
 }
-export function AttackingSettingModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.AttackingSettingModelFromJSON = AttackingSettingModelFromJSON;
+function AttackingSettingModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'antiCsrfTokenNames': !exists(json, 'AntiCsrfTokenNames') ? undefined : json['AntiCsrfTokenNames'],
-        'attackParameterName': !exists(json, 'AttackParameterName') ? undefined : json['AttackParameterName'],
-        'attackRefererHeader': !exists(json, 'AttackRefererHeader') ? undefined : json['AttackRefererHeader'],
-        'attackUserAgentHeader': !exists(json, 'AttackUserAgentHeader') ? undefined : json['AttackUserAgentHeader'],
-        'attackCookies': !exists(json, 'AttackCookies') ? undefined : json['AttackCookies'],
-        'maxParametersToAttack': !exists(json, 'MaxParametersToAttack') ? undefined : json['MaxParametersToAttack'],
-        'optimizeAttacksToRecurringParameters': !exists(json, 'OptimizeAttacksToRecurringParameters') ? undefined : json['OptimizeAttacksToRecurringParameters'],
-        'optimizeHeaderAttacks': !exists(json, 'OptimizeHeaderAttacks') ? undefined : json['OptimizeHeaderAttacks'],
-        'overrideVersionVulnerabilitySeverity': !exists(json, 'OverrideVersionVulnerabilitySeverity') ? undefined : json['OverrideVersionVulnerabilitySeverity'],
-        'proofGenerationEnabled': !exists(json, 'ProofGenerationEnabled') ? undefined : json['ProofGenerationEnabled'],
-        'recurringParametersPageAttackLimit': !exists(json, 'RecurringParametersPageAttackLimit') ? undefined : json['RecurringParametersPageAttackLimit'],
-        'useExtraParameters': !exists(json, 'UseExtraParameters') ? undefined : json['UseExtraParameters'],
-        'attackCsrfToken': !exists(json, 'AttackCsrfToken') ? undefined : json['AttackCsrfToken'],
+        'antiCsrfTokenNames': !(0, runtime_1.exists)(json, 'AntiCsrfTokenNames') ? undefined : json['AntiCsrfTokenNames'],
+        'attackParameterName': !(0, runtime_1.exists)(json, 'AttackParameterName') ? undefined : json['AttackParameterName'],
+        'attackRefererHeader': !(0, runtime_1.exists)(json, 'AttackRefererHeader') ? undefined : json['AttackRefererHeader'],
+        'attackUserAgentHeader': !(0, runtime_1.exists)(json, 'AttackUserAgentHeader') ? undefined : json['AttackUserAgentHeader'],
+        'attackCookies': !(0, runtime_1.exists)(json, 'AttackCookies') ? undefined : json['AttackCookies'],
+        'maxParametersToAttack': !(0, runtime_1.exists)(json, 'MaxParametersToAttack') ? undefined : json['MaxParametersToAttack'],
+        'optimizeAttacksToRecurringParameters': !(0, runtime_1.exists)(json, 'OptimizeAttacksToRecurringParameters') ? undefined : json['OptimizeAttacksToRecurringParameters'],
+        'optimizeHeaderAttacks': !(0, runtime_1.exists)(json, 'OptimizeHeaderAttacks') ? undefined : json['OptimizeHeaderAttacks'],
+        'overrideVersionVulnerabilitySeverity': !(0, runtime_1.exists)(json, 'OverrideVersionVulnerabilitySeverity') ? undefined : json['OverrideVersionVulnerabilitySeverity'],
+        'proofGenerationEnabled': !(0, runtime_1.exists)(json, 'ProofGenerationEnabled') ? undefined : json['ProofGenerationEnabled'],
+        'recurringParametersPageAttackLimit': !(0, runtime_1.exists)(json, 'RecurringParametersPageAttackLimit') ? undefined : json['RecurringParametersPageAttackLimit'],
+        'useExtraParameters': !(0, runtime_1.exists)(json, 'UseExtraParameters') ? undefined : json['UseExtraParameters'],
+        'attackCsrfToken': !(0, runtime_1.exists)(json, 'AttackCsrfToken') ? undefined : json['AttackCsrfToken'],
     };
 }
-export function AttackingSettingModelToJSON(value) {
+exports.AttackingSettingModelFromJSONTyped = AttackingSettingModelFromJSONTyped;
+function AttackingSettingModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -65,4 +71,5 @@ export function AttackingSettingModelToJSON(value) {
         'AttackCsrfToken': value.attackCsrfToken,
     };
 }
+exports.AttackingSettingModelToJSON = AttackingSettingModelToJSON;
 //# sourceMappingURL=AttackingSettingModel.js.map

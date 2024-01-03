@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,29 +12,34 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AsanaUserToJSON = exports.AsanaUserFromJSONTyped = exports.AsanaUserFromJSON = exports.instanceOfAsanaUser = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the AsanaUser interface.
  */
-export function instanceOfAsanaUser(value) {
+function instanceOfAsanaUser(value) {
     let isInstance = true;
     return isInstance;
 }
-export function AsanaUserFromJSON(json) {
+exports.instanceOfAsanaUser = instanceOfAsanaUser;
+function AsanaUserFromJSON(json) {
     return AsanaUserFromJSONTyped(json, false);
 }
-export function AsanaUserFromJSONTyped(json, ignoreDiscriminator) {
+exports.AsanaUserFromJSON = AsanaUserFromJSON;
+function AsanaUserFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'email': !exists(json, 'email') ? undefined : json['email'],
-        'gid': !exists(json, 'gid') ? undefined : json['gid'],
-        'name': !exists(json, 'name') ? undefined : json['name'],
-        'displayName': !exists(json, 'DisplayName') ? undefined : json['DisplayName'],
+        'email': !(0, runtime_1.exists)(json, 'email') ? undefined : json['email'],
+        'gid': !(0, runtime_1.exists)(json, 'gid') ? undefined : json['gid'],
+        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        'displayName': !(0, runtime_1.exists)(json, 'DisplayName') ? undefined : json['DisplayName'],
     };
 }
-export function AsanaUserToJSON(value) {
+exports.AsanaUserFromJSONTyped = AsanaUserFromJSONTyped;
+function AsanaUserToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -46,4 +52,5 @@ export function AsanaUserToJSON(value) {
         'name': value.name,
     };
 }
+exports.AsanaUserToJSON = AsanaUserToJSON;
 //# sourceMappingURL=AsanaUser.js.map

@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,36 +12,41 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ProxySettingsModelToJSON = exports.ProxySettingsModelFromJSONTyped = exports.ProxySettingsModelFromJSON = exports.instanceOfProxySettingsModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the ProxySettingsModel interface.
  */
-export function instanceOfProxySettingsModel(value) {
+function instanceOfProxySettingsModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function ProxySettingsModelFromJSON(json) {
+exports.instanceOfProxySettingsModel = instanceOfProxySettingsModel;
+function ProxySettingsModelFromJSON(json) {
     return ProxySettingsModelFromJSONTyped(json, false);
 }
-export function ProxySettingsModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.ProxySettingsModelFromJSON = ProxySettingsModelFromJSON;
+function ProxySettingsModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'proxyByPassList': !exists(json, 'ProxyByPassList') ? undefined : json['ProxyByPassList'],
-        'enableCustomProxy': !exists(json, 'EnableCustomProxy') ? undefined : json['EnableCustomProxy'],
-        'proxyAddress': !exists(json, 'ProxyAddress') ? undefined : json['ProxyAddress'],
-        'proxyAuthenticationRequired': !exists(json, 'ProxyAuthenticationRequired') ? undefined : json['ProxyAuthenticationRequired'],
-        'proxyDomain': !exists(json, 'ProxyDomain') ? undefined : json['ProxyDomain'],
-        'proxyPassword': !exists(json, 'ProxyPassword') ? undefined : json['ProxyPassword'],
-        'proxyPort': !exists(json, 'ProxyPort') ? undefined : json['ProxyPort'],
-        'proxyUsername': !exists(json, 'ProxyUsername') ? undefined : json['ProxyUsername'],
-        'proxyByPassOnLocal': !exists(json, 'ProxyByPassOnLocal') ? undefined : json['ProxyByPassOnLocal'],
-        'proxyByPassText': !exists(json, 'ProxyByPassText') ? undefined : json['ProxyByPassText'],
-        'usePolicyProxyForExternalCommunication': !exists(json, 'UsePolicyProxyForExternalCommunication') ? undefined : json['UsePolicyProxyForExternalCommunication'],
+        'proxyByPassList': !(0, runtime_1.exists)(json, 'ProxyByPassList') ? undefined : json['ProxyByPassList'],
+        'enableCustomProxy': !(0, runtime_1.exists)(json, 'EnableCustomProxy') ? undefined : json['EnableCustomProxy'],
+        'proxyAddress': !(0, runtime_1.exists)(json, 'ProxyAddress') ? undefined : json['ProxyAddress'],
+        'proxyAuthenticationRequired': !(0, runtime_1.exists)(json, 'ProxyAuthenticationRequired') ? undefined : json['ProxyAuthenticationRequired'],
+        'proxyDomain': !(0, runtime_1.exists)(json, 'ProxyDomain') ? undefined : json['ProxyDomain'],
+        'proxyPassword': !(0, runtime_1.exists)(json, 'ProxyPassword') ? undefined : json['ProxyPassword'],
+        'proxyPort': !(0, runtime_1.exists)(json, 'ProxyPort') ? undefined : json['ProxyPort'],
+        'proxyUsername': !(0, runtime_1.exists)(json, 'ProxyUsername') ? undefined : json['ProxyUsername'],
+        'proxyByPassOnLocal': !(0, runtime_1.exists)(json, 'ProxyByPassOnLocal') ? undefined : json['ProxyByPassOnLocal'],
+        'proxyByPassText': !(0, runtime_1.exists)(json, 'ProxyByPassText') ? undefined : json['ProxyByPassText'],
+        'usePolicyProxyForExternalCommunication': !(0, runtime_1.exists)(json, 'UsePolicyProxyForExternalCommunication') ? undefined : json['UsePolicyProxyForExternalCommunication'],
     };
 }
-export function ProxySettingsModelToJSON(value) {
+exports.ProxySettingsModelFromJSONTyped = ProxySettingsModelFromJSONTyped;
+function ProxySettingsModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -61,4 +67,5 @@ export function ProxySettingsModelToJSON(value) {
         'UsePolicyProxyForExternalCommunication': value.usePolicyProxyForExternalCommunication,
     };
 }
+exports.ProxySettingsModelToJSON = ProxySettingsModelToJSON;
 //# sourceMappingURL=ProxySettingsModel.js.map

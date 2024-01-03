@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,29 +12,34 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.NameValuePairToJSON = exports.NameValuePairFromJSONTyped = exports.NameValuePairFromJSON = exports.instanceOfNameValuePair = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the NameValuePair interface.
  */
-export function instanceOfNameValuePair(value) {
+function instanceOfNameValuePair(value) {
     let isInstance = true;
     return isInstance;
 }
-export function NameValuePairFromJSON(json) {
+exports.instanceOfNameValuePair = instanceOfNameValuePair;
+function NameValuePairFromJSON(json) {
     return NameValuePairFromJSONTyped(json, false);
 }
-export function NameValuePairFromJSONTyped(json, ignoreDiscriminator) {
+exports.NameValuePairFromJSON = NameValuePairFromJSON;
+function NameValuePairFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'value': !exists(json, 'Value') ? undefined : json['Value'],
-        'isEncoded': !exists(json, 'IsEncoded') ? undefined : json['IsEncoded'],
-        'isEncrypted': !exists(json, 'IsEncrypted') ? undefined : json['IsEncrypted'],
+        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
+        'value': !(0, runtime_1.exists)(json, 'Value') ? undefined : json['Value'],
+        'isEncoded': !(0, runtime_1.exists)(json, 'IsEncoded') ? undefined : json['IsEncoded'],
+        'isEncrypted': !(0, runtime_1.exists)(json, 'IsEncrypted') ? undefined : json['IsEncrypted'],
     };
 }
-export function NameValuePairToJSON(value) {
+exports.NameValuePairFromJSONTyped = NameValuePairFromJSONTyped;
+function NameValuePairToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -47,4 +53,5 @@ export function NameValuePairToJSON(value) {
         'IsEncrypted': value.isEncrypted,
     };
 }
+exports.NameValuePairToJSON = NameValuePairToJSON;
 //# sourceMappingURL=NameValuePair.js.map

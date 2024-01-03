@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,18 +12,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.OtpSettingsToJSON = exports.OtpSettingsFromJSONTyped = exports.OtpSettingsFromJSON = exports.instanceOfOtpSettings = exports.OtpSettingsAlgorithmEnum = exports.OtpSettingsOtpTypeEnum = void 0;
+const runtime_1 = require("../runtime");
 /**
  * @export
  */
-export const OtpSettingsOtpTypeEnum = {
+exports.OtpSettingsOtpTypeEnum = {
     Totp: 'Totp',
     Hotp: 'Hotp'
 };
 /**
  * @export
  */
-export const OtpSettingsAlgorithmEnum = {
+exports.OtpSettingsAlgorithmEnum = {
     Sha1: 'Sha1',
     Sha256: 'Sha256',
     Sha512: 'Sha512'
@@ -30,26 +33,29 @@ export const OtpSettingsAlgorithmEnum = {
 /**
  * Check if a given object implements the OtpSettings interface.
  */
-export function instanceOfOtpSettings(value) {
+function instanceOfOtpSettings(value) {
     let isInstance = true;
     return isInstance;
 }
-export function OtpSettingsFromJSON(json) {
+exports.instanceOfOtpSettings = instanceOfOtpSettings;
+function OtpSettingsFromJSON(json) {
     return OtpSettingsFromJSONTyped(json, false);
 }
-export function OtpSettingsFromJSONTyped(json, ignoreDiscriminator) {
+exports.OtpSettingsFromJSON = OtpSettingsFromJSON;
+function OtpSettingsFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'otpType': !exists(json, 'OtpType') ? undefined : json['OtpType'],
-        'secretKey': !exists(json, 'SecretKey') ? undefined : json['SecretKey'],
-        'digit': !exists(json, 'Digit') ? undefined : json['Digit'],
-        'period': !exists(json, 'Period') ? undefined : json['Period'],
-        'algorithm': !exists(json, 'Algorithm') ? undefined : json['Algorithm'],
+        'otpType': !(0, runtime_1.exists)(json, 'OtpType') ? undefined : json['OtpType'],
+        'secretKey': !(0, runtime_1.exists)(json, 'SecretKey') ? undefined : json['SecretKey'],
+        'digit': !(0, runtime_1.exists)(json, 'Digit') ? undefined : json['Digit'],
+        'period': !(0, runtime_1.exists)(json, 'Period') ? undefined : json['Period'],
+        'algorithm': !(0, runtime_1.exists)(json, 'Algorithm') ? undefined : json['Algorithm'],
     };
 }
-export function OtpSettingsToJSON(value) {
+exports.OtpSettingsFromJSONTyped = OtpSettingsFromJSONTyped;
+function OtpSettingsToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -64,4 +70,5 @@ export function OtpSettingsToJSON(value) {
         'Algorithm': value.algorithm,
     };
 }
+exports.OtpSettingsToJSON = OtpSettingsToJSON;
 //# sourceMappingURL=OtpSettings.js.map

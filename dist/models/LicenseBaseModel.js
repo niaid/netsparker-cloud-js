@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,29 +12,34 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.LicenseBaseModelToJSON = exports.LicenseBaseModelFromJSONTyped = exports.LicenseBaseModelFromJSON = exports.instanceOfLicenseBaseModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the LicenseBaseModel interface.
  */
-export function instanceOfLicenseBaseModel(value) {
+function instanceOfLicenseBaseModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function LicenseBaseModelFromJSON(json) {
+exports.instanceOfLicenseBaseModel = instanceOfLicenseBaseModel;
+function LicenseBaseModelFromJSON(json) {
     return LicenseBaseModelFromJSONTyped(json, false);
 }
-export function LicenseBaseModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.LicenseBaseModelFromJSON = LicenseBaseModelFromJSON;
+function LicenseBaseModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'isActive': !exists(json, 'IsActive') ? undefined : json['IsActive'],
-        'key': !exists(json, 'Key') ? undefined : json['Key'],
-        'accountCanCreateSharkScanTask': !exists(json, 'AccountCanCreateSharkScanTask') ? undefined : json['AccountCanCreateSharkScanTask'],
+        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
+        'isActive': !(0, runtime_1.exists)(json, 'IsActive') ? undefined : json['IsActive'],
+        'key': !(0, runtime_1.exists)(json, 'Key') ? undefined : json['Key'],
+        'accountCanCreateSharkScanTask': !(0, runtime_1.exists)(json, 'AccountCanCreateSharkScanTask') ? undefined : json['AccountCanCreateSharkScanTask'],
     };
 }
-export function LicenseBaseModelToJSON(value) {
+exports.LicenseBaseModelFromJSONTyped = LicenseBaseModelFromJSONTyped;
+function LicenseBaseModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -47,4 +53,5 @@ export function LicenseBaseModelToJSON(value) {
         'AccountCanCreateSharkScanTask': value.accountCanCreateSharkScanTask,
     };
 }
+exports.LicenseBaseModelToJSON = LicenseBaseModelToJSON;
 //# sourceMappingURL=LicenseBaseModel.js.map

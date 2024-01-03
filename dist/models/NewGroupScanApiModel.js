@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,12 +12,14 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { ScanTimeWindowModelFromJSON, ScanTimeWindowModelToJSON, } from './ScanTimeWindowModel';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.NewGroupScanApiModelToJSON = exports.NewGroupScanApiModelFromJSONTyped = exports.NewGroupScanApiModelFromJSON = exports.instanceOfNewGroupScanApiModel = exports.NewGroupScanApiModelAuthenticationProfileOptionEnum = void 0;
+const runtime_1 = require("../runtime");
+const ScanTimeWindowModel_1 = require("./ScanTimeWindowModel");
 /**
  * @export
  */
-export const NewGroupScanApiModelAuthenticationProfileOptionEnum = {
+exports.NewGroupScanApiModelAuthenticationProfileOptionEnum = {
     DontUse: 'DontUse',
     UseMatchedProfile: 'UseMatchedProfile',
     SelectedProfile: 'SelectedProfile'
@@ -24,29 +27,32 @@ export const NewGroupScanApiModelAuthenticationProfileOptionEnum = {
 /**
  * Check if a given object implements the NewGroupScanApiModel interface.
  */
-export function instanceOfNewGroupScanApiModel(value) {
+function instanceOfNewGroupScanApiModel(value) {
     let isInstance = true;
     isInstance = isInstance && "websiteGroupName" in value;
     return isInstance;
 }
-export function NewGroupScanApiModelFromJSON(json) {
+exports.instanceOfNewGroupScanApiModel = instanceOfNewGroupScanApiModel;
+function NewGroupScanApiModelFromJSON(json) {
     return NewGroupScanApiModelFromJSONTyped(json, false);
 }
-export function NewGroupScanApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.NewGroupScanApiModelFromJSON = NewGroupScanApiModelFromJSON;
+function NewGroupScanApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'policyId': !exists(json, 'PolicyId') ? undefined : json['PolicyId'],
-        'reportPolicyId': !exists(json, 'ReportPolicyId') ? undefined : json['ReportPolicyId'],
-        'authenticationProfileOption': !exists(json, 'AuthenticationProfileOption') ? undefined : json['AuthenticationProfileOption'],
-        'authenticationProfileId': !exists(json, 'AuthenticationProfileId') ? undefined : json['AuthenticationProfileId'],
-        'timeWindow': !exists(json, 'TimeWindow') ? undefined : ScanTimeWindowModelFromJSON(json['TimeWindow']),
+        'policyId': !(0, runtime_1.exists)(json, 'PolicyId') ? undefined : json['PolicyId'],
+        'reportPolicyId': !(0, runtime_1.exists)(json, 'ReportPolicyId') ? undefined : json['ReportPolicyId'],
+        'authenticationProfileOption': !(0, runtime_1.exists)(json, 'AuthenticationProfileOption') ? undefined : json['AuthenticationProfileOption'],
+        'authenticationProfileId': !(0, runtime_1.exists)(json, 'AuthenticationProfileId') ? undefined : json['AuthenticationProfileId'],
+        'timeWindow': !(0, runtime_1.exists)(json, 'TimeWindow') ? undefined : (0, ScanTimeWindowModel_1.ScanTimeWindowModelFromJSON)(json['TimeWindow']),
         'websiteGroupName': json['WebsiteGroupName'],
-        'tags': !exists(json, 'Tags') ? undefined : json['Tags'],
+        'tags': !(0, runtime_1.exists)(json, 'Tags') ? undefined : json['Tags'],
     };
 }
-export function NewGroupScanApiModelToJSON(value) {
+exports.NewGroupScanApiModelFromJSONTyped = NewGroupScanApiModelFromJSONTyped;
+function NewGroupScanApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -58,9 +64,10 @@ export function NewGroupScanApiModelToJSON(value) {
         'ReportPolicyId': value.reportPolicyId,
         'AuthenticationProfileOption': value.authenticationProfileOption,
         'AuthenticationProfileId': value.authenticationProfileId,
-        'TimeWindow': ScanTimeWindowModelToJSON(value.timeWindow),
+        'TimeWindow': (0, ScanTimeWindowModel_1.ScanTimeWindowModelToJSON)(value.timeWindow),
         'WebsiteGroupName': value.websiteGroupName,
         'Tags': value.tags,
     };
 }
+exports.NewGroupScanApiModelToJSON = NewGroupScanApiModelToJSON;
 //# sourceMappingURL=NewGroupScanApiModel.js.map

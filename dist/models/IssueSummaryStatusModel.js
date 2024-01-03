@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,11 +12,13 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.IssueSummaryStatusModelToJSON = exports.IssueSummaryStatusModelFromJSONTyped = exports.IssueSummaryStatusModelFromJSON = exports.instanceOfIssueSummaryStatusModel = exports.IssueSummaryStatusModelStatusEnum = void 0;
+const runtime_1 = require("../runtime");
 /**
  * @export
  */
-export const IssueSummaryStatusModelStatusEnum = {
+exports.IssueSummaryStatusModelStatusEnum = {
     Present: 'Present',
     FixedUnconfirmed: 'FixedUnconfirmed',
     FixedCantRetest: 'FixedCantRetest',
@@ -29,23 +32,26 @@ export const IssueSummaryStatusModelStatusEnum = {
 /**
  * Check if a given object implements the IssueSummaryStatusModel interface.
  */
-export function instanceOfIssueSummaryStatusModel(value) {
+function instanceOfIssueSummaryStatusModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function IssueSummaryStatusModelFromJSON(json) {
+exports.instanceOfIssueSummaryStatusModel = instanceOfIssueSummaryStatusModel;
+function IssueSummaryStatusModelFromJSON(json) {
     return IssueSummaryStatusModelFromJSONTyped(json, false);
 }
-export function IssueSummaryStatusModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.IssueSummaryStatusModelFromJSON = IssueSummaryStatusModelFromJSON;
+function IssueSummaryStatusModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'status': !exists(json, 'Status') ? undefined : json['Status'],
-        'statusDate': !exists(json, 'StatusDate') ? undefined : json['StatusDate'],
+        'status': !(0, runtime_1.exists)(json, 'Status') ? undefined : json['Status'],
+        'statusDate': !(0, runtime_1.exists)(json, 'StatusDate') ? undefined : json['StatusDate'],
     };
 }
-export function IssueSummaryStatusModelToJSON(value) {
+exports.IssueSummaryStatusModelFromJSONTyped = IssueSummaryStatusModelFromJSONTyped;
+function IssueSummaryStatusModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -56,4 +62,5 @@ export function IssueSummaryStatusModelToJSON(value) {
         'Status': value.status,
     };
 }
+exports.IssueSummaryStatusModelToJSON = IssueSummaryStatusModelToJSON;
 //# sourceMappingURL=IssueSummaryStatusModel.js.map

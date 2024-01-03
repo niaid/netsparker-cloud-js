@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,31 +12,36 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { OtpSettingsFromJSON, OtpSettingsToJSON, } from './OtpSettings';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ThreeLeggedFieldsToJSON = exports.ThreeLeggedFieldsFromJSONTyped = exports.ThreeLeggedFieldsFromJSON = exports.instanceOfThreeLeggedFields = void 0;
+const runtime_1 = require("../runtime");
+const OtpSettings_1 = require("./OtpSettings");
 /**
  * Check if a given object implements the ThreeLeggedFields interface.
  */
-export function instanceOfThreeLeggedFields(value) {
+function instanceOfThreeLeggedFields(value) {
     let isInstance = true;
     return isInstance;
 }
-export function ThreeLeggedFieldsFromJSON(json) {
+exports.instanceOfThreeLeggedFields = instanceOfThreeLeggedFields;
+function ThreeLeggedFieldsFromJSON(json) {
     return ThreeLeggedFieldsFromJSONTyped(json, false);
 }
-export function ThreeLeggedFieldsFromJSONTyped(json, ignoreDiscriminator) {
+exports.ThreeLeggedFieldsFromJSON = ThreeLeggedFieldsFromJSON;
+function ThreeLeggedFieldsFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'enabled': !exists(json, 'Enabled') ? undefined : json['Enabled'],
-        'username': !exists(json, 'Username') ? undefined : json['Username'],
-        'password': !exists(json, 'Password') ? undefined : json['Password'],
-        'otpSettings': !exists(json, 'OtpSettings') ? undefined : OtpSettingsFromJSON(json['OtpSettings']),
-        'customScripts': !exists(json, 'CustomScripts') ? undefined : json['CustomScripts'],
+        'enabled': !(0, runtime_1.exists)(json, 'Enabled') ? undefined : json['Enabled'],
+        'username': !(0, runtime_1.exists)(json, 'Username') ? undefined : json['Username'],
+        'password': !(0, runtime_1.exists)(json, 'Password') ? undefined : json['Password'],
+        'otpSettings': !(0, runtime_1.exists)(json, 'OtpSettings') ? undefined : (0, OtpSettings_1.OtpSettingsFromJSON)(json['OtpSettings']),
+        'customScripts': !(0, runtime_1.exists)(json, 'CustomScripts') ? undefined : json['CustomScripts'],
     };
 }
-export function ThreeLeggedFieldsToJSON(value) {
+exports.ThreeLeggedFieldsFromJSONTyped = ThreeLeggedFieldsFromJSONTyped;
+function ThreeLeggedFieldsToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -46,8 +52,9 @@ export function ThreeLeggedFieldsToJSON(value) {
         'Enabled': value.enabled,
         'Username': value.username,
         'Password': value.password,
-        'OtpSettings': OtpSettingsToJSON(value.otpSettings),
+        'OtpSettings': (0, OtpSettings_1.OtpSettingsToJSON)(value.otpSettings),
         'CustomScripts': value.customScripts,
     };
 }
+exports.ThreeLeggedFieldsToJSON = ThreeLeggedFieldsToJSON;
 //# sourceMappingURL=ThreeLeggedFields.js.map

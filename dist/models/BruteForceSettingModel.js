@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,27 +12,32 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.BruteForceSettingModelToJSON = exports.BruteForceSettingModelFromJSONTyped = exports.BruteForceSettingModelFromJSON = exports.instanceOfBruteForceSettingModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the BruteForceSettingModel interface.
  */
-export function instanceOfBruteForceSettingModel(value) {
+function instanceOfBruteForceSettingModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function BruteForceSettingModelFromJSON(json) {
+exports.instanceOfBruteForceSettingModel = instanceOfBruteForceSettingModel;
+function BruteForceSettingModelFromJSON(json) {
     return BruteForceSettingModelFromJSONTyped(json, false);
 }
-export function BruteForceSettingModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.BruteForceSettingModelFromJSON = BruteForceSettingModelFromJSON;
+function BruteForceSettingModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'enableAuthBruteForce': !exists(json, 'EnableAuthBruteForce') ? undefined : json['EnableAuthBruteForce'],
-        'maxBruteForce': !exists(json, 'MaxBruteForce') ? undefined : json['MaxBruteForce'],
+        'enableAuthBruteForce': !(0, runtime_1.exists)(json, 'EnableAuthBruteForce') ? undefined : json['EnableAuthBruteForce'],
+        'maxBruteForce': !(0, runtime_1.exists)(json, 'MaxBruteForce') ? undefined : json['MaxBruteForce'],
     };
 }
-export function BruteForceSettingModelToJSON(value) {
+exports.BruteForceSettingModelFromJSONTyped = BruteForceSettingModelFromJSONTyped;
+function BruteForceSettingModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -43,4 +49,5 @@ export function BruteForceSettingModelToJSON(value) {
         'MaxBruteForce': value.maxBruteForce,
     };
 }
+exports.BruteForceSettingModelToJSON = BruteForceSettingModelToJSON;
 //# sourceMappingURL=BruteForceSettingModel.js.map

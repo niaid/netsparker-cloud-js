@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,28 +12,33 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { ServiceNowIncidentFieldPairValueFromJSON, ServiceNowIncidentFieldPairValueToJSON, } from './ServiceNowIncidentFieldPairValue';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ServiceNowIncidentMappingFieldKeyValuePairToJSON = exports.ServiceNowIncidentMappingFieldKeyValuePairFromJSONTyped = exports.ServiceNowIncidentMappingFieldKeyValuePairFromJSON = exports.instanceOfServiceNowIncidentMappingFieldKeyValuePair = void 0;
+const runtime_1 = require("../runtime");
+const ServiceNowIncidentFieldPairValue_1 = require("./ServiceNowIncidentFieldPairValue");
 /**
  * Check if a given object implements the ServiceNowIncidentMappingFieldKeyValuePair interface.
  */
-export function instanceOfServiceNowIncidentMappingFieldKeyValuePair(value) {
+function instanceOfServiceNowIncidentMappingFieldKeyValuePair(value) {
     let isInstance = true;
     return isInstance;
 }
-export function ServiceNowIncidentMappingFieldKeyValuePairFromJSON(json) {
+exports.instanceOfServiceNowIncidentMappingFieldKeyValuePair = instanceOfServiceNowIncidentMappingFieldKeyValuePair;
+function ServiceNowIncidentMappingFieldKeyValuePairFromJSON(json) {
     return ServiceNowIncidentMappingFieldKeyValuePairFromJSONTyped(json, false);
 }
-export function ServiceNowIncidentMappingFieldKeyValuePairFromJSONTyped(json, ignoreDiscriminator) {
+exports.ServiceNowIncidentMappingFieldKeyValuePairFromJSON = ServiceNowIncidentMappingFieldKeyValuePairFromJSON;
+function ServiceNowIncidentMappingFieldKeyValuePairFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'serviceNowField': !exists(json, 'ServiceNowField') ? undefined : json['ServiceNowField'],
-        'serviceNowValue': !exists(json, 'ServiceNowValue') ? undefined : ServiceNowIncidentFieldPairValueFromJSON(json['ServiceNowValue']),
+        'serviceNowField': !(0, runtime_1.exists)(json, 'ServiceNowField') ? undefined : json['ServiceNowField'],
+        'serviceNowValue': !(0, runtime_1.exists)(json, 'ServiceNowValue') ? undefined : (0, ServiceNowIncidentFieldPairValue_1.ServiceNowIncidentFieldPairValueFromJSON)(json['ServiceNowValue']),
     };
 }
-export function ServiceNowIncidentMappingFieldKeyValuePairToJSON(value) {
+exports.ServiceNowIncidentMappingFieldKeyValuePairFromJSONTyped = ServiceNowIncidentMappingFieldKeyValuePairFromJSONTyped;
+function ServiceNowIncidentMappingFieldKeyValuePairToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -41,7 +47,8 @@ export function ServiceNowIncidentMappingFieldKeyValuePairToJSON(value) {
     }
     return {
         'ServiceNowField': value.serviceNowField,
-        'ServiceNowValue': ServiceNowIncidentFieldPairValueToJSON(value.serviceNowValue),
+        'ServiceNowValue': (0, ServiceNowIncidentFieldPairValue_1.ServiceNowIncidentFieldPairValueToJSON)(value.serviceNowValue),
     };
 }
+exports.ServiceNowIncidentMappingFieldKeyValuePairToJSON = ServiceNowIncidentMappingFieldKeyValuePairToJSON;
 //# sourceMappingURL=ServiceNowIncidentMappingFieldKeyValuePair.js.map

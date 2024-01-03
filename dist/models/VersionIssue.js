@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,11 +12,13 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.VersionIssueToJSON = exports.VersionIssueFromJSONTyped = exports.VersionIssueFromJSON = exports.instanceOfVersionIssue = exports.VersionIssueOwnerVulnerabilityTypeEnum = exports.VersionIssueSeverityEnum = void 0;
+const runtime_1 = require("../runtime");
 /**
  * @export
  */
-export const VersionIssueSeverityEnum = {
+exports.VersionIssueSeverityEnum = {
     BestPractice: 'BestPractice',
     Information: 'Information',
     Low: 'Low',
@@ -26,7 +29,7 @@ export const VersionIssueSeverityEnum = {
 /**
  * @export
  */
-export const VersionIssueOwnerVulnerabilityTypeEnum = {
+exports.VersionIssueOwnerVulnerabilityTypeEnum = {
     Custom: 'Custom',
     Sca: 'Sca',
     None: 'None',
@@ -1553,38 +1556,41 @@ export const VersionIssueOwnerVulnerabilityTypeEnum = {
 /**
  * Check if a given object implements the VersionIssue interface.
  */
-export function instanceOfVersionIssue(value) {
+function instanceOfVersionIssue(value) {
     let isInstance = true;
     return isInstance;
 }
-export function VersionIssueFromJSON(json) {
+exports.instanceOfVersionIssue = instanceOfVersionIssue;
+function VersionIssueFromJSON(json) {
     return VersionIssueFromJSONTyped(json, false);
 }
-export function VersionIssueFromJSONTyped(json, ignoreDiscriminator) {
+exports.VersionIssueFromJSON = VersionIssueFromJSON;
+function VersionIssueFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'exploit': !exists(json, 'Exploit') ? undefined : json['Exploit'],
-        'externalReferences': !exists(json, 'ExternalReferences') ? undefined : json['ExternalReferences'],
-        'fromVersionOrdinal': !exists(json, 'FromVersionOrdinal') ? undefined : json['FromVersionOrdinal'],
-        'fromVersion': !exists(json, 'FromVersion') ? undefined : json['FromVersion'],
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'impact': !exists(json, 'Impact') ? undefined : json['Impact'],
-        'remedy': !exists(json, 'Remedy') ? undefined : json['Remedy'],
-        'severity': !exists(json, 'Severity') ? undefined : json['Severity'],
-        'summary': !exists(json, 'Summary') ? undefined : json['Summary'],
-        'title': !exists(json, 'Title') ? undefined : json['Title'],
-        'toVersionOrdinal': !exists(json, 'ToVersionOrdinal') ? undefined : json['ToVersionOrdinal'],
-        'toVersion': !exists(json, 'ToVersion') ? undefined : json['ToVersion'],
-        'vulnerability': !exists(json, 'Vulnerability') ? undefined : json['Vulnerability'],
-        'application': !exists(json, 'Application') ? undefined : json['Application'],
-        'bdu': !exists(json, 'Bdu') ? undefined : json['Bdu'],
-        'cvss': !exists(json, 'Cvss') ? undefined : json['Cvss'],
-        'ownerVulnerabilityType': !exists(json, 'OwnerVulnerabilityType') ? undefined : json['OwnerVulnerabilityType'],
+        'exploit': !(0, runtime_1.exists)(json, 'Exploit') ? undefined : json['Exploit'],
+        'externalReferences': !(0, runtime_1.exists)(json, 'ExternalReferences') ? undefined : json['ExternalReferences'],
+        'fromVersionOrdinal': !(0, runtime_1.exists)(json, 'FromVersionOrdinal') ? undefined : json['FromVersionOrdinal'],
+        'fromVersion': !(0, runtime_1.exists)(json, 'FromVersion') ? undefined : json['FromVersion'],
+        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
+        'impact': !(0, runtime_1.exists)(json, 'Impact') ? undefined : json['Impact'],
+        'remedy': !(0, runtime_1.exists)(json, 'Remedy') ? undefined : json['Remedy'],
+        'severity': !(0, runtime_1.exists)(json, 'Severity') ? undefined : json['Severity'],
+        'summary': !(0, runtime_1.exists)(json, 'Summary') ? undefined : json['Summary'],
+        'title': !(0, runtime_1.exists)(json, 'Title') ? undefined : json['Title'],
+        'toVersionOrdinal': !(0, runtime_1.exists)(json, 'ToVersionOrdinal') ? undefined : json['ToVersionOrdinal'],
+        'toVersion': !(0, runtime_1.exists)(json, 'ToVersion') ? undefined : json['ToVersion'],
+        'vulnerability': !(0, runtime_1.exists)(json, 'Vulnerability') ? undefined : json['Vulnerability'],
+        'application': !(0, runtime_1.exists)(json, 'Application') ? undefined : json['Application'],
+        'bdu': !(0, runtime_1.exists)(json, 'Bdu') ? undefined : json['Bdu'],
+        'cvss': !(0, runtime_1.exists)(json, 'Cvss') ? undefined : json['Cvss'],
+        'ownerVulnerabilityType': !(0, runtime_1.exists)(json, 'OwnerVulnerabilityType') ? undefined : json['OwnerVulnerabilityType'],
     };
 }
-export function VersionIssueToJSON(value) {
+exports.VersionIssueFromJSONTyped = VersionIssueFromJSONTyped;
+function VersionIssueToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -1611,4 +1617,5 @@ export function VersionIssueToJSON(value) {
         'OwnerVulnerabilityType': value.ownerVulnerabilityType,
     };
 }
+exports.VersionIssueToJSON = VersionIssueToJSON;
 //# sourceMappingURL=VersionIssue.js.map

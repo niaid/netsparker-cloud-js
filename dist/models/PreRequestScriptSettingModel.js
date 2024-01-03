@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,27 +12,32 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.PreRequestScriptSettingModelToJSON = exports.PreRequestScriptSettingModelFromJSONTyped = exports.PreRequestScriptSettingModelFromJSON = exports.instanceOfPreRequestScriptSettingModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the PreRequestScriptSettingModel interface.
  */
-export function instanceOfPreRequestScriptSettingModel(value) {
+function instanceOfPreRequestScriptSettingModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function PreRequestScriptSettingModelFromJSON(json) {
+exports.instanceOfPreRequestScriptSettingModel = instanceOfPreRequestScriptSettingModel;
+function PreRequestScriptSettingModelFromJSON(json) {
     return PreRequestScriptSettingModelFromJSONTyped(json, false);
 }
-export function PreRequestScriptSettingModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.PreRequestScriptSettingModelFromJSON = PreRequestScriptSettingModelFromJSON;
+function PreRequestScriptSettingModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'isEnabled': !exists(json, 'IsEnabled') ? undefined : json['IsEnabled'],
-        'content': !exists(json, 'Content') ? undefined : json['Content'],
+        'isEnabled': !(0, runtime_1.exists)(json, 'IsEnabled') ? undefined : json['IsEnabled'],
+        'content': !(0, runtime_1.exists)(json, 'Content') ? undefined : json['Content'],
     };
 }
-export function PreRequestScriptSettingModelToJSON(value) {
+exports.PreRequestScriptSettingModelFromJSONTyped = PreRequestScriptSettingModelFromJSONTyped;
+function PreRequestScriptSettingModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -43,4 +49,5 @@ export function PreRequestScriptSettingModelToJSON(value) {
         'Content': value.content,
     };
 }
+exports.PreRequestScriptSettingModelToJSON = PreRequestScriptSettingModelToJSON;
 //# sourceMappingURL=PreRequestScriptSettingModel.js.map

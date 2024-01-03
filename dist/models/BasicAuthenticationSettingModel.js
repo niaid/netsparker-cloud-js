@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,29 +12,34 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { BasicAuthenticationCredentialModelFromJSON, BasicAuthenticationCredentialModelToJSON, } from './BasicAuthenticationCredentialModel';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.BasicAuthenticationSettingModelToJSON = exports.BasicAuthenticationSettingModelFromJSONTyped = exports.BasicAuthenticationSettingModelFromJSON = exports.instanceOfBasicAuthenticationSettingModel = void 0;
+const runtime_1 = require("../runtime");
+const BasicAuthenticationCredentialModel_1 = require("./BasicAuthenticationCredentialModel");
 /**
  * Check if a given object implements the BasicAuthenticationSettingModel interface.
  */
-export function instanceOfBasicAuthenticationSettingModel(value) {
+function instanceOfBasicAuthenticationSettingModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function BasicAuthenticationSettingModelFromJSON(json) {
+exports.instanceOfBasicAuthenticationSettingModel = instanceOfBasicAuthenticationSettingModel;
+function BasicAuthenticationSettingModelFromJSON(json) {
     return BasicAuthenticationSettingModelFromJSONTyped(json, false);
 }
-export function BasicAuthenticationSettingModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.BasicAuthenticationSettingModelFromJSON = BasicAuthenticationSettingModelFromJSON;
+function BasicAuthenticationSettingModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'credentials': !exists(json, 'Credentials') ? undefined : (json['Credentials'].map(BasicAuthenticationCredentialModelFromJSON)),
-        'isEnabled': !exists(json, 'IsEnabled') ? undefined : json['IsEnabled'],
-        'noChallenge': !exists(json, 'NoChallenge') ? undefined : json['NoChallenge'],
+        'credentials': !(0, runtime_1.exists)(json, 'Credentials') ? undefined : (json['Credentials'].map(BasicAuthenticationCredentialModel_1.BasicAuthenticationCredentialModelFromJSON)),
+        'isEnabled': !(0, runtime_1.exists)(json, 'IsEnabled') ? undefined : json['IsEnabled'],
+        'noChallenge': !(0, runtime_1.exists)(json, 'NoChallenge') ? undefined : json['NoChallenge'],
     };
 }
-export function BasicAuthenticationSettingModelToJSON(value) {
+exports.BasicAuthenticationSettingModelFromJSONTyped = BasicAuthenticationSettingModelFromJSONTyped;
+function BasicAuthenticationSettingModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -41,9 +47,10 @@ export function BasicAuthenticationSettingModelToJSON(value) {
         return null;
     }
     return {
-        'Credentials': value.credentials === undefined ? undefined : (value.credentials.map(BasicAuthenticationCredentialModelToJSON)),
+        'Credentials': value.credentials === undefined ? undefined : (value.credentials.map(BasicAuthenticationCredentialModel_1.BasicAuthenticationCredentialModelToJSON)),
         'IsEnabled': value.isEnabled,
         'NoChallenge': value.noChallenge,
     };
 }
+exports.BasicAuthenticationSettingModelToJSON = BasicAuthenticationSettingModelToJSON;
 //# sourceMappingURL=BasicAuthenticationSettingModel.js.map

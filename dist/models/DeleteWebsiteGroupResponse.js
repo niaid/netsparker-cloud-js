@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,11 +12,13 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.DeleteWebsiteGroupResponseToJSON = exports.DeleteWebsiteGroupResponseFromJSONTyped = exports.DeleteWebsiteGroupResponseFromJSON = exports.instanceOfDeleteWebsiteGroupResponse = exports.DeleteWebsiteGroupResponseResultEnum = void 0;
+const runtime_1 = require("../runtime");
 /**
  * @export
  */
-export const DeleteWebsiteGroupResponseResultEnum = {
+exports.DeleteWebsiteGroupResponseResultEnum = {
     Ok: 'Ok',
     NotFound: 'NotFound',
     WebsitesExisting: 'WebsitesExisting',
@@ -26,23 +29,26 @@ export const DeleteWebsiteGroupResponseResultEnum = {
 /**
  * Check if a given object implements the DeleteWebsiteGroupResponse interface.
  */
-export function instanceOfDeleteWebsiteGroupResponse(value) {
+function instanceOfDeleteWebsiteGroupResponse(value) {
     let isInstance = true;
     return isInstance;
 }
-export function DeleteWebsiteGroupResponseFromJSON(json) {
+exports.instanceOfDeleteWebsiteGroupResponse = instanceOfDeleteWebsiteGroupResponse;
+function DeleteWebsiteGroupResponseFromJSON(json) {
     return DeleteWebsiteGroupResponseFromJSONTyped(json, false);
 }
-export function DeleteWebsiteGroupResponseFromJSONTyped(json, ignoreDiscriminator) {
+exports.DeleteWebsiteGroupResponseFromJSON = DeleteWebsiteGroupResponseFromJSON;
+function DeleteWebsiteGroupResponseFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'result': !exists(json, 'Result') ? undefined : json['Result'],
-        'message': !exists(json, 'Message') ? undefined : json['Message'],
+        'result': !(0, runtime_1.exists)(json, 'Result') ? undefined : json['Result'],
+        'message': !(0, runtime_1.exists)(json, 'Message') ? undefined : json['Message'],
     };
 }
-export function DeleteWebsiteGroupResponseToJSON(value) {
+exports.DeleteWebsiteGroupResponseFromJSONTyped = DeleteWebsiteGroupResponseFromJSONTyped;
+function DeleteWebsiteGroupResponseToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -54,4 +60,5 @@ export function DeleteWebsiteGroupResponseToJSON(value) {
         'Message': value.message,
     };
 }
+exports.DeleteWebsiteGroupResponseToJSON = DeleteWebsiteGroupResponseToJSON;
 //# sourceMappingURL=DeleteWebsiteGroupResponse.js.map

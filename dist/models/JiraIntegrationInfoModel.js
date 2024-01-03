@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,29 +12,31 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { IntegrationCustomFieldVmFromJSON, IntegrationCustomFieldVmToJSON, } from './IntegrationCustomFieldVm';
-import { IntegrationUserMappingItemModelFromJSON, IntegrationUserMappingItemModelToJSON, } from './IntegrationUserMappingItemModel';
-import { IntegrationWizardResultModelFromJSON, IntegrationWizardResultModelToJSON, } from './IntegrationWizardResultModel';
-import { JiraPriorityMappingFromJSON, JiraPriorityMappingToJSON, } from './JiraPriorityMapping';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.JiraIntegrationInfoModelToJSON = exports.JiraIntegrationInfoModelFromJSONTyped = exports.JiraIntegrationInfoModelFromJSON = exports.instanceOfJiraIntegrationInfoModel = exports.JiraIntegrationInfoModelTypeEnum = exports.JiraIntegrationInfoModelEpicSelectionTypeEnum = exports.JiraIntegrationInfoModelTemplateTypeEnum = exports.JiraIntegrationInfoModelReopenStatusJiraEnum = void 0;
+const runtime_1 = require("../runtime");
+const IntegrationCustomFieldVm_1 = require("./IntegrationCustomFieldVm");
+const IntegrationUserMappingItemModel_1 = require("./IntegrationUserMappingItemModel");
+const IntegrationWizardResultModel_1 = require("./IntegrationWizardResultModel");
+const JiraPriorityMapping_1 = require("./JiraPriorityMapping");
 /**
  * @export
  */
-export const JiraIntegrationInfoModelReopenStatusJiraEnum = {
+exports.JiraIntegrationInfoModelReopenStatusJiraEnum = {
     ToDo: 'ToDo',
     InProgress: 'InProgress'
 };
 /**
  * @export
  */
-export const JiraIntegrationInfoModelTemplateTypeEnum = {
+exports.JiraIntegrationInfoModelTemplateTypeEnum = {
     Standard: 'Standard',
     Detailed: 'Detailed'
 };
 /**
  * @export
  */
-export const JiraIntegrationInfoModelEpicSelectionTypeEnum = {
+exports.JiraIntegrationInfoModelEpicSelectionTypeEnum = {
     None: 'None',
     EpicName: 'EpicName',
     EpicKey: 'EpicKey'
@@ -41,7 +44,7 @@ export const JiraIntegrationInfoModelEpicSelectionTypeEnum = {
 /**
  * @export
  */
-export const JiraIntegrationInfoModelTypeEnum = {
+exports.JiraIntegrationInfoModelTypeEnum = {
     Jira: 'Jira',
     GitHub: 'GitHub',
     Tfs: 'TFS',
@@ -79,7 +82,7 @@ export const JiraIntegrationInfoModelTypeEnum = {
 /**
  * Check if a given object implements the JiraIntegrationInfoModel interface.
  */
-export function instanceOfJiraIntegrationInfoModel(value) {
+function instanceOfJiraIntegrationInfoModel(value) {
     let isInstance = true;
     isInstance = isInstance && "issueType" in value;
     isInstance = isInstance && "password" in value;
@@ -89,59 +92,62 @@ export function instanceOfJiraIntegrationInfoModel(value) {
     isInstance = isInstance && "titleFormat" in value;
     return isInstance;
 }
-export function JiraIntegrationInfoModelFromJSON(json) {
+exports.instanceOfJiraIntegrationInfoModel = instanceOfJiraIntegrationInfoModel;
+function JiraIntegrationInfoModelFromJSON(json) {
     return JiraIntegrationInfoModelFromJSONTyped(json, false);
 }
-export function JiraIntegrationInfoModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.JiraIntegrationInfoModelFromJSON = JiraIntegrationInfoModelFromJSON;
+function JiraIntegrationInfoModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'assignedTo': !exists(json, 'AssignedTo') ? undefined : json['AssignedTo'],
-        'assignedToName': !exists(json, 'AssignedToName') ? undefined : json['AssignedToName'],
-        'autoAssignToPerson': !exists(json, 'AutoAssignToPerson') ? undefined : json['AutoAssignToPerson'],
-        'dueDays': !exists(json, 'DueDays') ? undefined : json['DueDays'],
-        'isCloud': !exists(json, 'IsCloud') ? undefined : json['IsCloud'],
+        'assignedTo': !(0, runtime_1.exists)(json, 'AssignedTo') ? undefined : json['AssignedTo'],
+        'assignedToName': !(0, runtime_1.exists)(json, 'AssignedToName') ? undefined : json['AssignedToName'],
+        'autoAssignToPerson': !(0, runtime_1.exists)(json, 'AutoAssignToPerson') ? undefined : json['AutoAssignToPerson'],
+        'dueDays': !(0, runtime_1.exists)(json, 'DueDays') ? undefined : json['DueDays'],
+        'isCloud': !(0, runtime_1.exists)(json, 'IsCloud') ? undefined : json['IsCloud'],
         'issueType': json['IssueType'],
-        'issueTypeId': !exists(json, 'IssueTypeId') ? undefined : json['IssueTypeId'],
-        'labels': !exists(json, 'Labels') ? undefined : json['Labels'],
-        'components': !exists(json, 'Components') ? undefined : json['Components'],
-        'mappedJiraUsers': !exists(json, 'MappedJiraUsers') ? undefined : (json['MappedJiraUsers'].map(IntegrationUserMappingItemModelFromJSON)),
+        'issueTypeId': !(0, runtime_1.exists)(json, 'IssueTypeId') ? undefined : json['IssueTypeId'],
+        'labels': !(0, runtime_1.exists)(json, 'Labels') ? undefined : json['Labels'],
+        'components': !(0, runtime_1.exists)(json, 'Components') ? undefined : json['Components'],
+        'mappedJiraUsers': !(0, runtime_1.exists)(json, 'MappedJiraUsers') ? undefined : (json['MappedJiraUsers'].map(IntegrationUserMappingItemModel_1.IntegrationUserMappingItemModelFromJSON)),
         'password': json['Password'],
-        'priority': !exists(json, 'Priority') ? undefined : json['Priority'],
-        'securityLevel': !exists(json, 'SecurityLevel') ? undefined : json['SecurityLevel'],
+        'priority': !(0, runtime_1.exists)(json, 'Priority') ? undefined : json['Priority'],
+        'securityLevel': !(0, runtime_1.exists)(json, 'SecurityLevel') ? undefined : json['SecurityLevel'],
         'projectKey': json['ProjectKey'],
-        'projectName': !exists(json, 'ProjectName') ? undefined : json['ProjectName'],
-        'projectId': !exists(json, 'ProjectId') ? undefined : json['ProjectId'],
-        'reopenStatus': !exists(json, 'ReopenStatus') ? undefined : json['ReopenStatus'],
-        'reopenStatusJira': !exists(json, 'ReopenStatusJira') ? undefined : json['ReopenStatusJira'],
-        'reporter': !exists(json, 'Reporter') ? undefined : json['Reporter'],
-        'reporterName': !exists(json, 'ReporterName') ? undefined : json['ReporterName'],
+        'projectName': !(0, runtime_1.exists)(json, 'ProjectName') ? undefined : json['ProjectName'],
+        'projectId': !(0, runtime_1.exists)(json, 'ProjectId') ? undefined : json['ProjectId'],
+        'reopenStatus': !(0, runtime_1.exists)(json, 'ReopenStatus') ? undefined : json['ReopenStatus'],
+        'reopenStatusJira': !(0, runtime_1.exists)(json, 'ReopenStatusJira') ? undefined : json['ReopenStatusJira'],
+        'reporter': !(0, runtime_1.exists)(json, 'Reporter') ? undefined : json['Reporter'],
+        'reporterName': !(0, runtime_1.exists)(json, 'ReporterName') ? undefined : json['ReporterName'],
         'url': json['Url'],
         'usernameOrEmail': json['UsernameOrEmail'],
-        'webhookUrl': !exists(json, 'WebhookUrl') ? undefined : json['WebhookUrl'],
-        'templateType': !exists(json, 'TemplateType') ? undefined : json['TemplateType'],
-        'epicName': !exists(json, 'EpicName') ? undefined : json['EpicName'],
-        'epicNameCustomFieldName': !exists(json, 'EpicNameCustomFieldName') ? undefined : json['EpicNameCustomFieldName'],
-        'epicKey': !exists(json, 'EpicKey') ? undefined : json['EpicKey'],
-        'epicKeyCustomFieldName': !exists(json, 'EpicKeyCustomFieldName') ? undefined : json['EpicKeyCustomFieldName'],
-        'epicSelectionType': !exists(json, 'EpicSelectionType') ? undefined : json['EpicSelectionType'],
-        'priorityMappings': !exists(json, 'PriorityMappings') ? undefined : (json['PriorityMappings'].map(JiraPriorityMappingFromJSON)),
-        'type': !exists(json, 'Type') ? undefined : json['Type'],
-        'genericErrorMessage': !exists(json, 'GenericErrorMessage') ? undefined : json['GenericErrorMessage'],
-        'identifier': !exists(json, 'Identifier') ? undefined : json['Identifier'],
-        'testMessageBody': !exists(json, 'TestMessageBody') ? undefined : json['TestMessageBody'],
-        'testMessageTitle': !exists(json, 'TestMessageTitle') ? undefined : json['TestMessageTitle'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'integrationVersion': !exists(json, 'IntegrationVersion') ? undefined : json['IntegrationVersion'],
-        'accountID': !exists(json, 'AccountID') ? undefined : json['AccountID'],
-        'customFields': !exists(json, 'CustomFields') ? undefined : (json['CustomFields'].map(IntegrationCustomFieldVmFromJSON)),
-        'resolvedStatus': !exists(json, 'ResolvedStatus') ? undefined : json['ResolvedStatus'],
+        'webhookUrl': !(0, runtime_1.exists)(json, 'WebhookUrl') ? undefined : json['WebhookUrl'],
+        'templateType': !(0, runtime_1.exists)(json, 'TemplateType') ? undefined : json['TemplateType'],
+        'epicName': !(0, runtime_1.exists)(json, 'EpicName') ? undefined : json['EpicName'],
+        'epicNameCustomFieldName': !(0, runtime_1.exists)(json, 'EpicNameCustomFieldName') ? undefined : json['EpicNameCustomFieldName'],
+        'epicKey': !(0, runtime_1.exists)(json, 'EpicKey') ? undefined : json['EpicKey'],
+        'epicKeyCustomFieldName': !(0, runtime_1.exists)(json, 'EpicKeyCustomFieldName') ? undefined : json['EpicKeyCustomFieldName'],
+        'epicSelectionType': !(0, runtime_1.exists)(json, 'EpicSelectionType') ? undefined : json['EpicSelectionType'],
+        'priorityMappings': !(0, runtime_1.exists)(json, 'PriorityMappings') ? undefined : (json['PriorityMappings'].map(JiraPriorityMapping_1.JiraPriorityMappingFromJSON)),
+        'type': !(0, runtime_1.exists)(json, 'Type') ? undefined : json['Type'],
+        'genericErrorMessage': !(0, runtime_1.exists)(json, 'GenericErrorMessage') ? undefined : json['GenericErrorMessage'],
+        'identifier': !(0, runtime_1.exists)(json, 'Identifier') ? undefined : json['Identifier'],
+        'testMessageBody': !(0, runtime_1.exists)(json, 'TestMessageBody') ? undefined : json['TestMessageBody'],
+        'testMessageTitle': !(0, runtime_1.exists)(json, 'TestMessageTitle') ? undefined : json['TestMessageTitle'],
+        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
+        'integrationVersion': !(0, runtime_1.exists)(json, 'IntegrationVersion') ? undefined : json['IntegrationVersion'],
+        'accountID': !(0, runtime_1.exists)(json, 'AccountID') ? undefined : json['AccountID'],
+        'customFields': !(0, runtime_1.exists)(json, 'CustomFields') ? undefined : (json['CustomFields'].map(IntegrationCustomFieldVm_1.IntegrationCustomFieldVmFromJSON)),
+        'resolvedStatus': !(0, runtime_1.exists)(json, 'ResolvedStatus') ? undefined : json['ResolvedStatus'],
         'titleFormat': json['TitleFormat'],
-        'integrationWizardResultModel': !exists(json, 'IntegrationWizardResultModel') ? undefined : IntegrationWizardResultModelFromJSON(json['IntegrationWizardResultModel']),
+        'integrationWizardResultModel': !(0, runtime_1.exists)(json, 'IntegrationWizardResultModel') ? undefined : (0, IntegrationWizardResultModel_1.IntegrationWizardResultModelFromJSON)(json['IntegrationWizardResultModel']),
     };
 }
-export function JiraIntegrationInfoModelToJSON(value) {
+exports.JiraIntegrationInfoModelFromJSONTyped = JiraIntegrationInfoModelFromJSONTyped;
+function JiraIntegrationInfoModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -157,7 +163,7 @@ export function JiraIntegrationInfoModelToJSON(value) {
         'IssueTypeId': value.issueTypeId,
         'Labels': value.labels,
         'Components': value.components,
-        'MappedJiraUsers': value.mappedJiraUsers === undefined ? undefined : (value.mappedJiraUsers.map(IntegrationUserMappingItemModelToJSON)),
+        'MappedJiraUsers': value.mappedJiraUsers === undefined ? undefined : (value.mappedJiraUsers.map(IntegrationUserMappingItemModel_1.IntegrationUserMappingItemModelToJSON)),
         'Password': value.password,
         'Priority': value.priority,
         'SecurityLevel': value.securityLevel,
@@ -174,14 +180,15 @@ export function JiraIntegrationInfoModelToJSON(value) {
         'EpicNameCustomFieldName': value.epicNameCustomFieldName,
         'EpicKey': value.epicKey,
         'EpicKeyCustomFieldName': value.epicKeyCustomFieldName,
-        'PriorityMappings': value.priorityMappings === undefined ? undefined : (value.priorityMappings.map(JiraPriorityMappingToJSON)),
+        'PriorityMappings': value.priorityMappings === undefined ? undefined : (value.priorityMappings.map(JiraPriorityMapping_1.JiraPriorityMappingToJSON)),
         'Name': value.name,
         'IntegrationVersion': value.integrationVersion,
         'AccountID': value.accountID,
-        'CustomFields': value.customFields === undefined ? undefined : (value.customFields.map(IntegrationCustomFieldVmToJSON)),
+        'CustomFields': value.customFields === undefined ? undefined : (value.customFields.map(IntegrationCustomFieldVm_1.IntegrationCustomFieldVmToJSON)),
         'ResolvedStatus': value.resolvedStatus,
         'TitleFormat': value.titleFormat,
-        'IntegrationWizardResultModel': IntegrationWizardResultModelToJSON(value.integrationWizardResultModel),
+        'IntegrationWizardResultModel': (0, IntegrationWizardResultModel_1.IntegrationWizardResultModelToJSON)(value.integrationWizardResultModel),
     };
 }
+exports.JiraIntegrationInfoModelToJSON = JiraIntegrationInfoModelToJSON;
 //# sourceMappingURL=JiraIntegrationInfoModel.js.map

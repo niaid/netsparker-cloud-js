@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,18 +12,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.DeleteScanNotificationApiModelToJSON = exports.DeleteScanNotificationApiModelFromJSONTyped = exports.DeleteScanNotificationApiModelFromJSON = exports.instanceOfDeleteScanNotificationApiModel = void 0;
 /**
  * Check if a given object implements the DeleteScanNotificationApiModel interface.
  */
-export function instanceOfDeleteScanNotificationApiModel(value) {
+function instanceOfDeleteScanNotificationApiModel(value) {
     let isInstance = true;
     isInstance = isInstance && "id" in value;
     return isInstance;
 }
-export function DeleteScanNotificationApiModelFromJSON(json) {
+exports.instanceOfDeleteScanNotificationApiModel = instanceOfDeleteScanNotificationApiModel;
+function DeleteScanNotificationApiModelFromJSON(json) {
     return DeleteScanNotificationApiModelFromJSONTyped(json, false);
 }
-export function DeleteScanNotificationApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.DeleteScanNotificationApiModelFromJSON = DeleteScanNotificationApiModelFromJSON;
+function DeleteScanNotificationApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
@@ -30,7 +35,8 @@ export function DeleteScanNotificationApiModelFromJSONTyped(json, ignoreDiscrimi
         'id': json['Id'],
     };
 }
-export function DeleteScanNotificationApiModelToJSON(value) {
+exports.DeleteScanNotificationApiModelFromJSONTyped = DeleteScanNotificationApiModelFromJSONTyped;
+function DeleteScanNotificationApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -41,4 +47,5 @@ export function DeleteScanNotificationApiModelToJSON(value) {
         'Id': value.id,
     };
 }
+exports.DeleteScanNotificationApiModelToJSON = DeleteScanNotificationApiModelToJSON;
 //# sourceMappingURL=DeleteScanNotificationApiModel.js.map

@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,16 +12,18 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists, mapValues } from '../runtime';
-import { IntegrationCustomFieldVmFromJSON, IntegrationCustomFieldVmToJSON, } from './IntegrationCustomFieldVm';
-import { IntegrationWizardResultModelFromJSON, IntegrationWizardResultModelToJSON, } from './IntegrationWizardResultModel';
-import { ServiceNowIncidentFieldPairValueFromJSON, ServiceNowIncidentFieldPairValueToJSON, } from './ServiceNowIncidentFieldPairValue';
-import { ServiceNowIncidentMappingFromJSON, ServiceNowIncidentMappingToJSON, } from './ServiceNowIncidentMapping';
-import { ServiceNowIntegrationInfoModelFieldMappingsDictionaryFromJSON, ServiceNowIntegrationInfoModelFieldMappingsDictionaryToJSON, } from './ServiceNowIntegrationInfoModelFieldMappingsDictionary';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ServiceNowIntegrationInfoModelToJSON = exports.ServiceNowIntegrationInfoModelFromJSONTyped = exports.ServiceNowIntegrationInfoModelFromJSON = exports.instanceOfServiceNowIntegrationInfoModel = exports.ServiceNowIntegrationInfoModelTypeEnum = exports.ServiceNowIntegrationInfoModelTemplateTypeEnum = exports.ServiceNowIntegrationInfoModelResolvedStatusServiceNowEnum = exports.ServiceNowIntegrationInfoModelServiceNowOnHoldReasonTypeEnum = exports.ServiceNowIntegrationInfoModelServiceNowReopenCategoryTypeEnum = exports.ServiceNowIntegrationInfoModelServiceNowCategoryTypesEnum = void 0;
+const runtime_1 = require("../runtime");
+const IntegrationCustomFieldVm_1 = require("./IntegrationCustomFieldVm");
+const IntegrationWizardResultModel_1 = require("./IntegrationWizardResultModel");
+const ServiceNowIncidentFieldPairValue_1 = require("./ServiceNowIncidentFieldPairValue");
+const ServiceNowIncidentMapping_1 = require("./ServiceNowIncidentMapping");
+const ServiceNowIntegrationInfoModelFieldMappingsDictionary_1 = require("./ServiceNowIntegrationInfoModelFieldMappingsDictionary");
 /**
  * @export
  */
-export const ServiceNowIntegrationInfoModelServiceNowCategoryTypesEnum = {
+exports.ServiceNowIntegrationInfoModelServiceNowCategoryTypesEnum = {
     Inquiry: 'Inquiry',
     Software: 'Software',
     Hardware: 'Hardware',
@@ -30,7 +33,7 @@ export const ServiceNowIntegrationInfoModelServiceNowCategoryTypesEnum = {
 /**
  * @export
  */
-export const ServiceNowIntegrationInfoModelServiceNowReopenCategoryTypeEnum = {
+exports.ServiceNowIntegrationInfoModelServiceNowReopenCategoryTypeEnum = {
     New: 'New',
     InProgress: 'In_Progress',
     OnHold: 'On_Hold'
@@ -38,7 +41,7 @@ export const ServiceNowIntegrationInfoModelServiceNowReopenCategoryTypeEnum = {
 /**
  * @export
  */
-export const ServiceNowIntegrationInfoModelServiceNowOnHoldReasonTypeEnum = {
+exports.ServiceNowIntegrationInfoModelServiceNowOnHoldReasonTypeEnum = {
     AwaitingCaller: 'AwaitingCaller',
     AwaitingChange: 'AwaitingChange',
     AwaitingProblem: 'AwaitingProblem',
@@ -47,21 +50,21 @@ export const ServiceNowIntegrationInfoModelServiceNowOnHoldReasonTypeEnum = {
 /**
  * @export
  */
-export const ServiceNowIntegrationInfoModelResolvedStatusServiceNowEnum = {
+exports.ServiceNowIntegrationInfoModelResolvedStatusServiceNowEnum = {
     Resolved: 'Resolved',
     Closed: 'Closed'
 };
 /**
  * @export
  */
-export const ServiceNowIntegrationInfoModelTemplateTypeEnum = {
+exports.ServiceNowIntegrationInfoModelTemplateTypeEnum = {
     Standard: 'Standard',
     Detailed: 'Detailed'
 };
 /**
  * @export
  */
-export const ServiceNowIntegrationInfoModelTypeEnum = {
+exports.ServiceNowIntegrationInfoModelTypeEnum = {
     NetsparkerEnterprise: 'NetsparkerEnterprise',
     Webhook: 'Webhook',
     Zapier: 'Zapier',
@@ -99,7 +102,7 @@ export const ServiceNowIntegrationInfoModelTypeEnum = {
 /**
  * Check if a given object implements the ServiceNowIntegrationInfoModel interface.
  */
-export function instanceOfServiceNowIntegrationInfoModel(value) {
+function instanceOfServiceNowIntegrationInfoModel(value) {
     let isInstance = true;
     isInstance = isInstance && "password" in value;
     isInstance = isInstance && "url" in value;
@@ -107,50 +110,53 @@ export function instanceOfServiceNowIntegrationInfoModel(value) {
     isInstance = isInstance && "titleFormat" in value;
     return isInstance;
 }
-export function ServiceNowIntegrationInfoModelFromJSON(json) {
+exports.instanceOfServiceNowIntegrationInfoModel = instanceOfServiceNowIntegrationInfoModel;
+function ServiceNowIntegrationInfoModelFromJSON(json) {
     return ServiceNowIntegrationInfoModelFromJSONTyped(json, false);
 }
-export function ServiceNowIntegrationInfoModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.ServiceNowIntegrationInfoModelFromJSON = ServiceNowIntegrationInfoModelFromJSON;
+function ServiceNowIntegrationInfoModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'assignedToId': !exists(json, 'AssignedToId') ? undefined : json['AssignedToId'],
-        'callerId': !exists(json, 'CallerId') ? undefined : json['CallerId'],
-        'serviceNowCategoryTypes': !exists(json, 'ServiceNowCategoryTypes') ? undefined : json['ServiceNowCategoryTypes'],
-        'categoryTypes': !exists(json, 'CategoryTypes') ? undefined : json['CategoryTypes'],
-        'reopenStatus': !exists(json, 'ReopenStatus') ? undefined : json['ReopenStatus'],
-        'serviceNowReopenCategoryType': !exists(json, 'ServiceNowReopenCategoryType') ? undefined : json['ServiceNowReopenCategoryType'],
-        'serviceNowOnHoldReasonType': !exists(json, 'ServiceNowOnHoldReasonType') ? undefined : json['ServiceNowOnHoldReasonType'],
-        'closeTheFixedVulnerabilities': !exists(json, 'CloseTheFixedVulnerabilities') ? undefined : json['CloseTheFixedVulnerabilities'],
-        'category': !exists(json, 'Category') ? undefined : json['Category'],
-        'dueDays': !exists(json, 'DueDays') ? undefined : json['DueDays'],
-        'severity': !exists(json, 'Severity') ? undefined : json['Severity'],
+        'assignedToId': !(0, runtime_1.exists)(json, 'AssignedToId') ? undefined : json['AssignedToId'],
+        'callerId': !(0, runtime_1.exists)(json, 'CallerId') ? undefined : json['CallerId'],
+        'serviceNowCategoryTypes': !(0, runtime_1.exists)(json, 'ServiceNowCategoryTypes') ? undefined : json['ServiceNowCategoryTypes'],
+        'categoryTypes': !(0, runtime_1.exists)(json, 'CategoryTypes') ? undefined : json['CategoryTypes'],
+        'reopenStatus': !(0, runtime_1.exists)(json, 'ReopenStatus') ? undefined : json['ReopenStatus'],
+        'serviceNowReopenCategoryType': !(0, runtime_1.exists)(json, 'ServiceNowReopenCategoryType') ? undefined : json['ServiceNowReopenCategoryType'],
+        'serviceNowOnHoldReasonType': !(0, runtime_1.exists)(json, 'ServiceNowOnHoldReasonType') ? undefined : json['ServiceNowOnHoldReasonType'],
+        'closeTheFixedVulnerabilities': !(0, runtime_1.exists)(json, 'CloseTheFixedVulnerabilities') ? undefined : json['CloseTheFixedVulnerabilities'],
+        'category': !(0, runtime_1.exists)(json, 'Category') ? undefined : json['Category'],
+        'dueDays': !(0, runtime_1.exists)(json, 'DueDays') ? undefined : json['DueDays'],
+        'severity': !(0, runtime_1.exists)(json, 'Severity') ? undefined : json['Severity'],
         'password': json['Password'],
-        'resolvedStatus': !exists(json, 'ResolvedStatus') ? undefined : json['ResolvedStatus'],
-        'resolvedStatusServiceNow': !exists(json, 'ResolvedStatusServiceNow') ? undefined : json['ResolvedStatusServiceNow'],
+        'resolvedStatus': !(0, runtime_1.exists)(json, 'ResolvedStatus') ? undefined : json['ResolvedStatus'],
+        'resolvedStatusServiceNow': !(0, runtime_1.exists)(json, 'ResolvedStatusServiceNow') ? undefined : json['ResolvedStatusServiceNow'],
         'url': json['Url'],
-        'webhookUrl': !exists(json, 'WebhookUrl') ? undefined : json['WebhookUrl'],
+        'webhookUrl': !(0, runtime_1.exists)(json, 'WebhookUrl') ? undefined : json['WebhookUrl'],
         'username': json['Username'],
-        'templateType': !exists(json, 'TemplateType') ? undefined : json['TemplateType'],
-        'fieldMappingsDictionary': !exists(json, 'FieldMappingsDictionary') ? undefined : ServiceNowIntegrationInfoModelFieldMappingsDictionaryFromJSON(json['FieldMappingsDictionary']),
-        'incidentFieldPairs': !exists(json, 'IncidentFieldPairs') ? undefined : (mapValues(json['IncidentFieldPairs'], ServiceNowIncidentFieldPairValueFromJSON)),
-        'isImprovedVersion': !exists(json, 'IsImprovedVersion') ? undefined : json['IsImprovedVersion'],
-        'fieldMappings': !exists(json, 'FieldMappings') ? undefined : (json['FieldMappings'].map(ServiceNowIncidentMappingFromJSON)),
-        'type': !exists(json, 'Type') ? undefined : json['Type'],
-        'genericErrorMessage': !exists(json, 'GenericErrorMessage') ? undefined : json['GenericErrorMessage'],
-        'identifier': !exists(json, 'Identifier') ? undefined : json['Identifier'],
-        'testMessageBody': !exists(json, 'TestMessageBody') ? undefined : json['TestMessageBody'],
-        'testMessageTitle': !exists(json, 'TestMessageTitle') ? undefined : json['TestMessageTitle'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'integrationVersion': !exists(json, 'IntegrationVersion') ? undefined : json['IntegrationVersion'],
-        'accountID': !exists(json, 'AccountID') ? undefined : json['AccountID'],
-        'customFields': !exists(json, 'CustomFields') ? undefined : (json['CustomFields'].map(IntegrationCustomFieldVmFromJSON)),
+        'templateType': !(0, runtime_1.exists)(json, 'TemplateType') ? undefined : json['TemplateType'],
+        'fieldMappingsDictionary': !(0, runtime_1.exists)(json, 'FieldMappingsDictionary') ? undefined : (0, ServiceNowIntegrationInfoModelFieldMappingsDictionary_1.ServiceNowIntegrationInfoModelFieldMappingsDictionaryFromJSON)(json['FieldMappingsDictionary']),
+        'incidentFieldPairs': !(0, runtime_1.exists)(json, 'IncidentFieldPairs') ? undefined : ((0, runtime_1.mapValues)(json['IncidentFieldPairs'], ServiceNowIncidentFieldPairValue_1.ServiceNowIncidentFieldPairValueFromJSON)),
+        'isImprovedVersion': !(0, runtime_1.exists)(json, 'IsImprovedVersion') ? undefined : json['IsImprovedVersion'],
+        'fieldMappings': !(0, runtime_1.exists)(json, 'FieldMappings') ? undefined : (json['FieldMappings'].map(ServiceNowIncidentMapping_1.ServiceNowIncidentMappingFromJSON)),
+        'type': !(0, runtime_1.exists)(json, 'Type') ? undefined : json['Type'],
+        'genericErrorMessage': !(0, runtime_1.exists)(json, 'GenericErrorMessage') ? undefined : json['GenericErrorMessage'],
+        'identifier': !(0, runtime_1.exists)(json, 'Identifier') ? undefined : json['Identifier'],
+        'testMessageBody': !(0, runtime_1.exists)(json, 'TestMessageBody') ? undefined : json['TestMessageBody'],
+        'testMessageTitle': !(0, runtime_1.exists)(json, 'TestMessageTitle') ? undefined : json['TestMessageTitle'],
+        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
+        'integrationVersion': !(0, runtime_1.exists)(json, 'IntegrationVersion') ? undefined : json['IntegrationVersion'],
+        'accountID': !(0, runtime_1.exists)(json, 'AccountID') ? undefined : json['AccountID'],
+        'customFields': !(0, runtime_1.exists)(json, 'CustomFields') ? undefined : (json['CustomFields'].map(IntegrationCustomFieldVm_1.IntegrationCustomFieldVmFromJSON)),
         'titleFormat': json['TitleFormat'],
-        'integrationWizardResultModel': !exists(json, 'IntegrationWizardResultModel') ? undefined : IntegrationWizardResultModelFromJSON(json['IntegrationWizardResultModel']),
+        'integrationWizardResultModel': !(0, runtime_1.exists)(json, 'IntegrationWizardResultModel') ? undefined : (0, IntegrationWizardResultModel_1.IntegrationWizardResultModelFromJSON)(json['IntegrationWizardResultModel']),
     };
 }
-export function ServiceNowIntegrationInfoModelToJSON(value) {
+exports.ServiceNowIntegrationInfoModelFromJSONTyped = ServiceNowIntegrationInfoModelFromJSONTyped;
+function ServiceNowIntegrationInfoModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -173,16 +179,17 @@ export function ServiceNowIntegrationInfoModelToJSON(value) {
         'Url': value.url,
         'Username': value.username,
         'TemplateType': value.templateType,
-        'FieldMappingsDictionary': ServiceNowIntegrationInfoModelFieldMappingsDictionaryToJSON(value.fieldMappingsDictionary),
-        'IncidentFieldPairs': value.incidentFieldPairs === undefined ? undefined : (mapValues(value.incidentFieldPairs, ServiceNowIncidentFieldPairValueToJSON)),
+        'FieldMappingsDictionary': (0, ServiceNowIntegrationInfoModelFieldMappingsDictionary_1.ServiceNowIntegrationInfoModelFieldMappingsDictionaryToJSON)(value.fieldMappingsDictionary),
+        'IncidentFieldPairs': value.incidentFieldPairs === undefined ? undefined : ((0, runtime_1.mapValues)(value.incidentFieldPairs, ServiceNowIncidentFieldPairValue_1.ServiceNowIncidentFieldPairValueToJSON)),
         'IsImprovedVersion': value.isImprovedVersion,
-        'FieldMappings': value.fieldMappings === undefined ? undefined : (value.fieldMappings.map(ServiceNowIncidentMappingToJSON)),
+        'FieldMappings': value.fieldMappings === undefined ? undefined : (value.fieldMappings.map(ServiceNowIncidentMapping_1.ServiceNowIncidentMappingToJSON)),
         'Name': value.name,
         'IntegrationVersion': value.integrationVersion,
         'AccountID': value.accountID,
-        'CustomFields': value.customFields === undefined ? undefined : (value.customFields.map(IntegrationCustomFieldVmToJSON)),
+        'CustomFields': value.customFields === undefined ? undefined : (value.customFields.map(IntegrationCustomFieldVm_1.IntegrationCustomFieldVmToJSON)),
         'TitleFormat': value.titleFormat,
-        'IntegrationWizardResultModel': IntegrationWizardResultModelToJSON(value.integrationWizardResultModel),
+        'IntegrationWizardResultModel': (0, IntegrationWizardResultModel_1.IntegrationWizardResultModelToJSON)(value.integrationWizardResultModel),
     };
 }
+exports.ServiceNowIntegrationInfoModelToJSON = ServiceNowIntegrationInfoModelToJSON;
 //# sourceMappingURL=ServiceNowIntegrationInfoModel.js.map

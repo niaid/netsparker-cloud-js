@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,11 +12,13 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ImportLinksValidationApiModelToJSON = exports.ImportLinksValidationApiModelFromJSONTyped = exports.ImportLinksValidationApiModelFromJSON = exports.instanceOfImportLinksValidationApiModel = exports.ImportLinksValidationApiModelImportTypeEnum = void 0;
+const runtime_1 = require("../runtime");
 /**
  * @export
  */
-export const ImportLinksValidationApiModelImportTypeEnum = {
+exports.ImportLinksValidationApiModelImportTypeEnum = {
     None: 'None',
     Fiddler: 'Fiddler',
     Burp: 'Burp',
@@ -36,24 +39,27 @@ export const ImportLinksValidationApiModelImportTypeEnum = {
 /**
  * Check if a given object implements the ImportLinksValidationApiModel interface.
  */
-export function instanceOfImportLinksValidationApiModel(value) {
+function instanceOfImportLinksValidationApiModel(value) {
     let isInstance = true;
     isInstance = isInstance && "siteUrl" in value;
     return isInstance;
 }
-export function ImportLinksValidationApiModelFromJSON(json) {
+exports.instanceOfImportLinksValidationApiModel = instanceOfImportLinksValidationApiModel;
+function ImportLinksValidationApiModelFromJSON(json) {
     return ImportLinksValidationApiModelFromJSONTyped(json, false);
 }
-export function ImportLinksValidationApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.ImportLinksValidationApiModelFromJSON = ImportLinksValidationApiModelFromJSON;
+function ImportLinksValidationApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
         'siteUrl': json['SiteUrl'],
-        'importType': !exists(json, 'ImportType') ? undefined : json['ImportType'],
+        'importType': !(0, runtime_1.exists)(json, 'ImportType') ? undefined : json['ImportType'],
     };
 }
-export function ImportLinksValidationApiModelToJSON(value) {
+exports.ImportLinksValidationApiModelFromJSONTyped = ImportLinksValidationApiModelFromJSONTyped;
+function ImportLinksValidationApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -65,4 +71,5 @@ export function ImportLinksValidationApiModelToJSON(value) {
         'ImportType': value.importType,
     };
 }
+exports.ImportLinksValidationApiModelToJSON = ImportLinksValidationApiModelToJSON;
 //# sourceMappingURL=ImportLinksValidationApiModel.js.map

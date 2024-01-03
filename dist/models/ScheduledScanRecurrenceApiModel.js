@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,11 +12,13 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ScheduledScanRecurrenceApiModelToJSON = exports.ScheduledScanRecurrenceApiModelFromJSONTyped = exports.ScheduledScanRecurrenceApiModelFromJSON = exports.instanceOfScheduledScanRecurrenceApiModel = exports.ScheduledScanRecurrenceApiModelDayOfWeekEnum = exports.ScheduledScanRecurrenceApiModelOrdinalEnum = exports.ScheduledScanRecurrenceApiModelMonthsOfYearEnum = exports.ScheduledScanRecurrenceApiModelDaysOfWeekEnum = exports.ScheduledScanRecurrenceApiModelEndingTypeEnum = exports.ScheduledScanRecurrenceApiModelRepeatTypeEnum = void 0;
+const runtime_1 = require("../runtime");
 /**
  * @export
  */
-export const ScheduledScanRecurrenceApiModelRepeatTypeEnum = {
+exports.ScheduledScanRecurrenceApiModelRepeatTypeEnum = {
     Days: 'Days',
     Weeks: 'Weeks',
     Months: 'Months',
@@ -24,7 +27,7 @@ export const ScheduledScanRecurrenceApiModelRepeatTypeEnum = {
 /**
  * @export
  */
-export const ScheduledScanRecurrenceApiModelEndingTypeEnum = {
+exports.ScheduledScanRecurrenceApiModelEndingTypeEnum = {
     Never: 'Never',
     Date: 'Date',
     Occurences: 'Occurences'
@@ -32,7 +35,7 @@ export const ScheduledScanRecurrenceApiModelEndingTypeEnum = {
 /**
  * @export
  */
-export const ScheduledScanRecurrenceApiModelDaysOfWeekEnum = {
+exports.ScheduledScanRecurrenceApiModelDaysOfWeekEnum = {
     Sunday: 'Sunday',
     Monday: 'Monday',
     Tuesday: 'Tuesday',
@@ -44,7 +47,7 @@ export const ScheduledScanRecurrenceApiModelDaysOfWeekEnum = {
 /**
  * @export
  */
-export const ScheduledScanRecurrenceApiModelMonthsOfYearEnum = {
+exports.ScheduledScanRecurrenceApiModelMonthsOfYearEnum = {
     January: 'January',
     February: 'February',
     March: 'March',
@@ -61,7 +64,7 @@ export const ScheduledScanRecurrenceApiModelMonthsOfYearEnum = {
 /**
  * @export
  */
-export const ScheduledScanRecurrenceApiModelOrdinalEnum = {
+exports.ScheduledScanRecurrenceApiModelOrdinalEnum = {
     First: 'First',
     Second: 'Second',
     Third: 'Third',
@@ -71,7 +74,7 @@ export const ScheduledScanRecurrenceApiModelOrdinalEnum = {
 /**
  * @export
  */
-export const ScheduledScanRecurrenceApiModelDayOfWeekEnum = {
+exports.ScheduledScanRecurrenceApiModelDayOfWeekEnum = {
     Sunday: 'Sunday',
     Monday: 'Monday',
     Tuesday: 'Tuesday',
@@ -83,31 +86,34 @@ export const ScheduledScanRecurrenceApiModelDayOfWeekEnum = {
 /**
  * Check if a given object implements the ScheduledScanRecurrenceApiModel interface.
  */
-export function instanceOfScheduledScanRecurrenceApiModel(value) {
+function instanceOfScheduledScanRecurrenceApiModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function ScheduledScanRecurrenceApiModelFromJSON(json) {
+exports.instanceOfScheduledScanRecurrenceApiModel = instanceOfScheduledScanRecurrenceApiModel;
+function ScheduledScanRecurrenceApiModelFromJSON(json) {
     return ScheduledScanRecurrenceApiModelFromJSONTyped(json, false);
 }
-export function ScheduledScanRecurrenceApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.ScheduledScanRecurrenceApiModelFromJSON = ScheduledScanRecurrenceApiModelFromJSON;
+function ScheduledScanRecurrenceApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'repeatType': !exists(json, 'RepeatType') ? undefined : json['RepeatType'],
-        'interval': !exists(json, 'Interval') ? undefined : json['Interval'],
-        'endingType': !exists(json, 'EndingType') ? undefined : json['EndingType'],
-        'daysOfWeek': !exists(json, 'DaysOfWeek') ? undefined : json['DaysOfWeek'],
-        'monthsOfYear': !exists(json, 'MonthsOfYear') ? undefined : json['MonthsOfYear'],
-        'ordinal': !exists(json, 'Ordinal') ? undefined : json['Ordinal'],
-        'endOn': !exists(json, 'EndOn') ? undefined : json['EndOn'],
-        'endOnOccurences': !exists(json, 'EndOnOccurences') ? undefined : json['EndOnOccurences'],
-        'dayOfMonth': !exists(json, 'DayOfMonth') ? undefined : json['DayOfMonth'],
-        'dayOfWeek': !exists(json, 'DayOfWeek') ? undefined : json['DayOfWeek'],
+        'repeatType': !(0, runtime_1.exists)(json, 'RepeatType') ? undefined : json['RepeatType'],
+        'interval': !(0, runtime_1.exists)(json, 'Interval') ? undefined : json['Interval'],
+        'endingType': !(0, runtime_1.exists)(json, 'EndingType') ? undefined : json['EndingType'],
+        'daysOfWeek': !(0, runtime_1.exists)(json, 'DaysOfWeek') ? undefined : json['DaysOfWeek'],
+        'monthsOfYear': !(0, runtime_1.exists)(json, 'MonthsOfYear') ? undefined : json['MonthsOfYear'],
+        'ordinal': !(0, runtime_1.exists)(json, 'Ordinal') ? undefined : json['Ordinal'],
+        'endOn': !(0, runtime_1.exists)(json, 'EndOn') ? undefined : json['EndOn'],
+        'endOnOccurences': !(0, runtime_1.exists)(json, 'EndOnOccurences') ? undefined : json['EndOnOccurences'],
+        'dayOfMonth': !(0, runtime_1.exists)(json, 'DayOfMonth') ? undefined : json['DayOfMonth'],
+        'dayOfWeek': !(0, runtime_1.exists)(json, 'DayOfWeek') ? undefined : json['DayOfWeek'],
     };
 }
-export function ScheduledScanRecurrenceApiModelToJSON(value) {
+exports.ScheduledScanRecurrenceApiModelFromJSONTyped = ScheduledScanRecurrenceApiModelFromJSONTyped;
+function ScheduledScanRecurrenceApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -127,4 +133,5 @@ export function ScheduledScanRecurrenceApiModelToJSON(value) {
         'DayOfWeek': value.dayOfWeek,
     };
 }
+exports.ScheduledScanRecurrenceApiModelToJSON = ScheduledScanRecurrenceApiModelToJSON;
 //# sourceMappingURL=ScheduledScanRecurrenceApiModel.js.map

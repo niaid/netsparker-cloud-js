@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,27 +12,32 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AdditionalWebsiteModelToJSON = exports.AdditionalWebsiteModelFromJSONTyped = exports.AdditionalWebsiteModelFromJSON = exports.instanceOfAdditionalWebsiteModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the AdditionalWebsiteModel interface.
  */
-export function instanceOfAdditionalWebsiteModel(value) {
+function instanceOfAdditionalWebsiteModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function AdditionalWebsiteModelFromJSON(json) {
+exports.instanceOfAdditionalWebsiteModel = instanceOfAdditionalWebsiteModel;
+function AdditionalWebsiteModelFromJSON(json) {
     return AdditionalWebsiteModelFromJSONTyped(json, false);
 }
-export function AdditionalWebsiteModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.AdditionalWebsiteModelFromJSON = AdditionalWebsiteModelFromJSON;
+function AdditionalWebsiteModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'canonical': !exists(json, 'Canonical') ? undefined : json['Canonical'],
-        'targetUrl': !exists(json, 'TargetUrl') ? undefined : json['TargetUrl'],
+        'canonical': !(0, runtime_1.exists)(json, 'Canonical') ? undefined : json['Canonical'],
+        'targetUrl': !(0, runtime_1.exists)(json, 'TargetUrl') ? undefined : json['TargetUrl'],
     };
 }
-export function AdditionalWebsiteModelToJSON(value) {
+exports.AdditionalWebsiteModelFromJSONTyped = AdditionalWebsiteModelFromJSONTyped;
+function AdditionalWebsiteModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -43,4 +49,5 @@ export function AdditionalWebsiteModelToJSON(value) {
         'TargetUrl': value.targetUrl,
     };
 }
+exports.AdditionalWebsiteModelToJSON = AdditionalWebsiteModelToJSON;
 //# sourceMappingURL=AdditionalWebsiteModel.js.map

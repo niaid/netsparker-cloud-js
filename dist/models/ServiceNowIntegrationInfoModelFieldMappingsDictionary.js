@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,26 +12,31 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ServiceNowIntegrationInfoModelFieldMappingsDictionaryToJSON = exports.ServiceNowIntegrationInfoModelFieldMappingsDictionaryFromJSONTyped = exports.ServiceNowIntegrationInfoModelFieldMappingsDictionaryFromJSON = exports.instanceOfServiceNowIntegrationInfoModelFieldMappingsDictionary = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the ServiceNowIntegrationInfoModelFieldMappingsDictionary interface.
  */
-export function instanceOfServiceNowIntegrationInfoModelFieldMappingsDictionary(value) {
+function instanceOfServiceNowIntegrationInfoModelFieldMappingsDictionary(value) {
     let isInstance = true;
     return isInstance;
 }
-export function ServiceNowIntegrationInfoModelFieldMappingsDictionaryFromJSON(json) {
+exports.instanceOfServiceNowIntegrationInfoModelFieldMappingsDictionary = instanceOfServiceNowIntegrationInfoModelFieldMappingsDictionary;
+function ServiceNowIntegrationInfoModelFieldMappingsDictionaryFromJSON(json) {
     return ServiceNowIntegrationInfoModelFieldMappingsDictionaryFromJSONTyped(json, false);
 }
-export function ServiceNowIntegrationInfoModelFieldMappingsDictionaryFromJSONTyped(json, ignoreDiscriminator) {
+exports.ServiceNowIntegrationInfoModelFieldMappingsDictionaryFromJSON = ServiceNowIntegrationInfoModelFieldMappingsDictionaryFromJSON;
+function ServiceNowIntegrationInfoModelFieldMappingsDictionaryFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'severity': !exists(json, 'Severity') ? undefined : json['Severity'],
+        'severity': !(0, runtime_1.exists)(json, 'Severity') ? undefined : json['Severity'],
     };
 }
-export function ServiceNowIntegrationInfoModelFieldMappingsDictionaryToJSON(value) {
+exports.ServiceNowIntegrationInfoModelFieldMappingsDictionaryFromJSONTyped = ServiceNowIntegrationInfoModelFieldMappingsDictionaryFromJSONTyped;
+function ServiceNowIntegrationInfoModelFieldMappingsDictionaryToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -41,4 +47,5 @@ export function ServiceNowIntegrationInfoModelFieldMappingsDictionaryToJSON(valu
         'Severity': value.severity,
     };
 }
+exports.ServiceNowIntegrationInfoModelFieldMappingsDictionaryToJSON = ServiceNowIntegrationInfoModelFieldMappingsDictionaryToJSON;
 //# sourceMappingURL=ServiceNowIntegrationInfoModelFieldMappingsDictionary.js.map

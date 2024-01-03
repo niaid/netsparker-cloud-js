@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,19 +12,23 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.TestScanProfileCredentialsRequestModelToJSON = exports.TestScanProfileCredentialsRequestModelFromJSONTyped = exports.TestScanProfileCredentialsRequestModelFromJSON = exports.instanceOfTestScanProfileCredentialsRequestModel = void 0;
 /**
  * Check if a given object implements the TestScanProfileCredentialsRequestModel interface.
  */
-export function instanceOfTestScanProfileCredentialsRequestModel(value) {
+function instanceOfTestScanProfileCredentialsRequestModel(value) {
     let isInstance = true;
     isInstance = isInstance && "profileId" in value;
     isInstance = isInstance && "url" in value;
     return isInstance;
 }
-export function TestScanProfileCredentialsRequestModelFromJSON(json) {
+exports.instanceOfTestScanProfileCredentialsRequestModel = instanceOfTestScanProfileCredentialsRequestModel;
+function TestScanProfileCredentialsRequestModelFromJSON(json) {
     return TestScanProfileCredentialsRequestModelFromJSONTyped(json, false);
 }
-export function TestScanProfileCredentialsRequestModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.TestScanProfileCredentialsRequestModelFromJSON = TestScanProfileCredentialsRequestModelFromJSON;
+function TestScanProfileCredentialsRequestModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
@@ -32,7 +37,8 @@ export function TestScanProfileCredentialsRequestModelFromJSONTyped(json, ignore
         'url': json['Url'],
     };
 }
-export function TestScanProfileCredentialsRequestModelToJSON(value) {
+exports.TestScanProfileCredentialsRequestModelFromJSONTyped = TestScanProfileCredentialsRequestModelFromJSONTyped;
+function TestScanProfileCredentialsRequestModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -44,4 +50,5 @@ export function TestScanProfileCredentialsRequestModelToJSON(value) {
         'Url': value.url,
     };
 }
+exports.TestScanProfileCredentialsRequestModelToJSON = TestScanProfileCredentialsRequestModelToJSON;
 //# sourceMappingURL=TestScanProfileCredentialsRequestModel.js.map

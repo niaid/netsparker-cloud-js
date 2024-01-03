@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,12 +12,37 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import * as runtime from '../runtime';
-import { DeleteDiscoveryConnectionModelToJSON, DiscoveryConnectionsViewModelToJSON, DiscoveryServiceListApiResultFromJSON, DiscoverySettingsApiModelFromJSON, DiscoverySettingsApiModelToJSON, ExcludeFilterToJSON, } from '../models/index';
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.DiscoveryListByFilterStatusEnum = exports.DiscoveryExportCsvSeparatorEnum = exports.DiscoveryConnectionsTypeEnum = exports.DiscoveryConnectionByIdTypeEnum = exports.DiscoveryApi = void 0;
+const runtime = __importStar(require("../runtime"));
+const index_1 = require("../models/index");
 /**
  *
  */
-export class DiscoveryApi extends runtime.BaseAPI {
+class DiscoveryApi extends runtime.BaseAPI {
     /**
      * Get Connection By Id And Type.
      */
@@ -96,7 +122,7 @@ export class DiscoveryApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: DiscoveryConnectionsViewModelToJSON(requestParameters.model),
+            body: (0, index_1.DiscoveryConnectionsViewModelToJSON)(requestParameters.model),
         }, initOverrides);
         return new runtime.VoidApiResponse(response);
     }
@@ -121,7 +147,7 @@ export class DiscoveryApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: DeleteDiscoveryConnectionModelToJSON(requestParameters.model),
+            body: (0, index_1.DeleteDiscoveryConnectionModelToJSON)(requestParameters.model),
         }, initOverrides);
         return new runtime.VoidApiResponse(response);
     }
@@ -146,7 +172,7 @@ export class DiscoveryApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: DiscoveryConnectionsViewModelToJSON(requestParameters.model),
+            body: (0, index_1.DiscoveryConnectionsViewModelToJSON)(requestParameters.model),
         }, initOverrides);
         return new runtime.VoidApiResponse(response);
     }
@@ -171,7 +197,7 @@ export class DiscoveryApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: ExcludeFilterToJSON(requestParameters.model),
+            body: (0, index_1.ExcludeFilterToJSON)(requestParameters.model),
         }, initOverrides);
         return new runtime.JSONApiResponse(response);
     }
@@ -302,7 +328,7 @@ export class DiscoveryApi extends runtime.BaseAPI {
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => DiscoveryServiceListApiResultFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.DiscoveryServiceListApiResultFromJSON)(jsonValue));
     }
     /**
      * Gets the list discovery services.
@@ -353,7 +379,7 @@ export class DiscoveryApi extends runtime.BaseAPI {
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => DiscoveryServiceListApiResultFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.DiscoveryServiceListApiResultFromJSON)(jsonValue));
     }
     /**
      * Gets the list discovery services with filter.
@@ -374,7 +400,7 @@ export class DiscoveryApi extends runtime.BaseAPI {
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => DiscoverySettingsApiModelFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.DiscoverySettingsApiModelFromJSON)(jsonValue));
     }
     /**
      * Gets the discovery settings.
@@ -398,9 +424,9 @@ export class DiscoveryApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: DiscoverySettingsApiModelToJSON(requestParameters.model),
+            body: (0, index_1.DiscoverySettingsApiModelToJSON)(requestParameters.model),
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => DiscoverySettingsApiModelFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.DiscoverySettingsApiModelFromJSON)(jsonValue));
     }
     /**
      * Updates discovery settings.
@@ -410,22 +436,23 @@ export class DiscoveryApi extends runtime.BaseAPI {
         return await response.value();
     }
 }
+exports.DiscoveryApi = DiscoveryApi;
 /**
  * @export
  */
-export const DiscoveryConnectionByIdTypeEnum = {
+exports.DiscoveryConnectionByIdTypeEnum = {
     Aws: 'Aws'
 };
 /**
  * @export
  */
-export const DiscoveryConnectionsTypeEnum = {
+exports.DiscoveryConnectionsTypeEnum = {
     Aws: 'Aws'
 };
 /**
  * @export
  */
-export const DiscoveryExportCsvSeparatorEnum = {
+exports.DiscoveryExportCsvSeparatorEnum = {
     Comma: 'Comma',
     Semicolon: 'Semicolon',
     Pipe: 'Pipe',
@@ -434,7 +461,7 @@ export const DiscoveryExportCsvSeparatorEnum = {
 /**
  * @export
  */
-export const DiscoveryListByFilterStatusEnum = {
+exports.DiscoveryListByFilterStatusEnum = {
     Discovered: 'Discovered',
     Ignored: 'Ignored',
     Created: 'Created'

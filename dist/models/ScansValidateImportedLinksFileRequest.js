@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,18 +12,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ScansValidateImportedLinksFileRequestToJSON = exports.ScansValidateImportedLinksFileRequestFromJSONTyped = exports.ScansValidateImportedLinksFileRequestFromJSON = exports.instanceOfScansValidateImportedLinksFileRequest = void 0;
 /**
  * Check if a given object implements the ScansValidateImportedLinksFileRequest interface.
  */
-export function instanceOfScansValidateImportedLinksFileRequest(value) {
+function instanceOfScansValidateImportedLinksFileRequest(value) {
     let isInstance = true;
     isInstance = isInstance && "file" in value;
     return isInstance;
 }
-export function ScansValidateImportedLinksFileRequestFromJSON(json) {
+exports.instanceOfScansValidateImportedLinksFileRequest = instanceOfScansValidateImportedLinksFileRequest;
+function ScansValidateImportedLinksFileRequestFromJSON(json) {
     return ScansValidateImportedLinksFileRequestFromJSONTyped(json, false);
 }
-export function ScansValidateImportedLinksFileRequestFromJSONTyped(json, ignoreDiscriminator) {
+exports.ScansValidateImportedLinksFileRequestFromJSON = ScansValidateImportedLinksFileRequestFromJSON;
+function ScansValidateImportedLinksFileRequestFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
@@ -30,7 +35,8 @@ export function ScansValidateImportedLinksFileRequestFromJSONTyped(json, ignoreD
         'file': json['File'],
     };
 }
-export function ScansValidateImportedLinksFileRequestToJSON(value) {
+exports.ScansValidateImportedLinksFileRequestFromJSONTyped = ScansValidateImportedLinksFileRequestFromJSONTyped;
+function ScansValidateImportedLinksFileRequestToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -41,4 +47,5 @@ export function ScansValidateImportedLinksFileRequestToJSON(value) {
         'File': value.file,
     };
 }
+exports.ScansValidateImportedLinksFileRequestToJSON = ScansValidateImportedLinksFileRequestToJSON;
 //# sourceMappingURL=ScansValidateImportedLinksFileRequest.js.map

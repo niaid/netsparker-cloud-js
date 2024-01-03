@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,11 +12,13 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ScanCustomReportApiModelToJSON = exports.ScanCustomReportApiModelFromJSONTyped = exports.ScanCustomReportApiModelFromJSON = exports.instanceOfScanCustomReportApiModel = exports.ScanCustomReportApiModelReportFormatEnum = void 0;
+const runtime_1 = require("../runtime");
 /**
  * @export
  */
-export const ScanCustomReportApiModelReportFormatEnum = {
+exports.ScanCustomReportApiModelReportFormatEnum = {
     Xml: 'Xml',
     Csv: 'Csv',
     Pdf: 'Pdf',
@@ -26,29 +29,32 @@ export const ScanCustomReportApiModelReportFormatEnum = {
 /**
  * Check if a given object implements the ScanCustomReportApiModel interface.
  */
-export function instanceOfScanCustomReportApiModel(value) {
+function instanceOfScanCustomReportApiModel(value) {
     let isInstance = true;
     isInstance = isInstance && "id" in value;
     isInstance = isInstance && "reportName" in value;
     return isInstance;
 }
-export function ScanCustomReportApiModelFromJSON(json) {
+exports.instanceOfScanCustomReportApiModel = instanceOfScanCustomReportApiModel;
+function ScanCustomReportApiModelFromJSON(json) {
     return ScanCustomReportApiModelFromJSONTyped(json, false);
 }
-export function ScanCustomReportApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.ScanCustomReportApiModelFromJSON = ScanCustomReportApiModelFromJSON;
+function ScanCustomReportApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'excludeIgnoreds': !exists(json, 'ExcludeIgnoreds') ? undefined : json['ExcludeIgnoreds'],
+        'excludeIgnoreds': !(0, runtime_1.exists)(json, 'ExcludeIgnoreds') ? undefined : json['ExcludeIgnoreds'],
         'id': json['Id'],
-        'onlyConfirmedVulnerabilities': !exists(json, 'OnlyConfirmedVulnerabilities') ? undefined : json['OnlyConfirmedVulnerabilities'],
-        'onlyUnconfirmedVulnerabilities': !exists(json, 'OnlyUnconfirmedVulnerabilities') ? undefined : json['OnlyUnconfirmedVulnerabilities'],
+        'onlyConfirmedVulnerabilities': !(0, runtime_1.exists)(json, 'OnlyConfirmedVulnerabilities') ? undefined : json['OnlyConfirmedVulnerabilities'],
+        'onlyUnconfirmedVulnerabilities': !(0, runtime_1.exists)(json, 'OnlyUnconfirmedVulnerabilities') ? undefined : json['OnlyUnconfirmedVulnerabilities'],
         'reportName': json['ReportName'],
-        'reportFormat': !exists(json, 'ReportFormat') ? undefined : json['ReportFormat'],
+        'reportFormat': !(0, runtime_1.exists)(json, 'ReportFormat') ? undefined : json['ReportFormat'],
     };
 }
-export function ScanCustomReportApiModelToJSON(value) {
+exports.ScanCustomReportApiModelFromJSONTyped = ScanCustomReportApiModelFromJSONTyped;
+function ScanCustomReportApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -64,4 +70,5 @@ export function ScanCustomReportApiModelToJSON(value) {
         'ReportFormat': value.reportFormat,
     };
 }
+exports.ScanCustomReportApiModelToJSON = ScanCustomReportApiModelToJSON;
 //# sourceMappingURL=ScanCustomReportApiModel.js.map

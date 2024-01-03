@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,18 +12,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AgentGroupApiDeleteModelToJSON = exports.AgentGroupApiDeleteModelFromJSONTyped = exports.AgentGroupApiDeleteModelFromJSON = exports.instanceOfAgentGroupApiDeleteModel = void 0;
 /**
  * Check if a given object implements the AgentGroupApiDeleteModel interface.
  */
-export function instanceOfAgentGroupApiDeleteModel(value) {
+function instanceOfAgentGroupApiDeleteModel(value) {
     let isInstance = true;
     isInstance = isInstance && "name" in value;
     return isInstance;
 }
-export function AgentGroupApiDeleteModelFromJSON(json) {
+exports.instanceOfAgentGroupApiDeleteModel = instanceOfAgentGroupApiDeleteModel;
+function AgentGroupApiDeleteModelFromJSON(json) {
     return AgentGroupApiDeleteModelFromJSONTyped(json, false);
 }
-export function AgentGroupApiDeleteModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.AgentGroupApiDeleteModelFromJSON = AgentGroupApiDeleteModelFromJSON;
+function AgentGroupApiDeleteModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
@@ -30,7 +35,8 @@ export function AgentGroupApiDeleteModelFromJSONTyped(json, ignoreDiscriminator)
         'name': json['Name'],
     };
 }
-export function AgentGroupApiDeleteModelToJSON(value) {
+exports.AgentGroupApiDeleteModelFromJSONTyped = AgentGroupApiDeleteModelFromJSONTyped;
+function AgentGroupApiDeleteModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -41,4 +47,5 @@ export function AgentGroupApiDeleteModelToJSON(value) {
         'Name': value.name,
     };
 }
+exports.AgentGroupApiDeleteModelToJSON = AgentGroupApiDeleteModelToJSON;
 //# sourceMappingURL=AgentGroupApiDeleteModel.js.map

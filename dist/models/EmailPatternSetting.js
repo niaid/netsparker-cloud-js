@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,18 +12,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.EmailPatternSettingToJSON = exports.EmailPatternSettingFromJSONTyped = exports.EmailPatternSettingFromJSON = exports.instanceOfEmailPatternSetting = void 0;
 /**
  * Check if a given object implements the EmailPatternSetting interface.
  */
-export function instanceOfEmailPatternSetting(value) {
+function instanceOfEmailPatternSetting(value) {
     let isInstance = true;
     isInstance = isInstance && "value" in value;
     return isInstance;
 }
-export function EmailPatternSettingFromJSON(json) {
+exports.instanceOfEmailPatternSetting = instanceOfEmailPatternSetting;
+function EmailPatternSettingFromJSON(json) {
     return EmailPatternSettingFromJSONTyped(json, false);
 }
-export function EmailPatternSettingFromJSONTyped(json, ignoreDiscriminator) {
+exports.EmailPatternSettingFromJSON = EmailPatternSettingFromJSON;
+function EmailPatternSettingFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
@@ -30,7 +35,8 @@ export function EmailPatternSettingFromJSONTyped(json, ignoreDiscriminator) {
         'value': json['Value'],
     };
 }
-export function EmailPatternSettingToJSON(value) {
+exports.EmailPatternSettingFromJSONTyped = EmailPatternSettingFromJSONTyped;
+function EmailPatternSettingToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -41,4 +47,5 @@ export function EmailPatternSettingToJSON(value) {
         'Value': value.value,
     };
 }
+exports.EmailPatternSettingToJSON = EmailPatternSettingToJSON;
 //# sourceMappingURL=EmailPatternSetting.js.map

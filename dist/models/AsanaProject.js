@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,28 +12,33 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AsanaProjectToJSON = exports.AsanaProjectFromJSONTyped = exports.AsanaProjectFromJSON = exports.instanceOfAsanaProject = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the AsanaProject interface.
  */
-export function instanceOfAsanaProject(value) {
+function instanceOfAsanaProject(value) {
     let isInstance = true;
     return isInstance;
 }
-export function AsanaProjectFromJSON(json) {
+exports.instanceOfAsanaProject = instanceOfAsanaProject;
+function AsanaProjectFromJSON(json) {
     return AsanaProjectFromJSONTyped(json, false);
 }
-export function AsanaProjectFromJSONTyped(json, ignoreDiscriminator) {
+exports.AsanaProjectFromJSON = AsanaProjectFromJSON;
+function AsanaProjectFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'gid': !exists(json, 'gid') ? undefined : json['gid'],
-        'name': !exists(json, 'name') ? undefined : json['name'],
-        'url': !exists(json, 'Url') ? undefined : json['Url'],
+        'gid': !(0, runtime_1.exists)(json, 'gid') ? undefined : json['gid'],
+        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        'url': !(0, runtime_1.exists)(json, 'Url') ? undefined : json['Url'],
     };
 }
-export function AsanaProjectToJSON(value) {
+exports.AsanaProjectFromJSONTyped = AsanaProjectFromJSONTyped;
+function AsanaProjectToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -45,4 +51,5 @@ export function AsanaProjectToJSON(value) {
         'Url': value.url,
     };
 }
+exports.AsanaProjectToJSON = AsanaProjectToJSON;
 //# sourceMappingURL=AsanaProject.js.map

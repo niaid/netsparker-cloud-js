@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,14 +12,16 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { NewScanNotificationRecipientApiModelFromJSON, NewScanNotificationRecipientApiModelToJSON, } from './NewScanNotificationRecipientApiModel';
-import { NotificationEmailSmsFilterApiFromJSON, NotificationEmailSmsFilterApiToJSON, } from './NotificationEmailSmsFilterApi';
-import { NotificationIntegrationFilterApiFromJSON, NotificationIntegrationFilterApiToJSON, } from './NotificationIntegrationFilterApi';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.NewScanNotificationApiModelToJSON = exports.NewScanNotificationApiModelFromJSONTyped = exports.NewScanNotificationApiModelFromJSON = exports.instanceOfNewScanNotificationApiModel = exports.NewScanNotificationApiModelScopeEnum = exports.NewScanNotificationApiModelEventEnum = void 0;
+const runtime_1 = require("../runtime");
+const NewScanNotificationRecipientApiModel_1 = require("./NewScanNotificationRecipientApiModel");
+const NotificationEmailSmsFilterApi_1 = require("./NotificationEmailSmsFilterApi");
+const NotificationIntegrationFilterApi_1 = require("./NotificationIntegrationFilterApi");
 /**
  * @export
  */
-export const NewScanNotificationApiModelEventEnum = {
+exports.NewScanNotificationApiModelEventEnum = {
     NewScan: 'NewScan',
     ScanCompleted: 'ScanCompleted',
     ScanCancelled: 'ScanCancelled',
@@ -29,7 +32,7 @@ export const NewScanNotificationApiModelEventEnum = {
 /**
  * @export
  */
-export const NewScanNotificationApiModelScopeEnum = {
+exports.NewScanNotificationApiModelScopeEnum = {
     AnyWebsite: 'AnyWebsite',
     WebsiteGroup: 'WebsiteGroup',
     Website: 'Website'
@@ -37,7 +40,7 @@ export const NewScanNotificationApiModelScopeEnum = {
 /**
  * Check if a given object implements the NewScanNotificationApiModel interface.
  */
-export function instanceOfNewScanNotificationApiModel(value) {
+function instanceOfNewScanNotificationApiModel(value) {
     let isInstance = true;
     isInstance = isInstance && "recipients" in value;
     isInstance = isInstance && "disabled" in value;
@@ -46,27 +49,30 @@ export function instanceOfNewScanNotificationApiModel(value) {
     isInstance = isInstance && "scope" in value;
     return isInstance;
 }
-export function NewScanNotificationApiModelFromJSON(json) {
+exports.instanceOfNewScanNotificationApiModel = instanceOfNewScanNotificationApiModel;
+function NewScanNotificationApiModelFromJSON(json) {
     return NewScanNotificationApiModelFromJSONTyped(json, false);
 }
-export function NewScanNotificationApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.NewScanNotificationApiModelFromJSON = NewScanNotificationApiModelFromJSON;
+function NewScanNotificationApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'recipients': NewScanNotificationRecipientApiModelFromJSON(json['Recipients']),
-        'websiteGroupName': !exists(json, 'WebsiteGroupName') ? undefined : json['WebsiteGroupName'],
-        'websiteRootUrl': !exists(json, 'WebsiteRootUrl') ? undefined : json['WebsiteRootUrl'],
-        'emailSmsFilter': !exists(json, 'EmailSmsFilter') ? undefined : NotificationEmailSmsFilterApiFromJSON(json['EmailSmsFilter']),
-        'integrationFilter': !exists(json, 'IntegrationFilter') ? undefined : NotificationIntegrationFilterApiFromJSON(json['IntegrationFilter']),
+        'recipients': (0, NewScanNotificationRecipientApiModel_1.NewScanNotificationRecipientApiModelFromJSON)(json['Recipients']),
+        'websiteGroupName': !(0, runtime_1.exists)(json, 'WebsiteGroupName') ? undefined : json['WebsiteGroupName'],
+        'websiteRootUrl': !(0, runtime_1.exists)(json, 'WebsiteRootUrl') ? undefined : json['WebsiteRootUrl'],
+        'emailSmsFilter': !(0, runtime_1.exists)(json, 'EmailSmsFilter') ? undefined : (0, NotificationEmailSmsFilterApi_1.NotificationEmailSmsFilterApiFromJSON)(json['EmailSmsFilter']),
+        'integrationFilter': !(0, runtime_1.exists)(json, 'IntegrationFilter') ? undefined : (0, NotificationIntegrationFilterApi_1.NotificationIntegrationFilterApiFromJSON)(json['IntegrationFilter']),
         'disabled': json['Disabled'],
-        'scanTaskGroupId': !exists(json, 'ScanTaskGroupId') ? undefined : json['ScanTaskGroupId'],
+        'scanTaskGroupId': !(0, runtime_1.exists)(json, 'ScanTaskGroupId') ? undefined : json['ScanTaskGroupId'],
         'event': json['Event'],
         'name': json['Name'],
         'scope': json['Scope'],
     };
 }
-export function NewScanNotificationApiModelToJSON(value) {
+exports.NewScanNotificationApiModelFromJSONTyped = NewScanNotificationApiModelFromJSONTyped;
+function NewScanNotificationApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -74,11 +80,11 @@ export function NewScanNotificationApiModelToJSON(value) {
         return null;
     }
     return {
-        'Recipients': NewScanNotificationRecipientApiModelToJSON(value.recipients),
+        'Recipients': (0, NewScanNotificationRecipientApiModel_1.NewScanNotificationRecipientApiModelToJSON)(value.recipients),
         'WebsiteGroupName': value.websiteGroupName,
         'WebsiteRootUrl': value.websiteRootUrl,
-        'EmailSmsFilter': NotificationEmailSmsFilterApiToJSON(value.emailSmsFilter),
-        'IntegrationFilter': NotificationIntegrationFilterApiToJSON(value.integrationFilter),
+        'EmailSmsFilter': (0, NotificationEmailSmsFilterApi_1.NotificationEmailSmsFilterApiToJSON)(value.emailSmsFilter),
+        'IntegrationFilter': (0, NotificationIntegrationFilterApi_1.NotificationIntegrationFilterApiToJSON)(value.integrationFilter),
         'Disabled': value.disabled,
         'ScanTaskGroupId': value.scanTaskGroupId,
         'Event': value.event,
@@ -86,4 +92,5 @@ export function NewScanNotificationApiModelToJSON(value) {
         'Scope': value.scope,
     };
 }
+exports.NewScanNotificationApiModelToJSON = NewScanNotificationApiModelToJSON;
 //# sourceMappingURL=NewScanNotificationApiModel.js.map

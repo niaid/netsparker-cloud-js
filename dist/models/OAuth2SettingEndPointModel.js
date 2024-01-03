@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,32 +12,37 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { ContentTypeTemplateFromJSON, ContentTypeTemplateToJSON, } from './ContentTypeTemplate';
-import { SelectOptionModelFromJSON, SelectOptionModelToJSON, } from './SelectOptionModel';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.OAuth2SettingEndPointModelToJSON = exports.OAuth2SettingEndPointModelFromJSONTyped = exports.OAuth2SettingEndPointModelFromJSON = exports.instanceOfOAuth2SettingEndPointModel = void 0;
+const runtime_1 = require("../runtime");
+const ContentTypeTemplate_1 = require("./ContentTypeTemplate");
+const SelectOptionModel_1 = require("./SelectOptionModel");
 /**
  * Check if a given object implements the OAuth2SettingEndPointModel interface.
  */
-export function instanceOfOAuth2SettingEndPointModel(value) {
+function instanceOfOAuth2SettingEndPointModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function OAuth2SettingEndPointModelFromJSON(json) {
+exports.instanceOfOAuth2SettingEndPointModel = instanceOfOAuth2SettingEndPointModel;
+function OAuth2SettingEndPointModelFromJSON(json) {
     return OAuth2SettingEndPointModelFromJSONTyped(json, false);
 }
-export function OAuth2SettingEndPointModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.OAuth2SettingEndPointModelFromJSON = OAuth2SettingEndPointModelFromJSON;
+function OAuth2SettingEndPointModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'url': !exists(json, 'Url') ? undefined : json['Url'],
-        'contentType': !exists(json, 'ContentType') ? undefined : json['ContentType'],
-        'contentTypeTemplates': !exists(json, 'ContentTypeTemplates') ? undefined : (json['ContentTypeTemplates'].map(ContentTypeTemplateFromJSON)),
-        'method': !exists(json, 'Method') ? undefined : json['Method'],
-        'methodTemplates': !exists(json, 'MethodTemplates') ? undefined : (json['MethodTemplates'].map(SelectOptionModelFromJSON)),
+        'url': !(0, runtime_1.exists)(json, 'Url') ? undefined : json['Url'],
+        'contentType': !(0, runtime_1.exists)(json, 'ContentType') ? undefined : json['ContentType'],
+        'contentTypeTemplates': !(0, runtime_1.exists)(json, 'ContentTypeTemplates') ? undefined : (json['ContentTypeTemplates'].map(ContentTypeTemplate_1.ContentTypeTemplateFromJSON)),
+        'method': !(0, runtime_1.exists)(json, 'Method') ? undefined : json['Method'],
+        'methodTemplates': !(0, runtime_1.exists)(json, 'MethodTemplates') ? undefined : (json['MethodTemplates'].map(SelectOptionModel_1.SelectOptionModelFromJSON)),
     };
 }
-export function OAuth2SettingEndPointModelToJSON(value) {
+exports.OAuth2SettingEndPointModelFromJSONTyped = OAuth2SettingEndPointModelFromJSONTyped;
+function OAuth2SettingEndPointModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -46,9 +52,10 @@ export function OAuth2SettingEndPointModelToJSON(value) {
     return {
         'Url': value.url,
         'ContentType': value.contentType,
-        'ContentTypeTemplates': value.contentTypeTemplates === undefined ? undefined : (value.contentTypeTemplates.map(ContentTypeTemplateToJSON)),
+        'ContentTypeTemplates': value.contentTypeTemplates === undefined ? undefined : (value.contentTypeTemplates.map(ContentTypeTemplate_1.ContentTypeTemplateToJSON)),
         'Method': value.method,
-        'MethodTemplates': value.methodTemplates === undefined ? undefined : (value.methodTemplates.map(SelectOptionModelToJSON)),
+        'MethodTemplates': value.methodTemplates === undefined ? undefined : (value.methodTemplates.map(SelectOptionModel_1.SelectOptionModelToJSON)),
     };
 }
+exports.OAuth2SettingEndPointModelToJSON = OAuth2SettingEndPointModelToJSON;
 //# sourceMappingURL=OAuth2SettingEndPointModel.js.map

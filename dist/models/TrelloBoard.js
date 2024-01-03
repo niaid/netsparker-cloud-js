@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,30 +12,35 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.TrelloBoardToJSON = exports.TrelloBoardFromJSONTyped = exports.TrelloBoardFromJSON = exports.instanceOfTrelloBoard = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the TrelloBoard interface.
  */
-export function instanceOfTrelloBoard(value) {
+function instanceOfTrelloBoard(value) {
     let isInstance = true;
     return isInstance;
 }
-export function TrelloBoardFromJSON(json) {
+exports.instanceOfTrelloBoard = instanceOfTrelloBoard;
+function TrelloBoardFromJSON(json) {
     return TrelloBoardFromJSONTyped(json, false);
 }
-export function TrelloBoardFromJSONTyped(json, ignoreDiscriminator) {
+exports.TrelloBoardFromJSON = TrelloBoardFromJSON;
+function TrelloBoardFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'closed': !exists(json, 'closed') ? undefined : json['closed'],
-        'id': !exists(json, 'id') ? undefined : json['id'],
-        'isActive': !exists(json, 'IsActive') ? undefined : json['IsActive'],
-        'name': !exists(json, 'name') ? undefined : json['name'],
-        'shortUrl': !exists(json, 'shortUrl') ? undefined : json['shortUrl'],
+        'closed': !(0, runtime_1.exists)(json, 'closed') ? undefined : json['closed'],
+        'id': !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
+        'isActive': !(0, runtime_1.exists)(json, 'IsActive') ? undefined : json['IsActive'],
+        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        'shortUrl': !(0, runtime_1.exists)(json, 'shortUrl') ? undefined : json['shortUrl'],
     };
 }
-export function TrelloBoardToJSON(value) {
+exports.TrelloBoardFromJSONTyped = TrelloBoardFromJSONTyped;
+function TrelloBoardToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -48,4 +54,5 @@ export function TrelloBoardToJSON(value) {
         'shortUrl': value.shortUrl,
     };
 }
+exports.TrelloBoardToJSON = TrelloBoardToJSON;
 //# sourceMappingURL=TrelloBoard.js.map

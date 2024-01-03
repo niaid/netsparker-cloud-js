@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,28 +12,33 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { NameValuePairFromJSON, NameValuePairToJSON, } from './NameValuePair';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AuthorizationCodeTableModelToJSON = exports.AuthorizationCodeTableModelFromJSONTyped = exports.AuthorizationCodeTableModelFromJSON = exports.instanceOfAuthorizationCodeTableModel = void 0;
+const runtime_1 = require("../runtime");
+const NameValuePair_1 = require("./NameValuePair");
 /**
  * Check if a given object implements the AuthorizationCodeTableModel interface.
  */
-export function instanceOfAuthorizationCodeTableModel(value) {
+function instanceOfAuthorizationCodeTableModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function AuthorizationCodeTableModelFromJSON(json) {
+exports.instanceOfAuthorizationCodeTableModel = instanceOfAuthorizationCodeTableModel;
+function AuthorizationCodeTableModelFromJSON(json) {
     return AuthorizationCodeTableModelFromJSONTyped(json, false);
 }
-export function AuthorizationCodeTableModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.AuthorizationCodeTableModelFromJSON = AuthorizationCodeTableModelFromJSON;
+function AuthorizationCodeTableModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'fields': !exists(json, 'Fields') ? undefined : json['Fields'],
-        'items': !exists(json, 'Items') ? undefined : (json['Items'].map(NameValuePairFromJSON)),
+        'fields': !(0, runtime_1.exists)(json, 'Fields') ? undefined : json['Fields'],
+        'items': !(0, runtime_1.exists)(json, 'Items') ? undefined : (json['Items'].map(NameValuePair_1.NameValuePairFromJSON)),
     };
 }
-export function AuthorizationCodeTableModelToJSON(value) {
+exports.AuthorizationCodeTableModelFromJSONTyped = AuthorizationCodeTableModelFromJSONTyped;
+function AuthorizationCodeTableModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -41,7 +47,8 @@ export function AuthorizationCodeTableModelToJSON(value) {
     }
     return {
         'Fields': value.fields,
-        'Items': value.items === undefined ? undefined : (value.items.map(NameValuePairToJSON)),
+        'Items': value.items === undefined ? undefined : (value.items.map(NameValuePair_1.NameValuePairToJSON)),
     };
 }
+exports.AuthorizationCodeTableModelToJSON = AuthorizationCodeTableModelToJSON;
 //# sourceMappingURL=AuthorizationCodeTableModel.js.map

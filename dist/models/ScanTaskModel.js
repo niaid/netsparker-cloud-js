@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,19 +12,21 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { AdditionalWebsiteModelFromJSON, AdditionalWebsiteModelToJSON, } from './AdditionalWebsiteModel';
-import { BusinessLogicRecorderSettingModelFromJSON, BusinessLogicRecorderSettingModelToJSON, } from './BusinessLogicRecorderSettingModel';
-import { PciScanTaskViewModelFromJSON, PciScanTaskViewModelToJSON, } from './PciScanTaskViewModel';
-import { ReducedScanTaskProfileFromJSON, ReducedScanTaskProfileToJSON, } from './ReducedScanTaskProfile';
-import { ScanTimeWindowModelFromJSON, ScanTimeWindowModelToJSON, } from './ScanTimeWindowModel';
-import { UrlRewriteExcludedPathModelFromJSON, UrlRewriteExcludedPathModelToJSON, } from './UrlRewriteExcludedPathModel';
-import { UrlRewriteRuleModelFromJSON, UrlRewriteRuleModelToJSON, } from './UrlRewriteRuleModel';
-import { VcsCommitInfoFromJSON, VcsCommitInfoToJSON, } from './VcsCommitInfo';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ScanTaskModelToJSON = exports.ScanTaskModelFromJSONTyped = exports.ScanTaskModelFromJSON = exports.instanceOfScanTaskModel = exports.ScanTaskModelThreatLevelEnum = exports.ScanTaskModelStateEnum = exports.ScanTaskModelScanTypeEnum = exports.ScanTaskModelPhaseEnum = exports.ScanTaskModelGlobalThreatLevelEnum = exports.ScanTaskModelFailureReasonEnum = exports.ScanTaskModelWebsiteProtocolEnum = exports.ScanTaskModelUrlRewriteModeEnum = exports.ScanTaskModelScopeEnum = exports.ScanTaskModelAuthenticationProfileOptionEnum = void 0;
+const runtime_1 = require("../runtime");
+const AdditionalWebsiteModel_1 = require("./AdditionalWebsiteModel");
+const BusinessLogicRecorderSettingModel_1 = require("./BusinessLogicRecorderSettingModel");
+const PciScanTaskViewModel_1 = require("./PciScanTaskViewModel");
+const ReducedScanTaskProfile_1 = require("./ReducedScanTaskProfile");
+const ScanTimeWindowModel_1 = require("./ScanTimeWindowModel");
+const UrlRewriteExcludedPathModel_1 = require("./UrlRewriteExcludedPathModel");
+const UrlRewriteRuleModel_1 = require("./UrlRewriteRuleModel");
+const VcsCommitInfo_1 = require("./VcsCommitInfo");
 /**
  * @export
  */
-export const ScanTaskModelAuthenticationProfileOptionEnum = {
+exports.ScanTaskModelAuthenticationProfileOptionEnum = {
     DontUse: 'DontUse',
     UseMatchedProfile: 'UseMatchedProfile',
     SelectedProfile: 'SelectedProfile'
@@ -31,7 +34,7 @@ export const ScanTaskModelAuthenticationProfileOptionEnum = {
 /**
  * @export
  */
-export const ScanTaskModelScopeEnum = {
+exports.ScanTaskModelScopeEnum = {
     EnteredPathAndBelow: 'EnteredPathAndBelow',
     OnlyEnteredUrl: 'OnlyEnteredUrl',
     WholeDomain: 'WholeDomain'
@@ -39,7 +42,7 @@ export const ScanTaskModelScopeEnum = {
 /**
  * @export
  */
-export const ScanTaskModelUrlRewriteModeEnum = {
+exports.ScanTaskModelUrlRewriteModeEnum = {
     None: 'None',
     Heuristic: 'Heuristic',
     Custom: 'Custom'
@@ -47,14 +50,14 @@ export const ScanTaskModelUrlRewriteModeEnum = {
 /**
  * @export
  */
-export const ScanTaskModelWebsiteProtocolEnum = {
+exports.ScanTaskModelWebsiteProtocolEnum = {
     Http: 'Http',
     Https: 'Https'
 };
 /**
  * @export
  */
-export const ScanTaskModelFailureReasonEnum = {
+exports.ScanTaskModelFailureReasonEnum = {
     None: 'None',
     Request: 'Request',
     HeadRequest: 'HeadRequest',
@@ -105,7 +108,7 @@ export const ScanTaskModelFailureReasonEnum = {
 /**
  * @export
  */
-export const ScanTaskModelGlobalThreatLevelEnum = {
+exports.ScanTaskModelGlobalThreatLevelEnum = {
     Unknown: 'Unknown',
     Secure: 'Secure',
     NeedsAttention: 'NeedsAttention',
@@ -115,7 +118,7 @@ export const ScanTaskModelGlobalThreatLevelEnum = {
 /**
  * @export
  */
-export const ScanTaskModelPhaseEnum = {
+exports.ScanTaskModelPhaseEnum = {
     Pending: 'Pending',
     Crawling: 'Crawling',
     CrawlingAndAttacking: 'CrawlingAndAttacking',
@@ -126,7 +129,7 @@ export const ScanTaskModelPhaseEnum = {
 /**
  * @export
  */
-export const ScanTaskModelScanTypeEnum = {
+exports.ScanTaskModelScanTypeEnum = {
     Full: 'Full',
     Retest: 'Retest',
     Incremental: 'Incremental'
@@ -134,7 +137,7 @@ export const ScanTaskModelScanTypeEnum = {
 /**
  * @export
  */
-export const ScanTaskModelStateEnum = {
+exports.ScanTaskModelStateEnum = {
     Queued: 'Queued',
     Scanning: 'Scanning',
     Archiving: 'Archiving',
@@ -150,7 +153,7 @@ export const ScanTaskModelStateEnum = {
 /**
  * @export
  */
-export const ScanTaskModelThreatLevelEnum = {
+exports.ScanTaskModelThreatLevelEnum = {
     Unknown: 'Unknown',
     Secure: 'Secure',
     NeedsAttention: 'NeedsAttention',
@@ -160,117 +163,120 @@ export const ScanTaskModelThreatLevelEnum = {
 /**
  * Check if a given object implements the ScanTaskModel interface.
  */
-export function instanceOfScanTaskModel(value) {
+function instanceOfScanTaskModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function ScanTaskModelFromJSON(json) {
+exports.instanceOfScanTaskModel = instanceOfScanTaskModel;
+function ScanTaskModelFromJSON(json) {
     return ScanTaskModelFromJSONTyped(json, false);
 }
-export function ScanTaskModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.ScanTaskModelFromJSON = ScanTaskModelFromJSON;
+function ScanTaskModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'additionalWebsites': !exists(json, 'AdditionalWebsites') ? undefined : (json['AdditionalWebsites'].map(AdditionalWebsiteModelFromJSON)),
-        'agentId': !exists(json, 'AgentId') ? undefined : json['AgentId'],
-        'agentName': !exists(json, 'AgentName') ? undefined : json['AgentName'],
-        'cookies': !exists(json, 'Cookies') ? undefined : json['Cookies'],
-        'crawlAndAttack': !exists(json, 'CrawlAndAttack') ? undefined : json['CrawlAndAttack'],
-        'deletedOn': !exists(json, 'DeletedOn') ? undefined : (new Date(json['DeletedOn'])),
-        'enableHeuristicChecksInCustomUrlRewrite': !exists(json, 'EnableHeuristicChecksInCustomUrlRewrite') ? undefined : json['EnableHeuristicChecksInCustomUrlRewrite'],
-        'excludedLinks': !exists(json, 'ExcludedLinks') ? undefined : json['ExcludedLinks'],
-        'excludeLinks': !exists(json, 'ExcludeLinks') ? undefined : json['ExcludeLinks'],
-        'disallowedHttpMethods': !exists(json, 'DisallowedHttpMethods') ? undefined : json['DisallowedHttpMethods'],
-        'findAndFollowNewLinks': !exists(json, 'FindAndFollowNewLinks') ? undefined : json['FindAndFollowNewLinks'],
-        'importedLinks': !exists(json, 'ImportedLinks') ? undefined : json['ImportedLinks'],
-        'allImportedLinks': !exists(json, 'AllImportedLinks') ? undefined : json['AllImportedLinks'],
-        'desktopScanId': !exists(json, 'DesktopScanId') ? undefined : json['DesktopScanId'],
-        'initiatedTime': !exists(json, 'InitiatedTime') ? undefined : json['InitiatedTime'],
-        'initiatedDate': !exists(json, 'InitiatedDate') ? undefined : json['InitiatedDate'],
-        'initiatedAt': !exists(json, 'InitiatedAt') ? undefined : (new Date(json['InitiatedAt'])),
-        'maxDynamicSignatures': !exists(json, 'MaxDynamicSignatures') ? undefined : json['MaxDynamicSignatures'],
-        'maxScanDuration': !exists(json, 'MaxScanDuration') ? undefined : json['MaxScanDuration'],
-        'duration': !exists(json, 'Duration') ? undefined : json['Duration'],
-        'policyDescription': !exists(json, 'PolicyDescription') ? undefined : json['PolicyDescription'],
-        'policyId': !exists(json, 'PolicyId') ? undefined : json['PolicyId'],
-        'policyUserId': !exists(json, 'PolicyUserId') ? undefined : json['PolicyUserId'],
-        'policyIsDefault': !exists(json, 'PolicyIsDefault') ? undefined : json['PolicyIsDefault'],
-        'policyIsShared': !exists(json, 'PolicyIsShared') ? undefined : json['PolicyIsShared'],
-        'policyName': !exists(json, 'PolicyName') ? undefined : json['PolicyName'],
-        'authenticationProfileId': !exists(json, 'AuthenticationProfileId') ? undefined : json['AuthenticationProfileId'],
-        'authenticationProfileOption': !exists(json, 'AuthenticationProfileOption') ? undefined : json['AuthenticationProfileOption'],
-        'reportPolicyDescription': !exists(json, 'ReportPolicyDescription') ? undefined : json['ReportPolicyDescription'],
-        'reportPolicyId': !exists(json, 'ReportPolicyId') ? undefined : json['ReportPolicyId'],
-        'reportPolicyUserId': !exists(json, 'ReportPolicyUserId') ? undefined : json['ReportPolicyUserId'],
-        'reportPolicyIsDefault': !exists(json, 'ReportPolicyIsDefault') ? undefined : json['ReportPolicyIsDefault'],
-        'reportPolicyIsShared': !exists(json, 'ReportPolicyIsShared') ? undefined : json['ReportPolicyIsShared'],
-        'reportPolicyName': !exists(json, 'ReportPolicyName') ? undefined : json['ReportPolicyName'],
-        'scope': !exists(json, 'Scope') ? undefined : json['Scope'],
-        'subPathMaxDynamicSignatures': !exists(json, 'SubPathMaxDynamicSignatures') ? undefined : json['SubPathMaxDynamicSignatures'],
-        'targetPath': !exists(json, 'TargetPath') ? undefined : json['TargetPath'],
-        'targetUrl': !exists(json, 'TargetUrl') ? undefined : json['TargetUrl'],
-        'targetUrlRoot': !exists(json, 'TargetUrlRoot') ? undefined : json['TargetUrlRoot'],
-        'timeWindow': !exists(json, 'TimeWindow') ? undefined : ScanTimeWindowModelFromJSON(json['TimeWindow']),
-        'totalVulnerabilityCount': !exists(json, 'TotalVulnerabilityCount') ? undefined : json['TotalVulnerabilityCount'],
-        'urlRewriteAnalyzableExtensions': !exists(json, 'UrlRewriteAnalyzableExtensions') ? undefined : json['UrlRewriteAnalyzableExtensions'],
-        'urlRewriteBlockSeparators': !exists(json, 'UrlRewriteBlockSeparators') ? undefined : json['UrlRewriteBlockSeparators'],
-        'urlRewriteMode': !exists(json, 'UrlRewriteMode') ? undefined : json['UrlRewriteMode'],
-        'urlRewriteRules': !exists(json, 'UrlRewriteRules') ? undefined : (json['UrlRewriteRules'].map(UrlRewriteRuleModelFromJSON)),
-        'urlRewriteExcludedLinks': !exists(json, 'UrlRewriteExcludedLinks') ? undefined : (json['UrlRewriteExcludedLinks'].map(UrlRewriteExcludedPathModelFromJSON)),
-        'userId': !exists(json, 'UserId') ? undefined : json['UserId'],
-        'vcsCommitInfo': !exists(json, 'VcsCommitInfo') ? undefined : VcsCommitInfoFromJSON(json['VcsCommitInfo']),
-        'websiteName': !exists(json, 'WebsiteName') ? undefined : json['WebsiteName'],
-        'websiteUrl': !exists(json, 'WebsiteUrl') ? undefined : json['WebsiteUrl'],
-        'websiteDescription': !exists(json, 'WebsiteDescription') ? undefined : json['WebsiteDescription'],
-        'websiteProtocol': !exists(json, 'WebsiteProtocol') ? undefined : json['WebsiteProtocol'],
-        'websiteIsDeleted': !exists(json, 'WebsiteIsDeleted') ? undefined : json['WebsiteIsDeleted'],
-        'isWebsiteLatestCompletedFullScanTask': !exists(json, 'IsWebsiteLatestCompletedFullScanTask') ? undefined : json['IsWebsiteLatestCompletedFullScanTask'],
-        'enablePciScanTask': !exists(json, 'EnablePciScanTask') ? undefined : json['EnablePciScanTask'],
-        'pciScanTask': !exists(json, 'PciScanTask') ? undefined : PciScanTaskViewModelFromJSON(json['PciScanTask']),
-        'userName': !exists(json, 'UserName') ? undefined : json['UserName'],
-        'queuedScanTaskExist': !exists(json, 'QueuedScanTaskExist') ? undefined : json['QueuedScanTaskExist'],
-        'scanTaskProfileId': !exists(json, 'ScanTaskProfileId') ? undefined : json['ScanTaskProfileId'],
-        'scanTaskProfile': !exists(json, 'ScanTaskProfile') ? undefined : ReducedScanTaskProfileFromJSON(json['ScanTaskProfile']),
-        'websiteGroupIds': !exists(json, 'WebsiteGroupIds') ? undefined : json['WebsiteGroupIds'],
-        'comments': !exists(json, 'Comments') ? undefined : json['Comments'],
-        'businessLogicRecorderSetting': !exists(json, 'BusinessLogicRecorderSetting') ? undefined : BusinessLogicRecorderSettingModelFromJSON(json['BusinessLogicRecorderSetting']),
-        'scanProfileChanged': !exists(json, 'ScanProfileChanged') ? undefined : json['ScanProfileChanged'],
-        'completedSteps': !exists(json, 'CompletedSteps') ? undefined : json['CompletedSteps'],
-        'estimatedLaunchTime': !exists(json, 'EstimatedLaunchTime') ? undefined : json['EstimatedLaunchTime'],
-        'estimatedSteps': !exists(json, 'EstimatedSteps') ? undefined : json['EstimatedSteps'],
-        'failureReason': !exists(json, 'FailureReason') ? undefined : json['FailureReason'],
-        'failureReasonDescription': !exists(json, 'FailureReasonDescription') ? undefined : json['FailureReasonDescription'],
-        'failureReasonString': !exists(json, 'FailureReasonString') ? undefined : json['FailureReasonString'],
-        'globalThreatLevel': !exists(json, 'GlobalThreatLevel') ? undefined : json['GlobalThreatLevel'],
-        'globalVulnerabilityCriticalCount': !exists(json, 'GlobalVulnerabilityCriticalCount') ? undefined : json['GlobalVulnerabilityCriticalCount'],
-        'globalVulnerabilityHighCount': !exists(json, 'GlobalVulnerabilityHighCount') ? undefined : json['GlobalVulnerabilityHighCount'],
-        'globalVulnerabilityInfoCount': !exists(json, 'GlobalVulnerabilityInfoCount') ? undefined : json['GlobalVulnerabilityInfoCount'],
-        'globalVulnerabilityBestPracticeCount': !exists(json, 'GlobalVulnerabilityBestPracticeCount') ? undefined : json['GlobalVulnerabilityBestPracticeCount'],
-        'globalVulnerabilityLowCount': !exists(json, 'GlobalVulnerabilityLowCount') ? undefined : json['GlobalVulnerabilityLowCount'],
-        'globalVulnerabilityMediumCount': !exists(json, 'GlobalVulnerabilityMediumCount') ? undefined : json['GlobalVulnerabilityMediumCount'],
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'isCompleted': !exists(json, 'IsCompleted') ? undefined : json['IsCompleted'],
-        'percentage': !exists(json, 'Percentage') ? undefined : json['Percentage'],
-        'phase': !exists(json, 'Phase') ? undefined : json['Phase'],
-        'scanTaskGroupId': !exists(json, 'ScanTaskGroupId') ? undefined : json['ScanTaskGroupId'],
-        'scanType': !exists(json, 'ScanType') ? undefined : json['ScanType'],
-        'scheduledScanId': !exists(json, 'ScheduledScanId') ? undefined : json['ScheduledScanId'],
-        'state': !exists(json, 'State') ? undefined : json['State'],
-        'stateChanged': !exists(json, 'StateChanged') ? undefined : (new Date(json['StateChanged'])),
-        'threatLevel': !exists(json, 'ThreatLevel') ? undefined : json['ThreatLevel'],
-        'vulnerabilityCriticalCount': !exists(json, 'VulnerabilityCriticalCount') ? undefined : json['VulnerabilityCriticalCount'],
-        'vulnerabilityHighCount': !exists(json, 'VulnerabilityHighCount') ? undefined : json['VulnerabilityHighCount'],
-        'vulnerabilityInfoCount': !exists(json, 'VulnerabilityInfoCount') ? undefined : json['VulnerabilityInfoCount'],
-        'vulnerabilityBestPracticeCount': !exists(json, 'VulnerabilityBestPracticeCount') ? undefined : json['VulnerabilityBestPracticeCount'],
-        'vulnerabilityLowCount': !exists(json, 'VulnerabilityLowCount') ? undefined : json['VulnerabilityLowCount'],
-        'vulnerabilityMediumCount': !exists(json, 'VulnerabilityMediumCount') ? undefined : json['VulnerabilityMediumCount'],
-        'websiteId': !exists(json, 'WebsiteId') ? undefined : json['WebsiteId'],
-        'initiated': !exists(json, 'Initiated') ? undefined : (new Date(json['Initiated'])),
-        'tags': !exists(json, 'Tags') ? undefined : json['Tags'],
+        'additionalWebsites': !(0, runtime_1.exists)(json, 'AdditionalWebsites') ? undefined : (json['AdditionalWebsites'].map(AdditionalWebsiteModel_1.AdditionalWebsiteModelFromJSON)),
+        'agentId': !(0, runtime_1.exists)(json, 'AgentId') ? undefined : json['AgentId'],
+        'agentName': !(0, runtime_1.exists)(json, 'AgentName') ? undefined : json['AgentName'],
+        'cookies': !(0, runtime_1.exists)(json, 'Cookies') ? undefined : json['Cookies'],
+        'crawlAndAttack': !(0, runtime_1.exists)(json, 'CrawlAndAttack') ? undefined : json['CrawlAndAttack'],
+        'deletedOn': !(0, runtime_1.exists)(json, 'DeletedOn') ? undefined : (new Date(json['DeletedOn'])),
+        'enableHeuristicChecksInCustomUrlRewrite': !(0, runtime_1.exists)(json, 'EnableHeuristicChecksInCustomUrlRewrite') ? undefined : json['EnableHeuristicChecksInCustomUrlRewrite'],
+        'excludedLinks': !(0, runtime_1.exists)(json, 'ExcludedLinks') ? undefined : json['ExcludedLinks'],
+        'excludeLinks': !(0, runtime_1.exists)(json, 'ExcludeLinks') ? undefined : json['ExcludeLinks'],
+        'disallowedHttpMethods': !(0, runtime_1.exists)(json, 'DisallowedHttpMethods') ? undefined : json['DisallowedHttpMethods'],
+        'findAndFollowNewLinks': !(0, runtime_1.exists)(json, 'FindAndFollowNewLinks') ? undefined : json['FindAndFollowNewLinks'],
+        'importedLinks': !(0, runtime_1.exists)(json, 'ImportedLinks') ? undefined : json['ImportedLinks'],
+        'allImportedLinks': !(0, runtime_1.exists)(json, 'AllImportedLinks') ? undefined : json['AllImportedLinks'],
+        'desktopScanId': !(0, runtime_1.exists)(json, 'DesktopScanId') ? undefined : json['DesktopScanId'],
+        'initiatedTime': !(0, runtime_1.exists)(json, 'InitiatedTime') ? undefined : json['InitiatedTime'],
+        'initiatedDate': !(0, runtime_1.exists)(json, 'InitiatedDate') ? undefined : json['InitiatedDate'],
+        'initiatedAt': !(0, runtime_1.exists)(json, 'InitiatedAt') ? undefined : (new Date(json['InitiatedAt'])),
+        'maxDynamicSignatures': !(0, runtime_1.exists)(json, 'MaxDynamicSignatures') ? undefined : json['MaxDynamicSignatures'],
+        'maxScanDuration': !(0, runtime_1.exists)(json, 'MaxScanDuration') ? undefined : json['MaxScanDuration'],
+        'duration': !(0, runtime_1.exists)(json, 'Duration') ? undefined : json['Duration'],
+        'policyDescription': !(0, runtime_1.exists)(json, 'PolicyDescription') ? undefined : json['PolicyDescription'],
+        'policyId': !(0, runtime_1.exists)(json, 'PolicyId') ? undefined : json['PolicyId'],
+        'policyUserId': !(0, runtime_1.exists)(json, 'PolicyUserId') ? undefined : json['PolicyUserId'],
+        'policyIsDefault': !(0, runtime_1.exists)(json, 'PolicyIsDefault') ? undefined : json['PolicyIsDefault'],
+        'policyIsShared': !(0, runtime_1.exists)(json, 'PolicyIsShared') ? undefined : json['PolicyIsShared'],
+        'policyName': !(0, runtime_1.exists)(json, 'PolicyName') ? undefined : json['PolicyName'],
+        'authenticationProfileId': !(0, runtime_1.exists)(json, 'AuthenticationProfileId') ? undefined : json['AuthenticationProfileId'],
+        'authenticationProfileOption': !(0, runtime_1.exists)(json, 'AuthenticationProfileOption') ? undefined : json['AuthenticationProfileOption'],
+        'reportPolicyDescription': !(0, runtime_1.exists)(json, 'ReportPolicyDescription') ? undefined : json['ReportPolicyDescription'],
+        'reportPolicyId': !(0, runtime_1.exists)(json, 'ReportPolicyId') ? undefined : json['ReportPolicyId'],
+        'reportPolicyUserId': !(0, runtime_1.exists)(json, 'ReportPolicyUserId') ? undefined : json['ReportPolicyUserId'],
+        'reportPolicyIsDefault': !(0, runtime_1.exists)(json, 'ReportPolicyIsDefault') ? undefined : json['ReportPolicyIsDefault'],
+        'reportPolicyIsShared': !(0, runtime_1.exists)(json, 'ReportPolicyIsShared') ? undefined : json['ReportPolicyIsShared'],
+        'reportPolicyName': !(0, runtime_1.exists)(json, 'ReportPolicyName') ? undefined : json['ReportPolicyName'],
+        'scope': !(0, runtime_1.exists)(json, 'Scope') ? undefined : json['Scope'],
+        'subPathMaxDynamicSignatures': !(0, runtime_1.exists)(json, 'SubPathMaxDynamicSignatures') ? undefined : json['SubPathMaxDynamicSignatures'],
+        'targetPath': !(0, runtime_1.exists)(json, 'TargetPath') ? undefined : json['TargetPath'],
+        'targetUrl': !(0, runtime_1.exists)(json, 'TargetUrl') ? undefined : json['TargetUrl'],
+        'targetUrlRoot': !(0, runtime_1.exists)(json, 'TargetUrlRoot') ? undefined : json['TargetUrlRoot'],
+        'timeWindow': !(0, runtime_1.exists)(json, 'TimeWindow') ? undefined : (0, ScanTimeWindowModel_1.ScanTimeWindowModelFromJSON)(json['TimeWindow']),
+        'totalVulnerabilityCount': !(0, runtime_1.exists)(json, 'TotalVulnerabilityCount') ? undefined : json['TotalVulnerabilityCount'],
+        'urlRewriteAnalyzableExtensions': !(0, runtime_1.exists)(json, 'UrlRewriteAnalyzableExtensions') ? undefined : json['UrlRewriteAnalyzableExtensions'],
+        'urlRewriteBlockSeparators': !(0, runtime_1.exists)(json, 'UrlRewriteBlockSeparators') ? undefined : json['UrlRewriteBlockSeparators'],
+        'urlRewriteMode': !(0, runtime_1.exists)(json, 'UrlRewriteMode') ? undefined : json['UrlRewriteMode'],
+        'urlRewriteRules': !(0, runtime_1.exists)(json, 'UrlRewriteRules') ? undefined : (json['UrlRewriteRules'].map(UrlRewriteRuleModel_1.UrlRewriteRuleModelFromJSON)),
+        'urlRewriteExcludedLinks': !(0, runtime_1.exists)(json, 'UrlRewriteExcludedLinks') ? undefined : (json['UrlRewriteExcludedLinks'].map(UrlRewriteExcludedPathModel_1.UrlRewriteExcludedPathModelFromJSON)),
+        'userId': !(0, runtime_1.exists)(json, 'UserId') ? undefined : json['UserId'],
+        'vcsCommitInfo': !(0, runtime_1.exists)(json, 'VcsCommitInfo') ? undefined : (0, VcsCommitInfo_1.VcsCommitInfoFromJSON)(json['VcsCommitInfo']),
+        'websiteName': !(0, runtime_1.exists)(json, 'WebsiteName') ? undefined : json['WebsiteName'],
+        'websiteUrl': !(0, runtime_1.exists)(json, 'WebsiteUrl') ? undefined : json['WebsiteUrl'],
+        'websiteDescription': !(0, runtime_1.exists)(json, 'WebsiteDescription') ? undefined : json['WebsiteDescription'],
+        'websiteProtocol': !(0, runtime_1.exists)(json, 'WebsiteProtocol') ? undefined : json['WebsiteProtocol'],
+        'websiteIsDeleted': !(0, runtime_1.exists)(json, 'WebsiteIsDeleted') ? undefined : json['WebsiteIsDeleted'],
+        'isWebsiteLatestCompletedFullScanTask': !(0, runtime_1.exists)(json, 'IsWebsiteLatestCompletedFullScanTask') ? undefined : json['IsWebsiteLatestCompletedFullScanTask'],
+        'enablePciScanTask': !(0, runtime_1.exists)(json, 'EnablePciScanTask') ? undefined : json['EnablePciScanTask'],
+        'pciScanTask': !(0, runtime_1.exists)(json, 'PciScanTask') ? undefined : (0, PciScanTaskViewModel_1.PciScanTaskViewModelFromJSON)(json['PciScanTask']),
+        'userName': !(0, runtime_1.exists)(json, 'UserName') ? undefined : json['UserName'],
+        'queuedScanTaskExist': !(0, runtime_1.exists)(json, 'QueuedScanTaskExist') ? undefined : json['QueuedScanTaskExist'],
+        'scanTaskProfileId': !(0, runtime_1.exists)(json, 'ScanTaskProfileId') ? undefined : json['ScanTaskProfileId'],
+        'scanTaskProfile': !(0, runtime_1.exists)(json, 'ScanTaskProfile') ? undefined : (0, ReducedScanTaskProfile_1.ReducedScanTaskProfileFromJSON)(json['ScanTaskProfile']),
+        'websiteGroupIds': !(0, runtime_1.exists)(json, 'WebsiteGroupIds') ? undefined : json['WebsiteGroupIds'],
+        'comments': !(0, runtime_1.exists)(json, 'Comments') ? undefined : json['Comments'],
+        'businessLogicRecorderSetting': !(0, runtime_1.exists)(json, 'BusinessLogicRecorderSetting') ? undefined : (0, BusinessLogicRecorderSettingModel_1.BusinessLogicRecorderSettingModelFromJSON)(json['BusinessLogicRecorderSetting']),
+        'scanProfileChanged': !(0, runtime_1.exists)(json, 'ScanProfileChanged') ? undefined : json['ScanProfileChanged'],
+        'completedSteps': !(0, runtime_1.exists)(json, 'CompletedSteps') ? undefined : json['CompletedSteps'],
+        'estimatedLaunchTime': !(0, runtime_1.exists)(json, 'EstimatedLaunchTime') ? undefined : json['EstimatedLaunchTime'],
+        'estimatedSteps': !(0, runtime_1.exists)(json, 'EstimatedSteps') ? undefined : json['EstimatedSteps'],
+        'failureReason': !(0, runtime_1.exists)(json, 'FailureReason') ? undefined : json['FailureReason'],
+        'failureReasonDescription': !(0, runtime_1.exists)(json, 'FailureReasonDescription') ? undefined : json['FailureReasonDescription'],
+        'failureReasonString': !(0, runtime_1.exists)(json, 'FailureReasonString') ? undefined : json['FailureReasonString'],
+        'globalThreatLevel': !(0, runtime_1.exists)(json, 'GlobalThreatLevel') ? undefined : json['GlobalThreatLevel'],
+        'globalVulnerabilityCriticalCount': !(0, runtime_1.exists)(json, 'GlobalVulnerabilityCriticalCount') ? undefined : json['GlobalVulnerabilityCriticalCount'],
+        'globalVulnerabilityHighCount': !(0, runtime_1.exists)(json, 'GlobalVulnerabilityHighCount') ? undefined : json['GlobalVulnerabilityHighCount'],
+        'globalVulnerabilityInfoCount': !(0, runtime_1.exists)(json, 'GlobalVulnerabilityInfoCount') ? undefined : json['GlobalVulnerabilityInfoCount'],
+        'globalVulnerabilityBestPracticeCount': !(0, runtime_1.exists)(json, 'GlobalVulnerabilityBestPracticeCount') ? undefined : json['GlobalVulnerabilityBestPracticeCount'],
+        'globalVulnerabilityLowCount': !(0, runtime_1.exists)(json, 'GlobalVulnerabilityLowCount') ? undefined : json['GlobalVulnerabilityLowCount'],
+        'globalVulnerabilityMediumCount': !(0, runtime_1.exists)(json, 'GlobalVulnerabilityMediumCount') ? undefined : json['GlobalVulnerabilityMediumCount'],
+        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
+        'isCompleted': !(0, runtime_1.exists)(json, 'IsCompleted') ? undefined : json['IsCompleted'],
+        'percentage': !(0, runtime_1.exists)(json, 'Percentage') ? undefined : json['Percentage'],
+        'phase': !(0, runtime_1.exists)(json, 'Phase') ? undefined : json['Phase'],
+        'scanTaskGroupId': !(0, runtime_1.exists)(json, 'ScanTaskGroupId') ? undefined : json['ScanTaskGroupId'],
+        'scanType': !(0, runtime_1.exists)(json, 'ScanType') ? undefined : json['ScanType'],
+        'scheduledScanId': !(0, runtime_1.exists)(json, 'ScheduledScanId') ? undefined : json['ScheduledScanId'],
+        'state': !(0, runtime_1.exists)(json, 'State') ? undefined : json['State'],
+        'stateChanged': !(0, runtime_1.exists)(json, 'StateChanged') ? undefined : (new Date(json['StateChanged'])),
+        'threatLevel': !(0, runtime_1.exists)(json, 'ThreatLevel') ? undefined : json['ThreatLevel'],
+        'vulnerabilityCriticalCount': !(0, runtime_1.exists)(json, 'VulnerabilityCriticalCount') ? undefined : json['VulnerabilityCriticalCount'],
+        'vulnerabilityHighCount': !(0, runtime_1.exists)(json, 'VulnerabilityHighCount') ? undefined : json['VulnerabilityHighCount'],
+        'vulnerabilityInfoCount': !(0, runtime_1.exists)(json, 'VulnerabilityInfoCount') ? undefined : json['VulnerabilityInfoCount'],
+        'vulnerabilityBestPracticeCount': !(0, runtime_1.exists)(json, 'VulnerabilityBestPracticeCount') ? undefined : json['VulnerabilityBestPracticeCount'],
+        'vulnerabilityLowCount': !(0, runtime_1.exists)(json, 'VulnerabilityLowCount') ? undefined : json['VulnerabilityLowCount'],
+        'vulnerabilityMediumCount': !(0, runtime_1.exists)(json, 'VulnerabilityMediumCount') ? undefined : json['VulnerabilityMediumCount'],
+        'websiteId': !(0, runtime_1.exists)(json, 'WebsiteId') ? undefined : json['WebsiteId'],
+        'initiated': !(0, runtime_1.exists)(json, 'Initiated') ? undefined : (new Date(json['Initiated'])),
+        'tags': !(0, runtime_1.exists)(json, 'Tags') ? undefined : json['Tags'],
     };
 }
-export function ScanTaskModelToJSON(value) {
+exports.ScanTaskModelFromJSONTyped = ScanTaskModelFromJSONTyped;
+function ScanTaskModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -278,7 +284,7 @@ export function ScanTaskModelToJSON(value) {
         return null;
     }
     return {
-        'AdditionalWebsites': value.additionalWebsites === undefined ? undefined : (value.additionalWebsites.map(AdditionalWebsiteModelToJSON)),
+        'AdditionalWebsites': value.additionalWebsites === undefined ? undefined : (value.additionalWebsites.map(AdditionalWebsiteModel_1.AdditionalWebsiteModelToJSON)),
         'AgentId': value.agentId,
         'AgentName': value.agentName,
         'Cookies': value.cookies,
@@ -317,15 +323,15 @@ export function ScanTaskModelToJSON(value) {
         'TargetPath': value.targetPath,
         'TargetUrl': value.targetUrl,
         'TargetUrlRoot': value.targetUrlRoot,
-        'TimeWindow': ScanTimeWindowModelToJSON(value.timeWindow),
+        'TimeWindow': (0, ScanTimeWindowModel_1.ScanTimeWindowModelToJSON)(value.timeWindow),
         'TotalVulnerabilityCount': value.totalVulnerabilityCount,
         'UrlRewriteAnalyzableExtensions': value.urlRewriteAnalyzableExtensions,
         'UrlRewriteBlockSeparators': value.urlRewriteBlockSeparators,
         'UrlRewriteMode': value.urlRewriteMode,
-        'UrlRewriteRules': value.urlRewriteRules === undefined ? undefined : (value.urlRewriteRules.map(UrlRewriteRuleModelToJSON)),
-        'UrlRewriteExcludedLinks': value.urlRewriteExcludedLinks === undefined ? undefined : (value.urlRewriteExcludedLinks.map(UrlRewriteExcludedPathModelToJSON)),
+        'UrlRewriteRules': value.urlRewriteRules === undefined ? undefined : (value.urlRewriteRules.map(UrlRewriteRuleModel_1.UrlRewriteRuleModelToJSON)),
+        'UrlRewriteExcludedLinks': value.urlRewriteExcludedLinks === undefined ? undefined : (value.urlRewriteExcludedLinks.map(UrlRewriteExcludedPathModel_1.UrlRewriteExcludedPathModelToJSON)),
         'UserId': value.userId,
-        'VcsCommitInfo': VcsCommitInfoToJSON(value.vcsCommitInfo),
+        'VcsCommitInfo': (0, VcsCommitInfo_1.VcsCommitInfoToJSON)(value.vcsCommitInfo),
         'WebsiteName': value.websiteName,
         'WebsiteUrl': value.websiteUrl,
         'WebsiteDescription': value.websiteDescription,
@@ -333,14 +339,14 @@ export function ScanTaskModelToJSON(value) {
         'WebsiteIsDeleted': value.websiteIsDeleted,
         'IsWebsiteLatestCompletedFullScanTask': value.isWebsiteLatestCompletedFullScanTask,
         'EnablePciScanTask': value.enablePciScanTask,
-        'PciScanTask': PciScanTaskViewModelToJSON(value.pciScanTask),
+        'PciScanTask': (0, PciScanTaskViewModel_1.PciScanTaskViewModelToJSON)(value.pciScanTask),
         'UserName': value.userName,
         'QueuedScanTaskExist': value.queuedScanTaskExist,
         'ScanTaskProfileId': value.scanTaskProfileId,
-        'ScanTaskProfile': ReducedScanTaskProfileToJSON(value.scanTaskProfile),
+        'ScanTaskProfile': (0, ReducedScanTaskProfile_1.ReducedScanTaskProfileToJSON)(value.scanTaskProfile),
         'WebsiteGroupIds': value.websiteGroupIds,
         'Comments': value.comments,
-        'BusinessLogicRecorderSetting': BusinessLogicRecorderSettingModelToJSON(value.businessLogicRecorderSetting),
+        'BusinessLogicRecorderSetting': (0, BusinessLogicRecorderSettingModel_1.BusinessLogicRecorderSettingModelToJSON)(value.businessLogicRecorderSetting),
         'ScanProfileChanged': value.scanProfileChanged,
         'CompletedSteps': value.completedSteps,
         'EstimatedLaunchTime': value.estimatedLaunchTime,
@@ -373,4 +379,5 @@ export function ScanTaskModelToJSON(value) {
         'Tags': value.tags,
     };
 }
+exports.ScanTaskModelToJSON = ScanTaskModelToJSON;
 //# sourceMappingURL=ScanTaskModel.js.map

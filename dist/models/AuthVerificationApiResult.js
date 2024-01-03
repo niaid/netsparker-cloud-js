@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,11 +12,13 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AuthVerificationApiResultToJSON = exports.AuthVerificationApiResultFromJSONTyped = exports.AuthVerificationApiResultFromJSON = exports.instanceOfAuthVerificationApiResult = exports.AuthVerificationApiResultLogoutSignatureTypeEnum = void 0;
+const runtime_1 = require("../runtime");
 /**
  * @export
  */
-export const AuthVerificationApiResultLogoutSignatureTypeEnum = {
+exports.AuthVerificationApiResultLogoutSignatureTypeEnum = {
     None: 'None',
     RedirectBased: 'RedirectBased',
     KeywordBased: 'KeywordBased'
@@ -23,25 +26,28 @@ export const AuthVerificationApiResultLogoutSignatureTypeEnum = {
 /**
  * Check if a given object implements the AuthVerificationApiResult interface.
  */
-export function instanceOfAuthVerificationApiResult(value) {
+function instanceOfAuthVerificationApiResult(value) {
     let isInstance = true;
     return isInstance;
 }
-export function AuthVerificationApiResultFromJSON(json) {
+exports.instanceOfAuthVerificationApiResult = instanceOfAuthVerificationApiResult;
+function AuthVerificationApiResultFromJSON(json) {
     return AuthVerificationApiResultFromJSONTyped(json, false);
 }
-export function AuthVerificationApiResultFromJSONTyped(json, ignoreDiscriminator) {
+exports.AuthVerificationApiResultFromJSON = AuthVerificationApiResultFromJSON;
+function AuthVerificationApiResultFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'keywords': !exists(json, 'Keywords') ? undefined : json['Keywords'],
-        'loginRequiredUrl': !exists(json, 'LoginRequiredUrl') ? undefined : json['LoginRequiredUrl'],
-        'logoutSignatureType': !exists(json, 'LogoutSignatureType') ? undefined : json['LogoutSignatureType'],
-        'redirectLocation': !exists(json, 'RedirectLocation') ? undefined : json['RedirectLocation'],
+        'keywords': !(0, runtime_1.exists)(json, 'Keywords') ? undefined : json['Keywords'],
+        'loginRequiredUrl': !(0, runtime_1.exists)(json, 'LoginRequiredUrl') ? undefined : json['LoginRequiredUrl'],
+        'logoutSignatureType': !(0, runtime_1.exists)(json, 'LogoutSignatureType') ? undefined : json['LogoutSignatureType'],
+        'redirectLocation': !(0, runtime_1.exists)(json, 'RedirectLocation') ? undefined : json['RedirectLocation'],
     };
 }
-export function AuthVerificationApiResultToJSON(value) {
+exports.AuthVerificationApiResultFromJSONTyped = AuthVerificationApiResultFromJSONTyped;
+function AuthVerificationApiResultToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -55,4 +61,5 @@ export function AuthVerificationApiResultToJSON(value) {
         'RedirectLocation': value.redirectLocation,
     };
 }
+exports.AuthVerificationApiResultToJSON = AuthVerificationApiResultToJSON;
 //# sourceMappingURL=AuthVerificationApiResult.js.map

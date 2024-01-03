@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,12 +12,37 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import * as runtime from '../runtime';
-import { AgentGroupApiDeleteModelToJSON, AgentGroupApiNewModelToJSON, AgentGroupApiUpdateModelToJSON, AgentGroupModelFromJSON, AgentGroupsListApiResultFromJSON, } from '../models/index';
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AgentGroupsApi = void 0;
+const runtime = __importStar(require("../runtime"));
+const index_1 = require("../models/index");
 /**
  *
  */
-export class AgentGroupsApi extends runtime.BaseAPI {
+class AgentGroupsApi extends runtime.BaseAPI {
     /**
      * Deletes the agent group
      */
@@ -32,7 +58,7 @@ export class AgentGroupsApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AgentGroupApiDeleteModelToJSON(requestParameters.model),
+            body: (0, index_1.AgentGroupApiDeleteModelToJSON)(requestParameters.model),
         }, initOverrides);
         return new runtime.JSONApiResponse(response);
     }
@@ -61,7 +87,7 @@ export class AgentGroupsApi extends runtime.BaseAPI {
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => AgentGroupsListApiResultFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.AgentGroupsListApiResultFromJSON)(jsonValue));
     }
     /**
      * Gets the list of agent groups.
@@ -85,9 +111,9 @@ export class AgentGroupsApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AgentGroupApiNewModelToJSON(requestParameters.model),
+            body: (0, index_1.AgentGroupApiNewModelToJSON)(requestParameters.model),
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => AgentGroupModelFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.AgentGroupModelFromJSON)(jsonValue));
     }
     /**
      * Creates a new agent group
@@ -111,9 +137,9 @@ export class AgentGroupsApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AgentGroupApiUpdateModelToJSON(requestParameters.model),
+            body: (0, index_1.AgentGroupApiUpdateModelToJSON)(requestParameters.model),
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => AgentGroupModelFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.AgentGroupModelFromJSON)(jsonValue));
     }
     /**
      * Updates the agent group
@@ -123,4 +149,5 @@ export class AgentGroupsApi extends runtime.BaseAPI {
         return await response.value();
     }
 }
+exports.AgentGroupsApi = AgentGroupsApi;
 //# sourceMappingURL=AgentGroupsApi.js.map

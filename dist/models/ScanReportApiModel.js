@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,18 +12,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ScanReportApiModelToJSON = exports.ScanReportApiModelFromJSONTyped = exports.ScanReportApiModelFromJSON = exports.instanceOfScanReportApiModel = exports.ScanReportApiModelTypeEnum = exports.ScanReportApiModelFormatEnum = exports.ScanReportApiModelContentFormatEnum = void 0;
+const runtime_1 = require("../runtime");
 /**
  * @export
  */
-export const ScanReportApiModelContentFormatEnum = {
+exports.ScanReportApiModelContentFormatEnum = {
     Html: 'Html',
     Markdown: 'Markdown'
 };
 /**
  * @export
  */
-export const ScanReportApiModelFormatEnum = {
+exports.ScanReportApiModelFormatEnum = {
     Xml: 'Xml',
     Csv: 'Csv',
     Pdf: 'Pdf',
@@ -33,7 +36,7 @@ export const ScanReportApiModelFormatEnum = {
 /**
  * @export
  */
-export const ScanReportApiModelTypeEnum = {
+exports.ScanReportApiModelTypeEnum = {
     Crawled: 'Crawled',
     Scanned: 'Scanned',
     Vulnerabilities: 'Vulnerabilities',
@@ -63,33 +66,36 @@ export const ScanReportApiModelTypeEnum = {
 /**
  * Check if a given object implements the ScanReportApiModel interface.
  */
-export function instanceOfScanReportApiModel(value) {
+function instanceOfScanReportApiModel(value) {
     let isInstance = true;
     isInstance = isInstance && "format" in value;
     isInstance = isInstance && "id" in value;
     isInstance = isInstance && "type" in value;
     return isInstance;
 }
-export function ScanReportApiModelFromJSON(json) {
+exports.instanceOfScanReportApiModel = instanceOfScanReportApiModel;
+function ScanReportApiModelFromJSON(json) {
     return ScanReportApiModelFromJSONTyped(json, false);
 }
-export function ScanReportApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.ScanReportApiModelFromJSON = ScanReportApiModelFromJSON;
+function ScanReportApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'contentFormat': !exists(json, 'ContentFormat') ? undefined : json['ContentFormat'],
-        'excludeResponseData': !exists(json, 'ExcludeResponseData') ? undefined : json['ExcludeResponseData'],
+        'contentFormat': !(0, runtime_1.exists)(json, 'ContentFormat') ? undefined : json['ContentFormat'],
+        'excludeResponseData': !(0, runtime_1.exists)(json, 'ExcludeResponseData') ? undefined : json['ExcludeResponseData'],
         'format': json['Format'],
         'id': json['Id'],
         'type': json['Type'],
-        'onlyConfirmedIssues': !exists(json, 'OnlyConfirmedIssues') ? undefined : json['OnlyConfirmedIssues'],
-        'onlyUnconfirmedIssues': !exists(json, 'OnlyUnconfirmedIssues') ? undefined : json['OnlyUnconfirmedIssues'],
-        'excludeAddressedIssues': !exists(json, 'ExcludeAddressedIssues') ? undefined : json['ExcludeAddressedIssues'],
-        'excludeHistoryOfIssues': !exists(json, 'ExcludeHistoryOfIssues') ? undefined : json['ExcludeHistoryOfIssues'],
+        'onlyConfirmedIssues': !(0, runtime_1.exists)(json, 'OnlyConfirmedIssues') ? undefined : json['OnlyConfirmedIssues'],
+        'onlyUnconfirmedIssues': !(0, runtime_1.exists)(json, 'OnlyUnconfirmedIssues') ? undefined : json['OnlyUnconfirmedIssues'],
+        'excludeAddressedIssues': !(0, runtime_1.exists)(json, 'ExcludeAddressedIssues') ? undefined : json['ExcludeAddressedIssues'],
+        'excludeHistoryOfIssues': !(0, runtime_1.exists)(json, 'ExcludeHistoryOfIssues') ? undefined : json['ExcludeHistoryOfIssues'],
     };
 }
-export function ScanReportApiModelToJSON(value) {
+exports.ScanReportApiModelFromJSONTyped = ScanReportApiModelFromJSONTyped;
+function ScanReportApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -108,4 +114,5 @@ export function ScanReportApiModelToJSON(value) {
         'ExcludeHistoryOfIssues': value.excludeHistoryOfIssues,
     };
 }
+exports.ScanReportApiModelToJSON = ScanReportApiModelToJSON;
 //# sourceMappingURL=ScanReportApiModel.js.map

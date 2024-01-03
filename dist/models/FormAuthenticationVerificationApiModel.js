@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,12 +12,14 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { OtpSettingsFromJSON, OtpSettingsToJSON, } from './OtpSettings';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.FormAuthenticationVerificationApiModelToJSON = exports.FormAuthenticationVerificationApiModelFromJSONTyped = exports.FormAuthenticationVerificationApiModelFromJSON = exports.instanceOfFormAuthenticationVerificationApiModel = void 0;
+const runtime_1 = require("../runtime");
+const OtpSettings_1 = require("./OtpSettings");
 /**
  * Check if a given object implements the FormAuthenticationVerificationApiModel interface.
  */
-export function instanceOfFormAuthenticationVerificationApiModel(value) {
+function instanceOfFormAuthenticationVerificationApiModel(value) {
     let isInstance = true;
     isInstance = isInstance && "loginFormUrl" in value;
     isInstance = isInstance && "password" in value;
@@ -24,10 +27,12 @@ export function instanceOfFormAuthenticationVerificationApiModel(value) {
     isInstance = isInstance && "username" in value;
     return isInstance;
 }
-export function FormAuthenticationVerificationApiModelFromJSON(json) {
+exports.instanceOfFormAuthenticationVerificationApiModel = instanceOfFormAuthenticationVerificationApiModel;
+function FormAuthenticationVerificationApiModelFromJSON(json) {
     return FormAuthenticationVerificationApiModelFromJSONTyped(json, false);
 }
-export function FormAuthenticationVerificationApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.FormAuthenticationVerificationApiModelFromJSON = FormAuthenticationVerificationApiModelFromJSON;
+function FormAuthenticationVerificationApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
@@ -36,10 +41,11 @@ export function FormAuthenticationVerificationApiModelFromJSONTyped(json, ignore
         'password': json['Password'],
         'scanTargetUrl': json['ScanTargetUrl'],
         'username': json['Username'],
-        'otpSettings': !exists(json, 'OtpSettings') ? undefined : OtpSettingsFromJSON(json['OtpSettings']),
+        'otpSettings': !(0, runtime_1.exists)(json, 'OtpSettings') ? undefined : (0, OtpSettings_1.OtpSettingsFromJSON)(json['OtpSettings']),
     };
 }
-export function FormAuthenticationVerificationApiModelToJSON(value) {
+exports.FormAuthenticationVerificationApiModelFromJSONTyped = FormAuthenticationVerificationApiModelFromJSONTyped;
+function FormAuthenticationVerificationApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -51,7 +57,8 @@ export function FormAuthenticationVerificationApiModelToJSON(value) {
         'Password': value.password,
         'ScanTargetUrl': value.scanTargetUrl,
         'Username': value.username,
-        'OtpSettings': OtpSettingsToJSON(value.otpSettings),
+        'OtpSettings': (0, OtpSettings_1.OtpSettingsToJSON)(value.otpSettings),
     };
 }
+exports.FormAuthenticationVerificationApiModelToJSON = FormAuthenticationVerificationApiModelToJSON;
 //# sourceMappingURL=FormAuthenticationVerificationApiModel.js.map

@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,12 +12,14 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { CustomScriptPageViewModelFromJSON, CustomScriptPageViewModelToJSON, } from './CustomScriptPageViewModel';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AuthenticationProfileViewModelToJSON = exports.AuthenticationProfileViewModelFromJSONTyped = exports.AuthenticationProfileViewModelFromJSON = exports.instanceOfAuthenticationProfileViewModel = void 0;
+const runtime_1 = require("../runtime");
+const CustomScriptPageViewModel_1 = require("./CustomScriptPageViewModel");
 /**
  * Check if a given object implements the AuthenticationProfileViewModel interface.
  */
-export function instanceOfAuthenticationProfileViewModel(value) {
+function instanceOfAuthenticationProfileViewModel(value) {
     let isInstance = true;
     isInstance = isInstance && "name" in value;
     isInstance = isInstance && "triggeredUrl" in value;
@@ -24,22 +27,25 @@ export function instanceOfAuthenticationProfileViewModel(value) {
     isInstance = isInstance && "customScripts" in value;
     return isInstance;
 }
-export function AuthenticationProfileViewModelFromJSON(json) {
+exports.instanceOfAuthenticationProfileViewModel = instanceOfAuthenticationProfileViewModel;
+function AuthenticationProfileViewModelFromJSON(json) {
     return AuthenticationProfileViewModelFromJSONTyped(json, false);
 }
-export function AuthenticationProfileViewModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.AuthenticationProfileViewModelFromJSON = AuthenticationProfileViewModelFromJSON;
+function AuthenticationProfileViewModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'id': !exists(json, 'id') ? undefined : json['id'],
+        'id': !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
         'name': json['name'],
         'triggeredUrl': json['triggeredUrl'],
         'loginUrl': json['loginUrl'],
-        'customScripts': (json['customScripts'].map(CustomScriptPageViewModelFromJSON)),
+        'customScripts': (json['customScripts'].map(CustomScriptPageViewModel_1.CustomScriptPageViewModelFromJSON)),
     };
 }
-export function AuthenticationProfileViewModelToJSON(value) {
+exports.AuthenticationProfileViewModelFromJSONTyped = AuthenticationProfileViewModelFromJSONTyped;
+function AuthenticationProfileViewModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -51,7 +57,8 @@ export function AuthenticationProfileViewModelToJSON(value) {
         'name': value.name,
         'triggeredUrl': value.triggeredUrl,
         'loginUrl': value.loginUrl,
-        'customScripts': (value.customScripts.map(CustomScriptPageViewModelToJSON)),
+        'customScripts': (value.customScripts.map(CustomScriptPageViewModel_1.CustomScriptPageViewModelToJSON)),
     };
 }
+exports.AuthenticationProfileViewModelToJSON = AuthenticationProfileViewModelToJSON;
 //# sourceMappingURL=AuthenticationProfileViewModel.js.map

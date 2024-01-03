@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,12 +12,14 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { RoleWebsiteGroupMappingApiModelFromJSON, RoleWebsiteGroupMappingApiModelToJSON, } from './RoleWebsiteGroupMappingApiModel';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.NewMemberApiModelToJSON = exports.NewMemberApiModelFromJSONTyped = exports.NewMemberApiModelFromJSON = exports.instanceOfNewMemberApiModel = void 0;
+const runtime_1 = require("../runtime");
+const RoleWebsiteGroupMappingApiModel_1 = require("./RoleWebsiteGroupMappingApiModel");
 /**
  * Check if a given object implements the NewMemberApiModel interface.
  */
-export function instanceOfNewMemberApiModel(value) {
+function instanceOfNewMemberApiModel(value) {
     let isInstance = true;
     isInstance = isInstance && "name" in value;
     isInstance = isInstance && "email" in value;
@@ -24,32 +27,35 @@ export function instanceOfNewMemberApiModel(value) {
     isInstance = isInstance && "dateTimeFormat" in value;
     return isInstance;
 }
-export function NewMemberApiModelFromJSON(json) {
+exports.instanceOfNewMemberApiModel = instanceOfNewMemberApiModel;
+function NewMemberApiModelFromJSON(json) {
     return NewMemberApiModelFromJSONTyped(json, false);
 }
-export function NewMemberApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.NewMemberApiModelFromJSON = NewMemberApiModelFromJSON;
+function NewMemberApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
         'name': json['Name'],
         'email': json['Email'],
-        'password': !exists(json, 'Password') ? undefined : json['Password'],
-        'confirmPassword': !exists(json, 'ConfirmPassword') ? undefined : json['ConfirmPassword'],
-        'autoGeneratePassword': !exists(json, 'AutoGeneratePassword') ? undefined : json['AutoGeneratePassword'],
-        'phoneNumber': !exists(json, 'PhoneNumber') ? undefined : json['PhoneNumber'],
-        'onlySsoLogin': !exists(json, 'OnlySsoLogin') ? undefined : json['OnlySsoLogin'],
-        'alternateLoginEmail': !exists(json, 'AlternateLoginEmail') ? undefined : json['AlternateLoginEmail'],
-        'sendNotification': !exists(json, 'SendNotification') ? undefined : json['SendNotification'],
+        'password': !(0, runtime_1.exists)(json, 'Password') ? undefined : json['Password'],
+        'confirmPassword': !(0, runtime_1.exists)(json, 'ConfirmPassword') ? undefined : json['ConfirmPassword'],
+        'autoGeneratePassword': !(0, runtime_1.exists)(json, 'AutoGeneratePassword') ? undefined : json['AutoGeneratePassword'],
+        'phoneNumber': !(0, runtime_1.exists)(json, 'PhoneNumber') ? undefined : json['PhoneNumber'],
+        'onlySsoLogin': !(0, runtime_1.exists)(json, 'OnlySsoLogin') ? undefined : json['OnlySsoLogin'],
+        'alternateLoginEmail': !(0, runtime_1.exists)(json, 'AlternateLoginEmail') ? undefined : json['AlternateLoginEmail'],
+        'sendNotification': !(0, runtime_1.exists)(json, 'SendNotification') ? undefined : json['SendNotification'],
         'timezoneId': json['TimezoneId'],
         'dateTimeFormat': json['DateTimeFormat'],
-        'isApiAccessEnabled': !exists(json, 'IsApiAccessEnabled') ? undefined : json['IsApiAccessEnabled'],
-        'allowedWebsiteLimit': !exists(json, 'AllowedWebsiteLimit') ? undefined : json['AllowedWebsiteLimit'],
-        'teams': !exists(json, 'Teams') ? undefined : json['Teams'],
-        'roleWebsiteGroupMappings': !exists(json, 'RoleWebsiteGroupMappings') ? undefined : (json['RoleWebsiteGroupMappings'].map(RoleWebsiteGroupMappingApiModelFromJSON)),
+        'isApiAccessEnabled': !(0, runtime_1.exists)(json, 'IsApiAccessEnabled') ? undefined : json['IsApiAccessEnabled'],
+        'allowedWebsiteLimit': !(0, runtime_1.exists)(json, 'AllowedWebsiteLimit') ? undefined : json['AllowedWebsiteLimit'],
+        'teams': !(0, runtime_1.exists)(json, 'Teams') ? undefined : json['Teams'],
+        'roleWebsiteGroupMappings': !(0, runtime_1.exists)(json, 'RoleWebsiteGroupMappings') ? undefined : (json['RoleWebsiteGroupMappings'].map(RoleWebsiteGroupMappingApiModel_1.RoleWebsiteGroupMappingApiModelFromJSON)),
     };
 }
-export function NewMemberApiModelToJSON(value) {
+exports.NewMemberApiModelFromJSONTyped = NewMemberApiModelFromJSONTyped;
+function NewMemberApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -71,7 +77,8 @@ export function NewMemberApiModelToJSON(value) {
         'IsApiAccessEnabled': value.isApiAccessEnabled,
         'AllowedWebsiteLimit': value.allowedWebsiteLimit,
         'Teams': value.teams,
-        'RoleWebsiteGroupMappings': value.roleWebsiteGroupMappings === undefined ? undefined : (value.roleWebsiteGroupMappings.map(RoleWebsiteGroupMappingApiModelToJSON)),
+        'RoleWebsiteGroupMappings': value.roleWebsiteGroupMappings === undefined ? undefined : (value.roleWebsiteGroupMappings.map(RoleWebsiteGroupMappingApiModel_1.RoleWebsiteGroupMappingApiModelToJSON)),
     };
 }
+exports.NewMemberApiModelToJSON = NewMemberApiModelToJSON;
 //# sourceMappingURL=NewMemberApiModel.js.map

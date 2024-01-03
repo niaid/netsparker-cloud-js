@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,27 +12,32 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.SecurityCheckSettingToJSON = exports.SecurityCheckSettingFromJSONTyped = exports.SecurityCheckSettingFromJSON = exports.instanceOfSecurityCheckSetting = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the SecurityCheckSetting interface.
  */
-export function instanceOfSecurityCheckSetting(value) {
+function instanceOfSecurityCheckSetting(value) {
     let isInstance = true;
     return isInstance;
 }
-export function SecurityCheckSettingFromJSON(json) {
+exports.instanceOfSecurityCheckSetting = instanceOfSecurityCheckSetting;
+function SecurityCheckSettingFromJSON(json) {
     return SecurityCheckSettingFromJSONTyped(json, false);
 }
-export function SecurityCheckSettingFromJSONTyped(json, ignoreDiscriminator) {
+exports.SecurityCheckSettingFromJSON = SecurityCheckSettingFromJSON;
+function SecurityCheckSettingFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'value': !exists(json, 'Value') ? undefined : json['Value'],
+        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
+        'value': !(0, runtime_1.exists)(json, 'Value') ? undefined : json['Value'],
     };
 }
-export function SecurityCheckSettingToJSON(value) {
+exports.SecurityCheckSettingFromJSONTyped = SecurityCheckSettingFromJSONTyped;
+function SecurityCheckSettingToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -43,4 +49,5 @@ export function SecurityCheckSettingToJSON(value) {
         'Value': value.value,
     };
 }
+exports.SecurityCheckSettingToJSON = SecurityCheckSettingToJSON;
 //# sourceMappingURL=SecurityCheckSetting.js.map

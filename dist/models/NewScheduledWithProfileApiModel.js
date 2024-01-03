@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,12 +12,14 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { ScheduledScanRecurrenceApiModelFromJSON, ScheduledScanRecurrenceApiModelToJSON, } from './ScheduledScanRecurrenceApiModel';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.NewScheduledWithProfileApiModelToJSON = exports.NewScheduledWithProfileApiModelFromJSONTyped = exports.NewScheduledWithProfileApiModelFromJSON = exports.instanceOfNewScheduledWithProfileApiModel = exports.NewScheduledWithProfileApiModelScheduleRunTypeEnum = void 0;
+const runtime_1 = require("../runtime");
+const ScheduledScanRecurrenceApiModel_1 = require("./ScheduledScanRecurrenceApiModel");
 /**
  * @export
  */
-export const NewScheduledWithProfileApiModelScheduleRunTypeEnum = {
+exports.NewScheduledWithProfileApiModelScheduleRunTypeEnum = {
     Once: 'Once',
     Daily: 'Daily',
     Weekly: 'Weekly',
@@ -29,7 +32,7 @@ export const NewScheduledWithProfileApiModelScheduleRunTypeEnum = {
 /**
  * Check if a given object implements the NewScheduledWithProfileApiModel interface.
  */
-export function instanceOfNewScheduledWithProfileApiModel(value) {
+function instanceOfNewScheduledWithProfileApiModel(value) {
     let isInstance = true;
     isInstance = isInstance && "profileName" in value;
     isInstance = isInstance && "targetUri" in value;
@@ -38,10 +41,12 @@ export function instanceOfNewScheduledWithProfileApiModel(value) {
     isInstance = isInstance && "scheduleRunType" in value;
     return isInstance;
 }
-export function NewScheduledWithProfileApiModelFromJSON(json) {
+exports.instanceOfNewScheduledWithProfileApiModel = instanceOfNewScheduledWithProfileApiModel;
+function NewScheduledWithProfileApiModelFromJSON(json) {
     return NewScheduledWithProfileApiModelFromJSONTyped(json, false);
 }
-export function NewScheduledWithProfileApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.NewScheduledWithProfileApiModelFromJSON = NewScheduledWithProfileApiModelFromJSON;
+function NewScheduledWithProfileApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
@@ -51,10 +56,11 @@ export function NewScheduledWithProfileApiModelFromJSONTyped(json, ignoreDiscrim
         'name': json['Name'],
         'nextExecutionTime': json['NextExecutionTime'],
         'scheduleRunType': json['ScheduleRunType'],
-        'customRecurrence': !exists(json, 'CustomRecurrence') ? undefined : ScheduledScanRecurrenceApiModelFromJSON(json['CustomRecurrence']),
+        'customRecurrence': !(0, runtime_1.exists)(json, 'CustomRecurrence') ? undefined : (0, ScheduledScanRecurrenceApiModel_1.ScheduledScanRecurrenceApiModelFromJSON)(json['CustomRecurrence']),
     };
 }
-export function NewScheduledWithProfileApiModelToJSON(value) {
+exports.NewScheduledWithProfileApiModelFromJSONTyped = NewScheduledWithProfileApiModelFromJSONTyped;
+function NewScheduledWithProfileApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -67,7 +73,8 @@ export function NewScheduledWithProfileApiModelToJSON(value) {
         'Name': value.name,
         'NextExecutionTime': value.nextExecutionTime,
         'ScheduleRunType': value.scheduleRunType,
-        'CustomRecurrence': ScheduledScanRecurrenceApiModelToJSON(value.customRecurrence),
+        'CustomRecurrence': (0, ScheduledScanRecurrenceApiModel_1.ScheduledScanRecurrenceApiModelToJSON)(value.customRecurrence),
     };
 }
+exports.NewScheduledWithProfileApiModelToJSON = NewScheduledWithProfileApiModelToJSON;
 //# sourceMappingURL=NewScheduledWithProfileApiModel.js.map

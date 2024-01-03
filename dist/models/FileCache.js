@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,11 +12,13 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.FileCacheToJSON = exports.FileCacheFromJSONTyped = exports.FileCacheFromJSON = exports.instanceOfFileCache = exports.FileCacheImporterTypeEnum = void 0;
+const runtime_1 = require("../runtime");
 /**
  * @export
  */
-export const FileCacheImporterTypeEnum = {
+exports.FileCacheImporterTypeEnum = {
     None: 'None',
     Fiddler: 'Fiddler',
     Burp: 'Burp',
@@ -39,28 +42,31 @@ export const FileCacheImporterTypeEnum = {
 /**
  * Check if a given object implements the FileCache interface.
  */
-export function instanceOfFileCache(value) {
+function instanceOfFileCache(value) {
     let isInstance = true;
     return isInstance;
 }
-export function FileCacheFromJSON(json) {
+exports.instanceOfFileCache = instanceOfFileCache;
+function FileCacheFromJSON(json) {
     return FileCacheFromJSONTyped(json, false);
 }
-export function FileCacheFromJSONTyped(json, ignoreDiscriminator) {
+exports.FileCacheFromJSON = FileCacheFromJSON;
+function FileCacheFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'key': !exists(json, 'Key') ? undefined : json['Key'],
-        'fileName': !exists(json, 'FileName') ? undefined : json['FileName'],
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'accept': !exists(json, 'Accept') ? undefined : json['Accept'],
-        'importerType': !exists(json, 'ImporterType') ? undefined : json['ImporterType'],
-        'uRL': !exists(json, 'URL') ? undefined : json['URL'],
-        'apiURL': !exists(json, 'ApiURL') ? undefined : json['ApiURL'],
+        'key': !(0, runtime_1.exists)(json, 'Key') ? undefined : json['Key'],
+        'fileName': !(0, runtime_1.exists)(json, 'FileName') ? undefined : json['FileName'],
+        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
+        'accept': !(0, runtime_1.exists)(json, 'Accept') ? undefined : json['Accept'],
+        'importerType': !(0, runtime_1.exists)(json, 'ImporterType') ? undefined : json['ImporterType'],
+        'uRL': !(0, runtime_1.exists)(json, 'URL') ? undefined : json['URL'],
+        'apiURL': !(0, runtime_1.exists)(json, 'ApiURL') ? undefined : json['ApiURL'],
     };
 }
-export function FileCacheToJSON(value) {
+exports.FileCacheFromJSONTyped = FileCacheFromJSONTyped;
+function FileCacheToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -77,4 +83,5 @@ export function FileCacheToJSON(value) {
         'ApiURL': value.apiURL,
     };
 }
+exports.FileCacheToJSON = FileCacheToJSON;
 //# sourceMappingURL=FileCache.js.map

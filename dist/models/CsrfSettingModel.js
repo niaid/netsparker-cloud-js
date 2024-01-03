@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,31 +12,36 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.CsrfSettingModelToJSON = exports.CsrfSettingModelFromJSONTyped = exports.CsrfSettingModelFromJSON = exports.instanceOfCsrfSettingModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the CsrfSettingModel interface.
  */
-export function instanceOfCsrfSettingModel(value) {
+function instanceOfCsrfSettingModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function CsrfSettingModelFromJSON(json) {
+exports.instanceOfCsrfSettingModel = instanceOfCsrfSettingModel;
+function CsrfSettingModelFromJSON(json) {
     return CsrfSettingModelFromJSONTyped(json, false);
 }
-export function CsrfSettingModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.CsrfSettingModelFromJSON = CsrfSettingModelFromJSON;
+function CsrfSettingModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'captchaIndicators': !exists(json, 'CaptchaIndicators') ? undefined : json['CaptchaIndicators'],
-        'loginFormValues': !exists(json, 'LoginFormValues') ? undefined : json['LoginFormValues'],
-        'nonFormValues': !exists(json, 'NonFormValues') ? undefined : json['NonFormValues'],
-        'nonInputValues': !exists(json, 'NonInputValues') ? undefined : json['NonInputValues'],
-        'userNameInputs': !exists(json, 'UserNameInputs') ? undefined : json['UserNameInputs'],
-        'authenticatedPagesCheck': !exists(json, 'AuthenticatedPagesCheck') ? undefined : json['AuthenticatedPagesCheck'],
+        'captchaIndicators': !(0, runtime_1.exists)(json, 'CaptchaIndicators') ? undefined : json['CaptchaIndicators'],
+        'loginFormValues': !(0, runtime_1.exists)(json, 'LoginFormValues') ? undefined : json['LoginFormValues'],
+        'nonFormValues': !(0, runtime_1.exists)(json, 'NonFormValues') ? undefined : json['NonFormValues'],
+        'nonInputValues': !(0, runtime_1.exists)(json, 'NonInputValues') ? undefined : json['NonInputValues'],
+        'userNameInputs': !(0, runtime_1.exists)(json, 'UserNameInputs') ? undefined : json['UserNameInputs'],
+        'authenticatedPagesCheck': !(0, runtime_1.exists)(json, 'AuthenticatedPagesCheck') ? undefined : json['AuthenticatedPagesCheck'],
     };
 }
-export function CsrfSettingModelToJSON(value) {
+exports.CsrfSettingModelFromJSONTyped = CsrfSettingModelFromJSONTyped;
+function CsrfSettingModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -51,4 +57,5 @@ export function CsrfSettingModelToJSON(value) {
         'AuthenticatedPagesCheck': value.authenticatedPagesCheck,
     };
 }
+exports.CsrfSettingModelToJSON = CsrfSettingModelToJSON;
 //# sourceMappingURL=CsrfSettingModel.js.map

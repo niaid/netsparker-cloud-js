@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,28 +12,33 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.FreshserviceUserToJSON = exports.FreshserviceUserFromJSONTyped = exports.FreshserviceUserFromJSON = exports.instanceOfFreshserviceUser = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the FreshserviceUser interface.
  */
-export function instanceOfFreshserviceUser(value) {
+function instanceOfFreshserviceUser(value) {
     let isInstance = true;
     return isInstance;
 }
-export function FreshserviceUserFromJSON(json) {
+exports.instanceOfFreshserviceUser = instanceOfFreshserviceUser;
+function FreshserviceUserFromJSON(json) {
     return FreshserviceUserFromJSONTyped(json, false);
 }
-export function FreshserviceUserFromJSONTyped(json, ignoreDiscriminator) {
+exports.FreshserviceUserFromJSON = FreshserviceUserFromJSON;
+function FreshserviceUserFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'email': !exists(json, 'email') ? undefined : json['email'],
-        'id': !exists(json, 'id') ? undefined : json['id'],
-        'name': !exists(json, 'name') ? undefined : json['name'],
+        'email': !(0, runtime_1.exists)(json, 'email') ? undefined : json['email'],
+        'id': !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
+        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
     };
 }
-export function FreshserviceUserToJSON(value) {
+exports.FreshserviceUserFromJSONTyped = FreshserviceUserFromJSONTyped;
+function FreshserviceUserToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -45,4 +51,5 @@ export function FreshserviceUserToJSON(value) {
         'name': value.name,
     };
 }
+exports.FreshserviceUserToJSON = FreshserviceUserToJSON;
 //# sourceMappingURL=FreshserviceUser.js.map

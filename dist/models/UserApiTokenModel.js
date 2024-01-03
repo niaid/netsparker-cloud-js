@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,27 +12,32 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.UserApiTokenModelToJSON = exports.UserApiTokenModelFromJSONTyped = exports.UserApiTokenModelFromJSON = exports.instanceOfUserApiTokenModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the UserApiTokenModel interface.
  */
-export function instanceOfUserApiTokenModel(value) {
+function instanceOfUserApiTokenModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function UserApiTokenModelFromJSON(json) {
+exports.instanceOfUserApiTokenModel = instanceOfUserApiTokenModel;
+function UserApiTokenModelFromJSON(json) {
     return UserApiTokenModelFromJSONTyped(json, false);
 }
-export function UserApiTokenModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.UserApiTokenModelFromJSON = UserApiTokenModelFromJSON;
+function UserApiTokenModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'token': !exists(json, 'Token') ? undefined : json['Token'],
+        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
+        'token': !(0, runtime_1.exists)(json, 'Token') ? undefined : json['Token'],
     };
 }
-export function UserApiTokenModelToJSON(value) {
+exports.UserApiTokenModelFromJSONTyped = UserApiTokenModelFromJSONTyped;
+function UserApiTokenModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -43,4 +49,5 @@ export function UserApiTokenModelToJSON(value) {
         'Token': value.token,
     };
 }
+exports.UserApiTokenModelToJSON = UserApiTokenModelToJSON;
 //# sourceMappingURL=UserApiTokenModel.js.map

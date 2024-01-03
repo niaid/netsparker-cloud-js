@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,18 +12,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.DeleteWebsiteApiModelToJSON = exports.DeleteWebsiteApiModelFromJSONTyped = exports.DeleteWebsiteApiModelFromJSON = exports.instanceOfDeleteWebsiteApiModel = void 0;
 /**
  * Check if a given object implements the DeleteWebsiteApiModel interface.
  */
-export function instanceOfDeleteWebsiteApiModel(value) {
+function instanceOfDeleteWebsiteApiModel(value) {
     let isInstance = true;
     isInstance = isInstance && "rootUrl" in value;
     return isInstance;
 }
-export function DeleteWebsiteApiModelFromJSON(json) {
+exports.instanceOfDeleteWebsiteApiModel = instanceOfDeleteWebsiteApiModel;
+function DeleteWebsiteApiModelFromJSON(json) {
     return DeleteWebsiteApiModelFromJSONTyped(json, false);
 }
-export function DeleteWebsiteApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.DeleteWebsiteApiModelFromJSON = DeleteWebsiteApiModelFromJSON;
+function DeleteWebsiteApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
@@ -30,7 +35,8 @@ export function DeleteWebsiteApiModelFromJSONTyped(json, ignoreDiscriminator) {
         'rootUrl': json['RootUrl'],
     };
 }
-export function DeleteWebsiteApiModelToJSON(value) {
+exports.DeleteWebsiteApiModelFromJSONTyped = DeleteWebsiteApiModelFromJSONTyped;
+function DeleteWebsiteApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -41,4 +47,5 @@ export function DeleteWebsiteApiModelToJSON(value) {
         'RootUrl': value.rootUrl,
     };
 }
+exports.DeleteWebsiteApiModelToJSON = DeleteWebsiteApiModelToJSON;
 //# sourceMappingURL=DeleteWebsiteApiModel.js.map

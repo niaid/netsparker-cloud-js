@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,29 +12,34 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.NewWebsiteGroupApiModelToJSON = exports.NewWebsiteGroupApiModelFromJSONTyped = exports.NewWebsiteGroupApiModelFromJSON = exports.instanceOfNewWebsiteGroupApiModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the NewWebsiteGroupApiModel interface.
  */
-export function instanceOfNewWebsiteGroupApiModel(value) {
+function instanceOfNewWebsiteGroupApiModel(value) {
     let isInstance = true;
     isInstance = isInstance && "name" in value;
     return isInstance;
 }
-export function NewWebsiteGroupApiModelFromJSON(json) {
+exports.instanceOfNewWebsiteGroupApiModel = instanceOfNewWebsiteGroupApiModel;
+function NewWebsiteGroupApiModelFromJSON(json) {
     return NewWebsiteGroupApiModelFromJSONTyped(json, false);
 }
-export function NewWebsiteGroupApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.NewWebsiteGroupApiModelFromJSON = NewWebsiteGroupApiModelFromJSON;
+function NewWebsiteGroupApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
         'name': json['Name'],
-        'description': !exists(json, 'Description') ? undefined : json['Description'],
-        'tags': !exists(json, 'Tags') ? undefined : json['Tags'],
+        'description': !(0, runtime_1.exists)(json, 'Description') ? undefined : json['Description'],
+        'tags': !(0, runtime_1.exists)(json, 'Tags') ? undefined : json['Tags'],
     };
 }
-export function NewWebsiteGroupApiModelToJSON(value) {
+exports.NewWebsiteGroupApiModelFromJSONTyped = NewWebsiteGroupApiModelFromJSONTyped;
+function NewWebsiteGroupApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -46,4 +52,5 @@ export function NewWebsiteGroupApiModelToJSON(value) {
         'Tags': value.tags,
     };
 }
+exports.NewWebsiteGroupApiModelToJSON = NewWebsiteGroupApiModelToJSON;
 //# sourceMappingURL=NewWebsiteGroupApiModel.js.map

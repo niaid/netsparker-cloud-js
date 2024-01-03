@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,28 +12,33 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { BasicAuthenticationCredentialApiModelFromJSON, BasicAuthenticationCredentialApiModelToJSON, } from './BasicAuthenticationCredentialApiModel';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.BasicAuthenticationSettingApiModelToJSON = exports.BasicAuthenticationSettingApiModelFromJSONTyped = exports.BasicAuthenticationSettingApiModelFromJSON = exports.instanceOfBasicAuthenticationSettingApiModel = void 0;
+const runtime_1 = require("../runtime");
+const BasicAuthenticationCredentialApiModel_1 = require("./BasicAuthenticationCredentialApiModel");
 /**
  * Check if a given object implements the BasicAuthenticationSettingApiModel interface.
  */
-export function instanceOfBasicAuthenticationSettingApiModel(value) {
+function instanceOfBasicAuthenticationSettingApiModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function BasicAuthenticationSettingApiModelFromJSON(json) {
+exports.instanceOfBasicAuthenticationSettingApiModel = instanceOfBasicAuthenticationSettingApiModel;
+function BasicAuthenticationSettingApiModelFromJSON(json) {
     return BasicAuthenticationSettingApiModelFromJSONTyped(json, false);
 }
-export function BasicAuthenticationSettingApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.BasicAuthenticationSettingApiModelFromJSON = BasicAuthenticationSettingApiModelFromJSON;
+function BasicAuthenticationSettingApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'alwaysAuthenticateNoChallenge': !exists(json, 'AlwaysAuthenticateNoChallenge') ? undefined : json['AlwaysAuthenticateNoChallenge'],
-        'credentials': !exists(json, 'Credentials') ? undefined : (json['Credentials'].map(BasicAuthenticationCredentialApiModelFromJSON)),
+        'alwaysAuthenticateNoChallenge': !(0, runtime_1.exists)(json, 'AlwaysAuthenticateNoChallenge') ? undefined : json['AlwaysAuthenticateNoChallenge'],
+        'credentials': !(0, runtime_1.exists)(json, 'Credentials') ? undefined : (json['Credentials'].map(BasicAuthenticationCredentialApiModel_1.BasicAuthenticationCredentialApiModelFromJSON)),
     };
 }
-export function BasicAuthenticationSettingApiModelToJSON(value) {
+exports.BasicAuthenticationSettingApiModelFromJSONTyped = BasicAuthenticationSettingApiModelFromJSONTyped;
+function BasicAuthenticationSettingApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -41,7 +47,8 @@ export function BasicAuthenticationSettingApiModelToJSON(value) {
     }
     return {
         'AlwaysAuthenticateNoChallenge': value.alwaysAuthenticateNoChallenge,
-        'Credentials': value.credentials === undefined ? undefined : (value.credentials.map(BasicAuthenticationCredentialApiModelToJSON)),
+        'Credentials': value.credentials === undefined ? undefined : (value.credentials.map(BasicAuthenticationCredentialApiModel_1.BasicAuthenticationCredentialApiModelToJSON)),
     };
 }
+exports.BasicAuthenticationSettingApiModelToJSON = BasicAuthenticationSettingApiModelToJSON;
 //# sourceMappingURL=BasicAuthenticationSettingApiModel.js.map

@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,27 +12,32 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.TagViewModelToJSON = exports.TagViewModelFromJSONTyped = exports.TagViewModelFromJSON = exports.instanceOfTagViewModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the TagViewModel interface.
  */
-export function instanceOfTagViewModel(value) {
+function instanceOfTagViewModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function TagViewModelFromJSON(json) {
+exports.instanceOfTagViewModel = instanceOfTagViewModel;
+function TagViewModelFromJSON(json) {
     return TagViewModelFromJSONTyped(json, false);
 }
-export function TagViewModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.TagViewModelFromJSON = TagViewModelFromJSON;
+function TagViewModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'value': !exists(json, 'Value') ? undefined : json['Value'],
+        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
+        'value': !(0, runtime_1.exists)(json, 'Value') ? undefined : json['Value'],
     };
 }
-export function TagViewModelToJSON(value) {
+exports.TagViewModelFromJSONTyped = TagViewModelFromJSONTyped;
+function TagViewModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -43,4 +49,5 @@ export function TagViewModelToJSON(value) {
         'Value': value.value,
     };
 }
+exports.TagViewModelToJSON = TagViewModelToJSON;
 //# sourceMappingURL=TagViewModel.js.map

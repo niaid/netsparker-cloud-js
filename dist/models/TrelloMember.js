@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,31 +12,36 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.TrelloMemberToJSON = exports.TrelloMemberFromJSONTyped = exports.TrelloMemberFromJSON = exports.instanceOfTrelloMember = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the TrelloMember interface.
  */
-export function instanceOfTrelloMember(value) {
+function instanceOfTrelloMember(value) {
     let isInstance = true;
     return isInstance;
 }
-export function TrelloMemberFromJSON(json) {
+exports.instanceOfTrelloMember = instanceOfTrelloMember;
+function TrelloMemberFromJSON(json) {
     return TrelloMemberFromJSONTyped(json, false);
 }
-export function TrelloMemberFromJSONTyped(json, ignoreDiscriminator) {
+exports.TrelloMemberFromJSON = TrelloMemberFromJSON;
+function TrelloMemberFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'confirmed': !exists(json, 'confirmed') ? undefined : json['confirmed'],
-        'email': !exists(json, 'email') ? undefined : json['email'],
-        'fullname': !exists(json, 'fullname') ? undefined : json['fullname'],
-        'id': !exists(json, 'id') ? undefined : json['id'],
-        'shortUrl': !exists(json, 'shortUrl') ? undefined : json['shortUrl'],
-        'username': !exists(json, 'username') ? undefined : json['username'],
+        'confirmed': !(0, runtime_1.exists)(json, 'confirmed') ? undefined : json['confirmed'],
+        'email': !(0, runtime_1.exists)(json, 'email') ? undefined : json['email'],
+        'fullname': !(0, runtime_1.exists)(json, 'fullname') ? undefined : json['fullname'],
+        'id': !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
+        'shortUrl': !(0, runtime_1.exists)(json, 'shortUrl') ? undefined : json['shortUrl'],
+        'username': !(0, runtime_1.exists)(json, 'username') ? undefined : json['username'],
     };
 }
-export function TrelloMemberToJSON(value) {
+exports.TrelloMemberFromJSONTyped = TrelloMemberFromJSONTyped;
+function TrelloMemberToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -51,4 +57,5 @@ export function TrelloMemberToJSON(value) {
         'username': value.username,
     };
 }
+exports.TrelloMemberToJSON = TrelloMemberToJSON;
 //# sourceMappingURL=TrelloMember.js.map

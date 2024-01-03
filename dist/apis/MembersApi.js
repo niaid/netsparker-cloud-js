@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,12 +12,37 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import * as runtime from '../runtime';
-import { MemberApiModelListApiResultFromJSON, MemberApiViewModelFromJSON, MemberInvitationDtoFromJSON, MemberInvitationPagedListDtoFromJSON, NewMemberApiModelToJSON, NewMemberInvitationApiModelToJSON, TimezoneApiModelFromJSON, UpdateMemberApiModelToJSON, UserApiTokenModelFromJSON, } from '../models/index';
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.MembersApi = void 0;
+const runtime = __importStar(require("../runtime"));
+const index_1 = require("../models/index");
 /**
  *
  */
-export class MembersApi extends runtime.BaseAPI {
+class MembersApi extends runtime.BaseAPI {
     /**
      * Deletes a member
      */
@@ -87,7 +113,7 @@ export class MembersApi extends runtime.BaseAPI {
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => MemberApiViewModelFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.MemberApiViewModelFromJSON)(jsonValue));
     }
     /**
      * Gets the member by the specified id.
@@ -114,7 +140,7 @@ export class MembersApi extends runtime.BaseAPI {
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => UserApiTokenModelFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.UserApiTokenModelFromJSON)(jsonValue));
     }
     /**
      * Gets user api token.
@@ -141,7 +167,7 @@ export class MembersApi extends runtime.BaseAPI {
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => MemberApiViewModelFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.MemberApiViewModelFromJSON)(jsonValue));
     }
     /**
      * Gets user by email.
@@ -168,7 +194,7 @@ export class MembersApi extends runtime.BaseAPI {
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => MemberInvitationDtoFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.MemberInvitationDtoFromJSON)(jsonValue));
     }
     /**
      * Gets the member invitation by the specified id.
@@ -189,7 +215,7 @@ export class MembersApi extends runtime.BaseAPI {
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => TimezoneApiModelFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.TimezoneApiModelFromJSON)(jsonValue));
     }
     /**
      * Gets a list all of the time zones.
@@ -216,7 +242,7 @@ export class MembersApi extends runtime.BaseAPI {
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => MemberInvitationPagedListDtoFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.MemberInvitationPagedListDtoFromJSON)(jsonValue));
     }
     /**
      * Gets the list of members.
@@ -243,7 +269,7 @@ export class MembersApi extends runtime.BaseAPI {
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => MemberApiModelListApiResultFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.MemberApiModelListApiResultFromJSON)(jsonValue));
     }
     /**
      * Gets the list of members.
@@ -267,9 +293,9 @@ export class MembersApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: NewMemberApiModelToJSON(requestParameters.model),
+            body: (0, index_1.NewMemberApiModelToJSON)(requestParameters.model),
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => MemberApiViewModelFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.MemberApiViewModelFromJSON)(jsonValue));
     }
     /**
      * Creates a new member.
@@ -293,7 +319,7 @@ export class MembersApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: NewMemberInvitationApiModelToJSON(requestParameters.model),
+            body: (0, index_1.NewMemberInvitationApiModelToJSON)(requestParameters.model),
         }, initOverrides);
         return new runtime.VoidApiResponse(response);
     }
@@ -344,9 +370,9 @@ export class MembersApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: UpdateMemberApiModelToJSON(requestParameters.model),
+            body: (0, index_1.UpdateMemberApiModelToJSON)(requestParameters.model),
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => MemberApiViewModelFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.MemberApiViewModelFromJSON)(jsonValue));
     }
     /**
      * Updates a member
@@ -356,4 +382,5 @@ export class MembersApi extends runtime.BaseAPI {
         return await response.value();
     }
 }
+exports.MembersApi = MembersApi;
 //# sourceMappingURL=MembersApi.js.map

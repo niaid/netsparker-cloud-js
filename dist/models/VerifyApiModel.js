@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,11 +12,13 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.VerifyApiModelToJSON = exports.VerifyApiModelFromJSONTyped = exports.VerifyApiModelFromJSON = exports.instanceOfVerifyApiModel = exports.VerifyApiModelVerificationMethodEnum = void 0;
+const runtime_1 = require("../runtime");
 /**
  * @export
  */
-export const VerifyApiModelVerificationMethodEnum = {
+exports.VerifyApiModelVerificationMethodEnum = {
     File: 'File',
     Tag: 'Tag',
     Dns: 'Dns',
@@ -24,25 +27,28 @@ export const VerifyApiModelVerificationMethodEnum = {
 /**
  * Check if a given object implements the VerifyApiModel interface.
  */
-export function instanceOfVerifyApiModel(value) {
+function instanceOfVerifyApiModel(value) {
     let isInstance = true;
     isInstance = isInstance && "websiteUrl" in value;
     return isInstance;
 }
-export function VerifyApiModelFromJSON(json) {
+exports.instanceOfVerifyApiModel = instanceOfVerifyApiModel;
+function VerifyApiModelFromJSON(json) {
     return VerifyApiModelFromJSONTyped(json, false);
 }
-export function VerifyApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.VerifyApiModelFromJSON = VerifyApiModelFromJSON;
+function VerifyApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'verificationMethod': !exists(json, 'VerificationMethod') ? undefined : json['VerificationMethod'],
-        'verificationSecret': !exists(json, 'VerificationSecret') ? undefined : json['VerificationSecret'],
+        'verificationMethod': !(0, runtime_1.exists)(json, 'VerificationMethod') ? undefined : json['VerificationMethod'],
+        'verificationSecret': !(0, runtime_1.exists)(json, 'VerificationSecret') ? undefined : json['VerificationSecret'],
         'websiteUrl': json['WebsiteUrl'],
     };
 }
-export function VerifyApiModelToJSON(value) {
+exports.VerifyApiModelFromJSONTyped = VerifyApiModelFromJSONTyped;
+function VerifyApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -55,4 +61,5 @@ export function VerifyApiModelToJSON(value) {
         'WebsiteUrl': value.websiteUrl,
     };
 }
+exports.VerifyApiModelToJSON = VerifyApiModelToJSON;
 //# sourceMappingURL=VerifyApiModel.js.map

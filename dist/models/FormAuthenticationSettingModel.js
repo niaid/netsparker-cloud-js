@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,47 +12,52 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists, mapValues } from '../runtime';
-import { AuthorizationTokenRuleFromJSON, AuthorizationTokenRuleToJSON, } from './AuthorizationTokenRule';
-import { FormAuthenticationCustomScriptFromJSON, FormAuthenticationCustomScriptToJSON, } from './FormAuthenticationCustomScript';
-import { FormAuthenticationPersonaFromJSON, FormAuthenticationPersonaToJSON, } from './FormAuthenticationPersona';
-import { LogoutKeywordPatternModelFromJSON, LogoutKeywordPatternModelToJSON, } from './LogoutKeywordPatternModel';
-import { ScanNotificationIntegrationViewModelFromJSON, ScanNotificationIntegrationViewModelToJSON, } from './ScanNotificationIntegrationViewModel';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.FormAuthenticationSettingModelToJSON = exports.FormAuthenticationSettingModelFromJSONTyped = exports.FormAuthenticationSettingModelFromJSON = exports.instanceOfFormAuthenticationSettingModel = void 0;
+const runtime_1 = require("../runtime");
+const AuthorizationTokenRule_1 = require("./AuthorizationTokenRule");
+const FormAuthenticationCustomScript_1 = require("./FormAuthenticationCustomScript");
+const FormAuthenticationPersona_1 = require("./FormAuthenticationPersona");
+const LogoutKeywordPatternModel_1 = require("./LogoutKeywordPatternModel");
+const ScanNotificationIntegrationViewModel_1 = require("./ScanNotificationIntegrationViewModel");
 /**
  * Check if a given object implements the FormAuthenticationSettingModel interface.
  */
-export function instanceOfFormAuthenticationSettingModel(value) {
+function instanceOfFormAuthenticationSettingModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function FormAuthenticationSettingModelFromJSON(json) {
+exports.instanceOfFormAuthenticationSettingModel = instanceOfFormAuthenticationSettingModel;
+function FormAuthenticationSettingModelFromJSON(json) {
     return FormAuthenticationSettingModelFromJSONTyped(json, false);
 }
-export function FormAuthenticationSettingModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.FormAuthenticationSettingModelFromJSON = FormAuthenticationSettingModelFromJSON;
+function FormAuthenticationSettingModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'integrations': !exists(json, 'Integrations') ? undefined : (mapValues(json['Integrations'], ScanNotificationIntegrationViewModelFromJSON)),
-        'customScripts': !exists(json, 'CustomScripts') ? undefined : (json['CustomScripts'].map(FormAuthenticationCustomScriptFromJSON)),
-        'interactiveLoginRequired': !exists(json, 'InteractiveLoginRequired') ? undefined : json['InteractiveLoginRequired'],
-        'defaultPersonaValidation': !exists(json, 'DefaultPersonaValidation') ? undefined : json['DefaultPersonaValidation'],
-        'detectBearerToken': !exists(json, 'DetectBearerToken') ? undefined : json['DetectBearerToken'],
-        'disableLogoutDetection': !exists(json, 'DisableLogoutDetection') ? undefined : json['DisableLogoutDetection'],
-        'isEnabled': !exists(json, 'IsEnabled') ? undefined : json['IsEnabled'],
-        'isNotVerified': !exists(json, 'IsNotVerified') ? undefined : json['IsNotVerified'],
-        'loginFormUrl': !exists(json, 'LoginFormUrl') ? undefined : json['LoginFormUrl'],
-        'loginRequiredUrl': !exists(json, 'LoginRequiredUrl') ? undefined : json['LoginRequiredUrl'],
-        'logoutKeywordPatterns': !exists(json, 'LogoutKeywordPatterns') ? undefined : (json['LogoutKeywordPatterns'].map(LogoutKeywordPatternModelFromJSON)),
-        'logoutKeywordPatternsValue': !exists(json, 'LogoutKeywordPatternsValue') ? undefined : json['LogoutKeywordPatternsValue'],
-        'logoutRedirectPattern': !exists(json, 'LogoutRedirectPattern') ? undefined : json['LogoutRedirectPattern'],
-        'overrideTargetUrl': !exists(json, 'OverrideTargetUrl') ? undefined : json['OverrideTargetUrl'],
-        'personas': !exists(json, 'Personas') ? undefined : (json['Personas'].map(FormAuthenticationPersonaFromJSON)),
-        'personasValidation': !exists(json, 'PersonasValidation') ? undefined : json['PersonasValidation'],
-        'authorizationTokenRules': !exists(json, 'AuthorizationTokenRules') ? undefined : (json['AuthorizationTokenRules'].map(AuthorizationTokenRuleFromJSON)),
+        'integrations': !(0, runtime_1.exists)(json, 'Integrations') ? undefined : ((0, runtime_1.mapValues)(json['Integrations'], ScanNotificationIntegrationViewModel_1.ScanNotificationIntegrationViewModelFromJSON)),
+        'customScripts': !(0, runtime_1.exists)(json, 'CustomScripts') ? undefined : (json['CustomScripts'].map(FormAuthenticationCustomScript_1.FormAuthenticationCustomScriptFromJSON)),
+        'interactiveLoginRequired': !(0, runtime_1.exists)(json, 'InteractiveLoginRequired') ? undefined : json['InteractiveLoginRequired'],
+        'defaultPersonaValidation': !(0, runtime_1.exists)(json, 'DefaultPersonaValidation') ? undefined : json['DefaultPersonaValidation'],
+        'detectBearerToken': !(0, runtime_1.exists)(json, 'DetectBearerToken') ? undefined : json['DetectBearerToken'],
+        'disableLogoutDetection': !(0, runtime_1.exists)(json, 'DisableLogoutDetection') ? undefined : json['DisableLogoutDetection'],
+        'isEnabled': !(0, runtime_1.exists)(json, 'IsEnabled') ? undefined : json['IsEnabled'],
+        'isNotVerified': !(0, runtime_1.exists)(json, 'IsNotVerified') ? undefined : json['IsNotVerified'],
+        'loginFormUrl': !(0, runtime_1.exists)(json, 'LoginFormUrl') ? undefined : json['LoginFormUrl'],
+        'loginRequiredUrl': !(0, runtime_1.exists)(json, 'LoginRequiredUrl') ? undefined : json['LoginRequiredUrl'],
+        'logoutKeywordPatterns': !(0, runtime_1.exists)(json, 'LogoutKeywordPatterns') ? undefined : (json['LogoutKeywordPatterns'].map(LogoutKeywordPatternModel_1.LogoutKeywordPatternModelFromJSON)),
+        'logoutKeywordPatternsValue': !(0, runtime_1.exists)(json, 'LogoutKeywordPatternsValue') ? undefined : json['LogoutKeywordPatternsValue'],
+        'logoutRedirectPattern': !(0, runtime_1.exists)(json, 'LogoutRedirectPattern') ? undefined : json['LogoutRedirectPattern'],
+        'overrideTargetUrl': !(0, runtime_1.exists)(json, 'OverrideTargetUrl') ? undefined : json['OverrideTargetUrl'],
+        'personas': !(0, runtime_1.exists)(json, 'Personas') ? undefined : (json['Personas'].map(FormAuthenticationPersona_1.FormAuthenticationPersonaFromJSON)),
+        'personasValidation': !(0, runtime_1.exists)(json, 'PersonasValidation') ? undefined : json['PersonasValidation'],
+        'authorizationTokenRules': !(0, runtime_1.exists)(json, 'AuthorizationTokenRules') ? undefined : (json['AuthorizationTokenRules'].map(AuthorizationTokenRule_1.AuthorizationTokenRuleFromJSON)),
     };
 }
-export function FormAuthenticationSettingModelToJSON(value) {
+exports.FormAuthenticationSettingModelFromJSONTyped = FormAuthenticationSettingModelFromJSONTyped;
+function FormAuthenticationSettingModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -59,20 +65,21 @@ export function FormAuthenticationSettingModelToJSON(value) {
         return null;
     }
     return {
-        'Integrations': value.integrations === undefined ? undefined : (mapValues(value.integrations, ScanNotificationIntegrationViewModelToJSON)),
-        'CustomScripts': value.customScripts === undefined ? undefined : (value.customScripts.map(FormAuthenticationCustomScriptToJSON)),
+        'Integrations': value.integrations === undefined ? undefined : ((0, runtime_1.mapValues)(value.integrations, ScanNotificationIntegrationViewModel_1.ScanNotificationIntegrationViewModelToJSON)),
+        'CustomScripts': value.customScripts === undefined ? undefined : (value.customScripts.map(FormAuthenticationCustomScript_1.FormAuthenticationCustomScriptToJSON)),
         'InteractiveLoginRequired': value.interactiveLoginRequired,
         'DetectBearerToken': value.detectBearerToken,
         'DisableLogoutDetection': value.disableLogoutDetection,
         'IsEnabled': value.isEnabled,
         'LoginFormUrl': value.loginFormUrl,
         'LoginRequiredUrl': value.loginRequiredUrl,
-        'LogoutKeywordPatterns': value.logoutKeywordPatterns === undefined ? undefined : (value.logoutKeywordPatterns.map(LogoutKeywordPatternModelToJSON)),
+        'LogoutKeywordPatterns': value.logoutKeywordPatterns === undefined ? undefined : (value.logoutKeywordPatterns.map(LogoutKeywordPatternModel_1.LogoutKeywordPatternModelToJSON)),
         'LogoutKeywordPatternsValue': value.logoutKeywordPatternsValue,
         'LogoutRedirectPattern': value.logoutRedirectPattern,
         'OverrideTargetUrl': value.overrideTargetUrl,
-        'Personas': value.personas === undefined ? undefined : (value.personas.map(FormAuthenticationPersonaToJSON)),
-        'AuthorizationTokenRules': value.authorizationTokenRules === undefined ? undefined : (value.authorizationTokenRules.map(AuthorizationTokenRuleToJSON)),
+        'Personas': value.personas === undefined ? undefined : (value.personas.map(FormAuthenticationPersona_1.FormAuthenticationPersonaToJSON)),
+        'AuthorizationTokenRules': value.authorizationTokenRules === undefined ? undefined : (value.authorizationTokenRules.map(AuthorizationTokenRule_1.AuthorizationTokenRuleToJSON)),
     };
 }
+exports.FormAuthenticationSettingModelToJSON = FormAuthenticationSettingModelToJSON;
 //# sourceMappingURL=FormAuthenticationSettingModel.js.map

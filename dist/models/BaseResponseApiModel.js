@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,26 +12,31 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.BaseResponseApiModelToJSON = exports.BaseResponseApiModelFromJSONTyped = exports.BaseResponseApiModelFromJSON = exports.instanceOfBaseResponseApiModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the BaseResponseApiModel interface.
  */
-export function instanceOfBaseResponseApiModel(value) {
+function instanceOfBaseResponseApiModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function BaseResponseApiModelFromJSON(json) {
+exports.instanceOfBaseResponseApiModel = instanceOfBaseResponseApiModel;
+function BaseResponseApiModelFromJSON(json) {
     return BaseResponseApiModelFromJSONTyped(json, false);
 }
-export function BaseResponseApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.BaseResponseApiModelFromJSON = BaseResponseApiModelFromJSON;
+function BaseResponseApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'message': !exists(json, 'Message') ? undefined : json['Message'],
+        'message': !(0, runtime_1.exists)(json, 'Message') ? undefined : json['Message'],
     };
 }
-export function BaseResponseApiModelToJSON(value) {
+exports.BaseResponseApiModelFromJSONTyped = BaseResponseApiModelFromJSONTyped;
+function BaseResponseApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -41,4 +47,5 @@ export function BaseResponseApiModelToJSON(value) {
         'Message': value.message,
     };
 }
+exports.BaseResponseApiModelToJSON = BaseResponseApiModelToJSON;
 //# sourceMappingURL=BaseResponseApiModel.js.map

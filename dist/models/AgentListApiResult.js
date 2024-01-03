@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,37 +12,42 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { AgentListApiModelFromJSON, AgentListApiModelToJSON, } from './AgentListApiModel';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AgentListApiResultToJSON = exports.AgentListApiResultFromJSONTyped = exports.AgentListApiResultFromJSON = exports.instanceOfAgentListApiResult = void 0;
+const runtime_1 = require("../runtime");
+const AgentListApiModel_1 = require("./AgentListApiModel");
 /**
  * Check if a given object implements the AgentListApiResult interface.
  */
-export function instanceOfAgentListApiResult(value) {
+function instanceOfAgentListApiResult(value) {
     let isInstance = true;
     return isInstance;
 }
-export function AgentListApiResultFromJSON(json) {
+exports.instanceOfAgentListApiResult = instanceOfAgentListApiResult;
+function AgentListApiResultFromJSON(json) {
     return AgentListApiResultFromJSONTyped(json, false);
 }
-export function AgentListApiResultFromJSONTyped(json, ignoreDiscriminator) {
+exports.AgentListApiResultFromJSON = AgentListApiResultFromJSON;
+function AgentListApiResultFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'firstItemOnPage': !exists(json, 'FirstItemOnPage') ? undefined : json['FirstItemOnPage'],
-        'hasNextPage': !exists(json, 'HasNextPage') ? undefined : json['HasNextPage'],
-        'hasPreviousPage': !exists(json, 'HasPreviousPage') ? undefined : json['HasPreviousPage'],
-        'isFirstPage': !exists(json, 'IsFirstPage') ? undefined : json['IsFirstPage'],
-        'isLastPage': !exists(json, 'IsLastPage') ? undefined : json['IsLastPage'],
-        'lastItemOnPage': !exists(json, 'LastItemOnPage') ? undefined : json['LastItemOnPage'],
-        'list': !exists(json, 'List') ? undefined : (json['List'].map(AgentListApiModelFromJSON)),
-        'pageCount': !exists(json, 'PageCount') ? undefined : json['PageCount'],
-        'pageNumber': !exists(json, 'PageNumber') ? undefined : json['PageNumber'],
-        'pageSize': !exists(json, 'PageSize') ? undefined : json['PageSize'],
-        'totalItemCount': !exists(json, 'TotalItemCount') ? undefined : json['TotalItemCount'],
+        'firstItemOnPage': !(0, runtime_1.exists)(json, 'FirstItemOnPage') ? undefined : json['FirstItemOnPage'],
+        'hasNextPage': !(0, runtime_1.exists)(json, 'HasNextPage') ? undefined : json['HasNextPage'],
+        'hasPreviousPage': !(0, runtime_1.exists)(json, 'HasPreviousPage') ? undefined : json['HasPreviousPage'],
+        'isFirstPage': !(0, runtime_1.exists)(json, 'IsFirstPage') ? undefined : json['IsFirstPage'],
+        'isLastPage': !(0, runtime_1.exists)(json, 'IsLastPage') ? undefined : json['IsLastPage'],
+        'lastItemOnPage': !(0, runtime_1.exists)(json, 'LastItemOnPage') ? undefined : json['LastItemOnPage'],
+        'list': !(0, runtime_1.exists)(json, 'List') ? undefined : (json['List'].map(AgentListApiModel_1.AgentListApiModelFromJSON)),
+        'pageCount': !(0, runtime_1.exists)(json, 'PageCount') ? undefined : json['PageCount'],
+        'pageNumber': !(0, runtime_1.exists)(json, 'PageNumber') ? undefined : json['PageNumber'],
+        'pageSize': !(0, runtime_1.exists)(json, 'PageSize') ? undefined : json['PageSize'],
+        'totalItemCount': !(0, runtime_1.exists)(json, 'TotalItemCount') ? undefined : json['TotalItemCount'],
     };
 }
-export function AgentListApiResultToJSON(value) {
+exports.AgentListApiResultFromJSONTyped = AgentListApiResultFromJSONTyped;
+function AgentListApiResultToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -55,11 +61,12 @@ export function AgentListApiResultToJSON(value) {
         'IsFirstPage': value.isFirstPage,
         'IsLastPage': value.isLastPage,
         'LastItemOnPage': value.lastItemOnPage,
-        'List': value.list === undefined ? undefined : (value.list.map(AgentListApiModelToJSON)),
+        'List': value.list === undefined ? undefined : (value.list.map(AgentListApiModel_1.AgentListApiModelToJSON)),
         'PageCount': value.pageCount,
         'PageNumber': value.pageNumber,
         'PageSize': value.pageSize,
         'TotalItemCount': value.totalItemCount,
     };
 }
+exports.AgentListApiResultToJSON = AgentListApiResultToJSON;
 //# sourceMappingURL=AgentListApiResult.js.map

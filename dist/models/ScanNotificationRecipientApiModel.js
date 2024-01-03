@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,13 +12,15 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { OutsiderRecipientFromJSON, OutsiderRecipientToJSON, } from './OutsiderRecipient';
-import { ScanNotificationRecipientUserApiModelFromJSON, ScanNotificationRecipientUserApiModelToJSON, } from './ScanNotificationRecipientUserApiModel';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ScanNotificationRecipientApiModelToJSON = exports.ScanNotificationRecipientApiModelFromJSONTyped = exports.ScanNotificationRecipientApiModelFromJSON = exports.instanceOfScanNotificationRecipientApiModel = exports.ScanNotificationRecipientApiModelSpecificSmsRecipientsEnum = exports.ScanNotificationRecipientApiModelSpecificEmailRecipientsEnum = void 0;
+const runtime_1 = require("../runtime");
+const OutsiderRecipient_1 = require("./OutsiderRecipient");
+const ScanNotificationRecipientUserApiModel_1 = require("./ScanNotificationRecipientUserApiModel");
 /**
  * @export
  */
-export const ScanNotificationRecipientApiModelSpecificEmailRecipientsEnum = {
+exports.ScanNotificationRecipientApiModelSpecificEmailRecipientsEnum = {
     None: 'None',
     WebsiteTechnicalContact: 'WebsiteTechnicalContact',
     PersonWhoStartedScan: 'PersonWhoStartedScan',
@@ -27,7 +30,7 @@ export const ScanNotificationRecipientApiModelSpecificEmailRecipientsEnum = {
 /**
  * @export
  */
-export const ScanNotificationRecipientApiModelSpecificSmsRecipientsEnum = {
+exports.ScanNotificationRecipientApiModelSpecificSmsRecipientsEnum = {
     None: 'None',
     WebsiteTechnicalContact: 'WebsiteTechnicalContact',
     PersonWhoStartedScan: 'PersonWhoStartedScan',
@@ -37,28 +40,31 @@ export const ScanNotificationRecipientApiModelSpecificSmsRecipientsEnum = {
 /**
  * Check if a given object implements the ScanNotificationRecipientApiModel interface.
  */
-export function instanceOfScanNotificationRecipientApiModel(value) {
+function instanceOfScanNotificationRecipientApiModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function ScanNotificationRecipientApiModelFromJSON(json) {
+exports.instanceOfScanNotificationRecipientApiModel = instanceOfScanNotificationRecipientApiModel;
+function ScanNotificationRecipientApiModelFromJSON(json) {
     return ScanNotificationRecipientApiModelFromJSONTyped(json, false);
 }
-export function ScanNotificationRecipientApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.ScanNotificationRecipientApiModelFromJSON = ScanNotificationRecipientApiModelFromJSON;
+function ScanNotificationRecipientApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'outsiderRecipients': !exists(json, 'OutsiderRecipients') ? undefined : (json['OutsiderRecipients'].map(OutsiderRecipientFromJSON)),
-        'emailRecipientUsers': !exists(json, 'EmailRecipientUsers') ? undefined : (json['EmailRecipientUsers'].map(ScanNotificationRecipientUserApiModelFromJSON)),
-        'excludedUsers': !exists(json, 'ExcludedUsers') ? undefined : (json['ExcludedUsers'].map(ScanNotificationRecipientUserApiModelFromJSON)),
-        'integrationRecipients': !exists(json, 'IntegrationRecipients') ? undefined : json['IntegrationRecipients'],
-        'smsRecipientUsers': !exists(json, 'SmsRecipientUsers') ? undefined : (json['SmsRecipientUsers'].map(ScanNotificationRecipientUserApiModelFromJSON)),
-        'specificEmailRecipients': !exists(json, 'SpecificEmailRecipients') ? undefined : json['SpecificEmailRecipients'],
-        'specificSmsRecipients': !exists(json, 'SpecificSmsRecipients') ? undefined : json['SpecificSmsRecipients'],
+        'outsiderRecipients': !(0, runtime_1.exists)(json, 'OutsiderRecipients') ? undefined : (json['OutsiderRecipients'].map(OutsiderRecipient_1.OutsiderRecipientFromJSON)),
+        'emailRecipientUsers': !(0, runtime_1.exists)(json, 'EmailRecipientUsers') ? undefined : (json['EmailRecipientUsers'].map(ScanNotificationRecipientUserApiModel_1.ScanNotificationRecipientUserApiModelFromJSON)),
+        'excludedUsers': !(0, runtime_1.exists)(json, 'ExcludedUsers') ? undefined : (json['ExcludedUsers'].map(ScanNotificationRecipientUserApiModel_1.ScanNotificationRecipientUserApiModelFromJSON)),
+        'integrationRecipients': !(0, runtime_1.exists)(json, 'IntegrationRecipients') ? undefined : json['IntegrationRecipients'],
+        'smsRecipientUsers': !(0, runtime_1.exists)(json, 'SmsRecipientUsers') ? undefined : (json['SmsRecipientUsers'].map(ScanNotificationRecipientUserApiModel_1.ScanNotificationRecipientUserApiModelFromJSON)),
+        'specificEmailRecipients': !(0, runtime_1.exists)(json, 'SpecificEmailRecipients') ? undefined : json['SpecificEmailRecipients'],
+        'specificSmsRecipients': !(0, runtime_1.exists)(json, 'SpecificSmsRecipients') ? undefined : json['SpecificSmsRecipients'],
     };
 }
-export function ScanNotificationRecipientApiModelToJSON(value) {
+exports.ScanNotificationRecipientApiModelFromJSONTyped = ScanNotificationRecipientApiModelFromJSONTyped;
+function ScanNotificationRecipientApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -66,13 +72,14 @@ export function ScanNotificationRecipientApiModelToJSON(value) {
         return null;
     }
     return {
-        'OutsiderRecipients': value.outsiderRecipients === undefined ? undefined : (value.outsiderRecipients.map(OutsiderRecipientToJSON)),
-        'EmailRecipientUsers': value.emailRecipientUsers === undefined ? undefined : (value.emailRecipientUsers.map(ScanNotificationRecipientUserApiModelToJSON)),
-        'ExcludedUsers': value.excludedUsers === undefined ? undefined : (value.excludedUsers.map(ScanNotificationRecipientUserApiModelToJSON)),
+        'OutsiderRecipients': value.outsiderRecipients === undefined ? undefined : (value.outsiderRecipients.map(OutsiderRecipient_1.OutsiderRecipientToJSON)),
+        'EmailRecipientUsers': value.emailRecipientUsers === undefined ? undefined : (value.emailRecipientUsers.map(ScanNotificationRecipientUserApiModel_1.ScanNotificationRecipientUserApiModelToJSON)),
+        'ExcludedUsers': value.excludedUsers === undefined ? undefined : (value.excludedUsers.map(ScanNotificationRecipientUserApiModel_1.ScanNotificationRecipientUserApiModelToJSON)),
         'IntegrationRecipients': value.integrationRecipients,
-        'SmsRecipientUsers': value.smsRecipientUsers === undefined ? undefined : (value.smsRecipientUsers.map(ScanNotificationRecipientUserApiModelToJSON)),
+        'SmsRecipientUsers': value.smsRecipientUsers === undefined ? undefined : (value.smsRecipientUsers.map(ScanNotificationRecipientUserApiModel_1.ScanNotificationRecipientUserApiModelToJSON)),
         'SpecificEmailRecipients': value.specificEmailRecipients,
         'SpecificSmsRecipients': value.specificSmsRecipients,
     };
 }
+exports.ScanNotificationRecipientApiModelToJSON = ScanNotificationRecipientApiModelToJSON;
 //# sourceMappingURL=ScanNotificationRecipientApiModel.js.map

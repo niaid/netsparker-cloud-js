@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,27 +12,32 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ScheduledScanUpdateViewModelToJSON = exports.ScheduledScanUpdateViewModelFromJSONTyped = exports.ScheduledScanUpdateViewModelFromJSON = exports.instanceOfScheduledScanUpdateViewModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the ScheduledScanUpdateViewModel interface.
  */
-export function instanceOfScheduledScanUpdateViewModel(value) {
+function instanceOfScheduledScanUpdateViewModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function ScheduledScanUpdateViewModelFromJSON(json) {
+exports.instanceOfScheduledScanUpdateViewModel = instanceOfScheduledScanUpdateViewModel;
+function ScheduledScanUpdateViewModelFromJSON(json) {
     return ScheduledScanUpdateViewModelFromJSONTyped(json, false);
 }
-export function ScheduledScanUpdateViewModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.ScheduledScanUpdateViewModelFromJSON = ScheduledScanUpdateViewModelFromJSON;
+function ScheduledScanUpdateViewModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
+        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
+        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
     };
 }
-export function ScheduledScanUpdateViewModelToJSON(value) {
+exports.ScheduledScanUpdateViewModelFromJSONTyped = ScheduledScanUpdateViewModelFromJSONTyped;
+function ScheduledScanUpdateViewModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -43,4 +49,5 @@ export function ScheduledScanUpdateViewModelToJSON(value) {
         'Name': value.name,
     };
 }
+exports.ScheduledScanUpdateViewModelToJSON = ScheduledScanUpdateViewModelToJSON;
 //# sourceMappingURL=ScheduledScanUpdateViewModel.js.map

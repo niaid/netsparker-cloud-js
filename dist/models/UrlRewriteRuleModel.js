@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,27 +12,32 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.UrlRewriteRuleModelToJSON = exports.UrlRewriteRuleModelFromJSONTyped = exports.UrlRewriteRuleModelFromJSON = exports.instanceOfUrlRewriteRuleModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the UrlRewriteRuleModel interface.
  */
-export function instanceOfUrlRewriteRuleModel(value) {
+function instanceOfUrlRewriteRuleModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function UrlRewriteRuleModelFromJSON(json) {
+exports.instanceOfUrlRewriteRuleModel = instanceOfUrlRewriteRuleModel;
+function UrlRewriteRuleModelFromJSON(json) {
     return UrlRewriteRuleModelFromJSONTyped(json, false);
 }
-export function UrlRewriteRuleModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.UrlRewriteRuleModelFromJSON = UrlRewriteRuleModelFromJSON;
+function UrlRewriteRuleModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'placeholderPattern': !exists(json, 'PlaceholderPattern') ? undefined : json['PlaceholderPattern'],
-        'regexPattern': !exists(json, 'RegexPattern') ? undefined : json['RegexPattern'],
+        'placeholderPattern': !(0, runtime_1.exists)(json, 'PlaceholderPattern') ? undefined : json['PlaceholderPattern'],
+        'regexPattern': !(0, runtime_1.exists)(json, 'RegexPattern') ? undefined : json['RegexPattern'],
     };
 }
-export function UrlRewriteRuleModelToJSON(value) {
+exports.UrlRewriteRuleModelFromJSONTyped = UrlRewriteRuleModelFromJSONTyped;
+function UrlRewriteRuleModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -43,4 +49,5 @@ export function UrlRewriteRuleModelToJSON(value) {
         'RegexPattern': value.regexPattern,
     };
 }
+exports.UrlRewriteRuleModelToJSON = UrlRewriteRuleModelToJSON;
 //# sourceMappingURL=UrlRewriteRuleModel.js.map

@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,42 +12,47 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.FormAuthenticationAzureKeyVaultSettingToJSON = exports.FormAuthenticationAzureKeyVaultSettingFromJSONTyped = exports.FormAuthenticationAzureKeyVaultSettingFromJSON = exports.instanceOfFormAuthenticationAzureKeyVaultSetting = exports.FormAuthenticationAzureKeyVaultSettingAgentModeEnum = void 0;
+const runtime_1 = require("../runtime");
 /**
  * @export
  */
-export const FormAuthenticationAzureKeyVaultSettingAgentModeEnum = {
+exports.FormAuthenticationAzureKeyVaultSettingAgentModeEnum = {
     Cloud: 'Cloud',
     Internal: 'Internal'
 };
 /**
  * Check if a given object implements the FormAuthenticationAzureKeyVaultSetting interface.
  */
-export function instanceOfFormAuthenticationAzureKeyVaultSetting(value) {
+function instanceOfFormAuthenticationAzureKeyVaultSetting(value) {
     let isInstance = true;
     return isInstance;
 }
-export function FormAuthenticationAzureKeyVaultSettingFromJSON(json) {
+exports.instanceOfFormAuthenticationAzureKeyVaultSetting = instanceOfFormAuthenticationAzureKeyVaultSetting;
+function FormAuthenticationAzureKeyVaultSettingFromJSON(json) {
     return FormAuthenticationAzureKeyVaultSettingFromJSONTyped(json, false);
 }
-export function FormAuthenticationAzureKeyVaultSettingFromJSONTyped(json, ignoreDiscriminator) {
+exports.FormAuthenticationAzureKeyVaultSettingFromJSON = FormAuthenticationAzureKeyVaultSettingFromJSON;
+function FormAuthenticationAzureKeyVaultSettingFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'integrationId': !exists(json, 'IntegrationId') ? undefined : json['IntegrationId'],
-        'useStaticUsername': !exists(json, 'UseStaticUsername') ? undefined : json['UseStaticUsername'],
-        'staticUsername': !exists(json, 'StaticUsername') ? undefined : json['StaticUsername'],
-        'usernameKey': !exists(json, 'UsernameKey') ? undefined : json['UsernameKey'],
-        'passwordKey': !exists(json, 'PasswordKey') ? undefined : json['PasswordKey'],
-        'clientID': !exists(json, 'ClientID') ? undefined : json['ClientID'],
-        'clientSecret': !exists(json, 'ClientSecret') ? undefined : json['ClientSecret'],
-        'tenantId': !exists(json, 'TenantId') ? undefined : json['TenantId'],
-        'vaultName': !exists(json, 'VaultName') ? undefined : json['VaultName'],
-        'agentMode': !exists(json, 'AgentMode') ? undefined : json['AgentMode'],
+        'integrationId': !(0, runtime_1.exists)(json, 'IntegrationId') ? undefined : json['IntegrationId'],
+        'useStaticUsername': !(0, runtime_1.exists)(json, 'UseStaticUsername') ? undefined : json['UseStaticUsername'],
+        'staticUsername': !(0, runtime_1.exists)(json, 'StaticUsername') ? undefined : json['StaticUsername'],
+        'usernameKey': !(0, runtime_1.exists)(json, 'UsernameKey') ? undefined : json['UsernameKey'],
+        'passwordKey': !(0, runtime_1.exists)(json, 'PasswordKey') ? undefined : json['PasswordKey'],
+        'clientID': !(0, runtime_1.exists)(json, 'ClientID') ? undefined : json['ClientID'],
+        'clientSecret': !(0, runtime_1.exists)(json, 'ClientSecret') ? undefined : json['ClientSecret'],
+        'tenantId': !(0, runtime_1.exists)(json, 'TenantId') ? undefined : json['TenantId'],
+        'vaultName': !(0, runtime_1.exists)(json, 'VaultName') ? undefined : json['VaultName'],
+        'agentMode': !(0, runtime_1.exists)(json, 'AgentMode') ? undefined : json['AgentMode'],
     };
 }
-export function FormAuthenticationAzureKeyVaultSettingToJSON(value) {
+exports.FormAuthenticationAzureKeyVaultSettingFromJSONTyped = FormAuthenticationAzureKeyVaultSettingFromJSONTyped;
+function FormAuthenticationAzureKeyVaultSettingToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -66,4 +72,5 @@ export function FormAuthenticationAzureKeyVaultSettingToJSON(value) {
         'AgentMode': value.agentMode,
     };
 }
+exports.FormAuthenticationAzureKeyVaultSettingToJSON = FormAuthenticationAzureKeyVaultSettingToJSON;
 //# sourceMappingURL=FormAuthenticationAzureKeyVaultSetting.js.map

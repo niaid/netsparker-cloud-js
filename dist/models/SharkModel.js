@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,11 +12,13 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.SharkModelToJSON = exports.SharkModelFromJSONTyped = exports.SharkModelFromJSON = exports.instanceOfSharkModel = exports.SharkModelSharkPlatformTypeEnum = void 0;
+const runtime_1 = require("../runtime");
 /**
  * @export
  */
-export const SharkModelSharkPlatformTypeEnum = {
+exports.SharkModelSharkPlatformTypeEnum = {
     AspNet: 'AspNet',
     Php: 'Php',
     Java: 'Java',
@@ -24,25 +27,28 @@ export const SharkModelSharkPlatformTypeEnum = {
 /**
  * Check if a given object implements the SharkModel interface.
  */
-export function instanceOfSharkModel(value) {
+function instanceOfSharkModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function SharkModelFromJSON(json) {
+exports.instanceOfSharkModel = instanceOfSharkModel;
+function SharkModelFromJSON(json) {
     return SharkModelFromJSONTyped(json, false);
 }
-export function SharkModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.SharkModelFromJSON = SharkModelFromJSON;
+function SharkModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'isSharkEnabled': !exists(json, 'IsSharkEnabled') ? undefined : json['IsSharkEnabled'],
-        'sharkPlatformType': !exists(json, 'SharkPlatformType') ? undefined : json['SharkPlatformType'],
-        'sharkPassword': !exists(json, 'SharkPassword') ? undefined : json['SharkPassword'],
-        'sharkBridgeUrl': !exists(json, 'SharkBridgeUrl') ? undefined : json['SharkBridgeUrl'],
+        'isSharkEnabled': !(0, runtime_1.exists)(json, 'IsSharkEnabled') ? undefined : json['IsSharkEnabled'],
+        'sharkPlatformType': !(0, runtime_1.exists)(json, 'SharkPlatformType') ? undefined : json['SharkPlatformType'],
+        'sharkPassword': !(0, runtime_1.exists)(json, 'SharkPassword') ? undefined : json['SharkPassword'],
+        'sharkBridgeUrl': !(0, runtime_1.exists)(json, 'SharkBridgeUrl') ? undefined : json['SharkBridgeUrl'],
     };
 }
-export function SharkModelToJSON(value) {
+exports.SharkModelFromJSONTyped = SharkModelFromJSONTyped;
+function SharkModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -56,4 +62,5 @@ export function SharkModelToJSON(value) {
         'SharkBridgeUrl': value.sharkBridgeUrl,
     };
 }
+exports.SharkModelToJSON = SharkModelToJSON;
 //# sourceMappingURL=SharkModel.js.map

@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,28 +12,33 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AgentStatusModelToJSON = exports.AgentStatusModelFromJSONTyped = exports.AgentStatusModelFromJSON = exports.instanceOfAgentStatusModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the AgentStatusModel interface.
  */
-export function instanceOfAgentStatusModel(value) {
+function instanceOfAgentStatusModel(value) {
     let isInstance = true;
     isInstance = isInstance && "agentId" in value;
     return isInstance;
 }
-export function AgentStatusModelFromJSON(json) {
+exports.instanceOfAgentStatusModel = instanceOfAgentStatusModel;
+function AgentStatusModelFromJSON(json) {
     return AgentStatusModelFromJSONTyped(json, false);
 }
-export function AgentStatusModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.AgentStatusModelFromJSON = AgentStatusModelFromJSON;
+function AgentStatusModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
         'agentId': json['AgentId'],
-        'status': !exists(json, 'Status') ? undefined : json['Status'],
+        'status': !(0, runtime_1.exists)(json, 'Status') ? undefined : json['Status'],
     };
 }
-export function AgentStatusModelToJSON(value) {
+exports.AgentStatusModelFromJSONTyped = AgentStatusModelFromJSONTyped;
+function AgentStatusModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -44,4 +50,5 @@ export function AgentStatusModelToJSON(value) {
         'Status': value.status,
     };
 }
+exports.AgentStatusModelToJSON = AgentStatusModelToJSON;
 //# sourceMappingURL=AgentStatusModel.js.map

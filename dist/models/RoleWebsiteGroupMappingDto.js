@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,29 +12,34 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.RoleWebsiteGroupMappingDtoToJSON = exports.RoleWebsiteGroupMappingDtoFromJSONTyped = exports.RoleWebsiteGroupMappingDtoFromJSON = exports.instanceOfRoleWebsiteGroupMappingDto = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the RoleWebsiteGroupMappingDto interface.
  */
-export function instanceOfRoleWebsiteGroupMappingDto(value) {
+function instanceOfRoleWebsiteGroupMappingDto(value) {
     let isInstance = true;
     return isInstance;
 }
-export function RoleWebsiteGroupMappingDtoFromJSON(json) {
+exports.instanceOfRoleWebsiteGroupMappingDto = instanceOfRoleWebsiteGroupMappingDto;
+function RoleWebsiteGroupMappingDtoFromJSON(json) {
     return RoleWebsiteGroupMappingDtoFromJSONTyped(json, false);
 }
-export function RoleWebsiteGroupMappingDtoFromJSONTyped(json, ignoreDiscriminator) {
+exports.RoleWebsiteGroupMappingDtoFromJSON = RoleWebsiteGroupMappingDtoFromJSON;
+function RoleWebsiteGroupMappingDtoFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'roleName': !exists(json, 'RoleName') ? undefined : json['RoleName'],
-        'roleId': !exists(json, 'RoleId') ? undefined : json['RoleId'],
-        'websiteGroupName': !exists(json, 'WebsiteGroupName') ? undefined : json['WebsiteGroupName'],
-        'websiteGroupId': !exists(json, 'WebsiteGroupId') ? undefined : json['WebsiteGroupId'],
+        'roleName': !(0, runtime_1.exists)(json, 'RoleName') ? undefined : json['RoleName'],
+        'roleId': !(0, runtime_1.exists)(json, 'RoleId') ? undefined : json['RoleId'],
+        'websiteGroupName': !(0, runtime_1.exists)(json, 'WebsiteGroupName') ? undefined : json['WebsiteGroupName'],
+        'websiteGroupId': !(0, runtime_1.exists)(json, 'WebsiteGroupId') ? undefined : json['WebsiteGroupId'],
     };
 }
-export function RoleWebsiteGroupMappingDtoToJSON(value) {
+exports.RoleWebsiteGroupMappingDtoFromJSONTyped = RoleWebsiteGroupMappingDtoFromJSONTyped;
+function RoleWebsiteGroupMappingDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -47,4 +53,5 @@ export function RoleWebsiteGroupMappingDtoToJSON(value) {
         'WebsiteGroupId': value.websiteGroupId,
     };
 }
+exports.RoleWebsiteGroupMappingDtoToJSON = RoleWebsiteGroupMappingDtoToJSON;
 //# sourceMappingURL=RoleWebsiteGroupMappingDto.js.map

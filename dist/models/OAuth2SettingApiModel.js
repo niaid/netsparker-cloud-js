@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,17 +12,19 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { BasicAuthenticationSettingApiModelFromJSON, BasicAuthenticationSettingApiModelToJSON, } from './BasicAuthenticationSettingApiModel';
-import { FormAuthenticationSettingApiModelFromJSON, FormAuthenticationSettingApiModelToJSON, } from './FormAuthenticationSettingApiModel';
-import { NameValuePairFromJSON, NameValuePairToJSON, } from './NameValuePair';
-import { OAuth2SettingEndpointFromJSON, OAuth2SettingEndpointToJSON, } from './OAuth2SettingEndpoint';
-import { ResponseFieldsFromJSON, ResponseFieldsToJSON, } from './ResponseFields';
-import { ThreeLeggedFieldsFromJSON, ThreeLeggedFieldsToJSON, } from './ThreeLeggedFields';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.OAuth2SettingApiModelToJSON = exports.OAuth2SettingApiModelFromJSONTyped = exports.OAuth2SettingApiModelFromJSON = exports.instanceOfOAuth2SettingApiModel = exports.OAuth2SettingApiModelAuthenticationTypeEnum = exports.OAuth2SettingApiModelFlowTypeEnum = void 0;
+const runtime_1 = require("../runtime");
+const BasicAuthenticationSettingApiModel_1 = require("./BasicAuthenticationSettingApiModel");
+const FormAuthenticationSettingApiModel_1 = require("./FormAuthenticationSettingApiModel");
+const NameValuePair_1 = require("./NameValuePair");
+const OAuth2SettingEndpoint_1 = require("./OAuth2SettingEndpoint");
+const ResponseFields_1 = require("./ResponseFields");
+const ThreeLeggedFields_1 = require("./ThreeLeggedFields");
 /**
  * @export
  */
-export const OAuth2SettingApiModelFlowTypeEnum = {
+exports.OAuth2SettingApiModelFlowTypeEnum = {
     AuthorizationCode: 'AuthorizationCode',
     Implicit: 'Implicit',
     ResourceOwnerPasswordCredentials: 'ResourceOwnerPasswordCredentials',
@@ -31,7 +34,7 @@ export const OAuth2SettingApiModelFlowTypeEnum = {
 /**
  * @export
  */
-export const OAuth2SettingApiModelAuthenticationTypeEnum = {
+exports.OAuth2SettingApiModelAuthenticationTypeEnum = {
     None: 'None',
     Form: 'Form',
     Basic: 'Basic'
@@ -39,35 +42,38 @@ export const OAuth2SettingApiModelAuthenticationTypeEnum = {
 /**
  * Check if a given object implements the OAuth2SettingApiModel interface.
  */
-export function instanceOfOAuth2SettingApiModel(value) {
+function instanceOfOAuth2SettingApiModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function OAuth2SettingApiModelFromJSON(json) {
+exports.instanceOfOAuth2SettingApiModel = instanceOfOAuth2SettingApiModel;
+function OAuth2SettingApiModelFromJSON(json) {
     return OAuth2SettingApiModelFromJSONTyped(json, false);
 }
-export function OAuth2SettingApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.OAuth2SettingApiModelFromJSON = OAuth2SettingApiModelFromJSON;
+function OAuth2SettingApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'serializedPolicyData': !exists(json, 'SerializedPolicyData') ? undefined : json['SerializedPolicyData'],
-        'flowType': !exists(json, 'FlowType') ? undefined : json['FlowType'],
-        'authenticationType': !exists(json, 'AuthenticationType') ? undefined : json['AuthenticationType'],
-        'accessTokenEndpoint': !exists(json, 'AccessTokenEndpoint') ? undefined : OAuth2SettingEndpointFromJSON(json['AccessTokenEndpoint']),
-        'authorizationCodeEndpoint': !exists(json, 'AuthorizationCodeEndpoint') ? undefined : OAuth2SettingEndpointFromJSON(json['AuthorizationCodeEndpoint']),
-        'accessTokenItems': !exists(json, 'AccessTokenItems') ? undefined : (json['AccessTokenItems'].map(NameValuePairFromJSON)),
-        'authorizationCodeItems': !exists(json, 'AuthorizationCodeItems') ? undefined : (json['AuthorizationCodeItems'].map(NameValuePairFromJSON)),
-        'responseFields': !exists(json, 'ResponseFields') ? undefined : ResponseFieldsFromJSON(json['ResponseFields']),
-        'threeLeggedFields': !exists(json, 'ThreeLeggedFields') ? undefined : ThreeLeggedFieldsFromJSON(json['ThreeLeggedFields']),
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'enabled': !exists(json, 'Enabled') ? undefined : json['Enabled'],
-        'headers': !exists(json, 'Headers') ? undefined : (json['Headers'].map(NameValuePairFromJSON)),
-        'formAuthenticationSetting': !exists(json, 'FormAuthenticationSetting') ? undefined : FormAuthenticationSettingApiModelFromJSON(json['FormAuthenticationSetting']),
-        'basicAuthenticationSetting': !exists(json, 'BasicAuthenticationSetting') ? undefined : BasicAuthenticationSettingApiModelFromJSON(json['BasicAuthenticationSetting']),
+        'serializedPolicyData': !(0, runtime_1.exists)(json, 'SerializedPolicyData') ? undefined : json['SerializedPolicyData'],
+        'flowType': !(0, runtime_1.exists)(json, 'FlowType') ? undefined : json['FlowType'],
+        'authenticationType': !(0, runtime_1.exists)(json, 'AuthenticationType') ? undefined : json['AuthenticationType'],
+        'accessTokenEndpoint': !(0, runtime_1.exists)(json, 'AccessTokenEndpoint') ? undefined : (0, OAuth2SettingEndpoint_1.OAuth2SettingEndpointFromJSON)(json['AccessTokenEndpoint']),
+        'authorizationCodeEndpoint': !(0, runtime_1.exists)(json, 'AuthorizationCodeEndpoint') ? undefined : (0, OAuth2SettingEndpoint_1.OAuth2SettingEndpointFromJSON)(json['AuthorizationCodeEndpoint']),
+        'accessTokenItems': !(0, runtime_1.exists)(json, 'AccessTokenItems') ? undefined : (json['AccessTokenItems'].map(NameValuePair_1.NameValuePairFromJSON)),
+        'authorizationCodeItems': !(0, runtime_1.exists)(json, 'AuthorizationCodeItems') ? undefined : (json['AuthorizationCodeItems'].map(NameValuePair_1.NameValuePairFromJSON)),
+        'responseFields': !(0, runtime_1.exists)(json, 'ResponseFields') ? undefined : (0, ResponseFields_1.ResponseFieldsFromJSON)(json['ResponseFields']),
+        'threeLeggedFields': !(0, runtime_1.exists)(json, 'ThreeLeggedFields') ? undefined : (0, ThreeLeggedFields_1.ThreeLeggedFieldsFromJSON)(json['ThreeLeggedFields']),
+        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
+        'enabled': !(0, runtime_1.exists)(json, 'Enabled') ? undefined : json['Enabled'],
+        'headers': !(0, runtime_1.exists)(json, 'Headers') ? undefined : (json['Headers'].map(NameValuePair_1.NameValuePairFromJSON)),
+        'formAuthenticationSetting': !(0, runtime_1.exists)(json, 'FormAuthenticationSetting') ? undefined : (0, FormAuthenticationSettingApiModel_1.FormAuthenticationSettingApiModelFromJSON)(json['FormAuthenticationSetting']),
+        'basicAuthenticationSetting': !(0, runtime_1.exists)(json, 'BasicAuthenticationSetting') ? undefined : (0, BasicAuthenticationSettingApiModel_1.BasicAuthenticationSettingApiModelFromJSON)(json['BasicAuthenticationSetting']),
     };
 }
-export function OAuth2SettingApiModelToJSON(value) {
+exports.OAuth2SettingApiModelFromJSONTyped = OAuth2SettingApiModelFromJSONTyped;
+function OAuth2SettingApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -78,17 +84,18 @@ export function OAuth2SettingApiModelToJSON(value) {
         'SerializedPolicyData': value.serializedPolicyData,
         'FlowType': value.flowType,
         'AuthenticationType': value.authenticationType,
-        'AccessTokenEndpoint': OAuth2SettingEndpointToJSON(value.accessTokenEndpoint),
-        'AuthorizationCodeEndpoint': OAuth2SettingEndpointToJSON(value.authorizationCodeEndpoint),
-        'AccessTokenItems': value.accessTokenItems === undefined ? undefined : (value.accessTokenItems.map(NameValuePairToJSON)),
-        'AuthorizationCodeItems': value.authorizationCodeItems === undefined ? undefined : (value.authorizationCodeItems.map(NameValuePairToJSON)),
-        'ResponseFields': ResponseFieldsToJSON(value.responseFields),
-        'ThreeLeggedFields': ThreeLeggedFieldsToJSON(value.threeLeggedFields),
+        'AccessTokenEndpoint': (0, OAuth2SettingEndpoint_1.OAuth2SettingEndpointToJSON)(value.accessTokenEndpoint),
+        'AuthorizationCodeEndpoint': (0, OAuth2SettingEndpoint_1.OAuth2SettingEndpointToJSON)(value.authorizationCodeEndpoint),
+        'AccessTokenItems': value.accessTokenItems === undefined ? undefined : (value.accessTokenItems.map(NameValuePair_1.NameValuePairToJSON)),
+        'AuthorizationCodeItems': value.authorizationCodeItems === undefined ? undefined : (value.authorizationCodeItems.map(NameValuePair_1.NameValuePairToJSON)),
+        'ResponseFields': (0, ResponseFields_1.ResponseFieldsToJSON)(value.responseFields),
+        'ThreeLeggedFields': (0, ThreeLeggedFields_1.ThreeLeggedFieldsToJSON)(value.threeLeggedFields),
         'Id': value.id,
         'Enabled': value.enabled,
-        'Headers': value.headers === undefined ? undefined : (value.headers.map(NameValuePairToJSON)),
-        'FormAuthenticationSetting': FormAuthenticationSettingApiModelToJSON(value.formAuthenticationSetting),
-        'BasicAuthenticationSetting': BasicAuthenticationSettingApiModelToJSON(value.basicAuthenticationSetting),
+        'Headers': value.headers === undefined ? undefined : (value.headers.map(NameValuePair_1.NameValuePairToJSON)),
+        'FormAuthenticationSetting': (0, FormAuthenticationSettingApiModel_1.FormAuthenticationSettingApiModelToJSON)(value.formAuthenticationSetting),
+        'BasicAuthenticationSetting': (0, BasicAuthenticationSettingApiModel_1.BasicAuthenticationSettingApiModelToJSON)(value.basicAuthenticationSetting),
     };
 }
+exports.OAuth2SettingApiModelToJSON = OAuth2SettingApiModelToJSON;
 //# sourceMappingURL=OAuth2SettingApiModel.js.map

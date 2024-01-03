@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,18 +12,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.DeleteAgentModelToJSON = exports.DeleteAgentModelFromJSONTyped = exports.DeleteAgentModelFromJSON = exports.instanceOfDeleteAgentModel = void 0;
 /**
  * Check if a given object implements the DeleteAgentModel interface.
  */
-export function instanceOfDeleteAgentModel(value) {
+function instanceOfDeleteAgentModel(value) {
     let isInstance = true;
     isInstance = isInstance && "agentId" in value;
     return isInstance;
 }
-export function DeleteAgentModelFromJSON(json) {
+exports.instanceOfDeleteAgentModel = instanceOfDeleteAgentModel;
+function DeleteAgentModelFromJSON(json) {
     return DeleteAgentModelFromJSONTyped(json, false);
 }
-export function DeleteAgentModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.DeleteAgentModelFromJSON = DeleteAgentModelFromJSON;
+function DeleteAgentModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
@@ -30,7 +35,8 @@ export function DeleteAgentModelFromJSONTyped(json, ignoreDiscriminator) {
         'agentId': json['AgentId'],
     };
 }
-export function DeleteAgentModelToJSON(value) {
+exports.DeleteAgentModelFromJSONTyped = DeleteAgentModelFromJSONTyped;
+function DeleteAgentModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -41,4 +47,5 @@ export function DeleteAgentModelToJSON(value) {
         'AgentId': value.agentId,
     };
 }
+exports.DeleteAgentModelToJSON = DeleteAgentModelToJSON;
 //# sourceMappingURL=DeleteAgentModel.js.map

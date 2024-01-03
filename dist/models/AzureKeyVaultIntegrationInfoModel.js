@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,20 +12,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { IntegrationCustomFieldVmFromJSON, IntegrationCustomFieldVmToJSON, } from './IntegrationCustomFieldVm';
-import { IntegrationWizardResultModelFromJSON, IntegrationWizardResultModelToJSON, } from './IntegrationWizardResultModel';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AzureKeyVaultIntegrationInfoModelToJSON = exports.AzureKeyVaultIntegrationInfoModelFromJSONTyped = exports.AzureKeyVaultIntegrationInfoModelFromJSON = exports.instanceOfAzureKeyVaultIntegrationInfoModel = exports.AzureKeyVaultIntegrationInfoModelTemplateTypeEnum = exports.AzureKeyVaultIntegrationInfoModelTypeEnum = exports.AzureKeyVaultIntegrationInfoModelAgentModeEnum = void 0;
+const runtime_1 = require("../runtime");
+const IntegrationCustomFieldVm_1 = require("./IntegrationCustomFieldVm");
+const IntegrationWizardResultModel_1 = require("./IntegrationWizardResultModel");
 /**
  * @export
  */
-export const AzureKeyVaultIntegrationInfoModelAgentModeEnum = {
+exports.AzureKeyVaultIntegrationInfoModelAgentModeEnum = {
     Cloud: 'Cloud',
     Internal: 'Internal'
 };
 /**
  * @export
  */
-export const AzureKeyVaultIntegrationInfoModelTypeEnum = {
+exports.AzureKeyVaultIntegrationInfoModelTypeEnum = {
     NetsparkerEnterprise: 'NetsparkerEnterprise',
     Webhook: 'Webhook',
     Zapier: 'Zapier',
@@ -62,14 +65,14 @@ export const AzureKeyVaultIntegrationInfoModelTypeEnum = {
 /**
  * @export
  */
-export const AzureKeyVaultIntegrationInfoModelTemplateTypeEnum = {
+exports.AzureKeyVaultIntegrationInfoModelTemplateTypeEnum = {
     Standard: 'Standard',
     Detailed: 'Detailed'
 };
 /**
  * Check if a given object implements the AzureKeyVaultIntegrationInfoModel interface.
  */
-export function instanceOfAzureKeyVaultIntegrationInfoModel(value) {
+function instanceOfAzureKeyVaultIntegrationInfoModel(value) {
     let isInstance = true;
     isInstance = isInstance && "clientID" in value;
     isInstance = isInstance && "secret" in value;
@@ -77,36 +80,39 @@ export function instanceOfAzureKeyVaultIntegrationInfoModel(value) {
     isInstance = isInstance && "titleFormat" in value;
     return isInstance;
 }
-export function AzureKeyVaultIntegrationInfoModelFromJSON(json) {
+exports.instanceOfAzureKeyVaultIntegrationInfoModel = instanceOfAzureKeyVaultIntegrationInfoModel;
+function AzureKeyVaultIntegrationInfoModelFromJSON(json) {
     return AzureKeyVaultIntegrationInfoModelFromJSONTyped(json, false);
 }
-export function AzureKeyVaultIntegrationInfoModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.AzureKeyVaultIntegrationInfoModelFromJSON = AzureKeyVaultIntegrationInfoModelFromJSON;
+function AzureKeyVaultIntegrationInfoModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
         'clientID': json['ClientID'],
         'secret': json['Secret'],
-        'agentMode': !exists(json, 'AgentMode') ? undefined : json['AgentMode'],
+        'agentMode': !(0, runtime_1.exists)(json, 'AgentMode') ? undefined : json['AgentMode'],
         'tenantId': json['TenantId'],
-        'type': !exists(json, 'Type') ? undefined : json['Type'],
-        'genericErrorMessage': !exists(json, 'GenericErrorMessage') ? undefined : json['GenericErrorMessage'],
-        'identifier': !exists(json, 'Identifier') ? undefined : json['Identifier'],
-        'testMessageBody': !exists(json, 'TestMessageBody') ? undefined : json['TestMessageBody'],
-        'testMessageTitle': !exists(json, 'TestMessageTitle') ? undefined : json['TestMessageTitle'],
-        'webhookUrl': !exists(json, 'WebhookUrl') ? undefined : json['WebhookUrl'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'integrationVersion': !exists(json, 'IntegrationVersion') ? undefined : json['IntegrationVersion'],
-        'accountID': !exists(json, 'AccountID') ? undefined : json['AccountID'],
-        'customFields': !exists(json, 'CustomFields') ? undefined : (json['CustomFields'].map(IntegrationCustomFieldVmFromJSON)),
-        'templateType': !exists(json, 'TemplateType') ? undefined : json['TemplateType'],
-        'reopenStatus': !exists(json, 'ReopenStatus') ? undefined : json['ReopenStatus'],
-        'resolvedStatus': !exists(json, 'ResolvedStatus') ? undefined : json['ResolvedStatus'],
+        'type': !(0, runtime_1.exists)(json, 'Type') ? undefined : json['Type'],
+        'genericErrorMessage': !(0, runtime_1.exists)(json, 'GenericErrorMessage') ? undefined : json['GenericErrorMessage'],
+        'identifier': !(0, runtime_1.exists)(json, 'Identifier') ? undefined : json['Identifier'],
+        'testMessageBody': !(0, runtime_1.exists)(json, 'TestMessageBody') ? undefined : json['TestMessageBody'],
+        'testMessageTitle': !(0, runtime_1.exists)(json, 'TestMessageTitle') ? undefined : json['TestMessageTitle'],
+        'webhookUrl': !(0, runtime_1.exists)(json, 'WebhookUrl') ? undefined : json['WebhookUrl'],
+        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
+        'integrationVersion': !(0, runtime_1.exists)(json, 'IntegrationVersion') ? undefined : json['IntegrationVersion'],
+        'accountID': !(0, runtime_1.exists)(json, 'AccountID') ? undefined : json['AccountID'],
+        'customFields': !(0, runtime_1.exists)(json, 'CustomFields') ? undefined : (json['CustomFields'].map(IntegrationCustomFieldVm_1.IntegrationCustomFieldVmFromJSON)),
+        'templateType': !(0, runtime_1.exists)(json, 'TemplateType') ? undefined : json['TemplateType'],
+        'reopenStatus': !(0, runtime_1.exists)(json, 'ReopenStatus') ? undefined : json['ReopenStatus'],
+        'resolvedStatus': !(0, runtime_1.exists)(json, 'ResolvedStatus') ? undefined : json['ResolvedStatus'],
         'titleFormat': json['TitleFormat'],
-        'integrationWizardResultModel': !exists(json, 'IntegrationWizardResultModel') ? undefined : IntegrationWizardResultModelFromJSON(json['IntegrationWizardResultModel']),
+        'integrationWizardResultModel': !(0, runtime_1.exists)(json, 'IntegrationWizardResultModel') ? undefined : (0, IntegrationWizardResultModel_1.IntegrationWizardResultModelFromJSON)(json['IntegrationWizardResultModel']),
     };
 }
-export function AzureKeyVaultIntegrationInfoModelToJSON(value) {
+exports.AzureKeyVaultIntegrationInfoModelFromJSONTyped = AzureKeyVaultIntegrationInfoModelFromJSONTyped;
+function AzureKeyVaultIntegrationInfoModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -121,12 +127,13 @@ export function AzureKeyVaultIntegrationInfoModelToJSON(value) {
         'Name': value.name,
         'IntegrationVersion': value.integrationVersion,
         'AccountID': value.accountID,
-        'CustomFields': value.customFields === undefined ? undefined : (value.customFields.map(IntegrationCustomFieldVmToJSON)),
+        'CustomFields': value.customFields === undefined ? undefined : (value.customFields.map(IntegrationCustomFieldVm_1.IntegrationCustomFieldVmToJSON)),
         'TemplateType': value.templateType,
         'ReopenStatus': value.reopenStatus,
         'ResolvedStatus': value.resolvedStatus,
         'TitleFormat': value.titleFormat,
-        'IntegrationWizardResultModel': IntegrationWizardResultModelToJSON(value.integrationWizardResultModel),
+        'IntegrationWizardResultModel': (0, IntegrationWizardResultModel_1.IntegrationWizardResultModelToJSON)(value.integrationWizardResultModel),
     };
 }
+exports.AzureKeyVaultIntegrationInfoModelToJSON = AzureKeyVaultIntegrationInfoModelToJSON;
 //# sourceMappingURL=AzureKeyVaultIntegrationInfoModel.js.map

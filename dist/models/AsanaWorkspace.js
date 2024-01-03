@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,27 +12,32 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AsanaWorkspaceToJSON = exports.AsanaWorkspaceFromJSONTyped = exports.AsanaWorkspaceFromJSON = exports.instanceOfAsanaWorkspace = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the AsanaWorkspace interface.
  */
-export function instanceOfAsanaWorkspace(value) {
+function instanceOfAsanaWorkspace(value) {
     let isInstance = true;
     return isInstance;
 }
-export function AsanaWorkspaceFromJSON(json) {
+exports.instanceOfAsanaWorkspace = instanceOfAsanaWorkspace;
+function AsanaWorkspaceFromJSON(json) {
     return AsanaWorkspaceFromJSONTyped(json, false);
 }
-export function AsanaWorkspaceFromJSONTyped(json, ignoreDiscriminator) {
+exports.AsanaWorkspaceFromJSON = AsanaWorkspaceFromJSON;
+function AsanaWorkspaceFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'gid': !exists(json, 'gid') ? undefined : json['gid'],
-        'name': !exists(json, 'name') ? undefined : json['name'],
+        'gid': !(0, runtime_1.exists)(json, 'gid') ? undefined : json['gid'],
+        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
     };
 }
-export function AsanaWorkspaceToJSON(value) {
+exports.AsanaWorkspaceFromJSONTyped = AsanaWorkspaceFromJSONTyped;
+function AsanaWorkspaceToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -43,4 +49,5 @@ export function AsanaWorkspaceToJSON(value) {
         'name': value.name,
     };
 }
+exports.AsanaWorkspaceToJSON = AsanaWorkspaceToJSON;
 //# sourceMappingURL=AsanaWorkspace.js.map

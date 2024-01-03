@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,19 +12,23 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.SequenceViewModelToJSON = exports.SequenceViewModelFromJSONTyped = exports.SequenceViewModelFromJSON = exports.instanceOfSequenceViewModel = void 0;
 /**
  * Check if a given object implements the SequenceViewModel interface.
  */
-export function instanceOfSequenceViewModel(value) {
+function instanceOfSequenceViewModel(value) {
     let isInstance = true;
     isInstance = isInstance && "name" in value;
     isInstance = isInstance && "businessLogicRecorderSettings" in value;
     return isInstance;
 }
-export function SequenceViewModelFromJSON(json) {
+exports.instanceOfSequenceViewModel = instanceOfSequenceViewModel;
+function SequenceViewModelFromJSON(json) {
     return SequenceViewModelFromJSONTyped(json, false);
 }
-export function SequenceViewModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.SequenceViewModelFromJSON = SequenceViewModelFromJSON;
+function SequenceViewModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
@@ -32,7 +37,8 @@ export function SequenceViewModelFromJSONTyped(json, ignoreDiscriminator) {
         'businessLogicRecorderSettings': json['BusinessLogicRecorderSettings'],
     };
 }
-export function SequenceViewModelToJSON(value) {
+exports.SequenceViewModelFromJSONTyped = SequenceViewModelFromJSONTyped;
+function SequenceViewModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -44,4 +50,5 @@ export function SequenceViewModelToJSON(value) {
         'BusinessLogicRecorderSettings': value.businessLogicRecorderSettings,
     };
 }
+exports.SequenceViewModelToJSON = SequenceViewModelToJSON;
 //# sourceMappingURL=SequenceViewModel.js.map

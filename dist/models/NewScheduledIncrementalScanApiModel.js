@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,11 +12,13 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.NewScheduledIncrementalScanApiModelToJSON = exports.NewScheduledIncrementalScanApiModelFromJSONTyped = exports.NewScheduledIncrementalScanApiModelFromJSON = exports.instanceOfNewScheduledIncrementalScanApiModel = exports.NewScheduledIncrementalScanApiModelScheduleRunTypeEnum = void 0;
+const runtime_1 = require("../runtime");
 /**
  * @export
  */
-export const NewScheduledIncrementalScanApiModelScheduleRunTypeEnum = {
+exports.NewScheduledIncrementalScanApiModelScheduleRunTypeEnum = {
     Once: 'Once',
     Daily: 'Daily',
     Weekly: 'Weekly',
@@ -28,7 +31,7 @@ export const NewScheduledIncrementalScanApiModelScheduleRunTypeEnum = {
 /**
  * Check if a given object implements the NewScheduledIncrementalScanApiModel interface.
  */
-export function instanceOfNewScheduledIncrementalScanApiModel(value) {
+function instanceOfNewScheduledIncrementalScanApiModel(value) {
     let isInstance = true;
     isInstance = isInstance && "name" in value;
     isInstance = isInstance && "nextExecutionTime" in value;
@@ -36,25 +39,28 @@ export function instanceOfNewScheduledIncrementalScanApiModel(value) {
     isInstance = isInstance && "baseScanId" in value;
     return isInstance;
 }
-export function NewScheduledIncrementalScanApiModelFromJSON(json) {
+exports.instanceOfNewScheduledIncrementalScanApiModel = instanceOfNewScheduledIncrementalScanApiModel;
+function NewScheduledIncrementalScanApiModelFromJSON(json) {
     return NewScheduledIncrementalScanApiModelFromJSONTyped(json, false);
 }
-export function NewScheduledIncrementalScanApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.NewScheduledIncrementalScanApiModelFromJSON = NewScheduledIncrementalScanApiModelFromJSON;
+function NewScheduledIncrementalScanApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'isMaxScanDurationEnabled': !exists(json, 'IsMaxScanDurationEnabled') ? undefined : json['IsMaxScanDurationEnabled'],
-        'maxScanDuration': !exists(json, 'MaxScanDuration') ? undefined : json['MaxScanDuration'],
+        'isMaxScanDurationEnabled': !(0, runtime_1.exists)(json, 'IsMaxScanDurationEnabled') ? undefined : json['IsMaxScanDurationEnabled'],
+        'maxScanDuration': !(0, runtime_1.exists)(json, 'MaxScanDuration') ? undefined : json['MaxScanDuration'],
         'name': json['Name'],
         'nextExecutionTime': json['NextExecutionTime'],
         'scheduleRunType': json['ScheduleRunType'],
-        'tags': !exists(json, 'Tags') ? undefined : json['Tags'],
-        'agentName': !exists(json, 'AgentName') ? undefined : json['AgentName'],
+        'tags': !(0, runtime_1.exists)(json, 'Tags') ? undefined : json['Tags'],
+        'agentName': !(0, runtime_1.exists)(json, 'AgentName') ? undefined : json['AgentName'],
         'baseScanId': json['BaseScanId'],
     };
 }
-export function NewScheduledIncrementalScanApiModelToJSON(value) {
+exports.NewScheduledIncrementalScanApiModelFromJSONTyped = NewScheduledIncrementalScanApiModelFromJSONTyped;
+function NewScheduledIncrementalScanApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -72,4 +78,5 @@ export function NewScheduledIncrementalScanApiModelToJSON(value) {
         'BaseScanId': value.baseScanId,
     };
 }
+exports.NewScheduledIncrementalScanApiModelToJSON = NewScheduledIncrementalScanApiModelToJSON;
 //# sourceMappingURL=NewScheduledIncrementalScanApiModel.js.map

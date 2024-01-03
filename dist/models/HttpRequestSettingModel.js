@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,43 +12,48 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { ScanPolicyUserAgentModelFromJSON, ScanPolicyUserAgentModelToJSON, } from './ScanPolicyUserAgentModel';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.HttpRequestSettingModelToJSON = exports.HttpRequestSettingModelFromJSONTyped = exports.HttpRequestSettingModelFromJSON = exports.instanceOfHttpRequestSettingModel = void 0;
+const runtime_1 = require("../runtime");
+const ScanPolicyUserAgentModel_1 = require("./ScanPolicyUserAgentModel");
 /**
  * Check if a given object implements the HttpRequestSettingModel interface.
  */
-export function instanceOfHttpRequestSettingModel(value) {
+function instanceOfHttpRequestSettingModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function HttpRequestSettingModelFromJSON(json) {
+exports.instanceOfHttpRequestSettingModel = instanceOfHttpRequestSettingModel;
+function HttpRequestSettingModelFromJSON(json) {
     return HttpRequestSettingModelFromJSONTyped(json, false);
 }
-export function HttpRequestSettingModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.HttpRequestSettingModelFromJSON = HttpRequestSettingModelFromJSON;
+function HttpRequestSettingModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'accept': !exists(json, 'Accept') ? undefined : json['Accept'],
-        'acceptCharset': !exists(json, 'AcceptCharset') ? undefined : json['AcceptCharset'],
-        'acceptLanguage': !exists(json, 'AcceptLanguage') ? undefined : json['AcceptLanguage'],
-        'enableCookies': !exists(json, 'EnableCookies') ? undefined : json['EnableCookies'],
-        'enableGzipAndDeflate': !exists(json, 'EnableGzipAndDeflate') ? undefined : json['EnableGzipAndDeflate'],
-        'httpKeepAlive': !exists(json, 'HttpKeepAlive') ? undefined : json['HttpKeepAlive'],
-        'logHttpRequests': !exists(json, 'LogHttpRequests') ? undefined : json['LogHttpRequests'],
-        'requestsPerSecond': !exists(json, 'RequestsPerSecond') ? undefined : json['RequestsPerSecond'],
-        'concurrentConnectionCount': !exists(json, 'ConcurrentConnectionCount') ? undefined : json['ConcurrentConnectionCount'],
-        'requestTimeout': !exists(json, 'RequestTimeout') ? undefined : json['RequestTimeout'],
-        'connectionTimeout': !exists(json, 'ConnectionTimeout') ? undefined : json['ConnectionTimeout'],
-        'userAgent': !exists(json, 'UserAgent') ? undefined : json['UserAgent'],
-        'userAgents': !exists(json, 'UserAgents') ? undefined : json['UserAgents'],
-        'customUserAgents': !exists(json, 'CustomUserAgents') ? undefined : json['CustomUserAgents'],
-        'customUserAgent': !exists(json, 'CustomUserAgent') ? undefined : ScanPolicyUserAgentModelFromJSON(json['CustomUserAgent']),
-        'forceUserAgent': !exists(json, 'ForceUserAgent') ? undefined : json['ForceUserAgent'],
-        'authorizationHeaderName': !exists(json, 'AuthorizationHeaderName') ? undefined : json['AuthorizationHeaderName'],
+        'accept': !(0, runtime_1.exists)(json, 'Accept') ? undefined : json['Accept'],
+        'acceptCharset': !(0, runtime_1.exists)(json, 'AcceptCharset') ? undefined : json['AcceptCharset'],
+        'acceptLanguage': !(0, runtime_1.exists)(json, 'AcceptLanguage') ? undefined : json['AcceptLanguage'],
+        'enableCookies': !(0, runtime_1.exists)(json, 'EnableCookies') ? undefined : json['EnableCookies'],
+        'enableGzipAndDeflate': !(0, runtime_1.exists)(json, 'EnableGzipAndDeflate') ? undefined : json['EnableGzipAndDeflate'],
+        'httpKeepAlive': !(0, runtime_1.exists)(json, 'HttpKeepAlive') ? undefined : json['HttpKeepAlive'],
+        'logHttpRequests': !(0, runtime_1.exists)(json, 'LogHttpRequests') ? undefined : json['LogHttpRequests'],
+        'requestsPerSecond': !(0, runtime_1.exists)(json, 'RequestsPerSecond') ? undefined : json['RequestsPerSecond'],
+        'concurrentConnectionCount': !(0, runtime_1.exists)(json, 'ConcurrentConnectionCount') ? undefined : json['ConcurrentConnectionCount'],
+        'requestTimeout': !(0, runtime_1.exists)(json, 'RequestTimeout') ? undefined : json['RequestTimeout'],
+        'connectionTimeout': !(0, runtime_1.exists)(json, 'ConnectionTimeout') ? undefined : json['ConnectionTimeout'],
+        'userAgent': !(0, runtime_1.exists)(json, 'UserAgent') ? undefined : json['UserAgent'],
+        'userAgents': !(0, runtime_1.exists)(json, 'UserAgents') ? undefined : json['UserAgents'],
+        'customUserAgents': !(0, runtime_1.exists)(json, 'CustomUserAgents') ? undefined : json['CustomUserAgents'],
+        'customUserAgent': !(0, runtime_1.exists)(json, 'CustomUserAgent') ? undefined : (0, ScanPolicyUserAgentModel_1.ScanPolicyUserAgentModelFromJSON)(json['CustomUserAgent']),
+        'forceUserAgent': !(0, runtime_1.exists)(json, 'ForceUserAgent') ? undefined : json['ForceUserAgent'],
+        'authorizationHeaderName': !(0, runtime_1.exists)(json, 'AuthorizationHeaderName') ? undefined : json['AuthorizationHeaderName'],
     };
 }
-export function HttpRequestSettingModelToJSON(value) {
+exports.HttpRequestSettingModelFromJSONTyped = HttpRequestSettingModelFromJSONTyped;
+function HttpRequestSettingModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -69,9 +75,10 @@ export function HttpRequestSettingModelToJSON(value) {
         'UserAgent': value.userAgent,
         'UserAgents': value.userAgents,
         'CustomUserAgents': value.customUserAgents,
-        'CustomUserAgent': ScanPolicyUserAgentModelToJSON(value.customUserAgent),
+        'CustomUserAgent': (0, ScanPolicyUserAgentModel_1.ScanPolicyUserAgentModelToJSON)(value.customUserAgent),
         'ForceUserAgent': value.forceUserAgent,
         'AuthorizationHeaderName': value.authorizationHeaderName,
     };
 }
+exports.HttpRequestSettingModelToJSON = HttpRequestSettingModelToJSON;
 //# sourceMappingURL=HttpRequestSettingModel.js.map

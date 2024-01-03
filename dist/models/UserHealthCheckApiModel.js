@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,30 +12,35 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.UserHealthCheckApiModelToJSON = exports.UserHealthCheckApiModelFromJSONTyped = exports.UserHealthCheckApiModelFromJSON = exports.instanceOfUserHealthCheckApiModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the UserHealthCheckApiModel interface.
  */
-export function instanceOfUserHealthCheckApiModel(value) {
+function instanceOfUserHealthCheckApiModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function UserHealthCheckApiModelFromJSON(json) {
+exports.instanceOfUserHealthCheckApiModel = instanceOfUserHealthCheckApiModel;
+function UserHealthCheckApiModelFromJSON(json) {
     return UserHealthCheckApiModelFromJSONTyped(json, false);
 }
-export function UserHealthCheckApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.UserHealthCheckApiModelFromJSON = UserHealthCheckApiModelFromJSON;
+function UserHealthCheckApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'dateFormat': !exists(json, 'DateFormat') ? undefined : json['DateFormat'],
-        'displayName': !exists(json, 'DisplayName') ? undefined : json['DisplayName'],
-        'email': !exists(json, 'Email') ? undefined : json['Email'],
-        'alternateLoginEmail': !exists(json, 'AlternateLoginEmail') ? undefined : json['AlternateLoginEmail'],
-        'timeZoneInfo': !exists(json, 'TimeZoneInfo') ? undefined : json['TimeZoneInfo'],
+        'dateFormat': !(0, runtime_1.exists)(json, 'DateFormat') ? undefined : json['DateFormat'],
+        'displayName': !(0, runtime_1.exists)(json, 'DisplayName') ? undefined : json['DisplayName'],
+        'email': !(0, runtime_1.exists)(json, 'Email') ? undefined : json['Email'],
+        'alternateLoginEmail': !(0, runtime_1.exists)(json, 'AlternateLoginEmail') ? undefined : json['AlternateLoginEmail'],
+        'timeZoneInfo': !(0, runtime_1.exists)(json, 'TimeZoneInfo') ? undefined : json['TimeZoneInfo'],
     };
 }
-export function UserHealthCheckApiModelToJSON(value) {
+exports.UserHealthCheckApiModelFromJSONTyped = UserHealthCheckApiModelFromJSONTyped;
+function UserHealthCheckApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -49,4 +55,5 @@ export function UserHealthCheckApiModelToJSON(value) {
         'TimeZoneInfo': value.timeZoneInfo,
     };
 }
+exports.UserHealthCheckApiModelToJSON = UserHealthCheckApiModelToJSON;
 //# sourceMappingURL=UserHealthCheckApiModel.js.map

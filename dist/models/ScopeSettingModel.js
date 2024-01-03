@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,31 +12,36 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { ContentTypeModelFromJSON, ContentTypeModelToJSON, } from './ContentTypeModel';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ScopeSettingModelToJSON = exports.ScopeSettingModelFromJSONTyped = exports.ScopeSettingModelFromJSON = exports.instanceOfScopeSettingModel = void 0;
+const runtime_1 = require("../runtime");
+const ContentTypeModel_1 = require("./ContentTypeModel");
 /**
  * Check if a given object implements the ScopeSettingModel interface.
  */
-export function instanceOfScopeSettingModel(value) {
+function instanceOfScopeSettingModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function ScopeSettingModelFromJSON(json) {
+exports.instanceOfScopeSettingModel = instanceOfScopeSettingModel;
+function ScopeSettingModelFromJSON(json) {
     return ScopeSettingModelFromJSONTyped(json, false);
 }
-export function ScopeSettingModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.ScopeSettingModelFromJSON = ScopeSettingModelFromJSON;
+function ScopeSettingModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'blockAdNetworks': !exists(json, 'BlockAdNetworks') ? undefined : json['BlockAdNetworks'],
-        'byPassScopeForStaticChecks': !exists(json, 'ByPassScopeForStaticChecks') ? undefined : json['ByPassScopeForStaticChecks'],
-        'caseSensitiveScope': !exists(json, 'CaseSensitiveScope') ? undefined : json['CaseSensitiveScope'],
-        'contentTypeCheckEnabled': !exists(json, 'ContentTypeCheckEnabled') ? undefined : json['ContentTypeCheckEnabled'],
-        'ignoredContentTypes': !exists(json, 'IgnoredContentTypes') ? undefined : (json['IgnoredContentTypes'].map(ContentTypeModelFromJSON)),
+        'blockAdNetworks': !(0, runtime_1.exists)(json, 'BlockAdNetworks') ? undefined : json['BlockAdNetworks'],
+        'byPassScopeForStaticChecks': !(0, runtime_1.exists)(json, 'ByPassScopeForStaticChecks') ? undefined : json['ByPassScopeForStaticChecks'],
+        'caseSensitiveScope': !(0, runtime_1.exists)(json, 'CaseSensitiveScope') ? undefined : json['CaseSensitiveScope'],
+        'contentTypeCheckEnabled': !(0, runtime_1.exists)(json, 'ContentTypeCheckEnabled') ? undefined : json['ContentTypeCheckEnabled'],
+        'ignoredContentTypes': !(0, runtime_1.exists)(json, 'IgnoredContentTypes') ? undefined : (json['IgnoredContentTypes'].map(ContentTypeModel_1.ContentTypeModelFromJSON)),
     };
 }
-export function ScopeSettingModelToJSON(value) {
+exports.ScopeSettingModelFromJSONTyped = ScopeSettingModelFromJSONTyped;
+function ScopeSettingModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -47,7 +53,8 @@ export function ScopeSettingModelToJSON(value) {
         'ByPassScopeForStaticChecks': value.byPassScopeForStaticChecks,
         'CaseSensitiveScope': value.caseSensitiveScope,
         'ContentTypeCheckEnabled': value.contentTypeCheckEnabled,
-        'IgnoredContentTypes': value.ignoredContentTypes === undefined ? undefined : (value.ignoredContentTypes.map(ContentTypeModelToJSON)),
+        'IgnoredContentTypes': value.ignoredContentTypes === undefined ? undefined : (value.ignoredContentTypes.map(ContentTypeModel_1.ContentTypeModelToJSON)),
     };
 }
+exports.ScopeSettingModelToJSON = ScopeSettingModelToJSON;
 //# sourceMappingURL=ScopeSettingModel.js.map

@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,28 +12,33 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ScanNotificationRecipientUserApiModelToJSON = exports.ScanNotificationRecipientUserApiModelFromJSONTyped = exports.ScanNotificationRecipientUserApiModelFromJSON = exports.instanceOfScanNotificationRecipientUserApiModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the ScanNotificationRecipientUserApiModel interface.
  */
-export function instanceOfScanNotificationRecipientUserApiModel(value) {
+function instanceOfScanNotificationRecipientUserApiModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function ScanNotificationRecipientUserApiModelFromJSON(json) {
+exports.instanceOfScanNotificationRecipientUserApiModel = instanceOfScanNotificationRecipientUserApiModel;
+function ScanNotificationRecipientUserApiModelFromJSON(json) {
     return ScanNotificationRecipientUserApiModelFromJSONTyped(json, false);
 }
-export function ScanNotificationRecipientUserApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.ScanNotificationRecipientUserApiModelFromJSON = ScanNotificationRecipientUserApiModelFromJSON;
+function ScanNotificationRecipientUserApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'email': !exists(json, 'Email') ? undefined : json['Email'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'phoneNumber': !exists(json, 'PhoneNumber') ? undefined : json['PhoneNumber'],
+        'email': !(0, runtime_1.exists)(json, 'Email') ? undefined : json['Email'],
+        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
+        'phoneNumber': !(0, runtime_1.exists)(json, 'PhoneNumber') ? undefined : json['PhoneNumber'],
     };
 }
-export function ScanNotificationRecipientUserApiModelToJSON(value) {
+exports.ScanNotificationRecipientUserApiModelFromJSONTyped = ScanNotificationRecipientUserApiModelFromJSONTyped;
+function ScanNotificationRecipientUserApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -45,4 +51,5 @@ export function ScanNotificationRecipientUserApiModelToJSON(value) {
         'PhoneNumber': value.phoneNumber,
     };
 }
+exports.ScanNotificationRecipientUserApiModelToJSON = ScanNotificationRecipientUserApiModelToJSON;
 //# sourceMappingURL=ScanNotificationRecipientUserApiModel.js.map

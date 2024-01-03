@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,27 +12,32 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ReducedTeamDtoToJSON = exports.ReducedTeamDtoFromJSONTyped = exports.ReducedTeamDtoFromJSON = exports.instanceOfReducedTeamDto = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the ReducedTeamDto interface.
  */
-export function instanceOfReducedTeamDto(value) {
+function instanceOfReducedTeamDto(value) {
     let isInstance = true;
     return isInstance;
 }
-export function ReducedTeamDtoFromJSON(json) {
+exports.instanceOfReducedTeamDto = instanceOfReducedTeamDto;
+function ReducedTeamDtoFromJSON(json) {
     return ReducedTeamDtoFromJSONTyped(json, false);
 }
-export function ReducedTeamDtoFromJSONTyped(json, ignoreDiscriminator) {
+exports.ReducedTeamDtoFromJSON = ReducedTeamDtoFromJSON;
+function ReducedTeamDtoFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
+        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
+        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
     };
 }
-export function ReducedTeamDtoToJSON(value) {
+exports.ReducedTeamDtoFromJSONTyped = ReducedTeamDtoFromJSONTyped;
+function ReducedTeamDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -43,4 +49,5 @@ export function ReducedTeamDtoToJSON(value) {
         'Name': value.name,
     };
 }
+exports.ReducedTeamDtoToJSON = ReducedTeamDtoToJSON;
 //# sourceMappingURL=ReducedTeamDto.js.map

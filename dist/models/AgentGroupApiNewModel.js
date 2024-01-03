@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,19 +12,23 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AgentGroupApiNewModelToJSON = exports.AgentGroupApiNewModelFromJSONTyped = exports.AgentGroupApiNewModelFromJSON = exports.instanceOfAgentGroupApiNewModel = void 0;
 /**
  * Check if a given object implements the AgentGroupApiNewModel interface.
  */
-export function instanceOfAgentGroupApiNewModel(value) {
+function instanceOfAgentGroupApiNewModel(value) {
     let isInstance = true;
     isInstance = isInstance && "agents" in value;
     isInstance = isInstance && "name" in value;
     return isInstance;
 }
-export function AgentGroupApiNewModelFromJSON(json) {
+exports.instanceOfAgentGroupApiNewModel = instanceOfAgentGroupApiNewModel;
+function AgentGroupApiNewModelFromJSON(json) {
     return AgentGroupApiNewModelFromJSONTyped(json, false);
 }
-export function AgentGroupApiNewModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.AgentGroupApiNewModelFromJSON = AgentGroupApiNewModelFromJSON;
+function AgentGroupApiNewModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
@@ -32,7 +37,8 @@ export function AgentGroupApiNewModelFromJSONTyped(json, ignoreDiscriminator) {
         'name': json['Name'],
     };
 }
-export function AgentGroupApiNewModelToJSON(value) {
+exports.AgentGroupApiNewModelFromJSONTyped = AgentGroupApiNewModelFromJSONTyped;
+function AgentGroupApiNewModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -44,4 +50,5 @@ export function AgentGroupApiNewModelToJSON(value) {
         'Name': value.name,
     };
 }
+exports.AgentGroupApiNewModelToJSON = AgentGroupApiNewModelToJSON;
 //# sourceMappingURL=AgentGroupApiNewModel.js.map

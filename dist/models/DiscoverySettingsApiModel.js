@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,38 +12,43 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.DiscoverySettingsApiModelToJSON = exports.DiscoverySettingsApiModelFromJSONTyped = exports.DiscoverySettingsApiModelFromJSON = exports.instanceOfDiscoverySettingsApiModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the DiscoverySettingsApiModel interface.
  */
-export function instanceOfDiscoverySettingsApiModel(value) {
+function instanceOfDiscoverySettingsApiModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function DiscoverySettingsApiModelFromJSON(json) {
+exports.instanceOfDiscoverySettingsApiModel = instanceOfDiscoverySettingsApiModel;
+function DiscoverySettingsApiModelFromJSON(json) {
     return DiscoverySettingsApiModelFromJSONTyped(json, false);
 }
-export function DiscoverySettingsApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.DiscoverySettingsApiModelFromJSON = DiscoverySettingsApiModelFromJSON;
+function DiscoverySettingsApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'includedSlds': !exists(json, 'IncludedSlds') ? undefined : json['IncludedSlds'],
-        'includedIpRanges': !exists(json, 'IncludedIpRanges') ? undefined : json['IncludedIpRanges'],
-        'includedOrganizations': !exists(json, 'IncludedOrganizations') ? undefined : json['IncludedOrganizations'],
-        'excludedSlds': !exists(json, 'ExcludedSlds') ? undefined : json['ExcludedSlds'],
-        'excludedTlds': !exists(json, 'ExcludedTlds') ? undefined : json['ExcludedTlds'],
-        'excludedIpAddresses': !exists(json, 'ExcludedIpAddresses') ? undefined : json['ExcludedIpAddresses'],
-        'excludedOrganizations': !exists(json, 'ExcludedOrganizations') ? undefined : json['ExcludedOrganizations'],
-        'onlyRegisteredDomains': !exists(json, 'OnlyRegisteredDomains') ? undefined : json['OnlyRegisteredDomains'],
-        'sharedHostMatching': !exists(json, 'SharedHostMatching') ? undefined : json['SharedHostMatching'],
-        'organizationNameMatching': !exists(json, 'OrganizationNameMatching') ? undefined : json['OrganizationNameMatching'],
-        'emailMatching': !exists(json, 'EmailMatching') ? undefined : json['EmailMatching'],
-        'websitesMatching': !exists(json, 'WebsitesMatching') ? undefined : json['WebsitesMatching'],
-        'enableSlds': !exists(json, 'EnableSlds') ? undefined : json['EnableSlds'],
+        'includedSlds': !(0, runtime_1.exists)(json, 'IncludedSlds') ? undefined : json['IncludedSlds'],
+        'includedIpRanges': !(0, runtime_1.exists)(json, 'IncludedIpRanges') ? undefined : json['IncludedIpRanges'],
+        'includedOrganizations': !(0, runtime_1.exists)(json, 'IncludedOrganizations') ? undefined : json['IncludedOrganizations'],
+        'excludedSlds': !(0, runtime_1.exists)(json, 'ExcludedSlds') ? undefined : json['ExcludedSlds'],
+        'excludedTlds': !(0, runtime_1.exists)(json, 'ExcludedTlds') ? undefined : json['ExcludedTlds'],
+        'excludedIpAddresses': !(0, runtime_1.exists)(json, 'ExcludedIpAddresses') ? undefined : json['ExcludedIpAddresses'],
+        'excludedOrganizations': !(0, runtime_1.exists)(json, 'ExcludedOrganizations') ? undefined : json['ExcludedOrganizations'],
+        'onlyRegisteredDomains': !(0, runtime_1.exists)(json, 'OnlyRegisteredDomains') ? undefined : json['OnlyRegisteredDomains'],
+        'sharedHostMatching': !(0, runtime_1.exists)(json, 'SharedHostMatching') ? undefined : json['SharedHostMatching'],
+        'organizationNameMatching': !(0, runtime_1.exists)(json, 'OrganizationNameMatching') ? undefined : json['OrganizationNameMatching'],
+        'emailMatching': !(0, runtime_1.exists)(json, 'EmailMatching') ? undefined : json['EmailMatching'],
+        'websitesMatching': !(0, runtime_1.exists)(json, 'WebsitesMatching') ? undefined : json['WebsitesMatching'],
+        'enableSlds': !(0, runtime_1.exists)(json, 'EnableSlds') ? undefined : json['EnableSlds'],
     };
 }
-export function DiscoverySettingsApiModelToJSON(value) {
+exports.DiscoverySettingsApiModelFromJSONTyped = DiscoverySettingsApiModelFromJSONTyped;
+function DiscoverySettingsApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -65,4 +71,5 @@ export function DiscoverySettingsApiModelToJSON(value) {
         'EnableSlds': value.enableSlds,
     };
 }
+exports.DiscoverySettingsApiModelToJSON = DiscoverySettingsApiModelToJSON;
 //# sourceMappingURL=DiscoverySettingsApiModel.js.map

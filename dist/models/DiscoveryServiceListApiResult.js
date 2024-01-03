@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,37 +12,42 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { DiscoveryApiModelFromJSON, DiscoveryApiModelToJSON, } from './DiscoveryApiModel';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.DiscoveryServiceListApiResultToJSON = exports.DiscoveryServiceListApiResultFromJSONTyped = exports.DiscoveryServiceListApiResultFromJSON = exports.instanceOfDiscoveryServiceListApiResult = void 0;
+const runtime_1 = require("../runtime");
+const DiscoveryApiModel_1 = require("./DiscoveryApiModel");
 /**
  * Check if a given object implements the DiscoveryServiceListApiResult interface.
  */
-export function instanceOfDiscoveryServiceListApiResult(value) {
+function instanceOfDiscoveryServiceListApiResult(value) {
     let isInstance = true;
     return isInstance;
 }
-export function DiscoveryServiceListApiResultFromJSON(json) {
+exports.instanceOfDiscoveryServiceListApiResult = instanceOfDiscoveryServiceListApiResult;
+function DiscoveryServiceListApiResultFromJSON(json) {
     return DiscoveryServiceListApiResultFromJSONTyped(json, false);
 }
-export function DiscoveryServiceListApiResultFromJSONTyped(json, ignoreDiscriminator) {
+exports.DiscoveryServiceListApiResultFromJSON = DiscoveryServiceListApiResultFromJSON;
+function DiscoveryServiceListApiResultFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'firstItemOnPage': !exists(json, 'FirstItemOnPage') ? undefined : json['FirstItemOnPage'],
-        'hasNextPage': !exists(json, 'HasNextPage') ? undefined : json['HasNextPage'],
-        'hasPreviousPage': !exists(json, 'HasPreviousPage') ? undefined : json['HasPreviousPage'],
-        'isFirstPage': !exists(json, 'IsFirstPage') ? undefined : json['IsFirstPage'],
-        'isLastPage': !exists(json, 'IsLastPage') ? undefined : json['IsLastPage'],
-        'lastItemOnPage': !exists(json, 'LastItemOnPage') ? undefined : json['LastItemOnPage'],
-        'list': !exists(json, 'List') ? undefined : (json['List'].map(DiscoveryApiModelFromJSON)),
-        'pageCount': !exists(json, 'PageCount') ? undefined : json['PageCount'],
-        'pageNumber': !exists(json, 'PageNumber') ? undefined : json['PageNumber'],
-        'pageSize': !exists(json, 'PageSize') ? undefined : json['PageSize'],
-        'totalItemCount': !exists(json, 'TotalItemCount') ? undefined : json['TotalItemCount'],
+        'firstItemOnPage': !(0, runtime_1.exists)(json, 'FirstItemOnPage') ? undefined : json['FirstItemOnPage'],
+        'hasNextPage': !(0, runtime_1.exists)(json, 'HasNextPage') ? undefined : json['HasNextPage'],
+        'hasPreviousPage': !(0, runtime_1.exists)(json, 'HasPreviousPage') ? undefined : json['HasPreviousPage'],
+        'isFirstPage': !(0, runtime_1.exists)(json, 'IsFirstPage') ? undefined : json['IsFirstPage'],
+        'isLastPage': !(0, runtime_1.exists)(json, 'IsLastPage') ? undefined : json['IsLastPage'],
+        'lastItemOnPage': !(0, runtime_1.exists)(json, 'LastItemOnPage') ? undefined : json['LastItemOnPage'],
+        'list': !(0, runtime_1.exists)(json, 'List') ? undefined : (json['List'].map(DiscoveryApiModel_1.DiscoveryApiModelFromJSON)),
+        'pageCount': !(0, runtime_1.exists)(json, 'PageCount') ? undefined : json['PageCount'],
+        'pageNumber': !(0, runtime_1.exists)(json, 'PageNumber') ? undefined : json['PageNumber'],
+        'pageSize': !(0, runtime_1.exists)(json, 'PageSize') ? undefined : json['PageSize'],
+        'totalItemCount': !(0, runtime_1.exists)(json, 'TotalItemCount') ? undefined : json['TotalItemCount'],
     };
 }
-export function DiscoveryServiceListApiResultToJSON(value) {
+exports.DiscoveryServiceListApiResultFromJSONTyped = DiscoveryServiceListApiResultFromJSONTyped;
+function DiscoveryServiceListApiResultToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -55,11 +61,12 @@ export function DiscoveryServiceListApiResultToJSON(value) {
         'IsFirstPage': value.isFirstPage,
         'IsLastPage': value.isLastPage,
         'LastItemOnPage': value.lastItemOnPage,
-        'List': value.list === undefined ? undefined : (value.list.map(DiscoveryApiModelToJSON)),
+        'List': value.list === undefined ? undefined : (value.list.map(DiscoveryApiModel_1.DiscoveryApiModelToJSON)),
         'PageCount': value.pageCount,
         'PageNumber': value.pageNumber,
         'PageSize': value.pageSize,
         'TotalItemCount': value.totalItemCount,
     };
 }
+exports.DiscoveryServiceListApiResultToJSON = DiscoveryServiceListApiResultToJSON;
 //# sourceMappingURL=DiscoveryServiceListApiResult.js.map

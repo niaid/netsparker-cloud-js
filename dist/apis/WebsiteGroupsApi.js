@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,12 +12,37 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import * as runtime from '../runtime';
-import { DeleteWebsiteGroupApiModelToJSON, DeleteWebsiteGroupResponseFromJSON, NewWebsiteGroupApiModelToJSON, UpdateWebsiteGroupApiModelToJSON, WebsiteGroupApiModelFromJSON, WebsiteGroupListApiResultFromJSON, } from '../models/index';
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.WebsiteGroupsApi = void 0;
+const runtime = __importStar(require("../runtime"));
+const index_1 = require("../models/index");
 /**
  *
  */
-export class WebsiteGroupsApi extends runtime.BaseAPI {
+class WebsiteGroupsApi extends runtime.BaseAPI {
     /**
      * Deletes a website group.
      */
@@ -32,9 +58,9 @@ export class WebsiteGroupsApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: DeleteWebsiteGroupApiModelToJSON(requestParameters.model),
+            body: (0, index_1.DeleteWebsiteGroupApiModelToJSON)(requestParameters.model),
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => DeleteWebsiteGroupResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.DeleteWebsiteGroupResponseFromJSON)(jsonValue));
     }
     /**
      * Deletes a website group.
@@ -58,7 +84,7 @@ export class WebsiteGroupsApi extends runtime.BaseAPI {
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => DeleteWebsiteGroupResponseFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.DeleteWebsiteGroupResponseFromJSON)(jsonValue));
     }
     /**
      * Deletes a website group with given id
@@ -82,7 +108,7 @@ export class WebsiteGroupsApi extends runtime.BaseAPI {
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => WebsiteGroupApiModelFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.WebsiteGroupApiModelFromJSON)(jsonValue));
     }
     /**
      * Gets website group by id.
@@ -109,7 +135,7 @@ export class WebsiteGroupsApi extends runtime.BaseAPI {
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => WebsiteGroupApiModelFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.WebsiteGroupApiModelFromJSON)(jsonValue));
     }
     /**
      * Gets website group by name.
@@ -136,7 +162,7 @@ export class WebsiteGroupsApi extends runtime.BaseAPI {
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => WebsiteGroupListApiResultFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.WebsiteGroupListApiResultFromJSON)(jsonValue));
     }
     /**
      * Gets the list of website groups.
@@ -160,9 +186,9 @@ export class WebsiteGroupsApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: NewWebsiteGroupApiModelToJSON(requestParameters.model),
+            body: (0, index_1.NewWebsiteGroupApiModelToJSON)(requestParameters.model),
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => WebsiteGroupApiModelFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.WebsiteGroupApiModelFromJSON)(jsonValue));
     }
     /**
      * Creates a new website group.
@@ -186,9 +212,9 @@ export class WebsiteGroupsApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: UpdateWebsiteGroupApiModelToJSON(requestParameters.model),
+            body: (0, index_1.UpdateWebsiteGroupApiModelToJSON)(requestParameters.model),
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => WebsiteGroupApiModelFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.WebsiteGroupApiModelFromJSON)(jsonValue));
     }
     /**
      * Updates a website group.
@@ -198,4 +224,5 @@ export class WebsiteGroupsApi extends runtime.BaseAPI {
         return await response.value();
     }
 }
+exports.WebsiteGroupsApi = WebsiteGroupsApi;
 //# sourceMappingURL=WebsiteGroupsApi.js.map

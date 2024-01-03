@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,28 +12,33 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.RoleWebsiteGroupMappingApiModelToJSON = exports.RoleWebsiteGroupMappingApiModelFromJSONTyped = exports.RoleWebsiteGroupMappingApiModelFromJSON = exports.instanceOfRoleWebsiteGroupMappingApiModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the RoleWebsiteGroupMappingApiModel interface.
  */
-export function instanceOfRoleWebsiteGroupMappingApiModel(value) {
+function instanceOfRoleWebsiteGroupMappingApiModel(value) {
     let isInstance = true;
     isInstance = isInstance && "roleId" in value;
     return isInstance;
 }
-export function RoleWebsiteGroupMappingApiModelFromJSON(json) {
+exports.instanceOfRoleWebsiteGroupMappingApiModel = instanceOfRoleWebsiteGroupMappingApiModel;
+function RoleWebsiteGroupMappingApiModelFromJSON(json) {
     return RoleWebsiteGroupMappingApiModelFromJSONTyped(json, false);
 }
-export function RoleWebsiteGroupMappingApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.RoleWebsiteGroupMappingApiModelFromJSON = RoleWebsiteGroupMappingApiModelFromJSON;
+function RoleWebsiteGroupMappingApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'websiteGroupId': !exists(json, 'WebsiteGroupId') ? undefined : json['WebsiteGroupId'],
+        'websiteGroupId': !(0, runtime_1.exists)(json, 'WebsiteGroupId') ? undefined : json['WebsiteGroupId'],
         'roleId': json['RoleId'],
     };
 }
-export function RoleWebsiteGroupMappingApiModelToJSON(value) {
+exports.RoleWebsiteGroupMappingApiModelFromJSONTyped = RoleWebsiteGroupMappingApiModelFromJSONTyped;
+function RoleWebsiteGroupMappingApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -44,4 +50,5 @@ export function RoleWebsiteGroupMappingApiModelToJSON(value) {
         'RoleId': value.roleId,
     };
 }
+exports.RoleWebsiteGroupMappingApiModelToJSON = RoleWebsiteGroupMappingApiModelToJSON;
 //# sourceMappingURL=RoleWebsiteGroupMappingApiModel.js.map

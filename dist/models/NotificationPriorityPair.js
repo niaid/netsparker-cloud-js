@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,27 +12,32 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.NotificationPriorityPairToJSON = exports.NotificationPriorityPairFromJSONTyped = exports.NotificationPriorityPairFromJSON = exports.instanceOfNotificationPriorityPair = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the NotificationPriorityPair interface.
  */
-export function instanceOfNotificationPriorityPair(value) {
+function instanceOfNotificationPriorityPair(value) {
     let isInstance = true;
     return isInstance;
 }
-export function NotificationPriorityPairFromJSON(json) {
+exports.instanceOfNotificationPriorityPair = instanceOfNotificationPriorityPair;
+function NotificationPriorityPairFromJSON(json) {
     return NotificationPriorityPairFromJSONTyped(json, false);
 }
-export function NotificationPriorityPairFromJSONTyped(json, ignoreDiscriminator) {
+exports.NotificationPriorityPairFromJSON = NotificationPriorityPairFromJSON;
+function NotificationPriorityPairFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'priority': !exists(json, 'Priority') ? undefined : json['Priority'],
+        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
+        'priority': !(0, runtime_1.exists)(json, 'Priority') ? undefined : json['Priority'],
     };
 }
-export function NotificationPriorityPairToJSON(value) {
+exports.NotificationPriorityPairFromJSONTyped = NotificationPriorityPairFromJSONTyped;
+function NotificationPriorityPairToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -43,4 +49,5 @@ export function NotificationPriorityPairToJSON(value) {
         'Priority': value.priority,
     };
 }
+exports.NotificationPriorityPairToJSON = NotificationPriorityPairToJSON;
 //# sourceMappingURL=NotificationPriorityPair.js.map

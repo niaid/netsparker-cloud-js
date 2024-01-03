@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,12 +12,37 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import * as runtime from '../runtime';
-import { AllIssuesApiModelFromJSON, IssueApiResultFromJSON, IssueApiUpdateModelToJSON, IssueSummaryApiResultFromJSON, VulnerabilityContentApiModelFromJSON, } from '../models/index';
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.IssuesWaitingForRetestSeverityEnum = exports.IssuesTodoSeverityEnum = exports.IssuesReportSeverityEnum = exports.IssuesReportCsvSeparatorEnum = exports.IssuesAllIssuesIntegrationEnum = exports.IssuesAllIssuesSortTypeEnum = exports.IssuesAllIssuesSeverityEnum = exports.IssuesAddressedIssuesSeverityEnum = exports.IssuesApi = void 0;
+const runtime = __importStar(require("../runtime"));
+const index_1 = require("../models/index");
 /**
  *
  */
-export class IssuesApi extends runtime.BaseAPI {
+class IssuesApi extends runtime.BaseAPI {
     /**
      * Gets the list of addressed issues.
      */
@@ -44,7 +70,7 @@ export class IssuesApi extends runtime.BaseAPI {
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => IssueApiResultFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.IssueApiResultFromJSON)(jsonValue));
     }
     /**
      * Gets the list of addressed issues.
@@ -92,7 +118,7 @@ export class IssuesApi extends runtime.BaseAPI {
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => IssueApiResultFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.IssueApiResultFromJSON)(jsonValue));
     }
     /**
      * Gets the list of all issues.
@@ -116,7 +142,7 @@ export class IssuesApi extends runtime.BaseAPI {
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => AllIssuesApiModelFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.AllIssuesApiModelFromJSON)(jsonValue));
     }
     /**
      * Gets issues by id. Returns with encoded(raw html) vulnerability template data by default.
@@ -140,7 +166,7 @@ export class IssuesApi extends runtime.BaseAPI {
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => VulnerabilityContentApiModelFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.VulnerabilityContentApiModelFromJSON)(jsonValue));
     }
     /**
      * Gets vulnerability request/response content by id.
@@ -223,7 +249,7 @@ export class IssuesApi extends runtime.BaseAPI {
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => IssueSummaryApiResultFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.IssueSummaryApiResultFromJSON)(jsonValue));
     }
     /**
      * Gets the summary of vulnerabilities
@@ -259,7 +285,7 @@ export class IssuesApi extends runtime.BaseAPI {
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => IssueApiResultFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.IssueApiResultFromJSON)(jsonValue));
     }
     /**
      * Gets the list of to-do issues.
@@ -283,7 +309,7 @@ export class IssuesApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: IssueApiUpdateModelToJSON(requestParameters.model),
+            body: (0, index_1.IssueApiUpdateModelToJSON)(requestParameters.model),
         }, initOverrides);
         return new runtime.VoidApiResponse(response);
     }
@@ -320,7 +346,7 @@ export class IssuesApi extends runtime.BaseAPI {
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => IssueApiResultFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.IssueApiResultFromJSON)(jsonValue));
     }
     /**
      * Gets the list of retest issues.
@@ -330,10 +356,11 @@ export class IssuesApi extends runtime.BaseAPI {
         return await response.value();
     }
 }
+exports.IssuesApi = IssuesApi;
 /**
  * @export
  */
-export const IssuesAddressedIssuesSeverityEnum = {
+exports.IssuesAddressedIssuesSeverityEnum = {
     BestPractice: 'BestPractice',
     Information: 'Information',
     Low: 'Low',
@@ -344,7 +371,7 @@ export const IssuesAddressedIssuesSeverityEnum = {
 /**
  * @export
  */
-export const IssuesAllIssuesSeverityEnum = {
+exports.IssuesAllIssuesSeverityEnum = {
     BestPractice: 'BestPractice',
     Information: 'Information',
     Low: 'Low',
@@ -355,14 +382,14 @@ export const IssuesAllIssuesSeverityEnum = {
 /**
  * @export
  */
-export const IssuesAllIssuesSortTypeEnum = {
+exports.IssuesAllIssuesSortTypeEnum = {
     Ascending: 'Ascending',
     Descending: 'Descending'
 };
 /**
  * @export
  */
-export const IssuesAllIssuesIntegrationEnum = {
+exports.IssuesAllIssuesIntegrationEnum = {
     Jira: 'Jira',
     GitHub: 'GitHub',
     Tfs: 'TFS',
@@ -400,7 +427,7 @@ export const IssuesAllIssuesIntegrationEnum = {
 /**
  * @export
  */
-export const IssuesReportCsvSeparatorEnum = {
+exports.IssuesReportCsvSeparatorEnum = {
     Comma: 'Comma',
     Semicolon: 'Semicolon',
     Pipe: 'Pipe',
@@ -409,7 +436,7 @@ export const IssuesReportCsvSeparatorEnum = {
 /**
  * @export
  */
-export const IssuesReportSeverityEnum = {
+exports.IssuesReportSeverityEnum = {
     BestPractice: 'BestPractice',
     Information: 'Information',
     Low: 'Low',
@@ -420,7 +447,7 @@ export const IssuesReportSeverityEnum = {
 /**
  * @export
  */
-export const IssuesTodoSeverityEnum = {
+exports.IssuesTodoSeverityEnum = {
     BestPractice: 'BestPractice',
     Information: 'Information',
     Low: 'Low',
@@ -431,7 +458,7 @@ export const IssuesTodoSeverityEnum = {
 /**
  * @export
  */
-export const IssuesWaitingForRetestSeverityEnum = {
+exports.IssuesWaitingForRetestSeverityEnum = {
     BestPractice: 'BestPractice',
     Information: 'Information',
     Low: 'Low',

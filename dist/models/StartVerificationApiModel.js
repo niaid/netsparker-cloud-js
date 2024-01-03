@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,10 +12,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.StartVerificationApiModelToJSON = exports.StartVerificationApiModelFromJSONTyped = exports.StartVerificationApiModelFromJSON = exports.instanceOfStartVerificationApiModel = exports.StartVerificationApiModelVerificationMethodEnum = void 0;
 /**
  * @export
  */
-export const StartVerificationApiModelVerificationMethodEnum = {
+exports.StartVerificationApiModelVerificationMethodEnum = {
     File: 'File',
     Tag: 'Tag',
     Dns: 'Dns',
@@ -23,16 +26,18 @@ export const StartVerificationApiModelVerificationMethodEnum = {
 /**
  * Check if a given object implements the StartVerificationApiModel interface.
  */
-export function instanceOfStartVerificationApiModel(value) {
+function instanceOfStartVerificationApiModel(value) {
     let isInstance = true;
     isInstance = isInstance && "verificationMethod" in value;
     isInstance = isInstance && "websiteUrl" in value;
     return isInstance;
 }
-export function StartVerificationApiModelFromJSON(json) {
+exports.instanceOfStartVerificationApiModel = instanceOfStartVerificationApiModel;
+function StartVerificationApiModelFromJSON(json) {
     return StartVerificationApiModelFromJSONTyped(json, false);
 }
-export function StartVerificationApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.StartVerificationApiModelFromJSON = StartVerificationApiModelFromJSON;
+function StartVerificationApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
@@ -41,7 +46,8 @@ export function StartVerificationApiModelFromJSONTyped(json, ignoreDiscriminator
         'websiteUrl': json['WebsiteUrl'],
     };
 }
-export function StartVerificationApiModelToJSON(value) {
+exports.StartVerificationApiModelFromJSONTyped = StartVerificationApiModelFromJSONTyped;
+function StartVerificationApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -53,4 +59,5 @@ export function StartVerificationApiModelToJSON(value) {
         'WebsiteUrl': value.websiteUrl,
     };
 }
+exports.StartVerificationApiModelToJSON = StartVerificationApiModelToJSON;
 //# sourceMappingURL=StartVerificationApiModel.js.map

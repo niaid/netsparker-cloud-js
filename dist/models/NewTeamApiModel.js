@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,30 +12,35 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { RoleWebsiteGroupMappingApiModelFromJSON, RoleWebsiteGroupMappingApiModelToJSON, } from './RoleWebsiteGroupMappingApiModel';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.NewTeamApiModelToJSON = exports.NewTeamApiModelFromJSONTyped = exports.NewTeamApiModelFromJSON = exports.instanceOfNewTeamApiModel = void 0;
+const runtime_1 = require("../runtime");
+const RoleWebsiteGroupMappingApiModel_1 = require("./RoleWebsiteGroupMappingApiModel");
 /**
  * Check if a given object implements the NewTeamApiModel interface.
  */
-export function instanceOfNewTeamApiModel(value) {
+function instanceOfNewTeamApiModel(value) {
     let isInstance = true;
     isInstance = isInstance && "name" in value;
     return isInstance;
 }
-export function NewTeamApiModelFromJSON(json) {
+exports.instanceOfNewTeamApiModel = instanceOfNewTeamApiModel;
+function NewTeamApiModelFromJSON(json) {
     return NewTeamApiModelFromJSONTyped(json, false);
 }
-export function NewTeamApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.NewTeamApiModelFromJSON = NewTeamApiModelFromJSON;
+function NewTeamApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'roleWebsiteGroupMappings': !exists(json, 'RoleWebsiteGroupMappings') ? undefined : (json['RoleWebsiteGroupMappings'].map(RoleWebsiteGroupMappingApiModelFromJSON)),
+        'roleWebsiteGroupMappings': !(0, runtime_1.exists)(json, 'RoleWebsiteGroupMappings') ? undefined : (json['RoleWebsiteGroupMappings'].map(RoleWebsiteGroupMappingApiModel_1.RoleWebsiteGroupMappingApiModelFromJSON)),
         'name': json['Name'],
-        'members': !exists(json, 'Members') ? undefined : json['Members'],
+        'members': !(0, runtime_1.exists)(json, 'Members') ? undefined : json['Members'],
     };
 }
-export function NewTeamApiModelToJSON(value) {
+exports.NewTeamApiModelFromJSONTyped = NewTeamApiModelFromJSONTyped;
+function NewTeamApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -42,9 +48,10 @@ export function NewTeamApiModelToJSON(value) {
         return null;
     }
     return {
-        'RoleWebsiteGroupMappings': value.roleWebsiteGroupMappings === undefined ? undefined : (value.roleWebsiteGroupMappings.map(RoleWebsiteGroupMappingApiModelToJSON)),
+        'RoleWebsiteGroupMappings': value.roleWebsiteGroupMappings === undefined ? undefined : (value.roleWebsiteGroupMappings.map(RoleWebsiteGroupMappingApiModel_1.RoleWebsiteGroupMappingApiModelToJSON)),
         'Name': value.name,
         'Members': value.members,
     };
 }
+exports.NewTeamApiModelToJSON = NewTeamApiModelToJSON;
 //# sourceMappingURL=NewTeamApiModel.js.map

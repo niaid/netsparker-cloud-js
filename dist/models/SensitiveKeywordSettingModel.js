@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,18 +12,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.SensitiveKeywordSettingModelToJSON = exports.SensitiveKeywordSettingModelFromJSONTyped = exports.SensitiveKeywordSettingModelFromJSON = exports.instanceOfSensitiveKeywordSettingModel = void 0;
 /**
  * Check if a given object implements the SensitiveKeywordSettingModel interface.
  */
-export function instanceOfSensitiveKeywordSettingModel(value) {
+function instanceOfSensitiveKeywordSettingModel(value) {
     let isInstance = true;
     isInstance = isInstance && "pattern" in value;
     return isInstance;
 }
-export function SensitiveKeywordSettingModelFromJSON(json) {
+exports.instanceOfSensitiveKeywordSettingModel = instanceOfSensitiveKeywordSettingModel;
+function SensitiveKeywordSettingModelFromJSON(json) {
     return SensitiveKeywordSettingModelFromJSONTyped(json, false);
 }
-export function SensitiveKeywordSettingModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.SensitiveKeywordSettingModelFromJSON = SensitiveKeywordSettingModelFromJSON;
+function SensitiveKeywordSettingModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
@@ -30,7 +35,8 @@ export function SensitiveKeywordSettingModelFromJSONTyped(json, ignoreDiscrimina
         'pattern': json['Pattern'],
     };
 }
-export function SensitiveKeywordSettingModelToJSON(value) {
+exports.SensitiveKeywordSettingModelFromJSONTyped = SensitiveKeywordSettingModelFromJSONTyped;
+function SensitiveKeywordSettingModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -41,4 +47,5 @@ export function SensitiveKeywordSettingModelToJSON(value) {
         'Pattern': value.pattern,
     };
 }
+exports.SensitiveKeywordSettingModelToJSON = SensitiveKeywordSettingModelToJSON;
 //# sourceMappingURL=SensitiveKeywordSettingModel.js.map

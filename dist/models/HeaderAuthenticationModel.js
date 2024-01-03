@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,28 +12,33 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { CustomHttpHeaderModelFromJSON, CustomHttpHeaderModelToJSON, } from './CustomHttpHeaderModel';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.HeaderAuthenticationModelToJSON = exports.HeaderAuthenticationModelFromJSONTyped = exports.HeaderAuthenticationModelFromJSON = exports.instanceOfHeaderAuthenticationModel = void 0;
+const runtime_1 = require("../runtime");
+const CustomHttpHeaderModel_1 = require("./CustomHttpHeaderModel");
 /**
  * Check if a given object implements the HeaderAuthenticationModel interface.
  */
-export function instanceOfHeaderAuthenticationModel(value) {
+function instanceOfHeaderAuthenticationModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function HeaderAuthenticationModelFromJSON(json) {
+exports.instanceOfHeaderAuthenticationModel = instanceOfHeaderAuthenticationModel;
+function HeaderAuthenticationModelFromJSON(json) {
     return HeaderAuthenticationModelFromJSONTyped(json, false);
 }
-export function HeaderAuthenticationModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.HeaderAuthenticationModelFromJSON = HeaderAuthenticationModelFromJSON;
+function HeaderAuthenticationModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'headers': !exists(json, 'Headers') ? undefined : (json['Headers'].map(CustomHttpHeaderModelFromJSON)),
-        'isEnabled': !exists(json, 'IsEnabled') ? undefined : json['IsEnabled'],
+        'headers': !(0, runtime_1.exists)(json, 'Headers') ? undefined : (json['Headers'].map(CustomHttpHeaderModel_1.CustomHttpHeaderModelFromJSON)),
+        'isEnabled': !(0, runtime_1.exists)(json, 'IsEnabled') ? undefined : json['IsEnabled'],
     };
 }
-export function HeaderAuthenticationModelToJSON(value) {
+exports.HeaderAuthenticationModelFromJSONTyped = HeaderAuthenticationModelFromJSONTyped;
+function HeaderAuthenticationModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,8 +46,9 @@ export function HeaderAuthenticationModelToJSON(value) {
         return null;
     }
     return {
-        'Headers': value.headers === undefined ? undefined : (value.headers.map(CustomHttpHeaderModelToJSON)),
+        'Headers': value.headers === undefined ? undefined : (value.headers.map(CustomHttpHeaderModel_1.CustomHttpHeaderModelToJSON)),
         'IsEnabled': value.isEnabled,
     };
 }
+exports.HeaderAuthenticationModelToJSON = HeaderAuthenticationModelToJSON;
 //# sourceMappingURL=HeaderAuthenticationModel.js.map

@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,27 +12,32 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AgentSelectionModelToJSON = exports.AgentSelectionModelFromJSONTyped = exports.AgentSelectionModelFromJSON = exports.instanceOfAgentSelectionModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the AgentSelectionModel interface.
  */
-export function instanceOfAgentSelectionModel(value) {
+function instanceOfAgentSelectionModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function AgentSelectionModelFromJSON(json) {
+exports.instanceOfAgentSelectionModel = instanceOfAgentSelectionModel;
+function AgentSelectionModelFromJSON(json) {
     return AgentSelectionModelFromJSONTyped(json, false);
 }
-export function AgentSelectionModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.AgentSelectionModelFromJSON = AgentSelectionModelFromJSON;
+function AgentSelectionModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'agentId': !exists(json, 'AgentId') ? undefined : json['AgentId'],
-        'websiteId': !exists(json, 'WebsiteId') ? undefined : json['WebsiteId'],
+        'agentId': !(0, runtime_1.exists)(json, 'AgentId') ? undefined : json['AgentId'],
+        'websiteId': !(0, runtime_1.exists)(json, 'WebsiteId') ? undefined : json['WebsiteId'],
     };
 }
-export function AgentSelectionModelToJSON(value) {
+exports.AgentSelectionModelFromJSONTyped = AgentSelectionModelFromJSONTyped;
+function AgentSelectionModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -43,4 +49,5 @@ export function AgentSelectionModelToJSON(value) {
         'WebsiteId': value.websiteId,
     };
 }
+exports.AgentSelectionModelToJSON = AgentSelectionModelToJSON;
 //# sourceMappingURL=AgentSelectionModel.js.map

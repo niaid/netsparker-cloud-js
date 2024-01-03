@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,13 +12,15 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { ExcludedLinkModelFromJSON, ExcludedLinkModelToJSON, } from './ExcludedLinkModel';
-import { ExcludedUsageTrackerModelFromJSON, ExcludedUsageTrackerModelToJSON, } from './ExcludedUsageTrackerModel';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ScopeSettingToJSON = exports.ScopeSettingFromJSONTyped = exports.ScopeSettingFromJSON = exports.instanceOfScopeSetting = exports.ScopeSettingScopeEnum = exports.ScopeSettingDisallowedHttpMethodsEnum = void 0;
+const runtime_1 = require("../runtime");
+const ExcludedLinkModel_1 = require("./ExcludedLinkModel");
+const ExcludedUsageTrackerModel_1 = require("./ExcludedUsageTrackerModel");
 /**
  * @export
  */
-export const ScopeSettingDisallowedHttpMethodsEnum = {
+exports.ScopeSettingDisallowedHttpMethodsEnum = {
     Get: 'GET',
     Post: 'POST',
     Connect: 'CONNECT',
@@ -35,7 +38,7 @@ export const ScopeSettingDisallowedHttpMethodsEnum = {
 /**
  * @export
  */
-export const ScopeSettingScopeEnum = {
+exports.ScopeSettingScopeEnum = {
     EnteredPathAndBelow: 'EnteredPathAndBelow',
     OnlyEnteredUrl: 'OnlyEnteredUrl',
     WholeDomain: 'WholeDomain'
@@ -43,28 +46,31 @@ export const ScopeSettingScopeEnum = {
 /**
  * Check if a given object implements the ScopeSetting interface.
  */
-export function instanceOfScopeSetting(value) {
+function instanceOfScopeSetting(value) {
     let isInstance = true;
     return isInstance;
 }
-export function ScopeSettingFromJSON(json) {
+exports.instanceOfScopeSetting = instanceOfScopeSetting;
+function ScopeSettingFromJSON(json) {
     return ScopeSettingFromJSONTyped(json, false);
 }
-export function ScopeSettingFromJSONTyped(json, ignoreDiscriminator) {
+exports.ScopeSettingFromJSON = ScopeSettingFromJSON;
+function ScopeSettingFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'excludedLinks': !exists(json, 'ExcludedLinks') ? undefined : (json['ExcludedLinks'].map(ExcludedLinkModelFromJSON)),
-        'excludeLinks': !exists(json, 'ExcludeLinks') ? undefined : json['ExcludeLinks'],
-        'excludedUsageTrackers': !exists(json, 'ExcludedUsageTrackers') ? undefined : (json['ExcludedUsageTrackers'].map(ExcludedUsageTrackerModelFromJSON)),
-        'excludeAuthenticationPages': !exists(json, 'ExcludeAuthenticationPages') ? undefined : json['ExcludeAuthenticationPages'],
-        'disallowedHttpMethods': !exists(json, 'DisallowedHttpMethods') ? undefined : json['DisallowedHttpMethods'],
-        'scope': !exists(json, 'Scope') ? undefined : json['Scope'],
-        'doNotDifferentiateProtocols': !exists(json, 'DoNotDifferentiateProtocols') ? undefined : json['DoNotDifferentiateProtocols'],
+        'excludedLinks': !(0, runtime_1.exists)(json, 'ExcludedLinks') ? undefined : (json['ExcludedLinks'].map(ExcludedLinkModel_1.ExcludedLinkModelFromJSON)),
+        'excludeLinks': !(0, runtime_1.exists)(json, 'ExcludeLinks') ? undefined : json['ExcludeLinks'],
+        'excludedUsageTrackers': !(0, runtime_1.exists)(json, 'ExcludedUsageTrackers') ? undefined : (json['ExcludedUsageTrackers'].map(ExcludedUsageTrackerModel_1.ExcludedUsageTrackerModelFromJSON)),
+        'excludeAuthenticationPages': !(0, runtime_1.exists)(json, 'ExcludeAuthenticationPages') ? undefined : json['ExcludeAuthenticationPages'],
+        'disallowedHttpMethods': !(0, runtime_1.exists)(json, 'DisallowedHttpMethods') ? undefined : json['DisallowedHttpMethods'],
+        'scope': !(0, runtime_1.exists)(json, 'Scope') ? undefined : json['Scope'],
+        'doNotDifferentiateProtocols': !(0, runtime_1.exists)(json, 'DoNotDifferentiateProtocols') ? undefined : json['DoNotDifferentiateProtocols'],
     };
 }
-export function ScopeSettingToJSON(value) {
+exports.ScopeSettingFromJSONTyped = ScopeSettingFromJSONTyped;
+function ScopeSettingToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -72,13 +78,14 @@ export function ScopeSettingToJSON(value) {
         return null;
     }
     return {
-        'ExcludedLinks': value.excludedLinks === undefined ? undefined : (value.excludedLinks.map(ExcludedLinkModelToJSON)),
+        'ExcludedLinks': value.excludedLinks === undefined ? undefined : (value.excludedLinks.map(ExcludedLinkModel_1.ExcludedLinkModelToJSON)),
         'ExcludeLinks': value.excludeLinks,
-        'ExcludedUsageTrackers': value.excludedUsageTrackers === undefined ? undefined : (value.excludedUsageTrackers.map(ExcludedUsageTrackerModelToJSON)),
+        'ExcludedUsageTrackers': value.excludedUsageTrackers === undefined ? undefined : (value.excludedUsageTrackers.map(ExcludedUsageTrackerModel_1.ExcludedUsageTrackerModelToJSON)),
         'ExcludeAuthenticationPages': value.excludeAuthenticationPages,
         'DisallowedHttpMethods': value.disallowedHttpMethods,
         'Scope': value.scope,
         'DoNotDifferentiateProtocols': value.doNotDifferentiateProtocols,
     };
 }
+exports.ScopeSettingToJSON = ScopeSettingToJSON;
 //# sourceMappingURL=ScopeSetting.js.map

@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,31 +12,36 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.IncrementalApiModelToJSON = exports.IncrementalApiModelFromJSONTyped = exports.IncrementalApiModelFromJSON = exports.instanceOfIncrementalApiModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the IncrementalApiModel interface.
  */
-export function instanceOfIncrementalApiModel(value) {
+function instanceOfIncrementalApiModel(value) {
     let isInstance = true;
     isInstance = isInstance && "baseScanId" in value;
     return isInstance;
 }
-export function IncrementalApiModelFromJSON(json) {
+exports.instanceOfIncrementalApiModel = instanceOfIncrementalApiModel;
+function IncrementalApiModelFromJSON(json) {
     return IncrementalApiModelFromJSONTyped(json, false);
 }
-export function IncrementalApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.IncrementalApiModelFromJSON = IncrementalApiModelFromJSON;
+function IncrementalApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'isMaxScanDurationEnabled': !exists(json, 'IsMaxScanDurationEnabled') ? undefined : json['IsMaxScanDurationEnabled'],
-        'maxScanDuration': !exists(json, 'MaxScanDuration') ? undefined : json['MaxScanDuration'],
-        'agentGroupName': !exists(json, 'AgentGroupName') ? undefined : json['AgentGroupName'],
-        'agentName': !exists(json, 'AgentName') ? undefined : json['AgentName'],
+        'isMaxScanDurationEnabled': !(0, runtime_1.exists)(json, 'IsMaxScanDurationEnabled') ? undefined : json['IsMaxScanDurationEnabled'],
+        'maxScanDuration': !(0, runtime_1.exists)(json, 'MaxScanDuration') ? undefined : json['MaxScanDuration'],
+        'agentGroupName': !(0, runtime_1.exists)(json, 'AgentGroupName') ? undefined : json['AgentGroupName'],
+        'agentName': !(0, runtime_1.exists)(json, 'AgentName') ? undefined : json['AgentName'],
         'baseScanId': json['BaseScanId'],
     };
 }
-export function IncrementalApiModelToJSON(value) {
+exports.IncrementalApiModelFromJSONTyped = IncrementalApiModelFromJSONTyped;
+function IncrementalApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -50,4 +56,5 @@ export function IncrementalApiModelToJSON(value) {
         'BaseScanId': value.baseScanId,
     };
 }
+exports.IncrementalApiModelToJSON = IncrementalApiModelToJSON;
 //# sourceMappingURL=IncrementalApiModel.js.map

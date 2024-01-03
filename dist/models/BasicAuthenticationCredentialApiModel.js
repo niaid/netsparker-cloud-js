@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,11 +12,13 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.BasicAuthenticationCredentialApiModelToJSON = exports.BasicAuthenticationCredentialApiModelFromJSONTyped = exports.BasicAuthenticationCredentialApiModelFromJSON = exports.instanceOfBasicAuthenticationCredentialApiModel = exports.BasicAuthenticationCredentialApiModelAuthenticationTypeEnum = void 0;
+const runtime_1 = require("../runtime");
 /**
  * @export
  */
-export const BasicAuthenticationCredentialApiModelAuthenticationTypeEnum = {
+exports.BasicAuthenticationCredentialApiModelAuthenticationTypeEnum = {
     Basic: 'Basic',
     Ntlm: 'Ntlm',
     Kerberos: 'Kerberos',
@@ -25,26 +28,29 @@ export const BasicAuthenticationCredentialApiModelAuthenticationTypeEnum = {
 /**
  * Check if a given object implements the BasicAuthenticationCredentialApiModel interface.
  */
-export function instanceOfBasicAuthenticationCredentialApiModel(value) {
+function instanceOfBasicAuthenticationCredentialApiModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function BasicAuthenticationCredentialApiModelFromJSON(json) {
+exports.instanceOfBasicAuthenticationCredentialApiModel = instanceOfBasicAuthenticationCredentialApiModel;
+function BasicAuthenticationCredentialApiModelFromJSON(json) {
     return BasicAuthenticationCredentialApiModelFromJSONTyped(json, false);
 }
-export function BasicAuthenticationCredentialApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.BasicAuthenticationCredentialApiModelFromJSON = BasicAuthenticationCredentialApiModelFromJSON;
+function BasicAuthenticationCredentialApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'authenticationType': !exists(json, 'AuthenticationType') ? undefined : json['AuthenticationType'],
-        'domain': !exists(json, 'Domain') ? undefined : json['Domain'],
-        'password': !exists(json, 'Password') ? undefined : json['Password'],
-        'uriPrefix': !exists(json, 'UriPrefix') ? undefined : json['UriPrefix'],
-        'userName': !exists(json, 'UserName') ? undefined : json['UserName'],
+        'authenticationType': !(0, runtime_1.exists)(json, 'AuthenticationType') ? undefined : json['AuthenticationType'],
+        'domain': !(0, runtime_1.exists)(json, 'Domain') ? undefined : json['Domain'],
+        'password': !(0, runtime_1.exists)(json, 'Password') ? undefined : json['Password'],
+        'uriPrefix': !(0, runtime_1.exists)(json, 'UriPrefix') ? undefined : json['UriPrefix'],
+        'userName': !(0, runtime_1.exists)(json, 'UserName') ? undefined : json['UserName'],
     };
 }
-export function BasicAuthenticationCredentialApiModelToJSON(value) {
+exports.BasicAuthenticationCredentialApiModelFromJSONTyped = BasicAuthenticationCredentialApiModelFromJSONTyped;
+function BasicAuthenticationCredentialApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -59,4 +65,5 @@ export function BasicAuthenticationCredentialApiModelToJSON(value) {
         'UserName': value.userName,
     };
 }
+exports.BasicAuthenticationCredentialApiModelToJSON = BasicAuthenticationCredentialApiModelToJSON;
 //# sourceMappingURL=BasicAuthenticationCredentialApiModel.js.map

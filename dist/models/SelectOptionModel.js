@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,27 +12,32 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.SelectOptionModelToJSON = exports.SelectOptionModelFromJSONTyped = exports.SelectOptionModelFromJSON = exports.instanceOfSelectOptionModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the SelectOptionModel interface.
  */
-export function instanceOfSelectOptionModel(value) {
+function instanceOfSelectOptionModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function SelectOptionModelFromJSON(json) {
+exports.instanceOfSelectOptionModel = instanceOfSelectOptionModel;
+function SelectOptionModelFromJSON(json) {
     return SelectOptionModelFromJSONTyped(json, false);
 }
-export function SelectOptionModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.SelectOptionModelFromJSON = SelectOptionModelFromJSON;
+function SelectOptionModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'label': !exists(json, 'Label') ? undefined : json['Label'],
-        'value': !exists(json, 'Value') ? undefined : json['Value'],
+        'label': !(0, runtime_1.exists)(json, 'Label') ? undefined : json['Label'],
+        'value': !(0, runtime_1.exists)(json, 'Value') ? undefined : json['Value'],
     };
 }
-export function SelectOptionModelToJSON(value) {
+exports.SelectOptionModelFromJSONTyped = SelectOptionModelFromJSONTyped;
+function SelectOptionModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -43,4 +49,5 @@ export function SelectOptionModelToJSON(value) {
         'Value': value.value,
     };
 }
+exports.SelectOptionModelToJSON = SelectOptionModelToJSON;
 //# sourceMappingURL=SelectOptionModel.js.map

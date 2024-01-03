@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,26 +12,31 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ContentTypeTemplateToJSON = exports.ContentTypeTemplateFromJSONTyped = exports.ContentTypeTemplateFromJSON = exports.instanceOfContentTypeTemplate = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the ContentTypeTemplate interface.
  */
-export function instanceOfContentTypeTemplate(value) {
+function instanceOfContentTypeTemplate(value) {
     let isInstance = true;
     return isInstance;
 }
-export function ContentTypeTemplateFromJSON(json) {
+exports.instanceOfContentTypeTemplate = instanceOfContentTypeTemplate;
+function ContentTypeTemplateFromJSON(json) {
     return ContentTypeTemplateFromJSONTyped(json, false);
 }
-export function ContentTypeTemplateFromJSONTyped(json, ignoreDiscriminator) {
+exports.ContentTypeTemplateFromJSON = ContentTypeTemplateFromJSON;
+function ContentTypeTemplateFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
+        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
     };
 }
-export function ContentTypeTemplateToJSON(value) {
+exports.ContentTypeTemplateFromJSONTyped = ContentTypeTemplateFromJSONTyped;
+function ContentTypeTemplateToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -41,4 +47,5 @@ export function ContentTypeTemplateToJSON(value) {
         'Name': value.name,
     };
 }
+exports.ContentTypeTemplateToJSON = ContentTypeTemplateToJSON;
 //# sourceMappingURL=ContentTypeTemplate.js.map

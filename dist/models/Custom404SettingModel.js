@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,31 +12,36 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.Custom404SettingModelToJSON = exports.Custom404SettingModelFromJSONTyped = exports.Custom404SettingModelFromJSON = exports.instanceOfCustom404SettingModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the Custom404SettingModel interface.
  */
-export function instanceOfCustom404SettingModel(value) {
+function instanceOfCustom404SettingModel(value) {
     let isInstance = true;
     isInstance = isInstance && "max404PagesToTest" in value;
     isInstance = isInstance && "maximum404Signature" in value;
     return isInstance;
 }
-export function Custom404SettingModelFromJSON(json) {
+exports.instanceOfCustom404SettingModel = instanceOfCustom404SettingModel;
+function Custom404SettingModelFromJSON(json) {
     return Custom404SettingModelFromJSONTyped(json, false);
 }
-export function Custom404SettingModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.Custom404SettingModelFromJSON = Custom404SettingModelFromJSON;
+function Custom404SettingModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'custom404RegEx': !exists(json, 'Custom404RegEx') ? undefined : json['Custom404RegEx'],
-        'disableAuto404Detection': !exists(json, 'DisableAuto404Detection') ? undefined : json['DisableAuto404Detection'],
+        'custom404RegEx': !(0, runtime_1.exists)(json, 'Custom404RegEx') ? undefined : json['Custom404RegEx'],
+        'disableAuto404Detection': !(0, runtime_1.exists)(json, 'DisableAuto404Detection') ? undefined : json['DisableAuto404Detection'],
         'max404PagesToTest': json['Max404PagesToTest'],
         'maximum404Signature': json['Maximum404Signature'],
     };
 }
-export function Custom404SettingModelToJSON(value) {
+exports.Custom404SettingModelFromJSONTyped = Custom404SettingModelFromJSONTyped;
+function Custom404SettingModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -49,4 +55,5 @@ export function Custom404SettingModelToJSON(value) {
         'Maximum404Signature': value.maximum404Signature,
     };
 }
+exports.Custom404SettingModelToJSON = Custom404SettingModelToJSON;
 //# sourceMappingURL=Custom404SettingModel.js.map

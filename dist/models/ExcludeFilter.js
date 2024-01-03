@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,30 +12,35 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ExcludeFilterToJSON = exports.ExcludeFilterFromJSONTyped = exports.ExcludeFilterFromJSON = exports.instanceOfExcludeFilter = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the ExcludeFilter interface.
  */
-export function instanceOfExcludeFilter(value) {
+function instanceOfExcludeFilter(value) {
     let isInstance = true;
     return isInstance;
 }
-export function ExcludeFilterFromJSON(json) {
+exports.instanceOfExcludeFilter = instanceOfExcludeFilter;
+function ExcludeFilterFromJSON(json) {
     return ExcludeFilterFromJSONTyped(json, false);
 }
-export function ExcludeFilterFromJSONTyped(json, ignoreDiscriminator) {
+exports.ExcludeFilterFromJSON = ExcludeFilterFromJSON;
+function ExcludeFilterFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'excludedSlds': !exists(json, 'ExcludedSlds') ? undefined : json['ExcludedSlds'],
-        'excludedTlds': !exists(json, 'ExcludedTlds') ? undefined : json['ExcludedTlds'],
-        'excludedIpAddresses': !exists(json, 'ExcludedIpAddresses') ? undefined : json['ExcludedIpAddresses'],
-        'excludedDomains': !exists(json, 'ExcludedDomains') ? undefined : json['ExcludedDomains'],
-        'excludedOrganizations': !exists(json, 'ExcludedOrganizations') ? undefined : json['ExcludedOrganizations'],
+        'excludedSlds': !(0, runtime_1.exists)(json, 'ExcludedSlds') ? undefined : json['ExcludedSlds'],
+        'excludedTlds': !(0, runtime_1.exists)(json, 'ExcludedTlds') ? undefined : json['ExcludedTlds'],
+        'excludedIpAddresses': !(0, runtime_1.exists)(json, 'ExcludedIpAddresses') ? undefined : json['ExcludedIpAddresses'],
+        'excludedDomains': !(0, runtime_1.exists)(json, 'ExcludedDomains') ? undefined : json['ExcludedDomains'],
+        'excludedOrganizations': !(0, runtime_1.exists)(json, 'ExcludedOrganizations') ? undefined : json['ExcludedOrganizations'],
     };
 }
-export function ExcludeFilterToJSON(value) {
+exports.ExcludeFilterFromJSONTyped = ExcludeFilterFromJSONTyped;
+function ExcludeFilterToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -49,4 +55,5 @@ export function ExcludeFilterToJSON(value) {
         'ExcludedOrganizations': value.excludedOrganizations,
     };
 }
+exports.ExcludeFilterToJSON = ExcludeFilterToJSON;
 //# sourceMappingURL=ExcludeFilter.js.map

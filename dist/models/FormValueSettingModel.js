@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,11 +12,13 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.FormValueSettingModelToJSON = exports.FormValueSettingModelFromJSONTyped = exports.FormValueSettingModelFromJSON = exports.instanceOfFormValueSettingModel = exports.FormValueSettingModelMatchTargetValueEnum = exports.FormValueSettingModelMatchTargetEnum = exports.FormValueSettingModelMatchEnum = void 0;
+const runtime_1 = require("../runtime");
 /**
  * @export
  */
-export const FormValueSettingModelMatchEnum = {
+exports.FormValueSettingModelMatchEnum = {
     RegEx: 'RegEx',
     Exact: 'Exact',
     Contains: 'Contains',
@@ -25,7 +28,7 @@ export const FormValueSettingModelMatchEnum = {
 /**
  * @export
  */
-export const FormValueSettingModelMatchTargetEnum = {
+exports.FormValueSettingModelMatchTargetEnum = {
     Name: 'Name',
     Label: 'Label',
     Placeholder: 'Placeholder',
@@ -34,7 +37,7 @@ export const FormValueSettingModelMatchTargetEnum = {
 /**
  * @export
  */
-export const FormValueSettingModelMatchTargetValueEnum = {
+exports.FormValueSettingModelMatchTargetValueEnum = {
     Name: 'Name',
     Label: 'Label',
     Placeholder: 'Placeholder',
@@ -43,32 +46,35 @@ export const FormValueSettingModelMatchTargetValueEnum = {
 /**
  * Check if a given object implements the FormValueSettingModel interface.
  */
-export function instanceOfFormValueSettingModel(value) {
+function instanceOfFormValueSettingModel(value) {
     let isInstance = true;
     isInstance = isInstance && "matchTargetValue" in value;
     isInstance = isInstance && "name" in value;
     isInstance = isInstance && "value" in value;
     return isInstance;
 }
-export function FormValueSettingModelFromJSON(json) {
+exports.instanceOfFormValueSettingModel = instanceOfFormValueSettingModel;
+function FormValueSettingModelFromJSON(json) {
     return FormValueSettingModelFromJSONTyped(json, false);
 }
-export function FormValueSettingModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.FormValueSettingModelFromJSON = FormValueSettingModelFromJSON;
+function FormValueSettingModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'force': !exists(json, 'Force') ? undefined : json['Force'],
-        'match': !exists(json, 'Match') ? undefined : json['Match'],
-        'matchTarget': !exists(json, 'MatchTarget') ? undefined : json['MatchTarget'],
+        'force': !(0, runtime_1.exists)(json, 'Force') ? undefined : json['Force'],
+        'match': !(0, runtime_1.exists)(json, 'Match') ? undefined : json['Match'],
+        'matchTarget': !(0, runtime_1.exists)(json, 'MatchTarget') ? undefined : json['MatchTarget'],
         'matchTargetValue': json['MatchTargetValue'],
         'name': json['Name'],
-        'pattern': !exists(json, 'Pattern') ? undefined : json['Pattern'],
-        'type': !exists(json, 'Type') ? undefined : json['Type'],
+        'pattern': !(0, runtime_1.exists)(json, 'Pattern') ? undefined : json['Pattern'],
+        'type': !(0, runtime_1.exists)(json, 'Type') ? undefined : json['Type'],
         'value': json['Value'],
     };
 }
-export function FormValueSettingModelToJSON(value) {
+exports.FormValueSettingModelFromJSONTyped = FormValueSettingModelFromJSONTyped;
+function FormValueSettingModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -86,4 +92,5 @@ export function FormValueSettingModelToJSON(value) {
         'Value': value.value,
     };
 }
+exports.FormValueSettingModelToJSON = FormValueSettingModelToJSON;
 //# sourceMappingURL=FormValueSettingModel.js.map

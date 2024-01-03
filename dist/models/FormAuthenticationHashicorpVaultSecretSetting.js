@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,40 +12,45 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.FormAuthenticationHashicorpVaultSecretSettingToJSON = exports.FormAuthenticationHashicorpVaultSecretSettingFromJSONTyped = exports.FormAuthenticationHashicorpVaultSecretSettingFromJSON = exports.instanceOfFormAuthenticationHashicorpVaultSecretSetting = exports.FormAuthenticationHashicorpVaultSecretSettingVersionEnum = void 0;
+const runtime_1 = require("../runtime");
 /**
  * @export
  */
-export const FormAuthenticationHashicorpVaultSecretSettingVersionEnum = {
+exports.FormAuthenticationHashicorpVaultSecretSettingVersionEnum = {
     V1: 'V1',
     V2: 'V2'
 };
 /**
  * Check if a given object implements the FormAuthenticationHashicorpVaultSecretSetting interface.
  */
-export function instanceOfFormAuthenticationHashicorpVaultSecretSetting(value) {
+function instanceOfFormAuthenticationHashicorpVaultSecretSetting(value) {
     let isInstance = true;
     return isInstance;
 }
-export function FormAuthenticationHashicorpVaultSecretSettingFromJSON(json) {
+exports.instanceOfFormAuthenticationHashicorpVaultSecretSetting = instanceOfFormAuthenticationHashicorpVaultSecretSetting;
+function FormAuthenticationHashicorpVaultSecretSettingFromJSON(json) {
     return FormAuthenticationHashicorpVaultSecretSettingFromJSONTyped(json, false);
 }
-export function FormAuthenticationHashicorpVaultSecretSettingFromJSONTyped(json, ignoreDiscriminator) {
+exports.FormAuthenticationHashicorpVaultSecretSettingFromJSON = FormAuthenticationHashicorpVaultSecretSettingFromJSON;
+function FormAuthenticationHashicorpVaultSecretSettingFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'integrationId': !exists(json, 'IntegrationId') ? undefined : json['IntegrationId'],
-        'version': !exists(json, 'Version') ? undefined : json['Version'],
-        'secretEngine': !exists(json, 'SecretEngine') ? undefined : json['SecretEngine'],
-        'secret': !exists(json, 'Secret') ? undefined : json['Secret'],
-        'useStaticUsername': !exists(json, 'UseStaticUsername') ? undefined : json['UseStaticUsername'],
-        'staticUsername': !exists(json, 'StaticUsername') ? undefined : json['StaticUsername'],
-        'usernameKey': !exists(json, 'UsernameKey') ? undefined : json['UsernameKey'],
-        'passwordKey': !exists(json, 'PasswordKey') ? undefined : json['PasswordKey'],
+        'integrationId': !(0, runtime_1.exists)(json, 'IntegrationId') ? undefined : json['IntegrationId'],
+        'version': !(0, runtime_1.exists)(json, 'Version') ? undefined : json['Version'],
+        'secretEngine': !(0, runtime_1.exists)(json, 'SecretEngine') ? undefined : json['SecretEngine'],
+        'secret': !(0, runtime_1.exists)(json, 'Secret') ? undefined : json['Secret'],
+        'useStaticUsername': !(0, runtime_1.exists)(json, 'UseStaticUsername') ? undefined : json['UseStaticUsername'],
+        'staticUsername': !(0, runtime_1.exists)(json, 'StaticUsername') ? undefined : json['StaticUsername'],
+        'usernameKey': !(0, runtime_1.exists)(json, 'UsernameKey') ? undefined : json['UsernameKey'],
+        'passwordKey': !(0, runtime_1.exists)(json, 'PasswordKey') ? undefined : json['PasswordKey'],
     };
 }
-export function FormAuthenticationHashicorpVaultSecretSettingToJSON(value) {
+exports.FormAuthenticationHashicorpVaultSecretSettingFromJSONTyped = FormAuthenticationHashicorpVaultSecretSettingFromJSONTyped;
+function FormAuthenticationHashicorpVaultSecretSettingToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -62,4 +68,5 @@ export function FormAuthenticationHashicorpVaultSecretSettingToJSON(value) {
         'PasswordKey': value.passwordKey,
     };
 }
+exports.FormAuthenticationHashicorpVaultSecretSettingToJSON = FormAuthenticationHashicorpVaultSecretSettingToJSON;
 //# sourceMappingURL=FormAuthenticationHashicorpVaultSecretSetting.js.map

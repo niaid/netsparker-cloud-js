@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,11 +12,13 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.VcsCommitInfoToJSON = exports.VcsCommitInfoFromJSONTyped = exports.VcsCommitInfoFromJSON = exports.instanceOfVcsCommitInfo = exports.VcsCommitInfoIntegrationSystemEnum = void 0;
+const runtime_1 = require("../runtime");
 /**
  * @export
  */
-export const VcsCommitInfoIntegrationSystemEnum = {
+exports.VcsCommitInfoIntegrationSystemEnum = {
     Teamcity: 'Teamcity',
     Jenkins: 'Jenkins',
     Bamboo: 'Bamboo',
@@ -30,37 +33,40 @@ export const VcsCommitInfoIntegrationSystemEnum = {
 /**
  * Check if a given object implements the VcsCommitInfo interface.
  */
-export function instanceOfVcsCommitInfo(value) {
+function instanceOfVcsCommitInfo(value) {
     let isInstance = true;
     return isInstance;
 }
-export function VcsCommitInfoFromJSON(json) {
+exports.instanceOfVcsCommitInfo = instanceOfVcsCommitInfo;
+function VcsCommitInfoFromJSON(json) {
     return VcsCommitInfoFromJSONTyped(json, false);
 }
-export function VcsCommitInfoFromJSONTyped(json, ignoreDiscriminator) {
+exports.VcsCommitInfoFromJSON = VcsCommitInfoFromJSON;
+function VcsCommitInfoFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'ciBuildConfigurationName': !exists(json, 'CiBuildConfigurationName') ? undefined : json['CiBuildConfigurationName'],
-        'ciBuildHasChange': !exists(json, 'CiBuildHasChange') ? undefined : json['CiBuildHasChange'],
-        'ciBuildId': !exists(json, 'CiBuildId') ? undefined : json['CiBuildId'],
-        'ciBuildServerName': !exists(json, 'CiBuildServerName') ? undefined : json['CiBuildServerName'],
-        'ciBuildServerVersion': !exists(json, 'CiBuildServerVersion') ? undefined : json['CiBuildServerVersion'],
-        'ciBuildUrl': !exists(json, 'CiBuildUrl') ? undefined : json['CiBuildUrl'],
-        'ciNcPluginVersion': !exists(json, 'CiNcPluginVersion') ? undefined : json['CiNcPluginVersion'],
-        'ciTimestamp': !exists(json, 'CiTimestamp') ? undefined : (new Date(json['CiTimestamp'])),
-        'comitterId': !exists(json, 'ComitterId') ? undefined : json['ComitterId'],
-        'committer': !exists(json, 'Committer') ? undefined : json['Committer'],
-        'committerName': !exists(json, 'CommitterName') ? undefined : json['CommitterName'],
-        'committerOverride': !exists(json, 'CommitterOverride') ? undefined : json['CommitterOverride'],
-        'integrationSystem': !exists(json, 'IntegrationSystem') ? undefined : json['IntegrationSystem'],
-        'isCommiterExistAndAuthorizedInNc': !exists(json, 'IsCommiterExistAndAuthorizedInNc') ? undefined : json['IsCommiterExistAndAuthorizedInNc'],
-        'vcsName': !exists(json, 'VcsName') ? undefined : json['VcsName'],
-        'vcsVersion': !exists(json, 'VcsVersion') ? undefined : json['VcsVersion'],
+        'ciBuildConfigurationName': !(0, runtime_1.exists)(json, 'CiBuildConfigurationName') ? undefined : json['CiBuildConfigurationName'],
+        'ciBuildHasChange': !(0, runtime_1.exists)(json, 'CiBuildHasChange') ? undefined : json['CiBuildHasChange'],
+        'ciBuildId': !(0, runtime_1.exists)(json, 'CiBuildId') ? undefined : json['CiBuildId'],
+        'ciBuildServerName': !(0, runtime_1.exists)(json, 'CiBuildServerName') ? undefined : json['CiBuildServerName'],
+        'ciBuildServerVersion': !(0, runtime_1.exists)(json, 'CiBuildServerVersion') ? undefined : json['CiBuildServerVersion'],
+        'ciBuildUrl': !(0, runtime_1.exists)(json, 'CiBuildUrl') ? undefined : json['CiBuildUrl'],
+        'ciNcPluginVersion': !(0, runtime_1.exists)(json, 'CiNcPluginVersion') ? undefined : json['CiNcPluginVersion'],
+        'ciTimestamp': !(0, runtime_1.exists)(json, 'CiTimestamp') ? undefined : (new Date(json['CiTimestamp'])),
+        'comitterId': !(0, runtime_1.exists)(json, 'ComitterId') ? undefined : json['ComitterId'],
+        'committer': !(0, runtime_1.exists)(json, 'Committer') ? undefined : json['Committer'],
+        'committerName': !(0, runtime_1.exists)(json, 'CommitterName') ? undefined : json['CommitterName'],
+        'committerOverride': !(0, runtime_1.exists)(json, 'CommitterOverride') ? undefined : json['CommitterOverride'],
+        'integrationSystem': !(0, runtime_1.exists)(json, 'IntegrationSystem') ? undefined : json['IntegrationSystem'],
+        'isCommiterExistAndAuthorizedInNc': !(0, runtime_1.exists)(json, 'IsCommiterExistAndAuthorizedInNc') ? undefined : json['IsCommiterExistAndAuthorizedInNc'],
+        'vcsName': !(0, runtime_1.exists)(json, 'VcsName') ? undefined : json['VcsName'],
+        'vcsVersion': !(0, runtime_1.exists)(json, 'VcsVersion') ? undefined : json['VcsVersion'],
     };
 }
-export function VcsCommitInfoToJSON(value) {
+exports.VcsCommitInfoFromJSONTyped = VcsCommitInfoFromJSONTyped;
+function VcsCommitInfoToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -85,4 +91,5 @@ export function VcsCommitInfoToJSON(value) {
         'VcsVersion': value.vcsVersion,
     };
 }
+exports.VcsCommitInfoToJSON = VcsCommitInfoToJSON;
 //# sourceMappingURL=VcsCommitInfo.js.map

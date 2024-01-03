@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,12 +12,37 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import * as runtime from '../runtime';
-import { AgentListApiResultFromJSON, AgentStatusModelToJSON, DeleteAgentModelToJSON, } from '../models/index';
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AgentsApi = void 0;
+const runtime = __importStar(require("../runtime"));
+const index_1 = require("../models/index");
 /**
  *
  */
-export class AgentsApi extends runtime.BaseAPI {
+class AgentsApi extends runtime.BaseAPI {
     /**
      * Sets agent status as terminated.  Before deleting an agent, please make sure that you\'ve stopped the related service from the Windows Services Manager screen.  If it is running, the agent will reappear on the page despite removal.
      */
@@ -32,7 +58,7 @@ export class AgentsApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: DeleteAgentModelToJSON(requestParameters.model),
+            body: (0, index_1.DeleteAgentModelToJSON)(requestParameters.model),
         }, initOverrides);
         return new runtime.VoidApiResponse(response);
     }
@@ -60,7 +86,7 @@ export class AgentsApi extends runtime.BaseAPI {
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => AgentListApiResultFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.AgentListApiResultFromJSON)(jsonValue));
     }
     /**
      * Gets the list of agents.
@@ -84,7 +110,7 @@ export class AgentsApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AgentStatusModelToJSON(requestParameters.model),
+            body: (0, index_1.AgentStatusModelToJSON)(requestParameters.model),
         }, initOverrides);
         return new runtime.VoidApiResponse(response);
     }
@@ -95,4 +121,5 @@ export class AgentsApi extends runtime.BaseAPI {
         await this.agentsSetStatusRaw(requestParameters, initOverrides);
     }
 }
+exports.AgentsApi = AgentsApi;
 //# sourceMappingURL=AgentsApi.js.map

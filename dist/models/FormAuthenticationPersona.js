@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,18 +12,20 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.FormAuthenticationPersonaToJSON = exports.FormAuthenticationPersonaFromJSONTyped = exports.FormAuthenticationPersonaFromJSON = exports.instanceOfFormAuthenticationPersona = exports.FormAuthenticationPersonaVersionEnum = exports.FormAuthenticationPersonaFormAuthTypeEnum = exports.FormAuthenticationPersonaAlgorithmEnum = exports.FormAuthenticationPersonaOtpTypeEnum = void 0;
+const runtime_1 = require("../runtime");
 /**
  * @export
  */
-export const FormAuthenticationPersonaOtpTypeEnum = {
+exports.FormAuthenticationPersonaOtpTypeEnum = {
     Totp: 'Totp',
     Hotp: 'Hotp'
 };
 /**
  * @export
  */
-export const FormAuthenticationPersonaAlgorithmEnum = {
+exports.FormAuthenticationPersonaAlgorithmEnum = {
     Sha1: 'Sha1',
     Sha256: 'Sha256',
     Sha512: 'Sha512'
@@ -30,65 +33,68 @@ export const FormAuthenticationPersonaAlgorithmEnum = {
 /**
  * @export
  */
-export const FormAuthenticationPersonaFormAuthTypeEnum = {
+exports.FormAuthenticationPersonaFormAuthTypeEnum = {
     Manual: 'Manual',
     Integration: 'Integration'
 };
 /**
  * @export
  */
-export const FormAuthenticationPersonaVersionEnum = {
+exports.FormAuthenticationPersonaVersionEnum = {
     V1: 'V1',
     V2: 'V2'
 };
 /**
  * Check if a given object implements the FormAuthenticationPersona interface.
  */
-export function instanceOfFormAuthenticationPersona(value) {
+function instanceOfFormAuthenticationPersona(value) {
     let isInstance = true;
     return isInstance;
 }
-export function FormAuthenticationPersonaFromJSON(json) {
+exports.instanceOfFormAuthenticationPersona = instanceOfFormAuthenticationPersona;
+function FormAuthenticationPersonaFromJSON(json) {
     return FormAuthenticationPersonaFromJSONTyped(json, false);
 }
-export function FormAuthenticationPersonaFromJSONTyped(json, ignoreDiscriminator) {
+exports.FormAuthenticationPersonaFromJSON = FormAuthenticationPersonaFromJSON;
+function FormAuthenticationPersonaFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'isActive': !exists(json, 'IsActive') ? undefined : json['IsActive'],
-        'password': !exists(json, 'Password') ? undefined : json['Password'],
-        'userName': !exists(json, 'UserName') ? undefined : json['UserName'],
-        'otpType': !exists(json, 'OtpType') ? undefined : json['OtpType'],
-        'secretKey': !exists(json, 'SecretKey') ? undefined : json['SecretKey'],
-        'digit': !exists(json, 'Digit') ? undefined : json['Digit'],
-        'period': !exists(json, 'Period') ? undefined : json['Period'],
-        'algorithm': !exists(json, 'Algorithm') ? undefined : json['Algorithm'],
-        'formAuthType': !exists(json, 'FormAuthType') ? undefined : json['FormAuthType'],
-        'integrationId': !exists(json, 'IntegrationId') ? undefined : json['IntegrationId'],
-        'version': !exists(json, 'Version') ? undefined : json['Version'],
-        'secretEngine': !exists(json, 'SecretEngine') ? undefined : json['SecretEngine'],
-        'secret': !exists(json, 'Secret') ? undefined : json['Secret'],
-        'useStaticUsername': !exists(json, 'UseStaticUsername') ? undefined : json['UseStaticUsername'],
-        'staticUsername': !exists(json, 'StaticUsername') ? undefined : json['StaticUsername'],
-        'usernameKey': !exists(json, 'UsernameKey') ? undefined : json['UsernameKey'],
-        'passwordKey': !exists(json, 'PasswordKey') ? undefined : json['PasswordKey'],
-        'cyberArkUseStaticUsername': !exists(json, 'CyberArkUseStaticUsername') ? undefined : json['CyberArkUseStaticUsername'],
-        'cyberArkStaticUsername': !exists(json, 'CyberArkStaticUsername') ? undefined : json['CyberArkStaticUsername'],
-        'cyberArkUserNameQuery': !exists(json, 'CyberArkUserNameQuery') ? undefined : json['CyberArkUserNameQuery'],
-        'cyberArkPasswordQuery': !exists(json, 'CyberArkPasswordQuery') ? undefined : json['CyberArkPasswordQuery'],
-        'azureUseStaticUsername': !exists(json, 'AzureUseStaticUsername') ? undefined : json['AzureUseStaticUsername'],
-        'azureStaticUsername': !exists(json, 'AzureStaticUsername') ? undefined : json['AzureStaticUsername'],
-        'azureSecret': !exists(json, 'AzureSecret') ? undefined : json['AzureSecret'],
-        'azureVaultName': !exists(json, 'AzureVaultName') ? undefined : json['AzureVaultName'],
-        'azureUsernameKey': !exists(json, 'AzureUsernameKey') ? undefined : json['AzureUsernameKey'],
-        'azurePasswordKey': !exists(json, 'AzurePasswordKey') ? undefined : json['AzurePasswordKey'],
-        'originalUserName': !exists(json, 'OriginalUserName') ? undefined : json['OriginalUserName'],
-        'isReplacedCredentials': !exists(json, 'IsReplacedCredentials') ? undefined : json['IsReplacedCredentials'],
-        'index': !exists(json, 'Index') ? undefined : json['Index'],
+        'isActive': !(0, runtime_1.exists)(json, 'IsActive') ? undefined : json['IsActive'],
+        'password': !(0, runtime_1.exists)(json, 'Password') ? undefined : json['Password'],
+        'userName': !(0, runtime_1.exists)(json, 'UserName') ? undefined : json['UserName'],
+        'otpType': !(0, runtime_1.exists)(json, 'OtpType') ? undefined : json['OtpType'],
+        'secretKey': !(0, runtime_1.exists)(json, 'SecretKey') ? undefined : json['SecretKey'],
+        'digit': !(0, runtime_1.exists)(json, 'Digit') ? undefined : json['Digit'],
+        'period': !(0, runtime_1.exists)(json, 'Period') ? undefined : json['Period'],
+        'algorithm': !(0, runtime_1.exists)(json, 'Algorithm') ? undefined : json['Algorithm'],
+        'formAuthType': !(0, runtime_1.exists)(json, 'FormAuthType') ? undefined : json['FormAuthType'],
+        'integrationId': !(0, runtime_1.exists)(json, 'IntegrationId') ? undefined : json['IntegrationId'],
+        'version': !(0, runtime_1.exists)(json, 'Version') ? undefined : json['Version'],
+        'secretEngine': !(0, runtime_1.exists)(json, 'SecretEngine') ? undefined : json['SecretEngine'],
+        'secret': !(0, runtime_1.exists)(json, 'Secret') ? undefined : json['Secret'],
+        'useStaticUsername': !(0, runtime_1.exists)(json, 'UseStaticUsername') ? undefined : json['UseStaticUsername'],
+        'staticUsername': !(0, runtime_1.exists)(json, 'StaticUsername') ? undefined : json['StaticUsername'],
+        'usernameKey': !(0, runtime_1.exists)(json, 'UsernameKey') ? undefined : json['UsernameKey'],
+        'passwordKey': !(0, runtime_1.exists)(json, 'PasswordKey') ? undefined : json['PasswordKey'],
+        'cyberArkUseStaticUsername': !(0, runtime_1.exists)(json, 'CyberArkUseStaticUsername') ? undefined : json['CyberArkUseStaticUsername'],
+        'cyberArkStaticUsername': !(0, runtime_1.exists)(json, 'CyberArkStaticUsername') ? undefined : json['CyberArkStaticUsername'],
+        'cyberArkUserNameQuery': !(0, runtime_1.exists)(json, 'CyberArkUserNameQuery') ? undefined : json['CyberArkUserNameQuery'],
+        'cyberArkPasswordQuery': !(0, runtime_1.exists)(json, 'CyberArkPasswordQuery') ? undefined : json['CyberArkPasswordQuery'],
+        'azureUseStaticUsername': !(0, runtime_1.exists)(json, 'AzureUseStaticUsername') ? undefined : json['AzureUseStaticUsername'],
+        'azureStaticUsername': !(0, runtime_1.exists)(json, 'AzureStaticUsername') ? undefined : json['AzureStaticUsername'],
+        'azureSecret': !(0, runtime_1.exists)(json, 'AzureSecret') ? undefined : json['AzureSecret'],
+        'azureVaultName': !(0, runtime_1.exists)(json, 'AzureVaultName') ? undefined : json['AzureVaultName'],
+        'azureUsernameKey': !(0, runtime_1.exists)(json, 'AzureUsernameKey') ? undefined : json['AzureUsernameKey'],
+        'azurePasswordKey': !(0, runtime_1.exists)(json, 'AzurePasswordKey') ? undefined : json['AzurePasswordKey'],
+        'originalUserName': !(0, runtime_1.exists)(json, 'OriginalUserName') ? undefined : json['OriginalUserName'],
+        'isReplacedCredentials': !(0, runtime_1.exists)(json, 'IsReplacedCredentials') ? undefined : json['IsReplacedCredentials'],
+        'index': !(0, runtime_1.exists)(json, 'Index') ? undefined : json['Index'],
     };
 }
-export function FormAuthenticationPersonaToJSON(value) {
+exports.FormAuthenticationPersonaFromJSONTyped = FormAuthenticationPersonaFromJSONTyped;
+function FormAuthenticationPersonaToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -128,4 +134,5 @@ export function FormAuthenticationPersonaToJSON(value) {
         'Index': value.index,
     };
 }
+exports.FormAuthenticationPersonaToJSON = FormAuthenticationPersonaToJSON;
 //# sourceMappingURL=FormAuthenticationPersona.js.map

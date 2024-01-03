@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,27 +12,32 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ServiceNowIncidentFieldPairValueToJSON = exports.ServiceNowIncidentFieldPairValueFromJSONTyped = exports.ServiceNowIncidentFieldPairValueFromJSON = exports.instanceOfServiceNowIncidentFieldPairValue = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the ServiceNowIncidentFieldPairValue interface.
  */
-export function instanceOfServiceNowIncidentFieldPairValue(value) {
+function instanceOfServiceNowIncidentFieldPairValue(value) {
     let isInstance = true;
     return isInstance;
 }
-export function ServiceNowIncidentFieldPairValueFromJSON(json) {
+exports.instanceOfServiceNowIncidentFieldPairValue = instanceOfServiceNowIncidentFieldPairValue;
+function ServiceNowIncidentFieldPairValueFromJSON(json) {
     return ServiceNowIncidentFieldPairValueFromJSONTyped(json, false);
 }
-export function ServiceNowIncidentFieldPairValueFromJSONTyped(json, ignoreDiscriminator) {
+exports.ServiceNowIncidentFieldPairValueFromJSON = ServiceNowIncidentFieldPairValueFromJSON;
+function ServiceNowIncidentFieldPairValueFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'text': !exists(json, 'Text') ? undefined : json['Text'],
+        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
+        'text': !(0, runtime_1.exists)(json, 'Text') ? undefined : json['Text'],
     };
 }
-export function ServiceNowIncidentFieldPairValueToJSON(value) {
+exports.ServiceNowIncidentFieldPairValueFromJSONTyped = ServiceNowIncidentFieldPairValueFromJSONTyped;
+function ServiceNowIncidentFieldPairValueToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -43,4 +49,5 @@ export function ServiceNowIncidentFieldPairValueToJSON(value) {
         'Text': value.text,
     };
 }
+exports.ServiceNowIncidentFieldPairValueToJSON = ServiceNowIncidentFieldPairValueToJSON;
 //# sourceMappingURL=ServiceNowIncidentFieldPairValue.js.map

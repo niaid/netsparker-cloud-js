@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,29 +12,34 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.TrelloListToJSON = exports.TrelloListFromJSONTyped = exports.TrelloListFromJSON = exports.instanceOfTrelloList = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the TrelloList interface.
  */
-export function instanceOfTrelloList(value) {
+function instanceOfTrelloList(value) {
     let isInstance = true;
     return isInstance;
 }
-export function TrelloListFromJSON(json) {
+exports.instanceOfTrelloList = instanceOfTrelloList;
+function TrelloListFromJSON(json) {
     return TrelloListFromJSONTyped(json, false);
 }
-export function TrelloListFromJSONTyped(json, ignoreDiscriminator) {
+exports.TrelloListFromJSON = TrelloListFromJSON;
+function TrelloListFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'closed': !exists(json, 'closed') ? undefined : json['closed'],
-        'id': !exists(json, 'id') ? undefined : json['id'],
-        'isActive': !exists(json, 'IsActive') ? undefined : json['IsActive'],
-        'name': !exists(json, 'name') ? undefined : json['name'],
+        'closed': !(0, runtime_1.exists)(json, 'closed') ? undefined : json['closed'],
+        'id': !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
+        'isActive': !(0, runtime_1.exists)(json, 'IsActive') ? undefined : json['IsActive'],
+        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
     };
 }
-export function TrelloListToJSON(value) {
+exports.TrelloListFromJSONTyped = TrelloListFromJSONTyped;
+function TrelloListToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -46,4 +52,5 @@ export function TrelloListToJSON(value) {
         'name': value.name,
     };
 }
+exports.TrelloListToJSON = TrelloListToJSON;
 //# sourceMappingURL=TrelloList.js.map

@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,50 +12,55 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.NewWebsiteApiModelToJSON = exports.NewWebsiteApiModelFromJSONTyped = exports.NewWebsiteApiModelFromJSON = exports.instanceOfNewWebsiteApiModel = exports.NewWebsiteApiModelLicenseTypeEnum = exports.NewWebsiteApiModelAgentModeEnum = void 0;
+const runtime_1 = require("../runtime");
 /**
  * @export
  */
-export const NewWebsiteApiModelAgentModeEnum = {
+exports.NewWebsiteApiModelAgentModeEnum = {
     Cloud: 'Cloud',
     Internal: 'Internal'
 };
 /**
  * @export
  */
-export const NewWebsiteApiModelLicenseTypeEnum = {
+exports.NewWebsiteApiModelLicenseTypeEnum = {
     Subscription: 'Subscription',
     Credit: 'Credit'
 };
 /**
  * Check if a given object implements the NewWebsiteApiModel interface.
  */
-export function instanceOfNewWebsiteApiModel(value) {
+function instanceOfNewWebsiteApiModel(value) {
     let isInstance = true;
     isInstance = isInstance && "rootUrl" in value;
     isInstance = isInstance && "licenseType" in value;
     isInstance = isInstance && "name" in value;
     return isInstance;
 }
-export function NewWebsiteApiModelFromJSON(json) {
+exports.instanceOfNewWebsiteApiModel = instanceOfNewWebsiteApiModel;
+function NewWebsiteApiModelFromJSON(json) {
     return NewWebsiteApiModelFromJSONTyped(json, false);
 }
-export function NewWebsiteApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.NewWebsiteApiModelFromJSON = NewWebsiteApiModelFromJSON;
+function NewWebsiteApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'agentMode': !exists(json, 'AgentMode') ? undefined : json['AgentMode'],
+        'agentMode': !(0, runtime_1.exists)(json, 'AgentMode') ? undefined : json['AgentMode'],
         'rootUrl': json['RootUrl'],
-        'groups': !exists(json, 'Groups') ? undefined : json['Groups'],
+        'groups': !(0, runtime_1.exists)(json, 'Groups') ? undefined : json['Groups'],
         'licenseType': json['LicenseType'],
         'name': json['Name'],
-        'description': !exists(json, 'Description') ? undefined : json['Description'],
-        'technicalContactEmail': !exists(json, 'TechnicalContactEmail') ? undefined : json['TechnicalContactEmail'],
-        'tags': !exists(json, 'Tags') ? undefined : json['Tags'],
+        'description': !(0, runtime_1.exists)(json, 'Description') ? undefined : json['Description'],
+        'technicalContactEmail': !(0, runtime_1.exists)(json, 'TechnicalContactEmail') ? undefined : json['TechnicalContactEmail'],
+        'tags': !(0, runtime_1.exists)(json, 'Tags') ? undefined : json['Tags'],
     };
 }
-export function NewWebsiteApiModelToJSON(value) {
+exports.NewWebsiteApiModelFromJSONTyped = NewWebsiteApiModelFromJSONTyped;
+function NewWebsiteApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -72,4 +78,5 @@ export function NewWebsiteApiModelToJSON(value) {
         'Tags': value.tags,
     };
 }
+exports.NewWebsiteApiModelToJSON = NewWebsiteApiModelToJSON;
 //# sourceMappingURL=NewWebsiteApiModel.js.map

@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,10 +12,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ExtensionSettingModelToJSON = exports.ExtensionSettingModelFromJSONTyped = exports.ExtensionSettingModelFromJSON = exports.instanceOfExtensionSettingModel = exports.ExtensionSettingModelCrawlOptionEnum = exports.ExtensionSettingModelAttackOptionEnum = void 0;
 /**
  * @export
  */
-export const ExtensionSettingModelAttackOptionEnum = {
+exports.ExtensionSettingModelAttackOptionEnum = {
     DoNotAttack: 'DoNotAttack',
     AttackParameters: 'AttackParameters',
     AttackParametersAndQueryString: 'AttackParametersAndQueryString'
@@ -22,7 +25,7 @@ export const ExtensionSettingModelAttackOptionEnum = {
 /**
  * @export
  */
-export const ExtensionSettingModelCrawlOptionEnum = {
+exports.ExtensionSettingModelCrawlOptionEnum = {
     DoNotCrawl: 'DoNotCrawl',
     Crawl: 'Crawl',
     CrawlOnlyParameter: 'CrawlOnlyParameter'
@@ -30,17 +33,19 @@ export const ExtensionSettingModelCrawlOptionEnum = {
 /**
  * Check if a given object implements the ExtensionSettingModel interface.
  */
-export function instanceOfExtensionSettingModel(value) {
+function instanceOfExtensionSettingModel(value) {
     let isInstance = true;
     isInstance = isInstance && "attackOption" in value;
     isInstance = isInstance && "crawlOption" in value;
     isInstance = isInstance && "extension" in value;
     return isInstance;
 }
-export function ExtensionSettingModelFromJSON(json) {
+exports.instanceOfExtensionSettingModel = instanceOfExtensionSettingModel;
+function ExtensionSettingModelFromJSON(json) {
     return ExtensionSettingModelFromJSONTyped(json, false);
 }
-export function ExtensionSettingModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.ExtensionSettingModelFromJSON = ExtensionSettingModelFromJSON;
+function ExtensionSettingModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
@@ -50,7 +55,8 @@ export function ExtensionSettingModelFromJSONTyped(json, ignoreDiscriminator) {
         'extension': json['Extension'],
     };
 }
-export function ExtensionSettingModelToJSON(value) {
+exports.ExtensionSettingModelFromJSONTyped = ExtensionSettingModelFromJSONTyped;
+function ExtensionSettingModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -63,4 +69,5 @@ export function ExtensionSettingModelToJSON(value) {
         'Extension': value.extension,
     };
 }
+exports.ExtensionSettingModelToJSON = ExtensionSettingModelToJSON;
 //# sourceMappingURL=ExtensionSettingModel.js.map

@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,11 +12,13 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.IssueRequestContentParametersApiModelToJSON = exports.IssueRequestContentParametersApiModelFromJSONTyped = exports.IssueRequestContentParametersApiModelFromJSON = exports.instanceOfIssueRequestContentParametersApiModel = exports.IssueRequestContentParametersApiModelInputTypeEnum = void 0;
+const runtime_1 = require("../runtime");
 /**
  * @export
  */
-export const IssueRequestContentParametersApiModelInputTypeEnum = {
+exports.IssueRequestContentParametersApiModelInputTypeEnum = {
     Hidden: 'Hidden',
     Text: 'Text',
     Textarea: 'Textarea',
@@ -46,25 +49,28 @@ export const IssueRequestContentParametersApiModelInputTypeEnum = {
 /**
  * Check if a given object implements the IssueRequestContentParametersApiModel interface.
  */
-export function instanceOfIssueRequestContentParametersApiModel(value) {
+function instanceOfIssueRequestContentParametersApiModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function IssueRequestContentParametersApiModelFromJSON(json) {
+exports.instanceOfIssueRequestContentParametersApiModel = instanceOfIssueRequestContentParametersApiModel;
+function IssueRequestContentParametersApiModelFromJSON(json) {
     return IssueRequestContentParametersApiModelFromJSONTyped(json, false);
 }
-export function IssueRequestContentParametersApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.IssueRequestContentParametersApiModelFromJSON = IssueRequestContentParametersApiModelFromJSON;
+function IssueRequestContentParametersApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'value': !exists(json, 'Value') ? undefined : json['Value'],
-        'typeName': !exists(json, 'TypeName') ? undefined : json['TypeName'],
-        'inputType': !exists(json, 'InputType') ? undefined : json['InputType'],
+        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
+        'value': !(0, runtime_1.exists)(json, 'Value') ? undefined : json['Value'],
+        'typeName': !(0, runtime_1.exists)(json, 'TypeName') ? undefined : json['TypeName'],
+        'inputType': !(0, runtime_1.exists)(json, 'InputType') ? undefined : json['InputType'],
     };
 }
-export function IssueRequestContentParametersApiModelToJSON(value) {
+exports.IssueRequestContentParametersApiModelFromJSONTyped = IssueRequestContentParametersApiModelFromJSONTyped;
+function IssueRequestContentParametersApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -78,4 +84,5 @@ export function IssueRequestContentParametersApiModelToJSON(value) {
         'InputType': value.inputType,
     };
 }
+exports.IssueRequestContentParametersApiModelToJSON = IssueRequestContentParametersApiModelToJSON;
 //# sourceMappingURL=IssueRequestContentParametersApiModel.js.map

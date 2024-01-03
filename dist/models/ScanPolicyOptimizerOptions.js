@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,11 +12,13 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ScanPolicyOptimizerOptionsToJSON = exports.ScanPolicyOptimizerOptionsFromJSONTyped = exports.ScanPolicyOptimizerOptionsFromJSON = exports.instanceOfScanPolicyOptimizerOptions = exports.ScanPolicyOptimizerOptionsWebServerEnum = exports.ScanPolicyOptimizerOptionsSuggestionStatusEnum = exports.ScanPolicyOptimizerOptionsOperatingSystemEnum = exports.ScanPolicyOptimizerOptionsDomParserPresetEnum = exports.ScanPolicyOptimizerOptionsDatabaseServerEnum = exports.ScanPolicyOptimizerOptionsAppServerEnum = void 0;
+const runtime_1 = require("../runtime");
 /**
  * @export
  */
-export const ScanPolicyOptimizerOptionsAppServerEnum = {
+exports.ScanPolicyOptimizerOptionsAppServerEnum = {
     All: 'All',
     Aspnet: 'Aspnet',
     Php: 'Php',
@@ -29,7 +32,7 @@ export const ScanPolicyOptimizerOptionsAppServerEnum = {
 /**
  * @export
  */
-export const ScanPolicyOptimizerOptionsDatabaseServerEnum = {
+exports.ScanPolicyOptimizerOptionsDatabaseServerEnum = {
     All: 'All',
     MsSql: 'MsSql',
     MySql: 'MySql',
@@ -44,7 +47,7 @@ export const ScanPolicyOptimizerOptionsDatabaseServerEnum = {
 /**
  * @export
  */
-export const ScanPolicyOptimizerOptionsDomParserPresetEnum = {
+exports.ScanPolicyOptimizerOptionsDomParserPresetEnum = {
     None: 'None',
     Default: 'Default',
     Spa: 'Spa',
@@ -53,7 +56,7 @@ export const ScanPolicyOptimizerOptionsDomParserPresetEnum = {
 /**
  * @export
  */
-export const ScanPolicyOptimizerOptionsOperatingSystemEnum = {
+exports.ScanPolicyOptimizerOptionsOperatingSystemEnum = {
     All: 'All',
     Windows: 'Windows',
     Unix: 'Unix'
@@ -61,7 +64,7 @@ export const ScanPolicyOptimizerOptionsOperatingSystemEnum = {
 /**
  * @export
  */
-export const ScanPolicyOptimizerOptionsSuggestionStatusEnum = {
+exports.ScanPolicyOptimizerOptionsSuggestionStatusEnum = {
     Always: 'Always',
     NotNow: 'NotNow',
     Never: 'Never'
@@ -69,7 +72,7 @@ export const ScanPolicyOptimizerOptionsSuggestionStatusEnum = {
 /**
  * @export
  */
-export const ScanPolicyOptimizerOptionsWebServerEnum = {
+exports.ScanPolicyOptimizerOptionsWebServerEnum = {
     All: 'All',
     Iis: 'Iis',
     Apache: 'Apache',
@@ -80,34 +83,37 @@ export const ScanPolicyOptimizerOptionsWebServerEnum = {
 /**
  * Check if a given object implements the ScanPolicyOptimizerOptions interface.
  */
-export function instanceOfScanPolicyOptimizerOptions(value) {
+function instanceOfScanPolicyOptimizerOptions(value) {
     let isInstance = true;
     return isInstance;
 }
-export function ScanPolicyOptimizerOptionsFromJSON(json) {
+exports.instanceOfScanPolicyOptimizerOptions = instanceOfScanPolicyOptimizerOptions;
+function ScanPolicyOptimizerOptionsFromJSON(json) {
     return ScanPolicyOptimizerOptionsFromJSONTyped(json, false);
 }
-export function ScanPolicyOptimizerOptionsFromJSONTyped(json, ignoreDiscriminator) {
+exports.ScanPolicyOptimizerOptionsFromJSON = ScanPolicyOptimizerOptionsFromJSON;
+function ScanPolicyOptimizerOptionsFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'appServer': !exists(json, 'AppServer') ? undefined : json['AppServer'],
-        'databaseServer': !exists(json, 'DatabaseServer') ? undefined : json['DatabaseServer'],
-        'directoryNameLimit': !exists(json, 'DirectoryNameLimit') ? undefined : json['DirectoryNameLimit'],
-        'domParserPreset': !exists(json, 'DomParserPreset') ? undefined : json['DomParserPreset'],
-        'hosts': !exists(json, 'Hosts') ? undefined : json['Hosts'],
-        'isSharkEnabled': !exists(json, 'IsSharkEnabled') ? undefined : json['IsSharkEnabled'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'netsparkerHawkBaseUrl': !exists(json, 'NetsparkerHawkBaseUrl') ? undefined : json['NetsparkerHawkBaseUrl'],
-        'operatingSystem': !exists(json, 'OperatingSystem') ? undefined : json['OperatingSystem'],
-        'optimized': !exists(json, 'Optimized') ? undefined : json['Optimized'],
-        'resourceFinders': !exists(json, 'ResourceFinders') ? undefined : json['ResourceFinders'],
-        'suggestionStatus': !exists(json, 'SuggestionStatus') ? undefined : json['SuggestionStatus'],
-        'webServer': !exists(json, 'WebServer') ? undefined : json['WebServer'],
+        'appServer': !(0, runtime_1.exists)(json, 'AppServer') ? undefined : json['AppServer'],
+        'databaseServer': !(0, runtime_1.exists)(json, 'DatabaseServer') ? undefined : json['DatabaseServer'],
+        'directoryNameLimit': !(0, runtime_1.exists)(json, 'DirectoryNameLimit') ? undefined : json['DirectoryNameLimit'],
+        'domParserPreset': !(0, runtime_1.exists)(json, 'DomParserPreset') ? undefined : json['DomParserPreset'],
+        'hosts': !(0, runtime_1.exists)(json, 'Hosts') ? undefined : json['Hosts'],
+        'isSharkEnabled': !(0, runtime_1.exists)(json, 'IsSharkEnabled') ? undefined : json['IsSharkEnabled'],
+        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
+        'netsparkerHawkBaseUrl': !(0, runtime_1.exists)(json, 'NetsparkerHawkBaseUrl') ? undefined : json['NetsparkerHawkBaseUrl'],
+        'operatingSystem': !(0, runtime_1.exists)(json, 'OperatingSystem') ? undefined : json['OperatingSystem'],
+        'optimized': !(0, runtime_1.exists)(json, 'Optimized') ? undefined : json['Optimized'],
+        'resourceFinders': !(0, runtime_1.exists)(json, 'ResourceFinders') ? undefined : json['ResourceFinders'],
+        'suggestionStatus': !(0, runtime_1.exists)(json, 'SuggestionStatus') ? undefined : json['SuggestionStatus'],
+        'webServer': !(0, runtime_1.exists)(json, 'WebServer') ? undefined : json['WebServer'],
     };
 }
-export function ScanPolicyOptimizerOptionsToJSON(value) {
+exports.ScanPolicyOptimizerOptionsFromJSONTyped = ScanPolicyOptimizerOptionsFromJSONTyped;
+function ScanPolicyOptimizerOptionsToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -130,4 +136,5 @@ export function ScanPolicyOptimizerOptionsToJSON(value) {
         'WebServer': value.webServer,
     };
 }
+exports.ScanPolicyOptimizerOptionsToJSON = ScanPolicyOptimizerOptionsToJSON;
 //# sourceMappingURL=ScanPolicyOptimizerOptions.js.map

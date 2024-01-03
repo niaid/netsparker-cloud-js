@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,29 +12,34 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.IssueHistoryApiModelToJSON = exports.IssueHistoryApiModelFromJSONTyped = exports.IssueHistoryApiModelFromJSON = exports.instanceOfIssueHistoryApiModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the IssueHistoryApiModel interface.
  */
-export function instanceOfIssueHistoryApiModel(value) {
+function instanceOfIssueHistoryApiModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function IssueHistoryApiModelFromJSON(json) {
+exports.instanceOfIssueHistoryApiModel = instanceOfIssueHistoryApiModel;
+function IssueHistoryApiModelFromJSON(json) {
     return IssueHistoryApiModelFromJSONTyped(json, false);
 }
-export function IssueHistoryApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.IssueHistoryApiModelFromJSON = IssueHistoryApiModelFromJSON;
+function IssueHistoryApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'message': !exists(json, 'Message') ? undefined : json['Message'],
-        'note': !exists(json, 'Note') ? undefined : json['Note'],
-        'owner': !exists(json, 'Owner') ? undefined : json['Owner'],
-        'date': !exists(json, 'Date') ? undefined : json['Date'],
+        'message': !(0, runtime_1.exists)(json, 'Message') ? undefined : json['Message'],
+        'note': !(0, runtime_1.exists)(json, 'Note') ? undefined : json['Note'],
+        'owner': !(0, runtime_1.exists)(json, 'Owner') ? undefined : json['Owner'],
+        'date': !(0, runtime_1.exists)(json, 'Date') ? undefined : json['Date'],
     };
 }
-export function IssueHistoryApiModelToJSON(value) {
+exports.IssueHistoryApiModelFromJSONTyped = IssueHistoryApiModelFromJSONTyped;
+function IssueHistoryApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -47,4 +53,5 @@ export function IssueHistoryApiModelToJSON(value) {
         'Date': value.date,
     };
 }
+exports.IssueHistoryApiModelToJSON = IssueHistoryApiModelToJSON;
 //# sourceMappingURL=IssueHistoryApiModel.js.map

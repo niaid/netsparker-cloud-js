@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,12 +12,14 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { IssueSummaryStatusModelFromJSON, IssueSummaryStatusModelToJSON, } from './IssueSummaryStatusModel';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.IssueSummaryListModelToJSON = exports.IssueSummaryListModelFromJSONTyped = exports.IssueSummaryListModelFromJSON = exports.instanceOfIssueSummaryListModel = exports.IssueSummaryListModelSeverityEnum = exports.IssueSummaryListModelStateEnum = void 0;
+const runtime_1 = require("../runtime");
+const IssueSummaryStatusModel_1 = require("./IssueSummaryStatusModel");
 /**
  * @export
  */
-export const IssueSummaryListModelStateEnum = {
+exports.IssueSummaryListModelStateEnum = {
     Present: 'Present',
     FixedUnconfirmed: 'FixedUnconfirmed',
     FixedCantRetest: 'FixedCantRetest',
@@ -30,7 +33,7 @@ export const IssueSummaryListModelStateEnum = {
 /**
  * @export
  */
-export const IssueSummaryListModelSeverityEnum = {
+exports.IssueSummaryListModelSeverityEnum = {
     BestPractice: 'BestPractice',
     Information: 'Information',
     Low: 'Low',
@@ -41,26 +44,29 @@ export const IssueSummaryListModelSeverityEnum = {
 /**
  * Check if a given object implements the IssueSummaryListModel interface.
  */
-export function instanceOfIssueSummaryListModel(value) {
+function instanceOfIssueSummaryListModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function IssueSummaryListModelFromJSON(json) {
+exports.instanceOfIssueSummaryListModel = instanceOfIssueSummaryListModel;
+function IssueSummaryListModelFromJSON(json) {
     return IssueSummaryListModelFromJSONTyped(json, false);
 }
-export function IssueSummaryListModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.IssueSummaryListModelFromJSON = IssueSummaryListModelFromJSON;
+function IssueSummaryListModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'title': !exists(json, 'Title') ? undefined : json['Title'],
-        'state': !exists(json, 'State') ? undefined : json['State'],
-        'severity': !exists(json, 'Severity') ? undefined : json['Severity'],
-        'url': !exists(json, 'Url') ? undefined : json['Url'],
-        'statusByDate': !exists(json, 'StatusByDate') ? undefined : (json['StatusByDate'].map(IssueSummaryStatusModelFromJSON)),
+        'title': !(0, runtime_1.exists)(json, 'Title') ? undefined : json['Title'],
+        'state': !(0, runtime_1.exists)(json, 'State') ? undefined : json['State'],
+        'severity': !(0, runtime_1.exists)(json, 'Severity') ? undefined : json['Severity'],
+        'url': !(0, runtime_1.exists)(json, 'Url') ? undefined : json['Url'],
+        'statusByDate': !(0, runtime_1.exists)(json, 'StatusByDate') ? undefined : (json['StatusByDate'].map(IssueSummaryStatusModel_1.IssueSummaryStatusModelFromJSON)),
     };
 }
-export function IssueSummaryListModelToJSON(value) {
+exports.IssueSummaryListModelFromJSONTyped = IssueSummaryListModelFromJSONTyped;
+function IssueSummaryListModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -72,7 +78,8 @@ export function IssueSummaryListModelToJSON(value) {
         'State': value.state,
         'Severity': value.severity,
         'Url': value.url,
-        'StatusByDate': value.statusByDate === undefined ? undefined : (value.statusByDate.map(IssueSummaryStatusModelToJSON)),
+        'StatusByDate': value.statusByDate === undefined ? undefined : (value.statusByDate.map(IssueSummaryStatusModel_1.IssueSummaryStatusModelToJSON)),
     };
 }
+exports.IssueSummaryListModelToJSON = IssueSummaryListModelToJSON;
 //# sourceMappingURL=IssueSummaryListModel.js.map

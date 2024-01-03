@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,27 +12,32 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.IdNamePairToJSON = exports.IdNamePairFromJSONTyped = exports.IdNamePairFromJSON = exports.instanceOfIdNamePair = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the IdNamePair interface.
  */
-export function instanceOfIdNamePair(value) {
+function instanceOfIdNamePair(value) {
     let isInstance = true;
     return isInstance;
 }
-export function IdNamePairFromJSON(json) {
+exports.instanceOfIdNamePair = instanceOfIdNamePair;
+function IdNamePairFromJSON(json) {
     return IdNamePairFromJSONTyped(json, false);
 }
-export function IdNamePairFromJSONTyped(json, ignoreDiscriminator) {
+exports.IdNamePairFromJSON = IdNamePairFromJSON;
+function IdNamePairFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
+        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
+        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
     };
 }
-export function IdNamePairToJSON(value) {
+exports.IdNamePairFromJSONTyped = IdNamePairFromJSONTyped;
+function IdNamePairToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -43,4 +49,5 @@ export function IdNamePairToJSON(value) {
         'Name': value.name,
     };
 }
+exports.IdNamePairToJSON = IdNamePairToJSON;
 //# sourceMappingURL=IdNamePair.js.map

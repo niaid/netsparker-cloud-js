@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,28 +12,33 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AgentGroupModelToJSON = exports.AgentGroupModelFromJSONTyped = exports.AgentGroupModelFromJSON = exports.instanceOfAgentGroupModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the AgentGroupModel interface.
  */
-export function instanceOfAgentGroupModel(value) {
+function instanceOfAgentGroupModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function AgentGroupModelFromJSON(json) {
+exports.instanceOfAgentGroupModel = instanceOfAgentGroupModel;
+function AgentGroupModelFromJSON(json) {
     return AgentGroupModelFromJSONTyped(json, false);
 }
-export function AgentGroupModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.AgentGroupModelFromJSON = AgentGroupModelFromJSON;
+function AgentGroupModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'agents': !exists(json, 'Agents') ? undefined : json['Agents'],
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
+        'agents': !(0, runtime_1.exists)(json, 'Agents') ? undefined : json['Agents'],
+        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
+        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
     };
 }
-export function AgentGroupModelToJSON(value) {
+exports.AgentGroupModelFromJSONTyped = AgentGroupModelFromJSONTyped;
+function AgentGroupModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -45,4 +51,5 @@ export function AgentGroupModelToJSON(value) {
         'Name': value.name,
     };
 }
+exports.AgentGroupModelToJSON = AgentGroupModelToJSON;
 //# sourceMappingURL=AgentGroupModel.js.map

@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,28 +12,33 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.OAuth2SettingEndpointToJSON = exports.OAuth2SettingEndpointFromJSONTyped = exports.OAuth2SettingEndpointFromJSON = exports.instanceOfOAuth2SettingEndpoint = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the OAuth2SettingEndpoint interface.
  */
-export function instanceOfOAuth2SettingEndpoint(value) {
+function instanceOfOAuth2SettingEndpoint(value) {
     let isInstance = true;
     return isInstance;
 }
-export function OAuth2SettingEndpointFromJSON(json) {
+exports.instanceOfOAuth2SettingEndpoint = instanceOfOAuth2SettingEndpoint;
+function OAuth2SettingEndpointFromJSON(json) {
     return OAuth2SettingEndpointFromJSONTyped(json, false);
 }
-export function OAuth2SettingEndpointFromJSONTyped(json, ignoreDiscriminator) {
+exports.OAuth2SettingEndpointFromJSON = OAuth2SettingEndpointFromJSON;
+function OAuth2SettingEndpointFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'url': !exists(json, 'Url') ? undefined : json['Url'],
-        'contentType': !exists(json, 'ContentType') ? undefined : json['ContentType'],
-        'method': !exists(json, 'Method') ? undefined : json['Method'],
+        'url': !(0, runtime_1.exists)(json, 'Url') ? undefined : json['Url'],
+        'contentType': !(0, runtime_1.exists)(json, 'ContentType') ? undefined : json['ContentType'],
+        'method': !(0, runtime_1.exists)(json, 'Method') ? undefined : json['Method'],
     };
 }
-export function OAuth2SettingEndpointToJSON(value) {
+exports.OAuth2SettingEndpointFromJSONTyped = OAuth2SettingEndpointFromJSONTyped;
+function OAuth2SettingEndpointToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -45,4 +51,5 @@ export function OAuth2SettingEndpointToJSON(value) {
         'Method': value.method,
     };
 }
+exports.OAuth2SettingEndpointToJSON = OAuth2SettingEndpointToJSON;
 //# sourceMappingURL=OAuth2SettingEndpoint.js.map

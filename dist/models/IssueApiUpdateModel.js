@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,30 +12,35 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.IssueApiUpdateModelToJSON = exports.IssueApiUpdateModelFromJSONTyped = exports.IssueApiUpdateModelFromJSON = exports.instanceOfIssueApiUpdateModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the IssueApiUpdateModel interface.
  */
-export function instanceOfIssueApiUpdateModel(value) {
+function instanceOfIssueApiUpdateModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function IssueApiUpdateModelFromJSON(json) {
+exports.instanceOfIssueApiUpdateModel = instanceOfIssueApiUpdateModel;
+function IssueApiUpdateModelFromJSON(json) {
     return IssueApiUpdateModelFromJSONTyped(json, false);
 }
-export function IssueApiUpdateModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.IssueApiUpdateModelFromJSON = IssueApiUpdateModelFromJSON;
+function IssueApiUpdateModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'issueId': !exists(json, 'IssueId') ? undefined : json['IssueId'],
-        'state': !exists(json, 'State') ? undefined : json['State'],
-        'assigneeId': !exists(json, 'AssigneeId') ? undefined : json['AssigneeId'],
-        'note': !exists(json, 'Note') ? undefined : json['Note'],
-        'tags': !exists(json, 'Tags') ? undefined : json['Tags'],
+        'issueId': !(0, runtime_1.exists)(json, 'IssueId') ? undefined : json['IssueId'],
+        'state': !(0, runtime_1.exists)(json, 'State') ? undefined : json['State'],
+        'assigneeId': !(0, runtime_1.exists)(json, 'AssigneeId') ? undefined : json['AssigneeId'],
+        'note': !(0, runtime_1.exists)(json, 'Note') ? undefined : json['Note'],
+        'tags': !(0, runtime_1.exists)(json, 'Tags') ? undefined : json['Tags'],
     };
 }
-export function IssueApiUpdateModelToJSON(value) {
+exports.IssueApiUpdateModelFromJSONTyped = IssueApiUpdateModelFromJSONTyped;
+function IssueApiUpdateModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -49,4 +55,5 @@ export function IssueApiUpdateModelToJSON(value) {
         'Tags': value.tags,
     };
 }
+exports.IssueApiUpdateModelToJSON = IssueApiUpdateModelToJSON;
 //# sourceMappingURL=IssueApiUpdateModel.js.map

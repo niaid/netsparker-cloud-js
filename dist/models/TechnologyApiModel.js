@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,44 +12,49 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.TechnologyApiModelToJSON = exports.TechnologyApiModelFromJSONTyped = exports.TechnologyApiModelFromJSON = exports.instanceOfTechnologyApiModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the TechnologyApiModel interface.
  */
-export function instanceOfTechnologyApiModel(value) {
+function instanceOfTechnologyApiModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function TechnologyApiModelFromJSON(json) {
+exports.instanceOfTechnologyApiModel = instanceOfTechnologyApiModel;
+function TechnologyApiModelFromJSON(json) {
     return TechnologyApiModelFromJSONTyped(json, false);
 }
-export function TechnologyApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.TechnologyApiModelFromJSON = TechnologyApiModelFromJSON;
+function TechnologyApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'category': !exists(json, 'Category') ? undefined : json['Category'],
-        'displayName': !exists(json, 'DisplayName') ? undefined : json['DisplayName'],
-        'endOfLife': !exists(json, 'EndOfLife') ? undefined : json['EndOfLife'],
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'identifiedVersion': !exists(json, 'IdentifiedVersion') ? undefined : json['IdentifiedVersion'],
-        'isNotificationDisabled': !exists(json, 'IsNotificationDisabled') ? undefined : json['IsNotificationDisabled'],
-        'isOutofDate': !exists(json, 'IsOutofDate') ? undefined : json['IsOutofDate'],
-        'issueCriticalCount': !exists(json, 'IssueCriticalCount') ? undefined : json['IssueCriticalCount'],
-        'issueHighCount': !exists(json, 'IssueHighCount') ? undefined : json['IssueHighCount'],
-        'issueInfoCount': !exists(json, 'IssueInfoCount') ? undefined : json['IssueInfoCount'],
-        'issueLowCount': !exists(json, 'IssueLowCount') ? undefined : json['IssueLowCount'],
-        'issueMediumCount': !exists(json, 'IssueMediumCount') ? undefined : json['IssueMediumCount'],
-        'lastSeenDate': !exists(json, 'LastSeenDate') ? undefined : json['LastSeenDate'],
-        'latestVersion': !exists(json, 'LatestVersion') ? undefined : json['LatestVersion'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'scanTaskId': !exists(json, 'ScanTaskId') ? undefined : json['ScanTaskId'],
-        'websiteId': !exists(json, 'WebsiteId') ? undefined : json['WebsiteId'],
-        'websiteName': !exists(json, 'WebsiteName') ? undefined : json['WebsiteName'],
-        'overallLatestVersion': !exists(json, 'OverallLatestVersion') ? undefined : json['OverallLatestVersion'],
+        'category': !(0, runtime_1.exists)(json, 'Category') ? undefined : json['Category'],
+        'displayName': !(0, runtime_1.exists)(json, 'DisplayName') ? undefined : json['DisplayName'],
+        'endOfLife': !(0, runtime_1.exists)(json, 'EndOfLife') ? undefined : json['EndOfLife'],
+        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
+        'identifiedVersion': !(0, runtime_1.exists)(json, 'IdentifiedVersion') ? undefined : json['IdentifiedVersion'],
+        'isNotificationDisabled': !(0, runtime_1.exists)(json, 'IsNotificationDisabled') ? undefined : json['IsNotificationDisabled'],
+        'isOutofDate': !(0, runtime_1.exists)(json, 'IsOutofDate') ? undefined : json['IsOutofDate'],
+        'issueCriticalCount': !(0, runtime_1.exists)(json, 'IssueCriticalCount') ? undefined : json['IssueCriticalCount'],
+        'issueHighCount': !(0, runtime_1.exists)(json, 'IssueHighCount') ? undefined : json['IssueHighCount'],
+        'issueInfoCount': !(0, runtime_1.exists)(json, 'IssueInfoCount') ? undefined : json['IssueInfoCount'],
+        'issueLowCount': !(0, runtime_1.exists)(json, 'IssueLowCount') ? undefined : json['IssueLowCount'],
+        'issueMediumCount': !(0, runtime_1.exists)(json, 'IssueMediumCount') ? undefined : json['IssueMediumCount'],
+        'lastSeenDate': !(0, runtime_1.exists)(json, 'LastSeenDate') ? undefined : json['LastSeenDate'],
+        'latestVersion': !(0, runtime_1.exists)(json, 'LatestVersion') ? undefined : json['LatestVersion'],
+        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
+        'scanTaskId': !(0, runtime_1.exists)(json, 'ScanTaskId') ? undefined : json['ScanTaskId'],
+        'websiteId': !(0, runtime_1.exists)(json, 'WebsiteId') ? undefined : json['WebsiteId'],
+        'websiteName': !(0, runtime_1.exists)(json, 'WebsiteName') ? undefined : json['WebsiteName'],
+        'overallLatestVersion': !(0, runtime_1.exists)(json, 'OverallLatestVersion') ? undefined : json['OverallLatestVersion'],
     };
 }
-export function TechnologyApiModelToJSON(value) {
+exports.TechnologyApiModelFromJSONTyped = TechnologyApiModelFromJSONTyped;
+function TechnologyApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -77,4 +83,5 @@ export function TechnologyApiModelToJSON(value) {
         'OverallLatestVersion': value.overallLatestVersion,
     };
 }
+exports.TechnologyApiModelToJSON = TechnologyApiModelToJSON;
 //# sourceMappingURL=TechnologyApiModel.js.map

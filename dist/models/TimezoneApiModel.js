@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,27 +12,32 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.TimezoneApiModelToJSON = exports.TimezoneApiModelFromJSONTyped = exports.TimezoneApiModelFromJSON = exports.instanceOfTimezoneApiModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the TimezoneApiModel interface.
  */
-export function instanceOfTimezoneApiModel(value) {
+function instanceOfTimezoneApiModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function TimezoneApiModelFromJSON(json) {
+exports.instanceOfTimezoneApiModel = instanceOfTimezoneApiModel;
+function TimezoneApiModelFromJSON(json) {
     return TimezoneApiModelFromJSONTyped(json, false);
 }
-export function TimezoneApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.TimezoneApiModelFromJSON = TimezoneApiModelFromJSON;
+function TimezoneApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
+        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
+        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
     };
 }
-export function TimezoneApiModelToJSON(value) {
+exports.TimezoneApiModelFromJSONTyped = TimezoneApiModelFromJSONTyped;
+function TimezoneApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -43,4 +49,5 @@ export function TimezoneApiModelToJSON(value) {
         'Name': value.name,
     };
 }
+exports.TimezoneApiModelToJSON = TimezoneApiModelToJSON;
 //# sourceMappingURL=TimezoneApiModel.js.map

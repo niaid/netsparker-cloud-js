@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,11 +12,13 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.NewScanNotificationRecipientApiModelToJSON = exports.NewScanNotificationRecipientApiModelFromJSONTyped = exports.NewScanNotificationRecipientApiModelFromJSON = exports.instanceOfNewScanNotificationRecipientApiModel = exports.NewScanNotificationRecipientApiModelSpecificSmsRecipientsEnum = exports.NewScanNotificationRecipientApiModelSpecificEmailRecipientsEnum = void 0;
+const runtime_1 = require("../runtime");
 /**
  * @export
  */
-export const NewScanNotificationRecipientApiModelSpecificEmailRecipientsEnum = {
+exports.NewScanNotificationRecipientApiModelSpecificEmailRecipientsEnum = {
     None: 'None',
     WebsiteTechnicalContact: 'WebsiteTechnicalContact',
     PersonWhoStartedScan: 'PersonWhoStartedScan',
@@ -25,7 +28,7 @@ export const NewScanNotificationRecipientApiModelSpecificEmailRecipientsEnum = {
 /**
  * @export
  */
-export const NewScanNotificationRecipientApiModelSpecificSmsRecipientsEnum = {
+exports.NewScanNotificationRecipientApiModelSpecificSmsRecipientsEnum = {
     None: 'None',
     WebsiteTechnicalContact: 'WebsiteTechnicalContact',
     PersonWhoStartedScan: 'PersonWhoStartedScan',
@@ -35,28 +38,31 @@ export const NewScanNotificationRecipientApiModelSpecificSmsRecipientsEnum = {
 /**
  * Check if a given object implements the NewScanNotificationRecipientApiModel interface.
  */
-export function instanceOfNewScanNotificationRecipientApiModel(value) {
+function instanceOfNewScanNotificationRecipientApiModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function NewScanNotificationRecipientApiModelFromJSON(json) {
+exports.instanceOfNewScanNotificationRecipientApiModel = instanceOfNewScanNotificationRecipientApiModel;
+function NewScanNotificationRecipientApiModelFromJSON(json) {
     return NewScanNotificationRecipientApiModelFromJSONTyped(json, false);
 }
-export function NewScanNotificationRecipientApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.NewScanNotificationRecipientApiModelFromJSON = NewScanNotificationRecipientApiModelFromJSON;
+function NewScanNotificationRecipientApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'emails': !exists(json, 'Emails') ? undefined : json['Emails'],
-        'excludedUsers': !exists(json, 'ExcludedUsers') ? undefined : json['ExcludedUsers'],
-        'integrations': !exists(json, 'Integrations') ? undefined : json['Integrations'],
-        'phoneNumbers': !exists(json, 'PhoneNumbers') ? undefined : json['PhoneNumbers'],
-        'outsiderRecipients': !exists(json, 'OutsiderRecipients') ? undefined : json['OutsiderRecipients'],
-        'specificEmailRecipients': !exists(json, 'SpecificEmailRecipients') ? undefined : json['SpecificEmailRecipients'],
-        'specificSmsRecipients': !exists(json, 'SpecificSmsRecipients') ? undefined : json['SpecificSmsRecipients'],
+        'emails': !(0, runtime_1.exists)(json, 'Emails') ? undefined : json['Emails'],
+        'excludedUsers': !(0, runtime_1.exists)(json, 'ExcludedUsers') ? undefined : json['ExcludedUsers'],
+        'integrations': !(0, runtime_1.exists)(json, 'Integrations') ? undefined : json['Integrations'],
+        'phoneNumbers': !(0, runtime_1.exists)(json, 'PhoneNumbers') ? undefined : json['PhoneNumbers'],
+        'outsiderRecipients': !(0, runtime_1.exists)(json, 'OutsiderRecipients') ? undefined : json['OutsiderRecipients'],
+        'specificEmailRecipients': !(0, runtime_1.exists)(json, 'SpecificEmailRecipients') ? undefined : json['SpecificEmailRecipients'],
+        'specificSmsRecipients': !(0, runtime_1.exists)(json, 'SpecificSmsRecipients') ? undefined : json['SpecificSmsRecipients'],
     };
 }
-export function NewScanNotificationRecipientApiModelToJSON(value) {
+exports.NewScanNotificationRecipientApiModelFromJSONTyped = NewScanNotificationRecipientApiModelFromJSONTyped;
+function NewScanNotificationRecipientApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -73,4 +79,5 @@ export function NewScanNotificationRecipientApiModelToJSON(value) {
         'SpecificSmsRecipients': value.specificSmsRecipients,
     };
 }
+exports.NewScanNotificationRecipientApiModelToJSON = NewScanNotificationRecipientApiModelToJSON;
 //# sourceMappingURL=NewScanNotificationRecipientApiModel.js.map

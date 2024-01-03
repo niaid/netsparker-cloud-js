@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,17 +12,19 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { IntegrationCustomFieldVmFromJSON, IntegrationCustomFieldVmToJSON, } from './IntegrationCustomFieldVm';
-import { IntegrationWizardResultModelFromJSON, IntegrationWizardResultModelToJSON, } from './IntegrationWizardResultModel';
-import { TrelloBoardFromJSON, TrelloBoardToJSON, } from './TrelloBoard';
-import { TrelloLabelFromJSON, TrelloLabelToJSON, } from './TrelloLabel';
-import { TrelloListFromJSON, TrelloListToJSON, } from './TrelloList';
-import { TrelloMemberFromJSON, TrelloMemberToJSON, } from './TrelloMember';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.TrelloIntegrationInfoModelToJSON = exports.TrelloIntegrationInfoModelFromJSONTyped = exports.TrelloIntegrationInfoModelFromJSON = exports.instanceOfTrelloIntegrationInfoModel = exports.TrelloIntegrationInfoModelTemplateTypeEnum = exports.TrelloIntegrationInfoModelTypeEnum = void 0;
+const runtime_1 = require("../runtime");
+const IntegrationCustomFieldVm_1 = require("./IntegrationCustomFieldVm");
+const IntegrationWizardResultModel_1 = require("./IntegrationWizardResultModel");
+const TrelloBoard_1 = require("./TrelloBoard");
+const TrelloLabel_1 = require("./TrelloLabel");
+const TrelloList_1 = require("./TrelloList");
+const TrelloMember_1 = require("./TrelloMember");
 /**
  * @export
  */
-export const TrelloIntegrationInfoModelTypeEnum = {
+exports.TrelloIntegrationInfoModelTypeEnum = {
     Jira: 'Jira',
     GitHub: 'GitHub',
     Tfs: 'TFS',
@@ -59,14 +62,14 @@ export const TrelloIntegrationInfoModelTypeEnum = {
 /**
  * @export
  */
-export const TrelloIntegrationInfoModelTemplateTypeEnum = {
+exports.TrelloIntegrationInfoModelTemplateTypeEnum = {
     Standard: 'Standard',
     Detailed: 'Detailed'
 };
 /**
  * Check if a given object implements the TrelloIntegrationInfoModel interface.
  */
-export function instanceOfTrelloIntegrationInfoModel(value) {
+function instanceOfTrelloIntegrationInfoModel(value) {
     let isInstance = true;
     isInstance = isInstance && "apiKey" in value;
     isInstance = isInstance && "token" in value;
@@ -76,10 +79,12 @@ export function instanceOfTrelloIntegrationInfoModel(value) {
     isInstance = isInstance && "titleFormat" in value;
     return isInstance;
 }
-export function TrelloIntegrationInfoModelFromJSON(json) {
+exports.instanceOfTrelloIntegrationInfoModel = instanceOfTrelloIntegrationInfoModel;
+function TrelloIntegrationInfoModelFromJSON(json) {
     return TrelloIntegrationInfoModelFromJSONTyped(json, false);
 }
-export function TrelloIntegrationInfoModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.TrelloIntegrationInfoModelFromJSON = TrelloIntegrationInfoModelFromJSON;
+function TrelloIntegrationInfoModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
@@ -87,34 +92,35 @@ export function TrelloIntegrationInfoModelFromJSONTyped(json, ignoreDiscriminato
         'apiKey': json['ApiKey'],
         'token': json['Token'],
         'listId': json['ListId'],
-        'integrationWizardResultModel': !exists(json, 'IntegrationWizardResultModel') ? undefined : IntegrationWizardResultModelFromJSON(json['IntegrationWizardResultModel']),
+        'integrationWizardResultModel': !(0, runtime_1.exists)(json, 'IntegrationWizardResultModel') ? undefined : (0, IntegrationWizardResultModel_1.IntegrationWizardResultModelFromJSON)(json['IntegrationWizardResultModel']),
         'boardId': json['BoardId'],
-        'boardIds': !exists(json, 'BoardIds') ? undefined : (json['BoardIds'].map(TrelloBoardFromJSON)),
-        'lists': !exists(json, 'Lists') ? undefined : (json['Lists'].map(TrelloListFromJSON)),
-        'members': !exists(json, 'Members') ? undefined : (json['Members'].map(TrelloMemberFromJSON)),
-        'labels': !exists(json, 'Labels') ? undefined : (json['Labels'].map(TrelloLabelFromJSON)),
-        'memberIds': !exists(json, 'MemberIds') ? undefined : json['MemberIds'],
-        'labelIds': !exists(json, 'LabelIds') ? undefined : json['LabelIds'],
-        'labelIdsSelected': !exists(json, 'LabelIdsSelected') ? undefined : json['LabelIdsSelected'],
-        'memberIdsSelected': !exists(json, 'MemberIdsSelected') ? undefined : json['MemberIdsSelected'],
+        'boardIds': !(0, runtime_1.exists)(json, 'BoardIds') ? undefined : (json['BoardIds'].map(TrelloBoard_1.TrelloBoardFromJSON)),
+        'lists': !(0, runtime_1.exists)(json, 'Lists') ? undefined : (json['Lists'].map(TrelloList_1.TrelloListFromJSON)),
+        'members': !(0, runtime_1.exists)(json, 'Members') ? undefined : (json['Members'].map(TrelloMember_1.TrelloMemberFromJSON)),
+        'labels': !(0, runtime_1.exists)(json, 'Labels') ? undefined : (json['Labels'].map(TrelloLabel_1.TrelloLabelFromJSON)),
+        'memberIds': !(0, runtime_1.exists)(json, 'MemberIds') ? undefined : json['MemberIds'],
+        'labelIds': !(0, runtime_1.exists)(json, 'LabelIds') ? undefined : json['LabelIds'],
+        'labelIdsSelected': !(0, runtime_1.exists)(json, 'LabelIdsSelected') ? undefined : json['LabelIdsSelected'],
+        'memberIdsSelected': !(0, runtime_1.exists)(json, 'MemberIdsSelected') ? undefined : json['MemberIdsSelected'],
         'dueDays': json['DueDays'],
-        'type': !exists(json, 'Type') ? undefined : json['Type'],
-        'genericErrorMessage': !exists(json, 'GenericErrorMessage') ? undefined : json['GenericErrorMessage'],
-        'identifier': !exists(json, 'Identifier') ? undefined : json['Identifier'],
-        'testMessageBody': !exists(json, 'TestMessageBody') ? undefined : json['TestMessageBody'],
-        'testMessageTitle': !exists(json, 'TestMessageTitle') ? undefined : json['TestMessageTitle'],
-        'webhookUrl': !exists(json, 'WebhookUrl') ? undefined : json['WebhookUrl'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'integrationVersion': !exists(json, 'IntegrationVersion') ? undefined : json['IntegrationVersion'],
-        'accountID': !exists(json, 'AccountID') ? undefined : json['AccountID'],
-        'customFields': !exists(json, 'CustomFields') ? undefined : (json['CustomFields'].map(IntegrationCustomFieldVmFromJSON)),
-        'templateType': !exists(json, 'TemplateType') ? undefined : json['TemplateType'],
-        'reopenStatus': !exists(json, 'ReopenStatus') ? undefined : json['ReopenStatus'],
-        'resolvedStatus': !exists(json, 'ResolvedStatus') ? undefined : json['ResolvedStatus'],
+        'type': !(0, runtime_1.exists)(json, 'Type') ? undefined : json['Type'],
+        'genericErrorMessage': !(0, runtime_1.exists)(json, 'GenericErrorMessage') ? undefined : json['GenericErrorMessage'],
+        'identifier': !(0, runtime_1.exists)(json, 'Identifier') ? undefined : json['Identifier'],
+        'testMessageBody': !(0, runtime_1.exists)(json, 'TestMessageBody') ? undefined : json['TestMessageBody'],
+        'testMessageTitle': !(0, runtime_1.exists)(json, 'TestMessageTitle') ? undefined : json['TestMessageTitle'],
+        'webhookUrl': !(0, runtime_1.exists)(json, 'WebhookUrl') ? undefined : json['WebhookUrl'],
+        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
+        'integrationVersion': !(0, runtime_1.exists)(json, 'IntegrationVersion') ? undefined : json['IntegrationVersion'],
+        'accountID': !(0, runtime_1.exists)(json, 'AccountID') ? undefined : json['AccountID'],
+        'customFields': !(0, runtime_1.exists)(json, 'CustomFields') ? undefined : (json['CustomFields'].map(IntegrationCustomFieldVm_1.IntegrationCustomFieldVmFromJSON)),
+        'templateType': !(0, runtime_1.exists)(json, 'TemplateType') ? undefined : json['TemplateType'],
+        'reopenStatus': !(0, runtime_1.exists)(json, 'ReopenStatus') ? undefined : json['ReopenStatus'],
+        'resolvedStatus': !(0, runtime_1.exists)(json, 'ResolvedStatus') ? undefined : json['ResolvedStatus'],
         'titleFormat': json['TitleFormat'],
     };
 }
-export function TrelloIntegrationInfoModelToJSON(value) {
+exports.TrelloIntegrationInfoModelFromJSONTyped = TrelloIntegrationInfoModelFromJSONTyped;
+function TrelloIntegrationInfoModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -125,23 +131,24 @@ export function TrelloIntegrationInfoModelToJSON(value) {
         'ApiKey': value.apiKey,
         'Token': value.token,
         'ListId': value.listId,
-        'IntegrationWizardResultModel': IntegrationWizardResultModelToJSON(value.integrationWizardResultModel),
+        'IntegrationWizardResultModel': (0, IntegrationWizardResultModel_1.IntegrationWizardResultModelToJSON)(value.integrationWizardResultModel),
         'BoardId': value.boardId,
-        'BoardIds': value.boardIds === undefined ? undefined : (value.boardIds.map(TrelloBoardToJSON)),
-        'Lists': value.lists === undefined ? undefined : (value.lists.map(TrelloListToJSON)),
-        'Members': value.members === undefined ? undefined : (value.members.map(TrelloMemberToJSON)),
-        'Labels': value.labels === undefined ? undefined : (value.labels.map(TrelloLabelToJSON)),
+        'BoardIds': value.boardIds === undefined ? undefined : (value.boardIds.map(TrelloBoard_1.TrelloBoardToJSON)),
+        'Lists': value.lists === undefined ? undefined : (value.lists.map(TrelloList_1.TrelloListToJSON)),
+        'Members': value.members === undefined ? undefined : (value.members.map(TrelloMember_1.TrelloMemberToJSON)),
+        'Labels': value.labels === undefined ? undefined : (value.labels.map(TrelloLabel_1.TrelloLabelToJSON)),
         'MemberIds': value.memberIds,
         'LabelIds': value.labelIds,
         'DueDays': value.dueDays,
         'Name': value.name,
         'IntegrationVersion': value.integrationVersion,
         'AccountID': value.accountID,
-        'CustomFields': value.customFields === undefined ? undefined : (value.customFields.map(IntegrationCustomFieldVmToJSON)),
+        'CustomFields': value.customFields === undefined ? undefined : (value.customFields.map(IntegrationCustomFieldVm_1.IntegrationCustomFieldVmToJSON)),
         'TemplateType': value.templateType,
         'ReopenStatus': value.reopenStatus,
         'ResolvedStatus': value.resolvedStatus,
         'TitleFormat': value.titleFormat,
     };
 }
+exports.TrelloIntegrationInfoModelToJSON = TrelloIntegrationInfoModelToJSON;
 //# sourceMappingURL=TrelloIntegrationInfoModel.js.map

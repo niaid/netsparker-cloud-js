@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,26 +12,31 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ScanControlApiModelToJSON = exports.ScanControlApiModelFromJSONTyped = exports.ScanControlApiModelFromJSON = exports.instanceOfScanControlApiModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the ScanControlApiModel interface.
  */
-export function instanceOfScanControlApiModel(value) {
+function instanceOfScanControlApiModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function ScanControlApiModelFromJSON(json) {
+exports.instanceOfScanControlApiModel = instanceOfScanControlApiModel;
+function ScanControlApiModelFromJSON(json) {
     return ScanControlApiModelFromJSONTyped(json, false);
 }
-export function ScanControlApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.ScanControlApiModelFromJSON = ScanControlApiModelFromJSON;
+function ScanControlApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'isScansSuspended': !exists(json, 'IsScansSuspended') ? undefined : json['IsScansSuspended'],
+        'isScansSuspended': !(0, runtime_1.exists)(json, 'IsScansSuspended') ? undefined : json['IsScansSuspended'],
     };
 }
-export function ScanControlApiModelToJSON(value) {
+exports.ScanControlApiModelFromJSONTyped = ScanControlApiModelFromJSONTyped;
+function ScanControlApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -41,4 +47,5 @@ export function ScanControlApiModelToJSON(value) {
         'IsScansSuspended': value.isScansSuspended,
     };
 }
+exports.ScanControlApiModelToJSON = ScanControlApiModelToJSON;
 //# sourceMappingURL=ScanControlApiModel.js.map

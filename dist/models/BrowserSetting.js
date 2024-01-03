@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,29 +12,34 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.BrowserSettingToJSON = exports.BrowserSettingFromJSONTyped = exports.BrowserSettingFromJSON = exports.instanceOfBrowserSetting = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the BrowserSetting interface.
  */
-export function instanceOfBrowserSetting(value) {
+function instanceOfBrowserSetting(value) {
     let isInstance = true;
     isInstance = isInstance && "name" in value;
     return isInstance;
 }
-export function BrowserSettingFromJSON(json) {
+exports.instanceOfBrowserSetting = instanceOfBrowserSetting;
+function BrowserSettingFromJSON(json) {
     return BrowserSettingFromJSONTyped(json, false);
 }
-export function BrowserSettingFromJSONTyped(json, ignoreDiscriminator) {
+exports.BrowserSettingFromJSON = BrowserSettingFromJSON;
+function BrowserSettingFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'enabled': !exists(json, 'Enabled') ? undefined : json['Enabled'],
+        'enabled': !(0, runtime_1.exists)(json, 'Enabled') ? undefined : json['Enabled'],
         'name': json['Name'],
-        'readOnly': !exists(json, 'ReadOnly') ? undefined : json['ReadOnly'],
+        'readOnly': !(0, runtime_1.exists)(json, 'ReadOnly') ? undefined : json['ReadOnly'],
     };
 }
-export function BrowserSettingToJSON(value) {
+exports.BrowserSettingFromJSONTyped = BrowserSettingFromJSONTyped;
+function BrowserSettingToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -46,4 +52,5 @@ export function BrowserSettingToJSON(value) {
         'ReadOnly': value.readOnly,
     };
 }
+exports.BrowserSettingToJSON = BrowserSettingToJSON;
 //# sourceMappingURL=BrowserSetting.js.map

@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,28 +12,33 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.BaseScanApiModelToJSON = exports.BaseScanApiModelFromJSONTyped = exports.BaseScanApiModelFromJSON = exports.instanceOfBaseScanApiModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the BaseScanApiModel interface.
  */
-export function instanceOfBaseScanApiModel(value) {
+function instanceOfBaseScanApiModel(value) {
     let isInstance = true;
     isInstance = isInstance && "baseScanId" in value;
     return isInstance;
 }
-export function BaseScanApiModelFromJSON(json) {
+exports.instanceOfBaseScanApiModel = instanceOfBaseScanApiModel;
+function BaseScanApiModelFromJSON(json) {
     return BaseScanApiModelFromJSONTyped(json, false);
 }
-export function BaseScanApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.BaseScanApiModelFromJSON = BaseScanApiModelFromJSON;
+function BaseScanApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'agentName': !exists(json, 'AgentName') ? undefined : json['AgentName'],
+        'agentName': !(0, runtime_1.exists)(json, 'AgentName') ? undefined : json['AgentName'],
         'baseScanId': json['BaseScanId'],
     };
 }
-export function BaseScanApiModelToJSON(value) {
+exports.BaseScanApiModelFromJSONTyped = BaseScanApiModelFromJSONTyped;
+function BaseScanApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -44,4 +50,5 @@ export function BaseScanApiModelToJSON(value) {
         'BaseScanId': value.baseScanId,
     };
 }
+exports.BaseScanApiModelToJSON = BaseScanApiModelToJSON;
 //# sourceMappingURL=BaseScanApiModel.js.map

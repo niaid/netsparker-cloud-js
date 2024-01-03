@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,30 +12,35 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { FileCacheFromJSON, FileCacheToJSON, } from './FileCache';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ClientCertificateAuthenticationViewModelToJSON = exports.ClientCertificateAuthenticationViewModelFromJSONTyped = exports.ClientCertificateAuthenticationViewModelFromJSON = exports.instanceOfClientCertificateAuthenticationViewModel = void 0;
+const runtime_1 = require("../runtime");
+const FileCache_1 = require("./FileCache");
 /**
  * Check if a given object implements the ClientCertificateAuthenticationViewModel interface.
  */
-export function instanceOfClientCertificateAuthenticationViewModel(value) {
+function instanceOfClientCertificateAuthenticationViewModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function ClientCertificateAuthenticationViewModelFromJSON(json) {
+exports.instanceOfClientCertificateAuthenticationViewModel = instanceOfClientCertificateAuthenticationViewModel;
+function ClientCertificateAuthenticationViewModelFromJSON(json) {
     return ClientCertificateAuthenticationViewModelFromJSONTyped(json, false);
 }
-export function ClientCertificateAuthenticationViewModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.ClientCertificateAuthenticationViewModelFromJSON = ClientCertificateAuthenticationViewModelFromJSON;
+function ClientCertificateAuthenticationViewModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'isReplacedCredentials': !exists(json, 'IsReplacedCredentials') ? undefined : json['IsReplacedCredentials'],
-        'file': !exists(json, 'File') ? undefined : FileCacheFromJSON(json['File']),
-        'isEnabled': !exists(json, 'IsEnabled') ? undefined : json['IsEnabled'],
-        'password': !exists(json, 'Password') ? undefined : json['Password'],
+        'isReplacedCredentials': !(0, runtime_1.exists)(json, 'IsReplacedCredentials') ? undefined : json['IsReplacedCredentials'],
+        'file': !(0, runtime_1.exists)(json, 'File') ? undefined : (0, FileCache_1.FileCacheFromJSON)(json['File']),
+        'isEnabled': !(0, runtime_1.exists)(json, 'IsEnabled') ? undefined : json['IsEnabled'],
+        'password': !(0, runtime_1.exists)(json, 'Password') ? undefined : json['Password'],
     };
 }
-export function ClientCertificateAuthenticationViewModelToJSON(value) {
+exports.ClientCertificateAuthenticationViewModelFromJSONTyped = ClientCertificateAuthenticationViewModelFromJSONTyped;
+function ClientCertificateAuthenticationViewModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -43,9 +49,10 @@ export function ClientCertificateAuthenticationViewModelToJSON(value) {
     }
     return {
         'IsReplacedCredentials': value.isReplacedCredentials,
-        'File': FileCacheToJSON(value.file),
+        'File': (0, FileCache_1.FileCacheToJSON)(value.file),
         'IsEnabled': value.isEnabled,
         'Password': value.password,
     };
 }
+exports.ClientCertificateAuthenticationViewModelToJSON = ClientCertificateAuthenticationViewModelToJSON;
 //# sourceMappingURL=ClientCertificateAuthenticationViewModel.js.map

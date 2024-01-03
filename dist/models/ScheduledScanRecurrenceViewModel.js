@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,11 +12,13 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ScheduledScanRecurrenceViewModelToJSON = exports.ScheduledScanRecurrenceViewModelFromJSONTyped = exports.ScheduledScanRecurrenceViewModelFromJSON = exports.instanceOfScheduledScanRecurrenceViewModel = exports.ScheduledScanRecurrenceViewModelDayOfWeekEnum = exports.ScheduledScanRecurrenceViewModelOrdinalEnum = exports.ScheduledScanRecurrenceViewModelMonthsOfYearEnum = exports.ScheduledScanRecurrenceViewModelDaysOfWeekEnum = exports.ScheduledScanRecurrenceViewModelEndingTypeEnum = exports.ScheduledScanRecurrenceViewModelRepeatTypeEnum = void 0;
+const runtime_1 = require("../runtime");
 /**
  * @export
  */
-export const ScheduledScanRecurrenceViewModelRepeatTypeEnum = {
+exports.ScheduledScanRecurrenceViewModelRepeatTypeEnum = {
     Days: 'Days',
     Weeks: 'Weeks',
     Months: 'Months',
@@ -24,7 +27,7 @@ export const ScheduledScanRecurrenceViewModelRepeatTypeEnum = {
 /**
  * @export
  */
-export const ScheduledScanRecurrenceViewModelEndingTypeEnum = {
+exports.ScheduledScanRecurrenceViewModelEndingTypeEnum = {
     Never: 'Never',
     Date: 'Date',
     Occurences: 'Occurences'
@@ -32,7 +35,7 @@ export const ScheduledScanRecurrenceViewModelEndingTypeEnum = {
 /**
  * @export
  */
-export const ScheduledScanRecurrenceViewModelDaysOfWeekEnum = {
+exports.ScheduledScanRecurrenceViewModelDaysOfWeekEnum = {
     Sunday: 'Sunday',
     Monday: 'Monday',
     Tuesday: 'Tuesday',
@@ -44,7 +47,7 @@ export const ScheduledScanRecurrenceViewModelDaysOfWeekEnum = {
 /**
  * @export
  */
-export const ScheduledScanRecurrenceViewModelMonthsOfYearEnum = {
+exports.ScheduledScanRecurrenceViewModelMonthsOfYearEnum = {
     January: 'January',
     February: 'February',
     March: 'March',
@@ -61,7 +64,7 @@ export const ScheduledScanRecurrenceViewModelMonthsOfYearEnum = {
 /**
  * @export
  */
-export const ScheduledScanRecurrenceViewModelOrdinalEnum = {
+exports.ScheduledScanRecurrenceViewModelOrdinalEnum = {
     First: 'First',
     Second: 'Second',
     Third: 'Third',
@@ -71,7 +74,7 @@ export const ScheduledScanRecurrenceViewModelOrdinalEnum = {
 /**
  * @export
  */
-export const ScheduledScanRecurrenceViewModelDayOfWeekEnum = {
+exports.ScheduledScanRecurrenceViewModelDayOfWeekEnum = {
     Sunday: 'Sunday',
     Monday: 'Monday',
     Tuesday: 'Tuesday',
@@ -83,33 +86,36 @@ export const ScheduledScanRecurrenceViewModelDayOfWeekEnum = {
 /**
  * Check if a given object implements the ScheduledScanRecurrenceViewModel interface.
  */
-export function instanceOfScheduledScanRecurrenceViewModel(value) {
+function instanceOfScheduledScanRecurrenceViewModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function ScheduledScanRecurrenceViewModelFromJSON(json) {
+exports.instanceOfScheduledScanRecurrenceViewModel = instanceOfScheduledScanRecurrenceViewModel;
+function ScheduledScanRecurrenceViewModelFromJSON(json) {
     return ScheduledScanRecurrenceViewModelFromJSONTyped(json, false);
 }
-export function ScheduledScanRecurrenceViewModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.ScheduledScanRecurrenceViewModelFromJSON = ScheduledScanRecurrenceViewModelFromJSON;
+function ScheduledScanRecurrenceViewModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'repeatType': !exists(json, 'RepeatType') ? undefined : json['RepeatType'],
-        'interval': !exists(json, 'Interval') ? undefined : json['Interval'],
-        'startDate': !exists(json, 'StartDate') ? undefined : (new Date(json['StartDate'])),
-        'endingType': !exists(json, 'EndingType') ? undefined : json['EndingType'],
-        'daysOfWeek': !exists(json, 'DaysOfWeek') ? undefined : json['DaysOfWeek'],
-        'monthsOfYear': !exists(json, 'MonthsOfYear') ? undefined : json['MonthsOfYear'],
-        'ordinal': !exists(json, 'Ordinal') ? undefined : json['Ordinal'],
-        'endOn': !exists(json, 'EndOn') ? undefined : json['EndOn'],
-        'endOnOccurences': !exists(json, 'EndOnOccurences') ? undefined : json['EndOnOccurences'],
-        'dayOfMonth': !exists(json, 'DayOfMonth') ? undefined : json['DayOfMonth'],
-        'endOnDate': !exists(json, 'EndOnDate') ? undefined : (new Date(json['EndOnDate'])),
-        'dayOfWeek': !exists(json, 'DayOfWeek') ? undefined : json['DayOfWeek'],
+        'repeatType': !(0, runtime_1.exists)(json, 'RepeatType') ? undefined : json['RepeatType'],
+        'interval': !(0, runtime_1.exists)(json, 'Interval') ? undefined : json['Interval'],
+        'startDate': !(0, runtime_1.exists)(json, 'StartDate') ? undefined : (new Date(json['StartDate'])),
+        'endingType': !(0, runtime_1.exists)(json, 'EndingType') ? undefined : json['EndingType'],
+        'daysOfWeek': !(0, runtime_1.exists)(json, 'DaysOfWeek') ? undefined : json['DaysOfWeek'],
+        'monthsOfYear': !(0, runtime_1.exists)(json, 'MonthsOfYear') ? undefined : json['MonthsOfYear'],
+        'ordinal': !(0, runtime_1.exists)(json, 'Ordinal') ? undefined : json['Ordinal'],
+        'endOn': !(0, runtime_1.exists)(json, 'EndOn') ? undefined : json['EndOn'],
+        'endOnOccurences': !(0, runtime_1.exists)(json, 'EndOnOccurences') ? undefined : json['EndOnOccurences'],
+        'dayOfMonth': !(0, runtime_1.exists)(json, 'DayOfMonth') ? undefined : json['DayOfMonth'],
+        'endOnDate': !(0, runtime_1.exists)(json, 'EndOnDate') ? undefined : (new Date(json['EndOnDate'])),
+        'dayOfWeek': !(0, runtime_1.exists)(json, 'DayOfWeek') ? undefined : json['DayOfWeek'],
     };
 }
-export function ScheduledScanRecurrenceViewModelToJSON(value) {
+exports.ScheduledScanRecurrenceViewModelFromJSONTyped = ScheduledScanRecurrenceViewModelFromJSONTyped;
+function ScheduledScanRecurrenceViewModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -131,4 +137,5 @@ export function ScheduledScanRecurrenceViewModelToJSON(value) {
         'DayOfWeek': value.dayOfWeek,
     };
 }
+exports.ScheduledScanRecurrenceViewModelToJSON = ScheduledScanRecurrenceViewModelToJSON;
 //# sourceMappingURL=ScheduledScanRecurrenceViewModel.js.map

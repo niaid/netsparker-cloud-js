@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,27 +12,32 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { SequenceViewModelFromJSON, SequenceViewModelToJSON, } from './SequenceViewModel';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.BusinessLogicRecorderSettingModelToJSON = exports.BusinessLogicRecorderSettingModelFromJSONTyped = exports.BusinessLogicRecorderSettingModelFromJSON = exports.instanceOfBusinessLogicRecorderSettingModel = void 0;
+const runtime_1 = require("../runtime");
+const SequenceViewModel_1 = require("./SequenceViewModel");
 /**
  * Check if a given object implements the BusinessLogicRecorderSettingModel interface.
  */
-export function instanceOfBusinessLogicRecorderSettingModel(value) {
+function instanceOfBusinessLogicRecorderSettingModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function BusinessLogicRecorderSettingModelFromJSON(json) {
+exports.instanceOfBusinessLogicRecorderSettingModel = instanceOfBusinessLogicRecorderSettingModel;
+function BusinessLogicRecorderSettingModelFromJSON(json) {
     return BusinessLogicRecorderSettingModelFromJSONTyped(json, false);
 }
-export function BusinessLogicRecorderSettingModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.BusinessLogicRecorderSettingModelFromJSON = BusinessLogicRecorderSettingModelFromJSON;
+function BusinessLogicRecorderSettingModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'sequenceModelList': !exists(json, 'SequenceModelList') ? undefined : (json['SequenceModelList'].map(SequenceViewModelFromJSON)),
+        'sequenceModelList': !(0, runtime_1.exists)(json, 'SequenceModelList') ? undefined : (json['SequenceModelList'].map(SequenceViewModel_1.SequenceViewModelFromJSON)),
     };
 }
-export function BusinessLogicRecorderSettingModelToJSON(value) {
+exports.BusinessLogicRecorderSettingModelFromJSONTyped = BusinessLogicRecorderSettingModelFromJSONTyped;
+function BusinessLogicRecorderSettingModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -39,7 +45,8 @@ export function BusinessLogicRecorderSettingModelToJSON(value) {
         return null;
     }
     return {
-        'SequenceModelList': value.sequenceModelList === undefined ? undefined : (value.sequenceModelList.map(SequenceViewModelToJSON)),
+        'SequenceModelList': value.sequenceModelList === undefined ? undefined : (value.sequenceModelList.map(SequenceViewModel_1.SequenceViewModelToJSON)),
     };
 }
+exports.BusinessLogicRecorderSettingModelToJSON = BusinessLogicRecorderSettingModelToJSON;
 //# sourceMappingURL=BusinessLogicRecorderSettingModel.js.map

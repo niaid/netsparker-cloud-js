@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,34 +12,39 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.WebsiteGroupApiModelToJSON = exports.WebsiteGroupApiModelFromJSONTyped = exports.WebsiteGroupApiModelFromJSON = exports.instanceOfWebsiteGroupApiModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the WebsiteGroupApiModel interface.
  */
-export function instanceOfWebsiteGroupApiModel(value) {
+function instanceOfWebsiteGroupApiModel(value) {
     let isInstance = true;
     isInstance = isInstance && "id" in value;
     isInstance = isInstance && "name" in value;
     return isInstance;
 }
-export function WebsiteGroupApiModelFromJSON(json) {
+exports.instanceOfWebsiteGroupApiModel = instanceOfWebsiteGroupApiModel;
+function WebsiteGroupApiModelFromJSON(json) {
     return WebsiteGroupApiModelFromJSONTyped(json, false);
 }
-export function WebsiteGroupApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.WebsiteGroupApiModelFromJSON = WebsiteGroupApiModelFromJSON;
+function WebsiteGroupApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'totalWebsites': !exists(json, 'TotalWebsites') ? undefined : json['TotalWebsites'],
-        'createdAt': !exists(json, 'CreatedAt') ? undefined : (new Date(json['CreatedAt'])),
-        'updatedAt': !exists(json, 'UpdatedAt') ? undefined : (new Date(json['UpdatedAt'])),
+        'totalWebsites': !(0, runtime_1.exists)(json, 'TotalWebsites') ? undefined : json['TotalWebsites'],
+        'createdAt': !(0, runtime_1.exists)(json, 'CreatedAt') ? undefined : (new Date(json['CreatedAt'])),
+        'updatedAt': !(0, runtime_1.exists)(json, 'UpdatedAt') ? undefined : (new Date(json['UpdatedAt'])),
         'id': json['Id'],
         'name': json['Name'],
-        'description': !exists(json, 'Description') ? undefined : json['Description'],
-        'tags': !exists(json, 'Tags') ? undefined : json['Tags'],
+        'description': !(0, runtime_1.exists)(json, 'Description') ? undefined : json['Description'],
+        'tags': !(0, runtime_1.exists)(json, 'Tags') ? undefined : json['Tags'],
     };
 }
-export function WebsiteGroupApiModelToJSON(value) {
+exports.WebsiteGroupApiModelFromJSONTyped = WebsiteGroupApiModelFromJSONTyped;
+function WebsiteGroupApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -55,4 +61,5 @@ export function WebsiteGroupApiModelToJSON(value) {
         'Tags': value.tags,
     };
 }
+exports.WebsiteGroupApiModelToJSON = WebsiteGroupApiModelToJSON;
 //# sourceMappingURL=WebsiteGroupApiModel.js.map

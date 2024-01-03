@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,27 +12,32 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { ScanTimeWindowItemModelFromJSON, ScanTimeWindowItemModelToJSON, } from './ScanTimeWindowItemModel';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ScanTimeWindowModelToJSON = exports.ScanTimeWindowModelFromJSONTyped = exports.ScanTimeWindowModelFromJSON = exports.instanceOfScanTimeWindowModel = void 0;
+const runtime_1 = require("../runtime");
+const ScanTimeWindowItemModel_1 = require("./ScanTimeWindowItemModel");
 /**
  * Check if a given object implements the ScanTimeWindowModel interface.
  */
-export function instanceOfScanTimeWindowModel(value) {
+function instanceOfScanTimeWindowModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function ScanTimeWindowModelFromJSON(json) {
+exports.instanceOfScanTimeWindowModel = instanceOfScanTimeWindowModel;
+function ScanTimeWindowModelFromJSON(json) {
     return ScanTimeWindowModelFromJSONTyped(json, false);
 }
-export function ScanTimeWindowModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.ScanTimeWindowModelFromJSON = ScanTimeWindowModelFromJSON;
+function ScanTimeWindowModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'items': !exists(json, 'Items') ? undefined : (json['Items'].map(ScanTimeWindowItemModelFromJSON)),
+        'items': !(0, runtime_1.exists)(json, 'Items') ? undefined : (json['Items'].map(ScanTimeWindowItemModel_1.ScanTimeWindowItemModelFromJSON)),
     };
 }
-export function ScanTimeWindowModelToJSON(value) {
+exports.ScanTimeWindowModelFromJSONTyped = ScanTimeWindowModelFromJSONTyped;
+function ScanTimeWindowModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -39,7 +45,8 @@ export function ScanTimeWindowModelToJSON(value) {
         return null;
     }
     return {
-        'Items': value.items === undefined ? undefined : (value.items.map(ScanTimeWindowItemModelToJSON)),
+        'Items': value.items === undefined ? undefined : (value.items.map(ScanTimeWindowItemModel_1.ScanTimeWindowItemModelToJSON)),
     };
 }
+exports.ScanTimeWindowModelToJSON = ScanTimeWindowModelToJSON;
 //# sourceMappingURL=ScanTimeWindowModel.js.map

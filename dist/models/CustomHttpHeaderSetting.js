@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,11 +12,13 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.CustomHttpHeaderSettingToJSON = exports.CustomHttpHeaderSettingFromJSONTyped = exports.CustomHttpHeaderSettingFromJSON = exports.instanceOfCustomHttpHeaderSetting = exports.CustomHttpHeaderSettingAttackModeEnum = void 0;
+const runtime_1 = require("../runtime");
 /**
  * @export
  */
-export const CustomHttpHeaderSettingAttackModeEnum = {
+exports.CustomHttpHeaderSettingAttackModeEnum = {
     None: 'None',
     Optimized: 'Optimized',
     Full: 'Full'
@@ -23,26 +26,29 @@ export const CustomHttpHeaderSettingAttackModeEnum = {
 /**
  * Check if a given object implements the CustomHttpHeaderSetting interface.
  */
-export function instanceOfCustomHttpHeaderSetting(value) {
+function instanceOfCustomHttpHeaderSetting(value) {
     let isInstance = true;
     isInstance = isInstance && "name" in value;
     return isInstance;
 }
-export function CustomHttpHeaderSettingFromJSON(json) {
+exports.instanceOfCustomHttpHeaderSetting = instanceOfCustomHttpHeaderSetting;
+function CustomHttpHeaderSettingFromJSON(json) {
     return CustomHttpHeaderSettingFromJSONTyped(json, false);
 }
-export function CustomHttpHeaderSettingFromJSONTyped(json, ignoreDiscriminator) {
+exports.CustomHttpHeaderSettingFromJSON = CustomHttpHeaderSettingFromJSON;
+function CustomHttpHeaderSettingFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'attackMode': !exists(json, 'AttackMode') ? undefined : json['AttackMode'],
-        'enabled': !exists(json, 'Enabled') ? undefined : json['Enabled'],
+        'attackMode': !(0, runtime_1.exists)(json, 'AttackMode') ? undefined : json['AttackMode'],
+        'enabled': !(0, runtime_1.exists)(json, 'Enabled') ? undefined : json['Enabled'],
         'name': json['Name'],
-        'value': !exists(json, 'Value') ? undefined : json['Value'],
+        'value': !(0, runtime_1.exists)(json, 'Value') ? undefined : json['Value'],
     };
 }
-export function CustomHttpHeaderSettingToJSON(value) {
+exports.CustomHttpHeaderSettingFromJSONTyped = CustomHttpHeaderSettingFromJSONTyped;
+function CustomHttpHeaderSettingToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -56,4 +62,5 @@ export function CustomHttpHeaderSettingToJSON(value) {
         'Value': value.value,
     };
 }
+exports.CustomHttpHeaderSettingToJSON = CustomHttpHeaderSettingToJSON;
 //# sourceMappingURL=CustomHttpHeaderSetting.js.map

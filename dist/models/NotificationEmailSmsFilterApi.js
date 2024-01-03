@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,11 +12,13 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.NotificationEmailSmsFilterApiToJSON = exports.NotificationEmailSmsFilterApiFromJSONTyped = exports.NotificationEmailSmsFilterApiFromJSON = exports.instanceOfNotificationEmailSmsFilterApi = exports.NotificationEmailSmsFilterApiStateEnum = exports.NotificationEmailSmsFilterApiSeverityEnum = void 0;
+const runtime_1 = require("../runtime");
 /**
  * @export
  */
-export const NotificationEmailSmsFilterApiSeverityEnum = {
+exports.NotificationEmailSmsFilterApiSeverityEnum = {
     BestPractice: 'BestPractice',
     Information: 'Information',
     Low: 'Low',
@@ -26,7 +29,7 @@ export const NotificationEmailSmsFilterApiSeverityEnum = {
 /**
  * @export
  */
-export const NotificationEmailSmsFilterApiStateEnum = {
+exports.NotificationEmailSmsFilterApiStateEnum = {
     NotFound: 'NotFound',
     Fixed: 'Fixed',
     NotFixed: 'NotFixed',
@@ -36,25 +39,28 @@ export const NotificationEmailSmsFilterApiStateEnum = {
 /**
  * Check if a given object implements the NotificationEmailSmsFilterApi interface.
  */
-export function instanceOfNotificationEmailSmsFilterApi(value) {
+function instanceOfNotificationEmailSmsFilterApi(value) {
     let isInstance = true;
     return isInstance;
 }
-export function NotificationEmailSmsFilterApiFromJSON(json) {
+exports.instanceOfNotificationEmailSmsFilterApi = instanceOfNotificationEmailSmsFilterApi;
+function NotificationEmailSmsFilterApiFromJSON(json) {
     return NotificationEmailSmsFilterApiFromJSONTyped(json, false);
 }
-export function NotificationEmailSmsFilterApiFromJSONTyped(json, ignoreDiscriminator) {
+exports.NotificationEmailSmsFilterApiFromJSON = NotificationEmailSmsFilterApiFromJSON;
+function NotificationEmailSmsFilterApiFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'isConfirmed': !exists(json, 'IsConfirmed') ? undefined : json['IsConfirmed'],
-        'severity': !exists(json, 'Severity') ? undefined : json['Severity'],
-        'state': !exists(json, 'State') ? undefined : json['State'],
-        'certainty': !exists(json, 'Certainty') ? undefined : json['Certainty'],
+        'isConfirmed': !(0, runtime_1.exists)(json, 'IsConfirmed') ? undefined : json['IsConfirmed'],
+        'severity': !(0, runtime_1.exists)(json, 'Severity') ? undefined : json['Severity'],
+        'state': !(0, runtime_1.exists)(json, 'State') ? undefined : json['State'],
+        'certainty': !(0, runtime_1.exists)(json, 'Certainty') ? undefined : json['Certainty'],
     };
 }
-export function NotificationEmailSmsFilterApiToJSON(value) {
+exports.NotificationEmailSmsFilterApiFromJSONTyped = NotificationEmailSmsFilterApiFromJSONTyped;
+function NotificationEmailSmsFilterApiToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -68,4 +74,5 @@ export function NotificationEmailSmsFilterApiToJSON(value) {
         'Certainty': value.certainty,
     };
 }
+exports.NotificationEmailSmsFilterApiToJSON = NotificationEmailSmsFilterApiToJSON;
 //# sourceMappingURL=NotificationEmailSmsFilterApi.js.map

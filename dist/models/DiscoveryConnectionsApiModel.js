@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,28 +12,33 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.DiscoveryConnectionsApiModelToJSON = exports.DiscoveryConnectionsApiModelFromJSONTyped = exports.DiscoveryConnectionsApiModelFromJSON = exports.instanceOfDiscoveryConnectionsApiModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the DiscoveryConnectionsApiModel interface.
  */
-export function instanceOfDiscoveryConnectionsApiModel(value) {
+function instanceOfDiscoveryConnectionsApiModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function DiscoveryConnectionsApiModelFromJSON(json) {
+exports.instanceOfDiscoveryConnectionsApiModel = instanceOfDiscoveryConnectionsApiModel;
+function DiscoveryConnectionsApiModelFromJSON(json) {
     return DiscoveryConnectionsApiModelFromJSONTyped(json, false);
 }
-export function DiscoveryConnectionsApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.DiscoveryConnectionsApiModelFromJSON = DiscoveryConnectionsApiModelFromJSON;
+function DiscoveryConnectionsApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'eC2InstanceId': !exists(json, 'EC2InstanceId') ? undefined : json['EC2InstanceId'],
-        'eC2CreationDate': !exists(json, 'EC2CreationDate') ? undefined : (new Date(json['EC2CreationDate'])),
-        'platform': !exists(json, 'Platform') ? undefined : json['Platform'],
+        'eC2InstanceId': !(0, runtime_1.exists)(json, 'EC2InstanceId') ? undefined : json['EC2InstanceId'],
+        'eC2CreationDate': !(0, runtime_1.exists)(json, 'EC2CreationDate') ? undefined : (new Date(json['EC2CreationDate'])),
+        'platform': !(0, runtime_1.exists)(json, 'Platform') ? undefined : json['Platform'],
     };
 }
-export function DiscoveryConnectionsApiModelToJSON(value) {
+exports.DiscoveryConnectionsApiModelFromJSONTyped = DiscoveryConnectionsApiModelFromJSONTyped;
+function DiscoveryConnectionsApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -45,4 +51,5 @@ export function DiscoveryConnectionsApiModelToJSON(value) {
         'Platform': value.platform,
     };
 }
+exports.DiscoveryConnectionsApiModelToJSON = DiscoveryConnectionsApiModelToJSON;
 //# sourceMappingURL=DiscoveryConnectionsApiModel.js.map

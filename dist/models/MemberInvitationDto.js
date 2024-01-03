@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,40 +12,45 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { ReducedTeamDtoFromJSON, ReducedTeamDtoToJSON, } from './ReducedTeamDto';
-import { RoleWebsiteGroupMappingDtoFromJSON, RoleWebsiteGroupMappingDtoToJSON, } from './RoleWebsiteGroupMappingDto';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.MemberInvitationDtoToJSON = exports.MemberInvitationDtoFromJSONTyped = exports.MemberInvitationDtoFromJSON = exports.instanceOfMemberInvitationDto = void 0;
+const runtime_1 = require("../runtime");
+const ReducedTeamDto_1 = require("./ReducedTeamDto");
+const RoleWebsiteGroupMappingDto_1 = require("./RoleWebsiteGroupMappingDto");
 /**
  * Check if a given object implements the MemberInvitationDto interface.
  */
-export function instanceOfMemberInvitationDto(value) {
+function instanceOfMemberInvitationDto(value) {
     let isInstance = true;
     return isInstance;
 }
-export function MemberInvitationDtoFromJSON(json) {
+exports.instanceOfMemberInvitationDto = instanceOfMemberInvitationDto;
+function MemberInvitationDtoFromJSON(json) {
     return MemberInvitationDtoFromJSONTyped(json, false);
 }
-export function MemberInvitationDtoFromJSONTyped(json, ignoreDiscriminator) {
+exports.MemberInvitationDtoFromJSON = MemberInvitationDtoFromJSON;
+function MemberInvitationDtoFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'accountId': !exists(json, 'AccountId') ? undefined : json['AccountId'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'email': !exists(json, 'Email') ? undefined : json['Email'],
-        'isApiAccessEnabled': !exists(json, 'IsApiAccessEnabled') ? undefined : json['IsApiAccessEnabled'],
-        'phoneNumber': !exists(json, 'PhoneNumber') ? undefined : json['PhoneNumber'],
-        'allowedWebsiteLimit': !exists(json, 'AllowedWebsiteLimit') ? undefined : json['AllowedWebsiteLimit'],
-        'alternateLoginEmail': !exists(json, 'AlternateLoginEmail') ? undefined : json['AlternateLoginEmail'],
-        'inUse': !exists(json, 'InUse') ? undefined : json['InUse'],
-        'teams': !exists(json, 'Teams') ? undefined : (json['Teams'].map(ReducedTeamDtoFromJSON)),
-        'roleWebsiteGroupMappings': !exists(json, 'RoleWebsiteGroupMappings') ? undefined : (json['RoleWebsiteGroupMappings'].map(RoleWebsiteGroupMappingDtoFromJSON)),
-        'isAlternateLoginEmail': !exists(json, 'IsAlternateLoginEmail') ? undefined : json['IsAlternateLoginEmail'],
-        'onlySsoLogin': !exists(json, 'OnlySsoLogin') ? undefined : json['OnlySsoLogin'],
+        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
+        'accountId': !(0, runtime_1.exists)(json, 'AccountId') ? undefined : json['AccountId'],
+        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
+        'email': !(0, runtime_1.exists)(json, 'Email') ? undefined : json['Email'],
+        'isApiAccessEnabled': !(0, runtime_1.exists)(json, 'IsApiAccessEnabled') ? undefined : json['IsApiAccessEnabled'],
+        'phoneNumber': !(0, runtime_1.exists)(json, 'PhoneNumber') ? undefined : json['PhoneNumber'],
+        'allowedWebsiteLimit': !(0, runtime_1.exists)(json, 'AllowedWebsiteLimit') ? undefined : json['AllowedWebsiteLimit'],
+        'alternateLoginEmail': !(0, runtime_1.exists)(json, 'AlternateLoginEmail') ? undefined : json['AlternateLoginEmail'],
+        'inUse': !(0, runtime_1.exists)(json, 'InUse') ? undefined : json['InUse'],
+        'teams': !(0, runtime_1.exists)(json, 'Teams') ? undefined : (json['Teams'].map(ReducedTeamDto_1.ReducedTeamDtoFromJSON)),
+        'roleWebsiteGroupMappings': !(0, runtime_1.exists)(json, 'RoleWebsiteGroupMappings') ? undefined : (json['RoleWebsiteGroupMappings'].map(RoleWebsiteGroupMappingDto_1.RoleWebsiteGroupMappingDtoFromJSON)),
+        'isAlternateLoginEmail': !(0, runtime_1.exists)(json, 'IsAlternateLoginEmail') ? undefined : json['IsAlternateLoginEmail'],
+        'onlySsoLogin': !(0, runtime_1.exists)(json, 'OnlySsoLogin') ? undefined : json['OnlySsoLogin'],
     };
 }
-export function MemberInvitationDtoToJSON(value) {
+exports.MemberInvitationDtoFromJSONTyped = MemberInvitationDtoFromJSONTyped;
+function MemberInvitationDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -61,10 +67,11 @@ export function MemberInvitationDtoToJSON(value) {
         'AllowedWebsiteLimit': value.allowedWebsiteLimit,
         'AlternateLoginEmail': value.alternateLoginEmail,
         'InUse': value.inUse,
-        'Teams': value.teams === undefined ? undefined : (value.teams.map(ReducedTeamDtoToJSON)),
-        'RoleWebsiteGroupMappings': value.roleWebsiteGroupMappings === undefined ? undefined : (value.roleWebsiteGroupMappings.map(RoleWebsiteGroupMappingDtoToJSON)),
+        'Teams': value.teams === undefined ? undefined : (value.teams.map(ReducedTeamDto_1.ReducedTeamDtoToJSON)),
+        'RoleWebsiteGroupMappings': value.roleWebsiteGroupMappings === undefined ? undefined : (value.roleWebsiteGroupMappings.map(RoleWebsiteGroupMappingDto_1.RoleWebsiteGroupMappingDtoToJSON)),
         'IsAlternateLoginEmail': value.isAlternateLoginEmail,
         'OnlySsoLogin': value.onlySsoLogin,
     };
 }
+exports.MemberInvitationDtoToJSON = MemberInvitationDtoToJSON;
 //# sourceMappingURL=MemberInvitationDto.js.map

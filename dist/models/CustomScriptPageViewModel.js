@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,19 +12,23 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.CustomScriptPageViewModelToJSON = exports.CustomScriptPageViewModelFromJSONTyped = exports.CustomScriptPageViewModelFromJSON = exports.instanceOfCustomScriptPageViewModel = void 0;
 /**
  * Check if a given object implements the CustomScriptPageViewModel interface.
  */
-export function instanceOfCustomScriptPageViewModel(value) {
+function instanceOfCustomScriptPageViewModel(value) {
     let isInstance = true;
     isInstance = isInstance && "key" in value;
     isInstance = isInstance && "value" in value;
     return isInstance;
 }
-export function CustomScriptPageViewModelFromJSON(json) {
+exports.instanceOfCustomScriptPageViewModel = instanceOfCustomScriptPageViewModel;
+function CustomScriptPageViewModelFromJSON(json) {
     return CustomScriptPageViewModelFromJSONTyped(json, false);
 }
-export function CustomScriptPageViewModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.CustomScriptPageViewModelFromJSON = CustomScriptPageViewModelFromJSON;
+function CustomScriptPageViewModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
@@ -32,7 +37,8 @@ export function CustomScriptPageViewModelFromJSONTyped(json, ignoreDiscriminator
         'value': json['value'],
     };
 }
-export function CustomScriptPageViewModelToJSON(value) {
+exports.CustomScriptPageViewModelFromJSONTyped = CustomScriptPageViewModelFromJSONTyped;
+function CustomScriptPageViewModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -44,4 +50,5 @@ export function CustomScriptPageViewModelToJSON(value) {
         'value': value.value,
     };
 }
+exports.CustomScriptPageViewModelToJSON = CustomScriptPageViewModelToJSON;
 //# sourceMappingURL=CustomScriptPageViewModel.js.map

@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,31 +12,36 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { ReducedMemberApiViewModelFromJSON, ReducedMemberApiViewModelToJSON, } from './ReducedMemberApiViewModel';
-import { RoleWebsiteGroupMappingDtoFromJSON, RoleWebsiteGroupMappingDtoToJSON, } from './RoleWebsiteGroupMappingDto';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.TeamApiViewModelToJSON = exports.TeamApiViewModelFromJSONTyped = exports.TeamApiViewModelFromJSON = exports.instanceOfTeamApiViewModel = void 0;
+const runtime_1 = require("../runtime");
+const ReducedMemberApiViewModel_1 = require("./ReducedMemberApiViewModel");
+const RoleWebsiteGroupMappingDto_1 = require("./RoleWebsiteGroupMappingDto");
 /**
  * Check if a given object implements the TeamApiViewModel interface.
  */
-export function instanceOfTeamApiViewModel(value) {
+function instanceOfTeamApiViewModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function TeamApiViewModelFromJSON(json) {
+exports.instanceOfTeamApiViewModel = instanceOfTeamApiViewModel;
+function TeamApiViewModelFromJSON(json) {
     return TeamApiViewModelFromJSONTyped(json, false);
 }
-export function TeamApiViewModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.TeamApiViewModelFromJSON = TeamApiViewModelFromJSON;
+function TeamApiViewModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'members': !exists(json, 'Members') ? undefined : (json['Members'].map(ReducedMemberApiViewModelFromJSON)),
-        'roleWebsiteGroupMappings': !exists(json, 'RoleWebsiteGroupMappings') ? undefined : (json['RoleWebsiteGroupMappings'].map(RoleWebsiteGroupMappingDtoFromJSON)),
+        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
+        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
+        'members': !(0, runtime_1.exists)(json, 'Members') ? undefined : (json['Members'].map(ReducedMemberApiViewModel_1.ReducedMemberApiViewModelFromJSON)),
+        'roleWebsiteGroupMappings': !(0, runtime_1.exists)(json, 'RoleWebsiteGroupMappings') ? undefined : (json['RoleWebsiteGroupMappings'].map(RoleWebsiteGroupMappingDto_1.RoleWebsiteGroupMappingDtoFromJSON)),
     };
 }
-export function TeamApiViewModelToJSON(value) {
+exports.TeamApiViewModelFromJSONTyped = TeamApiViewModelFromJSONTyped;
+function TeamApiViewModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -45,8 +51,9 @@ export function TeamApiViewModelToJSON(value) {
     return {
         'Id': value.id,
         'Name': value.name,
-        'Members': value.members === undefined ? undefined : (value.members.map(ReducedMemberApiViewModelToJSON)),
-        'RoleWebsiteGroupMappings': value.roleWebsiteGroupMappings === undefined ? undefined : (value.roleWebsiteGroupMappings.map(RoleWebsiteGroupMappingDtoToJSON)),
+        'Members': value.members === undefined ? undefined : (value.members.map(ReducedMemberApiViewModel_1.ReducedMemberApiViewModelToJSON)),
+        'RoleWebsiteGroupMappings': value.roleWebsiteGroupMappings === undefined ? undefined : (value.roleWebsiteGroupMappings.map(RoleWebsiteGroupMappingDto_1.RoleWebsiteGroupMappingDtoToJSON)),
     };
 }
+exports.TeamApiViewModelToJSON = TeamApiViewModelToJSON;
 //# sourceMappingURL=TeamApiViewModel.js.map

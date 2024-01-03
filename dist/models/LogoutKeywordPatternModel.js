@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,28 +12,33 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.LogoutKeywordPatternModelToJSON = exports.LogoutKeywordPatternModelFromJSONTyped = exports.LogoutKeywordPatternModelFromJSON = exports.instanceOfLogoutKeywordPatternModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the LogoutKeywordPatternModel interface.
  */
-export function instanceOfLogoutKeywordPatternModel(value) {
+function instanceOfLogoutKeywordPatternModel(value) {
     let isInstance = true;
     isInstance = isInstance && "pattern" in value;
     return isInstance;
 }
-export function LogoutKeywordPatternModelFromJSON(json) {
+exports.instanceOfLogoutKeywordPatternModel = instanceOfLogoutKeywordPatternModel;
+function LogoutKeywordPatternModelFromJSON(json) {
     return LogoutKeywordPatternModelFromJSONTyped(json, false);
 }
-export function LogoutKeywordPatternModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.LogoutKeywordPatternModelFromJSON = LogoutKeywordPatternModelFromJSON;
+function LogoutKeywordPatternModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
         'pattern': json['Pattern'],
-        'regex': !exists(json, 'Regex') ? undefined : json['Regex'],
+        'regex': !(0, runtime_1.exists)(json, 'Regex') ? undefined : json['Regex'],
     };
 }
-export function LogoutKeywordPatternModelToJSON(value) {
+exports.LogoutKeywordPatternModelFromJSONTyped = LogoutKeywordPatternModelFromJSONTyped;
+function LogoutKeywordPatternModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -44,4 +50,5 @@ export function LogoutKeywordPatternModelToJSON(value) {
         'Regex': value.regex,
     };
 }
+exports.LogoutKeywordPatternModelToJSON = LogoutKeywordPatternModelToJSON;
 //# sourceMappingURL=LogoutKeywordPatternModel.js.map

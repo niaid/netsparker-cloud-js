@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,11 +12,13 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.IssueReportFilterApiModelToJSON = exports.IssueReportFilterApiModelFromJSONTyped = exports.IssueReportFilterApiModelFromJSON = exports.instanceOfIssueReportFilterApiModel = exports.IssueReportFilterApiModelSeverityEnum = exports.IssueReportFilterApiModelCsvSeparatorEnum = void 0;
+const runtime_1 = require("../runtime");
 /**
  * @export
  */
-export const IssueReportFilterApiModelCsvSeparatorEnum = {
+exports.IssueReportFilterApiModelCsvSeparatorEnum = {
     Comma: 'Comma',
     Semicolon: 'Semicolon',
     Pipe: 'Pipe',
@@ -24,7 +27,7 @@ export const IssueReportFilterApiModelCsvSeparatorEnum = {
 /**
  * @export
  */
-export const IssueReportFilterApiModelSeverityEnum = {
+exports.IssueReportFilterApiModelSeverityEnum = {
     BestPractice: 'BestPractice',
     Information: 'Information',
     Low: 'Low',
@@ -35,27 +38,30 @@ export const IssueReportFilterApiModelSeverityEnum = {
 /**
  * Check if a given object implements the IssueReportFilterApiModel interface.
  */
-export function instanceOfIssueReportFilterApiModel(value) {
+function instanceOfIssueReportFilterApiModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function IssueReportFilterApiModelFromJSON(json) {
+exports.instanceOfIssueReportFilterApiModel = instanceOfIssueReportFilterApiModel;
+function IssueReportFilterApiModelFromJSON(json) {
     return IssueReportFilterApiModelFromJSONTyped(json, false);
 }
-export function IssueReportFilterApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.IssueReportFilterApiModelFromJSON = IssueReportFilterApiModelFromJSON;
+function IssueReportFilterApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'csvSeparator': !exists(json, 'CsvSeparator') ? undefined : json['CsvSeparator'],
-        'severity': !exists(json, 'Severity') ? undefined : json['Severity'],
-        'websiteGroupName': !exists(json, 'WebsiteGroupName') ? undefined : json['WebsiteGroupName'],
-        'webSiteName': !exists(json, 'WebSiteName') ? undefined : json['WebSiteName'],
-        'startDate': !exists(json, 'StartDate') ? undefined : (new Date(json['StartDate'])),
-        'endDate': !exists(json, 'EndDate') ? undefined : (new Date(json['EndDate'])),
+        'csvSeparator': !(0, runtime_1.exists)(json, 'CsvSeparator') ? undefined : json['CsvSeparator'],
+        'severity': !(0, runtime_1.exists)(json, 'Severity') ? undefined : json['Severity'],
+        'websiteGroupName': !(0, runtime_1.exists)(json, 'WebsiteGroupName') ? undefined : json['WebsiteGroupName'],
+        'webSiteName': !(0, runtime_1.exists)(json, 'WebSiteName') ? undefined : json['WebSiteName'],
+        'startDate': !(0, runtime_1.exists)(json, 'StartDate') ? undefined : (new Date(json['StartDate'])),
+        'endDate': !(0, runtime_1.exists)(json, 'EndDate') ? undefined : (new Date(json['EndDate'])),
     };
 }
-export function IssueReportFilterApiModelToJSON(value) {
+exports.IssueReportFilterApiModelFromJSONTyped = IssueReportFilterApiModelFromJSONTyped;
+function IssueReportFilterApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -71,4 +77,5 @@ export function IssueReportFilterApiModelToJSON(value) {
         'EndDate': value.endDate === undefined ? undefined : (value.endDate.toISOString()),
     };
 }
+exports.IssueReportFilterApiModelToJSON = IssueReportFilterApiModelToJSON;
 //# sourceMappingURL=IssueReportFilterApiModel.js.map

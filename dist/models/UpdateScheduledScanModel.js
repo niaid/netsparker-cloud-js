@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,28 +12,30 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { AdditionalWebsitesSettingModelFromJSON, AdditionalWebsitesSettingModelToJSON, } from './AdditionalWebsitesSettingModel';
-import { AgentSelectionModelFromJSON, AgentSelectionModelToJSON, } from './AgentSelectionModel';
-import { BasicAuthenticationSettingModelFromJSON, BasicAuthenticationSettingModelToJSON, } from './BasicAuthenticationSettingModel';
-import { BusinessLogicRecorderSettingModelFromJSON, BusinessLogicRecorderSettingModelToJSON, } from './BusinessLogicRecorderSettingModel';
-import { ClientCertificateAuthenticationViewModelFromJSON, ClientCertificateAuthenticationViewModelToJSON, } from './ClientCertificateAuthenticationViewModel';
-import { FormAuthenticationSettingModelFromJSON, FormAuthenticationSettingModelToJSON, } from './FormAuthenticationSettingModel';
-import { HeaderAuthenticationModelFromJSON, HeaderAuthenticationModelToJSON, } from './HeaderAuthenticationModel';
-import { ImportedLinksSettingFromJSON, ImportedLinksSettingToJSON, } from './ImportedLinksSetting';
-import { OAuth2SettingModelFromJSON, OAuth2SettingModelToJSON, } from './OAuth2SettingModel';
-import { PreRequestScriptSettingModelFromJSON, PreRequestScriptSettingModelToJSON, } from './PreRequestScriptSettingModel';
-import { ScanTimeWindowViewModelFromJSON, ScanTimeWindowViewModelToJSON, } from './ScanTimeWindowViewModel';
-import { ScheduledScanRecurrenceViewModelFromJSON, ScheduledScanRecurrenceViewModelToJSON, } from './ScheduledScanRecurrenceViewModel';
-import { ScheduledScanUpdateViewModelFromJSON, ScheduledScanUpdateViewModelToJSON, } from './ScheduledScanUpdateViewModel';
-import { ScopeSettingFromJSON, ScopeSettingToJSON, } from './ScopeSetting';
-import { SharkModelFromJSON, SharkModelToJSON, } from './SharkModel';
-import { TagViewModelFromJSON, TagViewModelToJSON, } from './TagViewModel';
-import { UrlRewriteSettingFromJSON, UrlRewriteSettingToJSON, } from './UrlRewriteSetting';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.UpdateScheduledScanModelToJSON = exports.UpdateScheduledScanModelFromJSONTyped = exports.UpdateScheduledScanModelFromJSON = exports.instanceOfUpdateScheduledScanModel = exports.UpdateScheduledScanModelCreateTypeEnum = exports.UpdateScheduledScanModelCustomScriptTemplateTypeEnum = exports.UpdateScheduledScanModelScheduleRunTypeEnum = exports.UpdateScheduledScanModelScanTypeEnum = void 0;
+const runtime_1 = require("../runtime");
+const AdditionalWebsitesSettingModel_1 = require("./AdditionalWebsitesSettingModel");
+const AgentSelectionModel_1 = require("./AgentSelectionModel");
+const BasicAuthenticationSettingModel_1 = require("./BasicAuthenticationSettingModel");
+const BusinessLogicRecorderSettingModel_1 = require("./BusinessLogicRecorderSettingModel");
+const ClientCertificateAuthenticationViewModel_1 = require("./ClientCertificateAuthenticationViewModel");
+const FormAuthenticationSettingModel_1 = require("./FormAuthenticationSettingModel");
+const HeaderAuthenticationModel_1 = require("./HeaderAuthenticationModel");
+const ImportedLinksSetting_1 = require("./ImportedLinksSetting");
+const OAuth2SettingModel_1 = require("./OAuth2SettingModel");
+const PreRequestScriptSettingModel_1 = require("./PreRequestScriptSettingModel");
+const ScanTimeWindowViewModel_1 = require("./ScanTimeWindowViewModel");
+const ScheduledScanRecurrenceViewModel_1 = require("./ScheduledScanRecurrenceViewModel");
+const ScheduledScanUpdateViewModel_1 = require("./ScheduledScanUpdateViewModel");
+const ScopeSetting_1 = require("./ScopeSetting");
+const SharkModel_1 = require("./SharkModel");
+const TagViewModel_1 = require("./TagViewModel");
+const UrlRewriteSetting_1 = require("./UrlRewriteSetting");
 /**
  * @export
  */
-export const UpdateScheduledScanModelScanTypeEnum = {
+exports.UpdateScheduledScanModelScanTypeEnum = {
     Full: 'Full',
     Retest: 'Retest',
     Incremental: 'Incremental'
@@ -40,7 +43,7 @@ export const UpdateScheduledScanModelScanTypeEnum = {
 /**
  * @export
  */
-export const UpdateScheduledScanModelScheduleRunTypeEnum = {
+exports.UpdateScheduledScanModelScheduleRunTypeEnum = {
     Once: 'Once',
     Daily: 'Daily',
     Weekly: 'Weekly',
@@ -53,7 +56,7 @@ export const UpdateScheduledScanModelScheduleRunTypeEnum = {
 /**
  * @export
  */
-export const UpdateScheduledScanModelCustomScriptTemplateTypeEnum = {
+exports.UpdateScheduledScanModelCustomScriptTemplateTypeEnum = {
     Default: 'Default',
     SimpleLoginForm: 'SimpleLoginForm',
     SimpleLoginFormQuery: 'SimpleLoginFormQuery',
@@ -62,87 +65,90 @@ export const UpdateScheduledScanModelCustomScriptTemplateTypeEnum = {
 /**
  * @export
  */
-export const UpdateScheduledScanModelCreateTypeEnum = {
+exports.UpdateScheduledScanModelCreateTypeEnum = {
     Website: 'Website',
     WebsiteGroup: 'WebsiteGroup'
 };
 /**
  * Check if a given object implements the UpdateScheduledScanModel interface.
  */
-export function instanceOfUpdateScheduledScanModel(value) {
+function instanceOfUpdateScheduledScanModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function UpdateScheduledScanModelFromJSON(json) {
+exports.instanceOfUpdateScheduledScanModel = instanceOfUpdateScheduledScanModel;
+function UpdateScheduledScanModelFromJSON(json) {
     return UpdateScheduledScanModelFromJSONTyped(json, false);
 }
-export function UpdateScheduledScanModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.UpdateScheduledScanModelFromJSON = UpdateScheduledScanModelFromJSON;
+function UpdateScheduledScanModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'occurencesCount': !exists(json, 'OccurencesCount') ? undefined : json['OccurencesCount'],
-        'disabled': !exists(json, 'Disabled') ? undefined : json['Disabled'],
-        'enableScheduling': !exists(json, 'EnableScheduling') ? undefined : json['EnableScheduling'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'nextExecutionTime': !exists(json, 'NextExecutionTime') ? undefined : json['NextExecutionTime'],
-        'scanGroupId': !exists(json, 'ScanGroupId') ? undefined : json['ScanGroupId'],
-        'scanType': !exists(json, 'ScanType') ? undefined : json['ScanType'],
-        'scheduleRunType': !exists(json, 'ScheduleRunType') ? undefined : json['ScheduleRunType'],
-        'customRecurrence': !exists(json, 'CustomRecurrence') ? undefined : ScheduledScanRecurrenceViewModelFromJSON(json['CustomRecurrence']),
-        'customScriptTemplateType': !exists(json, 'CustomScriptTemplateType') ? undefined : json['CustomScriptTemplateType'],
-        'isTargetUrlRequired': !exists(json, 'IsTargetUrlRequired') ? undefined : json['IsTargetUrlRequired'],
-        'isGenerateOptimizedCss': !exists(json, 'IsGenerateOptimizedCss') ? undefined : json['IsGenerateOptimizedCss'],
-        'accountTags': !exists(json, 'AccountTags') ? undefined : (json['AccountTags'].map(TagViewModelFromJSON)),
-        'entityCurrentTags': !exists(json, 'EntityCurrentTags') ? undefined : json['EntityCurrentTags'],
-        'scheduledTaskNames': !exists(json, 'ScheduledTaskNames') ? undefined : (json['ScheduledTaskNames'].map(ScheduledScanUpdateViewModelFromJSON)),
-        'launchSettingId': !exists(json, 'LaunchSettingId') ? undefined : json['LaunchSettingId'],
-        'additionalWebsites': !exists(json, 'AdditionalWebsites') ? undefined : AdditionalWebsitesSettingModelFromJSON(json['AdditionalWebsites']),
-        'agentGroupId': !exists(json, 'AgentGroupId') ? undefined : json['AgentGroupId'],
-        'agentId': !exists(json, 'AgentId') ? undefined : json['AgentId'],
-        'basicAuthenticationSetting': !exists(json, 'BasicAuthenticationSetting') ? undefined : BasicAuthenticationSettingModelFromJSON(json['BasicAuthenticationSetting']),
-        'canEdit': !exists(json, 'CanEdit') ? undefined : json['CanEdit'],
-        'clientCertificateAuthentication': !exists(json, 'ClientCertificateAuthentication') ? undefined : ClientCertificateAuthenticationViewModelFromJSON(json['ClientCertificateAuthentication']),
-        'cookies': !exists(json, 'Cookies') ? undefined : json['Cookies'],
-        'comments': !exists(json, 'Comments') ? undefined : json['Comments'],
-        'crawlAndAttack': !exists(json, 'CrawlAndAttack') ? undefined : json['CrawlAndAttack'],
-        'createType': !exists(json, 'CreateType') ? undefined : json['CreateType'],
-        'authenticationProfileOption': !exists(json, 'AuthenticationProfileOption') ? undefined : json['AuthenticationProfileOption'],
-        'authenticationProfileName': !exists(json, 'AuthenticationProfileName') ? undefined : json['AuthenticationProfileName'],
-        'findAndFollowNewLinks': !exists(json, 'FindAndFollowNewLinks') ? undefined : json['FindAndFollowNewLinks'],
-        'formAuthenticationSetting': !exists(json, 'FormAuthenticationSetting') ? undefined : FormAuthenticationSettingModelFromJSON(json['FormAuthenticationSetting']),
-        'headerAuthentication': !exists(json, 'HeaderAuthentication') ? undefined : HeaderAuthenticationModelFromJSON(json['HeaderAuthentication']),
-        'shark': !exists(json, 'Shark') ? undefined : SharkModelFromJSON(json['Shark']),
-        'importedLinks': !exists(json, 'ImportedLinks') ? undefined : ImportedLinksSettingFromJSON(json['ImportedLinks']),
-        'isMaxScanDurationEnabled': !exists(json, 'IsMaxScanDurationEnabled') ? undefined : json['IsMaxScanDurationEnabled'],
-        'isPrimary': !exists(json, 'IsPrimary') ? undefined : json['IsPrimary'],
-        'isShared': !exists(json, 'IsShared') ? undefined : json['IsShared'],
-        'maxScanDuration': !exists(json, 'MaxScanDuration') ? undefined : json['MaxScanDuration'],
-        'policyId': !exists(json, 'PolicyId') ? undefined : json['PolicyId'],
-        'policyName': !exists(json, 'PolicyName') ? undefined : json['PolicyName'],
-        'profileId': !exists(json, 'ProfileId') ? undefined : json['ProfileId'],
-        'profileName': !exists(json, 'ProfileName') ? undefined : json['ProfileName'],
-        'reportPolicyId': !exists(json, 'ReportPolicyId') ? undefined : json['ReportPolicyId'],
-        'reportPolicyName': !exists(json, 'ReportPolicyName') ? undefined : json['ReportPolicyName'],
-        'saveScanProfile': !exists(json, 'SaveScanProfile') ? undefined : json['SaveScanProfile'],
-        'scopeSetting': !exists(json, 'ScopeSetting') ? undefined : ScopeSettingFromJSON(json['ScopeSetting']),
-        'selectedAgents': !exists(json, 'SelectedAgents') ? undefined : (json['SelectedAgents'].map(AgentSelectionModelFromJSON)),
-        'selectedScanProfileId': !exists(json, 'SelectedScanProfileId') ? undefined : json['SelectedScanProfileId'],
-        'selectedScanProfileName': !exists(json, 'SelectedScanProfileName') ? undefined : json['SelectedScanProfileName'],
-        'targetUrl': !exists(json, 'TargetUrl') ? undefined : json['TargetUrl'],
-        'description': !exists(json, 'Description') ? undefined : json['Description'],
-        'timeWindow': !exists(json, 'TimeWindow') ? undefined : ScanTimeWindowViewModelFromJSON(json['TimeWindow']),
-        'urlRewriteSetting': !exists(json, 'UrlRewriteSetting') ? undefined : UrlRewriteSettingFromJSON(json['UrlRewriteSetting']),
-        'preRequestScriptSetting': !exists(json, 'PreRequestScriptSetting') ? undefined : PreRequestScriptSettingModelFromJSON(json['PreRequestScriptSetting']),
-        'userId': !exists(json, 'UserId') ? undefined : json['UserId'],
-        'websiteGroupId': !exists(json, 'WebsiteGroupId') ? undefined : json['WebsiteGroupId'],
-        'enablePciScanTask': !exists(json, 'EnablePciScanTask') ? undefined : json['EnablePciScanTask'],
-        'oAuth2Setting': !exists(json, 'OAuth2Setting') ? undefined : OAuth2SettingModelFromJSON(json['OAuth2Setting']),
-        'businessLogicRecorder': !exists(json, 'BusinessLogicRecorder') ? undefined : BusinessLogicRecorderSettingModelFromJSON(json['BusinessLogicRecorder']),
+        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
+        'occurencesCount': !(0, runtime_1.exists)(json, 'OccurencesCount') ? undefined : json['OccurencesCount'],
+        'disabled': !(0, runtime_1.exists)(json, 'Disabled') ? undefined : json['Disabled'],
+        'enableScheduling': !(0, runtime_1.exists)(json, 'EnableScheduling') ? undefined : json['EnableScheduling'],
+        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
+        'nextExecutionTime': !(0, runtime_1.exists)(json, 'NextExecutionTime') ? undefined : json['NextExecutionTime'],
+        'scanGroupId': !(0, runtime_1.exists)(json, 'ScanGroupId') ? undefined : json['ScanGroupId'],
+        'scanType': !(0, runtime_1.exists)(json, 'ScanType') ? undefined : json['ScanType'],
+        'scheduleRunType': !(0, runtime_1.exists)(json, 'ScheduleRunType') ? undefined : json['ScheduleRunType'],
+        'customRecurrence': !(0, runtime_1.exists)(json, 'CustomRecurrence') ? undefined : (0, ScheduledScanRecurrenceViewModel_1.ScheduledScanRecurrenceViewModelFromJSON)(json['CustomRecurrence']),
+        'customScriptTemplateType': !(0, runtime_1.exists)(json, 'CustomScriptTemplateType') ? undefined : json['CustomScriptTemplateType'],
+        'isTargetUrlRequired': !(0, runtime_1.exists)(json, 'IsTargetUrlRequired') ? undefined : json['IsTargetUrlRequired'],
+        'isGenerateOptimizedCss': !(0, runtime_1.exists)(json, 'IsGenerateOptimizedCss') ? undefined : json['IsGenerateOptimizedCss'],
+        'accountTags': !(0, runtime_1.exists)(json, 'AccountTags') ? undefined : (json['AccountTags'].map(TagViewModel_1.TagViewModelFromJSON)),
+        'entityCurrentTags': !(0, runtime_1.exists)(json, 'EntityCurrentTags') ? undefined : json['EntityCurrentTags'],
+        'scheduledTaskNames': !(0, runtime_1.exists)(json, 'ScheduledTaskNames') ? undefined : (json['ScheduledTaskNames'].map(ScheduledScanUpdateViewModel_1.ScheduledScanUpdateViewModelFromJSON)),
+        'launchSettingId': !(0, runtime_1.exists)(json, 'LaunchSettingId') ? undefined : json['LaunchSettingId'],
+        'additionalWebsites': !(0, runtime_1.exists)(json, 'AdditionalWebsites') ? undefined : (0, AdditionalWebsitesSettingModel_1.AdditionalWebsitesSettingModelFromJSON)(json['AdditionalWebsites']),
+        'agentGroupId': !(0, runtime_1.exists)(json, 'AgentGroupId') ? undefined : json['AgentGroupId'],
+        'agentId': !(0, runtime_1.exists)(json, 'AgentId') ? undefined : json['AgentId'],
+        'basicAuthenticationSetting': !(0, runtime_1.exists)(json, 'BasicAuthenticationSetting') ? undefined : (0, BasicAuthenticationSettingModel_1.BasicAuthenticationSettingModelFromJSON)(json['BasicAuthenticationSetting']),
+        'canEdit': !(0, runtime_1.exists)(json, 'CanEdit') ? undefined : json['CanEdit'],
+        'clientCertificateAuthentication': !(0, runtime_1.exists)(json, 'ClientCertificateAuthentication') ? undefined : (0, ClientCertificateAuthenticationViewModel_1.ClientCertificateAuthenticationViewModelFromJSON)(json['ClientCertificateAuthentication']),
+        'cookies': !(0, runtime_1.exists)(json, 'Cookies') ? undefined : json['Cookies'],
+        'comments': !(0, runtime_1.exists)(json, 'Comments') ? undefined : json['Comments'],
+        'crawlAndAttack': !(0, runtime_1.exists)(json, 'CrawlAndAttack') ? undefined : json['CrawlAndAttack'],
+        'createType': !(0, runtime_1.exists)(json, 'CreateType') ? undefined : json['CreateType'],
+        'authenticationProfileOption': !(0, runtime_1.exists)(json, 'AuthenticationProfileOption') ? undefined : json['AuthenticationProfileOption'],
+        'authenticationProfileName': !(0, runtime_1.exists)(json, 'AuthenticationProfileName') ? undefined : json['AuthenticationProfileName'],
+        'findAndFollowNewLinks': !(0, runtime_1.exists)(json, 'FindAndFollowNewLinks') ? undefined : json['FindAndFollowNewLinks'],
+        'formAuthenticationSetting': !(0, runtime_1.exists)(json, 'FormAuthenticationSetting') ? undefined : (0, FormAuthenticationSettingModel_1.FormAuthenticationSettingModelFromJSON)(json['FormAuthenticationSetting']),
+        'headerAuthentication': !(0, runtime_1.exists)(json, 'HeaderAuthentication') ? undefined : (0, HeaderAuthenticationModel_1.HeaderAuthenticationModelFromJSON)(json['HeaderAuthentication']),
+        'shark': !(0, runtime_1.exists)(json, 'Shark') ? undefined : (0, SharkModel_1.SharkModelFromJSON)(json['Shark']),
+        'importedLinks': !(0, runtime_1.exists)(json, 'ImportedLinks') ? undefined : (0, ImportedLinksSetting_1.ImportedLinksSettingFromJSON)(json['ImportedLinks']),
+        'isMaxScanDurationEnabled': !(0, runtime_1.exists)(json, 'IsMaxScanDurationEnabled') ? undefined : json['IsMaxScanDurationEnabled'],
+        'isPrimary': !(0, runtime_1.exists)(json, 'IsPrimary') ? undefined : json['IsPrimary'],
+        'isShared': !(0, runtime_1.exists)(json, 'IsShared') ? undefined : json['IsShared'],
+        'maxScanDuration': !(0, runtime_1.exists)(json, 'MaxScanDuration') ? undefined : json['MaxScanDuration'],
+        'policyId': !(0, runtime_1.exists)(json, 'PolicyId') ? undefined : json['PolicyId'],
+        'policyName': !(0, runtime_1.exists)(json, 'PolicyName') ? undefined : json['PolicyName'],
+        'profileId': !(0, runtime_1.exists)(json, 'ProfileId') ? undefined : json['ProfileId'],
+        'profileName': !(0, runtime_1.exists)(json, 'ProfileName') ? undefined : json['ProfileName'],
+        'reportPolicyId': !(0, runtime_1.exists)(json, 'ReportPolicyId') ? undefined : json['ReportPolicyId'],
+        'reportPolicyName': !(0, runtime_1.exists)(json, 'ReportPolicyName') ? undefined : json['ReportPolicyName'],
+        'saveScanProfile': !(0, runtime_1.exists)(json, 'SaveScanProfile') ? undefined : json['SaveScanProfile'],
+        'scopeSetting': !(0, runtime_1.exists)(json, 'ScopeSetting') ? undefined : (0, ScopeSetting_1.ScopeSettingFromJSON)(json['ScopeSetting']),
+        'selectedAgents': !(0, runtime_1.exists)(json, 'SelectedAgents') ? undefined : (json['SelectedAgents'].map(AgentSelectionModel_1.AgentSelectionModelFromJSON)),
+        'selectedScanProfileId': !(0, runtime_1.exists)(json, 'SelectedScanProfileId') ? undefined : json['SelectedScanProfileId'],
+        'selectedScanProfileName': !(0, runtime_1.exists)(json, 'SelectedScanProfileName') ? undefined : json['SelectedScanProfileName'],
+        'targetUrl': !(0, runtime_1.exists)(json, 'TargetUrl') ? undefined : json['TargetUrl'],
+        'description': !(0, runtime_1.exists)(json, 'Description') ? undefined : json['Description'],
+        'timeWindow': !(0, runtime_1.exists)(json, 'TimeWindow') ? undefined : (0, ScanTimeWindowViewModel_1.ScanTimeWindowViewModelFromJSON)(json['TimeWindow']),
+        'urlRewriteSetting': !(0, runtime_1.exists)(json, 'UrlRewriteSetting') ? undefined : (0, UrlRewriteSetting_1.UrlRewriteSettingFromJSON)(json['UrlRewriteSetting']),
+        'preRequestScriptSetting': !(0, runtime_1.exists)(json, 'PreRequestScriptSetting') ? undefined : (0, PreRequestScriptSettingModel_1.PreRequestScriptSettingModelFromJSON)(json['PreRequestScriptSetting']),
+        'userId': !(0, runtime_1.exists)(json, 'UserId') ? undefined : json['UserId'],
+        'websiteGroupId': !(0, runtime_1.exists)(json, 'WebsiteGroupId') ? undefined : json['WebsiteGroupId'],
+        'enablePciScanTask': !(0, runtime_1.exists)(json, 'EnablePciScanTask') ? undefined : json['EnablePciScanTask'],
+        'oAuth2Setting': !(0, runtime_1.exists)(json, 'OAuth2Setting') ? undefined : (0, OAuth2SettingModel_1.OAuth2SettingModelFromJSON)(json['OAuth2Setting']),
+        'businessLogicRecorder': !(0, runtime_1.exists)(json, 'BusinessLogicRecorder') ? undefined : (0, BusinessLogicRecorderSettingModel_1.BusinessLogicRecorderSettingModelFromJSON)(json['BusinessLogicRecorder']),
     };
 }
-export function UpdateScheduledScanModelToJSON(value) {
+exports.UpdateScheduledScanModelFromJSONTyped = UpdateScheduledScanModelFromJSONTyped;
+function UpdateScheduledScanModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -159,17 +165,17 @@ export function UpdateScheduledScanModelToJSON(value) {
         'ScanGroupId': value.scanGroupId,
         'ScanType': value.scanType,
         'ScheduleRunType': value.scheduleRunType,
-        'CustomRecurrence': ScheduledScanRecurrenceViewModelToJSON(value.customRecurrence),
+        'CustomRecurrence': (0, ScheduledScanRecurrenceViewModel_1.ScheduledScanRecurrenceViewModelToJSON)(value.customRecurrence),
         'IsGenerateOptimizedCss': value.isGenerateOptimizedCss,
-        'AccountTags': value.accountTags === undefined ? undefined : (value.accountTags.map(TagViewModelToJSON)),
+        'AccountTags': value.accountTags === undefined ? undefined : (value.accountTags.map(TagViewModel_1.TagViewModelToJSON)),
         'EntityCurrentTags': value.entityCurrentTags,
-        'ScheduledTaskNames': value.scheduledTaskNames === undefined ? undefined : (value.scheduledTaskNames.map(ScheduledScanUpdateViewModelToJSON)),
+        'ScheduledTaskNames': value.scheduledTaskNames === undefined ? undefined : (value.scheduledTaskNames.map(ScheduledScanUpdateViewModel_1.ScheduledScanUpdateViewModelToJSON)),
         'LaunchSettingId': value.launchSettingId,
-        'AdditionalWebsites': AdditionalWebsitesSettingModelToJSON(value.additionalWebsites),
+        'AdditionalWebsites': (0, AdditionalWebsitesSettingModel_1.AdditionalWebsitesSettingModelToJSON)(value.additionalWebsites),
         'AgentGroupId': value.agentGroupId,
         'AgentId': value.agentId,
-        'BasicAuthenticationSetting': BasicAuthenticationSettingModelToJSON(value.basicAuthenticationSetting),
-        'ClientCertificateAuthentication': ClientCertificateAuthenticationViewModelToJSON(value.clientCertificateAuthentication),
+        'BasicAuthenticationSetting': (0, BasicAuthenticationSettingModel_1.BasicAuthenticationSettingModelToJSON)(value.basicAuthenticationSetting),
+        'ClientCertificateAuthentication': (0, ClientCertificateAuthenticationViewModel_1.ClientCertificateAuthenticationViewModelToJSON)(value.clientCertificateAuthentication),
         'Cookies': value.cookies,
         'Comments': value.comments,
         'CrawlAndAttack': value.crawlAndAttack,
@@ -177,10 +183,10 @@ export function UpdateScheduledScanModelToJSON(value) {
         'AuthenticationProfileOption': value.authenticationProfileOption,
         'AuthenticationProfileName': value.authenticationProfileName,
         'FindAndFollowNewLinks': value.findAndFollowNewLinks,
-        'FormAuthenticationSetting': FormAuthenticationSettingModelToJSON(value.formAuthenticationSetting),
-        'HeaderAuthentication': HeaderAuthenticationModelToJSON(value.headerAuthentication),
-        'Shark': SharkModelToJSON(value.shark),
-        'ImportedLinks': ImportedLinksSettingToJSON(value.importedLinks),
+        'FormAuthenticationSetting': (0, FormAuthenticationSettingModel_1.FormAuthenticationSettingModelToJSON)(value.formAuthenticationSetting),
+        'HeaderAuthentication': (0, HeaderAuthenticationModel_1.HeaderAuthenticationModelToJSON)(value.headerAuthentication),
+        'Shark': (0, SharkModel_1.SharkModelToJSON)(value.shark),
+        'ImportedLinks': (0, ImportedLinksSetting_1.ImportedLinksSettingToJSON)(value.importedLinks),
         'IsMaxScanDurationEnabled': value.isMaxScanDurationEnabled,
         'IsPrimary': value.isPrimary,
         'IsShared': value.isShared,
@@ -192,20 +198,21 @@ export function UpdateScheduledScanModelToJSON(value) {
         'ReportPolicyId': value.reportPolicyId,
         'ReportPolicyName': value.reportPolicyName,
         'SaveScanProfile': value.saveScanProfile,
-        'ScopeSetting': ScopeSettingToJSON(value.scopeSetting),
-        'SelectedAgents': value.selectedAgents === undefined ? undefined : (value.selectedAgents.map(AgentSelectionModelToJSON)),
+        'ScopeSetting': (0, ScopeSetting_1.ScopeSettingToJSON)(value.scopeSetting),
+        'SelectedAgents': value.selectedAgents === undefined ? undefined : (value.selectedAgents.map(AgentSelectionModel_1.AgentSelectionModelToJSON)),
         'SelectedScanProfileId': value.selectedScanProfileId,
         'SelectedScanProfileName': value.selectedScanProfileName,
         'TargetUrl': value.targetUrl,
         'Description': value.description,
-        'TimeWindow': ScanTimeWindowViewModelToJSON(value.timeWindow),
-        'UrlRewriteSetting': UrlRewriteSettingToJSON(value.urlRewriteSetting),
-        'PreRequestScriptSetting': PreRequestScriptSettingModelToJSON(value.preRequestScriptSetting),
+        'TimeWindow': (0, ScanTimeWindowViewModel_1.ScanTimeWindowViewModelToJSON)(value.timeWindow),
+        'UrlRewriteSetting': (0, UrlRewriteSetting_1.UrlRewriteSettingToJSON)(value.urlRewriteSetting),
+        'PreRequestScriptSetting': (0, PreRequestScriptSettingModel_1.PreRequestScriptSettingModelToJSON)(value.preRequestScriptSetting),
         'UserId': value.userId,
         'WebsiteGroupId': value.websiteGroupId,
         'EnablePciScanTask': value.enablePciScanTask,
-        'OAuth2Setting': OAuth2SettingModelToJSON(value.oAuth2Setting),
-        'BusinessLogicRecorder': BusinessLogicRecorderSettingModelToJSON(value.businessLogicRecorder),
+        'OAuth2Setting': (0, OAuth2SettingModel_1.OAuth2SettingModelToJSON)(value.oAuth2Setting),
+        'BusinessLogicRecorder': (0, BusinessLogicRecorderSettingModel_1.BusinessLogicRecorderSettingModelToJSON)(value.businessLogicRecorder),
     };
 }
+exports.UpdateScheduledScanModelToJSON = UpdateScheduledScanModelToJSON;
 //# sourceMappingURL=UpdateScheduledScanModel.js.map

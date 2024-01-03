@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,18 +12,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ExcludedLinkModelToJSON = exports.ExcludedLinkModelFromJSONTyped = exports.ExcludedLinkModelFromJSON = exports.instanceOfExcludedLinkModel = void 0;
 /**
  * Check if a given object implements the ExcludedLinkModel interface.
  */
-export function instanceOfExcludedLinkModel(value) {
+function instanceOfExcludedLinkModel(value) {
     let isInstance = true;
     isInstance = isInstance && "regexPattern" in value;
     return isInstance;
 }
-export function ExcludedLinkModelFromJSON(json) {
+exports.instanceOfExcludedLinkModel = instanceOfExcludedLinkModel;
+function ExcludedLinkModelFromJSON(json) {
     return ExcludedLinkModelFromJSONTyped(json, false);
 }
-export function ExcludedLinkModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.ExcludedLinkModelFromJSON = ExcludedLinkModelFromJSON;
+function ExcludedLinkModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
@@ -30,7 +35,8 @@ export function ExcludedLinkModelFromJSONTyped(json, ignoreDiscriminator) {
         'regexPattern': json['RegexPattern'],
     };
 }
-export function ExcludedLinkModelToJSON(value) {
+exports.ExcludedLinkModelFromJSONTyped = ExcludedLinkModelFromJSONTyped;
+function ExcludedLinkModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -41,4 +47,5 @@ export function ExcludedLinkModelToJSON(value) {
         'RegexPattern': value.regexPattern,
     };
 }
+exports.ExcludedLinkModelToJSON = ExcludedLinkModelToJSON;
 //# sourceMappingURL=ExcludedLinkModel.js.map

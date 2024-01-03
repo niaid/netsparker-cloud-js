@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,28 +12,33 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.TrelloLabelToJSON = exports.TrelloLabelFromJSONTyped = exports.TrelloLabelFromJSON = exports.instanceOfTrelloLabel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the TrelloLabel interface.
  */
-export function instanceOfTrelloLabel(value) {
+function instanceOfTrelloLabel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function TrelloLabelFromJSON(json) {
+exports.instanceOfTrelloLabel = instanceOfTrelloLabel;
+function TrelloLabelFromJSON(json) {
     return TrelloLabelFromJSONTyped(json, false);
 }
-export function TrelloLabelFromJSONTyped(json, ignoreDiscriminator) {
+exports.TrelloLabelFromJSON = TrelloLabelFromJSON;
+function TrelloLabelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'color': !exists(json, 'color') ? undefined : json['color'],
-        'id': !exists(json, 'id') ? undefined : json['id'],
-        'name': !exists(json, 'name') ? undefined : json['name'],
+        'color': !(0, runtime_1.exists)(json, 'color') ? undefined : json['color'],
+        'id': !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
+        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
     };
 }
-export function TrelloLabelToJSON(value) {
+exports.TrelloLabelFromJSONTyped = TrelloLabelFromJSONTyped;
+function TrelloLabelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -45,4 +51,5 @@ export function TrelloLabelToJSON(value) {
         'name': value.name,
     };
 }
+exports.TrelloLabelToJSON = TrelloLabelToJSON;
 //# sourceMappingURL=TrelloLabel.js.map

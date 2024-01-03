@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,28 +12,33 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.PermissionApiModelToJSON = exports.PermissionApiModelFromJSONTyped = exports.PermissionApiModelFromJSON = exports.instanceOfPermissionApiModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the PermissionApiModel interface.
  */
-export function instanceOfPermissionApiModel(value) {
+function instanceOfPermissionApiModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function PermissionApiModelFromJSON(json) {
+exports.instanceOfPermissionApiModel = instanceOfPermissionApiModel;
+function PermissionApiModelFromJSON(json) {
     return PermissionApiModelFromJSONTyped(json, false);
 }
-export function PermissionApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.PermissionApiModelFromJSON = PermissionApiModelFromJSON;
+function PermissionApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'information': !exists(json, 'Information') ? undefined : json['Information'],
+        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
+        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
+        'information': !(0, runtime_1.exists)(json, 'Information') ? undefined : json['Information'],
     };
 }
-export function PermissionApiModelToJSON(value) {
+exports.PermissionApiModelFromJSONTyped = PermissionApiModelFromJSONTyped;
+function PermissionApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -45,4 +51,5 @@ export function PermissionApiModelToJSON(value) {
         'Information': value.information,
     };
 }
+exports.PermissionApiModelToJSON = PermissionApiModelToJSON;
 //# sourceMappingURL=PermissionApiModel.js.map

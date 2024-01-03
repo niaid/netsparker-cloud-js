@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,52 +12,57 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { ReducedTeamDtoFromJSON, ReducedTeamDtoToJSON, } from './ReducedTeamDto';
-import { RoleWebsiteGroupMappingDtoFromJSON, RoleWebsiteGroupMappingDtoToJSON, } from './RoleWebsiteGroupMappingDto';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.MemberApiViewModelToJSON = exports.MemberApiViewModelFromJSONTyped = exports.MemberApiViewModelFromJSON = exports.instanceOfMemberApiViewModel = exports.MemberApiViewModelStateEnum = void 0;
+const runtime_1 = require("../runtime");
+const ReducedTeamDto_1 = require("./ReducedTeamDto");
+const RoleWebsiteGroupMappingDto_1 = require("./RoleWebsiteGroupMappingDto");
 /**
  * @export
  */
-export const MemberApiViewModelStateEnum = {
+exports.MemberApiViewModelStateEnum = {
     Enabled: 'Enabled',
     Disabled: 'Disabled'
 };
 /**
  * Check if a given object implements the MemberApiViewModel interface.
  */
-export function instanceOfMemberApiViewModel(value) {
+function instanceOfMemberApiViewModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function MemberApiViewModelFromJSON(json) {
+exports.instanceOfMemberApiViewModel = instanceOfMemberApiViewModel;
+function MemberApiViewModelFromJSON(json) {
     return MemberApiViewModelFromJSONTyped(json, false);
 }
-export function MemberApiViewModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.MemberApiViewModelFromJSON = MemberApiViewModelFromJSON;
+function MemberApiViewModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'accountId': !exists(json, 'AccountId') ? undefined : json['AccountId'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'email': !exists(json, 'Email') ? undefined : json['Email'],
-        'isApiAccessEnabled': !exists(json, 'IsApiAccessEnabled') ? undefined : json['IsApiAccessEnabled'],
-        'phoneNumber': !exists(json, 'PhoneNumber') ? undefined : json['PhoneNumber'],
-        'dateTimeFormat': !exists(json, 'DateTimeFormat') ? undefined : json['DateTimeFormat'],
-        'timezoneId': !exists(json, 'TimezoneId') ? undefined : json['TimezoneId'],
-        'state': !exists(json, 'State') ? undefined : json['State'],
-        'allowedWebsiteLimit': !exists(json, 'AllowedWebsiteLimit') ? undefined : json['AllowedWebsiteLimit'],
-        'isTwoFactorAuthenticationEnabled': !exists(json, 'IsTwoFactorAuthenticationEnabled') ? undefined : json['IsTwoFactorAuthenticationEnabled'],
-        'alternateLoginEmail': !exists(json, 'AlternateLoginEmail') ? undefined : json['AlternateLoginEmail'],
-        'roleWebsiteGroupMappings': !exists(json, 'RoleWebsiteGroupMappings') ? undefined : (json['RoleWebsiteGroupMappings'].map(RoleWebsiteGroupMappingDtoFromJSON)),
-        'teams': !exists(json, 'Teams') ? undefined : (json['Teams'].map(ReducedTeamDtoFromJSON)),
-        'onlySsoLogin': !exists(json, 'OnlySsoLogin') ? undefined : json['OnlySsoLogin'],
-        'createdAt': !exists(json, 'CreatedAt') ? undefined : (new Date(json['CreatedAt'])),
-        'lastLoginDate': !exists(json, 'LastLoginDate') ? undefined : (new Date(json['LastLoginDate'])),
-        'websiteCount': !exists(json, 'WebsiteCount') ? undefined : json['WebsiteCount'],
+        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
+        'accountId': !(0, runtime_1.exists)(json, 'AccountId') ? undefined : json['AccountId'],
+        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
+        'email': !(0, runtime_1.exists)(json, 'Email') ? undefined : json['Email'],
+        'isApiAccessEnabled': !(0, runtime_1.exists)(json, 'IsApiAccessEnabled') ? undefined : json['IsApiAccessEnabled'],
+        'phoneNumber': !(0, runtime_1.exists)(json, 'PhoneNumber') ? undefined : json['PhoneNumber'],
+        'dateTimeFormat': !(0, runtime_1.exists)(json, 'DateTimeFormat') ? undefined : json['DateTimeFormat'],
+        'timezoneId': !(0, runtime_1.exists)(json, 'TimezoneId') ? undefined : json['TimezoneId'],
+        'state': !(0, runtime_1.exists)(json, 'State') ? undefined : json['State'],
+        'allowedWebsiteLimit': !(0, runtime_1.exists)(json, 'AllowedWebsiteLimit') ? undefined : json['AllowedWebsiteLimit'],
+        'isTwoFactorAuthenticationEnabled': !(0, runtime_1.exists)(json, 'IsTwoFactorAuthenticationEnabled') ? undefined : json['IsTwoFactorAuthenticationEnabled'],
+        'alternateLoginEmail': !(0, runtime_1.exists)(json, 'AlternateLoginEmail') ? undefined : json['AlternateLoginEmail'],
+        'roleWebsiteGroupMappings': !(0, runtime_1.exists)(json, 'RoleWebsiteGroupMappings') ? undefined : (json['RoleWebsiteGroupMappings'].map(RoleWebsiteGroupMappingDto_1.RoleWebsiteGroupMappingDtoFromJSON)),
+        'teams': !(0, runtime_1.exists)(json, 'Teams') ? undefined : (json['Teams'].map(ReducedTeamDto_1.ReducedTeamDtoFromJSON)),
+        'onlySsoLogin': !(0, runtime_1.exists)(json, 'OnlySsoLogin') ? undefined : json['OnlySsoLogin'],
+        'createdAt': !(0, runtime_1.exists)(json, 'CreatedAt') ? undefined : (new Date(json['CreatedAt'])),
+        'lastLoginDate': !(0, runtime_1.exists)(json, 'LastLoginDate') ? undefined : (new Date(json['LastLoginDate'])),
+        'websiteCount': !(0, runtime_1.exists)(json, 'WebsiteCount') ? undefined : json['WebsiteCount'],
     };
 }
-export function MemberApiViewModelToJSON(value) {
+exports.MemberApiViewModelFromJSONTyped = MemberApiViewModelFromJSONTyped;
+function MemberApiViewModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -76,12 +82,13 @@ export function MemberApiViewModelToJSON(value) {
         'AllowedWebsiteLimit': value.allowedWebsiteLimit,
         'IsTwoFactorAuthenticationEnabled': value.isTwoFactorAuthenticationEnabled,
         'AlternateLoginEmail': value.alternateLoginEmail,
-        'RoleWebsiteGroupMappings': value.roleWebsiteGroupMappings === undefined ? undefined : (value.roleWebsiteGroupMappings.map(RoleWebsiteGroupMappingDtoToJSON)),
-        'Teams': value.teams === undefined ? undefined : (value.teams.map(ReducedTeamDtoToJSON)),
+        'RoleWebsiteGroupMappings': value.roleWebsiteGroupMappings === undefined ? undefined : (value.roleWebsiteGroupMappings.map(RoleWebsiteGroupMappingDto_1.RoleWebsiteGroupMappingDtoToJSON)),
+        'Teams': value.teams === undefined ? undefined : (value.teams.map(ReducedTeamDto_1.ReducedTeamDtoToJSON)),
         'OnlySsoLogin': value.onlySsoLogin,
         'CreatedAt': value.createdAt === undefined ? undefined : (value.createdAt.toISOString()),
         'LastLoginDate': value.lastLoginDate === undefined ? undefined : (value.lastLoginDate.toISOString()),
         'WebsiteCount': value.websiteCount,
     };
 }
+exports.MemberApiViewModelToJSON = MemberApiViewModelToJSON;
 //# sourceMappingURL=MemberApiViewModel.js.map

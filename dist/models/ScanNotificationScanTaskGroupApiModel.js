@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,28 +12,33 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ScanNotificationScanTaskGroupApiModelToJSON = exports.ScanNotificationScanTaskGroupApiModelFromJSONTyped = exports.ScanNotificationScanTaskGroupApiModelFromJSON = exports.instanceOfScanNotificationScanTaskGroupApiModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the ScanNotificationScanTaskGroupApiModel interface.
  */
-export function instanceOfScanNotificationScanTaskGroupApiModel(value) {
+function instanceOfScanNotificationScanTaskGroupApiModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function ScanNotificationScanTaskGroupApiModelFromJSON(json) {
+exports.instanceOfScanNotificationScanTaskGroupApiModel = instanceOfScanNotificationScanTaskGroupApiModel;
+function ScanNotificationScanTaskGroupApiModelFromJSON(json) {
     return ScanNotificationScanTaskGroupApiModelFromJSONTyped(json, false);
 }
-export function ScanNotificationScanTaskGroupApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.ScanNotificationScanTaskGroupApiModelFromJSON = ScanNotificationScanTaskGroupApiModelFromJSON;
+function ScanNotificationScanTaskGroupApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'websiteId': !exists(json, 'WebsiteId') ? undefined : json['WebsiteId'],
-        'scanTaskGroupName': !exists(json, 'ScanTaskGroupName') ? undefined : json['ScanTaskGroupName'],
-        'scanTaskGroupId': !exists(json, 'ScanTaskGroupId') ? undefined : json['ScanTaskGroupId'],
+        'websiteId': !(0, runtime_1.exists)(json, 'WebsiteId') ? undefined : json['WebsiteId'],
+        'scanTaskGroupName': !(0, runtime_1.exists)(json, 'ScanTaskGroupName') ? undefined : json['ScanTaskGroupName'],
+        'scanTaskGroupId': !(0, runtime_1.exists)(json, 'ScanTaskGroupId') ? undefined : json['ScanTaskGroupId'],
     };
 }
-export function ScanNotificationScanTaskGroupApiModelToJSON(value) {
+exports.ScanNotificationScanTaskGroupApiModelFromJSONTyped = ScanNotificationScanTaskGroupApiModelFromJSONTyped;
+function ScanNotificationScanTaskGroupApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -45,4 +51,5 @@ export function ScanNotificationScanTaskGroupApiModelToJSON(value) {
         'ScanTaskGroupId': value.scanTaskGroupId,
     };
 }
+exports.ScanNotificationScanTaskGroupApiModelToJSON = ScanNotificationScanTaskGroupApiModelToJSON;
 //# sourceMappingURL=ScanNotificationScanTaskGroupApiModel.js.map

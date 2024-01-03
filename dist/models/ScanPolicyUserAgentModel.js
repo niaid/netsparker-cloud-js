@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,27 +12,32 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ScanPolicyUserAgentModelToJSON = exports.ScanPolicyUserAgentModelFromJSONTyped = exports.ScanPolicyUserAgentModelFromJSON = exports.instanceOfScanPolicyUserAgentModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the ScanPolicyUserAgentModel interface.
  */
-export function instanceOfScanPolicyUserAgentModel(value) {
+function instanceOfScanPolicyUserAgentModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function ScanPolicyUserAgentModelFromJSON(json) {
+exports.instanceOfScanPolicyUserAgentModel = instanceOfScanPolicyUserAgentModel;
+function ScanPolicyUserAgentModelFromJSON(json) {
     return ScanPolicyUserAgentModelFromJSONTyped(json, false);
 }
-export function ScanPolicyUserAgentModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.ScanPolicyUserAgentModelFromJSON = ScanPolicyUserAgentModelFromJSON;
+function ScanPolicyUserAgentModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'value': !exists(json, 'Value') ? undefined : json['Value'],
+        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
+        'value': !(0, runtime_1.exists)(json, 'Value') ? undefined : json['Value'],
     };
 }
-export function ScanPolicyUserAgentModelToJSON(value) {
+exports.ScanPolicyUserAgentModelFromJSONTyped = ScanPolicyUserAgentModelFromJSONTyped;
+function ScanPolicyUserAgentModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -43,4 +49,5 @@ export function ScanPolicyUserAgentModelToJSON(value) {
         'Value': value.value,
     };
 }
+exports.ScanPolicyUserAgentModelToJSON = ScanPolicyUserAgentModelToJSON;
 //# sourceMappingURL=ScanPolicyUserAgentModel.js.map

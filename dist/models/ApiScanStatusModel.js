@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,11 +12,13 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ApiScanStatusModelToJSON = exports.ApiScanStatusModelFromJSONTyped = exports.ApiScanStatusModelFromJSON = exports.instanceOfApiScanStatusModel = exports.ApiScanStatusModelStateEnum = void 0;
+const runtime_1 = require("../runtime");
 /**
  * @export
  */
-export const ApiScanStatusModelStateEnum = {
+exports.ApiScanStatusModelStateEnum = {
     Queued: 'Queued',
     Scanning: 'Scanning',
     Archiving: 'Archiving',
@@ -31,25 +34,28 @@ export const ApiScanStatusModelStateEnum = {
 /**
  * Check if a given object implements the ApiScanStatusModel interface.
  */
-export function instanceOfApiScanStatusModel(value) {
+function instanceOfApiScanStatusModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function ApiScanStatusModelFromJSON(json) {
+exports.instanceOfApiScanStatusModel = instanceOfApiScanStatusModel;
+function ApiScanStatusModelFromJSON(json) {
     return ApiScanStatusModelFromJSONTyped(json, false);
 }
-export function ApiScanStatusModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.ApiScanStatusModelFromJSON = ApiScanStatusModelFromJSON;
+function ApiScanStatusModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'completedSteps': !exists(json, 'CompletedSteps') ? undefined : json['CompletedSteps'],
-        'estimatedLaunchTime': !exists(json, 'EstimatedLaunchTime') ? undefined : json['EstimatedLaunchTime'],
-        'estimatedSteps': !exists(json, 'EstimatedSteps') ? undefined : json['EstimatedSteps'],
-        'state': !exists(json, 'State') ? undefined : json['State'],
+        'completedSteps': !(0, runtime_1.exists)(json, 'CompletedSteps') ? undefined : json['CompletedSteps'],
+        'estimatedLaunchTime': !(0, runtime_1.exists)(json, 'EstimatedLaunchTime') ? undefined : json['EstimatedLaunchTime'],
+        'estimatedSteps': !(0, runtime_1.exists)(json, 'EstimatedSteps') ? undefined : json['EstimatedSteps'],
+        'state': !(0, runtime_1.exists)(json, 'State') ? undefined : json['State'],
     };
 }
-export function ApiScanStatusModelToJSON(value) {
+exports.ApiScanStatusModelFromJSONTyped = ApiScanStatusModelFromJSONTyped;
+function ApiScanStatusModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -63,4 +69,5 @@ export function ApiScanStatusModelToJSON(value) {
         'State': value.state,
     };
 }
+exports.ApiScanStatusModelToJSON = ApiScanStatusModelToJSON;
 //# sourceMappingURL=ApiScanStatusModel.js.map

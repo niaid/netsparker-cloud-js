@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,28 +12,33 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AgentGroupApiModelToJSON = exports.AgentGroupApiModelFromJSONTyped = exports.AgentGroupApiModelFromJSON = exports.instanceOfAgentGroupApiModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the AgentGroupApiModel interface.
  */
-export function instanceOfAgentGroupApiModel(value) {
+function instanceOfAgentGroupApiModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function AgentGroupApiModelFromJSON(json) {
+exports.instanceOfAgentGroupApiModel = instanceOfAgentGroupApiModel;
+function AgentGroupApiModelFromJSON(json) {
     return AgentGroupApiModelFromJSONTyped(json, false);
 }
-export function AgentGroupApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.AgentGroupApiModelFromJSON = AgentGroupApiModelFromJSON;
+function AgentGroupApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'agents': !exists(json, 'Agents') ? undefined : json['Agents'],
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
+        'agents': !(0, runtime_1.exists)(json, 'Agents') ? undefined : json['Agents'],
+        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
+        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
     };
 }
-export function AgentGroupApiModelToJSON(value) {
+exports.AgentGroupApiModelFromJSONTyped = AgentGroupApiModelFromJSONTyped;
+function AgentGroupApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -45,4 +51,5 @@ export function AgentGroupApiModelToJSON(value) {
         'Name': value.name,
     };
 }
+exports.AgentGroupApiModelToJSON = AgentGroupApiModelToJSON;
 //# sourceMappingURL=AgentGroupApiModel.js.map

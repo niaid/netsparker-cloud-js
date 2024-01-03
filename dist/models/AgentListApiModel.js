@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,11 +12,13 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AgentListApiModelToJSON = exports.AgentListApiModelFromJSONTyped = exports.AgentListApiModelFromJSON = exports.instanceOfAgentListApiModel = exports.AgentListApiModelStateEnum = void 0;
+const runtime_1 = require("../runtime");
 /**
  * @export
  */
-export const AgentListApiModelStateEnum = {
+exports.AgentListApiModelStateEnum = {
     Launching: 'Launching',
     Waiting: 'Waiting',
     Scanning: 'Scanning',
@@ -27,36 +30,39 @@ export const AgentListApiModelStateEnum = {
 /**
  * Check if a given object implements the AgentListApiModel interface.
  */
-export function instanceOfAgentListApiModel(value) {
+function instanceOfAgentListApiModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function AgentListApiModelFromJSON(json) {
+exports.instanceOfAgentListApiModel = instanceOfAgentListApiModel;
+function AgentListApiModelFromJSON(json) {
     return AgentListApiModelFromJSONTyped(json, false);
 }
-export function AgentListApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.AgentListApiModelFromJSON = AgentListApiModelFromJSON;
+function AgentListApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'heartbeat': !exists(json, 'Heartbeat') ? undefined : (new Date(json['Heartbeat'])),
-        'ipAddress': !exists(json, 'IpAddress') ? undefined : json['IpAddress'],
-        'launched': !exists(json, 'Launched') ? undefined : (new Date(json['Launched'])),
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'state': !exists(json, 'State') ? undefined : json['State'],
-        'version': !exists(json, 'Version') ? undefined : json['Version'],
-        'autoUpdateEnabled': !exists(json, 'AutoUpdateEnabled') ? undefined : json['AutoUpdateEnabled'],
-        'hasWaitingCommand': !exists(json, 'HasWaitingCommand') ? undefined : json['HasWaitingCommand'],
-        'vdbVersion': !exists(json, 'VdbVersion') ? undefined : json['VdbVersion'],
-        'osDescription': !exists(json, 'OsDescription') ? undefined : json['OsDescription'],
-        'frameworkDescription': !exists(json, 'FrameworkDescription') ? undefined : json['FrameworkDescription'],
-        'osArchitecture': !exists(json, 'OsArchitecture') ? undefined : json['OsArchitecture'],
-        'processArchitecture': !exists(json, 'ProcessArchitecture') ? undefined : json['ProcessArchitecture'],
-        'isAgentNeedsUpdate': !exists(json, 'IsAgentNeedsUpdate') ? undefined : json['IsAgentNeedsUpdate'],
+        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
+        'heartbeat': !(0, runtime_1.exists)(json, 'Heartbeat') ? undefined : (new Date(json['Heartbeat'])),
+        'ipAddress': !(0, runtime_1.exists)(json, 'IpAddress') ? undefined : json['IpAddress'],
+        'launched': !(0, runtime_1.exists)(json, 'Launched') ? undefined : (new Date(json['Launched'])),
+        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
+        'state': !(0, runtime_1.exists)(json, 'State') ? undefined : json['State'],
+        'version': !(0, runtime_1.exists)(json, 'Version') ? undefined : json['Version'],
+        'autoUpdateEnabled': !(0, runtime_1.exists)(json, 'AutoUpdateEnabled') ? undefined : json['AutoUpdateEnabled'],
+        'hasWaitingCommand': !(0, runtime_1.exists)(json, 'HasWaitingCommand') ? undefined : json['HasWaitingCommand'],
+        'vdbVersion': !(0, runtime_1.exists)(json, 'VdbVersion') ? undefined : json['VdbVersion'],
+        'osDescription': !(0, runtime_1.exists)(json, 'OsDescription') ? undefined : json['OsDescription'],
+        'frameworkDescription': !(0, runtime_1.exists)(json, 'FrameworkDescription') ? undefined : json['FrameworkDescription'],
+        'osArchitecture': !(0, runtime_1.exists)(json, 'OsArchitecture') ? undefined : json['OsArchitecture'],
+        'processArchitecture': !(0, runtime_1.exists)(json, 'ProcessArchitecture') ? undefined : json['ProcessArchitecture'],
+        'isAgentNeedsUpdate': !(0, runtime_1.exists)(json, 'IsAgentNeedsUpdate') ? undefined : json['IsAgentNeedsUpdate'],
     };
 }
-export function AgentListApiModelToJSON(value) {
+exports.AgentListApiModelFromJSONTyped = AgentListApiModelFromJSONTyped;
+function AgentListApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -81,4 +87,5 @@ export function AgentListApiModelToJSON(value) {
         'IsAgentNeedsUpdate': value.isAgentNeedsUpdate,
     };
 }
+exports.AgentListApiModelToJSON = AgentListApiModelToJSON;
 //# sourceMappingURL=AgentListApiModel.js.map

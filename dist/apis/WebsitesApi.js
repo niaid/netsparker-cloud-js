@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,12 +12,37 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import * as runtime from '../runtime';
-import { DeleteWebsiteApiModelToJSON, NewWebsiteApiModelToJSON, SendVerificationEmailModelFromJSON, StartVerificationApiModelToJSON, StartVerificationResultFromJSON, UpdateWebsiteApiModelToJSON, VerifyApiModelToJSON, WebsiteApiModelFromJSON, WebsiteListApiResultFromJSON, } from '../models/index';
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.WebsitesApi = void 0;
+const runtime = __importStar(require("../runtime"));
+const index_1 = require("../models/index");
 /**
  *
  */
-export class WebsitesApi extends runtime.BaseAPI {
+class WebsitesApi extends runtime.BaseAPI {
     /**
      * Deletes a website.
      */
@@ -32,7 +58,7 @@ export class WebsitesApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: DeleteWebsiteApiModelToJSON(requestParameters.model),
+            body: (0, index_1.DeleteWebsiteApiModelToJSON)(requestParameters.model),
         }, initOverrides);
         if (this.isJsonMime(response.headers.get('content-type'))) {
             return new runtime.JSONApiResponse(response);
@@ -63,7 +89,7 @@ export class WebsitesApi extends runtime.BaseAPI {
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => WebsiteApiModelFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.WebsiteApiModelFromJSON)(jsonValue));
     }
     /**
      * Gets website by id.
@@ -90,7 +116,7 @@ export class WebsitesApi extends runtime.BaseAPI {
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => WebsiteApiModelFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.WebsiteApiModelFromJSON)(jsonValue));
     }
     /**
      * Gets website by name or URL.
@@ -123,7 +149,7 @@ export class WebsitesApi extends runtime.BaseAPI {
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => WebsiteListApiResultFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.WebsiteListApiResultFromJSON)(jsonValue));
     }
     /**
      * Gets the list of websites by group name or id.
@@ -150,7 +176,7 @@ export class WebsitesApi extends runtime.BaseAPI {
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => WebsiteListApiResultFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.WebsiteListApiResultFromJSON)(jsonValue));
     }
     /**
      * Gets the list of websites.
@@ -174,9 +200,9 @@ export class WebsitesApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: NewWebsiteApiModelToJSON(requestParameters.model),
+            body: (0, index_1.NewWebsiteApiModelToJSON)(requestParameters.model),
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => WebsiteApiModelFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.WebsiteApiModelFromJSON)(jsonValue));
     }
     /**
      * Creates a new website.
@@ -202,7 +228,7 @@ export class WebsitesApi extends runtime.BaseAPI {
             query: queryParameters,
             body: requestParameters.websiteUrl,
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => SendVerificationEmailModelFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.SendVerificationEmailModelFromJSON)(jsonValue));
     }
     /**
      * Sends the verification email if verification limit not exceeded yet.
@@ -226,9 +252,9 @@ export class WebsitesApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: StartVerificationApiModelToJSON(requestParameters.model),
+            body: (0, index_1.StartVerificationApiModelToJSON)(requestParameters.model),
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => StartVerificationResultFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.StartVerificationResultFromJSON)(jsonValue));
     }
     /**
      * Starts the verification with specified method.
@@ -252,9 +278,9 @@ export class WebsitesApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: UpdateWebsiteApiModelToJSON(requestParameters.model),
+            body: (0, index_1.UpdateWebsiteApiModelToJSON)(requestParameters.model),
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => WebsiteApiModelFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.WebsiteApiModelFromJSON)(jsonValue));
     }
     /**
      * Updates a website.
@@ -304,7 +330,7 @@ export class WebsitesApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: VerifyApiModelToJSON(requestParameters.model),
+            body: (0, index_1.VerifyApiModelToJSON)(requestParameters.model),
         }, initOverrides);
         if (this.isJsonMime(response.headers.get('content-type'))) {
             return new runtime.JSONApiResponse(response);
@@ -321,4 +347,5 @@ export class WebsitesApi extends runtime.BaseAPI {
         return await response.value();
     }
 }
+exports.WebsitesApi = WebsitesApi;
 //# sourceMappingURL=WebsitesApi.js.map

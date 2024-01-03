@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,28 +12,33 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { CvssScoreValueFromJSON, CvssScoreValueToJSON, } from './CvssScoreValue';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.CvssMetricModelToJSON = exports.CvssMetricModelFromJSONTyped = exports.CvssMetricModelFromJSON = exports.instanceOfCvssMetricModel = void 0;
+const runtime_1 = require("../runtime");
+const CvssScoreValue_1 = require("./CvssScoreValue");
 /**
  * Check if a given object implements the CvssMetricModel interface.
  */
-export function instanceOfCvssMetricModel(value) {
+function instanceOfCvssMetricModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function CvssMetricModelFromJSON(json) {
+exports.instanceOfCvssMetricModel = instanceOfCvssMetricModel;
+function CvssMetricModelFromJSON(json) {
     return CvssMetricModelFromJSONTyped(json, false);
 }
-export function CvssMetricModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.CvssMetricModelFromJSON = CvssMetricModelFromJSON;
+function CvssMetricModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'score': !exists(json, 'Score') ? undefined : CvssScoreValueFromJSON(json['Score']),
-        'metrics': !exists(json, 'Metrics') ? undefined : json['Metrics'],
+        'score': !(0, runtime_1.exists)(json, 'Score') ? undefined : (0, CvssScoreValue_1.CvssScoreValueFromJSON)(json['Score']),
+        'metrics': !(0, runtime_1.exists)(json, 'Metrics') ? undefined : json['Metrics'],
     };
 }
-export function CvssMetricModelToJSON(value) {
+exports.CvssMetricModelFromJSONTyped = CvssMetricModelFromJSONTyped;
+function CvssMetricModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -40,8 +46,9 @@ export function CvssMetricModelToJSON(value) {
         return null;
     }
     return {
-        'Score': CvssScoreValueToJSON(value.score),
+        'Score': (0, CvssScoreValue_1.CvssScoreValueToJSON)(value.score),
         'Metrics': value.metrics,
     };
 }
+exports.CvssMetricModelToJSON = CvssMetricModelToJSON;
 //# sourceMappingURL=CvssMetricModel.js.map

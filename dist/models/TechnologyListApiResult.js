@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,37 +12,42 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { TechnologyApiModelFromJSON, TechnologyApiModelToJSON, } from './TechnologyApiModel';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.TechnologyListApiResultToJSON = exports.TechnologyListApiResultFromJSONTyped = exports.TechnologyListApiResultFromJSON = exports.instanceOfTechnologyListApiResult = void 0;
+const runtime_1 = require("../runtime");
+const TechnologyApiModel_1 = require("./TechnologyApiModel");
 /**
  * Check if a given object implements the TechnologyListApiResult interface.
  */
-export function instanceOfTechnologyListApiResult(value) {
+function instanceOfTechnologyListApiResult(value) {
     let isInstance = true;
     return isInstance;
 }
-export function TechnologyListApiResultFromJSON(json) {
+exports.instanceOfTechnologyListApiResult = instanceOfTechnologyListApiResult;
+function TechnologyListApiResultFromJSON(json) {
     return TechnologyListApiResultFromJSONTyped(json, false);
 }
-export function TechnologyListApiResultFromJSONTyped(json, ignoreDiscriminator) {
+exports.TechnologyListApiResultFromJSON = TechnologyListApiResultFromJSON;
+function TechnologyListApiResultFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'firstItemOnPage': !exists(json, 'FirstItemOnPage') ? undefined : json['FirstItemOnPage'],
-        'hasNextPage': !exists(json, 'HasNextPage') ? undefined : json['HasNextPage'],
-        'hasPreviousPage': !exists(json, 'HasPreviousPage') ? undefined : json['HasPreviousPage'],
-        'isFirstPage': !exists(json, 'IsFirstPage') ? undefined : json['IsFirstPage'],
-        'isLastPage': !exists(json, 'IsLastPage') ? undefined : json['IsLastPage'],
-        'lastItemOnPage': !exists(json, 'LastItemOnPage') ? undefined : json['LastItemOnPage'],
-        'list': !exists(json, 'List') ? undefined : (json['List'].map(TechnologyApiModelFromJSON)),
-        'pageCount': !exists(json, 'PageCount') ? undefined : json['PageCount'],
-        'pageNumber': !exists(json, 'PageNumber') ? undefined : json['PageNumber'],
-        'pageSize': !exists(json, 'PageSize') ? undefined : json['PageSize'],
-        'totalItemCount': !exists(json, 'TotalItemCount') ? undefined : json['TotalItemCount'],
+        'firstItemOnPage': !(0, runtime_1.exists)(json, 'FirstItemOnPage') ? undefined : json['FirstItemOnPage'],
+        'hasNextPage': !(0, runtime_1.exists)(json, 'HasNextPage') ? undefined : json['HasNextPage'],
+        'hasPreviousPage': !(0, runtime_1.exists)(json, 'HasPreviousPage') ? undefined : json['HasPreviousPage'],
+        'isFirstPage': !(0, runtime_1.exists)(json, 'IsFirstPage') ? undefined : json['IsFirstPage'],
+        'isLastPage': !(0, runtime_1.exists)(json, 'IsLastPage') ? undefined : json['IsLastPage'],
+        'lastItemOnPage': !(0, runtime_1.exists)(json, 'LastItemOnPage') ? undefined : json['LastItemOnPage'],
+        'list': !(0, runtime_1.exists)(json, 'List') ? undefined : (json['List'].map(TechnologyApiModel_1.TechnologyApiModelFromJSON)),
+        'pageCount': !(0, runtime_1.exists)(json, 'PageCount') ? undefined : json['PageCount'],
+        'pageNumber': !(0, runtime_1.exists)(json, 'PageNumber') ? undefined : json['PageNumber'],
+        'pageSize': !(0, runtime_1.exists)(json, 'PageSize') ? undefined : json['PageSize'],
+        'totalItemCount': !(0, runtime_1.exists)(json, 'TotalItemCount') ? undefined : json['TotalItemCount'],
     };
 }
-export function TechnologyListApiResultToJSON(value) {
+exports.TechnologyListApiResultFromJSONTyped = TechnologyListApiResultFromJSONTyped;
+function TechnologyListApiResultToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -55,11 +61,12 @@ export function TechnologyListApiResultToJSON(value) {
         'IsFirstPage': value.isFirstPage,
         'IsLastPage': value.isLastPage,
         'LastItemOnPage': value.lastItemOnPage,
-        'List': value.list === undefined ? undefined : (value.list.map(TechnologyApiModelToJSON)),
+        'List': value.list === undefined ? undefined : (value.list.map(TechnologyApiModel_1.TechnologyApiModelToJSON)),
         'PageCount': value.pageCount,
         'PageNumber': value.pageNumber,
         'PageSize': value.pageSize,
         'TotalItemCount': value.totalItemCount,
     };
 }
+exports.TechnologyListApiResultToJSON = TechnologyListApiResultToJSON;
 //# sourceMappingURL=TechnologyListApiResult.js.map

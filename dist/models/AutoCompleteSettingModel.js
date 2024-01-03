@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,18 +12,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AutoCompleteSettingModelToJSON = exports.AutoCompleteSettingModelFromJSONTyped = exports.AutoCompleteSettingModelFromJSON = exports.instanceOfAutoCompleteSettingModel = void 0;
 /**
  * Check if a given object implements the AutoCompleteSettingModel interface.
  */
-export function instanceOfAutoCompleteSettingModel(value) {
+function instanceOfAutoCompleteSettingModel(value) {
     let isInstance = true;
     isInstance = isInstance && "value" in value;
     return isInstance;
 }
-export function AutoCompleteSettingModelFromJSON(json) {
+exports.instanceOfAutoCompleteSettingModel = instanceOfAutoCompleteSettingModel;
+function AutoCompleteSettingModelFromJSON(json) {
     return AutoCompleteSettingModelFromJSONTyped(json, false);
 }
-export function AutoCompleteSettingModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.AutoCompleteSettingModelFromJSON = AutoCompleteSettingModelFromJSON;
+function AutoCompleteSettingModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
@@ -30,7 +35,8 @@ export function AutoCompleteSettingModelFromJSONTyped(json, ignoreDiscriminator)
         'value': json['Value'],
     };
 }
-export function AutoCompleteSettingModelToJSON(value) {
+exports.AutoCompleteSettingModelFromJSONTyped = AutoCompleteSettingModelFromJSONTyped;
+function AutoCompleteSettingModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -41,4 +47,5 @@ export function AutoCompleteSettingModelToJSON(value) {
         'Value': value.value,
     };
 }
+exports.AutoCompleteSettingModelToJSON = AutoCompleteSettingModelToJSON;
 //# sourceMappingURL=AutoCompleteSettingModel.js.map

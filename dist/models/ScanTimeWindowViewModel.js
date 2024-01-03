@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,39 +12,44 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { ScanTimeWindowItemViewModelFromJSON, ScanTimeWindowItemViewModelToJSON, } from './ScanTimeWindowItemViewModel';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ScanTimeWindowViewModelToJSON = exports.ScanTimeWindowViewModelFromJSONTyped = exports.ScanTimeWindowViewModelFromJSON = exports.instanceOfScanTimeWindowViewModel = exports.ScanTimeWindowViewModelScanCreateTypeEnum = void 0;
+const runtime_1 = require("../runtime");
+const ScanTimeWindowItemViewModel_1 = require("./ScanTimeWindowItemViewModel");
 /**
  * @export
  */
-export const ScanTimeWindowViewModelScanCreateTypeEnum = {
+exports.ScanTimeWindowViewModelScanCreateTypeEnum = {
     Website: 'Website',
     WebsiteGroup: 'WebsiteGroup'
 };
 /**
  * Check if a given object implements the ScanTimeWindowViewModel interface.
  */
-export function instanceOfScanTimeWindowViewModel(value) {
+function instanceOfScanTimeWindowViewModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function ScanTimeWindowViewModelFromJSON(json) {
+exports.instanceOfScanTimeWindowViewModel = instanceOfScanTimeWindowViewModel;
+function ScanTimeWindowViewModelFromJSON(json) {
     return ScanTimeWindowViewModelFromJSONTyped(json, false);
 }
-export function ScanTimeWindowViewModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.ScanTimeWindowViewModelFromJSON = ScanTimeWindowViewModelFromJSON;
+function ScanTimeWindowViewModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'isEnabled': !exists(json, 'IsEnabled') ? undefined : json['IsEnabled'],
-        'isEnabledForWebsite': !exists(json, 'IsEnabledForWebsite') ? undefined : json['IsEnabledForWebsite'],
-        'isEnabledForWebsiteGroup': !exists(json, 'IsEnabledForWebsiteGroup') ? undefined : json['IsEnabledForWebsiteGroup'],
-        'items': !exists(json, 'Items') ? undefined : (json['Items'].map(ScanTimeWindowItemViewModelFromJSON)),
-        'timeZone': !exists(json, 'TimeZone') ? undefined : json['TimeZone'],
-        'scanCreateType': !exists(json, 'ScanCreateType') ? undefined : json['ScanCreateType'],
+        'isEnabled': !(0, runtime_1.exists)(json, 'IsEnabled') ? undefined : json['IsEnabled'],
+        'isEnabledForWebsite': !(0, runtime_1.exists)(json, 'IsEnabledForWebsite') ? undefined : json['IsEnabledForWebsite'],
+        'isEnabledForWebsiteGroup': !(0, runtime_1.exists)(json, 'IsEnabledForWebsiteGroup') ? undefined : json['IsEnabledForWebsiteGroup'],
+        'items': !(0, runtime_1.exists)(json, 'Items') ? undefined : (json['Items'].map(ScanTimeWindowItemViewModel_1.ScanTimeWindowItemViewModelFromJSON)),
+        'timeZone': !(0, runtime_1.exists)(json, 'TimeZone') ? undefined : json['TimeZone'],
+        'scanCreateType': !(0, runtime_1.exists)(json, 'ScanCreateType') ? undefined : json['ScanCreateType'],
     };
 }
-export function ScanTimeWindowViewModelToJSON(value) {
+exports.ScanTimeWindowViewModelFromJSONTyped = ScanTimeWindowViewModelFromJSONTyped;
+function ScanTimeWindowViewModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -54,9 +60,10 @@ export function ScanTimeWindowViewModelToJSON(value) {
         'IsEnabled': value.isEnabled,
         'IsEnabledForWebsite': value.isEnabledForWebsite,
         'IsEnabledForWebsiteGroup': value.isEnabledForWebsiteGroup,
-        'Items': value.items === undefined ? undefined : (value.items.map(ScanTimeWindowItemViewModelToJSON)),
+        'Items': value.items === undefined ? undefined : (value.items.map(ScanTimeWindowItemViewModel_1.ScanTimeWindowItemViewModelToJSON)),
         'TimeZone': value.timeZone,
         'ScanCreateType': value.scanCreateType,
     };
 }
+exports.ScanTimeWindowViewModelToJSON = ScanTimeWindowViewModelToJSON;
 //# sourceMappingURL=ScanTimeWindowViewModel.js.map

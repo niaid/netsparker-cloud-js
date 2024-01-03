@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,11 +12,13 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.CustomScriptRequestApiModelToJSON = exports.CustomScriptRequestApiModelFromJSONTyped = exports.CustomScriptRequestApiModelFromJSON = exports.instanceOfCustomScriptRequestApiModel = exports.CustomScriptRequestApiModelTypeEnum = void 0;
+const runtime_1 = require("../runtime");
 /**
  * @export
  */
-export const CustomScriptRequestApiModelTypeEnum = {
+exports.CustomScriptRequestApiModelTypeEnum = {
     Active: 'Active',
     Passive: 'Passive',
     PerDirectory: 'PerDirectory',
@@ -24,26 +27,29 @@ export const CustomScriptRequestApiModelTypeEnum = {
 /**
  * Check if a given object implements the CustomScriptRequestApiModel interface.
  */
-export function instanceOfCustomScriptRequestApiModel(value) {
+function instanceOfCustomScriptRequestApiModel(value) {
     let isInstance = true;
     isInstance = isInstance && "name" in value;
     isInstance = isInstance && "content" in value;
     return isInstance;
 }
-export function CustomScriptRequestApiModelFromJSON(json) {
+exports.instanceOfCustomScriptRequestApiModel = instanceOfCustomScriptRequestApiModel;
+function CustomScriptRequestApiModelFromJSON(json) {
     return CustomScriptRequestApiModelFromJSONTyped(json, false);
 }
-export function CustomScriptRequestApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.CustomScriptRequestApiModelFromJSON = CustomScriptRequestApiModelFromJSON;
+function CustomScriptRequestApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'type': !exists(json, 'Type') ? undefined : json['Type'],
+        'type': !(0, runtime_1.exists)(json, 'Type') ? undefined : json['Type'],
         'name': json['Name'],
         'content': json['Content'],
     };
 }
-export function CustomScriptRequestApiModelToJSON(value) {
+exports.CustomScriptRequestApiModelFromJSONTyped = CustomScriptRequestApiModelFromJSONTyped;
+function CustomScriptRequestApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -56,4 +62,5 @@ export function CustomScriptRequestApiModelToJSON(value) {
         'Content': value.content,
     };
 }
+exports.CustomScriptRequestApiModelToJSON = CustomScriptRequestApiModelToJSON;
 //# sourceMappingURL=CustomScriptRequestApiModel.js.map

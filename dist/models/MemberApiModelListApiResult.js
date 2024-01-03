@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,37 +12,42 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { MemberApiViewModelFromJSON, MemberApiViewModelToJSON, } from './MemberApiViewModel';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.MemberApiModelListApiResultToJSON = exports.MemberApiModelListApiResultFromJSONTyped = exports.MemberApiModelListApiResultFromJSON = exports.instanceOfMemberApiModelListApiResult = void 0;
+const runtime_1 = require("../runtime");
+const MemberApiViewModel_1 = require("./MemberApiViewModel");
 /**
  * Check if a given object implements the MemberApiModelListApiResult interface.
  */
-export function instanceOfMemberApiModelListApiResult(value) {
+function instanceOfMemberApiModelListApiResult(value) {
     let isInstance = true;
     return isInstance;
 }
-export function MemberApiModelListApiResultFromJSON(json) {
+exports.instanceOfMemberApiModelListApiResult = instanceOfMemberApiModelListApiResult;
+function MemberApiModelListApiResultFromJSON(json) {
     return MemberApiModelListApiResultFromJSONTyped(json, false);
 }
-export function MemberApiModelListApiResultFromJSONTyped(json, ignoreDiscriminator) {
+exports.MemberApiModelListApiResultFromJSON = MemberApiModelListApiResultFromJSON;
+function MemberApiModelListApiResultFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'firstItemOnPage': !exists(json, 'FirstItemOnPage') ? undefined : json['FirstItemOnPage'],
-        'hasNextPage': !exists(json, 'HasNextPage') ? undefined : json['HasNextPage'],
-        'hasPreviousPage': !exists(json, 'HasPreviousPage') ? undefined : json['HasPreviousPage'],
-        'isFirstPage': !exists(json, 'IsFirstPage') ? undefined : json['IsFirstPage'],
-        'isLastPage': !exists(json, 'IsLastPage') ? undefined : json['IsLastPage'],
-        'lastItemOnPage': !exists(json, 'LastItemOnPage') ? undefined : json['LastItemOnPage'],
-        'list': !exists(json, 'List') ? undefined : (json['List'].map(MemberApiViewModelFromJSON)),
-        'pageCount': !exists(json, 'PageCount') ? undefined : json['PageCount'],
-        'pageNumber': !exists(json, 'PageNumber') ? undefined : json['PageNumber'],
-        'pageSize': !exists(json, 'PageSize') ? undefined : json['PageSize'],
-        'totalItemCount': !exists(json, 'TotalItemCount') ? undefined : json['TotalItemCount'],
+        'firstItemOnPage': !(0, runtime_1.exists)(json, 'FirstItemOnPage') ? undefined : json['FirstItemOnPage'],
+        'hasNextPage': !(0, runtime_1.exists)(json, 'HasNextPage') ? undefined : json['HasNextPage'],
+        'hasPreviousPage': !(0, runtime_1.exists)(json, 'HasPreviousPage') ? undefined : json['HasPreviousPage'],
+        'isFirstPage': !(0, runtime_1.exists)(json, 'IsFirstPage') ? undefined : json['IsFirstPage'],
+        'isLastPage': !(0, runtime_1.exists)(json, 'IsLastPage') ? undefined : json['IsLastPage'],
+        'lastItemOnPage': !(0, runtime_1.exists)(json, 'LastItemOnPage') ? undefined : json['LastItemOnPage'],
+        'list': !(0, runtime_1.exists)(json, 'List') ? undefined : (json['List'].map(MemberApiViewModel_1.MemberApiViewModelFromJSON)),
+        'pageCount': !(0, runtime_1.exists)(json, 'PageCount') ? undefined : json['PageCount'],
+        'pageNumber': !(0, runtime_1.exists)(json, 'PageNumber') ? undefined : json['PageNumber'],
+        'pageSize': !(0, runtime_1.exists)(json, 'PageSize') ? undefined : json['PageSize'],
+        'totalItemCount': !(0, runtime_1.exists)(json, 'TotalItemCount') ? undefined : json['TotalItemCount'],
     };
 }
-export function MemberApiModelListApiResultToJSON(value) {
+exports.MemberApiModelListApiResultFromJSONTyped = MemberApiModelListApiResultFromJSONTyped;
+function MemberApiModelListApiResultToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -55,11 +61,12 @@ export function MemberApiModelListApiResultToJSON(value) {
         'IsFirstPage': value.isFirstPage,
         'IsLastPage': value.isLastPage,
         'LastItemOnPage': value.lastItemOnPage,
-        'List': value.list === undefined ? undefined : (value.list.map(MemberApiViewModelToJSON)),
+        'List': value.list === undefined ? undefined : (value.list.map(MemberApiViewModel_1.MemberApiViewModelToJSON)),
         'PageCount': value.pageCount,
         'PageNumber': value.pageNumber,
         'PageSize': value.pageSize,
         'TotalItemCount': value.totalItemCount,
     };
 }
+exports.MemberApiModelListApiResultToJSON = MemberApiModelListApiResultToJSON;
 //# sourceMappingURL=MemberApiModelListApiResult.js.map

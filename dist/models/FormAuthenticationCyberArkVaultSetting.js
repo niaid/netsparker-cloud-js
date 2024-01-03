@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,41 +12,46 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.FormAuthenticationCyberArkVaultSettingToJSON = exports.FormAuthenticationCyberArkVaultSettingFromJSONTyped = exports.FormAuthenticationCyberArkVaultSettingFromJSON = exports.instanceOfFormAuthenticationCyberArkVaultSetting = exports.FormAuthenticationCyberArkVaultSettingAgentModeEnum = void 0;
+const runtime_1 = require("../runtime");
 /**
  * @export
  */
-export const FormAuthenticationCyberArkVaultSettingAgentModeEnum = {
+exports.FormAuthenticationCyberArkVaultSettingAgentModeEnum = {
     Cloud: 'Cloud',
     Internal: 'Internal'
 };
 /**
  * Check if a given object implements the FormAuthenticationCyberArkVaultSetting interface.
  */
-export function instanceOfFormAuthenticationCyberArkVaultSetting(value) {
+function instanceOfFormAuthenticationCyberArkVaultSetting(value) {
     let isInstance = true;
     return isInstance;
 }
-export function FormAuthenticationCyberArkVaultSettingFromJSON(json) {
+exports.instanceOfFormAuthenticationCyberArkVaultSetting = instanceOfFormAuthenticationCyberArkVaultSetting;
+function FormAuthenticationCyberArkVaultSettingFromJSON(json) {
     return FormAuthenticationCyberArkVaultSettingFromJSONTyped(json, false);
 }
-export function FormAuthenticationCyberArkVaultSettingFromJSONTyped(json, ignoreDiscriminator) {
+exports.FormAuthenticationCyberArkVaultSettingFromJSON = FormAuthenticationCyberArkVaultSettingFromJSON;
+function FormAuthenticationCyberArkVaultSettingFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'integrationId': !exists(json, 'IntegrationId') ? undefined : json['IntegrationId'],
-        'cyberArkUseStaticUsername': !exists(json, 'CyberArkUseStaticUsername') ? undefined : json['CyberArkUseStaticUsername'],
-        'cyberArkStaticUsername': !exists(json, 'CyberArkStaticUsername') ? undefined : json['CyberArkStaticUsername'],
-        'cyberArkUserNameQuery': !exists(json, 'CyberArkUserNameQuery') ? undefined : json['CyberArkUserNameQuery'],
-        'cyberArkPasswordQuery': !exists(json, 'CyberArkPasswordQuery') ? undefined : json['CyberArkPasswordQuery'],
-        'url': !exists(json, 'Url') ? undefined : json['Url'],
-        'certificateFilePassword': !exists(json, 'CertificateFilePassword') ? undefined : json['CertificateFilePassword'],
-        'certificateFileKey': !exists(json, 'CertificateFileKey') ? undefined : json['CertificateFileKey'],
-        'agentMode': !exists(json, 'AgentMode') ? undefined : json['AgentMode'],
+        'integrationId': !(0, runtime_1.exists)(json, 'IntegrationId') ? undefined : json['IntegrationId'],
+        'cyberArkUseStaticUsername': !(0, runtime_1.exists)(json, 'CyberArkUseStaticUsername') ? undefined : json['CyberArkUseStaticUsername'],
+        'cyberArkStaticUsername': !(0, runtime_1.exists)(json, 'CyberArkStaticUsername') ? undefined : json['CyberArkStaticUsername'],
+        'cyberArkUserNameQuery': !(0, runtime_1.exists)(json, 'CyberArkUserNameQuery') ? undefined : json['CyberArkUserNameQuery'],
+        'cyberArkPasswordQuery': !(0, runtime_1.exists)(json, 'CyberArkPasswordQuery') ? undefined : json['CyberArkPasswordQuery'],
+        'url': !(0, runtime_1.exists)(json, 'Url') ? undefined : json['Url'],
+        'certificateFilePassword': !(0, runtime_1.exists)(json, 'CertificateFilePassword') ? undefined : json['CertificateFilePassword'],
+        'certificateFileKey': !(0, runtime_1.exists)(json, 'CertificateFileKey') ? undefined : json['CertificateFileKey'],
+        'agentMode': !(0, runtime_1.exists)(json, 'AgentMode') ? undefined : json['AgentMode'],
     };
 }
-export function FormAuthenticationCyberArkVaultSettingToJSON(value) {
+exports.FormAuthenticationCyberArkVaultSettingFromJSONTyped = FormAuthenticationCyberArkVaultSettingFromJSONTyped;
+function FormAuthenticationCyberArkVaultSettingToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -64,4 +70,5 @@ export function FormAuthenticationCyberArkVaultSettingToJSON(value) {
         'AgentMode': value.agentMode,
     };
 }
+exports.FormAuthenticationCyberArkVaultSettingToJSON = FormAuthenticationCyberArkVaultSettingToJSON;
 //# sourceMappingURL=FormAuthenticationCyberArkVaultSetting.js.map

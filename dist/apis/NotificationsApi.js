@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,12 +12,37 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import * as runtime from '../runtime';
-import { DeleteScanNotificationApiModelToJSON, NewScanNotificationApiModelToJSON, NotificationPriorityPairToJSON, ScanNotificationApiModelFromJSON, ScanNotificationListApiResultFromJSON, ScanNotificationScanTaskGroupApiModelFromJSON, UpdateScanNotificationApiModelToJSON, } from '../models/index';
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.NotificationsGetPrioritiesEventEnum = exports.NotificationsApi = void 0;
+const runtime = __importStar(require("../runtime"));
+const index_1 = require("../models/index");
 /**
  *
  */
-export class NotificationsApi extends runtime.BaseAPI {
+class NotificationsApi extends runtime.BaseAPI {
     /**
      * Deletes an existing scan notification definition.
      */
@@ -32,7 +58,7 @@ export class NotificationsApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: DeleteScanNotificationApiModelToJSON(requestParameters.model),
+            body: (0, index_1.DeleteScanNotificationApiModelToJSON)(requestParameters.model),
         }, initOverrides);
         return new runtime.VoidApiResponse(response);
     }
@@ -57,7 +83,7 @@ export class NotificationsApi extends runtime.BaseAPI {
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => ScanNotificationApiModelFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.ScanNotificationApiModelFromJSON)(jsonValue));
     }
     /**
      * Gets the notification.
@@ -84,7 +110,7 @@ export class NotificationsApi extends runtime.BaseAPI {
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => ScanNotificationApiModelFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.ScanNotificationApiModelFromJSON)(jsonValue));
     }
     /**
      * Gets the list of notifications grouped by their Scopes and ordered by priorities for the given event.
@@ -111,7 +137,7 @@ export class NotificationsApi extends runtime.BaseAPI {
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => ScanNotificationScanTaskGroupApiModelFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.ScanNotificationScanTaskGroupApiModelFromJSON)(jsonValue));
     }
     /**
      * Gets the scan groups of website.
@@ -138,7 +164,7 @@ export class NotificationsApi extends runtime.BaseAPI {
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => ScanNotificationListApiResultFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.ScanNotificationListApiResultFromJSON)(jsonValue));
     }
     /**
      * Gets the list of notifications.
@@ -162,9 +188,9 @@ export class NotificationsApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: NewScanNotificationApiModelToJSON(requestParameters.model),
+            body: (0, index_1.NewScanNotificationApiModelToJSON)(requestParameters.model),
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => ScanNotificationApiModelFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.ScanNotificationApiModelFromJSON)(jsonValue));
     }
     /**
      * Creates a new scan notification definition.
@@ -188,7 +214,7 @@ export class NotificationsApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: requestParameters.priorities.map(NotificationPriorityPairToJSON),
+            body: requestParameters.priorities.map(index_1.NotificationPriorityPairToJSON),
         }, initOverrides);
         return new runtime.VoidApiResponse(response);
     }
@@ -213,9 +239,9 @@ export class NotificationsApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: UpdateScanNotificationApiModelToJSON(requestParameters.model),
+            body: (0, index_1.UpdateScanNotificationApiModelToJSON)(requestParameters.model),
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => ScanNotificationApiModelFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.ScanNotificationApiModelFromJSON)(jsonValue));
     }
     /**
      * Updates an existing scan notification definition.
@@ -225,10 +251,11 @@ export class NotificationsApi extends runtime.BaseAPI {
         return await response.value();
     }
 }
+exports.NotificationsApi = NotificationsApi;
 /**
  * @export
  */
-export const NotificationsGetPrioritiesEventEnum = {
+exports.NotificationsGetPrioritiesEventEnum = {
     NewScan: 'NewScan',
     ScanCompleted: 'ScanCompleted',
     ScanCancelled: 'ScanCancelled',

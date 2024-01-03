@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,11 +12,13 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.CvssScoreValueToJSON = exports.CvssScoreValueFromJSONTyped = exports.CvssScoreValueFromJSON = exports.instanceOfCvssScoreValue = exports.CvssScoreValueSeverityEnum = void 0;
+const runtime_1 = require("../runtime");
 /**
  * @export
  */
-export const CvssScoreValueSeverityEnum = {
+exports.CvssScoreValueSeverityEnum = {
     None: 'None',
     Low: 'Low',
     Medium: 'Medium',
@@ -25,23 +28,26 @@ export const CvssScoreValueSeverityEnum = {
 /**
  * Check if a given object implements the CvssScoreValue interface.
  */
-export function instanceOfCvssScoreValue(value) {
+function instanceOfCvssScoreValue(value) {
     let isInstance = true;
     return isInstance;
 }
-export function CvssScoreValueFromJSON(json) {
+exports.instanceOfCvssScoreValue = instanceOfCvssScoreValue;
+function CvssScoreValueFromJSON(json) {
     return CvssScoreValueFromJSONTyped(json, false);
 }
-export function CvssScoreValueFromJSONTyped(json, ignoreDiscriminator) {
+exports.CvssScoreValueFromJSON = CvssScoreValueFromJSON;
+function CvssScoreValueFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'severity': !exists(json, 'Severity') ? undefined : json['Severity'],
-        'value': !exists(json, 'Value') ? undefined : json['Value'],
+        'severity': !(0, runtime_1.exists)(json, 'Severity') ? undefined : json['Severity'],
+        'value': !(0, runtime_1.exists)(json, 'Value') ? undefined : json['Value'],
     };
 }
-export function CvssScoreValueToJSON(value) {
+exports.CvssScoreValueFromJSONTyped = CvssScoreValueFromJSONTyped;
+function CvssScoreValueToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -50,4 +56,5 @@ export function CvssScoreValueToJSON(value) {
     }
     return {};
 }
+exports.CvssScoreValueToJSON = CvssScoreValueToJSON;
 //# sourceMappingURL=CvssScoreValue.js.map

@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,34 +12,39 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.DeleteDiscoveryConnectionModelToJSON = exports.DeleteDiscoveryConnectionModelFromJSONTyped = exports.DeleteDiscoveryConnectionModelFromJSON = exports.instanceOfDeleteDiscoveryConnectionModel = exports.DeleteDiscoveryConnectionModelTypeEnum = void 0;
+const runtime_1 = require("../runtime");
 /**
  * @export
  */
-export const DeleteDiscoveryConnectionModelTypeEnum = {
+exports.DeleteDiscoveryConnectionModelTypeEnum = {
     Aws: 'Aws'
 };
 /**
  * Check if a given object implements the DeleteDiscoveryConnectionModel interface.
  */
-export function instanceOfDeleteDiscoveryConnectionModel(value) {
+function instanceOfDeleteDiscoveryConnectionModel(value) {
     let isInstance = true;
     isInstance = isInstance && "connectionId" in value;
     return isInstance;
 }
-export function DeleteDiscoveryConnectionModelFromJSON(json) {
+exports.instanceOfDeleteDiscoveryConnectionModel = instanceOfDeleteDiscoveryConnectionModel;
+function DeleteDiscoveryConnectionModelFromJSON(json) {
     return DeleteDiscoveryConnectionModelFromJSONTyped(json, false);
 }
-export function DeleteDiscoveryConnectionModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.DeleteDiscoveryConnectionModelFromJSON = DeleteDiscoveryConnectionModelFromJSON;
+function DeleteDiscoveryConnectionModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
         'connectionId': json['ConnectionId'],
-        'type': !exists(json, 'Type') ? undefined : json['Type'],
+        'type': !(0, runtime_1.exists)(json, 'Type') ? undefined : json['Type'],
     };
 }
-export function DeleteDiscoveryConnectionModelToJSON(value) {
+exports.DeleteDiscoveryConnectionModelFromJSONTyped = DeleteDiscoveryConnectionModelFromJSONTyped;
+function DeleteDiscoveryConnectionModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -50,4 +56,5 @@ export function DeleteDiscoveryConnectionModelToJSON(value) {
         'Type': value.type,
     };
 }
+exports.DeleteDiscoveryConnectionModelToJSON = DeleteDiscoveryConnectionModelToJSON;
 //# sourceMappingURL=DeleteDiscoveryConnectionModel.js.map

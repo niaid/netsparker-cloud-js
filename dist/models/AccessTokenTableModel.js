@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,27 +12,32 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AccessTokenTableModelToJSON = exports.AccessTokenTableModelFromJSONTyped = exports.AccessTokenTableModelFromJSON = exports.instanceOfAccessTokenTableModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the AccessTokenTableModel interface.
  */
-export function instanceOfAccessTokenTableModel(value) {
+function instanceOfAccessTokenTableModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function AccessTokenTableModelFromJSON(json) {
+exports.instanceOfAccessTokenTableModel = instanceOfAccessTokenTableModel;
+function AccessTokenTableModelFromJSON(json) {
     return AccessTokenTableModelFromJSONTyped(json, false);
 }
-export function AccessTokenTableModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.AccessTokenTableModelFromJSON = AccessTokenTableModelFromJSON;
+function AccessTokenTableModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'fields': !exists(json, 'Fields') ? undefined : json['Fields'],
-        'items': !exists(json, 'Items') ? undefined : json['Items'],
+        'fields': !(0, runtime_1.exists)(json, 'Fields') ? undefined : json['Fields'],
+        'items': !(0, runtime_1.exists)(json, 'Items') ? undefined : json['Items'],
     };
 }
-export function AccessTokenTableModelToJSON(value) {
+exports.AccessTokenTableModelFromJSONTyped = AccessTokenTableModelFromJSONTyped;
+function AccessTokenTableModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -43,4 +49,5 @@ export function AccessTokenTableModelToJSON(value) {
         'Items': value.items,
     };
 }
+exports.AccessTokenTableModelToJSON = AccessTokenTableModelToJSON;
 //# sourceMappingURL=AccessTokenTableModel.js.map

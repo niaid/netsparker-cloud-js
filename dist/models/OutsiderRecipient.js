@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,26 +12,31 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.OutsiderRecipientToJSON = exports.OutsiderRecipientFromJSONTyped = exports.OutsiderRecipientFromJSON = exports.instanceOfOutsiderRecipient = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the OutsiderRecipient interface.
  */
-export function instanceOfOutsiderRecipient(value) {
+function instanceOfOutsiderRecipient(value) {
     let isInstance = true;
     return isInstance;
 }
-export function OutsiderRecipientFromJSON(json) {
+exports.instanceOfOutsiderRecipient = instanceOfOutsiderRecipient;
+function OutsiderRecipientFromJSON(json) {
     return OutsiderRecipientFromJSONTyped(json, false);
 }
-export function OutsiderRecipientFromJSONTyped(json, ignoreDiscriminator) {
+exports.OutsiderRecipientFromJSON = OutsiderRecipientFromJSON;
+function OutsiderRecipientFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'email': !exists(json, 'Email') ? undefined : json['Email'],
+        'email': !(0, runtime_1.exists)(json, 'Email') ? undefined : json['Email'],
     };
 }
-export function OutsiderRecipientToJSON(value) {
+exports.OutsiderRecipientFromJSONTyped = OutsiderRecipientFromJSONTyped;
+function OutsiderRecipientToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -41,4 +47,5 @@ export function OutsiderRecipientToJSON(value) {
         'Email': value.email,
     };
 }
+exports.OutsiderRecipientToJSON = OutsiderRecipientToJSON;
 //# sourceMappingURL=OutsiderRecipient.js.map

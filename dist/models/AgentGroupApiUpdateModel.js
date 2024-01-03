@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,20 +12,24 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AgentGroupApiUpdateModelToJSON = exports.AgentGroupApiUpdateModelFromJSONTyped = exports.AgentGroupApiUpdateModelFromJSON = exports.instanceOfAgentGroupApiUpdateModel = void 0;
 /**
  * Check if a given object implements the AgentGroupApiUpdateModel interface.
  */
-export function instanceOfAgentGroupApiUpdateModel(value) {
+function instanceOfAgentGroupApiUpdateModel(value) {
     let isInstance = true;
     isInstance = isInstance && "agents" in value;
     isInstance = isInstance && "id" in value;
     isInstance = isInstance && "name" in value;
     return isInstance;
 }
-export function AgentGroupApiUpdateModelFromJSON(json) {
+exports.instanceOfAgentGroupApiUpdateModel = instanceOfAgentGroupApiUpdateModel;
+function AgentGroupApiUpdateModelFromJSON(json) {
     return AgentGroupApiUpdateModelFromJSONTyped(json, false);
 }
-export function AgentGroupApiUpdateModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.AgentGroupApiUpdateModelFromJSON = AgentGroupApiUpdateModelFromJSON;
+function AgentGroupApiUpdateModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
@@ -34,7 +39,8 @@ export function AgentGroupApiUpdateModelFromJSONTyped(json, ignoreDiscriminator)
         'name': json['Name'],
     };
 }
-export function AgentGroupApiUpdateModelToJSON(value) {
+exports.AgentGroupApiUpdateModelFromJSONTyped = AgentGroupApiUpdateModelFromJSONTyped;
+function AgentGroupApiUpdateModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -47,4 +53,5 @@ export function AgentGroupApiUpdateModelToJSON(value) {
         'Name': value.name,
     };
 }
+exports.AgentGroupApiUpdateModelToJSON = AgentGroupApiUpdateModelToJSON;
 //# sourceMappingURL=AgentGroupApiUpdateModel.js.map

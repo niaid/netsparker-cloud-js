@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,11 +12,13 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.JiraPriorityMappingToJSON = exports.JiraPriorityMappingFromJSONTyped = exports.JiraPriorityMappingFromJSON = exports.instanceOfJiraPriorityMapping = exports.JiraPriorityMappingIcSeverityEnum = void 0;
+const runtime_1 = require("../runtime");
 /**
  * @export
  */
-export const JiraPriorityMappingIcSeverityEnum = {
+exports.JiraPriorityMappingIcSeverityEnum = {
     BestPractice: 'BestPractice',
     Information: 'Information',
     Low: 'Low',
@@ -26,23 +29,26 @@ export const JiraPriorityMappingIcSeverityEnum = {
 /**
  * Check if a given object implements the JiraPriorityMapping interface.
  */
-export function instanceOfJiraPriorityMapping(value) {
+function instanceOfJiraPriorityMapping(value) {
     let isInstance = true;
     return isInstance;
 }
-export function JiraPriorityMappingFromJSON(json) {
+exports.instanceOfJiraPriorityMapping = instanceOfJiraPriorityMapping;
+function JiraPriorityMappingFromJSON(json) {
     return JiraPriorityMappingFromJSONTyped(json, false);
 }
-export function JiraPriorityMappingFromJSONTyped(json, ignoreDiscriminator) {
+exports.JiraPriorityMappingFromJSON = JiraPriorityMappingFromJSON;
+function JiraPriorityMappingFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'priority': !exists(json, 'Priority') ? undefined : json['Priority'],
-        'icSeverity': !exists(json, 'IcSeverity') ? undefined : json['IcSeverity'],
+        'priority': !(0, runtime_1.exists)(json, 'Priority') ? undefined : json['Priority'],
+        'icSeverity': !(0, runtime_1.exists)(json, 'IcSeverity') ? undefined : json['IcSeverity'],
     };
 }
-export function JiraPriorityMappingToJSON(value) {
+exports.JiraPriorityMappingFromJSONTyped = JiraPriorityMappingFromJSONTyped;
+function JiraPriorityMappingToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -54,4 +60,5 @@ export function JiraPriorityMappingToJSON(value) {
         'IcSeverity': value.icSeverity,
     };
 }
+exports.JiraPriorityMappingToJSON = JiraPriorityMappingToJSON;
 //# sourceMappingURL=JiraPriorityMapping.js.map

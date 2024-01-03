@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,39 +12,44 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.WebStorageSettingToJSON = exports.WebStorageSettingFromJSONTyped = exports.WebStorageSettingFromJSON = exports.instanceOfWebStorageSetting = exports.WebStorageSettingTypeEnum = void 0;
+const runtime_1 = require("../runtime");
 /**
  * @export
  */
-export const WebStorageSettingTypeEnum = {
+exports.WebStorageSettingTypeEnum = {
     Local: 'Local',
     Session: 'Session'
 };
 /**
  * Check if a given object implements the WebStorageSetting interface.
  */
-export function instanceOfWebStorageSetting(value) {
+function instanceOfWebStorageSetting(value) {
     let isInstance = true;
     isInstance = isInstance && "key" in value;
     isInstance = isInstance && "type" in value;
     isInstance = isInstance && "value" in value;
     return isInstance;
 }
-export function WebStorageSettingFromJSON(json) {
+exports.instanceOfWebStorageSetting = instanceOfWebStorageSetting;
+function WebStorageSettingFromJSON(json) {
     return WebStorageSettingFromJSONTyped(json, false);
 }
-export function WebStorageSettingFromJSONTyped(json, ignoreDiscriminator) {
+exports.WebStorageSettingFromJSON = WebStorageSettingFromJSON;
+function WebStorageSettingFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
         'key': json['Key'],
-        'origin': !exists(json, 'Origin') ? undefined : json['Origin'],
+        'origin': !(0, runtime_1.exists)(json, 'Origin') ? undefined : json['Origin'],
         'type': json['Type'],
         'value': json['Value'],
     };
 }
-export function WebStorageSettingToJSON(value) {
+exports.WebStorageSettingFromJSONTyped = WebStorageSettingFromJSONTyped;
+function WebStorageSettingToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -57,4 +63,5 @@ export function WebStorageSettingToJSON(value) {
         'Value': value.value,
     };
 }
+exports.WebStorageSettingToJSON = WebStorageSettingToJSON;
 //# sourceMappingURL=WebStorageSetting.js.map

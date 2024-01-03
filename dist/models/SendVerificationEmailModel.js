@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,27 +12,32 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.SendVerificationEmailModelToJSON = exports.SendVerificationEmailModelFromJSONTyped = exports.SendVerificationEmailModelFromJSON = exports.instanceOfSendVerificationEmailModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the SendVerificationEmailModel interface.
  */
-export function instanceOfSendVerificationEmailModel(value) {
+function instanceOfSendVerificationEmailModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function SendVerificationEmailModelFromJSON(json) {
+exports.instanceOfSendVerificationEmailModel = instanceOfSendVerificationEmailModel;
+function SendVerificationEmailModelFromJSON(json) {
     return SendVerificationEmailModelFromJSONTyped(json, false);
 }
-export function SendVerificationEmailModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.SendVerificationEmailModelFromJSON = SendVerificationEmailModelFromJSON;
+function SendVerificationEmailModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'isMailSent': !exists(json, 'IsMailSent') ? undefined : json['IsMailSent'],
-        'verificationMessage': !exists(json, 'VerificationMessage') ? undefined : json['VerificationMessage'],
+        'isMailSent': !(0, runtime_1.exists)(json, 'IsMailSent') ? undefined : json['IsMailSent'],
+        'verificationMessage': !(0, runtime_1.exists)(json, 'VerificationMessage') ? undefined : json['VerificationMessage'],
     };
 }
-export function SendVerificationEmailModelToJSON(value) {
+exports.SendVerificationEmailModelFromJSONTyped = SendVerificationEmailModelFromJSONTyped;
+function SendVerificationEmailModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -43,4 +49,5 @@ export function SendVerificationEmailModelToJSON(value) {
         'VerificationMessage': value.verificationMessage,
     };
 }
+exports.SendVerificationEmailModelToJSON = SendVerificationEmailModelToJSON;
 //# sourceMappingURL=SendVerificationEmailModel.js.map

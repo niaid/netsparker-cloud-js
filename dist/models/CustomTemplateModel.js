@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,32 +12,37 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { CustomTemplateContentModelFromJSON, CustomTemplateContentModelToJSON, } from './CustomTemplateContentModel';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.CustomTemplateModelToJSON = exports.CustomTemplateModelFromJSONTyped = exports.CustomTemplateModelFromJSON = exports.instanceOfCustomTemplateModel = void 0;
+const runtime_1 = require("../runtime");
+const CustomTemplateContentModel_1 = require("./CustomTemplateContentModel");
 /**
  * Check if a given object implements the CustomTemplateModel interface.
  */
-export function instanceOfCustomTemplateModel(value) {
+function instanceOfCustomTemplateModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function CustomTemplateModelFromJSON(json) {
+exports.instanceOfCustomTemplateModel = instanceOfCustomTemplateModel;
+function CustomTemplateModelFromJSON(json) {
     return CustomTemplateModelFromJSONTyped(json, false);
 }
-export function CustomTemplateModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.CustomTemplateModelFromJSON = CustomTemplateModelFromJSON;
+function CustomTemplateModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'sourceTemplateId': !exists(json, 'source_template_id') ? undefined : json['source_template_id'],
-        'title': !exists(json, 'title') ? undefined : json['title'],
-        'description': !exists(json, 'description') ? undefined : json['description'],
-        'remediation': !exists(json, 'remediation') ? undefined : json['remediation'],
-        'severity': !exists(json, 'severity') ? undefined : json['severity'],
-        'template': !exists(json, 'template') ? undefined : CustomTemplateContentModelFromJSON(json['template']),
+        'sourceTemplateId': !(0, runtime_1.exists)(json, 'source_template_id') ? undefined : json['source_template_id'],
+        'title': !(0, runtime_1.exists)(json, 'title') ? undefined : json['title'],
+        'description': !(0, runtime_1.exists)(json, 'description') ? undefined : json['description'],
+        'remediation': !(0, runtime_1.exists)(json, 'remediation') ? undefined : json['remediation'],
+        'severity': !(0, runtime_1.exists)(json, 'severity') ? undefined : json['severity'],
+        'template': !(0, runtime_1.exists)(json, 'template') ? undefined : (0, CustomTemplateContentModel_1.CustomTemplateContentModelFromJSON)(json['template']),
     };
 }
-export function CustomTemplateModelToJSON(value) {
+exports.CustomTemplateModelFromJSONTyped = CustomTemplateModelFromJSONTyped;
+function CustomTemplateModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -49,7 +55,8 @@ export function CustomTemplateModelToJSON(value) {
         'description': value.description,
         'remediation': value.remediation,
         'severity': value.severity,
-        'template': CustomTemplateContentModelToJSON(value.template),
+        'template': (0, CustomTemplateContentModel_1.CustomTemplateContentModelToJSON)(value.template),
     };
 }
+exports.CustomTemplateModelToJSON = CustomTemplateModelToJSON;
 //# sourceMappingURL=CustomTemplateModel.js.map

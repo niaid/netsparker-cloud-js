@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,12 +12,37 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import * as runtime from '../runtime';
-import { SaveScanProfileApiModelFromJSON, SaveScanProfileApiModelToJSON, ScanProfilesListApiResultFromJSON, } from '../models/index';
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ScanProfilesApi = void 0;
+const runtime = __importStar(require("../runtime"));
+const index_1 = require("../models/index");
 /**
  *
  */
-export class ScanProfilesApi extends runtime.BaseAPI {
+class ScanProfilesApi extends runtime.BaseAPI {
     /**
      * Deletes a scan profiles.
      */
@@ -63,7 +89,7 @@ export class ScanProfilesApi extends runtime.BaseAPI {
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => SaveScanProfileApiModelFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.SaveScanProfileApiModelFromJSON)(jsonValue));
     }
     /**
      * Gets the scan profiles by the specified id.
@@ -90,7 +116,7 @@ export class ScanProfilesApi extends runtime.BaseAPI {
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => SaveScanProfileApiModelFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.SaveScanProfileApiModelFromJSON)(jsonValue));
     }
     /**
      * Gets the scan profiles by the specified name.
@@ -117,7 +143,7 @@ export class ScanProfilesApi extends runtime.BaseAPI {
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => ScanProfilesListApiResultFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.ScanProfilesListApiResultFromJSON)(jsonValue));
     }
     /**
      * Gets the list of scan profiles.
@@ -141,9 +167,9 @@ export class ScanProfilesApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SaveScanProfileApiModelToJSON(requestParameters.model),
+            body: (0, index_1.SaveScanProfileApiModelToJSON)(requestParameters.model),
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => SaveScanProfileApiModelFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.SaveScanProfileApiModelFromJSON)(jsonValue));
     }
     /**
      * Creates a new scan profiles.
@@ -167,9 +193,9 @@ export class ScanProfilesApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: SaveScanProfileApiModelToJSON(requestParameters.model),
+            body: (0, index_1.SaveScanProfileApiModelToJSON)(requestParameters.model),
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => SaveScanProfileApiModelFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.SaveScanProfileApiModelFromJSON)(jsonValue));
     }
     /**
      * Updates a scan profiles.
@@ -179,4 +205,5 @@ export class ScanProfilesApi extends runtime.BaseAPI {
         return await response.value();
     }
 }
+exports.ScanProfilesApi = ScanProfilesApi;
 //# sourceMappingURL=ScanProfilesApi.js.map

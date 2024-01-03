@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,19 +12,23 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.NewScanTaskWithProfileApiModelToJSON = exports.NewScanTaskWithProfileApiModelFromJSONTyped = exports.NewScanTaskWithProfileApiModelFromJSON = exports.instanceOfNewScanTaskWithProfileApiModel = void 0;
 /**
  * Check if a given object implements the NewScanTaskWithProfileApiModel interface.
  */
-export function instanceOfNewScanTaskWithProfileApiModel(value) {
+function instanceOfNewScanTaskWithProfileApiModel(value) {
     let isInstance = true;
     isInstance = isInstance && "profileName" in value;
     isInstance = isInstance && "targetUri" in value;
     return isInstance;
 }
-export function NewScanTaskWithProfileApiModelFromJSON(json) {
+exports.instanceOfNewScanTaskWithProfileApiModel = instanceOfNewScanTaskWithProfileApiModel;
+function NewScanTaskWithProfileApiModelFromJSON(json) {
     return NewScanTaskWithProfileApiModelFromJSONTyped(json, false);
 }
-export function NewScanTaskWithProfileApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.NewScanTaskWithProfileApiModelFromJSON = NewScanTaskWithProfileApiModelFromJSON;
+function NewScanTaskWithProfileApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
@@ -32,7 +37,8 @@ export function NewScanTaskWithProfileApiModelFromJSONTyped(json, ignoreDiscrimi
         'targetUri': json['TargetUri'],
     };
 }
-export function NewScanTaskWithProfileApiModelToJSON(value) {
+exports.NewScanTaskWithProfileApiModelFromJSONTyped = NewScanTaskWithProfileApiModelFromJSONTyped;
+function NewScanTaskWithProfileApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -44,4 +50,5 @@ export function NewScanTaskWithProfileApiModelToJSON(value) {
         'TargetUri': value.targetUri,
     };
 }
+exports.NewScanTaskWithProfileApiModelToJSON = NewScanTaskWithProfileApiModelToJSON;
 //# sourceMappingURL=NewScanTaskWithProfileApiModel.js.map

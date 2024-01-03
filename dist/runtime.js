@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,8 +12,10 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-export const BASE_PATH = "https://www.netsparkercloud.com".replace(/\/+$/, "");
-export class Configuration {
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.TextApiResponse = exports.BlobApiResponse = exports.VoidApiResponse = exports.JSONApiResponse = exports.canConsumeForm = exports.mapValues = exports.querystring = exports.exists = exports.COLLECTION_FORMATS = exports.RequiredError = exports.FetchError = exports.ResponseError = exports.BaseAPI = exports.DefaultConfig = exports.Configuration = exports.BASE_PATH = void 0;
+exports.BASE_PATH = "https://www.netsparkercloud.com".replace(/\/+$/, "");
+class Configuration {
     configuration;
     constructor(configuration = {}) {
         this.configuration = configuration;
@@ -21,7 +24,7 @@ export class Configuration {
         this.configuration = configuration;
     }
     get basePath() {
-        return this.configuration.basePath != null ? this.configuration.basePath : BASE_PATH;
+        return this.configuration.basePath != null ? this.configuration.basePath : exports.BASE_PATH;
     }
     get fetchApi() {
         return this.configuration.fetchApi;
@@ -59,15 +62,16 @@ export class Configuration {
         return this.configuration.credentials;
     }
 }
-export const DefaultConfig = new Configuration();
+exports.Configuration = Configuration;
+exports.DefaultConfig = new Configuration();
 /**
  * This is the base class for all generated API classes.
  */
-export class BaseAPI {
+class BaseAPI {
     configuration;
     static jsonRegex = new RegExp('^(:?application\/json|[^;/ \t]+\/[^;/ \t]+[+]json)[ \t]*(:?;.*)?$', 'i');
     middleware;
-    constructor(configuration = DefaultConfig) {
+    constructor(configuration = exports.DefaultConfig) {
         this.configuration = configuration;
         this.middleware = configuration.middleware;
     }
@@ -210,6 +214,7 @@ export class BaseAPI {
         return next;
     }
 }
+exports.BaseAPI = BaseAPI;
 ;
 function isBlob(value) {
     return typeof Blob !== 'undefined' && value instanceof Blob;
@@ -217,7 +222,7 @@ function isBlob(value) {
 function isFormData(value) {
     return typeof FormData !== "undefined" && value instanceof FormData;
 }
-export class ResponseError extends Error {
+class ResponseError extends Error {
     response;
     name = "ResponseError";
     constructor(response, msg) {
@@ -225,7 +230,8 @@ export class ResponseError extends Error {
         this.response = response;
     }
 }
-export class FetchError extends Error {
+exports.ResponseError = ResponseError;
+class FetchError extends Error {
     cause;
     name = "FetchError";
     constructor(cause, msg) {
@@ -233,7 +239,8 @@ export class FetchError extends Error {
         this.cause = cause;
     }
 }
-export class RequiredError extends Error {
+exports.FetchError = FetchError;
+class RequiredError extends Error {
     field;
     name = "RequiredError";
     constructor(field, msg) {
@@ -241,22 +248,25 @@ export class RequiredError extends Error {
         this.field = field;
     }
 }
-export const COLLECTION_FORMATS = {
+exports.RequiredError = RequiredError;
+exports.COLLECTION_FORMATS = {
     csv: ",",
     ssv: " ",
     tsv: "\t",
     pipes: "|",
 };
-export function exists(json, key) {
+function exists(json, key) {
     const value = json[key];
     return value !== null && value !== undefined;
 }
-export function querystring(params, prefix = '') {
+exports.exists = exists;
+function querystring(params, prefix = '') {
     return Object.keys(params)
         .map(key => querystringSingleKey(key, params[key], prefix))
         .filter(part => part.length > 0)
         .join('&');
 }
+exports.querystring = querystring;
 function querystringSingleKey(key, value, keyPrefix = '') {
     const fullKey = keyPrefix + (keyPrefix.length ? `[${key}]` : key);
     if (value instanceof Array) {
@@ -276,10 +286,11 @@ function querystringSingleKey(key, value, keyPrefix = '') {
     }
     return `${encodeURIComponent(fullKey)}=${encodeURIComponent(String(value))}`;
 }
-export function mapValues(data, fn) {
+function mapValues(data, fn) {
     return Object.keys(data).reduce((acc, key) => ({ ...acc, [key]: fn(data[key]) }), {});
 }
-export function canConsumeForm(consumes) {
+exports.mapValues = mapValues;
+function canConsumeForm(consumes) {
     for (const consume of consumes) {
         if ('multipart/form-data' === consume.contentType) {
             return true;
@@ -287,7 +298,8 @@ export function canConsumeForm(consumes) {
     }
     return false;
 }
-export class JSONApiResponse {
+exports.canConsumeForm = canConsumeForm;
+class JSONApiResponse {
     raw;
     transformer;
     constructor(raw, transformer = (jsonValue) => jsonValue) {
@@ -298,7 +310,8 @@ export class JSONApiResponse {
         return this.transformer(await this.raw.json());
     }
 }
-export class VoidApiResponse {
+exports.JSONApiResponse = JSONApiResponse;
+class VoidApiResponse {
     raw;
     constructor(raw) {
         this.raw = raw;
@@ -307,7 +320,8 @@ export class VoidApiResponse {
         return undefined;
     }
 }
-export class BlobApiResponse {
+exports.VoidApiResponse = VoidApiResponse;
+class BlobApiResponse {
     raw;
     constructor(raw) {
         this.raw = raw;
@@ -317,7 +331,8 @@ export class BlobApiResponse {
     }
     ;
 }
-export class TextApiResponse {
+exports.BlobApiResponse = BlobApiResponse;
+class TextApiResponse {
     raw;
     constructor(raw) {
         this.raw = raw;
@@ -327,4 +342,5 @@ export class TextApiResponse {
     }
     ;
 }
+exports.TextApiResponse = TextApiResponse;
 //# sourceMappingURL=runtime.js.map

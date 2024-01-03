@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,27 +12,32 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.IntegrationWizardResultModelToJSON = exports.IntegrationWizardResultModelFromJSONTyped = exports.IntegrationWizardResultModelFromJSON = exports.instanceOfIntegrationWizardResultModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the IntegrationWizardResultModel interface.
  */
-export function instanceOfIntegrationWizardResultModel(value) {
+function instanceOfIntegrationWizardResultModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function IntegrationWizardResultModelFromJSON(json) {
+exports.instanceOfIntegrationWizardResultModel = instanceOfIntegrationWizardResultModel;
+function IntegrationWizardResultModelFromJSON(json) {
     return IntegrationWizardResultModelFromJSONTyped(json, false);
 }
-export function IntegrationWizardResultModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.IntegrationWizardResultModelFromJSON = IntegrationWizardResultModelFromJSON;
+function IntegrationWizardResultModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'status': !exists(json, 'Status') ? undefined : json['Status'],
-        'errorMessage': !exists(json, 'ErrorMessage') ? undefined : json['ErrorMessage'],
+        'status': !(0, runtime_1.exists)(json, 'Status') ? undefined : json['Status'],
+        'errorMessage': !(0, runtime_1.exists)(json, 'ErrorMessage') ? undefined : json['ErrorMessage'],
     };
 }
-export function IntegrationWizardResultModelToJSON(value) {
+exports.IntegrationWizardResultModelFromJSONTyped = IntegrationWizardResultModelFromJSONTyped;
+function IntegrationWizardResultModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -43,4 +49,5 @@ export function IntegrationWizardResultModelToJSON(value) {
         'ErrorMessage': value.errorMessage,
     };
 }
+exports.IntegrationWizardResultModelToJSON = IntegrationWizardResultModelToJSON;
 //# sourceMappingURL=IntegrationWizardResultModel.js.map

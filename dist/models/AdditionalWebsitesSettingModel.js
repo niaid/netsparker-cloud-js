@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,27 +12,32 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { AdditionalWebsiteModelFromJSON, AdditionalWebsiteModelToJSON, } from './AdditionalWebsiteModel';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AdditionalWebsitesSettingModelToJSON = exports.AdditionalWebsitesSettingModelFromJSONTyped = exports.AdditionalWebsitesSettingModelFromJSON = exports.instanceOfAdditionalWebsitesSettingModel = void 0;
+const runtime_1 = require("../runtime");
+const AdditionalWebsiteModel_1 = require("./AdditionalWebsiteModel");
 /**
  * Check if a given object implements the AdditionalWebsitesSettingModel interface.
  */
-export function instanceOfAdditionalWebsitesSettingModel(value) {
+function instanceOfAdditionalWebsitesSettingModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function AdditionalWebsitesSettingModelFromJSON(json) {
+exports.instanceOfAdditionalWebsitesSettingModel = instanceOfAdditionalWebsitesSettingModel;
+function AdditionalWebsitesSettingModelFromJSON(json) {
     return AdditionalWebsitesSettingModelFromJSONTyped(json, false);
 }
-export function AdditionalWebsitesSettingModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.AdditionalWebsitesSettingModelFromJSON = AdditionalWebsitesSettingModelFromJSON;
+function AdditionalWebsitesSettingModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'websites': !exists(json, 'Websites') ? undefined : (json['Websites'].map(AdditionalWebsiteModelFromJSON)),
+        'websites': !(0, runtime_1.exists)(json, 'Websites') ? undefined : (json['Websites'].map(AdditionalWebsiteModel_1.AdditionalWebsiteModelFromJSON)),
     };
 }
-export function AdditionalWebsitesSettingModelToJSON(value) {
+exports.AdditionalWebsitesSettingModelFromJSONTyped = AdditionalWebsitesSettingModelFromJSONTyped;
+function AdditionalWebsitesSettingModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -39,7 +45,8 @@ export function AdditionalWebsitesSettingModelToJSON(value) {
         return null;
     }
     return {
-        'Websites': value.websites === undefined ? undefined : (value.websites.map(AdditionalWebsiteModelToJSON)),
+        'Websites': value.websites === undefined ? undefined : (value.websites.map(AdditionalWebsiteModel_1.AdditionalWebsiteModelToJSON)),
     };
 }
+exports.AdditionalWebsitesSettingModelToJSON = AdditionalWebsitesSettingModelToJSON;
 //# sourceMappingURL=AdditionalWebsitesSettingModel.js.map

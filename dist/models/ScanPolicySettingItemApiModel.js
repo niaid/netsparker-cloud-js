@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,36 +12,41 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { ScanPolicyOptimizerOptionsFromJSON, ScanPolicyOptimizerOptionsToJSON, } from './ScanPolicyOptimizerOptions';
-import { WebsiteGroupModelFromJSON, WebsiteGroupModelToJSON, } from './WebsiteGroupModel';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ScanPolicySettingItemApiModelToJSON = exports.ScanPolicySettingItemApiModelFromJSONTyped = exports.ScanPolicySettingItemApiModelFromJSON = exports.instanceOfScanPolicySettingItemApiModel = void 0;
+const runtime_1 = require("../runtime");
+const ScanPolicyOptimizerOptions_1 = require("./ScanPolicyOptimizerOptions");
+const WebsiteGroupModel_1 = require("./WebsiteGroupModel");
 /**
  * Check if a given object implements the ScanPolicySettingItemApiModel interface.
  */
-export function instanceOfScanPolicySettingItemApiModel(value) {
+function instanceOfScanPolicySettingItemApiModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function ScanPolicySettingItemApiModelFromJSON(json) {
+exports.instanceOfScanPolicySettingItemApiModel = instanceOfScanPolicySettingItemApiModel;
+function ScanPolicySettingItemApiModelFromJSON(json) {
     return ScanPolicySettingItemApiModelFromJSONTyped(json, false);
 }
-export function ScanPolicySettingItemApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.ScanPolicySettingItemApiModelFromJSON = ScanPolicySettingItemApiModelFromJSON;
+function ScanPolicySettingItemApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'description': !exists(json, 'Description') ? undefined : json['Description'],
-        'groups': !exists(json, 'Groups') ? undefined : (json['Groups'].map(WebsiteGroupModelFromJSON)),
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'isDefault': !exists(json, 'IsDefault') ? undefined : json['IsDefault'],
-        'isShared': !exists(json, 'IsShared') ? undefined : json['IsShared'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'optimizerOptions': !exists(json, 'OptimizerOptions') ? undefined : ScanPolicyOptimizerOptionsFromJSON(json['OptimizerOptions']),
-        'isAccountDefault': !exists(json, 'IsAccountDefault') ? undefined : json['IsAccountDefault'],
-        'nameWithAccessModifier': !exists(json, 'NameWithAccessModifier') ? undefined : json['NameWithAccessModifier'],
+        'description': !(0, runtime_1.exists)(json, 'Description') ? undefined : json['Description'],
+        'groups': !(0, runtime_1.exists)(json, 'Groups') ? undefined : (json['Groups'].map(WebsiteGroupModel_1.WebsiteGroupModelFromJSON)),
+        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
+        'isDefault': !(0, runtime_1.exists)(json, 'IsDefault') ? undefined : json['IsDefault'],
+        'isShared': !(0, runtime_1.exists)(json, 'IsShared') ? undefined : json['IsShared'],
+        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
+        'optimizerOptions': !(0, runtime_1.exists)(json, 'OptimizerOptions') ? undefined : (0, ScanPolicyOptimizerOptions_1.ScanPolicyOptimizerOptionsFromJSON)(json['OptimizerOptions']),
+        'isAccountDefault': !(0, runtime_1.exists)(json, 'IsAccountDefault') ? undefined : json['IsAccountDefault'],
+        'nameWithAccessModifier': !(0, runtime_1.exists)(json, 'NameWithAccessModifier') ? undefined : json['NameWithAccessModifier'],
     };
 }
-export function ScanPolicySettingItemApiModelToJSON(value) {
+exports.ScanPolicySettingItemApiModelFromJSONTyped = ScanPolicySettingItemApiModelFromJSONTyped;
+function ScanPolicySettingItemApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -49,13 +55,14 @@ export function ScanPolicySettingItemApiModelToJSON(value) {
     }
     return {
         'Description': value.description,
-        'Groups': value.groups === undefined ? undefined : (value.groups.map(WebsiteGroupModelToJSON)),
+        'Groups': value.groups === undefined ? undefined : (value.groups.map(WebsiteGroupModel_1.WebsiteGroupModelToJSON)),
         'Id': value.id,
         'IsDefault': value.isDefault,
         'IsShared': value.isShared,
         'Name': value.name,
-        'OptimizerOptions': ScanPolicyOptimizerOptionsToJSON(value.optimizerOptions),
+        'OptimizerOptions': (0, ScanPolicyOptimizerOptions_1.ScanPolicyOptimizerOptionsToJSON)(value.optimizerOptions),
         'IsAccountDefault': value.isAccountDefault,
     };
 }
+exports.ScanPolicySettingItemApiModelToJSON = ScanPolicySettingItemApiModelToJSON;
 //# sourceMappingURL=ScanPolicySettingItemApiModel.js.map

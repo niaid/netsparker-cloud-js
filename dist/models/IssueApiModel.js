@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,17 +12,19 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { CustomFieldModelFromJSON, } from './CustomFieldModel';
-import { IssueApiModelCvssVectorFromJSON, IssueApiModelCvssVectorToJSON, } from './IssueApiModelCvssVector';
-import { IssueHistoryApiModelFromJSON, IssueHistoryApiModelToJSON, } from './IssueHistoryApiModel';
-import { IssueRequestContentParametersApiModelFromJSON, } from './IssueRequestContentParametersApiModel';
-import { VersionIssueFromJSON, } from './VersionIssue';
-import { VulnerabilityClassificationFromJSON, VulnerabilityClassificationToJSON, } from './VulnerabilityClassification';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.IssueApiModelToJSON = exports.IssueApiModelFromJSONTyped = exports.IssueApiModelFromJSON = exports.instanceOfIssueApiModel = exports.IssueApiModelTypeEnum = exports.IssueApiModelSeverityEnum = void 0;
+const runtime_1 = require("../runtime");
+const CustomFieldModel_1 = require("./CustomFieldModel");
+const IssueApiModelCvssVector_1 = require("./IssueApiModelCvssVector");
+const IssueHistoryApiModel_1 = require("./IssueHistoryApiModel");
+const IssueRequestContentParametersApiModel_1 = require("./IssueRequestContentParametersApiModel");
+const VersionIssue_1 = require("./VersionIssue");
+const VulnerabilityClassification_1 = require("./VulnerabilityClassification");
 /**
  * @export
  */
-export const IssueApiModelSeverityEnum = {
+exports.IssueApiModelSeverityEnum = {
     BestPractice: 'BestPractice',
     Information: 'Information',
     Low: 'Low',
@@ -32,7 +35,7 @@ export const IssueApiModelSeverityEnum = {
 /**
  * @export
  */
-export const IssueApiModelTypeEnum = {
+exports.IssueApiModelTypeEnum = {
     Custom: 'Custom',
     Sca: 'Sca',
     None: 'None',
@@ -1559,63 +1562,66 @@ export const IssueApiModelTypeEnum = {
 /**
  * Check if a given object implements the IssueApiModel interface.
  */
-export function instanceOfIssueApiModel(value) {
+function instanceOfIssueApiModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function IssueApiModelFromJSON(json) {
+exports.instanceOfIssueApiModel = instanceOfIssueApiModel;
+function IssueApiModelFromJSON(json) {
     return IssueApiModelFromJSONTyped(json, false);
 }
-export function IssueApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.IssueApiModelFromJSON = IssueApiModelFromJSON;
+function IssueApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'assigneeName': !exists(json, 'AssigneeName') ? undefined : json['AssigneeName'],
-        'firstSeenDate': !exists(json, 'FirstSeenDate') ? undefined : json['FirstSeenDate'],
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'isAddressed': !exists(json, 'IsAddressed') ? undefined : json['IsAddressed'],
-        'isDetectedByShark': !exists(json, 'IsDetectedByShark') ? undefined : json['IsDetectedByShark'],
-        'isPresent': !exists(json, 'IsPresent') ? undefined : json['IsPresent'],
-        'lastSeenDate': !exists(json, 'LastSeenDate') ? undefined : json['LastSeenDate'],
-        'updatedDate': !exists(json, 'UpdatedDate') ? undefined : json['UpdatedDate'],
-        'severity': !exists(json, 'Severity') ? undefined : json['Severity'],
-        'state': !exists(json, 'State') ? undefined : json['State'],
-        'title': !exists(json, 'Title') ? undefined : json['Title'],
-        'url': !exists(json, 'Url') ? undefined : json['Url'],
-        'latestVulnerabilityIsConfirmed': !exists(json, 'LatestVulnerabilityIsConfirmed') ? undefined : json['LatestVulnerabilityIsConfirmed'],
-        'websiteId': !exists(json, 'WebsiteId') ? undefined : json['WebsiteId'],
-        'websiteName': !exists(json, 'WebsiteName') ? undefined : json['WebsiteName'],
-        'websiteRootUrl': !exists(json, 'WebsiteRootUrl') ? undefined : json['WebsiteRootUrl'],
-        'fixTimeInMinutes': !exists(json, 'FixTimeInMinutes') ? undefined : json['FixTimeInMinutes'],
-        'certainty': !exists(json, 'Certainty') ? undefined : json['Certainty'],
-        'parameters': !exists(json, 'Parameters') ? undefined : (json['Parameters'].map(IssueRequestContentParametersApiModelFromJSON)),
-        'vulnerabilityDetail': !exists(json, 'VulnerabilityDetail') ? undefined : json['VulnerabilityDetail'],
-        'impact': !exists(json, 'Impact') ? undefined : json['Impact'],
-        'actions': !exists(json, 'Actions') ? undefined : json['Actions'],
-        'skills': !exists(json, 'Skills') ? undefined : json['Skills'],
-        'remedy': !exists(json, 'Remedy') ? undefined : json['Remedy'],
-        'remedyReferences': !exists(json, 'RemedyReferences') ? undefined : json['RemedyReferences'],
-        'externalReferences': !exists(json, 'ExternalReferences') ? undefined : json['ExternalReferences'],
-        'proofOfConcept': !exists(json, 'ProofOfConcept') ? undefined : json['ProofOfConcept'],
-        'customData': !exists(json, 'CustomData') ? undefined : json['CustomData'],
-        'customFields': !exists(json, 'CustomFields') ? undefined : (json['CustomFields'].map(CustomFieldModelFromJSON)),
-        'classificationLinks': !exists(json, 'ClassificationLinks') ? undefined : json['ClassificationLinks'],
-        'cvssVectorString': !exists(json, 'CvssVectorString') ? undefined : json['CvssVectorString'],
-        'cvss31VectorString': !exists(json, 'Cvss31VectorString') ? undefined : json['Cvss31VectorString'],
-        'cvss40VectorString': !exists(json, 'Cvss40VectorString') ? undefined : json['Cvss40VectorString'],
-        'type': !exists(json, 'Type') ? undefined : json['Type'],
-        'classification': !exists(json, 'Classification') ? undefined : VulnerabilityClassificationFromJSON(json['Classification']),
-        'cvssVector': !exists(json, 'CvssVector') ? undefined : IssueApiModelCvssVectorFromJSON(json['CvssVector']),
-        'versionIssues': !exists(json, 'VersionIssues') ? undefined : (json['VersionIssues'].map(VersionIssueFromJSON)),
-        'isRetest': !exists(json, 'IsRetest') ? undefined : json['IsRetest'],
-        'isTodo': !exists(json, 'IsTodo') ? undefined : json['IsTodo'],
-        'latestScanId': !exists(json, 'LatestScanId') ? undefined : json['LatestScanId'],
-        'history': !exists(json, 'History') ? undefined : (json['History'].map(IssueHistoryApiModelFromJSON)),
-        'tags': !exists(json, 'Tags') ? undefined : json['Tags'],
+        'assigneeName': !(0, runtime_1.exists)(json, 'AssigneeName') ? undefined : json['AssigneeName'],
+        'firstSeenDate': !(0, runtime_1.exists)(json, 'FirstSeenDate') ? undefined : json['FirstSeenDate'],
+        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
+        'isAddressed': !(0, runtime_1.exists)(json, 'IsAddressed') ? undefined : json['IsAddressed'],
+        'isDetectedByShark': !(0, runtime_1.exists)(json, 'IsDetectedByShark') ? undefined : json['IsDetectedByShark'],
+        'isPresent': !(0, runtime_1.exists)(json, 'IsPresent') ? undefined : json['IsPresent'],
+        'lastSeenDate': !(0, runtime_1.exists)(json, 'LastSeenDate') ? undefined : json['LastSeenDate'],
+        'updatedDate': !(0, runtime_1.exists)(json, 'UpdatedDate') ? undefined : json['UpdatedDate'],
+        'severity': !(0, runtime_1.exists)(json, 'Severity') ? undefined : json['Severity'],
+        'state': !(0, runtime_1.exists)(json, 'State') ? undefined : json['State'],
+        'title': !(0, runtime_1.exists)(json, 'Title') ? undefined : json['Title'],
+        'url': !(0, runtime_1.exists)(json, 'Url') ? undefined : json['Url'],
+        'latestVulnerabilityIsConfirmed': !(0, runtime_1.exists)(json, 'LatestVulnerabilityIsConfirmed') ? undefined : json['LatestVulnerabilityIsConfirmed'],
+        'websiteId': !(0, runtime_1.exists)(json, 'WebsiteId') ? undefined : json['WebsiteId'],
+        'websiteName': !(0, runtime_1.exists)(json, 'WebsiteName') ? undefined : json['WebsiteName'],
+        'websiteRootUrl': !(0, runtime_1.exists)(json, 'WebsiteRootUrl') ? undefined : json['WebsiteRootUrl'],
+        'fixTimeInMinutes': !(0, runtime_1.exists)(json, 'FixTimeInMinutes') ? undefined : json['FixTimeInMinutes'],
+        'certainty': !(0, runtime_1.exists)(json, 'Certainty') ? undefined : json['Certainty'],
+        'parameters': !(0, runtime_1.exists)(json, 'Parameters') ? undefined : (json['Parameters'].map(IssueRequestContentParametersApiModel_1.IssueRequestContentParametersApiModelFromJSON)),
+        'vulnerabilityDetail': !(0, runtime_1.exists)(json, 'VulnerabilityDetail') ? undefined : json['VulnerabilityDetail'],
+        'impact': !(0, runtime_1.exists)(json, 'Impact') ? undefined : json['Impact'],
+        'actions': !(0, runtime_1.exists)(json, 'Actions') ? undefined : json['Actions'],
+        'skills': !(0, runtime_1.exists)(json, 'Skills') ? undefined : json['Skills'],
+        'remedy': !(0, runtime_1.exists)(json, 'Remedy') ? undefined : json['Remedy'],
+        'remedyReferences': !(0, runtime_1.exists)(json, 'RemedyReferences') ? undefined : json['RemedyReferences'],
+        'externalReferences': !(0, runtime_1.exists)(json, 'ExternalReferences') ? undefined : json['ExternalReferences'],
+        'proofOfConcept': !(0, runtime_1.exists)(json, 'ProofOfConcept') ? undefined : json['ProofOfConcept'],
+        'customData': !(0, runtime_1.exists)(json, 'CustomData') ? undefined : json['CustomData'],
+        'customFields': !(0, runtime_1.exists)(json, 'CustomFields') ? undefined : (json['CustomFields'].map(CustomFieldModel_1.CustomFieldModelFromJSON)),
+        'classificationLinks': !(0, runtime_1.exists)(json, 'ClassificationLinks') ? undefined : json['ClassificationLinks'],
+        'cvssVectorString': !(0, runtime_1.exists)(json, 'CvssVectorString') ? undefined : json['CvssVectorString'],
+        'cvss31VectorString': !(0, runtime_1.exists)(json, 'Cvss31VectorString') ? undefined : json['Cvss31VectorString'],
+        'cvss40VectorString': !(0, runtime_1.exists)(json, 'Cvss40VectorString') ? undefined : json['Cvss40VectorString'],
+        'type': !(0, runtime_1.exists)(json, 'Type') ? undefined : json['Type'],
+        'classification': !(0, runtime_1.exists)(json, 'Classification') ? undefined : (0, VulnerabilityClassification_1.VulnerabilityClassificationFromJSON)(json['Classification']),
+        'cvssVector': !(0, runtime_1.exists)(json, 'CvssVector') ? undefined : (0, IssueApiModelCvssVector_1.IssueApiModelCvssVectorFromJSON)(json['CvssVector']),
+        'versionIssues': !(0, runtime_1.exists)(json, 'VersionIssues') ? undefined : (json['VersionIssues'].map(VersionIssue_1.VersionIssueFromJSON)),
+        'isRetest': !(0, runtime_1.exists)(json, 'IsRetest') ? undefined : json['IsRetest'],
+        'isTodo': !(0, runtime_1.exists)(json, 'IsTodo') ? undefined : json['IsTodo'],
+        'latestScanId': !(0, runtime_1.exists)(json, 'LatestScanId') ? undefined : json['LatestScanId'],
+        'history': !(0, runtime_1.exists)(json, 'History') ? undefined : (json['History'].map(IssueHistoryApiModel_1.IssueHistoryApiModelFromJSON)),
+        'tags': !(0, runtime_1.exists)(json, 'Tags') ? undefined : json['Tags'],
     };
 }
-export function IssueApiModelToJSON(value) {
+exports.IssueApiModelFromJSONTyped = IssueApiModelFromJSONTyped;
+function IssueApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -1653,13 +1659,14 @@ export function IssueApiModelToJSON(value) {
         'ClassificationLinks': value.classificationLinks,
         'CvssVectorString': value.cvssVectorString,
         'Type': value.type,
-        'Classification': VulnerabilityClassificationToJSON(value.classification),
-        'CvssVector': IssueApiModelCvssVectorToJSON(value.cvssVector),
+        'Classification': (0, VulnerabilityClassification_1.VulnerabilityClassificationToJSON)(value.classification),
+        'CvssVector': (0, IssueApiModelCvssVector_1.IssueApiModelCvssVectorToJSON)(value.cvssVector),
         'IsRetest': value.isRetest,
         'IsTodo': value.isTodo,
         'LatestScanId': value.latestScanId,
-        'History': value.history === undefined ? undefined : (value.history.map(IssueHistoryApiModelToJSON)),
+        'History': value.history === undefined ? undefined : (value.history.map(IssueHistoryApiModel_1.IssueHistoryApiModelToJSON)),
         'Tags': value.tags,
     };
 }
+exports.IssueApiModelToJSON = IssueApiModelToJSON;
 //# sourceMappingURL=IssueApiModel.js.map

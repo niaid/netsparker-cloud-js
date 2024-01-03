@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,11 +12,13 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.StartVerificationResultToJSON = exports.StartVerificationResultFromJSONTyped = exports.StartVerificationResultFromJSON = exports.instanceOfStartVerificationResult = exports.StartVerificationResultVerifyOwnershipResultEnum = void 0;
+const runtime_1 = require("../runtime");
 /**
  * @export
  */
-export const StartVerificationResultVerifyOwnershipResultEnum = {
+exports.StartVerificationResultVerifyOwnershipResultEnum = {
     Verified: 'Verified',
     NotVerified: 'NotVerified',
     VerificationLimitExceed: 'VerificationLimitExceed'
@@ -23,24 +26,27 @@ export const StartVerificationResultVerifyOwnershipResultEnum = {
 /**
  * Check if a given object implements the StartVerificationResult interface.
  */
-export function instanceOfStartVerificationResult(value) {
+function instanceOfStartVerificationResult(value) {
     let isInstance = true;
     return isInstance;
 }
-export function StartVerificationResultFromJSON(json) {
+exports.instanceOfStartVerificationResult = instanceOfStartVerificationResult;
+function StartVerificationResultFromJSON(json) {
     return StartVerificationResultFromJSONTyped(json, false);
 }
-export function StartVerificationResultFromJSONTyped(json, ignoreDiscriminator) {
+exports.StartVerificationResultFromJSON = StartVerificationResultFromJSON;
+function StartVerificationResultFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'data': !exists(json, 'Data') ? undefined : json['Data'],
-        'message': !exists(json, 'Message') ? undefined : json['Message'],
-        'verifyOwnershipResult': !exists(json, 'VerifyOwnershipResult') ? undefined : json['VerifyOwnershipResult'],
+        'data': !(0, runtime_1.exists)(json, 'Data') ? undefined : json['Data'],
+        'message': !(0, runtime_1.exists)(json, 'Message') ? undefined : json['Message'],
+        'verifyOwnershipResult': !(0, runtime_1.exists)(json, 'VerifyOwnershipResult') ? undefined : json['VerifyOwnershipResult'],
     };
 }
-export function StartVerificationResultToJSON(value) {
+exports.StartVerificationResultFromJSONTyped = StartVerificationResultFromJSONTyped;
+function StartVerificationResultToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -53,4 +59,5 @@ export function StartVerificationResultToJSON(value) {
         'VerifyOwnershipResult': value.verifyOwnershipResult,
     };
 }
+exports.StartVerificationResultToJSON = StartVerificationResultToJSON;
 //# sourceMappingURL=StartVerificationResult.js.map

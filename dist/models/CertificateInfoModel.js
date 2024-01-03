@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,28 +12,33 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.CertificateInfoModelToJSON = exports.CertificateInfoModelFromJSONTyped = exports.CertificateInfoModelFromJSON = exports.instanceOfCertificateInfoModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the CertificateInfoModel interface.
  */
-export function instanceOfCertificateInfoModel(value) {
+function instanceOfCertificateInfoModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function CertificateInfoModelFromJSON(json) {
+exports.instanceOfCertificateInfoModel = instanceOfCertificateInfoModel;
+function CertificateInfoModelFromJSON(json) {
     return CertificateInfoModelFromJSONTyped(json, false);
 }
-export function CertificateInfoModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.CertificateInfoModelFromJSON = CertificateInfoModelFromJSON;
+function CertificateInfoModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'cN': !exists(json, 'CN') ? undefined : json['CN'],
-        'expresionDate': !exists(json, 'ExpresionDate') ? undefined : json['ExpresionDate'],
-        'thumbprint': !exists(json, 'Thumbprint') ? undefined : json['Thumbprint'],
+        'cN': !(0, runtime_1.exists)(json, 'CN') ? undefined : json['CN'],
+        'expresionDate': !(0, runtime_1.exists)(json, 'ExpresionDate') ? undefined : json['ExpresionDate'],
+        'thumbprint': !(0, runtime_1.exists)(json, 'Thumbprint') ? undefined : json['Thumbprint'],
     };
 }
-export function CertificateInfoModelToJSON(value) {
+exports.CertificateInfoModelFromJSONTyped = CertificateInfoModelFromJSONTyped;
+function CertificateInfoModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -45,4 +51,5 @@ export function CertificateInfoModelToJSON(value) {
         'Thumbprint': value.thumbprint,
     };
 }
+exports.CertificateInfoModelToJSON = CertificateInfoModelToJSON;
 //# sourceMappingURL=CertificateInfoModel.js.map

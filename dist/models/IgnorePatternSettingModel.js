@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,10 +12,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.IgnorePatternSettingModelToJSON = exports.IgnorePatternSettingModelFromJSONTyped = exports.IgnorePatternSettingModelFromJSON = exports.instanceOfIgnorePatternSettingModel = exports.IgnorePatternSettingModelParameterTypeEnum = void 0;
 /**
  * @export
  */
-export const IgnorePatternSettingModelParameterTypeEnum = {
+exports.IgnorePatternSettingModelParameterTypeEnum = {
     Post: 'POST',
     Get: 'GET',
     Cookie: 'COOKIE',
@@ -25,17 +28,19 @@ export const IgnorePatternSettingModelParameterTypeEnum = {
 /**
  * Check if a given object implements the IgnorePatternSettingModel interface.
  */
-export function instanceOfIgnorePatternSettingModel(value) {
+function instanceOfIgnorePatternSettingModel(value) {
     let isInstance = true;
     isInstance = isInstance && "name" in value;
     isInstance = isInstance && "parameterType" in value;
     isInstance = isInstance && "pattern" in value;
     return isInstance;
 }
-export function IgnorePatternSettingModelFromJSON(json) {
+exports.instanceOfIgnorePatternSettingModel = instanceOfIgnorePatternSettingModel;
+function IgnorePatternSettingModelFromJSON(json) {
     return IgnorePatternSettingModelFromJSONTyped(json, false);
 }
-export function IgnorePatternSettingModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.IgnorePatternSettingModelFromJSON = IgnorePatternSettingModelFromJSON;
+function IgnorePatternSettingModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
@@ -45,7 +50,8 @@ export function IgnorePatternSettingModelFromJSONTyped(json, ignoreDiscriminator
         'pattern': json['Pattern'],
     };
 }
-export function IgnorePatternSettingModelToJSON(value) {
+exports.IgnorePatternSettingModelFromJSONTyped = IgnorePatternSettingModelFromJSONTyped;
+function IgnorePatternSettingModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -58,4 +64,5 @@ export function IgnorePatternSettingModelToJSON(value) {
         'Pattern': value.pattern,
     };
 }
+exports.IgnorePatternSettingModelToJSON = IgnorePatternSettingModelToJSON;
 //# sourceMappingURL=IgnorePatternSettingModel.js.map

@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,11 +12,13 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ApiFileModelToJSON = exports.ApiFileModelFromJSONTyped = exports.ApiFileModelFromJSON = exports.instanceOfApiFileModel = exports.ApiFileModelTypeEnum = exports.ApiFileModelImporterTypeEnum = void 0;
+const runtime_1 = require("../runtime");
 /**
  * @export
  */
-export const ApiFileModelImporterTypeEnum = {
+exports.ApiFileModelImporterTypeEnum = {
     None: 'None',
     Fiddler: 'Fiddler',
     Burp: 'Burp',
@@ -39,7 +42,7 @@ export const ApiFileModelImporterTypeEnum = {
 /**
  * @export
  */
-export const ApiFileModelTypeEnum = {
+exports.ApiFileModelTypeEnum = {
     LinkImportFile: 'LinkImportFile',
     LinkImportUrl: 'LinkImportUrl',
     LinkImportEnterLink: 'LinkImportEnterLink'
@@ -47,27 +50,30 @@ export const ApiFileModelTypeEnum = {
 /**
  * Check if a given object implements the ApiFileModel interface.
  */
-export function instanceOfApiFileModel(value) {
+function instanceOfApiFileModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function ApiFileModelFromJSON(json) {
+exports.instanceOfApiFileModel = instanceOfApiFileModel;
+function ApiFileModelFromJSON(json) {
     return ApiFileModelFromJSONTyped(json, false);
 }
-export function ApiFileModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.ApiFileModelFromJSON = ApiFileModelFromJSON;
+function ApiFileModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'content': !exists(json, 'Content') ? undefined : json['Content'],
-        'fileName': !exists(json, 'FileName') ? undefined : json['FileName'],
-        'importerType': !exists(json, 'ImporterType') ? undefined : json['ImporterType'],
-        'uRL': !exists(json, 'URL') ? undefined : json['URL'],
-        'apiURL': !exists(json, 'ApiURL') ? undefined : json['ApiURL'],
-        'type': !exists(json, 'Type') ? undefined : json['Type'],
+        'content': !(0, runtime_1.exists)(json, 'Content') ? undefined : json['Content'],
+        'fileName': !(0, runtime_1.exists)(json, 'FileName') ? undefined : json['FileName'],
+        'importerType': !(0, runtime_1.exists)(json, 'ImporterType') ? undefined : json['ImporterType'],
+        'uRL': !(0, runtime_1.exists)(json, 'URL') ? undefined : json['URL'],
+        'apiURL': !(0, runtime_1.exists)(json, 'ApiURL') ? undefined : json['ApiURL'],
+        'type': !(0, runtime_1.exists)(json, 'Type') ? undefined : json['Type'],
     };
 }
-export function ApiFileModelToJSON(value) {
+exports.ApiFileModelFromJSONTyped = ApiFileModelFromJSONTyped;
+function ApiFileModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -83,4 +89,5 @@ export function ApiFileModelToJSON(value) {
         'Type': value.type,
     };
 }
+exports.ApiFileModelToJSON = ApiFileModelToJSON;
 //# sourceMappingURL=ApiFileModel.js.map

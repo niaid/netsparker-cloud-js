@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,11 +12,13 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ScanTimeWindowItemViewModelToJSON = exports.ScanTimeWindowItemViewModelFromJSONTyped = exports.ScanTimeWindowItemViewModelFromJSON = exports.instanceOfScanTimeWindowItemViewModel = exports.ScanTimeWindowItemViewModelDayEnum = void 0;
+const runtime_1 = require("../runtime");
 /**
  * @export
  */
-export const ScanTimeWindowItemViewModelDayEnum = {
+exports.ScanTimeWindowItemViewModelDayEnum = {
     Sunday: 'Sunday',
     Monday: 'Monday',
     Tuesday: 'Tuesday',
@@ -27,25 +30,28 @@ export const ScanTimeWindowItemViewModelDayEnum = {
 /**
  * Check if a given object implements the ScanTimeWindowItemViewModel interface.
  */
-export function instanceOfScanTimeWindowItemViewModel(value) {
+function instanceOfScanTimeWindowItemViewModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function ScanTimeWindowItemViewModelFromJSON(json) {
+exports.instanceOfScanTimeWindowItemViewModel = instanceOfScanTimeWindowItemViewModel;
+function ScanTimeWindowItemViewModelFromJSON(json) {
     return ScanTimeWindowItemViewModelFromJSONTyped(json, false);
 }
-export function ScanTimeWindowItemViewModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.ScanTimeWindowItemViewModelFromJSON = ScanTimeWindowItemViewModelFromJSON;
+function ScanTimeWindowItemViewModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'day': !exists(json, 'Day') ? undefined : json['Day'],
-        'from': !exists(json, 'From') ? undefined : json['From'],
-        'scanningAllowed': !exists(json, 'ScanningAllowed') ? undefined : json['ScanningAllowed'],
-        'to': !exists(json, 'To') ? undefined : json['To'],
+        'day': !(0, runtime_1.exists)(json, 'Day') ? undefined : json['Day'],
+        'from': !(0, runtime_1.exists)(json, 'From') ? undefined : json['From'],
+        'scanningAllowed': !(0, runtime_1.exists)(json, 'ScanningAllowed') ? undefined : json['ScanningAllowed'],
+        'to': !(0, runtime_1.exists)(json, 'To') ? undefined : json['To'],
     };
 }
-export function ScanTimeWindowItemViewModelToJSON(value) {
+exports.ScanTimeWindowItemViewModelFromJSONTyped = ScanTimeWindowItemViewModelFromJSONTyped;
+function ScanTimeWindowItemViewModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -59,4 +65,5 @@ export function ScanTimeWindowItemViewModelToJSON(value) {
         'To': value.to,
     };
 }
+exports.ScanTimeWindowItemViewModelToJSON = ScanTimeWindowItemViewModelToJSON;
 //# sourceMappingURL=ScanTimeWindowItemViewModel.js.map

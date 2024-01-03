@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,30 +12,35 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.WebsiteGroupModelToJSON = exports.WebsiteGroupModelFromJSONTyped = exports.WebsiteGroupModelFromJSON = exports.instanceOfWebsiteGroupModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the WebsiteGroupModel interface.
  */
-export function instanceOfWebsiteGroupModel(value) {
+function instanceOfWebsiteGroupModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function WebsiteGroupModelFromJSON(json) {
+exports.instanceOfWebsiteGroupModel = instanceOfWebsiteGroupModel;
+function WebsiteGroupModelFromJSON(json) {
     return WebsiteGroupModelFromJSONTyped(json, false);
 }
-export function WebsiteGroupModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.WebsiteGroupModelFromJSON = WebsiteGroupModelFromJSON;
+function WebsiteGroupModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'displayName': !exists(json, 'DisplayName') ? undefined : json['DisplayName'],
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'notVerifiedWebsiteCount': !exists(json, 'NotVerifiedWebsiteCount') ? undefined : json['NotVerifiedWebsiteCount'],
-        'verifiedWebsiteCount': !exists(json, 'VerifiedWebsiteCount') ? undefined : json['VerifiedWebsiteCount'],
+        'displayName': !(0, runtime_1.exists)(json, 'DisplayName') ? undefined : json['DisplayName'],
+        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
+        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
+        'notVerifiedWebsiteCount': !(0, runtime_1.exists)(json, 'NotVerifiedWebsiteCount') ? undefined : json['NotVerifiedWebsiteCount'],
+        'verifiedWebsiteCount': !(0, runtime_1.exists)(json, 'VerifiedWebsiteCount') ? undefined : json['VerifiedWebsiteCount'],
     };
 }
-export function WebsiteGroupModelToJSON(value) {
+exports.WebsiteGroupModelFromJSONTyped = WebsiteGroupModelFromJSONTyped;
+function WebsiteGroupModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -48,4 +54,5 @@ export function WebsiteGroupModelToJSON(value) {
         'VerifiedWebsiteCount': value.verifiedWebsiteCount,
     };
 }
+exports.WebsiteGroupModelToJSON = WebsiteGroupModelToJSON;
 //# sourceMappingURL=WebsiteGroupModel.js.map

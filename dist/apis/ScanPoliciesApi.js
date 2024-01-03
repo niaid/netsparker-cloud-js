@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,12 +12,37 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import * as runtime from '../runtime';
-import { NewScanPolicySettingModelToJSON, ScanPolicyListApiResultFromJSON, ScanPolicySettingApiModelFromJSON, UpdateScanPolicySettingModelToJSON, } from '../models/index';
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ScanPoliciesApi = void 0;
+const runtime = __importStar(require("../runtime"));
+const index_1 = require("../models/index");
 /**
  *
  */
-export class ScanPoliciesApi extends runtime.BaseAPI {
+class ScanPoliciesApi extends runtime.BaseAPI {
     /**
      * Deletes a scan policy.
      */
@@ -60,7 +86,7 @@ export class ScanPoliciesApi extends runtime.BaseAPI {
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => ScanPolicySettingApiModelFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.ScanPolicySettingApiModelFromJSON)(jsonValue));
     }
     /**
      * Gets the scan policy by the specified name.
@@ -84,7 +110,7 @@ export class ScanPoliciesApi extends runtime.BaseAPI {
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => ScanPolicySettingApiModelFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.ScanPolicySettingApiModelFromJSON)(jsonValue));
     }
     /**
      * Gets the scan policy by the specified id.
@@ -111,7 +137,7 @@ export class ScanPoliciesApi extends runtime.BaseAPI {
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => ScanPolicyListApiResultFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.ScanPolicyListApiResultFromJSON)(jsonValue));
     }
     /**
      * Gets the list of scan policies.
@@ -135,9 +161,9 @@ export class ScanPoliciesApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: NewScanPolicySettingModelToJSON(requestParameters.model),
+            body: (0, index_1.NewScanPolicySettingModelToJSON)(requestParameters.model),
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => ScanPolicySettingApiModelFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.ScanPolicySettingApiModelFromJSON)(jsonValue));
     }
     /**
      * Creates a new scan policy.
@@ -161,9 +187,9 @@ export class ScanPoliciesApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: UpdateScanPolicySettingModelToJSON(requestParameters.model),
+            body: (0, index_1.UpdateScanPolicySettingModelToJSON)(requestParameters.model),
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => ScanPolicySettingApiModelFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.ScanPolicySettingApiModelFromJSON)(jsonValue));
     }
     /**
      * Updates a scan policy.
@@ -173,4 +199,5 @@ export class ScanPoliciesApi extends runtime.BaseAPI {
         return await response.value();
     }
 }
+exports.ScanPoliciesApi = ScanPoliciesApi;
 //# sourceMappingURL=ScanPoliciesApi.js.map

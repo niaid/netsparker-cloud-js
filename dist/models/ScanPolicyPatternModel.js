@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,30 +12,35 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ScanPolicyPatternModelToJSON = exports.ScanPolicyPatternModelFromJSONTyped = exports.ScanPolicyPatternModelFromJSON = exports.instanceOfScanPolicyPatternModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the ScanPolicyPatternModel interface.
  */
-export function instanceOfScanPolicyPatternModel(value) {
+function instanceOfScanPolicyPatternModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function ScanPolicyPatternModelFromJSON(json) {
+exports.instanceOfScanPolicyPatternModel = instanceOfScanPolicyPatternModel;
+function ScanPolicyPatternModelFromJSON(json) {
     return ScanPolicyPatternModelFromJSONTyped(json, false);
 }
-export function ScanPolicyPatternModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.ScanPolicyPatternModelFromJSON = ScanPolicyPatternModelFromJSON;
+function ScanPolicyPatternModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'customScriptId': !exists(json, 'CustomScriptId') ? undefined : json['CustomScriptId'],
-        'description': !exists(json, 'Description') ? undefined : json['Description'],
-        'enabled': !exists(json, 'Enabled') ? undefined : json['Enabled'],
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
+        'customScriptId': !(0, runtime_1.exists)(json, 'CustomScriptId') ? undefined : json['CustomScriptId'],
+        'description': !(0, runtime_1.exists)(json, 'Description') ? undefined : json['Description'],
+        'enabled': !(0, runtime_1.exists)(json, 'Enabled') ? undefined : json['Enabled'],
+        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
+        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
     };
 }
-export function ScanPolicyPatternModelToJSON(value) {
+exports.ScanPolicyPatternModelFromJSONTyped = ScanPolicyPatternModelFromJSONTyped;
+function ScanPolicyPatternModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -49,4 +55,5 @@ export function ScanPolicyPatternModelToJSON(value) {
         'Name': value.name,
     };
 }
+exports.ScanPolicyPatternModelToJSON = ScanPolicyPatternModelToJSON;
 //# sourceMappingURL=ScanPolicyPatternModel.js.map

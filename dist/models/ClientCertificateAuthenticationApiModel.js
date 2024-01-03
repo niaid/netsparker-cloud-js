@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,30 +12,35 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { ApiFileModelFromJSON, ApiFileModelToJSON, } from './ApiFileModel';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ClientCertificateAuthenticationApiModelToJSON = exports.ClientCertificateAuthenticationApiModelFromJSONTyped = exports.ClientCertificateAuthenticationApiModelFromJSON = exports.instanceOfClientCertificateAuthenticationApiModel = void 0;
+const runtime_1 = require("../runtime");
+const ApiFileModel_1 = require("./ApiFileModel");
 /**
  * Check if a given object implements the ClientCertificateAuthenticationApiModel interface.
  */
-export function instanceOfClientCertificateAuthenticationApiModel(value) {
+function instanceOfClientCertificateAuthenticationApiModel(value) {
     let isInstance = true;
     isInstance = isInstance && "file" in value;
     return isInstance;
 }
-export function ClientCertificateAuthenticationApiModelFromJSON(json) {
+exports.instanceOfClientCertificateAuthenticationApiModel = instanceOfClientCertificateAuthenticationApiModel;
+function ClientCertificateAuthenticationApiModelFromJSON(json) {
     return ClientCertificateAuthenticationApiModelFromJSONTyped(json, false);
 }
-export function ClientCertificateAuthenticationApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.ClientCertificateAuthenticationApiModelFromJSON = ClientCertificateAuthenticationApiModelFromJSON;
+function ClientCertificateAuthenticationApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'file': ApiFileModelFromJSON(json['File']),
-        'isEnabled': !exists(json, 'IsEnabled') ? undefined : json['IsEnabled'],
-        'password': !exists(json, 'Password') ? undefined : json['Password'],
+        'file': (0, ApiFileModel_1.ApiFileModelFromJSON)(json['File']),
+        'isEnabled': !(0, runtime_1.exists)(json, 'IsEnabled') ? undefined : json['IsEnabled'],
+        'password': !(0, runtime_1.exists)(json, 'Password') ? undefined : json['Password'],
     };
 }
-export function ClientCertificateAuthenticationApiModelToJSON(value) {
+exports.ClientCertificateAuthenticationApiModelFromJSONTyped = ClientCertificateAuthenticationApiModelFromJSONTyped;
+function ClientCertificateAuthenticationApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -42,9 +48,10 @@ export function ClientCertificateAuthenticationApiModelToJSON(value) {
         return null;
     }
     return {
-        'File': ApiFileModelToJSON(value.file),
+        'File': (0, ApiFileModel_1.ApiFileModelToJSON)(value.file),
         'IsEnabled': value.isEnabled,
         'Password': value.password,
     };
 }
+exports.ClientCertificateAuthenticationApiModelToJSON = ClientCertificateAuthenticationApiModelToJSON;
 //# sourceMappingURL=ClientCertificateAuthenticationApiModel.js.map

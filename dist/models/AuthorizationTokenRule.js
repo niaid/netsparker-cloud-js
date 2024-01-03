@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,27 +12,32 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AuthorizationTokenRuleToJSON = exports.AuthorizationTokenRuleFromJSONTyped = exports.AuthorizationTokenRuleFromJSON = exports.instanceOfAuthorizationTokenRule = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the AuthorizationTokenRule interface.
  */
-export function instanceOfAuthorizationTokenRule(value) {
+function instanceOfAuthorizationTokenRule(value) {
     let isInstance = true;
     return isInstance;
 }
-export function AuthorizationTokenRuleFromJSON(json) {
+exports.instanceOfAuthorizationTokenRule = instanceOfAuthorizationTokenRule;
+function AuthorizationTokenRuleFromJSON(json) {
     return AuthorizationTokenRuleFromJSONTyped(json, false);
 }
-export function AuthorizationTokenRuleFromJSONTyped(json, ignoreDiscriminator) {
+exports.AuthorizationTokenRuleFromJSON = AuthorizationTokenRuleFromJSON;
+function AuthorizationTokenRuleFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'source': !exists(json, 'Source') ? undefined : json['Source'],
-        'destination': !exists(json, 'Destination') ? undefined : json['Destination'],
+        'source': !(0, runtime_1.exists)(json, 'Source') ? undefined : json['Source'],
+        'destination': !(0, runtime_1.exists)(json, 'Destination') ? undefined : json['Destination'],
     };
 }
-export function AuthorizationTokenRuleToJSON(value) {
+exports.AuthorizationTokenRuleFromJSONTyped = AuthorizationTokenRuleFromJSONTyped;
+function AuthorizationTokenRuleToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -43,4 +49,5 @@ export function AuthorizationTokenRuleToJSON(value) {
         'Destination': value.destination,
     };
 }
+exports.AuthorizationTokenRuleToJSON = AuthorizationTokenRuleToJSON;
 //# sourceMappingURL=AuthorizationTokenRule.js.map

@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,30 +12,35 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.UpdateRoleApiModelToJSON = exports.UpdateRoleApiModelFromJSONTyped = exports.UpdateRoleApiModelFromJSON = exports.instanceOfUpdateRoleApiModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the UpdateRoleApiModel interface.
  */
-export function instanceOfUpdateRoleApiModel(value) {
+function instanceOfUpdateRoleApiModel(value) {
     let isInstance = true;
     isInstance = isInstance && "id" in value;
     isInstance = isInstance && "name" in value;
     return isInstance;
 }
-export function UpdateRoleApiModelFromJSON(json) {
+exports.instanceOfUpdateRoleApiModel = instanceOfUpdateRoleApiModel;
+function UpdateRoleApiModelFromJSON(json) {
     return UpdateRoleApiModelFromJSONTyped(json, false);
 }
-export function UpdateRoleApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.UpdateRoleApiModelFromJSON = UpdateRoleApiModelFromJSON;
+function UpdateRoleApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
         'id': json['Id'],
         'name': json['Name'],
-        'permissions': !exists(json, 'Permissions') ? undefined : json['Permissions'],
+        'permissions': !(0, runtime_1.exists)(json, 'Permissions') ? undefined : json['Permissions'],
     };
 }
-export function UpdateRoleApiModelToJSON(value) {
+exports.UpdateRoleApiModelFromJSONTyped = UpdateRoleApiModelFromJSONTyped;
+function UpdateRoleApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -47,4 +53,5 @@ export function UpdateRoleApiModelToJSON(value) {
         'Permissions': value.permissions,
     };
 }
+exports.UpdateRoleApiModelToJSON = UpdateRoleApiModelToJSON;
 //# sourceMappingURL=UpdateRoleApiModel.js.map

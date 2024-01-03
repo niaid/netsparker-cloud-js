@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,27 +12,32 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.FieldPairValueToJSON = exports.FieldPairValueFromJSONTyped = exports.FieldPairValueFromJSON = exports.instanceOfFieldPairValue = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the FieldPairValue interface.
  */
-export function instanceOfFieldPairValue(value) {
+function instanceOfFieldPairValue(value) {
     let isInstance = true;
     return isInstance;
 }
-export function FieldPairValueFromJSON(json) {
+exports.instanceOfFieldPairValue = instanceOfFieldPairValue;
+function FieldPairValueFromJSON(json) {
     return FieldPairValueFromJSONTyped(json, false);
 }
-export function FieldPairValueFromJSONTyped(json, ignoreDiscriminator) {
+exports.FieldPairValueFromJSON = FieldPairValueFromJSON;
+function FieldPairValueFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'text': !exists(json, 'Text') ? undefined : json['Text'],
+        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
+        'text': !(0, runtime_1.exists)(json, 'Text') ? undefined : json['Text'],
     };
 }
-export function FieldPairValueToJSON(value) {
+exports.FieldPairValueFromJSONTyped = FieldPairValueFromJSONTyped;
+function FieldPairValueToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -43,4 +49,5 @@ export function FieldPairValueToJSON(value) {
         'Text': value.text,
     };
 }
+exports.FieldPairValueToJSON = FieldPairValueToJSON;
 //# sourceMappingURL=FieldPairValue.js.map

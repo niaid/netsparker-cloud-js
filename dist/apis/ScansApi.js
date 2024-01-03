@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,12 +12,37 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import * as runtime from '../runtime';
-import { ApiScanStatusModelFromJSON, AuthVerificationApiResultFromJSON, BaseScanApiModelToJSON, FormAuthenticationVerificationApiModelToJSON, IncrementalApiModelToJSON, NewGroupScanApiModelToJSON, NewScanTaskApiModelToJSON, NewScanTaskWithProfileApiModelToJSON, NewScheduledIncrementalScanApiModelToJSON, NewScheduledScanApiModelToJSON, NewScheduledWithProfileApiModelToJSON, ScanTaskListApiResultFromJSON, ScanTaskModelFromJSON, ScansValidateImportedLinksFileRequestToJSON, ScheduledScanListApiResultFromJSON, TestScanProfileCredentialsRequestModelFromJSON, TestScanProfileCredentialsRequestModelToJSON, UpdateScheduledIncrementalScanApiModelFromJSON, UpdateScheduledIncrementalScanApiModelToJSON, UpdateScheduledScanApiModelFromJSON, UpdateScheduledScanApiModelToJSON, UpdateScheduledScanModelFromJSON, VulnerabilityModelFromJSON, } from '../models/index';
+var __createBinding = (this && this.__createBinding) || (Object.create ? (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    var desc = Object.getOwnPropertyDescriptor(m, k);
+    if (!desc || ("get" in desc ? !m.__esModule : desc.writable || desc.configurable)) {
+      desc = { enumerable: true, get: function() { return m[k]; } };
+    }
+    Object.defineProperty(o, k2, desc);
+}) : (function(o, m, k, k2) {
+    if (k2 === undefined) k2 = k;
+    o[k2] = m[k];
+}));
+var __setModuleDefault = (this && this.__setModuleDefault) || (Object.create ? (function(o, v) {
+    Object.defineProperty(o, "default", { enumerable: true, value: v });
+}) : function(o, v) {
+    o["default"] = v;
+});
+var __importStar = (this && this.__importStar) || function (mod) {
+    if (mod && mod.__esModule) return mod;
+    var result = {};
+    if (mod != null) for (var k in mod) if (k !== "default" && Object.prototype.hasOwnProperty.call(mod, k)) __createBinding(result, mod, k);
+    __setModuleDefault(result, mod);
+    return result;
+};
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ScansValidateImportedLinksFileOperationImportTypeEnum = exports.ScansReportContentFormatEnum = exports.ScansReportTypeEnum = exports.ScansReportFormatEnum = exports.ScansListByWebsiteInitiatedDateSortTypeEnum = exports.ScansListByStateScanTaskStateEnum = exports.ScansDownloadPciScanReportReportTypeEnum = exports.ScansCustomReportReportFormatEnum = exports.ScansApi = void 0;
+const runtime = __importStar(require("../runtime"));
+const index_1 = require("../models/index");
 /**
  *
  */
-export class ScansApi extends runtime.BaseAPI {
+class ScansApi extends runtime.BaseAPI {
     /**
      * Stops a scan in progress.
      */
@@ -138,7 +164,7 @@ export class ScansApi extends runtime.BaseAPI {
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => ScanTaskModelFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.ScanTaskModelFromJSON)(jsonValue));
     }
     /**
      * Gets the detail of a scan.
@@ -252,9 +278,9 @@ export class ScansApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: IncrementalApiModelToJSON(requestParameters.model),
+            body: (0, index_1.IncrementalApiModelToJSON)(requestParameters.model),
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => ScanTaskModelFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.ScanTaskModelFromJSON)(jsonValue));
     }
     /**
      * Launches an incremental scan based on the provided base scan identifier.
@@ -281,7 +307,7 @@ export class ScansApi extends runtime.BaseAPI {
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => ScanTaskListApiResultFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.ScanTaskListApiResultFromJSON)(jsonValue));
     }
     /**
      * Gets the list of scans and their details.
@@ -323,7 +349,7 @@ export class ScansApi extends runtime.BaseAPI {
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => ScanTaskListApiResultFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.ScanTaskListApiResultFromJSON)(jsonValue));
     }
     /**
      * Gets the list of scans by state
@@ -362,7 +388,7 @@ export class ScansApi extends runtime.BaseAPI {
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => ScanTaskListApiResultFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.ScanTaskListApiResultFromJSON)(jsonValue));
     }
     /**
      * Gets the list of scans by stateChanged
@@ -398,7 +424,7 @@ export class ScansApi extends runtime.BaseAPI {
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => ScanTaskListApiResultFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.ScanTaskListApiResultFromJSON)(jsonValue));
     }
     /**
      * Gets the list of scans and their details.
@@ -425,7 +451,7 @@ export class ScansApi extends runtime.BaseAPI {
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => ScheduledScanListApiResultFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.ScheduledScanListApiResultFromJSON)(jsonValue));
     }
     /**
      * Gets the list of scheduled scans which are scheduled to be launched in the future.
@@ -449,9 +475,9 @@ export class ScansApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: NewScanTaskApiModelToJSON(requestParameters.model),
+            body: (0, index_1.NewScanTaskApiModelToJSON)(requestParameters.model),
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => jsonValue.map(ScanTaskModelFromJSON));
+        return new runtime.JSONApiResponse(response, (jsonValue) => jsonValue.map(index_1.ScanTaskModelFromJSON));
     }
     /**
      * Launches a new scan.
@@ -477,7 +503,7 @@ export class ScansApi extends runtime.BaseAPI {
             query: queryParameters,
             body: requestParameters.id,
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => ScanTaskModelFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.ScanTaskModelFromJSON)(jsonValue));
     }
     /**
      * Launches a new scan with same configuration from the scan specified with scan id.
@@ -501,9 +527,9 @@ export class ScansApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: NewGroupScanApiModelToJSON(requestParameters.model),
+            body: (0, index_1.NewGroupScanApiModelToJSON)(requestParameters.model),
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => jsonValue.map(ScanTaskModelFromJSON));
+        return new runtime.JSONApiResponse(response, (jsonValue) => jsonValue.map(index_1.ScanTaskModelFromJSON));
     }
     /**
      * Launches a new group scan.
@@ -527,9 +553,9 @@ export class ScansApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: NewScanTaskWithProfileApiModelToJSON(requestParameters.model),
+            body: (0, index_1.NewScanTaskWithProfileApiModelToJSON)(requestParameters.model),
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => ScanTaskModelFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.ScanTaskModelFromJSON)(jsonValue));
     }
     /**
      * Launches a new scan with profile id.
@@ -662,7 +688,7 @@ export class ScansApi extends runtime.BaseAPI {
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => jsonValue.map(VulnerabilityModelFromJSON));
+        return new runtime.JSONApiResponse(response, (jsonValue) => jsonValue.map(index_1.VulnerabilityModelFromJSON));
     }
     /**
      * Gets the result of a scan.
@@ -738,9 +764,9 @@ export class ScansApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: BaseScanApiModelToJSON(requestParameters.model),
+            body: (0, index_1.BaseScanApiModelToJSON)(requestParameters.model),
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => ScanTaskModelFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.ScanTaskModelFromJSON)(jsonValue));
     }
     /**
      * Launches a retest scan based on the provided base scan identifier.
@@ -764,9 +790,9 @@ export class ScansApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: NewScheduledScanApiModelToJSON(requestParameters.model),
+            body: (0, index_1.NewScheduledScanApiModelToJSON)(requestParameters.model),
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateScheduledScanModelFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.UpdateScheduledScanModelFromJSON)(jsonValue));
     }
     /**
      * Schedules a scan to be launched in the future.
@@ -790,9 +816,9 @@ export class ScansApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: NewScheduledIncrementalScanApiModelToJSON(requestParameters.model),
+            body: (0, index_1.NewScheduledIncrementalScanApiModelToJSON)(requestParameters.model),
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateScheduledScanModelFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.UpdateScheduledScanModelFromJSON)(jsonValue));
     }
     /**
      * Schedules an incremental scan to be launched in the future.
@@ -816,9 +842,9 @@ export class ScansApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: NewScheduledWithProfileApiModelToJSON(requestParameters.model),
+            body: (0, index_1.NewScheduledWithProfileApiModelToJSON)(requestParameters.model),
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateScheduledScanModelFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.UpdateScheduledScanModelFromJSON)(jsonValue));
     }
     /**
      * Schedules a scan by a profile to be launched in the future.
@@ -842,7 +868,7 @@ export class ScansApi extends runtime.BaseAPI {
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => ApiScanStatusModelFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.ApiScanStatusModelFromJSON)(jsonValue));
     }
     /**
      * Gets the status of a scan.
@@ -866,9 +892,9 @@ export class ScansApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: TestScanProfileCredentialsRequestModelToJSON(requestParameters.model),
+            body: (0, index_1.TestScanProfileCredentialsRequestModelToJSON)(requestParameters.model),
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => TestScanProfileCredentialsRequestModelFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.TestScanProfileCredentialsRequestModelFromJSON)(jsonValue));
     }
     /**
      * Tests the credentials of scan profile for specific url.
@@ -917,9 +943,9 @@ export class ScansApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: UpdateScheduledScanApiModelToJSON(requestParameters.model),
+            body: (0, index_1.UpdateScheduledScanApiModelToJSON)(requestParameters.model),
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateScheduledScanApiModelFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.UpdateScheduledScanApiModelFromJSON)(jsonValue));
     }
     /**
      * Updates a scheduled scan.
@@ -943,9 +969,9 @@ export class ScansApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: UpdateScheduledIncrementalScanApiModelToJSON(requestParameters.model),
+            body: (0, index_1.UpdateScheduledIncrementalScanApiModelToJSON)(requestParameters.model),
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => UpdateScheduledIncrementalScanApiModelFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.UpdateScheduledIncrementalScanApiModelFromJSON)(jsonValue));
     }
     /**
      * Updates an incremental scheduled scan.
@@ -977,7 +1003,7 @@ export class ScansApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: ScansValidateImportedLinksFileRequestToJSON(requestParameters.scansValidateImportedLinksFileRequest),
+            body: (0, index_1.ScansValidateImportedLinksFileRequestToJSON)(requestParameters.scansValidateImportedLinksFileRequest),
         }, initOverrides);
         return new runtime.JSONApiResponse(response);
     }
@@ -1002,9 +1028,9 @@ export class ScansApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: FormAuthenticationVerificationApiModelToJSON(requestParameters.model),
+            body: (0, index_1.FormAuthenticationVerificationApiModelToJSON)(requestParameters.model),
         }, initOverrides);
-        return new runtime.JSONApiResponse(response, (jsonValue) => AuthVerificationApiResultFromJSON(jsonValue));
+        return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.AuthVerificationApiResultFromJSON)(jsonValue));
     }
     /**
      * Verifies the specified form authentication settings.
@@ -1014,10 +1040,11 @@ export class ScansApi extends runtime.BaseAPI {
         return await response.value();
     }
 }
+exports.ScansApi = ScansApi;
 /**
  * @export
  */
-export const ScansCustomReportReportFormatEnum = {
+exports.ScansCustomReportReportFormatEnum = {
     Xml: 'Xml',
     Csv: 'Csv',
     Pdf: 'Pdf',
@@ -1028,7 +1055,7 @@ export const ScansCustomReportReportFormatEnum = {
 /**
  * @export
  */
-export const ScansDownloadPciScanReportReportTypeEnum = {
+exports.ScansDownloadPciScanReportReportTypeEnum = {
     Attestation: 'Attestation',
     Detailed: 'Detailed',
     Executive: 'Executive'
@@ -1036,7 +1063,7 @@ export const ScansDownloadPciScanReportReportTypeEnum = {
 /**
  * @export
  */
-export const ScansListByStateScanTaskStateEnum = {
+exports.ScansListByStateScanTaskStateEnum = {
     Queued: 'Queued',
     Scanning: 'Scanning',
     Archiving: 'Archiving',
@@ -1052,14 +1079,14 @@ export const ScansListByStateScanTaskStateEnum = {
 /**
  * @export
  */
-export const ScansListByWebsiteInitiatedDateSortTypeEnum = {
+exports.ScansListByWebsiteInitiatedDateSortTypeEnum = {
     Ascending: 'Ascending',
     Descending: 'Descending'
 };
 /**
  * @export
  */
-export const ScansReportFormatEnum = {
+exports.ScansReportFormatEnum = {
     Xml: 'Xml',
     Csv: 'Csv',
     Pdf: 'Pdf',
@@ -1070,7 +1097,7 @@ export const ScansReportFormatEnum = {
 /**
  * @export
  */
-export const ScansReportTypeEnum = {
+exports.ScansReportTypeEnum = {
     Crawled: 'Crawled',
     Scanned: 'Scanned',
     Vulnerabilities: 'Vulnerabilities',
@@ -1100,14 +1127,14 @@ export const ScansReportTypeEnum = {
 /**
  * @export
  */
-export const ScansReportContentFormatEnum = {
+exports.ScansReportContentFormatEnum = {
     Html: 'Html',
     Markdown: 'Markdown'
 };
 /**
  * @export
  */
-export const ScansValidateImportedLinksFileOperationImportTypeEnum = {
+exports.ScansValidateImportedLinksFileOperationImportTypeEnum = {
     None: 'None',
     Fiddler: 'Fiddler',
     Burp: 'Burp',

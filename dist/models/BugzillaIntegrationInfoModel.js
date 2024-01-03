@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,13 +12,15 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { IntegrationCustomFieldVmFromJSON, IntegrationCustomFieldVmToJSON, } from './IntegrationCustomFieldVm';
-import { IntegrationWizardResultModelFromJSON, IntegrationWizardResultModelToJSON, } from './IntegrationWizardResultModel';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.BugzillaIntegrationInfoModelToJSON = exports.BugzillaIntegrationInfoModelFromJSONTyped = exports.BugzillaIntegrationInfoModelFromJSON = exports.instanceOfBugzillaIntegrationInfoModel = exports.BugzillaIntegrationInfoModelTemplateTypeEnum = exports.BugzillaIntegrationInfoModelTypeEnum = void 0;
+const runtime_1 = require("../runtime");
+const IntegrationCustomFieldVm_1 = require("./IntegrationCustomFieldVm");
+const IntegrationWizardResultModel_1 = require("./IntegrationWizardResultModel");
 /**
  * @export
  */
-export const BugzillaIntegrationInfoModelTypeEnum = {
+exports.BugzillaIntegrationInfoModelTypeEnum = {
     NetsparkerEnterprise: 'NetsparkerEnterprise',
     Webhook: 'Webhook',
     Zapier: 'Zapier',
@@ -55,14 +58,14 @@ export const BugzillaIntegrationInfoModelTypeEnum = {
 /**
  * @export
  */
-export const BugzillaIntegrationInfoModelTemplateTypeEnum = {
+exports.BugzillaIntegrationInfoModelTemplateTypeEnum = {
     Standard: 'Standard',
     Detailed: 'Detailed'
 };
 /**
  * Check if a given object implements the BugzillaIntegrationInfoModel interface.
  */
-export function instanceOfBugzillaIntegrationInfoModel(value) {
+function instanceOfBugzillaIntegrationInfoModel(value) {
     let isInstance = true;
     isInstance = isInstance && "url" in value;
     isInstance = isInstance && "apiKey" in value;
@@ -74,10 +77,12 @@ export function instanceOfBugzillaIntegrationInfoModel(value) {
     isInstance = isInstance && "titleFormat" in value;
     return isInstance;
 }
-export function BugzillaIntegrationInfoModelFromJSON(json) {
+exports.instanceOfBugzillaIntegrationInfoModel = instanceOfBugzillaIntegrationInfoModel;
+function BugzillaIntegrationInfoModelFromJSON(json) {
     return BugzillaIntegrationInfoModelFromJSONTyped(json, false);
 }
-export function BugzillaIntegrationInfoModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.BugzillaIntegrationInfoModelFromJSON = BugzillaIntegrationInfoModelFromJSON;
+function BugzillaIntegrationInfoModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
@@ -89,30 +94,31 @@ export function BugzillaIntegrationInfoModelFromJSONTyped(json, ignoreDiscrimina
         'version': json['Version'],
         'platform': json['Platform'],
         'operationSystem': json['OperationSystem'],
-        'status': !exists(json, 'Status') ? undefined : json['Status'],
-        'priority': !exists(json, 'Priority') ? undefined : json['Priority'],
-        'assignedTo': !exists(json, 'AssignedTo') ? undefined : json['AssignedTo'],
-        'severity': !exists(json, 'Severity') ? undefined : json['Severity'],
-        'milestone': !exists(json, 'Milestone') ? undefined : json['Milestone'],
-        'dueDays': !exists(json, 'DueDays') ? undefined : json['DueDays'],
-        'type': !exists(json, 'Type') ? undefined : json['Type'],
-        'genericErrorMessage': !exists(json, 'GenericErrorMessage') ? undefined : json['GenericErrorMessage'],
-        'identifier': !exists(json, 'Identifier') ? undefined : json['Identifier'],
-        'testMessageBody': !exists(json, 'TestMessageBody') ? undefined : json['TestMessageBody'],
-        'testMessageTitle': !exists(json, 'TestMessageTitle') ? undefined : json['TestMessageTitle'],
-        'webhookUrl': !exists(json, 'WebhookUrl') ? undefined : json['WebhookUrl'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'integrationVersion': !exists(json, 'IntegrationVersion') ? undefined : json['IntegrationVersion'],
-        'accountID': !exists(json, 'AccountID') ? undefined : json['AccountID'],
-        'customFields': !exists(json, 'CustomFields') ? undefined : (json['CustomFields'].map(IntegrationCustomFieldVmFromJSON)),
-        'templateType': !exists(json, 'TemplateType') ? undefined : json['TemplateType'],
-        'reopenStatus': !exists(json, 'ReopenStatus') ? undefined : json['ReopenStatus'],
-        'resolvedStatus': !exists(json, 'ResolvedStatus') ? undefined : json['ResolvedStatus'],
+        'status': !(0, runtime_1.exists)(json, 'Status') ? undefined : json['Status'],
+        'priority': !(0, runtime_1.exists)(json, 'Priority') ? undefined : json['Priority'],
+        'assignedTo': !(0, runtime_1.exists)(json, 'AssignedTo') ? undefined : json['AssignedTo'],
+        'severity': !(0, runtime_1.exists)(json, 'Severity') ? undefined : json['Severity'],
+        'milestone': !(0, runtime_1.exists)(json, 'Milestone') ? undefined : json['Milestone'],
+        'dueDays': !(0, runtime_1.exists)(json, 'DueDays') ? undefined : json['DueDays'],
+        'type': !(0, runtime_1.exists)(json, 'Type') ? undefined : json['Type'],
+        'genericErrorMessage': !(0, runtime_1.exists)(json, 'GenericErrorMessage') ? undefined : json['GenericErrorMessage'],
+        'identifier': !(0, runtime_1.exists)(json, 'Identifier') ? undefined : json['Identifier'],
+        'testMessageBody': !(0, runtime_1.exists)(json, 'TestMessageBody') ? undefined : json['TestMessageBody'],
+        'testMessageTitle': !(0, runtime_1.exists)(json, 'TestMessageTitle') ? undefined : json['TestMessageTitle'],
+        'webhookUrl': !(0, runtime_1.exists)(json, 'WebhookUrl') ? undefined : json['WebhookUrl'],
+        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
+        'integrationVersion': !(0, runtime_1.exists)(json, 'IntegrationVersion') ? undefined : json['IntegrationVersion'],
+        'accountID': !(0, runtime_1.exists)(json, 'AccountID') ? undefined : json['AccountID'],
+        'customFields': !(0, runtime_1.exists)(json, 'CustomFields') ? undefined : (json['CustomFields'].map(IntegrationCustomFieldVm_1.IntegrationCustomFieldVmFromJSON)),
+        'templateType': !(0, runtime_1.exists)(json, 'TemplateType') ? undefined : json['TemplateType'],
+        'reopenStatus': !(0, runtime_1.exists)(json, 'ReopenStatus') ? undefined : json['ReopenStatus'],
+        'resolvedStatus': !(0, runtime_1.exists)(json, 'ResolvedStatus') ? undefined : json['ResolvedStatus'],
         'titleFormat': json['TitleFormat'],
-        'integrationWizardResultModel': !exists(json, 'IntegrationWizardResultModel') ? undefined : IntegrationWizardResultModelFromJSON(json['IntegrationWizardResultModel']),
+        'integrationWizardResultModel': !(0, runtime_1.exists)(json, 'IntegrationWizardResultModel') ? undefined : (0, IntegrationWizardResultModel_1.IntegrationWizardResultModelFromJSON)(json['IntegrationWizardResultModel']),
     };
 }
-export function BugzillaIntegrationInfoModelToJSON(value) {
+exports.BugzillaIntegrationInfoModelFromJSONTyped = BugzillaIntegrationInfoModelFromJSONTyped;
+function BugzillaIntegrationInfoModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -136,12 +142,13 @@ export function BugzillaIntegrationInfoModelToJSON(value) {
         'Name': value.name,
         'IntegrationVersion': value.integrationVersion,
         'AccountID': value.accountID,
-        'CustomFields': value.customFields === undefined ? undefined : (value.customFields.map(IntegrationCustomFieldVmToJSON)),
+        'CustomFields': value.customFields === undefined ? undefined : (value.customFields.map(IntegrationCustomFieldVm_1.IntegrationCustomFieldVmToJSON)),
         'TemplateType': value.templateType,
         'ReopenStatus': value.reopenStatus,
         'ResolvedStatus': value.resolvedStatus,
         'TitleFormat': value.titleFormat,
-        'IntegrationWizardResultModel': IntegrationWizardResultModelToJSON(value.integrationWizardResultModel),
+        'IntegrationWizardResultModel': (0, IntegrationWizardResultModel_1.IntegrationWizardResultModelToJSON)(value.integrationWizardResultModel),
     };
 }
+exports.BugzillaIntegrationInfoModelToJSON = BugzillaIntegrationInfoModelToJSON;
 //# sourceMappingURL=BugzillaIntegrationInfoModel.js.map

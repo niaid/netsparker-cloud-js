@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,37 +12,42 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { AuditLogDtoFromJSON, AuditLogDtoToJSON, } from './AuditLogDto';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AuditLogPagedResultDtoToJSON = exports.AuditLogPagedResultDtoFromJSONTyped = exports.AuditLogPagedResultDtoFromJSON = exports.instanceOfAuditLogPagedResultDto = void 0;
+const runtime_1 = require("../runtime");
+const AuditLogDto_1 = require("./AuditLogDto");
 /**
  * Check if a given object implements the AuditLogPagedResultDto interface.
  */
-export function instanceOfAuditLogPagedResultDto(value) {
+function instanceOfAuditLogPagedResultDto(value) {
     let isInstance = true;
     return isInstance;
 }
-export function AuditLogPagedResultDtoFromJSON(json) {
+exports.instanceOfAuditLogPagedResultDto = instanceOfAuditLogPagedResultDto;
+function AuditLogPagedResultDtoFromJSON(json) {
     return AuditLogPagedResultDtoFromJSONTyped(json, false);
 }
-export function AuditLogPagedResultDtoFromJSONTyped(json, ignoreDiscriminator) {
+exports.AuditLogPagedResultDtoFromJSON = AuditLogPagedResultDtoFromJSON;
+function AuditLogPagedResultDtoFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'firstItemOnPage': !exists(json, 'FirstItemOnPage') ? undefined : json['FirstItemOnPage'],
-        'hasNextPage': !exists(json, 'HasNextPage') ? undefined : json['HasNextPage'],
-        'hasPreviousPage': !exists(json, 'HasPreviousPage') ? undefined : json['HasPreviousPage'],
-        'isFirstPage': !exists(json, 'IsFirstPage') ? undefined : json['IsFirstPage'],
-        'isLastPage': !exists(json, 'IsLastPage') ? undefined : json['IsLastPage'],
-        'lastItemOnPage': !exists(json, 'LastItemOnPage') ? undefined : json['LastItemOnPage'],
-        'list': !exists(json, 'List') ? undefined : (json['List'].map(AuditLogDtoFromJSON)),
-        'pageCount': !exists(json, 'PageCount') ? undefined : json['PageCount'],
-        'pageNumber': !exists(json, 'PageNumber') ? undefined : json['PageNumber'],
-        'pageSize': !exists(json, 'PageSize') ? undefined : json['PageSize'],
-        'totalItemCount': !exists(json, 'TotalItemCount') ? undefined : json['TotalItemCount'],
+        'firstItemOnPage': !(0, runtime_1.exists)(json, 'FirstItemOnPage') ? undefined : json['FirstItemOnPage'],
+        'hasNextPage': !(0, runtime_1.exists)(json, 'HasNextPage') ? undefined : json['HasNextPage'],
+        'hasPreviousPage': !(0, runtime_1.exists)(json, 'HasPreviousPage') ? undefined : json['HasPreviousPage'],
+        'isFirstPage': !(0, runtime_1.exists)(json, 'IsFirstPage') ? undefined : json['IsFirstPage'],
+        'isLastPage': !(0, runtime_1.exists)(json, 'IsLastPage') ? undefined : json['IsLastPage'],
+        'lastItemOnPage': !(0, runtime_1.exists)(json, 'LastItemOnPage') ? undefined : json['LastItemOnPage'],
+        'list': !(0, runtime_1.exists)(json, 'List') ? undefined : (json['List'].map(AuditLogDto_1.AuditLogDtoFromJSON)),
+        'pageCount': !(0, runtime_1.exists)(json, 'PageCount') ? undefined : json['PageCount'],
+        'pageNumber': !(0, runtime_1.exists)(json, 'PageNumber') ? undefined : json['PageNumber'],
+        'pageSize': !(0, runtime_1.exists)(json, 'PageSize') ? undefined : json['PageSize'],
+        'totalItemCount': !(0, runtime_1.exists)(json, 'TotalItemCount') ? undefined : json['TotalItemCount'],
     };
 }
-export function AuditLogPagedResultDtoToJSON(value) {
+exports.AuditLogPagedResultDtoFromJSONTyped = AuditLogPagedResultDtoFromJSONTyped;
+function AuditLogPagedResultDtoToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -55,11 +61,12 @@ export function AuditLogPagedResultDtoToJSON(value) {
         'IsFirstPage': value.isFirstPage,
         'IsLastPage': value.isLastPage,
         'LastItemOnPage': value.lastItemOnPage,
-        'List': value.list === undefined ? undefined : (value.list.map(AuditLogDtoToJSON)),
+        'List': value.list === undefined ? undefined : (value.list.map(AuditLogDto_1.AuditLogDtoToJSON)),
         'PageCount': value.pageCount,
         'PageNumber': value.pageNumber,
         'PageSize': value.pageSize,
         'TotalItemCount': value.totalItemCount,
     };
 }
+exports.AuditLogPagedResultDtoToJSON = AuditLogPagedResultDtoToJSON;
 //# sourceMappingURL=AuditLogPagedResultDto.js.map

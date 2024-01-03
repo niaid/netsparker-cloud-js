@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,11 +12,13 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.NotificationIntegrationFilterApiToJSON = exports.NotificationIntegrationFilterApiFromJSONTyped = exports.NotificationIntegrationFilterApiFromJSON = exports.instanceOfNotificationIntegrationFilterApi = exports.NotificationIntegrationFilterApiStateEnum = exports.NotificationIntegrationFilterApiSeverityEnum = void 0;
+const runtime_1 = require("../runtime");
 /**
  * @export
  */
-export const NotificationIntegrationFilterApiSeverityEnum = {
+exports.NotificationIntegrationFilterApiSeverityEnum = {
     BestPractice: 'BestPractice',
     Information: 'Information',
     Low: 'Low',
@@ -26,7 +29,7 @@ export const NotificationIntegrationFilterApiSeverityEnum = {
 /**
  * @export
  */
-export const NotificationIntegrationFilterApiStateEnum = {
+exports.NotificationIntegrationFilterApiStateEnum = {
     NotFound: 'NotFound',
     Fixed: 'Fixed',
     NotFixed: 'NotFixed',
@@ -36,25 +39,28 @@ export const NotificationIntegrationFilterApiStateEnum = {
 /**
  * Check if a given object implements the NotificationIntegrationFilterApi interface.
  */
-export function instanceOfNotificationIntegrationFilterApi(value) {
+function instanceOfNotificationIntegrationFilterApi(value) {
     let isInstance = true;
     return isInstance;
 }
-export function NotificationIntegrationFilterApiFromJSON(json) {
+exports.instanceOfNotificationIntegrationFilterApi = instanceOfNotificationIntegrationFilterApi;
+function NotificationIntegrationFilterApiFromJSON(json) {
     return NotificationIntegrationFilterApiFromJSONTyped(json, false);
 }
-export function NotificationIntegrationFilterApiFromJSONTyped(json, ignoreDiscriminator) {
+exports.NotificationIntegrationFilterApiFromJSON = NotificationIntegrationFilterApiFromJSON;
+function NotificationIntegrationFilterApiFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'isConfirmed': !exists(json, 'IsConfirmed') ? undefined : json['IsConfirmed'],
-        'severity': !exists(json, 'Severity') ? undefined : json['Severity'],
-        'state': !exists(json, 'State') ? undefined : json['State'],
-        'certainty': !exists(json, 'Certainty') ? undefined : json['Certainty'],
+        'isConfirmed': !(0, runtime_1.exists)(json, 'IsConfirmed') ? undefined : json['IsConfirmed'],
+        'severity': !(0, runtime_1.exists)(json, 'Severity') ? undefined : json['Severity'],
+        'state': !(0, runtime_1.exists)(json, 'State') ? undefined : json['State'],
+        'certainty': !(0, runtime_1.exists)(json, 'Certainty') ? undefined : json['Certainty'],
     };
 }
-export function NotificationIntegrationFilterApiToJSON(value) {
+exports.NotificationIntegrationFilterApiFromJSONTyped = NotificationIntegrationFilterApiFromJSONTyped;
+function NotificationIntegrationFilterApiToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -68,4 +74,5 @@ export function NotificationIntegrationFilterApiToJSON(value) {
         'Certainty': value.certainty,
     };
 }
+exports.NotificationIntegrationFilterApiToJSON = NotificationIntegrationFilterApiToJSON;
 //# sourceMappingURL=NotificationIntegrationFilterApi.js.map

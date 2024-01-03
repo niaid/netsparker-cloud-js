@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,30 +12,35 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ReducedMemberApiViewModelToJSON = exports.ReducedMemberApiViewModelFromJSONTyped = exports.ReducedMemberApiViewModelFromJSON = exports.instanceOfReducedMemberApiViewModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the ReducedMemberApiViewModel interface.
  */
-export function instanceOfReducedMemberApiViewModel(value) {
+function instanceOfReducedMemberApiViewModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function ReducedMemberApiViewModelFromJSON(json) {
+exports.instanceOfReducedMemberApiViewModel = instanceOfReducedMemberApiViewModel;
+function ReducedMemberApiViewModelFromJSON(json) {
     return ReducedMemberApiViewModelFromJSONTyped(json, false);
 }
-export function ReducedMemberApiViewModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.ReducedMemberApiViewModelFromJSON = ReducedMemberApiViewModelFromJSON;
+function ReducedMemberApiViewModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'accountId': !exists(json, 'AccountId') ? undefined : json['AccountId'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'email': !exists(json, 'Email') ? undefined : json['Email'],
-        'alternateLoginEmail': !exists(json, 'AlternateLoginEmail') ? undefined : json['AlternateLoginEmail'],
+        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
+        'accountId': !(0, runtime_1.exists)(json, 'AccountId') ? undefined : json['AccountId'],
+        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
+        'email': !(0, runtime_1.exists)(json, 'Email') ? undefined : json['Email'],
+        'alternateLoginEmail': !(0, runtime_1.exists)(json, 'AlternateLoginEmail') ? undefined : json['AlternateLoginEmail'],
     };
 }
-export function ReducedMemberApiViewModelToJSON(value) {
+exports.ReducedMemberApiViewModelFromJSONTyped = ReducedMemberApiViewModelFromJSONTyped;
+function ReducedMemberApiViewModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -49,4 +55,5 @@ export function ReducedMemberApiViewModelToJSON(value) {
         'AlternateLoginEmail': value.alternateLoginEmail,
     };
 }
+exports.ReducedMemberApiViewModelToJSON = ReducedMemberApiViewModelToJSON;
 //# sourceMappingURL=ReducedMemberApiViewModel.js.map

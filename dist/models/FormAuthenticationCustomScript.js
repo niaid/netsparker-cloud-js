@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,18 +12,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.FormAuthenticationCustomScriptToJSON = exports.FormAuthenticationCustomScriptFromJSONTyped = exports.FormAuthenticationCustomScriptFromJSON = exports.instanceOfFormAuthenticationCustomScript = void 0;
 /**
  * Check if a given object implements the FormAuthenticationCustomScript interface.
  */
-export function instanceOfFormAuthenticationCustomScript(value) {
+function instanceOfFormAuthenticationCustomScript(value) {
     let isInstance = true;
     isInstance = isInstance && "value" in value;
     return isInstance;
 }
-export function FormAuthenticationCustomScriptFromJSON(json) {
+exports.instanceOfFormAuthenticationCustomScript = instanceOfFormAuthenticationCustomScript;
+function FormAuthenticationCustomScriptFromJSON(json) {
     return FormAuthenticationCustomScriptFromJSONTyped(json, false);
 }
-export function FormAuthenticationCustomScriptFromJSONTyped(json, ignoreDiscriminator) {
+exports.FormAuthenticationCustomScriptFromJSON = FormAuthenticationCustomScriptFromJSON;
+function FormAuthenticationCustomScriptFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
@@ -30,7 +35,8 @@ export function FormAuthenticationCustomScriptFromJSONTyped(json, ignoreDiscrimi
         'value': json['Value'],
     };
 }
-export function FormAuthenticationCustomScriptToJSON(value) {
+exports.FormAuthenticationCustomScriptFromJSONTyped = FormAuthenticationCustomScriptFromJSONTyped;
+function FormAuthenticationCustomScriptToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -41,4 +47,5 @@ export function FormAuthenticationCustomScriptToJSON(value) {
         'Value': value.value,
     };
 }
+exports.FormAuthenticationCustomScriptToJSON = FormAuthenticationCustomScriptToJSON;
 //# sourceMappingURL=FormAuthenticationCustomScript.js.map

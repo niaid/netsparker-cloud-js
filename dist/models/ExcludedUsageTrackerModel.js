@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,18 +12,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ExcludedUsageTrackerModelToJSON = exports.ExcludedUsageTrackerModelFromJSONTyped = exports.ExcludedUsageTrackerModelFromJSON = exports.instanceOfExcludedUsageTrackerModel = void 0;
 /**
  * Check if a given object implements the ExcludedUsageTrackerModel interface.
  */
-export function instanceOfExcludedUsageTrackerModel(value) {
+function instanceOfExcludedUsageTrackerModel(value) {
     let isInstance = true;
     isInstance = isInstance && "url" in value;
     return isInstance;
 }
-export function ExcludedUsageTrackerModelFromJSON(json) {
+exports.instanceOfExcludedUsageTrackerModel = instanceOfExcludedUsageTrackerModel;
+function ExcludedUsageTrackerModelFromJSON(json) {
     return ExcludedUsageTrackerModelFromJSONTyped(json, false);
 }
-export function ExcludedUsageTrackerModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.ExcludedUsageTrackerModelFromJSON = ExcludedUsageTrackerModelFromJSON;
+function ExcludedUsageTrackerModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
@@ -30,7 +35,8 @@ export function ExcludedUsageTrackerModelFromJSONTyped(json, ignoreDiscriminator
         'url': json['Url'],
     };
 }
-export function ExcludedUsageTrackerModelToJSON(value) {
+exports.ExcludedUsageTrackerModelFromJSONTyped = ExcludedUsageTrackerModelFromJSONTyped;
+function ExcludedUsageTrackerModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -41,4 +47,5 @@ export function ExcludedUsageTrackerModelToJSON(value) {
         'Url': value.url,
     };
 }
+exports.ExcludedUsageTrackerModelToJSON = ExcludedUsageTrackerModelToJSON;
 //# sourceMappingURL=ExcludedUsageTrackerModel.js.map

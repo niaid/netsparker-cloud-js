@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,31 +12,36 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.UpdateWebsiteGroupApiModelToJSON = exports.UpdateWebsiteGroupApiModelFromJSONTyped = exports.UpdateWebsiteGroupApiModelFromJSON = exports.instanceOfUpdateWebsiteGroupApiModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the UpdateWebsiteGroupApiModel interface.
  */
-export function instanceOfUpdateWebsiteGroupApiModel(value) {
+function instanceOfUpdateWebsiteGroupApiModel(value) {
     let isInstance = true;
     isInstance = isInstance && "id" in value;
     isInstance = isInstance && "name" in value;
     return isInstance;
 }
-export function UpdateWebsiteGroupApiModelFromJSON(json) {
+exports.instanceOfUpdateWebsiteGroupApiModel = instanceOfUpdateWebsiteGroupApiModel;
+function UpdateWebsiteGroupApiModelFromJSON(json) {
     return UpdateWebsiteGroupApiModelFromJSONTyped(json, false);
 }
-export function UpdateWebsiteGroupApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.UpdateWebsiteGroupApiModelFromJSON = UpdateWebsiteGroupApiModelFromJSON;
+function UpdateWebsiteGroupApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
         'id': json['Id'],
         'name': json['Name'],
-        'description': !exists(json, 'Description') ? undefined : json['Description'],
-        'tags': !exists(json, 'Tags') ? undefined : json['Tags'],
+        'description': !(0, runtime_1.exists)(json, 'Description') ? undefined : json['Description'],
+        'tags': !(0, runtime_1.exists)(json, 'Tags') ? undefined : json['Tags'],
     };
 }
-export function UpdateWebsiteGroupApiModelToJSON(value) {
+exports.UpdateWebsiteGroupApiModelFromJSONTyped = UpdateWebsiteGroupApiModelFromJSONTyped;
+function UpdateWebsiteGroupApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -49,4 +55,5 @@ export function UpdateWebsiteGroupApiModelToJSON(value) {
         'Tags': value.tags,
     };
 }
+exports.UpdateWebsiteGroupApiModelToJSON = UpdateWebsiteGroupApiModelToJSON;
 //# sourceMappingURL=UpdateWebsiteGroupApiModel.js.map

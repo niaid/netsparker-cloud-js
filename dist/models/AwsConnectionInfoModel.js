@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,21 +12,25 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.AwsConnectionInfoModelToJSON = exports.AwsConnectionInfoModelFromJSONTyped = exports.AwsConnectionInfoModelFromJSON = exports.instanceOfAwsConnectionInfoModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the AwsConnectionInfoModel interface.
  */
-export function instanceOfAwsConnectionInfoModel(value) {
+function instanceOfAwsConnectionInfoModel(value) {
     let isInstance = true;
     isInstance = isInstance && "region" in value;
     isInstance = isInstance && "accessKeyId" in value;
     isInstance = isInstance && "secretAccessKey" in value;
     return isInstance;
 }
-export function AwsConnectionInfoModelFromJSON(json) {
+exports.instanceOfAwsConnectionInfoModel = instanceOfAwsConnectionInfoModel;
+function AwsConnectionInfoModelFromJSON(json) {
     return AwsConnectionInfoModelFromJSONTyped(json, false);
 }
-export function AwsConnectionInfoModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.AwsConnectionInfoModelFromJSON = AwsConnectionInfoModelFromJSON;
+function AwsConnectionInfoModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
@@ -33,10 +38,11 @@ export function AwsConnectionInfoModelFromJSONTyped(json, ignoreDiscriminator) {
         'region': json['Region'],
         'accessKeyId': json['AccessKeyId'],
         'secretAccessKey': json['SecretAccessKey'],
-        'showUnreachableDiscoveredWebsites': !exists(json, 'ShowUnreachableDiscoveredWebsites') ? undefined : json['ShowUnreachableDiscoveredWebsites'],
+        'showUnreachableDiscoveredWebsites': !(0, runtime_1.exists)(json, 'ShowUnreachableDiscoveredWebsites') ? undefined : json['ShowUnreachableDiscoveredWebsites'],
     };
 }
-export function AwsConnectionInfoModelToJSON(value) {
+exports.AwsConnectionInfoModelFromJSONTyped = AwsConnectionInfoModelFromJSONTyped;
+function AwsConnectionInfoModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -50,4 +56,5 @@ export function AwsConnectionInfoModelToJSON(value) {
         'ShowUnreachableDiscoveredWebsites': value.showUnreachableDiscoveredWebsites,
     };
 }
+exports.AwsConnectionInfoModelToJSON = AwsConnectionInfoModelToJSON;
 //# sourceMappingURL=AwsConnectionInfoModel.js.map

@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,33 +12,38 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ReducedScanTaskProfileToJSON = exports.ReducedScanTaskProfileFromJSONTyped = exports.ReducedScanTaskProfileFromJSON = exports.instanceOfReducedScanTaskProfile = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the ReducedScanTaskProfile interface.
  */
-export function instanceOfReducedScanTaskProfile(value) {
+function instanceOfReducedScanTaskProfile(value) {
     let isInstance = true;
     return isInstance;
 }
-export function ReducedScanTaskProfileFromJSON(json) {
+exports.instanceOfReducedScanTaskProfile = instanceOfReducedScanTaskProfile;
+function ReducedScanTaskProfileFromJSON(json) {
     return ReducedScanTaskProfileFromJSONTyped(json, false);
 }
-export function ReducedScanTaskProfileFromJSONTyped(json, ignoreDiscriminator) {
+exports.ReducedScanTaskProfileFromJSON = ReducedScanTaskProfileFromJSON;
+function ReducedScanTaskProfileFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'isMine': !exists(json, 'IsMine') ? undefined : json['IsMine'],
-        'isPrimary': !exists(json, 'IsPrimary') ? undefined : json['IsPrimary'],
-        'isShared': !exists(json, 'IsShared') ? undefined : json['IsShared'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'targetUrl': !exists(json, 'TargetUrl') ? undefined : json['TargetUrl'],
-        'scanPolicyName': !exists(json, 'ScanPolicyName') ? undefined : json['ScanPolicyName'],
-        'tags': !exists(json, 'Tags') ? undefined : json['Tags'],
+        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
+        'isMine': !(0, runtime_1.exists)(json, 'IsMine') ? undefined : json['IsMine'],
+        'isPrimary': !(0, runtime_1.exists)(json, 'IsPrimary') ? undefined : json['IsPrimary'],
+        'isShared': !(0, runtime_1.exists)(json, 'IsShared') ? undefined : json['IsShared'],
+        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
+        'targetUrl': !(0, runtime_1.exists)(json, 'TargetUrl') ? undefined : json['TargetUrl'],
+        'scanPolicyName': !(0, runtime_1.exists)(json, 'ScanPolicyName') ? undefined : json['ScanPolicyName'],
+        'tags': !(0, runtime_1.exists)(json, 'Tags') ? undefined : json['Tags'],
     };
 }
-export function ReducedScanTaskProfileToJSON(value) {
+exports.ReducedScanTaskProfileFromJSONTyped = ReducedScanTaskProfileFromJSONTyped;
+function ReducedScanTaskProfileToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -55,4 +61,5 @@ export function ReducedScanTaskProfileToJSON(value) {
         'Tags': value.tags,
     };
 }
+exports.ReducedScanTaskProfileToJSON = ReducedScanTaskProfileToJSON;
 //# sourceMappingURL=ReducedScanTaskProfile.js.map

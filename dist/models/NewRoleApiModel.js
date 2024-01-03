@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,28 +12,33 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.NewRoleApiModelToJSON = exports.NewRoleApiModelFromJSONTyped = exports.NewRoleApiModelFromJSON = exports.instanceOfNewRoleApiModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the NewRoleApiModel interface.
  */
-export function instanceOfNewRoleApiModel(value) {
+function instanceOfNewRoleApiModel(value) {
     let isInstance = true;
     isInstance = isInstance && "name" in value;
     return isInstance;
 }
-export function NewRoleApiModelFromJSON(json) {
+exports.instanceOfNewRoleApiModel = instanceOfNewRoleApiModel;
+function NewRoleApiModelFromJSON(json) {
     return NewRoleApiModelFromJSONTyped(json, false);
 }
-export function NewRoleApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.NewRoleApiModelFromJSON = NewRoleApiModelFromJSON;
+function NewRoleApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
         'name': json['Name'],
-        'permissions': !exists(json, 'Permissions') ? undefined : json['Permissions'],
+        'permissions': !(0, runtime_1.exists)(json, 'Permissions') ? undefined : json['Permissions'],
     };
 }
-export function NewRoleApiModelToJSON(value) {
+exports.NewRoleApiModelFromJSONTyped = NewRoleApiModelFromJSONTyped;
+function NewRoleApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -44,4 +50,5 @@ export function NewRoleApiModelToJSON(value) {
         'Permissions': value.permissions,
     };
 }
+exports.NewRoleApiModelToJSON = NewRoleApiModelToJSON;
 //# sourceMappingURL=NewRoleApiModel.js.map

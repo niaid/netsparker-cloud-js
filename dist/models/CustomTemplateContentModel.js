@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,32 +12,37 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.CustomTemplateContentModelToJSON = exports.CustomTemplateContentModelFromJSONTyped = exports.CustomTemplateContentModelFromJSON = exports.instanceOfCustomTemplateContentModel = void 0;
+const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the CustomTemplateContentModel interface.
  */
-export function instanceOfCustomTemplateContentModel(value) {
+function instanceOfCustomTemplateContentModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function CustomTemplateContentModelFromJSON(json) {
+exports.instanceOfCustomTemplateContentModel = instanceOfCustomTemplateContentModel;
+function CustomTemplateContentModelFromJSON(json) {
     return CustomTemplateContentModelFromJSONTyped(json, false);
 }
-export function CustomTemplateContentModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.CustomTemplateContentModelFromJSON = CustomTemplateContentModelFromJSON;
+function CustomTemplateContentModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'cVSS': !exists(json, 'CVSS') ? undefined : json['CVSS'],
-        'cATEGORY': !exists(json, 'CATEGORY') ? undefined : json['CATEGORY'],
-        'cVELIST': !exists(json, 'CVE_LIST') ? undefined : json['CVE_LIST'],
-        'pCIFLAG': !exists(json, 'PCI_FLAG') ? undefined : json['PCI_FLAG'],
-        'dISCOVERY': !exists(json, 'DISCOVERY') ? undefined : json['DISCOVERY'],
-        'pATCHABLE': !exists(json, 'PATCHABLE') ? undefined : json['PATCHABLE'],
-        'vULNTYPE': !exists(json, 'VULN_TYPE') ? undefined : json['VULN_TYPE'],
+        'cVSS': !(0, runtime_1.exists)(json, 'CVSS') ? undefined : json['CVSS'],
+        'cATEGORY': !(0, runtime_1.exists)(json, 'CATEGORY') ? undefined : json['CATEGORY'],
+        'cVELIST': !(0, runtime_1.exists)(json, 'CVE_LIST') ? undefined : json['CVE_LIST'],
+        'pCIFLAG': !(0, runtime_1.exists)(json, 'PCI_FLAG') ? undefined : json['PCI_FLAG'],
+        'dISCOVERY': !(0, runtime_1.exists)(json, 'DISCOVERY') ? undefined : json['DISCOVERY'],
+        'pATCHABLE': !(0, runtime_1.exists)(json, 'PATCHABLE') ? undefined : json['PATCHABLE'],
+        'vULNTYPE': !(0, runtime_1.exists)(json, 'VULN_TYPE') ? undefined : json['VULN_TYPE'],
     };
 }
-export function CustomTemplateContentModelToJSON(value) {
+exports.CustomTemplateContentModelFromJSONTyped = CustomTemplateContentModelFromJSONTyped;
+function CustomTemplateContentModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -53,4 +59,5 @@ export function CustomTemplateContentModelToJSON(value) {
         'VULN_TYPE': value.vULNTYPE,
     };
 }
+exports.CustomTemplateContentModelToJSON = CustomTemplateContentModelToJSON;
 //# sourceMappingURL=CustomTemplateContentModel.js.map

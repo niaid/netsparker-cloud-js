@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,35 +12,40 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { IssueSummaryListModelFromJSON, IssueSummaryListModelToJSON, } from './IssueSummaryListModel';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.IssueSummaryApiModelToJSON = exports.IssueSummaryApiModelFromJSONTyped = exports.IssueSummaryApiModelFromJSON = exports.instanceOfIssueSummaryApiModel = void 0;
+const runtime_1 = require("../runtime");
+const IssueSummaryListModel_1 = require("./IssueSummaryListModel");
 /**
  * Check if a given object implements the IssueSummaryApiModel interface.
  */
-export function instanceOfIssueSummaryApiModel(value) {
+function instanceOfIssueSummaryApiModel(value) {
     let isInstance = true;
     return isInstance;
 }
-export function IssueSummaryApiModelFromJSON(json) {
+exports.instanceOfIssueSummaryApiModel = instanceOfIssueSummaryApiModel;
+function IssueSummaryApiModelFromJSON(json) {
     return IssueSummaryApiModelFromJSONTyped(json, false);
 }
-export function IssueSummaryApiModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.IssueSummaryApiModelFromJSON = IssueSummaryApiModelFromJSON;
+function IssueSummaryApiModelFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'targetUri': !exists(json, 'TargetUri') ? undefined : json['TargetUri'],
-        'websiteName': !exists(json, 'WebsiteName') ? undefined : json['WebsiteName'],
-        'websiteId': !exists(json, 'WebsiteId') ? undefined : json['WebsiteId'],
-        'lastSuccessfulScanDate': !exists(json, 'LastSuccessfulScanDate') ? undefined : json['LastSuccessfulScanDate'],
-        'scanGroupId': !exists(json, 'ScanGroupId') ? undefined : json['ScanGroupId'],
-        'scanProfileName': !exists(json, 'ScanProfileName') ? undefined : json['ScanProfileName'],
-        'scanProfileTags': !exists(json, 'ScanProfileTags') ? undefined : json['ScanProfileTags'],
-        'scanTaskId': !exists(json, 'ScanTaskId') ? undefined : json['ScanTaskId'],
-        'issueSummaryLists': !exists(json, 'IssueSummaryLists') ? undefined : (json['IssueSummaryLists'].map(IssueSummaryListModelFromJSON)),
+        'targetUri': !(0, runtime_1.exists)(json, 'TargetUri') ? undefined : json['TargetUri'],
+        'websiteName': !(0, runtime_1.exists)(json, 'WebsiteName') ? undefined : json['WebsiteName'],
+        'websiteId': !(0, runtime_1.exists)(json, 'WebsiteId') ? undefined : json['WebsiteId'],
+        'lastSuccessfulScanDate': !(0, runtime_1.exists)(json, 'LastSuccessfulScanDate') ? undefined : json['LastSuccessfulScanDate'],
+        'scanGroupId': !(0, runtime_1.exists)(json, 'ScanGroupId') ? undefined : json['ScanGroupId'],
+        'scanProfileName': !(0, runtime_1.exists)(json, 'ScanProfileName') ? undefined : json['ScanProfileName'],
+        'scanProfileTags': !(0, runtime_1.exists)(json, 'ScanProfileTags') ? undefined : json['ScanProfileTags'],
+        'scanTaskId': !(0, runtime_1.exists)(json, 'ScanTaskId') ? undefined : json['ScanTaskId'],
+        'issueSummaryLists': !(0, runtime_1.exists)(json, 'IssueSummaryLists') ? undefined : (json['IssueSummaryLists'].map(IssueSummaryListModel_1.IssueSummaryListModelFromJSON)),
     };
 }
-export function IssueSummaryApiModelToJSON(value) {
+exports.IssueSummaryApiModelFromJSONTyped = IssueSummaryApiModelFromJSONTyped;
+function IssueSummaryApiModelToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -54,7 +60,8 @@ export function IssueSummaryApiModelToJSON(value) {
         'ScanProfileName': value.scanProfileName,
         'ScanProfileTags': value.scanProfileTags,
         'ScanTaskId': value.scanTaskId,
-        'IssueSummaryLists': value.issueSummaryLists === undefined ? undefined : (value.issueSummaryLists.map(IssueSummaryListModelToJSON)),
+        'IssueSummaryLists': value.issueSummaryLists === undefined ? undefined : (value.issueSummaryLists.map(IssueSummaryListModel_1.IssueSummaryListModelToJSON)),
     };
 }
+exports.IssueSummaryApiModelToJSON = IssueSummaryApiModelToJSON;
 //# sourceMappingURL=IssueSummaryApiModel.js.map

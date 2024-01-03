@@ -1,3 +1,4 @@
+"use strict";
 /* tslint:disable */
 /* eslint-disable */
 /**
@@ -11,29 +12,34 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import { exists } from '../runtime';
-import { FileCacheFromJSON, FileCacheToJSON, } from './FileCache';
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.ImportedLinksSettingToJSON = exports.ImportedLinksSettingFromJSONTyped = exports.ImportedLinksSettingFromJSON = exports.instanceOfImportedLinksSetting = void 0;
+const runtime_1 = require("../runtime");
+const FileCache_1 = require("./FileCache");
 /**
  * Check if a given object implements the ImportedLinksSetting interface.
  */
-export function instanceOfImportedLinksSetting(value) {
+function instanceOfImportedLinksSetting(value) {
     let isInstance = true;
     return isInstance;
 }
-export function ImportedLinksSettingFromJSON(json) {
+exports.instanceOfImportedLinksSetting = instanceOfImportedLinksSetting;
+function ImportedLinksSettingFromJSON(json) {
     return ImportedLinksSettingFromJSONTyped(json, false);
 }
-export function ImportedLinksSettingFromJSONTyped(json, ignoreDiscriminator) {
+exports.ImportedLinksSettingFromJSON = ImportedLinksSettingFromJSON;
+function ImportedLinksSettingFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
     return {
-        'importedFiles': !exists(json, 'ImportedFiles') ? undefined : (json['ImportedFiles'].map(FileCacheFromJSON)),
-        'importedLinks': !exists(json, 'ImportedLinks') ? undefined : json['ImportedLinks'],
-        'importedURL': !exists(json, 'ImportedURL') ? undefined : json['ImportedURL'],
+        'importedFiles': !(0, runtime_1.exists)(json, 'ImportedFiles') ? undefined : (json['ImportedFiles'].map(FileCache_1.FileCacheFromJSON)),
+        'importedLinks': !(0, runtime_1.exists)(json, 'ImportedLinks') ? undefined : json['ImportedLinks'],
+        'importedURL': !(0, runtime_1.exists)(json, 'ImportedURL') ? undefined : json['ImportedURL'],
     };
 }
-export function ImportedLinksSettingToJSON(value) {
+exports.ImportedLinksSettingFromJSONTyped = ImportedLinksSettingFromJSONTyped;
+function ImportedLinksSettingToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -41,9 +47,10 @@ export function ImportedLinksSettingToJSON(value) {
         return null;
     }
     return {
-        'ImportedFiles': value.importedFiles === undefined ? undefined : (value.importedFiles.map(FileCacheToJSON)),
+        'ImportedFiles': value.importedFiles === undefined ? undefined : (value.importedFiles.map(FileCache_1.FileCacheToJSON)),
         'ImportedLinks': value.importedLinks,
         'ImportedURL': value.importedURL,
     };
 }
+exports.ImportedLinksSettingToJSON = ImportedLinksSettingToJSON;
 //# sourceMappingURL=ImportedLinksSetting.js.map
