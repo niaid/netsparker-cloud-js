@@ -130,55 +130,53 @@ export interface MicrosoftTeamsIntegrationInfoModel {
     integrationWizardResultModel?: IntegrationWizardResultModel;
 }
 
-
 /**
- * @export
- */
-export const MicrosoftTeamsIntegrationInfoModelTypeEnum = {
-    NetsparkerEnterprise: 'NetsparkerEnterprise',
-    Webhook: 'Webhook',
-    Zapier: 'Zapier',
-    Slack: 'Slack',
-    Mattermost: 'Mattermost',
-    MicrosoftTeams: 'MicrosoftTeams',
-    AzureDevOps: 'AzureDevOps',
-    Bitbucket: 'Bitbucket',
-    Bugzilla: 'Bugzilla',
-    Clubhouse: 'Clubhouse',
-    DefectDojo: 'DefectDojo',
-    PivotalTracker: 'PivotalTracker',
-    Jira: 'Jira',
-    FogBugz: 'FogBugz',
-    GitHub: 'GitHub',
-    PagerDuty: 'PagerDuty',
-    Kafka: 'Kafka',
-    Kenna: 'Kenna',
-    Redmine: 'Redmine',
-    ServiceNow: 'ServiceNow',
-    Tfs: 'TFS',
-    Unfuddle: 'Unfuddle',
-    YouTrack: 'YouTrack',
-    Freshservice: 'Freshservice',
-    Splunk: 'Splunk',
-    JazzTeam: 'JazzTeam',
-    ServiceNowVrm: 'ServiceNowVRM',
-    Asana: 'Asana',
-    Trello: 'Trello',
-    Hashicorp: 'Hashicorp',
-    CyberArk: 'CyberArk',
-    AzureKeyVault: 'AzureKeyVault',
-    GitLab: 'GitLab'
-} as const;
-export type MicrosoftTeamsIntegrationInfoModelTypeEnum = typeof MicrosoftTeamsIntegrationInfoModelTypeEnum[keyof typeof MicrosoftTeamsIntegrationInfoModelTypeEnum];
-
+* @export
+* @enum {string}
+*/
+export enum MicrosoftTeamsIntegrationInfoModelTypeEnum {
+    NetsparkerEnterprise = 'NetsparkerEnterprise',
+    Webhook = 'Webhook',
+    Zapier = 'Zapier',
+    Slack = 'Slack',
+    Mattermost = 'Mattermost',
+    MicrosoftTeams = 'MicrosoftTeams',
+    AzureDevOps = 'AzureDevOps',
+    Bitbucket = 'Bitbucket',
+    Bugzilla = 'Bugzilla',
+    Clubhouse = 'Clubhouse',
+    DefectDojo = 'DefectDojo',
+    PivotalTracker = 'PivotalTracker',
+    Jira = 'Jira',
+    FogBugz = 'FogBugz',
+    GitHub = 'GitHub',
+    PagerDuty = 'PagerDuty',
+    Kafka = 'Kafka',
+    Kenna = 'Kenna',
+    Redmine = 'Redmine',
+    ServiceNow = 'ServiceNow',
+    Tfs = 'TFS',
+    Unfuddle = 'Unfuddle',
+    YouTrack = 'YouTrack',
+    Freshservice = 'Freshservice',
+    Splunk = 'Splunk',
+    JazzTeam = 'JazzTeam',
+    ServiceNowVrm = 'ServiceNowVRM',
+    Asana = 'Asana',
+    Trello = 'Trello',
+    Hashicorp = 'Hashicorp',
+    CyberArk = 'CyberArk',
+    AzureKeyVault = 'AzureKeyVault',
+    GitLab = 'GitLab'
+}
 /**
- * @export
- */
-export const MicrosoftTeamsIntegrationInfoModelTemplateTypeEnum = {
-    Standard: 'Standard',
-    Detailed: 'Detailed'
-} as const;
-export type MicrosoftTeamsIntegrationInfoModelTemplateTypeEnum = typeof MicrosoftTeamsIntegrationInfoModelTemplateTypeEnum[keyof typeof MicrosoftTeamsIntegrationInfoModelTemplateTypeEnum];
+* @export
+* @enum {string}
+*/
+export enum MicrosoftTeamsIntegrationInfoModelTemplateTypeEnum {
+    Standard = 'Standard',
+    Detailed = 'Detailed'
+}
 
 
 /**

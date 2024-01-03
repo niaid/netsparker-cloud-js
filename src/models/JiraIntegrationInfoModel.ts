@@ -298,74 +298,70 @@ export interface JiraIntegrationInfoModel {
     integrationWizardResultModel?: IntegrationWizardResultModel;
 }
 
-
 /**
- * @export
- */
-export const JiraIntegrationInfoModelReopenStatusJiraEnum = {
-    ToDo: 'ToDo',
-    InProgress: 'InProgress'
-} as const;
-export type JiraIntegrationInfoModelReopenStatusJiraEnum = typeof JiraIntegrationInfoModelReopenStatusJiraEnum[keyof typeof JiraIntegrationInfoModelReopenStatusJiraEnum];
-
+* @export
+* @enum {string}
+*/
+export enum JiraIntegrationInfoModelReopenStatusJiraEnum {
+    ToDo = 'ToDo',
+    InProgress = 'InProgress'
+}
 /**
- * @export
- */
-export const JiraIntegrationInfoModelTemplateTypeEnum = {
-    Standard: 'Standard',
-    Detailed: 'Detailed'
-} as const;
-export type JiraIntegrationInfoModelTemplateTypeEnum = typeof JiraIntegrationInfoModelTemplateTypeEnum[keyof typeof JiraIntegrationInfoModelTemplateTypeEnum];
-
+* @export
+* @enum {string}
+*/
+export enum JiraIntegrationInfoModelTemplateTypeEnum {
+    Standard = 'Standard',
+    Detailed = 'Detailed'
+}
 /**
- * @export
- */
-export const JiraIntegrationInfoModelEpicSelectionTypeEnum = {
-    None: 'None',
-    EpicName: 'EpicName',
-    EpicKey: 'EpicKey'
-} as const;
-export type JiraIntegrationInfoModelEpicSelectionTypeEnum = typeof JiraIntegrationInfoModelEpicSelectionTypeEnum[keyof typeof JiraIntegrationInfoModelEpicSelectionTypeEnum];
-
+* @export
+* @enum {string}
+*/
+export enum JiraIntegrationInfoModelEpicSelectionTypeEnum {
+    None = 'None',
+    EpicName = 'EpicName',
+    EpicKey = 'EpicKey'
+}
 /**
- * @export
- */
-export const JiraIntegrationInfoModelTypeEnum = {
-    Jira: 'Jira',
-    GitHub: 'GitHub',
-    Tfs: 'TFS',
-    FogBugz: 'FogBugz',
-    ServiceNow: 'ServiceNow',
-    Slack: 'Slack',
-    GitLab: 'GitLab',
-    Bitbucket: 'Bitbucket',
-    Unfuddle: 'Unfuddle',
-    Zapier: 'Zapier',
-    AzureDevOps: 'AzureDevOps',
-    Redmine: 'Redmine',
-    Bugzilla: 'Bugzilla',
-    Kafka: 'Kafka',
-    PagerDuty: 'PagerDuty',
-    MicrosoftTeams: 'MicrosoftTeams',
-    Clubhouse: 'Clubhouse',
-    Trello: 'Trello',
-    Asana: 'Asana',
-    Webhook: 'Webhook',
-    Kenna: 'Kenna',
-    Freshservice: 'Freshservice',
-    YouTrack: 'YouTrack',
-    NetsparkerEnterprise: 'NetsparkerEnterprise',
-    Splunk: 'Splunk',
-    Mattermost: 'Mattermost',
-    Hashicorp: 'Hashicorp',
-    PivotalTracker: 'PivotalTracker',
-    CyberArk: 'CyberArk',
-    DefectDojo: 'DefectDojo',
-    JazzTeam: 'JazzTeam',
-    AzureKeyVault: 'AzureKeyVault',
-    ServiceNowVrm: 'ServiceNowVRM'
-} as const;
-export type JiraIntegrationInfoModelTypeEnum = typeof JiraIntegrationInfoModelTypeEnum[keyof typeof JiraIntegrationInfoModelTypeEnum];
+* @export
+* @enum {string}
+*/
+export enum JiraIntegrationInfoModelTypeEnum {
+    Jira = 'Jira',
+    GitHub = 'GitHub',
+    Tfs = 'TFS',
+    FogBugz = 'FogBugz',
+    ServiceNow = 'ServiceNow',
+    Slack = 'Slack',
+    GitLab = 'GitLab',
+    Bitbucket = 'Bitbucket',
+    Unfuddle = 'Unfuddle',
+    Zapier = 'Zapier',
+    AzureDevOps = 'AzureDevOps',
+    Redmine = 'Redmine',
+    Bugzilla = 'Bugzilla',
+    Kafka = 'Kafka',
+    PagerDuty = 'PagerDuty',
+    MicrosoftTeams = 'MicrosoftTeams',
+    Clubhouse = 'Clubhouse',
+    Trello = 'Trello',
+    Asana = 'Asana',
+    Webhook = 'Webhook',
+    Kenna = 'Kenna',
+    Freshservice = 'Freshservice',
+    YouTrack = 'YouTrack',
+    NetsparkerEnterprise = 'NetsparkerEnterprise',
+    Splunk = 'Splunk',
+    Mattermost = 'Mattermost',
+    Hashicorp = 'Hashicorp',
+    PivotalTracker = 'PivotalTracker',
+    CyberArk = 'CyberArk',
+    DefectDojo = 'DefectDojo',
+    JazzTeam = 'JazzTeam',
+    AzureKeyVault = 'AzureKeyVault',
+    ServiceNowVrm = 'ServiceNowVRM'
+}
 
 
 /**

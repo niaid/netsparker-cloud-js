@@ -18,50 +18,54 @@ const runtime_1 = require("../runtime");
 const IntegrationCustomFieldVm_1 = require("./IntegrationCustomFieldVm");
 const IntegrationWizardResultModel_1 = require("./IntegrationWizardResultModel");
 /**
- * @export
- */
-exports.YouTrackIntegrationInfoModelTypeEnum = {
-    Jira: 'Jira',
-    GitHub: 'GitHub',
-    Tfs: 'TFS',
-    FogBugz: 'FogBugz',
-    ServiceNow: 'ServiceNow',
-    Slack: 'Slack',
-    GitLab: 'GitLab',
-    Bitbucket: 'Bitbucket',
-    Unfuddle: 'Unfuddle',
-    Zapier: 'Zapier',
-    AzureDevOps: 'AzureDevOps',
-    Redmine: 'Redmine',
-    Bugzilla: 'Bugzilla',
-    Kafka: 'Kafka',
-    PagerDuty: 'PagerDuty',
-    MicrosoftTeams: 'MicrosoftTeams',
-    Clubhouse: 'Clubhouse',
-    Trello: 'Trello',
-    Asana: 'Asana',
-    Webhook: 'Webhook',
-    Kenna: 'Kenna',
-    Freshservice: 'Freshservice',
-    YouTrack: 'YouTrack',
-    NetsparkerEnterprise: 'NetsparkerEnterprise',
-    Splunk: 'Splunk',
-    Mattermost: 'Mattermost',
-    Hashicorp: 'Hashicorp',
-    PivotalTracker: 'PivotalTracker',
-    CyberArk: 'CyberArk',
-    DefectDojo: 'DefectDojo',
-    JazzTeam: 'JazzTeam',
-    AzureKeyVault: 'AzureKeyVault',
-    ServiceNowVrm: 'ServiceNowVRM'
-};
+* @export
+* @enum {string}
+*/
+var YouTrackIntegrationInfoModelTypeEnum;
+(function (YouTrackIntegrationInfoModelTypeEnum) {
+    YouTrackIntegrationInfoModelTypeEnum["Jira"] = "Jira";
+    YouTrackIntegrationInfoModelTypeEnum["GitHub"] = "GitHub";
+    YouTrackIntegrationInfoModelTypeEnum["Tfs"] = "TFS";
+    YouTrackIntegrationInfoModelTypeEnum["FogBugz"] = "FogBugz";
+    YouTrackIntegrationInfoModelTypeEnum["ServiceNow"] = "ServiceNow";
+    YouTrackIntegrationInfoModelTypeEnum["Slack"] = "Slack";
+    YouTrackIntegrationInfoModelTypeEnum["GitLab"] = "GitLab";
+    YouTrackIntegrationInfoModelTypeEnum["Bitbucket"] = "Bitbucket";
+    YouTrackIntegrationInfoModelTypeEnum["Unfuddle"] = "Unfuddle";
+    YouTrackIntegrationInfoModelTypeEnum["Zapier"] = "Zapier";
+    YouTrackIntegrationInfoModelTypeEnum["AzureDevOps"] = "AzureDevOps";
+    YouTrackIntegrationInfoModelTypeEnum["Redmine"] = "Redmine";
+    YouTrackIntegrationInfoModelTypeEnum["Bugzilla"] = "Bugzilla";
+    YouTrackIntegrationInfoModelTypeEnum["Kafka"] = "Kafka";
+    YouTrackIntegrationInfoModelTypeEnum["PagerDuty"] = "PagerDuty";
+    YouTrackIntegrationInfoModelTypeEnum["MicrosoftTeams"] = "MicrosoftTeams";
+    YouTrackIntegrationInfoModelTypeEnum["Clubhouse"] = "Clubhouse";
+    YouTrackIntegrationInfoModelTypeEnum["Trello"] = "Trello";
+    YouTrackIntegrationInfoModelTypeEnum["Asana"] = "Asana";
+    YouTrackIntegrationInfoModelTypeEnum["Webhook"] = "Webhook";
+    YouTrackIntegrationInfoModelTypeEnum["Kenna"] = "Kenna";
+    YouTrackIntegrationInfoModelTypeEnum["Freshservice"] = "Freshservice";
+    YouTrackIntegrationInfoModelTypeEnum["YouTrack"] = "YouTrack";
+    YouTrackIntegrationInfoModelTypeEnum["NetsparkerEnterprise"] = "NetsparkerEnterprise";
+    YouTrackIntegrationInfoModelTypeEnum["Splunk"] = "Splunk";
+    YouTrackIntegrationInfoModelTypeEnum["Mattermost"] = "Mattermost";
+    YouTrackIntegrationInfoModelTypeEnum["Hashicorp"] = "Hashicorp";
+    YouTrackIntegrationInfoModelTypeEnum["PivotalTracker"] = "PivotalTracker";
+    YouTrackIntegrationInfoModelTypeEnum["CyberArk"] = "CyberArk";
+    YouTrackIntegrationInfoModelTypeEnum["DefectDojo"] = "DefectDojo";
+    YouTrackIntegrationInfoModelTypeEnum["JazzTeam"] = "JazzTeam";
+    YouTrackIntegrationInfoModelTypeEnum["AzureKeyVault"] = "AzureKeyVault";
+    YouTrackIntegrationInfoModelTypeEnum["ServiceNowVrm"] = "ServiceNowVRM";
+})(YouTrackIntegrationInfoModelTypeEnum = exports.YouTrackIntegrationInfoModelTypeEnum || (exports.YouTrackIntegrationInfoModelTypeEnum = {}));
 /**
- * @export
- */
-exports.YouTrackIntegrationInfoModelTemplateTypeEnum = {
-    Standard: 'Standard',
-    Detailed: 'Detailed'
-};
+* @export
+* @enum {string}
+*/
+var YouTrackIntegrationInfoModelTemplateTypeEnum;
+(function (YouTrackIntegrationInfoModelTemplateTypeEnum) {
+    YouTrackIntegrationInfoModelTemplateTypeEnum["Standard"] = "Standard";
+    YouTrackIntegrationInfoModelTemplateTypeEnum["Detailed"] = "Detailed";
+})(YouTrackIntegrationInfoModelTemplateTypeEnum = exports.YouTrackIntegrationInfoModelTemplateTypeEnum || (exports.YouTrackIntegrationInfoModelTemplateTypeEnum = {}));
 /**
  * Check if a given object implements the YouTrackIntegrationInfoModel interface.
  */

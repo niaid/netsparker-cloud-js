@@ -18,12 +18,14 @@ const runtime_1 = require("../runtime");
 const ReducedTeamDto_1 = require("./ReducedTeamDto");
 const RoleWebsiteGroupMappingDto_1 = require("./RoleWebsiteGroupMappingDto");
 /**
- * @export
- */
-exports.MemberApiViewModelStateEnum = {
-    Enabled: 'Enabled',
-    Disabled: 'Disabled'
-};
+* @export
+* @enum {string}
+*/
+var MemberApiViewModelStateEnum;
+(function (MemberApiViewModelStateEnum) {
+    MemberApiViewModelStateEnum["Enabled"] = "Enabled";
+    MemberApiViewModelStateEnum["Disabled"] = "Disabled";
+})(MemberApiViewModelStateEnum = exports.MemberApiViewModelStateEnum || (exports.MemberApiViewModelStateEnum = {}));
 /**
  * Check if a given object implements the MemberApiViewModel interface.
  */

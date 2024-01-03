@@ -16,37 +16,41 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ApiFileModelToJSON = exports.ApiFileModelFromJSONTyped = exports.ApiFileModelFromJSON = exports.instanceOfApiFileModel = exports.ApiFileModelTypeEnum = exports.ApiFileModelImporterTypeEnum = void 0;
 const runtime_1 = require("../runtime");
 /**
- * @export
- */
-exports.ApiFileModelImporterTypeEnum = {
-    None: 'None',
-    Fiddler: 'Fiddler',
-    Burp: 'Burp',
-    Swagger: 'Swagger',
-    OwaspZap: 'OwaspZap',
-    AspNet: 'AspNet',
-    HttpArchive: 'HttpArchive',
-    Wadl: 'Wadl',
-    Wsdl: 'Wsdl',
-    Postman: 'Postman',
-    Netsparker: 'Netsparker',
-    HttpRequestImporter: 'HttpRequestImporter',
-    LinkImporter: 'LinkImporter',
-    CsvImporter: 'CsvImporter',
-    Iodocs: 'Iodocs',
-    WordPress: 'WordPress',
-    Raml: 'Raml',
-    GraphQl: 'GraphQl',
-    AcxXml: 'AcxXml'
-};
+* @export
+* @enum {string}
+*/
+var ApiFileModelImporterTypeEnum;
+(function (ApiFileModelImporterTypeEnum) {
+    ApiFileModelImporterTypeEnum["None"] = "None";
+    ApiFileModelImporterTypeEnum["Fiddler"] = "Fiddler";
+    ApiFileModelImporterTypeEnum["Burp"] = "Burp";
+    ApiFileModelImporterTypeEnum["Swagger"] = "Swagger";
+    ApiFileModelImporterTypeEnum["OwaspZap"] = "OwaspZap";
+    ApiFileModelImporterTypeEnum["AspNet"] = "AspNet";
+    ApiFileModelImporterTypeEnum["HttpArchive"] = "HttpArchive";
+    ApiFileModelImporterTypeEnum["Wadl"] = "Wadl";
+    ApiFileModelImporterTypeEnum["Wsdl"] = "Wsdl";
+    ApiFileModelImporterTypeEnum["Postman"] = "Postman";
+    ApiFileModelImporterTypeEnum["Netsparker"] = "Netsparker";
+    ApiFileModelImporterTypeEnum["HttpRequestImporter"] = "HttpRequestImporter";
+    ApiFileModelImporterTypeEnum["LinkImporter"] = "LinkImporter";
+    ApiFileModelImporterTypeEnum["CsvImporter"] = "CsvImporter";
+    ApiFileModelImporterTypeEnum["Iodocs"] = "Iodocs";
+    ApiFileModelImporterTypeEnum["WordPress"] = "WordPress";
+    ApiFileModelImporterTypeEnum["Raml"] = "Raml";
+    ApiFileModelImporterTypeEnum["GraphQl"] = "GraphQl";
+    ApiFileModelImporterTypeEnum["AcxXml"] = "AcxXml";
+})(ApiFileModelImporterTypeEnum = exports.ApiFileModelImporterTypeEnum || (exports.ApiFileModelImporterTypeEnum = {}));
 /**
- * @export
- */
-exports.ApiFileModelTypeEnum = {
-    LinkImportFile: 'LinkImportFile',
-    LinkImportUrl: 'LinkImportUrl',
-    LinkImportEnterLink: 'LinkImportEnterLink'
-};
+* @export
+* @enum {string}
+*/
+var ApiFileModelTypeEnum;
+(function (ApiFileModelTypeEnum) {
+    ApiFileModelTypeEnum["LinkImportFile"] = "LinkImportFile";
+    ApiFileModelTypeEnum["LinkImportUrl"] = "LinkImportUrl";
+    ApiFileModelTypeEnum["LinkImportEnterLink"] = "LinkImportEnterLink";
+})(ApiFileModelTypeEnum = exports.ApiFileModelTypeEnum || (exports.ApiFileModelTypeEnum = {}));
 /**
  * Check if a given object implements the ApiFileModel interface.
  */

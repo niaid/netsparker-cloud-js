@@ -150,22 +150,22 @@ export interface DiscoveryApiModel {
     discoveryConnectionsDetail?: DiscoveryConnectionsApiModel;
 }
 /**
- * @export
- */
-export declare const DiscoveryApiModelStatusEnum: {
-    readonly Discovered: "Discovered";
-    readonly Ignored: "Ignored";
-    readonly Created: "Created";
-};
-export type DiscoveryApiModelStatusEnum = typeof DiscoveryApiModelStatusEnum[keyof typeof DiscoveryApiModelStatusEnum];
+* @export
+* @enum {string}
+*/
+export declare enum DiscoveryApiModelStatusEnum {
+    Discovered = "Discovered",
+    Ignored = "Ignored",
+    Created = "Created"
+}
 /**
- * @export
- */
-export declare const DiscoveryApiModelDiscoverySourceTypeEnum: {
-    readonly RadarDeepInfo: "RadarDeepInfo";
-    readonly Aws: "Aws";
-};
-export type DiscoveryApiModelDiscoverySourceTypeEnum = typeof DiscoveryApiModelDiscoverySourceTypeEnum[keyof typeof DiscoveryApiModelDiscoverySourceTypeEnum];
+* @export
+* @enum {string}
+*/
+export declare enum DiscoveryApiModelDiscoverySourceTypeEnum {
+    RadarDeepInfo = "RadarDeepInfo",
+    Aws = "Aws"
+}
 /**
  * Check if a given object implements the DiscoveryApiModel interface.
  */

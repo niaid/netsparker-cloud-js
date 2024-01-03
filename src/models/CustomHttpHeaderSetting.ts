@@ -45,16 +45,15 @@ export interface CustomHttpHeaderSetting {
     value?: string;
 }
 
-
 /**
- * @export
- */
-export const CustomHttpHeaderSettingAttackModeEnum = {
-    None: 'None',
-    Optimized: 'Optimized',
-    Full: 'Full'
-} as const;
-export type CustomHttpHeaderSettingAttackModeEnum = typeof CustomHttpHeaderSettingAttackModeEnum[keyof typeof CustomHttpHeaderSettingAttackModeEnum];
+* @export
+* @enum {string}
+*/
+export enum CustomHttpHeaderSettingAttackModeEnum {
+    None = 'None',
+    Optimized = 'Optimized',
+    Full = 'Full'
+}
 
 
 /**

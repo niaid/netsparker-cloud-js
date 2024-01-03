@@ -16,70 +16,82 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ScanPolicyOptimizerOptionsToJSON = exports.ScanPolicyOptimizerOptionsFromJSONTyped = exports.ScanPolicyOptimizerOptionsFromJSON = exports.instanceOfScanPolicyOptimizerOptions = exports.ScanPolicyOptimizerOptionsWebServerEnum = exports.ScanPolicyOptimizerOptionsSuggestionStatusEnum = exports.ScanPolicyOptimizerOptionsOperatingSystemEnum = exports.ScanPolicyOptimizerOptionsDomParserPresetEnum = exports.ScanPolicyOptimizerOptionsDatabaseServerEnum = exports.ScanPolicyOptimizerOptionsAppServerEnum = void 0;
 const runtime_1 = require("../runtime");
 /**
- * @export
- */
-exports.ScanPolicyOptimizerOptionsAppServerEnum = {
-    All: 'All',
-    Aspnet: 'Aspnet',
-    Php: 'Php',
-    Rails: 'Rails',
-    Java: 'Java',
-    Perl: 'Perl',
-    Python: 'Python',
-    NodeJs: 'NodeJs',
-    Other: 'Other'
-};
+* @export
+* @enum {string}
+*/
+var ScanPolicyOptimizerOptionsAppServerEnum;
+(function (ScanPolicyOptimizerOptionsAppServerEnum) {
+    ScanPolicyOptimizerOptionsAppServerEnum["All"] = "All";
+    ScanPolicyOptimizerOptionsAppServerEnum["Aspnet"] = "Aspnet";
+    ScanPolicyOptimizerOptionsAppServerEnum["Php"] = "Php";
+    ScanPolicyOptimizerOptionsAppServerEnum["Rails"] = "Rails";
+    ScanPolicyOptimizerOptionsAppServerEnum["Java"] = "Java";
+    ScanPolicyOptimizerOptionsAppServerEnum["Perl"] = "Perl";
+    ScanPolicyOptimizerOptionsAppServerEnum["Python"] = "Python";
+    ScanPolicyOptimizerOptionsAppServerEnum["NodeJs"] = "NodeJs";
+    ScanPolicyOptimizerOptionsAppServerEnum["Other"] = "Other";
+})(ScanPolicyOptimizerOptionsAppServerEnum = exports.ScanPolicyOptimizerOptionsAppServerEnum || (exports.ScanPolicyOptimizerOptionsAppServerEnum = {}));
 /**
- * @export
- */
-exports.ScanPolicyOptimizerOptionsDatabaseServerEnum = {
-    All: 'All',
-    MsSql: 'MsSql',
-    MySql: 'MySql',
-    Oracle: 'Oracle',
-    PostgreSql: 'PostgreSql',
-    MsAccess: 'MsAccess',
-    HsqlDb: 'HsqlDb',
-    Sqlite: 'Sqlite',
-    MongoDb: 'MongoDb',
-    Other: 'Other'
-};
+* @export
+* @enum {string}
+*/
+var ScanPolicyOptimizerOptionsDatabaseServerEnum;
+(function (ScanPolicyOptimizerOptionsDatabaseServerEnum) {
+    ScanPolicyOptimizerOptionsDatabaseServerEnum["All"] = "All";
+    ScanPolicyOptimizerOptionsDatabaseServerEnum["MsSql"] = "MsSql";
+    ScanPolicyOptimizerOptionsDatabaseServerEnum["MySql"] = "MySql";
+    ScanPolicyOptimizerOptionsDatabaseServerEnum["Oracle"] = "Oracle";
+    ScanPolicyOptimizerOptionsDatabaseServerEnum["PostgreSql"] = "PostgreSql";
+    ScanPolicyOptimizerOptionsDatabaseServerEnum["MsAccess"] = "MsAccess";
+    ScanPolicyOptimizerOptionsDatabaseServerEnum["HsqlDb"] = "HsqlDb";
+    ScanPolicyOptimizerOptionsDatabaseServerEnum["Sqlite"] = "Sqlite";
+    ScanPolicyOptimizerOptionsDatabaseServerEnum["MongoDb"] = "MongoDb";
+    ScanPolicyOptimizerOptionsDatabaseServerEnum["Other"] = "Other";
+})(ScanPolicyOptimizerOptionsDatabaseServerEnum = exports.ScanPolicyOptimizerOptionsDatabaseServerEnum || (exports.ScanPolicyOptimizerOptionsDatabaseServerEnum = {}));
 /**
- * @export
- */
-exports.ScanPolicyOptimizerOptionsDomParserPresetEnum = {
-    None: 'None',
-    Default: 'Default',
-    Spa: 'Spa',
-    LargeSpa: 'LargeSpa'
-};
+* @export
+* @enum {string}
+*/
+var ScanPolicyOptimizerOptionsDomParserPresetEnum;
+(function (ScanPolicyOptimizerOptionsDomParserPresetEnum) {
+    ScanPolicyOptimizerOptionsDomParserPresetEnum["None"] = "None";
+    ScanPolicyOptimizerOptionsDomParserPresetEnum["Default"] = "Default";
+    ScanPolicyOptimizerOptionsDomParserPresetEnum["Spa"] = "Spa";
+    ScanPolicyOptimizerOptionsDomParserPresetEnum["LargeSpa"] = "LargeSpa";
+})(ScanPolicyOptimizerOptionsDomParserPresetEnum = exports.ScanPolicyOptimizerOptionsDomParserPresetEnum || (exports.ScanPolicyOptimizerOptionsDomParserPresetEnum = {}));
 /**
- * @export
- */
-exports.ScanPolicyOptimizerOptionsOperatingSystemEnum = {
-    All: 'All',
-    Windows: 'Windows',
-    Unix: 'Unix'
-};
+* @export
+* @enum {string}
+*/
+var ScanPolicyOptimizerOptionsOperatingSystemEnum;
+(function (ScanPolicyOptimizerOptionsOperatingSystemEnum) {
+    ScanPolicyOptimizerOptionsOperatingSystemEnum["All"] = "All";
+    ScanPolicyOptimizerOptionsOperatingSystemEnum["Windows"] = "Windows";
+    ScanPolicyOptimizerOptionsOperatingSystemEnum["Unix"] = "Unix";
+})(ScanPolicyOptimizerOptionsOperatingSystemEnum = exports.ScanPolicyOptimizerOptionsOperatingSystemEnum || (exports.ScanPolicyOptimizerOptionsOperatingSystemEnum = {}));
 /**
- * @export
- */
-exports.ScanPolicyOptimizerOptionsSuggestionStatusEnum = {
-    Always: 'Always',
-    NotNow: 'NotNow',
-    Never: 'Never'
-};
+* @export
+* @enum {string}
+*/
+var ScanPolicyOptimizerOptionsSuggestionStatusEnum;
+(function (ScanPolicyOptimizerOptionsSuggestionStatusEnum) {
+    ScanPolicyOptimizerOptionsSuggestionStatusEnum["Always"] = "Always";
+    ScanPolicyOptimizerOptionsSuggestionStatusEnum["NotNow"] = "NotNow";
+    ScanPolicyOptimizerOptionsSuggestionStatusEnum["Never"] = "Never";
+})(ScanPolicyOptimizerOptionsSuggestionStatusEnum = exports.ScanPolicyOptimizerOptionsSuggestionStatusEnum || (exports.ScanPolicyOptimizerOptionsSuggestionStatusEnum = {}));
 /**
- * @export
- */
-exports.ScanPolicyOptimizerOptionsWebServerEnum = {
-    All: 'All',
-    Iis: 'Iis',
-    Apache: 'Apache',
-    ApacheTomcat: 'ApacheTomcat',
-    Nginx: 'Nginx',
-    Other: 'Other'
-};
+* @export
+* @enum {string}
+*/
+var ScanPolicyOptimizerOptionsWebServerEnum;
+(function (ScanPolicyOptimizerOptionsWebServerEnum) {
+    ScanPolicyOptimizerOptionsWebServerEnum["All"] = "All";
+    ScanPolicyOptimizerOptionsWebServerEnum["Iis"] = "Iis";
+    ScanPolicyOptimizerOptionsWebServerEnum["Apache"] = "Apache";
+    ScanPolicyOptimizerOptionsWebServerEnum["ApacheTomcat"] = "ApacheTomcat";
+    ScanPolicyOptimizerOptionsWebServerEnum["Nginx"] = "Nginx";
+    ScanPolicyOptimizerOptionsWebServerEnum["Other"] = "Other";
+})(ScanPolicyOptimizerOptionsWebServerEnum = exports.ScanPolicyOptimizerOptionsWebServerEnum || (exports.ScanPolicyOptimizerOptionsWebServerEnum = {}));
 /**
  * Check if a given object implements the ScanPolicyOptimizerOptions interface.
  */

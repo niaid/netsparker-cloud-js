@@ -19,24 +19,28 @@ const NewScanNotificationRecipientApiModel_1 = require("./NewScanNotificationRec
 const NotificationEmailSmsFilterApi_1 = require("./NotificationEmailSmsFilterApi");
 const NotificationIntegrationFilterApi_1 = require("./NotificationIntegrationFilterApi");
 /**
- * @export
- */
-exports.UpdateScanNotificationApiModelEventEnum = {
-    NewScan: 'NewScan',
-    ScanCompleted: 'ScanCompleted',
-    ScanCancelled: 'ScanCancelled',
-    ScanFailed: 'ScanFailed',
-    ScheduledScanLaunchFailed: 'ScheduledScanLaunchFailed',
-    OutOfDateTechnology: 'OutOfDateTechnology'
-};
+* @export
+* @enum {string}
+*/
+var UpdateScanNotificationApiModelEventEnum;
+(function (UpdateScanNotificationApiModelEventEnum) {
+    UpdateScanNotificationApiModelEventEnum["NewScan"] = "NewScan";
+    UpdateScanNotificationApiModelEventEnum["ScanCompleted"] = "ScanCompleted";
+    UpdateScanNotificationApiModelEventEnum["ScanCancelled"] = "ScanCancelled";
+    UpdateScanNotificationApiModelEventEnum["ScanFailed"] = "ScanFailed";
+    UpdateScanNotificationApiModelEventEnum["ScheduledScanLaunchFailed"] = "ScheduledScanLaunchFailed";
+    UpdateScanNotificationApiModelEventEnum["OutOfDateTechnology"] = "OutOfDateTechnology";
+})(UpdateScanNotificationApiModelEventEnum = exports.UpdateScanNotificationApiModelEventEnum || (exports.UpdateScanNotificationApiModelEventEnum = {}));
 /**
- * @export
- */
-exports.UpdateScanNotificationApiModelScopeEnum = {
-    AnyWebsite: 'AnyWebsite',
-    WebsiteGroup: 'WebsiteGroup',
-    Website: 'Website'
-};
+* @export
+* @enum {string}
+*/
+var UpdateScanNotificationApiModelScopeEnum;
+(function (UpdateScanNotificationApiModelScopeEnum) {
+    UpdateScanNotificationApiModelScopeEnum["AnyWebsite"] = "AnyWebsite";
+    UpdateScanNotificationApiModelScopeEnum["WebsiteGroup"] = "WebsiteGroup";
+    UpdateScanNotificationApiModelScopeEnum["Website"] = "Website";
+})(UpdateScanNotificationApiModelScopeEnum = exports.UpdateScanNotificationApiModelScopeEnum || (exports.UpdateScanNotificationApiModelScopeEnum = {}));
 /**
  * Check if a given object implements the UpdateScanNotificationApiModel interface.
  */

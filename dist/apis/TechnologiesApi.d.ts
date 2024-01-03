@@ -11,13 +11,13 @@
  */
 import * as runtime from '../runtime';
 import type { TechnologyListApiResult } from '../models/index';
-export interface TechnologiesListRequest {
+export interface TechnologiesApiTechnologiesListRequest {
     webSiteName?: string;
     technologyName?: string;
     page?: number;
     pageSize?: number;
 }
-export interface TechnologiesOutofdateTechnologiesRequest {
+export interface TechnologiesApiTechnologiesOutofdateTechnologiesRequest {
     webSiteName?: string;
     technologyName?: string;
     page?: number;
@@ -30,17 +30,17 @@ export declare class TechnologiesApi extends runtime.BaseAPI {
     /**
      * Gets the list of technologies that currently in use.
      */
-    technologiesListRaw(requestParameters: TechnologiesListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TechnologyListApiResult>>;
+    technologiesListRaw(requestParameters: TechnologiesApiTechnologiesListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TechnologyListApiResult>>;
     /**
      * Gets the list of technologies that currently in use.
      */
-    technologiesList(requestParameters?: TechnologiesListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TechnologyListApiResult>;
+    technologiesList(requestParameters?: TechnologiesApiTechnologiesListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TechnologyListApiResult>;
     /**
      * Gets the list of out-of-date technologies that currently in use.
      */
-    technologiesOutofdateTechnologiesRaw(requestParameters: TechnologiesOutofdateTechnologiesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TechnologyListApiResult>>;
+    technologiesOutofdateTechnologiesRaw(requestParameters: TechnologiesApiTechnologiesOutofdateTechnologiesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TechnologyListApiResult>>;
     /**
      * Gets the list of out-of-date technologies that currently in use.
      */
-    technologiesOutofdateTechnologies(requestParameters?: TechnologiesOutofdateTechnologiesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TechnologyListApiResult>;
+    technologiesOutofdateTechnologies(requestParameters?: TechnologiesApiTechnologiesOutofdateTechnologiesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TechnologyListApiResult>;
 }

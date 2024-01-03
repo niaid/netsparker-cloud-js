@@ -43,28 +43,28 @@ export interface NotificationEmailSmsFilterApi {
     certainty?: number;
 }
 /**
- * @export
- */
-export declare const NotificationEmailSmsFilterApiSeverityEnum: {
-    readonly BestPractice: "BestPractice";
-    readonly Information: "Information";
-    readonly Low: "Low";
-    readonly Medium: "Medium";
-    readonly High: "High";
-    readonly Critical: "Critical";
-};
-export type NotificationEmailSmsFilterApiSeverityEnum = typeof NotificationEmailSmsFilterApiSeverityEnum[keyof typeof NotificationEmailSmsFilterApiSeverityEnum];
+* @export
+* @enum {string}
+*/
+export declare enum NotificationEmailSmsFilterApiSeverityEnum {
+    BestPractice = "BestPractice",
+    Information = "Information",
+    Low = "Low",
+    Medium = "Medium",
+    High = "High",
+    Critical = "Critical"
+}
 /**
- * @export
- */
-export declare const NotificationEmailSmsFilterApiStateEnum: {
-    readonly NotFound: "NotFound";
-    readonly Fixed: "Fixed";
-    readonly NotFixed: "NotFixed";
-    readonly New: "New";
-    readonly Revived: "Revived";
-};
-export type NotificationEmailSmsFilterApiStateEnum = typeof NotificationEmailSmsFilterApiStateEnum[keyof typeof NotificationEmailSmsFilterApiStateEnum];
+* @export
+* @enum {string}
+*/
+export declare enum NotificationEmailSmsFilterApiStateEnum {
+    NotFound = "NotFound",
+    Fixed = "Fixed",
+    NotFixed = "NotFixed",
+    New = "New",
+    Revived = "Revived"
+}
 /**
  * Check if a given object implements the NotificationEmailSmsFilterApi interface.
  */

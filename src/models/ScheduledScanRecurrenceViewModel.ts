@@ -93,86 +93,80 @@ export interface ScheduledScanRecurrenceViewModel {
     dayOfWeek?: ScheduledScanRecurrenceViewModelDayOfWeekEnum;
 }
 
-
 /**
- * @export
- */
-export const ScheduledScanRecurrenceViewModelRepeatTypeEnum = {
-    Days: 'Days',
-    Weeks: 'Weeks',
-    Months: 'Months',
-    Years: 'Years'
-} as const;
-export type ScheduledScanRecurrenceViewModelRepeatTypeEnum = typeof ScheduledScanRecurrenceViewModelRepeatTypeEnum[keyof typeof ScheduledScanRecurrenceViewModelRepeatTypeEnum];
-
+* @export
+* @enum {string}
+*/
+export enum ScheduledScanRecurrenceViewModelRepeatTypeEnum {
+    Days = 'Days',
+    Weeks = 'Weeks',
+    Months = 'Months',
+    Years = 'Years'
+}
 /**
- * @export
- */
-export const ScheduledScanRecurrenceViewModelEndingTypeEnum = {
-    Never: 'Never',
-    Date: 'Date',
-    Occurences: 'Occurences'
-} as const;
-export type ScheduledScanRecurrenceViewModelEndingTypeEnum = typeof ScheduledScanRecurrenceViewModelEndingTypeEnum[keyof typeof ScheduledScanRecurrenceViewModelEndingTypeEnum];
-
+* @export
+* @enum {string}
+*/
+export enum ScheduledScanRecurrenceViewModelEndingTypeEnum {
+    Never = 'Never',
+    Date = 'Date',
+    Occurences = 'Occurences'
+}
 /**
- * @export
- */
-export const ScheduledScanRecurrenceViewModelDaysOfWeekEnum = {
-    Sunday: 'Sunday',
-    Monday: 'Monday',
-    Tuesday: 'Tuesday',
-    Wednesday: 'Wednesday',
-    Thursday: 'Thursday',
-    Friday: 'Friday',
-    Saturday: 'Saturday'
-} as const;
-export type ScheduledScanRecurrenceViewModelDaysOfWeekEnum = typeof ScheduledScanRecurrenceViewModelDaysOfWeekEnum[keyof typeof ScheduledScanRecurrenceViewModelDaysOfWeekEnum];
-
+* @export
+* @enum {string}
+*/
+export enum ScheduledScanRecurrenceViewModelDaysOfWeekEnum {
+    Sunday = 'Sunday',
+    Monday = 'Monday',
+    Tuesday = 'Tuesday',
+    Wednesday = 'Wednesday',
+    Thursday = 'Thursday',
+    Friday = 'Friday',
+    Saturday = 'Saturday'
+}
 /**
- * @export
- */
-export const ScheduledScanRecurrenceViewModelMonthsOfYearEnum = {
-    January: 'January',
-    February: 'February',
-    March: 'March',
-    April: 'April',
-    May: 'May',
-    June: 'June',
-    July: 'July',
-    August: 'August',
-    September: 'September',
-    October: 'October',
-    November: 'November',
-    December: 'December'
-} as const;
-export type ScheduledScanRecurrenceViewModelMonthsOfYearEnum = typeof ScheduledScanRecurrenceViewModelMonthsOfYearEnum[keyof typeof ScheduledScanRecurrenceViewModelMonthsOfYearEnum];
-
+* @export
+* @enum {string}
+*/
+export enum ScheduledScanRecurrenceViewModelMonthsOfYearEnum {
+    January = 'January',
+    February = 'February',
+    March = 'March',
+    April = 'April',
+    May = 'May',
+    June = 'June',
+    July = 'July',
+    August = 'August',
+    September = 'September',
+    October = 'October',
+    November = 'November',
+    December = 'December'
+}
 /**
- * @export
- */
-export const ScheduledScanRecurrenceViewModelOrdinalEnum = {
-    First: 'First',
-    Second: 'Second',
-    Third: 'Third',
-    Fourth: 'Fourth',
-    Last: 'Last'
-} as const;
-export type ScheduledScanRecurrenceViewModelOrdinalEnum = typeof ScheduledScanRecurrenceViewModelOrdinalEnum[keyof typeof ScheduledScanRecurrenceViewModelOrdinalEnum];
-
+* @export
+* @enum {string}
+*/
+export enum ScheduledScanRecurrenceViewModelOrdinalEnum {
+    First = 'First',
+    Second = 'Second',
+    Third = 'Third',
+    Fourth = 'Fourth',
+    Last = 'Last'
+}
 /**
- * @export
- */
-export const ScheduledScanRecurrenceViewModelDayOfWeekEnum = {
-    Sunday: 'Sunday',
-    Monday: 'Monday',
-    Tuesday: 'Tuesday',
-    Wednesday: 'Wednesday',
-    Thursday: 'Thursday',
-    Friday: 'Friday',
-    Saturday: 'Saturday'
-} as const;
-export type ScheduledScanRecurrenceViewModelDayOfWeekEnum = typeof ScheduledScanRecurrenceViewModelDayOfWeekEnum[keyof typeof ScheduledScanRecurrenceViewModelDayOfWeekEnum];
+* @export
+* @enum {string}
+*/
+export enum ScheduledScanRecurrenceViewModelDayOfWeekEnum {
+    Sunday = 'Sunday',
+    Monday = 'Monday',
+    Tuesday = 'Tuesday',
+    Wednesday = 'Wednesday',
+    Thursday = 'Thursday',
+    Friday = 'Friday',
+    Saturday = 'Saturday'
+}
 
 
 /**

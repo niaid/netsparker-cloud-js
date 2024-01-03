@@ -184,55 +184,53 @@ export interface RedmineIntegrationInfoModel {
     integrationWizardResultModel?: IntegrationWizardResultModel;
 }
 
-
 /**
- * @export
- */
-export const RedmineIntegrationInfoModelTypeEnum = {
-    NetsparkerEnterprise: 'NetsparkerEnterprise',
-    Webhook: 'Webhook',
-    Zapier: 'Zapier',
-    Slack: 'Slack',
-    Mattermost: 'Mattermost',
-    MicrosoftTeams: 'MicrosoftTeams',
-    AzureDevOps: 'AzureDevOps',
-    Bitbucket: 'Bitbucket',
-    Bugzilla: 'Bugzilla',
-    Clubhouse: 'Clubhouse',
-    DefectDojo: 'DefectDojo',
-    PivotalTracker: 'PivotalTracker',
-    Jira: 'Jira',
-    FogBugz: 'FogBugz',
-    GitHub: 'GitHub',
-    PagerDuty: 'PagerDuty',
-    Kafka: 'Kafka',
-    Kenna: 'Kenna',
-    Redmine: 'Redmine',
-    ServiceNow: 'ServiceNow',
-    Tfs: 'TFS',
-    Unfuddle: 'Unfuddle',
-    YouTrack: 'YouTrack',
-    Freshservice: 'Freshservice',
-    Splunk: 'Splunk',
-    JazzTeam: 'JazzTeam',
-    ServiceNowVrm: 'ServiceNowVRM',
-    Asana: 'Asana',
-    Trello: 'Trello',
-    Hashicorp: 'Hashicorp',
-    CyberArk: 'CyberArk',
-    AzureKeyVault: 'AzureKeyVault',
-    GitLab: 'GitLab'
-} as const;
-export type RedmineIntegrationInfoModelTypeEnum = typeof RedmineIntegrationInfoModelTypeEnum[keyof typeof RedmineIntegrationInfoModelTypeEnum];
-
+* @export
+* @enum {string}
+*/
+export enum RedmineIntegrationInfoModelTypeEnum {
+    NetsparkerEnterprise = 'NetsparkerEnterprise',
+    Webhook = 'Webhook',
+    Zapier = 'Zapier',
+    Slack = 'Slack',
+    Mattermost = 'Mattermost',
+    MicrosoftTeams = 'MicrosoftTeams',
+    AzureDevOps = 'AzureDevOps',
+    Bitbucket = 'Bitbucket',
+    Bugzilla = 'Bugzilla',
+    Clubhouse = 'Clubhouse',
+    DefectDojo = 'DefectDojo',
+    PivotalTracker = 'PivotalTracker',
+    Jira = 'Jira',
+    FogBugz = 'FogBugz',
+    GitHub = 'GitHub',
+    PagerDuty = 'PagerDuty',
+    Kafka = 'Kafka',
+    Kenna = 'Kenna',
+    Redmine = 'Redmine',
+    ServiceNow = 'ServiceNow',
+    Tfs = 'TFS',
+    Unfuddle = 'Unfuddle',
+    YouTrack = 'YouTrack',
+    Freshservice = 'Freshservice',
+    Splunk = 'Splunk',
+    JazzTeam = 'JazzTeam',
+    ServiceNowVrm = 'ServiceNowVRM',
+    Asana = 'Asana',
+    Trello = 'Trello',
+    Hashicorp = 'Hashicorp',
+    CyberArk = 'CyberArk',
+    AzureKeyVault = 'AzureKeyVault',
+    GitLab = 'GitLab'
+}
 /**
- * @export
- */
-export const RedmineIntegrationInfoModelTemplateTypeEnum = {
-    Standard: 'Standard',
-    Detailed: 'Detailed'
-} as const;
-export type RedmineIntegrationInfoModelTemplateTypeEnum = typeof RedmineIntegrationInfoModelTemplateTypeEnum[keyof typeof RedmineIntegrationInfoModelTemplateTypeEnum];
+* @export
+* @enum {string}
+*/
+export enum RedmineIntegrationInfoModelTemplateTypeEnum {
+    Standard = 'Standard',
+    Detailed = 'Detailed'
+}
 
 
 /**

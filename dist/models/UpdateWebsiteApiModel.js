@@ -16,26 +16,32 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.UpdateWebsiteApiModelToJSON = exports.UpdateWebsiteApiModelFromJSONTyped = exports.UpdateWebsiteApiModelFromJSON = exports.instanceOfUpdateWebsiteApiModel = exports.UpdateWebsiteApiModelLicenseTypeEnum = exports.UpdateWebsiteApiModelAgentModeEnum = exports.UpdateWebsiteApiModelDefaultProtocolEnum = void 0;
 const runtime_1 = require("../runtime");
 /**
- * @export
- */
-exports.UpdateWebsiteApiModelDefaultProtocolEnum = {
-    Http: 'Http',
-    Https: 'Https'
-};
+* @export
+* @enum {string}
+*/
+var UpdateWebsiteApiModelDefaultProtocolEnum;
+(function (UpdateWebsiteApiModelDefaultProtocolEnum) {
+    UpdateWebsiteApiModelDefaultProtocolEnum["Http"] = "Http";
+    UpdateWebsiteApiModelDefaultProtocolEnum["Https"] = "Https";
+})(UpdateWebsiteApiModelDefaultProtocolEnum = exports.UpdateWebsiteApiModelDefaultProtocolEnum || (exports.UpdateWebsiteApiModelDefaultProtocolEnum = {}));
 /**
- * @export
- */
-exports.UpdateWebsiteApiModelAgentModeEnum = {
-    Cloud: 'Cloud',
-    Internal: 'Internal'
-};
+* @export
+* @enum {string}
+*/
+var UpdateWebsiteApiModelAgentModeEnum;
+(function (UpdateWebsiteApiModelAgentModeEnum) {
+    UpdateWebsiteApiModelAgentModeEnum["Cloud"] = "Cloud";
+    UpdateWebsiteApiModelAgentModeEnum["Internal"] = "Internal";
+})(UpdateWebsiteApiModelAgentModeEnum = exports.UpdateWebsiteApiModelAgentModeEnum || (exports.UpdateWebsiteApiModelAgentModeEnum = {}));
 /**
- * @export
- */
-exports.UpdateWebsiteApiModelLicenseTypeEnum = {
-    Subscription: 'Subscription',
-    Credit: 'Credit'
-};
+* @export
+* @enum {string}
+*/
+var UpdateWebsiteApiModelLicenseTypeEnum;
+(function (UpdateWebsiteApiModelLicenseTypeEnum) {
+    UpdateWebsiteApiModelLicenseTypeEnum["Subscription"] = "Subscription";
+    UpdateWebsiteApiModelLicenseTypeEnum["Credit"] = "Credit";
+})(UpdateWebsiteApiModelLicenseTypeEnum = exports.UpdateWebsiteApiModelLicenseTypeEnum || (exports.UpdateWebsiteApiModelLicenseTypeEnum = {}));
 /**
  * Check if a given object implements the UpdateWebsiteApiModel interface.
  */

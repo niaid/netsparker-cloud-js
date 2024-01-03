@@ -18,50 +18,54 @@ const runtime_1 = require("../runtime");
 const IntegrationCustomFieldVm_1 = require("./IntegrationCustomFieldVm");
 const IntegrationWizardResultModel_1 = require("./IntegrationWizardResultModel");
 /**
- * @export
- */
-exports.FogBugzIntegrationInfoModelTypeEnum = {
-    Jira: 'Jira',
-    GitHub: 'GitHub',
-    Tfs: 'TFS',
-    FogBugz: 'FogBugz',
-    ServiceNow: 'ServiceNow',
-    Slack: 'Slack',
-    GitLab: 'GitLab',
-    Bitbucket: 'Bitbucket',
-    Unfuddle: 'Unfuddle',
-    Zapier: 'Zapier',
-    AzureDevOps: 'AzureDevOps',
-    Redmine: 'Redmine',
-    Bugzilla: 'Bugzilla',
-    Kafka: 'Kafka',
-    PagerDuty: 'PagerDuty',
-    MicrosoftTeams: 'MicrosoftTeams',
-    Clubhouse: 'Clubhouse',
-    Trello: 'Trello',
-    Asana: 'Asana',
-    Webhook: 'Webhook',
-    Kenna: 'Kenna',
-    Freshservice: 'Freshservice',
-    YouTrack: 'YouTrack',
-    NetsparkerEnterprise: 'NetsparkerEnterprise',
-    Splunk: 'Splunk',
-    Mattermost: 'Mattermost',
-    Hashicorp: 'Hashicorp',
-    PivotalTracker: 'PivotalTracker',
-    CyberArk: 'CyberArk',
-    DefectDojo: 'DefectDojo',
-    JazzTeam: 'JazzTeam',
-    AzureKeyVault: 'AzureKeyVault',
-    ServiceNowVrm: 'ServiceNowVRM'
-};
+* @export
+* @enum {string}
+*/
+var FogBugzIntegrationInfoModelTypeEnum;
+(function (FogBugzIntegrationInfoModelTypeEnum) {
+    FogBugzIntegrationInfoModelTypeEnum["Jira"] = "Jira";
+    FogBugzIntegrationInfoModelTypeEnum["GitHub"] = "GitHub";
+    FogBugzIntegrationInfoModelTypeEnum["Tfs"] = "TFS";
+    FogBugzIntegrationInfoModelTypeEnum["FogBugz"] = "FogBugz";
+    FogBugzIntegrationInfoModelTypeEnum["ServiceNow"] = "ServiceNow";
+    FogBugzIntegrationInfoModelTypeEnum["Slack"] = "Slack";
+    FogBugzIntegrationInfoModelTypeEnum["GitLab"] = "GitLab";
+    FogBugzIntegrationInfoModelTypeEnum["Bitbucket"] = "Bitbucket";
+    FogBugzIntegrationInfoModelTypeEnum["Unfuddle"] = "Unfuddle";
+    FogBugzIntegrationInfoModelTypeEnum["Zapier"] = "Zapier";
+    FogBugzIntegrationInfoModelTypeEnum["AzureDevOps"] = "AzureDevOps";
+    FogBugzIntegrationInfoModelTypeEnum["Redmine"] = "Redmine";
+    FogBugzIntegrationInfoModelTypeEnum["Bugzilla"] = "Bugzilla";
+    FogBugzIntegrationInfoModelTypeEnum["Kafka"] = "Kafka";
+    FogBugzIntegrationInfoModelTypeEnum["PagerDuty"] = "PagerDuty";
+    FogBugzIntegrationInfoModelTypeEnum["MicrosoftTeams"] = "MicrosoftTeams";
+    FogBugzIntegrationInfoModelTypeEnum["Clubhouse"] = "Clubhouse";
+    FogBugzIntegrationInfoModelTypeEnum["Trello"] = "Trello";
+    FogBugzIntegrationInfoModelTypeEnum["Asana"] = "Asana";
+    FogBugzIntegrationInfoModelTypeEnum["Webhook"] = "Webhook";
+    FogBugzIntegrationInfoModelTypeEnum["Kenna"] = "Kenna";
+    FogBugzIntegrationInfoModelTypeEnum["Freshservice"] = "Freshservice";
+    FogBugzIntegrationInfoModelTypeEnum["YouTrack"] = "YouTrack";
+    FogBugzIntegrationInfoModelTypeEnum["NetsparkerEnterprise"] = "NetsparkerEnterprise";
+    FogBugzIntegrationInfoModelTypeEnum["Splunk"] = "Splunk";
+    FogBugzIntegrationInfoModelTypeEnum["Mattermost"] = "Mattermost";
+    FogBugzIntegrationInfoModelTypeEnum["Hashicorp"] = "Hashicorp";
+    FogBugzIntegrationInfoModelTypeEnum["PivotalTracker"] = "PivotalTracker";
+    FogBugzIntegrationInfoModelTypeEnum["CyberArk"] = "CyberArk";
+    FogBugzIntegrationInfoModelTypeEnum["DefectDojo"] = "DefectDojo";
+    FogBugzIntegrationInfoModelTypeEnum["JazzTeam"] = "JazzTeam";
+    FogBugzIntegrationInfoModelTypeEnum["AzureKeyVault"] = "AzureKeyVault";
+    FogBugzIntegrationInfoModelTypeEnum["ServiceNowVrm"] = "ServiceNowVRM";
+})(FogBugzIntegrationInfoModelTypeEnum = exports.FogBugzIntegrationInfoModelTypeEnum || (exports.FogBugzIntegrationInfoModelTypeEnum = {}));
 /**
- * @export
- */
-exports.FogBugzIntegrationInfoModelTemplateTypeEnum = {
-    Standard: 'Standard',
-    Detailed: 'Detailed'
-};
+* @export
+* @enum {string}
+*/
+var FogBugzIntegrationInfoModelTemplateTypeEnum;
+(function (FogBugzIntegrationInfoModelTemplateTypeEnum) {
+    FogBugzIntegrationInfoModelTemplateTypeEnum["Standard"] = "Standard";
+    FogBugzIntegrationInfoModelTemplateTypeEnum["Detailed"] = "Detailed";
+})(FogBugzIntegrationInfoModelTemplateTypeEnum = exports.FogBugzIntegrationInfoModelTemplateTypeEnum || (exports.FogBugzIntegrationInfoModelTemplateTypeEnum = {}));
 /**
  * Check if a given object implements the FogBugzIntegrationInfoModel interface.
  */

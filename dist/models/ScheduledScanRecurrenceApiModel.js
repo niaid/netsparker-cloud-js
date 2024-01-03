@@ -16,73 +16,85 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ScheduledScanRecurrenceApiModelToJSON = exports.ScheduledScanRecurrenceApiModelFromJSONTyped = exports.ScheduledScanRecurrenceApiModelFromJSON = exports.instanceOfScheduledScanRecurrenceApiModel = exports.ScheduledScanRecurrenceApiModelDayOfWeekEnum = exports.ScheduledScanRecurrenceApiModelOrdinalEnum = exports.ScheduledScanRecurrenceApiModelMonthsOfYearEnum = exports.ScheduledScanRecurrenceApiModelDaysOfWeekEnum = exports.ScheduledScanRecurrenceApiModelEndingTypeEnum = exports.ScheduledScanRecurrenceApiModelRepeatTypeEnum = void 0;
 const runtime_1 = require("../runtime");
 /**
- * @export
- */
-exports.ScheduledScanRecurrenceApiModelRepeatTypeEnum = {
-    Days: 'Days',
-    Weeks: 'Weeks',
-    Months: 'Months',
-    Years: 'Years'
-};
+* @export
+* @enum {string}
+*/
+var ScheduledScanRecurrenceApiModelRepeatTypeEnum;
+(function (ScheduledScanRecurrenceApiModelRepeatTypeEnum) {
+    ScheduledScanRecurrenceApiModelRepeatTypeEnum["Days"] = "Days";
+    ScheduledScanRecurrenceApiModelRepeatTypeEnum["Weeks"] = "Weeks";
+    ScheduledScanRecurrenceApiModelRepeatTypeEnum["Months"] = "Months";
+    ScheduledScanRecurrenceApiModelRepeatTypeEnum["Years"] = "Years";
+})(ScheduledScanRecurrenceApiModelRepeatTypeEnum = exports.ScheduledScanRecurrenceApiModelRepeatTypeEnum || (exports.ScheduledScanRecurrenceApiModelRepeatTypeEnum = {}));
 /**
- * @export
- */
-exports.ScheduledScanRecurrenceApiModelEndingTypeEnum = {
-    Never: 'Never',
-    Date: 'Date',
-    Occurences: 'Occurences'
-};
+* @export
+* @enum {string}
+*/
+var ScheduledScanRecurrenceApiModelEndingTypeEnum;
+(function (ScheduledScanRecurrenceApiModelEndingTypeEnum) {
+    ScheduledScanRecurrenceApiModelEndingTypeEnum["Never"] = "Never";
+    ScheduledScanRecurrenceApiModelEndingTypeEnum["Date"] = "Date";
+    ScheduledScanRecurrenceApiModelEndingTypeEnum["Occurences"] = "Occurences";
+})(ScheduledScanRecurrenceApiModelEndingTypeEnum = exports.ScheduledScanRecurrenceApiModelEndingTypeEnum || (exports.ScheduledScanRecurrenceApiModelEndingTypeEnum = {}));
 /**
- * @export
- */
-exports.ScheduledScanRecurrenceApiModelDaysOfWeekEnum = {
-    Sunday: 'Sunday',
-    Monday: 'Monday',
-    Tuesday: 'Tuesday',
-    Wednesday: 'Wednesday',
-    Thursday: 'Thursday',
-    Friday: 'Friday',
-    Saturday: 'Saturday'
-};
+* @export
+* @enum {string}
+*/
+var ScheduledScanRecurrenceApiModelDaysOfWeekEnum;
+(function (ScheduledScanRecurrenceApiModelDaysOfWeekEnum) {
+    ScheduledScanRecurrenceApiModelDaysOfWeekEnum["Sunday"] = "Sunday";
+    ScheduledScanRecurrenceApiModelDaysOfWeekEnum["Monday"] = "Monday";
+    ScheduledScanRecurrenceApiModelDaysOfWeekEnum["Tuesday"] = "Tuesday";
+    ScheduledScanRecurrenceApiModelDaysOfWeekEnum["Wednesday"] = "Wednesday";
+    ScheduledScanRecurrenceApiModelDaysOfWeekEnum["Thursday"] = "Thursday";
+    ScheduledScanRecurrenceApiModelDaysOfWeekEnum["Friday"] = "Friday";
+    ScheduledScanRecurrenceApiModelDaysOfWeekEnum["Saturday"] = "Saturday";
+})(ScheduledScanRecurrenceApiModelDaysOfWeekEnum = exports.ScheduledScanRecurrenceApiModelDaysOfWeekEnum || (exports.ScheduledScanRecurrenceApiModelDaysOfWeekEnum = {}));
 /**
- * @export
- */
-exports.ScheduledScanRecurrenceApiModelMonthsOfYearEnum = {
-    January: 'January',
-    February: 'February',
-    March: 'March',
-    April: 'April',
-    May: 'May',
-    June: 'June',
-    July: 'July',
-    August: 'August',
-    September: 'September',
-    October: 'October',
-    November: 'November',
-    December: 'December'
-};
+* @export
+* @enum {string}
+*/
+var ScheduledScanRecurrenceApiModelMonthsOfYearEnum;
+(function (ScheduledScanRecurrenceApiModelMonthsOfYearEnum) {
+    ScheduledScanRecurrenceApiModelMonthsOfYearEnum["January"] = "January";
+    ScheduledScanRecurrenceApiModelMonthsOfYearEnum["February"] = "February";
+    ScheduledScanRecurrenceApiModelMonthsOfYearEnum["March"] = "March";
+    ScheduledScanRecurrenceApiModelMonthsOfYearEnum["April"] = "April";
+    ScheduledScanRecurrenceApiModelMonthsOfYearEnum["May"] = "May";
+    ScheduledScanRecurrenceApiModelMonthsOfYearEnum["June"] = "June";
+    ScheduledScanRecurrenceApiModelMonthsOfYearEnum["July"] = "July";
+    ScheduledScanRecurrenceApiModelMonthsOfYearEnum["August"] = "August";
+    ScheduledScanRecurrenceApiModelMonthsOfYearEnum["September"] = "September";
+    ScheduledScanRecurrenceApiModelMonthsOfYearEnum["October"] = "October";
+    ScheduledScanRecurrenceApiModelMonthsOfYearEnum["November"] = "November";
+    ScheduledScanRecurrenceApiModelMonthsOfYearEnum["December"] = "December";
+})(ScheduledScanRecurrenceApiModelMonthsOfYearEnum = exports.ScheduledScanRecurrenceApiModelMonthsOfYearEnum || (exports.ScheduledScanRecurrenceApiModelMonthsOfYearEnum = {}));
 /**
- * @export
- */
-exports.ScheduledScanRecurrenceApiModelOrdinalEnum = {
-    First: 'First',
-    Second: 'Second',
-    Third: 'Third',
-    Fourth: 'Fourth',
-    Last: 'Last'
-};
+* @export
+* @enum {string}
+*/
+var ScheduledScanRecurrenceApiModelOrdinalEnum;
+(function (ScheduledScanRecurrenceApiModelOrdinalEnum) {
+    ScheduledScanRecurrenceApiModelOrdinalEnum["First"] = "First";
+    ScheduledScanRecurrenceApiModelOrdinalEnum["Second"] = "Second";
+    ScheduledScanRecurrenceApiModelOrdinalEnum["Third"] = "Third";
+    ScheduledScanRecurrenceApiModelOrdinalEnum["Fourth"] = "Fourth";
+    ScheduledScanRecurrenceApiModelOrdinalEnum["Last"] = "Last";
+})(ScheduledScanRecurrenceApiModelOrdinalEnum = exports.ScheduledScanRecurrenceApiModelOrdinalEnum || (exports.ScheduledScanRecurrenceApiModelOrdinalEnum = {}));
 /**
- * @export
- */
-exports.ScheduledScanRecurrenceApiModelDayOfWeekEnum = {
-    Sunday: 'Sunday',
-    Monday: 'Monday',
-    Tuesday: 'Tuesday',
-    Wednesday: 'Wednesday',
-    Thursday: 'Thursday',
-    Friday: 'Friday',
-    Saturday: 'Saturday'
-};
+* @export
+* @enum {string}
+*/
+var ScheduledScanRecurrenceApiModelDayOfWeekEnum;
+(function (ScheduledScanRecurrenceApiModelDayOfWeekEnum) {
+    ScheduledScanRecurrenceApiModelDayOfWeekEnum["Sunday"] = "Sunday";
+    ScheduledScanRecurrenceApiModelDayOfWeekEnum["Monday"] = "Monday";
+    ScheduledScanRecurrenceApiModelDayOfWeekEnum["Tuesday"] = "Tuesday";
+    ScheduledScanRecurrenceApiModelDayOfWeekEnum["Wednesday"] = "Wednesday";
+    ScheduledScanRecurrenceApiModelDayOfWeekEnum["Thursday"] = "Thursday";
+    ScheduledScanRecurrenceApiModelDayOfWeekEnum["Friday"] = "Friday";
+    ScheduledScanRecurrenceApiModelDayOfWeekEnum["Saturday"] = "Saturday";
+})(ScheduledScanRecurrenceApiModelDayOfWeekEnum = exports.ScheduledScanRecurrenceApiModelDayOfWeekEnum || (exports.ScheduledScanRecurrenceApiModelDayOfWeekEnum = {}));
 /**
  * Check if a given object implements the ScheduledScanRecurrenceApiModel interface.
  */

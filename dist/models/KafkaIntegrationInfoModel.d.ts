@@ -127,61 +127,61 @@ export interface KafkaIntegrationInfoModel {
     integrationWizardResultModel?: IntegrationWizardResultModel;
 }
 /**
- * @export
- */
-export declare const KafkaIntegrationInfoModelDataSerializationEnum: {
-    readonly JsonSerialized: "JsonSerialized";
-    readonly FlattenedJsonSerialized: "FlattenedJsonSerialized";
-    readonly AvroSerialized: "AvroSerialized";
-};
-export type KafkaIntegrationInfoModelDataSerializationEnum = typeof KafkaIntegrationInfoModelDataSerializationEnum[keyof typeof KafkaIntegrationInfoModelDataSerializationEnum];
+* @export
+* @enum {string}
+*/
+export declare enum KafkaIntegrationInfoModelDataSerializationEnum {
+    JsonSerialized = "JsonSerialized",
+    FlattenedJsonSerialized = "FlattenedJsonSerialized",
+    AvroSerialized = "AvroSerialized"
+}
 /**
- * @export
- */
-export declare const KafkaIntegrationInfoModelTypeEnum: {
-    readonly Jira: "Jira";
-    readonly GitHub: "GitHub";
-    readonly Tfs: "TFS";
-    readonly FogBugz: "FogBugz";
-    readonly ServiceNow: "ServiceNow";
-    readonly Slack: "Slack";
-    readonly GitLab: "GitLab";
-    readonly Bitbucket: "Bitbucket";
-    readonly Unfuddle: "Unfuddle";
-    readonly Zapier: "Zapier";
-    readonly AzureDevOps: "AzureDevOps";
-    readonly Redmine: "Redmine";
-    readonly Bugzilla: "Bugzilla";
-    readonly Kafka: "Kafka";
-    readonly PagerDuty: "PagerDuty";
-    readonly MicrosoftTeams: "MicrosoftTeams";
-    readonly Clubhouse: "Clubhouse";
-    readonly Trello: "Trello";
-    readonly Asana: "Asana";
-    readonly Webhook: "Webhook";
-    readonly Kenna: "Kenna";
-    readonly Freshservice: "Freshservice";
-    readonly YouTrack: "YouTrack";
-    readonly NetsparkerEnterprise: "NetsparkerEnterprise";
-    readonly Splunk: "Splunk";
-    readonly Mattermost: "Mattermost";
-    readonly Hashicorp: "Hashicorp";
-    readonly PivotalTracker: "PivotalTracker";
-    readonly CyberArk: "CyberArk";
-    readonly DefectDojo: "DefectDojo";
-    readonly JazzTeam: "JazzTeam";
-    readonly AzureKeyVault: "AzureKeyVault";
-    readonly ServiceNowVrm: "ServiceNowVRM";
-};
-export type KafkaIntegrationInfoModelTypeEnum = typeof KafkaIntegrationInfoModelTypeEnum[keyof typeof KafkaIntegrationInfoModelTypeEnum];
+* @export
+* @enum {string}
+*/
+export declare enum KafkaIntegrationInfoModelTypeEnum {
+    Jira = "Jira",
+    GitHub = "GitHub",
+    Tfs = "TFS",
+    FogBugz = "FogBugz",
+    ServiceNow = "ServiceNow",
+    Slack = "Slack",
+    GitLab = "GitLab",
+    Bitbucket = "Bitbucket",
+    Unfuddle = "Unfuddle",
+    Zapier = "Zapier",
+    AzureDevOps = "AzureDevOps",
+    Redmine = "Redmine",
+    Bugzilla = "Bugzilla",
+    Kafka = "Kafka",
+    PagerDuty = "PagerDuty",
+    MicrosoftTeams = "MicrosoftTeams",
+    Clubhouse = "Clubhouse",
+    Trello = "Trello",
+    Asana = "Asana",
+    Webhook = "Webhook",
+    Kenna = "Kenna",
+    Freshservice = "Freshservice",
+    YouTrack = "YouTrack",
+    NetsparkerEnterprise = "NetsparkerEnterprise",
+    Splunk = "Splunk",
+    Mattermost = "Mattermost",
+    Hashicorp = "Hashicorp",
+    PivotalTracker = "PivotalTracker",
+    CyberArk = "CyberArk",
+    DefectDojo = "DefectDojo",
+    JazzTeam = "JazzTeam",
+    AzureKeyVault = "AzureKeyVault",
+    ServiceNowVrm = "ServiceNowVRM"
+}
 /**
- * @export
- */
-export declare const KafkaIntegrationInfoModelTemplateTypeEnum: {
-    readonly Standard: "Standard";
-    readonly Detailed: "Detailed";
-};
-export type KafkaIntegrationInfoModelTemplateTypeEnum = typeof KafkaIntegrationInfoModelTemplateTypeEnum[keyof typeof KafkaIntegrationInfoModelTemplateTypeEnum];
+* @export
+* @enum {string}
+*/
+export declare enum KafkaIntegrationInfoModelTemplateTypeEnum {
+    Standard = "Standard",
+    Detailed = "Detailed"
+}
 /**
  * Check if a given object implements the KafkaIntegrationInfoModel interface.
  */

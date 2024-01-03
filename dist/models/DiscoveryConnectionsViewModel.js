@@ -17,11 +17,13 @@ exports.DiscoveryConnectionsViewModelToJSON = exports.DiscoveryConnectionsViewMo
 const runtime_1 = require("../runtime");
 const AwsConnectionInfoModel_1 = require("./AwsConnectionInfoModel");
 /**
- * @export
- */
-exports.DiscoveryConnectionsViewModelTypeEnum = {
-    Aws: 'Aws'
-};
+* @export
+* @enum {string}
+*/
+var DiscoveryConnectionsViewModelTypeEnum;
+(function (DiscoveryConnectionsViewModelTypeEnum) {
+    DiscoveryConnectionsViewModelTypeEnum["Aws"] = "Aws";
+})(DiscoveryConnectionsViewModelTypeEnum = exports.DiscoveryConnectionsViewModelTypeEnum || (exports.DiscoveryConnectionsViewModelTypeEnum = {}));
 /**
  * Check if a given object implements the DiscoveryConnectionsViewModel interface.
  */

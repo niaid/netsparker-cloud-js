@@ -76,36 +76,34 @@ export interface ScopeSetting {
     doNotDifferentiateProtocols?: boolean;
 }
 
-
 /**
- * @export
- */
-export const ScopeSettingDisallowedHttpMethodsEnum = {
-    Get: 'GET',
-    Post: 'POST',
-    Connect: 'CONNECT',
-    Head: 'HEAD',
-    Trace: 'TRACE',
-    Debug: 'DEBUG',
-    Track: 'TRACK',
-    Put: 'PUT',
-    Options: 'OPTIONS',
-    Delete: 'DELETE',
-    Link: 'LINK',
-    Unlink: 'UNLINK',
-    Patch: 'PATCH'
-} as const;
-export type ScopeSettingDisallowedHttpMethodsEnum = typeof ScopeSettingDisallowedHttpMethodsEnum[keyof typeof ScopeSettingDisallowedHttpMethodsEnum];
-
+* @export
+* @enum {string}
+*/
+export enum ScopeSettingDisallowedHttpMethodsEnum {
+    Get = 'GET',
+    Post = 'POST',
+    Connect = 'CONNECT',
+    Head = 'HEAD',
+    Trace = 'TRACE',
+    Debug = 'DEBUG',
+    Track = 'TRACK',
+    Put = 'PUT',
+    Options = 'OPTIONS',
+    Delete = 'DELETE',
+    Link = 'LINK',
+    Unlink = 'UNLINK',
+    Patch = 'PATCH'
+}
 /**
- * @export
- */
-export const ScopeSettingScopeEnum = {
-    EnteredPathAndBelow: 'EnteredPathAndBelow',
-    OnlyEnteredUrl: 'OnlyEnteredUrl',
-    WholeDomain: 'WholeDomain'
-} as const;
-export type ScopeSettingScopeEnum = typeof ScopeSettingScopeEnum[keyof typeof ScopeSettingScopeEnum];
+* @export
+* @enum {string}
+*/
+export enum ScopeSettingScopeEnum {
+    EnteredPathAndBelow = 'EnteredPathAndBelow',
+    OnlyEnteredUrl = 'OnlyEnteredUrl',
+    WholeDomain = 'WholeDomain'
+}
 
 
 /**

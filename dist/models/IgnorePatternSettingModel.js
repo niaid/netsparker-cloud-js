@@ -15,16 +15,18 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.IgnorePatternSettingModelToJSON = exports.IgnorePatternSettingModelFromJSONTyped = exports.IgnorePatternSettingModelFromJSON = exports.instanceOfIgnorePatternSettingModel = exports.IgnorePatternSettingModelParameterTypeEnum = void 0;
 /**
- * @export
- */
-exports.IgnorePatternSettingModelParameterTypeEnum = {
-    Post: 'POST',
-    Get: 'GET',
-    Cookie: 'COOKIE',
-    Webstorage: 'WEBSTORAGE',
-    All: 'ALL',
-    Setcookie: 'SETCOOKIE'
-};
+* @export
+* @enum {string}
+*/
+var IgnorePatternSettingModelParameterTypeEnum;
+(function (IgnorePatternSettingModelParameterTypeEnum) {
+    IgnorePatternSettingModelParameterTypeEnum["Post"] = "POST";
+    IgnorePatternSettingModelParameterTypeEnum["Get"] = "GET";
+    IgnorePatternSettingModelParameterTypeEnum["Cookie"] = "COOKIE";
+    IgnorePatternSettingModelParameterTypeEnum["Webstorage"] = "WEBSTORAGE";
+    IgnorePatternSettingModelParameterTypeEnum["All"] = "ALL";
+    IgnorePatternSettingModelParameterTypeEnum["Setcookie"] = "SETCOOKIE";
+})(IgnorePatternSettingModelParameterTypeEnum = exports.IgnorePatternSettingModelParameterTypeEnum || (exports.IgnorePatternSettingModelParameterTypeEnum = {}));
 /**
  * Check if a given object implements the IgnorePatternSettingModel interface.
  */

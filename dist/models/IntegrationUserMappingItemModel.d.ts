@@ -71,34 +71,34 @@ export interface IntegrationUserMappingItemModel {
     userId: string;
 }
 /**
- * @export
- */
-export declare const IntegrationUserMappingItemModelIntegrationSystemEnum: {
-    readonly Teamcity: "Teamcity";
-    readonly Jenkins: "Jenkins";
-    readonly Bamboo: "Bamboo";
-    readonly GitLab: "GitLab";
-    readonly AzureDevOps: "AzureDevOps";
-    readonly Jira: "Jira";
-    readonly CircleCi: "CircleCI";
-    readonly TravisCi: "TravisCI";
-    readonly UrbanCodeDeploy: "UrbanCodeDeploy";
-    readonly GitHubActions: "GitHubActions";
-};
-export type IntegrationUserMappingItemModelIntegrationSystemEnum = typeof IntegrationUserMappingItemModelIntegrationSystemEnum[keyof typeof IntegrationUserMappingItemModelIntegrationSystemEnum];
+* @export
+* @enum {string}
+*/
+export declare enum IntegrationUserMappingItemModelIntegrationSystemEnum {
+    Teamcity = "Teamcity",
+    Jenkins = "Jenkins",
+    Bamboo = "Bamboo",
+    GitLab = "GitLab",
+    AzureDevOps = "AzureDevOps",
+    Jira = "Jira",
+    CircleCi = "CircleCI",
+    TravisCi = "TravisCI",
+    UrbanCodeDeploy = "UrbanCodeDeploy",
+    GitHubActions = "GitHubActions"
+}
 /**
- * @export
- */
-export declare const IntegrationUserMappingItemModelResultEnum: {
-    readonly NotFound: "NotFound";
-    readonly BadRequest: "BadRequest";
-    readonly Duplicate: "Duplicate";
-    readonly Saved: "Saved";
-    readonly Edited: "Edited";
-    readonly Deleted: "Deleted";
-    readonly Exist: "Exist";
-};
-export type IntegrationUserMappingItemModelResultEnum = typeof IntegrationUserMappingItemModelResultEnum[keyof typeof IntegrationUserMappingItemModelResultEnum];
+* @export
+* @enum {string}
+*/
+export declare enum IntegrationUserMappingItemModelResultEnum {
+    NotFound = "NotFound",
+    BadRequest = "BadRequest",
+    Duplicate = "Duplicate",
+    Saved = "Saved",
+    Edited = "Edited",
+    Deleted = "Deleted",
+    Exist = "Exist"
+}
 /**
  * Check if a given object implements the IntegrationUserMappingItemModel interface.
  */

@@ -99,83 +99,77 @@ export interface ScanPolicyOptimizerOptions {
     webServer?: ScanPolicyOptimizerOptionsWebServerEnum;
 }
 
-
 /**
- * @export
- */
-export const ScanPolicyOptimizerOptionsAppServerEnum = {
-    All: 'All',
-    Aspnet: 'Aspnet',
-    Php: 'Php',
-    Rails: 'Rails',
-    Java: 'Java',
-    Perl: 'Perl',
-    Python: 'Python',
-    NodeJs: 'NodeJs',
-    Other: 'Other'
-} as const;
-export type ScanPolicyOptimizerOptionsAppServerEnum = typeof ScanPolicyOptimizerOptionsAppServerEnum[keyof typeof ScanPolicyOptimizerOptionsAppServerEnum];
-
+* @export
+* @enum {string}
+*/
+export enum ScanPolicyOptimizerOptionsAppServerEnum {
+    All = 'All',
+    Aspnet = 'Aspnet',
+    Php = 'Php',
+    Rails = 'Rails',
+    Java = 'Java',
+    Perl = 'Perl',
+    Python = 'Python',
+    NodeJs = 'NodeJs',
+    Other = 'Other'
+}
 /**
- * @export
- */
-export const ScanPolicyOptimizerOptionsDatabaseServerEnum = {
-    All: 'All',
-    MsSql: 'MsSql',
-    MySql: 'MySql',
-    Oracle: 'Oracle',
-    PostgreSql: 'PostgreSql',
-    MsAccess: 'MsAccess',
-    HsqlDb: 'HsqlDb',
-    Sqlite: 'Sqlite',
-    MongoDb: 'MongoDb',
-    Other: 'Other'
-} as const;
-export type ScanPolicyOptimizerOptionsDatabaseServerEnum = typeof ScanPolicyOptimizerOptionsDatabaseServerEnum[keyof typeof ScanPolicyOptimizerOptionsDatabaseServerEnum];
-
+* @export
+* @enum {string}
+*/
+export enum ScanPolicyOptimizerOptionsDatabaseServerEnum {
+    All = 'All',
+    MsSql = 'MsSql',
+    MySql = 'MySql',
+    Oracle = 'Oracle',
+    PostgreSql = 'PostgreSql',
+    MsAccess = 'MsAccess',
+    HsqlDb = 'HsqlDb',
+    Sqlite = 'Sqlite',
+    MongoDb = 'MongoDb',
+    Other = 'Other'
+}
 /**
- * @export
- */
-export const ScanPolicyOptimizerOptionsDomParserPresetEnum = {
-    None: 'None',
-    Default: 'Default',
-    Spa: 'Spa',
-    LargeSpa: 'LargeSpa'
-} as const;
-export type ScanPolicyOptimizerOptionsDomParserPresetEnum = typeof ScanPolicyOptimizerOptionsDomParserPresetEnum[keyof typeof ScanPolicyOptimizerOptionsDomParserPresetEnum];
-
+* @export
+* @enum {string}
+*/
+export enum ScanPolicyOptimizerOptionsDomParserPresetEnum {
+    None = 'None',
+    Default = 'Default',
+    Spa = 'Spa',
+    LargeSpa = 'LargeSpa'
+}
 /**
- * @export
- */
-export const ScanPolicyOptimizerOptionsOperatingSystemEnum = {
-    All: 'All',
-    Windows: 'Windows',
-    Unix: 'Unix'
-} as const;
-export type ScanPolicyOptimizerOptionsOperatingSystemEnum = typeof ScanPolicyOptimizerOptionsOperatingSystemEnum[keyof typeof ScanPolicyOptimizerOptionsOperatingSystemEnum];
-
+* @export
+* @enum {string}
+*/
+export enum ScanPolicyOptimizerOptionsOperatingSystemEnum {
+    All = 'All',
+    Windows = 'Windows',
+    Unix = 'Unix'
+}
 /**
- * @export
- */
-export const ScanPolicyOptimizerOptionsSuggestionStatusEnum = {
-    Always: 'Always',
-    NotNow: 'NotNow',
-    Never: 'Never'
-} as const;
-export type ScanPolicyOptimizerOptionsSuggestionStatusEnum = typeof ScanPolicyOptimizerOptionsSuggestionStatusEnum[keyof typeof ScanPolicyOptimizerOptionsSuggestionStatusEnum];
-
+* @export
+* @enum {string}
+*/
+export enum ScanPolicyOptimizerOptionsSuggestionStatusEnum {
+    Always = 'Always',
+    NotNow = 'NotNow',
+    Never = 'Never'
+}
 /**
- * @export
- */
-export const ScanPolicyOptimizerOptionsWebServerEnum = {
-    All: 'All',
-    Iis: 'Iis',
-    Apache: 'Apache',
-    ApacheTomcat: 'ApacheTomcat',
-    Nginx: 'Nginx',
-    Other: 'Other'
-} as const;
-export type ScanPolicyOptimizerOptionsWebServerEnum = typeof ScanPolicyOptimizerOptionsWebServerEnum[keyof typeof ScanPolicyOptimizerOptionsWebServerEnum];
+* @export
+* @enum {string}
+*/
+export enum ScanPolicyOptimizerOptionsWebServerEnum {
+    All = 'All',
+    Iis = 'Iis',
+    Apache = 'Apache',
+    ApacheTomcat = 'ApacheTomcat',
+    Nginx = 'Nginx',
+    Other = 'Other'
+}
 
 
 /**

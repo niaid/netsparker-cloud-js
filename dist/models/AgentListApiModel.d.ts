@@ -107,18 +107,18 @@ export interface AgentListApiModel {
     isAgentNeedsUpdate?: boolean;
 }
 /**
- * @export
- */
-export declare const AgentListApiModelStateEnum: {
-    readonly Launching: "Launching";
-    readonly Waiting: "Waiting";
-    readonly Scanning: "Scanning";
-    readonly Terminated: "Terminated";
-    readonly NotAvailable: "NotAvailable";
-    readonly Disabled: "Disabled";
-    readonly Updating: "Updating";
-};
-export type AgentListApiModelStateEnum = typeof AgentListApiModelStateEnum[keyof typeof AgentListApiModelStateEnum];
+* @export
+* @enum {string}
+*/
+export declare enum AgentListApiModelStateEnum {
+    Launching = "Launching",
+    Waiting = "Waiting",
+    Scanning = "Scanning",
+    Terminated = "Terminated",
+    NotAvailable = "NotAvailable",
+    Disabled = "Disabled",
+    Updating = "Updating"
+}
 /**
  * Check if a given object implements the AgentListApiModel interface.
  */

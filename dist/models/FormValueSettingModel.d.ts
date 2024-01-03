@@ -65,36 +65,36 @@ export interface FormValueSettingModel {
     value: string;
 }
 /**
- * @export
- */
-export declare const FormValueSettingModelMatchEnum: {
-    readonly RegEx: "RegEx";
-    readonly Exact: "Exact";
-    readonly Contains: "Contains";
-    readonly Starts: "Starts";
-    readonly Ends: "Ends";
-};
-export type FormValueSettingModelMatchEnum = typeof FormValueSettingModelMatchEnum[keyof typeof FormValueSettingModelMatchEnum];
+* @export
+* @enum {string}
+*/
+export declare enum FormValueSettingModelMatchEnum {
+    RegEx = "RegEx",
+    Exact = "Exact",
+    Contains = "Contains",
+    Starts = "Starts",
+    Ends = "Ends"
+}
 /**
- * @export
- */
-export declare const FormValueSettingModelMatchTargetEnum: {
-    readonly Name: "Name";
-    readonly Label: "Label";
-    readonly Placeholder: "Placeholder";
-    readonly Id: "Id";
-};
-export type FormValueSettingModelMatchTargetEnum = typeof FormValueSettingModelMatchTargetEnum[keyof typeof FormValueSettingModelMatchTargetEnum];
+* @export
+* @enum {string}
+*/
+export declare enum FormValueSettingModelMatchTargetEnum {
+    Name = "Name",
+    Label = "Label",
+    Placeholder = "Placeholder",
+    Id = "Id"
+}
 /**
- * @export
- */
-export declare const FormValueSettingModelMatchTargetValueEnum: {
-    readonly Name: "Name";
-    readonly Label: "Label";
-    readonly Placeholder: "Placeholder";
-    readonly Id: "Id";
-};
-export type FormValueSettingModelMatchTargetValueEnum = typeof FormValueSettingModelMatchTargetValueEnum[keyof typeof FormValueSettingModelMatchTargetValueEnum];
+* @export
+* @enum {string}
+*/
+export declare enum FormValueSettingModelMatchTargetValueEnum {
+    Name = "Name",
+    Label = "Label",
+    Placeholder = "Placeholder",
+    Id = "Id"
+}
 /**
  * Check if a given object implements the FormValueSettingModel interface.
  */

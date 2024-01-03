@@ -422,65 +422,60 @@ export interface SaveScanProfileApiModel {
     comments?: string;
 }
 
-
 /**
- * @export
- */
-export const SaveScanProfileApiModelCreateTypeEnum = {
-    Website: 'Website',
-    WebsiteGroup: 'WebsiteGroup'
-} as const;
-export type SaveScanProfileApiModelCreateTypeEnum = typeof SaveScanProfileApiModelCreateTypeEnum[keyof typeof SaveScanProfileApiModelCreateTypeEnum];
-
+* @export
+* @enum {string}
+*/
+export enum SaveScanProfileApiModelCreateTypeEnum {
+    Website = 'Website',
+    WebsiteGroup = 'WebsiteGroup'
+}
 /**
- * @export
- */
-export const SaveScanProfileApiModelDisallowedHttpMethodsEnum = {
-    Get: 'GET',
-    Post: 'POST',
-    Connect: 'CONNECT',
-    Head: 'HEAD',
-    Trace: 'TRACE',
-    Debug: 'DEBUG',
-    Track: 'TRACK',
-    Put: 'PUT',
-    Options: 'OPTIONS',
-    Delete: 'DELETE',
-    Link: 'LINK',
-    Unlink: 'UNLINK',
-    Patch: 'PATCH'
-} as const;
-export type SaveScanProfileApiModelDisallowedHttpMethodsEnum = typeof SaveScanProfileApiModelDisallowedHttpMethodsEnum[keyof typeof SaveScanProfileApiModelDisallowedHttpMethodsEnum];
-
+* @export
+* @enum {string}
+*/
+export enum SaveScanProfileApiModelDisallowedHttpMethodsEnum {
+    Get = 'GET',
+    Post = 'POST',
+    Connect = 'CONNECT',
+    Head = 'HEAD',
+    Trace = 'TRACE',
+    Debug = 'DEBUG',
+    Track = 'TRACK',
+    Put = 'PUT',
+    Options = 'OPTIONS',
+    Delete = 'DELETE',
+    Link = 'LINK',
+    Unlink = 'UNLINK',
+    Patch = 'PATCH'
+}
 /**
- * @export
- */
-export const SaveScanProfileApiModelAuthenticationProfileOptionEnum = {
-    DontUse: 'DontUse',
-    UseMatchedProfile: 'UseMatchedProfile',
-    SelectedProfile: 'SelectedProfile'
-} as const;
-export type SaveScanProfileApiModelAuthenticationProfileOptionEnum = typeof SaveScanProfileApiModelAuthenticationProfileOptionEnum[keyof typeof SaveScanProfileApiModelAuthenticationProfileOptionEnum];
-
+* @export
+* @enum {string}
+*/
+export enum SaveScanProfileApiModelAuthenticationProfileOptionEnum {
+    DontUse = 'DontUse',
+    UseMatchedProfile = 'UseMatchedProfile',
+    SelectedProfile = 'SelectedProfile'
+}
 /**
- * @export
- */
-export const SaveScanProfileApiModelScopeEnum = {
-    EnteredPathAndBelow: 'EnteredPathAndBelow',
-    OnlyEnteredUrl: 'OnlyEnteredUrl',
-    WholeDomain: 'WholeDomain'
-} as const;
-export type SaveScanProfileApiModelScopeEnum = typeof SaveScanProfileApiModelScopeEnum[keyof typeof SaveScanProfileApiModelScopeEnum];
-
+* @export
+* @enum {string}
+*/
+export enum SaveScanProfileApiModelScopeEnum {
+    EnteredPathAndBelow = 'EnteredPathAndBelow',
+    OnlyEnteredUrl = 'OnlyEnteredUrl',
+    WholeDomain = 'WholeDomain'
+}
 /**
- * @export
- */
-export const SaveScanProfileApiModelUrlRewriteModeEnum = {
-    None: 'None',
-    Heuristic: 'Heuristic',
-    Custom: 'Custom'
-} as const;
-export type SaveScanProfileApiModelUrlRewriteModeEnum = typeof SaveScanProfileApiModelUrlRewriteModeEnum[keyof typeof SaveScanProfileApiModelUrlRewriteModeEnum];
+* @export
+* @enum {string}
+*/
+export enum SaveScanProfileApiModelUrlRewriteModeEnum {
+    None = 'None',
+    Heuristic = 'Heuristic',
+    Custom = 'Custom'
+}
 
 
 /**

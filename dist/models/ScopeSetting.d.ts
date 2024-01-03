@@ -61,33 +61,33 @@ export interface ScopeSetting {
     doNotDifferentiateProtocols?: boolean;
 }
 /**
- * @export
- */
-export declare const ScopeSettingDisallowedHttpMethodsEnum: {
-    readonly Get: "GET";
-    readonly Post: "POST";
-    readonly Connect: "CONNECT";
-    readonly Head: "HEAD";
-    readonly Trace: "TRACE";
-    readonly Debug: "DEBUG";
-    readonly Track: "TRACK";
-    readonly Put: "PUT";
-    readonly Options: "OPTIONS";
-    readonly Delete: "DELETE";
-    readonly Link: "LINK";
-    readonly Unlink: "UNLINK";
-    readonly Patch: "PATCH";
-};
-export type ScopeSettingDisallowedHttpMethodsEnum = typeof ScopeSettingDisallowedHttpMethodsEnum[keyof typeof ScopeSettingDisallowedHttpMethodsEnum];
+* @export
+* @enum {string}
+*/
+export declare enum ScopeSettingDisallowedHttpMethodsEnum {
+    Get = "GET",
+    Post = "POST",
+    Connect = "CONNECT",
+    Head = "HEAD",
+    Trace = "TRACE",
+    Debug = "DEBUG",
+    Track = "TRACK",
+    Put = "PUT",
+    Options = "OPTIONS",
+    Delete = "DELETE",
+    Link = "LINK",
+    Unlink = "UNLINK",
+    Patch = "PATCH"
+}
 /**
- * @export
- */
-export declare const ScopeSettingScopeEnum: {
-    readonly EnteredPathAndBelow: "EnteredPathAndBelow";
-    readonly OnlyEnteredUrl: "OnlyEnteredUrl";
-    readonly WholeDomain: "WholeDomain";
-};
-export type ScopeSettingScopeEnum = typeof ScopeSettingScopeEnum[keyof typeof ScopeSettingScopeEnum];
+* @export
+* @enum {string}
+*/
+export declare enum ScopeSettingScopeEnum {
+    EnteredPathAndBelow = "EnteredPathAndBelow",
+    OnlyEnteredUrl = "OnlyEnteredUrl",
+    WholeDomain = "WholeDomain"
+}
 /**
  * Check if a given object implements the ScopeSetting interface.
  */

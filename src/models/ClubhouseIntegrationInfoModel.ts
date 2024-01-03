@@ -184,65 +184,62 @@ export interface ClubhouseIntegrationInfoModel {
     integrationWizardResultModel?: IntegrationWizardResultModel;
 }
 
-
 /**
- * @export
- */
-export const ClubhouseIntegrationInfoModelClubhouseStoryTypeEnum = {
-    Bug: 'Bug',
-    Feature: 'Feature',
-    Chore: 'Chore'
-} as const;
-export type ClubhouseIntegrationInfoModelClubhouseStoryTypeEnum = typeof ClubhouseIntegrationInfoModelClubhouseStoryTypeEnum[keyof typeof ClubhouseIntegrationInfoModelClubhouseStoryTypeEnum];
-
+* @export
+* @enum {string}
+*/
+export enum ClubhouseIntegrationInfoModelClubhouseStoryTypeEnum {
+    Bug = 'Bug',
+    Feature = 'Feature',
+    Chore = 'Chore'
+}
 /**
- * @export
- */
-export const ClubhouseIntegrationInfoModelTypeEnum = {
-    NetsparkerEnterprise: 'NetsparkerEnterprise',
-    Webhook: 'Webhook',
-    Zapier: 'Zapier',
-    Slack: 'Slack',
-    Mattermost: 'Mattermost',
-    MicrosoftTeams: 'MicrosoftTeams',
-    AzureDevOps: 'AzureDevOps',
-    Bitbucket: 'Bitbucket',
-    Bugzilla: 'Bugzilla',
-    Clubhouse: 'Clubhouse',
-    DefectDojo: 'DefectDojo',
-    PivotalTracker: 'PivotalTracker',
-    Jira: 'Jira',
-    FogBugz: 'FogBugz',
-    GitHub: 'GitHub',
-    PagerDuty: 'PagerDuty',
-    Kafka: 'Kafka',
-    Kenna: 'Kenna',
-    Redmine: 'Redmine',
-    ServiceNow: 'ServiceNow',
-    Tfs: 'TFS',
-    Unfuddle: 'Unfuddle',
-    YouTrack: 'YouTrack',
-    Freshservice: 'Freshservice',
-    Splunk: 'Splunk',
-    JazzTeam: 'JazzTeam',
-    ServiceNowVrm: 'ServiceNowVRM',
-    Asana: 'Asana',
-    Trello: 'Trello',
-    Hashicorp: 'Hashicorp',
-    CyberArk: 'CyberArk',
-    AzureKeyVault: 'AzureKeyVault',
-    GitLab: 'GitLab'
-} as const;
-export type ClubhouseIntegrationInfoModelTypeEnum = typeof ClubhouseIntegrationInfoModelTypeEnum[keyof typeof ClubhouseIntegrationInfoModelTypeEnum];
-
+* @export
+* @enum {string}
+*/
+export enum ClubhouseIntegrationInfoModelTypeEnum {
+    NetsparkerEnterprise = 'NetsparkerEnterprise',
+    Webhook = 'Webhook',
+    Zapier = 'Zapier',
+    Slack = 'Slack',
+    Mattermost = 'Mattermost',
+    MicrosoftTeams = 'MicrosoftTeams',
+    AzureDevOps = 'AzureDevOps',
+    Bitbucket = 'Bitbucket',
+    Bugzilla = 'Bugzilla',
+    Clubhouse = 'Clubhouse',
+    DefectDojo = 'DefectDojo',
+    PivotalTracker = 'PivotalTracker',
+    Jira = 'Jira',
+    FogBugz = 'FogBugz',
+    GitHub = 'GitHub',
+    PagerDuty = 'PagerDuty',
+    Kafka = 'Kafka',
+    Kenna = 'Kenna',
+    Redmine = 'Redmine',
+    ServiceNow = 'ServiceNow',
+    Tfs = 'TFS',
+    Unfuddle = 'Unfuddle',
+    YouTrack = 'YouTrack',
+    Freshservice = 'Freshservice',
+    Splunk = 'Splunk',
+    JazzTeam = 'JazzTeam',
+    ServiceNowVrm = 'ServiceNowVRM',
+    Asana = 'Asana',
+    Trello = 'Trello',
+    Hashicorp = 'Hashicorp',
+    CyberArk = 'CyberArk',
+    AzureKeyVault = 'AzureKeyVault',
+    GitLab = 'GitLab'
+}
 /**
- * @export
- */
-export const ClubhouseIntegrationInfoModelTemplateTypeEnum = {
-    Standard: 'Standard',
-    Detailed: 'Detailed'
-} as const;
-export type ClubhouseIntegrationInfoModelTemplateTypeEnum = typeof ClubhouseIntegrationInfoModelTemplateTypeEnum[keyof typeof ClubhouseIntegrationInfoModelTemplateTypeEnum];
+* @export
+* @enum {string}
+*/
+export enum ClubhouseIntegrationInfoModelTemplateTypeEnum {
+    Standard = 'Standard',
+    Detailed = 'Detailed'
+}
 
 
 /**

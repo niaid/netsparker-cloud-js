@@ -16,17 +16,19 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AgentListApiModelToJSON = exports.AgentListApiModelFromJSONTyped = exports.AgentListApiModelFromJSON = exports.instanceOfAgentListApiModel = exports.AgentListApiModelStateEnum = void 0;
 const runtime_1 = require("../runtime");
 /**
- * @export
- */
-exports.AgentListApiModelStateEnum = {
-    Launching: 'Launching',
-    Waiting: 'Waiting',
-    Scanning: 'Scanning',
-    Terminated: 'Terminated',
-    NotAvailable: 'NotAvailable',
-    Disabled: 'Disabled',
-    Updating: 'Updating'
-};
+* @export
+* @enum {string}
+*/
+var AgentListApiModelStateEnum;
+(function (AgentListApiModelStateEnum) {
+    AgentListApiModelStateEnum["Launching"] = "Launching";
+    AgentListApiModelStateEnum["Waiting"] = "Waiting";
+    AgentListApiModelStateEnum["Scanning"] = "Scanning";
+    AgentListApiModelStateEnum["Terminated"] = "Terminated";
+    AgentListApiModelStateEnum["NotAvailable"] = "NotAvailable";
+    AgentListApiModelStateEnum["Disabled"] = "Disabled";
+    AgentListApiModelStateEnum["Updating"] = "Updating";
+})(AgentListApiModelStateEnum = exports.AgentListApiModelStateEnum || (exports.AgentListApiModelStateEnum = {}));
 /**
  * Check if a given object implements the AgentListApiModel interface.
  */

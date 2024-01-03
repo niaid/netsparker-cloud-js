@@ -42,16 +42,16 @@ export interface IntegrationCustomFieldVm {
     inputType?: IntegrationCustomFieldVmInputTypeEnum;
 }
 /**
- * @export
- */
-export declare const IntegrationCustomFieldVmInputTypeEnum: {
-    readonly Text: "Text";
-    readonly Password: "Password";
-    readonly Textarea: "Textarea";
-    readonly FileUpload: "FileUpload";
-    readonly Complex: "Complex";
-};
-export type IntegrationCustomFieldVmInputTypeEnum = typeof IntegrationCustomFieldVmInputTypeEnum[keyof typeof IntegrationCustomFieldVmInputTypeEnum];
+* @export
+* @enum {string}
+*/
+export declare enum IntegrationCustomFieldVmInputTypeEnum {
+    Text = "Text",
+    Password = "Password",
+    Textarea = "Textarea",
+    FileUpload = "FileUpload",
+    Complex = "Complex"
+}
 /**
  * Check if a given object implements the IntegrationCustomFieldVm interface.
  */

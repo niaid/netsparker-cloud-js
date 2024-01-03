@@ -154,55 +154,53 @@ export interface DefectDojoIntegrationInfoModel {
     integrationWizardResultModel?: IntegrationWizardResultModel;
 }
 
-
 /**
- * @export
- */
-export const DefectDojoIntegrationInfoModelTypeEnum = {
-    NetsparkerEnterprise: 'NetsparkerEnterprise',
-    Webhook: 'Webhook',
-    Zapier: 'Zapier',
-    Slack: 'Slack',
-    Mattermost: 'Mattermost',
-    MicrosoftTeams: 'MicrosoftTeams',
-    AzureDevOps: 'AzureDevOps',
-    Bitbucket: 'Bitbucket',
-    Bugzilla: 'Bugzilla',
-    Clubhouse: 'Clubhouse',
-    DefectDojo: 'DefectDojo',
-    PivotalTracker: 'PivotalTracker',
-    Jira: 'Jira',
-    FogBugz: 'FogBugz',
-    GitHub: 'GitHub',
-    PagerDuty: 'PagerDuty',
-    Kafka: 'Kafka',
-    Kenna: 'Kenna',
-    Redmine: 'Redmine',
-    ServiceNow: 'ServiceNow',
-    Tfs: 'TFS',
-    Unfuddle: 'Unfuddle',
-    YouTrack: 'YouTrack',
-    Freshservice: 'Freshservice',
-    Splunk: 'Splunk',
-    JazzTeam: 'JazzTeam',
-    ServiceNowVrm: 'ServiceNowVRM',
-    Asana: 'Asana',
-    Trello: 'Trello',
-    Hashicorp: 'Hashicorp',
-    CyberArk: 'CyberArk',
-    AzureKeyVault: 'AzureKeyVault',
-    GitLab: 'GitLab'
-} as const;
-export type DefectDojoIntegrationInfoModelTypeEnum = typeof DefectDojoIntegrationInfoModelTypeEnum[keyof typeof DefectDojoIntegrationInfoModelTypeEnum];
-
+* @export
+* @enum {string}
+*/
+export enum DefectDojoIntegrationInfoModelTypeEnum {
+    NetsparkerEnterprise = 'NetsparkerEnterprise',
+    Webhook = 'Webhook',
+    Zapier = 'Zapier',
+    Slack = 'Slack',
+    Mattermost = 'Mattermost',
+    MicrosoftTeams = 'MicrosoftTeams',
+    AzureDevOps = 'AzureDevOps',
+    Bitbucket = 'Bitbucket',
+    Bugzilla = 'Bugzilla',
+    Clubhouse = 'Clubhouse',
+    DefectDojo = 'DefectDojo',
+    PivotalTracker = 'PivotalTracker',
+    Jira = 'Jira',
+    FogBugz = 'FogBugz',
+    GitHub = 'GitHub',
+    PagerDuty = 'PagerDuty',
+    Kafka = 'Kafka',
+    Kenna = 'Kenna',
+    Redmine = 'Redmine',
+    ServiceNow = 'ServiceNow',
+    Tfs = 'TFS',
+    Unfuddle = 'Unfuddle',
+    YouTrack = 'YouTrack',
+    Freshservice = 'Freshservice',
+    Splunk = 'Splunk',
+    JazzTeam = 'JazzTeam',
+    ServiceNowVrm = 'ServiceNowVRM',
+    Asana = 'Asana',
+    Trello = 'Trello',
+    Hashicorp = 'Hashicorp',
+    CyberArk = 'CyberArk',
+    AzureKeyVault = 'AzureKeyVault',
+    GitLab = 'GitLab'
+}
 /**
- * @export
- */
-export const DefectDojoIntegrationInfoModelTemplateTypeEnum = {
-    Standard: 'Standard',
-    Detailed: 'Detailed'
-} as const;
-export type DefectDojoIntegrationInfoModelTemplateTypeEnum = typeof DefectDojoIntegrationInfoModelTemplateTypeEnum[keyof typeof DefectDojoIntegrationInfoModelTemplateTypeEnum];
+* @export
+* @enum {string}
+*/
+export enum DefectDojoIntegrationInfoModelTemplateTypeEnum {
+    Standard = 'Standard',
+    Detailed = 'Detailed'
+}
 
 
 /**

@@ -45,24 +45,23 @@ export interface ApiScanStatusModel {
     state?: ApiScanStatusModelStateEnum;
 }
 
-
 /**
- * @export
- */
-export const ApiScanStatusModelStateEnum = {
-    Queued: 'Queued',
-    Scanning: 'Scanning',
-    Archiving: 'Archiving',
-    Complete: 'Complete',
-    Failed: 'Failed',
-    Cancelled: 'Cancelled',
-    Delayed: 'Delayed',
-    Pausing: 'Pausing',
-    Paused: 'Paused',
-    Resuming: 'Resuming',
-    AsyncArchiving: 'AsyncArchiving'
-} as const;
-export type ApiScanStatusModelStateEnum = typeof ApiScanStatusModelStateEnum[keyof typeof ApiScanStatusModelStateEnum];
+* @export
+* @enum {string}
+*/
+export enum ApiScanStatusModelStateEnum {
+    Queued = 'Queued',
+    Scanning = 'Scanning',
+    Archiving = 'Archiving',
+    Complete = 'Complete',
+    Failed = 'Failed',
+    Cancelled = 'Cancelled',
+    Delayed = 'Delayed',
+    Pausing = 'Pausing',
+    Paused = 'Paused',
+    Resuming = 'Resuming',
+    AsyncArchiving = 'AsyncArchiving'
+}
 
 
 /**

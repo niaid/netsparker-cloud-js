@@ -33,14 +33,13 @@ export interface DeleteDiscoveryConnectionModel {
     type?: DeleteDiscoveryConnectionModelTypeEnum;
 }
 
-
 /**
- * @export
- */
-export const DeleteDiscoveryConnectionModelTypeEnum = {
-    Aws: 'Aws'
-} as const;
-export type DeleteDiscoveryConnectionModelTypeEnum = typeof DeleteDiscoveryConnectionModelTypeEnum[keyof typeof DeleteDiscoveryConnectionModelTypeEnum];
+* @export
+* @enum {string}
+*/
+export enum DeleteDiscoveryConnectionModelTypeEnum {
+    Aws = 'Aws'
+}
 
 
 /**

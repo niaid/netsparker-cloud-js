@@ -22,14 +22,14 @@ import {
     TechnologyListApiResultToJSON,
 } from '../models/index';
 
-export interface TechnologiesListRequest {
+export interface TechnologiesApiTechnologiesListRequest {
     webSiteName?: string;
     technologyName?: string;
     page?: number;
     pageSize?: number;
 }
 
-export interface TechnologiesOutofdateTechnologiesRequest {
+export interface TechnologiesApiTechnologiesOutofdateTechnologiesRequest {
     webSiteName?: string;
     technologyName?: string;
     page?: number;
@@ -44,7 +44,7 @@ export class TechnologiesApi extends runtime.BaseAPI {
     /**
      * Gets the list of technologies that currently in use.
      */
-    async technologiesListRaw(requestParameters: TechnologiesListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TechnologyListApiResult>> {
+    async technologiesListRaw(requestParameters: TechnologiesApiTechnologiesListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TechnologyListApiResult>> {
         const queryParameters: any = {};
 
         if (requestParameters.webSiteName !== undefined) {
@@ -78,7 +78,7 @@ export class TechnologiesApi extends runtime.BaseAPI {
     /**
      * Gets the list of technologies that currently in use.
      */
-    async technologiesList(requestParameters: TechnologiesListRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TechnologyListApiResult> {
+    async technologiesList(requestParameters: TechnologiesApiTechnologiesListRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TechnologyListApiResult> {
         const response = await this.technologiesListRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -86,7 +86,7 @@ export class TechnologiesApi extends runtime.BaseAPI {
     /**
      * Gets the list of out-of-date technologies that currently in use.
      */
-    async technologiesOutofdateTechnologiesRaw(requestParameters: TechnologiesOutofdateTechnologiesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TechnologyListApiResult>> {
+    async technologiesOutofdateTechnologiesRaw(requestParameters: TechnologiesApiTechnologiesOutofdateTechnologiesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TechnologyListApiResult>> {
         const queryParameters: any = {};
 
         if (requestParameters.webSiteName !== undefined) {
@@ -120,7 +120,7 @@ export class TechnologiesApi extends runtime.BaseAPI {
     /**
      * Gets the list of out-of-date technologies that currently in use.
      */
-    async technologiesOutofdateTechnologies(requestParameters: TechnologiesOutofdateTechnologiesRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TechnologyListApiResult> {
+    async technologiesOutofdateTechnologies(requestParameters: TechnologiesApiTechnologiesOutofdateTechnologiesRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TechnologyListApiResult> {
         const response = await this.technologiesOutofdateTechnologiesRaw(requestParameters, initOverrides);
         return await response.value();
     }

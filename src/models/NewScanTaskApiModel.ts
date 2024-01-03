@@ -386,65 +386,60 @@ export interface NewScanTaskApiModel {
     comments?: string;
 }
 
-
 /**
- * @export
- */
-export const NewScanTaskApiModelCreateTypeEnum = {
-    Website: 'Website',
-    WebsiteGroup: 'WebsiteGroup'
-} as const;
-export type NewScanTaskApiModelCreateTypeEnum = typeof NewScanTaskApiModelCreateTypeEnum[keyof typeof NewScanTaskApiModelCreateTypeEnum];
-
+* @export
+* @enum {string}
+*/
+export enum NewScanTaskApiModelCreateTypeEnum {
+    Website = 'Website',
+    WebsiteGroup = 'WebsiteGroup'
+}
 /**
- * @export
- */
-export const NewScanTaskApiModelDisallowedHttpMethodsEnum = {
-    Get: 'GET',
-    Post: 'POST',
-    Connect: 'CONNECT',
-    Head: 'HEAD',
-    Trace: 'TRACE',
-    Debug: 'DEBUG',
-    Track: 'TRACK',
-    Put: 'PUT',
-    Options: 'OPTIONS',
-    Delete: 'DELETE',
-    Link: 'LINK',
-    Unlink: 'UNLINK',
-    Patch: 'PATCH'
-} as const;
-export type NewScanTaskApiModelDisallowedHttpMethodsEnum = typeof NewScanTaskApiModelDisallowedHttpMethodsEnum[keyof typeof NewScanTaskApiModelDisallowedHttpMethodsEnum];
-
+* @export
+* @enum {string}
+*/
+export enum NewScanTaskApiModelDisallowedHttpMethodsEnum {
+    Get = 'GET',
+    Post = 'POST',
+    Connect = 'CONNECT',
+    Head = 'HEAD',
+    Trace = 'TRACE',
+    Debug = 'DEBUG',
+    Track = 'TRACK',
+    Put = 'PUT',
+    Options = 'OPTIONS',
+    Delete = 'DELETE',
+    Link = 'LINK',
+    Unlink = 'UNLINK',
+    Patch = 'PATCH'
+}
 /**
- * @export
- */
-export const NewScanTaskApiModelAuthenticationProfileOptionEnum = {
-    DontUse: 'DontUse',
-    UseMatchedProfile: 'UseMatchedProfile',
-    SelectedProfile: 'SelectedProfile'
-} as const;
-export type NewScanTaskApiModelAuthenticationProfileOptionEnum = typeof NewScanTaskApiModelAuthenticationProfileOptionEnum[keyof typeof NewScanTaskApiModelAuthenticationProfileOptionEnum];
-
+* @export
+* @enum {string}
+*/
+export enum NewScanTaskApiModelAuthenticationProfileOptionEnum {
+    DontUse = 'DontUse',
+    UseMatchedProfile = 'UseMatchedProfile',
+    SelectedProfile = 'SelectedProfile'
+}
 /**
- * @export
- */
-export const NewScanTaskApiModelScopeEnum = {
-    EnteredPathAndBelow: 'EnteredPathAndBelow',
-    OnlyEnteredUrl: 'OnlyEnteredUrl',
-    WholeDomain: 'WholeDomain'
-} as const;
-export type NewScanTaskApiModelScopeEnum = typeof NewScanTaskApiModelScopeEnum[keyof typeof NewScanTaskApiModelScopeEnum];
-
+* @export
+* @enum {string}
+*/
+export enum NewScanTaskApiModelScopeEnum {
+    EnteredPathAndBelow = 'EnteredPathAndBelow',
+    OnlyEnteredUrl = 'OnlyEnteredUrl',
+    WholeDomain = 'WholeDomain'
+}
 /**
- * @export
- */
-export const NewScanTaskApiModelUrlRewriteModeEnum = {
-    None: 'None',
-    Heuristic: 'Heuristic',
-    Custom: 'Custom'
-} as const;
-export type NewScanTaskApiModelUrlRewriteModeEnum = typeof NewScanTaskApiModelUrlRewriteModeEnum[keyof typeof NewScanTaskApiModelUrlRewriteModeEnum];
+* @export
+* @enum {string}
+*/
+export enum NewScanTaskApiModelUrlRewriteModeEnum {
+    None = 'None',
+    Heuristic = 'Heuristic',
+    Custom = 'Custom'
+}
 
 
 /**

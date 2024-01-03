@@ -16,23 +16,27 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.PciScanTaskViewModelToJSON = exports.PciScanTaskViewModelFromJSONTyped = exports.PciScanTaskViewModelFromJSON = exports.instanceOfPciScanTaskViewModel = exports.PciScanTaskViewModelComplianceStatusEnum = exports.PciScanTaskViewModelScanStateEnum = void 0;
 const runtime_1 = require("../runtime");
 /**
- * @export
- */
-exports.PciScanTaskViewModelScanStateEnum = {
-    New: 'New',
-    Running: 'Running',
-    Stopped: 'Stopped',
-    Deleted: 'Deleted',
-    Done: 'Done'
-};
+* @export
+* @enum {string}
+*/
+var PciScanTaskViewModelScanStateEnum;
+(function (PciScanTaskViewModelScanStateEnum) {
+    PciScanTaskViewModelScanStateEnum["New"] = "New";
+    PciScanTaskViewModelScanStateEnum["Running"] = "Running";
+    PciScanTaskViewModelScanStateEnum["Stopped"] = "Stopped";
+    PciScanTaskViewModelScanStateEnum["Deleted"] = "Deleted";
+    PciScanTaskViewModelScanStateEnum["Done"] = "Done";
+})(PciScanTaskViewModelScanStateEnum = exports.PciScanTaskViewModelScanStateEnum || (exports.PciScanTaskViewModelScanStateEnum = {}));
 /**
- * @export
- */
-exports.PciScanTaskViewModelComplianceStatusEnum = {
-    Scanning: 'Scanning',
-    Passed: 'Passed',
-    Failed: 'Failed'
-};
+* @export
+* @enum {string}
+*/
+var PciScanTaskViewModelComplianceStatusEnum;
+(function (PciScanTaskViewModelComplianceStatusEnum) {
+    PciScanTaskViewModelComplianceStatusEnum["Scanning"] = "Scanning";
+    PciScanTaskViewModelComplianceStatusEnum["Passed"] = "Passed";
+    PciScanTaskViewModelComplianceStatusEnum["Failed"] = "Failed";
+})(PciScanTaskViewModelComplianceStatusEnum = exports.PciScanTaskViewModelComplianceStatusEnum || (exports.PciScanTaskViewModelComplianceStatusEnum = {}));
 /**
  * Check if a given object implements the PciScanTaskViewModel interface.
  */

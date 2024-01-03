@@ -123,13 +123,13 @@ export interface UpdateMemberApiModel {
     roleWebsiteGroupMappings?: Array<RoleWebsiteGroupMappingApiModel>;
 }
 /**
- * @export
- */
-export declare const UpdateMemberApiModelStateEnum: {
-    readonly Enabled: "Enabled";
-    readonly Disabled: "Disabled";
-};
-export type UpdateMemberApiModelStateEnum = typeof UpdateMemberApiModelStateEnum[keyof typeof UpdateMemberApiModelStateEnum];
+* @export
+* @enum {string}
+*/
+export declare enum UpdateMemberApiModelStateEnum {
+    Enabled = "Enabled",
+    Disabled = "Disabled"
+}
 /**
  * Check if a given object implements the UpdateMemberApiModel interface.
  */

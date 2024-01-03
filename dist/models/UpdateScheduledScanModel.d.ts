@@ -390,46 +390,46 @@ export interface UpdateScheduledScanModel {
     businessLogicRecorder?: BusinessLogicRecorderSettingModel;
 }
 /**
- * @export
- */
-export declare const UpdateScheduledScanModelScanTypeEnum: {
-    readonly Full: "Full";
-    readonly Retest: "Retest";
-    readonly Incremental: "Incremental";
-};
-export type UpdateScheduledScanModelScanTypeEnum = typeof UpdateScheduledScanModelScanTypeEnum[keyof typeof UpdateScheduledScanModelScanTypeEnum];
+* @export
+* @enum {string}
+*/
+export declare enum UpdateScheduledScanModelScanTypeEnum {
+    Full = "Full",
+    Retest = "Retest",
+    Incremental = "Incremental"
+}
 /**
- * @export
- */
-export declare const UpdateScheduledScanModelScheduleRunTypeEnum: {
-    readonly Once: "Once";
-    readonly Daily: "Daily";
-    readonly Weekly: "Weekly";
-    readonly Monthly: "Monthly";
-    readonly Quarterly: "Quarterly";
-    readonly Biannually: "Biannually";
-    readonly Yearly: "Yearly";
-    readonly Custom: "Custom";
-};
-export type UpdateScheduledScanModelScheduleRunTypeEnum = typeof UpdateScheduledScanModelScheduleRunTypeEnum[keyof typeof UpdateScheduledScanModelScheduleRunTypeEnum];
+* @export
+* @enum {string}
+*/
+export declare enum UpdateScheduledScanModelScheduleRunTypeEnum {
+    Once = "Once",
+    Daily = "Daily",
+    Weekly = "Weekly",
+    Monthly = "Monthly",
+    Quarterly = "Quarterly",
+    Biannually = "Biannually",
+    Yearly = "Yearly",
+    Custom = "Custom"
+}
 /**
- * @export
- */
-export declare const UpdateScheduledScanModelCustomScriptTemplateTypeEnum: {
-    readonly Default: "Default";
-    readonly SimpleLoginForm: "SimpleLoginForm";
-    readonly SimpleLoginFormQuery: "SimpleLoginFormQuery";
-    readonly SimpleLoginFormDelay: "SimpleLoginFormDelay";
-};
-export type UpdateScheduledScanModelCustomScriptTemplateTypeEnum = typeof UpdateScheduledScanModelCustomScriptTemplateTypeEnum[keyof typeof UpdateScheduledScanModelCustomScriptTemplateTypeEnum];
+* @export
+* @enum {string}
+*/
+export declare enum UpdateScheduledScanModelCustomScriptTemplateTypeEnum {
+    Default = "Default",
+    SimpleLoginForm = "SimpleLoginForm",
+    SimpleLoginFormQuery = "SimpleLoginFormQuery",
+    SimpleLoginFormDelay = "SimpleLoginFormDelay"
+}
 /**
- * @export
- */
-export declare const UpdateScheduledScanModelCreateTypeEnum: {
-    readonly Website: "Website";
-    readonly WebsiteGroup: "WebsiteGroup";
-};
-export type UpdateScheduledScanModelCreateTypeEnum = typeof UpdateScheduledScanModelCreateTypeEnum[keyof typeof UpdateScheduledScanModelCreateTypeEnum];
+* @export
+* @enum {string}
+*/
+export declare enum UpdateScheduledScanModelCreateTypeEnum {
+    Website = "Website",
+    WebsiteGroup = "WebsiteGroup"
+}
 /**
  * Check if a given object implements the UpdateScheduledScanModel interface.
  */

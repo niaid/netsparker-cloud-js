@@ -75,15 +75,14 @@ export interface FormAuthenticationCyberArkVaultSetting {
     agentMode?: FormAuthenticationCyberArkVaultSettingAgentModeEnum;
 }
 
-
 /**
- * @export
- */
-export const FormAuthenticationCyberArkVaultSettingAgentModeEnum = {
-    Cloud: 'Cloud',
-    Internal: 'Internal'
-} as const;
-export type FormAuthenticationCyberArkVaultSettingAgentModeEnum = typeof FormAuthenticationCyberArkVaultSettingAgentModeEnum[keyof typeof FormAuthenticationCyberArkVaultSettingAgentModeEnum];
+* @export
+* @enum {string}
+*/
+export enum FormAuthenticationCyberArkVaultSettingAgentModeEnum {
+    Cloud = 'Cloud',
+    Internal = 'Internal'
+}
 
 
 /**

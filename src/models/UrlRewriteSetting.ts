@@ -83,16 +83,15 @@ export interface UrlRewriteSetting {
     urlRewriteExcludedLinks?: Array<UrlRewriteExcludedPathModel>;
 }
 
-
 /**
- * @export
- */
-export const UrlRewriteSettingUrlRewriteModeEnum = {
-    None: 'None',
-    Heuristic: 'Heuristic',
-    Custom: 'Custom'
-} as const;
-export type UrlRewriteSettingUrlRewriteModeEnum = typeof UrlRewriteSettingUrlRewriteModeEnum[keyof typeof UrlRewriteSettingUrlRewriteModeEnum];
+* @export
+* @enum {string}
+*/
+export enum UrlRewriteSettingUrlRewriteModeEnum {
+    None = 'None',
+    Heuristic = 'Heuristic',
+    Custom = 'Custom'
+}
 
 
 /**

@@ -36,7 +36,7 @@ var __importStar = (this && this.__importStar) || function (mod) {
     return result;
 };
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ScansValidateImportedLinksFileOperationImportTypeEnum = exports.ScansReportContentFormatEnum = exports.ScansReportTypeEnum = exports.ScansReportFormatEnum = exports.ScansListByWebsiteInitiatedDateSortTypeEnum = exports.ScansListByStateScanTaskStateEnum = exports.ScansDownloadPciScanReportReportTypeEnum = exports.ScansCustomReportReportFormatEnum = exports.ScansApi = void 0;
+exports.ScansValidateImportedLinksFileImportTypeEnum = exports.ScansReportContentFormatEnum = exports.ScansReportTypeEnum = exports.ScansReportFormatEnum = exports.ScansListByWebsiteInitiatedDateSortTypeEnum = exports.ScansListByStateScanTaskStateEnum = exports.ScansDownloadPciScanReportReportTypeEnum = exports.ScansCustomReportReportFormatEnum = exports.ScansApi = void 0;
 const runtime = __importStar(require("../runtime"));
 const index_1 = require("../models/index");
 /**
@@ -48,19 +48,19 @@ class ScansApi extends runtime.BaseAPI {
      */
     async scansCancelRaw(requestParameters, initOverrides) {
         if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling scansCancel.');
+            throw new runtime.RequiredError("id", "Required parameter requestParameters.id was null or undefined when calling scansCancel.");
         }
         const queryParameters = {};
         const headerParameters = {};
-        headerParameters['Content-Type'] = 'application/json';
+        headerParameters["Content-Type"] = "application/json";
         const response = await this.request({
             path: `/api/1.0/scans/cancel`,
-            method: 'POST',
+            method: "POST",
             headers: headerParameters,
             query: queryParameters,
             body: requestParameters.id,
         }, initOverrides);
-        if (this.isJsonMime(response.headers.get('content-type'))) {
+        if (this.isJsonMime(response.headers.get("content-type"))) {
             return new runtime.JSONApiResponse(response);
         }
         else {
@@ -79,34 +79,37 @@ class ScansApi extends runtime.BaseAPI {
      */
     async scansCustomReportRaw(requestParameters, initOverrides) {
         if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling scansCustomReport.');
+            throw new runtime.RequiredError("id", "Required parameter requestParameters.id was null or undefined when calling scansCustomReport.");
         }
-        if (requestParameters.reportName === null || requestParameters.reportName === undefined) {
-            throw new runtime.RequiredError('reportName', 'Required parameter requestParameters.reportName was null or undefined when calling scansCustomReport.');
+        if (requestParameters.reportName === null ||
+            requestParameters.reportName === undefined) {
+            throw new runtime.RequiredError("reportName", "Required parameter requestParameters.reportName was null or undefined when calling scansCustomReport.");
         }
         const queryParameters = {};
         if (requestParameters.excludeIgnoreds !== undefined) {
-            queryParameters['excludeIgnoreds'] = requestParameters.excludeIgnoreds;
+            queryParameters["excludeIgnoreds"] = requestParameters.excludeIgnoreds;
         }
         if (requestParameters.id !== undefined) {
-            queryParameters['id'] = requestParameters.id;
+            queryParameters["id"] = requestParameters.id;
         }
         if (requestParameters.onlyConfirmedVulnerabilities !== undefined) {
-            queryParameters['onlyConfirmedVulnerabilities'] = requestParameters.onlyConfirmedVulnerabilities;
+            queryParameters["onlyConfirmedVulnerabilities"] =
+                requestParameters.onlyConfirmedVulnerabilities;
         }
         if (requestParameters.onlyUnconfirmedVulnerabilities !== undefined) {
-            queryParameters['onlyUnconfirmedVulnerabilities'] = requestParameters.onlyUnconfirmedVulnerabilities;
+            queryParameters["onlyUnconfirmedVulnerabilities"] =
+                requestParameters.onlyUnconfirmedVulnerabilities;
         }
         if (requestParameters.reportName !== undefined) {
-            queryParameters['reportName'] = requestParameters.reportName;
+            queryParameters["reportName"] = requestParameters.reportName;
         }
         if (requestParameters.reportFormat !== undefined) {
-            queryParameters['reportFormat'] = requestParameters.reportFormat;
+            queryParameters["reportFormat"] = requestParameters.reportFormat;
         }
         const headerParameters = {};
         const response = await this.request({
             path: `/api/1.0/scans/custom-report/`,
-            method: 'GET',
+            method: "GET",
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
@@ -123,19 +126,19 @@ class ScansApi extends runtime.BaseAPI {
      */
     async scansDeleteRaw(requestParameters, initOverrides) {
         if (requestParameters.ids === null || requestParameters.ids === undefined) {
-            throw new runtime.RequiredError('ids', 'Required parameter requestParameters.ids was null or undefined when calling scansDelete.');
+            throw new runtime.RequiredError("ids", "Required parameter requestParameters.ids was null or undefined when calling scansDelete.");
         }
         const queryParameters = {};
         const headerParameters = {};
-        headerParameters['Content-Type'] = 'application/json';
+        headerParameters["Content-Type"] = "application/json";
         const response = await this.request({
             path: `/api/1.0/scans/delete`,
-            method: 'POST',
+            method: "POST",
             headers: headerParameters,
             query: queryParameters,
             body: requestParameters.ids,
         }, initOverrides);
-        if (this.isJsonMime(response.headers.get('content-type'))) {
+        if (this.isJsonMime(response.headers.get("content-type"))) {
             return new runtime.JSONApiResponse(response);
         }
         else {
@@ -154,13 +157,13 @@ class ScansApi extends runtime.BaseAPI {
      */
     async scansDetailRaw(requestParameters, initOverrides) {
         if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling scansDetail.');
+            throw new runtime.RequiredError("id", "Required parameter requestParameters.id was null or undefined when calling scansDetail.");
         }
         const queryParameters = {};
         const headerParameters = {};
         const response = await this.request({
             path: `/api/1.0/scans/detail/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
-            method: 'GET',
+            method: "GET",
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
@@ -177,23 +180,25 @@ class ScansApi extends runtime.BaseAPI {
      * Downloads the pci scan report based on report type
      */
     async scansDownloadPciScanReportRaw(requestParameters, initOverrides) {
-        if (requestParameters.scanId === null || requestParameters.scanId === undefined) {
-            throw new runtime.RequiredError('scanId', 'Required parameter requestParameters.scanId was null or undefined when calling scansDownloadPciScanReport.');
+        if (requestParameters.scanId === null ||
+            requestParameters.scanId === undefined) {
+            throw new runtime.RequiredError("scanId", "Required parameter requestParameters.scanId was null or undefined when calling scansDownloadPciScanReport.");
         }
-        if (requestParameters.reportType === null || requestParameters.reportType === undefined) {
-            throw new runtime.RequiredError('reportType', 'Required parameter requestParameters.reportType was null or undefined when calling scansDownloadPciScanReport.');
+        if (requestParameters.reportType === null ||
+            requestParameters.reportType === undefined) {
+            throw new runtime.RequiredError("reportType", "Required parameter requestParameters.reportType was null or undefined when calling scansDownloadPciScanReport.");
         }
         const queryParameters = {};
         if (requestParameters.scanId !== undefined) {
-            queryParameters['scanId'] = requestParameters.scanId;
+            queryParameters["scanId"] = requestParameters.scanId;
         }
         if (requestParameters.reportType !== undefined) {
-            queryParameters['reportType'] = requestParameters.reportType;
+            queryParameters["reportType"] = requestParameters.reportType;
         }
         const headerParameters = {};
         const response = await this.request({
             path: `/api/1.0/scans/downloadpciscanreport`,
-            method: 'GET',
+            method: "GET",
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
@@ -210,20 +215,22 @@ class ScansApi extends runtime.BaseAPI {
      * Downloads the scan file as zip
      */
     async scansDownloadScanFileRaw(requestParameters, initOverrides) {
-        if (requestParameters.scanId === null || requestParameters.scanId === undefined) {
-            throw new runtime.RequiredError('scanId', 'Required parameter requestParameters.scanId was null or undefined when calling scansDownloadScanFile.');
+        if (requestParameters.scanId === null ||
+            requestParameters.scanId === undefined) {
+            throw new runtime.RequiredError("scanId", "Required parameter requestParameters.scanId was null or undefined when calling scansDownloadScanFile.");
         }
         const queryParameters = {};
         if (requestParameters.scanId !== undefined) {
-            queryParameters['scanId'] = requestParameters.scanId;
+            queryParameters["scanId"] = requestParameters.scanId;
         }
         if (requestParameters.isWindowsCompatible !== undefined) {
-            queryParameters['isWindowsCompatible'] = requestParameters.isWindowsCompatible;
+            queryParameters["isWindowsCompatible"] =
+                requestParameters.isWindowsCompatible;
         }
         const headerParameters = {};
         const response = await this.request({
             path: `/api/1.0/scans/downloadscanfile`,
-            method: 'GET',
+            method: "GET",
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
@@ -240,17 +247,18 @@ class ScansApi extends runtime.BaseAPI {
      * Downloads the scan file as zip
      */
     async scansDownloadScanFileCheckRaw(requestParameters, initOverrides) {
-        if (requestParameters.scanId === null || requestParameters.scanId === undefined) {
-            throw new runtime.RequiredError('scanId', 'Required parameter requestParameters.scanId was null or undefined when calling scansDownloadScanFileCheck.');
+        if (requestParameters.scanId === null ||
+            requestParameters.scanId === undefined) {
+            throw new runtime.RequiredError("scanId", "Required parameter requestParameters.scanId was null or undefined when calling scansDownloadScanFileCheck.");
         }
         const queryParameters = {};
         if (requestParameters.scanId !== undefined) {
-            queryParameters['scanId'] = requestParameters.scanId;
+            queryParameters["scanId"] = requestParameters.scanId;
         }
         const headerParameters = {};
         const response = await this.request({
             path: `/api/1.0/scans/downloadscanfilecheck`,
-            method: 'GET',
+            method: "GET",
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
@@ -267,15 +275,16 @@ class ScansApi extends runtime.BaseAPI {
      * Launches an incremental scan based on the provided base scan identifier.
      */
     async scansIncrementalRaw(requestParameters, initOverrides) {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model', 'Required parameter requestParameters.model was null or undefined when calling scansIncremental.');
+        if (requestParameters.model === null ||
+            requestParameters.model === undefined) {
+            throw new runtime.RequiredError("model", "Required parameter requestParameters.model was null or undefined when calling scansIncremental.");
         }
         const queryParameters = {};
         const headerParameters = {};
-        headerParameters['Content-Type'] = 'application/json';
+        headerParameters["Content-Type"] = "application/json";
         const response = await this.request({
             path: `/api/1.0/scans/incremental`,
-            method: 'POST',
+            method: "POST",
             headers: headerParameters,
             query: queryParameters,
             body: (0, index_1.IncrementalApiModelToJSON)(requestParameters.model),
@@ -295,15 +304,15 @@ class ScansApi extends runtime.BaseAPI {
     async scansListRaw(requestParameters, initOverrides) {
         const queryParameters = {};
         if (requestParameters.page !== undefined) {
-            queryParameters['page'] = requestParameters.page;
+            queryParameters["page"] = requestParameters.page;
         }
         if (requestParameters.pageSize !== undefined) {
-            queryParameters['pageSize'] = requestParameters.pageSize;
+            queryParameters["pageSize"] = requestParameters.pageSize;
         }
         const headerParameters = {};
         const response = await this.request({
             path: `/api/1.0/scans/list`,
-            method: 'GET',
+            method: "GET",
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
@@ -320,32 +329,34 @@ class ScansApi extends runtime.BaseAPI {
      * Gets the list of scans by state
      */
     async scansListByStateRaw(requestParameters, initOverrides) {
-        if (requestParameters.scanTaskState === null || requestParameters.scanTaskState === undefined) {
-            throw new runtime.RequiredError('scanTaskState', 'Required parameter requestParameters.scanTaskState was null or undefined when calling scansListByState.');
+        if (requestParameters.scanTaskState === null ||
+            requestParameters.scanTaskState === undefined) {
+            throw new runtime.RequiredError("scanTaskState", "Required parameter requestParameters.scanTaskState was null or undefined when calling scansListByState.");
         }
         const queryParameters = {};
         if (requestParameters.scanTaskState !== undefined) {
-            queryParameters['scanTaskState'] = requestParameters.scanTaskState;
+            queryParameters["scanTaskState"] = requestParameters.scanTaskState;
         }
         if (requestParameters.targetUrlCriteria !== undefined) {
-            queryParameters['targetUrlCriteria'] = requestParameters.targetUrlCriteria;
+            queryParameters["targetUrlCriteria"] =
+                requestParameters.targetUrlCriteria;
         }
         if (requestParameters.page !== undefined) {
-            queryParameters['page'] = requestParameters.page;
+            queryParameters["page"] = requestParameters.page;
         }
         if (requestParameters.pageSize !== undefined) {
-            queryParameters['pageSize'] = requestParameters.pageSize;
+            queryParameters["pageSize"] = requestParameters.pageSize;
         }
         if (requestParameters.startDate !== undefined) {
-            queryParameters['startDate'] = requestParameters.startDate.toISOString();
+            queryParameters["startDate"] = requestParameters.startDate.toISOString();
         }
         if (requestParameters.endDate !== undefined) {
-            queryParameters['endDate'] = requestParameters.endDate.toISOString();
+            queryParameters["endDate"] = requestParameters.endDate.toISOString();
         }
         const headerParameters = {};
         const response = await this.request({
             path: `/api/1.0/scans/listbystate`,
-            method: 'GET',
+            method: "GET",
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
@@ -362,29 +373,31 @@ class ScansApi extends runtime.BaseAPI {
      * Gets the list of scans by stateChanged
      */
     async scansListByStateChangedRaw(requestParameters, initOverrides) {
-        if (requestParameters.startDate === null || requestParameters.startDate === undefined) {
-            throw new runtime.RequiredError('startDate', 'Required parameter requestParameters.startDate was null or undefined when calling scansListByStateChanged.');
+        if (requestParameters.startDate === null ||
+            requestParameters.startDate === undefined) {
+            throw new runtime.RequiredError("startDate", "Required parameter requestParameters.startDate was null or undefined when calling scansListByStateChanged.");
         }
-        if (requestParameters.endDate === null || requestParameters.endDate === undefined) {
-            throw new runtime.RequiredError('endDate', 'Required parameter requestParameters.endDate was null or undefined when calling scansListByStateChanged.');
+        if (requestParameters.endDate === null ||
+            requestParameters.endDate === undefined) {
+            throw new runtime.RequiredError("endDate", "Required parameter requestParameters.endDate was null or undefined when calling scansListByStateChanged.");
         }
         const queryParameters = {};
         if (requestParameters.startDate !== undefined) {
-            queryParameters['startDate'] = requestParameters.startDate.toISOString();
+            queryParameters["startDate"] = requestParameters.startDate.toISOString();
         }
         if (requestParameters.endDate !== undefined) {
-            queryParameters['endDate'] = requestParameters.endDate.toISOString();
+            queryParameters["endDate"] = requestParameters.endDate.toISOString();
         }
         if (requestParameters.page !== undefined) {
-            queryParameters['page'] = requestParameters.page;
+            queryParameters["page"] = requestParameters.page;
         }
         if (requestParameters.pageSize !== undefined) {
-            queryParameters['pageSize'] = requestParameters.pageSize;
+            queryParameters["pageSize"] = requestParameters.pageSize;
         }
         const headerParameters = {};
         const response = await this.request({
             path: `/api/1.0/scans/listbystatechanged`,
-            method: 'GET',
+            method: "GET",
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
@@ -403,24 +416,25 @@ class ScansApi extends runtime.BaseAPI {
     async scansListByWebsiteRaw(requestParameters, initOverrides) {
         const queryParameters = {};
         if (requestParameters.websiteUrl !== undefined) {
-            queryParameters['websiteUrl'] = requestParameters.websiteUrl;
+            queryParameters["websiteUrl"] = requestParameters.websiteUrl;
         }
         if (requestParameters.targetUrl !== undefined) {
-            queryParameters['targetUrl'] = requestParameters.targetUrl;
+            queryParameters["targetUrl"] = requestParameters.targetUrl;
         }
         if (requestParameters.page !== undefined) {
-            queryParameters['page'] = requestParameters.page;
+            queryParameters["page"] = requestParameters.page;
         }
         if (requestParameters.pageSize !== undefined) {
-            queryParameters['pageSize'] = requestParameters.pageSize;
+            queryParameters["pageSize"] = requestParameters.pageSize;
         }
         if (requestParameters.initiatedDateSortType !== undefined) {
-            queryParameters['initiatedDateSortType'] = requestParameters.initiatedDateSortType;
+            queryParameters["initiatedDateSortType"] =
+                requestParameters.initiatedDateSortType;
         }
         const headerParameters = {};
         const response = await this.request({
             path: `/api/1.0/scans/listbywebsite`,
-            method: 'GET',
+            method: "GET",
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
@@ -439,15 +453,15 @@ class ScansApi extends runtime.BaseAPI {
     async scansListScheduledRaw(requestParameters, initOverrides) {
         const queryParameters = {};
         if (requestParameters.page !== undefined) {
-            queryParameters['page'] = requestParameters.page;
+            queryParameters["page"] = requestParameters.page;
         }
         if (requestParameters.pageSize !== undefined) {
-            queryParameters['pageSize'] = requestParameters.pageSize;
+            queryParameters["pageSize"] = requestParameters.pageSize;
         }
         const headerParameters = {};
         const response = await this.request({
             path: `/api/1.0/scans/list-scheduled`,
-            method: 'GET',
+            method: "GET",
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
@@ -464,15 +478,16 @@ class ScansApi extends runtime.BaseAPI {
      * Launches a new scan.
      */
     async scansNewRaw(requestParameters, initOverrides) {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model', 'Required parameter requestParameters.model was null or undefined when calling scansNew.');
+        if (requestParameters.model === null ||
+            requestParameters.model === undefined) {
+            throw new runtime.RequiredError("model", "Required parameter requestParameters.model was null or undefined when calling scansNew.");
         }
         const queryParameters = {};
         const headerParameters = {};
-        headerParameters['Content-Type'] = 'application/json';
+        headerParameters["Content-Type"] = "application/json";
         const response = await this.request({
             path: `/api/1.0/scans/new`,
-            method: 'POST',
+            method: "POST",
             headers: headerParameters,
             query: queryParameters,
             body: (0, index_1.NewScanTaskApiModelToJSON)(requestParameters.model),
@@ -491,14 +506,14 @@ class ScansApi extends runtime.BaseAPI {
      */
     async scansNewFromScanRaw(requestParameters, initOverrides) {
         if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling scansNewFromScan.');
+            throw new runtime.RequiredError("id", "Required parameter requestParameters.id was null or undefined when calling scansNewFromScan.");
         }
         const queryParameters = {};
         const headerParameters = {};
-        headerParameters['Content-Type'] = 'application/json';
+        headerParameters["Content-Type"] = "application/json";
         const response = await this.request({
             path: `/api/1.0/scans/newfromscan`,
-            method: 'POST',
+            method: "POST",
             headers: headerParameters,
             query: queryParameters,
             body: requestParameters.id,
@@ -516,15 +531,16 @@ class ScansApi extends runtime.BaseAPI {
      * Launches a new group scan.
      */
     async scansNewGroupScanRaw(requestParameters, initOverrides) {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model', 'Required parameter requestParameters.model was null or undefined when calling scansNewGroupScan.');
+        if (requestParameters.model === null ||
+            requestParameters.model === undefined) {
+            throw new runtime.RequiredError("model", "Required parameter requestParameters.model was null or undefined when calling scansNewGroupScan.");
         }
         const queryParameters = {};
         const headerParameters = {};
-        headerParameters['Content-Type'] = 'application/json';
+        headerParameters["Content-Type"] = "application/json";
         const response = await this.request({
             path: `/api/1.0/scans/newgroupscan`,
-            method: 'POST',
+            method: "POST",
             headers: headerParameters,
             query: queryParameters,
             body: (0, index_1.NewGroupScanApiModelToJSON)(requestParameters.model),
@@ -542,15 +558,16 @@ class ScansApi extends runtime.BaseAPI {
      * Launches a new scan with profile id.
      */
     async scansNewWithProfileRaw(requestParameters, initOverrides) {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model', 'Required parameter requestParameters.model was null or undefined when calling scansNewWithProfile.');
+        if (requestParameters.model === null ||
+            requestParameters.model === undefined) {
+            throw new runtime.RequiredError("model", "Required parameter requestParameters.model was null or undefined when calling scansNewWithProfile.");
         }
         const queryParameters = {};
         const headerParameters = {};
-        headerParameters['Content-Type'] = 'application/json';
+        headerParameters["Content-Type"] = "application/json";
         const response = await this.request({
             path: `/api/1.0/scans/newwithprofile`,
-            method: 'POST',
+            method: "POST",
             headers: headerParameters,
             query: queryParameters,
             body: (0, index_1.NewScanTaskWithProfileApiModelToJSON)(requestParameters.model),
@@ -569,19 +586,19 @@ class ScansApi extends runtime.BaseAPI {
      */
     async scansPauseRaw(requestParameters, initOverrides) {
         if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling scansPause.');
+            throw new runtime.RequiredError("id", "Required parameter requestParameters.id was null or undefined when calling scansPause.");
         }
         const queryParameters = {};
         const headerParameters = {};
-        headerParameters['Content-Type'] = 'application/json';
+        headerParameters["Content-Type"] = "application/json";
         const response = await this.request({
             path: `/api/1.0/scans/pause`,
-            method: 'POST',
+            method: "POST",
             headers: headerParameters,
             query: queryParameters,
             body: requestParameters.id,
         }, initOverrides);
-        if (this.isJsonMime(response.headers.get('content-type'))) {
+        if (this.isJsonMime(response.headers.get("content-type"))) {
             return new runtime.JSONApiResponse(response);
         }
         else {
@@ -603,7 +620,7 @@ class ScansApi extends runtime.BaseAPI {
         const headerParameters = {};
         const response = await this.request({
             path: `/api/1.0/scans/pause-active-scans`,
-            method: 'POST',
+            method: "POST",
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
@@ -620,47 +637,54 @@ class ScansApi extends runtime.BaseAPI {
      * Returns the report of a scan in the specified format.
      */
     async scansReportRaw(requestParameters, initOverrides) {
-        if (requestParameters.format === null || requestParameters.format === undefined) {
-            throw new runtime.RequiredError('format', 'Required parameter requestParameters.format was null or undefined when calling scansReport.');
+        if (requestParameters.format === null ||
+            requestParameters.format === undefined) {
+            throw new runtime.RequiredError("format", "Required parameter requestParameters.format was null or undefined when calling scansReport.");
         }
         if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling scansReport.');
+            throw new runtime.RequiredError("id", "Required parameter requestParameters.id was null or undefined when calling scansReport.");
         }
-        if (requestParameters.type === null || requestParameters.type === undefined) {
-            throw new runtime.RequiredError('type', 'Required parameter requestParameters.type was null or undefined when calling scansReport.');
+        if (requestParameters.type === null ||
+            requestParameters.type === undefined) {
+            throw new runtime.RequiredError("type", "Required parameter requestParameters.type was null or undefined when calling scansReport.");
         }
         const queryParameters = {};
         if (requestParameters.contentFormat !== undefined) {
-            queryParameters['contentFormat'] = requestParameters.contentFormat;
+            queryParameters["contentFormat"] = requestParameters.contentFormat;
         }
         if (requestParameters.excludeResponseData !== undefined) {
-            queryParameters['excludeResponseData'] = requestParameters.excludeResponseData;
+            queryParameters["excludeResponseData"] =
+                requestParameters.excludeResponseData;
         }
         if (requestParameters.format !== undefined) {
-            queryParameters['format'] = requestParameters.format;
+            queryParameters["format"] = requestParameters.format;
         }
         if (requestParameters.id !== undefined) {
-            queryParameters['id'] = requestParameters.id;
+            queryParameters["id"] = requestParameters.id;
         }
         if (requestParameters.type !== undefined) {
-            queryParameters['type'] = requestParameters.type;
+            queryParameters["type"] = requestParameters.type;
         }
         if (requestParameters.onlyConfirmedIssues !== undefined) {
-            queryParameters['onlyConfirmedIssues'] = requestParameters.onlyConfirmedIssues;
+            queryParameters["onlyConfirmedIssues"] =
+                requestParameters.onlyConfirmedIssues;
         }
         if (requestParameters.onlyUnconfirmedIssues !== undefined) {
-            queryParameters['onlyUnconfirmedIssues'] = requestParameters.onlyUnconfirmedIssues;
+            queryParameters["onlyUnconfirmedIssues"] =
+                requestParameters.onlyUnconfirmedIssues;
         }
         if (requestParameters.excludeAddressedIssues !== undefined) {
-            queryParameters['excludeAddressedIssues'] = requestParameters.excludeAddressedIssues;
+            queryParameters["excludeAddressedIssues"] =
+                requestParameters.excludeAddressedIssues;
         }
         if (requestParameters.excludeHistoryOfIssues !== undefined) {
-            queryParameters['excludeHistoryOfIssues'] = requestParameters.excludeHistoryOfIssues;
+            queryParameters["excludeHistoryOfIssues"] =
+                requestParameters.excludeHistoryOfIssues;
         }
         const headerParameters = {};
         const response = await this.request({
             path: `/api/1.0/scans/report/`,
-            method: 'GET',
+            method: "GET",
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
@@ -678,13 +702,13 @@ class ScansApi extends runtime.BaseAPI {
      */
     async scansResultRaw(requestParameters, initOverrides) {
         if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling scansResult.');
+            throw new runtime.RequiredError("id", "Required parameter requestParameters.id was null or undefined when calling scansResult.");
         }
         const queryParameters = {};
         const headerParameters = {};
         const response = await this.request({
             path: `/api/1.0/scans/result/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
-            method: 'GET',
+            method: "GET",
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
@@ -702,19 +726,19 @@ class ScansApi extends runtime.BaseAPI {
      */
     async scansResumeRaw(requestParameters, initOverrides) {
         if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling scansResume.');
+            throw new runtime.RequiredError("id", "Required parameter requestParameters.id was null or undefined when calling scansResume.");
         }
         const queryParameters = {};
         const headerParameters = {};
-        headerParameters['Content-Type'] = 'application/json';
+        headerParameters["Content-Type"] = "application/json";
         const response = await this.request({
             path: `/api/1.0/scans/resume`,
-            method: 'POST',
+            method: "POST",
             headers: headerParameters,
             query: queryParameters,
             body: requestParameters.id,
         }, initOverrides);
-        if (this.isJsonMime(response.headers.get('content-type'))) {
+        if (this.isJsonMime(response.headers.get("content-type"))) {
             return new runtime.JSONApiResponse(response);
         }
         else {
@@ -736,7 +760,7 @@ class ScansApi extends runtime.BaseAPI {
         const headerParameters = {};
         const response = await this.request({
             path: `/api/1.0/scans/resume-paused-scans`,
-            method: 'POST',
+            method: "POST",
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
@@ -753,15 +777,16 @@ class ScansApi extends runtime.BaseAPI {
      * Launches a retest scan based on the provided base scan identifier.
      */
     async scansRetestRaw(requestParameters, initOverrides) {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model', 'Required parameter requestParameters.model was null or undefined when calling scansRetest.');
+        if (requestParameters.model === null ||
+            requestParameters.model === undefined) {
+            throw new runtime.RequiredError("model", "Required parameter requestParameters.model was null or undefined when calling scansRetest.");
         }
         const queryParameters = {};
         const headerParameters = {};
-        headerParameters['Content-Type'] = 'application/json';
+        headerParameters["Content-Type"] = "application/json";
         const response = await this.request({
             path: `/api/1.0/scans/retest`,
-            method: 'POST',
+            method: "POST",
             headers: headerParameters,
             query: queryParameters,
             body: (0, index_1.BaseScanApiModelToJSON)(requestParameters.model),
@@ -779,15 +804,16 @@ class ScansApi extends runtime.BaseAPI {
      * Schedules a scan to be launched in the future.
      */
     async scansScheduleRaw(requestParameters, initOverrides) {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model', 'Required parameter requestParameters.model was null or undefined when calling scansSchedule.');
+        if (requestParameters.model === null ||
+            requestParameters.model === undefined) {
+            throw new runtime.RequiredError("model", "Required parameter requestParameters.model was null or undefined when calling scansSchedule.");
         }
         const queryParameters = {};
         const headerParameters = {};
-        headerParameters['Content-Type'] = 'application/json';
+        headerParameters["Content-Type"] = "application/json";
         const response = await this.request({
             path: `/api/1.0/scans/schedule`,
-            method: 'POST',
+            method: "POST",
             headers: headerParameters,
             query: queryParameters,
             body: (0, index_1.NewScheduledScanApiModelToJSON)(requestParameters.model),
@@ -805,15 +831,16 @@ class ScansApi extends runtime.BaseAPI {
      * Schedules an incremental scan to be launched in the future.
      */
     async scansScheduleIncrementalRaw(requestParameters, initOverrides) {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model', 'Required parameter requestParameters.model was null or undefined when calling scansScheduleIncremental.');
+        if (requestParameters.model === null ||
+            requestParameters.model === undefined) {
+            throw new runtime.RequiredError("model", "Required parameter requestParameters.model was null or undefined when calling scansScheduleIncremental.");
         }
         const queryParameters = {};
         const headerParameters = {};
-        headerParameters['Content-Type'] = 'application/json';
+        headerParameters["Content-Type"] = "application/json";
         const response = await this.request({
             path: `/api/1.0/scans/schedule-incremental`,
-            method: 'POST',
+            method: "POST",
             headers: headerParameters,
             query: queryParameters,
             body: (0, index_1.NewScheduledIncrementalScanApiModelToJSON)(requestParameters.model),
@@ -831,15 +858,16 @@ class ScansApi extends runtime.BaseAPI {
      * Schedules a scan by a profile to be launched in the future.
      */
     async scansScheduleWithProfileRaw(requestParameters, initOverrides) {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model', 'Required parameter requestParameters.model was null or undefined when calling scansScheduleWithProfile.');
+        if (requestParameters.model === null ||
+            requestParameters.model === undefined) {
+            throw new runtime.RequiredError("model", "Required parameter requestParameters.model was null or undefined when calling scansScheduleWithProfile.");
         }
         const queryParameters = {};
         const headerParameters = {};
-        headerParameters['Content-Type'] = 'application/json';
+        headerParameters["Content-Type"] = "application/json";
         const response = await this.request({
             path: `/api/1.0/scans/schedulewithprofile`,
-            method: 'POST',
+            method: "POST",
             headers: headerParameters,
             query: queryParameters,
             body: (0, index_1.NewScheduledWithProfileApiModelToJSON)(requestParameters.model),
@@ -858,13 +886,13 @@ class ScansApi extends runtime.BaseAPI {
      */
     async scansStatusRaw(requestParameters, initOverrides) {
         if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling scansStatus.');
+            throw new runtime.RequiredError("id", "Required parameter requestParameters.id was null or undefined when calling scansStatus.");
         }
         const queryParameters = {};
         const headerParameters = {};
         const response = await this.request({
             path: `/api/1.0/scans/status/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
-            method: 'GET',
+            method: "GET",
             headers: headerParameters,
             query: queryParameters,
         }, initOverrides);
@@ -881,15 +909,16 @@ class ScansApi extends runtime.BaseAPI {
      * Tests the credentials of scan profile for specific url.
      */
     async scansTestScanProfileCredentialsRaw(requestParameters, initOverrides) {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model', 'Required parameter requestParameters.model was null or undefined when calling scansTestScanProfileCredentials.');
+        if (requestParameters.model === null ||
+            requestParameters.model === undefined) {
+            throw new runtime.RequiredError("model", "Required parameter requestParameters.model was null or undefined when calling scansTestScanProfileCredentials.");
         }
         const queryParameters = {};
         const headerParameters = {};
-        headerParameters['Content-Type'] = 'application/json';
+        headerParameters["Content-Type"] = "application/json";
         const response = await this.request({
             path: `/api/1.0/scans/test-scan-profile-credentials`,
-            method: 'POST',
+            method: "POST",
             headers: headerParameters,
             query: queryParameters,
             body: (0, index_1.TestScanProfileCredentialsRequestModelToJSON)(requestParameters.model),
@@ -908,14 +937,14 @@ class ScansApi extends runtime.BaseAPI {
      */
     async scansUnscheduleRaw(requestParameters, initOverrides) {
         if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling scansUnschedule.');
+            throw new runtime.RequiredError("id", "Required parameter requestParameters.id was null or undefined when calling scansUnschedule.");
         }
         const queryParameters = {};
         const headerParameters = {};
-        headerParameters['Content-Type'] = 'application/json';
+        headerParameters["Content-Type"] = "application/json";
         const response = await this.request({
             path: `/api/1.0/scans/unschedule`,
-            method: 'POST',
+            method: "POST",
             headers: headerParameters,
             query: queryParameters,
             body: requestParameters.id,
@@ -932,15 +961,16 @@ class ScansApi extends runtime.BaseAPI {
      * Updates a scheduled scan.
      */
     async scansUpdateScheduledRaw(requestParameters, initOverrides) {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model', 'Required parameter requestParameters.model was null or undefined when calling scansUpdateScheduled.');
+        if (requestParameters.model === null ||
+            requestParameters.model === undefined) {
+            throw new runtime.RequiredError("model", "Required parameter requestParameters.model was null or undefined when calling scansUpdateScheduled.");
         }
         const queryParameters = {};
         const headerParameters = {};
-        headerParameters['Content-Type'] = 'application/json';
+        headerParameters["Content-Type"] = "application/json";
         const response = await this.request({
             path: `/api/1.0/scans/update-scheduled`,
-            method: 'POST',
+            method: "POST",
             headers: headerParameters,
             query: queryParameters,
             body: (0, index_1.UpdateScheduledScanApiModelToJSON)(requestParameters.model),
@@ -958,15 +988,16 @@ class ScansApi extends runtime.BaseAPI {
      * Updates an incremental scheduled scan.
      */
     async scansUpdateScheduledIncrementalRaw(requestParameters, initOverrides) {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model', 'Required parameter requestParameters.model was null or undefined when calling scansUpdateScheduledIncremental.');
+        if (requestParameters.model === null ||
+            requestParameters.model === undefined) {
+            throw new runtime.RequiredError("model", "Required parameter requestParameters.model was null or undefined when calling scansUpdateScheduledIncremental.");
         }
         const queryParameters = {};
         const headerParameters = {};
-        headerParameters['Content-Type'] = 'application/json';
+        headerParameters["Content-Type"] = "application/json";
         const response = await this.request({
             path: `/api/1.0/scans/update-scheduled-incremental`,
-            method: 'POST',
+            method: "POST",
             headers: headerParameters,
             query: queryParameters,
             body: (0, index_1.UpdateScheduledIncrementalScanApiModelToJSON)(requestParameters.model),
@@ -983,24 +1014,26 @@ class ScansApi extends runtime.BaseAPI {
     /**
      */
     async scansValidateImportedLinksFileRaw(requestParameters, initOverrides) {
-        if (requestParameters.siteUrl === null || requestParameters.siteUrl === undefined) {
-            throw new runtime.RequiredError('siteUrl', 'Required parameter requestParameters.siteUrl was null or undefined when calling scansValidateImportedLinksFile.');
+        if (requestParameters.siteUrl === null ||
+            requestParameters.siteUrl === undefined) {
+            throw new runtime.RequiredError("siteUrl", "Required parameter requestParameters.siteUrl was null or undefined when calling scansValidateImportedLinksFile.");
         }
-        if (requestParameters.scansValidateImportedLinksFileRequest === null || requestParameters.scansValidateImportedLinksFileRequest === undefined) {
-            throw new runtime.RequiredError('scansValidateImportedLinksFileRequest', 'Required parameter requestParameters.scansValidateImportedLinksFileRequest was null or undefined when calling scansValidateImportedLinksFile.');
+        if (requestParameters.scansValidateImportedLinksFileRequest === null ||
+            requestParameters.scansValidateImportedLinksFileRequest === undefined) {
+            throw new runtime.RequiredError("scansValidateImportedLinksFileRequest", "Required parameter requestParameters.scansValidateImportedLinksFileRequest was null or undefined when calling scansValidateImportedLinksFile.");
         }
         const queryParameters = {};
         if (requestParameters.siteUrl !== undefined) {
-            queryParameters['siteUrl'] = requestParameters.siteUrl;
+            queryParameters["siteUrl"] = requestParameters.siteUrl;
         }
         if (requestParameters.importType !== undefined) {
-            queryParameters['importType'] = requestParameters.importType;
+            queryParameters["importType"] = requestParameters.importType;
         }
         const headerParameters = {};
-        headerParameters['Content-Type'] = 'application/form-data';
+        headerParameters["Content-Type"] = "application/form-data";
         const response = await this.request({
             path: `/api/1.0/scans/validate-imported-links-file`,
-            method: 'POST',
+            method: "POST",
             headers: headerParameters,
             query: queryParameters,
             body: (0, index_1.ScansValidateImportedLinksFileRequestToJSON)(requestParameters.scansValidateImportedLinksFileRequest),
@@ -1017,15 +1050,16 @@ class ScansApi extends runtime.BaseAPI {
      * Verifies the specified form authentication settings.
      */
     async scansVerifyFormAuthRaw(requestParameters, initOverrides) {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model', 'Required parameter requestParameters.model was null or undefined when calling scansVerifyFormAuth.');
+        if (requestParameters.model === null ||
+            requestParameters.model === undefined) {
+            throw new runtime.RequiredError("model", "Required parameter requestParameters.model was null or undefined when calling scansVerifyFormAuth.");
         }
         const queryParameters = {};
         const headerParameters = {};
-        headerParameters['Content-Type'] = 'application/json';
+        headerParameters["Content-Type"] = "application/json";
         const response = await this.request({
             path: `/api/1.0/scans/verifyformauth`,
-            method: 'POST',
+            method: "POST",
             headers: headerParameters,
             query: queryParameters,
             body: (0, index_1.FormAuthenticationVerificationApiModelToJSON)(requestParameters.model),
@@ -1043,113 +1077,129 @@ class ScansApi extends runtime.BaseAPI {
 exports.ScansApi = ScansApi;
 /**
  * @export
+ * @enum {string}
  */
-exports.ScansCustomReportReportFormatEnum = {
-    Xml: 'Xml',
-    Csv: 'Csv',
-    Pdf: 'Pdf',
-    Html: 'Html',
-    Txt: 'Txt',
-    Json: 'Json'
-};
+var ScansCustomReportReportFormatEnum;
+(function (ScansCustomReportReportFormatEnum) {
+    ScansCustomReportReportFormatEnum["Xml"] = "Xml";
+    ScansCustomReportReportFormatEnum["Csv"] = "Csv";
+    ScansCustomReportReportFormatEnum["Pdf"] = "Pdf";
+    ScansCustomReportReportFormatEnum["Html"] = "Html";
+    ScansCustomReportReportFormatEnum["Txt"] = "Txt";
+    ScansCustomReportReportFormatEnum["Json"] = "Json";
+})(ScansCustomReportReportFormatEnum = exports.ScansCustomReportReportFormatEnum || (exports.ScansCustomReportReportFormatEnum = {}));
 /**
  * @export
+ * @enum {string}
  */
-exports.ScansDownloadPciScanReportReportTypeEnum = {
-    Attestation: 'Attestation',
-    Detailed: 'Detailed',
-    Executive: 'Executive'
-};
+var ScansDownloadPciScanReportReportTypeEnum;
+(function (ScansDownloadPciScanReportReportTypeEnum) {
+    ScansDownloadPciScanReportReportTypeEnum["Attestation"] = "Attestation";
+    ScansDownloadPciScanReportReportTypeEnum["Detailed"] = "Detailed";
+    ScansDownloadPciScanReportReportTypeEnum["Executive"] = "Executive";
+})(ScansDownloadPciScanReportReportTypeEnum = exports.ScansDownloadPciScanReportReportTypeEnum || (exports.ScansDownloadPciScanReportReportTypeEnum = {}));
 /**
  * @export
+ * @enum {string}
  */
-exports.ScansListByStateScanTaskStateEnum = {
-    Queued: 'Queued',
-    Scanning: 'Scanning',
-    Archiving: 'Archiving',
-    Complete: 'Complete',
-    Failed: 'Failed',
-    Cancelled: 'Cancelled',
-    Delayed: 'Delayed',
-    Pausing: 'Pausing',
-    Paused: 'Paused',
-    Resuming: 'Resuming',
-    AsyncArchiving: 'AsyncArchiving'
-};
+var ScansListByStateScanTaskStateEnum;
+(function (ScansListByStateScanTaskStateEnum) {
+    ScansListByStateScanTaskStateEnum["Queued"] = "Queued";
+    ScansListByStateScanTaskStateEnum["Scanning"] = "Scanning";
+    ScansListByStateScanTaskStateEnum["Archiving"] = "Archiving";
+    ScansListByStateScanTaskStateEnum["Complete"] = "Complete";
+    ScansListByStateScanTaskStateEnum["Failed"] = "Failed";
+    ScansListByStateScanTaskStateEnum["Cancelled"] = "Cancelled";
+    ScansListByStateScanTaskStateEnum["Delayed"] = "Delayed";
+    ScansListByStateScanTaskStateEnum["Pausing"] = "Pausing";
+    ScansListByStateScanTaskStateEnum["Paused"] = "Paused";
+    ScansListByStateScanTaskStateEnum["Resuming"] = "Resuming";
+    ScansListByStateScanTaskStateEnum["AsyncArchiving"] = "AsyncArchiving";
+})(ScansListByStateScanTaskStateEnum = exports.ScansListByStateScanTaskStateEnum || (exports.ScansListByStateScanTaskStateEnum = {}));
 /**
  * @export
+ * @enum {string}
  */
-exports.ScansListByWebsiteInitiatedDateSortTypeEnum = {
-    Ascending: 'Ascending',
-    Descending: 'Descending'
-};
+var ScansListByWebsiteInitiatedDateSortTypeEnum;
+(function (ScansListByWebsiteInitiatedDateSortTypeEnum) {
+    ScansListByWebsiteInitiatedDateSortTypeEnum["Ascending"] = "Ascending";
+    ScansListByWebsiteInitiatedDateSortTypeEnum["Descending"] = "Descending";
+})(ScansListByWebsiteInitiatedDateSortTypeEnum = exports.ScansListByWebsiteInitiatedDateSortTypeEnum || (exports.ScansListByWebsiteInitiatedDateSortTypeEnum = {}));
 /**
  * @export
+ * @enum {string}
  */
-exports.ScansReportFormatEnum = {
-    Xml: 'Xml',
-    Csv: 'Csv',
-    Pdf: 'Pdf',
-    Html: 'Html',
-    Txt: 'Txt',
-    Json: 'Json'
-};
+var ScansReportFormatEnum;
+(function (ScansReportFormatEnum) {
+    ScansReportFormatEnum["Xml"] = "Xml";
+    ScansReportFormatEnum["Csv"] = "Csv";
+    ScansReportFormatEnum["Pdf"] = "Pdf";
+    ScansReportFormatEnum["Html"] = "Html";
+    ScansReportFormatEnum["Txt"] = "Txt";
+    ScansReportFormatEnum["Json"] = "Json";
+})(ScansReportFormatEnum = exports.ScansReportFormatEnum || (exports.ScansReportFormatEnum = {}));
 /**
  * @export
+ * @enum {string}
  */
-exports.ScansReportTypeEnum = {
-    Crawled: 'Crawled',
-    Scanned: 'Scanned',
-    Vulnerabilities: 'Vulnerabilities',
-    ScanDetail: 'ScanDetail',
-    ModSecurityWafRules: 'ModSecurityWafRules',
-    OwaspTopTen2013: 'OwaspTopTen2013',
-    HipaaCompliance: 'HIPAACompliance',
-    Pci32: 'Pci32',
-    KnowledgeBase: 'KnowledgeBase',
-    ExecutiveSummary: 'ExecutiveSummary',
-    FullScanDetail: 'FullScanDetail',
-    OwaspTopTen2017: 'OwaspTopTen2017',
-    CustomReport: 'CustomReport',
-    Iso27001Compliance: 'Iso27001Compliance',
-    F5BigIpAsmWafRules: 'F5BigIpAsmWafRules',
-    Wasc: 'WASC',
-    SansTop25: 'SansTop25',
-    Asvs40: 'Asvs40',
-    Nistsp80053: 'Nistsp80053',
-    DisaStig: 'DisaStig',
-    OwaspApiTop10: 'OwaspApiTop10',
-    OwaspTopTen2021: 'OwaspTopTen2021',
-    VulnerabilitiesPerWebsite: 'VulnerabilitiesPerWebsite',
-    OwaspApiTopTen2023: 'OwaspApiTopTen2023',
-    PciDss40: 'PciDss40'
-};
+var ScansReportTypeEnum;
+(function (ScansReportTypeEnum) {
+    ScansReportTypeEnum["Crawled"] = "Crawled";
+    ScansReportTypeEnum["Scanned"] = "Scanned";
+    ScansReportTypeEnum["Vulnerabilities"] = "Vulnerabilities";
+    ScansReportTypeEnum["ScanDetail"] = "ScanDetail";
+    ScansReportTypeEnum["ModSecurityWafRules"] = "ModSecurityWafRules";
+    ScansReportTypeEnum["OwaspTopTen2013"] = "OwaspTopTen2013";
+    ScansReportTypeEnum["HipaaCompliance"] = "HIPAACompliance";
+    ScansReportTypeEnum["Pci32"] = "Pci32";
+    ScansReportTypeEnum["KnowledgeBase"] = "KnowledgeBase";
+    ScansReportTypeEnum["ExecutiveSummary"] = "ExecutiveSummary";
+    ScansReportTypeEnum["FullScanDetail"] = "FullScanDetail";
+    ScansReportTypeEnum["OwaspTopTen2017"] = "OwaspTopTen2017";
+    ScansReportTypeEnum["CustomReport"] = "CustomReport";
+    ScansReportTypeEnum["Iso27001Compliance"] = "Iso27001Compliance";
+    ScansReportTypeEnum["F5BigIpAsmWafRules"] = "F5BigIpAsmWafRules";
+    ScansReportTypeEnum["Wasc"] = "WASC";
+    ScansReportTypeEnum["SansTop25"] = "SansTop25";
+    ScansReportTypeEnum["Asvs40"] = "Asvs40";
+    ScansReportTypeEnum["Nistsp80053"] = "Nistsp80053";
+    ScansReportTypeEnum["DisaStig"] = "DisaStig";
+    ScansReportTypeEnum["OwaspApiTop10"] = "OwaspApiTop10";
+    ScansReportTypeEnum["OwaspTopTen2021"] = "OwaspTopTen2021";
+    ScansReportTypeEnum["VulnerabilitiesPerWebsite"] = "VulnerabilitiesPerWebsite";
+    ScansReportTypeEnum["OwaspApiTopTen2023"] = "OwaspApiTopTen2023";
+    ScansReportTypeEnum["PciDss40"] = "PciDss40";
+})(ScansReportTypeEnum = exports.ScansReportTypeEnum || (exports.ScansReportTypeEnum = {}));
 /**
  * @export
+ * @enum {string}
  */
-exports.ScansReportContentFormatEnum = {
-    Html: 'Html',
-    Markdown: 'Markdown'
-};
+var ScansReportContentFormatEnum;
+(function (ScansReportContentFormatEnum) {
+    ScansReportContentFormatEnum["Html"] = "Html";
+    ScansReportContentFormatEnum["Markdown"] = "Markdown";
+})(ScansReportContentFormatEnum = exports.ScansReportContentFormatEnum || (exports.ScansReportContentFormatEnum = {}));
 /**
  * @export
+ * @enum {string}
  */
-exports.ScansValidateImportedLinksFileOperationImportTypeEnum = {
-    None: 'None',
-    Fiddler: 'Fiddler',
-    Burp: 'Burp',
-    Swagger: 'Swagger',
-    OwaspZap: 'OwaspZap',
-    AspNet: 'AspNet',
-    HttpArchive: 'HttpArchive',
-    Wadl: 'Wadl',
-    Wsdl: 'Wsdl',
-    Postman: 'Postman',
-    InvictiSessionFile: 'InvictiSessionFile',
-    CsvImporter: 'CsvImporter',
-    Iodocs: 'Iodocs',
-    WordPress: 'WordPress',
-    Raml: 'Raml',
-    GraphQl: 'GraphQl'
-};
+var ScansValidateImportedLinksFileImportTypeEnum;
+(function (ScansValidateImportedLinksFileImportTypeEnum) {
+    ScansValidateImportedLinksFileImportTypeEnum["None"] = "None";
+    ScansValidateImportedLinksFileImportTypeEnum["Fiddler"] = "Fiddler";
+    ScansValidateImportedLinksFileImportTypeEnum["Burp"] = "Burp";
+    ScansValidateImportedLinksFileImportTypeEnum["Swagger"] = "Swagger";
+    ScansValidateImportedLinksFileImportTypeEnum["OwaspZap"] = "OwaspZap";
+    ScansValidateImportedLinksFileImportTypeEnum["AspNet"] = "AspNet";
+    ScansValidateImportedLinksFileImportTypeEnum["HttpArchive"] = "HttpArchive";
+    ScansValidateImportedLinksFileImportTypeEnum["Wadl"] = "Wadl";
+    ScansValidateImportedLinksFileImportTypeEnum["Wsdl"] = "Wsdl";
+    ScansValidateImportedLinksFileImportTypeEnum["Postman"] = "Postman";
+    ScansValidateImportedLinksFileImportTypeEnum["InvictiSessionFile"] = "InvictiSessionFile";
+    ScansValidateImportedLinksFileImportTypeEnum["CsvImporter"] = "CsvImporter";
+    ScansValidateImportedLinksFileImportTypeEnum["Iodocs"] = "Iodocs";
+    ScansValidateImportedLinksFileImportTypeEnum["WordPress"] = "WordPress";
+    ScansValidateImportedLinksFileImportTypeEnum["Raml"] = "Raml";
+    ScansValidateImportedLinksFileImportTypeEnum["GraphQl"] = "GraphQl";
+})(ScansValidateImportedLinksFileImportTypeEnum = exports.ScansValidateImportedLinksFileImportTypeEnum || (exports.ScansValidateImportedLinksFileImportTypeEnum = {}));
 //# sourceMappingURL=ScansApi.js.map

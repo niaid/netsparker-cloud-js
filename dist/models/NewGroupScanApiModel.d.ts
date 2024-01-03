@@ -61,14 +61,14 @@ export interface NewGroupScanApiModel {
     tags?: Array<string>;
 }
 /**
- * @export
- */
-export declare const NewGroupScanApiModelAuthenticationProfileOptionEnum: {
-    readonly DontUse: "DontUse";
-    readonly UseMatchedProfile: "UseMatchedProfile";
-    readonly SelectedProfile: "SelectedProfile";
-};
-export type NewGroupScanApiModelAuthenticationProfileOptionEnum = typeof NewGroupScanApiModelAuthenticationProfileOptionEnum[keyof typeof NewGroupScanApiModelAuthenticationProfileOptionEnum];
+* @export
+* @enum {string}
+*/
+export declare enum NewGroupScanApiModelAuthenticationProfileOptionEnum {
+    DontUse = "DontUse",
+    UseMatchedProfile = "UseMatchedProfile",
+    SelectedProfile = "SelectedProfile"
+}
 /**
  * Check if a given object implements the NewGroupScanApiModel interface.
  */

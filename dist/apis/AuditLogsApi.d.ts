@@ -10,14 +10,14 @@
  * Do not edit the class manually.
  */
 import * as runtime from '../runtime';
-export interface AuditLogsExportRequest {
+export interface AuditLogsApiAuditLogsExportRequest {
     page?: number;
     pageSize?: number;
     csvSeparator?: AuditLogsExportCsvSeparatorEnum;
     startDate?: Date;
     endDate?: Date;
 }
-export interface AuditLogsListRequest {
+export interface AuditLogsApiAuditLogsListRequest {
     page?: number;
     pageSize?: number;
     startDate?: Date;
@@ -30,27 +30,27 @@ export declare class AuditLogsApi extends runtime.BaseAPI {
     /**
      * Returns the selected log type in the csv format as a downloadable file.
      */
-    auditLogsExportRaw(requestParameters: AuditLogsExportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    auditLogsExportRaw(requestParameters: AuditLogsApiAuditLogsExportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Returns the selected log type in the csv format as a downloadable file.
      */
-    auditLogsExport(requestParameters?: AuditLogsExportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    auditLogsExport(requestParameters?: AuditLogsApiAuditLogsExportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Gets the list of audit logs.
      */
-    auditLogsListRaw(requestParameters: AuditLogsListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    auditLogsListRaw(requestParameters: AuditLogsApiAuditLogsListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Gets the list of audit logs.
      */
-    auditLogsList(requestParameters?: AuditLogsListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    auditLogsList(requestParameters?: AuditLogsApiAuditLogsListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
 }
 /**
- * @export
- */
-export declare const AuditLogsExportCsvSeparatorEnum: {
-    readonly Comma: "Comma";
-    readonly Semicolon: "Semicolon";
-    readonly Pipe: "Pipe";
-    readonly Tab: "Tab";
-};
-export type AuditLogsExportCsvSeparatorEnum = typeof AuditLogsExportCsvSeparatorEnum[keyof typeof AuditLogsExportCsvSeparatorEnum];
+  * @export
+  * @enum {string}
+  */
+export declare enum AuditLogsExportCsvSeparatorEnum {
+    Comma = "Comma",
+    Semicolon = "Semicolon",
+    Pipe = "Pipe",
+    Tab = "Tab"
+}

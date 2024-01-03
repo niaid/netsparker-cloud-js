@@ -94,24 +94,22 @@ export interface FormAuthenticationHashicorpVaultSetting {
     namespace?: string;
 }
 
-
 /**
- * @export
- */
-export const FormAuthenticationHashicorpVaultSettingAgentModeEnum = {
-    Cloud: 'Cloud',
-    Internal: 'Internal'
-} as const;
-export type FormAuthenticationHashicorpVaultSettingAgentModeEnum = typeof FormAuthenticationHashicorpVaultSettingAgentModeEnum[keyof typeof FormAuthenticationHashicorpVaultSettingAgentModeEnum];
-
+* @export
+* @enum {string}
+*/
+export enum FormAuthenticationHashicorpVaultSettingAgentModeEnum {
+    Cloud = 'Cloud',
+    Internal = 'Internal'
+}
 /**
- * @export
- */
-export const FormAuthenticationHashicorpVaultSettingAuthTypeEnum = {
-    Token: 'Token',
-    TlsCert: 'TLSCert'
-} as const;
-export type FormAuthenticationHashicorpVaultSettingAuthTypeEnum = typeof FormAuthenticationHashicorpVaultSettingAuthTypeEnum[keyof typeof FormAuthenticationHashicorpVaultSettingAuthTypeEnum];
+* @export
+* @enum {string}
+*/
+export enum FormAuthenticationHashicorpVaultSettingAuthTypeEnum {
+    Token = 'Token',
+    TlsCert = 'TLSCert'
+}
 
 
 /**

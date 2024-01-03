@@ -11,13 +11,13 @@
  */
 import * as runtime from '../runtime';
 import type { CustomScriptRequestApiModel, CustomScriptUpdateRequestApiModel } from '../models/index';
-export interface CustomScriptDeleteRequest {
+export interface CustomScriptApiCustomScriptDeleteRequest {
     ids: Array<string>;
 }
-export interface CustomScriptNewRequest {
+export interface CustomScriptApiCustomScriptNewRequest {
     model: Array<CustomScriptRequestApiModel>;
 }
-export interface CustomScriptUpdateRequest {
+export interface CustomScriptApiCustomScriptUpdateRequest {
     model: Array<CustomScriptUpdateRequestApiModel>;
 }
 /**
@@ -27,11 +27,11 @@ export declare class CustomScriptApi extends runtime.BaseAPI {
     /**
      * Deletes Custom Scripts
      */
-    customScriptDeleteRaw(requestParameters: CustomScriptDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>>;
+    customScriptDeleteRaw(requestParameters: CustomScriptApiCustomScriptDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>>;
     /**
      * Deletes Custom Scripts
      */
-    customScriptDelete(requestParameters: CustomScriptDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object>;
+    customScriptDelete(requestParameters: CustomScriptApiCustomScriptDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object>;
     /**
      * Lists Custom Scripts
      */
@@ -43,17 +43,17 @@ export declare class CustomScriptApi extends runtime.BaseAPI {
     /**
      * Creates Custom Scripts
      */
-    customScriptNewRaw(requestParameters: CustomScriptNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>>;
+    customScriptNewRaw(requestParameters: CustomScriptApiCustomScriptNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>>;
     /**
      * Creates Custom Scripts
      */
-    customScriptNew(requestParameters: CustomScriptNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object>;
+    customScriptNew(requestParameters: CustomScriptApiCustomScriptNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object>;
     /**
      * Updates Custom Scripts
      */
-    customScriptUpdateRaw(requestParameters: CustomScriptUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>>;
+    customScriptUpdateRaw(requestParameters: CustomScriptApiCustomScriptUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>>;
     /**
      * Updates Custom Scripts
      */
-    customScriptUpdate(requestParameters: CustomScriptUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object>;
+    customScriptUpdate(requestParameters: CustomScriptApiCustomScriptUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object>;
 }

@@ -16,36 +16,38 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.IssueRequestContentParametersApiModelToJSON = exports.IssueRequestContentParametersApiModelFromJSONTyped = exports.IssueRequestContentParametersApiModelFromJSON = exports.instanceOfIssueRequestContentParametersApiModel = exports.IssueRequestContentParametersApiModelInputTypeEnum = void 0;
 const runtime_1 = require("../runtime");
 /**
- * @export
- */
-exports.IssueRequestContentParametersApiModelInputTypeEnum = {
-    Hidden: 'Hidden',
-    Text: 'Text',
-    Textarea: 'Textarea',
-    Submit: 'Submit',
-    Reset: 'Reset',
-    Button: 'Button',
-    Image: 'Image',
-    File: 'File',
-    Radio: 'Radio',
-    Select: 'Select',
-    Checkbox: 'Checkbox',
-    Password: 'Password',
-    Color: 'Color',
-    Date: 'Date',
-    Datetime: 'Datetime',
-    DatetimeLocal: 'DatetimeLocal',
-    Email: 'Email',
-    Month: 'Month',
-    Number: 'Number',
-    Range: 'Range',
-    Search: 'Search',
-    Tel: 'Tel',
-    Time: 'Time',
-    Url: 'Url',
-    Week: 'Week',
-    Output: 'Output'
-};
+* @export
+* @enum {string}
+*/
+var IssueRequestContentParametersApiModelInputTypeEnum;
+(function (IssueRequestContentParametersApiModelInputTypeEnum) {
+    IssueRequestContentParametersApiModelInputTypeEnum["Hidden"] = "Hidden";
+    IssueRequestContentParametersApiModelInputTypeEnum["Text"] = "Text";
+    IssueRequestContentParametersApiModelInputTypeEnum["Textarea"] = "Textarea";
+    IssueRequestContentParametersApiModelInputTypeEnum["Submit"] = "Submit";
+    IssueRequestContentParametersApiModelInputTypeEnum["Reset"] = "Reset";
+    IssueRequestContentParametersApiModelInputTypeEnum["Button"] = "Button";
+    IssueRequestContentParametersApiModelInputTypeEnum["Image"] = "Image";
+    IssueRequestContentParametersApiModelInputTypeEnum["File"] = "File";
+    IssueRequestContentParametersApiModelInputTypeEnum["Radio"] = "Radio";
+    IssueRequestContentParametersApiModelInputTypeEnum["Select"] = "Select";
+    IssueRequestContentParametersApiModelInputTypeEnum["Checkbox"] = "Checkbox";
+    IssueRequestContentParametersApiModelInputTypeEnum["Password"] = "Password";
+    IssueRequestContentParametersApiModelInputTypeEnum["Color"] = "Color";
+    IssueRequestContentParametersApiModelInputTypeEnum["Date"] = "Date";
+    IssueRequestContentParametersApiModelInputTypeEnum["Datetime"] = "Datetime";
+    IssueRequestContentParametersApiModelInputTypeEnum["DatetimeLocal"] = "DatetimeLocal";
+    IssueRequestContentParametersApiModelInputTypeEnum["Email"] = "Email";
+    IssueRequestContentParametersApiModelInputTypeEnum["Month"] = "Month";
+    IssueRequestContentParametersApiModelInputTypeEnum["Number"] = "Number";
+    IssueRequestContentParametersApiModelInputTypeEnum["Range"] = "Range";
+    IssueRequestContentParametersApiModelInputTypeEnum["Search"] = "Search";
+    IssueRequestContentParametersApiModelInputTypeEnum["Tel"] = "Tel";
+    IssueRequestContentParametersApiModelInputTypeEnum["Time"] = "Time";
+    IssueRequestContentParametersApiModelInputTypeEnum["Url"] = "Url";
+    IssueRequestContentParametersApiModelInputTypeEnum["Week"] = "Week";
+    IssueRequestContentParametersApiModelInputTypeEnum["Output"] = "Output";
+})(IssueRequestContentParametersApiModelInputTypeEnum = exports.IssueRequestContentParametersApiModelInputTypeEnum || (exports.IssueRequestContentParametersApiModelInputTypeEnum = {}));
 /**
  * Check if a given object implements the IssueRequestContentParametersApiModel interface.
  */

@@ -89,79 +89,79 @@ export interface ScheduledScanRecurrenceViewModel {
     dayOfWeek?: ScheduledScanRecurrenceViewModelDayOfWeekEnum;
 }
 /**
- * @export
- */
-export declare const ScheduledScanRecurrenceViewModelRepeatTypeEnum: {
-    readonly Days: "Days";
-    readonly Weeks: "Weeks";
-    readonly Months: "Months";
-    readonly Years: "Years";
-};
-export type ScheduledScanRecurrenceViewModelRepeatTypeEnum = typeof ScheduledScanRecurrenceViewModelRepeatTypeEnum[keyof typeof ScheduledScanRecurrenceViewModelRepeatTypeEnum];
+* @export
+* @enum {string}
+*/
+export declare enum ScheduledScanRecurrenceViewModelRepeatTypeEnum {
+    Days = "Days",
+    Weeks = "Weeks",
+    Months = "Months",
+    Years = "Years"
+}
 /**
- * @export
- */
-export declare const ScheduledScanRecurrenceViewModelEndingTypeEnum: {
-    readonly Never: "Never";
-    readonly Date: "Date";
-    readonly Occurences: "Occurences";
-};
-export type ScheduledScanRecurrenceViewModelEndingTypeEnum = typeof ScheduledScanRecurrenceViewModelEndingTypeEnum[keyof typeof ScheduledScanRecurrenceViewModelEndingTypeEnum];
+* @export
+* @enum {string}
+*/
+export declare enum ScheduledScanRecurrenceViewModelEndingTypeEnum {
+    Never = "Never",
+    Date = "Date",
+    Occurences = "Occurences"
+}
 /**
- * @export
- */
-export declare const ScheduledScanRecurrenceViewModelDaysOfWeekEnum: {
-    readonly Sunday: "Sunday";
-    readonly Monday: "Monday";
-    readonly Tuesday: "Tuesday";
-    readonly Wednesday: "Wednesday";
-    readonly Thursday: "Thursday";
-    readonly Friday: "Friday";
-    readonly Saturday: "Saturday";
-};
-export type ScheduledScanRecurrenceViewModelDaysOfWeekEnum = typeof ScheduledScanRecurrenceViewModelDaysOfWeekEnum[keyof typeof ScheduledScanRecurrenceViewModelDaysOfWeekEnum];
+* @export
+* @enum {string}
+*/
+export declare enum ScheduledScanRecurrenceViewModelDaysOfWeekEnum {
+    Sunday = "Sunday",
+    Monday = "Monday",
+    Tuesday = "Tuesday",
+    Wednesday = "Wednesday",
+    Thursday = "Thursday",
+    Friday = "Friday",
+    Saturday = "Saturday"
+}
 /**
- * @export
- */
-export declare const ScheduledScanRecurrenceViewModelMonthsOfYearEnum: {
-    readonly January: "January";
-    readonly February: "February";
-    readonly March: "March";
-    readonly April: "April";
-    readonly May: "May";
-    readonly June: "June";
-    readonly July: "July";
-    readonly August: "August";
-    readonly September: "September";
-    readonly October: "October";
-    readonly November: "November";
-    readonly December: "December";
-};
-export type ScheduledScanRecurrenceViewModelMonthsOfYearEnum = typeof ScheduledScanRecurrenceViewModelMonthsOfYearEnum[keyof typeof ScheduledScanRecurrenceViewModelMonthsOfYearEnum];
+* @export
+* @enum {string}
+*/
+export declare enum ScheduledScanRecurrenceViewModelMonthsOfYearEnum {
+    January = "January",
+    February = "February",
+    March = "March",
+    April = "April",
+    May = "May",
+    June = "June",
+    July = "July",
+    August = "August",
+    September = "September",
+    October = "October",
+    November = "November",
+    December = "December"
+}
 /**
- * @export
- */
-export declare const ScheduledScanRecurrenceViewModelOrdinalEnum: {
-    readonly First: "First";
-    readonly Second: "Second";
-    readonly Third: "Third";
-    readonly Fourth: "Fourth";
-    readonly Last: "Last";
-};
-export type ScheduledScanRecurrenceViewModelOrdinalEnum = typeof ScheduledScanRecurrenceViewModelOrdinalEnum[keyof typeof ScheduledScanRecurrenceViewModelOrdinalEnum];
+* @export
+* @enum {string}
+*/
+export declare enum ScheduledScanRecurrenceViewModelOrdinalEnum {
+    First = "First",
+    Second = "Second",
+    Third = "Third",
+    Fourth = "Fourth",
+    Last = "Last"
+}
 /**
- * @export
- */
-export declare const ScheduledScanRecurrenceViewModelDayOfWeekEnum: {
-    readonly Sunday: "Sunday";
-    readonly Monday: "Monday";
-    readonly Tuesday: "Tuesday";
-    readonly Wednesday: "Wednesday";
-    readonly Thursday: "Thursday";
-    readonly Friday: "Friday";
-    readonly Saturday: "Saturday";
-};
-export type ScheduledScanRecurrenceViewModelDayOfWeekEnum = typeof ScheduledScanRecurrenceViewModelDayOfWeekEnum[keyof typeof ScheduledScanRecurrenceViewModelDayOfWeekEnum];
+* @export
+* @enum {string}
+*/
+export declare enum ScheduledScanRecurrenceViewModelDayOfWeekEnum {
+    Sunday = "Sunday",
+    Monday = "Monday",
+    Tuesday = "Tuesday",
+    Wednesday = "Wednesday",
+    Thursday = "Thursday",
+    Friday = "Friday",
+    Saturday = "Saturday"
+}
 /**
  * Check if a given object implements the ScheduledScanRecurrenceViewModel interface.
  */

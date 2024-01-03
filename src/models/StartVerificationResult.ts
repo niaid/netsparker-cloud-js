@@ -39,16 +39,15 @@ export interface StartVerificationResult {
     verifyOwnershipResult?: StartVerificationResultVerifyOwnershipResultEnum;
 }
 
-
 /**
- * @export
- */
-export const StartVerificationResultVerifyOwnershipResultEnum = {
-    Verified: 'Verified',
-    NotVerified: 'NotVerified',
-    VerificationLimitExceed: 'VerificationLimitExceed'
-} as const;
-export type StartVerificationResultVerifyOwnershipResultEnum = typeof StartVerificationResultVerifyOwnershipResultEnum[keyof typeof StartVerificationResultVerifyOwnershipResultEnum];
+* @export
+* @enum {string}
+*/
+export enum StartVerificationResultVerifyOwnershipResultEnum {
+    Verified = 'Verified',
+    NotVerified = 'NotVerified',
+    VerificationLimitExceed = 'VerificationLimitExceed'
+}
 
 
 /**

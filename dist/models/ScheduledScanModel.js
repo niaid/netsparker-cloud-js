@@ -33,49 +33,59 @@ const SharkModel_1 = require("./SharkModel");
 const TagViewModel_1 = require("./TagViewModel");
 const UrlRewriteSetting_1 = require("./UrlRewriteSetting");
 /**
- * @export
- */
-exports.ScheduledScanModelLastExecutionStatusEnum = {
-    Ok: 'Ok',
-    LicenseError: 'LicenseError'
-};
+* @export
+* @enum {string}
+*/
+var ScheduledScanModelLastExecutionStatusEnum;
+(function (ScheduledScanModelLastExecutionStatusEnum) {
+    ScheduledScanModelLastExecutionStatusEnum["Ok"] = "Ok";
+    ScheduledScanModelLastExecutionStatusEnum["LicenseError"] = "LicenseError";
+})(ScheduledScanModelLastExecutionStatusEnum = exports.ScheduledScanModelLastExecutionStatusEnum || (exports.ScheduledScanModelLastExecutionStatusEnum = {}));
 /**
- * @export
- */
-exports.ScheduledScanModelScanTypeEnum = {
-    Full: 'Full',
-    Retest: 'Retest',
-    Incremental: 'Incremental'
-};
+* @export
+* @enum {string}
+*/
+var ScheduledScanModelScanTypeEnum;
+(function (ScheduledScanModelScanTypeEnum) {
+    ScheduledScanModelScanTypeEnum["Full"] = "Full";
+    ScheduledScanModelScanTypeEnum["Retest"] = "Retest";
+    ScheduledScanModelScanTypeEnum["Incremental"] = "Incremental";
+})(ScheduledScanModelScanTypeEnum = exports.ScheduledScanModelScanTypeEnum || (exports.ScheduledScanModelScanTypeEnum = {}));
 /**
- * @export
- */
-exports.ScheduledScanModelScheduleRunTypeEnum = {
-    Once: 'Once',
-    Daily: 'Daily',
-    Weekly: 'Weekly',
-    Monthly: 'Monthly',
-    Quarterly: 'Quarterly',
-    Biannually: 'Biannually',
-    Yearly: 'Yearly',
-    Custom: 'Custom'
-};
+* @export
+* @enum {string}
+*/
+var ScheduledScanModelScheduleRunTypeEnum;
+(function (ScheduledScanModelScheduleRunTypeEnum) {
+    ScheduledScanModelScheduleRunTypeEnum["Once"] = "Once";
+    ScheduledScanModelScheduleRunTypeEnum["Daily"] = "Daily";
+    ScheduledScanModelScheduleRunTypeEnum["Weekly"] = "Weekly";
+    ScheduledScanModelScheduleRunTypeEnum["Monthly"] = "Monthly";
+    ScheduledScanModelScheduleRunTypeEnum["Quarterly"] = "Quarterly";
+    ScheduledScanModelScheduleRunTypeEnum["Biannually"] = "Biannually";
+    ScheduledScanModelScheduleRunTypeEnum["Yearly"] = "Yearly";
+    ScheduledScanModelScheduleRunTypeEnum["Custom"] = "Custom";
+})(ScheduledScanModelScheduleRunTypeEnum = exports.ScheduledScanModelScheduleRunTypeEnum || (exports.ScheduledScanModelScheduleRunTypeEnum = {}));
 /**
- * @export
- */
-exports.ScheduledScanModelCustomScriptTemplateTypeEnum = {
-    Default: 'Default',
-    SimpleLoginForm: 'SimpleLoginForm',
-    SimpleLoginFormQuery: 'SimpleLoginFormQuery',
-    SimpleLoginFormDelay: 'SimpleLoginFormDelay'
-};
+* @export
+* @enum {string}
+*/
+var ScheduledScanModelCustomScriptTemplateTypeEnum;
+(function (ScheduledScanModelCustomScriptTemplateTypeEnum) {
+    ScheduledScanModelCustomScriptTemplateTypeEnum["Default"] = "Default";
+    ScheduledScanModelCustomScriptTemplateTypeEnum["SimpleLoginForm"] = "SimpleLoginForm";
+    ScheduledScanModelCustomScriptTemplateTypeEnum["SimpleLoginFormQuery"] = "SimpleLoginFormQuery";
+    ScheduledScanModelCustomScriptTemplateTypeEnum["SimpleLoginFormDelay"] = "SimpleLoginFormDelay";
+})(ScheduledScanModelCustomScriptTemplateTypeEnum = exports.ScheduledScanModelCustomScriptTemplateTypeEnum || (exports.ScheduledScanModelCustomScriptTemplateTypeEnum = {}));
 /**
- * @export
- */
-exports.ScheduledScanModelCreateTypeEnum = {
-    Website: 'Website',
-    WebsiteGroup: 'WebsiteGroup'
-};
+* @export
+* @enum {string}
+*/
+var ScheduledScanModelCreateTypeEnum;
+(function (ScheduledScanModelCreateTypeEnum) {
+    ScheduledScanModelCreateTypeEnum["Website"] = "Website";
+    ScheduledScanModelCreateTypeEnum["WebsiteGroup"] = "WebsiteGroup";
+})(ScheduledScanModelCreateTypeEnum = exports.ScheduledScanModelCreateTypeEnum || (exports.ScheduledScanModelCreateTypeEnum = {}));
 /**
  * Check if a given object implements the ScheduledScanModel interface.
  */

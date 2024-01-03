@@ -43,28 +43,28 @@ export interface NotificationIntegrationFilterApi {
     certainty?: number;
 }
 /**
- * @export
- */
-export declare const NotificationIntegrationFilterApiSeverityEnum: {
-    readonly BestPractice: "BestPractice";
-    readonly Information: "Information";
-    readonly Low: "Low";
-    readonly Medium: "Medium";
-    readonly High: "High";
-    readonly Critical: "Critical";
-};
-export type NotificationIntegrationFilterApiSeverityEnum = typeof NotificationIntegrationFilterApiSeverityEnum[keyof typeof NotificationIntegrationFilterApiSeverityEnum];
+* @export
+* @enum {string}
+*/
+export declare enum NotificationIntegrationFilterApiSeverityEnum {
+    BestPractice = "BestPractice",
+    Information = "Information",
+    Low = "Low",
+    Medium = "Medium",
+    High = "High",
+    Critical = "Critical"
+}
 /**
- * @export
- */
-export declare const NotificationIntegrationFilterApiStateEnum: {
-    readonly NotFound: "NotFound";
-    readonly Fixed: "Fixed";
-    readonly NotFixed: "NotFixed";
-    readonly New: "New";
-    readonly Revived: "Revived";
-};
-export type NotificationIntegrationFilterApiStateEnum = typeof NotificationIntegrationFilterApiStateEnum[keyof typeof NotificationIntegrationFilterApiStateEnum];
+* @export
+* @enum {string}
+*/
+export declare enum NotificationIntegrationFilterApiStateEnum {
+    NotFound = "NotFound",
+    Fixed = "Fixed",
+    NotFixed = "NotFixed",
+    New = "New",
+    Revived = "Revived"
+}
 /**
  * Check if a given object implements the NotificationIntegrationFilterApi interface.
  */

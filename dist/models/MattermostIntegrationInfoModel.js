@@ -18,50 +18,54 @@ const runtime_1 = require("../runtime");
 const IntegrationCustomFieldVm_1 = require("./IntegrationCustomFieldVm");
 const IntegrationWizardResultModel_1 = require("./IntegrationWizardResultModel");
 /**
- * @export
- */
-exports.MattermostIntegrationInfoModelTypeEnum = {
-    NetsparkerEnterprise: 'NetsparkerEnterprise',
-    Webhook: 'Webhook',
-    Zapier: 'Zapier',
-    Slack: 'Slack',
-    Mattermost: 'Mattermost',
-    MicrosoftTeams: 'MicrosoftTeams',
-    AzureDevOps: 'AzureDevOps',
-    Bitbucket: 'Bitbucket',
-    Bugzilla: 'Bugzilla',
-    Clubhouse: 'Clubhouse',
-    DefectDojo: 'DefectDojo',
-    PivotalTracker: 'PivotalTracker',
-    Jira: 'Jira',
-    FogBugz: 'FogBugz',
-    GitHub: 'GitHub',
-    PagerDuty: 'PagerDuty',
-    Kafka: 'Kafka',
-    Kenna: 'Kenna',
-    Redmine: 'Redmine',
-    ServiceNow: 'ServiceNow',
-    Tfs: 'TFS',
-    Unfuddle: 'Unfuddle',
-    YouTrack: 'YouTrack',
-    Freshservice: 'Freshservice',
-    Splunk: 'Splunk',
-    JazzTeam: 'JazzTeam',
-    ServiceNowVrm: 'ServiceNowVRM',
-    Asana: 'Asana',
-    Trello: 'Trello',
-    Hashicorp: 'Hashicorp',
-    CyberArk: 'CyberArk',
-    AzureKeyVault: 'AzureKeyVault',
-    GitLab: 'GitLab'
-};
+* @export
+* @enum {string}
+*/
+var MattermostIntegrationInfoModelTypeEnum;
+(function (MattermostIntegrationInfoModelTypeEnum) {
+    MattermostIntegrationInfoModelTypeEnum["NetsparkerEnterprise"] = "NetsparkerEnterprise";
+    MattermostIntegrationInfoModelTypeEnum["Webhook"] = "Webhook";
+    MattermostIntegrationInfoModelTypeEnum["Zapier"] = "Zapier";
+    MattermostIntegrationInfoModelTypeEnum["Slack"] = "Slack";
+    MattermostIntegrationInfoModelTypeEnum["Mattermost"] = "Mattermost";
+    MattermostIntegrationInfoModelTypeEnum["MicrosoftTeams"] = "MicrosoftTeams";
+    MattermostIntegrationInfoModelTypeEnum["AzureDevOps"] = "AzureDevOps";
+    MattermostIntegrationInfoModelTypeEnum["Bitbucket"] = "Bitbucket";
+    MattermostIntegrationInfoModelTypeEnum["Bugzilla"] = "Bugzilla";
+    MattermostIntegrationInfoModelTypeEnum["Clubhouse"] = "Clubhouse";
+    MattermostIntegrationInfoModelTypeEnum["DefectDojo"] = "DefectDojo";
+    MattermostIntegrationInfoModelTypeEnum["PivotalTracker"] = "PivotalTracker";
+    MattermostIntegrationInfoModelTypeEnum["Jira"] = "Jira";
+    MattermostIntegrationInfoModelTypeEnum["FogBugz"] = "FogBugz";
+    MattermostIntegrationInfoModelTypeEnum["GitHub"] = "GitHub";
+    MattermostIntegrationInfoModelTypeEnum["PagerDuty"] = "PagerDuty";
+    MattermostIntegrationInfoModelTypeEnum["Kafka"] = "Kafka";
+    MattermostIntegrationInfoModelTypeEnum["Kenna"] = "Kenna";
+    MattermostIntegrationInfoModelTypeEnum["Redmine"] = "Redmine";
+    MattermostIntegrationInfoModelTypeEnum["ServiceNow"] = "ServiceNow";
+    MattermostIntegrationInfoModelTypeEnum["Tfs"] = "TFS";
+    MattermostIntegrationInfoModelTypeEnum["Unfuddle"] = "Unfuddle";
+    MattermostIntegrationInfoModelTypeEnum["YouTrack"] = "YouTrack";
+    MattermostIntegrationInfoModelTypeEnum["Freshservice"] = "Freshservice";
+    MattermostIntegrationInfoModelTypeEnum["Splunk"] = "Splunk";
+    MattermostIntegrationInfoModelTypeEnum["JazzTeam"] = "JazzTeam";
+    MattermostIntegrationInfoModelTypeEnum["ServiceNowVrm"] = "ServiceNowVRM";
+    MattermostIntegrationInfoModelTypeEnum["Asana"] = "Asana";
+    MattermostIntegrationInfoModelTypeEnum["Trello"] = "Trello";
+    MattermostIntegrationInfoModelTypeEnum["Hashicorp"] = "Hashicorp";
+    MattermostIntegrationInfoModelTypeEnum["CyberArk"] = "CyberArk";
+    MattermostIntegrationInfoModelTypeEnum["AzureKeyVault"] = "AzureKeyVault";
+    MattermostIntegrationInfoModelTypeEnum["GitLab"] = "GitLab";
+})(MattermostIntegrationInfoModelTypeEnum = exports.MattermostIntegrationInfoModelTypeEnum || (exports.MattermostIntegrationInfoModelTypeEnum = {}));
 /**
- * @export
- */
-exports.MattermostIntegrationInfoModelTemplateTypeEnum = {
-    Standard: 'Standard',
-    Detailed: 'Detailed'
-};
+* @export
+* @enum {string}
+*/
+var MattermostIntegrationInfoModelTemplateTypeEnum;
+(function (MattermostIntegrationInfoModelTemplateTypeEnum) {
+    MattermostIntegrationInfoModelTemplateTypeEnum["Standard"] = "Standard";
+    MattermostIntegrationInfoModelTemplateTypeEnum["Detailed"] = "Detailed";
+})(MattermostIntegrationInfoModelTemplateTypeEnum = exports.MattermostIntegrationInfoModelTemplateTypeEnum || (exports.MattermostIntegrationInfoModelTemplateTypeEnum = {}));
 /**
  * Check if a given object implements the MattermostIntegrationInfoModel interface.
  */

@@ -70,21 +70,20 @@ export interface NewScheduledIncrementalScanApiModel {
     baseScanId: string;
 }
 
-
 /**
- * @export
- */
-export const NewScheduledIncrementalScanApiModelScheduleRunTypeEnum = {
-    Once: 'Once',
-    Daily: 'Daily',
-    Weekly: 'Weekly',
-    Monthly: 'Monthly',
-    Quarterly: 'Quarterly',
-    Biannually: 'Biannually',
-    Yearly: 'Yearly',
-    Custom: 'Custom'
-} as const;
-export type NewScheduledIncrementalScanApiModelScheduleRunTypeEnum = typeof NewScheduledIncrementalScanApiModelScheduleRunTypeEnum[keyof typeof NewScheduledIncrementalScanApiModelScheduleRunTypeEnum];
+* @export
+* @enum {string}
+*/
+export enum NewScheduledIncrementalScanApiModelScheduleRunTypeEnum {
+    Once = 'Once',
+    Daily = 'Daily',
+    Weekly = 'Weekly',
+    Monthly = 'Monthly',
+    Quarterly = 'Quarterly',
+    Biannually = 'Biannually',
+    Yearly = 'Yearly',
+    Custom = 'Custom'
+}
 
 
 /**

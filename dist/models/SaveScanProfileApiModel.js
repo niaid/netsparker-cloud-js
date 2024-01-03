@@ -31,54 +31,64 @@ const SharkModel_1 = require("./SharkModel");
 const UrlRewriteExcludedPathModel_1 = require("./UrlRewriteExcludedPathModel");
 const UrlRewriteRuleModel_1 = require("./UrlRewriteRuleModel");
 /**
- * @export
- */
-exports.SaveScanProfileApiModelCreateTypeEnum = {
-    Website: 'Website',
-    WebsiteGroup: 'WebsiteGroup'
-};
+* @export
+* @enum {string}
+*/
+var SaveScanProfileApiModelCreateTypeEnum;
+(function (SaveScanProfileApiModelCreateTypeEnum) {
+    SaveScanProfileApiModelCreateTypeEnum["Website"] = "Website";
+    SaveScanProfileApiModelCreateTypeEnum["WebsiteGroup"] = "WebsiteGroup";
+})(SaveScanProfileApiModelCreateTypeEnum = exports.SaveScanProfileApiModelCreateTypeEnum || (exports.SaveScanProfileApiModelCreateTypeEnum = {}));
 /**
- * @export
- */
-exports.SaveScanProfileApiModelDisallowedHttpMethodsEnum = {
-    Get: 'GET',
-    Post: 'POST',
-    Connect: 'CONNECT',
-    Head: 'HEAD',
-    Trace: 'TRACE',
-    Debug: 'DEBUG',
-    Track: 'TRACK',
-    Put: 'PUT',
-    Options: 'OPTIONS',
-    Delete: 'DELETE',
-    Link: 'LINK',
-    Unlink: 'UNLINK',
-    Patch: 'PATCH'
-};
+* @export
+* @enum {string}
+*/
+var SaveScanProfileApiModelDisallowedHttpMethodsEnum;
+(function (SaveScanProfileApiModelDisallowedHttpMethodsEnum) {
+    SaveScanProfileApiModelDisallowedHttpMethodsEnum["Get"] = "GET";
+    SaveScanProfileApiModelDisallowedHttpMethodsEnum["Post"] = "POST";
+    SaveScanProfileApiModelDisallowedHttpMethodsEnum["Connect"] = "CONNECT";
+    SaveScanProfileApiModelDisallowedHttpMethodsEnum["Head"] = "HEAD";
+    SaveScanProfileApiModelDisallowedHttpMethodsEnum["Trace"] = "TRACE";
+    SaveScanProfileApiModelDisallowedHttpMethodsEnum["Debug"] = "DEBUG";
+    SaveScanProfileApiModelDisallowedHttpMethodsEnum["Track"] = "TRACK";
+    SaveScanProfileApiModelDisallowedHttpMethodsEnum["Put"] = "PUT";
+    SaveScanProfileApiModelDisallowedHttpMethodsEnum["Options"] = "OPTIONS";
+    SaveScanProfileApiModelDisallowedHttpMethodsEnum["Delete"] = "DELETE";
+    SaveScanProfileApiModelDisallowedHttpMethodsEnum["Link"] = "LINK";
+    SaveScanProfileApiModelDisallowedHttpMethodsEnum["Unlink"] = "UNLINK";
+    SaveScanProfileApiModelDisallowedHttpMethodsEnum["Patch"] = "PATCH";
+})(SaveScanProfileApiModelDisallowedHttpMethodsEnum = exports.SaveScanProfileApiModelDisallowedHttpMethodsEnum || (exports.SaveScanProfileApiModelDisallowedHttpMethodsEnum = {}));
 /**
- * @export
- */
-exports.SaveScanProfileApiModelAuthenticationProfileOptionEnum = {
-    DontUse: 'DontUse',
-    UseMatchedProfile: 'UseMatchedProfile',
-    SelectedProfile: 'SelectedProfile'
-};
+* @export
+* @enum {string}
+*/
+var SaveScanProfileApiModelAuthenticationProfileOptionEnum;
+(function (SaveScanProfileApiModelAuthenticationProfileOptionEnum) {
+    SaveScanProfileApiModelAuthenticationProfileOptionEnum["DontUse"] = "DontUse";
+    SaveScanProfileApiModelAuthenticationProfileOptionEnum["UseMatchedProfile"] = "UseMatchedProfile";
+    SaveScanProfileApiModelAuthenticationProfileOptionEnum["SelectedProfile"] = "SelectedProfile";
+})(SaveScanProfileApiModelAuthenticationProfileOptionEnum = exports.SaveScanProfileApiModelAuthenticationProfileOptionEnum || (exports.SaveScanProfileApiModelAuthenticationProfileOptionEnum = {}));
 /**
- * @export
- */
-exports.SaveScanProfileApiModelScopeEnum = {
-    EnteredPathAndBelow: 'EnteredPathAndBelow',
-    OnlyEnteredUrl: 'OnlyEnteredUrl',
-    WholeDomain: 'WholeDomain'
-};
+* @export
+* @enum {string}
+*/
+var SaveScanProfileApiModelScopeEnum;
+(function (SaveScanProfileApiModelScopeEnum) {
+    SaveScanProfileApiModelScopeEnum["EnteredPathAndBelow"] = "EnteredPathAndBelow";
+    SaveScanProfileApiModelScopeEnum["OnlyEnteredUrl"] = "OnlyEnteredUrl";
+    SaveScanProfileApiModelScopeEnum["WholeDomain"] = "WholeDomain";
+})(SaveScanProfileApiModelScopeEnum = exports.SaveScanProfileApiModelScopeEnum || (exports.SaveScanProfileApiModelScopeEnum = {}));
 /**
- * @export
- */
-exports.SaveScanProfileApiModelUrlRewriteModeEnum = {
-    None: 'None',
-    Heuristic: 'Heuristic',
-    Custom: 'Custom'
-};
+* @export
+* @enum {string}
+*/
+var SaveScanProfileApiModelUrlRewriteModeEnum;
+(function (SaveScanProfileApiModelUrlRewriteModeEnum) {
+    SaveScanProfileApiModelUrlRewriteModeEnum["None"] = "None";
+    SaveScanProfileApiModelUrlRewriteModeEnum["Heuristic"] = "Heuristic";
+    SaveScanProfileApiModelUrlRewriteModeEnum["Custom"] = "Custom";
+})(SaveScanProfileApiModelUrlRewriteModeEnum = exports.SaveScanProfileApiModelUrlRewriteModeEnum || (exports.SaveScanProfileApiModelUrlRewriteModeEnum = {}));
 /**
  * Check if a given object implements the SaveScanProfileApiModel interface.
  */

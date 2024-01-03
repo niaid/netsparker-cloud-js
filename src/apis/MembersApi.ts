@@ -49,53 +49,53 @@ import {
     UserApiTokenModelToJSON,
 } from '../models/index';
 
-export interface MembersDeleteRequest {
+export interface MembersApiMembersDeleteRequest {
     id: string;
 }
 
-export interface MembersDeleteInvitationRequest {
+export interface MembersApiMembersDeleteInvitationRequest {
     email: string;
 }
 
-export interface MembersGetRequest {
+export interface MembersApiMembersGetRequest {
     id: string;
 }
 
-export interface MembersGetApiTokenRequest {
+export interface MembersApiMembersGetApiTokenRequest {
     email: string;
 }
 
-export interface MembersGetByEmailRequest {
+export interface MembersApiMembersGetByEmailRequest {
     email: string;
 }
 
-export interface MembersGetInvitationRequest {
+export interface MembersApiMembersGetInvitationRequest {
     invitationId: string;
 }
 
-export interface MembersInvitationListRequest {
+export interface MembersApiMembersInvitationListRequest {
     page?: number;
     pageSize?: number;
 }
 
-export interface MembersListRequest {
+export interface MembersApiMembersListRequest {
     page?: number;
     pageSize?: number;
 }
 
-export interface MembersNewRequest {
+export interface MembersApiMembersNewRequest {
     model: NewMemberApiModel;
 }
 
-export interface MembersNewInvitationRequest {
+export interface MembersApiMembersNewInvitationRequest {
     model: NewMemberInvitationApiModel;
 }
 
-export interface MembersSendInvitationEmailRequest {
+export interface MembersApiMembersSendInvitationEmailRequest {
     invitationId: string;
 }
 
-export interface MembersUpdateRequest {
+export interface MembersApiMembersUpdateRequest {
     model: UpdateMemberApiModel;
 }
 
@@ -107,7 +107,7 @@ export class MembersApi extends runtime.BaseAPI {
     /**
      * Deletes a member
      */
-    async membersDeleteRaw(requestParameters: MembersDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>> {
+    async membersDeleteRaw(requestParameters: MembersApiMembersDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>> {
         if (requestParameters.id === null || requestParameters.id === undefined) {
             throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling membersDelete.');
         }
@@ -133,7 +133,7 @@ export class MembersApi extends runtime.BaseAPI {
     /**
      * Deletes a member
      */
-    async membersDelete(requestParameters: MembersDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string> {
+    async membersDelete(requestParameters: MembersApiMembersDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string> {
         const response = await this.membersDeleteRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -141,7 +141,7 @@ export class MembersApi extends runtime.BaseAPI {
     /**
      * Deletes member invitation
      */
-    async membersDeleteInvitationRaw(requestParameters: MembersDeleteInvitationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async membersDeleteInvitationRaw(requestParameters: MembersApiMembersDeleteInvitationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters.email === null || requestParameters.email === undefined) {
             throw new runtime.RequiredError('email','Required parameter requestParameters.email was null or undefined when calling membersDeleteInvitation.');
         }
@@ -167,14 +167,14 @@ export class MembersApi extends runtime.BaseAPI {
     /**
      * Deletes member invitation
      */
-    async membersDeleteInvitation(requestParameters: MembersDeleteInvitationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+    async membersDeleteInvitation(requestParameters: MembersApiMembersDeleteInvitationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
         await this.membersDeleteInvitationRaw(requestParameters, initOverrides);
     }
 
     /**
      * Gets the member by the specified id.
      */
-    async membersGetRaw(requestParameters: MembersGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<MemberApiViewModel>> {
+    async membersGetRaw(requestParameters: MembersApiMembersGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<MemberApiViewModel>> {
         if (requestParameters.id === null || requestParameters.id === undefined) {
             throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling membersGet.');
         }
@@ -196,7 +196,7 @@ export class MembersApi extends runtime.BaseAPI {
     /**
      * Gets the member by the specified id.
      */
-    async membersGet(requestParameters: MembersGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<MemberApiViewModel> {
+    async membersGet(requestParameters: MembersApiMembersGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<MemberApiViewModel> {
         const response = await this.membersGetRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -204,7 +204,7 @@ export class MembersApi extends runtime.BaseAPI {
     /**
      * Gets user api token.
      */
-    async membersGetApiTokenRaw(requestParameters: MembersGetApiTokenRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UserApiTokenModel>> {
+    async membersGetApiTokenRaw(requestParameters: MembersApiMembersGetApiTokenRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UserApiTokenModel>> {
         if (requestParameters.email === null || requestParameters.email === undefined) {
             throw new runtime.RequiredError('email','Required parameter requestParameters.email was null or undefined when calling membersGetApiToken.');
         }
@@ -230,7 +230,7 @@ export class MembersApi extends runtime.BaseAPI {
     /**
      * Gets user api token.
      */
-    async membersGetApiToken(requestParameters: MembersGetApiTokenRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UserApiTokenModel> {
+    async membersGetApiToken(requestParameters: MembersApiMembersGetApiTokenRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UserApiTokenModel> {
         const response = await this.membersGetApiTokenRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -238,7 +238,7 @@ export class MembersApi extends runtime.BaseAPI {
     /**
      * Gets user by email.
      */
-    async membersGetByEmailRaw(requestParameters: MembersGetByEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<MemberApiViewModel>> {
+    async membersGetByEmailRaw(requestParameters: MembersApiMembersGetByEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<MemberApiViewModel>> {
         if (requestParameters.email === null || requestParameters.email === undefined) {
             throw new runtime.RequiredError('email','Required parameter requestParameters.email was null or undefined when calling membersGetByEmail.');
         }
@@ -264,7 +264,7 @@ export class MembersApi extends runtime.BaseAPI {
     /**
      * Gets user by email.
      */
-    async membersGetByEmail(requestParameters: MembersGetByEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<MemberApiViewModel> {
+    async membersGetByEmail(requestParameters: MembersApiMembersGetByEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<MemberApiViewModel> {
         const response = await this.membersGetByEmailRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -272,7 +272,7 @@ export class MembersApi extends runtime.BaseAPI {
     /**
      * Gets the member invitation by the specified id.
      */
-    async membersGetInvitationRaw(requestParameters: MembersGetInvitationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<MemberInvitationDto>> {
+    async membersGetInvitationRaw(requestParameters: MembersApiMembersGetInvitationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<MemberInvitationDto>> {
         if (requestParameters.invitationId === null || requestParameters.invitationId === undefined) {
             throw new runtime.RequiredError('invitationId','Required parameter requestParameters.invitationId was null or undefined when calling membersGetInvitation.');
         }
@@ -298,7 +298,7 @@ export class MembersApi extends runtime.BaseAPI {
     /**
      * Gets the member invitation by the specified id.
      */
-    async membersGetInvitation(requestParameters: MembersGetInvitationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<MemberInvitationDto> {
+    async membersGetInvitation(requestParameters: MembersApiMembersGetInvitationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<MemberInvitationDto> {
         const response = await this.membersGetInvitationRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -332,7 +332,7 @@ export class MembersApi extends runtime.BaseAPI {
     /**
      * Gets the list of members.
      */
-    async membersInvitationListRaw(requestParameters: MembersInvitationListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<MemberInvitationPagedListDto>> {
+    async membersInvitationListRaw(requestParameters: MembersApiMembersInvitationListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<MemberInvitationPagedListDto>> {
         const queryParameters: any = {};
 
         if (requestParameters.page !== undefined) {
@@ -358,7 +358,7 @@ export class MembersApi extends runtime.BaseAPI {
     /**
      * Gets the list of members.
      */
-    async membersInvitationList(requestParameters: MembersInvitationListRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<MemberInvitationPagedListDto> {
+    async membersInvitationList(requestParameters: MembersApiMembersInvitationListRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<MemberInvitationPagedListDto> {
         const response = await this.membersInvitationListRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -366,7 +366,7 @@ export class MembersApi extends runtime.BaseAPI {
     /**
      * Gets the list of members.
      */
-    async membersListRaw(requestParameters: MembersListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<MemberApiModelListApiResult>> {
+    async membersListRaw(requestParameters: MembersApiMembersListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<MemberApiModelListApiResult>> {
         const queryParameters: any = {};
 
         if (requestParameters.page !== undefined) {
@@ -392,7 +392,7 @@ export class MembersApi extends runtime.BaseAPI {
     /**
      * Gets the list of members.
      */
-    async membersList(requestParameters: MembersListRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<MemberApiModelListApiResult> {
+    async membersList(requestParameters: MembersApiMembersListRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<MemberApiModelListApiResult> {
         const response = await this.membersListRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -400,7 +400,7 @@ export class MembersApi extends runtime.BaseAPI {
     /**
      * Creates a new member.
      */
-    async membersNewRaw(requestParameters: MembersNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<MemberApiViewModel>> {
+    async membersNewRaw(requestParameters: MembersApiMembersNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<MemberApiViewModel>> {
         if (requestParameters.model === null || requestParameters.model === undefined) {
             throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling membersNew.');
         }
@@ -425,7 +425,7 @@ export class MembersApi extends runtime.BaseAPI {
     /**
      * Creates a new member.
      */
-    async membersNew(requestParameters: MembersNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<MemberApiViewModel> {
+    async membersNew(requestParameters: MembersApiMembersNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<MemberApiViewModel> {
         const response = await this.membersNewRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -433,7 +433,7 @@ export class MembersApi extends runtime.BaseAPI {
     /**
      * Creates a new member invitation
      */
-    async membersNewInvitationRaw(requestParameters: MembersNewInvitationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async membersNewInvitationRaw(requestParameters: MembersApiMembersNewInvitationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters.model === null || requestParameters.model === undefined) {
             throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling membersNewInvitation.');
         }
@@ -458,14 +458,14 @@ export class MembersApi extends runtime.BaseAPI {
     /**
      * Creates a new member invitation
      */
-    async membersNewInvitation(requestParameters: MembersNewInvitationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+    async membersNewInvitation(requestParameters: MembersApiMembersNewInvitationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
         await this.membersNewInvitationRaw(requestParameters, initOverrides);
     }
 
     /**
      * Sends member invitation email
      */
-    async membersSendInvitationEmailRaw(requestParameters: MembersSendInvitationEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async membersSendInvitationEmailRaw(requestParameters: MembersApiMembersSendInvitationEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters.invitationId === null || requestParameters.invitationId === undefined) {
             throw new runtime.RequiredError('invitationId','Required parameter requestParameters.invitationId was null or undefined when calling membersSendInvitationEmail.');
         }
@@ -491,14 +491,14 @@ export class MembersApi extends runtime.BaseAPI {
     /**
      * Sends member invitation email
      */
-    async membersSendInvitationEmail(requestParameters: MembersSendInvitationEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+    async membersSendInvitationEmail(requestParameters: MembersApiMembersSendInvitationEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
         await this.membersSendInvitationEmailRaw(requestParameters, initOverrides);
     }
 
     /**
      * Updates a member
      */
-    async membersUpdateRaw(requestParameters: MembersUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<MemberApiViewModel>> {
+    async membersUpdateRaw(requestParameters: MembersApiMembersUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<MemberApiViewModel>> {
         if (requestParameters.model === null || requestParameters.model === undefined) {
             throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling membersUpdate.');
         }
@@ -523,7 +523,7 @@ export class MembersApi extends runtime.BaseAPI {
     /**
      * Updates a member
      */
-    async membersUpdate(requestParameters: MembersUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<MemberApiViewModel> {
+    async membersUpdate(requestParameters: MembersApiMembersUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<MemberApiViewModel> {
         const response = await this.membersUpdateRaw(requestParameters, initOverrides);
         return await response.value();
     }

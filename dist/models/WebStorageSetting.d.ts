@@ -41,13 +41,13 @@ export interface WebStorageSetting {
     value: string;
 }
 /**
- * @export
- */
-export declare const WebStorageSettingTypeEnum: {
-    readonly Local: "Local";
-    readonly Session: "Session";
-};
-export type WebStorageSettingTypeEnum = typeof WebStorageSettingTypeEnum[keyof typeof WebStorageSettingTypeEnum];
+* @export
+* @enum {string}
+*/
+export declare enum WebStorageSettingTypeEnum {
+    Local = "Local",
+    Session = "Session"
+}
 /**
  * Check if a given object implements the WebStorageSetting interface.
  */

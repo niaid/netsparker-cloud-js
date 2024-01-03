@@ -15,14 +15,16 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.StartVerificationApiModelToJSON = exports.StartVerificationApiModelFromJSONTyped = exports.StartVerificationApiModelFromJSON = exports.instanceOfStartVerificationApiModel = exports.StartVerificationApiModelVerificationMethodEnum = void 0;
 /**
- * @export
- */
-exports.StartVerificationApiModelVerificationMethodEnum = {
-    File: 'File',
-    Tag: 'Tag',
-    Dns: 'Dns',
-    Email: 'Email'
-};
+* @export
+* @enum {string}
+*/
+var StartVerificationApiModelVerificationMethodEnum;
+(function (StartVerificationApiModelVerificationMethodEnum) {
+    StartVerificationApiModelVerificationMethodEnum["File"] = "File";
+    StartVerificationApiModelVerificationMethodEnum["Tag"] = "Tag";
+    StartVerificationApiModelVerificationMethodEnum["Dns"] = "Dns";
+    StartVerificationApiModelVerificationMethodEnum["Email"] = "Email";
+})(StartVerificationApiModelVerificationMethodEnum = exports.StartVerificationApiModelVerificationMethodEnum || (exports.StartVerificationApiModelVerificationMethodEnum = {}));
 /**
  * Check if a given object implements the StartVerificationApiModel interface.
  */

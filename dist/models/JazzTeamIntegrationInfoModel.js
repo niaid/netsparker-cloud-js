@@ -18,77 +18,87 @@ const runtime_1 = require("../runtime");
 const IntegrationCustomFieldVm_1 = require("./IntegrationCustomFieldVm");
 const IntegrationWizardResultModel_1 = require("./IntegrationWizardResultModel");
 /**
- * @export
- */
-exports.JazzTeamIntegrationInfoModelSeverityEnum = {
-    Blocker: 'Blocker',
-    Critical: 'Critical',
-    Major: 'Major',
-    Normal: 'Normal',
-    Minor: 'Minor',
-    Unclassified: 'Unclassified'
-};
+* @export
+* @enum {string}
+*/
+var JazzTeamIntegrationInfoModelSeverityEnum;
+(function (JazzTeamIntegrationInfoModelSeverityEnum) {
+    JazzTeamIntegrationInfoModelSeverityEnum["Blocker"] = "Blocker";
+    JazzTeamIntegrationInfoModelSeverityEnum["Critical"] = "Critical";
+    JazzTeamIntegrationInfoModelSeverityEnum["Major"] = "Major";
+    JazzTeamIntegrationInfoModelSeverityEnum["Normal"] = "Normal";
+    JazzTeamIntegrationInfoModelSeverityEnum["Minor"] = "Minor";
+    JazzTeamIntegrationInfoModelSeverityEnum["Unclassified"] = "Unclassified";
+})(JazzTeamIntegrationInfoModelSeverityEnum = exports.JazzTeamIntegrationInfoModelSeverityEnum || (exports.JazzTeamIntegrationInfoModelSeverityEnum = {}));
 /**
- * @export
- */
-exports.JazzTeamIntegrationInfoModelPriorityEnum = {
-    High: 'High',
-    Medium: 'Medium',
-    Low: 'Low',
-    Unassigned: 'Unassigned'
-};
+* @export
+* @enum {string}
+*/
+var JazzTeamIntegrationInfoModelPriorityEnum;
+(function (JazzTeamIntegrationInfoModelPriorityEnum) {
+    JazzTeamIntegrationInfoModelPriorityEnum["High"] = "High";
+    JazzTeamIntegrationInfoModelPriorityEnum["Medium"] = "Medium";
+    JazzTeamIntegrationInfoModelPriorityEnum["Low"] = "Low";
+    JazzTeamIntegrationInfoModelPriorityEnum["Unassigned"] = "Unassigned";
+})(JazzTeamIntegrationInfoModelPriorityEnum = exports.JazzTeamIntegrationInfoModelPriorityEnum || (exports.JazzTeamIntegrationInfoModelPriorityEnum = {}));
 /**
- * @export
- */
-exports.JazzTeamIntegrationInfoModelWorkItemTypeEnum = {
-    Task: 'Task',
-    Defect: 'Defect'
-};
+* @export
+* @enum {string}
+*/
+var JazzTeamIntegrationInfoModelWorkItemTypeEnum;
+(function (JazzTeamIntegrationInfoModelWorkItemTypeEnum) {
+    JazzTeamIntegrationInfoModelWorkItemTypeEnum["Task"] = "Task";
+    JazzTeamIntegrationInfoModelWorkItemTypeEnum["Defect"] = "Defect";
+})(JazzTeamIntegrationInfoModelWorkItemTypeEnum = exports.JazzTeamIntegrationInfoModelWorkItemTypeEnum || (exports.JazzTeamIntegrationInfoModelWorkItemTypeEnum = {}));
 /**
- * @export
- */
-exports.JazzTeamIntegrationInfoModelTemplateTypeEnum = {
-    Standard: 'Standard',
-    Detailed: 'Detailed'
-};
+* @export
+* @enum {string}
+*/
+var JazzTeamIntegrationInfoModelTemplateTypeEnum;
+(function (JazzTeamIntegrationInfoModelTemplateTypeEnum) {
+    JazzTeamIntegrationInfoModelTemplateTypeEnum["Standard"] = "Standard";
+    JazzTeamIntegrationInfoModelTemplateTypeEnum["Detailed"] = "Detailed";
+})(JazzTeamIntegrationInfoModelTemplateTypeEnum = exports.JazzTeamIntegrationInfoModelTemplateTypeEnum || (exports.JazzTeamIntegrationInfoModelTemplateTypeEnum = {}));
 /**
- * @export
- */
-exports.JazzTeamIntegrationInfoModelTypeEnum = {
-    NetsparkerEnterprise: 'NetsparkerEnterprise',
-    Webhook: 'Webhook',
-    Zapier: 'Zapier',
-    Slack: 'Slack',
-    Mattermost: 'Mattermost',
-    MicrosoftTeams: 'MicrosoftTeams',
-    AzureDevOps: 'AzureDevOps',
-    Bitbucket: 'Bitbucket',
-    Bugzilla: 'Bugzilla',
-    Clubhouse: 'Clubhouse',
-    DefectDojo: 'DefectDojo',
-    PivotalTracker: 'PivotalTracker',
-    Jira: 'Jira',
-    FogBugz: 'FogBugz',
-    GitHub: 'GitHub',
-    PagerDuty: 'PagerDuty',
-    Kafka: 'Kafka',
-    Kenna: 'Kenna',
-    Redmine: 'Redmine',
-    ServiceNow: 'ServiceNow',
-    Tfs: 'TFS',
-    Unfuddle: 'Unfuddle',
-    YouTrack: 'YouTrack',
-    Freshservice: 'Freshservice',
-    Splunk: 'Splunk',
-    JazzTeam: 'JazzTeam',
-    ServiceNowVrm: 'ServiceNowVRM',
-    Asana: 'Asana',
-    Trello: 'Trello',
-    Hashicorp: 'Hashicorp',
-    CyberArk: 'CyberArk',
-    AzureKeyVault: 'AzureKeyVault',
-    GitLab: 'GitLab'
-};
+* @export
+* @enum {string}
+*/
+var JazzTeamIntegrationInfoModelTypeEnum;
+(function (JazzTeamIntegrationInfoModelTypeEnum) {
+    JazzTeamIntegrationInfoModelTypeEnum["NetsparkerEnterprise"] = "NetsparkerEnterprise";
+    JazzTeamIntegrationInfoModelTypeEnum["Webhook"] = "Webhook";
+    JazzTeamIntegrationInfoModelTypeEnum["Zapier"] = "Zapier";
+    JazzTeamIntegrationInfoModelTypeEnum["Slack"] = "Slack";
+    JazzTeamIntegrationInfoModelTypeEnum["Mattermost"] = "Mattermost";
+    JazzTeamIntegrationInfoModelTypeEnum["MicrosoftTeams"] = "MicrosoftTeams";
+    JazzTeamIntegrationInfoModelTypeEnum["AzureDevOps"] = "AzureDevOps";
+    JazzTeamIntegrationInfoModelTypeEnum["Bitbucket"] = "Bitbucket";
+    JazzTeamIntegrationInfoModelTypeEnum["Bugzilla"] = "Bugzilla";
+    JazzTeamIntegrationInfoModelTypeEnum["Clubhouse"] = "Clubhouse";
+    JazzTeamIntegrationInfoModelTypeEnum["DefectDojo"] = "DefectDojo";
+    JazzTeamIntegrationInfoModelTypeEnum["PivotalTracker"] = "PivotalTracker";
+    JazzTeamIntegrationInfoModelTypeEnum["Jira"] = "Jira";
+    JazzTeamIntegrationInfoModelTypeEnum["FogBugz"] = "FogBugz";
+    JazzTeamIntegrationInfoModelTypeEnum["GitHub"] = "GitHub";
+    JazzTeamIntegrationInfoModelTypeEnum["PagerDuty"] = "PagerDuty";
+    JazzTeamIntegrationInfoModelTypeEnum["Kafka"] = "Kafka";
+    JazzTeamIntegrationInfoModelTypeEnum["Kenna"] = "Kenna";
+    JazzTeamIntegrationInfoModelTypeEnum["Redmine"] = "Redmine";
+    JazzTeamIntegrationInfoModelTypeEnum["ServiceNow"] = "ServiceNow";
+    JazzTeamIntegrationInfoModelTypeEnum["Tfs"] = "TFS";
+    JazzTeamIntegrationInfoModelTypeEnum["Unfuddle"] = "Unfuddle";
+    JazzTeamIntegrationInfoModelTypeEnum["YouTrack"] = "YouTrack";
+    JazzTeamIntegrationInfoModelTypeEnum["Freshservice"] = "Freshservice";
+    JazzTeamIntegrationInfoModelTypeEnum["Splunk"] = "Splunk";
+    JazzTeamIntegrationInfoModelTypeEnum["JazzTeam"] = "JazzTeam";
+    JazzTeamIntegrationInfoModelTypeEnum["ServiceNowVrm"] = "ServiceNowVRM";
+    JazzTeamIntegrationInfoModelTypeEnum["Asana"] = "Asana";
+    JazzTeamIntegrationInfoModelTypeEnum["Trello"] = "Trello";
+    JazzTeamIntegrationInfoModelTypeEnum["Hashicorp"] = "Hashicorp";
+    JazzTeamIntegrationInfoModelTypeEnum["CyberArk"] = "CyberArk";
+    JazzTeamIntegrationInfoModelTypeEnum["AzureKeyVault"] = "AzureKeyVault";
+    JazzTeamIntegrationInfoModelTypeEnum["GitLab"] = "GitLab";
+})(JazzTeamIntegrationInfoModelTypeEnum = exports.JazzTeamIntegrationInfoModelTypeEnum || (exports.JazzTeamIntegrationInfoModelTypeEnum = {}));
 /**
  * Check if a given object implements the JazzTeamIntegrationInfoModel interface.
  */

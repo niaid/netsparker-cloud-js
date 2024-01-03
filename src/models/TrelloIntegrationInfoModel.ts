@@ -226,55 +226,53 @@ export interface TrelloIntegrationInfoModel {
     titleFormat: string;
 }
 
-
 /**
- * @export
- */
-export const TrelloIntegrationInfoModelTypeEnum = {
-    Jira: 'Jira',
-    GitHub: 'GitHub',
-    Tfs: 'TFS',
-    FogBugz: 'FogBugz',
-    ServiceNow: 'ServiceNow',
-    Slack: 'Slack',
-    GitLab: 'GitLab',
-    Bitbucket: 'Bitbucket',
-    Unfuddle: 'Unfuddle',
-    Zapier: 'Zapier',
-    AzureDevOps: 'AzureDevOps',
-    Redmine: 'Redmine',
-    Bugzilla: 'Bugzilla',
-    Kafka: 'Kafka',
-    PagerDuty: 'PagerDuty',
-    MicrosoftTeams: 'MicrosoftTeams',
-    Clubhouse: 'Clubhouse',
-    Trello: 'Trello',
-    Asana: 'Asana',
-    Webhook: 'Webhook',
-    Kenna: 'Kenna',
-    Freshservice: 'Freshservice',
-    YouTrack: 'YouTrack',
-    NetsparkerEnterprise: 'NetsparkerEnterprise',
-    Splunk: 'Splunk',
-    Mattermost: 'Mattermost',
-    Hashicorp: 'Hashicorp',
-    PivotalTracker: 'PivotalTracker',
-    CyberArk: 'CyberArk',
-    DefectDojo: 'DefectDojo',
-    JazzTeam: 'JazzTeam',
-    AzureKeyVault: 'AzureKeyVault',
-    ServiceNowVrm: 'ServiceNowVRM'
-} as const;
-export type TrelloIntegrationInfoModelTypeEnum = typeof TrelloIntegrationInfoModelTypeEnum[keyof typeof TrelloIntegrationInfoModelTypeEnum];
-
+* @export
+* @enum {string}
+*/
+export enum TrelloIntegrationInfoModelTypeEnum {
+    Jira = 'Jira',
+    GitHub = 'GitHub',
+    Tfs = 'TFS',
+    FogBugz = 'FogBugz',
+    ServiceNow = 'ServiceNow',
+    Slack = 'Slack',
+    GitLab = 'GitLab',
+    Bitbucket = 'Bitbucket',
+    Unfuddle = 'Unfuddle',
+    Zapier = 'Zapier',
+    AzureDevOps = 'AzureDevOps',
+    Redmine = 'Redmine',
+    Bugzilla = 'Bugzilla',
+    Kafka = 'Kafka',
+    PagerDuty = 'PagerDuty',
+    MicrosoftTeams = 'MicrosoftTeams',
+    Clubhouse = 'Clubhouse',
+    Trello = 'Trello',
+    Asana = 'Asana',
+    Webhook = 'Webhook',
+    Kenna = 'Kenna',
+    Freshservice = 'Freshservice',
+    YouTrack = 'YouTrack',
+    NetsparkerEnterprise = 'NetsparkerEnterprise',
+    Splunk = 'Splunk',
+    Mattermost = 'Mattermost',
+    Hashicorp = 'Hashicorp',
+    PivotalTracker = 'PivotalTracker',
+    CyberArk = 'CyberArk',
+    DefectDojo = 'DefectDojo',
+    JazzTeam = 'JazzTeam',
+    AzureKeyVault = 'AzureKeyVault',
+    ServiceNowVrm = 'ServiceNowVRM'
+}
 /**
- * @export
- */
-export const TrelloIntegrationInfoModelTemplateTypeEnum = {
-    Standard: 'Standard',
-    Detailed: 'Detailed'
-} as const;
-export type TrelloIntegrationInfoModelTemplateTypeEnum = typeof TrelloIntegrationInfoModelTemplateTypeEnum[keyof typeof TrelloIntegrationInfoModelTemplateTypeEnum];
+* @export
+* @enum {string}
+*/
+export enum TrelloIntegrationInfoModelTemplateTypeEnum {
+    Standard = 'Standard',
+    Detailed = 'Detailed'
+}
 
 
 /**

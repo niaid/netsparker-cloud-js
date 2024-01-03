@@ -148,55 +148,53 @@ export interface YouTrackIntegrationInfoModel {
     integrationWizardResultModel?: IntegrationWizardResultModel;
 }
 
-
 /**
- * @export
- */
-export const YouTrackIntegrationInfoModelTypeEnum = {
-    Jira: 'Jira',
-    GitHub: 'GitHub',
-    Tfs: 'TFS',
-    FogBugz: 'FogBugz',
-    ServiceNow: 'ServiceNow',
-    Slack: 'Slack',
-    GitLab: 'GitLab',
-    Bitbucket: 'Bitbucket',
-    Unfuddle: 'Unfuddle',
-    Zapier: 'Zapier',
-    AzureDevOps: 'AzureDevOps',
-    Redmine: 'Redmine',
-    Bugzilla: 'Bugzilla',
-    Kafka: 'Kafka',
-    PagerDuty: 'PagerDuty',
-    MicrosoftTeams: 'MicrosoftTeams',
-    Clubhouse: 'Clubhouse',
-    Trello: 'Trello',
-    Asana: 'Asana',
-    Webhook: 'Webhook',
-    Kenna: 'Kenna',
-    Freshservice: 'Freshservice',
-    YouTrack: 'YouTrack',
-    NetsparkerEnterprise: 'NetsparkerEnterprise',
-    Splunk: 'Splunk',
-    Mattermost: 'Mattermost',
-    Hashicorp: 'Hashicorp',
-    PivotalTracker: 'PivotalTracker',
-    CyberArk: 'CyberArk',
-    DefectDojo: 'DefectDojo',
-    JazzTeam: 'JazzTeam',
-    AzureKeyVault: 'AzureKeyVault',
-    ServiceNowVrm: 'ServiceNowVRM'
-} as const;
-export type YouTrackIntegrationInfoModelTypeEnum = typeof YouTrackIntegrationInfoModelTypeEnum[keyof typeof YouTrackIntegrationInfoModelTypeEnum];
-
+* @export
+* @enum {string}
+*/
+export enum YouTrackIntegrationInfoModelTypeEnum {
+    Jira = 'Jira',
+    GitHub = 'GitHub',
+    Tfs = 'TFS',
+    FogBugz = 'FogBugz',
+    ServiceNow = 'ServiceNow',
+    Slack = 'Slack',
+    GitLab = 'GitLab',
+    Bitbucket = 'Bitbucket',
+    Unfuddle = 'Unfuddle',
+    Zapier = 'Zapier',
+    AzureDevOps = 'AzureDevOps',
+    Redmine = 'Redmine',
+    Bugzilla = 'Bugzilla',
+    Kafka = 'Kafka',
+    PagerDuty = 'PagerDuty',
+    MicrosoftTeams = 'MicrosoftTeams',
+    Clubhouse = 'Clubhouse',
+    Trello = 'Trello',
+    Asana = 'Asana',
+    Webhook = 'Webhook',
+    Kenna = 'Kenna',
+    Freshservice = 'Freshservice',
+    YouTrack = 'YouTrack',
+    NetsparkerEnterprise = 'NetsparkerEnterprise',
+    Splunk = 'Splunk',
+    Mattermost = 'Mattermost',
+    Hashicorp = 'Hashicorp',
+    PivotalTracker = 'PivotalTracker',
+    CyberArk = 'CyberArk',
+    DefectDojo = 'DefectDojo',
+    JazzTeam = 'JazzTeam',
+    AzureKeyVault = 'AzureKeyVault',
+    ServiceNowVrm = 'ServiceNowVRM'
+}
 /**
- * @export
- */
-export const YouTrackIntegrationInfoModelTemplateTypeEnum = {
-    Standard: 'Standard',
-    Detailed: 'Detailed'
-} as const;
-export type YouTrackIntegrationInfoModelTemplateTypeEnum = typeof YouTrackIntegrationInfoModelTemplateTypeEnum[keyof typeof YouTrackIntegrationInfoModelTemplateTypeEnum];
+* @export
+* @enum {string}
+*/
+export enum YouTrackIntegrationInfoModelTemplateTypeEnum {
+    Standard = 'Standard',
+    Detailed = 'Detailed'
+}
 
 
 /**

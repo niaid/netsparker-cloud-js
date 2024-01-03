@@ -11,23 +11,23 @@
  */
 import * as runtime from '../runtime';
 import type { SaveScanProfileApiModel, ScanProfilesListApiResult } from '../models/index';
-export interface ScanProfilesDeleteRequest {
+export interface ScanProfilesApiScanProfilesDeleteRequest {
     profileId: string;
 }
-export interface ScanProfilesGetByIdRequest {
+export interface ScanProfilesApiScanProfilesGetByIdRequest {
     id: string;
 }
-export interface ScanProfilesGetByNameRequest {
+export interface ScanProfilesApiScanProfilesGetByNameRequest {
     name: string;
 }
-export interface ScanProfilesListRequest {
+export interface ScanProfilesApiScanProfilesListRequest {
     page?: number;
     pageSize?: number;
 }
-export interface ScanProfilesNewRequest {
+export interface ScanProfilesApiScanProfilesNewRequest {
     model: SaveScanProfileApiModel;
 }
-export interface ScanProfilesUpdateRequest {
+export interface ScanProfilesApiScanProfilesUpdateRequest {
     model: SaveScanProfileApiModel;
 }
 /**
@@ -37,49 +37,49 @@ export declare class ScanProfilesApi extends runtime.BaseAPI {
     /**
      * Deletes a scan profiles.
      */
-    scanProfilesDeleteRaw(requestParameters: ScanProfilesDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
+    scanProfilesDeleteRaw(requestParameters: ScanProfilesApiScanProfilesDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
     /**
      * Deletes a scan profiles.
      */
-    scanProfilesDelete(requestParameters: ScanProfilesDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
+    scanProfilesDelete(requestParameters: ScanProfilesApiScanProfilesDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
     /**
      * Gets the scan profiles by the specified id.
      */
-    scanProfilesGetByIdRaw(requestParameters: ScanProfilesGetByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SaveScanProfileApiModel>>;
+    scanProfilesGetByIdRaw(requestParameters: ScanProfilesApiScanProfilesGetByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SaveScanProfileApiModel>>;
     /**
      * Gets the scan profiles by the specified id.
      */
-    scanProfilesGetById(requestParameters: ScanProfilesGetByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SaveScanProfileApiModel>;
+    scanProfilesGetById(requestParameters: ScanProfilesApiScanProfilesGetByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SaveScanProfileApiModel>;
     /**
      * Gets the scan profiles by the specified name.
      */
-    scanProfilesGetByNameRaw(requestParameters: ScanProfilesGetByNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SaveScanProfileApiModel>>;
+    scanProfilesGetByNameRaw(requestParameters: ScanProfilesApiScanProfilesGetByNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SaveScanProfileApiModel>>;
     /**
      * Gets the scan profiles by the specified name.
      */
-    scanProfilesGetByName(requestParameters: ScanProfilesGetByNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SaveScanProfileApiModel>;
+    scanProfilesGetByName(requestParameters: ScanProfilesApiScanProfilesGetByNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SaveScanProfileApiModel>;
     /**
      * Gets the list of scan profiles.
      */
-    scanProfilesListRaw(requestParameters: ScanProfilesListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanProfilesListApiResult>>;
+    scanProfilesListRaw(requestParameters: ScanProfilesApiScanProfilesListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanProfilesListApiResult>>;
     /**
      * Gets the list of scan profiles.
      */
-    scanProfilesList(requestParameters?: ScanProfilesListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanProfilesListApiResult>;
+    scanProfilesList(requestParameters?: ScanProfilesApiScanProfilesListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanProfilesListApiResult>;
     /**
      * Creates a new scan profiles.
      */
-    scanProfilesNewRaw(requestParameters: ScanProfilesNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SaveScanProfileApiModel>>;
+    scanProfilesNewRaw(requestParameters: ScanProfilesApiScanProfilesNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SaveScanProfileApiModel>>;
     /**
      * Creates a new scan profiles.
      */
-    scanProfilesNew(requestParameters: ScanProfilesNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SaveScanProfileApiModel>;
+    scanProfilesNew(requestParameters: ScanProfilesApiScanProfilesNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SaveScanProfileApiModel>;
     /**
      * Updates a scan profiles.
      */
-    scanProfilesUpdateRaw(requestParameters: ScanProfilesUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SaveScanProfileApiModel>>;
+    scanProfilesUpdateRaw(requestParameters: ScanProfilesApiScanProfilesUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SaveScanProfileApiModel>>;
     /**
      * Updates a scan profiles.
      */
-    scanProfilesUpdate(requestParameters: ScanProfilesUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SaveScanProfileApiModel>;
+    scanProfilesUpdate(requestParameters: ScanProfilesApiScanProfilesUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SaveScanProfileApiModel>;
 }

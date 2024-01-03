@@ -166,55 +166,53 @@ export interface GitHubIntegrationInfoModel {
     integrationWizardResultModel?: IntegrationWizardResultModel;
 }
 
-
 /**
- * @export
- */
-export const GitHubIntegrationInfoModelTypeEnum = {
-    Jira: 'Jira',
-    GitHub: 'GitHub',
-    Tfs: 'TFS',
-    FogBugz: 'FogBugz',
-    ServiceNow: 'ServiceNow',
-    Slack: 'Slack',
-    GitLab: 'GitLab',
-    Bitbucket: 'Bitbucket',
-    Unfuddle: 'Unfuddle',
-    Zapier: 'Zapier',
-    AzureDevOps: 'AzureDevOps',
-    Redmine: 'Redmine',
-    Bugzilla: 'Bugzilla',
-    Kafka: 'Kafka',
-    PagerDuty: 'PagerDuty',
-    MicrosoftTeams: 'MicrosoftTeams',
-    Clubhouse: 'Clubhouse',
-    Trello: 'Trello',
-    Asana: 'Asana',
-    Webhook: 'Webhook',
-    Kenna: 'Kenna',
-    Freshservice: 'Freshservice',
-    YouTrack: 'YouTrack',
-    NetsparkerEnterprise: 'NetsparkerEnterprise',
-    Splunk: 'Splunk',
-    Mattermost: 'Mattermost',
-    Hashicorp: 'Hashicorp',
-    PivotalTracker: 'PivotalTracker',
-    CyberArk: 'CyberArk',
-    DefectDojo: 'DefectDojo',
-    JazzTeam: 'JazzTeam',
-    AzureKeyVault: 'AzureKeyVault',
-    ServiceNowVrm: 'ServiceNowVRM'
-} as const;
-export type GitHubIntegrationInfoModelTypeEnum = typeof GitHubIntegrationInfoModelTypeEnum[keyof typeof GitHubIntegrationInfoModelTypeEnum];
-
+* @export
+* @enum {string}
+*/
+export enum GitHubIntegrationInfoModelTypeEnum {
+    Jira = 'Jira',
+    GitHub = 'GitHub',
+    Tfs = 'TFS',
+    FogBugz = 'FogBugz',
+    ServiceNow = 'ServiceNow',
+    Slack = 'Slack',
+    GitLab = 'GitLab',
+    Bitbucket = 'Bitbucket',
+    Unfuddle = 'Unfuddle',
+    Zapier = 'Zapier',
+    AzureDevOps = 'AzureDevOps',
+    Redmine = 'Redmine',
+    Bugzilla = 'Bugzilla',
+    Kafka = 'Kafka',
+    PagerDuty = 'PagerDuty',
+    MicrosoftTeams = 'MicrosoftTeams',
+    Clubhouse = 'Clubhouse',
+    Trello = 'Trello',
+    Asana = 'Asana',
+    Webhook = 'Webhook',
+    Kenna = 'Kenna',
+    Freshservice = 'Freshservice',
+    YouTrack = 'YouTrack',
+    NetsparkerEnterprise = 'NetsparkerEnterprise',
+    Splunk = 'Splunk',
+    Mattermost = 'Mattermost',
+    Hashicorp = 'Hashicorp',
+    PivotalTracker = 'PivotalTracker',
+    CyberArk = 'CyberArk',
+    DefectDojo = 'DefectDojo',
+    JazzTeam = 'JazzTeam',
+    AzureKeyVault = 'AzureKeyVault',
+    ServiceNowVrm = 'ServiceNowVRM'
+}
 /**
- * @export
- */
-export const GitHubIntegrationInfoModelTemplateTypeEnum = {
-    Standard: 'Standard',
-    Detailed: 'Detailed'
-} as const;
-export type GitHubIntegrationInfoModelTemplateTypeEnum = typeof GitHubIntegrationInfoModelTemplateTypeEnum[keyof typeof GitHubIntegrationInfoModelTemplateTypeEnum];
+* @export
+* @enum {string}
+*/
+export enum GitHubIntegrationInfoModelTemplateTypeEnum {
+    Standard = 'Standard',
+    Detailed = 'Detailed'
+}
 
 
 /**

@@ -52,18 +52,17 @@ export interface IntegrationCustomFieldVm {
     inputType?: IntegrationCustomFieldVmInputTypeEnum;
 }
 
-
 /**
- * @export
- */
-export const IntegrationCustomFieldVmInputTypeEnum = {
-    Text: 'Text',
-    Password: 'Password',
-    Textarea: 'Textarea',
-    FileUpload: 'FileUpload',
-    Complex: 'Complex'
-} as const;
-export type IntegrationCustomFieldVmInputTypeEnum = typeof IntegrationCustomFieldVmInputTypeEnum[keyof typeof IntegrationCustomFieldVmInputTypeEnum];
+* @export
+* @enum {string}
+*/
+export enum IntegrationCustomFieldVmInputTypeEnum {
+    Text = 'Text',
+    Password = 'Password',
+    Textarea = 'Textarea',
+    FileUpload = 'FileUpload',
+    Complex = 'Complex'
+}
 
 
 /**

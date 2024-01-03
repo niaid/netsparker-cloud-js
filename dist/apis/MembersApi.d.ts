@@ -11,42 +11,42 @@
  */
 import * as runtime from '../runtime';
 import type { MemberApiModelListApiResult, MemberApiViewModel, MemberInvitationDto, MemberInvitationPagedListDto, NewMemberApiModel, NewMemberInvitationApiModel, TimezoneApiModel, UpdateMemberApiModel, UserApiTokenModel } from '../models/index';
-export interface MembersDeleteRequest {
+export interface MembersApiMembersDeleteRequest {
     id: string;
 }
-export interface MembersDeleteInvitationRequest {
+export interface MembersApiMembersDeleteInvitationRequest {
     email: string;
 }
-export interface MembersGetRequest {
+export interface MembersApiMembersGetRequest {
     id: string;
 }
-export interface MembersGetApiTokenRequest {
+export interface MembersApiMembersGetApiTokenRequest {
     email: string;
 }
-export interface MembersGetByEmailRequest {
+export interface MembersApiMembersGetByEmailRequest {
     email: string;
 }
-export interface MembersGetInvitationRequest {
+export interface MembersApiMembersGetInvitationRequest {
     invitationId: string;
 }
-export interface MembersInvitationListRequest {
+export interface MembersApiMembersInvitationListRequest {
     page?: number;
     pageSize?: number;
 }
-export interface MembersListRequest {
+export interface MembersApiMembersListRequest {
     page?: number;
     pageSize?: number;
 }
-export interface MembersNewRequest {
+export interface MembersApiMembersNewRequest {
     model: NewMemberApiModel;
 }
-export interface MembersNewInvitationRequest {
+export interface MembersApiMembersNewInvitationRequest {
     model: NewMemberInvitationApiModel;
 }
-export interface MembersSendInvitationEmailRequest {
+export interface MembersApiMembersSendInvitationEmailRequest {
     invitationId: string;
 }
-export interface MembersUpdateRequest {
+export interface MembersApiMembersUpdateRequest {
     model: UpdateMemberApiModel;
 }
 /**
@@ -56,51 +56,51 @@ export declare class MembersApi extends runtime.BaseAPI {
     /**
      * Deletes a member
      */
-    membersDeleteRaw(requestParameters: MembersDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
+    membersDeleteRaw(requestParameters: MembersApiMembersDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
     /**
      * Deletes a member
      */
-    membersDelete(requestParameters: MembersDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
+    membersDelete(requestParameters: MembersApiMembersDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
     /**
      * Deletes member invitation
      */
-    membersDeleteInvitationRaw(requestParameters: MembersDeleteInvitationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    membersDeleteInvitationRaw(requestParameters: MembersApiMembersDeleteInvitationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Deletes member invitation
      */
-    membersDeleteInvitation(requestParameters: MembersDeleteInvitationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    membersDeleteInvitation(requestParameters: MembersApiMembersDeleteInvitationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Gets the member by the specified id.
      */
-    membersGetRaw(requestParameters: MembersGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<MemberApiViewModel>>;
+    membersGetRaw(requestParameters: MembersApiMembersGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<MemberApiViewModel>>;
     /**
      * Gets the member by the specified id.
      */
-    membersGet(requestParameters: MembersGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<MemberApiViewModel>;
+    membersGet(requestParameters: MembersApiMembersGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<MemberApiViewModel>;
     /**
      * Gets user api token.
      */
-    membersGetApiTokenRaw(requestParameters: MembersGetApiTokenRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UserApiTokenModel>>;
+    membersGetApiTokenRaw(requestParameters: MembersApiMembersGetApiTokenRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UserApiTokenModel>>;
     /**
      * Gets user api token.
      */
-    membersGetApiToken(requestParameters: MembersGetApiTokenRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UserApiTokenModel>;
+    membersGetApiToken(requestParameters: MembersApiMembersGetApiTokenRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UserApiTokenModel>;
     /**
      * Gets user by email.
      */
-    membersGetByEmailRaw(requestParameters: MembersGetByEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<MemberApiViewModel>>;
+    membersGetByEmailRaw(requestParameters: MembersApiMembersGetByEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<MemberApiViewModel>>;
     /**
      * Gets user by email.
      */
-    membersGetByEmail(requestParameters: MembersGetByEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<MemberApiViewModel>;
+    membersGetByEmail(requestParameters: MembersApiMembersGetByEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<MemberApiViewModel>;
     /**
      * Gets the member invitation by the specified id.
      */
-    membersGetInvitationRaw(requestParameters: MembersGetInvitationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<MemberInvitationDto>>;
+    membersGetInvitationRaw(requestParameters: MembersApiMembersGetInvitationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<MemberInvitationDto>>;
     /**
      * Gets the member invitation by the specified id.
      */
-    membersGetInvitation(requestParameters: MembersGetInvitationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<MemberInvitationDto>;
+    membersGetInvitation(requestParameters: MembersApiMembersGetInvitationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<MemberInvitationDto>;
     /**
      * Gets a list all of the time zones.
      */
@@ -112,49 +112,49 @@ export declare class MembersApi extends runtime.BaseAPI {
     /**
      * Gets the list of members.
      */
-    membersInvitationListRaw(requestParameters: MembersInvitationListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<MemberInvitationPagedListDto>>;
+    membersInvitationListRaw(requestParameters: MembersApiMembersInvitationListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<MemberInvitationPagedListDto>>;
     /**
      * Gets the list of members.
      */
-    membersInvitationList(requestParameters?: MembersInvitationListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<MemberInvitationPagedListDto>;
+    membersInvitationList(requestParameters?: MembersApiMembersInvitationListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<MemberInvitationPagedListDto>;
     /**
      * Gets the list of members.
      */
-    membersListRaw(requestParameters: MembersListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<MemberApiModelListApiResult>>;
+    membersListRaw(requestParameters: MembersApiMembersListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<MemberApiModelListApiResult>>;
     /**
      * Gets the list of members.
      */
-    membersList(requestParameters?: MembersListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<MemberApiModelListApiResult>;
+    membersList(requestParameters?: MembersApiMembersListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<MemberApiModelListApiResult>;
     /**
      * Creates a new member.
      */
-    membersNewRaw(requestParameters: MembersNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<MemberApiViewModel>>;
+    membersNewRaw(requestParameters: MembersApiMembersNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<MemberApiViewModel>>;
     /**
      * Creates a new member.
      */
-    membersNew(requestParameters: MembersNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<MemberApiViewModel>;
+    membersNew(requestParameters: MembersApiMembersNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<MemberApiViewModel>;
     /**
      * Creates a new member invitation
      */
-    membersNewInvitationRaw(requestParameters: MembersNewInvitationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    membersNewInvitationRaw(requestParameters: MembersApiMembersNewInvitationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Creates a new member invitation
      */
-    membersNewInvitation(requestParameters: MembersNewInvitationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    membersNewInvitation(requestParameters: MembersApiMembersNewInvitationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Sends member invitation email
      */
-    membersSendInvitationEmailRaw(requestParameters: MembersSendInvitationEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    membersSendInvitationEmailRaw(requestParameters: MembersApiMembersSendInvitationEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Sends member invitation email
      */
-    membersSendInvitationEmail(requestParameters: MembersSendInvitationEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    membersSendInvitationEmail(requestParameters: MembersApiMembersSendInvitationEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Updates a member
      */
-    membersUpdateRaw(requestParameters: MembersUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<MemberApiViewModel>>;
+    membersUpdateRaw(requestParameters: MembersApiMembersUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<MemberApiViewModel>>;
     /**
      * Updates a member
      */
-    membersUpdate(requestParameters: MembersUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<MemberApiViewModel>;
+    membersUpdate(requestParameters: MembersApiMembersUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<MemberApiViewModel>;
 }

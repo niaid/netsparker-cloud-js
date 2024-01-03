@@ -11,23 +11,23 @@
  */
 import * as runtime from '../runtime';
 import type { NewScanPolicySettingModel, ScanPolicyListApiResult, ScanPolicySettingApiModel, UpdateScanPolicySettingModel } from '../models/index';
-export interface ScanPoliciesDeleteRequest {
+export interface ScanPoliciesApiScanPoliciesDeleteRequest {
     name: string;
 }
-export interface ScanPoliciesFindRequest {
+export interface ScanPoliciesApiScanPoliciesFindRequest {
     name: string;
 }
-export interface ScanPoliciesGetRequest {
+export interface ScanPoliciesApiScanPoliciesGetRequest {
     id: string;
 }
-export interface ScanPoliciesListRequest {
+export interface ScanPoliciesApiScanPoliciesListRequest {
     page?: number;
     pageSize?: number;
 }
-export interface ScanPoliciesNewRequest {
+export interface ScanPoliciesApiScanPoliciesNewRequest {
     model: NewScanPolicySettingModel;
 }
-export interface ScanPoliciesUpdateRequest {
+export interface ScanPoliciesApiScanPoliciesUpdateRequest {
     model: UpdateScanPolicySettingModel;
 }
 /**
@@ -37,49 +37,49 @@ export declare class ScanPoliciesApi extends runtime.BaseAPI {
     /**
      * Deletes a scan policy.
      */
-    scanPoliciesDeleteRaw(requestParameters: ScanPoliciesDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    scanPoliciesDeleteRaw(requestParameters: ScanPoliciesApiScanPoliciesDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Deletes a scan policy.
      */
-    scanPoliciesDelete(requestParameters: ScanPoliciesDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    scanPoliciesDelete(requestParameters: ScanPoliciesApiScanPoliciesDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Gets the scan policy by the specified name.
      */
-    scanPoliciesFindRaw(requestParameters: ScanPoliciesFindRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanPolicySettingApiModel>>;
+    scanPoliciesFindRaw(requestParameters: ScanPoliciesApiScanPoliciesFindRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanPolicySettingApiModel>>;
     /**
      * Gets the scan policy by the specified name.
      */
-    scanPoliciesFind(requestParameters: ScanPoliciesFindRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanPolicySettingApiModel>;
+    scanPoliciesFind(requestParameters: ScanPoliciesApiScanPoliciesFindRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanPolicySettingApiModel>;
     /**
      * Gets the scan policy by the specified id.
      */
-    scanPoliciesGetRaw(requestParameters: ScanPoliciesGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanPolicySettingApiModel>>;
+    scanPoliciesGetRaw(requestParameters: ScanPoliciesApiScanPoliciesGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanPolicySettingApiModel>>;
     /**
      * Gets the scan policy by the specified id.
      */
-    scanPoliciesGet(requestParameters: ScanPoliciesGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanPolicySettingApiModel>;
+    scanPoliciesGet(requestParameters: ScanPoliciesApiScanPoliciesGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanPolicySettingApiModel>;
     /**
      * Gets the list of scan policies.
      */
-    scanPoliciesListRaw(requestParameters: ScanPoliciesListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanPolicyListApiResult>>;
+    scanPoliciesListRaw(requestParameters: ScanPoliciesApiScanPoliciesListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanPolicyListApiResult>>;
     /**
      * Gets the list of scan policies.
      */
-    scanPoliciesList(requestParameters?: ScanPoliciesListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanPolicyListApiResult>;
+    scanPoliciesList(requestParameters?: ScanPoliciesApiScanPoliciesListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanPolicyListApiResult>;
     /**
      * Creates a new scan policy.
      */
-    scanPoliciesNewRaw(requestParameters: ScanPoliciesNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanPolicySettingApiModel>>;
+    scanPoliciesNewRaw(requestParameters: ScanPoliciesApiScanPoliciesNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanPolicySettingApiModel>>;
     /**
      * Creates a new scan policy.
      */
-    scanPoliciesNew(requestParameters: ScanPoliciesNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanPolicySettingApiModel>;
+    scanPoliciesNew(requestParameters: ScanPoliciesApiScanPoliciesNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanPolicySettingApiModel>;
     /**
      * Updates a scan policy.
      */
-    scanPoliciesUpdateRaw(requestParameters: ScanPoliciesUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanPolicySettingApiModel>>;
+    scanPoliciesUpdateRaw(requestParameters: ScanPoliciesApiScanPoliciesUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanPolicySettingApiModel>>;
     /**
      * Updates a scan policy.
      */
-    scanPoliciesUpdate(requestParameters: ScanPoliciesUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanPolicySettingApiModel>;
+    scanPoliciesUpdate(requestParameters: ScanPoliciesApiScanPoliciesUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanPolicySettingApiModel>;
 }

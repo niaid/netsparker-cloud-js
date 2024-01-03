@@ -95,25 +95,25 @@ export interface OAuth2SettingModel {
     threeLegged?: ThreeLeggedFields;
 }
 /**
- * @export
- */
-export declare const OAuth2SettingModelSelectedFlowTypeEnum: {
-    readonly AuthorizationCode: "AuthorizationCode";
-    readonly Implicit: "Implicit";
-    readonly ResourceOwnerPasswordCredentials: "ResourceOwnerPasswordCredentials";
-    readonly ClientCredentials: "ClientCredentials";
-    readonly Custom: "Custom";
-};
-export type OAuth2SettingModelSelectedFlowTypeEnum = typeof OAuth2SettingModelSelectedFlowTypeEnum[keyof typeof OAuth2SettingModelSelectedFlowTypeEnum];
+* @export
+* @enum {string}
+*/
+export declare enum OAuth2SettingModelSelectedFlowTypeEnum {
+    AuthorizationCode = "AuthorizationCode",
+    Implicit = "Implicit",
+    ResourceOwnerPasswordCredentials = "ResourceOwnerPasswordCredentials",
+    ClientCredentials = "ClientCredentials",
+    Custom = "Custom"
+}
 /**
- * @export
- */
-export declare const OAuth2SettingModelSelectedAuthenticationTypeEnum: {
-    readonly None: "None";
-    readonly Form: "Form";
-    readonly Basic: "Basic";
-};
-export type OAuth2SettingModelSelectedAuthenticationTypeEnum = typeof OAuth2SettingModelSelectedAuthenticationTypeEnum[keyof typeof OAuth2SettingModelSelectedAuthenticationTypeEnum];
+* @export
+* @enum {string}
+*/
+export declare enum OAuth2SettingModelSelectedAuthenticationTypeEnum {
+    None = "None",
+    Form = "Form",
+    Basic = "Basic"
+}
 /**
  * Check if a given object implements the OAuth2SettingModel interface.
  */

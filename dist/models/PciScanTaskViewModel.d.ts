@@ -47,25 +47,25 @@ export interface PciScanTaskViewModel {
     endDate?: Date;
 }
 /**
- * @export
- */
-export declare const PciScanTaskViewModelScanStateEnum: {
-    readonly New: "New";
-    readonly Running: "Running";
-    readonly Stopped: "Stopped";
-    readonly Deleted: "Deleted";
-    readonly Done: "Done";
-};
-export type PciScanTaskViewModelScanStateEnum = typeof PciScanTaskViewModelScanStateEnum[keyof typeof PciScanTaskViewModelScanStateEnum];
+* @export
+* @enum {string}
+*/
+export declare enum PciScanTaskViewModelScanStateEnum {
+    New = "New",
+    Running = "Running",
+    Stopped = "Stopped",
+    Deleted = "Deleted",
+    Done = "Done"
+}
 /**
- * @export
- */
-export declare const PciScanTaskViewModelComplianceStatusEnum: {
-    readonly Scanning: "Scanning";
-    readonly Passed: "Passed";
-    readonly Failed: "Failed";
-};
-export type PciScanTaskViewModelComplianceStatusEnum = typeof PciScanTaskViewModelComplianceStatusEnum[keyof typeof PciScanTaskViewModelComplianceStatusEnum];
+* @export
+* @enum {string}
+*/
+export declare enum PciScanTaskViewModelComplianceStatusEnum {
+    Scanning = "Scanning",
+    Passed = "Passed",
+    Failed = "Failed"
+}
 /**
  * Check if a given object implements the PciScanTaskViewModel interface.
  */

@@ -29,15 +29,15 @@ export interface StartVerificationApiModel {
     websiteUrl: string;
 }
 /**
- * @export
- */
-export declare const StartVerificationApiModelVerificationMethodEnum: {
-    readonly File: "File";
-    readonly Tag: "Tag";
-    readonly Dns: "Dns";
-    readonly Email: "Email";
-};
-export type StartVerificationApiModelVerificationMethodEnum = typeof StartVerificationApiModelVerificationMethodEnum[keyof typeof StartVerificationApiModelVerificationMethodEnum];
+* @export
+* @enum {string}
+*/
+export declare enum StartVerificationApiModelVerificationMethodEnum {
+    File = "File",
+    Tag = "Tag",
+    Dns = "Dns",
+    Email = "Email"
+}
 /**
  * Check if a given object implements the StartVerificationApiModel interface.
  */

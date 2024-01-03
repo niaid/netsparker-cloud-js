@@ -18,50 +18,54 @@ const runtime_1 = require("../runtime");
 const IntegrationCustomFieldVm_1 = require("./IntegrationCustomFieldVm");
 const IntegrationWizardResultModel_1 = require("./IntegrationWizardResultModel");
 /**
- * @export
- */
-exports.GitLabIntegrationInfoModelTypeEnum = {
-    Jira: 'Jira',
-    GitHub: 'GitHub',
-    Tfs: 'TFS',
-    FogBugz: 'FogBugz',
-    ServiceNow: 'ServiceNow',
-    Slack: 'Slack',
-    GitLab: 'GitLab',
-    Bitbucket: 'Bitbucket',
-    Unfuddle: 'Unfuddle',
-    Zapier: 'Zapier',
-    AzureDevOps: 'AzureDevOps',
-    Redmine: 'Redmine',
-    Bugzilla: 'Bugzilla',
-    Kafka: 'Kafka',
-    PagerDuty: 'PagerDuty',
-    MicrosoftTeams: 'MicrosoftTeams',
-    Clubhouse: 'Clubhouse',
-    Trello: 'Trello',
-    Asana: 'Asana',
-    Webhook: 'Webhook',
-    Kenna: 'Kenna',
-    Freshservice: 'Freshservice',
-    YouTrack: 'YouTrack',
-    NetsparkerEnterprise: 'NetsparkerEnterprise',
-    Splunk: 'Splunk',
-    Mattermost: 'Mattermost',
-    Hashicorp: 'Hashicorp',
-    PivotalTracker: 'PivotalTracker',
-    CyberArk: 'CyberArk',
-    DefectDojo: 'DefectDojo',
-    JazzTeam: 'JazzTeam',
-    AzureKeyVault: 'AzureKeyVault',
-    ServiceNowVrm: 'ServiceNowVRM'
-};
+* @export
+* @enum {string}
+*/
+var GitLabIntegrationInfoModelTypeEnum;
+(function (GitLabIntegrationInfoModelTypeEnum) {
+    GitLabIntegrationInfoModelTypeEnum["Jira"] = "Jira";
+    GitLabIntegrationInfoModelTypeEnum["GitHub"] = "GitHub";
+    GitLabIntegrationInfoModelTypeEnum["Tfs"] = "TFS";
+    GitLabIntegrationInfoModelTypeEnum["FogBugz"] = "FogBugz";
+    GitLabIntegrationInfoModelTypeEnum["ServiceNow"] = "ServiceNow";
+    GitLabIntegrationInfoModelTypeEnum["Slack"] = "Slack";
+    GitLabIntegrationInfoModelTypeEnum["GitLab"] = "GitLab";
+    GitLabIntegrationInfoModelTypeEnum["Bitbucket"] = "Bitbucket";
+    GitLabIntegrationInfoModelTypeEnum["Unfuddle"] = "Unfuddle";
+    GitLabIntegrationInfoModelTypeEnum["Zapier"] = "Zapier";
+    GitLabIntegrationInfoModelTypeEnum["AzureDevOps"] = "AzureDevOps";
+    GitLabIntegrationInfoModelTypeEnum["Redmine"] = "Redmine";
+    GitLabIntegrationInfoModelTypeEnum["Bugzilla"] = "Bugzilla";
+    GitLabIntegrationInfoModelTypeEnum["Kafka"] = "Kafka";
+    GitLabIntegrationInfoModelTypeEnum["PagerDuty"] = "PagerDuty";
+    GitLabIntegrationInfoModelTypeEnum["MicrosoftTeams"] = "MicrosoftTeams";
+    GitLabIntegrationInfoModelTypeEnum["Clubhouse"] = "Clubhouse";
+    GitLabIntegrationInfoModelTypeEnum["Trello"] = "Trello";
+    GitLabIntegrationInfoModelTypeEnum["Asana"] = "Asana";
+    GitLabIntegrationInfoModelTypeEnum["Webhook"] = "Webhook";
+    GitLabIntegrationInfoModelTypeEnum["Kenna"] = "Kenna";
+    GitLabIntegrationInfoModelTypeEnum["Freshservice"] = "Freshservice";
+    GitLabIntegrationInfoModelTypeEnum["YouTrack"] = "YouTrack";
+    GitLabIntegrationInfoModelTypeEnum["NetsparkerEnterprise"] = "NetsparkerEnterprise";
+    GitLabIntegrationInfoModelTypeEnum["Splunk"] = "Splunk";
+    GitLabIntegrationInfoModelTypeEnum["Mattermost"] = "Mattermost";
+    GitLabIntegrationInfoModelTypeEnum["Hashicorp"] = "Hashicorp";
+    GitLabIntegrationInfoModelTypeEnum["PivotalTracker"] = "PivotalTracker";
+    GitLabIntegrationInfoModelTypeEnum["CyberArk"] = "CyberArk";
+    GitLabIntegrationInfoModelTypeEnum["DefectDojo"] = "DefectDojo";
+    GitLabIntegrationInfoModelTypeEnum["JazzTeam"] = "JazzTeam";
+    GitLabIntegrationInfoModelTypeEnum["AzureKeyVault"] = "AzureKeyVault";
+    GitLabIntegrationInfoModelTypeEnum["ServiceNowVrm"] = "ServiceNowVRM";
+})(GitLabIntegrationInfoModelTypeEnum = exports.GitLabIntegrationInfoModelTypeEnum || (exports.GitLabIntegrationInfoModelTypeEnum = {}));
 /**
- * @export
- */
-exports.GitLabIntegrationInfoModelTemplateTypeEnum = {
-    Standard: 'Standard',
-    Detailed: 'Detailed'
-};
+* @export
+* @enum {string}
+*/
+var GitLabIntegrationInfoModelTemplateTypeEnum;
+(function (GitLabIntegrationInfoModelTemplateTypeEnum) {
+    GitLabIntegrationInfoModelTemplateTypeEnum["Standard"] = "Standard";
+    GitLabIntegrationInfoModelTemplateTypeEnum["Detailed"] = "Detailed";
+})(GitLabIntegrationInfoModelTemplateTypeEnum = exports.GitLabIntegrationInfoModelTemplateTypeEnum || (exports.GitLabIntegrationInfoModelTemplateTypeEnum = {}));
 /**
  * Check if a given object implements the GitLabIntegrationInfoModel interface.
  */

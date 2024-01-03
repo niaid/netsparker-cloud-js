@@ -71,16 +71,15 @@ export interface NewGroupScanApiModel {
     tags?: Array<string>;
 }
 
-
 /**
- * @export
- */
-export const NewGroupScanApiModelAuthenticationProfileOptionEnum = {
-    DontUse: 'DontUse',
-    UseMatchedProfile: 'UseMatchedProfile',
-    SelectedProfile: 'SelectedProfile'
-} as const;
-export type NewGroupScanApiModelAuthenticationProfileOptionEnum = typeof NewGroupScanApiModelAuthenticationProfileOptionEnum[keyof typeof NewGroupScanApiModelAuthenticationProfileOptionEnum];
+* @export
+* @enum {string}
+*/
+export enum NewGroupScanApiModelAuthenticationProfileOptionEnum {
+    DontUse = 'DontUse',
+    UseMatchedProfile = 'UseMatchedProfile',
+    SelectedProfile = 'SelectedProfile'
+}
 
 
 /**

@@ -29,17 +29,17 @@ export interface JiraPriorityMapping {
     icSeverity?: JiraPriorityMappingIcSeverityEnum;
 }
 /**
- * @export
- */
-export declare const JiraPriorityMappingIcSeverityEnum: {
-    readonly BestPractice: "BestPractice";
-    readonly Information: "Information";
-    readonly Low: "Low";
-    readonly Medium: "Medium";
-    readonly High: "High";
-    readonly Critical: "Critical";
-};
-export type JiraPriorityMappingIcSeverityEnum = typeof JiraPriorityMappingIcSeverityEnum[keyof typeof JiraPriorityMappingIcSeverityEnum];
+* @export
+* @enum {string}
+*/
+export declare enum JiraPriorityMappingIcSeverityEnum {
+    BestPractice = "BestPractice",
+    Information = "Information",
+    Low = "Low",
+    Medium = "Medium",
+    High = "High",
+    Critical = "Critical"
+}
 /**
  * Check if a given object implements the JiraPriorityMapping interface.
  */

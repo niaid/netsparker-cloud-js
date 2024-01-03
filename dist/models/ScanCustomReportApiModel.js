@@ -16,16 +16,18 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ScanCustomReportApiModelToJSON = exports.ScanCustomReportApiModelFromJSONTyped = exports.ScanCustomReportApiModelFromJSON = exports.instanceOfScanCustomReportApiModel = exports.ScanCustomReportApiModelReportFormatEnum = void 0;
 const runtime_1 = require("../runtime");
 /**
- * @export
- */
-exports.ScanCustomReportApiModelReportFormatEnum = {
-    Xml: 'Xml',
-    Csv: 'Csv',
-    Pdf: 'Pdf',
-    Html: 'Html',
-    Txt: 'Txt',
-    Json: 'Json'
-};
+* @export
+* @enum {string}
+*/
+var ScanCustomReportApiModelReportFormatEnum;
+(function (ScanCustomReportApiModelReportFormatEnum) {
+    ScanCustomReportApiModelReportFormatEnum["Xml"] = "Xml";
+    ScanCustomReportApiModelReportFormatEnum["Csv"] = "Csv";
+    ScanCustomReportApiModelReportFormatEnum["Pdf"] = "Pdf";
+    ScanCustomReportApiModelReportFormatEnum["Html"] = "Html";
+    ScanCustomReportApiModelReportFormatEnum["Txt"] = "Txt";
+    ScanCustomReportApiModelReportFormatEnum["Json"] = "Json";
+})(ScanCustomReportApiModelReportFormatEnum = exports.ScanCustomReportApiModelReportFormatEnum || (exports.ScanCustomReportApiModelReportFormatEnum = {}));
 /**
  * Check if a given object implements the ScanCustomReportApiModel interface.
  */

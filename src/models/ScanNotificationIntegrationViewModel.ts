@@ -436,56 +436,54 @@ export interface ScanNotificationIntegrationViewModel {
     microsoftTeamsInfo?: MicrosoftTeamsIntegrationInfoModel;
 }
 
-
 /**
- * @export
- */
-export const ScanNotificationIntegrationViewModelTypeEnum = {
-    Jira: 'Jira',
-    GitHub: 'GitHub',
-    Tfs: 'TFS',
-    FogBugz: 'FogBugz',
-    ServiceNow: 'ServiceNow',
-    Slack: 'Slack',
-    GitLab: 'GitLab',
-    Bitbucket: 'Bitbucket',
-    Unfuddle: 'Unfuddle',
-    Zapier: 'Zapier',
-    AzureDevOps: 'AzureDevOps',
-    Redmine: 'Redmine',
-    Bugzilla: 'Bugzilla',
-    Kafka: 'Kafka',
-    PagerDuty: 'PagerDuty',
-    MicrosoftTeams: 'MicrosoftTeams',
-    Clubhouse: 'Clubhouse',
-    Trello: 'Trello',
-    Asana: 'Asana',
-    Webhook: 'Webhook',
-    Kenna: 'Kenna',
-    Freshservice: 'Freshservice',
-    YouTrack: 'YouTrack',
-    NetsparkerEnterprise: 'NetsparkerEnterprise',
-    Splunk: 'Splunk',
-    Mattermost: 'Mattermost',
-    Hashicorp: 'Hashicorp',
-    PivotalTracker: 'PivotalTracker',
-    CyberArk: 'CyberArk',
-    DefectDojo: 'DefectDojo',
-    JazzTeam: 'JazzTeam',
-    AzureKeyVault: 'AzureKeyVault',
-    ServiceNowVrm: 'ServiceNowVRM'
-} as const;
-export type ScanNotificationIntegrationViewModelTypeEnum = typeof ScanNotificationIntegrationViewModelTypeEnum[keyof typeof ScanNotificationIntegrationViewModelTypeEnum];
-
+* @export
+* @enum {string}
+*/
+export enum ScanNotificationIntegrationViewModelTypeEnum {
+    Jira = 'Jira',
+    GitHub = 'GitHub',
+    Tfs = 'TFS',
+    FogBugz = 'FogBugz',
+    ServiceNow = 'ServiceNow',
+    Slack = 'Slack',
+    GitLab = 'GitLab',
+    Bitbucket = 'Bitbucket',
+    Unfuddle = 'Unfuddle',
+    Zapier = 'Zapier',
+    AzureDevOps = 'AzureDevOps',
+    Redmine = 'Redmine',
+    Bugzilla = 'Bugzilla',
+    Kafka = 'Kafka',
+    PagerDuty = 'PagerDuty',
+    MicrosoftTeams = 'MicrosoftTeams',
+    Clubhouse = 'Clubhouse',
+    Trello = 'Trello',
+    Asana = 'Asana',
+    Webhook = 'Webhook',
+    Kenna = 'Kenna',
+    Freshservice = 'Freshservice',
+    YouTrack = 'YouTrack',
+    NetsparkerEnterprise = 'NetsparkerEnterprise',
+    Splunk = 'Splunk',
+    Mattermost = 'Mattermost',
+    Hashicorp = 'Hashicorp',
+    PivotalTracker = 'PivotalTracker',
+    CyberArk = 'CyberArk',
+    DefectDojo = 'DefectDojo',
+    JazzTeam = 'JazzTeam',
+    AzureKeyVault = 'AzureKeyVault',
+    ServiceNowVrm = 'ServiceNowVRM'
+}
 /**
- * @export
- */
-export const ScanNotificationIntegrationViewModelCategoryEnum = {
-    IssueTrackingSystem: 'IssueTrackingSystem',
-    TeamMessagingSystem: 'TeamMessagingSystem',
-    SecretsAndEncryptionManagement: 'SecretsAndEncryptionManagement'
-} as const;
-export type ScanNotificationIntegrationViewModelCategoryEnum = typeof ScanNotificationIntegrationViewModelCategoryEnum[keyof typeof ScanNotificationIntegrationViewModelCategoryEnum];
+* @export
+* @enum {string}
+*/
+export enum ScanNotificationIntegrationViewModelCategoryEnum {
+    IssueTrackingSystem = 'IssueTrackingSystem',
+    TeamMessagingSystem = 'TeamMessagingSystem',
+    SecretsAndEncryptionManagement = 'SecretsAndEncryptionManagement'
+}
 
 
 /**

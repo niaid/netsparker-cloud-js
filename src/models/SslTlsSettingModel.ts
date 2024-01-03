@@ -63,24 +63,22 @@ export interface SslTlsSettingModel {
     tls13Enabled?: boolean;
 }
 
-
 /**
- * @export
- */
-export const SslTlsSettingModelExternalDomainInvalidCertificateActionEnum = {
-    Ignore: 'Ignore',
-    Reject: 'Reject'
-} as const;
-export type SslTlsSettingModelExternalDomainInvalidCertificateActionEnum = typeof SslTlsSettingModelExternalDomainInvalidCertificateActionEnum[keyof typeof SslTlsSettingModelExternalDomainInvalidCertificateActionEnum];
-
+* @export
+* @enum {string}
+*/
+export enum SslTlsSettingModelExternalDomainInvalidCertificateActionEnum {
+    Ignore = 'Ignore',
+    Reject = 'Reject'
+}
 /**
- * @export
- */
-export const SslTlsSettingModelTargetUrlInvalidCertificateActionEnum = {
-    Ignore: 'Ignore',
-    Reject: 'Reject'
-} as const;
-export type SslTlsSettingModelTargetUrlInvalidCertificateActionEnum = typeof SslTlsSettingModelTargetUrlInvalidCertificateActionEnum[keyof typeof SslTlsSettingModelTargetUrlInvalidCertificateActionEnum];
+* @export
+* @enum {string}
+*/
+export enum SslTlsSettingModelTargetUrlInvalidCertificateActionEnum {
+    Ignore = 'Ignore',
+    Reject = 'Reject'
+}
 
 
 /**

@@ -17,18 +17,20 @@ exports.NewScheduledWithProfileApiModelToJSON = exports.NewScheduledWithProfileA
 const runtime_1 = require("../runtime");
 const ScheduledScanRecurrenceApiModel_1 = require("./ScheduledScanRecurrenceApiModel");
 /**
- * @export
- */
-exports.NewScheduledWithProfileApiModelScheduleRunTypeEnum = {
-    Once: 'Once',
-    Daily: 'Daily',
-    Weekly: 'Weekly',
-    Monthly: 'Monthly',
-    Quarterly: 'Quarterly',
-    Biannually: 'Biannually',
-    Yearly: 'Yearly',
-    Custom: 'Custom'
-};
+* @export
+* @enum {string}
+*/
+var NewScheduledWithProfileApiModelScheduleRunTypeEnum;
+(function (NewScheduledWithProfileApiModelScheduleRunTypeEnum) {
+    NewScheduledWithProfileApiModelScheduleRunTypeEnum["Once"] = "Once";
+    NewScheduledWithProfileApiModelScheduleRunTypeEnum["Daily"] = "Daily";
+    NewScheduledWithProfileApiModelScheduleRunTypeEnum["Weekly"] = "Weekly";
+    NewScheduledWithProfileApiModelScheduleRunTypeEnum["Monthly"] = "Monthly";
+    NewScheduledWithProfileApiModelScheduleRunTypeEnum["Quarterly"] = "Quarterly";
+    NewScheduledWithProfileApiModelScheduleRunTypeEnum["Biannually"] = "Biannually";
+    NewScheduledWithProfileApiModelScheduleRunTypeEnum["Yearly"] = "Yearly";
+    NewScheduledWithProfileApiModelScheduleRunTypeEnum["Custom"] = "Custom";
+})(NewScheduledWithProfileApiModelScheduleRunTypeEnum = exports.NewScheduledWithProfileApiModelScheduleRunTypeEnum || (exports.NewScheduledWithProfileApiModelScheduleRunTypeEnum = {}));
 /**
  * Check if a given object implements the NewScheduledWithProfileApiModel interface.
  */

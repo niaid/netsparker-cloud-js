@@ -17,20 +17,24 @@ exports.DiscoveryApiModelToJSON = exports.DiscoveryApiModelFromJSONTyped = expor
 const runtime_1 = require("../runtime");
 const DiscoveryConnectionsApiModel_1 = require("./DiscoveryConnectionsApiModel");
 /**
- * @export
- */
-exports.DiscoveryApiModelStatusEnum = {
-    Discovered: 'Discovered',
-    Ignored: 'Ignored',
-    Created: 'Created'
-};
+* @export
+* @enum {string}
+*/
+var DiscoveryApiModelStatusEnum;
+(function (DiscoveryApiModelStatusEnum) {
+    DiscoveryApiModelStatusEnum["Discovered"] = "Discovered";
+    DiscoveryApiModelStatusEnum["Ignored"] = "Ignored";
+    DiscoveryApiModelStatusEnum["Created"] = "Created";
+})(DiscoveryApiModelStatusEnum = exports.DiscoveryApiModelStatusEnum || (exports.DiscoveryApiModelStatusEnum = {}));
 /**
- * @export
- */
-exports.DiscoveryApiModelDiscoverySourceTypeEnum = {
-    RadarDeepInfo: 'RadarDeepInfo',
-    Aws: 'Aws'
-};
+* @export
+* @enum {string}
+*/
+var DiscoveryApiModelDiscoverySourceTypeEnum;
+(function (DiscoveryApiModelDiscoverySourceTypeEnum) {
+    DiscoveryApiModelDiscoverySourceTypeEnum["RadarDeepInfo"] = "RadarDeepInfo";
+    DiscoveryApiModelDiscoverySourceTypeEnum["Aws"] = "Aws";
+})(DiscoveryApiModelDiscoverySourceTypeEnum = exports.DiscoveryApiModelDiscoverySourceTypeEnum || (exports.DiscoveryApiModelDiscoverySourceTypeEnum = {}));
 /**
  * Check if a given object implements the DiscoveryApiModel interface.
  */

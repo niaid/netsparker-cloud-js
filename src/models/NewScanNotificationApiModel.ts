@@ -101,29 +101,27 @@ export interface NewScanNotificationApiModel {
     scope: NewScanNotificationApiModelScopeEnum;
 }
 
-
 /**
- * @export
- */
-export const NewScanNotificationApiModelEventEnum = {
-    NewScan: 'NewScan',
-    ScanCompleted: 'ScanCompleted',
-    ScanCancelled: 'ScanCancelled',
-    ScanFailed: 'ScanFailed',
-    ScheduledScanLaunchFailed: 'ScheduledScanLaunchFailed',
-    OutOfDateTechnology: 'OutOfDateTechnology'
-} as const;
-export type NewScanNotificationApiModelEventEnum = typeof NewScanNotificationApiModelEventEnum[keyof typeof NewScanNotificationApiModelEventEnum];
-
+* @export
+* @enum {string}
+*/
+export enum NewScanNotificationApiModelEventEnum {
+    NewScan = 'NewScan',
+    ScanCompleted = 'ScanCompleted',
+    ScanCancelled = 'ScanCancelled',
+    ScanFailed = 'ScanFailed',
+    ScheduledScanLaunchFailed = 'ScheduledScanLaunchFailed',
+    OutOfDateTechnology = 'OutOfDateTechnology'
+}
 /**
- * @export
- */
-export const NewScanNotificationApiModelScopeEnum = {
-    AnyWebsite: 'AnyWebsite',
-    WebsiteGroup: 'WebsiteGroup',
-    Website: 'Website'
-} as const;
-export type NewScanNotificationApiModelScopeEnum = typeof NewScanNotificationApiModelScopeEnum[keyof typeof NewScanNotificationApiModelScopeEnum];
+* @export
+* @enum {string}
+*/
+export enum NewScanNotificationApiModelScopeEnum {
+    AnyWebsite = 'AnyWebsite',
+    WebsiteGroup = 'WebsiteGroup',
+    Website = 'Website'
+}
 
 
 /**

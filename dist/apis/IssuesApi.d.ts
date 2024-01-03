@@ -11,14 +11,14 @@
  */
 import * as runtime from '../runtime';
 import type { AllIssuesApiModel, IssueApiResult, IssueApiUpdateModel, IssueSummaryApiResult, VulnerabilityContentApiModel } from '../models/index';
-export interface IssuesAddressedIssuesRequest {
+export interface IssuesApiIssuesAddressedIssuesRequest {
     severity?: IssuesAddressedIssuesSeverityEnum;
     webSiteName?: string;
     websiteGroupName?: string;
     page?: number;
     pageSize?: number;
 }
-export interface IssuesAllIssuesRequest {
+export interface IssuesApiIssuesAllIssuesRequest {
     severity?: IssuesAllIssuesSeverityEnum;
     webSiteName?: string;
     websiteGroupName?: string;
@@ -29,13 +29,13 @@ export interface IssuesAllIssuesRequest {
     rawDetails?: boolean;
     integration?: IssuesAllIssuesIntegrationEnum;
 }
-export interface IssuesGetRequest {
+export interface IssuesApiIssuesGetRequest {
     id: string;
 }
-export interface IssuesGetVulnerabilityContentRequest {
+export interface IssuesApiIssuesGetVulnerabilityContentRequest {
     id: string;
 }
-export interface IssuesReportRequest {
+export interface IssuesApiIssuesReportRequest {
     csvSeparator?: IssuesReportCsvSeparatorEnum;
     severity?: IssuesReportSeverityEnum;
     websiteGroupName?: string;
@@ -43,7 +43,7 @@ export interface IssuesReportRequest {
     startDate?: Date;
     endDate?: Date;
 }
-export interface IssuesSummaryRequest {
+export interface IssuesApiIssuesSummaryRequest {
     targetUri: string;
     websiteRoot: string;
     sinceDate?: string;
@@ -51,17 +51,17 @@ export interface IssuesSummaryRequest {
     page?: number;
     pageSize?: number;
 }
-export interface IssuesTodoRequest {
+export interface IssuesApiIssuesTodoRequest {
     severity?: IssuesTodoSeverityEnum;
     webSiteName?: string;
     websiteGroupName?: string;
     page?: number;
     pageSize?: number;
 }
-export interface IssuesUpdateRequest {
+export interface IssuesApiIssuesUpdateRequest {
     model: IssueApiUpdateModel;
 }
-export interface IssuesWaitingForRetestRequest {
+export interface IssuesApiIssuesWaitingForRetestRequest {
     severity?: IssuesWaitingForRetestSeverityEnum;
     webSiteName?: string;
     websiteGroupName?: string;
@@ -75,190 +75,190 @@ export declare class IssuesApi extends runtime.BaseAPI {
     /**
      * Gets the list of addressed issues.
      */
-    issuesAddressedIssuesRaw(requestParameters: IssuesAddressedIssuesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<IssueApiResult>>;
+    issuesAddressedIssuesRaw(requestParameters: IssuesApiIssuesAddressedIssuesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<IssueApiResult>>;
     /**
      * Gets the list of addressed issues.
      */
-    issuesAddressedIssues(requestParameters?: IssuesAddressedIssuesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<IssueApiResult>;
+    issuesAddressedIssues(requestParameters?: IssuesApiIssuesAddressedIssuesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<IssueApiResult>;
     /**
      * Gets the list of all issues.
      */
-    issuesAllIssuesRaw(requestParameters: IssuesAllIssuesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<IssueApiResult>>;
+    issuesAllIssuesRaw(requestParameters: IssuesApiIssuesAllIssuesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<IssueApiResult>>;
     /**
      * Gets the list of all issues.
      */
-    issuesAllIssues(requestParameters?: IssuesAllIssuesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<IssueApiResult>;
+    issuesAllIssues(requestParameters?: IssuesApiIssuesAllIssuesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<IssueApiResult>;
     /**
      * Gets issues by id. Returns with encoded(raw html) vulnerability template data by default.
      */
-    issuesGetRaw(requestParameters: IssuesGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AllIssuesApiModel>>;
+    issuesGetRaw(requestParameters: IssuesApiIssuesGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AllIssuesApiModel>>;
     /**
      * Gets issues by id. Returns with encoded(raw html) vulnerability template data by default.
      */
-    issuesGet(requestParameters: IssuesGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AllIssuesApiModel>;
+    issuesGet(requestParameters: IssuesApiIssuesGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AllIssuesApiModel>;
     /**
      * Gets vulnerability request/response content by id.
      */
-    issuesGetVulnerabilityContentRaw(requestParameters: IssuesGetVulnerabilityContentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<VulnerabilityContentApiModel>>;
+    issuesGetVulnerabilityContentRaw(requestParameters: IssuesApiIssuesGetVulnerabilityContentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<VulnerabilityContentApiModel>>;
     /**
      * Gets vulnerability request/response content by id.
      */
-    issuesGetVulnerabilityContent(requestParameters: IssuesGetVulnerabilityContentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<VulnerabilityContentApiModel>;
+    issuesGetVulnerabilityContent(requestParameters: IssuesApiIssuesGetVulnerabilityContentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<VulnerabilityContentApiModel>;
     /**
      * Generates a report of issues in the CSV format.
      */
-    issuesReportRaw(requestParameters: IssuesReportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    issuesReportRaw(requestParameters: IssuesApiIssuesReportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Generates a report of issues in the CSV format.
      */
-    issuesReport(requestParameters?: IssuesReportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    issuesReport(requestParameters?: IssuesApiIssuesReportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Gets the summary of vulnerabilities
      */
-    issuesSummaryRaw(requestParameters: IssuesSummaryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<IssueSummaryApiResult>>;
+    issuesSummaryRaw(requestParameters: IssuesApiIssuesSummaryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<IssueSummaryApiResult>>;
     /**
      * Gets the summary of vulnerabilities
      */
-    issuesSummary(requestParameters: IssuesSummaryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<IssueSummaryApiResult>;
+    issuesSummary(requestParameters: IssuesApiIssuesSummaryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<IssueSummaryApiResult>;
     /**
      * Gets the list of to-do issues.
      */
-    issuesTodoRaw(requestParameters: IssuesTodoRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<IssueApiResult>>;
+    issuesTodoRaw(requestParameters: IssuesApiIssuesTodoRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<IssueApiResult>>;
     /**
      * Gets the list of to-do issues.
      */
-    issuesTodo(requestParameters?: IssuesTodoRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<IssueApiResult>;
+    issuesTodo(requestParameters?: IssuesApiIssuesTodoRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<IssueApiResult>;
     /**
      * Updates an existing issue.
      */
-    issuesUpdateRaw(requestParameters: IssuesUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    issuesUpdateRaw(requestParameters: IssuesApiIssuesUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Updates an existing issue.
      */
-    issuesUpdate(requestParameters: IssuesUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    issuesUpdate(requestParameters: IssuesApiIssuesUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Gets the list of retest issues.
      */
-    issuesWaitingForRetestRaw(requestParameters: IssuesWaitingForRetestRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<IssueApiResult>>;
+    issuesWaitingForRetestRaw(requestParameters: IssuesApiIssuesWaitingForRetestRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<IssueApiResult>>;
     /**
      * Gets the list of retest issues.
      */
-    issuesWaitingForRetest(requestParameters?: IssuesWaitingForRetestRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<IssueApiResult>;
+    issuesWaitingForRetest(requestParameters?: IssuesApiIssuesWaitingForRetestRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<IssueApiResult>;
 }
 /**
- * @export
- */
-export declare const IssuesAddressedIssuesSeverityEnum: {
-    readonly BestPractice: "BestPractice";
-    readonly Information: "Information";
-    readonly Low: "Low";
-    readonly Medium: "Medium";
-    readonly High: "High";
-    readonly Critical: "Critical";
-};
-export type IssuesAddressedIssuesSeverityEnum = typeof IssuesAddressedIssuesSeverityEnum[keyof typeof IssuesAddressedIssuesSeverityEnum];
+  * @export
+  * @enum {string}
+  */
+export declare enum IssuesAddressedIssuesSeverityEnum {
+    BestPractice = "BestPractice",
+    Information = "Information",
+    Low = "Low",
+    Medium = "Medium",
+    High = "High",
+    Critical = "Critical"
+}
 /**
- * @export
- */
-export declare const IssuesAllIssuesSeverityEnum: {
-    readonly BestPractice: "BestPractice";
-    readonly Information: "Information";
-    readonly Low: "Low";
-    readonly Medium: "Medium";
-    readonly High: "High";
-    readonly Critical: "Critical";
-};
-export type IssuesAllIssuesSeverityEnum = typeof IssuesAllIssuesSeverityEnum[keyof typeof IssuesAllIssuesSeverityEnum];
+  * @export
+  * @enum {string}
+  */
+export declare enum IssuesAllIssuesSeverityEnum {
+    BestPractice = "BestPractice",
+    Information = "Information",
+    Low = "Low",
+    Medium = "Medium",
+    High = "High",
+    Critical = "Critical"
+}
 /**
- * @export
- */
-export declare const IssuesAllIssuesSortTypeEnum: {
-    readonly Ascending: "Ascending";
-    readonly Descending: "Descending";
-};
-export type IssuesAllIssuesSortTypeEnum = typeof IssuesAllIssuesSortTypeEnum[keyof typeof IssuesAllIssuesSortTypeEnum];
+  * @export
+  * @enum {string}
+  */
+export declare enum IssuesAllIssuesSortTypeEnum {
+    Ascending = "Ascending",
+    Descending = "Descending"
+}
 /**
- * @export
- */
-export declare const IssuesAllIssuesIntegrationEnum: {
-    readonly Jira: "Jira";
-    readonly GitHub: "GitHub";
-    readonly Tfs: "TFS";
-    readonly FogBugz: "FogBugz";
-    readonly ServiceNow: "ServiceNow";
-    readonly Slack: "Slack";
-    readonly GitLab: "GitLab";
-    readonly Bitbucket: "Bitbucket";
-    readonly Unfuddle: "Unfuddle";
-    readonly Zapier: "Zapier";
-    readonly AzureDevOps: "AzureDevOps";
-    readonly Redmine: "Redmine";
-    readonly Bugzilla: "Bugzilla";
-    readonly Kafka: "Kafka";
-    readonly PagerDuty: "PagerDuty";
-    readonly MicrosoftTeams: "MicrosoftTeams";
-    readonly Clubhouse: "Clubhouse";
-    readonly Trello: "Trello";
-    readonly Asana: "Asana";
-    readonly Webhook: "Webhook";
-    readonly Kenna: "Kenna";
-    readonly Freshservice: "Freshservice";
-    readonly YouTrack: "YouTrack";
-    readonly NetsparkerEnterprise: "NetsparkerEnterprise";
-    readonly Splunk: "Splunk";
-    readonly Mattermost: "Mattermost";
-    readonly Hashicorp: "Hashicorp";
-    readonly PivotalTracker: "PivotalTracker";
-    readonly CyberArk: "CyberArk";
-    readonly DefectDojo: "DefectDojo";
-    readonly JazzTeam: "JazzTeam";
-    readonly AzureKeyVault: "AzureKeyVault";
-    readonly ServiceNowVrm: "ServiceNowVRM";
-};
-export type IssuesAllIssuesIntegrationEnum = typeof IssuesAllIssuesIntegrationEnum[keyof typeof IssuesAllIssuesIntegrationEnum];
+  * @export
+  * @enum {string}
+  */
+export declare enum IssuesAllIssuesIntegrationEnum {
+    Jira = "Jira",
+    GitHub = "GitHub",
+    Tfs = "TFS",
+    FogBugz = "FogBugz",
+    ServiceNow = "ServiceNow",
+    Slack = "Slack",
+    GitLab = "GitLab",
+    Bitbucket = "Bitbucket",
+    Unfuddle = "Unfuddle",
+    Zapier = "Zapier",
+    AzureDevOps = "AzureDevOps",
+    Redmine = "Redmine",
+    Bugzilla = "Bugzilla",
+    Kafka = "Kafka",
+    PagerDuty = "PagerDuty",
+    MicrosoftTeams = "MicrosoftTeams",
+    Clubhouse = "Clubhouse",
+    Trello = "Trello",
+    Asana = "Asana",
+    Webhook = "Webhook",
+    Kenna = "Kenna",
+    Freshservice = "Freshservice",
+    YouTrack = "YouTrack",
+    NetsparkerEnterprise = "NetsparkerEnterprise",
+    Splunk = "Splunk",
+    Mattermost = "Mattermost",
+    Hashicorp = "Hashicorp",
+    PivotalTracker = "PivotalTracker",
+    CyberArk = "CyberArk",
+    DefectDojo = "DefectDojo",
+    JazzTeam = "JazzTeam",
+    AzureKeyVault = "AzureKeyVault",
+    ServiceNowVrm = "ServiceNowVRM"
+}
 /**
- * @export
- */
-export declare const IssuesReportCsvSeparatorEnum: {
-    readonly Comma: "Comma";
-    readonly Semicolon: "Semicolon";
-    readonly Pipe: "Pipe";
-    readonly Tab: "Tab";
-};
-export type IssuesReportCsvSeparatorEnum = typeof IssuesReportCsvSeparatorEnum[keyof typeof IssuesReportCsvSeparatorEnum];
+  * @export
+  * @enum {string}
+  */
+export declare enum IssuesReportCsvSeparatorEnum {
+    Comma = "Comma",
+    Semicolon = "Semicolon",
+    Pipe = "Pipe",
+    Tab = "Tab"
+}
 /**
- * @export
- */
-export declare const IssuesReportSeverityEnum: {
-    readonly BestPractice: "BestPractice";
-    readonly Information: "Information";
-    readonly Low: "Low";
-    readonly Medium: "Medium";
-    readonly High: "High";
-    readonly Critical: "Critical";
-};
-export type IssuesReportSeverityEnum = typeof IssuesReportSeverityEnum[keyof typeof IssuesReportSeverityEnum];
+  * @export
+  * @enum {string}
+  */
+export declare enum IssuesReportSeverityEnum {
+    BestPractice = "BestPractice",
+    Information = "Information",
+    Low = "Low",
+    Medium = "Medium",
+    High = "High",
+    Critical = "Critical"
+}
 /**
- * @export
- */
-export declare const IssuesTodoSeverityEnum: {
-    readonly BestPractice: "BestPractice";
-    readonly Information: "Information";
-    readonly Low: "Low";
-    readonly Medium: "Medium";
-    readonly High: "High";
-    readonly Critical: "Critical";
-};
-export type IssuesTodoSeverityEnum = typeof IssuesTodoSeverityEnum[keyof typeof IssuesTodoSeverityEnum];
+  * @export
+  * @enum {string}
+  */
+export declare enum IssuesTodoSeverityEnum {
+    BestPractice = "BestPractice",
+    Information = "Information",
+    Low = "Low",
+    Medium = "Medium",
+    High = "High",
+    Critical = "Critical"
+}
 /**
- * @export
- */
-export declare const IssuesWaitingForRetestSeverityEnum: {
-    readonly BestPractice: "BestPractice";
-    readonly Information: "Information";
-    readonly Low: "Low";
-    readonly Medium: "Medium";
-    readonly High: "High";
-    readonly Critical: "Critical";
-};
-export type IssuesWaitingForRetestSeverityEnum = typeof IssuesWaitingForRetestSeverityEnum[keyof typeof IssuesWaitingForRetestSeverityEnum];
+  * @export
+  * @enum {string}
+  */
+export declare enum IssuesWaitingForRetestSeverityEnum {
+    BestPractice = "BestPractice",
+    Information = "Information",
+    Low = "Low",
+    Medium = "Medium",
+    High = "High",
+    Critical = "Critical"
+}

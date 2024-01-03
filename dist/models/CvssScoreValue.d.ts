@@ -29,16 +29,16 @@ export interface CvssScoreValue {
     readonly value?: number;
 }
 /**
- * @export
- */
-export declare const CvssScoreValueSeverityEnum: {
-    readonly None: "None";
-    readonly Low: "Low";
-    readonly Medium: "Medium";
-    readonly High: "High";
-    readonly Critical: "Critical";
-};
-export type CvssScoreValueSeverityEnum = typeof CvssScoreValueSeverityEnum[keyof typeof CvssScoreValueSeverityEnum];
+* @export
+* @enum {string}
+*/
+export declare enum CvssScoreValueSeverityEnum {
+    None = "None",
+    Low = "Low",
+    Medium = "Medium",
+    High = "High",
+    Critical = "Critical"
+}
 /**
  * Check if a given object implements the CvssScoreValue interface.
  */

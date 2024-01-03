@@ -273,69 +273,69 @@ export interface JiraIntegrationInfoModel {
     integrationWizardResultModel?: IntegrationWizardResultModel;
 }
 /**
- * @export
- */
-export declare const JiraIntegrationInfoModelReopenStatusJiraEnum: {
-    readonly ToDo: "ToDo";
-    readonly InProgress: "InProgress";
-};
-export type JiraIntegrationInfoModelReopenStatusJiraEnum = typeof JiraIntegrationInfoModelReopenStatusJiraEnum[keyof typeof JiraIntegrationInfoModelReopenStatusJiraEnum];
+* @export
+* @enum {string}
+*/
+export declare enum JiraIntegrationInfoModelReopenStatusJiraEnum {
+    ToDo = "ToDo",
+    InProgress = "InProgress"
+}
 /**
- * @export
- */
-export declare const JiraIntegrationInfoModelTemplateTypeEnum: {
-    readonly Standard: "Standard";
-    readonly Detailed: "Detailed";
-};
-export type JiraIntegrationInfoModelTemplateTypeEnum = typeof JiraIntegrationInfoModelTemplateTypeEnum[keyof typeof JiraIntegrationInfoModelTemplateTypeEnum];
+* @export
+* @enum {string}
+*/
+export declare enum JiraIntegrationInfoModelTemplateTypeEnum {
+    Standard = "Standard",
+    Detailed = "Detailed"
+}
 /**
- * @export
- */
-export declare const JiraIntegrationInfoModelEpicSelectionTypeEnum: {
-    readonly None: "None";
-    readonly EpicName: "EpicName";
-    readonly EpicKey: "EpicKey";
-};
-export type JiraIntegrationInfoModelEpicSelectionTypeEnum = typeof JiraIntegrationInfoModelEpicSelectionTypeEnum[keyof typeof JiraIntegrationInfoModelEpicSelectionTypeEnum];
+* @export
+* @enum {string}
+*/
+export declare enum JiraIntegrationInfoModelEpicSelectionTypeEnum {
+    None = "None",
+    EpicName = "EpicName",
+    EpicKey = "EpicKey"
+}
 /**
- * @export
- */
-export declare const JiraIntegrationInfoModelTypeEnum: {
-    readonly Jira: "Jira";
-    readonly GitHub: "GitHub";
-    readonly Tfs: "TFS";
-    readonly FogBugz: "FogBugz";
-    readonly ServiceNow: "ServiceNow";
-    readonly Slack: "Slack";
-    readonly GitLab: "GitLab";
-    readonly Bitbucket: "Bitbucket";
-    readonly Unfuddle: "Unfuddle";
-    readonly Zapier: "Zapier";
-    readonly AzureDevOps: "AzureDevOps";
-    readonly Redmine: "Redmine";
-    readonly Bugzilla: "Bugzilla";
-    readonly Kafka: "Kafka";
-    readonly PagerDuty: "PagerDuty";
-    readonly MicrosoftTeams: "MicrosoftTeams";
-    readonly Clubhouse: "Clubhouse";
-    readonly Trello: "Trello";
-    readonly Asana: "Asana";
-    readonly Webhook: "Webhook";
-    readonly Kenna: "Kenna";
-    readonly Freshservice: "Freshservice";
-    readonly YouTrack: "YouTrack";
-    readonly NetsparkerEnterprise: "NetsparkerEnterprise";
-    readonly Splunk: "Splunk";
-    readonly Mattermost: "Mattermost";
-    readonly Hashicorp: "Hashicorp";
-    readonly PivotalTracker: "PivotalTracker";
-    readonly CyberArk: "CyberArk";
-    readonly DefectDojo: "DefectDojo";
-    readonly JazzTeam: "JazzTeam";
-    readonly AzureKeyVault: "AzureKeyVault";
-    readonly ServiceNowVrm: "ServiceNowVRM";
-};
-export type JiraIntegrationInfoModelTypeEnum = typeof JiraIntegrationInfoModelTypeEnum[keyof typeof JiraIntegrationInfoModelTypeEnum];
+* @export
+* @enum {string}
+*/
+export declare enum JiraIntegrationInfoModelTypeEnum {
+    Jira = "Jira",
+    GitHub = "GitHub",
+    Tfs = "TFS",
+    FogBugz = "FogBugz",
+    ServiceNow = "ServiceNow",
+    Slack = "Slack",
+    GitLab = "GitLab",
+    Bitbucket = "Bitbucket",
+    Unfuddle = "Unfuddle",
+    Zapier = "Zapier",
+    AzureDevOps = "AzureDevOps",
+    Redmine = "Redmine",
+    Bugzilla = "Bugzilla",
+    Kafka = "Kafka",
+    PagerDuty = "PagerDuty",
+    MicrosoftTeams = "MicrosoftTeams",
+    Clubhouse = "Clubhouse",
+    Trello = "Trello",
+    Asana = "Asana",
+    Webhook = "Webhook",
+    Kenna = "Kenna",
+    Freshservice = "Freshservice",
+    YouTrack = "YouTrack",
+    NetsparkerEnterprise = "NetsparkerEnterprise",
+    Splunk = "Splunk",
+    Mattermost = "Mattermost",
+    Hashicorp = "Hashicorp",
+    PivotalTracker = "PivotalTracker",
+    CyberArk = "CyberArk",
+    DefectDojo = "DefectDojo",
+    JazzTeam = "JazzTeam",
+    AzureKeyVault = "AzureKeyVault",
+    ServiceNowVrm = "ServiceNowVRM"
+}
 /**
  * Check if a given object implements the JiraIntegrationInfoModel interface.
  */

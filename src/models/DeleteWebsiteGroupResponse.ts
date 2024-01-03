@@ -33,19 +33,18 @@ export interface DeleteWebsiteGroupResponse {
     message?: string;
 }
 
-
 /**
- * @export
- */
-export const DeleteWebsiteGroupResponseResultEnum = {
-    Ok: 'Ok',
-    NotFound: 'NotFound',
-    WebsitesExisting: 'WebsitesExisting',
-    ScheduledScanExists: 'ScheduledScanExists',
-    OneWebsiteGroupMustExist: 'OneWebsiteGroupMustExist',
-    ScanNotificationRuleExists: 'ScanNotificationRuleExists'
-} as const;
-export type DeleteWebsiteGroupResponseResultEnum = typeof DeleteWebsiteGroupResponseResultEnum[keyof typeof DeleteWebsiteGroupResponseResultEnum];
+* @export
+* @enum {string}
+*/
+export enum DeleteWebsiteGroupResponseResultEnum {
+    Ok = 'Ok',
+    NotFound = 'NotFound',
+    WebsitesExisting = 'WebsitesExisting',
+    ScheduledScanExists = 'ScheduledScanExists',
+    OneWebsiteGroupMustExist = 'OneWebsiteGroupMustExist',
+    ScanNotificationRuleExists = 'ScanNotificationRuleExists'
+}
 
 
 /**

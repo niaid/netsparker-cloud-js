@@ -197,38 +197,38 @@ export interface FormAuthenticationPersona {
     index?: number;
 }
 /**
- * @export
- */
-export declare const FormAuthenticationPersonaOtpTypeEnum: {
-    readonly Totp: "Totp";
-    readonly Hotp: "Hotp";
-};
-export type FormAuthenticationPersonaOtpTypeEnum = typeof FormAuthenticationPersonaOtpTypeEnum[keyof typeof FormAuthenticationPersonaOtpTypeEnum];
+* @export
+* @enum {string}
+*/
+export declare enum FormAuthenticationPersonaOtpTypeEnum {
+    Totp = "Totp",
+    Hotp = "Hotp"
+}
 /**
- * @export
- */
-export declare const FormAuthenticationPersonaAlgorithmEnum: {
-    readonly Sha1: "Sha1";
-    readonly Sha256: "Sha256";
-    readonly Sha512: "Sha512";
-};
-export type FormAuthenticationPersonaAlgorithmEnum = typeof FormAuthenticationPersonaAlgorithmEnum[keyof typeof FormAuthenticationPersonaAlgorithmEnum];
+* @export
+* @enum {string}
+*/
+export declare enum FormAuthenticationPersonaAlgorithmEnum {
+    Sha1 = "Sha1",
+    Sha256 = "Sha256",
+    Sha512 = "Sha512"
+}
 /**
- * @export
- */
-export declare const FormAuthenticationPersonaFormAuthTypeEnum: {
-    readonly Manual: "Manual";
-    readonly Integration: "Integration";
-};
-export type FormAuthenticationPersonaFormAuthTypeEnum = typeof FormAuthenticationPersonaFormAuthTypeEnum[keyof typeof FormAuthenticationPersonaFormAuthTypeEnum];
+* @export
+* @enum {string}
+*/
+export declare enum FormAuthenticationPersonaFormAuthTypeEnum {
+    Manual = "Manual",
+    Integration = "Integration"
+}
 /**
- * @export
- */
-export declare const FormAuthenticationPersonaVersionEnum: {
-    readonly V1: "V1";
-    readonly V2: "V2";
-};
-export type FormAuthenticationPersonaVersionEnum = typeof FormAuthenticationPersonaVersionEnum[keyof typeof FormAuthenticationPersonaVersionEnum];
+* @export
+* @enum {string}
+*/
+export declare enum FormAuthenticationPersonaVersionEnum {
+    V1 = "V1",
+    V2 = "V2"
+}
 /**
  * Check if a given object implements the FormAuthenticationPersona interface.
  */

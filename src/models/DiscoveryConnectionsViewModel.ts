@@ -52,14 +52,13 @@ export interface DiscoveryConnectionsViewModel {
     awsConnectionInfo?: AwsConnectionInfoModel;
 }
 
-
 /**
- * @export
- */
-export const DiscoveryConnectionsViewModelTypeEnum = {
-    Aws: 'Aws'
-} as const;
-export type DiscoveryConnectionsViewModelTypeEnum = typeof DiscoveryConnectionsViewModelTypeEnum[keyof typeof DiscoveryConnectionsViewModelTypeEnum];
+* @export
+* @enum {string}
+*/
+export enum DiscoveryConnectionsViewModelTypeEnum {
+    Aws = 'Aws'
+}
 
 
 /**

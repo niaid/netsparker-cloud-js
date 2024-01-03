@@ -306,59 +306,59 @@ export interface NewScanTaskApiModel {
     comments?: string;
 }
 /**
- * @export
- */
-export declare const NewScanTaskApiModelCreateTypeEnum: {
-    readonly Website: "Website";
-    readonly WebsiteGroup: "WebsiteGroup";
-};
-export type NewScanTaskApiModelCreateTypeEnum = typeof NewScanTaskApiModelCreateTypeEnum[keyof typeof NewScanTaskApiModelCreateTypeEnum];
+* @export
+* @enum {string}
+*/
+export declare enum NewScanTaskApiModelCreateTypeEnum {
+    Website = "Website",
+    WebsiteGroup = "WebsiteGroup"
+}
 /**
- * @export
- */
-export declare const NewScanTaskApiModelDisallowedHttpMethodsEnum: {
-    readonly Get: "GET";
-    readonly Post: "POST";
-    readonly Connect: "CONNECT";
-    readonly Head: "HEAD";
-    readonly Trace: "TRACE";
-    readonly Debug: "DEBUG";
-    readonly Track: "TRACK";
-    readonly Put: "PUT";
-    readonly Options: "OPTIONS";
-    readonly Delete: "DELETE";
-    readonly Link: "LINK";
-    readonly Unlink: "UNLINK";
-    readonly Patch: "PATCH";
-};
-export type NewScanTaskApiModelDisallowedHttpMethodsEnum = typeof NewScanTaskApiModelDisallowedHttpMethodsEnum[keyof typeof NewScanTaskApiModelDisallowedHttpMethodsEnum];
+* @export
+* @enum {string}
+*/
+export declare enum NewScanTaskApiModelDisallowedHttpMethodsEnum {
+    Get = "GET",
+    Post = "POST",
+    Connect = "CONNECT",
+    Head = "HEAD",
+    Trace = "TRACE",
+    Debug = "DEBUG",
+    Track = "TRACK",
+    Put = "PUT",
+    Options = "OPTIONS",
+    Delete = "DELETE",
+    Link = "LINK",
+    Unlink = "UNLINK",
+    Patch = "PATCH"
+}
 /**
- * @export
- */
-export declare const NewScanTaskApiModelAuthenticationProfileOptionEnum: {
-    readonly DontUse: "DontUse";
-    readonly UseMatchedProfile: "UseMatchedProfile";
-    readonly SelectedProfile: "SelectedProfile";
-};
-export type NewScanTaskApiModelAuthenticationProfileOptionEnum = typeof NewScanTaskApiModelAuthenticationProfileOptionEnum[keyof typeof NewScanTaskApiModelAuthenticationProfileOptionEnum];
+* @export
+* @enum {string}
+*/
+export declare enum NewScanTaskApiModelAuthenticationProfileOptionEnum {
+    DontUse = "DontUse",
+    UseMatchedProfile = "UseMatchedProfile",
+    SelectedProfile = "SelectedProfile"
+}
 /**
- * @export
- */
-export declare const NewScanTaskApiModelScopeEnum: {
-    readonly EnteredPathAndBelow: "EnteredPathAndBelow";
-    readonly OnlyEnteredUrl: "OnlyEnteredUrl";
-    readonly WholeDomain: "WholeDomain";
-};
-export type NewScanTaskApiModelScopeEnum = typeof NewScanTaskApiModelScopeEnum[keyof typeof NewScanTaskApiModelScopeEnum];
+* @export
+* @enum {string}
+*/
+export declare enum NewScanTaskApiModelScopeEnum {
+    EnteredPathAndBelow = "EnteredPathAndBelow",
+    OnlyEnteredUrl = "OnlyEnteredUrl",
+    WholeDomain = "WholeDomain"
+}
 /**
- * @export
- */
-export declare const NewScanTaskApiModelUrlRewriteModeEnum: {
-    readonly None: "None";
-    readonly Heuristic: "Heuristic";
-    readonly Custom: "Custom";
-};
-export type NewScanTaskApiModelUrlRewriteModeEnum = typeof NewScanTaskApiModelUrlRewriteModeEnum[keyof typeof NewScanTaskApiModelUrlRewriteModeEnum];
+* @export
+* @enum {string}
+*/
+export declare enum NewScanTaskApiModelUrlRewriteModeEnum {
+    None = "None",
+    Heuristic = "Heuristic",
+    Custom = "Custom"
+}
 /**
  * Check if a given object implements the NewScanTaskApiModel interface.
  */

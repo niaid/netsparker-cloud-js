@@ -31,28 +31,28 @@ import {
     UpdateScanPolicySettingModelToJSON,
 } from '../models/index';
 
-export interface ScanPoliciesDeleteRequest {
+export interface ScanPoliciesApiScanPoliciesDeleteRequest {
     name: string;
 }
 
-export interface ScanPoliciesFindRequest {
+export interface ScanPoliciesApiScanPoliciesFindRequest {
     name: string;
 }
 
-export interface ScanPoliciesGetRequest {
+export interface ScanPoliciesApiScanPoliciesGetRequest {
     id: string;
 }
 
-export interface ScanPoliciesListRequest {
+export interface ScanPoliciesApiScanPoliciesListRequest {
     page?: number;
     pageSize?: number;
 }
 
-export interface ScanPoliciesNewRequest {
+export interface ScanPoliciesApiScanPoliciesNewRequest {
     model: NewScanPolicySettingModel;
 }
 
-export interface ScanPoliciesUpdateRequest {
+export interface ScanPoliciesApiScanPoliciesUpdateRequest {
     model: UpdateScanPolicySettingModel;
 }
 
@@ -64,7 +64,7 @@ export class ScanPoliciesApi extends runtime.BaseAPI {
     /**
      * Deletes a scan policy.
      */
-    async scanPoliciesDeleteRaw(requestParameters: ScanPoliciesDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async scanPoliciesDeleteRaw(requestParameters: ScanPoliciesApiScanPoliciesDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters.name === null || requestParameters.name === undefined) {
             throw new runtime.RequiredError('name','Required parameter requestParameters.name was null or undefined when calling scanPoliciesDelete.');
         }
@@ -89,14 +89,14 @@ export class ScanPoliciesApi extends runtime.BaseAPI {
     /**
      * Deletes a scan policy.
      */
-    async scanPoliciesDelete(requestParameters: ScanPoliciesDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+    async scanPoliciesDelete(requestParameters: ScanPoliciesApiScanPoliciesDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
         await this.scanPoliciesDeleteRaw(requestParameters, initOverrides);
     }
 
     /**
      * Gets the scan policy by the specified name.
      */
-    async scanPoliciesFindRaw(requestParameters: ScanPoliciesFindRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanPolicySettingApiModel>> {
+    async scanPoliciesFindRaw(requestParameters: ScanPoliciesApiScanPoliciesFindRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanPolicySettingApiModel>> {
         if (requestParameters.name === null || requestParameters.name === undefined) {
             throw new runtime.RequiredError('name','Required parameter requestParameters.name was null or undefined when calling scanPoliciesFind.');
         }
@@ -122,7 +122,7 @@ export class ScanPoliciesApi extends runtime.BaseAPI {
     /**
      * Gets the scan policy by the specified name.
      */
-    async scanPoliciesFind(requestParameters: ScanPoliciesFindRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanPolicySettingApiModel> {
+    async scanPoliciesFind(requestParameters: ScanPoliciesApiScanPoliciesFindRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanPolicySettingApiModel> {
         const response = await this.scanPoliciesFindRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -130,7 +130,7 @@ export class ScanPoliciesApi extends runtime.BaseAPI {
     /**
      * Gets the scan policy by the specified id.
      */
-    async scanPoliciesGetRaw(requestParameters: ScanPoliciesGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanPolicySettingApiModel>> {
+    async scanPoliciesGetRaw(requestParameters: ScanPoliciesApiScanPoliciesGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanPolicySettingApiModel>> {
         if (requestParameters.id === null || requestParameters.id === undefined) {
             throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling scanPoliciesGet.');
         }
@@ -152,7 +152,7 @@ export class ScanPoliciesApi extends runtime.BaseAPI {
     /**
      * Gets the scan policy by the specified id.
      */
-    async scanPoliciesGet(requestParameters: ScanPoliciesGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanPolicySettingApiModel> {
+    async scanPoliciesGet(requestParameters: ScanPoliciesApiScanPoliciesGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanPolicySettingApiModel> {
         const response = await this.scanPoliciesGetRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -160,7 +160,7 @@ export class ScanPoliciesApi extends runtime.BaseAPI {
     /**
      * Gets the list of scan policies.
      */
-    async scanPoliciesListRaw(requestParameters: ScanPoliciesListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanPolicyListApiResult>> {
+    async scanPoliciesListRaw(requestParameters: ScanPoliciesApiScanPoliciesListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanPolicyListApiResult>> {
         const queryParameters: any = {};
 
         if (requestParameters.page !== undefined) {
@@ -186,7 +186,7 @@ export class ScanPoliciesApi extends runtime.BaseAPI {
     /**
      * Gets the list of scan policies.
      */
-    async scanPoliciesList(requestParameters: ScanPoliciesListRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanPolicyListApiResult> {
+    async scanPoliciesList(requestParameters: ScanPoliciesApiScanPoliciesListRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanPolicyListApiResult> {
         const response = await this.scanPoliciesListRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -194,7 +194,7 @@ export class ScanPoliciesApi extends runtime.BaseAPI {
     /**
      * Creates a new scan policy.
      */
-    async scanPoliciesNewRaw(requestParameters: ScanPoliciesNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanPolicySettingApiModel>> {
+    async scanPoliciesNewRaw(requestParameters: ScanPoliciesApiScanPoliciesNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanPolicySettingApiModel>> {
         if (requestParameters.model === null || requestParameters.model === undefined) {
             throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling scanPoliciesNew.');
         }
@@ -219,7 +219,7 @@ export class ScanPoliciesApi extends runtime.BaseAPI {
     /**
      * Creates a new scan policy.
      */
-    async scanPoliciesNew(requestParameters: ScanPoliciesNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanPolicySettingApiModel> {
+    async scanPoliciesNew(requestParameters: ScanPoliciesApiScanPoliciesNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanPolicySettingApiModel> {
         const response = await this.scanPoliciesNewRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -227,7 +227,7 @@ export class ScanPoliciesApi extends runtime.BaseAPI {
     /**
      * Updates a scan policy.
      */
-    async scanPoliciesUpdateRaw(requestParameters: ScanPoliciesUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanPolicySettingApiModel>> {
+    async scanPoliciesUpdateRaw(requestParameters: ScanPoliciesApiScanPoliciesUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanPolicySettingApiModel>> {
         if (requestParameters.model === null || requestParameters.model === undefined) {
             throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling scanPoliciesUpdate.');
         }
@@ -252,7 +252,7 @@ export class ScanPoliciesApi extends runtime.BaseAPI {
     /**
      * Updates a scan policy.
      */
-    async scanPoliciesUpdate(requestParameters: ScanPoliciesUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanPolicySettingApiModel> {
+    async scanPoliciesUpdate(requestParameters: ScanPoliciesApiScanPoliciesUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanPolicySettingApiModel> {
         const response = await this.scanPoliciesUpdateRaw(requestParameters, initOverrides);
         return await response.value();
     }

@@ -18,64 +18,72 @@ const runtime_1 = require("../runtime");
 const IntegrationCustomFieldVm_1 = require("./IntegrationCustomFieldVm");
 const IntegrationWizardResultModel_1 = require("./IntegrationWizardResultModel");
 /**
- * @export
- */
-exports.PagerDutyIntegrationInfoModelServiceTypeEnum = {
-    Service: 'service',
-    ServiceReference: 'service_reference'
-};
+* @export
+* @enum {string}
+*/
+var PagerDutyIntegrationInfoModelServiceTypeEnum;
+(function (PagerDutyIntegrationInfoModelServiceTypeEnum) {
+    PagerDutyIntegrationInfoModelServiceTypeEnum["Service"] = "service";
+    PagerDutyIntegrationInfoModelServiceTypeEnum["ServiceReference"] = "service_reference";
+})(PagerDutyIntegrationInfoModelServiceTypeEnum = exports.PagerDutyIntegrationInfoModelServiceTypeEnum || (exports.PagerDutyIntegrationInfoModelServiceTypeEnum = {}));
 /**
- * @export
- */
-exports.PagerDutyIntegrationInfoModelUrgencyEnum = {
-    High: 'high',
-    Low: 'low'
-};
+* @export
+* @enum {string}
+*/
+var PagerDutyIntegrationInfoModelUrgencyEnum;
+(function (PagerDutyIntegrationInfoModelUrgencyEnum) {
+    PagerDutyIntegrationInfoModelUrgencyEnum["High"] = "high";
+    PagerDutyIntegrationInfoModelUrgencyEnum["Low"] = "low";
+})(PagerDutyIntegrationInfoModelUrgencyEnum = exports.PagerDutyIntegrationInfoModelUrgencyEnum || (exports.PagerDutyIntegrationInfoModelUrgencyEnum = {}));
 /**
- * @export
- */
-exports.PagerDutyIntegrationInfoModelTypeEnum = {
-    NetsparkerEnterprise: 'NetsparkerEnterprise',
-    Webhook: 'Webhook',
-    Zapier: 'Zapier',
-    Slack: 'Slack',
-    Mattermost: 'Mattermost',
-    MicrosoftTeams: 'MicrosoftTeams',
-    AzureDevOps: 'AzureDevOps',
-    Bitbucket: 'Bitbucket',
-    Bugzilla: 'Bugzilla',
-    Clubhouse: 'Clubhouse',
-    DefectDojo: 'DefectDojo',
-    PivotalTracker: 'PivotalTracker',
-    Jira: 'Jira',
-    FogBugz: 'FogBugz',
-    GitHub: 'GitHub',
-    PagerDuty: 'PagerDuty',
-    Kafka: 'Kafka',
-    Kenna: 'Kenna',
-    Redmine: 'Redmine',
-    ServiceNow: 'ServiceNow',
-    Tfs: 'TFS',
-    Unfuddle: 'Unfuddle',
-    YouTrack: 'YouTrack',
-    Freshservice: 'Freshservice',
-    Splunk: 'Splunk',
-    JazzTeam: 'JazzTeam',
-    ServiceNowVrm: 'ServiceNowVRM',
-    Asana: 'Asana',
-    Trello: 'Trello',
-    Hashicorp: 'Hashicorp',
-    CyberArk: 'CyberArk',
-    AzureKeyVault: 'AzureKeyVault',
-    GitLab: 'GitLab'
-};
+* @export
+* @enum {string}
+*/
+var PagerDutyIntegrationInfoModelTypeEnum;
+(function (PagerDutyIntegrationInfoModelTypeEnum) {
+    PagerDutyIntegrationInfoModelTypeEnum["NetsparkerEnterprise"] = "NetsparkerEnterprise";
+    PagerDutyIntegrationInfoModelTypeEnum["Webhook"] = "Webhook";
+    PagerDutyIntegrationInfoModelTypeEnum["Zapier"] = "Zapier";
+    PagerDutyIntegrationInfoModelTypeEnum["Slack"] = "Slack";
+    PagerDutyIntegrationInfoModelTypeEnum["Mattermost"] = "Mattermost";
+    PagerDutyIntegrationInfoModelTypeEnum["MicrosoftTeams"] = "MicrosoftTeams";
+    PagerDutyIntegrationInfoModelTypeEnum["AzureDevOps"] = "AzureDevOps";
+    PagerDutyIntegrationInfoModelTypeEnum["Bitbucket"] = "Bitbucket";
+    PagerDutyIntegrationInfoModelTypeEnum["Bugzilla"] = "Bugzilla";
+    PagerDutyIntegrationInfoModelTypeEnum["Clubhouse"] = "Clubhouse";
+    PagerDutyIntegrationInfoModelTypeEnum["DefectDojo"] = "DefectDojo";
+    PagerDutyIntegrationInfoModelTypeEnum["PivotalTracker"] = "PivotalTracker";
+    PagerDutyIntegrationInfoModelTypeEnum["Jira"] = "Jira";
+    PagerDutyIntegrationInfoModelTypeEnum["FogBugz"] = "FogBugz";
+    PagerDutyIntegrationInfoModelTypeEnum["GitHub"] = "GitHub";
+    PagerDutyIntegrationInfoModelTypeEnum["PagerDuty"] = "PagerDuty";
+    PagerDutyIntegrationInfoModelTypeEnum["Kafka"] = "Kafka";
+    PagerDutyIntegrationInfoModelTypeEnum["Kenna"] = "Kenna";
+    PagerDutyIntegrationInfoModelTypeEnum["Redmine"] = "Redmine";
+    PagerDutyIntegrationInfoModelTypeEnum["ServiceNow"] = "ServiceNow";
+    PagerDutyIntegrationInfoModelTypeEnum["Tfs"] = "TFS";
+    PagerDutyIntegrationInfoModelTypeEnum["Unfuddle"] = "Unfuddle";
+    PagerDutyIntegrationInfoModelTypeEnum["YouTrack"] = "YouTrack";
+    PagerDutyIntegrationInfoModelTypeEnum["Freshservice"] = "Freshservice";
+    PagerDutyIntegrationInfoModelTypeEnum["Splunk"] = "Splunk";
+    PagerDutyIntegrationInfoModelTypeEnum["JazzTeam"] = "JazzTeam";
+    PagerDutyIntegrationInfoModelTypeEnum["ServiceNowVrm"] = "ServiceNowVRM";
+    PagerDutyIntegrationInfoModelTypeEnum["Asana"] = "Asana";
+    PagerDutyIntegrationInfoModelTypeEnum["Trello"] = "Trello";
+    PagerDutyIntegrationInfoModelTypeEnum["Hashicorp"] = "Hashicorp";
+    PagerDutyIntegrationInfoModelTypeEnum["CyberArk"] = "CyberArk";
+    PagerDutyIntegrationInfoModelTypeEnum["AzureKeyVault"] = "AzureKeyVault";
+    PagerDutyIntegrationInfoModelTypeEnum["GitLab"] = "GitLab";
+})(PagerDutyIntegrationInfoModelTypeEnum = exports.PagerDutyIntegrationInfoModelTypeEnum || (exports.PagerDutyIntegrationInfoModelTypeEnum = {}));
 /**
- * @export
- */
-exports.PagerDutyIntegrationInfoModelTemplateTypeEnum = {
-    Standard: 'Standard',
-    Detailed: 'Detailed'
-};
+* @export
+* @enum {string}
+*/
+var PagerDutyIntegrationInfoModelTemplateTypeEnum;
+(function (PagerDutyIntegrationInfoModelTemplateTypeEnum) {
+    PagerDutyIntegrationInfoModelTemplateTypeEnum["Standard"] = "Standard";
+    PagerDutyIntegrationInfoModelTemplateTypeEnum["Detailed"] = "Detailed";
+})(PagerDutyIntegrationInfoModelTemplateTypeEnum = exports.PagerDutyIntegrationInfoModelTemplateTypeEnum || (exports.PagerDutyIntegrationInfoModelTemplateTypeEnum = {}));
 /**
  * Check if a given object implements the PagerDutyIntegrationInfoModel interface.
  */

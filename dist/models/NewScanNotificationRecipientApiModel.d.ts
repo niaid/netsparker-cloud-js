@@ -61,27 +61,27 @@ export interface NewScanNotificationRecipientApiModel {
     specificSmsRecipients?: Array<NewScanNotificationRecipientApiModelSpecificSmsRecipientsEnum>;
 }
 /**
- * @export
- */
-export declare const NewScanNotificationRecipientApiModelSpecificEmailRecipientsEnum: {
-    readonly None: "None";
-    readonly WebsiteTechnicalContact: "WebsiteTechnicalContact";
-    readonly PersonWhoStartedScan: "PersonWhoStartedScan";
-    readonly AllAuthorized: "AllAuthorized";
-    readonly AccountAdmins: "AccountAdmins";
-};
-export type NewScanNotificationRecipientApiModelSpecificEmailRecipientsEnum = typeof NewScanNotificationRecipientApiModelSpecificEmailRecipientsEnum[keyof typeof NewScanNotificationRecipientApiModelSpecificEmailRecipientsEnum];
+* @export
+* @enum {string}
+*/
+export declare enum NewScanNotificationRecipientApiModelSpecificEmailRecipientsEnum {
+    None = "None",
+    WebsiteTechnicalContact = "WebsiteTechnicalContact",
+    PersonWhoStartedScan = "PersonWhoStartedScan",
+    AllAuthorized = "AllAuthorized",
+    AccountAdmins = "AccountAdmins"
+}
 /**
- * @export
- */
-export declare const NewScanNotificationRecipientApiModelSpecificSmsRecipientsEnum: {
-    readonly None: "None";
-    readonly WebsiteTechnicalContact: "WebsiteTechnicalContact";
-    readonly PersonWhoStartedScan: "PersonWhoStartedScan";
-    readonly AllAuthorized: "AllAuthorized";
-    readonly AccountAdmins: "AccountAdmins";
-};
-export type NewScanNotificationRecipientApiModelSpecificSmsRecipientsEnum = typeof NewScanNotificationRecipientApiModelSpecificSmsRecipientsEnum[keyof typeof NewScanNotificationRecipientApiModelSpecificSmsRecipientsEnum];
+* @export
+* @enum {string}
+*/
+export declare enum NewScanNotificationRecipientApiModelSpecificSmsRecipientsEnum {
+    None = "None",
+    WebsiteTechnicalContact = "WebsiteTechnicalContact",
+    PersonWhoStartedScan = "PersonWhoStartedScan",
+    AllAuthorized = "AllAuthorized",
+    AccountAdmins = "AccountAdmins"
+}
 /**
  * Check if a given object implements the NewScanNotificationRecipientApiModel interface.
  */

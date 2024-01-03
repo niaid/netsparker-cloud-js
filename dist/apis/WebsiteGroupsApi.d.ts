@@ -11,26 +11,26 @@
  */
 import * as runtime from '../runtime';
 import type { DeleteWebsiteGroupApiModel, DeleteWebsiteGroupResponse, NewWebsiteGroupApiModel, UpdateWebsiteGroupApiModel, WebsiteGroupApiModel, WebsiteGroupListApiResult } from '../models/index';
-export interface WebsiteGroupsDeleteRequest {
+export interface WebsiteGroupsApiWebsiteGroupsDeleteRequest {
     model: DeleteWebsiteGroupApiModel;
 }
-export interface WebsiteGroupsDeleteByIdRequest {
+export interface WebsiteGroupsApiWebsiteGroupsDeleteByIdRequest {
     id: string;
 }
-export interface WebsiteGroupsGetByIdRequest {
+export interface WebsiteGroupsApiWebsiteGroupsGetByIdRequest {
     id: string;
 }
-export interface WebsiteGroupsGetByQueryRequest {
+export interface WebsiteGroupsApiWebsiteGroupsGetByQueryRequest {
     query: string;
 }
-export interface WebsiteGroupsListRequest {
+export interface WebsiteGroupsApiWebsiteGroupsListRequest {
     page?: number;
     pageSize?: number;
 }
-export interface WebsiteGroupsNewRequest {
+export interface WebsiteGroupsApiWebsiteGroupsNewRequest {
     model: NewWebsiteGroupApiModel;
 }
-export interface WebsiteGroupsUpdateRequest {
+export interface WebsiteGroupsApiWebsiteGroupsUpdateRequest {
     model: UpdateWebsiteGroupApiModel;
 }
 /**
@@ -40,57 +40,57 @@ export declare class WebsiteGroupsApi extends runtime.BaseAPI {
     /**
      * Deletes a website group.
      */
-    websiteGroupsDeleteRaw(requestParameters: WebsiteGroupsDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DeleteWebsiteGroupResponse>>;
+    websiteGroupsDeleteRaw(requestParameters: WebsiteGroupsApiWebsiteGroupsDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DeleteWebsiteGroupResponse>>;
     /**
      * Deletes a website group.
      */
-    websiteGroupsDelete(requestParameters: WebsiteGroupsDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DeleteWebsiteGroupResponse>;
+    websiteGroupsDelete(requestParameters: WebsiteGroupsApiWebsiteGroupsDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DeleteWebsiteGroupResponse>;
     /**
      * Deletes a website group with given id
      */
-    websiteGroupsDeleteByIdRaw(requestParameters: WebsiteGroupsDeleteByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DeleteWebsiteGroupResponse>>;
+    websiteGroupsDeleteByIdRaw(requestParameters: WebsiteGroupsApiWebsiteGroupsDeleteByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DeleteWebsiteGroupResponse>>;
     /**
      * Deletes a website group with given id
      */
-    websiteGroupsDeleteById(requestParameters: WebsiteGroupsDeleteByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DeleteWebsiteGroupResponse>;
+    websiteGroupsDeleteById(requestParameters: WebsiteGroupsApiWebsiteGroupsDeleteByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DeleteWebsiteGroupResponse>;
     /**
      * Gets website group by id.
      */
-    websiteGroupsGetByIdRaw(requestParameters: WebsiteGroupsGetByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteGroupApiModel>>;
+    websiteGroupsGetByIdRaw(requestParameters: WebsiteGroupsApiWebsiteGroupsGetByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteGroupApiModel>>;
     /**
      * Gets website group by id.
      */
-    websiteGroupsGetById(requestParameters: WebsiteGroupsGetByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebsiteGroupApiModel>;
+    websiteGroupsGetById(requestParameters: WebsiteGroupsApiWebsiteGroupsGetByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebsiteGroupApiModel>;
     /**
      * Gets website group by name.
      */
-    websiteGroupsGetByQueryRaw(requestParameters: WebsiteGroupsGetByQueryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteGroupApiModel>>;
+    websiteGroupsGetByQueryRaw(requestParameters: WebsiteGroupsApiWebsiteGroupsGetByQueryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteGroupApiModel>>;
     /**
      * Gets website group by name.
      */
-    websiteGroupsGetByQuery(requestParameters: WebsiteGroupsGetByQueryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebsiteGroupApiModel>;
+    websiteGroupsGetByQuery(requestParameters: WebsiteGroupsApiWebsiteGroupsGetByQueryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebsiteGroupApiModel>;
     /**
      * Gets the list of website groups.
      */
-    websiteGroupsListRaw(requestParameters: WebsiteGroupsListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteGroupListApiResult>>;
+    websiteGroupsListRaw(requestParameters: WebsiteGroupsApiWebsiteGroupsListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteGroupListApiResult>>;
     /**
      * Gets the list of website groups.
      */
-    websiteGroupsList(requestParameters?: WebsiteGroupsListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebsiteGroupListApiResult>;
+    websiteGroupsList(requestParameters?: WebsiteGroupsApiWebsiteGroupsListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebsiteGroupListApiResult>;
     /**
      * Creates a new website group.
      */
-    websiteGroupsNewRaw(requestParameters: WebsiteGroupsNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteGroupApiModel>>;
+    websiteGroupsNewRaw(requestParameters: WebsiteGroupsApiWebsiteGroupsNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteGroupApiModel>>;
     /**
      * Creates a new website group.
      */
-    websiteGroupsNew(requestParameters: WebsiteGroupsNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebsiteGroupApiModel>;
+    websiteGroupsNew(requestParameters: WebsiteGroupsApiWebsiteGroupsNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebsiteGroupApiModel>;
     /**
      * Updates a website group.
      */
-    websiteGroupsUpdateRaw(requestParameters: WebsiteGroupsUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteGroupApiModel>>;
+    websiteGroupsUpdateRaw(requestParameters: WebsiteGroupsApiWebsiteGroupsUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteGroupApiModel>>;
     /**
      * Updates a website group.
      */
-    websiteGroupsUpdate(requestParameters: WebsiteGroupsUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebsiteGroupApiModel>;
+    websiteGroupsUpdate(requestParameters: WebsiteGroupsApiWebsiteGroupsUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebsiteGroupApiModel>;
 }

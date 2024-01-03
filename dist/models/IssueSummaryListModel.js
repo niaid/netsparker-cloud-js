@@ -17,30 +17,34 @@ exports.IssueSummaryListModelToJSON = exports.IssueSummaryListModelFromJSONTyped
 const runtime_1 = require("../runtime");
 const IssueSummaryStatusModel_1 = require("./IssueSummaryStatusModel");
 /**
- * @export
- */
-exports.IssueSummaryListModelStateEnum = {
-    Present: 'Present',
-    FixedUnconfirmed: 'FixedUnconfirmed',
-    FixedCantRetest: 'FixedCantRetest',
-    FixedConfirmed: 'FixedConfirmed',
-    Revived: 'Revived',
-    Scanning: 'Scanning',
-    Ignored: 'Ignored',
-    AcceptedRisk: 'AcceptedRisk',
-    FalsePositive: 'FalsePositive'
-};
+* @export
+* @enum {string}
+*/
+var IssueSummaryListModelStateEnum;
+(function (IssueSummaryListModelStateEnum) {
+    IssueSummaryListModelStateEnum["Present"] = "Present";
+    IssueSummaryListModelStateEnum["FixedUnconfirmed"] = "FixedUnconfirmed";
+    IssueSummaryListModelStateEnum["FixedCantRetest"] = "FixedCantRetest";
+    IssueSummaryListModelStateEnum["FixedConfirmed"] = "FixedConfirmed";
+    IssueSummaryListModelStateEnum["Revived"] = "Revived";
+    IssueSummaryListModelStateEnum["Scanning"] = "Scanning";
+    IssueSummaryListModelStateEnum["Ignored"] = "Ignored";
+    IssueSummaryListModelStateEnum["AcceptedRisk"] = "AcceptedRisk";
+    IssueSummaryListModelStateEnum["FalsePositive"] = "FalsePositive";
+})(IssueSummaryListModelStateEnum = exports.IssueSummaryListModelStateEnum || (exports.IssueSummaryListModelStateEnum = {}));
 /**
- * @export
- */
-exports.IssueSummaryListModelSeverityEnum = {
-    BestPractice: 'BestPractice',
-    Information: 'Information',
-    Low: 'Low',
-    Medium: 'Medium',
-    High: 'High',
-    Critical: 'Critical'
-};
+* @export
+* @enum {string}
+*/
+var IssueSummaryListModelSeverityEnum;
+(function (IssueSummaryListModelSeverityEnum) {
+    IssueSummaryListModelSeverityEnum["BestPractice"] = "BestPractice";
+    IssueSummaryListModelSeverityEnum["Information"] = "Information";
+    IssueSummaryListModelSeverityEnum["Low"] = "Low";
+    IssueSummaryListModelSeverityEnum["Medium"] = "Medium";
+    IssueSummaryListModelSeverityEnum["High"] = "High";
+    IssueSummaryListModelSeverityEnum["Critical"] = "Critical";
+})(IssueSummaryListModelSeverityEnum = exports.IssueSummaryListModelSeverityEnum || (exports.IssueSummaryListModelSeverityEnum = {}));
 /**
  * Check if a given object implements the IssueSummaryListModel interface.
  */

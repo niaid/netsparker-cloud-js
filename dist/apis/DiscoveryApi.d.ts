@@ -11,36 +11,36 @@
  */
 import * as runtime from '../runtime';
 import type { DeleteDiscoveryConnectionModel, DiscoveryConnectionsViewModel, DiscoveryServiceListApiResult, DiscoverySettingsApiModel, ExcludeFilter } from '../models/index';
-export interface DiscoveryConnectionByIdRequest {
+export interface DiscoveryApiDiscoveryConnectionByIdRequest {
     connectionId: string;
     type?: DiscoveryConnectionByIdTypeEnum;
 }
-export interface DiscoveryConnectionsRequest {
+export interface DiscoveryApiDiscoveryConnectionsRequest {
     name?: string;
     region?: string;
     type?: DiscoveryConnectionsTypeEnum;
     page?: number;
     pageSize?: number;
 }
-export interface DiscoveryCreateConnectionRequest {
+export interface DiscoveryApiDiscoveryCreateConnectionRequest {
     model: DiscoveryConnectionsViewModel;
 }
-export interface DiscoveryDeleteConnectionRequest {
+export interface DiscoveryApiDiscoveryDeleteConnectionRequest {
     model: DeleteDiscoveryConnectionModel;
 }
-export interface DiscoveryEditConnectionRequest {
+export interface DiscoveryApiDiscoveryEditConnectionRequest {
     model: DiscoveryConnectionsViewModel;
 }
-export interface DiscoveryExcludeRequest {
+export interface DiscoveryApiDiscoveryExcludeRequest {
     model: ExcludeFilter;
 }
-export interface DiscoveryExportRequest {
+export interface DiscoveryApiDiscoveryExportRequest {
     csvSeparator?: DiscoveryExportCsvSeparatorEnum;
 }
-export interface DiscoveryIgnoreRequest {
+export interface DiscoveryApiDiscoveryIgnoreRequest {
     serviceIds: Array<string>;
 }
-export interface DiscoveryIgnoreByFilterRequest {
+export interface DiscoveryApiDiscoveryIgnoreByFilterRequest {
     authority?: string;
     ipAddress?: string;
     secondLevelDomain?: string;
@@ -49,11 +49,11 @@ export interface DiscoveryIgnoreByFilterRequest {
     distance?: number;
     registeredDomain?: boolean;
 }
-export interface DiscoveryListRequest {
+export interface DiscoveryApiDiscoveryListRequest {
     page?: number;
     pageSize?: number;
 }
-export interface DiscoveryListByFilterRequest {
+export interface DiscoveryApiDiscoveryListByFilterRequest {
     authority?: string;
     ipAddress?: string;
     secondLevelDomain?: string;
@@ -65,7 +65,7 @@ export interface DiscoveryListByFilterRequest {
     page?: number;
     pageSize?: number;
 }
-export interface DiscoveryUpdateSettingsRequest {
+export interface DiscoveryApiDiscoveryUpdateSettingsRequest {
     model: DiscoverySettingsApiModel;
 }
 /**
@@ -75,91 +75,91 @@ export declare class DiscoveryApi extends runtime.BaseAPI {
     /**
      * Get Connection By Id And Type.
      */
-    discoveryConnectionByIdRaw(requestParameters: DiscoveryConnectionByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    discoveryConnectionByIdRaw(requestParameters: DiscoveryApiDiscoveryConnectionByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Get Connection By Id And Type.
      */
-    discoveryConnectionById(requestParameters: DiscoveryConnectionByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    discoveryConnectionById(requestParameters: DiscoveryApiDiscoveryConnectionByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * List Connections.
      */
-    discoveryConnectionsRaw(requestParameters: DiscoveryConnectionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    discoveryConnectionsRaw(requestParameters: DiscoveryApiDiscoveryConnectionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * List Connections.
      */
-    discoveryConnections(requestParameters?: DiscoveryConnectionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    discoveryConnections(requestParameters?: DiscoveryApiDiscoveryConnectionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Creates New Connection.
      */
-    discoveryCreateConnectionRaw(requestParameters: DiscoveryCreateConnectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    discoveryCreateConnectionRaw(requestParameters: DiscoveryApiDiscoveryCreateConnectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Creates New Connection.
      */
-    discoveryCreateConnection(requestParameters: DiscoveryCreateConnectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    discoveryCreateConnection(requestParameters: DiscoveryApiDiscoveryCreateConnectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Deletes Connection.
      */
-    discoveryDeleteConnectionRaw(requestParameters: DiscoveryDeleteConnectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    discoveryDeleteConnectionRaw(requestParameters: DiscoveryApiDiscoveryDeleteConnectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Deletes Connection.
      */
-    discoveryDeleteConnection(requestParameters: DiscoveryDeleteConnectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    discoveryDeleteConnection(requestParameters: DiscoveryApiDiscoveryDeleteConnectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Edits Connection.
      */
-    discoveryEditConnectionRaw(requestParameters: DiscoveryEditConnectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    discoveryEditConnectionRaw(requestParameters: DiscoveryApiDiscoveryEditConnectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Edits Connection.
      */
-    discoveryEditConnection(requestParameters: DiscoveryEditConnectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    discoveryEditConnection(requestParameters: DiscoveryApiDiscoveryEditConnectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Returns exclude operation result.  This operation note override existing data, append to existing data.  If you want to override please use update-settings endpoint.
      */
-    discoveryExcludeRaw(requestParameters: DiscoveryExcludeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>>;
+    discoveryExcludeRaw(requestParameters: DiscoveryApiDiscoveryExcludeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>>;
     /**
      * Returns exclude operation result.  This operation note override existing data, append to existing data.  If you want to override please use update-settings endpoint.
      */
-    discoveryExclude(requestParameters: DiscoveryExcludeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object>;
+    discoveryExclude(requestParameters: DiscoveryApiDiscoveryExcludeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object>;
     /**
      * Returns the all discovery services in the csv format as a downloadable file.
      */
-    discoveryExportRaw(requestParameters: DiscoveryExportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>>;
+    discoveryExportRaw(requestParameters: DiscoveryApiDiscoveryExportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>>;
     /**
      * Returns the all discovery services in the csv format as a downloadable file.
      */
-    discoveryExport(requestParameters?: DiscoveryExportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object>;
+    discoveryExport(requestParameters?: DiscoveryApiDiscoveryExportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object>;
     /**
      * Ignores discovery service with given service ids.
      */
-    discoveryIgnoreRaw(requestParameters: DiscoveryIgnoreRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
+    discoveryIgnoreRaw(requestParameters: DiscoveryApiDiscoveryIgnoreRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
     /**
      * Ignores discovery service with given service ids.
      */
-    discoveryIgnore(requestParameters: DiscoveryIgnoreRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
+    discoveryIgnore(requestParameters: DiscoveryApiDiscoveryIgnoreRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
     /**
      * Ignores discovery services for selected filters.
      */
-    discoveryIgnoreByFilterRaw(requestParameters: DiscoveryIgnoreByFilterRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
+    discoveryIgnoreByFilterRaw(requestParameters: DiscoveryApiDiscoveryIgnoreByFilterRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
     /**
      * Ignores discovery services for selected filters.
      */
-    discoveryIgnoreByFilter(requestParameters?: DiscoveryIgnoreByFilterRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
+    discoveryIgnoreByFilter(requestParameters?: DiscoveryApiDiscoveryIgnoreByFilterRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
     /**
      * Gets the list discovery services.
      */
-    discoveryListRaw(requestParameters: DiscoveryListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DiscoveryServiceListApiResult>>;
+    discoveryListRaw(requestParameters: DiscoveryApiDiscoveryListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DiscoveryServiceListApiResult>>;
     /**
      * Gets the list discovery services.
      */
-    discoveryList(requestParameters?: DiscoveryListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DiscoveryServiceListApiResult>;
+    discoveryList(requestParameters?: DiscoveryApiDiscoveryListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DiscoveryServiceListApiResult>;
     /**
      * Gets the list discovery services with filter.
      */
-    discoveryListByFilterRaw(requestParameters: DiscoveryListByFilterRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DiscoveryServiceListApiResult>>;
+    discoveryListByFilterRaw(requestParameters: DiscoveryApiDiscoveryListByFilterRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DiscoveryServiceListApiResult>>;
     /**
      * Gets the list discovery services with filter.
      */
-    discoveryListByFilter(requestParameters?: DiscoveryListByFilterRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DiscoveryServiceListApiResult>;
+    discoveryListByFilter(requestParameters?: DiscoveryApiDiscoveryListByFilterRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DiscoveryServiceListApiResult>;
     /**
      * Gets the discovery settings.
      */
@@ -171,42 +171,42 @@ export declare class DiscoveryApi extends runtime.BaseAPI {
     /**
      * Updates discovery settings.
      */
-    discoveryUpdateSettingsRaw(requestParameters: DiscoveryUpdateSettingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DiscoverySettingsApiModel>>;
+    discoveryUpdateSettingsRaw(requestParameters: DiscoveryApiDiscoveryUpdateSettingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DiscoverySettingsApiModel>>;
     /**
      * Updates discovery settings.
      */
-    discoveryUpdateSettings(requestParameters: DiscoveryUpdateSettingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DiscoverySettingsApiModel>;
+    discoveryUpdateSettings(requestParameters: DiscoveryApiDiscoveryUpdateSettingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DiscoverySettingsApiModel>;
 }
 /**
- * @export
- */
-export declare const DiscoveryConnectionByIdTypeEnum: {
-    readonly Aws: "Aws";
-};
-export type DiscoveryConnectionByIdTypeEnum = typeof DiscoveryConnectionByIdTypeEnum[keyof typeof DiscoveryConnectionByIdTypeEnum];
+  * @export
+  * @enum {string}
+  */
+export declare enum DiscoveryConnectionByIdTypeEnum {
+    Aws = "Aws"
+}
 /**
- * @export
- */
-export declare const DiscoveryConnectionsTypeEnum: {
-    readonly Aws: "Aws";
-};
-export type DiscoveryConnectionsTypeEnum = typeof DiscoveryConnectionsTypeEnum[keyof typeof DiscoveryConnectionsTypeEnum];
+  * @export
+  * @enum {string}
+  */
+export declare enum DiscoveryConnectionsTypeEnum {
+    Aws = "Aws"
+}
 /**
- * @export
- */
-export declare const DiscoveryExportCsvSeparatorEnum: {
-    readonly Comma: "Comma";
-    readonly Semicolon: "Semicolon";
-    readonly Pipe: "Pipe";
-    readonly Tab: "Tab";
-};
-export type DiscoveryExportCsvSeparatorEnum = typeof DiscoveryExportCsvSeparatorEnum[keyof typeof DiscoveryExportCsvSeparatorEnum];
+  * @export
+  * @enum {string}
+  */
+export declare enum DiscoveryExportCsvSeparatorEnum {
+    Comma = "Comma",
+    Semicolon = "Semicolon",
+    Pipe = "Pipe",
+    Tab = "Tab"
+}
 /**
- * @export
- */
-export declare const DiscoveryListByFilterStatusEnum: {
-    readonly Discovered: "Discovered";
-    readonly Ignored: "Ignored";
-    readonly Created: "Created";
-};
-export type DiscoveryListByFilterStatusEnum = typeof DiscoveryListByFilterStatusEnum[keyof typeof DiscoveryListByFilterStatusEnum];
+  * @export
+  * @enum {string}
+  */
+export declare enum DiscoveryListByFilterStatusEnum {
+    Discovered = "Discovered",
+    Ignored = "Ignored",
+    Created = "Created"
+}

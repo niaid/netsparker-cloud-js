@@ -18,25 +18,29 @@ const runtime_1 = require("../runtime");
 const OutsiderRecipient_1 = require("./OutsiderRecipient");
 const ScanNotificationRecipientUserApiModel_1 = require("./ScanNotificationRecipientUserApiModel");
 /**
- * @export
- */
-exports.ScanNotificationRecipientApiModelSpecificEmailRecipientsEnum = {
-    None: 'None',
-    WebsiteTechnicalContact: 'WebsiteTechnicalContact',
-    PersonWhoStartedScan: 'PersonWhoStartedScan',
-    AllAuthorized: 'AllAuthorized',
-    AccountAdmins: 'AccountAdmins'
-};
+* @export
+* @enum {string}
+*/
+var ScanNotificationRecipientApiModelSpecificEmailRecipientsEnum;
+(function (ScanNotificationRecipientApiModelSpecificEmailRecipientsEnum) {
+    ScanNotificationRecipientApiModelSpecificEmailRecipientsEnum["None"] = "None";
+    ScanNotificationRecipientApiModelSpecificEmailRecipientsEnum["WebsiteTechnicalContact"] = "WebsiteTechnicalContact";
+    ScanNotificationRecipientApiModelSpecificEmailRecipientsEnum["PersonWhoStartedScan"] = "PersonWhoStartedScan";
+    ScanNotificationRecipientApiModelSpecificEmailRecipientsEnum["AllAuthorized"] = "AllAuthorized";
+    ScanNotificationRecipientApiModelSpecificEmailRecipientsEnum["AccountAdmins"] = "AccountAdmins";
+})(ScanNotificationRecipientApiModelSpecificEmailRecipientsEnum = exports.ScanNotificationRecipientApiModelSpecificEmailRecipientsEnum || (exports.ScanNotificationRecipientApiModelSpecificEmailRecipientsEnum = {}));
 /**
- * @export
- */
-exports.ScanNotificationRecipientApiModelSpecificSmsRecipientsEnum = {
-    None: 'None',
-    WebsiteTechnicalContact: 'WebsiteTechnicalContact',
-    PersonWhoStartedScan: 'PersonWhoStartedScan',
-    AllAuthorized: 'AllAuthorized',
-    AccountAdmins: 'AccountAdmins'
-};
+* @export
+* @enum {string}
+*/
+var ScanNotificationRecipientApiModelSpecificSmsRecipientsEnum;
+(function (ScanNotificationRecipientApiModelSpecificSmsRecipientsEnum) {
+    ScanNotificationRecipientApiModelSpecificSmsRecipientsEnum["None"] = "None";
+    ScanNotificationRecipientApiModelSpecificSmsRecipientsEnum["WebsiteTechnicalContact"] = "WebsiteTechnicalContact";
+    ScanNotificationRecipientApiModelSpecificSmsRecipientsEnum["PersonWhoStartedScan"] = "PersonWhoStartedScan";
+    ScanNotificationRecipientApiModelSpecificSmsRecipientsEnum["AllAuthorized"] = "AllAuthorized";
+    ScanNotificationRecipientApiModelSpecificSmsRecipientsEnum["AccountAdmins"] = "AccountAdmins";
+})(ScanNotificationRecipientApiModelSpecificSmsRecipientsEnum = exports.ScanNotificationRecipientApiModelSpecificSmsRecipientsEnum || (exports.ScanNotificationRecipientApiModelSpecificSmsRecipientsEnum = {}));
 /**
  * Check if a given object implements the ScanNotificationRecipientApiModel interface.
  */

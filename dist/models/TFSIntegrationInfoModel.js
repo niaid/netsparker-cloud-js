@@ -18,50 +18,54 @@ const runtime_1 = require("../runtime");
 const IntegrationCustomFieldVm_1 = require("./IntegrationCustomFieldVm");
 const IntegrationWizardResultModel_1 = require("./IntegrationWizardResultModel");
 /**
- * @export
- */
-exports.TFSIntegrationInfoModelTypeEnum = {
-    NetsparkerEnterprise: 'NetsparkerEnterprise',
-    Webhook: 'Webhook',
-    Zapier: 'Zapier',
-    Slack: 'Slack',
-    Mattermost: 'Mattermost',
-    MicrosoftTeams: 'MicrosoftTeams',
-    AzureDevOps: 'AzureDevOps',
-    Bitbucket: 'Bitbucket',
-    Bugzilla: 'Bugzilla',
-    Clubhouse: 'Clubhouse',
-    DefectDojo: 'DefectDojo',
-    PivotalTracker: 'PivotalTracker',
-    Jira: 'Jira',
-    FogBugz: 'FogBugz',
-    GitHub: 'GitHub',
-    PagerDuty: 'PagerDuty',
-    Kafka: 'Kafka',
-    Kenna: 'Kenna',
-    Redmine: 'Redmine',
-    ServiceNow: 'ServiceNow',
-    Tfs: 'TFS',
-    Unfuddle: 'Unfuddle',
-    YouTrack: 'YouTrack',
-    Freshservice: 'Freshservice',
-    Splunk: 'Splunk',
-    JazzTeam: 'JazzTeam',
-    ServiceNowVrm: 'ServiceNowVRM',
-    Asana: 'Asana',
-    Trello: 'Trello',
-    Hashicorp: 'Hashicorp',
-    CyberArk: 'CyberArk',
-    AzureKeyVault: 'AzureKeyVault',
-    GitLab: 'GitLab'
-};
+* @export
+* @enum {string}
+*/
+var TFSIntegrationInfoModelTypeEnum;
+(function (TFSIntegrationInfoModelTypeEnum) {
+    TFSIntegrationInfoModelTypeEnum["NetsparkerEnterprise"] = "NetsparkerEnterprise";
+    TFSIntegrationInfoModelTypeEnum["Webhook"] = "Webhook";
+    TFSIntegrationInfoModelTypeEnum["Zapier"] = "Zapier";
+    TFSIntegrationInfoModelTypeEnum["Slack"] = "Slack";
+    TFSIntegrationInfoModelTypeEnum["Mattermost"] = "Mattermost";
+    TFSIntegrationInfoModelTypeEnum["MicrosoftTeams"] = "MicrosoftTeams";
+    TFSIntegrationInfoModelTypeEnum["AzureDevOps"] = "AzureDevOps";
+    TFSIntegrationInfoModelTypeEnum["Bitbucket"] = "Bitbucket";
+    TFSIntegrationInfoModelTypeEnum["Bugzilla"] = "Bugzilla";
+    TFSIntegrationInfoModelTypeEnum["Clubhouse"] = "Clubhouse";
+    TFSIntegrationInfoModelTypeEnum["DefectDojo"] = "DefectDojo";
+    TFSIntegrationInfoModelTypeEnum["PivotalTracker"] = "PivotalTracker";
+    TFSIntegrationInfoModelTypeEnum["Jira"] = "Jira";
+    TFSIntegrationInfoModelTypeEnum["FogBugz"] = "FogBugz";
+    TFSIntegrationInfoModelTypeEnum["GitHub"] = "GitHub";
+    TFSIntegrationInfoModelTypeEnum["PagerDuty"] = "PagerDuty";
+    TFSIntegrationInfoModelTypeEnum["Kafka"] = "Kafka";
+    TFSIntegrationInfoModelTypeEnum["Kenna"] = "Kenna";
+    TFSIntegrationInfoModelTypeEnum["Redmine"] = "Redmine";
+    TFSIntegrationInfoModelTypeEnum["ServiceNow"] = "ServiceNow";
+    TFSIntegrationInfoModelTypeEnum["Tfs"] = "TFS";
+    TFSIntegrationInfoModelTypeEnum["Unfuddle"] = "Unfuddle";
+    TFSIntegrationInfoModelTypeEnum["YouTrack"] = "YouTrack";
+    TFSIntegrationInfoModelTypeEnum["Freshservice"] = "Freshservice";
+    TFSIntegrationInfoModelTypeEnum["Splunk"] = "Splunk";
+    TFSIntegrationInfoModelTypeEnum["JazzTeam"] = "JazzTeam";
+    TFSIntegrationInfoModelTypeEnum["ServiceNowVrm"] = "ServiceNowVRM";
+    TFSIntegrationInfoModelTypeEnum["Asana"] = "Asana";
+    TFSIntegrationInfoModelTypeEnum["Trello"] = "Trello";
+    TFSIntegrationInfoModelTypeEnum["Hashicorp"] = "Hashicorp";
+    TFSIntegrationInfoModelTypeEnum["CyberArk"] = "CyberArk";
+    TFSIntegrationInfoModelTypeEnum["AzureKeyVault"] = "AzureKeyVault";
+    TFSIntegrationInfoModelTypeEnum["GitLab"] = "GitLab";
+})(TFSIntegrationInfoModelTypeEnum = exports.TFSIntegrationInfoModelTypeEnum || (exports.TFSIntegrationInfoModelTypeEnum = {}));
 /**
- * @export
- */
-exports.TFSIntegrationInfoModelTemplateTypeEnum = {
-    Standard: 'Standard',
-    Detailed: 'Detailed'
-};
+* @export
+* @enum {string}
+*/
+var TFSIntegrationInfoModelTemplateTypeEnum;
+(function (TFSIntegrationInfoModelTemplateTypeEnum) {
+    TFSIntegrationInfoModelTemplateTypeEnum["Standard"] = "Standard";
+    TFSIntegrationInfoModelTemplateTypeEnum["Detailed"] = "Detailed";
+})(TFSIntegrationInfoModelTemplateTypeEnum = exports.TFSIntegrationInfoModelTemplateTypeEnum || (exports.TFSIntegrationInfoModelTemplateTypeEnum = {}));
 /**
  * Check if a given object implements the TFSIntegrationInfoModel interface.
  */

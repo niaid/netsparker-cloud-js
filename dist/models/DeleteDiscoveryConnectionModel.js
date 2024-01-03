@@ -16,11 +16,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.DeleteDiscoveryConnectionModelToJSON = exports.DeleteDiscoveryConnectionModelFromJSONTyped = exports.DeleteDiscoveryConnectionModelFromJSON = exports.instanceOfDeleteDiscoveryConnectionModel = exports.DeleteDiscoveryConnectionModelTypeEnum = void 0;
 const runtime_1 = require("../runtime");
 /**
- * @export
- */
-exports.DeleteDiscoveryConnectionModelTypeEnum = {
-    Aws: 'Aws'
-};
+* @export
+* @enum {string}
+*/
+var DeleteDiscoveryConnectionModelTypeEnum;
+(function (DeleteDiscoveryConnectionModelTypeEnum) {
+    DeleteDiscoveryConnectionModelTypeEnum["Aws"] = "Aws";
+})(DeleteDiscoveryConnectionModelTypeEnum = exports.DeleteDiscoveryConnectionModelTypeEnum || (exports.DeleteDiscoveryConnectionModelTypeEnum = {}));
 /**
  * Check if a given object implements the DeleteDiscoveryConnectionModel interface.
  */

@@ -16,25 +16,29 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.IssueReportFilterApiModelToJSON = exports.IssueReportFilterApiModelFromJSONTyped = exports.IssueReportFilterApiModelFromJSON = exports.instanceOfIssueReportFilterApiModel = exports.IssueReportFilterApiModelSeverityEnum = exports.IssueReportFilterApiModelCsvSeparatorEnum = void 0;
 const runtime_1 = require("../runtime");
 /**
- * @export
- */
-exports.IssueReportFilterApiModelCsvSeparatorEnum = {
-    Comma: 'Comma',
-    Semicolon: 'Semicolon',
-    Pipe: 'Pipe',
-    Tab: 'Tab'
-};
+* @export
+* @enum {string}
+*/
+var IssueReportFilterApiModelCsvSeparatorEnum;
+(function (IssueReportFilterApiModelCsvSeparatorEnum) {
+    IssueReportFilterApiModelCsvSeparatorEnum["Comma"] = "Comma";
+    IssueReportFilterApiModelCsvSeparatorEnum["Semicolon"] = "Semicolon";
+    IssueReportFilterApiModelCsvSeparatorEnum["Pipe"] = "Pipe";
+    IssueReportFilterApiModelCsvSeparatorEnum["Tab"] = "Tab";
+})(IssueReportFilterApiModelCsvSeparatorEnum = exports.IssueReportFilterApiModelCsvSeparatorEnum || (exports.IssueReportFilterApiModelCsvSeparatorEnum = {}));
 /**
- * @export
- */
-exports.IssueReportFilterApiModelSeverityEnum = {
-    BestPractice: 'BestPractice',
-    Information: 'Information',
-    Low: 'Low',
-    Medium: 'Medium',
-    High: 'High',
-    Critical: 'Critical'
-};
+* @export
+* @enum {string}
+*/
+var IssueReportFilterApiModelSeverityEnum;
+(function (IssueReportFilterApiModelSeverityEnum) {
+    IssueReportFilterApiModelSeverityEnum["BestPractice"] = "BestPractice";
+    IssueReportFilterApiModelSeverityEnum["Information"] = "Information";
+    IssueReportFilterApiModelSeverityEnum["Low"] = "Low";
+    IssueReportFilterApiModelSeverityEnum["Medium"] = "Medium";
+    IssueReportFilterApiModelSeverityEnum["High"] = "High";
+    IssueReportFilterApiModelSeverityEnum["Critical"] = "Critical";
+})(IssueReportFilterApiModelSeverityEnum = exports.IssueReportFilterApiModelSeverityEnum || (exports.IssueReportFilterApiModelSeverityEnum = {}));
 /**
  * Check if a given object implements the IssueReportFilterApiModel interface.
  */

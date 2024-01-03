@@ -16,15 +16,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.BasicAuthenticationCredentialModelToJSON = exports.BasicAuthenticationCredentialModelFromJSONTyped = exports.BasicAuthenticationCredentialModelFromJSON = exports.instanceOfBasicAuthenticationCredentialModel = exports.BasicAuthenticationCredentialModelAuthenticationTypeEnum = void 0;
 const runtime_1 = require("../runtime");
 /**
- * @export
- */
-exports.BasicAuthenticationCredentialModelAuthenticationTypeEnum = {
-    Basic: 'Basic',
-    Ntlm: 'Ntlm',
-    Kerberos: 'Kerberos',
-    Digest: 'Digest',
-    Negotiate: 'Negotiate'
-};
+* @export
+* @enum {string}
+*/
+var BasicAuthenticationCredentialModelAuthenticationTypeEnum;
+(function (BasicAuthenticationCredentialModelAuthenticationTypeEnum) {
+    BasicAuthenticationCredentialModelAuthenticationTypeEnum["Basic"] = "Basic";
+    BasicAuthenticationCredentialModelAuthenticationTypeEnum["Ntlm"] = "Ntlm";
+    BasicAuthenticationCredentialModelAuthenticationTypeEnum["Kerberos"] = "Kerberos";
+    BasicAuthenticationCredentialModelAuthenticationTypeEnum["Digest"] = "Digest";
+    BasicAuthenticationCredentialModelAuthenticationTypeEnum["Negotiate"] = "Negotiate";
+})(BasicAuthenticationCredentialModelAuthenticationTypeEnum = exports.BasicAuthenticationCredentialModelAuthenticationTypeEnum || (exports.BasicAuthenticationCredentialModelAuthenticationTypeEnum = {}));
 /**
  * Check if a given object implements the BasicAuthenticationCredentialModel interface.
  */

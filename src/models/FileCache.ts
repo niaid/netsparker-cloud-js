@@ -63,32 +63,31 @@ export interface FileCache {
     apiURL?: string;
 }
 
-
 /**
- * @export
- */
-export const FileCacheImporterTypeEnum = {
-    None: 'None',
-    Fiddler: 'Fiddler',
-    Burp: 'Burp',
-    Swagger: 'Swagger',
-    OwaspZap: 'OwaspZap',
-    AspNet: 'AspNet',
-    HttpArchive: 'HttpArchive',
-    Wadl: 'Wadl',
-    Wsdl: 'Wsdl',
-    Postman: 'Postman',
-    Netsparker: 'Netsparker',
-    HttpRequestImporter: 'HttpRequestImporter',
-    LinkImporter: 'LinkImporter',
-    CsvImporter: 'CsvImporter',
-    Iodocs: 'Iodocs',
-    WordPress: 'WordPress',
-    Raml: 'Raml',
-    GraphQl: 'GraphQl',
-    AcxXml: 'AcxXml'
-} as const;
-export type FileCacheImporterTypeEnum = typeof FileCacheImporterTypeEnum[keyof typeof FileCacheImporterTypeEnum];
+* @export
+* @enum {string}
+*/
+export enum FileCacheImporterTypeEnum {
+    None = 'None',
+    Fiddler = 'Fiddler',
+    Burp = 'Burp',
+    Swagger = 'Swagger',
+    OwaspZap = 'OwaspZap',
+    AspNet = 'AspNet',
+    HttpArchive = 'HttpArchive',
+    Wadl = 'Wadl',
+    Wsdl = 'Wsdl',
+    Postman = 'Postman',
+    Netsparker = 'Netsparker',
+    HttpRequestImporter = 'HttpRequestImporter',
+    LinkImporter = 'LinkImporter',
+    CsvImporter = 'CsvImporter',
+    Iodocs = 'Iodocs',
+    WordPress = 'WordPress',
+    Raml = 'Raml',
+    GraphQl = 'GraphQl',
+    AcxXml = 'AcxXml'
+}
 
 
 /**

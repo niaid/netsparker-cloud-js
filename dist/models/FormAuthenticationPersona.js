@@ -16,34 +16,42 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.FormAuthenticationPersonaToJSON = exports.FormAuthenticationPersonaFromJSONTyped = exports.FormAuthenticationPersonaFromJSON = exports.instanceOfFormAuthenticationPersona = exports.FormAuthenticationPersonaVersionEnum = exports.FormAuthenticationPersonaFormAuthTypeEnum = exports.FormAuthenticationPersonaAlgorithmEnum = exports.FormAuthenticationPersonaOtpTypeEnum = void 0;
 const runtime_1 = require("../runtime");
 /**
- * @export
- */
-exports.FormAuthenticationPersonaOtpTypeEnum = {
-    Totp: 'Totp',
-    Hotp: 'Hotp'
-};
+* @export
+* @enum {string}
+*/
+var FormAuthenticationPersonaOtpTypeEnum;
+(function (FormAuthenticationPersonaOtpTypeEnum) {
+    FormAuthenticationPersonaOtpTypeEnum["Totp"] = "Totp";
+    FormAuthenticationPersonaOtpTypeEnum["Hotp"] = "Hotp";
+})(FormAuthenticationPersonaOtpTypeEnum = exports.FormAuthenticationPersonaOtpTypeEnum || (exports.FormAuthenticationPersonaOtpTypeEnum = {}));
 /**
- * @export
- */
-exports.FormAuthenticationPersonaAlgorithmEnum = {
-    Sha1: 'Sha1',
-    Sha256: 'Sha256',
-    Sha512: 'Sha512'
-};
+* @export
+* @enum {string}
+*/
+var FormAuthenticationPersonaAlgorithmEnum;
+(function (FormAuthenticationPersonaAlgorithmEnum) {
+    FormAuthenticationPersonaAlgorithmEnum["Sha1"] = "Sha1";
+    FormAuthenticationPersonaAlgorithmEnum["Sha256"] = "Sha256";
+    FormAuthenticationPersonaAlgorithmEnum["Sha512"] = "Sha512";
+})(FormAuthenticationPersonaAlgorithmEnum = exports.FormAuthenticationPersonaAlgorithmEnum || (exports.FormAuthenticationPersonaAlgorithmEnum = {}));
 /**
- * @export
- */
-exports.FormAuthenticationPersonaFormAuthTypeEnum = {
-    Manual: 'Manual',
-    Integration: 'Integration'
-};
+* @export
+* @enum {string}
+*/
+var FormAuthenticationPersonaFormAuthTypeEnum;
+(function (FormAuthenticationPersonaFormAuthTypeEnum) {
+    FormAuthenticationPersonaFormAuthTypeEnum["Manual"] = "Manual";
+    FormAuthenticationPersonaFormAuthTypeEnum["Integration"] = "Integration";
+})(FormAuthenticationPersonaFormAuthTypeEnum = exports.FormAuthenticationPersonaFormAuthTypeEnum || (exports.FormAuthenticationPersonaFormAuthTypeEnum = {}));
 /**
- * @export
- */
-exports.FormAuthenticationPersonaVersionEnum = {
-    V1: 'V1',
-    V2: 'V2'
-};
+* @export
+* @enum {string}
+*/
+var FormAuthenticationPersonaVersionEnum;
+(function (FormAuthenticationPersonaVersionEnum) {
+    FormAuthenticationPersonaVersionEnum["V1"] = "V1";
+    FormAuthenticationPersonaVersionEnum["V2"] = "V2";
+})(FormAuthenticationPersonaVersionEnum = exports.FormAuthenticationPersonaVersionEnum || (exports.FormAuthenticationPersonaVersionEnum = {}));
 /**
  * Check if a given object implements the FormAuthenticationPersona interface.
  */

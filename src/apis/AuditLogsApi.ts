@@ -15,7 +15,7 @@
 
 import * as runtime from '../runtime';
 
-export interface AuditLogsExportRequest {
+export interface AuditLogsApiAuditLogsExportRequest {
     page?: number;
     pageSize?: number;
     csvSeparator?: AuditLogsExportCsvSeparatorEnum;
@@ -23,7 +23,7 @@ export interface AuditLogsExportRequest {
     endDate?: Date;
 }
 
-export interface AuditLogsListRequest {
+export interface AuditLogsApiAuditLogsListRequest {
     page?: number;
     pageSize?: number;
     startDate?: Date;
@@ -38,7 +38,7 @@ export class AuditLogsApi extends runtime.BaseAPI {
     /**
      * Returns the selected log type in the csv format as a downloadable file.
      */
-    async auditLogsExportRaw(requestParameters: AuditLogsExportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async auditLogsExportRaw(requestParameters: AuditLogsApiAuditLogsExportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         const queryParameters: any = {};
 
         if (requestParameters.page !== undefined) {
@@ -76,14 +76,14 @@ export class AuditLogsApi extends runtime.BaseAPI {
     /**
      * Returns the selected log type in the csv format as a downloadable file.
      */
-    async auditLogsExport(requestParameters: AuditLogsExportRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+    async auditLogsExport(requestParameters: AuditLogsApiAuditLogsExportRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
         await this.auditLogsExportRaw(requestParameters, initOverrides);
     }
 
     /**
      * Gets the list of audit logs.
      */
-    async auditLogsListRaw(requestParameters: AuditLogsListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async auditLogsListRaw(requestParameters: AuditLogsApiAuditLogsListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         const queryParameters: any = {};
 
         if (requestParameters.page !== undefined) {
@@ -117,19 +117,19 @@ export class AuditLogsApi extends runtime.BaseAPI {
     /**
      * Gets the list of audit logs.
      */
-    async auditLogsList(requestParameters: AuditLogsListRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+    async auditLogsList(requestParameters: AuditLogsApiAuditLogsListRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
         await this.auditLogsListRaw(requestParameters, initOverrides);
     }
 
 }
 
 /**
- * @export
- */
-export const AuditLogsExportCsvSeparatorEnum = {
-    Comma: 'Comma',
-    Semicolon: 'Semicolon',
-    Pipe: 'Pipe',
-    Tab: 'Tab'
-} as const;
-export type AuditLogsExportCsvSeparatorEnum = typeof AuditLogsExportCsvSeparatorEnum[keyof typeof AuditLogsExportCsvSeparatorEnum];
+  * @export
+  * @enum {string}
+  */
+export enum AuditLogsExportCsvSeparatorEnum {
+    Comma = 'Comma',
+    Semicolon = 'Semicolon',
+    Pipe = 'Pipe',
+    Tab = 'Tab'
+}

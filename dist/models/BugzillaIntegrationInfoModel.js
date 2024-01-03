@@ -18,50 +18,54 @@ const runtime_1 = require("../runtime");
 const IntegrationCustomFieldVm_1 = require("./IntegrationCustomFieldVm");
 const IntegrationWizardResultModel_1 = require("./IntegrationWizardResultModel");
 /**
- * @export
- */
-exports.BugzillaIntegrationInfoModelTypeEnum = {
-    NetsparkerEnterprise: 'NetsparkerEnterprise',
-    Webhook: 'Webhook',
-    Zapier: 'Zapier',
-    Slack: 'Slack',
-    Mattermost: 'Mattermost',
-    MicrosoftTeams: 'MicrosoftTeams',
-    AzureDevOps: 'AzureDevOps',
-    Bitbucket: 'Bitbucket',
-    Bugzilla: 'Bugzilla',
-    Clubhouse: 'Clubhouse',
-    DefectDojo: 'DefectDojo',
-    PivotalTracker: 'PivotalTracker',
-    Jira: 'Jira',
-    FogBugz: 'FogBugz',
-    GitHub: 'GitHub',
-    PagerDuty: 'PagerDuty',
-    Kafka: 'Kafka',
-    Kenna: 'Kenna',
-    Redmine: 'Redmine',
-    ServiceNow: 'ServiceNow',
-    Tfs: 'TFS',
-    Unfuddle: 'Unfuddle',
-    YouTrack: 'YouTrack',
-    Freshservice: 'Freshservice',
-    Splunk: 'Splunk',
-    JazzTeam: 'JazzTeam',
-    ServiceNowVrm: 'ServiceNowVRM',
-    Asana: 'Asana',
-    Trello: 'Trello',
-    Hashicorp: 'Hashicorp',
-    CyberArk: 'CyberArk',
-    AzureKeyVault: 'AzureKeyVault',
-    GitLab: 'GitLab'
-};
+* @export
+* @enum {string}
+*/
+var BugzillaIntegrationInfoModelTypeEnum;
+(function (BugzillaIntegrationInfoModelTypeEnum) {
+    BugzillaIntegrationInfoModelTypeEnum["NetsparkerEnterprise"] = "NetsparkerEnterprise";
+    BugzillaIntegrationInfoModelTypeEnum["Webhook"] = "Webhook";
+    BugzillaIntegrationInfoModelTypeEnum["Zapier"] = "Zapier";
+    BugzillaIntegrationInfoModelTypeEnum["Slack"] = "Slack";
+    BugzillaIntegrationInfoModelTypeEnum["Mattermost"] = "Mattermost";
+    BugzillaIntegrationInfoModelTypeEnum["MicrosoftTeams"] = "MicrosoftTeams";
+    BugzillaIntegrationInfoModelTypeEnum["AzureDevOps"] = "AzureDevOps";
+    BugzillaIntegrationInfoModelTypeEnum["Bitbucket"] = "Bitbucket";
+    BugzillaIntegrationInfoModelTypeEnum["Bugzilla"] = "Bugzilla";
+    BugzillaIntegrationInfoModelTypeEnum["Clubhouse"] = "Clubhouse";
+    BugzillaIntegrationInfoModelTypeEnum["DefectDojo"] = "DefectDojo";
+    BugzillaIntegrationInfoModelTypeEnum["PivotalTracker"] = "PivotalTracker";
+    BugzillaIntegrationInfoModelTypeEnum["Jira"] = "Jira";
+    BugzillaIntegrationInfoModelTypeEnum["FogBugz"] = "FogBugz";
+    BugzillaIntegrationInfoModelTypeEnum["GitHub"] = "GitHub";
+    BugzillaIntegrationInfoModelTypeEnum["PagerDuty"] = "PagerDuty";
+    BugzillaIntegrationInfoModelTypeEnum["Kafka"] = "Kafka";
+    BugzillaIntegrationInfoModelTypeEnum["Kenna"] = "Kenna";
+    BugzillaIntegrationInfoModelTypeEnum["Redmine"] = "Redmine";
+    BugzillaIntegrationInfoModelTypeEnum["ServiceNow"] = "ServiceNow";
+    BugzillaIntegrationInfoModelTypeEnum["Tfs"] = "TFS";
+    BugzillaIntegrationInfoModelTypeEnum["Unfuddle"] = "Unfuddle";
+    BugzillaIntegrationInfoModelTypeEnum["YouTrack"] = "YouTrack";
+    BugzillaIntegrationInfoModelTypeEnum["Freshservice"] = "Freshservice";
+    BugzillaIntegrationInfoModelTypeEnum["Splunk"] = "Splunk";
+    BugzillaIntegrationInfoModelTypeEnum["JazzTeam"] = "JazzTeam";
+    BugzillaIntegrationInfoModelTypeEnum["ServiceNowVrm"] = "ServiceNowVRM";
+    BugzillaIntegrationInfoModelTypeEnum["Asana"] = "Asana";
+    BugzillaIntegrationInfoModelTypeEnum["Trello"] = "Trello";
+    BugzillaIntegrationInfoModelTypeEnum["Hashicorp"] = "Hashicorp";
+    BugzillaIntegrationInfoModelTypeEnum["CyberArk"] = "CyberArk";
+    BugzillaIntegrationInfoModelTypeEnum["AzureKeyVault"] = "AzureKeyVault";
+    BugzillaIntegrationInfoModelTypeEnum["GitLab"] = "GitLab";
+})(BugzillaIntegrationInfoModelTypeEnum = exports.BugzillaIntegrationInfoModelTypeEnum || (exports.BugzillaIntegrationInfoModelTypeEnum = {}));
 /**
- * @export
- */
-exports.BugzillaIntegrationInfoModelTemplateTypeEnum = {
-    Standard: 'Standard',
-    Detailed: 'Detailed'
-};
+* @export
+* @enum {string}
+*/
+var BugzillaIntegrationInfoModelTemplateTypeEnum;
+(function (BugzillaIntegrationInfoModelTemplateTypeEnum) {
+    BugzillaIntegrationInfoModelTemplateTypeEnum["Standard"] = "Standard";
+    BugzillaIntegrationInfoModelTemplateTypeEnum["Detailed"] = "Detailed";
+})(BugzillaIntegrationInfoModelTemplateTypeEnum = exports.BugzillaIntegrationInfoModelTemplateTypeEnum || (exports.BugzillaIntegrationInfoModelTemplateTypeEnum = {}));
 /**
  * Check if a given object implements the BugzillaIntegrationInfoModel interface.
  */

@@ -54,13 +54,13 @@ export interface ScanTimeWindowViewModel {
     scanCreateType?: ScanTimeWindowViewModelScanCreateTypeEnum;
 }
 /**
- * @export
- */
-export declare const ScanTimeWindowViewModelScanCreateTypeEnum: {
-    readonly Website: "Website";
-    readonly WebsiteGroup: "WebsiteGroup";
-};
-export type ScanTimeWindowViewModelScanCreateTypeEnum = typeof ScanTimeWindowViewModelScanCreateTypeEnum[keyof typeof ScanTimeWindowViewModelScanCreateTypeEnum];
+* @export
+* @enum {string}
+*/
+export declare enum ScanTimeWindowViewModelScanCreateTypeEnum {
+    Website = "Website",
+    WebsiteGroup = "WebsiteGroup"
+}
 /**
  * Check if a given object implements the ScanTimeWindowViewModel interface.
  */

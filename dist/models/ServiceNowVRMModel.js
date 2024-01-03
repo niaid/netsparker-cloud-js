@@ -19,50 +19,54 @@ const FieldPairValue_1 = require("./FieldPairValue");
 const IntegrationCustomFieldVm_1 = require("./IntegrationCustomFieldVm");
 const IntegrationWizardResultModel_1 = require("./IntegrationWizardResultModel");
 /**
- * @export
- */
-exports.ServiceNowVRMModelTypeEnum = {
-    Jira: 'Jira',
-    GitHub: 'GitHub',
-    Tfs: 'TFS',
-    FogBugz: 'FogBugz',
-    ServiceNow: 'ServiceNow',
-    Slack: 'Slack',
-    GitLab: 'GitLab',
-    Bitbucket: 'Bitbucket',
-    Unfuddle: 'Unfuddle',
-    Zapier: 'Zapier',
-    AzureDevOps: 'AzureDevOps',
-    Redmine: 'Redmine',
-    Bugzilla: 'Bugzilla',
-    Kafka: 'Kafka',
-    PagerDuty: 'PagerDuty',
-    MicrosoftTeams: 'MicrosoftTeams',
-    Clubhouse: 'Clubhouse',
-    Trello: 'Trello',
-    Asana: 'Asana',
-    Webhook: 'Webhook',
-    Kenna: 'Kenna',
-    Freshservice: 'Freshservice',
-    YouTrack: 'YouTrack',
-    NetsparkerEnterprise: 'NetsparkerEnterprise',
-    Splunk: 'Splunk',
-    Mattermost: 'Mattermost',
-    Hashicorp: 'Hashicorp',
-    PivotalTracker: 'PivotalTracker',
-    CyberArk: 'CyberArk',
-    DefectDojo: 'DefectDojo',
-    JazzTeam: 'JazzTeam',
-    AzureKeyVault: 'AzureKeyVault',
-    ServiceNowVrm: 'ServiceNowVRM'
-};
+* @export
+* @enum {string}
+*/
+var ServiceNowVRMModelTypeEnum;
+(function (ServiceNowVRMModelTypeEnum) {
+    ServiceNowVRMModelTypeEnum["Jira"] = "Jira";
+    ServiceNowVRMModelTypeEnum["GitHub"] = "GitHub";
+    ServiceNowVRMModelTypeEnum["Tfs"] = "TFS";
+    ServiceNowVRMModelTypeEnum["FogBugz"] = "FogBugz";
+    ServiceNowVRMModelTypeEnum["ServiceNow"] = "ServiceNow";
+    ServiceNowVRMModelTypeEnum["Slack"] = "Slack";
+    ServiceNowVRMModelTypeEnum["GitLab"] = "GitLab";
+    ServiceNowVRMModelTypeEnum["Bitbucket"] = "Bitbucket";
+    ServiceNowVRMModelTypeEnum["Unfuddle"] = "Unfuddle";
+    ServiceNowVRMModelTypeEnum["Zapier"] = "Zapier";
+    ServiceNowVRMModelTypeEnum["AzureDevOps"] = "AzureDevOps";
+    ServiceNowVRMModelTypeEnum["Redmine"] = "Redmine";
+    ServiceNowVRMModelTypeEnum["Bugzilla"] = "Bugzilla";
+    ServiceNowVRMModelTypeEnum["Kafka"] = "Kafka";
+    ServiceNowVRMModelTypeEnum["PagerDuty"] = "PagerDuty";
+    ServiceNowVRMModelTypeEnum["MicrosoftTeams"] = "MicrosoftTeams";
+    ServiceNowVRMModelTypeEnum["Clubhouse"] = "Clubhouse";
+    ServiceNowVRMModelTypeEnum["Trello"] = "Trello";
+    ServiceNowVRMModelTypeEnum["Asana"] = "Asana";
+    ServiceNowVRMModelTypeEnum["Webhook"] = "Webhook";
+    ServiceNowVRMModelTypeEnum["Kenna"] = "Kenna";
+    ServiceNowVRMModelTypeEnum["Freshservice"] = "Freshservice";
+    ServiceNowVRMModelTypeEnum["YouTrack"] = "YouTrack";
+    ServiceNowVRMModelTypeEnum["NetsparkerEnterprise"] = "NetsparkerEnterprise";
+    ServiceNowVRMModelTypeEnum["Splunk"] = "Splunk";
+    ServiceNowVRMModelTypeEnum["Mattermost"] = "Mattermost";
+    ServiceNowVRMModelTypeEnum["Hashicorp"] = "Hashicorp";
+    ServiceNowVRMModelTypeEnum["PivotalTracker"] = "PivotalTracker";
+    ServiceNowVRMModelTypeEnum["CyberArk"] = "CyberArk";
+    ServiceNowVRMModelTypeEnum["DefectDojo"] = "DefectDojo";
+    ServiceNowVRMModelTypeEnum["JazzTeam"] = "JazzTeam";
+    ServiceNowVRMModelTypeEnum["AzureKeyVault"] = "AzureKeyVault";
+    ServiceNowVRMModelTypeEnum["ServiceNowVrm"] = "ServiceNowVRM";
+})(ServiceNowVRMModelTypeEnum = exports.ServiceNowVRMModelTypeEnum || (exports.ServiceNowVRMModelTypeEnum = {}));
 /**
- * @export
- */
-exports.ServiceNowVRMModelTemplateTypeEnum = {
-    Standard: 'Standard',
-    Detailed: 'Detailed'
-};
+* @export
+* @enum {string}
+*/
+var ServiceNowVRMModelTemplateTypeEnum;
+(function (ServiceNowVRMModelTemplateTypeEnum) {
+    ServiceNowVRMModelTemplateTypeEnum["Standard"] = "Standard";
+    ServiceNowVRMModelTemplateTypeEnum["Detailed"] = "Detailed";
+})(ServiceNowVRMModelTemplateTypeEnum = exports.ServiceNowVRMModelTemplateTypeEnum || (exports.ServiceNowVRMModelTemplateTypeEnum = {}));
 /**
  * Check if a given object implements the ServiceNowVRMModel interface.
  */

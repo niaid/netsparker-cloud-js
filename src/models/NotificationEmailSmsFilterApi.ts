@@ -47,31 +47,29 @@ export interface NotificationEmailSmsFilterApi {
     certainty?: number;
 }
 
-
 /**
- * @export
- */
-export const NotificationEmailSmsFilterApiSeverityEnum = {
-    BestPractice: 'BestPractice',
-    Information: 'Information',
-    Low: 'Low',
-    Medium: 'Medium',
-    High: 'High',
-    Critical: 'Critical'
-} as const;
-export type NotificationEmailSmsFilterApiSeverityEnum = typeof NotificationEmailSmsFilterApiSeverityEnum[keyof typeof NotificationEmailSmsFilterApiSeverityEnum];
-
+* @export
+* @enum {string}
+*/
+export enum NotificationEmailSmsFilterApiSeverityEnum {
+    BestPractice = 'BestPractice',
+    Information = 'Information',
+    Low = 'Low',
+    Medium = 'Medium',
+    High = 'High',
+    Critical = 'Critical'
+}
 /**
- * @export
- */
-export const NotificationEmailSmsFilterApiStateEnum = {
-    NotFound: 'NotFound',
-    Fixed: 'Fixed',
-    NotFixed: 'NotFixed',
-    New: 'New',
-    Revived: 'Revived'
-} as const;
-export type NotificationEmailSmsFilterApiStateEnum = typeof NotificationEmailSmsFilterApiStateEnum[keyof typeof NotificationEmailSmsFilterApiStateEnum];
+* @export
+* @enum {string}
+*/
+export enum NotificationEmailSmsFilterApiStateEnum {
+    NotFound = 'NotFound',
+    Fixed = 'Fixed',
+    NotFixed = 'NotFixed',
+    New = 'New',
+    Revived = 'Revived'
+}
 
 
 /**

@@ -33,42 +33,50 @@ const SharkModel_1 = require("./SharkModel");
 const TagViewModel_1 = require("./TagViewModel");
 const UrlRewriteSetting_1 = require("./UrlRewriteSetting");
 /**
- * @export
- */
-exports.UpdateScheduledScanModelScanTypeEnum = {
-    Full: 'Full',
-    Retest: 'Retest',
-    Incremental: 'Incremental'
-};
+* @export
+* @enum {string}
+*/
+var UpdateScheduledScanModelScanTypeEnum;
+(function (UpdateScheduledScanModelScanTypeEnum) {
+    UpdateScheduledScanModelScanTypeEnum["Full"] = "Full";
+    UpdateScheduledScanModelScanTypeEnum["Retest"] = "Retest";
+    UpdateScheduledScanModelScanTypeEnum["Incremental"] = "Incremental";
+})(UpdateScheduledScanModelScanTypeEnum = exports.UpdateScheduledScanModelScanTypeEnum || (exports.UpdateScheduledScanModelScanTypeEnum = {}));
 /**
- * @export
- */
-exports.UpdateScheduledScanModelScheduleRunTypeEnum = {
-    Once: 'Once',
-    Daily: 'Daily',
-    Weekly: 'Weekly',
-    Monthly: 'Monthly',
-    Quarterly: 'Quarterly',
-    Biannually: 'Biannually',
-    Yearly: 'Yearly',
-    Custom: 'Custom'
-};
+* @export
+* @enum {string}
+*/
+var UpdateScheduledScanModelScheduleRunTypeEnum;
+(function (UpdateScheduledScanModelScheduleRunTypeEnum) {
+    UpdateScheduledScanModelScheduleRunTypeEnum["Once"] = "Once";
+    UpdateScheduledScanModelScheduleRunTypeEnum["Daily"] = "Daily";
+    UpdateScheduledScanModelScheduleRunTypeEnum["Weekly"] = "Weekly";
+    UpdateScheduledScanModelScheduleRunTypeEnum["Monthly"] = "Monthly";
+    UpdateScheduledScanModelScheduleRunTypeEnum["Quarterly"] = "Quarterly";
+    UpdateScheduledScanModelScheduleRunTypeEnum["Biannually"] = "Biannually";
+    UpdateScheduledScanModelScheduleRunTypeEnum["Yearly"] = "Yearly";
+    UpdateScheduledScanModelScheduleRunTypeEnum["Custom"] = "Custom";
+})(UpdateScheduledScanModelScheduleRunTypeEnum = exports.UpdateScheduledScanModelScheduleRunTypeEnum || (exports.UpdateScheduledScanModelScheduleRunTypeEnum = {}));
 /**
- * @export
- */
-exports.UpdateScheduledScanModelCustomScriptTemplateTypeEnum = {
-    Default: 'Default',
-    SimpleLoginForm: 'SimpleLoginForm',
-    SimpleLoginFormQuery: 'SimpleLoginFormQuery',
-    SimpleLoginFormDelay: 'SimpleLoginFormDelay'
-};
+* @export
+* @enum {string}
+*/
+var UpdateScheduledScanModelCustomScriptTemplateTypeEnum;
+(function (UpdateScheduledScanModelCustomScriptTemplateTypeEnum) {
+    UpdateScheduledScanModelCustomScriptTemplateTypeEnum["Default"] = "Default";
+    UpdateScheduledScanModelCustomScriptTemplateTypeEnum["SimpleLoginForm"] = "SimpleLoginForm";
+    UpdateScheduledScanModelCustomScriptTemplateTypeEnum["SimpleLoginFormQuery"] = "SimpleLoginFormQuery";
+    UpdateScheduledScanModelCustomScriptTemplateTypeEnum["SimpleLoginFormDelay"] = "SimpleLoginFormDelay";
+})(UpdateScheduledScanModelCustomScriptTemplateTypeEnum = exports.UpdateScheduledScanModelCustomScriptTemplateTypeEnum || (exports.UpdateScheduledScanModelCustomScriptTemplateTypeEnum = {}));
 /**
- * @export
- */
-exports.UpdateScheduledScanModelCreateTypeEnum = {
-    Website: 'Website',
-    WebsiteGroup: 'WebsiteGroup'
-};
+* @export
+* @enum {string}
+*/
+var UpdateScheduledScanModelCreateTypeEnum;
+(function (UpdateScheduledScanModelCreateTypeEnum) {
+    UpdateScheduledScanModelCreateTypeEnum["Website"] = "Website";
+    UpdateScheduledScanModelCreateTypeEnum["WebsiteGroup"] = "WebsiteGroup";
+})(UpdateScheduledScanModelCreateTypeEnum = exports.UpdateScheduledScanModelCreateTypeEnum || (exports.UpdateScheduledScanModelCreateTypeEnum = {}));
 /**
  * Check if a given object implements the UpdateScheduledScanModel interface.
  */

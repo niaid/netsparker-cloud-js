@@ -19,67 +19,75 @@ const CustomHttpHeaderModel_1 = require("./CustomHttpHeaderModel");
 const IntegrationCustomFieldVm_1 = require("./IntegrationCustomFieldVm");
 const IntegrationWizardResultModel_1 = require("./IntegrationWizardResultModel");
 /**
- * @export
- */
-exports.WebhookIntegrationInfoModelHttpMethodTypeEnum = {
-    Get: 'Get',
-    Post: 'Post',
-    Put: 'Put'
-};
+* @export
+* @enum {string}
+*/
+var WebhookIntegrationInfoModelHttpMethodTypeEnum;
+(function (WebhookIntegrationInfoModelHttpMethodTypeEnum) {
+    WebhookIntegrationInfoModelHttpMethodTypeEnum["Get"] = "Get";
+    WebhookIntegrationInfoModelHttpMethodTypeEnum["Post"] = "Post";
+    WebhookIntegrationInfoModelHttpMethodTypeEnum["Put"] = "Put";
+})(WebhookIntegrationInfoModelHttpMethodTypeEnum = exports.WebhookIntegrationInfoModelHttpMethodTypeEnum || (exports.WebhookIntegrationInfoModelHttpMethodTypeEnum = {}));
 /**
- * @export
- */
-exports.WebhookIntegrationInfoModelParameterTypeEnum = {
-    Form: 'Form',
-    Json: 'Json',
-    Xml: 'Xml',
-    QueryString: 'QueryString'
-};
+* @export
+* @enum {string}
+*/
+var WebhookIntegrationInfoModelParameterTypeEnum;
+(function (WebhookIntegrationInfoModelParameterTypeEnum) {
+    WebhookIntegrationInfoModelParameterTypeEnum["Form"] = "Form";
+    WebhookIntegrationInfoModelParameterTypeEnum["Json"] = "Json";
+    WebhookIntegrationInfoModelParameterTypeEnum["Xml"] = "Xml";
+    WebhookIntegrationInfoModelParameterTypeEnum["QueryString"] = "QueryString";
+})(WebhookIntegrationInfoModelParameterTypeEnum = exports.WebhookIntegrationInfoModelParameterTypeEnum || (exports.WebhookIntegrationInfoModelParameterTypeEnum = {}));
 /**
- * @export
- */
-exports.WebhookIntegrationInfoModelTypeEnum = {
-    NetsparkerEnterprise: 'NetsparkerEnterprise',
-    Webhook: 'Webhook',
-    Zapier: 'Zapier',
-    Slack: 'Slack',
-    Mattermost: 'Mattermost',
-    MicrosoftTeams: 'MicrosoftTeams',
-    AzureDevOps: 'AzureDevOps',
-    Bitbucket: 'Bitbucket',
-    Bugzilla: 'Bugzilla',
-    Clubhouse: 'Clubhouse',
-    DefectDojo: 'DefectDojo',
-    PivotalTracker: 'PivotalTracker',
-    Jira: 'Jira',
-    FogBugz: 'FogBugz',
-    GitHub: 'GitHub',
-    PagerDuty: 'PagerDuty',
-    Kafka: 'Kafka',
-    Kenna: 'Kenna',
-    Redmine: 'Redmine',
-    ServiceNow: 'ServiceNow',
-    Tfs: 'TFS',
-    Unfuddle: 'Unfuddle',
-    YouTrack: 'YouTrack',
-    Freshservice: 'Freshservice',
-    Splunk: 'Splunk',
-    JazzTeam: 'JazzTeam',
-    ServiceNowVrm: 'ServiceNowVRM',
-    Asana: 'Asana',
-    Trello: 'Trello',
-    Hashicorp: 'Hashicorp',
-    CyberArk: 'CyberArk',
-    AzureKeyVault: 'AzureKeyVault',
-    GitLab: 'GitLab'
-};
+* @export
+* @enum {string}
+*/
+var WebhookIntegrationInfoModelTypeEnum;
+(function (WebhookIntegrationInfoModelTypeEnum) {
+    WebhookIntegrationInfoModelTypeEnum["NetsparkerEnterprise"] = "NetsparkerEnterprise";
+    WebhookIntegrationInfoModelTypeEnum["Webhook"] = "Webhook";
+    WebhookIntegrationInfoModelTypeEnum["Zapier"] = "Zapier";
+    WebhookIntegrationInfoModelTypeEnum["Slack"] = "Slack";
+    WebhookIntegrationInfoModelTypeEnum["Mattermost"] = "Mattermost";
+    WebhookIntegrationInfoModelTypeEnum["MicrosoftTeams"] = "MicrosoftTeams";
+    WebhookIntegrationInfoModelTypeEnum["AzureDevOps"] = "AzureDevOps";
+    WebhookIntegrationInfoModelTypeEnum["Bitbucket"] = "Bitbucket";
+    WebhookIntegrationInfoModelTypeEnum["Bugzilla"] = "Bugzilla";
+    WebhookIntegrationInfoModelTypeEnum["Clubhouse"] = "Clubhouse";
+    WebhookIntegrationInfoModelTypeEnum["DefectDojo"] = "DefectDojo";
+    WebhookIntegrationInfoModelTypeEnum["PivotalTracker"] = "PivotalTracker";
+    WebhookIntegrationInfoModelTypeEnum["Jira"] = "Jira";
+    WebhookIntegrationInfoModelTypeEnum["FogBugz"] = "FogBugz";
+    WebhookIntegrationInfoModelTypeEnum["GitHub"] = "GitHub";
+    WebhookIntegrationInfoModelTypeEnum["PagerDuty"] = "PagerDuty";
+    WebhookIntegrationInfoModelTypeEnum["Kafka"] = "Kafka";
+    WebhookIntegrationInfoModelTypeEnum["Kenna"] = "Kenna";
+    WebhookIntegrationInfoModelTypeEnum["Redmine"] = "Redmine";
+    WebhookIntegrationInfoModelTypeEnum["ServiceNow"] = "ServiceNow";
+    WebhookIntegrationInfoModelTypeEnum["Tfs"] = "TFS";
+    WebhookIntegrationInfoModelTypeEnum["Unfuddle"] = "Unfuddle";
+    WebhookIntegrationInfoModelTypeEnum["YouTrack"] = "YouTrack";
+    WebhookIntegrationInfoModelTypeEnum["Freshservice"] = "Freshservice";
+    WebhookIntegrationInfoModelTypeEnum["Splunk"] = "Splunk";
+    WebhookIntegrationInfoModelTypeEnum["JazzTeam"] = "JazzTeam";
+    WebhookIntegrationInfoModelTypeEnum["ServiceNowVrm"] = "ServiceNowVRM";
+    WebhookIntegrationInfoModelTypeEnum["Asana"] = "Asana";
+    WebhookIntegrationInfoModelTypeEnum["Trello"] = "Trello";
+    WebhookIntegrationInfoModelTypeEnum["Hashicorp"] = "Hashicorp";
+    WebhookIntegrationInfoModelTypeEnum["CyberArk"] = "CyberArk";
+    WebhookIntegrationInfoModelTypeEnum["AzureKeyVault"] = "AzureKeyVault";
+    WebhookIntegrationInfoModelTypeEnum["GitLab"] = "GitLab";
+})(WebhookIntegrationInfoModelTypeEnum = exports.WebhookIntegrationInfoModelTypeEnum || (exports.WebhookIntegrationInfoModelTypeEnum = {}));
 /**
- * @export
- */
-exports.WebhookIntegrationInfoModelTemplateTypeEnum = {
-    Standard: 'Standard',
-    Detailed: 'Detailed'
-};
+* @export
+* @enum {string}
+*/
+var WebhookIntegrationInfoModelTemplateTypeEnum;
+(function (WebhookIntegrationInfoModelTemplateTypeEnum) {
+    WebhookIntegrationInfoModelTemplateTypeEnum["Standard"] = "Standard";
+    WebhookIntegrationInfoModelTemplateTypeEnum["Detailed"] = "Detailed";
+})(WebhookIntegrationInfoModelTemplateTypeEnum = exports.WebhookIntegrationInfoModelTemplateTypeEnum || (exports.WebhookIntegrationInfoModelTemplateTypeEnum = {}));
 /**
  * Check if a given object implements the WebhookIntegrationInfoModel interface.
  */

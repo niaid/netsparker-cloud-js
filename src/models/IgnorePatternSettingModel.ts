@@ -39,19 +39,18 @@ export interface IgnorePatternSettingModel {
     pattern: string;
 }
 
-
 /**
- * @export
- */
-export const IgnorePatternSettingModelParameterTypeEnum = {
-    Post: 'POST',
-    Get: 'GET',
-    Cookie: 'COOKIE',
-    Webstorage: 'WEBSTORAGE',
-    All: 'ALL',
-    Setcookie: 'SETCOOKIE'
-} as const;
-export type IgnorePatternSettingModelParameterTypeEnum = typeof IgnorePatternSettingModelParameterTypeEnum[keyof typeof IgnorePatternSettingModelParameterTypeEnum];
+* @export
+* @enum {string}
+*/
+export enum IgnorePatternSettingModelParameterTypeEnum {
+    Post = 'POST',
+    Get = 'GET',
+    Cookie = 'COOKIE',
+    Webstorage = 'WEBSTORAGE',
+    All = 'ALL',
+    Setcookie = 'SETCOOKIE'
+}
 
 
 /**

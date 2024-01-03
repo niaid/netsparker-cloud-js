@@ -33,18 +33,17 @@ export interface CvssScoreValue {
     readonly value?: number;
 }
 
-
 /**
- * @export
- */
-export const CvssScoreValueSeverityEnum = {
-    None: 'None',
-    Low: 'Low',
-    Medium: 'Medium',
-    High: 'High',
-    Critical: 'Critical'
-} as const;
-export type CvssScoreValueSeverityEnum = typeof CvssScoreValueSeverityEnum[keyof typeof CvssScoreValueSeverityEnum];
+* @export
+* @enum {string}
+*/
+export enum CvssScoreValueSeverityEnum {
+    None = 'None',
+    Low = 'Low',
+    Medium = 'Medium',
+    High = 'High',
+    Critical = 'Critical'
+}
 
 
 /**

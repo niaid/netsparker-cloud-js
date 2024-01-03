@@ -48,32 +48,32 @@ export interface IssueSummaryListModel {
     statusByDate?: Array<IssueSummaryStatusModel>;
 }
 /**
- * @export
- */
-export declare const IssueSummaryListModelStateEnum: {
-    readonly Present: "Present";
-    readonly FixedUnconfirmed: "FixedUnconfirmed";
-    readonly FixedCantRetest: "FixedCantRetest";
-    readonly FixedConfirmed: "FixedConfirmed";
-    readonly Revived: "Revived";
-    readonly Scanning: "Scanning";
-    readonly Ignored: "Ignored";
-    readonly AcceptedRisk: "AcceptedRisk";
-    readonly FalsePositive: "FalsePositive";
-};
-export type IssueSummaryListModelStateEnum = typeof IssueSummaryListModelStateEnum[keyof typeof IssueSummaryListModelStateEnum];
+* @export
+* @enum {string}
+*/
+export declare enum IssueSummaryListModelStateEnum {
+    Present = "Present",
+    FixedUnconfirmed = "FixedUnconfirmed",
+    FixedCantRetest = "FixedCantRetest",
+    FixedConfirmed = "FixedConfirmed",
+    Revived = "Revived",
+    Scanning = "Scanning",
+    Ignored = "Ignored",
+    AcceptedRisk = "AcceptedRisk",
+    FalsePositive = "FalsePositive"
+}
 /**
- * @export
- */
-export declare const IssueSummaryListModelSeverityEnum: {
-    readonly BestPractice: "BestPractice";
-    readonly Information: "Information";
-    readonly Low: "Low";
-    readonly Medium: "Medium";
-    readonly High: "High";
-    readonly Critical: "Critical";
-};
-export type IssueSummaryListModelSeverityEnum = typeof IssueSummaryListModelSeverityEnum[keyof typeof IssueSummaryListModelSeverityEnum];
+* @export
+* @enum {string}
+*/
+export declare enum IssueSummaryListModelSeverityEnum {
+    BestPractice = "BestPractice",
+    Information = "Information",
+    Low = "Low",
+    Medium = "Medium",
+    High = "High",
+    Critical = "Critical"
+}
 /**
  * Check if a given object implements the IssueSummaryListModel interface.
  */

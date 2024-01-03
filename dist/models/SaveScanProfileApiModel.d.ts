@@ -342,59 +342,59 @@ export interface SaveScanProfileApiModel {
     comments?: string;
 }
 /**
- * @export
- */
-export declare const SaveScanProfileApiModelCreateTypeEnum: {
-    readonly Website: "Website";
-    readonly WebsiteGroup: "WebsiteGroup";
-};
-export type SaveScanProfileApiModelCreateTypeEnum = typeof SaveScanProfileApiModelCreateTypeEnum[keyof typeof SaveScanProfileApiModelCreateTypeEnum];
+* @export
+* @enum {string}
+*/
+export declare enum SaveScanProfileApiModelCreateTypeEnum {
+    Website = "Website",
+    WebsiteGroup = "WebsiteGroup"
+}
 /**
- * @export
- */
-export declare const SaveScanProfileApiModelDisallowedHttpMethodsEnum: {
-    readonly Get: "GET";
-    readonly Post: "POST";
-    readonly Connect: "CONNECT";
-    readonly Head: "HEAD";
-    readonly Trace: "TRACE";
-    readonly Debug: "DEBUG";
-    readonly Track: "TRACK";
-    readonly Put: "PUT";
-    readonly Options: "OPTIONS";
-    readonly Delete: "DELETE";
-    readonly Link: "LINK";
-    readonly Unlink: "UNLINK";
-    readonly Patch: "PATCH";
-};
-export type SaveScanProfileApiModelDisallowedHttpMethodsEnum = typeof SaveScanProfileApiModelDisallowedHttpMethodsEnum[keyof typeof SaveScanProfileApiModelDisallowedHttpMethodsEnum];
+* @export
+* @enum {string}
+*/
+export declare enum SaveScanProfileApiModelDisallowedHttpMethodsEnum {
+    Get = "GET",
+    Post = "POST",
+    Connect = "CONNECT",
+    Head = "HEAD",
+    Trace = "TRACE",
+    Debug = "DEBUG",
+    Track = "TRACK",
+    Put = "PUT",
+    Options = "OPTIONS",
+    Delete = "DELETE",
+    Link = "LINK",
+    Unlink = "UNLINK",
+    Patch = "PATCH"
+}
 /**
- * @export
- */
-export declare const SaveScanProfileApiModelAuthenticationProfileOptionEnum: {
-    readonly DontUse: "DontUse";
-    readonly UseMatchedProfile: "UseMatchedProfile";
-    readonly SelectedProfile: "SelectedProfile";
-};
-export type SaveScanProfileApiModelAuthenticationProfileOptionEnum = typeof SaveScanProfileApiModelAuthenticationProfileOptionEnum[keyof typeof SaveScanProfileApiModelAuthenticationProfileOptionEnum];
+* @export
+* @enum {string}
+*/
+export declare enum SaveScanProfileApiModelAuthenticationProfileOptionEnum {
+    DontUse = "DontUse",
+    UseMatchedProfile = "UseMatchedProfile",
+    SelectedProfile = "SelectedProfile"
+}
 /**
- * @export
- */
-export declare const SaveScanProfileApiModelScopeEnum: {
-    readonly EnteredPathAndBelow: "EnteredPathAndBelow";
-    readonly OnlyEnteredUrl: "OnlyEnteredUrl";
-    readonly WholeDomain: "WholeDomain";
-};
-export type SaveScanProfileApiModelScopeEnum = typeof SaveScanProfileApiModelScopeEnum[keyof typeof SaveScanProfileApiModelScopeEnum];
+* @export
+* @enum {string}
+*/
+export declare enum SaveScanProfileApiModelScopeEnum {
+    EnteredPathAndBelow = "EnteredPathAndBelow",
+    OnlyEnteredUrl = "OnlyEnteredUrl",
+    WholeDomain = "WholeDomain"
+}
 /**
- * @export
- */
-export declare const SaveScanProfileApiModelUrlRewriteModeEnum: {
-    readonly None: "None";
-    readonly Heuristic: "Heuristic";
-    readonly Custom: "Custom";
-};
-export type SaveScanProfileApiModelUrlRewriteModeEnum = typeof SaveScanProfileApiModelUrlRewriteModeEnum[keyof typeof SaveScanProfileApiModelUrlRewriteModeEnum];
+* @export
+* @enum {string}
+*/
+export declare enum SaveScanProfileApiModelUrlRewriteModeEnum {
+    None = "None",
+    Heuristic = "Heuristic",
+    Custom = "Custom"
+}
 /**
  * Check if a given object implements the SaveScanProfileApiModel interface.
  */

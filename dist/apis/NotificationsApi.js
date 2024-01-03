@@ -253,14 +253,16 @@ class NotificationsApi extends runtime.BaseAPI {
 }
 exports.NotificationsApi = NotificationsApi;
 /**
- * @export
- */
-exports.NotificationsGetPrioritiesEventEnum = {
-    NewScan: 'NewScan',
-    ScanCompleted: 'ScanCompleted',
-    ScanCancelled: 'ScanCancelled',
-    ScanFailed: 'ScanFailed',
-    ScheduledScanLaunchFailed: 'ScheduledScanLaunchFailed',
-    OutOfDateTechnology: 'OutOfDateTechnology'
-};
+  * @export
+  * @enum {string}
+  */
+var NotificationsGetPrioritiesEventEnum;
+(function (NotificationsGetPrioritiesEventEnum) {
+    NotificationsGetPrioritiesEventEnum["NewScan"] = "NewScan";
+    NotificationsGetPrioritiesEventEnum["ScanCompleted"] = "ScanCompleted";
+    NotificationsGetPrioritiesEventEnum["ScanCancelled"] = "ScanCancelled";
+    NotificationsGetPrioritiesEventEnum["ScanFailed"] = "ScanFailed";
+    NotificationsGetPrioritiesEventEnum["ScheduledScanLaunchFailed"] = "ScheduledScanLaunchFailed";
+    NotificationsGetPrioritiesEventEnum["OutOfDateTechnology"] = "OutOfDateTechnology";
+})(NotificationsGetPrioritiesEventEnum = exports.NotificationsGetPrioritiesEventEnum || (exports.NotificationsGetPrioritiesEventEnum = {}));
 //# sourceMappingURL=NotificationsApi.js.map

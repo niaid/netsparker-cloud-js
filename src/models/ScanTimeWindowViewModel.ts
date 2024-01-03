@@ -64,15 +64,14 @@ export interface ScanTimeWindowViewModel {
     scanCreateType?: ScanTimeWindowViewModelScanCreateTypeEnum;
 }
 
-
 /**
- * @export
- */
-export const ScanTimeWindowViewModelScanCreateTypeEnum = {
-    Website: 'Website',
-    WebsiteGroup: 'WebsiteGroup'
-} as const;
-export type ScanTimeWindowViewModelScanCreateTypeEnum = typeof ScanTimeWindowViewModelScanCreateTypeEnum[keyof typeof ScanTimeWindowViewModelScanCreateTypeEnum];
+* @export
+* @enum {string}
+*/
+export enum ScanTimeWindowViewModelScanCreateTypeEnum {
+    Website = 'Website',
+    WebsiteGroup = 'WebsiteGroup'
+}
 
 
 /**

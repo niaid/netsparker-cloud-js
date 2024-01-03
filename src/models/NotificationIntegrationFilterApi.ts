@@ -47,31 +47,29 @@ export interface NotificationIntegrationFilterApi {
     certainty?: number;
 }
 
-
 /**
- * @export
- */
-export const NotificationIntegrationFilterApiSeverityEnum = {
-    BestPractice: 'BestPractice',
-    Information: 'Information',
-    Low: 'Low',
-    Medium: 'Medium',
-    High: 'High',
-    Critical: 'Critical'
-} as const;
-export type NotificationIntegrationFilterApiSeverityEnum = typeof NotificationIntegrationFilterApiSeverityEnum[keyof typeof NotificationIntegrationFilterApiSeverityEnum];
-
+* @export
+* @enum {string}
+*/
+export enum NotificationIntegrationFilterApiSeverityEnum {
+    BestPractice = 'BestPractice',
+    Information = 'Information',
+    Low = 'Low',
+    Medium = 'Medium',
+    High = 'High',
+    Critical = 'Critical'
+}
 /**
- * @export
- */
-export const NotificationIntegrationFilterApiStateEnum = {
-    NotFound: 'NotFound',
-    Fixed: 'Fixed',
-    NotFixed: 'NotFixed',
-    New: 'New',
-    Revived: 'Revived'
-} as const;
-export type NotificationIntegrationFilterApiStateEnum = typeof NotificationIntegrationFilterApiStateEnum[keyof typeof NotificationIntegrationFilterApiStateEnum];
+* @export
+* @enum {string}
+*/
+export enum NotificationIntegrationFilterApiStateEnum {
+    NotFound = 'NotFound',
+    Fixed = 'Fixed',
+    NotFixed = 'NotFixed',
+    New = 'New',
+    Revived = 'Revived'
+}
 
 
 /**

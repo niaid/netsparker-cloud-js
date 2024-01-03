@@ -18,31 +18,35 @@ const runtime_1 = require("../runtime");
 const ExcludedLinkModel_1 = require("./ExcludedLinkModel");
 const ExcludedUsageTrackerModel_1 = require("./ExcludedUsageTrackerModel");
 /**
- * @export
- */
-exports.ScopeSettingDisallowedHttpMethodsEnum = {
-    Get: 'GET',
-    Post: 'POST',
-    Connect: 'CONNECT',
-    Head: 'HEAD',
-    Trace: 'TRACE',
-    Debug: 'DEBUG',
-    Track: 'TRACK',
-    Put: 'PUT',
-    Options: 'OPTIONS',
-    Delete: 'DELETE',
-    Link: 'LINK',
-    Unlink: 'UNLINK',
-    Patch: 'PATCH'
-};
+* @export
+* @enum {string}
+*/
+var ScopeSettingDisallowedHttpMethodsEnum;
+(function (ScopeSettingDisallowedHttpMethodsEnum) {
+    ScopeSettingDisallowedHttpMethodsEnum["Get"] = "GET";
+    ScopeSettingDisallowedHttpMethodsEnum["Post"] = "POST";
+    ScopeSettingDisallowedHttpMethodsEnum["Connect"] = "CONNECT";
+    ScopeSettingDisallowedHttpMethodsEnum["Head"] = "HEAD";
+    ScopeSettingDisallowedHttpMethodsEnum["Trace"] = "TRACE";
+    ScopeSettingDisallowedHttpMethodsEnum["Debug"] = "DEBUG";
+    ScopeSettingDisallowedHttpMethodsEnum["Track"] = "TRACK";
+    ScopeSettingDisallowedHttpMethodsEnum["Put"] = "PUT";
+    ScopeSettingDisallowedHttpMethodsEnum["Options"] = "OPTIONS";
+    ScopeSettingDisallowedHttpMethodsEnum["Delete"] = "DELETE";
+    ScopeSettingDisallowedHttpMethodsEnum["Link"] = "LINK";
+    ScopeSettingDisallowedHttpMethodsEnum["Unlink"] = "UNLINK";
+    ScopeSettingDisallowedHttpMethodsEnum["Patch"] = "PATCH";
+})(ScopeSettingDisallowedHttpMethodsEnum = exports.ScopeSettingDisallowedHttpMethodsEnum || (exports.ScopeSettingDisallowedHttpMethodsEnum = {}));
 /**
- * @export
- */
-exports.ScopeSettingScopeEnum = {
-    EnteredPathAndBelow: 'EnteredPathAndBelow',
-    OnlyEnteredUrl: 'OnlyEnteredUrl',
-    WholeDomain: 'WholeDomain'
-};
+* @export
+* @enum {string}
+*/
+var ScopeSettingScopeEnum;
+(function (ScopeSettingScopeEnum) {
+    ScopeSettingScopeEnum["EnteredPathAndBelow"] = "EnteredPathAndBelow";
+    ScopeSettingScopeEnum["OnlyEnteredUrl"] = "OnlyEnteredUrl";
+    ScopeSettingScopeEnum["WholeDomain"] = "WholeDomain";
+})(ScopeSettingScopeEnum = exports.ScopeSettingScopeEnum || (exports.ScopeSettingScopeEnum = {}));
 /**
  * Check if a given object implements the ScopeSetting interface.
  */

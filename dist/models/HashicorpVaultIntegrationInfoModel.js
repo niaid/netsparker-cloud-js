@@ -19,64 +19,72 @@ const CertificateInfoModel_1 = require("./CertificateInfoModel");
 const IntegrationCustomFieldVm_1 = require("./IntegrationCustomFieldVm");
 const IntegrationWizardResultModel_1 = require("./IntegrationWizardResultModel");
 /**
- * @export
- */
-exports.HashicorpVaultIntegrationInfoModelAgentModeEnum = {
-    Cloud: 'Cloud',
-    Internal: 'Internal'
-};
+* @export
+* @enum {string}
+*/
+var HashicorpVaultIntegrationInfoModelAgentModeEnum;
+(function (HashicorpVaultIntegrationInfoModelAgentModeEnum) {
+    HashicorpVaultIntegrationInfoModelAgentModeEnum["Cloud"] = "Cloud";
+    HashicorpVaultIntegrationInfoModelAgentModeEnum["Internal"] = "Internal";
+})(HashicorpVaultIntegrationInfoModelAgentModeEnum = exports.HashicorpVaultIntegrationInfoModelAgentModeEnum || (exports.HashicorpVaultIntegrationInfoModelAgentModeEnum = {}));
 /**
- * @export
- */
-exports.HashicorpVaultIntegrationInfoModelAuthTypeEnum = {
-    Token: 'Token',
-    TlsCert: 'TLSCert'
-};
+* @export
+* @enum {string}
+*/
+var HashicorpVaultIntegrationInfoModelAuthTypeEnum;
+(function (HashicorpVaultIntegrationInfoModelAuthTypeEnum) {
+    HashicorpVaultIntegrationInfoModelAuthTypeEnum["Token"] = "Token";
+    HashicorpVaultIntegrationInfoModelAuthTypeEnum["TlsCert"] = "TLSCert";
+})(HashicorpVaultIntegrationInfoModelAuthTypeEnum = exports.HashicorpVaultIntegrationInfoModelAuthTypeEnum || (exports.HashicorpVaultIntegrationInfoModelAuthTypeEnum = {}));
 /**
- * @export
- */
-exports.HashicorpVaultIntegrationInfoModelTypeEnum = {
-    NetsparkerEnterprise: 'NetsparkerEnterprise',
-    Webhook: 'Webhook',
-    Zapier: 'Zapier',
-    Slack: 'Slack',
-    Mattermost: 'Mattermost',
-    MicrosoftTeams: 'MicrosoftTeams',
-    AzureDevOps: 'AzureDevOps',
-    Bitbucket: 'Bitbucket',
-    Bugzilla: 'Bugzilla',
-    Clubhouse: 'Clubhouse',
-    DefectDojo: 'DefectDojo',
-    PivotalTracker: 'PivotalTracker',
-    Jira: 'Jira',
-    FogBugz: 'FogBugz',
-    GitHub: 'GitHub',
-    PagerDuty: 'PagerDuty',
-    Kafka: 'Kafka',
-    Kenna: 'Kenna',
-    Redmine: 'Redmine',
-    ServiceNow: 'ServiceNow',
-    Tfs: 'TFS',
-    Unfuddle: 'Unfuddle',
-    YouTrack: 'YouTrack',
-    Freshservice: 'Freshservice',
-    Splunk: 'Splunk',
-    JazzTeam: 'JazzTeam',
-    ServiceNowVrm: 'ServiceNowVRM',
-    Asana: 'Asana',
-    Trello: 'Trello',
-    Hashicorp: 'Hashicorp',
-    CyberArk: 'CyberArk',
-    AzureKeyVault: 'AzureKeyVault',
-    GitLab: 'GitLab'
-};
+* @export
+* @enum {string}
+*/
+var HashicorpVaultIntegrationInfoModelTypeEnum;
+(function (HashicorpVaultIntegrationInfoModelTypeEnum) {
+    HashicorpVaultIntegrationInfoModelTypeEnum["NetsparkerEnterprise"] = "NetsparkerEnterprise";
+    HashicorpVaultIntegrationInfoModelTypeEnum["Webhook"] = "Webhook";
+    HashicorpVaultIntegrationInfoModelTypeEnum["Zapier"] = "Zapier";
+    HashicorpVaultIntegrationInfoModelTypeEnum["Slack"] = "Slack";
+    HashicorpVaultIntegrationInfoModelTypeEnum["Mattermost"] = "Mattermost";
+    HashicorpVaultIntegrationInfoModelTypeEnum["MicrosoftTeams"] = "MicrosoftTeams";
+    HashicorpVaultIntegrationInfoModelTypeEnum["AzureDevOps"] = "AzureDevOps";
+    HashicorpVaultIntegrationInfoModelTypeEnum["Bitbucket"] = "Bitbucket";
+    HashicorpVaultIntegrationInfoModelTypeEnum["Bugzilla"] = "Bugzilla";
+    HashicorpVaultIntegrationInfoModelTypeEnum["Clubhouse"] = "Clubhouse";
+    HashicorpVaultIntegrationInfoModelTypeEnum["DefectDojo"] = "DefectDojo";
+    HashicorpVaultIntegrationInfoModelTypeEnum["PivotalTracker"] = "PivotalTracker";
+    HashicorpVaultIntegrationInfoModelTypeEnum["Jira"] = "Jira";
+    HashicorpVaultIntegrationInfoModelTypeEnum["FogBugz"] = "FogBugz";
+    HashicorpVaultIntegrationInfoModelTypeEnum["GitHub"] = "GitHub";
+    HashicorpVaultIntegrationInfoModelTypeEnum["PagerDuty"] = "PagerDuty";
+    HashicorpVaultIntegrationInfoModelTypeEnum["Kafka"] = "Kafka";
+    HashicorpVaultIntegrationInfoModelTypeEnum["Kenna"] = "Kenna";
+    HashicorpVaultIntegrationInfoModelTypeEnum["Redmine"] = "Redmine";
+    HashicorpVaultIntegrationInfoModelTypeEnum["ServiceNow"] = "ServiceNow";
+    HashicorpVaultIntegrationInfoModelTypeEnum["Tfs"] = "TFS";
+    HashicorpVaultIntegrationInfoModelTypeEnum["Unfuddle"] = "Unfuddle";
+    HashicorpVaultIntegrationInfoModelTypeEnum["YouTrack"] = "YouTrack";
+    HashicorpVaultIntegrationInfoModelTypeEnum["Freshservice"] = "Freshservice";
+    HashicorpVaultIntegrationInfoModelTypeEnum["Splunk"] = "Splunk";
+    HashicorpVaultIntegrationInfoModelTypeEnum["JazzTeam"] = "JazzTeam";
+    HashicorpVaultIntegrationInfoModelTypeEnum["ServiceNowVrm"] = "ServiceNowVRM";
+    HashicorpVaultIntegrationInfoModelTypeEnum["Asana"] = "Asana";
+    HashicorpVaultIntegrationInfoModelTypeEnum["Trello"] = "Trello";
+    HashicorpVaultIntegrationInfoModelTypeEnum["Hashicorp"] = "Hashicorp";
+    HashicorpVaultIntegrationInfoModelTypeEnum["CyberArk"] = "CyberArk";
+    HashicorpVaultIntegrationInfoModelTypeEnum["AzureKeyVault"] = "AzureKeyVault";
+    HashicorpVaultIntegrationInfoModelTypeEnum["GitLab"] = "GitLab";
+})(HashicorpVaultIntegrationInfoModelTypeEnum = exports.HashicorpVaultIntegrationInfoModelTypeEnum || (exports.HashicorpVaultIntegrationInfoModelTypeEnum = {}));
 /**
- * @export
- */
-exports.HashicorpVaultIntegrationInfoModelTemplateTypeEnum = {
-    Standard: 'Standard',
-    Detailed: 'Detailed'
-};
+* @export
+* @enum {string}
+*/
+var HashicorpVaultIntegrationInfoModelTemplateTypeEnum;
+(function (HashicorpVaultIntegrationInfoModelTemplateTypeEnum) {
+    HashicorpVaultIntegrationInfoModelTemplateTypeEnum["Standard"] = "Standard";
+    HashicorpVaultIntegrationInfoModelTemplateTypeEnum["Detailed"] = "Detailed";
+})(HashicorpVaultIntegrationInfoModelTemplateTypeEnum = exports.HashicorpVaultIntegrationInfoModelTemplateTypeEnum || (exports.HashicorpVaultIntegrationInfoModelTemplateTypeEnum = {}));
 /**
  * Check if a given object implements the HashicorpVaultIntegrationInfoModel interface.
  */

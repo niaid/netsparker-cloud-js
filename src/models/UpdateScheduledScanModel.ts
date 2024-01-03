@@ -480,51 +480,47 @@ export interface UpdateScheduledScanModel {
     businessLogicRecorder?: BusinessLogicRecorderSettingModel;
 }
 
-
 /**
- * @export
- */
-export const UpdateScheduledScanModelScanTypeEnum = {
-    Full: 'Full',
-    Retest: 'Retest',
-    Incremental: 'Incremental'
-} as const;
-export type UpdateScheduledScanModelScanTypeEnum = typeof UpdateScheduledScanModelScanTypeEnum[keyof typeof UpdateScheduledScanModelScanTypeEnum];
-
+* @export
+* @enum {string}
+*/
+export enum UpdateScheduledScanModelScanTypeEnum {
+    Full = 'Full',
+    Retest = 'Retest',
+    Incremental = 'Incremental'
+}
 /**
- * @export
- */
-export const UpdateScheduledScanModelScheduleRunTypeEnum = {
-    Once: 'Once',
-    Daily: 'Daily',
-    Weekly: 'Weekly',
-    Monthly: 'Monthly',
-    Quarterly: 'Quarterly',
-    Biannually: 'Biannually',
-    Yearly: 'Yearly',
-    Custom: 'Custom'
-} as const;
-export type UpdateScheduledScanModelScheduleRunTypeEnum = typeof UpdateScheduledScanModelScheduleRunTypeEnum[keyof typeof UpdateScheduledScanModelScheduleRunTypeEnum];
-
+* @export
+* @enum {string}
+*/
+export enum UpdateScheduledScanModelScheduleRunTypeEnum {
+    Once = 'Once',
+    Daily = 'Daily',
+    Weekly = 'Weekly',
+    Monthly = 'Monthly',
+    Quarterly = 'Quarterly',
+    Biannually = 'Biannually',
+    Yearly = 'Yearly',
+    Custom = 'Custom'
+}
 /**
- * @export
- */
-export const UpdateScheduledScanModelCustomScriptTemplateTypeEnum = {
-    Default: 'Default',
-    SimpleLoginForm: 'SimpleLoginForm',
-    SimpleLoginFormQuery: 'SimpleLoginFormQuery',
-    SimpleLoginFormDelay: 'SimpleLoginFormDelay'
-} as const;
-export type UpdateScheduledScanModelCustomScriptTemplateTypeEnum = typeof UpdateScheduledScanModelCustomScriptTemplateTypeEnum[keyof typeof UpdateScheduledScanModelCustomScriptTemplateTypeEnum];
-
+* @export
+* @enum {string}
+*/
+export enum UpdateScheduledScanModelCustomScriptTemplateTypeEnum {
+    Default = 'Default',
+    SimpleLoginForm = 'SimpleLoginForm',
+    SimpleLoginFormQuery = 'SimpleLoginFormQuery',
+    SimpleLoginFormDelay = 'SimpleLoginFormDelay'
+}
 /**
- * @export
- */
-export const UpdateScheduledScanModelCreateTypeEnum = {
-    Website: 'Website',
-    WebsiteGroup: 'WebsiteGroup'
-} as const;
-export type UpdateScheduledScanModelCreateTypeEnum = typeof UpdateScheduledScanModelCreateTypeEnum[keyof typeof UpdateScheduledScanModelCreateTypeEnum];
+* @export
+* @enum {string}
+*/
+export enum UpdateScheduledScanModelCreateTypeEnum {
+    Website = 'Website',
+    WebsiteGroup = 'WebsiteGroup'
+}
 
 
 /**

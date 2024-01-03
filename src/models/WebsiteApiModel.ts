@@ -100,24 +100,22 @@ export interface WebsiteApiModel {
     tags?: Array<string>;
 }
 
-
 /**
- * @export
- */
-export const WebsiteApiModelLicenseTypeEnum = {
-    Subscription: 'Subscription',
-    Credit: 'Credit'
-} as const;
-export type WebsiteApiModelLicenseTypeEnum = typeof WebsiteApiModelLicenseTypeEnum[keyof typeof WebsiteApiModelLicenseTypeEnum];
-
+* @export
+* @enum {string}
+*/
+export enum WebsiteApiModelLicenseTypeEnum {
+    Subscription = 'Subscription',
+    Credit = 'Credit'
+}
 /**
- * @export
- */
-export const WebsiteApiModelAgentModeEnum = {
-    Cloud: 'Cloud',
-    Internal: 'Internal'
-} as const;
-export type WebsiteApiModelAgentModeEnum = typeof WebsiteApiModelAgentModeEnum[keyof typeof WebsiteApiModelAgentModeEnum];
+* @export
+* @enum {string}
+*/
+export enum WebsiteApiModelAgentModeEnum {
+    Cloud = 'Cloud',
+    Internal = 'Internal'
+}
 
 
 /**

@@ -17,19 +17,23 @@ exports.FormAuthenticationHashicorpVaultSettingToJSON = exports.FormAuthenticati
 const runtime_1 = require("../runtime");
 const FormAuthenticationHashicorpVaultSecretSetting_1 = require("./FormAuthenticationHashicorpVaultSecretSetting");
 /**
- * @export
- */
-exports.FormAuthenticationHashicorpVaultSettingAgentModeEnum = {
-    Cloud: 'Cloud',
-    Internal: 'Internal'
-};
+* @export
+* @enum {string}
+*/
+var FormAuthenticationHashicorpVaultSettingAgentModeEnum;
+(function (FormAuthenticationHashicorpVaultSettingAgentModeEnum) {
+    FormAuthenticationHashicorpVaultSettingAgentModeEnum["Cloud"] = "Cloud";
+    FormAuthenticationHashicorpVaultSettingAgentModeEnum["Internal"] = "Internal";
+})(FormAuthenticationHashicorpVaultSettingAgentModeEnum = exports.FormAuthenticationHashicorpVaultSettingAgentModeEnum || (exports.FormAuthenticationHashicorpVaultSettingAgentModeEnum = {}));
 /**
- * @export
- */
-exports.FormAuthenticationHashicorpVaultSettingAuthTypeEnum = {
-    Token: 'Token',
-    TlsCert: 'TLSCert'
-};
+* @export
+* @enum {string}
+*/
+var FormAuthenticationHashicorpVaultSettingAuthTypeEnum;
+(function (FormAuthenticationHashicorpVaultSettingAuthTypeEnum) {
+    FormAuthenticationHashicorpVaultSettingAuthTypeEnum["Token"] = "Token";
+    FormAuthenticationHashicorpVaultSettingAuthTypeEnum["TlsCert"] = "TLSCert";
+})(FormAuthenticationHashicorpVaultSettingAuthTypeEnum = exports.FormAuthenticationHashicorpVaultSettingAuthTypeEnum || (exports.FormAuthenticationHashicorpVaultSettingAuthTypeEnum = {}));
 /**
  * Check if a given object implements the FormAuthenticationHashicorpVaultSetting interface.
  */

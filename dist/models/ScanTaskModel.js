@@ -24,142 +24,162 @@ const UrlRewriteExcludedPathModel_1 = require("./UrlRewriteExcludedPathModel");
 const UrlRewriteRuleModel_1 = require("./UrlRewriteRuleModel");
 const VcsCommitInfo_1 = require("./VcsCommitInfo");
 /**
- * @export
- */
-exports.ScanTaskModelAuthenticationProfileOptionEnum = {
-    DontUse: 'DontUse',
-    UseMatchedProfile: 'UseMatchedProfile',
-    SelectedProfile: 'SelectedProfile'
-};
+* @export
+* @enum {string}
+*/
+var ScanTaskModelAuthenticationProfileOptionEnum;
+(function (ScanTaskModelAuthenticationProfileOptionEnum) {
+    ScanTaskModelAuthenticationProfileOptionEnum["DontUse"] = "DontUse";
+    ScanTaskModelAuthenticationProfileOptionEnum["UseMatchedProfile"] = "UseMatchedProfile";
+    ScanTaskModelAuthenticationProfileOptionEnum["SelectedProfile"] = "SelectedProfile";
+})(ScanTaskModelAuthenticationProfileOptionEnum = exports.ScanTaskModelAuthenticationProfileOptionEnum || (exports.ScanTaskModelAuthenticationProfileOptionEnum = {}));
 /**
- * @export
- */
-exports.ScanTaskModelScopeEnum = {
-    EnteredPathAndBelow: 'EnteredPathAndBelow',
-    OnlyEnteredUrl: 'OnlyEnteredUrl',
-    WholeDomain: 'WholeDomain'
-};
+* @export
+* @enum {string}
+*/
+var ScanTaskModelScopeEnum;
+(function (ScanTaskModelScopeEnum) {
+    ScanTaskModelScopeEnum["EnteredPathAndBelow"] = "EnteredPathAndBelow";
+    ScanTaskModelScopeEnum["OnlyEnteredUrl"] = "OnlyEnteredUrl";
+    ScanTaskModelScopeEnum["WholeDomain"] = "WholeDomain";
+})(ScanTaskModelScopeEnum = exports.ScanTaskModelScopeEnum || (exports.ScanTaskModelScopeEnum = {}));
 /**
- * @export
- */
-exports.ScanTaskModelUrlRewriteModeEnum = {
-    None: 'None',
-    Heuristic: 'Heuristic',
-    Custom: 'Custom'
-};
+* @export
+* @enum {string}
+*/
+var ScanTaskModelUrlRewriteModeEnum;
+(function (ScanTaskModelUrlRewriteModeEnum) {
+    ScanTaskModelUrlRewriteModeEnum["None"] = "None";
+    ScanTaskModelUrlRewriteModeEnum["Heuristic"] = "Heuristic";
+    ScanTaskModelUrlRewriteModeEnum["Custom"] = "Custom";
+})(ScanTaskModelUrlRewriteModeEnum = exports.ScanTaskModelUrlRewriteModeEnum || (exports.ScanTaskModelUrlRewriteModeEnum = {}));
 /**
- * @export
- */
-exports.ScanTaskModelWebsiteProtocolEnum = {
-    Http: 'Http',
-    Https: 'Https'
-};
+* @export
+* @enum {string}
+*/
+var ScanTaskModelWebsiteProtocolEnum;
+(function (ScanTaskModelWebsiteProtocolEnum) {
+    ScanTaskModelWebsiteProtocolEnum["Http"] = "Http";
+    ScanTaskModelWebsiteProtocolEnum["Https"] = "Https";
+})(ScanTaskModelWebsiteProtocolEnum = exports.ScanTaskModelWebsiteProtocolEnum || (exports.ScanTaskModelWebsiteProtocolEnum = {}));
 /**
- * @export
- */
-exports.ScanTaskModelFailureReasonEnum = {
-    None: 'None',
-    Request: 'Request',
-    HeadRequest: 'HeadRequest',
-    RedirectDetected: 'RedirectDetected',
-    TimeoutDetected: 'TimeoutDetected',
-    MaxLogoutExceeded: 'MaxLogoutExceeded',
-    RequestFailed: 'RequestFailed',
-    Response: 'Response',
-    CrawlerRequest: 'CrawlerRequest',
-    AttackerRequest: 'AttackerRequest',
-    ReCrawlerRequest: 'ReCrawlerRequest',
-    Finished: 'Finished',
-    LinkNotFound: 'LinkNotFound',
-    RecalculateAttackPossibilities: 'RecalculateAttackPossibilities',
-    PhaseCrawlStarted: 'PhaseCrawlStarted',
-    PhaseAttackStarted: 'PhaseAttackStarted',
-    PhaseReCrawlStarted: 'PhaseReCrawlStarted',
-    CrawlerPossibility: 'CrawlerPossibility',
-    ReCrawlerPossibilities: 'ReCrawlerPossibilities',
-    HostUnavailable: 'HostUnavailable',
-    NameResolutionFailure: 'NameResolutionFailure',
-    ProxyFailure: 'ProxyFailure',
-    OutOfDiskSpace: 'OutOfDiskSpace',
-    ProxyAuthenticationRequired: 'ProxyAuthenticationRequired',
-    OAuth2EndpointError: 'OAuth2EndpointError',
-    TargetLinkTimeoutDetected: 'TargetLinkTimeoutDetected',
-    LoginFailed: 'LoginFailed',
-    ScanTargetNotReachable: 'ScanTargetNotReachable',
-    ScanPolicyNotFound: 'ScanPolicyNotFound',
-    ReportPolicyNotFound: 'ReportPolicyNotFound',
-    SecurityProtocolTypeNotSupported: 'SecurityProtocolTypeNotSupported',
-    UnableToLoadScanSession: 'UnableToLoadScanSession',
-    AgentNotAvailable: 'AgentNotAvailable',
-    ScanNotAllowed: 'ScanNotAllowed',
-    UnableToFindAutoSaveNdb: 'UnableToFindAutoSaveNdb',
-    ErrorOccurredOnScanFailed: 'ErrorOccurredOnScanFailed',
-    ErrorOccurredOnPause: 'ErrorOccurredOnPause',
-    ErrorOccurredOnCancel: 'ErrorOccurredOnCancel',
-    ErrorOccurredOnScanCompleted: 'ErrorOccurredOnScanCompleted',
-    SevenZipNotFoundOrInstalled: 'SevenZipNotFoundOrInstalled',
-    ErrorOccurredOnLaunchScan: 'ErrorOccurredOnLaunchScan',
-    InvalidHeader: 'InvalidHeader',
-    ErrorOccurredOnPreScanValidation: 'ErrorOccurredOnPreScanValidation',
-    RawScanFileExpired: 'RawScanFileExpired',
-    SecretsAndEncryptionIntegration: 'SecretsAndEncryptionIntegration',
-    ArchiveMethodUnavailable: 'ArchiveMethodUnavailable'
-};
+* @export
+* @enum {string}
+*/
+var ScanTaskModelFailureReasonEnum;
+(function (ScanTaskModelFailureReasonEnum) {
+    ScanTaskModelFailureReasonEnum["None"] = "None";
+    ScanTaskModelFailureReasonEnum["Request"] = "Request";
+    ScanTaskModelFailureReasonEnum["HeadRequest"] = "HeadRequest";
+    ScanTaskModelFailureReasonEnum["RedirectDetected"] = "RedirectDetected";
+    ScanTaskModelFailureReasonEnum["TimeoutDetected"] = "TimeoutDetected";
+    ScanTaskModelFailureReasonEnum["MaxLogoutExceeded"] = "MaxLogoutExceeded";
+    ScanTaskModelFailureReasonEnum["RequestFailed"] = "RequestFailed";
+    ScanTaskModelFailureReasonEnum["Response"] = "Response";
+    ScanTaskModelFailureReasonEnum["CrawlerRequest"] = "CrawlerRequest";
+    ScanTaskModelFailureReasonEnum["AttackerRequest"] = "AttackerRequest";
+    ScanTaskModelFailureReasonEnum["ReCrawlerRequest"] = "ReCrawlerRequest";
+    ScanTaskModelFailureReasonEnum["Finished"] = "Finished";
+    ScanTaskModelFailureReasonEnum["LinkNotFound"] = "LinkNotFound";
+    ScanTaskModelFailureReasonEnum["RecalculateAttackPossibilities"] = "RecalculateAttackPossibilities";
+    ScanTaskModelFailureReasonEnum["PhaseCrawlStarted"] = "PhaseCrawlStarted";
+    ScanTaskModelFailureReasonEnum["PhaseAttackStarted"] = "PhaseAttackStarted";
+    ScanTaskModelFailureReasonEnum["PhaseReCrawlStarted"] = "PhaseReCrawlStarted";
+    ScanTaskModelFailureReasonEnum["CrawlerPossibility"] = "CrawlerPossibility";
+    ScanTaskModelFailureReasonEnum["ReCrawlerPossibilities"] = "ReCrawlerPossibilities";
+    ScanTaskModelFailureReasonEnum["HostUnavailable"] = "HostUnavailable";
+    ScanTaskModelFailureReasonEnum["NameResolutionFailure"] = "NameResolutionFailure";
+    ScanTaskModelFailureReasonEnum["ProxyFailure"] = "ProxyFailure";
+    ScanTaskModelFailureReasonEnum["OutOfDiskSpace"] = "OutOfDiskSpace";
+    ScanTaskModelFailureReasonEnum["ProxyAuthenticationRequired"] = "ProxyAuthenticationRequired";
+    ScanTaskModelFailureReasonEnum["OAuth2EndpointError"] = "OAuth2EndpointError";
+    ScanTaskModelFailureReasonEnum["TargetLinkTimeoutDetected"] = "TargetLinkTimeoutDetected";
+    ScanTaskModelFailureReasonEnum["LoginFailed"] = "LoginFailed";
+    ScanTaskModelFailureReasonEnum["ScanTargetNotReachable"] = "ScanTargetNotReachable";
+    ScanTaskModelFailureReasonEnum["ScanPolicyNotFound"] = "ScanPolicyNotFound";
+    ScanTaskModelFailureReasonEnum["ReportPolicyNotFound"] = "ReportPolicyNotFound";
+    ScanTaskModelFailureReasonEnum["SecurityProtocolTypeNotSupported"] = "SecurityProtocolTypeNotSupported";
+    ScanTaskModelFailureReasonEnum["UnableToLoadScanSession"] = "UnableToLoadScanSession";
+    ScanTaskModelFailureReasonEnum["AgentNotAvailable"] = "AgentNotAvailable";
+    ScanTaskModelFailureReasonEnum["ScanNotAllowed"] = "ScanNotAllowed";
+    ScanTaskModelFailureReasonEnum["UnableToFindAutoSaveNdb"] = "UnableToFindAutoSaveNdb";
+    ScanTaskModelFailureReasonEnum["ErrorOccurredOnScanFailed"] = "ErrorOccurredOnScanFailed";
+    ScanTaskModelFailureReasonEnum["ErrorOccurredOnPause"] = "ErrorOccurredOnPause";
+    ScanTaskModelFailureReasonEnum["ErrorOccurredOnCancel"] = "ErrorOccurredOnCancel";
+    ScanTaskModelFailureReasonEnum["ErrorOccurredOnScanCompleted"] = "ErrorOccurredOnScanCompleted";
+    ScanTaskModelFailureReasonEnum["SevenZipNotFoundOrInstalled"] = "SevenZipNotFoundOrInstalled";
+    ScanTaskModelFailureReasonEnum["ErrorOccurredOnLaunchScan"] = "ErrorOccurredOnLaunchScan";
+    ScanTaskModelFailureReasonEnum["InvalidHeader"] = "InvalidHeader";
+    ScanTaskModelFailureReasonEnum["ErrorOccurredOnPreScanValidation"] = "ErrorOccurredOnPreScanValidation";
+    ScanTaskModelFailureReasonEnum["RawScanFileExpired"] = "RawScanFileExpired";
+    ScanTaskModelFailureReasonEnum["SecretsAndEncryptionIntegration"] = "SecretsAndEncryptionIntegration";
+    ScanTaskModelFailureReasonEnum["ArchiveMethodUnavailable"] = "ArchiveMethodUnavailable";
+})(ScanTaskModelFailureReasonEnum = exports.ScanTaskModelFailureReasonEnum || (exports.ScanTaskModelFailureReasonEnum = {}));
 /**
- * @export
- */
-exports.ScanTaskModelGlobalThreatLevelEnum = {
-    Unknown: 'Unknown',
-    Secure: 'Secure',
-    NeedsAttention: 'NeedsAttention',
-    Insecure: 'Insecure',
-    Critical: 'Critical'
-};
+* @export
+* @enum {string}
+*/
+var ScanTaskModelGlobalThreatLevelEnum;
+(function (ScanTaskModelGlobalThreatLevelEnum) {
+    ScanTaskModelGlobalThreatLevelEnum["Unknown"] = "Unknown";
+    ScanTaskModelGlobalThreatLevelEnum["Secure"] = "Secure";
+    ScanTaskModelGlobalThreatLevelEnum["NeedsAttention"] = "NeedsAttention";
+    ScanTaskModelGlobalThreatLevelEnum["Insecure"] = "Insecure";
+    ScanTaskModelGlobalThreatLevelEnum["Critical"] = "Critical";
+})(ScanTaskModelGlobalThreatLevelEnum = exports.ScanTaskModelGlobalThreatLevelEnum || (exports.ScanTaskModelGlobalThreatLevelEnum = {}));
 /**
- * @export
- */
-exports.ScanTaskModelPhaseEnum = {
-    Pending: 'Pending',
-    Crawling: 'Crawling',
-    CrawlingAndAttacking: 'CrawlingAndAttacking',
-    Attacking: 'Attacking',
-    ReCrawling: 'ReCrawling',
-    Complete: 'Complete'
-};
+* @export
+* @enum {string}
+*/
+var ScanTaskModelPhaseEnum;
+(function (ScanTaskModelPhaseEnum) {
+    ScanTaskModelPhaseEnum["Pending"] = "Pending";
+    ScanTaskModelPhaseEnum["Crawling"] = "Crawling";
+    ScanTaskModelPhaseEnum["CrawlingAndAttacking"] = "CrawlingAndAttacking";
+    ScanTaskModelPhaseEnum["Attacking"] = "Attacking";
+    ScanTaskModelPhaseEnum["ReCrawling"] = "ReCrawling";
+    ScanTaskModelPhaseEnum["Complete"] = "Complete";
+})(ScanTaskModelPhaseEnum = exports.ScanTaskModelPhaseEnum || (exports.ScanTaskModelPhaseEnum = {}));
 /**
- * @export
- */
-exports.ScanTaskModelScanTypeEnum = {
-    Full: 'Full',
-    Retest: 'Retest',
-    Incremental: 'Incremental'
-};
+* @export
+* @enum {string}
+*/
+var ScanTaskModelScanTypeEnum;
+(function (ScanTaskModelScanTypeEnum) {
+    ScanTaskModelScanTypeEnum["Full"] = "Full";
+    ScanTaskModelScanTypeEnum["Retest"] = "Retest";
+    ScanTaskModelScanTypeEnum["Incremental"] = "Incremental";
+})(ScanTaskModelScanTypeEnum = exports.ScanTaskModelScanTypeEnum || (exports.ScanTaskModelScanTypeEnum = {}));
 /**
- * @export
- */
-exports.ScanTaskModelStateEnum = {
-    Queued: 'Queued',
-    Scanning: 'Scanning',
-    Archiving: 'Archiving',
-    Complete: 'Complete',
-    Failed: 'Failed',
-    Cancelled: 'Cancelled',
-    Delayed: 'Delayed',
-    Pausing: 'Pausing',
-    Paused: 'Paused',
-    Resuming: 'Resuming',
-    AsyncArchiving: 'AsyncArchiving'
-};
+* @export
+* @enum {string}
+*/
+var ScanTaskModelStateEnum;
+(function (ScanTaskModelStateEnum) {
+    ScanTaskModelStateEnum["Queued"] = "Queued";
+    ScanTaskModelStateEnum["Scanning"] = "Scanning";
+    ScanTaskModelStateEnum["Archiving"] = "Archiving";
+    ScanTaskModelStateEnum["Complete"] = "Complete";
+    ScanTaskModelStateEnum["Failed"] = "Failed";
+    ScanTaskModelStateEnum["Cancelled"] = "Cancelled";
+    ScanTaskModelStateEnum["Delayed"] = "Delayed";
+    ScanTaskModelStateEnum["Pausing"] = "Pausing";
+    ScanTaskModelStateEnum["Paused"] = "Paused";
+    ScanTaskModelStateEnum["Resuming"] = "Resuming";
+    ScanTaskModelStateEnum["AsyncArchiving"] = "AsyncArchiving";
+})(ScanTaskModelStateEnum = exports.ScanTaskModelStateEnum || (exports.ScanTaskModelStateEnum = {}));
 /**
- * @export
- */
-exports.ScanTaskModelThreatLevelEnum = {
-    Unknown: 'Unknown',
-    Secure: 'Secure',
-    NeedsAttention: 'NeedsAttention',
-    Insecure: 'Insecure',
-    Critical: 'Critical'
-};
+* @export
+* @enum {string}
+*/
+var ScanTaskModelThreatLevelEnum;
+(function (ScanTaskModelThreatLevelEnum) {
+    ScanTaskModelThreatLevelEnum["Unknown"] = "Unknown";
+    ScanTaskModelThreatLevelEnum["Secure"] = "Secure";
+    ScanTaskModelThreatLevelEnum["NeedsAttention"] = "NeedsAttention";
+    ScanTaskModelThreatLevelEnum["Insecure"] = "Insecure";
+    ScanTaskModelThreatLevelEnum["Critical"] = "Critical";
+})(ScanTaskModelThreatLevelEnum = exports.ScanTaskModelThreatLevelEnum || (exports.ScanTaskModelThreatLevelEnum = {}));
 /**
  * Check if a given object implements the ScanTaskModel interface.
  */

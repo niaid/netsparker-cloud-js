@@ -34,12 +34,12 @@ import {
     ExcludeFilterToJSON,
 } from '../models/index';
 
-export interface DiscoveryConnectionByIdRequest {
+export interface DiscoveryApiDiscoveryConnectionByIdRequest {
     connectionId: string;
     type?: DiscoveryConnectionByIdTypeEnum;
 }
 
-export interface DiscoveryConnectionsRequest {
+export interface DiscoveryApiDiscoveryConnectionsRequest {
     name?: string;
     region?: string;
     type?: DiscoveryConnectionsTypeEnum;
@@ -47,31 +47,31 @@ export interface DiscoveryConnectionsRequest {
     pageSize?: number;
 }
 
-export interface DiscoveryCreateConnectionRequest {
+export interface DiscoveryApiDiscoveryCreateConnectionRequest {
     model: DiscoveryConnectionsViewModel;
 }
 
-export interface DiscoveryDeleteConnectionRequest {
+export interface DiscoveryApiDiscoveryDeleteConnectionRequest {
     model: DeleteDiscoveryConnectionModel;
 }
 
-export interface DiscoveryEditConnectionRequest {
+export interface DiscoveryApiDiscoveryEditConnectionRequest {
     model: DiscoveryConnectionsViewModel;
 }
 
-export interface DiscoveryExcludeRequest {
+export interface DiscoveryApiDiscoveryExcludeRequest {
     model: ExcludeFilter;
 }
 
-export interface DiscoveryExportRequest {
+export interface DiscoveryApiDiscoveryExportRequest {
     csvSeparator?: DiscoveryExportCsvSeparatorEnum;
 }
 
-export interface DiscoveryIgnoreRequest {
+export interface DiscoveryApiDiscoveryIgnoreRequest {
     serviceIds: Array<string>;
 }
 
-export interface DiscoveryIgnoreByFilterRequest {
+export interface DiscoveryApiDiscoveryIgnoreByFilterRequest {
     authority?: string;
     ipAddress?: string;
     secondLevelDomain?: string;
@@ -81,12 +81,12 @@ export interface DiscoveryIgnoreByFilterRequest {
     registeredDomain?: boolean;
 }
 
-export interface DiscoveryListRequest {
+export interface DiscoveryApiDiscoveryListRequest {
     page?: number;
     pageSize?: number;
 }
 
-export interface DiscoveryListByFilterRequest {
+export interface DiscoveryApiDiscoveryListByFilterRequest {
     authority?: string;
     ipAddress?: string;
     secondLevelDomain?: string;
@@ -99,7 +99,7 @@ export interface DiscoveryListByFilterRequest {
     pageSize?: number;
 }
 
-export interface DiscoveryUpdateSettingsRequest {
+export interface DiscoveryApiDiscoveryUpdateSettingsRequest {
     model: DiscoverySettingsApiModel;
 }
 
@@ -111,7 +111,7 @@ export class DiscoveryApi extends runtime.BaseAPI {
     /**
      * Get Connection By Id And Type.
      */
-    async discoveryConnectionByIdRaw(requestParameters: DiscoveryConnectionByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async discoveryConnectionByIdRaw(requestParameters: DiscoveryApiDiscoveryConnectionByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters.connectionId === null || requestParameters.connectionId === undefined) {
             throw new runtime.RequiredError('connectionId','Required parameter requestParameters.connectionId was null or undefined when calling discoveryConnectionById.');
         }
@@ -141,14 +141,14 @@ export class DiscoveryApi extends runtime.BaseAPI {
     /**
      * Get Connection By Id And Type.
      */
-    async discoveryConnectionById(requestParameters: DiscoveryConnectionByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+    async discoveryConnectionById(requestParameters: DiscoveryApiDiscoveryConnectionByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
         await this.discoveryConnectionByIdRaw(requestParameters, initOverrides);
     }
 
     /**
      * List Connections.
      */
-    async discoveryConnectionsRaw(requestParameters: DiscoveryConnectionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async discoveryConnectionsRaw(requestParameters: DiscoveryApiDiscoveryConnectionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         const queryParameters: any = {};
 
         if (requestParameters.name !== undefined) {
@@ -186,14 +186,14 @@ export class DiscoveryApi extends runtime.BaseAPI {
     /**
      * List Connections.
      */
-    async discoveryConnections(requestParameters: DiscoveryConnectionsRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+    async discoveryConnections(requestParameters: DiscoveryApiDiscoveryConnectionsRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
         await this.discoveryConnectionsRaw(requestParameters, initOverrides);
     }
 
     /**
      * Creates New Connection.
      */
-    async discoveryCreateConnectionRaw(requestParameters: DiscoveryCreateConnectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async discoveryCreateConnectionRaw(requestParameters: DiscoveryApiDiscoveryCreateConnectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters.model === null || requestParameters.model === undefined) {
             throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling discoveryCreateConnection.');
         }
@@ -218,14 +218,14 @@ export class DiscoveryApi extends runtime.BaseAPI {
     /**
      * Creates New Connection.
      */
-    async discoveryCreateConnection(requestParameters: DiscoveryCreateConnectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+    async discoveryCreateConnection(requestParameters: DiscoveryApiDiscoveryCreateConnectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
         await this.discoveryCreateConnectionRaw(requestParameters, initOverrides);
     }
 
     /**
      * Deletes Connection.
      */
-    async discoveryDeleteConnectionRaw(requestParameters: DiscoveryDeleteConnectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async discoveryDeleteConnectionRaw(requestParameters: DiscoveryApiDiscoveryDeleteConnectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters.model === null || requestParameters.model === undefined) {
             throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling discoveryDeleteConnection.');
         }
@@ -250,14 +250,14 @@ export class DiscoveryApi extends runtime.BaseAPI {
     /**
      * Deletes Connection.
      */
-    async discoveryDeleteConnection(requestParameters: DiscoveryDeleteConnectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+    async discoveryDeleteConnection(requestParameters: DiscoveryApiDiscoveryDeleteConnectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
         await this.discoveryDeleteConnectionRaw(requestParameters, initOverrides);
     }
 
     /**
      * Edits Connection.
      */
-    async discoveryEditConnectionRaw(requestParameters: DiscoveryEditConnectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async discoveryEditConnectionRaw(requestParameters: DiscoveryApiDiscoveryEditConnectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters.model === null || requestParameters.model === undefined) {
             throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling discoveryEditConnection.');
         }
@@ -282,14 +282,14 @@ export class DiscoveryApi extends runtime.BaseAPI {
     /**
      * Edits Connection.
      */
-    async discoveryEditConnection(requestParameters: DiscoveryEditConnectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+    async discoveryEditConnection(requestParameters: DiscoveryApiDiscoveryEditConnectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
         await this.discoveryEditConnectionRaw(requestParameters, initOverrides);
     }
 
     /**
      * Returns exclude operation result.  This operation note override existing data, append to existing data.  If you want to override please use update-settings endpoint.
      */
-    async discoveryExcludeRaw(requestParameters: DiscoveryExcludeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>> {
+    async discoveryExcludeRaw(requestParameters: DiscoveryApiDiscoveryExcludeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>> {
         if (requestParameters.model === null || requestParameters.model === undefined) {
             throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling discoveryExclude.');
         }
@@ -314,7 +314,7 @@ export class DiscoveryApi extends runtime.BaseAPI {
     /**
      * Returns exclude operation result.  This operation note override existing data, append to existing data.  If you want to override please use update-settings endpoint.
      */
-    async discoveryExclude(requestParameters: DiscoveryExcludeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object> {
+    async discoveryExclude(requestParameters: DiscoveryApiDiscoveryExcludeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object> {
         const response = await this.discoveryExcludeRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -322,7 +322,7 @@ export class DiscoveryApi extends runtime.BaseAPI {
     /**
      * Returns the all discovery services in the csv format as a downloadable file.
      */
-    async discoveryExportRaw(requestParameters: DiscoveryExportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>> {
+    async discoveryExportRaw(requestParameters: DiscoveryApiDiscoveryExportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>> {
         const queryParameters: any = {};
 
         if (requestParameters.csvSeparator !== undefined) {
@@ -344,7 +344,7 @@ export class DiscoveryApi extends runtime.BaseAPI {
     /**
      * Returns the all discovery services in the csv format as a downloadable file.
      */
-    async discoveryExport(requestParameters: DiscoveryExportRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object> {
+    async discoveryExport(requestParameters: DiscoveryApiDiscoveryExportRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object> {
         const response = await this.discoveryExportRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -352,7 +352,7 @@ export class DiscoveryApi extends runtime.BaseAPI {
     /**
      * Ignores discovery service with given service ids.
      */
-    async discoveryIgnoreRaw(requestParameters: DiscoveryIgnoreRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>> {
+    async discoveryIgnoreRaw(requestParameters: DiscoveryApiDiscoveryIgnoreRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>> {
         if (requestParameters.serviceIds === null || requestParameters.serviceIds === undefined) {
             throw new runtime.RequiredError('serviceIds','Required parameter requestParameters.serviceIds was null or undefined when calling discoveryIgnore.');
         }
@@ -381,7 +381,7 @@ export class DiscoveryApi extends runtime.BaseAPI {
     /**
      * Ignores discovery service with given service ids.
      */
-    async discoveryIgnore(requestParameters: DiscoveryIgnoreRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string> {
+    async discoveryIgnore(requestParameters: DiscoveryApiDiscoveryIgnoreRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string> {
         const response = await this.discoveryIgnoreRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -389,7 +389,7 @@ export class DiscoveryApi extends runtime.BaseAPI {
     /**
      * Ignores discovery services for selected filters.
      */
-    async discoveryIgnoreByFilterRaw(requestParameters: DiscoveryIgnoreByFilterRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>> {
+    async discoveryIgnoreByFilterRaw(requestParameters: DiscoveryApiDiscoveryIgnoreByFilterRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>> {
         const queryParameters: any = {};
 
         if (requestParameters.authority !== undefined) {
@@ -439,7 +439,7 @@ export class DiscoveryApi extends runtime.BaseAPI {
     /**
      * Ignores discovery services for selected filters.
      */
-    async discoveryIgnoreByFilter(requestParameters: DiscoveryIgnoreByFilterRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string> {
+    async discoveryIgnoreByFilter(requestParameters: DiscoveryApiDiscoveryIgnoreByFilterRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string> {
         const response = await this.discoveryIgnoreByFilterRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -447,7 +447,7 @@ export class DiscoveryApi extends runtime.BaseAPI {
     /**
      * Gets the list discovery services.
      */
-    async discoveryListRaw(requestParameters: DiscoveryListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DiscoveryServiceListApiResult>> {
+    async discoveryListRaw(requestParameters: DiscoveryApiDiscoveryListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DiscoveryServiceListApiResult>> {
         const queryParameters: any = {};
 
         if (requestParameters.page !== undefined) {
@@ -473,7 +473,7 @@ export class DiscoveryApi extends runtime.BaseAPI {
     /**
      * Gets the list discovery services.
      */
-    async discoveryList(requestParameters: DiscoveryListRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DiscoveryServiceListApiResult> {
+    async discoveryList(requestParameters: DiscoveryApiDiscoveryListRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DiscoveryServiceListApiResult> {
         const response = await this.discoveryListRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -481,7 +481,7 @@ export class DiscoveryApi extends runtime.BaseAPI {
     /**
      * Gets the list discovery services with filter.
      */
-    async discoveryListByFilterRaw(requestParameters: DiscoveryListByFilterRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DiscoveryServiceListApiResult>> {
+    async discoveryListByFilterRaw(requestParameters: DiscoveryApiDiscoveryListByFilterRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DiscoveryServiceListApiResult>> {
         const queryParameters: any = {};
 
         if (requestParameters.authority !== undefined) {
@@ -539,7 +539,7 @@ export class DiscoveryApi extends runtime.BaseAPI {
     /**
      * Gets the list discovery services with filter.
      */
-    async discoveryListByFilter(requestParameters: DiscoveryListByFilterRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DiscoveryServiceListApiResult> {
+    async discoveryListByFilter(requestParameters: DiscoveryApiDiscoveryListByFilterRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DiscoveryServiceListApiResult> {
         const response = await this.discoveryListByFilterRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -573,7 +573,7 @@ export class DiscoveryApi extends runtime.BaseAPI {
     /**
      * Updates discovery settings.
      */
-    async discoveryUpdateSettingsRaw(requestParameters: DiscoveryUpdateSettingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DiscoverySettingsApiModel>> {
+    async discoveryUpdateSettingsRaw(requestParameters: DiscoveryApiDiscoveryUpdateSettingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DiscoverySettingsApiModel>> {
         if (requestParameters.model === null || requestParameters.model === undefined) {
             throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling discoveryUpdateSettings.');
         }
@@ -598,7 +598,7 @@ export class DiscoveryApi extends runtime.BaseAPI {
     /**
      * Updates discovery settings.
      */
-    async discoveryUpdateSettings(requestParameters: DiscoveryUpdateSettingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DiscoverySettingsApiModel> {
+    async discoveryUpdateSettings(requestParameters: DiscoveryApiDiscoveryUpdateSettingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DiscoverySettingsApiModel> {
         const response = await this.discoveryUpdateSettingsRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -606,35 +606,35 @@ export class DiscoveryApi extends runtime.BaseAPI {
 }
 
 /**
- * @export
- */
-export const DiscoveryConnectionByIdTypeEnum = {
-    Aws: 'Aws'
-} as const;
-export type DiscoveryConnectionByIdTypeEnum = typeof DiscoveryConnectionByIdTypeEnum[keyof typeof DiscoveryConnectionByIdTypeEnum];
+  * @export
+  * @enum {string}
+  */
+export enum DiscoveryConnectionByIdTypeEnum {
+    Aws = 'Aws'
+}
 /**
- * @export
- */
-export const DiscoveryConnectionsTypeEnum = {
-    Aws: 'Aws'
-} as const;
-export type DiscoveryConnectionsTypeEnum = typeof DiscoveryConnectionsTypeEnum[keyof typeof DiscoveryConnectionsTypeEnum];
+  * @export
+  * @enum {string}
+  */
+export enum DiscoveryConnectionsTypeEnum {
+    Aws = 'Aws'
+}
 /**
- * @export
- */
-export const DiscoveryExportCsvSeparatorEnum = {
-    Comma: 'Comma',
-    Semicolon: 'Semicolon',
-    Pipe: 'Pipe',
-    Tab: 'Tab'
-} as const;
-export type DiscoveryExportCsvSeparatorEnum = typeof DiscoveryExportCsvSeparatorEnum[keyof typeof DiscoveryExportCsvSeparatorEnum];
+  * @export
+  * @enum {string}
+  */
+export enum DiscoveryExportCsvSeparatorEnum {
+    Comma = 'Comma',
+    Semicolon = 'Semicolon',
+    Pipe = 'Pipe',
+    Tab = 'Tab'
+}
 /**
- * @export
- */
-export const DiscoveryListByFilterStatusEnum = {
-    Discovered: 'Discovered',
-    Ignored: 'Ignored',
-    Created: 'Created'
-} as const;
-export type DiscoveryListByFilterStatusEnum = typeof DiscoveryListByFilterStatusEnum[keyof typeof DiscoveryListByFilterStatusEnum];
+  * @export
+  * @enum {string}
+  */
+export enum DiscoveryListByFilterStatusEnum {
+    Discovered = 'Discovered',
+    Ignored = 'Ignored',
+    Created = 'Created'
+}

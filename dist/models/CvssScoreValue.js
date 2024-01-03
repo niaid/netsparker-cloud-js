@@ -16,15 +16,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.CvssScoreValueToJSON = exports.CvssScoreValueFromJSONTyped = exports.CvssScoreValueFromJSON = exports.instanceOfCvssScoreValue = exports.CvssScoreValueSeverityEnum = void 0;
 const runtime_1 = require("../runtime");
 /**
- * @export
- */
-exports.CvssScoreValueSeverityEnum = {
-    None: 'None',
-    Low: 'Low',
-    Medium: 'Medium',
-    High: 'High',
-    Critical: 'Critical'
-};
+* @export
+* @enum {string}
+*/
+var CvssScoreValueSeverityEnum;
+(function (CvssScoreValueSeverityEnum) {
+    CvssScoreValueSeverityEnum["None"] = "None";
+    CvssScoreValueSeverityEnum["Low"] = "Low";
+    CvssScoreValueSeverityEnum["Medium"] = "Medium";
+    CvssScoreValueSeverityEnum["High"] = "High";
+    CvssScoreValueSeverityEnum["Critical"] = "Critical";
+})(CvssScoreValueSeverityEnum = exports.CvssScoreValueSeverityEnum || (exports.CvssScoreValueSeverityEnum = {}));
 /**
  * Check if a given object implements the CvssScoreValue interface.
  */

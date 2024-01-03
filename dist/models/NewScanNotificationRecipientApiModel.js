@@ -16,25 +16,29 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.NewScanNotificationRecipientApiModelToJSON = exports.NewScanNotificationRecipientApiModelFromJSONTyped = exports.NewScanNotificationRecipientApiModelFromJSON = exports.instanceOfNewScanNotificationRecipientApiModel = exports.NewScanNotificationRecipientApiModelSpecificSmsRecipientsEnum = exports.NewScanNotificationRecipientApiModelSpecificEmailRecipientsEnum = void 0;
 const runtime_1 = require("../runtime");
 /**
- * @export
- */
-exports.NewScanNotificationRecipientApiModelSpecificEmailRecipientsEnum = {
-    None: 'None',
-    WebsiteTechnicalContact: 'WebsiteTechnicalContact',
-    PersonWhoStartedScan: 'PersonWhoStartedScan',
-    AllAuthorized: 'AllAuthorized',
-    AccountAdmins: 'AccountAdmins'
-};
+* @export
+* @enum {string}
+*/
+var NewScanNotificationRecipientApiModelSpecificEmailRecipientsEnum;
+(function (NewScanNotificationRecipientApiModelSpecificEmailRecipientsEnum) {
+    NewScanNotificationRecipientApiModelSpecificEmailRecipientsEnum["None"] = "None";
+    NewScanNotificationRecipientApiModelSpecificEmailRecipientsEnum["WebsiteTechnicalContact"] = "WebsiteTechnicalContact";
+    NewScanNotificationRecipientApiModelSpecificEmailRecipientsEnum["PersonWhoStartedScan"] = "PersonWhoStartedScan";
+    NewScanNotificationRecipientApiModelSpecificEmailRecipientsEnum["AllAuthorized"] = "AllAuthorized";
+    NewScanNotificationRecipientApiModelSpecificEmailRecipientsEnum["AccountAdmins"] = "AccountAdmins";
+})(NewScanNotificationRecipientApiModelSpecificEmailRecipientsEnum = exports.NewScanNotificationRecipientApiModelSpecificEmailRecipientsEnum || (exports.NewScanNotificationRecipientApiModelSpecificEmailRecipientsEnum = {}));
 /**
- * @export
- */
-exports.NewScanNotificationRecipientApiModelSpecificSmsRecipientsEnum = {
-    None: 'None',
-    WebsiteTechnicalContact: 'WebsiteTechnicalContact',
-    PersonWhoStartedScan: 'PersonWhoStartedScan',
-    AllAuthorized: 'AllAuthorized',
-    AccountAdmins: 'AccountAdmins'
-};
+* @export
+* @enum {string}
+*/
+var NewScanNotificationRecipientApiModelSpecificSmsRecipientsEnum;
+(function (NewScanNotificationRecipientApiModelSpecificSmsRecipientsEnum) {
+    NewScanNotificationRecipientApiModelSpecificSmsRecipientsEnum["None"] = "None";
+    NewScanNotificationRecipientApiModelSpecificSmsRecipientsEnum["WebsiteTechnicalContact"] = "WebsiteTechnicalContact";
+    NewScanNotificationRecipientApiModelSpecificSmsRecipientsEnum["PersonWhoStartedScan"] = "PersonWhoStartedScan";
+    NewScanNotificationRecipientApiModelSpecificSmsRecipientsEnum["AllAuthorized"] = "AllAuthorized";
+    NewScanNotificationRecipientApiModelSpecificSmsRecipientsEnum["AccountAdmins"] = "AccountAdmins";
+})(NewScanNotificationRecipientApiModelSpecificSmsRecipientsEnum = exports.NewScanNotificationRecipientApiModelSpecificSmsRecipientsEnum || (exports.NewScanNotificationRecipientApiModelSpecificSmsRecipientsEnum = {}));
 /**
  * Check if a given object implements the NewScanNotificationRecipientApiModel interface.
  */

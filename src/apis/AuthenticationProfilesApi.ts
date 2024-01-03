@@ -22,19 +22,19 @@ import {
     AuthenticationProfileViewModelToJSON,
 } from '../models/index';
 
-export interface AuthenticationProfilesDeleteRequest {
+export interface AuthenticationProfilesApiAuthenticationProfilesDeleteRequest {
     id: string;
 }
 
-export interface AuthenticationProfilesGetRequest {
+export interface AuthenticationProfilesApiAuthenticationProfilesGetRequest {
     id: string;
 }
 
-export interface AuthenticationProfilesNewRequest {
+export interface AuthenticationProfilesApiAuthenticationProfilesNewRequest {
     model: AuthenticationProfileViewModel;
 }
 
-export interface AuthenticationProfilesUpdateRequest {
+export interface AuthenticationProfilesApiAuthenticationProfilesUpdateRequest {
     model: AuthenticationProfileViewModel;
 }
 
@@ -46,7 +46,7 @@ export class AuthenticationProfilesApi extends runtime.BaseAPI {
     /**
      * Deletes an authentication profile.
      */
-    async authenticationProfilesDeleteRaw(requestParameters: AuthenticationProfilesDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>> {
+    async authenticationProfilesDeleteRaw(requestParameters: AuthenticationProfilesApiAuthenticationProfilesDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>> {
         if (requestParameters.id === null || requestParameters.id === undefined) {
             throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling authenticationProfilesDelete.');
         }
@@ -75,7 +75,7 @@ export class AuthenticationProfilesApi extends runtime.BaseAPI {
     /**
      * Deletes an authentication profile.
      */
-    async authenticationProfilesDelete(requestParameters: AuthenticationProfilesDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string> {
+    async authenticationProfilesDelete(requestParameters: AuthenticationProfilesApiAuthenticationProfilesDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string> {
         const response = await this.authenticationProfilesDeleteRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -83,7 +83,7 @@ export class AuthenticationProfilesApi extends runtime.BaseAPI {
     /**
      * Gets the authentication profiles by the specified id.
      */
-    async authenticationProfilesGetRaw(requestParameters: AuthenticationProfilesGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AuthenticationProfileViewModel>> {
+    async authenticationProfilesGetRaw(requestParameters: AuthenticationProfilesApiAuthenticationProfilesGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AuthenticationProfileViewModel>> {
         if (requestParameters.id === null || requestParameters.id === undefined) {
             throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling authenticationProfilesGet.');
         }
@@ -105,7 +105,7 @@ export class AuthenticationProfilesApi extends runtime.BaseAPI {
     /**
      * Gets the authentication profiles by the specified id.
      */
-    async authenticationProfilesGet(requestParameters: AuthenticationProfilesGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AuthenticationProfileViewModel> {
+    async authenticationProfilesGet(requestParameters: AuthenticationProfilesApiAuthenticationProfilesGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AuthenticationProfileViewModel> {
         const response = await this.authenticationProfilesGetRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -139,7 +139,7 @@ export class AuthenticationProfilesApi extends runtime.BaseAPI {
     /**
      * Creates a new authentication profile.
      */
-    async authenticationProfilesNewRaw(requestParameters: AuthenticationProfilesNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AuthenticationProfileViewModel>> {
+    async authenticationProfilesNewRaw(requestParameters: AuthenticationProfilesApiAuthenticationProfilesNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AuthenticationProfileViewModel>> {
         if (requestParameters.model === null || requestParameters.model === undefined) {
             throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling authenticationProfilesNew.');
         }
@@ -164,7 +164,7 @@ export class AuthenticationProfilesApi extends runtime.BaseAPI {
     /**
      * Creates a new authentication profile.
      */
-    async authenticationProfilesNew(requestParameters: AuthenticationProfilesNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AuthenticationProfileViewModel> {
+    async authenticationProfilesNew(requestParameters: AuthenticationProfilesApiAuthenticationProfilesNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AuthenticationProfileViewModel> {
         const response = await this.authenticationProfilesNewRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -172,7 +172,7 @@ export class AuthenticationProfilesApi extends runtime.BaseAPI {
     /**
      * Updates an authentication profile.
      */
-    async authenticationProfilesUpdateRaw(requestParameters: AuthenticationProfilesUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AuthenticationProfileViewModel>> {
+    async authenticationProfilesUpdateRaw(requestParameters: AuthenticationProfilesApiAuthenticationProfilesUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AuthenticationProfileViewModel>> {
         if (requestParameters.model === null || requestParameters.model === undefined) {
             throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling authenticationProfilesUpdate.');
         }
@@ -197,7 +197,7 @@ export class AuthenticationProfilesApi extends runtime.BaseAPI {
     /**
      * Updates an authentication profile.
      */
-    async authenticationProfilesUpdate(requestParameters: AuthenticationProfilesUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AuthenticationProfileViewModel> {
+    async authenticationProfilesUpdate(requestParameters: AuthenticationProfilesApiAuthenticationProfilesUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AuthenticationProfileViewModel> {
         const response = await this.authenticationProfilesUpdateRaw(requestParameters, initOverrides);
         return await response.value();
     }

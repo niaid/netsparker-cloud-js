@@ -18,58 +18,64 @@ const runtime_1 = require("../runtime");
 const IntegrationCustomFieldVm_1 = require("./IntegrationCustomFieldVm");
 const IntegrationWizardResultModel_1 = require("./IntegrationWizardResultModel");
 /**
- * @export
- */
-exports.ClubhouseIntegrationInfoModelClubhouseStoryTypeEnum = {
-    Bug: 'Bug',
-    Feature: 'Feature',
-    Chore: 'Chore'
-};
+* @export
+* @enum {string}
+*/
+var ClubhouseIntegrationInfoModelClubhouseStoryTypeEnum;
+(function (ClubhouseIntegrationInfoModelClubhouseStoryTypeEnum) {
+    ClubhouseIntegrationInfoModelClubhouseStoryTypeEnum["Bug"] = "Bug";
+    ClubhouseIntegrationInfoModelClubhouseStoryTypeEnum["Feature"] = "Feature";
+    ClubhouseIntegrationInfoModelClubhouseStoryTypeEnum["Chore"] = "Chore";
+})(ClubhouseIntegrationInfoModelClubhouseStoryTypeEnum = exports.ClubhouseIntegrationInfoModelClubhouseStoryTypeEnum || (exports.ClubhouseIntegrationInfoModelClubhouseStoryTypeEnum = {}));
 /**
- * @export
- */
-exports.ClubhouseIntegrationInfoModelTypeEnum = {
-    NetsparkerEnterprise: 'NetsparkerEnterprise',
-    Webhook: 'Webhook',
-    Zapier: 'Zapier',
-    Slack: 'Slack',
-    Mattermost: 'Mattermost',
-    MicrosoftTeams: 'MicrosoftTeams',
-    AzureDevOps: 'AzureDevOps',
-    Bitbucket: 'Bitbucket',
-    Bugzilla: 'Bugzilla',
-    Clubhouse: 'Clubhouse',
-    DefectDojo: 'DefectDojo',
-    PivotalTracker: 'PivotalTracker',
-    Jira: 'Jira',
-    FogBugz: 'FogBugz',
-    GitHub: 'GitHub',
-    PagerDuty: 'PagerDuty',
-    Kafka: 'Kafka',
-    Kenna: 'Kenna',
-    Redmine: 'Redmine',
-    ServiceNow: 'ServiceNow',
-    Tfs: 'TFS',
-    Unfuddle: 'Unfuddle',
-    YouTrack: 'YouTrack',
-    Freshservice: 'Freshservice',
-    Splunk: 'Splunk',
-    JazzTeam: 'JazzTeam',
-    ServiceNowVrm: 'ServiceNowVRM',
-    Asana: 'Asana',
-    Trello: 'Trello',
-    Hashicorp: 'Hashicorp',
-    CyberArk: 'CyberArk',
-    AzureKeyVault: 'AzureKeyVault',
-    GitLab: 'GitLab'
-};
+* @export
+* @enum {string}
+*/
+var ClubhouseIntegrationInfoModelTypeEnum;
+(function (ClubhouseIntegrationInfoModelTypeEnum) {
+    ClubhouseIntegrationInfoModelTypeEnum["NetsparkerEnterprise"] = "NetsparkerEnterprise";
+    ClubhouseIntegrationInfoModelTypeEnum["Webhook"] = "Webhook";
+    ClubhouseIntegrationInfoModelTypeEnum["Zapier"] = "Zapier";
+    ClubhouseIntegrationInfoModelTypeEnum["Slack"] = "Slack";
+    ClubhouseIntegrationInfoModelTypeEnum["Mattermost"] = "Mattermost";
+    ClubhouseIntegrationInfoModelTypeEnum["MicrosoftTeams"] = "MicrosoftTeams";
+    ClubhouseIntegrationInfoModelTypeEnum["AzureDevOps"] = "AzureDevOps";
+    ClubhouseIntegrationInfoModelTypeEnum["Bitbucket"] = "Bitbucket";
+    ClubhouseIntegrationInfoModelTypeEnum["Bugzilla"] = "Bugzilla";
+    ClubhouseIntegrationInfoModelTypeEnum["Clubhouse"] = "Clubhouse";
+    ClubhouseIntegrationInfoModelTypeEnum["DefectDojo"] = "DefectDojo";
+    ClubhouseIntegrationInfoModelTypeEnum["PivotalTracker"] = "PivotalTracker";
+    ClubhouseIntegrationInfoModelTypeEnum["Jira"] = "Jira";
+    ClubhouseIntegrationInfoModelTypeEnum["FogBugz"] = "FogBugz";
+    ClubhouseIntegrationInfoModelTypeEnum["GitHub"] = "GitHub";
+    ClubhouseIntegrationInfoModelTypeEnum["PagerDuty"] = "PagerDuty";
+    ClubhouseIntegrationInfoModelTypeEnum["Kafka"] = "Kafka";
+    ClubhouseIntegrationInfoModelTypeEnum["Kenna"] = "Kenna";
+    ClubhouseIntegrationInfoModelTypeEnum["Redmine"] = "Redmine";
+    ClubhouseIntegrationInfoModelTypeEnum["ServiceNow"] = "ServiceNow";
+    ClubhouseIntegrationInfoModelTypeEnum["Tfs"] = "TFS";
+    ClubhouseIntegrationInfoModelTypeEnum["Unfuddle"] = "Unfuddle";
+    ClubhouseIntegrationInfoModelTypeEnum["YouTrack"] = "YouTrack";
+    ClubhouseIntegrationInfoModelTypeEnum["Freshservice"] = "Freshservice";
+    ClubhouseIntegrationInfoModelTypeEnum["Splunk"] = "Splunk";
+    ClubhouseIntegrationInfoModelTypeEnum["JazzTeam"] = "JazzTeam";
+    ClubhouseIntegrationInfoModelTypeEnum["ServiceNowVrm"] = "ServiceNowVRM";
+    ClubhouseIntegrationInfoModelTypeEnum["Asana"] = "Asana";
+    ClubhouseIntegrationInfoModelTypeEnum["Trello"] = "Trello";
+    ClubhouseIntegrationInfoModelTypeEnum["Hashicorp"] = "Hashicorp";
+    ClubhouseIntegrationInfoModelTypeEnum["CyberArk"] = "CyberArk";
+    ClubhouseIntegrationInfoModelTypeEnum["AzureKeyVault"] = "AzureKeyVault";
+    ClubhouseIntegrationInfoModelTypeEnum["GitLab"] = "GitLab";
+})(ClubhouseIntegrationInfoModelTypeEnum = exports.ClubhouseIntegrationInfoModelTypeEnum || (exports.ClubhouseIntegrationInfoModelTypeEnum = {}));
 /**
- * @export
- */
-exports.ClubhouseIntegrationInfoModelTemplateTypeEnum = {
-    Standard: 'Standard',
-    Detailed: 'Detailed'
-};
+* @export
+* @enum {string}
+*/
+var ClubhouseIntegrationInfoModelTemplateTypeEnum;
+(function (ClubhouseIntegrationInfoModelTemplateTypeEnum) {
+    ClubhouseIntegrationInfoModelTemplateTypeEnum["Standard"] = "Standard";
+    ClubhouseIntegrationInfoModelTemplateTypeEnum["Detailed"] = "Detailed";
+})(ClubhouseIntegrationInfoModelTemplateTypeEnum = exports.ClubhouseIntegrationInfoModelTemplateTypeEnum || (exports.ClubhouseIntegrationInfoModelTemplateTypeEnum = {}));
 /**
  * Check if a given object implements the ClubhouseIntegrationInfoModel interface.
  */

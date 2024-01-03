@@ -16,13 +16,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.StartVerificationResultToJSON = exports.StartVerificationResultFromJSONTyped = exports.StartVerificationResultFromJSON = exports.instanceOfStartVerificationResult = exports.StartVerificationResultVerifyOwnershipResultEnum = void 0;
 const runtime_1 = require("../runtime");
 /**
- * @export
- */
-exports.StartVerificationResultVerifyOwnershipResultEnum = {
-    Verified: 'Verified',
-    NotVerified: 'NotVerified',
-    VerificationLimitExceed: 'VerificationLimitExceed'
-};
+* @export
+* @enum {string}
+*/
+var StartVerificationResultVerifyOwnershipResultEnum;
+(function (StartVerificationResultVerifyOwnershipResultEnum) {
+    StartVerificationResultVerifyOwnershipResultEnum["Verified"] = "Verified";
+    StartVerificationResultVerifyOwnershipResultEnum["NotVerified"] = "NotVerified";
+    StartVerificationResultVerifyOwnershipResultEnum["VerificationLimitExceed"] = "VerificationLimitExceed";
+})(StartVerificationResultVerifyOwnershipResultEnum = exports.StartVerificationResultVerifyOwnershipResultEnum || (exports.StartVerificationResultVerifyOwnershipResultEnum = {}));
 /**
  * Check if a given object implements the StartVerificationResult interface.
  */

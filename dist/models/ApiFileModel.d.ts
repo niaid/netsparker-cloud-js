@@ -53,39 +53,39 @@ export interface ApiFileModel {
     type?: ApiFileModelTypeEnum;
 }
 /**
- * @export
- */
-export declare const ApiFileModelImporterTypeEnum: {
-    readonly None: "None";
-    readonly Fiddler: "Fiddler";
-    readonly Burp: "Burp";
-    readonly Swagger: "Swagger";
-    readonly OwaspZap: "OwaspZap";
-    readonly AspNet: "AspNet";
-    readonly HttpArchive: "HttpArchive";
-    readonly Wadl: "Wadl";
-    readonly Wsdl: "Wsdl";
-    readonly Postman: "Postman";
-    readonly Netsparker: "Netsparker";
-    readonly HttpRequestImporter: "HttpRequestImporter";
-    readonly LinkImporter: "LinkImporter";
-    readonly CsvImporter: "CsvImporter";
-    readonly Iodocs: "Iodocs";
-    readonly WordPress: "WordPress";
-    readonly Raml: "Raml";
-    readonly GraphQl: "GraphQl";
-    readonly AcxXml: "AcxXml";
-};
-export type ApiFileModelImporterTypeEnum = typeof ApiFileModelImporterTypeEnum[keyof typeof ApiFileModelImporterTypeEnum];
+* @export
+* @enum {string}
+*/
+export declare enum ApiFileModelImporterTypeEnum {
+    None = "None",
+    Fiddler = "Fiddler",
+    Burp = "Burp",
+    Swagger = "Swagger",
+    OwaspZap = "OwaspZap",
+    AspNet = "AspNet",
+    HttpArchive = "HttpArchive",
+    Wadl = "Wadl",
+    Wsdl = "Wsdl",
+    Postman = "Postman",
+    Netsparker = "Netsparker",
+    HttpRequestImporter = "HttpRequestImporter",
+    LinkImporter = "LinkImporter",
+    CsvImporter = "CsvImporter",
+    Iodocs = "Iodocs",
+    WordPress = "WordPress",
+    Raml = "Raml",
+    GraphQl = "GraphQl",
+    AcxXml = "AcxXml"
+}
 /**
- * @export
- */
-export declare const ApiFileModelTypeEnum: {
-    readonly LinkImportFile: "LinkImportFile";
-    readonly LinkImportUrl: "LinkImportUrl";
-    readonly LinkImportEnterLink: "LinkImportEnterLink";
-};
-export type ApiFileModelTypeEnum = typeof ApiFileModelTypeEnum[keyof typeof ApiFileModelTypeEnum];
+* @export
+* @enum {string}
+*/
+export declare enum ApiFileModelTypeEnum {
+    LinkImportFile = "LinkImportFile",
+    LinkImportUrl = "LinkImportUrl",
+    LinkImportEnterLink = "LinkImportEnterLink"
+}
 /**
  * Check if a given object implements the ApiFileModel interface.
  */

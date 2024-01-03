@@ -90,21 +90,21 @@ export interface WebsiteApiModel {
     tags?: Array<string>;
 }
 /**
- * @export
- */
-export declare const WebsiteApiModelLicenseTypeEnum: {
-    readonly Subscription: "Subscription";
-    readonly Credit: "Credit";
-};
-export type WebsiteApiModelLicenseTypeEnum = typeof WebsiteApiModelLicenseTypeEnum[keyof typeof WebsiteApiModelLicenseTypeEnum];
+* @export
+* @enum {string}
+*/
+export declare enum WebsiteApiModelLicenseTypeEnum {
+    Subscription = "Subscription",
+    Credit = "Credit"
+}
 /**
- * @export
- */
-export declare const WebsiteApiModelAgentModeEnum: {
-    readonly Cloud: "Cloud";
-    readonly Internal: "Internal";
-};
-export type WebsiteApiModelAgentModeEnum = typeof WebsiteApiModelAgentModeEnum[keyof typeof WebsiteApiModelAgentModeEnum];
+* @export
+* @enum {string}
+*/
+export declare enum WebsiteApiModelAgentModeEnum {
+    Cloud = "Cloud",
+    Internal = "Internal"
+}
 /**
  * Check if a given object implements the WebsiteApiModel interface.
  */

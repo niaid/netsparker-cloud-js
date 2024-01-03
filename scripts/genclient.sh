@@ -26,6 +26,7 @@ echo "generating updated client in: ${CLIENT_OUT}"
 docker run --rm -v "${PWD}:/local" openapitools/openapi-generator-cli generate \
     -i /local/${CLIENT_SPEC} \
     -g typescript-fetch \
-    --additional-properties=typescriptThreePlus=true,supportsES6=true,enumClassPrefix=true \
+    --additional-properties=typescriptThreePlus=true,supportsES6=true \
     --skip-validate-spec \
-    -o /local/${CLIENT_OUT}
+    -o /local/${CLIENT_OUT} \
+    2>&1 | tee /local/buildissues.txt

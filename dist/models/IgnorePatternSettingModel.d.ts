@@ -35,17 +35,17 @@ export interface IgnorePatternSettingModel {
     pattern: string;
 }
 /**
- * @export
- */
-export declare const IgnorePatternSettingModelParameterTypeEnum: {
-    readonly Post: "POST";
-    readonly Get: "GET";
-    readonly Cookie: "COOKIE";
-    readonly Webstorage: "WEBSTORAGE";
-    readonly All: "ALL";
-    readonly Setcookie: "SETCOOKIE";
-};
-export type IgnorePatternSettingModelParameterTypeEnum = typeof IgnorePatternSettingModelParameterTypeEnum[keyof typeof IgnorePatternSettingModelParameterTypeEnum];
+* @export
+* @enum {string}
+*/
+export declare enum IgnorePatternSettingModelParameterTypeEnum {
+    Post = "POST",
+    Get = "GET",
+    Cookie = "COOKIE",
+    Webstorage = "WEBSTORAGE",
+    All = "ALL",
+    Setcookie = "SETCOOKIE"
+}
 /**
  * Check if a given object implements the IgnorePatternSettingModel interface.
  */

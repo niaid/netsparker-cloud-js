@@ -19,24 +19,28 @@ const NotificationEmailSmsFilterApi_1 = require("./NotificationEmailSmsFilterApi
 const NotificationIntegrationFilterApi_1 = require("./NotificationIntegrationFilterApi");
 const ScanNotificationRecipientApiModel_1 = require("./ScanNotificationRecipientApiModel");
 /**
- * @export
- */
-exports.ScanNotificationApiModelEventEnum = {
-    NewScan: 'NewScan',
-    ScanCompleted: 'ScanCompleted',
-    ScanCancelled: 'ScanCancelled',
-    ScanFailed: 'ScanFailed',
-    ScheduledScanLaunchFailed: 'ScheduledScanLaunchFailed',
-    OutOfDateTechnology: 'OutOfDateTechnology'
-};
+* @export
+* @enum {string}
+*/
+var ScanNotificationApiModelEventEnum;
+(function (ScanNotificationApiModelEventEnum) {
+    ScanNotificationApiModelEventEnum["NewScan"] = "NewScan";
+    ScanNotificationApiModelEventEnum["ScanCompleted"] = "ScanCompleted";
+    ScanNotificationApiModelEventEnum["ScanCancelled"] = "ScanCancelled";
+    ScanNotificationApiModelEventEnum["ScanFailed"] = "ScanFailed";
+    ScanNotificationApiModelEventEnum["ScheduledScanLaunchFailed"] = "ScheduledScanLaunchFailed";
+    ScanNotificationApiModelEventEnum["OutOfDateTechnology"] = "OutOfDateTechnology";
+})(ScanNotificationApiModelEventEnum = exports.ScanNotificationApiModelEventEnum || (exports.ScanNotificationApiModelEventEnum = {}));
 /**
- * @export
- */
-exports.ScanNotificationApiModelScopeEnum = {
-    AnyWebsite: 'AnyWebsite',
-    WebsiteGroup: 'WebsiteGroup',
-    Website: 'Website'
-};
+* @export
+* @enum {string}
+*/
+var ScanNotificationApiModelScopeEnum;
+(function (ScanNotificationApiModelScopeEnum) {
+    ScanNotificationApiModelScopeEnum["AnyWebsite"] = "AnyWebsite";
+    ScanNotificationApiModelScopeEnum["WebsiteGroup"] = "WebsiteGroup";
+    ScanNotificationApiModelScopeEnum["Website"] = "Website";
+})(ScanNotificationApiModelScopeEnum = exports.ScanNotificationApiModelScopeEnum || (exports.ScanNotificationApiModelScopeEnum = {}));
 /**
  * Check if a given object implements the ScanNotificationApiModel interface.
  */

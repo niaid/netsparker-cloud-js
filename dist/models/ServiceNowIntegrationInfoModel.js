@@ -21,84 +21,96 @@ const ServiceNowIncidentFieldPairValue_1 = require("./ServiceNowIncidentFieldPai
 const ServiceNowIncidentMapping_1 = require("./ServiceNowIncidentMapping");
 const ServiceNowIntegrationInfoModelFieldMappingsDictionary_1 = require("./ServiceNowIntegrationInfoModelFieldMappingsDictionary");
 /**
- * @export
- */
-exports.ServiceNowIntegrationInfoModelServiceNowCategoryTypesEnum = {
-    Inquiry: 'Inquiry',
-    Software: 'Software',
-    Hardware: 'Hardware',
-    Network: 'Network',
-    Database: 'Database'
-};
+* @export
+* @enum {string}
+*/
+var ServiceNowIntegrationInfoModelServiceNowCategoryTypesEnum;
+(function (ServiceNowIntegrationInfoModelServiceNowCategoryTypesEnum) {
+    ServiceNowIntegrationInfoModelServiceNowCategoryTypesEnum["Inquiry"] = "Inquiry";
+    ServiceNowIntegrationInfoModelServiceNowCategoryTypesEnum["Software"] = "Software";
+    ServiceNowIntegrationInfoModelServiceNowCategoryTypesEnum["Hardware"] = "Hardware";
+    ServiceNowIntegrationInfoModelServiceNowCategoryTypesEnum["Network"] = "Network";
+    ServiceNowIntegrationInfoModelServiceNowCategoryTypesEnum["Database"] = "Database";
+})(ServiceNowIntegrationInfoModelServiceNowCategoryTypesEnum = exports.ServiceNowIntegrationInfoModelServiceNowCategoryTypesEnum || (exports.ServiceNowIntegrationInfoModelServiceNowCategoryTypesEnum = {}));
 /**
- * @export
- */
-exports.ServiceNowIntegrationInfoModelServiceNowReopenCategoryTypeEnum = {
-    New: 'New',
-    InProgress: 'In_Progress',
-    OnHold: 'On_Hold'
-};
+* @export
+* @enum {string}
+*/
+var ServiceNowIntegrationInfoModelServiceNowReopenCategoryTypeEnum;
+(function (ServiceNowIntegrationInfoModelServiceNowReopenCategoryTypeEnum) {
+    ServiceNowIntegrationInfoModelServiceNowReopenCategoryTypeEnum["New"] = "New";
+    ServiceNowIntegrationInfoModelServiceNowReopenCategoryTypeEnum["InProgress"] = "In_Progress";
+    ServiceNowIntegrationInfoModelServiceNowReopenCategoryTypeEnum["OnHold"] = "On_Hold";
+})(ServiceNowIntegrationInfoModelServiceNowReopenCategoryTypeEnum = exports.ServiceNowIntegrationInfoModelServiceNowReopenCategoryTypeEnum || (exports.ServiceNowIntegrationInfoModelServiceNowReopenCategoryTypeEnum = {}));
 /**
- * @export
- */
-exports.ServiceNowIntegrationInfoModelServiceNowOnHoldReasonTypeEnum = {
-    AwaitingCaller: 'AwaitingCaller',
-    AwaitingChange: 'AwaitingChange',
-    AwaitingProblem: 'AwaitingProblem',
-    AwaitingVendor: 'AwaitingVendor'
-};
+* @export
+* @enum {string}
+*/
+var ServiceNowIntegrationInfoModelServiceNowOnHoldReasonTypeEnum;
+(function (ServiceNowIntegrationInfoModelServiceNowOnHoldReasonTypeEnum) {
+    ServiceNowIntegrationInfoModelServiceNowOnHoldReasonTypeEnum["AwaitingCaller"] = "AwaitingCaller";
+    ServiceNowIntegrationInfoModelServiceNowOnHoldReasonTypeEnum["AwaitingChange"] = "AwaitingChange";
+    ServiceNowIntegrationInfoModelServiceNowOnHoldReasonTypeEnum["AwaitingProblem"] = "AwaitingProblem";
+    ServiceNowIntegrationInfoModelServiceNowOnHoldReasonTypeEnum["AwaitingVendor"] = "AwaitingVendor";
+})(ServiceNowIntegrationInfoModelServiceNowOnHoldReasonTypeEnum = exports.ServiceNowIntegrationInfoModelServiceNowOnHoldReasonTypeEnum || (exports.ServiceNowIntegrationInfoModelServiceNowOnHoldReasonTypeEnum = {}));
 /**
- * @export
- */
-exports.ServiceNowIntegrationInfoModelResolvedStatusServiceNowEnum = {
-    Resolved: 'Resolved',
-    Closed: 'Closed'
-};
+* @export
+* @enum {string}
+*/
+var ServiceNowIntegrationInfoModelResolvedStatusServiceNowEnum;
+(function (ServiceNowIntegrationInfoModelResolvedStatusServiceNowEnum) {
+    ServiceNowIntegrationInfoModelResolvedStatusServiceNowEnum["Resolved"] = "Resolved";
+    ServiceNowIntegrationInfoModelResolvedStatusServiceNowEnum["Closed"] = "Closed";
+})(ServiceNowIntegrationInfoModelResolvedStatusServiceNowEnum = exports.ServiceNowIntegrationInfoModelResolvedStatusServiceNowEnum || (exports.ServiceNowIntegrationInfoModelResolvedStatusServiceNowEnum = {}));
 /**
- * @export
- */
-exports.ServiceNowIntegrationInfoModelTemplateTypeEnum = {
-    Standard: 'Standard',
-    Detailed: 'Detailed'
-};
+* @export
+* @enum {string}
+*/
+var ServiceNowIntegrationInfoModelTemplateTypeEnum;
+(function (ServiceNowIntegrationInfoModelTemplateTypeEnum) {
+    ServiceNowIntegrationInfoModelTemplateTypeEnum["Standard"] = "Standard";
+    ServiceNowIntegrationInfoModelTemplateTypeEnum["Detailed"] = "Detailed";
+})(ServiceNowIntegrationInfoModelTemplateTypeEnum = exports.ServiceNowIntegrationInfoModelTemplateTypeEnum || (exports.ServiceNowIntegrationInfoModelTemplateTypeEnum = {}));
 /**
- * @export
- */
-exports.ServiceNowIntegrationInfoModelTypeEnum = {
-    NetsparkerEnterprise: 'NetsparkerEnterprise',
-    Webhook: 'Webhook',
-    Zapier: 'Zapier',
-    Slack: 'Slack',
-    Mattermost: 'Mattermost',
-    MicrosoftTeams: 'MicrosoftTeams',
-    AzureDevOps: 'AzureDevOps',
-    Bitbucket: 'Bitbucket',
-    Bugzilla: 'Bugzilla',
-    Clubhouse: 'Clubhouse',
-    DefectDojo: 'DefectDojo',
-    PivotalTracker: 'PivotalTracker',
-    Jira: 'Jira',
-    FogBugz: 'FogBugz',
-    GitHub: 'GitHub',
-    PagerDuty: 'PagerDuty',
-    Kafka: 'Kafka',
-    Kenna: 'Kenna',
-    Redmine: 'Redmine',
-    ServiceNow: 'ServiceNow',
-    Tfs: 'TFS',
-    Unfuddle: 'Unfuddle',
-    YouTrack: 'YouTrack',
-    Freshservice: 'Freshservice',
-    Splunk: 'Splunk',
-    JazzTeam: 'JazzTeam',
-    ServiceNowVrm: 'ServiceNowVRM',
-    Asana: 'Asana',
-    Trello: 'Trello',
-    Hashicorp: 'Hashicorp',
-    CyberArk: 'CyberArk',
-    AzureKeyVault: 'AzureKeyVault',
-    GitLab: 'GitLab'
-};
+* @export
+* @enum {string}
+*/
+var ServiceNowIntegrationInfoModelTypeEnum;
+(function (ServiceNowIntegrationInfoModelTypeEnum) {
+    ServiceNowIntegrationInfoModelTypeEnum["NetsparkerEnterprise"] = "NetsparkerEnterprise";
+    ServiceNowIntegrationInfoModelTypeEnum["Webhook"] = "Webhook";
+    ServiceNowIntegrationInfoModelTypeEnum["Zapier"] = "Zapier";
+    ServiceNowIntegrationInfoModelTypeEnum["Slack"] = "Slack";
+    ServiceNowIntegrationInfoModelTypeEnum["Mattermost"] = "Mattermost";
+    ServiceNowIntegrationInfoModelTypeEnum["MicrosoftTeams"] = "MicrosoftTeams";
+    ServiceNowIntegrationInfoModelTypeEnum["AzureDevOps"] = "AzureDevOps";
+    ServiceNowIntegrationInfoModelTypeEnum["Bitbucket"] = "Bitbucket";
+    ServiceNowIntegrationInfoModelTypeEnum["Bugzilla"] = "Bugzilla";
+    ServiceNowIntegrationInfoModelTypeEnum["Clubhouse"] = "Clubhouse";
+    ServiceNowIntegrationInfoModelTypeEnum["DefectDojo"] = "DefectDojo";
+    ServiceNowIntegrationInfoModelTypeEnum["PivotalTracker"] = "PivotalTracker";
+    ServiceNowIntegrationInfoModelTypeEnum["Jira"] = "Jira";
+    ServiceNowIntegrationInfoModelTypeEnum["FogBugz"] = "FogBugz";
+    ServiceNowIntegrationInfoModelTypeEnum["GitHub"] = "GitHub";
+    ServiceNowIntegrationInfoModelTypeEnum["PagerDuty"] = "PagerDuty";
+    ServiceNowIntegrationInfoModelTypeEnum["Kafka"] = "Kafka";
+    ServiceNowIntegrationInfoModelTypeEnum["Kenna"] = "Kenna";
+    ServiceNowIntegrationInfoModelTypeEnum["Redmine"] = "Redmine";
+    ServiceNowIntegrationInfoModelTypeEnum["ServiceNow"] = "ServiceNow";
+    ServiceNowIntegrationInfoModelTypeEnum["Tfs"] = "TFS";
+    ServiceNowIntegrationInfoModelTypeEnum["Unfuddle"] = "Unfuddle";
+    ServiceNowIntegrationInfoModelTypeEnum["YouTrack"] = "YouTrack";
+    ServiceNowIntegrationInfoModelTypeEnum["Freshservice"] = "Freshservice";
+    ServiceNowIntegrationInfoModelTypeEnum["Splunk"] = "Splunk";
+    ServiceNowIntegrationInfoModelTypeEnum["JazzTeam"] = "JazzTeam";
+    ServiceNowIntegrationInfoModelTypeEnum["ServiceNowVrm"] = "ServiceNowVRM";
+    ServiceNowIntegrationInfoModelTypeEnum["Asana"] = "Asana";
+    ServiceNowIntegrationInfoModelTypeEnum["Trello"] = "Trello";
+    ServiceNowIntegrationInfoModelTypeEnum["Hashicorp"] = "Hashicorp";
+    ServiceNowIntegrationInfoModelTypeEnum["CyberArk"] = "CyberArk";
+    ServiceNowIntegrationInfoModelTypeEnum["AzureKeyVault"] = "AzureKeyVault";
+    ServiceNowIntegrationInfoModelTypeEnum["GitLab"] = "GitLab";
+})(ServiceNowIntegrationInfoModelTypeEnum = exports.ServiceNowIntegrationInfoModelTypeEnum || (exports.ServiceNowIntegrationInfoModelTypeEnum = {}));
 /**
  * Check if a given object implements the ServiceNowIntegrationInfoModel interface.
  */

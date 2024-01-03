@@ -71,29 +71,29 @@ export interface UpdateWebsiteApiModel {
     tags?: Array<string>;
 }
 /**
- * @export
- */
-export declare const UpdateWebsiteApiModelDefaultProtocolEnum: {
-    readonly Http: "Http";
-    readonly Https: "Https";
-};
-export type UpdateWebsiteApiModelDefaultProtocolEnum = typeof UpdateWebsiteApiModelDefaultProtocolEnum[keyof typeof UpdateWebsiteApiModelDefaultProtocolEnum];
+* @export
+* @enum {string}
+*/
+export declare enum UpdateWebsiteApiModelDefaultProtocolEnum {
+    Http = "Http",
+    Https = "Https"
+}
 /**
- * @export
- */
-export declare const UpdateWebsiteApiModelAgentModeEnum: {
-    readonly Cloud: "Cloud";
-    readonly Internal: "Internal";
-};
-export type UpdateWebsiteApiModelAgentModeEnum = typeof UpdateWebsiteApiModelAgentModeEnum[keyof typeof UpdateWebsiteApiModelAgentModeEnum];
+* @export
+* @enum {string}
+*/
+export declare enum UpdateWebsiteApiModelAgentModeEnum {
+    Cloud = "Cloud",
+    Internal = "Internal"
+}
 /**
- * @export
- */
-export declare const UpdateWebsiteApiModelLicenseTypeEnum: {
-    readonly Subscription: "Subscription";
-    readonly Credit: "Credit";
-};
-export type UpdateWebsiteApiModelLicenseTypeEnum = typeof UpdateWebsiteApiModelLicenseTypeEnum[keyof typeof UpdateWebsiteApiModelLicenseTypeEnum];
+* @export
+* @enum {string}
+*/
+export declare enum UpdateWebsiteApiModelLicenseTypeEnum {
+    Subscription = "Subscription",
+    Credit = "Credit"
+}
 /**
  * Check if a given object implements the UpdateWebsiteApiModel interface.
  */

@@ -16,12 +16,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.FormAuthenticationCyberArkVaultSettingToJSON = exports.FormAuthenticationCyberArkVaultSettingFromJSONTyped = exports.FormAuthenticationCyberArkVaultSettingFromJSON = exports.instanceOfFormAuthenticationCyberArkVaultSetting = exports.FormAuthenticationCyberArkVaultSettingAgentModeEnum = void 0;
 const runtime_1 = require("../runtime");
 /**
- * @export
- */
-exports.FormAuthenticationCyberArkVaultSettingAgentModeEnum = {
-    Cloud: 'Cloud',
-    Internal: 'Internal'
-};
+* @export
+* @enum {string}
+*/
+var FormAuthenticationCyberArkVaultSettingAgentModeEnum;
+(function (FormAuthenticationCyberArkVaultSettingAgentModeEnum) {
+    FormAuthenticationCyberArkVaultSettingAgentModeEnum["Cloud"] = "Cloud";
+    FormAuthenticationCyberArkVaultSettingAgentModeEnum["Internal"] = "Internal";
+})(FormAuthenticationCyberArkVaultSettingAgentModeEnum = exports.FormAuthenticationCyberArkVaultSettingAgentModeEnum || (exports.FormAuthenticationCyberArkVaultSettingAgentModeEnum = {}));
 /**
  * Check if a given object implements the FormAuthenticationCyberArkVaultSetting interface.
  */

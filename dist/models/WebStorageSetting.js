@@ -16,12 +16,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.WebStorageSettingToJSON = exports.WebStorageSettingFromJSONTyped = exports.WebStorageSettingFromJSON = exports.instanceOfWebStorageSetting = exports.WebStorageSettingTypeEnum = void 0;
 const runtime_1 = require("../runtime");
 /**
- * @export
- */
-exports.WebStorageSettingTypeEnum = {
-    Local: 'Local',
-    Session: 'Session'
-};
+* @export
+* @enum {string}
+*/
+var WebStorageSettingTypeEnum;
+(function (WebStorageSettingTypeEnum) {
+    WebStorageSettingTypeEnum["Local"] = "Local";
+    WebStorageSettingTypeEnum["Session"] = "Session";
+})(WebStorageSettingTypeEnum = exports.WebStorageSettingTypeEnum || (exports.WebStorageSettingTypeEnum = {}));
 /**
  * Check if a given object implements the WebStorageSetting interface.
  */

@@ -16,73 +16,85 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ScheduledScanRecurrenceViewModelToJSON = exports.ScheduledScanRecurrenceViewModelFromJSONTyped = exports.ScheduledScanRecurrenceViewModelFromJSON = exports.instanceOfScheduledScanRecurrenceViewModel = exports.ScheduledScanRecurrenceViewModelDayOfWeekEnum = exports.ScheduledScanRecurrenceViewModelOrdinalEnum = exports.ScheduledScanRecurrenceViewModelMonthsOfYearEnum = exports.ScheduledScanRecurrenceViewModelDaysOfWeekEnum = exports.ScheduledScanRecurrenceViewModelEndingTypeEnum = exports.ScheduledScanRecurrenceViewModelRepeatTypeEnum = void 0;
 const runtime_1 = require("../runtime");
 /**
- * @export
- */
-exports.ScheduledScanRecurrenceViewModelRepeatTypeEnum = {
-    Days: 'Days',
-    Weeks: 'Weeks',
-    Months: 'Months',
-    Years: 'Years'
-};
+* @export
+* @enum {string}
+*/
+var ScheduledScanRecurrenceViewModelRepeatTypeEnum;
+(function (ScheduledScanRecurrenceViewModelRepeatTypeEnum) {
+    ScheduledScanRecurrenceViewModelRepeatTypeEnum["Days"] = "Days";
+    ScheduledScanRecurrenceViewModelRepeatTypeEnum["Weeks"] = "Weeks";
+    ScheduledScanRecurrenceViewModelRepeatTypeEnum["Months"] = "Months";
+    ScheduledScanRecurrenceViewModelRepeatTypeEnum["Years"] = "Years";
+})(ScheduledScanRecurrenceViewModelRepeatTypeEnum = exports.ScheduledScanRecurrenceViewModelRepeatTypeEnum || (exports.ScheduledScanRecurrenceViewModelRepeatTypeEnum = {}));
 /**
- * @export
- */
-exports.ScheduledScanRecurrenceViewModelEndingTypeEnum = {
-    Never: 'Never',
-    Date: 'Date',
-    Occurences: 'Occurences'
-};
+* @export
+* @enum {string}
+*/
+var ScheduledScanRecurrenceViewModelEndingTypeEnum;
+(function (ScheduledScanRecurrenceViewModelEndingTypeEnum) {
+    ScheduledScanRecurrenceViewModelEndingTypeEnum["Never"] = "Never";
+    ScheduledScanRecurrenceViewModelEndingTypeEnum["Date"] = "Date";
+    ScheduledScanRecurrenceViewModelEndingTypeEnum["Occurences"] = "Occurences";
+})(ScheduledScanRecurrenceViewModelEndingTypeEnum = exports.ScheduledScanRecurrenceViewModelEndingTypeEnum || (exports.ScheduledScanRecurrenceViewModelEndingTypeEnum = {}));
 /**
- * @export
- */
-exports.ScheduledScanRecurrenceViewModelDaysOfWeekEnum = {
-    Sunday: 'Sunday',
-    Monday: 'Monday',
-    Tuesday: 'Tuesday',
-    Wednesday: 'Wednesday',
-    Thursday: 'Thursday',
-    Friday: 'Friday',
-    Saturday: 'Saturday'
-};
+* @export
+* @enum {string}
+*/
+var ScheduledScanRecurrenceViewModelDaysOfWeekEnum;
+(function (ScheduledScanRecurrenceViewModelDaysOfWeekEnum) {
+    ScheduledScanRecurrenceViewModelDaysOfWeekEnum["Sunday"] = "Sunday";
+    ScheduledScanRecurrenceViewModelDaysOfWeekEnum["Monday"] = "Monday";
+    ScheduledScanRecurrenceViewModelDaysOfWeekEnum["Tuesday"] = "Tuesday";
+    ScheduledScanRecurrenceViewModelDaysOfWeekEnum["Wednesday"] = "Wednesday";
+    ScheduledScanRecurrenceViewModelDaysOfWeekEnum["Thursday"] = "Thursday";
+    ScheduledScanRecurrenceViewModelDaysOfWeekEnum["Friday"] = "Friday";
+    ScheduledScanRecurrenceViewModelDaysOfWeekEnum["Saturday"] = "Saturday";
+})(ScheduledScanRecurrenceViewModelDaysOfWeekEnum = exports.ScheduledScanRecurrenceViewModelDaysOfWeekEnum || (exports.ScheduledScanRecurrenceViewModelDaysOfWeekEnum = {}));
 /**
- * @export
- */
-exports.ScheduledScanRecurrenceViewModelMonthsOfYearEnum = {
-    January: 'January',
-    February: 'February',
-    March: 'March',
-    April: 'April',
-    May: 'May',
-    June: 'June',
-    July: 'July',
-    August: 'August',
-    September: 'September',
-    October: 'October',
-    November: 'November',
-    December: 'December'
-};
+* @export
+* @enum {string}
+*/
+var ScheduledScanRecurrenceViewModelMonthsOfYearEnum;
+(function (ScheduledScanRecurrenceViewModelMonthsOfYearEnum) {
+    ScheduledScanRecurrenceViewModelMonthsOfYearEnum["January"] = "January";
+    ScheduledScanRecurrenceViewModelMonthsOfYearEnum["February"] = "February";
+    ScheduledScanRecurrenceViewModelMonthsOfYearEnum["March"] = "March";
+    ScheduledScanRecurrenceViewModelMonthsOfYearEnum["April"] = "April";
+    ScheduledScanRecurrenceViewModelMonthsOfYearEnum["May"] = "May";
+    ScheduledScanRecurrenceViewModelMonthsOfYearEnum["June"] = "June";
+    ScheduledScanRecurrenceViewModelMonthsOfYearEnum["July"] = "July";
+    ScheduledScanRecurrenceViewModelMonthsOfYearEnum["August"] = "August";
+    ScheduledScanRecurrenceViewModelMonthsOfYearEnum["September"] = "September";
+    ScheduledScanRecurrenceViewModelMonthsOfYearEnum["October"] = "October";
+    ScheduledScanRecurrenceViewModelMonthsOfYearEnum["November"] = "November";
+    ScheduledScanRecurrenceViewModelMonthsOfYearEnum["December"] = "December";
+})(ScheduledScanRecurrenceViewModelMonthsOfYearEnum = exports.ScheduledScanRecurrenceViewModelMonthsOfYearEnum || (exports.ScheduledScanRecurrenceViewModelMonthsOfYearEnum = {}));
 /**
- * @export
- */
-exports.ScheduledScanRecurrenceViewModelOrdinalEnum = {
-    First: 'First',
-    Second: 'Second',
-    Third: 'Third',
-    Fourth: 'Fourth',
-    Last: 'Last'
-};
+* @export
+* @enum {string}
+*/
+var ScheduledScanRecurrenceViewModelOrdinalEnum;
+(function (ScheduledScanRecurrenceViewModelOrdinalEnum) {
+    ScheduledScanRecurrenceViewModelOrdinalEnum["First"] = "First";
+    ScheduledScanRecurrenceViewModelOrdinalEnum["Second"] = "Second";
+    ScheduledScanRecurrenceViewModelOrdinalEnum["Third"] = "Third";
+    ScheduledScanRecurrenceViewModelOrdinalEnum["Fourth"] = "Fourth";
+    ScheduledScanRecurrenceViewModelOrdinalEnum["Last"] = "Last";
+})(ScheduledScanRecurrenceViewModelOrdinalEnum = exports.ScheduledScanRecurrenceViewModelOrdinalEnum || (exports.ScheduledScanRecurrenceViewModelOrdinalEnum = {}));
 /**
- * @export
- */
-exports.ScheduledScanRecurrenceViewModelDayOfWeekEnum = {
-    Sunday: 'Sunday',
-    Monday: 'Monday',
-    Tuesday: 'Tuesday',
-    Wednesday: 'Wednesday',
-    Thursday: 'Thursday',
-    Friday: 'Friday',
-    Saturday: 'Saturday'
-};
+* @export
+* @enum {string}
+*/
+var ScheduledScanRecurrenceViewModelDayOfWeekEnum;
+(function (ScheduledScanRecurrenceViewModelDayOfWeekEnum) {
+    ScheduledScanRecurrenceViewModelDayOfWeekEnum["Sunday"] = "Sunday";
+    ScheduledScanRecurrenceViewModelDayOfWeekEnum["Monday"] = "Monday";
+    ScheduledScanRecurrenceViewModelDayOfWeekEnum["Tuesday"] = "Tuesday";
+    ScheduledScanRecurrenceViewModelDayOfWeekEnum["Wednesday"] = "Wednesday";
+    ScheduledScanRecurrenceViewModelDayOfWeekEnum["Thursday"] = "Thursday";
+    ScheduledScanRecurrenceViewModelDayOfWeekEnum["Friday"] = "Friday";
+    ScheduledScanRecurrenceViewModelDayOfWeekEnum["Saturday"] = "Saturday";
+})(ScheduledScanRecurrenceViewModelDayOfWeekEnum = exports.ScheduledScanRecurrenceViewModelDayOfWeekEnum || (exports.ScheduledScanRecurrenceViewModelDayOfWeekEnum = {}));
 /**
  * Check if a given object implements the ScheduledScanRecurrenceViewModel interface.
  */

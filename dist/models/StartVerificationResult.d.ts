@@ -35,14 +35,14 @@ export interface StartVerificationResult {
     verifyOwnershipResult?: StartVerificationResultVerifyOwnershipResultEnum;
 }
 /**
- * @export
- */
-export declare const StartVerificationResultVerifyOwnershipResultEnum: {
-    readonly Verified: "Verified";
-    readonly NotVerified: "NotVerified";
-    readonly VerificationLimitExceed: "VerificationLimitExceed";
-};
-export type StartVerificationResultVerifyOwnershipResultEnum = typeof StartVerificationResultVerifyOwnershipResultEnum[keyof typeof StartVerificationResultVerifyOwnershipResultEnum];
+* @export
+* @enum {string}
+*/
+export declare enum StartVerificationResultVerifyOwnershipResultEnum {
+    Verified = "Verified",
+    NotVerified = "NotVerified",
+    VerificationLimitExceed = "VerificationLimitExceed"
+}
 /**
  * Check if a given object implements the StartVerificationResult interface.
  */

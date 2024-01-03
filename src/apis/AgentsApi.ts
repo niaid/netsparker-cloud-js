@@ -28,16 +28,16 @@ import {
     DeleteAgentModelToJSON,
 } from '../models/index';
 
-export interface AgentsDeleteRequest {
+export interface AgentsApiAgentsDeleteRequest {
     model: DeleteAgentModel;
 }
 
-export interface AgentsListRequest {
+export interface AgentsApiAgentsListRequest {
     page?: number;
     pageSize?: number;
 }
 
-export interface AgentsSetStatusRequest {
+export interface AgentsApiAgentsSetStatusRequest {
     model: AgentStatusModel;
 }
 
@@ -49,7 +49,7 @@ export class AgentsApi extends runtime.BaseAPI {
     /**
      * Sets agent status as terminated.  Before deleting an agent, please make sure that you\'ve stopped the related service from the Windows Services Manager screen.  If it is running, the agent will reappear on the page despite removal.
      */
-    async agentsDeleteRaw(requestParameters: AgentsDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async agentsDeleteRaw(requestParameters: AgentsApiAgentsDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters.model === null || requestParameters.model === undefined) {
             throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling agentsDelete.');
         }
@@ -74,14 +74,14 @@ export class AgentsApi extends runtime.BaseAPI {
     /**
      * Sets agent status as terminated.  Before deleting an agent, please make sure that you\'ve stopped the related service from the Windows Services Manager screen.  If it is running, the agent will reappear on the page despite removal.
      */
-    async agentsDelete(requestParameters: AgentsDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+    async agentsDelete(requestParameters: AgentsApiAgentsDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
         await this.agentsDeleteRaw(requestParameters, initOverrides);
     }
 
     /**
      * Gets the list of agents.
      */
-    async agentsListRaw(requestParameters: AgentsListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AgentListApiResult>> {
+    async agentsListRaw(requestParameters: AgentsApiAgentsListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AgentListApiResult>> {
         const queryParameters: any = {};
 
         if (requestParameters.page !== undefined) {
@@ -107,7 +107,7 @@ export class AgentsApi extends runtime.BaseAPI {
     /**
      * Gets the list of agents.
      */
-    async agentsList(requestParameters: AgentsListRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AgentListApiResult> {
+    async agentsList(requestParameters: AgentsApiAgentsListRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AgentListApiResult> {
         const response = await this.agentsListRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -115,7 +115,7 @@ export class AgentsApi extends runtime.BaseAPI {
     /**
      * Sets agent status enable or disable.
      */
-    async agentsSetStatusRaw(requestParameters: AgentsSetStatusRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async agentsSetStatusRaw(requestParameters: AgentsApiAgentsSetStatusRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters.model === null || requestParameters.model === undefined) {
             throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling agentsSetStatus.');
         }
@@ -140,7 +140,7 @@ export class AgentsApi extends runtime.BaseAPI {
     /**
      * Sets agent status enable or disable.
      */
-    async agentsSetStatus(requestParameters: AgentsSetStatusRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+    async agentsSetStatus(requestParameters: AgentsApiAgentsSetStatusRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
         await this.agentsSetStatusRaw(requestParameters, initOverrides);
     }
 

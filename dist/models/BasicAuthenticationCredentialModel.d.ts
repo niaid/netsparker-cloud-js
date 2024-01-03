@@ -71,16 +71,16 @@ export interface BasicAuthenticationCredentialModel {
     isReplacedCredentials?: boolean;
 }
 /**
- * @export
- */
-export declare const BasicAuthenticationCredentialModelAuthenticationTypeEnum: {
-    readonly Basic: "Basic";
-    readonly Ntlm: "Ntlm";
-    readonly Kerberos: "Kerberos";
-    readonly Digest: "Digest";
-    readonly Negotiate: "Negotiate";
-};
-export type BasicAuthenticationCredentialModelAuthenticationTypeEnum = typeof BasicAuthenticationCredentialModelAuthenticationTypeEnum[keyof typeof BasicAuthenticationCredentialModelAuthenticationTypeEnum];
+* @export
+* @enum {string}
+*/
+export declare enum BasicAuthenticationCredentialModelAuthenticationTypeEnum {
+    Basic = "Basic",
+    Ntlm = "Ntlm",
+    Kerberos = "Kerberos",
+    Digest = "Digest",
+    Negotiate = "Negotiate"
+}
 /**
  * Check if a given object implements the BasicAuthenticationCredentialModel interface.
  */

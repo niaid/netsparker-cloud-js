@@ -75,33 +75,30 @@ export interface UpdateWebsiteApiModel {
     tags?: Array<string>;
 }
 
-
 /**
- * @export
- */
-export const UpdateWebsiteApiModelDefaultProtocolEnum = {
-    Http: 'Http',
-    Https: 'Https'
-} as const;
-export type UpdateWebsiteApiModelDefaultProtocolEnum = typeof UpdateWebsiteApiModelDefaultProtocolEnum[keyof typeof UpdateWebsiteApiModelDefaultProtocolEnum];
-
+* @export
+* @enum {string}
+*/
+export enum UpdateWebsiteApiModelDefaultProtocolEnum {
+    Http = 'Http',
+    Https = 'Https'
+}
 /**
- * @export
- */
-export const UpdateWebsiteApiModelAgentModeEnum = {
-    Cloud: 'Cloud',
-    Internal: 'Internal'
-} as const;
-export type UpdateWebsiteApiModelAgentModeEnum = typeof UpdateWebsiteApiModelAgentModeEnum[keyof typeof UpdateWebsiteApiModelAgentModeEnum];
-
+* @export
+* @enum {string}
+*/
+export enum UpdateWebsiteApiModelAgentModeEnum {
+    Cloud = 'Cloud',
+    Internal = 'Internal'
+}
 /**
- * @export
- */
-export const UpdateWebsiteApiModelLicenseTypeEnum = {
-    Subscription: 'Subscription',
-    Credit: 'Credit'
-} as const;
-export type UpdateWebsiteApiModelLicenseTypeEnum = typeof UpdateWebsiteApiModelLicenseTypeEnum[keyof typeof UpdateWebsiteApiModelLicenseTypeEnum];
+* @export
+* @enum {string}
+*/
+export enum UpdateWebsiteApiModelLicenseTypeEnum {
+    Subscription = 'Subscription',
+    Credit = 'Credit'
+}
 
 
 /**

@@ -29,17 +29,17 @@ export interface DeleteWebsiteGroupResponse {
     message?: string;
 }
 /**
- * @export
- */
-export declare const DeleteWebsiteGroupResponseResultEnum: {
-    readonly Ok: "Ok";
-    readonly NotFound: "NotFound";
-    readonly WebsitesExisting: "WebsitesExisting";
-    readonly ScheduledScanExists: "ScheduledScanExists";
-    readonly OneWebsiteGroupMustExist: "OneWebsiteGroupMustExist";
-    readonly ScanNotificationRuleExists: "ScanNotificationRuleExists";
-};
-export type DeleteWebsiteGroupResponseResultEnum = typeof DeleteWebsiteGroupResponseResultEnum[keyof typeof DeleteWebsiteGroupResponseResultEnum];
+* @export
+* @enum {string}
+*/
+export declare enum DeleteWebsiteGroupResponseResultEnum {
+    Ok = "Ok",
+    NotFound = "NotFound",
+    WebsitesExisting = "WebsitesExisting",
+    ScheduledScanExists = "ScheduledScanExists",
+    OneWebsiteGroupMustExist = "OneWebsiteGroupMustExist",
+    ScanNotificationRuleExists = "ScanNotificationRuleExists"
+}
 /**
  * Check if a given object implements the DeleteWebsiteGroupResponse interface.
  */

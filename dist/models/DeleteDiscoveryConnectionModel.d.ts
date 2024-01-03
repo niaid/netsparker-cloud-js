@@ -29,12 +29,12 @@ export interface DeleteDiscoveryConnectionModel {
     type?: DeleteDiscoveryConnectionModelTypeEnum;
 }
 /**
- * @export
- */
-export declare const DeleteDiscoveryConnectionModelTypeEnum: {
-    readonly Aws: "Aws";
-};
-export type DeleteDiscoveryConnectionModelTypeEnum = typeof DeleteDiscoveryConnectionModelTypeEnum[keyof typeof DeleteDiscoveryConnectionModelTypeEnum];
+* @export
+* @enum {string}
+*/
+export declare enum DeleteDiscoveryConnectionModelTypeEnum {
+    Aws = "Aws"
+}
 /**
  * Check if a given object implements the DeleteDiscoveryConnectionModel interface.
  */

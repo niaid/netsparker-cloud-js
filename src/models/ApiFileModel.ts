@@ -57,42 +57,40 @@ export interface ApiFileModel {
     type?: ApiFileModelTypeEnum;
 }
 
-
 /**
- * @export
- */
-export const ApiFileModelImporterTypeEnum = {
-    None: 'None',
-    Fiddler: 'Fiddler',
-    Burp: 'Burp',
-    Swagger: 'Swagger',
-    OwaspZap: 'OwaspZap',
-    AspNet: 'AspNet',
-    HttpArchive: 'HttpArchive',
-    Wadl: 'Wadl',
-    Wsdl: 'Wsdl',
-    Postman: 'Postman',
-    Netsparker: 'Netsparker',
-    HttpRequestImporter: 'HttpRequestImporter',
-    LinkImporter: 'LinkImporter',
-    CsvImporter: 'CsvImporter',
-    Iodocs: 'Iodocs',
-    WordPress: 'WordPress',
-    Raml: 'Raml',
-    GraphQl: 'GraphQl',
-    AcxXml: 'AcxXml'
-} as const;
-export type ApiFileModelImporterTypeEnum = typeof ApiFileModelImporterTypeEnum[keyof typeof ApiFileModelImporterTypeEnum];
-
+* @export
+* @enum {string}
+*/
+export enum ApiFileModelImporterTypeEnum {
+    None = 'None',
+    Fiddler = 'Fiddler',
+    Burp = 'Burp',
+    Swagger = 'Swagger',
+    OwaspZap = 'OwaspZap',
+    AspNet = 'AspNet',
+    HttpArchive = 'HttpArchive',
+    Wadl = 'Wadl',
+    Wsdl = 'Wsdl',
+    Postman = 'Postman',
+    Netsparker = 'Netsparker',
+    HttpRequestImporter = 'HttpRequestImporter',
+    LinkImporter = 'LinkImporter',
+    CsvImporter = 'CsvImporter',
+    Iodocs = 'Iodocs',
+    WordPress = 'WordPress',
+    Raml = 'Raml',
+    GraphQl = 'GraphQl',
+    AcxXml = 'AcxXml'
+}
 /**
- * @export
- */
-export const ApiFileModelTypeEnum = {
-    LinkImportFile: 'LinkImportFile',
-    LinkImportUrl: 'LinkImportUrl',
-    LinkImportEnterLink: 'LinkImportEnterLink'
-} as const;
-export type ApiFileModelTypeEnum = typeof ApiFileModelTypeEnum[keyof typeof ApiFileModelTypeEnum];
+* @export
+* @enum {string}
+*/
+export enum ApiFileModelTypeEnum {
+    LinkImportFile = 'LinkImportFile',
+    LinkImportUrl = 'LinkImportUrl',
+    LinkImportEnterLink = 'LinkImportEnterLink'
+}
 
 
 /**

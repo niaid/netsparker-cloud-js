@@ -77,13 +77,13 @@ export interface FormAuthenticationAzureKeyVaultSetting {
     agentMode?: FormAuthenticationAzureKeyVaultSettingAgentModeEnum;
 }
 /**
- * @export
- */
-export declare const FormAuthenticationAzureKeyVaultSettingAgentModeEnum: {
-    readonly Cloud: "Cloud";
-    readonly Internal: "Internal";
-};
-export type FormAuthenticationAzureKeyVaultSettingAgentModeEnum = typeof FormAuthenticationAzureKeyVaultSettingAgentModeEnum[keyof typeof FormAuthenticationAzureKeyVaultSettingAgentModeEnum];
+* @export
+* @enum {string}
+*/
+export declare enum FormAuthenticationAzureKeyVaultSettingAgentModeEnum {
+    Cloud = "Cloud",
+    Internal = "Internal"
+}
 /**
  * Check if a given object implements the FormAuthenticationAzureKeyVaultSetting interface.
  */

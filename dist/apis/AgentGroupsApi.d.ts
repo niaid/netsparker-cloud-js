@@ -11,17 +11,17 @@
  */
 import * as runtime from '../runtime';
 import type { AgentGroupApiDeleteModel, AgentGroupApiNewModel, AgentGroupApiUpdateModel, AgentGroupModel, AgentGroupsListApiResult } from '../models/index';
-export interface AgentGroupsDeleteRequest {
+export interface AgentGroupsApiAgentGroupsDeleteRequest {
     model: AgentGroupApiDeleteModel;
 }
-export interface AgentGroupsListRequest {
+export interface AgentGroupsApiAgentGroupsListRequest {
     page?: number;
     pageSize?: number;
 }
-export interface AgentGroupsNewRequest {
+export interface AgentGroupsApiAgentGroupsNewRequest {
     model: AgentGroupApiNewModel;
 }
-export interface AgentGroupsUpdateRequest {
+export interface AgentGroupsApiAgentGroupsUpdateRequest {
     model: AgentGroupApiUpdateModel;
 }
 /**
@@ -31,33 +31,33 @@ export declare class AgentGroupsApi extends runtime.BaseAPI {
     /**
      * Deletes the agent group
      */
-    agentGroupsDeleteRaw(requestParameters: AgentGroupsDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>>;
+    agentGroupsDeleteRaw(requestParameters: AgentGroupsApiAgentGroupsDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>>;
     /**
      * Deletes the agent group
      */
-    agentGroupsDelete(requestParameters: AgentGroupsDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object>;
+    agentGroupsDelete(requestParameters: AgentGroupsApiAgentGroupsDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object>;
     /**
      * Gets the list of agent groups.
      */
-    agentGroupsListRaw(requestParameters: AgentGroupsListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AgentGroupsListApiResult>>;
+    agentGroupsListRaw(requestParameters: AgentGroupsApiAgentGroupsListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AgentGroupsListApiResult>>;
     /**
      * Gets the list of agent groups.
      */
-    agentGroupsList(requestParameters?: AgentGroupsListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AgentGroupsListApiResult>;
+    agentGroupsList(requestParameters?: AgentGroupsApiAgentGroupsListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AgentGroupsListApiResult>;
     /**
      * Creates a new agent group
      */
-    agentGroupsNewRaw(requestParameters: AgentGroupsNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AgentGroupModel>>;
+    agentGroupsNewRaw(requestParameters: AgentGroupsApiAgentGroupsNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AgentGroupModel>>;
     /**
      * Creates a new agent group
      */
-    agentGroupsNew(requestParameters: AgentGroupsNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AgentGroupModel>;
+    agentGroupsNew(requestParameters: AgentGroupsApiAgentGroupsNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AgentGroupModel>;
     /**
      * Updates the agent group
      */
-    agentGroupsUpdateRaw(requestParameters: AgentGroupsUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AgentGroupModel>>;
+    agentGroupsUpdateRaw(requestParameters: AgentGroupsApiAgentGroupsUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AgentGroupModel>>;
     /**
      * Updates the agent group
      */
-    agentGroupsUpdate(requestParameters: AgentGroupsUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AgentGroupModel>;
+    agentGroupsUpdate(requestParameters: AgentGroupsApiAgentGroupsUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AgentGroupModel>;
 }

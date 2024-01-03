@@ -20,65 +20,73 @@ const IntegrationUserMappingItemModel_1 = require("./IntegrationUserMappingItemM
 const IntegrationWizardResultModel_1 = require("./IntegrationWizardResultModel");
 const JiraPriorityMapping_1 = require("./JiraPriorityMapping");
 /**
- * @export
- */
-exports.JiraIntegrationInfoModelReopenStatusJiraEnum = {
-    ToDo: 'ToDo',
-    InProgress: 'InProgress'
-};
+* @export
+* @enum {string}
+*/
+var JiraIntegrationInfoModelReopenStatusJiraEnum;
+(function (JiraIntegrationInfoModelReopenStatusJiraEnum) {
+    JiraIntegrationInfoModelReopenStatusJiraEnum["ToDo"] = "ToDo";
+    JiraIntegrationInfoModelReopenStatusJiraEnum["InProgress"] = "InProgress";
+})(JiraIntegrationInfoModelReopenStatusJiraEnum = exports.JiraIntegrationInfoModelReopenStatusJiraEnum || (exports.JiraIntegrationInfoModelReopenStatusJiraEnum = {}));
 /**
- * @export
- */
-exports.JiraIntegrationInfoModelTemplateTypeEnum = {
-    Standard: 'Standard',
-    Detailed: 'Detailed'
-};
+* @export
+* @enum {string}
+*/
+var JiraIntegrationInfoModelTemplateTypeEnum;
+(function (JiraIntegrationInfoModelTemplateTypeEnum) {
+    JiraIntegrationInfoModelTemplateTypeEnum["Standard"] = "Standard";
+    JiraIntegrationInfoModelTemplateTypeEnum["Detailed"] = "Detailed";
+})(JiraIntegrationInfoModelTemplateTypeEnum = exports.JiraIntegrationInfoModelTemplateTypeEnum || (exports.JiraIntegrationInfoModelTemplateTypeEnum = {}));
 /**
- * @export
- */
-exports.JiraIntegrationInfoModelEpicSelectionTypeEnum = {
-    None: 'None',
-    EpicName: 'EpicName',
-    EpicKey: 'EpicKey'
-};
+* @export
+* @enum {string}
+*/
+var JiraIntegrationInfoModelEpicSelectionTypeEnum;
+(function (JiraIntegrationInfoModelEpicSelectionTypeEnum) {
+    JiraIntegrationInfoModelEpicSelectionTypeEnum["None"] = "None";
+    JiraIntegrationInfoModelEpicSelectionTypeEnum["EpicName"] = "EpicName";
+    JiraIntegrationInfoModelEpicSelectionTypeEnum["EpicKey"] = "EpicKey";
+})(JiraIntegrationInfoModelEpicSelectionTypeEnum = exports.JiraIntegrationInfoModelEpicSelectionTypeEnum || (exports.JiraIntegrationInfoModelEpicSelectionTypeEnum = {}));
 /**
- * @export
- */
-exports.JiraIntegrationInfoModelTypeEnum = {
-    Jira: 'Jira',
-    GitHub: 'GitHub',
-    Tfs: 'TFS',
-    FogBugz: 'FogBugz',
-    ServiceNow: 'ServiceNow',
-    Slack: 'Slack',
-    GitLab: 'GitLab',
-    Bitbucket: 'Bitbucket',
-    Unfuddle: 'Unfuddle',
-    Zapier: 'Zapier',
-    AzureDevOps: 'AzureDevOps',
-    Redmine: 'Redmine',
-    Bugzilla: 'Bugzilla',
-    Kafka: 'Kafka',
-    PagerDuty: 'PagerDuty',
-    MicrosoftTeams: 'MicrosoftTeams',
-    Clubhouse: 'Clubhouse',
-    Trello: 'Trello',
-    Asana: 'Asana',
-    Webhook: 'Webhook',
-    Kenna: 'Kenna',
-    Freshservice: 'Freshservice',
-    YouTrack: 'YouTrack',
-    NetsparkerEnterprise: 'NetsparkerEnterprise',
-    Splunk: 'Splunk',
-    Mattermost: 'Mattermost',
-    Hashicorp: 'Hashicorp',
-    PivotalTracker: 'PivotalTracker',
-    CyberArk: 'CyberArk',
-    DefectDojo: 'DefectDojo',
-    JazzTeam: 'JazzTeam',
-    AzureKeyVault: 'AzureKeyVault',
-    ServiceNowVrm: 'ServiceNowVRM'
-};
+* @export
+* @enum {string}
+*/
+var JiraIntegrationInfoModelTypeEnum;
+(function (JiraIntegrationInfoModelTypeEnum) {
+    JiraIntegrationInfoModelTypeEnum["Jira"] = "Jira";
+    JiraIntegrationInfoModelTypeEnum["GitHub"] = "GitHub";
+    JiraIntegrationInfoModelTypeEnum["Tfs"] = "TFS";
+    JiraIntegrationInfoModelTypeEnum["FogBugz"] = "FogBugz";
+    JiraIntegrationInfoModelTypeEnum["ServiceNow"] = "ServiceNow";
+    JiraIntegrationInfoModelTypeEnum["Slack"] = "Slack";
+    JiraIntegrationInfoModelTypeEnum["GitLab"] = "GitLab";
+    JiraIntegrationInfoModelTypeEnum["Bitbucket"] = "Bitbucket";
+    JiraIntegrationInfoModelTypeEnum["Unfuddle"] = "Unfuddle";
+    JiraIntegrationInfoModelTypeEnum["Zapier"] = "Zapier";
+    JiraIntegrationInfoModelTypeEnum["AzureDevOps"] = "AzureDevOps";
+    JiraIntegrationInfoModelTypeEnum["Redmine"] = "Redmine";
+    JiraIntegrationInfoModelTypeEnum["Bugzilla"] = "Bugzilla";
+    JiraIntegrationInfoModelTypeEnum["Kafka"] = "Kafka";
+    JiraIntegrationInfoModelTypeEnum["PagerDuty"] = "PagerDuty";
+    JiraIntegrationInfoModelTypeEnum["MicrosoftTeams"] = "MicrosoftTeams";
+    JiraIntegrationInfoModelTypeEnum["Clubhouse"] = "Clubhouse";
+    JiraIntegrationInfoModelTypeEnum["Trello"] = "Trello";
+    JiraIntegrationInfoModelTypeEnum["Asana"] = "Asana";
+    JiraIntegrationInfoModelTypeEnum["Webhook"] = "Webhook";
+    JiraIntegrationInfoModelTypeEnum["Kenna"] = "Kenna";
+    JiraIntegrationInfoModelTypeEnum["Freshservice"] = "Freshservice";
+    JiraIntegrationInfoModelTypeEnum["YouTrack"] = "YouTrack";
+    JiraIntegrationInfoModelTypeEnum["NetsparkerEnterprise"] = "NetsparkerEnterprise";
+    JiraIntegrationInfoModelTypeEnum["Splunk"] = "Splunk";
+    JiraIntegrationInfoModelTypeEnum["Mattermost"] = "Mattermost";
+    JiraIntegrationInfoModelTypeEnum["Hashicorp"] = "Hashicorp";
+    JiraIntegrationInfoModelTypeEnum["PivotalTracker"] = "PivotalTracker";
+    JiraIntegrationInfoModelTypeEnum["CyberArk"] = "CyberArk";
+    JiraIntegrationInfoModelTypeEnum["DefectDojo"] = "DefectDojo";
+    JiraIntegrationInfoModelTypeEnum["JazzTeam"] = "JazzTeam";
+    JiraIntegrationInfoModelTypeEnum["AzureKeyVault"] = "AzureKeyVault";
+    JiraIntegrationInfoModelTypeEnum["ServiceNowVrm"] = "ServiceNowVRM";
+})(JiraIntegrationInfoModelTypeEnum = exports.JiraIntegrationInfoModelTypeEnum || (exports.JiraIntegrationInfoModelTypeEnum = {}));
 /**
  * Check if a given object implements the JiraIntegrationInfoModel interface.
  */

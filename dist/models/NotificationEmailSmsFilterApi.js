@@ -16,26 +16,30 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.NotificationEmailSmsFilterApiToJSON = exports.NotificationEmailSmsFilterApiFromJSONTyped = exports.NotificationEmailSmsFilterApiFromJSON = exports.instanceOfNotificationEmailSmsFilterApi = exports.NotificationEmailSmsFilterApiStateEnum = exports.NotificationEmailSmsFilterApiSeverityEnum = void 0;
 const runtime_1 = require("../runtime");
 /**
- * @export
- */
-exports.NotificationEmailSmsFilterApiSeverityEnum = {
-    BestPractice: 'BestPractice',
-    Information: 'Information',
-    Low: 'Low',
-    Medium: 'Medium',
-    High: 'High',
-    Critical: 'Critical'
-};
+* @export
+* @enum {string}
+*/
+var NotificationEmailSmsFilterApiSeverityEnum;
+(function (NotificationEmailSmsFilterApiSeverityEnum) {
+    NotificationEmailSmsFilterApiSeverityEnum["BestPractice"] = "BestPractice";
+    NotificationEmailSmsFilterApiSeverityEnum["Information"] = "Information";
+    NotificationEmailSmsFilterApiSeverityEnum["Low"] = "Low";
+    NotificationEmailSmsFilterApiSeverityEnum["Medium"] = "Medium";
+    NotificationEmailSmsFilterApiSeverityEnum["High"] = "High";
+    NotificationEmailSmsFilterApiSeverityEnum["Critical"] = "Critical";
+})(NotificationEmailSmsFilterApiSeverityEnum = exports.NotificationEmailSmsFilterApiSeverityEnum || (exports.NotificationEmailSmsFilterApiSeverityEnum = {}));
 /**
- * @export
- */
-exports.NotificationEmailSmsFilterApiStateEnum = {
-    NotFound: 'NotFound',
-    Fixed: 'Fixed',
-    NotFixed: 'NotFixed',
-    New: 'New',
-    Revived: 'Revived'
-};
+* @export
+* @enum {string}
+*/
+var NotificationEmailSmsFilterApiStateEnum;
+(function (NotificationEmailSmsFilterApiStateEnum) {
+    NotificationEmailSmsFilterApiStateEnum["NotFound"] = "NotFound";
+    NotificationEmailSmsFilterApiStateEnum["Fixed"] = "Fixed";
+    NotificationEmailSmsFilterApiStateEnum["NotFixed"] = "NotFixed";
+    NotificationEmailSmsFilterApiStateEnum["New"] = "New";
+    NotificationEmailSmsFilterApiStateEnum["Revived"] = "Revived";
+})(NotificationEmailSmsFilterApiStateEnum = exports.NotificationEmailSmsFilterApiStateEnum || (exports.NotificationEmailSmsFilterApiStateEnum = {}));
 /**
  * Check if a given object implements the NotificationEmailSmsFilterApi interface.
  */

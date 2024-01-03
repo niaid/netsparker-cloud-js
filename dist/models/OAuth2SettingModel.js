@@ -22,23 +22,27 @@ const ResponseFields_1 = require("./ResponseFields");
 const SelectOptionModel_1 = require("./SelectOptionModel");
 const ThreeLeggedFields_1 = require("./ThreeLeggedFields");
 /**
- * @export
- */
-exports.OAuth2SettingModelSelectedFlowTypeEnum = {
-    AuthorizationCode: 'AuthorizationCode',
-    Implicit: 'Implicit',
-    ResourceOwnerPasswordCredentials: 'ResourceOwnerPasswordCredentials',
-    ClientCredentials: 'ClientCredentials',
-    Custom: 'Custom'
-};
+* @export
+* @enum {string}
+*/
+var OAuth2SettingModelSelectedFlowTypeEnum;
+(function (OAuth2SettingModelSelectedFlowTypeEnum) {
+    OAuth2SettingModelSelectedFlowTypeEnum["AuthorizationCode"] = "AuthorizationCode";
+    OAuth2SettingModelSelectedFlowTypeEnum["Implicit"] = "Implicit";
+    OAuth2SettingModelSelectedFlowTypeEnum["ResourceOwnerPasswordCredentials"] = "ResourceOwnerPasswordCredentials";
+    OAuth2SettingModelSelectedFlowTypeEnum["ClientCredentials"] = "ClientCredentials";
+    OAuth2SettingModelSelectedFlowTypeEnum["Custom"] = "Custom";
+})(OAuth2SettingModelSelectedFlowTypeEnum = exports.OAuth2SettingModelSelectedFlowTypeEnum || (exports.OAuth2SettingModelSelectedFlowTypeEnum = {}));
 /**
- * @export
- */
-exports.OAuth2SettingModelSelectedAuthenticationTypeEnum = {
-    None: 'None',
-    Form: 'Form',
-    Basic: 'Basic'
-};
+* @export
+* @enum {string}
+*/
+var OAuth2SettingModelSelectedAuthenticationTypeEnum;
+(function (OAuth2SettingModelSelectedAuthenticationTypeEnum) {
+    OAuth2SettingModelSelectedAuthenticationTypeEnum["None"] = "None";
+    OAuth2SettingModelSelectedAuthenticationTypeEnum["Form"] = "Form";
+    OAuth2SettingModelSelectedAuthenticationTypeEnum["Basic"] = "Basic";
+})(OAuth2SettingModelSelectedAuthenticationTypeEnum = exports.OAuth2SettingModelSelectedAuthenticationTypeEnum || (exports.OAuth2SettingModelSelectedAuthenticationTypeEnum = {}));
 /**
  * Check if a given object implements the OAuth2SettingModel interface.
  */

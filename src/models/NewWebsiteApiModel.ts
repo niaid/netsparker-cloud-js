@@ -69,24 +69,22 @@ export interface NewWebsiteApiModel {
     tags?: Array<string>;
 }
 
-
 /**
- * @export
- */
-export const NewWebsiteApiModelAgentModeEnum = {
-    Cloud: 'Cloud',
-    Internal: 'Internal'
-} as const;
-export type NewWebsiteApiModelAgentModeEnum = typeof NewWebsiteApiModelAgentModeEnum[keyof typeof NewWebsiteApiModelAgentModeEnum];
-
+* @export
+* @enum {string}
+*/
+export enum NewWebsiteApiModelAgentModeEnum {
+    Cloud = 'Cloud',
+    Internal = 'Internal'
+}
 /**
- * @export
- */
-export const NewWebsiteApiModelLicenseTypeEnum = {
-    Subscription: 'Subscription',
-    Credit: 'Credit'
-} as const;
-export type NewWebsiteApiModelLicenseTypeEnum = typeof NewWebsiteApiModelLicenseTypeEnum[keyof typeof NewWebsiteApiModelLicenseTypeEnum];
+* @export
+* @enum {string}
+*/
+export enum NewWebsiteApiModelLicenseTypeEnum {
+    Subscription = 'Subscription',
+    Credit = 'Credit'
+}
 
 
 /**

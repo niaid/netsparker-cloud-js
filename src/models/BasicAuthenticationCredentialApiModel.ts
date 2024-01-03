@@ -51,18 +51,17 @@ export interface BasicAuthenticationCredentialApiModel {
     userName?: string;
 }
 
-
 /**
- * @export
- */
-export const BasicAuthenticationCredentialApiModelAuthenticationTypeEnum = {
-    Basic: 'Basic',
-    Ntlm: 'Ntlm',
-    Kerberos: 'Kerberos',
-    Digest: 'Digest',
-    Negotiate: 'Negotiate'
-} as const;
-export type BasicAuthenticationCredentialApiModelAuthenticationTypeEnum = typeof BasicAuthenticationCredentialApiModelAuthenticationTypeEnum[keyof typeof BasicAuthenticationCredentialApiModelAuthenticationTypeEnum];
+* @export
+* @enum {string}
+*/
+export enum BasicAuthenticationCredentialApiModelAuthenticationTypeEnum {
+    Basic = 'Basic',
+    Ntlm = 'Ntlm',
+    Kerberos = 'Kerberos',
+    Digest = 'Digest',
+    Negotiate = 'Negotiate'
+}
 
 
 /**

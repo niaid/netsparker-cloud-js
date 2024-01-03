@@ -33,17 +33,16 @@ export interface StartVerificationApiModel {
     websiteUrl: string;
 }
 
-
 /**
- * @export
- */
-export const StartVerificationApiModelVerificationMethodEnum = {
-    File: 'File',
-    Tag: 'Tag',
-    Dns: 'Dns',
-    Email: 'Email'
-} as const;
-export type StartVerificationApiModelVerificationMethodEnum = typeof StartVerificationApiModelVerificationMethodEnum[keyof typeof StartVerificationApiModelVerificationMethodEnum];
+* @export
+* @enum {string}
+*/
+export enum StartVerificationApiModelVerificationMethodEnum {
+    File = 'File',
+    Tag = 'Tag',
+    Dns = 'Dns',
+    Email = 'Email'
+}
 
 
 /**

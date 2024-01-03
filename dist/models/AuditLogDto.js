@@ -16,124 +16,128 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AuditLogDtoToJSON = exports.AuditLogDtoFromJSONTyped = exports.AuditLogDtoFromJSON = exports.instanceOfAuditLogDto = exports.AuditLogDtoTypeEnum = exports.AuditLogDtoEndpointTypeEnum = void 0;
 const runtime_1 = require("../runtime");
 /**
- * @export
- */
-exports.AuditLogDtoEndpointTypeEnum = {
-    Web: 'Web',
-    Api: 'Api',
-    BackgroundTask: 'BackgroundTask'
-};
+* @export
+* @enum {string}
+*/
+var AuditLogDtoEndpointTypeEnum;
+(function (AuditLogDtoEndpointTypeEnum) {
+    AuditLogDtoEndpointTypeEnum["Web"] = "Web";
+    AuditLogDtoEndpointTypeEnum["Api"] = "Api";
+    AuditLogDtoEndpointTypeEnum["BackgroundTask"] = "BackgroundTask";
+})(AuditLogDtoEndpointTypeEnum = exports.AuditLogDtoEndpointTypeEnum || (exports.AuditLogDtoEndpointTypeEnum = {}));
 /**
- * @export
- */
-exports.AuditLogDtoTypeEnum = {
-    Signin: 'Signin',
-    Signout: 'Signout',
-    Signup: 'Signup',
-    ResentConfirmationEmail: 'ResentConfirmationEmail',
-    EmailConfirmed: 'EmailConfirmed',
-    PasswordResetRequested: 'PasswordResetRequested',
-    PasswordResetSucceeded: 'PasswordResetSucceeded',
-    PasswordChanged: 'PasswordChanged',
-    UserAccountUpdated: 'UserAccountUpdated',
-    UserCreated: 'UserCreated',
-    UserUpdated: 'UserUpdated',
-    AccessTokenReset: 'AccessTokenReset',
-    ScanStarted: 'ScanStarted',
-    ScanCancelled: 'ScanCancelled',
-    WebsiteGroupCreated: 'WebsiteGroupCreated',
-    WebsiteGroupDeleted: 'WebsiteGroupDeleted',
-    WebsiteGroupUpdated: 'WebsiteGroupUpdated',
-    WebsiteCreated: 'WebsiteCreated',
-    WebsiteUpdated: 'WebsiteUpdated',
-    WebsiteDeleted: 'WebsiteDeleted',
-    ScheduledScanDeleted: 'ScheduledScanDeleted',
-    ScheduledScanCreated: 'ScheduledScanCreated',
-    ScheduledScanUpdated: 'ScheduledScanUpdated',
-    ScanPolicyCreated: 'ScanPolicyCreated',
-    ScanPolicyUpdated: 'ScanPolicyUpdated',
-    ScanPolicyDeleted: 'ScanPolicyDeleted',
-    CheckedUpdates: 'CheckedUpdates',
-    ScanDeleted: 'ScanDeleted',
-    SigninAs: 'SigninAs',
-    TwoFactorAuthenticationDisabled: 'TwoFactorAuthenticationDisabled',
-    TwoFactorAuthenticationConfigured: 'TwoFactorAuthenticationConfigured',
-    TwoFactorAuthenticationRecoveryCodesViewed: 'TwoFactorAuthenticationRecoveryCodesViewed',
-    TwoFactorAuthenticationEnforcementChanged: 'TwoFactorAuthenticationEnforcementChanged',
-    SigninWithRecoveryCode: 'SigninWithRecoveryCode',
-    IssueCreated: 'IssueCreated',
-    IssueUpdated: 'IssueUpdated',
-    DeleteUser: 'DeleteUser',
-    StartVerification: 'StartVerification',
-    VerifyOwnership: 'VerifyOwnership',
-    ScanPaused: 'ScanPaused',
-    ScanResumed: 'ScanResumed',
-    AccountLicenseUpdated: 'AccountLicenseUpdated',
-    InvitationLicenseUpdated: 'InvitationLicenseUpdated',
-    MarkedLateConfirmation: 'MarkedLateConfirmation',
-    ConfirmSupportAccessRequest: 'ConfirmSupportAccessRequest',
-    AgentGroupCreated: 'AgentGroupCreated',
-    AgentGroupUpdated: 'AgentGroupUpdated',
-    AgentGroupDeleted: 'AgentGroupDeleted',
-    IpRestrictionAdded: 'IpRestrictionAdded',
-    IpRestrictionUpdated: 'IpRestrictionUpdated',
-    IpRestrictionDeleted: 'IpRestrictionDeleted',
-    IpRestrictionsStatusChanged: 'IpRestrictionsStatusChanged',
-    RawScanFileRetentionPeriodEnabled: 'RawScanFileRetentionPeriodEnabled',
-    RawScanFileRetentionPeriodDisabled: 'RawScanFileRetentionPeriodDisabled',
-    AccountUpdated: 'AccountUpdated',
-    ScanNotificationRuleCreated: 'ScanNotificationRuleCreated',
-    ScanNotificationRuleUpdated: 'ScanNotificationRuleUpdated',
-    ScanNotificationRuleDeleted: 'ScanNotificationRuleDeleted',
-    ScanNotificationRulePrioritiesUpdated: 'ScanNotificationRulePrioritiesUpdated',
-    ReportPolicyCreated: 'ReportPolicyCreated',
-    ReportPolicyUpdated: 'ReportPolicyUpdated',
-    ReportPolicyDeleted: 'ReportPolicyDeleted',
-    AgentDeleted: 'AgentDeleted',
-    DeleteAccount: 'DeleteAccount',
-    NsScanImported: 'NsScanImported',
-    AccountsMerged: 'AccountsMerged',
-    TooManyRequests: 'TooManyRequests',
-    SupportEditedUser: 'SupportEditedUser',
-    AgentsAutoUpdateSettingChanged: 'AgentsAutoUpdateSettingChanged',
-    WebsiteGroupTechContactChanged: 'WebsiteGroupTechContactChanged',
-    CreateInvitation: 'CreateInvitation',
-    DeleteInvitation: 'DeleteInvitation',
-    ScanProfileCreated: 'ScanProfileCreated',
-    ScanProfileUpdated: 'ScanProfileUpdated',
-    ScanProfileDeleted: 'ScanProfileDeleted',
-    GeneralSettingsUpdated: 'GeneralSettingsUpdated',
-    SecuritySettingsUpdated: 'SecuritySettingsUpdated',
-    DatabaseSettingsUpdated: 'DatabaseSettingsUpdated',
-    EmailSettingsUpdated: 'EmailSettingsUpdated',
-    SmsSettingsUpdated: 'SmsSettingsUpdated',
-    CloudProviderUpdated: 'CloudProviderUpdated',
-    SingleSignOnUpdated: 'SingleSignOnUpdated',
-    IpRestrictionsUpdated: 'IpRestrictionsUpdated',
-    TechnologyNotificationChanged: 'TechnologyNotificationChanged',
-    LoginAttemptFailed: 'LoginAttemptFailed',
-    IpRestrictedSessionsStatusChanged: 'IpRestrictedSessionsStatusChanged',
-    U2FSecurityKeyConfigured: 'U2FSecurityKeyConfigured',
-    U2FSecurityKeyReConfigured: 'U2FSecurityKeyReConfigured',
-    AgentTokenReset: 'AgentTokenReset',
-    AddOrUpdateTag: 'AddOrUpdateTag',
-    EncryptionKeysUpdated: 'EncryptionKeysUpdated',
-    EncryptionKeysDownloaded: 'EncryptionKeysDownloaded',
-    RoleCreated: 'RoleCreated',
-    RoleUpdated: 'RoleUpdated',
-    RoleDelete: 'RoleDelete',
-    TeamCreated: 'TeamCreated',
-    TeamUpdated: 'TeamUpdated',
-    TeamDelete: 'TeamDelete',
-    DefectDojoReportImported: 'DefectDojoReportImported',
-    DefectDojoReportImportFailed: 'DefectDojoReportImportFailed',
-    ScanDataRetentionPeriodEnabled: 'ScanDataRetentionPeriodEnabled',
-    ScanDataRetentionPeriodDisabled: 'ScanDataRetentionPeriodDisabled',
-    ScanQueuedAgain: 'ScanQueuedAgain',
-    ScanFailed: 'ScanFailed',
-    AgentCommandDelete: 'AgentCommandDelete',
-    ImportWebsite: 'ImportWebsite'
-};
+* @export
+* @enum {string}
+*/
+var AuditLogDtoTypeEnum;
+(function (AuditLogDtoTypeEnum) {
+    AuditLogDtoTypeEnum["Signin"] = "Signin";
+    AuditLogDtoTypeEnum["Signout"] = "Signout";
+    AuditLogDtoTypeEnum["Signup"] = "Signup";
+    AuditLogDtoTypeEnum["ResentConfirmationEmail"] = "ResentConfirmationEmail";
+    AuditLogDtoTypeEnum["EmailConfirmed"] = "EmailConfirmed";
+    AuditLogDtoTypeEnum["PasswordResetRequested"] = "PasswordResetRequested";
+    AuditLogDtoTypeEnum["PasswordResetSucceeded"] = "PasswordResetSucceeded";
+    AuditLogDtoTypeEnum["PasswordChanged"] = "PasswordChanged";
+    AuditLogDtoTypeEnum["UserAccountUpdated"] = "UserAccountUpdated";
+    AuditLogDtoTypeEnum["UserCreated"] = "UserCreated";
+    AuditLogDtoTypeEnum["UserUpdated"] = "UserUpdated";
+    AuditLogDtoTypeEnum["AccessTokenReset"] = "AccessTokenReset";
+    AuditLogDtoTypeEnum["ScanStarted"] = "ScanStarted";
+    AuditLogDtoTypeEnum["ScanCancelled"] = "ScanCancelled";
+    AuditLogDtoTypeEnum["WebsiteGroupCreated"] = "WebsiteGroupCreated";
+    AuditLogDtoTypeEnum["WebsiteGroupDeleted"] = "WebsiteGroupDeleted";
+    AuditLogDtoTypeEnum["WebsiteGroupUpdated"] = "WebsiteGroupUpdated";
+    AuditLogDtoTypeEnum["WebsiteCreated"] = "WebsiteCreated";
+    AuditLogDtoTypeEnum["WebsiteUpdated"] = "WebsiteUpdated";
+    AuditLogDtoTypeEnum["WebsiteDeleted"] = "WebsiteDeleted";
+    AuditLogDtoTypeEnum["ScheduledScanDeleted"] = "ScheduledScanDeleted";
+    AuditLogDtoTypeEnum["ScheduledScanCreated"] = "ScheduledScanCreated";
+    AuditLogDtoTypeEnum["ScheduledScanUpdated"] = "ScheduledScanUpdated";
+    AuditLogDtoTypeEnum["ScanPolicyCreated"] = "ScanPolicyCreated";
+    AuditLogDtoTypeEnum["ScanPolicyUpdated"] = "ScanPolicyUpdated";
+    AuditLogDtoTypeEnum["ScanPolicyDeleted"] = "ScanPolicyDeleted";
+    AuditLogDtoTypeEnum["CheckedUpdates"] = "CheckedUpdates";
+    AuditLogDtoTypeEnum["ScanDeleted"] = "ScanDeleted";
+    AuditLogDtoTypeEnum["SigninAs"] = "SigninAs";
+    AuditLogDtoTypeEnum["TwoFactorAuthenticationDisabled"] = "TwoFactorAuthenticationDisabled";
+    AuditLogDtoTypeEnum["TwoFactorAuthenticationConfigured"] = "TwoFactorAuthenticationConfigured";
+    AuditLogDtoTypeEnum["TwoFactorAuthenticationRecoveryCodesViewed"] = "TwoFactorAuthenticationRecoveryCodesViewed";
+    AuditLogDtoTypeEnum["TwoFactorAuthenticationEnforcementChanged"] = "TwoFactorAuthenticationEnforcementChanged";
+    AuditLogDtoTypeEnum["SigninWithRecoveryCode"] = "SigninWithRecoveryCode";
+    AuditLogDtoTypeEnum["IssueCreated"] = "IssueCreated";
+    AuditLogDtoTypeEnum["IssueUpdated"] = "IssueUpdated";
+    AuditLogDtoTypeEnum["DeleteUser"] = "DeleteUser";
+    AuditLogDtoTypeEnum["StartVerification"] = "StartVerification";
+    AuditLogDtoTypeEnum["VerifyOwnership"] = "VerifyOwnership";
+    AuditLogDtoTypeEnum["ScanPaused"] = "ScanPaused";
+    AuditLogDtoTypeEnum["ScanResumed"] = "ScanResumed";
+    AuditLogDtoTypeEnum["AccountLicenseUpdated"] = "AccountLicenseUpdated";
+    AuditLogDtoTypeEnum["InvitationLicenseUpdated"] = "InvitationLicenseUpdated";
+    AuditLogDtoTypeEnum["MarkedLateConfirmation"] = "MarkedLateConfirmation";
+    AuditLogDtoTypeEnum["ConfirmSupportAccessRequest"] = "ConfirmSupportAccessRequest";
+    AuditLogDtoTypeEnum["AgentGroupCreated"] = "AgentGroupCreated";
+    AuditLogDtoTypeEnum["AgentGroupUpdated"] = "AgentGroupUpdated";
+    AuditLogDtoTypeEnum["AgentGroupDeleted"] = "AgentGroupDeleted";
+    AuditLogDtoTypeEnum["IpRestrictionAdded"] = "IpRestrictionAdded";
+    AuditLogDtoTypeEnum["IpRestrictionUpdated"] = "IpRestrictionUpdated";
+    AuditLogDtoTypeEnum["IpRestrictionDeleted"] = "IpRestrictionDeleted";
+    AuditLogDtoTypeEnum["IpRestrictionsStatusChanged"] = "IpRestrictionsStatusChanged";
+    AuditLogDtoTypeEnum["RawScanFileRetentionPeriodEnabled"] = "RawScanFileRetentionPeriodEnabled";
+    AuditLogDtoTypeEnum["RawScanFileRetentionPeriodDisabled"] = "RawScanFileRetentionPeriodDisabled";
+    AuditLogDtoTypeEnum["AccountUpdated"] = "AccountUpdated";
+    AuditLogDtoTypeEnum["ScanNotificationRuleCreated"] = "ScanNotificationRuleCreated";
+    AuditLogDtoTypeEnum["ScanNotificationRuleUpdated"] = "ScanNotificationRuleUpdated";
+    AuditLogDtoTypeEnum["ScanNotificationRuleDeleted"] = "ScanNotificationRuleDeleted";
+    AuditLogDtoTypeEnum["ScanNotificationRulePrioritiesUpdated"] = "ScanNotificationRulePrioritiesUpdated";
+    AuditLogDtoTypeEnum["ReportPolicyCreated"] = "ReportPolicyCreated";
+    AuditLogDtoTypeEnum["ReportPolicyUpdated"] = "ReportPolicyUpdated";
+    AuditLogDtoTypeEnum["ReportPolicyDeleted"] = "ReportPolicyDeleted";
+    AuditLogDtoTypeEnum["AgentDeleted"] = "AgentDeleted";
+    AuditLogDtoTypeEnum["DeleteAccount"] = "DeleteAccount";
+    AuditLogDtoTypeEnum["NsScanImported"] = "NsScanImported";
+    AuditLogDtoTypeEnum["AccountsMerged"] = "AccountsMerged";
+    AuditLogDtoTypeEnum["TooManyRequests"] = "TooManyRequests";
+    AuditLogDtoTypeEnum["SupportEditedUser"] = "SupportEditedUser";
+    AuditLogDtoTypeEnum["AgentsAutoUpdateSettingChanged"] = "AgentsAutoUpdateSettingChanged";
+    AuditLogDtoTypeEnum["WebsiteGroupTechContactChanged"] = "WebsiteGroupTechContactChanged";
+    AuditLogDtoTypeEnum["CreateInvitation"] = "CreateInvitation";
+    AuditLogDtoTypeEnum["DeleteInvitation"] = "DeleteInvitation";
+    AuditLogDtoTypeEnum["ScanProfileCreated"] = "ScanProfileCreated";
+    AuditLogDtoTypeEnum["ScanProfileUpdated"] = "ScanProfileUpdated";
+    AuditLogDtoTypeEnum["ScanProfileDeleted"] = "ScanProfileDeleted";
+    AuditLogDtoTypeEnum["GeneralSettingsUpdated"] = "GeneralSettingsUpdated";
+    AuditLogDtoTypeEnum["SecuritySettingsUpdated"] = "SecuritySettingsUpdated";
+    AuditLogDtoTypeEnum["DatabaseSettingsUpdated"] = "DatabaseSettingsUpdated";
+    AuditLogDtoTypeEnum["EmailSettingsUpdated"] = "EmailSettingsUpdated";
+    AuditLogDtoTypeEnum["SmsSettingsUpdated"] = "SmsSettingsUpdated";
+    AuditLogDtoTypeEnum["CloudProviderUpdated"] = "CloudProviderUpdated";
+    AuditLogDtoTypeEnum["SingleSignOnUpdated"] = "SingleSignOnUpdated";
+    AuditLogDtoTypeEnum["IpRestrictionsUpdated"] = "IpRestrictionsUpdated";
+    AuditLogDtoTypeEnum["TechnologyNotificationChanged"] = "TechnologyNotificationChanged";
+    AuditLogDtoTypeEnum["LoginAttemptFailed"] = "LoginAttemptFailed";
+    AuditLogDtoTypeEnum["IpRestrictedSessionsStatusChanged"] = "IpRestrictedSessionsStatusChanged";
+    AuditLogDtoTypeEnum["U2FSecurityKeyConfigured"] = "U2FSecurityKeyConfigured";
+    AuditLogDtoTypeEnum["U2FSecurityKeyReConfigured"] = "U2FSecurityKeyReConfigured";
+    AuditLogDtoTypeEnum["AgentTokenReset"] = "AgentTokenReset";
+    AuditLogDtoTypeEnum["AddOrUpdateTag"] = "AddOrUpdateTag";
+    AuditLogDtoTypeEnum["EncryptionKeysUpdated"] = "EncryptionKeysUpdated";
+    AuditLogDtoTypeEnum["EncryptionKeysDownloaded"] = "EncryptionKeysDownloaded";
+    AuditLogDtoTypeEnum["RoleCreated"] = "RoleCreated";
+    AuditLogDtoTypeEnum["RoleUpdated"] = "RoleUpdated";
+    AuditLogDtoTypeEnum["RoleDelete"] = "RoleDelete";
+    AuditLogDtoTypeEnum["TeamCreated"] = "TeamCreated";
+    AuditLogDtoTypeEnum["TeamUpdated"] = "TeamUpdated";
+    AuditLogDtoTypeEnum["TeamDelete"] = "TeamDelete";
+    AuditLogDtoTypeEnum["DefectDojoReportImported"] = "DefectDojoReportImported";
+    AuditLogDtoTypeEnum["DefectDojoReportImportFailed"] = "DefectDojoReportImportFailed";
+    AuditLogDtoTypeEnum["ScanDataRetentionPeriodEnabled"] = "ScanDataRetentionPeriodEnabled";
+    AuditLogDtoTypeEnum["ScanDataRetentionPeriodDisabled"] = "ScanDataRetentionPeriodDisabled";
+    AuditLogDtoTypeEnum["ScanQueuedAgain"] = "ScanQueuedAgain";
+    AuditLogDtoTypeEnum["ScanFailed"] = "ScanFailed";
+    AuditLogDtoTypeEnum["AgentCommandDelete"] = "AgentCommandDelete";
+    AuditLogDtoTypeEnum["ImportWebsite"] = "ImportWebsite";
+})(AuditLogDtoTypeEnum = exports.AuditLogDtoTypeEnum || (exports.AuditLogDtoTypeEnum = {}));
 /**
  * Check if a given object implements the AuditLogDto interface.
  */

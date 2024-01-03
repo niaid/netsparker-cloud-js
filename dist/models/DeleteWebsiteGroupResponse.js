@@ -16,16 +16,18 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.DeleteWebsiteGroupResponseToJSON = exports.DeleteWebsiteGroupResponseFromJSONTyped = exports.DeleteWebsiteGroupResponseFromJSON = exports.instanceOfDeleteWebsiteGroupResponse = exports.DeleteWebsiteGroupResponseResultEnum = void 0;
 const runtime_1 = require("../runtime");
 /**
- * @export
- */
-exports.DeleteWebsiteGroupResponseResultEnum = {
-    Ok: 'Ok',
-    NotFound: 'NotFound',
-    WebsitesExisting: 'WebsitesExisting',
-    ScheduledScanExists: 'ScheduledScanExists',
-    OneWebsiteGroupMustExist: 'OneWebsiteGroupMustExist',
-    ScanNotificationRuleExists: 'ScanNotificationRuleExists'
-};
+* @export
+* @enum {string}
+*/
+var DeleteWebsiteGroupResponseResultEnum;
+(function (DeleteWebsiteGroupResponseResultEnum) {
+    DeleteWebsiteGroupResponseResultEnum["Ok"] = "Ok";
+    DeleteWebsiteGroupResponseResultEnum["NotFound"] = "NotFound";
+    DeleteWebsiteGroupResponseResultEnum["WebsitesExisting"] = "WebsitesExisting";
+    DeleteWebsiteGroupResponseResultEnum["ScheduledScanExists"] = "ScheduledScanExists";
+    DeleteWebsiteGroupResponseResultEnum["OneWebsiteGroupMustExist"] = "OneWebsiteGroupMustExist";
+    DeleteWebsiteGroupResponseResultEnum["ScanNotificationRuleExists"] = "ScanNotificationRuleExists";
+})(DeleteWebsiteGroupResponseResultEnum = exports.DeleteWebsiteGroupResponseResultEnum || (exports.DeleteWebsiteGroupResponseResultEnum = {}));
 /**
  * Check if a given object implements the DeleteWebsiteGroupResponse interface.
  */

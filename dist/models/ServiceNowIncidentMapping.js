@@ -17,11 +17,13 @@ exports.ServiceNowIncidentMappingToJSON = exports.ServiceNowIncidentMappingFromJ
 const runtime_1 = require("../runtime");
 const ServiceNowIncidentMappingFieldKeyValuePair_1 = require("./ServiceNowIncidentMappingFieldKeyValuePair");
 /**
- * @export
- */
-exports.ServiceNowIncidentMappingInvictiChoiceEnum = {
-    Severity: 'Severity'
-};
+* @export
+* @enum {string}
+*/
+var ServiceNowIncidentMappingInvictiChoiceEnum;
+(function (ServiceNowIncidentMappingInvictiChoiceEnum) {
+    ServiceNowIncidentMappingInvictiChoiceEnum["Severity"] = "Severity";
+})(ServiceNowIncidentMappingInvictiChoiceEnum = exports.ServiceNowIncidentMappingInvictiChoiceEnum || (exports.ServiceNowIncidentMappingInvictiChoiceEnum = {}));
 /**
  * Check if a given object implements the ServiceNowIncidentMapping interface.
  */

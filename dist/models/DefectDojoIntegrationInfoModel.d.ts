@@ -139,52 +139,52 @@ export interface DefectDojoIntegrationInfoModel {
     integrationWizardResultModel?: IntegrationWizardResultModel;
 }
 /**
- * @export
- */
-export declare const DefectDojoIntegrationInfoModelTypeEnum: {
-    readonly NetsparkerEnterprise: "NetsparkerEnterprise";
-    readonly Webhook: "Webhook";
-    readonly Zapier: "Zapier";
-    readonly Slack: "Slack";
-    readonly Mattermost: "Mattermost";
-    readonly MicrosoftTeams: "MicrosoftTeams";
-    readonly AzureDevOps: "AzureDevOps";
-    readonly Bitbucket: "Bitbucket";
-    readonly Bugzilla: "Bugzilla";
-    readonly Clubhouse: "Clubhouse";
-    readonly DefectDojo: "DefectDojo";
-    readonly PivotalTracker: "PivotalTracker";
-    readonly Jira: "Jira";
-    readonly FogBugz: "FogBugz";
-    readonly GitHub: "GitHub";
-    readonly PagerDuty: "PagerDuty";
-    readonly Kafka: "Kafka";
-    readonly Kenna: "Kenna";
-    readonly Redmine: "Redmine";
-    readonly ServiceNow: "ServiceNow";
-    readonly Tfs: "TFS";
-    readonly Unfuddle: "Unfuddle";
-    readonly YouTrack: "YouTrack";
-    readonly Freshservice: "Freshservice";
-    readonly Splunk: "Splunk";
-    readonly JazzTeam: "JazzTeam";
-    readonly ServiceNowVrm: "ServiceNowVRM";
-    readonly Asana: "Asana";
-    readonly Trello: "Trello";
-    readonly Hashicorp: "Hashicorp";
-    readonly CyberArk: "CyberArk";
-    readonly AzureKeyVault: "AzureKeyVault";
-    readonly GitLab: "GitLab";
-};
-export type DefectDojoIntegrationInfoModelTypeEnum = typeof DefectDojoIntegrationInfoModelTypeEnum[keyof typeof DefectDojoIntegrationInfoModelTypeEnum];
+* @export
+* @enum {string}
+*/
+export declare enum DefectDojoIntegrationInfoModelTypeEnum {
+    NetsparkerEnterprise = "NetsparkerEnterprise",
+    Webhook = "Webhook",
+    Zapier = "Zapier",
+    Slack = "Slack",
+    Mattermost = "Mattermost",
+    MicrosoftTeams = "MicrosoftTeams",
+    AzureDevOps = "AzureDevOps",
+    Bitbucket = "Bitbucket",
+    Bugzilla = "Bugzilla",
+    Clubhouse = "Clubhouse",
+    DefectDojo = "DefectDojo",
+    PivotalTracker = "PivotalTracker",
+    Jira = "Jira",
+    FogBugz = "FogBugz",
+    GitHub = "GitHub",
+    PagerDuty = "PagerDuty",
+    Kafka = "Kafka",
+    Kenna = "Kenna",
+    Redmine = "Redmine",
+    ServiceNow = "ServiceNow",
+    Tfs = "TFS",
+    Unfuddle = "Unfuddle",
+    YouTrack = "YouTrack",
+    Freshservice = "Freshservice",
+    Splunk = "Splunk",
+    JazzTeam = "JazzTeam",
+    ServiceNowVrm = "ServiceNowVRM",
+    Asana = "Asana",
+    Trello = "Trello",
+    Hashicorp = "Hashicorp",
+    CyberArk = "CyberArk",
+    AzureKeyVault = "AzureKeyVault",
+    GitLab = "GitLab"
+}
 /**
- * @export
- */
-export declare const DefectDojoIntegrationInfoModelTemplateTypeEnum: {
-    readonly Standard: "Standard";
-    readonly Detailed: "Detailed";
-};
-export type DefectDojoIntegrationInfoModelTemplateTypeEnum = typeof DefectDojoIntegrationInfoModelTemplateTypeEnum[keyof typeof DefectDojoIntegrationInfoModelTemplateTypeEnum];
+* @export
+* @enum {string}
+*/
+export declare enum DefectDojoIntegrationInfoModelTemplateTypeEnum {
+    Standard = "Standard",
+    Detailed = "Detailed"
+}
 /**
  * Check if a given object implements the DefectDojoIntegrationInfoModel interface.
  */

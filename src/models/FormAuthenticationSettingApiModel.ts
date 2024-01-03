@@ -166,25 +166,23 @@ export interface FormAuthenticationSettingApiModel {
     azureKeyVaultSetting?: FormAuthenticationAzureKeyVaultSetting;
 }
 
-
 /**
- * @export
- */
-export const FormAuthenticationSettingApiModelFormAuthTypeEnum = {
-    Manual: 'Manual',
-    Integration: 'Integration'
-} as const;
-export type FormAuthenticationSettingApiModelFormAuthTypeEnum = typeof FormAuthenticationSettingApiModelFormAuthTypeEnum[keyof typeof FormAuthenticationSettingApiModelFormAuthTypeEnum];
-
+* @export
+* @enum {string}
+*/
+export enum FormAuthenticationSettingApiModelFormAuthTypeEnum {
+    Manual = 'Manual',
+    Integration = 'Integration'
+}
 /**
- * @export
- */
-export const FormAuthenticationSettingApiModelFormAuthIntegrationTypeEnum = {
-    HashiCorp: 'HashiCorp',
-    CyberArk: 'CyberArk',
-    AzureKeyVault: 'AzureKeyVault'
-} as const;
-export type FormAuthenticationSettingApiModelFormAuthIntegrationTypeEnum = typeof FormAuthenticationSettingApiModelFormAuthIntegrationTypeEnum[keyof typeof FormAuthenticationSettingApiModelFormAuthIntegrationTypeEnum];
+* @export
+* @enum {string}
+*/
+export enum FormAuthenticationSettingApiModelFormAuthIntegrationTypeEnum {
+    HashiCorp = 'HashiCorp',
+    CyberArk = 'CyberArk',
+    AzureKeyVault = 'AzureKeyVault'
+}
 
 
 /**

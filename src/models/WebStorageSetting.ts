@@ -45,15 +45,14 @@ export interface WebStorageSetting {
     value: string;
 }
 
-
 /**
- * @export
- */
-export const WebStorageSettingTypeEnum = {
-    Local: 'Local',
-    Session: 'Session'
-} as const;
-export type WebStorageSettingTypeEnum = typeof WebStorageSettingTypeEnum[keyof typeof WebStorageSettingTypeEnum];
+* @export
+* @enum {string}
+*/
+export enum WebStorageSettingTypeEnum {
+    Local = 'Local',
+    Session = 'Session'
+}
 
 
 /**

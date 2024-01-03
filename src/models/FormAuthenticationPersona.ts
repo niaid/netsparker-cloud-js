@@ -201,43 +201,39 @@ export interface FormAuthenticationPersona {
     index?: number;
 }
 
-
 /**
- * @export
- */
-export const FormAuthenticationPersonaOtpTypeEnum = {
-    Totp: 'Totp',
-    Hotp: 'Hotp'
-} as const;
-export type FormAuthenticationPersonaOtpTypeEnum = typeof FormAuthenticationPersonaOtpTypeEnum[keyof typeof FormAuthenticationPersonaOtpTypeEnum];
-
+* @export
+* @enum {string}
+*/
+export enum FormAuthenticationPersonaOtpTypeEnum {
+    Totp = 'Totp',
+    Hotp = 'Hotp'
+}
 /**
- * @export
- */
-export const FormAuthenticationPersonaAlgorithmEnum = {
-    Sha1: 'Sha1',
-    Sha256: 'Sha256',
-    Sha512: 'Sha512'
-} as const;
-export type FormAuthenticationPersonaAlgorithmEnum = typeof FormAuthenticationPersonaAlgorithmEnum[keyof typeof FormAuthenticationPersonaAlgorithmEnum];
-
+* @export
+* @enum {string}
+*/
+export enum FormAuthenticationPersonaAlgorithmEnum {
+    Sha1 = 'Sha1',
+    Sha256 = 'Sha256',
+    Sha512 = 'Sha512'
+}
 /**
- * @export
- */
-export const FormAuthenticationPersonaFormAuthTypeEnum = {
-    Manual: 'Manual',
-    Integration: 'Integration'
-} as const;
-export type FormAuthenticationPersonaFormAuthTypeEnum = typeof FormAuthenticationPersonaFormAuthTypeEnum[keyof typeof FormAuthenticationPersonaFormAuthTypeEnum];
-
+* @export
+* @enum {string}
+*/
+export enum FormAuthenticationPersonaFormAuthTypeEnum {
+    Manual = 'Manual',
+    Integration = 'Integration'
+}
 /**
- * @export
- */
-export const FormAuthenticationPersonaVersionEnum = {
-    V1: 'V1',
-    V2: 'V2'
-} as const;
-export type FormAuthenticationPersonaVersionEnum = typeof FormAuthenticationPersonaVersionEnum[keyof typeof FormAuthenticationPersonaVersionEnum];
+* @export
+* @enum {string}
+*/
+export enum FormAuthenticationPersonaVersionEnum {
+    V1 = 'V1',
+    V2 = 'V2'
+}
 
 
 /**

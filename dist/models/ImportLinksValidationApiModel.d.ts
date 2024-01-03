@@ -29,27 +29,27 @@ export interface ImportLinksValidationApiModel {
     importType?: ImportLinksValidationApiModelImportTypeEnum;
 }
 /**
- * @export
- */
-export declare const ImportLinksValidationApiModelImportTypeEnum: {
-    readonly None: "None";
-    readonly Fiddler: "Fiddler";
-    readonly Burp: "Burp";
-    readonly Swagger: "Swagger";
-    readonly OwaspZap: "OwaspZap";
-    readonly AspNet: "AspNet";
-    readonly HttpArchive: "HttpArchive";
-    readonly Wadl: "Wadl";
-    readonly Wsdl: "Wsdl";
-    readonly Postman: "Postman";
-    readonly InvictiSessionFile: "InvictiSessionFile";
-    readonly CsvImporter: "CsvImporter";
-    readonly Iodocs: "Iodocs";
-    readonly WordPress: "WordPress";
-    readonly Raml: "Raml";
-    readonly GraphQl: "GraphQl";
-};
-export type ImportLinksValidationApiModelImportTypeEnum = typeof ImportLinksValidationApiModelImportTypeEnum[keyof typeof ImportLinksValidationApiModelImportTypeEnum];
+* @export
+* @enum {string}
+*/
+export declare enum ImportLinksValidationApiModelImportTypeEnum {
+    None = "None",
+    Fiddler = "Fiddler",
+    Burp = "Burp",
+    Swagger = "Swagger",
+    OwaspZap = "OwaspZap",
+    AspNet = "AspNet",
+    HttpArchive = "HttpArchive",
+    Wadl = "Wadl",
+    Wsdl = "Wsdl",
+    Postman = "Postman",
+    InvictiSessionFile = "InvictiSessionFile",
+    CsvImporter = "CsvImporter",
+    Iodocs = "Iodocs",
+    WordPress = "WordPress",
+    Raml = "Raml",
+    GraphQl = "GraphQl"
+}
 /**
  * Check if a given object implements the ImportLinksValidationApiModel interface.
  */

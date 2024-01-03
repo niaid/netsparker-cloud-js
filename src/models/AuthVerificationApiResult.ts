@@ -45,16 +45,15 @@ export interface AuthVerificationApiResult {
     redirectLocation?: string;
 }
 
-
 /**
- * @export
- */
-export const AuthVerificationApiResultLogoutSignatureTypeEnum = {
-    None: 'None',
-    RedirectBased: 'RedirectBased',
-    KeywordBased: 'KeywordBased'
-} as const;
-export type AuthVerificationApiResultLogoutSignatureTypeEnum = typeof AuthVerificationApiResultLogoutSignatureTypeEnum[keyof typeof AuthVerificationApiResultLogoutSignatureTypeEnum];
+* @export
+* @enum {string}
+*/
+export enum AuthVerificationApiResultLogoutSignatureTypeEnum {
+    None = 'None',
+    RedirectBased = 'RedirectBased',
+    KeywordBased = 'KeywordBased'
+}
 
 
 /**

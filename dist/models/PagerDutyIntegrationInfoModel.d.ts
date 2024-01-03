@@ -175,68 +175,68 @@ export interface PagerDutyIntegrationInfoModel {
     integrationWizardResultModel?: IntegrationWizardResultModel;
 }
 /**
- * @export
- */
-export declare const PagerDutyIntegrationInfoModelServiceTypeEnum: {
-    readonly Service: "service";
-    readonly ServiceReference: "service_reference";
-};
-export type PagerDutyIntegrationInfoModelServiceTypeEnum = typeof PagerDutyIntegrationInfoModelServiceTypeEnum[keyof typeof PagerDutyIntegrationInfoModelServiceTypeEnum];
+* @export
+* @enum {string}
+*/
+export declare enum PagerDutyIntegrationInfoModelServiceTypeEnum {
+    Service = "service",
+    ServiceReference = "service_reference"
+}
 /**
- * @export
- */
-export declare const PagerDutyIntegrationInfoModelUrgencyEnum: {
-    readonly High: "high";
-    readonly Low: "low";
-};
-export type PagerDutyIntegrationInfoModelUrgencyEnum = typeof PagerDutyIntegrationInfoModelUrgencyEnum[keyof typeof PagerDutyIntegrationInfoModelUrgencyEnum];
+* @export
+* @enum {string}
+*/
+export declare enum PagerDutyIntegrationInfoModelUrgencyEnum {
+    High = "high",
+    Low = "low"
+}
 /**
- * @export
- */
-export declare const PagerDutyIntegrationInfoModelTypeEnum: {
-    readonly NetsparkerEnterprise: "NetsparkerEnterprise";
-    readonly Webhook: "Webhook";
-    readonly Zapier: "Zapier";
-    readonly Slack: "Slack";
-    readonly Mattermost: "Mattermost";
-    readonly MicrosoftTeams: "MicrosoftTeams";
-    readonly AzureDevOps: "AzureDevOps";
-    readonly Bitbucket: "Bitbucket";
-    readonly Bugzilla: "Bugzilla";
-    readonly Clubhouse: "Clubhouse";
-    readonly DefectDojo: "DefectDojo";
-    readonly PivotalTracker: "PivotalTracker";
-    readonly Jira: "Jira";
-    readonly FogBugz: "FogBugz";
-    readonly GitHub: "GitHub";
-    readonly PagerDuty: "PagerDuty";
-    readonly Kafka: "Kafka";
-    readonly Kenna: "Kenna";
-    readonly Redmine: "Redmine";
-    readonly ServiceNow: "ServiceNow";
-    readonly Tfs: "TFS";
-    readonly Unfuddle: "Unfuddle";
-    readonly YouTrack: "YouTrack";
-    readonly Freshservice: "Freshservice";
-    readonly Splunk: "Splunk";
-    readonly JazzTeam: "JazzTeam";
-    readonly ServiceNowVrm: "ServiceNowVRM";
-    readonly Asana: "Asana";
-    readonly Trello: "Trello";
-    readonly Hashicorp: "Hashicorp";
-    readonly CyberArk: "CyberArk";
-    readonly AzureKeyVault: "AzureKeyVault";
-    readonly GitLab: "GitLab";
-};
-export type PagerDutyIntegrationInfoModelTypeEnum = typeof PagerDutyIntegrationInfoModelTypeEnum[keyof typeof PagerDutyIntegrationInfoModelTypeEnum];
+* @export
+* @enum {string}
+*/
+export declare enum PagerDutyIntegrationInfoModelTypeEnum {
+    NetsparkerEnterprise = "NetsparkerEnterprise",
+    Webhook = "Webhook",
+    Zapier = "Zapier",
+    Slack = "Slack",
+    Mattermost = "Mattermost",
+    MicrosoftTeams = "MicrosoftTeams",
+    AzureDevOps = "AzureDevOps",
+    Bitbucket = "Bitbucket",
+    Bugzilla = "Bugzilla",
+    Clubhouse = "Clubhouse",
+    DefectDojo = "DefectDojo",
+    PivotalTracker = "PivotalTracker",
+    Jira = "Jira",
+    FogBugz = "FogBugz",
+    GitHub = "GitHub",
+    PagerDuty = "PagerDuty",
+    Kafka = "Kafka",
+    Kenna = "Kenna",
+    Redmine = "Redmine",
+    ServiceNow = "ServiceNow",
+    Tfs = "TFS",
+    Unfuddle = "Unfuddle",
+    YouTrack = "YouTrack",
+    Freshservice = "Freshservice",
+    Splunk = "Splunk",
+    JazzTeam = "JazzTeam",
+    ServiceNowVrm = "ServiceNowVRM",
+    Asana = "Asana",
+    Trello = "Trello",
+    Hashicorp = "Hashicorp",
+    CyberArk = "CyberArk",
+    AzureKeyVault = "AzureKeyVault",
+    GitLab = "GitLab"
+}
 /**
- * @export
- */
-export declare const PagerDutyIntegrationInfoModelTemplateTypeEnum: {
-    readonly Standard: "Standard";
-    readonly Detailed: "Detailed";
-};
-export type PagerDutyIntegrationInfoModelTemplateTypeEnum = typeof PagerDutyIntegrationInfoModelTemplateTypeEnum[keyof typeof PagerDutyIntegrationInfoModelTemplateTypeEnum];
+* @export
+* @enum {string}
+*/
+export declare enum PagerDutyIntegrationInfoModelTemplateTypeEnum {
+    Standard = "Standard",
+    Detailed = "Detailed"
+}
 /**
  * Check if a given object implements the PagerDutyIntegrationInfoModel interface.
  */

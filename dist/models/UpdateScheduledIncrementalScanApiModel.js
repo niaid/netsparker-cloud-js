@@ -16,18 +16,20 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.UpdateScheduledIncrementalScanApiModelToJSON = exports.UpdateScheduledIncrementalScanApiModelFromJSONTyped = exports.UpdateScheduledIncrementalScanApiModelFromJSON = exports.instanceOfUpdateScheduledIncrementalScanApiModel = exports.UpdateScheduledIncrementalScanApiModelScheduleRunTypeEnum = void 0;
 const runtime_1 = require("../runtime");
 /**
- * @export
- */
-exports.UpdateScheduledIncrementalScanApiModelScheduleRunTypeEnum = {
-    Once: 'Once',
-    Daily: 'Daily',
-    Weekly: 'Weekly',
-    Monthly: 'Monthly',
-    Quarterly: 'Quarterly',
-    Biannually: 'Biannually',
-    Yearly: 'Yearly',
-    Custom: 'Custom'
-};
+* @export
+* @enum {string}
+*/
+var UpdateScheduledIncrementalScanApiModelScheduleRunTypeEnum;
+(function (UpdateScheduledIncrementalScanApiModelScheduleRunTypeEnum) {
+    UpdateScheduledIncrementalScanApiModelScheduleRunTypeEnum["Once"] = "Once";
+    UpdateScheduledIncrementalScanApiModelScheduleRunTypeEnum["Daily"] = "Daily";
+    UpdateScheduledIncrementalScanApiModelScheduleRunTypeEnum["Weekly"] = "Weekly";
+    UpdateScheduledIncrementalScanApiModelScheduleRunTypeEnum["Monthly"] = "Monthly";
+    UpdateScheduledIncrementalScanApiModelScheduleRunTypeEnum["Quarterly"] = "Quarterly";
+    UpdateScheduledIncrementalScanApiModelScheduleRunTypeEnum["Biannually"] = "Biannually";
+    UpdateScheduledIncrementalScanApiModelScheduleRunTypeEnum["Yearly"] = "Yearly";
+    UpdateScheduledIncrementalScanApiModelScheduleRunTypeEnum["Custom"] = "Custom";
+})(UpdateScheduledIncrementalScanApiModelScheduleRunTypeEnum = exports.UpdateScheduledIncrementalScanApiModelScheduleRunTypeEnum || (exports.UpdateScheduledIncrementalScanApiModelScheduleRunTypeEnum = {}));
 /**
  * Check if a given object implements the UpdateScheduledIncrementalScanApiModel interface.
  */

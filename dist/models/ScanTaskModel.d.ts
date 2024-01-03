@@ -603,152 +603,152 @@ export interface ScanTaskModel {
     tags?: Array<string>;
 }
 /**
- * @export
- */
-export declare const ScanTaskModelAuthenticationProfileOptionEnum: {
-    readonly DontUse: "DontUse";
-    readonly UseMatchedProfile: "UseMatchedProfile";
-    readonly SelectedProfile: "SelectedProfile";
-};
-export type ScanTaskModelAuthenticationProfileOptionEnum = typeof ScanTaskModelAuthenticationProfileOptionEnum[keyof typeof ScanTaskModelAuthenticationProfileOptionEnum];
+* @export
+* @enum {string}
+*/
+export declare enum ScanTaskModelAuthenticationProfileOptionEnum {
+    DontUse = "DontUse",
+    UseMatchedProfile = "UseMatchedProfile",
+    SelectedProfile = "SelectedProfile"
+}
 /**
- * @export
- */
-export declare const ScanTaskModelScopeEnum: {
-    readonly EnteredPathAndBelow: "EnteredPathAndBelow";
-    readonly OnlyEnteredUrl: "OnlyEnteredUrl";
-    readonly WholeDomain: "WholeDomain";
-};
-export type ScanTaskModelScopeEnum = typeof ScanTaskModelScopeEnum[keyof typeof ScanTaskModelScopeEnum];
+* @export
+* @enum {string}
+*/
+export declare enum ScanTaskModelScopeEnum {
+    EnteredPathAndBelow = "EnteredPathAndBelow",
+    OnlyEnteredUrl = "OnlyEnteredUrl",
+    WholeDomain = "WholeDomain"
+}
 /**
- * @export
- */
-export declare const ScanTaskModelUrlRewriteModeEnum: {
-    readonly None: "None";
-    readonly Heuristic: "Heuristic";
-    readonly Custom: "Custom";
-};
-export type ScanTaskModelUrlRewriteModeEnum = typeof ScanTaskModelUrlRewriteModeEnum[keyof typeof ScanTaskModelUrlRewriteModeEnum];
+* @export
+* @enum {string}
+*/
+export declare enum ScanTaskModelUrlRewriteModeEnum {
+    None = "None",
+    Heuristic = "Heuristic",
+    Custom = "Custom"
+}
 /**
- * @export
- */
-export declare const ScanTaskModelWebsiteProtocolEnum: {
-    readonly Http: "Http";
-    readonly Https: "Https";
-};
-export type ScanTaskModelWebsiteProtocolEnum = typeof ScanTaskModelWebsiteProtocolEnum[keyof typeof ScanTaskModelWebsiteProtocolEnum];
+* @export
+* @enum {string}
+*/
+export declare enum ScanTaskModelWebsiteProtocolEnum {
+    Http = "Http",
+    Https = "Https"
+}
 /**
- * @export
- */
-export declare const ScanTaskModelFailureReasonEnum: {
-    readonly None: "None";
-    readonly Request: "Request";
-    readonly HeadRequest: "HeadRequest";
-    readonly RedirectDetected: "RedirectDetected";
-    readonly TimeoutDetected: "TimeoutDetected";
-    readonly MaxLogoutExceeded: "MaxLogoutExceeded";
-    readonly RequestFailed: "RequestFailed";
-    readonly Response: "Response";
-    readonly CrawlerRequest: "CrawlerRequest";
-    readonly AttackerRequest: "AttackerRequest";
-    readonly ReCrawlerRequest: "ReCrawlerRequest";
-    readonly Finished: "Finished";
-    readonly LinkNotFound: "LinkNotFound";
-    readonly RecalculateAttackPossibilities: "RecalculateAttackPossibilities";
-    readonly PhaseCrawlStarted: "PhaseCrawlStarted";
-    readonly PhaseAttackStarted: "PhaseAttackStarted";
-    readonly PhaseReCrawlStarted: "PhaseReCrawlStarted";
-    readonly CrawlerPossibility: "CrawlerPossibility";
-    readonly ReCrawlerPossibilities: "ReCrawlerPossibilities";
-    readonly HostUnavailable: "HostUnavailable";
-    readonly NameResolutionFailure: "NameResolutionFailure";
-    readonly ProxyFailure: "ProxyFailure";
-    readonly OutOfDiskSpace: "OutOfDiskSpace";
-    readonly ProxyAuthenticationRequired: "ProxyAuthenticationRequired";
-    readonly OAuth2EndpointError: "OAuth2EndpointError";
-    readonly TargetLinkTimeoutDetected: "TargetLinkTimeoutDetected";
-    readonly LoginFailed: "LoginFailed";
-    readonly ScanTargetNotReachable: "ScanTargetNotReachable";
-    readonly ScanPolicyNotFound: "ScanPolicyNotFound";
-    readonly ReportPolicyNotFound: "ReportPolicyNotFound";
-    readonly SecurityProtocolTypeNotSupported: "SecurityProtocolTypeNotSupported";
-    readonly UnableToLoadScanSession: "UnableToLoadScanSession";
-    readonly AgentNotAvailable: "AgentNotAvailable";
-    readonly ScanNotAllowed: "ScanNotAllowed";
-    readonly UnableToFindAutoSaveNdb: "UnableToFindAutoSaveNdb";
-    readonly ErrorOccurredOnScanFailed: "ErrorOccurredOnScanFailed";
-    readonly ErrorOccurredOnPause: "ErrorOccurredOnPause";
-    readonly ErrorOccurredOnCancel: "ErrorOccurredOnCancel";
-    readonly ErrorOccurredOnScanCompleted: "ErrorOccurredOnScanCompleted";
-    readonly SevenZipNotFoundOrInstalled: "SevenZipNotFoundOrInstalled";
-    readonly ErrorOccurredOnLaunchScan: "ErrorOccurredOnLaunchScan";
-    readonly InvalidHeader: "InvalidHeader";
-    readonly ErrorOccurredOnPreScanValidation: "ErrorOccurredOnPreScanValidation";
-    readonly RawScanFileExpired: "RawScanFileExpired";
-    readonly SecretsAndEncryptionIntegration: "SecretsAndEncryptionIntegration";
-    readonly ArchiveMethodUnavailable: "ArchiveMethodUnavailable";
-};
-export type ScanTaskModelFailureReasonEnum = typeof ScanTaskModelFailureReasonEnum[keyof typeof ScanTaskModelFailureReasonEnum];
+* @export
+* @enum {string}
+*/
+export declare enum ScanTaskModelFailureReasonEnum {
+    None = "None",
+    Request = "Request",
+    HeadRequest = "HeadRequest",
+    RedirectDetected = "RedirectDetected",
+    TimeoutDetected = "TimeoutDetected",
+    MaxLogoutExceeded = "MaxLogoutExceeded",
+    RequestFailed = "RequestFailed",
+    Response = "Response",
+    CrawlerRequest = "CrawlerRequest",
+    AttackerRequest = "AttackerRequest",
+    ReCrawlerRequest = "ReCrawlerRequest",
+    Finished = "Finished",
+    LinkNotFound = "LinkNotFound",
+    RecalculateAttackPossibilities = "RecalculateAttackPossibilities",
+    PhaseCrawlStarted = "PhaseCrawlStarted",
+    PhaseAttackStarted = "PhaseAttackStarted",
+    PhaseReCrawlStarted = "PhaseReCrawlStarted",
+    CrawlerPossibility = "CrawlerPossibility",
+    ReCrawlerPossibilities = "ReCrawlerPossibilities",
+    HostUnavailable = "HostUnavailable",
+    NameResolutionFailure = "NameResolutionFailure",
+    ProxyFailure = "ProxyFailure",
+    OutOfDiskSpace = "OutOfDiskSpace",
+    ProxyAuthenticationRequired = "ProxyAuthenticationRequired",
+    OAuth2EndpointError = "OAuth2EndpointError",
+    TargetLinkTimeoutDetected = "TargetLinkTimeoutDetected",
+    LoginFailed = "LoginFailed",
+    ScanTargetNotReachable = "ScanTargetNotReachable",
+    ScanPolicyNotFound = "ScanPolicyNotFound",
+    ReportPolicyNotFound = "ReportPolicyNotFound",
+    SecurityProtocolTypeNotSupported = "SecurityProtocolTypeNotSupported",
+    UnableToLoadScanSession = "UnableToLoadScanSession",
+    AgentNotAvailable = "AgentNotAvailable",
+    ScanNotAllowed = "ScanNotAllowed",
+    UnableToFindAutoSaveNdb = "UnableToFindAutoSaveNdb",
+    ErrorOccurredOnScanFailed = "ErrorOccurredOnScanFailed",
+    ErrorOccurredOnPause = "ErrorOccurredOnPause",
+    ErrorOccurredOnCancel = "ErrorOccurredOnCancel",
+    ErrorOccurredOnScanCompleted = "ErrorOccurredOnScanCompleted",
+    SevenZipNotFoundOrInstalled = "SevenZipNotFoundOrInstalled",
+    ErrorOccurredOnLaunchScan = "ErrorOccurredOnLaunchScan",
+    InvalidHeader = "InvalidHeader",
+    ErrorOccurredOnPreScanValidation = "ErrorOccurredOnPreScanValidation",
+    RawScanFileExpired = "RawScanFileExpired",
+    SecretsAndEncryptionIntegration = "SecretsAndEncryptionIntegration",
+    ArchiveMethodUnavailable = "ArchiveMethodUnavailable"
+}
 /**
- * @export
- */
-export declare const ScanTaskModelGlobalThreatLevelEnum: {
-    readonly Unknown: "Unknown";
-    readonly Secure: "Secure";
-    readonly NeedsAttention: "NeedsAttention";
-    readonly Insecure: "Insecure";
-    readonly Critical: "Critical";
-};
-export type ScanTaskModelGlobalThreatLevelEnum = typeof ScanTaskModelGlobalThreatLevelEnum[keyof typeof ScanTaskModelGlobalThreatLevelEnum];
+* @export
+* @enum {string}
+*/
+export declare enum ScanTaskModelGlobalThreatLevelEnum {
+    Unknown = "Unknown",
+    Secure = "Secure",
+    NeedsAttention = "NeedsAttention",
+    Insecure = "Insecure",
+    Critical = "Critical"
+}
 /**
- * @export
- */
-export declare const ScanTaskModelPhaseEnum: {
-    readonly Pending: "Pending";
-    readonly Crawling: "Crawling";
-    readonly CrawlingAndAttacking: "CrawlingAndAttacking";
-    readonly Attacking: "Attacking";
-    readonly ReCrawling: "ReCrawling";
-    readonly Complete: "Complete";
-};
-export type ScanTaskModelPhaseEnum = typeof ScanTaskModelPhaseEnum[keyof typeof ScanTaskModelPhaseEnum];
+* @export
+* @enum {string}
+*/
+export declare enum ScanTaskModelPhaseEnum {
+    Pending = "Pending",
+    Crawling = "Crawling",
+    CrawlingAndAttacking = "CrawlingAndAttacking",
+    Attacking = "Attacking",
+    ReCrawling = "ReCrawling",
+    Complete = "Complete"
+}
 /**
- * @export
- */
-export declare const ScanTaskModelScanTypeEnum: {
-    readonly Full: "Full";
-    readonly Retest: "Retest";
-    readonly Incremental: "Incremental";
-};
-export type ScanTaskModelScanTypeEnum = typeof ScanTaskModelScanTypeEnum[keyof typeof ScanTaskModelScanTypeEnum];
+* @export
+* @enum {string}
+*/
+export declare enum ScanTaskModelScanTypeEnum {
+    Full = "Full",
+    Retest = "Retest",
+    Incremental = "Incremental"
+}
 /**
- * @export
- */
-export declare const ScanTaskModelStateEnum: {
-    readonly Queued: "Queued";
-    readonly Scanning: "Scanning";
-    readonly Archiving: "Archiving";
-    readonly Complete: "Complete";
-    readonly Failed: "Failed";
-    readonly Cancelled: "Cancelled";
-    readonly Delayed: "Delayed";
-    readonly Pausing: "Pausing";
-    readonly Paused: "Paused";
-    readonly Resuming: "Resuming";
-    readonly AsyncArchiving: "AsyncArchiving";
-};
-export type ScanTaskModelStateEnum = typeof ScanTaskModelStateEnum[keyof typeof ScanTaskModelStateEnum];
+* @export
+* @enum {string}
+*/
+export declare enum ScanTaskModelStateEnum {
+    Queued = "Queued",
+    Scanning = "Scanning",
+    Archiving = "Archiving",
+    Complete = "Complete",
+    Failed = "Failed",
+    Cancelled = "Cancelled",
+    Delayed = "Delayed",
+    Pausing = "Pausing",
+    Paused = "Paused",
+    Resuming = "Resuming",
+    AsyncArchiving = "AsyncArchiving"
+}
 /**
- * @export
- */
-export declare const ScanTaskModelThreatLevelEnum: {
-    readonly Unknown: "Unknown";
-    readonly Secure: "Secure";
-    readonly NeedsAttention: "NeedsAttention";
-    readonly Insecure: "Insecure";
-    readonly Critical: "Critical";
-};
-export type ScanTaskModelThreatLevelEnum = typeof ScanTaskModelThreatLevelEnum[keyof typeof ScanTaskModelThreatLevelEnum];
+* @export
+* @enum {string}
+*/
+export declare enum ScanTaskModelThreatLevelEnum {
+    Unknown = "Unknown",
+    Secure = "Secure",
+    NeedsAttention = "NeedsAttention",
+    Insecure = "Insecure",
+    Critical = "Critical"
+}
 /**
  * Check if a given object implements the ScanTaskModel interface.
  */

@@ -65,19 +65,18 @@ export interface ScanCustomReportApiModel {
     reportFormat?: ScanCustomReportApiModelReportFormatEnum;
 }
 
-
 /**
- * @export
- */
-export const ScanCustomReportApiModelReportFormatEnum = {
-    Xml: 'Xml',
-    Csv: 'Csv',
-    Pdf: 'Pdf',
-    Html: 'Html',
-    Txt: 'Txt',
-    Json: 'Json'
-} as const;
-export type ScanCustomReportApiModelReportFormatEnum = typeof ScanCustomReportApiModelReportFormatEnum[keyof typeof ScanCustomReportApiModelReportFormatEnum];
+* @export
+* @enum {string}
+*/
+export enum ScanCustomReportApiModelReportFormatEnum {
+    Xml = 'Xml',
+    Csv = 'Csv',
+    Pdf = 'Pdf',
+    Html = 'Html',
+    Txt = 'Txt',
+    Json = 'Json'
+}
 
 
 /**
