@@ -48,55 +48,51 @@ const WebhookIntegrationInfoModel_1 = require("./WebhookIntegrationInfoModel");
 const YouTrackIntegrationInfoModel_1 = require("./YouTrackIntegrationInfoModel");
 const ZapierIntegrationInfoModel_1 = require("./ZapierIntegrationInfoModel");
 /**
-* @export
-* @enum {string}
-*/
-var ScanNotificationIntegrationViewModelTypeEnum;
-(function (ScanNotificationIntegrationViewModelTypeEnum) {
-    ScanNotificationIntegrationViewModelTypeEnum["Jira"] = "Jira";
-    ScanNotificationIntegrationViewModelTypeEnum["GitHub"] = "GitHub";
-    ScanNotificationIntegrationViewModelTypeEnum["Tfs"] = "TFS";
-    ScanNotificationIntegrationViewModelTypeEnum["FogBugz"] = "FogBugz";
-    ScanNotificationIntegrationViewModelTypeEnum["ServiceNow"] = "ServiceNow";
-    ScanNotificationIntegrationViewModelTypeEnum["Slack"] = "Slack";
-    ScanNotificationIntegrationViewModelTypeEnum["GitLab"] = "GitLab";
-    ScanNotificationIntegrationViewModelTypeEnum["Bitbucket"] = "Bitbucket";
-    ScanNotificationIntegrationViewModelTypeEnum["Unfuddle"] = "Unfuddle";
-    ScanNotificationIntegrationViewModelTypeEnum["Zapier"] = "Zapier";
-    ScanNotificationIntegrationViewModelTypeEnum["AzureDevOps"] = "AzureDevOps";
-    ScanNotificationIntegrationViewModelTypeEnum["Redmine"] = "Redmine";
-    ScanNotificationIntegrationViewModelTypeEnum["Bugzilla"] = "Bugzilla";
-    ScanNotificationIntegrationViewModelTypeEnum["Kafka"] = "Kafka";
-    ScanNotificationIntegrationViewModelTypeEnum["PagerDuty"] = "PagerDuty";
-    ScanNotificationIntegrationViewModelTypeEnum["MicrosoftTeams"] = "MicrosoftTeams";
-    ScanNotificationIntegrationViewModelTypeEnum["Clubhouse"] = "Clubhouse";
-    ScanNotificationIntegrationViewModelTypeEnum["Trello"] = "Trello";
-    ScanNotificationIntegrationViewModelTypeEnum["Asana"] = "Asana";
-    ScanNotificationIntegrationViewModelTypeEnum["Webhook"] = "Webhook";
-    ScanNotificationIntegrationViewModelTypeEnum["Kenna"] = "Kenna";
-    ScanNotificationIntegrationViewModelTypeEnum["Freshservice"] = "Freshservice";
-    ScanNotificationIntegrationViewModelTypeEnum["YouTrack"] = "YouTrack";
-    ScanNotificationIntegrationViewModelTypeEnum["NetsparkerEnterprise"] = "NetsparkerEnterprise";
-    ScanNotificationIntegrationViewModelTypeEnum["Splunk"] = "Splunk";
-    ScanNotificationIntegrationViewModelTypeEnum["Mattermost"] = "Mattermost";
-    ScanNotificationIntegrationViewModelTypeEnum["Hashicorp"] = "Hashicorp";
-    ScanNotificationIntegrationViewModelTypeEnum["PivotalTracker"] = "PivotalTracker";
-    ScanNotificationIntegrationViewModelTypeEnum["CyberArk"] = "CyberArk";
-    ScanNotificationIntegrationViewModelTypeEnum["DefectDojo"] = "DefectDojo";
-    ScanNotificationIntegrationViewModelTypeEnum["JazzTeam"] = "JazzTeam";
-    ScanNotificationIntegrationViewModelTypeEnum["AzureKeyVault"] = "AzureKeyVault";
-    ScanNotificationIntegrationViewModelTypeEnum["ServiceNowVrm"] = "ServiceNowVRM";
-})(ScanNotificationIntegrationViewModelTypeEnum = exports.ScanNotificationIntegrationViewModelTypeEnum || (exports.ScanNotificationIntegrationViewModelTypeEnum = {}));
+ * @export
+ */
+exports.ScanNotificationIntegrationViewModelTypeEnum = {
+    Jira: 'Jira',
+    GitHub: 'GitHub',
+    Tfs: 'TFS',
+    FogBugz: 'FogBugz',
+    ServiceNow: 'ServiceNow',
+    Slack: 'Slack',
+    GitLab: 'GitLab',
+    Bitbucket: 'Bitbucket',
+    Unfuddle: 'Unfuddle',
+    Zapier: 'Zapier',
+    AzureDevOps: 'AzureDevOps',
+    Redmine: 'Redmine',
+    Bugzilla: 'Bugzilla',
+    Kafka: 'Kafka',
+    PagerDuty: 'PagerDuty',
+    MicrosoftTeams: 'MicrosoftTeams',
+    Clubhouse: 'Clubhouse',
+    Trello: 'Trello',
+    Asana: 'Asana',
+    Webhook: 'Webhook',
+    Kenna: 'Kenna',
+    Freshservice: 'Freshservice',
+    YouTrack: 'YouTrack',
+    NetsparkerEnterprise: 'NetsparkerEnterprise',
+    Splunk: 'Splunk',
+    Mattermost: 'Mattermost',
+    Hashicorp: 'Hashicorp',
+    PivotalTracker: 'PivotalTracker',
+    CyberArk: 'CyberArk',
+    DefectDojo: 'DefectDojo',
+    JazzTeam: 'JazzTeam',
+    AzureKeyVault: 'AzureKeyVault',
+    ServiceNowVrm: 'ServiceNowVRM'
+};
 /**
-* @export
-* @enum {string}
-*/
-var ScanNotificationIntegrationViewModelCategoryEnum;
-(function (ScanNotificationIntegrationViewModelCategoryEnum) {
-    ScanNotificationIntegrationViewModelCategoryEnum["IssueTrackingSystem"] = "IssueTrackingSystem";
-    ScanNotificationIntegrationViewModelCategoryEnum["TeamMessagingSystem"] = "TeamMessagingSystem";
-    ScanNotificationIntegrationViewModelCategoryEnum["SecretsAndEncryptionManagement"] = "SecretsAndEncryptionManagement";
-})(ScanNotificationIntegrationViewModelCategoryEnum = exports.ScanNotificationIntegrationViewModelCategoryEnum || (exports.ScanNotificationIntegrationViewModelCategoryEnum = {}));
+ * @export
+ */
+exports.ScanNotificationIntegrationViewModelCategoryEnum = {
+    IssueTrackingSystem: 'IssueTrackingSystem',
+    TeamMessagingSystem: 'TeamMessagingSystem',
+    SecretsAndEncryptionManagement: 'SecretsAndEncryptionManagement'
+};
 /**
  * Check if a given object implements the ScanNotificationIntegrationViewModel interface.
  */

@@ -57,28 +57,30 @@ export interface IssueReportFilterApiModel {
     endDate?: Date;
 }
 
+
 /**
-* @export
-* @enum {string}
-*/
-export enum IssueReportFilterApiModelCsvSeparatorEnum {
-    Comma = 'Comma',
-    Semicolon = 'Semicolon',
-    Pipe = 'Pipe',
-    Tab = 'Tab'
-}
+ * @export
+ */
+export const IssueReportFilterApiModelCsvSeparatorEnum = {
+    Comma: 'Comma',
+    Semicolon: 'Semicolon',
+    Pipe: 'Pipe',
+    Tab: 'Tab'
+} as const;
+export type IssueReportFilterApiModelCsvSeparatorEnum = typeof IssueReportFilterApiModelCsvSeparatorEnum[keyof typeof IssueReportFilterApiModelCsvSeparatorEnum];
+
 /**
-* @export
-* @enum {string}
-*/
-export enum IssueReportFilterApiModelSeverityEnum {
-    BestPractice = 'BestPractice',
-    Information = 'Information',
-    Low = 'Low',
-    Medium = 'Medium',
-    High = 'High',
-    Critical = 'Critical'
-}
+ * @export
+ */
+export const IssueReportFilterApiModelSeverityEnum = {
+    BestPractice: 'BestPractice',
+    Information: 'Information',
+    Low: 'Low',
+    Medium: 'Medium',
+    High: 'High',
+    Critical: 'Critical'
+} as const;
+export type IssueReportFilterApiModelSeverityEnum = typeof IssueReportFilterApiModelSeverityEnum[keyof typeof IssueReportFilterApiModelSeverityEnum];
 
 
 /**

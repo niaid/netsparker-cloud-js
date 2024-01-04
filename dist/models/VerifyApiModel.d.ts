@@ -35,15 +35,15 @@ export interface VerifyApiModel {
     websiteUrl: string;
 }
 /**
-* @export
-* @enum {string}
-*/
-export declare enum VerifyApiModelVerificationMethodEnum {
-    File = "File",
-    Tag = "Tag",
-    Dns = "Dns",
-    Email = "Email"
-}
+ * @export
+ */
+export declare const VerifyApiModelVerificationMethodEnum: {
+    readonly File: "File";
+    readonly Tag: "Tag";
+    readonly Dns: "Dns";
+    readonly Email: "Email";
+};
+export type VerifyApiModelVerificationMethodEnum = typeof VerifyApiModelVerificationMethodEnum[keyof typeof VerifyApiModelVerificationMethodEnum];
 /**
  * Check if a given object implements the VerifyApiModel interface.
  */

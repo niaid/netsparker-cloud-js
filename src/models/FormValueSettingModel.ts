@@ -69,37 +69,40 @@ export interface FormValueSettingModel {
     value: string;
 }
 
+
 /**
-* @export
-* @enum {string}
-*/
-export enum FormValueSettingModelMatchEnum {
-    RegEx = 'RegEx',
-    Exact = 'Exact',
-    Contains = 'Contains',
-    Starts = 'Starts',
-    Ends = 'Ends'
-}
+ * @export
+ */
+export const FormValueSettingModelMatchEnum = {
+    RegEx: 'RegEx',
+    Exact: 'Exact',
+    Contains: 'Contains',
+    Starts: 'Starts',
+    Ends: 'Ends'
+} as const;
+export type FormValueSettingModelMatchEnum = typeof FormValueSettingModelMatchEnum[keyof typeof FormValueSettingModelMatchEnum];
+
 /**
-* @export
-* @enum {string}
-*/
-export enum FormValueSettingModelMatchTargetEnum {
-    Name = 'Name',
-    Label = 'Label',
-    Placeholder = 'Placeholder',
-    Id = 'Id'
-}
+ * @export
+ */
+export const FormValueSettingModelMatchTargetEnum = {
+    Name: 'Name',
+    Label: 'Label',
+    Placeholder: 'Placeholder',
+    Id: 'Id'
+} as const;
+export type FormValueSettingModelMatchTargetEnum = typeof FormValueSettingModelMatchTargetEnum[keyof typeof FormValueSettingModelMatchTargetEnum];
+
 /**
-* @export
-* @enum {string}
-*/
-export enum FormValueSettingModelMatchTargetValueEnum {
-    Name = 'Name',
-    Label = 'Label',
-    Placeholder = 'Placeholder',
-    Id = 'Id'
-}
+ * @export
+ */
+export const FormValueSettingModelMatchTargetValueEnum = {
+    Name: 'Name',
+    Label: 'Label',
+    Placeholder: 'Placeholder',
+    Id: 'Id'
+} as const;
+export type FormValueSettingModelMatchTargetValueEnum = typeof FormValueSettingModelMatchTargetValueEnum[keyof typeof FormValueSettingModelMatchTargetValueEnum];
 
 
 /**

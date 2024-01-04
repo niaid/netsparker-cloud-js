@@ -232,53 +232,55 @@ export interface AsanaIntegrationInfoModel {
     titleFormat: string;
 }
 
+
 /**
-* @export
-* @enum {string}
-*/
-export enum AsanaIntegrationInfoModelTypeEnum {
-    Jira = 'Jira',
-    GitHub = 'GitHub',
-    Tfs = 'TFS',
-    FogBugz = 'FogBugz',
-    ServiceNow = 'ServiceNow',
-    Slack = 'Slack',
-    GitLab = 'GitLab',
-    Bitbucket = 'Bitbucket',
-    Unfuddle = 'Unfuddle',
-    Zapier = 'Zapier',
-    AzureDevOps = 'AzureDevOps',
-    Redmine = 'Redmine',
-    Bugzilla = 'Bugzilla',
-    Kafka = 'Kafka',
-    PagerDuty = 'PagerDuty',
-    MicrosoftTeams = 'MicrosoftTeams',
-    Clubhouse = 'Clubhouse',
-    Trello = 'Trello',
-    Asana = 'Asana',
-    Webhook = 'Webhook',
-    Kenna = 'Kenna',
-    Freshservice = 'Freshservice',
-    YouTrack = 'YouTrack',
-    NetsparkerEnterprise = 'NetsparkerEnterprise',
-    Splunk = 'Splunk',
-    Mattermost = 'Mattermost',
-    Hashicorp = 'Hashicorp',
-    PivotalTracker = 'PivotalTracker',
-    CyberArk = 'CyberArk',
-    DefectDojo = 'DefectDojo',
-    JazzTeam = 'JazzTeam',
-    AzureKeyVault = 'AzureKeyVault',
-    ServiceNowVrm = 'ServiceNowVRM'
-}
+ * @export
+ */
+export const AsanaIntegrationInfoModelTypeEnum = {
+    Jira: 'Jira',
+    GitHub: 'GitHub',
+    Tfs: 'TFS',
+    FogBugz: 'FogBugz',
+    ServiceNow: 'ServiceNow',
+    Slack: 'Slack',
+    GitLab: 'GitLab',
+    Bitbucket: 'Bitbucket',
+    Unfuddle: 'Unfuddle',
+    Zapier: 'Zapier',
+    AzureDevOps: 'AzureDevOps',
+    Redmine: 'Redmine',
+    Bugzilla: 'Bugzilla',
+    Kafka: 'Kafka',
+    PagerDuty: 'PagerDuty',
+    MicrosoftTeams: 'MicrosoftTeams',
+    Clubhouse: 'Clubhouse',
+    Trello: 'Trello',
+    Asana: 'Asana',
+    Webhook: 'Webhook',
+    Kenna: 'Kenna',
+    Freshservice: 'Freshservice',
+    YouTrack: 'YouTrack',
+    NetsparkerEnterprise: 'NetsparkerEnterprise',
+    Splunk: 'Splunk',
+    Mattermost: 'Mattermost',
+    Hashicorp: 'Hashicorp',
+    PivotalTracker: 'PivotalTracker',
+    CyberArk: 'CyberArk',
+    DefectDojo: 'DefectDojo',
+    JazzTeam: 'JazzTeam',
+    AzureKeyVault: 'AzureKeyVault',
+    ServiceNowVrm: 'ServiceNowVRM'
+} as const;
+export type AsanaIntegrationInfoModelTypeEnum = typeof AsanaIntegrationInfoModelTypeEnum[keyof typeof AsanaIntegrationInfoModelTypeEnum];
+
 /**
-* @export
-* @enum {string}
-*/
-export enum AsanaIntegrationInfoModelTemplateTypeEnum {
-    Standard = 'Standard',
-    Detailed = 'Detailed'
-}
+ * @export
+ */
+export const AsanaIntegrationInfoModelTemplateTypeEnum = {
+    Standard: 'Standard',
+    Detailed: 'Detailed'
+} as const;
+export type AsanaIntegrationInfoModelTemplateTypeEnum = typeof AsanaIntegrationInfoModelTemplateTypeEnum[keyof typeof AsanaIntegrationInfoModelTemplateTypeEnum];
 
 
 /**

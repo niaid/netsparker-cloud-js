@@ -16,30 +16,26 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.NotificationIntegrationFilterApiToJSON = exports.NotificationIntegrationFilterApiFromJSONTyped = exports.NotificationIntegrationFilterApiFromJSON = exports.instanceOfNotificationIntegrationFilterApi = exports.NotificationIntegrationFilterApiStateEnum = exports.NotificationIntegrationFilterApiSeverityEnum = void 0;
 const runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
-var NotificationIntegrationFilterApiSeverityEnum;
-(function (NotificationIntegrationFilterApiSeverityEnum) {
-    NotificationIntegrationFilterApiSeverityEnum["BestPractice"] = "BestPractice";
-    NotificationIntegrationFilterApiSeverityEnum["Information"] = "Information";
-    NotificationIntegrationFilterApiSeverityEnum["Low"] = "Low";
-    NotificationIntegrationFilterApiSeverityEnum["Medium"] = "Medium";
-    NotificationIntegrationFilterApiSeverityEnum["High"] = "High";
-    NotificationIntegrationFilterApiSeverityEnum["Critical"] = "Critical";
-})(NotificationIntegrationFilterApiSeverityEnum = exports.NotificationIntegrationFilterApiSeverityEnum || (exports.NotificationIntegrationFilterApiSeverityEnum = {}));
+ * @export
+ */
+exports.NotificationIntegrationFilterApiSeverityEnum = {
+    BestPractice: 'BestPractice',
+    Information: 'Information',
+    Low: 'Low',
+    Medium: 'Medium',
+    High: 'High',
+    Critical: 'Critical'
+};
 /**
-* @export
-* @enum {string}
-*/
-var NotificationIntegrationFilterApiStateEnum;
-(function (NotificationIntegrationFilterApiStateEnum) {
-    NotificationIntegrationFilterApiStateEnum["NotFound"] = "NotFound";
-    NotificationIntegrationFilterApiStateEnum["Fixed"] = "Fixed";
-    NotificationIntegrationFilterApiStateEnum["NotFixed"] = "NotFixed";
-    NotificationIntegrationFilterApiStateEnum["New"] = "New";
-    NotificationIntegrationFilterApiStateEnum["Revived"] = "Revived";
-})(NotificationIntegrationFilterApiStateEnum = exports.NotificationIntegrationFilterApiStateEnum || (exports.NotificationIntegrationFilterApiStateEnum = {}));
+ * @export
+ */
+exports.NotificationIntegrationFilterApiStateEnum = {
+    NotFound: 'NotFound',
+    Fixed: 'Fixed',
+    NotFixed: 'NotFixed',
+    New: 'New',
+    Revived: 'Revived'
+};
 /**
  * Check if a given object implements the NotificationIntegrationFilterApi interface.
  */

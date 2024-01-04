@@ -107,25 +107,25 @@ export interface OAuth2SettingApiModel {
     basicAuthenticationSetting?: BasicAuthenticationSettingApiModel;
 }
 /**
-* @export
-* @enum {string}
-*/
-export declare enum OAuth2SettingApiModelFlowTypeEnum {
-    AuthorizationCode = "AuthorizationCode",
-    Implicit = "Implicit",
-    ResourceOwnerPasswordCredentials = "ResourceOwnerPasswordCredentials",
-    ClientCredentials = "ClientCredentials",
-    Custom = "Custom"
-}
+ * @export
+ */
+export declare const OAuth2SettingApiModelFlowTypeEnum: {
+    readonly AuthorizationCode: "AuthorizationCode";
+    readonly Implicit: "Implicit";
+    readonly ResourceOwnerPasswordCredentials: "ResourceOwnerPasswordCredentials";
+    readonly ClientCredentials: "ClientCredentials";
+    readonly Custom: "Custom";
+};
+export type OAuth2SettingApiModelFlowTypeEnum = typeof OAuth2SettingApiModelFlowTypeEnum[keyof typeof OAuth2SettingApiModelFlowTypeEnum];
 /**
-* @export
-* @enum {string}
-*/
-export declare enum OAuth2SettingApiModelAuthenticationTypeEnum {
-    None = "None",
-    Form = "Form",
-    Basic = "Basic"
-}
+ * @export
+ */
+export declare const OAuth2SettingApiModelAuthenticationTypeEnum: {
+    readonly None: "None";
+    readonly Form: "Form";
+    readonly Basic: "Basic";
+};
+export type OAuth2SettingApiModelAuthenticationTypeEnum = typeof OAuth2SettingApiModelAuthenticationTypeEnum[keyof typeof OAuth2SettingApiModelAuthenticationTypeEnum];
 /**
  * Check if a given object implements the OAuth2SettingApiModel interface.
  */

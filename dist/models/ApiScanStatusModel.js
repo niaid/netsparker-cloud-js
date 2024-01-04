@@ -16,23 +16,21 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ApiScanStatusModelToJSON = exports.ApiScanStatusModelFromJSONTyped = exports.ApiScanStatusModelFromJSON = exports.instanceOfApiScanStatusModel = exports.ApiScanStatusModelStateEnum = void 0;
 const runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
-var ApiScanStatusModelStateEnum;
-(function (ApiScanStatusModelStateEnum) {
-    ApiScanStatusModelStateEnum["Queued"] = "Queued";
-    ApiScanStatusModelStateEnum["Scanning"] = "Scanning";
-    ApiScanStatusModelStateEnum["Archiving"] = "Archiving";
-    ApiScanStatusModelStateEnum["Complete"] = "Complete";
-    ApiScanStatusModelStateEnum["Failed"] = "Failed";
-    ApiScanStatusModelStateEnum["Cancelled"] = "Cancelled";
-    ApiScanStatusModelStateEnum["Delayed"] = "Delayed";
-    ApiScanStatusModelStateEnum["Pausing"] = "Pausing";
-    ApiScanStatusModelStateEnum["Paused"] = "Paused";
-    ApiScanStatusModelStateEnum["Resuming"] = "Resuming";
-    ApiScanStatusModelStateEnum["AsyncArchiving"] = "AsyncArchiving";
-})(ApiScanStatusModelStateEnum = exports.ApiScanStatusModelStateEnum || (exports.ApiScanStatusModelStateEnum = {}));
+ * @export
+ */
+exports.ApiScanStatusModelStateEnum = {
+    Queued: 'Queued',
+    Scanning: 'Scanning',
+    Archiving: 'Archiving',
+    Complete: 'Complete',
+    Failed: 'Failed',
+    Cancelled: 'Cancelled',
+    Delayed: 'Delayed',
+    Pausing: 'Pausing',
+    Paused: 'Paused',
+    Resuming: 'Resuming',
+    AsyncArchiving: 'AsyncArchiving'
+};
 /**
  * Check if a given object implements the ApiScanStatusModel interface.
  */

@@ -69,14 +69,15 @@ export interface FormAuthenticationHashicorpVaultSecretSetting {
     passwordKey?: string;
 }
 
+
 /**
-* @export
-* @enum {string}
-*/
-export enum FormAuthenticationHashicorpVaultSecretSettingVersionEnum {
-    V1 = 'V1',
-    V2 = 'V2'
-}
+ * @export
+ */
+export const FormAuthenticationHashicorpVaultSecretSettingVersionEnum = {
+    V1: 'V1',
+    V2: 'V2'
+} as const;
+export type FormAuthenticationHashicorpVaultSecretSettingVersionEnum = typeof FormAuthenticationHashicorpVaultSecretSettingVersionEnum[keyof typeof FormAuthenticationHashicorpVaultSecretSettingVersionEnum];
 
 
 /**

@@ -16,36 +16,32 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.IntegrationUserMappingItemModelToJSON = exports.IntegrationUserMappingItemModelFromJSONTyped = exports.IntegrationUserMappingItemModelFromJSON = exports.instanceOfIntegrationUserMappingItemModel = exports.IntegrationUserMappingItemModelResultEnum = exports.IntegrationUserMappingItemModelIntegrationSystemEnum = void 0;
 const runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
-var IntegrationUserMappingItemModelIntegrationSystemEnum;
-(function (IntegrationUserMappingItemModelIntegrationSystemEnum) {
-    IntegrationUserMappingItemModelIntegrationSystemEnum["Teamcity"] = "Teamcity";
-    IntegrationUserMappingItemModelIntegrationSystemEnum["Jenkins"] = "Jenkins";
-    IntegrationUserMappingItemModelIntegrationSystemEnum["Bamboo"] = "Bamboo";
-    IntegrationUserMappingItemModelIntegrationSystemEnum["GitLab"] = "GitLab";
-    IntegrationUserMappingItemModelIntegrationSystemEnum["AzureDevOps"] = "AzureDevOps";
-    IntegrationUserMappingItemModelIntegrationSystemEnum["Jira"] = "Jira";
-    IntegrationUserMappingItemModelIntegrationSystemEnum["CircleCi"] = "CircleCI";
-    IntegrationUserMappingItemModelIntegrationSystemEnum["TravisCi"] = "TravisCI";
-    IntegrationUserMappingItemModelIntegrationSystemEnum["UrbanCodeDeploy"] = "UrbanCodeDeploy";
-    IntegrationUserMappingItemModelIntegrationSystemEnum["GitHubActions"] = "GitHubActions";
-})(IntegrationUserMappingItemModelIntegrationSystemEnum = exports.IntegrationUserMappingItemModelIntegrationSystemEnum || (exports.IntegrationUserMappingItemModelIntegrationSystemEnum = {}));
+ * @export
+ */
+exports.IntegrationUserMappingItemModelIntegrationSystemEnum = {
+    Teamcity: 'Teamcity',
+    Jenkins: 'Jenkins',
+    Bamboo: 'Bamboo',
+    GitLab: 'GitLab',
+    AzureDevOps: 'AzureDevOps',
+    Jira: 'Jira',
+    CircleCi: 'CircleCI',
+    TravisCi: 'TravisCI',
+    UrbanCodeDeploy: 'UrbanCodeDeploy',
+    GitHubActions: 'GitHubActions'
+};
 /**
-* @export
-* @enum {string}
-*/
-var IntegrationUserMappingItemModelResultEnum;
-(function (IntegrationUserMappingItemModelResultEnum) {
-    IntegrationUserMappingItemModelResultEnum["NotFound"] = "NotFound";
-    IntegrationUserMappingItemModelResultEnum["BadRequest"] = "BadRequest";
-    IntegrationUserMappingItemModelResultEnum["Duplicate"] = "Duplicate";
-    IntegrationUserMappingItemModelResultEnum["Saved"] = "Saved";
-    IntegrationUserMappingItemModelResultEnum["Edited"] = "Edited";
-    IntegrationUserMappingItemModelResultEnum["Deleted"] = "Deleted";
-    IntegrationUserMappingItemModelResultEnum["Exist"] = "Exist";
-})(IntegrationUserMappingItemModelResultEnum = exports.IntegrationUserMappingItemModelResultEnum || (exports.IntegrationUserMappingItemModelResultEnum = {}));
+ * @export
+ */
+exports.IntegrationUserMappingItemModelResultEnum = {
+    NotFound: 'NotFound',
+    BadRequest: 'BadRequest',
+    Duplicate: 'Duplicate',
+    Saved: 'Saved',
+    Edited: 'Edited',
+    Deleted: 'Deleted',
+    Exist: 'Exist'
+};
 /**
  * Check if a given object implements the IntegrationUserMappingItemModel interface.
  */

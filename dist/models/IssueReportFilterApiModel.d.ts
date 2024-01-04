@@ -53,27 +53,27 @@ export interface IssueReportFilterApiModel {
     endDate?: Date;
 }
 /**
-* @export
-* @enum {string}
-*/
-export declare enum IssueReportFilterApiModelCsvSeparatorEnum {
-    Comma = "Comma",
-    Semicolon = "Semicolon",
-    Pipe = "Pipe",
-    Tab = "Tab"
-}
+ * @export
+ */
+export declare const IssueReportFilterApiModelCsvSeparatorEnum: {
+    readonly Comma: "Comma";
+    readonly Semicolon: "Semicolon";
+    readonly Pipe: "Pipe";
+    readonly Tab: "Tab";
+};
+export type IssueReportFilterApiModelCsvSeparatorEnum = typeof IssueReportFilterApiModelCsvSeparatorEnum[keyof typeof IssueReportFilterApiModelCsvSeparatorEnum];
 /**
-* @export
-* @enum {string}
-*/
-export declare enum IssueReportFilterApiModelSeverityEnum {
-    BestPractice = "BestPractice",
-    Information = "Information",
-    Low = "Low",
-    Medium = "Medium",
-    High = "High",
-    Critical = "Critical"
-}
+ * @export
+ */
+export declare const IssueReportFilterApiModelSeverityEnum: {
+    readonly BestPractice: "BestPractice";
+    readonly Information: "Information";
+    readonly Low: "Low";
+    readonly Medium: "Medium";
+    readonly High: "High";
+    readonly Critical: "Critical";
+};
+export type IssueReportFilterApiModelSeverityEnum = typeof IssueReportFilterApiModelSeverityEnum[keyof typeof IssueReportFilterApiModelSeverityEnum];
 /**
  * Check if a given object implements the IssueReportFilterApiModel interface.
  */

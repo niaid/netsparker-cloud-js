@@ -250,91 +250,97 @@ export interface ServiceNowIntegrationInfoModel {
     integrationWizardResultModel?: IntegrationWizardResultModel;
 }
 
+
 /**
-* @export
-* @enum {string}
-*/
-export enum ServiceNowIntegrationInfoModelServiceNowCategoryTypesEnum {
-    Inquiry = 'Inquiry',
-    Software = 'Software',
-    Hardware = 'Hardware',
-    Network = 'Network',
-    Database = 'Database'
-}
+ * @export
+ */
+export const ServiceNowIntegrationInfoModelServiceNowCategoryTypesEnum = {
+    Inquiry: 'Inquiry',
+    Software: 'Software',
+    Hardware: 'Hardware',
+    Network: 'Network',
+    Database: 'Database'
+} as const;
+export type ServiceNowIntegrationInfoModelServiceNowCategoryTypesEnum = typeof ServiceNowIntegrationInfoModelServiceNowCategoryTypesEnum[keyof typeof ServiceNowIntegrationInfoModelServiceNowCategoryTypesEnum];
+
 /**
-* @export
-* @enum {string}
-*/
-export enum ServiceNowIntegrationInfoModelServiceNowReopenCategoryTypeEnum {
-    New = 'New',
-    InProgress = 'In_Progress',
-    OnHold = 'On_Hold'
-}
+ * @export
+ */
+export const ServiceNowIntegrationInfoModelServiceNowReopenCategoryTypeEnum = {
+    New: 'New',
+    InProgress: 'In_Progress',
+    OnHold: 'On_Hold'
+} as const;
+export type ServiceNowIntegrationInfoModelServiceNowReopenCategoryTypeEnum = typeof ServiceNowIntegrationInfoModelServiceNowReopenCategoryTypeEnum[keyof typeof ServiceNowIntegrationInfoModelServiceNowReopenCategoryTypeEnum];
+
 /**
-* @export
-* @enum {string}
-*/
-export enum ServiceNowIntegrationInfoModelServiceNowOnHoldReasonTypeEnum {
-    AwaitingCaller = 'AwaitingCaller',
-    AwaitingChange = 'AwaitingChange',
-    AwaitingProblem = 'AwaitingProblem',
-    AwaitingVendor = 'AwaitingVendor'
-}
+ * @export
+ */
+export const ServiceNowIntegrationInfoModelServiceNowOnHoldReasonTypeEnum = {
+    AwaitingCaller: 'AwaitingCaller',
+    AwaitingChange: 'AwaitingChange',
+    AwaitingProblem: 'AwaitingProblem',
+    AwaitingVendor: 'AwaitingVendor'
+} as const;
+export type ServiceNowIntegrationInfoModelServiceNowOnHoldReasonTypeEnum = typeof ServiceNowIntegrationInfoModelServiceNowOnHoldReasonTypeEnum[keyof typeof ServiceNowIntegrationInfoModelServiceNowOnHoldReasonTypeEnum];
+
 /**
-* @export
-* @enum {string}
-*/
-export enum ServiceNowIntegrationInfoModelResolvedStatusServiceNowEnum {
-    Resolved = 'Resolved',
-    Closed = 'Closed'
-}
+ * @export
+ */
+export const ServiceNowIntegrationInfoModelResolvedStatusServiceNowEnum = {
+    Resolved: 'Resolved',
+    Closed: 'Closed'
+} as const;
+export type ServiceNowIntegrationInfoModelResolvedStatusServiceNowEnum = typeof ServiceNowIntegrationInfoModelResolvedStatusServiceNowEnum[keyof typeof ServiceNowIntegrationInfoModelResolvedStatusServiceNowEnum];
+
 /**
-* @export
-* @enum {string}
-*/
-export enum ServiceNowIntegrationInfoModelTemplateTypeEnum {
-    Standard = 'Standard',
-    Detailed = 'Detailed'
-}
+ * @export
+ */
+export const ServiceNowIntegrationInfoModelTemplateTypeEnum = {
+    Standard: 'Standard',
+    Detailed: 'Detailed'
+} as const;
+export type ServiceNowIntegrationInfoModelTemplateTypeEnum = typeof ServiceNowIntegrationInfoModelTemplateTypeEnum[keyof typeof ServiceNowIntegrationInfoModelTemplateTypeEnum];
+
 /**
-* @export
-* @enum {string}
-*/
-export enum ServiceNowIntegrationInfoModelTypeEnum {
-    NetsparkerEnterprise = 'NetsparkerEnterprise',
-    Webhook = 'Webhook',
-    Zapier = 'Zapier',
-    Slack = 'Slack',
-    Mattermost = 'Mattermost',
-    MicrosoftTeams = 'MicrosoftTeams',
-    AzureDevOps = 'AzureDevOps',
-    Bitbucket = 'Bitbucket',
-    Bugzilla = 'Bugzilla',
-    Clubhouse = 'Clubhouse',
-    DefectDojo = 'DefectDojo',
-    PivotalTracker = 'PivotalTracker',
-    Jira = 'Jira',
-    FogBugz = 'FogBugz',
-    GitHub = 'GitHub',
-    PagerDuty = 'PagerDuty',
-    Kafka = 'Kafka',
-    Kenna = 'Kenna',
-    Redmine = 'Redmine',
-    ServiceNow = 'ServiceNow',
-    Tfs = 'TFS',
-    Unfuddle = 'Unfuddle',
-    YouTrack = 'YouTrack',
-    Freshservice = 'Freshservice',
-    Splunk = 'Splunk',
-    JazzTeam = 'JazzTeam',
-    ServiceNowVrm = 'ServiceNowVRM',
-    Asana = 'Asana',
-    Trello = 'Trello',
-    Hashicorp = 'Hashicorp',
-    CyberArk = 'CyberArk',
-    AzureKeyVault = 'AzureKeyVault',
-    GitLab = 'GitLab'
-}
+ * @export
+ */
+export const ServiceNowIntegrationInfoModelTypeEnum = {
+    Jira: 'Jira',
+    GitHub: 'GitHub',
+    Tfs: 'TFS',
+    FogBugz: 'FogBugz',
+    ServiceNow: 'ServiceNow',
+    Slack: 'Slack',
+    GitLab: 'GitLab',
+    Bitbucket: 'Bitbucket',
+    Unfuddle: 'Unfuddle',
+    Zapier: 'Zapier',
+    AzureDevOps: 'AzureDevOps',
+    Redmine: 'Redmine',
+    Bugzilla: 'Bugzilla',
+    Kafka: 'Kafka',
+    PagerDuty: 'PagerDuty',
+    MicrosoftTeams: 'MicrosoftTeams',
+    Clubhouse: 'Clubhouse',
+    Trello: 'Trello',
+    Asana: 'Asana',
+    Webhook: 'Webhook',
+    Kenna: 'Kenna',
+    Freshservice: 'Freshservice',
+    YouTrack: 'YouTrack',
+    NetsparkerEnterprise: 'NetsparkerEnterprise',
+    Splunk: 'Splunk',
+    Mattermost: 'Mattermost',
+    Hashicorp: 'Hashicorp',
+    PivotalTracker: 'PivotalTracker',
+    CyberArk: 'CyberArk',
+    DefectDojo: 'DefectDojo',
+    JazzTeam: 'JazzTeam',
+    AzureKeyVault: 'AzureKeyVault',
+    ServiceNowVrm: 'ServiceNowVRM'
+} as const;
+export type ServiceNowIntegrationInfoModelTypeEnum = typeof ServiceNowIntegrationInfoModelTypeEnum[keyof typeof ServiceNowIntegrationInfoModelTypeEnum];
 
 
 /**

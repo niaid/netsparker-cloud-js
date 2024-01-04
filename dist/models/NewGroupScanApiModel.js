@@ -17,15 +17,13 @@ exports.NewGroupScanApiModelToJSON = exports.NewGroupScanApiModelFromJSONTyped =
 const runtime_1 = require("../runtime");
 const ScanTimeWindowModel_1 = require("./ScanTimeWindowModel");
 /**
-* @export
-* @enum {string}
-*/
-var NewGroupScanApiModelAuthenticationProfileOptionEnum;
-(function (NewGroupScanApiModelAuthenticationProfileOptionEnum) {
-    NewGroupScanApiModelAuthenticationProfileOptionEnum["DontUse"] = "DontUse";
-    NewGroupScanApiModelAuthenticationProfileOptionEnum["UseMatchedProfile"] = "UseMatchedProfile";
-    NewGroupScanApiModelAuthenticationProfileOptionEnum["SelectedProfile"] = "SelectedProfile";
-})(NewGroupScanApiModelAuthenticationProfileOptionEnum = exports.NewGroupScanApiModelAuthenticationProfileOptionEnum || (exports.NewGroupScanApiModelAuthenticationProfileOptionEnum = {}));
+ * @export
+ */
+exports.NewGroupScanApiModelAuthenticationProfileOptionEnum = {
+    DontUse: 'DontUse',
+    UseMatchedProfile: 'UseMatchedProfile',
+    SelectedProfile: 'SelectedProfile'
+};
 /**
  * Check if a given object implements the NewGroupScanApiModel interface.
  */

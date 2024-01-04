@@ -37,32 +37,32 @@ import {
     WebsiteGroupListApiResultToJSON,
 } from '../models/index';
 
-export interface WebsiteGroupsApiWebsiteGroupsDeleteRequest {
+export interface WebsiteGroupsDeleteRequest {
     model: DeleteWebsiteGroupApiModel;
 }
 
-export interface WebsiteGroupsApiWebsiteGroupsDeleteByIdRequest {
+export interface WebsiteGroupsDeleteByIdRequest {
     id: string;
 }
 
-export interface WebsiteGroupsApiWebsiteGroupsGetByIdRequest {
+export interface WebsiteGroupsGetByIdRequest {
     id: string;
 }
 
-export interface WebsiteGroupsApiWebsiteGroupsGetByQueryRequest {
+export interface WebsiteGroupsGetByQueryRequest {
     query: string;
 }
 
-export interface WebsiteGroupsApiWebsiteGroupsListRequest {
+export interface WebsiteGroupsListRequest {
     page?: number;
     pageSize?: number;
 }
 
-export interface WebsiteGroupsApiWebsiteGroupsNewRequest {
+export interface WebsiteGroupsNewRequest {
     model: NewWebsiteGroupApiModel;
 }
 
-export interface WebsiteGroupsApiWebsiteGroupsUpdateRequest {
+export interface WebsiteGroupsUpdateRequest {
     model: UpdateWebsiteGroupApiModel;
 }
 
@@ -74,7 +74,7 @@ export class WebsiteGroupsApi extends runtime.BaseAPI {
     /**
      * Deletes a website group.
      */
-    async websiteGroupsDeleteRaw(requestParameters: WebsiteGroupsApiWebsiteGroupsDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DeleteWebsiteGroupResponse>> {
+    async websiteGroupsDeleteRaw(requestParameters: WebsiteGroupsDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DeleteWebsiteGroupResponse>> {
         if (requestParameters.model === null || requestParameters.model === undefined) {
             throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling websiteGroupsDelete.');
         }
@@ -99,7 +99,7 @@ export class WebsiteGroupsApi extends runtime.BaseAPI {
     /**
      * Deletes a website group.
      */
-    async websiteGroupsDelete(requestParameters: WebsiteGroupsApiWebsiteGroupsDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DeleteWebsiteGroupResponse> {
+    async websiteGroupsDelete(requestParameters: WebsiteGroupsDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DeleteWebsiteGroupResponse> {
         const response = await this.websiteGroupsDeleteRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -107,7 +107,7 @@ export class WebsiteGroupsApi extends runtime.BaseAPI {
     /**
      * Deletes a website group with given id
      */
-    async websiteGroupsDeleteByIdRaw(requestParameters: WebsiteGroupsApiWebsiteGroupsDeleteByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DeleteWebsiteGroupResponse>> {
+    async websiteGroupsDeleteByIdRaw(requestParameters: WebsiteGroupsDeleteByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DeleteWebsiteGroupResponse>> {
         if (requestParameters.id === null || requestParameters.id === undefined) {
             throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling websiteGroupsDeleteById.');
         }
@@ -129,7 +129,7 @@ export class WebsiteGroupsApi extends runtime.BaseAPI {
     /**
      * Deletes a website group with given id
      */
-    async websiteGroupsDeleteById(requestParameters: WebsiteGroupsApiWebsiteGroupsDeleteByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DeleteWebsiteGroupResponse> {
+    async websiteGroupsDeleteById(requestParameters: WebsiteGroupsDeleteByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<DeleteWebsiteGroupResponse> {
         const response = await this.websiteGroupsDeleteByIdRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -137,7 +137,7 @@ export class WebsiteGroupsApi extends runtime.BaseAPI {
     /**
      * Gets website group by id.
      */
-    async websiteGroupsGetByIdRaw(requestParameters: WebsiteGroupsApiWebsiteGroupsGetByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteGroupApiModel>> {
+    async websiteGroupsGetByIdRaw(requestParameters: WebsiteGroupsGetByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteGroupApiModel>> {
         if (requestParameters.id === null || requestParameters.id === undefined) {
             throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling websiteGroupsGetById.');
         }
@@ -159,7 +159,7 @@ export class WebsiteGroupsApi extends runtime.BaseAPI {
     /**
      * Gets website group by id.
      */
-    async websiteGroupsGetById(requestParameters: WebsiteGroupsApiWebsiteGroupsGetByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebsiteGroupApiModel> {
+    async websiteGroupsGetById(requestParameters: WebsiteGroupsGetByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebsiteGroupApiModel> {
         const response = await this.websiteGroupsGetByIdRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -167,7 +167,7 @@ export class WebsiteGroupsApi extends runtime.BaseAPI {
     /**
      * Gets website group by name.
      */
-    async websiteGroupsGetByQueryRaw(requestParameters: WebsiteGroupsApiWebsiteGroupsGetByQueryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteGroupApiModel>> {
+    async websiteGroupsGetByQueryRaw(requestParameters: WebsiteGroupsGetByQueryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteGroupApiModel>> {
         if (requestParameters.query === null || requestParameters.query === undefined) {
             throw new runtime.RequiredError('query','Required parameter requestParameters.query was null or undefined when calling websiteGroupsGetByQuery.');
         }
@@ -193,7 +193,7 @@ export class WebsiteGroupsApi extends runtime.BaseAPI {
     /**
      * Gets website group by name.
      */
-    async websiteGroupsGetByQuery(requestParameters: WebsiteGroupsApiWebsiteGroupsGetByQueryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebsiteGroupApiModel> {
+    async websiteGroupsGetByQuery(requestParameters: WebsiteGroupsGetByQueryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebsiteGroupApiModel> {
         const response = await this.websiteGroupsGetByQueryRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -201,7 +201,7 @@ export class WebsiteGroupsApi extends runtime.BaseAPI {
     /**
      * Gets the list of website groups.
      */
-    async websiteGroupsListRaw(requestParameters: WebsiteGroupsApiWebsiteGroupsListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteGroupListApiResult>> {
+    async websiteGroupsListRaw(requestParameters: WebsiteGroupsListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteGroupListApiResult>> {
         const queryParameters: any = {};
 
         if (requestParameters.page !== undefined) {
@@ -227,7 +227,7 @@ export class WebsiteGroupsApi extends runtime.BaseAPI {
     /**
      * Gets the list of website groups.
      */
-    async websiteGroupsList(requestParameters: WebsiteGroupsApiWebsiteGroupsListRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebsiteGroupListApiResult> {
+    async websiteGroupsList(requestParameters: WebsiteGroupsListRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebsiteGroupListApiResult> {
         const response = await this.websiteGroupsListRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -235,7 +235,7 @@ export class WebsiteGroupsApi extends runtime.BaseAPI {
     /**
      * Creates a new website group.
      */
-    async websiteGroupsNewRaw(requestParameters: WebsiteGroupsApiWebsiteGroupsNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteGroupApiModel>> {
+    async websiteGroupsNewRaw(requestParameters: WebsiteGroupsNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteGroupApiModel>> {
         if (requestParameters.model === null || requestParameters.model === undefined) {
             throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling websiteGroupsNew.');
         }
@@ -260,7 +260,7 @@ export class WebsiteGroupsApi extends runtime.BaseAPI {
     /**
      * Creates a new website group.
      */
-    async websiteGroupsNew(requestParameters: WebsiteGroupsApiWebsiteGroupsNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebsiteGroupApiModel> {
+    async websiteGroupsNew(requestParameters: WebsiteGroupsNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebsiteGroupApiModel> {
         const response = await this.websiteGroupsNewRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -268,7 +268,7 @@ export class WebsiteGroupsApi extends runtime.BaseAPI {
     /**
      * Updates a website group.
      */
-    async websiteGroupsUpdateRaw(requestParameters: WebsiteGroupsApiWebsiteGroupsUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteGroupApiModel>> {
+    async websiteGroupsUpdateRaw(requestParameters: WebsiteGroupsUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteGroupApiModel>> {
         if (requestParameters.model === null || requestParameters.model === undefined) {
             throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling websiteGroupsUpdate.');
         }
@@ -293,7 +293,7 @@ export class WebsiteGroupsApi extends runtime.BaseAPI {
     /**
      * Updates a website group.
      */
-    async websiteGroupsUpdate(requestParameters: WebsiteGroupsApiWebsiteGroupsUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebsiteGroupApiModel> {
+    async websiteGroupsUpdate(requestParameters: WebsiteGroupsUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebsiteGroupApiModel> {
         const response = await this.websiteGroupsUpdateRaw(requestParameters, initOverrides);
         return await response.value();
     }

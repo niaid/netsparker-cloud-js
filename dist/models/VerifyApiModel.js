@@ -16,16 +16,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.VerifyApiModelToJSON = exports.VerifyApiModelFromJSONTyped = exports.VerifyApiModelFromJSON = exports.instanceOfVerifyApiModel = exports.VerifyApiModelVerificationMethodEnum = void 0;
 const runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
-var VerifyApiModelVerificationMethodEnum;
-(function (VerifyApiModelVerificationMethodEnum) {
-    VerifyApiModelVerificationMethodEnum["File"] = "File";
-    VerifyApiModelVerificationMethodEnum["Tag"] = "Tag";
-    VerifyApiModelVerificationMethodEnum["Dns"] = "Dns";
-    VerifyApiModelVerificationMethodEnum["Email"] = "Email";
-})(VerifyApiModelVerificationMethodEnum = exports.VerifyApiModelVerificationMethodEnum || (exports.VerifyApiModelVerificationMethodEnum = {}));
+ * @export
+ */
+exports.VerifyApiModelVerificationMethodEnum = {
+    File: 'File',
+    Tag: 'Tag',
+    Dns: 'Dns',
+    Email: 'Email'
+};
 /**
  * Check if a given object implements the VerifyApiModel interface.
  */

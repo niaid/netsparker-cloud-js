@@ -11,40 +11,40 @@
  */
 import * as runtime from '../runtime';
 import type { DeleteWebsiteApiModel, NewWebsiteApiModel, SendVerificationEmailModel, StartVerificationApiModel, StartVerificationResult, UpdateWebsiteApiModel, VerifyApiModel, WebsiteApiModel, WebsiteListApiResult } from '../models/index';
-export interface WebsitesApiWebsitesDeleteRequest {
+export interface WebsitesDeleteRequest {
     model: DeleteWebsiteApiModel;
 }
-export interface WebsitesApiWebsitesGetByIdRequest {
+export interface WebsitesGetByIdRequest {
     id: string;
 }
-export interface WebsitesApiWebsitesGetByQueryRequest {
+export interface WebsitesGetByQueryRequest {
     query: string;
 }
-export interface WebsitesApiWebsitesGetWebsitesByGroupRequest {
+export interface WebsitesGetWebsitesByGroupRequest {
     query: string;
     page?: number;
     pageSize?: number;
 }
-export interface WebsitesApiWebsitesListRequest {
+export interface WebsitesListRequest {
     page?: number;
     pageSize?: number;
 }
-export interface WebsitesApiWebsitesNewRequest {
+export interface WebsitesNewRequest {
     model: NewWebsiteApiModel;
 }
-export interface WebsitesApiWebsitesSendVerificationEmailRequest {
+export interface WebsitesSendVerificationEmailRequest {
     websiteUrl: string;
 }
-export interface WebsitesApiWebsitesStartVerificationRequest {
+export interface WebsitesStartVerificationRequest {
     model: StartVerificationApiModel;
 }
-export interface WebsitesApiWebsitesUpdateRequest {
+export interface WebsitesUpdateRequest {
     model: UpdateWebsiteApiModel;
 }
-export interface WebsitesApiWebsitesVerificationFileRequest {
+export interface WebsitesVerificationFileRequest {
     websiteUrl: string;
 }
-export interface WebsitesApiWebsitesVerifyRequest {
+export interface WebsitesVerifyRequest {
     model: VerifyApiModel;
 }
 /**
@@ -54,89 +54,89 @@ export declare class WebsitesApi extends runtime.BaseAPI {
     /**
      * Deletes a website.
      */
-    websitesDeleteRaw(requestParameters: WebsitesApiWebsitesDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
+    websitesDeleteRaw(requestParameters: WebsitesDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
     /**
      * Deletes a website.
      */
-    websitesDelete(requestParameters: WebsitesApiWebsitesDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
+    websitesDelete(requestParameters: WebsitesDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
     /**
      * Gets website by id.
      */
-    websitesGetByIdRaw(requestParameters: WebsitesApiWebsitesGetByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteApiModel>>;
+    websitesGetByIdRaw(requestParameters: WebsitesGetByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteApiModel>>;
     /**
      * Gets website by id.
      */
-    websitesGetById(requestParameters: WebsitesApiWebsitesGetByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebsiteApiModel>;
+    websitesGetById(requestParameters: WebsitesGetByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebsiteApiModel>;
     /**
      * Gets website by name or URL.
      */
-    websitesGetByQueryRaw(requestParameters: WebsitesApiWebsitesGetByQueryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteApiModel>>;
+    websitesGetByQueryRaw(requestParameters: WebsitesGetByQueryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteApiModel>>;
     /**
      * Gets website by name or URL.
      */
-    websitesGetByQuery(requestParameters: WebsitesApiWebsitesGetByQueryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebsiteApiModel>;
+    websitesGetByQuery(requestParameters: WebsitesGetByQueryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebsiteApiModel>;
     /**
      * Gets the list of websites by group name or id.
      */
-    websitesGetWebsitesByGroupRaw(requestParameters: WebsitesApiWebsitesGetWebsitesByGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteListApiResult>>;
+    websitesGetWebsitesByGroupRaw(requestParameters: WebsitesGetWebsitesByGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteListApiResult>>;
     /**
      * Gets the list of websites by group name or id.
      */
-    websitesGetWebsitesByGroup(requestParameters: WebsitesApiWebsitesGetWebsitesByGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebsiteListApiResult>;
+    websitesGetWebsitesByGroup(requestParameters: WebsitesGetWebsitesByGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebsiteListApiResult>;
     /**
      * Gets the list of websites.
      */
-    websitesListRaw(requestParameters: WebsitesApiWebsitesListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteListApiResult>>;
+    websitesListRaw(requestParameters: WebsitesListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteListApiResult>>;
     /**
      * Gets the list of websites.
      */
-    websitesList(requestParameters?: WebsitesApiWebsitesListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebsiteListApiResult>;
+    websitesList(requestParameters?: WebsitesListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebsiteListApiResult>;
     /**
      * Creates a new website.
      */
-    websitesNewRaw(requestParameters: WebsitesApiWebsitesNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteApiModel>>;
+    websitesNewRaw(requestParameters: WebsitesNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteApiModel>>;
     /**
      * Creates a new website.
      */
-    websitesNew(requestParameters: WebsitesApiWebsitesNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebsiteApiModel>;
+    websitesNew(requestParameters: WebsitesNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebsiteApiModel>;
     /**
      * Sends the verification email if verification limit not exceeded yet.
      */
-    websitesSendVerificationEmailRaw(requestParameters: WebsitesApiWebsitesSendVerificationEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SendVerificationEmailModel>>;
+    websitesSendVerificationEmailRaw(requestParameters: WebsitesSendVerificationEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SendVerificationEmailModel>>;
     /**
      * Sends the verification email if verification limit not exceeded yet.
      */
-    websitesSendVerificationEmail(requestParameters: WebsitesApiWebsitesSendVerificationEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SendVerificationEmailModel>;
+    websitesSendVerificationEmail(requestParameters: WebsitesSendVerificationEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SendVerificationEmailModel>;
     /**
      * Starts the verification with specified method.
      */
-    websitesStartVerificationRaw(requestParameters: WebsitesApiWebsitesStartVerificationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StartVerificationResult>>;
+    websitesStartVerificationRaw(requestParameters: WebsitesStartVerificationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StartVerificationResult>>;
     /**
      * Starts the verification with specified method.
      */
-    websitesStartVerification(requestParameters: WebsitesApiWebsitesStartVerificationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StartVerificationResult>;
+    websitesStartVerification(requestParameters: WebsitesStartVerificationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StartVerificationResult>;
     /**
      * Updates a website.
      */
-    websitesUpdateRaw(requestParameters: WebsitesApiWebsitesUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteApiModel>>;
+    websitesUpdateRaw(requestParameters: WebsitesUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteApiModel>>;
     /**
      * Updates a website.
      */
-    websitesUpdate(requestParameters: WebsitesApiWebsitesUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebsiteApiModel>;
+    websitesUpdate(requestParameters: WebsitesUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebsiteApiModel>;
     /**
      * Renders verification file.
      */
-    websitesVerificationFileRaw(requestParameters: WebsitesApiWebsitesVerificationFileRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    websitesVerificationFileRaw(requestParameters: WebsitesVerificationFileRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Renders verification file.
      */
-    websitesVerificationFile(requestParameters: WebsitesApiWebsitesVerificationFileRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    websitesVerificationFile(requestParameters: WebsitesVerificationFileRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Executes verification process.
      */
-    websitesVerifyRaw(requestParameters: WebsitesApiWebsitesVerifyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
+    websitesVerifyRaw(requestParameters: WebsitesVerifyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
     /**
      * Executes verification process.
      */
-    websitesVerify(requestParameters: WebsitesApiWebsitesVerifyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
+    websitesVerify(requestParameters: WebsitesVerifyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
 }

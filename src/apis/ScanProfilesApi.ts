@@ -25,28 +25,28 @@ import {
     ScanProfilesListApiResultToJSON,
 } from '../models/index';
 
-export interface ScanProfilesApiScanProfilesDeleteRequest {
+export interface ScanProfilesDeleteRequest {
     profileId: string;
 }
 
-export interface ScanProfilesApiScanProfilesGetByIdRequest {
+export interface ScanProfilesGetByIdRequest {
     id: string;
 }
 
-export interface ScanProfilesApiScanProfilesGetByNameRequest {
+export interface ScanProfilesGetByNameRequest {
     name: string;
 }
 
-export interface ScanProfilesApiScanProfilesListRequest {
+export interface ScanProfilesListRequest {
     page?: number;
     pageSize?: number;
 }
 
-export interface ScanProfilesApiScanProfilesNewRequest {
+export interface ScanProfilesNewRequest {
     model: SaveScanProfileApiModel;
 }
 
-export interface ScanProfilesApiScanProfilesUpdateRequest {
+export interface ScanProfilesUpdateRequest {
     model: SaveScanProfileApiModel;
 }
 
@@ -58,7 +58,7 @@ export class ScanProfilesApi extends runtime.BaseAPI {
     /**
      * Deletes a scan profiles.
      */
-    async scanProfilesDeleteRaw(requestParameters: ScanProfilesApiScanProfilesDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>> {
+    async scanProfilesDeleteRaw(requestParameters: ScanProfilesDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>> {
         if (requestParameters.profileId === null || requestParameters.profileId === undefined) {
             throw new runtime.RequiredError('profileId','Required parameter requestParameters.profileId was null or undefined when calling scanProfilesDelete.');
         }
@@ -87,7 +87,7 @@ export class ScanProfilesApi extends runtime.BaseAPI {
     /**
      * Deletes a scan profiles.
      */
-    async scanProfilesDelete(requestParameters: ScanProfilesApiScanProfilesDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string> {
+    async scanProfilesDelete(requestParameters: ScanProfilesDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string> {
         const response = await this.scanProfilesDeleteRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -95,7 +95,7 @@ export class ScanProfilesApi extends runtime.BaseAPI {
     /**
      * Gets the scan profiles by the specified id.
      */
-    async scanProfilesGetByIdRaw(requestParameters: ScanProfilesApiScanProfilesGetByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SaveScanProfileApiModel>> {
+    async scanProfilesGetByIdRaw(requestParameters: ScanProfilesGetByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SaveScanProfileApiModel>> {
         if (requestParameters.id === null || requestParameters.id === undefined) {
             throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling scanProfilesGetById.');
         }
@@ -117,7 +117,7 @@ export class ScanProfilesApi extends runtime.BaseAPI {
     /**
      * Gets the scan profiles by the specified id.
      */
-    async scanProfilesGetById(requestParameters: ScanProfilesApiScanProfilesGetByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SaveScanProfileApiModel> {
+    async scanProfilesGetById(requestParameters: ScanProfilesGetByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SaveScanProfileApiModel> {
         const response = await this.scanProfilesGetByIdRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -125,7 +125,7 @@ export class ScanProfilesApi extends runtime.BaseAPI {
     /**
      * Gets the scan profiles by the specified name.
      */
-    async scanProfilesGetByNameRaw(requestParameters: ScanProfilesApiScanProfilesGetByNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SaveScanProfileApiModel>> {
+    async scanProfilesGetByNameRaw(requestParameters: ScanProfilesGetByNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SaveScanProfileApiModel>> {
         if (requestParameters.name === null || requestParameters.name === undefined) {
             throw new runtime.RequiredError('name','Required parameter requestParameters.name was null or undefined when calling scanProfilesGetByName.');
         }
@@ -151,7 +151,7 @@ export class ScanProfilesApi extends runtime.BaseAPI {
     /**
      * Gets the scan profiles by the specified name.
      */
-    async scanProfilesGetByName(requestParameters: ScanProfilesApiScanProfilesGetByNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SaveScanProfileApiModel> {
+    async scanProfilesGetByName(requestParameters: ScanProfilesGetByNameRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SaveScanProfileApiModel> {
         const response = await this.scanProfilesGetByNameRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -159,7 +159,7 @@ export class ScanProfilesApi extends runtime.BaseAPI {
     /**
      * Gets the list of scan profiles.
      */
-    async scanProfilesListRaw(requestParameters: ScanProfilesApiScanProfilesListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanProfilesListApiResult>> {
+    async scanProfilesListRaw(requestParameters: ScanProfilesListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanProfilesListApiResult>> {
         const queryParameters: any = {};
 
         if (requestParameters.page !== undefined) {
@@ -185,7 +185,7 @@ export class ScanProfilesApi extends runtime.BaseAPI {
     /**
      * Gets the list of scan profiles.
      */
-    async scanProfilesList(requestParameters: ScanProfilesApiScanProfilesListRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanProfilesListApiResult> {
+    async scanProfilesList(requestParameters: ScanProfilesListRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanProfilesListApiResult> {
         const response = await this.scanProfilesListRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -193,7 +193,7 @@ export class ScanProfilesApi extends runtime.BaseAPI {
     /**
      * Creates a new scan profiles.
      */
-    async scanProfilesNewRaw(requestParameters: ScanProfilesApiScanProfilesNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SaveScanProfileApiModel>> {
+    async scanProfilesNewRaw(requestParameters: ScanProfilesNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SaveScanProfileApiModel>> {
         if (requestParameters.model === null || requestParameters.model === undefined) {
             throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling scanProfilesNew.');
         }
@@ -218,7 +218,7 @@ export class ScanProfilesApi extends runtime.BaseAPI {
     /**
      * Creates a new scan profiles.
      */
-    async scanProfilesNew(requestParameters: ScanProfilesApiScanProfilesNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SaveScanProfileApiModel> {
+    async scanProfilesNew(requestParameters: ScanProfilesNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SaveScanProfileApiModel> {
         const response = await this.scanProfilesNewRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -226,7 +226,7 @@ export class ScanProfilesApi extends runtime.BaseAPI {
     /**
      * Updates a scan profiles.
      */
-    async scanProfilesUpdateRaw(requestParameters: ScanProfilesApiScanProfilesUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SaveScanProfileApiModel>> {
+    async scanProfilesUpdateRaw(requestParameters: ScanProfilesUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SaveScanProfileApiModel>> {
         if (requestParameters.model === null || requestParameters.model === undefined) {
             throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling scanProfilesUpdate.');
         }
@@ -251,7 +251,7 @@ export class ScanProfilesApi extends runtime.BaseAPI {
     /**
      * Updates a scan profiles.
      */
-    async scanProfilesUpdate(requestParameters: ScanProfilesApiScanProfilesUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SaveScanProfileApiModel> {
+    async scanProfilesUpdate(requestParameters: ScanProfilesUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SaveScanProfileApiModel> {
         const response = await this.scanProfilesUpdateRaw(requestParameters, initOverrides);
         return await response.value();
     }

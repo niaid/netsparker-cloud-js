@@ -11,16 +11,16 @@
  */
 import * as runtime from '../runtime';
 import type { AuthenticationProfileViewModel } from '../models/index';
-export interface AuthenticationProfilesApiAuthenticationProfilesDeleteRequest {
+export interface AuthenticationProfilesDeleteRequest {
     id: string;
 }
-export interface AuthenticationProfilesApiAuthenticationProfilesGetRequest {
+export interface AuthenticationProfilesGetRequest {
     id: string;
 }
-export interface AuthenticationProfilesApiAuthenticationProfilesNewRequest {
+export interface AuthenticationProfilesNewRequest {
     model: AuthenticationProfileViewModel;
 }
-export interface AuthenticationProfilesApiAuthenticationProfilesUpdateRequest {
+export interface AuthenticationProfilesUpdateRequest {
     model: AuthenticationProfileViewModel;
 }
 /**
@@ -30,19 +30,19 @@ export declare class AuthenticationProfilesApi extends runtime.BaseAPI {
     /**
      * Deletes an authentication profile.
      */
-    authenticationProfilesDeleteRaw(requestParameters: AuthenticationProfilesApiAuthenticationProfilesDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
+    authenticationProfilesDeleteRaw(requestParameters: AuthenticationProfilesDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
     /**
      * Deletes an authentication profile.
      */
-    authenticationProfilesDelete(requestParameters: AuthenticationProfilesApiAuthenticationProfilesDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
+    authenticationProfilesDelete(requestParameters: AuthenticationProfilesDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
     /**
      * Gets the authentication profiles by the specified id.
      */
-    authenticationProfilesGetRaw(requestParameters: AuthenticationProfilesApiAuthenticationProfilesGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AuthenticationProfileViewModel>>;
+    authenticationProfilesGetRaw(requestParameters: AuthenticationProfilesGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AuthenticationProfileViewModel>>;
     /**
      * Gets the authentication profiles by the specified id.
      */
-    authenticationProfilesGet(requestParameters: AuthenticationProfilesApiAuthenticationProfilesGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AuthenticationProfileViewModel>;
+    authenticationProfilesGet(requestParameters: AuthenticationProfilesGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AuthenticationProfileViewModel>;
     /**
      * Gets the list of authentication profiles.
      */
@@ -54,17 +54,17 @@ export declare class AuthenticationProfilesApi extends runtime.BaseAPI {
     /**
      * Creates a new authentication profile.
      */
-    authenticationProfilesNewRaw(requestParameters: AuthenticationProfilesApiAuthenticationProfilesNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AuthenticationProfileViewModel>>;
+    authenticationProfilesNewRaw(requestParameters: AuthenticationProfilesNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AuthenticationProfileViewModel>>;
     /**
      * Creates a new authentication profile.
      */
-    authenticationProfilesNew(requestParameters: AuthenticationProfilesApiAuthenticationProfilesNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AuthenticationProfileViewModel>;
+    authenticationProfilesNew(requestParameters: AuthenticationProfilesNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AuthenticationProfileViewModel>;
     /**
      * Updates an authentication profile.
      */
-    authenticationProfilesUpdateRaw(requestParameters: AuthenticationProfilesApiAuthenticationProfilesUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AuthenticationProfileViewModel>>;
+    authenticationProfilesUpdateRaw(requestParameters: AuthenticationProfilesUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AuthenticationProfileViewModel>>;
     /**
      * Updates an authentication profile.
      */
-    authenticationProfilesUpdate(requestParameters: AuthenticationProfilesApiAuthenticationProfilesUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AuthenticationProfileViewModel>;
+    authenticationProfilesUpdate(requestParameters: AuthenticationProfilesUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AuthenticationProfileViewModel>;
 }

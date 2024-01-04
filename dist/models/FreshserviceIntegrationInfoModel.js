@@ -20,54 +20,50 @@ const FreshserviceUser_1 = require("./FreshserviceUser");
 const IntegrationCustomFieldVm_1 = require("./IntegrationCustomFieldVm");
 const IntegrationWizardResultModel_1 = require("./IntegrationWizardResultModel");
 /**
-* @export
-* @enum {string}
-*/
-var FreshserviceIntegrationInfoModelTypeEnum;
-(function (FreshserviceIntegrationInfoModelTypeEnum) {
-    FreshserviceIntegrationInfoModelTypeEnum["Jira"] = "Jira";
-    FreshserviceIntegrationInfoModelTypeEnum["GitHub"] = "GitHub";
-    FreshserviceIntegrationInfoModelTypeEnum["Tfs"] = "TFS";
-    FreshserviceIntegrationInfoModelTypeEnum["FogBugz"] = "FogBugz";
-    FreshserviceIntegrationInfoModelTypeEnum["ServiceNow"] = "ServiceNow";
-    FreshserviceIntegrationInfoModelTypeEnum["Slack"] = "Slack";
-    FreshserviceIntegrationInfoModelTypeEnum["GitLab"] = "GitLab";
-    FreshserviceIntegrationInfoModelTypeEnum["Bitbucket"] = "Bitbucket";
-    FreshserviceIntegrationInfoModelTypeEnum["Unfuddle"] = "Unfuddle";
-    FreshserviceIntegrationInfoModelTypeEnum["Zapier"] = "Zapier";
-    FreshserviceIntegrationInfoModelTypeEnum["AzureDevOps"] = "AzureDevOps";
-    FreshserviceIntegrationInfoModelTypeEnum["Redmine"] = "Redmine";
-    FreshserviceIntegrationInfoModelTypeEnum["Bugzilla"] = "Bugzilla";
-    FreshserviceIntegrationInfoModelTypeEnum["Kafka"] = "Kafka";
-    FreshserviceIntegrationInfoModelTypeEnum["PagerDuty"] = "PagerDuty";
-    FreshserviceIntegrationInfoModelTypeEnum["MicrosoftTeams"] = "MicrosoftTeams";
-    FreshserviceIntegrationInfoModelTypeEnum["Clubhouse"] = "Clubhouse";
-    FreshserviceIntegrationInfoModelTypeEnum["Trello"] = "Trello";
-    FreshserviceIntegrationInfoModelTypeEnum["Asana"] = "Asana";
-    FreshserviceIntegrationInfoModelTypeEnum["Webhook"] = "Webhook";
-    FreshserviceIntegrationInfoModelTypeEnum["Kenna"] = "Kenna";
-    FreshserviceIntegrationInfoModelTypeEnum["Freshservice"] = "Freshservice";
-    FreshserviceIntegrationInfoModelTypeEnum["YouTrack"] = "YouTrack";
-    FreshserviceIntegrationInfoModelTypeEnum["NetsparkerEnterprise"] = "NetsparkerEnterprise";
-    FreshserviceIntegrationInfoModelTypeEnum["Splunk"] = "Splunk";
-    FreshserviceIntegrationInfoModelTypeEnum["Mattermost"] = "Mattermost";
-    FreshserviceIntegrationInfoModelTypeEnum["Hashicorp"] = "Hashicorp";
-    FreshserviceIntegrationInfoModelTypeEnum["PivotalTracker"] = "PivotalTracker";
-    FreshserviceIntegrationInfoModelTypeEnum["CyberArk"] = "CyberArk";
-    FreshserviceIntegrationInfoModelTypeEnum["DefectDojo"] = "DefectDojo";
-    FreshserviceIntegrationInfoModelTypeEnum["JazzTeam"] = "JazzTeam";
-    FreshserviceIntegrationInfoModelTypeEnum["AzureKeyVault"] = "AzureKeyVault";
-    FreshserviceIntegrationInfoModelTypeEnum["ServiceNowVrm"] = "ServiceNowVRM";
-})(FreshserviceIntegrationInfoModelTypeEnum = exports.FreshserviceIntegrationInfoModelTypeEnum || (exports.FreshserviceIntegrationInfoModelTypeEnum = {}));
+ * @export
+ */
+exports.FreshserviceIntegrationInfoModelTypeEnum = {
+    Jira: 'Jira',
+    GitHub: 'GitHub',
+    Tfs: 'TFS',
+    FogBugz: 'FogBugz',
+    ServiceNow: 'ServiceNow',
+    Slack: 'Slack',
+    GitLab: 'GitLab',
+    Bitbucket: 'Bitbucket',
+    Unfuddle: 'Unfuddle',
+    Zapier: 'Zapier',
+    AzureDevOps: 'AzureDevOps',
+    Redmine: 'Redmine',
+    Bugzilla: 'Bugzilla',
+    Kafka: 'Kafka',
+    PagerDuty: 'PagerDuty',
+    MicrosoftTeams: 'MicrosoftTeams',
+    Clubhouse: 'Clubhouse',
+    Trello: 'Trello',
+    Asana: 'Asana',
+    Webhook: 'Webhook',
+    Kenna: 'Kenna',
+    Freshservice: 'Freshservice',
+    YouTrack: 'YouTrack',
+    NetsparkerEnterprise: 'NetsparkerEnterprise',
+    Splunk: 'Splunk',
+    Mattermost: 'Mattermost',
+    Hashicorp: 'Hashicorp',
+    PivotalTracker: 'PivotalTracker',
+    CyberArk: 'CyberArk',
+    DefectDojo: 'DefectDojo',
+    JazzTeam: 'JazzTeam',
+    AzureKeyVault: 'AzureKeyVault',
+    ServiceNowVrm: 'ServiceNowVRM'
+};
 /**
-* @export
-* @enum {string}
-*/
-var FreshserviceIntegrationInfoModelTemplateTypeEnum;
-(function (FreshserviceIntegrationInfoModelTemplateTypeEnum) {
-    FreshserviceIntegrationInfoModelTemplateTypeEnum["Standard"] = "Standard";
-    FreshserviceIntegrationInfoModelTemplateTypeEnum["Detailed"] = "Detailed";
-})(FreshserviceIntegrationInfoModelTemplateTypeEnum = exports.FreshserviceIntegrationInfoModelTemplateTypeEnum || (exports.FreshserviceIntegrationInfoModelTemplateTypeEnum = {}));
+ * @export
+ */
+exports.FreshserviceIntegrationInfoModelTemplateTypeEnum = {
+    Standard: 'Standard',
+    Detailed: 'Detailed'
+};
 /**
  * Check if a given object implements the FreshserviceIntegrationInfoModel interface.
  */

@@ -160,23 +160,25 @@ export interface DiscoveryApiModel {
     discoveryConnectionsDetail?: DiscoveryConnectionsApiModel;
 }
 
+
 /**
-* @export
-* @enum {string}
-*/
-export enum DiscoveryApiModelStatusEnum {
-    Discovered = 'Discovered',
-    Ignored = 'Ignored',
-    Created = 'Created'
-}
+ * @export
+ */
+export const DiscoveryApiModelStatusEnum = {
+    Discovered: 'Discovered',
+    Ignored: 'Ignored',
+    Created: 'Created'
+} as const;
+export type DiscoveryApiModelStatusEnum = typeof DiscoveryApiModelStatusEnum[keyof typeof DiscoveryApiModelStatusEnum];
+
 /**
-* @export
-* @enum {string}
-*/
-export enum DiscoveryApiModelDiscoverySourceTypeEnum {
-    RadarDeepInfo = 'RadarDeepInfo',
-    Aws = 'Aws'
-}
+ * @export
+ */
+export const DiscoveryApiModelDiscoverySourceTypeEnum = {
+    RadarDeepInfo: 'RadarDeepInfo',
+    Aws: 'Aws'
+} as const;
+export type DiscoveryApiModelDiscoverySourceTypeEnum = typeof DiscoveryApiModelDiscoverySourceTypeEnum[keyof typeof DiscoveryApiModelDiscoverySourceTypeEnum];
 
 
 /**

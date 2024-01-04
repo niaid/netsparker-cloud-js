@@ -84,21 +84,21 @@ export interface FormAuthenticationHashicorpVaultSetting {
     namespace?: string;
 }
 /**
-* @export
-* @enum {string}
-*/
-export declare enum FormAuthenticationHashicorpVaultSettingAgentModeEnum {
-    Cloud = "Cloud",
-    Internal = "Internal"
-}
+ * @export
+ */
+export declare const FormAuthenticationHashicorpVaultSettingAgentModeEnum: {
+    readonly Cloud: "Cloud";
+    readonly Internal: "Internal";
+};
+export type FormAuthenticationHashicorpVaultSettingAgentModeEnum = typeof FormAuthenticationHashicorpVaultSettingAgentModeEnum[keyof typeof FormAuthenticationHashicorpVaultSettingAgentModeEnum];
 /**
-* @export
-* @enum {string}
-*/
-export declare enum FormAuthenticationHashicorpVaultSettingAuthTypeEnum {
-    Token = "Token",
-    TlsCert = "TLSCert"
-}
+ * @export
+ */
+export declare const FormAuthenticationHashicorpVaultSettingAuthTypeEnum: {
+    readonly Token: "Token";
+    readonly TlsCert: "TLSCert";
+};
+export type FormAuthenticationHashicorpVaultSettingAuthTypeEnum = typeof FormAuthenticationHashicorpVaultSettingAuthTypeEnum[keyof typeof FormAuthenticationHashicorpVaultSettingAuthTypeEnum];
 /**
  * Check if a given object implements the FormAuthenticationHashicorpVaultSetting interface.
  */

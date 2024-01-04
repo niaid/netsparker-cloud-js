@@ -35,15 +35,15 @@ export interface CustomScriptRequestApiModel {
     content: string;
 }
 /**
-* @export
-* @enum {string}
-*/
-export declare enum CustomScriptRequestApiModelTypeEnum {
-    Active = "Active",
-    Passive = "Passive",
-    PerDirectory = "PerDirectory",
-    Singular = "Singular"
-}
+ * @export
+ */
+export declare const CustomScriptRequestApiModelTypeEnum: {
+    readonly Active: "Active";
+    readonly Passive: "Passive";
+    readonly PerDirectory: "PerDirectory";
+    readonly Singular: "Singular";
+};
+export type CustomScriptRequestApiModelTypeEnum = typeof CustomScriptRequestApiModelTypeEnum[keyof typeof CustomScriptRequestApiModelTypeEnum];
 /**
  * Check if a given object implements the CustomScriptRequestApiModel interface.
  */

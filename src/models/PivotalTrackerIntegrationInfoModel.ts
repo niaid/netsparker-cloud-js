@@ -154,63 +154,66 @@ export interface PivotalTrackerIntegrationInfoModel {
     integrationWizardResultModel?: IntegrationWizardResultModel;
 }
 
+
 /**
-* @export
-* @enum {string}
-*/
-export enum PivotalTrackerIntegrationInfoModelStoryTypeEnum {
-    Bug = 'Bug',
-    Feature = 'Feature',
-    Chore = 'Chore',
-    Release = 'Release'
-}
+ * @export
+ */
+export const PivotalTrackerIntegrationInfoModelStoryTypeEnum = {
+    Bug: 'Bug',
+    Feature: 'Feature',
+    Chore: 'Chore',
+    Release: 'Release'
+} as const;
+export type PivotalTrackerIntegrationInfoModelStoryTypeEnum = typeof PivotalTrackerIntegrationInfoModelStoryTypeEnum[keyof typeof PivotalTrackerIntegrationInfoModelStoryTypeEnum];
+
 /**
-* @export
-* @enum {string}
-*/
-export enum PivotalTrackerIntegrationInfoModelTypeEnum {
-    NetsparkerEnterprise = 'NetsparkerEnterprise',
-    Webhook = 'Webhook',
-    Zapier = 'Zapier',
-    Slack = 'Slack',
-    Mattermost = 'Mattermost',
-    MicrosoftTeams = 'MicrosoftTeams',
-    AzureDevOps = 'AzureDevOps',
-    Bitbucket = 'Bitbucket',
-    Bugzilla = 'Bugzilla',
-    Clubhouse = 'Clubhouse',
-    DefectDojo = 'DefectDojo',
-    PivotalTracker = 'PivotalTracker',
-    Jira = 'Jira',
-    FogBugz = 'FogBugz',
-    GitHub = 'GitHub',
-    PagerDuty = 'PagerDuty',
-    Kafka = 'Kafka',
-    Kenna = 'Kenna',
-    Redmine = 'Redmine',
-    ServiceNow = 'ServiceNow',
-    Tfs = 'TFS',
-    Unfuddle = 'Unfuddle',
-    YouTrack = 'YouTrack',
-    Freshservice = 'Freshservice',
-    Splunk = 'Splunk',
-    JazzTeam = 'JazzTeam',
-    ServiceNowVrm = 'ServiceNowVRM',
-    Asana = 'Asana',
-    Trello = 'Trello',
-    Hashicorp = 'Hashicorp',
-    CyberArk = 'CyberArk',
-    AzureKeyVault = 'AzureKeyVault',
-    GitLab = 'GitLab'
-}
+ * @export
+ */
+export const PivotalTrackerIntegrationInfoModelTypeEnum = {
+    NetsparkerEnterprise: 'NetsparkerEnterprise',
+    Webhook: 'Webhook',
+    Zapier: 'Zapier',
+    Slack: 'Slack',
+    Mattermost: 'Mattermost',
+    MicrosoftTeams: 'MicrosoftTeams',
+    AzureDevOps: 'AzureDevOps',
+    Bitbucket: 'Bitbucket',
+    Bugzilla: 'Bugzilla',
+    Clubhouse: 'Clubhouse',
+    DefectDojo: 'DefectDojo',
+    PivotalTracker: 'PivotalTracker',
+    Jira: 'Jira',
+    FogBugz: 'FogBugz',
+    GitHub: 'GitHub',
+    PagerDuty: 'PagerDuty',
+    Kafka: 'Kafka',
+    Kenna: 'Kenna',
+    Redmine: 'Redmine',
+    ServiceNow: 'ServiceNow',
+    Tfs: 'TFS',
+    Unfuddle: 'Unfuddle',
+    YouTrack: 'YouTrack',
+    Freshservice: 'Freshservice',
+    Splunk: 'Splunk',
+    JazzTeam: 'JazzTeam',
+    ServiceNowVrm: 'ServiceNowVRM',
+    Asana: 'Asana',
+    Trello: 'Trello',
+    Hashicorp: 'Hashicorp',
+    CyberArk: 'CyberArk',
+    AzureKeyVault: 'AzureKeyVault',
+    GitLab: 'GitLab'
+} as const;
+export type PivotalTrackerIntegrationInfoModelTypeEnum = typeof PivotalTrackerIntegrationInfoModelTypeEnum[keyof typeof PivotalTrackerIntegrationInfoModelTypeEnum];
+
 /**
-* @export
-* @enum {string}
-*/
-export enum PivotalTrackerIntegrationInfoModelTemplateTypeEnum {
-    Standard = 'Standard',
-    Detailed = 'Detailed'
-}
+ * @export
+ */
+export const PivotalTrackerIntegrationInfoModelTemplateTypeEnum = {
+    Standard: 'Standard',
+    Detailed: 'Detailed'
+} as const;
+export type PivotalTrackerIntegrationInfoModelTemplateTypeEnum = typeof PivotalTrackerIntegrationInfoModelTemplateTypeEnum[keyof typeof PivotalTrackerIntegrationInfoModelTemplateTypeEnum];
 
 
 /**

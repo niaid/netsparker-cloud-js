@@ -32,79 +32,67 @@ const SharkModel_1 = require("./SharkModel");
 const UrlRewriteExcludedPathModel_1 = require("./UrlRewriteExcludedPathModel");
 const UrlRewriteRuleModel_1 = require("./UrlRewriteRuleModel");
 /**
-* @export
-* @enum {string}
-*/
-var NewScheduledScanApiModelScheduleRunTypeEnum;
-(function (NewScheduledScanApiModelScheduleRunTypeEnum) {
-    NewScheduledScanApiModelScheduleRunTypeEnum["Once"] = "Once";
-    NewScheduledScanApiModelScheduleRunTypeEnum["Daily"] = "Daily";
-    NewScheduledScanApiModelScheduleRunTypeEnum["Weekly"] = "Weekly";
-    NewScheduledScanApiModelScheduleRunTypeEnum["Monthly"] = "Monthly";
-    NewScheduledScanApiModelScheduleRunTypeEnum["Quarterly"] = "Quarterly";
-    NewScheduledScanApiModelScheduleRunTypeEnum["Biannually"] = "Biannually";
-    NewScheduledScanApiModelScheduleRunTypeEnum["Yearly"] = "Yearly";
-    NewScheduledScanApiModelScheduleRunTypeEnum["Custom"] = "Custom";
-})(NewScheduledScanApiModelScheduleRunTypeEnum = exports.NewScheduledScanApiModelScheduleRunTypeEnum || (exports.NewScheduledScanApiModelScheduleRunTypeEnum = {}));
+ * @export
+ */
+exports.NewScheduledScanApiModelScheduleRunTypeEnum = {
+    Once: 'Once',
+    Daily: 'Daily',
+    Weekly: 'Weekly',
+    Monthly: 'Monthly',
+    Quarterly: 'Quarterly',
+    Biannually: 'Biannually',
+    Yearly: 'Yearly',
+    Custom: 'Custom'
+};
 /**
-* @export
-* @enum {string}
-*/
-var NewScheduledScanApiModelCreateTypeEnum;
-(function (NewScheduledScanApiModelCreateTypeEnum) {
-    NewScheduledScanApiModelCreateTypeEnum["Website"] = "Website";
-    NewScheduledScanApiModelCreateTypeEnum["WebsiteGroup"] = "WebsiteGroup";
-})(NewScheduledScanApiModelCreateTypeEnum = exports.NewScheduledScanApiModelCreateTypeEnum || (exports.NewScheduledScanApiModelCreateTypeEnum = {}));
+ * @export
+ */
+exports.NewScheduledScanApiModelCreateTypeEnum = {
+    Website: 'Website',
+    WebsiteGroup: 'WebsiteGroup'
+};
 /**
-* @export
-* @enum {string}
-*/
-var NewScheduledScanApiModelDisallowedHttpMethodsEnum;
-(function (NewScheduledScanApiModelDisallowedHttpMethodsEnum) {
-    NewScheduledScanApiModelDisallowedHttpMethodsEnum["Get"] = "GET";
-    NewScheduledScanApiModelDisallowedHttpMethodsEnum["Post"] = "POST";
-    NewScheduledScanApiModelDisallowedHttpMethodsEnum["Connect"] = "CONNECT";
-    NewScheduledScanApiModelDisallowedHttpMethodsEnum["Head"] = "HEAD";
-    NewScheduledScanApiModelDisallowedHttpMethodsEnum["Trace"] = "TRACE";
-    NewScheduledScanApiModelDisallowedHttpMethodsEnum["Debug"] = "DEBUG";
-    NewScheduledScanApiModelDisallowedHttpMethodsEnum["Track"] = "TRACK";
-    NewScheduledScanApiModelDisallowedHttpMethodsEnum["Put"] = "PUT";
-    NewScheduledScanApiModelDisallowedHttpMethodsEnum["Options"] = "OPTIONS";
-    NewScheduledScanApiModelDisallowedHttpMethodsEnum["Delete"] = "DELETE";
-    NewScheduledScanApiModelDisallowedHttpMethodsEnum["Link"] = "LINK";
-    NewScheduledScanApiModelDisallowedHttpMethodsEnum["Unlink"] = "UNLINK";
-    NewScheduledScanApiModelDisallowedHttpMethodsEnum["Patch"] = "PATCH";
-})(NewScheduledScanApiModelDisallowedHttpMethodsEnum = exports.NewScheduledScanApiModelDisallowedHttpMethodsEnum || (exports.NewScheduledScanApiModelDisallowedHttpMethodsEnum = {}));
+ * @export
+ */
+exports.NewScheduledScanApiModelDisallowedHttpMethodsEnum = {
+    Get: 'GET',
+    Post: 'POST',
+    Connect: 'CONNECT',
+    Head: 'HEAD',
+    Trace: 'TRACE',
+    Debug: 'DEBUG',
+    Track: 'TRACK',
+    Put: 'PUT',
+    Options: 'OPTIONS',
+    Delete: 'DELETE',
+    Link: 'LINK',
+    Unlink: 'UNLINK',
+    Patch: 'PATCH'
+};
 /**
-* @export
-* @enum {string}
-*/
-var NewScheduledScanApiModelAuthenticationProfileOptionEnum;
-(function (NewScheduledScanApiModelAuthenticationProfileOptionEnum) {
-    NewScheduledScanApiModelAuthenticationProfileOptionEnum["DontUse"] = "DontUse";
-    NewScheduledScanApiModelAuthenticationProfileOptionEnum["UseMatchedProfile"] = "UseMatchedProfile";
-    NewScheduledScanApiModelAuthenticationProfileOptionEnum["SelectedProfile"] = "SelectedProfile";
-})(NewScheduledScanApiModelAuthenticationProfileOptionEnum = exports.NewScheduledScanApiModelAuthenticationProfileOptionEnum || (exports.NewScheduledScanApiModelAuthenticationProfileOptionEnum = {}));
+ * @export
+ */
+exports.NewScheduledScanApiModelAuthenticationProfileOptionEnum = {
+    DontUse: 'DontUse',
+    UseMatchedProfile: 'UseMatchedProfile',
+    SelectedProfile: 'SelectedProfile'
+};
 /**
-* @export
-* @enum {string}
-*/
-var NewScheduledScanApiModelScopeEnum;
-(function (NewScheduledScanApiModelScopeEnum) {
-    NewScheduledScanApiModelScopeEnum["EnteredPathAndBelow"] = "EnteredPathAndBelow";
-    NewScheduledScanApiModelScopeEnum["OnlyEnteredUrl"] = "OnlyEnteredUrl";
-    NewScheduledScanApiModelScopeEnum["WholeDomain"] = "WholeDomain";
-})(NewScheduledScanApiModelScopeEnum = exports.NewScheduledScanApiModelScopeEnum || (exports.NewScheduledScanApiModelScopeEnum = {}));
+ * @export
+ */
+exports.NewScheduledScanApiModelScopeEnum = {
+    EnteredPathAndBelow: 'EnteredPathAndBelow',
+    OnlyEnteredUrl: 'OnlyEnteredUrl',
+    WholeDomain: 'WholeDomain'
+};
 /**
-* @export
-* @enum {string}
-*/
-var NewScheduledScanApiModelUrlRewriteModeEnum;
-(function (NewScheduledScanApiModelUrlRewriteModeEnum) {
-    NewScheduledScanApiModelUrlRewriteModeEnum["None"] = "None";
-    NewScheduledScanApiModelUrlRewriteModeEnum["Heuristic"] = "Heuristic";
-    NewScheduledScanApiModelUrlRewriteModeEnum["Custom"] = "Custom";
-})(NewScheduledScanApiModelUrlRewriteModeEnum = exports.NewScheduledScanApiModelUrlRewriteModeEnum || (exports.NewScheduledScanApiModelUrlRewriteModeEnum = {}));
+ * @export
+ */
+exports.NewScheduledScanApiModelUrlRewriteModeEnum = {
+    None: 'None',
+    Heuristic: 'Heuristic',
+    Custom: 'Custom'
+};
 /**
  * Check if a given object implements the NewScheduledScanApiModel interface.
  */

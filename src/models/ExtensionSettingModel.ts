@@ -39,24 +39,26 @@ export interface ExtensionSettingModel {
     extension: string;
 }
 
+
 /**
-* @export
-* @enum {string}
-*/
-export enum ExtensionSettingModelAttackOptionEnum {
-    DoNotAttack = 'DoNotAttack',
-    AttackParameters = 'AttackParameters',
-    AttackParametersAndQueryString = 'AttackParametersAndQueryString'
-}
+ * @export
+ */
+export const ExtensionSettingModelAttackOptionEnum = {
+    DoNotAttack: 'DoNotAttack',
+    AttackParameters: 'AttackParameters',
+    AttackParametersAndQueryString: 'AttackParametersAndQueryString'
+} as const;
+export type ExtensionSettingModelAttackOptionEnum = typeof ExtensionSettingModelAttackOptionEnum[keyof typeof ExtensionSettingModelAttackOptionEnum];
+
 /**
-* @export
-* @enum {string}
-*/
-export enum ExtensionSettingModelCrawlOptionEnum {
-    DoNotCrawl = 'DoNotCrawl',
-    Crawl = 'Crawl',
-    CrawlOnlyParameter = 'CrawlOnlyParameter'
-}
+ * @export
+ */
+export const ExtensionSettingModelCrawlOptionEnum = {
+    DoNotCrawl: 'DoNotCrawl',
+    Crawl: 'Crawl',
+    CrawlOnlyParameter: 'CrawlOnlyParameter'
+} as const;
+export type ExtensionSettingModelCrawlOptionEnum = typeof ExtensionSettingModelCrawlOptionEnum[keyof typeof ExtensionSettingModelCrawlOptionEnum];
 
 
 /**

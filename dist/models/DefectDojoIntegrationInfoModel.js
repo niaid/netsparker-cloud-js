@@ -18,54 +18,50 @@ const runtime_1 = require("../runtime");
 const IntegrationCustomFieldVm_1 = require("./IntegrationCustomFieldVm");
 const IntegrationWizardResultModel_1 = require("./IntegrationWizardResultModel");
 /**
-* @export
-* @enum {string}
-*/
-var DefectDojoIntegrationInfoModelTypeEnum;
-(function (DefectDojoIntegrationInfoModelTypeEnum) {
-    DefectDojoIntegrationInfoModelTypeEnum["NetsparkerEnterprise"] = "NetsparkerEnterprise";
-    DefectDojoIntegrationInfoModelTypeEnum["Webhook"] = "Webhook";
-    DefectDojoIntegrationInfoModelTypeEnum["Zapier"] = "Zapier";
-    DefectDojoIntegrationInfoModelTypeEnum["Slack"] = "Slack";
-    DefectDojoIntegrationInfoModelTypeEnum["Mattermost"] = "Mattermost";
-    DefectDojoIntegrationInfoModelTypeEnum["MicrosoftTeams"] = "MicrosoftTeams";
-    DefectDojoIntegrationInfoModelTypeEnum["AzureDevOps"] = "AzureDevOps";
-    DefectDojoIntegrationInfoModelTypeEnum["Bitbucket"] = "Bitbucket";
-    DefectDojoIntegrationInfoModelTypeEnum["Bugzilla"] = "Bugzilla";
-    DefectDojoIntegrationInfoModelTypeEnum["Clubhouse"] = "Clubhouse";
-    DefectDojoIntegrationInfoModelTypeEnum["DefectDojo"] = "DefectDojo";
-    DefectDojoIntegrationInfoModelTypeEnum["PivotalTracker"] = "PivotalTracker";
-    DefectDojoIntegrationInfoModelTypeEnum["Jira"] = "Jira";
-    DefectDojoIntegrationInfoModelTypeEnum["FogBugz"] = "FogBugz";
-    DefectDojoIntegrationInfoModelTypeEnum["GitHub"] = "GitHub";
-    DefectDojoIntegrationInfoModelTypeEnum["PagerDuty"] = "PagerDuty";
-    DefectDojoIntegrationInfoModelTypeEnum["Kafka"] = "Kafka";
-    DefectDojoIntegrationInfoModelTypeEnum["Kenna"] = "Kenna";
-    DefectDojoIntegrationInfoModelTypeEnum["Redmine"] = "Redmine";
-    DefectDojoIntegrationInfoModelTypeEnum["ServiceNow"] = "ServiceNow";
-    DefectDojoIntegrationInfoModelTypeEnum["Tfs"] = "TFS";
-    DefectDojoIntegrationInfoModelTypeEnum["Unfuddle"] = "Unfuddle";
-    DefectDojoIntegrationInfoModelTypeEnum["YouTrack"] = "YouTrack";
-    DefectDojoIntegrationInfoModelTypeEnum["Freshservice"] = "Freshservice";
-    DefectDojoIntegrationInfoModelTypeEnum["Splunk"] = "Splunk";
-    DefectDojoIntegrationInfoModelTypeEnum["JazzTeam"] = "JazzTeam";
-    DefectDojoIntegrationInfoModelTypeEnum["ServiceNowVrm"] = "ServiceNowVRM";
-    DefectDojoIntegrationInfoModelTypeEnum["Asana"] = "Asana";
-    DefectDojoIntegrationInfoModelTypeEnum["Trello"] = "Trello";
-    DefectDojoIntegrationInfoModelTypeEnum["Hashicorp"] = "Hashicorp";
-    DefectDojoIntegrationInfoModelTypeEnum["CyberArk"] = "CyberArk";
-    DefectDojoIntegrationInfoModelTypeEnum["AzureKeyVault"] = "AzureKeyVault";
-    DefectDojoIntegrationInfoModelTypeEnum["GitLab"] = "GitLab";
-})(DefectDojoIntegrationInfoModelTypeEnum = exports.DefectDojoIntegrationInfoModelTypeEnum || (exports.DefectDojoIntegrationInfoModelTypeEnum = {}));
+ * @export
+ */
+exports.DefectDojoIntegrationInfoModelTypeEnum = {
+    Jira: 'Jira',
+    GitHub: 'GitHub',
+    Tfs: 'TFS',
+    FogBugz: 'FogBugz',
+    ServiceNow: 'ServiceNow',
+    Slack: 'Slack',
+    GitLab: 'GitLab',
+    Bitbucket: 'Bitbucket',
+    Unfuddle: 'Unfuddle',
+    Zapier: 'Zapier',
+    AzureDevOps: 'AzureDevOps',
+    Redmine: 'Redmine',
+    Bugzilla: 'Bugzilla',
+    Kafka: 'Kafka',
+    PagerDuty: 'PagerDuty',
+    MicrosoftTeams: 'MicrosoftTeams',
+    Clubhouse: 'Clubhouse',
+    Trello: 'Trello',
+    Asana: 'Asana',
+    Webhook: 'Webhook',
+    Kenna: 'Kenna',
+    Freshservice: 'Freshservice',
+    YouTrack: 'YouTrack',
+    NetsparkerEnterprise: 'NetsparkerEnterprise',
+    Splunk: 'Splunk',
+    Mattermost: 'Mattermost',
+    Hashicorp: 'Hashicorp',
+    PivotalTracker: 'PivotalTracker',
+    CyberArk: 'CyberArk',
+    DefectDojo: 'DefectDojo',
+    JazzTeam: 'JazzTeam',
+    AzureKeyVault: 'AzureKeyVault',
+    ServiceNowVrm: 'ServiceNowVRM'
+};
 /**
-* @export
-* @enum {string}
-*/
-var DefectDojoIntegrationInfoModelTemplateTypeEnum;
-(function (DefectDojoIntegrationInfoModelTemplateTypeEnum) {
-    DefectDojoIntegrationInfoModelTemplateTypeEnum["Standard"] = "Standard";
-    DefectDojoIntegrationInfoModelTemplateTypeEnum["Detailed"] = "Detailed";
-})(DefectDojoIntegrationInfoModelTemplateTypeEnum = exports.DefectDojoIntegrationInfoModelTemplateTypeEnum || (exports.DefectDojoIntegrationInfoModelTemplateTypeEnum = {}));
+ * @export
+ */
+exports.DefectDojoIntegrationInfoModelTemplateTypeEnum = {
+    Standard: 'Standard',
+    Detailed: 'Detailed'
+};
 /**
  * Check if a given object implements the DefectDojoIntegrationInfoModel interface.
  */

@@ -11,10 +11,10 @@
  */
 import * as runtime from '../runtime';
 import type { AccountLicenseApiModel, ScanControlApiModel, UserHealthCheckApiModel } from '../models/index';
-export interface AccountApiAccountLicenseValidateRequest {
+export interface AccountLicenseValidateRequest {
     username: string;
 }
-export interface AccountApiAccountScanControl0Request {
+export interface AccountScanControl0Request {
     model: ScanControlApiModel;
 }
 /**
@@ -32,11 +32,11 @@ export declare class AccountApi extends runtime.BaseAPI {
     /**
      * If user info and license validated it returns success, otherwise fails
      */
-    accountLicenseValidateRaw(requestParameters: AccountApiAccountLicenseValidateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    accountLicenseValidateRaw(requestParameters: AccountLicenseValidateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * If user info and license validated it returns success, otherwise fails
      */
-    accountLicenseValidate(requestParameters: AccountApiAccountLicenseValidateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    accountLicenseValidate(requestParameters: AccountLicenseValidateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Gets the information of callee
      */
@@ -62,9 +62,9 @@ export declare class AccountApi extends runtime.BaseAPI {
     /**
      * Sets the scan control settings of account
      */
-    accountScanControl_1Raw(requestParameters: AccountApiAccountScanControl0Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>>;
+    accountScanControl_1Raw(requestParameters: AccountScanControl0Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>>;
     /**
      * Sets the scan control settings of account
      */
-    accountScanControl_1(requestParameters: AccountApiAccountScanControl0Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object>;
+    accountScanControl_1(requestParameters: AccountScanControl0Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object>;
 }

@@ -16,22 +16,20 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.VcsCommitInfoToJSON = exports.VcsCommitInfoFromJSONTyped = exports.VcsCommitInfoFromJSON = exports.instanceOfVcsCommitInfo = exports.VcsCommitInfoIntegrationSystemEnum = void 0;
 const runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
-var VcsCommitInfoIntegrationSystemEnum;
-(function (VcsCommitInfoIntegrationSystemEnum) {
-    VcsCommitInfoIntegrationSystemEnum["Teamcity"] = "Teamcity";
-    VcsCommitInfoIntegrationSystemEnum["Jenkins"] = "Jenkins";
-    VcsCommitInfoIntegrationSystemEnum["Bamboo"] = "Bamboo";
-    VcsCommitInfoIntegrationSystemEnum["GitLab"] = "GitLab";
-    VcsCommitInfoIntegrationSystemEnum["AzureDevOps"] = "AzureDevOps";
-    VcsCommitInfoIntegrationSystemEnum["Jira"] = "Jira";
-    VcsCommitInfoIntegrationSystemEnum["CircleCi"] = "CircleCI";
-    VcsCommitInfoIntegrationSystemEnum["TravisCi"] = "TravisCI";
-    VcsCommitInfoIntegrationSystemEnum["UrbanCodeDeploy"] = "UrbanCodeDeploy";
-    VcsCommitInfoIntegrationSystemEnum["GitHubActions"] = "GitHubActions";
-})(VcsCommitInfoIntegrationSystemEnum = exports.VcsCommitInfoIntegrationSystemEnum || (exports.VcsCommitInfoIntegrationSystemEnum = {}));
+ * @export
+ */
+exports.VcsCommitInfoIntegrationSystemEnum = {
+    Teamcity: 'Teamcity',
+    Jenkins: 'Jenkins',
+    Bamboo: 'Bamboo',
+    GitLab: 'GitLab',
+    AzureDevOps: 'AzureDevOps',
+    Jira: 'Jira',
+    CircleCi: 'CircleCI',
+    TravisCi: 'TravisCI',
+    UrbanCodeDeploy: 'UrbanCodeDeploy',
+    GitHubActions: 'GitHubActions'
+};
 /**
  * Check if a given object implements the VcsCommitInfo interface.
  */

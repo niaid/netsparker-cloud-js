@@ -67,33 +67,33 @@ export interface SecurityCheckGroupModel {
     name?: string;
 }
 /**
-* @export
-* @enum {string}
-*/
-export declare enum SecurityCheckGroupModelTypeEnum {
-    Engine = "Engine",
-    ResourceModifier = "ResourceModifier"
-}
+ * @export
+ */
+export declare const SecurityCheckGroupModelTypeEnum: {
+    readonly Engine: "Engine";
+    readonly ResourceModifier: "ResourceModifier";
+};
+export type SecurityCheckGroupModelTypeEnum = typeof SecurityCheckGroupModelTypeEnum[keyof typeof SecurityCheckGroupModelTypeEnum];
 /**
-* @export
-* @enum {string}
-*/
-export declare enum SecurityCheckGroupModelEngineGroupEnum {
-    SqlInjection = "SqlInjection",
-    Xss = "Xss",
-    CommandInjection = "CommandInjection",
-    FileInclusion = "FileInclusion",
-    Ssrf = "Ssrf",
-    Xxe = "Xxe",
-    StaticResources = "StaticResources",
-    ResourceFinder = "ResourceFinder",
-    ApacheStrutsRce = "ApacheStrutsRce",
-    CodeEvaluation = "CodeEvaluation",
-    CustomScriptChecks = "CustomScriptChecks",
-    HeaderInjection = "HeaderInjection",
-    NoSqlInjection = "NoSqlInjection",
-    WordpressDetection = "WordpressDetection"
-}
+ * @export
+ */
+export declare const SecurityCheckGroupModelEngineGroupEnum: {
+    readonly SqlInjection: "SqlInjection";
+    readonly Xss: "Xss";
+    readonly CommandInjection: "CommandInjection";
+    readonly FileInclusion: "FileInclusion";
+    readonly Ssrf: "Ssrf";
+    readonly Xxe: "Xxe";
+    readonly StaticResources: "StaticResources";
+    readonly ResourceFinder: "ResourceFinder";
+    readonly ApacheStrutsRce: "ApacheStrutsRce";
+    readonly CodeEvaluation: "CodeEvaluation";
+    readonly CustomScriptChecks: "CustomScriptChecks";
+    readonly HeaderInjection: "HeaderInjection";
+    readonly NoSqlInjection: "NoSqlInjection";
+    readonly WordpressDetection: "WordpressDetection";
+};
+export type SecurityCheckGroupModelEngineGroupEnum = typeof SecurityCheckGroupModelEngineGroupEnum[keyof typeof SecurityCheckGroupModelEngineGroupEnum];
 /**
  * Check if a given object implements the SecurityCheckGroupModel interface.
  */

@@ -16,15 +16,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.AuthVerificationApiResultToJSON = exports.AuthVerificationApiResultFromJSONTyped = exports.AuthVerificationApiResultFromJSON = exports.instanceOfAuthVerificationApiResult = exports.AuthVerificationApiResultLogoutSignatureTypeEnum = void 0;
 const runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
-var AuthVerificationApiResultLogoutSignatureTypeEnum;
-(function (AuthVerificationApiResultLogoutSignatureTypeEnum) {
-    AuthVerificationApiResultLogoutSignatureTypeEnum["None"] = "None";
-    AuthVerificationApiResultLogoutSignatureTypeEnum["RedirectBased"] = "RedirectBased";
-    AuthVerificationApiResultLogoutSignatureTypeEnum["KeywordBased"] = "KeywordBased";
-})(AuthVerificationApiResultLogoutSignatureTypeEnum = exports.AuthVerificationApiResultLogoutSignatureTypeEnum || (exports.AuthVerificationApiResultLogoutSignatureTypeEnum = {}));
+ * @export
+ */
+exports.AuthVerificationApiResultLogoutSignatureTypeEnum = {
+    None: 'None',
+    RedirectBased: 'RedirectBased',
+    KeywordBased: 'KeywordBased'
+};
 /**
  * Check if a given object implements the AuthVerificationApiResult interface.
  */

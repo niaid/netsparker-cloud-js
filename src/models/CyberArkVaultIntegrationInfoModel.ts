@@ -148,61 +148,64 @@ export interface CyberArkVaultIntegrationInfoModel {
     integrationWizardResultModel?: IntegrationWizardResultModel;
 }
 
+
 /**
-* @export
-* @enum {string}
-*/
-export enum CyberArkVaultIntegrationInfoModelAgentModeEnum {
-    Cloud = 'Cloud',
-    Internal = 'Internal'
-}
+ * @export
+ */
+export const CyberArkVaultIntegrationInfoModelAgentModeEnum = {
+    Cloud: 'Cloud',
+    Internal: 'Internal'
+} as const;
+export type CyberArkVaultIntegrationInfoModelAgentModeEnum = typeof CyberArkVaultIntegrationInfoModelAgentModeEnum[keyof typeof CyberArkVaultIntegrationInfoModelAgentModeEnum];
+
 /**
-* @export
-* @enum {string}
-*/
-export enum CyberArkVaultIntegrationInfoModelTypeEnum {
-    Jira = 'Jira',
-    GitHub = 'GitHub',
-    Tfs = 'TFS',
-    FogBugz = 'FogBugz',
-    ServiceNow = 'ServiceNow',
-    Slack = 'Slack',
-    GitLab = 'GitLab',
-    Bitbucket = 'Bitbucket',
-    Unfuddle = 'Unfuddle',
-    Zapier = 'Zapier',
-    AzureDevOps = 'AzureDevOps',
-    Redmine = 'Redmine',
-    Bugzilla = 'Bugzilla',
-    Kafka = 'Kafka',
-    PagerDuty = 'PagerDuty',
-    MicrosoftTeams = 'MicrosoftTeams',
-    Clubhouse = 'Clubhouse',
-    Trello = 'Trello',
-    Asana = 'Asana',
-    Webhook = 'Webhook',
-    Kenna = 'Kenna',
-    Freshservice = 'Freshservice',
-    YouTrack = 'YouTrack',
-    NetsparkerEnterprise = 'NetsparkerEnterprise',
-    Splunk = 'Splunk',
-    Mattermost = 'Mattermost',
-    Hashicorp = 'Hashicorp',
-    PivotalTracker = 'PivotalTracker',
-    CyberArk = 'CyberArk',
-    DefectDojo = 'DefectDojo',
-    JazzTeam = 'JazzTeam',
-    AzureKeyVault = 'AzureKeyVault',
-    ServiceNowVrm = 'ServiceNowVRM'
-}
+ * @export
+ */
+export const CyberArkVaultIntegrationInfoModelTypeEnum = {
+    NetsparkerEnterprise: 'NetsparkerEnterprise',
+    Webhook: 'Webhook',
+    Zapier: 'Zapier',
+    Slack: 'Slack',
+    Mattermost: 'Mattermost',
+    MicrosoftTeams: 'MicrosoftTeams',
+    AzureDevOps: 'AzureDevOps',
+    Bitbucket: 'Bitbucket',
+    Bugzilla: 'Bugzilla',
+    Clubhouse: 'Clubhouse',
+    DefectDojo: 'DefectDojo',
+    PivotalTracker: 'PivotalTracker',
+    Jira: 'Jira',
+    FogBugz: 'FogBugz',
+    GitHub: 'GitHub',
+    PagerDuty: 'PagerDuty',
+    Kafka: 'Kafka',
+    Tfs: 'TFS',
+    ServiceNow: 'ServiceNow',
+    GitLab: 'GitLab',
+    Unfuddle: 'Unfuddle',
+    Redmine: 'Redmine',
+    Trello: 'Trello',
+    Asana: 'Asana',
+    Kenna: 'Kenna',
+    Freshservice: 'Freshservice',
+    YouTrack: 'YouTrack',
+    Splunk: 'Splunk',
+    Hashicorp: 'Hashicorp',
+    CyberArk: 'CyberArk',
+    JazzTeam: 'JazzTeam',
+    AzureKeyVault: 'AzureKeyVault',
+    ServiceNowVrm: 'ServiceNowVRM'
+} as const;
+export type CyberArkVaultIntegrationInfoModelTypeEnum = typeof CyberArkVaultIntegrationInfoModelTypeEnum[keyof typeof CyberArkVaultIntegrationInfoModelTypeEnum];
+
 /**
-* @export
-* @enum {string}
-*/
-export enum CyberArkVaultIntegrationInfoModelTemplateTypeEnum {
-    Standard = 'Standard',
-    Detailed = 'Detailed'
-}
+ * @export
+ */
+export const CyberArkVaultIntegrationInfoModelTemplateTypeEnum = {
+    Standard: 'Standard',
+    Detailed: 'Detailed'
+} as const;
+export type CyberArkVaultIntegrationInfoModelTemplateTypeEnum = typeof CyberArkVaultIntegrationInfoModelTemplateTypeEnum[keyof typeof CyberArkVaultIntegrationInfoModelTemplateTypeEnum];
 
 
 /**

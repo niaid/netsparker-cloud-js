@@ -130,13 +130,13 @@ export interface MemberApiViewModel {
     websiteCount?: number;
 }
 /**
-* @export
-* @enum {string}
-*/
-export declare enum MemberApiViewModelStateEnum {
-    Enabled = "Enabled",
-    Disabled = "Disabled"
-}
+ * @export
+ */
+export declare const MemberApiViewModelStateEnum: {
+    readonly Enabled: "Enabled";
+    readonly Disabled: "Disabled";
+};
+export type MemberApiViewModelStateEnum = typeof MemberApiViewModelStateEnum[keyof typeof MemberApiViewModelStateEnum];
 /**
  * Check if a given object implements the MemberApiViewModel interface.
  */

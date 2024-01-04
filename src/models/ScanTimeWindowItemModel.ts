@@ -45,19 +45,20 @@ export interface ScanTimeWindowItemModel {
     to?: string;
 }
 
+
 /**
-* @export
-* @enum {string}
-*/
-export enum ScanTimeWindowItemModelDayEnum {
-    Sunday = 'Sunday',
-    Monday = 'Monday',
-    Tuesday = 'Tuesday',
-    Wednesday = 'Wednesday',
-    Thursday = 'Thursday',
-    Friday = 'Friday',
-    Saturday = 'Saturday'
-}
+ * @export
+ */
+export const ScanTimeWindowItemModelDayEnum = {
+    Sunday: 'Sunday',
+    Monday: 'Monday',
+    Tuesday: 'Tuesday',
+    Wednesday: 'Wednesday',
+    Thursday: 'Thursday',
+    Friday: 'Friday',
+    Saturday: 'Saturday'
+} as const;
+export type ScanTimeWindowItemModelDayEnum = typeof ScanTimeWindowItemModelDayEnum[keyof typeof ScanTimeWindowItemModelDayEnum];
 
 
 /**

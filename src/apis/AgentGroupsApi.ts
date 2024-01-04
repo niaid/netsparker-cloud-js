@@ -34,20 +34,20 @@ import {
     AgentGroupsListApiResultToJSON,
 } from '../models/index';
 
-export interface AgentGroupsApiAgentGroupsDeleteRequest {
+export interface AgentGroupsDeleteRequest {
     model: AgentGroupApiDeleteModel;
 }
 
-export interface AgentGroupsApiAgentGroupsListRequest {
+export interface AgentGroupsListRequest {
     page?: number;
     pageSize?: number;
 }
 
-export interface AgentGroupsApiAgentGroupsNewRequest {
+export interface AgentGroupsNewRequest {
     model: AgentGroupApiNewModel;
 }
 
-export interface AgentGroupsApiAgentGroupsUpdateRequest {
+export interface AgentGroupsUpdateRequest {
     model: AgentGroupApiUpdateModel;
 }
 
@@ -59,7 +59,7 @@ export class AgentGroupsApi extends runtime.BaseAPI {
     /**
      * Deletes the agent group
      */
-    async agentGroupsDeleteRaw(requestParameters: AgentGroupsApiAgentGroupsDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>> {
+    async agentGroupsDeleteRaw(requestParameters: AgentGroupsDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>> {
         if (requestParameters.model === null || requestParameters.model === undefined) {
             throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling agentGroupsDelete.');
         }
@@ -84,7 +84,7 @@ export class AgentGroupsApi extends runtime.BaseAPI {
     /**
      * Deletes the agent group
      */
-    async agentGroupsDelete(requestParameters: AgentGroupsApiAgentGroupsDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object> {
+    async agentGroupsDelete(requestParameters: AgentGroupsDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object> {
         const response = await this.agentGroupsDeleteRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -92,7 +92,7 @@ export class AgentGroupsApi extends runtime.BaseAPI {
     /**
      * Gets the list of agent groups.
      */
-    async agentGroupsListRaw(requestParameters: AgentGroupsApiAgentGroupsListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AgentGroupsListApiResult>> {
+    async agentGroupsListRaw(requestParameters: AgentGroupsListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AgentGroupsListApiResult>> {
         const queryParameters: any = {};
 
         if (requestParameters.page !== undefined) {
@@ -118,7 +118,7 @@ export class AgentGroupsApi extends runtime.BaseAPI {
     /**
      * Gets the list of agent groups.
      */
-    async agentGroupsList(requestParameters: AgentGroupsApiAgentGroupsListRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AgentGroupsListApiResult> {
+    async agentGroupsList(requestParameters: AgentGroupsListRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AgentGroupsListApiResult> {
         const response = await this.agentGroupsListRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -126,7 +126,7 @@ export class AgentGroupsApi extends runtime.BaseAPI {
     /**
      * Creates a new agent group
      */
-    async agentGroupsNewRaw(requestParameters: AgentGroupsApiAgentGroupsNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AgentGroupModel>> {
+    async agentGroupsNewRaw(requestParameters: AgentGroupsNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AgentGroupModel>> {
         if (requestParameters.model === null || requestParameters.model === undefined) {
             throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling agentGroupsNew.');
         }
@@ -151,7 +151,7 @@ export class AgentGroupsApi extends runtime.BaseAPI {
     /**
      * Creates a new agent group
      */
-    async agentGroupsNew(requestParameters: AgentGroupsApiAgentGroupsNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AgentGroupModel> {
+    async agentGroupsNew(requestParameters: AgentGroupsNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AgentGroupModel> {
         const response = await this.agentGroupsNewRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -159,7 +159,7 @@ export class AgentGroupsApi extends runtime.BaseAPI {
     /**
      * Updates the agent group
      */
-    async agentGroupsUpdateRaw(requestParameters: AgentGroupsApiAgentGroupsUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AgentGroupModel>> {
+    async agentGroupsUpdateRaw(requestParameters: AgentGroupsUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AgentGroupModel>> {
         if (requestParameters.model === null || requestParameters.model === undefined) {
             throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling agentGroupsUpdate.');
         }
@@ -184,7 +184,7 @@ export class AgentGroupsApi extends runtime.BaseAPI {
     /**
      * Updates the agent group
      */
-    async agentGroupsUpdate(requestParameters: AgentGroupsApiAgentGroupsUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AgentGroupModel> {
+    async agentGroupsUpdate(requestParameters: AgentGroupsUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AgentGroupModel> {
         const response = await this.agentGroupsUpdateRaw(requestParameters, initOverrides);
         return await response.value();
     }

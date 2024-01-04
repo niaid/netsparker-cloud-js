@@ -16,17 +16,15 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.BasicAuthenticationCredentialApiModelToJSON = exports.BasicAuthenticationCredentialApiModelFromJSONTyped = exports.BasicAuthenticationCredentialApiModelFromJSON = exports.instanceOfBasicAuthenticationCredentialApiModel = exports.BasicAuthenticationCredentialApiModelAuthenticationTypeEnum = void 0;
 const runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
-var BasicAuthenticationCredentialApiModelAuthenticationTypeEnum;
-(function (BasicAuthenticationCredentialApiModelAuthenticationTypeEnum) {
-    BasicAuthenticationCredentialApiModelAuthenticationTypeEnum["Basic"] = "Basic";
-    BasicAuthenticationCredentialApiModelAuthenticationTypeEnum["Ntlm"] = "Ntlm";
-    BasicAuthenticationCredentialApiModelAuthenticationTypeEnum["Kerberos"] = "Kerberos";
-    BasicAuthenticationCredentialApiModelAuthenticationTypeEnum["Digest"] = "Digest";
-    BasicAuthenticationCredentialApiModelAuthenticationTypeEnum["Negotiate"] = "Negotiate";
-})(BasicAuthenticationCredentialApiModelAuthenticationTypeEnum = exports.BasicAuthenticationCredentialApiModelAuthenticationTypeEnum || (exports.BasicAuthenticationCredentialApiModelAuthenticationTypeEnum = {}));
+ * @export
+ */
+exports.BasicAuthenticationCredentialApiModelAuthenticationTypeEnum = {
+    Basic: 'Basic',
+    Ntlm: 'Ntlm',
+    Kerberos: 'Kerberos',
+    Digest: 'Digest',
+    Negotiate: 'Negotiate'
+};
 /**
  * Check if a given object implements the BasicAuthenticationCredentialApiModel interface.
  */

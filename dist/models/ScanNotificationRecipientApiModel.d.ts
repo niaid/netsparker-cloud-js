@@ -61,27 +61,27 @@ export interface ScanNotificationRecipientApiModel {
     specificSmsRecipients?: Array<ScanNotificationRecipientApiModelSpecificSmsRecipientsEnum>;
 }
 /**
-* @export
-* @enum {string}
-*/
-export declare enum ScanNotificationRecipientApiModelSpecificEmailRecipientsEnum {
-    None = "None",
-    WebsiteTechnicalContact = "WebsiteTechnicalContact",
-    PersonWhoStartedScan = "PersonWhoStartedScan",
-    AllAuthorized = "AllAuthorized",
-    AccountAdmins = "AccountAdmins"
-}
+ * @export
+ */
+export declare const ScanNotificationRecipientApiModelSpecificEmailRecipientsEnum: {
+    readonly None: "None";
+    readonly WebsiteTechnicalContact: "WebsiteTechnicalContact";
+    readonly PersonWhoStartedScan: "PersonWhoStartedScan";
+    readonly AllAuthorized: "AllAuthorized";
+    readonly AccountAdmins: "AccountAdmins";
+};
+export type ScanNotificationRecipientApiModelSpecificEmailRecipientsEnum = typeof ScanNotificationRecipientApiModelSpecificEmailRecipientsEnum[keyof typeof ScanNotificationRecipientApiModelSpecificEmailRecipientsEnum];
 /**
-* @export
-* @enum {string}
-*/
-export declare enum ScanNotificationRecipientApiModelSpecificSmsRecipientsEnum {
-    None = "None",
-    WebsiteTechnicalContact = "WebsiteTechnicalContact",
-    PersonWhoStartedScan = "PersonWhoStartedScan",
-    AllAuthorized = "AllAuthorized",
-    AccountAdmins = "AccountAdmins"
-}
+ * @export
+ */
+export declare const ScanNotificationRecipientApiModelSpecificSmsRecipientsEnum: {
+    readonly None: "None";
+    readonly WebsiteTechnicalContact: "WebsiteTechnicalContact";
+    readonly PersonWhoStartedScan: "PersonWhoStartedScan";
+    readonly AllAuthorized: "AllAuthorized";
+    readonly AccountAdmins: "AccountAdmins";
+};
+export type ScanNotificationRecipientApiModelSpecificSmsRecipientsEnum = typeof ScanNotificationRecipientApiModelSpecificSmsRecipientsEnum[keyof typeof ScanNotificationRecipientApiModelSpecificSmsRecipientsEnum];
 /**
  * Check if a given object implements the ScanNotificationRecipientApiModel interface.
  */

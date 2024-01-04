@@ -76,28 +76,30 @@ export interface ScanNotificationRecipientApiModel {
     specificSmsRecipients?: Array<ScanNotificationRecipientApiModelSpecificSmsRecipientsEnum>;
 }
 
+
 /**
-* @export
-* @enum {string}
-*/
-export enum ScanNotificationRecipientApiModelSpecificEmailRecipientsEnum {
-    None = 'None',
-    WebsiteTechnicalContact = 'WebsiteTechnicalContact',
-    PersonWhoStartedScan = 'PersonWhoStartedScan',
-    AllAuthorized = 'AllAuthorized',
-    AccountAdmins = 'AccountAdmins'
-}
+ * @export
+ */
+export const ScanNotificationRecipientApiModelSpecificEmailRecipientsEnum = {
+    None: 'None',
+    WebsiteTechnicalContact: 'WebsiteTechnicalContact',
+    PersonWhoStartedScan: 'PersonWhoStartedScan',
+    AllAuthorized: 'AllAuthorized',
+    AccountAdmins: 'AccountAdmins'
+} as const;
+export type ScanNotificationRecipientApiModelSpecificEmailRecipientsEnum = typeof ScanNotificationRecipientApiModelSpecificEmailRecipientsEnum[keyof typeof ScanNotificationRecipientApiModelSpecificEmailRecipientsEnum];
+
 /**
-* @export
-* @enum {string}
-*/
-export enum ScanNotificationRecipientApiModelSpecificSmsRecipientsEnum {
-    None = 'None',
-    WebsiteTechnicalContact = 'WebsiteTechnicalContact',
-    PersonWhoStartedScan = 'PersonWhoStartedScan',
-    AllAuthorized = 'AllAuthorized',
-    AccountAdmins = 'AccountAdmins'
-}
+ * @export
+ */
+export const ScanNotificationRecipientApiModelSpecificSmsRecipientsEnum = {
+    None: 'None',
+    WebsiteTechnicalContact: 'WebsiteTechnicalContact',
+    PersonWhoStartedScan: 'PersonWhoStartedScan',
+    AllAuthorized: 'AllAuthorized',
+    AccountAdmins: 'AccountAdmins'
+} as const;
+export type ScanNotificationRecipientApiModelSpecificSmsRecipientsEnum = typeof ScanNotificationRecipientApiModelSpecificSmsRecipientsEnum[keyof typeof ScanNotificationRecipientApiModelSpecificSmsRecipientsEnum];
 
 
 /**

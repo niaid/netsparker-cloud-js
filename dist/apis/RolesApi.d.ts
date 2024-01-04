@@ -11,20 +11,20 @@
  */
 import * as runtime from '../runtime';
 import type { NewRoleApiModel, PermissionApiModel, RoleApiModelListApiResult, RoleApiViewModel, UpdateRoleApiModel } from '../models/index';
-export interface RolesApiRolesDeleteRequest {
+export interface RolesDeleteRequest {
     id: string;
 }
-export interface RolesApiRolesGetRequest {
+export interface RolesGetRequest {
     id: string;
 }
-export interface RolesApiRolesListRequest {
+export interface RolesListRequest {
     page?: number;
     pageSize?: number;
 }
-export interface RolesApiRolesNewRequest {
+export interface RolesNewRequest {
     model: NewRoleApiModel;
 }
-export interface RolesApiRolesUpdateRequest {
+export interface RolesUpdateRequest {
     model: UpdateRoleApiModel;
 }
 /**
@@ -34,27 +34,27 @@ export declare class RolesApi extends runtime.BaseAPI {
     /**
      * Deletes a role.
      */
-    rolesDeleteRaw(requestParameters: RolesApiRolesDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
+    rolesDeleteRaw(requestParameters: RolesDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
     /**
      * Deletes a role.
      */
-    rolesDelete(requestParameters: RolesApiRolesDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
+    rolesDelete(requestParameters: RolesDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
     /**
      * Gets the role by the specified id.
      */
-    rolesGetRaw(requestParameters: RolesApiRolesGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RoleApiViewModel>>;
+    rolesGetRaw(requestParameters: RolesGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RoleApiViewModel>>;
     /**
      * Gets the role by the specified id.
      */
-    rolesGet(requestParameters: RolesApiRolesGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RoleApiViewModel>;
+    rolesGet(requestParameters: RolesGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RoleApiViewModel>;
     /**
      * Gets the list of roles.
      */
-    rolesListRaw(requestParameters: RolesApiRolesListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RoleApiModelListApiResult>>;
+    rolesListRaw(requestParameters: RolesListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RoleApiModelListApiResult>>;
     /**
      * Gets the list of roles.
      */
-    rolesList(requestParameters?: RolesApiRolesListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RoleApiModelListApiResult>;
+    rolesList(requestParameters?: RolesListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RoleApiModelListApiResult>;
     /**
      * Gets the list of permissions.
      */
@@ -66,17 +66,17 @@ export declare class RolesApi extends runtime.BaseAPI {
     /**
      * Creates a new role
      */
-    rolesNewRaw(requestParameters: RolesApiRolesNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RoleApiViewModel>>;
+    rolesNewRaw(requestParameters: RolesNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RoleApiViewModel>>;
     /**
      * Creates a new role
      */
-    rolesNew(requestParameters: RolesApiRolesNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RoleApiViewModel>;
+    rolesNew(requestParameters: RolesNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RoleApiViewModel>;
     /**
      * Updates a role
      */
-    rolesUpdateRaw(requestParameters: RolesApiRolesUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RoleApiViewModel>>;
+    rolesUpdateRaw(requestParameters: RolesUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<RoleApiViewModel>>;
     /**
      * Updates a role
      */
-    rolesUpdate(requestParameters: RolesApiRolesUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RoleApiViewModel>;
+    rolesUpdate(requestParameters: RolesUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<RoleApiViewModel>;
 }

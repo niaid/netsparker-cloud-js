@@ -17,23 +17,19 @@ exports.WebsiteApiModelToJSON = exports.WebsiteApiModelFromJSONTyped = exports.W
 const runtime_1 = require("../runtime");
 const IdNamePair_1 = require("./IdNamePair");
 /**
-* @export
-* @enum {string}
-*/
-var WebsiteApiModelLicenseTypeEnum;
-(function (WebsiteApiModelLicenseTypeEnum) {
-    WebsiteApiModelLicenseTypeEnum["Subscription"] = "Subscription";
-    WebsiteApiModelLicenseTypeEnum["Credit"] = "Credit";
-})(WebsiteApiModelLicenseTypeEnum = exports.WebsiteApiModelLicenseTypeEnum || (exports.WebsiteApiModelLicenseTypeEnum = {}));
+ * @export
+ */
+exports.WebsiteApiModelLicenseTypeEnum = {
+    Subscription: 'Subscription',
+    Credit: 'Credit'
+};
 /**
-* @export
-* @enum {string}
-*/
-var WebsiteApiModelAgentModeEnum;
-(function (WebsiteApiModelAgentModeEnum) {
-    WebsiteApiModelAgentModeEnum["Cloud"] = "Cloud";
-    WebsiteApiModelAgentModeEnum["Internal"] = "Internal";
-})(WebsiteApiModelAgentModeEnum = exports.WebsiteApiModelAgentModeEnum || (exports.WebsiteApiModelAgentModeEnum = {}));
+ * @export
+ */
+exports.WebsiteApiModelAgentModeEnum = {
+    Cloud: 'Cloud',
+    Internal: 'Internal'
+};
 /**
  * Check if a given object implements the WebsiteApiModel interface.
  */

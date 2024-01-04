@@ -16,31 +16,29 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.FileCacheToJSON = exports.FileCacheFromJSONTyped = exports.FileCacheFromJSON = exports.instanceOfFileCache = exports.FileCacheImporterTypeEnum = void 0;
 const runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
-var FileCacheImporterTypeEnum;
-(function (FileCacheImporterTypeEnum) {
-    FileCacheImporterTypeEnum["None"] = "None";
-    FileCacheImporterTypeEnum["Fiddler"] = "Fiddler";
-    FileCacheImporterTypeEnum["Burp"] = "Burp";
-    FileCacheImporterTypeEnum["Swagger"] = "Swagger";
-    FileCacheImporterTypeEnum["OwaspZap"] = "OwaspZap";
-    FileCacheImporterTypeEnum["AspNet"] = "AspNet";
-    FileCacheImporterTypeEnum["HttpArchive"] = "HttpArchive";
-    FileCacheImporterTypeEnum["Wadl"] = "Wadl";
-    FileCacheImporterTypeEnum["Wsdl"] = "Wsdl";
-    FileCacheImporterTypeEnum["Postman"] = "Postman";
-    FileCacheImporterTypeEnum["Netsparker"] = "Netsparker";
-    FileCacheImporterTypeEnum["HttpRequestImporter"] = "HttpRequestImporter";
-    FileCacheImporterTypeEnum["LinkImporter"] = "LinkImporter";
-    FileCacheImporterTypeEnum["CsvImporter"] = "CsvImporter";
-    FileCacheImporterTypeEnum["Iodocs"] = "Iodocs";
-    FileCacheImporterTypeEnum["WordPress"] = "WordPress";
-    FileCacheImporterTypeEnum["Raml"] = "Raml";
-    FileCacheImporterTypeEnum["GraphQl"] = "GraphQl";
-    FileCacheImporterTypeEnum["AcxXml"] = "AcxXml";
-})(FileCacheImporterTypeEnum = exports.FileCacheImporterTypeEnum || (exports.FileCacheImporterTypeEnum = {}));
+ * @export
+ */
+exports.FileCacheImporterTypeEnum = {
+    None: 'None',
+    Fiddler: 'Fiddler',
+    Burp: 'Burp',
+    Swagger: 'Swagger',
+    OwaspZap: 'OwaspZap',
+    AspNet: 'AspNet',
+    HttpArchive: 'HttpArchive',
+    Wadl: 'Wadl',
+    Wsdl: 'Wsdl',
+    Postman: 'Postman',
+    Netsparker: 'Netsparker',
+    HttpRequestImporter: 'HttpRequestImporter',
+    LinkImporter: 'LinkImporter',
+    CsvImporter: 'CsvImporter',
+    Iodocs: 'Iodocs',
+    WordPress: 'WordPress',
+    Raml: 'Raml',
+    GraphQl: 'GraphQl',
+    AcxXml: 'AcxXml'
+};
 /**
  * Check if a given object implements the FileCache interface.
  */

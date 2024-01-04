@@ -22,27 +22,23 @@ const OAuth2SettingEndpoint_1 = require("./OAuth2SettingEndpoint");
 const ResponseFields_1 = require("./ResponseFields");
 const ThreeLeggedFields_1 = require("./ThreeLeggedFields");
 /**
-* @export
-* @enum {string}
-*/
-var OAuth2SettingApiModelFlowTypeEnum;
-(function (OAuth2SettingApiModelFlowTypeEnum) {
-    OAuth2SettingApiModelFlowTypeEnum["AuthorizationCode"] = "AuthorizationCode";
-    OAuth2SettingApiModelFlowTypeEnum["Implicit"] = "Implicit";
-    OAuth2SettingApiModelFlowTypeEnum["ResourceOwnerPasswordCredentials"] = "ResourceOwnerPasswordCredentials";
-    OAuth2SettingApiModelFlowTypeEnum["ClientCredentials"] = "ClientCredentials";
-    OAuth2SettingApiModelFlowTypeEnum["Custom"] = "Custom";
-})(OAuth2SettingApiModelFlowTypeEnum = exports.OAuth2SettingApiModelFlowTypeEnum || (exports.OAuth2SettingApiModelFlowTypeEnum = {}));
+ * @export
+ */
+exports.OAuth2SettingApiModelFlowTypeEnum = {
+    AuthorizationCode: 'AuthorizationCode',
+    Implicit: 'Implicit',
+    ResourceOwnerPasswordCredentials: 'ResourceOwnerPasswordCredentials',
+    ClientCredentials: 'ClientCredentials',
+    Custom: 'Custom'
+};
 /**
-* @export
-* @enum {string}
-*/
-var OAuth2SettingApiModelAuthenticationTypeEnum;
-(function (OAuth2SettingApiModelAuthenticationTypeEnum) {
-    OAuth2SettingApiModelAuthenticationTypeEnum["None"] = "None";
-    OAuth2SettingApiModelAuthenticationTypeEnum["Form"] = "Form";
-    OAuth2SettingApiModelAuthenticationTypeEnum["Basic"] = "Basic";
-})(OAuth2SettingApiModelAuthenticationTypeEnum = exports.OAuth2SettingApiModelAuthenticationTypeEnum || (exports.OAuth2SettingApiModelAuthenticationTypeEnum = {}));
+ * @export
+ */
+exports.OAuth2SettingApiModelAuthenticationTypeEnum = {
+    None: 'None',
+    Form: 'Form',
+    Basic: 'Basic'
+};
 /**
  * Check if a given object implements the OAuth2SettingApiModel interface.
  */

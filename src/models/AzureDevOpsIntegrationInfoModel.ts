@@ -166,53 +166,55 @@ export interface AzureDevOpsIntegrationInfoModel {
     integrationWizardResultModel?: IntegrationWizardResultModel;
 }
 
+
 /**
-* @export
-* @enum {string}
-*/
-export enum AzureDevOpsIntegrationInfoModelTypeEnum {
-    NetsparkerEnterprise = 'NetsparkerEnterprise',
-    Webhook = 'Webhook',
-    Zapier = 'Zapier',
-    Slack = 'Slack',
-    Mattermost = 'Mattermost',
-    MicrosoftTeams = 'MicrosoftTeams',
-    AzureDevOps = 'AzureDevOps',
-    Bitbucket = 'Bitbucket',
-    Bugzilla = 'Bugzilla',
-    Clubhouse = 'Clubhouse',
-    DefectDojo = 'DefectDojo',
-    PivotalTracker = 'PivotalTracker',
-    Jira = 'Jira',
-    FogBugz = 'FogBugz',
-    GitHub = 'GitHub',
-    PagerDuty = 'PagerDuty',
-    Kafka = 'Kafka',
-    Kenna = 'Kenna',
-    Redmine = 'Redmine',
-    ServiceNow = 'ServiceNow',
-    Tfs = 'TFS',
-    Unfuddle = 'Unfuddle',
-    YouTrack = 'YouTrack',
-    Freshservice = 'Freshservice',
-    Splunk = 'Splunk',
-    JazzTeam = 'JazzTeam',
-    ServiceNowVrm = 'ServiceNowVRM',
-    Asana = 'Asana',
-    Trello = 'Trello',
-    Hashicorp = 'Hashicorp',
-    CyberArk = 'CyberArk',
-    AzureKeyVault = 'AzureKeyVault',
-    GitLab = 'GitLab'
-}
+ * @export
+ */
+export const AzureDevOpsIntegrationInfoModelTypeEnum = {
+    Jira: 'Jira',
+    GitHub: 'GitHub',
+    Tfs: 'TFS',
+    FogBugz: 'FogBugz',
+    ServiceNow: 'ServiceNow',
+    Slack: 'Slack',
+    GitLab: 'GitLab',
+    Bitbucket: 'Bitbucket',
+    Unfuddle: 'Unfuddle',
+    Zapier: 'Zapier',
+    AzureDevOps: 'AzureDevOps',
+    Redmine: 'Redmine',
+    Bugzilla: 'Bugzilla',
+    Kafka: 'Kafka',
+    PagerDuty: 'PagerDuty',
+    MicrosoftTeams: 'MicrosoftTeams',
+    Clubhouse: 'Clubhouse',
+    Trello: 'Trello',
+    Asana: 'Asana',
+    Webhook: 'Webhook',
+    Kenna: 'Kenna',
+    Freshservice: 'Freshservice',
+    YouTrack: 'YouTrack',
+    NetsparkerEnterprise: 'NetsparkerEnterprise',
+    Splunk: 'Splunk',
+    Mattermost: 'Mattermost',
+    Hashicorp: 'Hashicorp',
+    PivotalTracker: 'PivotalTracker',
+    CyberArk: 'CyberArk',
+    DefectDojo: 'DefectDojo',
+    JazzTeam: 'JazzTeam',
+    AzureKeyVault: 'AzureKeyVault',
+    ServiceNowVrm: 'ServiceNowVRM'
+} as const;
+export type AzureDevOpsIntegrationInfoModelTypeEnum = typeof AzureDevOpsIntegrationInfoModelTypeEnum[keyof typeof AzureDevOpsIntegrationInfoModelTypeEnum];
+
 /**
-* @export
-* @enum {string}
-*/
-export enum AzureDevOpsIntegrationInfoModelTemplateTypeEnum {
-    Standard = 'Standard',
-    Detailed = 'Detailed'
-}
+ * @export
+ */
+export const AzureDevOpsIntegrationInfoModelTemplateTypeEnum = {
+    Standard: 'Standard',
+    Detailed: 'Detailed'
+} as const;
+export type AzureDevOpsIntegrationInfoModelTemplateTypeEnum = typeof AzureDevOpsIntegrationInfoModelTemplateTypeEnum[keyof typeof AzureDevOpsIntegrationInfoModelTemplateTypeEnum];
 
 
 /**

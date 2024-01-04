@@ -117,22 +117,23 @@ export interface VcsCommitInfo {
     vcsVersion?: string;
 }
 
+
 /**
-* @export
-* @enum {string}
-*/
-export enum VcsCommitInfoIntegrationSystemEnum {
-    Teamcity = 'Teamcity',
-    Jenkins = 'Jenkins',
-    Bamboo = 'Bamboo',
-    GitLab = 'GitLab',
-    AzureDevOps = 'AzureDevOps',
-    Jira = 'Jira',
-    CircleCi = 'CircleCI',
-    TravisCi = 'TravisCI',
-    UrbanCodeDeploy = 'UrbanCodeDeploy',
-    GitHubActions = 'GitHubActions'
-}
+ * @export
+ */
+export const VcsCommitInfoIntegrationSystemEnum = {
+    Teamcity: 'Teamcity',
+    Jenkins: 'Jenkins',
+    Bamboo: 'Bamboo',
+    GitLab: 'GitLab',
+    AzureDevOps: 'AzureDevOps',
+    Jira: 'Jira',
+    CircleCi: 'CircleCI',
+    TravisCi: 'TravisCI',
+    UrbanCodeDeploy: 'UrbanCodeDeploy',
+    GitHubActions: 'GitHubActions'
+} as const;
+export type VcsCommitInfoIntegrationSystemEnum = typeof VcsCommitInfoIntegrationSystemEnum[keyof typeof VcsCommitInfoIntegrationSystemEnum];
 
 
 /**

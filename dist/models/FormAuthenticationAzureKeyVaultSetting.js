@@ -16,14 +16,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.FormAuthenticationAzureKeyVaultSettingToJSON = exports.FormAuthenticationAzureKeyVaultSettingFromJSONTyped = exports.FormAuthenticationAzureKeyVaultSettingFromJSON = exports.instanceOfFormAuthenticationAzureKeyVaultSetting = exports.FormAuthenticationAzureKeyVaultSettingAgentModeEnum = void 0;
 const runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
-var FormAuthenticationAzureKeyVaultSettingAgentModeEnum;
-(function (FormAuthenticationAzureKeyVaultSettingAgentModeEnum) {
-    FormAuthenticationAzureKeyVaultSettingAgentModeEnum["Cloud"] = "Cloud";
-    FormAuthenticationAzureKeyVaultSettingAgentModeEnum["Internal"] = "Internal";
-})(FormAuthenticationAzureKeyVaultSettingAgentModeEnum = exports.FormAuthenticationAzureKeyVaultSettingAgentModeEnum || (exports.FormAuthenticationAzureKeyVaultSettingAgentModeEnum = {}));
+ * @export
+ */
+exports.FormAuthenticationAzureKeyVaultSettingAgentModeEnum = {
+    Cloud: 'Cloud',
+    Internal: 'Internal'
+};
 /**
  * Check if a given object implements the FormAuthenticationAzureKeyVaultSetting interface.
  */

@@ -22,24 +22,20 @@ const FormAuthenticationCyberArkVaultSetting_1 = require("./FormAuthenticationCy
 const FormAuthenticationHashicorpVaultSetting_1 = require("./FormAuthenticationHashicorpVaultSetting");
 const OtpSettings_1 = require("./OtpSettings");
 /**
-* @export
-* @enum {string}
-*/
-var FormAuthenticationSettingApiModelFormAuthTypeEnum;
-(function (FormAuthenticationSettingApiModelFormAuthTypeEnum) {
-    FormAuthenticationSettingApiModelFormAuthTypeEnum["Manual"] = "Manual";
-    FormAuthenticationSettingApiModelFormAuthTypeEnum["Integration"] = "Integration";
-})(FormAuthenticationSettingApiModelFormAuthTypeEnum = exports.FormAuthenticationSettingApiModelFormAuthTypeEnum || (exports.FormAuthenticationSettingApiModelFormAuthTypeEnum = {}));
+ * @export
+ */
+exports.FormAuthenticationSettingApiModelFormAuthTypeEnum = {
+    Manual: 'Manual',
+    Integration: 'Integration'
+};
 /**
-* @export
-* @enum {string}
-*/
-var FormAuthenticationSettingApiModelFormAuthIntegrationTypeEnum;
-(function (FormAuthenticationSettingApiModelFormAuthIntegrationTypeEnum) {
-    FormAuthenticationSettingApiModelFormAuthIntegrationTypeEnum["HashiCorp"] = "HashiCorp";
-    FormAuthenticationSettingApiModelFormAuthIntegrationTypeEnum["CyberArk"] = "CyberArk";
-    FormAuthenticationSettingApiModelFormAuthIntegrationTypeEnum["AzureKeyVault"] = "AzureKeyVault";
-})(FormAuthenticationSettingApiModelFormAuthIntegrationTypeEnum = exports.FormAuthenticationSettingApiModelFormAuthIntegrationTypeEnum || (exports.FormAuthenticationSettingApiModelFormAuthIntegrationTypeEnum = {}));
+ * @export
+ */
+exports.FormAuthenticationSettingApiModelFormAuthIntegrationTypeEnum = {
+    HashiCorp: 'HashiCorp',
+    CyberArk: 'CyberArk',
+    AzureKeyVault: 'AzureKeyVault'
+};
 /**
  * Check if a given object implements the FormAuthenticationSettingApiModel interface.
  */

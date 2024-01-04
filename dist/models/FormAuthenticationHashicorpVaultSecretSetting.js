@@ -16,14 +16,12 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.FormAuthenticationHashicorpVaultSecretSettingToJSON = exports.FormAuthenticationHashicorpVaultSecretSettingFromJSONTyped = exports.FormAuthenticationHashicorpVaultSecretSettingFromJSON = exports.instanceOfFormAuthenticationHashicorpVaultSecretSetting = exports.FormAuthenticationHashicorpVaultSecretSettingVersionEnum = void 0;
 const runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
-var FormAuthenticationHashicorpVaultSecretSettingVersionEnum;
-(function (FormAuthenticationHashicorpVaultSecretSettingVersionEnum) {
-    FormAuthenticationHashicorpVaultSecretSettingVersionEnum["V1"] = "V1";
-    FormAuthenticationHashicorpVaultSecretSettingVersionEnum["V2"] = "V2";
-})(FormAuthenticationHashicorpVaultSecretSettingVersionEnum = exports.FormAuthenticationHashicorpVaultSecretSettingVersionEnum || (exports.FormAuthenticationHashicorpVaultSecretSettingVersionEnum = {}));
+ * @export
+ */
+exports.FormAuthenticationHashicorpVaultSecretSettingVersionEnum = {
+    V1: 'V1',
+    V2: 'V2'
+};
 /**
  * Check if a given object implements the FormAuthenticationHashicorpVaultSecretSetting interface.
  */

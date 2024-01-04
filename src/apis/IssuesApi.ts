@@ -34,7 +34,7 @@ import {
     VulnerabilityContentApiModelToJSON,
 } from '../models/index';
 
-export interface IssuesApiIssuesAddressedIssuesRequest {
+export interface IssuesAddressedIssuesRequest {
     severity?: IssuesAddressedIssuesSeverityEnum;
     webSiteName?: string;
     websiteGroupName?: string;
@@ -42,7 +42,7 @@ export interface IssuesApiIssuesAddressedIssuesRequest {
     pageSize?: number;
 }
 
-export interface IssuesApiIssuesAllIssuesRequest {
+export interface IssuesAllIssuesRequest {
     severity?: IssuesAllIssuesSeverityEnum;
     webSiteName?: string;
     websiteGroupName?: string;
@@ -54,15 +54,15 @@ export interface IssuesApiIssuesAllIssuesRequest {
     integration?: IssuesAllIssuesIntegrationEnum;
 }
 
-export interface IssuesApiIssuesGetRequest {
+export interface IssuesGetRequest {
     id: string;
 }
 
-export interface IssuesApiIssuesGetVulnerabilityContentRequest {
+export interface IssuesGetVulnerabilityContentRequest {
     id: string;
 }
 
-export interface IssuesApiIssuesReportRequest {
+export interface IssuesReportRequest {
     csvSeparator?: IssuesReportCsvSeparatorEnum;
     severity?: IssuesReportSeverityEnum;
     websiteGroupName?: string;
@@ -71,7 +71,7 @@ export interface IssuesApiIssuesReportRequest {
     endDate?: Date;
 }
 
-export interface IssuesApiIssuesSummaryRequest {
+export interface IssuesSummaryRequest {
     targetUri: string;
     websiteRoot: string;
     sinceDate?: string;
@@ -80,7 +80,7 @@ export interface IssuesApiIssuesSummaryRequest {
     pageSize?: number;
 }
 
-export interface IssuesApiIssuesTodoRequest {
+export interface IssuesTodoRequest {
     severity?: IssuesTodoSeverityEnum;
     webSiteName?: string;
     websiteGroupName?: string;
@@ -88,11 +88,11 @@ export interface IssuesApiIssuesTodoRequest {
     pageSize?: number;
 }
 
-export interface IssuesApiIssuesUpdateRequest {
+export interface IssuesUpdateRequest {
     model: IssueApiUpdateModel;
 }
 
-export interface IssuesApiIssuesWaitingForRetestRequest {
+export interface IssuesWaitingForRetestRequest {
     severity?: IssuesWaitingForRetestSeverityEnum;
     webSiteName?: string;
     websiteGroupName?: string;
@@ -108,7 +108,7 @@ export class IssuesApi extends runtime.BaseAPI {
     /**
      * Gets the list of addressed issues.
      */
-    async issuesAddressedIssuesRaw(requestParameters: IssuesApiIssuesAddressedIssuesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<IssueApiResult>> {
+    async issuesAddressedIssuesRaw(requestParameters: IssuesAddressedIssuesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<IssueApiResult>> {
         const queryParameters: any = {};
 
         if (requestParameters.severity !== undefined) {
@@ -146,7 +146,7 @@ export class IssuesApi extends runtime.BaseAPI {
     /**
      * Gets the list of addressed issues.
      */
-    async issuesAddressedIssues(requestParameters: IssuesApiIssuesAddressedIssuesRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<IssueApiResult> {
+    async issuesAddressedIssues(requestParameters: IssuesAddressedIssuesRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<IssueApiResult> {
         const response = await this.issuesAddressedIssuesRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -154,7 +154,7 @@ export class IssuesApi extends runtime.BaseAPI {
     /**
      * Gets the list of all issues.
      */
-    async issuesAllIssuesRaw(requestParameters: IssuesApiIssuesAllIssuesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<IssueApiResult>> {
+    async issuesAllIssuesRaw(requestParameters: IssuesAllIssuesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<IssueApiResult>> {
         const queryParameters: any = {};
 
         if (requestParameters.severity !== undefined) {
@@ -208,7 +208,7 @@ export class IssuesApi extends runtime.BaseAPI {
     /**
      * Gets the list of all issues.
      */
-    async issuesAllIssues(requestParameters: IssuesApiIssuesAllIssuesRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<IssueApiResult> {
+    async issuesAllIssues(requestParameters: IssuesAllIssuesRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<IssueApiResult> {
         const response = await this.issuesAllIssuesRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -216,7 +216,7 @@ export class IssuesApi extends runtime.BaseAPI {
     /**
      * Gets issues by id. Returns with encoded(raw html) vulnerability template data by default.
      */
-    async issuesGetRaw(requestParameters: IssuesApiIssuesGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AllIssuesApiModel>> {
+    async issuesGetRaw(requestParameters: IssuesGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AllIssuesApiModel>> {
         if (requestParameters.id === null || requestParameters.id === undefined) {
             throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling issuesGet.');
         }
@@ -238,7 +238,7 @@ export class IssuesApi extends runtime.BaseAPI {
     /**
      * Gets issues by id. Returns with encoded(raw html) vulnerability template data by default.
      */
-    async issuesGet(requestParameters: IssuesApiIssuesGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AllIssuesApiModel> {
+    async issuesGet(requestParameters: IssuesGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AllIssuesApiModel> {
         const response = await this.issuesGetRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -246,7 +246,7 @@ export class IssuesApi extends runtime.BaseAPI {
     /**
      * Gets vulnerability request/response content by id.
      */
-    async issuesGetVulnerabilityContentRaw(requestParameters: IssuesApiIssuesGetVulnerabilityContentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<VulnerabilityContentApiModel>> {
+    async issuesGetVulnerabilityContentRaw(requestParameters: IssuesGetVulnerabilityContentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<VulnerabilityContentApiModel>> {
         if (requestParameters.id === null || requestParameters.id === undefined) {
             throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling issuesGetVulnerabilityContent.');
         }
@@ -268,7 +268,7 @@ export class IssuesApi extends runtime.BaseAPI {
     /**
      * Gets vulnerability request/response content by id.
      */
-    async issuesGetVulnerabilityContent(requestParameters: IssuesApiIssuesGetVulnerabilityContentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<VulnerabilityContentApiModel> {
+    async issuesGetVulnerabilityContent(requestParameters: IssuesGetVulnerabilityContentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<VulnerabilityContentApiModel> {
         const response = await this.issuesGetVulnerabilityContentRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -276,7 +276,7 @@ export class IssuesApi extends runtime.BaseAPI {
     /**
      * Generates a report of issues in the CSV format.
      */
-    async issuesReportRaw(requestParameters: IssuesApiIssuesReportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async issuesReportRaw(requestParameters: IssuesReportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         const queryParameters: any = {};
 
         if (requestParameters.csvSeparator !== undefined) {
@@ -318,14 +318,14 @@ export class IssuesApi extends runtime.BaseAPI {
     /**
      * Generates a report of issues in the CSV format.
      */
-    async issuesReport(requestParameters: IssuesApiIssuesReportRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+    async issuesReport(requestParameters: IssuesReportRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
         await this.issuesReportRaw(requestParameters, initOverrides);
     }
 
     /**
      * Gets the summary of vulnerabilities
      */
-    async issuesSummaryRaw(requestParameters: IssuesApiIssuesSummaryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<IssueSummaryApiResult>> {
+    async issuesSummaryRaw(requestParameters: IssuesSummaryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<IssueSummaryApiResult>> {
         if (requestParameters.targetUri === null || requestParameters.targetUri === undefined) {
             throw new runtime.RequiredError('targetUri','Required parameter requestParameters.targetUri was null or undefined when calling issuesSummary.');
         }
@@ -375,7 +375,7 @@ export class IssuesApi extends runtime.BaseAPI {
     /**
      * Gets the summary of vulnerabilities
      */
-    async issuesSummary(requestParameters: IssuesApiIssuesSummaryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<IssueSummaryApiResult> {
+    async issuesSummary(requestParameters: IssuesSummaryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<IssueSummaryApiResult> {
         const response = await this.issuesSummaryRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -383,7 +383,7 @@ export class IssuesApi extends runtime.BaseAPI {
     /**
      * Gets the list of to-do issues.
      */
-    async issuesTodoRaw(requestParameters: IssuesApiIssuesTodoRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<IssueApiResult>> {
+    async issuesTodoRaw(requestParameters: IssuesTodoRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<IssueApiResult>> {
         const queryParameters: any = {};
 
         if (requestParameters.severity !== undefined) {
@@ -421,7 +421,7 @@ export class IssuesApi extends runtime.BaseAPI {
     /**
      * Gets the list of to-do issues.
      */
-    async issuesTodo(requestParameters: IssuesApiIssuesTodoRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<IssueApiResult> {
+    async issuesTodo(requestParameters: IssuesTodoRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<IssueApiResult> {
         const response = await this.issuesTodoRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -429,7 +429,7 @@ export class IssuesApi extends runtime.BaseAPI {
     /**
      * Updates an existing issue.
      */
-    async issuesUpdateRaw(requestParameters: IssuesApiIssuesUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async issuesUpdateRaw(requestParameters: IssuesUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters.model === null || requestParameters.model === undefined) {
             throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling issuesUpdate.');
         }
@@ -454,14 +454,14 @@ export class IssuesApi extends runtime.BaseAPI {
     /**
      * Updates an existing issue.
      */
-    async issuesUpdate(requestParameters: IssuesApiIssuesUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+    async issuesUpdate(requestParameters: IssuesUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
         await this.issuesUpdateRaw(requestParameters, initOverrides);
     }
 
     /**
      * Gets the list of retest issues.
      */
-    async issuesWaitingForRetestRaw(requestParameters: IssuesApiIssuesWaitingForRetestRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<IssueApiResult>> {
+    async issuesWaitingForRetestRaw(requestParameters: IssuesWaitingForRetestRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<IssueApiResult>> {
         const queryParameters: any = {};
 
         if (requestParameters.severity !== undefined) {
@@ -499,7 +499,7 @@ export class IssuesApi extends runtime.BaseAPI {
     /**
      * Gets the list of retest issues.
      */
-    async issuesWaitingForRetest(requestParameters: IssuesApiIssuesWaitingForRetestRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<IssueApiResult> {
+    async issuesWaitingForRetest(requestParameters: IssuesWaitingForRetestRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<IssueApiResult> {
         const response = await this.issuesWaitingForRetestRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -507,119 +507,119 @@ export class IssuesApi extends runtime.BaseAPI {
 }
 
 /**
-  * @export
-  * @enum {string}
-  */
-export enum IssuesAddressedIssuesSeverityEnum {
-    BestPractice = 'BestPractice',
-    Information = 'Information',
-    Low = 'Low',
-    Medium = 'Medium',
-    High = 'High',
-    Critical = 'Critical'
-}
+ * @export
+ */
+export const IssuesAddressedIssuesSeverityEnum = {
+    BestPractice: 'BestPractice',
+    Information: 'Information',
+    Low: 'Low',
+    Medium: 'Medium',
+    High: 'High',
+    Critical: 'Critical'
+} as const;
+export type IssuesAddressedIssuesSeverityEnum = typeof IssuesAddressedIssuesSeverityEnum[keyof typeof IssuesAddressedIssuesSeverityEnum];
 /**
-  * @export
-  * @enum {string}
-  */
-export enum IssuesAllIssuesSeverityEnum {
-    BestPractice = 'BestPractice',
-    Information = 'Information',
-    Low = 'Low',
-    Medium = 'Medium',
-    High = 'High',
-    Critical = 'Critical'
-}
+ * @export
+ */
+export const IssuesAllIssuesSeverityEnum = {
+    BestPractice: 'BestPractice',
+    Information: 'Information',
+    Low: 'Low',
+    Medium: 'Medium',
+    High: 'High',
+    Critical: 'Critical'
+} as const;
+export type IssuesAllIssuesSeverityEnum = typeof IssuesAllIssuesSeverityEnum[keyof typeof IssuesAllIssuesSeverityEnum];
 /**
-  * @export
-  * @enum {string}
-  */
-export enum IssuesAllIssuesSortTypeEnum {
-    Ascending = 'Ascending',
-    Descending = 'Descending'
-}
+ * @export
+ */
+export const IssuesAllIssuesSortTypeEnum = {
+    Ascending: 'Ascending',
+    Descending: 'Descending'
+} as const;
+export type IssuesAllIssuesSortTypeEnum = typeof IssuesAllIssuesSortTypeEnum[keyof typeof IssuesAllIssuesSortTypeEnum];
 /**
-  * @export
-  * @enum {string}
-  */
-export enum IssuesAllIssuesIntegrationEnum {
-    Jira = 'Jira',
-    GitHub = 'GitHub',
-    Tfs = 'TFS',
-    FogBugz = 'FogBugz',
-    ServiceNow = 'ServiceNow',
-    Slack = 'Slack',
-    GitLab = 'GitLab',
-    Bitbucket = 'Bitbucket',
-    Unfuddle = 'Unfuddle',
-    Zapier = 'Zapier',
-    AzureDevOps = 'AzureDevOps',
-    Redmine = 'Redmine',
-    Bugzilla = 'Bugzilla',
-    Kafka = 'Kafka',
-    PagerDuty = 'PagerDuty',
-    MicrosoftTeams = 'MicrosoftTeams',
-    Clubhouse = 'Clubhouse',
-    Trello = 'Trello',
-    Asana = 'Asana',
-    Webhook = 'Webhook',
-    Kenna = 'Kenna',
-    Freshservice = 'Freshservice',
-    YouTrack = 'YouTrack',
-    NetsparkerEnterprise = 'NetsparkerEnterprise',
-    Splunk = 'Splunk',
-    Mattermost = 'Mattermost',
-    Hashicorp = 'Hashicorp',
-    PivotalTracker = 'PivotalTracker',
-    CyberArk = 'CyberArk',
-    DefectDojo = 'DefectDojo',
-    JazzTeam = 'JazzTeam',
-    AzureKeyVault = 'AzureKeyVault',
-    ServiceNowVrm = 'ServiceNowVRM'
-}
+ * @export
+ */
+export const IssuesAllIssuesIntegrationEnum = {
+    Jira: 'Jira',
+    GitHub: 'GitHub',
+    Tfs: 'TFS',
+    FogBugz: 'FogBugz',
+    ServiceNow: 'ServiceNow',
+    Slack: 'Slack',
+    GitLab: 'GitLab',
+    Bitbucket: 'Bitbucket',
+    Unfuddle: 'Unfuddle',
+    Zapier: 'Zapier',
+    AzureDevOps: 'AzureDevOps',
+    Redmine: 'Redmine',
+    Bugzilla: 'Bugzilla',
+    Kafka: 'Kafka',
+    PagerDuty: 'PagerDuty',
+    MicrosoftTeams: 'MicrosoftTeams',
+    Clubhouse: 'Clubhouse',
+    Trello: 'Trello',
+    Asana: 'Asana',
+    Webhook: 'Webhook',
+    Kenna: 'Kenna',
+    Freshservice: 'Freshservice',
+    YouTrack: 'YouTrack',
+    NetsparkerEnterprise: 'NetsparkerEnterprise',
+    Splunk: 'Splunk',
+    Mattermost: 'Mattermost',
+    Hashicorp: 'Hashicorp',
+    PivotalTracker: 'PivotalTracker',
+    CyberArk: 'CyberArk',
+    DefectDojo: 'DefectDojo',
+    JazzTeam: 'JazzTeam',
+    AzureKeyVault: 'AzureKeyVault',
+    ServiceNowVrm: 'ServiceNowVRM'
+} as const;
+export type IssuesAllIssuesIntegrationEnum = typeof IssuesAllIssuesIntegrationEnum[keyof typeof IssuesAllIssuesIntegrationEnum];
 /**
-  * @export
-  * @enum {string}
-  */
-export enum IssuesReportCsvSeparatorEnum {
-    Comma = 'Comma',
-    Semicolon = 'Semicolon',
-    Pipe = 'Pipe',
-    Tab = 'Tab'
-}
+ * @export
+ */
+export const IssuesReportCsvSeparatorEnum = {
+    Comma: 'Comma',
+    Semicolon: 'Semicolon',
+    Pipe: 'Pipe',
+    Tab: 'Tab'
+} as const;
+export type IssuesReportCsvSeparatorEnum = typeof IssuesReportCsvSeparatorEnum[keyof typeof IssuesReportCsvSeparatorEnum];
 /**
-  * @export
-  * @enum {string}
-  */
-export enum IssuesReportSeverityEnum {
-    BestPractice = 'BestPractice',
-    Information = 'Information',
-    Low = 'Low',
-    Medium = 'Medium',
-    High = 'High',
-    Critical = 'Critical'
-}
+ * @export
+ */
+export const IssuesReportSeverityEnum = {
+    BestPractice: 'BestPractice',
+    Information: 'Information',
+    Low: 'Low',
+    Medium: 'Medium',
+    High: 'High',
+    Critical: 'Critical'
+} as const;
+export type IssuesReportSeverityEnum = typeof IssuesReportSeverityEnum[keyof typeof IssuesReportSeverityEnum];
 /**
-  * @export
-  * @enum {string}
-  */
-export enum IssuesTodoSeverityEnum {
-    BestPractice = 'BestPractice',
-    Information = 'Information',
-    Low = 'Low',
-    Medium = 'Medium',
-    High = 'High',
-    Critical = 'Critical'
-}
+ * @export
+ */
+export const IssuesTodoSeverityEnum = {
+    BestPractice: 'BestPractice',
+    Information: 'Information',
+    Low: 'Low',
+    Medium: 'Medium',
+    High: 'High',
+    Critical: 'Critical'
+} as const;
+export type IssuesTodoSeverityEnum = typeof IssuesTodoSeverityEnum[keyof typeof IssuesTodoSeverityEnum];
 /**
-  * @export
-  * @enum {string}
-  */
-export enum IssuesWaitingForRetestSeverityEnum {
-    BestPractice = 'BestPractice',
-    Information = 'Information',
-    Low = 'Low',
-    Medium = 'Medium',
-    High = 'High',
-    Critical = 'Critical'
-}
+ * @export
+ */
+export const IssuesWaitingForRetestSeverityEnum = {
+    BestPractice: 'BestPractice',
+    Information: 'Information',
+    Low: 'Low',
+    Medium: 'Medium',
+    High: 'High',
+    Critical: 'Critical'
+} as const;
+export type IssuesWaitingForRetestSeverityEnum = typeof IssuesWaitingForRetestSeverityEnum[keyof typeof IssuesWaitingForRetestSeverityEnum];

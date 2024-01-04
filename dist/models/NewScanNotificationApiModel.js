@@ -19,28 +19,24 @@ const NewScanNotificationRecipientApiModel_1 = require("./NewScanNotificationRec
 const NotificationEmailSmsFilterApi_1 = require("./NotificationEmailSmsFilterApi");
 const NotificationIntegrationFilterApi_1 = require("./NotificationIntegrationFilterApi");
 /**
-* @export
-* @enum {string}
-*/
-var NewScanNotificationApiModelEventEnum;
-(function (NewScanNotificationApiModelEventEnum) {
-    NewScanNotificationApiModelEventEnum["NewScan"] = "NewScan";
-    NewScanNotificationApiModelEventEnum["ScanCompleted"] = "ScanCompleted";
-    NewScanNotificationApiModelEventEnum["ScanCancelled"] = "ScanCancelled";
-    NewScanNotificationApiModelEventEnum["ScanFailed"] = "ScanFailed";
-    NewScanNotificationApiModelEventEnum["ScheduledScanLaunchFailed"] = "ScheduledScanLaunchFailed";
-    NewScanNotificationApiModelEventEnum["OutOfDateTechnology"] = "OutOfDateTechnology";
-})(NewScanNotificationApiModelEventEnum = exports.NewScanNotificationApiModelEventEnum || (exports.NewScanNotificationApiModelEventEnum = {}));
+ * @export
+ */
+exports.NewScanNotificationApiModelEventEnum = {
+    NewScan: 'NewScan',
+    ScanCompleted: 'ScanCompleted',
+    ScanCancelled: 'ScanCancelled',
+    ScanFailed: 'ScanFailed',
+    ScheduledScanLaunchFailed: 'ScheduledScanLaunchFailed',
+    OutOfDateTechnology: 'OutOfDateTechnology'
+};
 /**
-* @export
-* @enum {string}
-*/
-var NewScanNotificationApiModelScopeEnum;
-(function (NewScanNotificationApiModelScopeEnum) {
-    NewScanNotificationApiModelScopeEnum["AnyWebsite"] = "AnyWebsite";
-    NewScanNotificationApiModelScopeEnum["WebsiteGroup"] = "WebsiteGroup";
-    NewScanNotificationApiModelScopeEnum["Website"] = "Website";
-})(NewScanNotificationApiModelScopeEnum = exports.NewScanNotificationApiModelScopeEnum || (exports.NewScanNotificationApiModelScopeEnum = {}));
+ * @export
+ */
+exports.NewScanNotificationApiModelScopeEnum = {
+    AnyWebsite: 'AnyWebsite',
+    WebsiteGroup: 'WebsiteGroup',
+    Website: 'Website'
+};
 /**
  * Check if a given object implements the NewScanNotificationApiModel interface.
  */

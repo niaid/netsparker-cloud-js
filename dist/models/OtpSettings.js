@@ -16,24 +16,20 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.OtpSettingsToJSON = exports.OtpSettingsFromJSONTyped = exports.OtpSettingsFromJSON = exports.instanceOfOtpSettings = exports.OtpSettingsAlgorithmEnum = exports.OtpSettingsOtpTypeEnum = void 0;
 const runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
-var OtpSettingsOtpTypeEnum;
-(function (OtpSettingsOtpTypeEnum) {
-    OtpSettingsOtpTypeEnum["Totp"] = "Totp";
-    OtpSettingsOtpTypeEnum["Hotp"] = "Hotp";
-})(OtpSettingsOtpTypeEnum = exports.OtpSettingsOtpTypeEnum || (exports.OtpSettingsOtpTypeEnum = {}));
+ * @export
+ */
+exports.OtpSettingsOtpTypeEnum = {
+    Totp: 'Totp',
+    Hotp: 'Hotp'
+};
 /**
-* @export
-* @enum {string}
-*/
-var OtpSettingsAlgorithmEnum;
-(function (OtpSettingsAlgorithmEnum) {
-    OtpSettingsAlgorithmEnum["Sha1"] = "Sha1";
-    OtpSettingsAlgorithmEnum["Sha256"] = "Sha256";
-    OtpSettingsAlgorithmEnum["Sha512"] = "Sha512";
-})(OtpSettingsAlgorithmEnum = exports.OtpSettingsAlgorithmEnum || (exports.OtpSettingsAlgorithmEnum = {}));
+ * @export
+ */
+exports.OtpSettingsAlgorithmEnum = {
+    Sha1: 'Sha1',
+    Sha256: 'Sha256',
+    Sha512: 'Sha512'
+};
 /**
  * Check if a given object implements the OtpSettings interface.
  */

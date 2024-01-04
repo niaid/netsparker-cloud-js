@@ -31,64 +31,54 @@ const SharkModel_1 = require("./SharkModel");
 const UrlRewriteExcludedPathModel_1 = require("./UrlRewriteExcludedPathModel");
 const UrlRewriteRuleModel_1 = require("./UrlRewriteRuleModel");
 /**
-* @export
-* @enum {string}
-*/
-var NewScanTaskApiModelCreateTypeEnum;
-(function (NewScanTaskApiModelCreateTypeEnum) {
-    NewScanTaskApiModelCreateTypeEnum["Website"] = "Website";
-    NewScanTaskApiModelCreateTypeEnum["WebsiteGroup"] = "WebsiteGroup";
-})(NewScanTaskApiModelCreateTypeEnum = exports.NewScanTaskApiModelCreateTypeEnum || (exports.NewScanTaskApiModelCreateTypeEnum = {}));
+ * @export
+ */
+exports.NewScanTaskApiModelCreateTypeEnum = {
+    Website: 'Website',
+    WebsiteGroup: 'WebsiteGroup'
+};
 /**
-* @export
-* @enum {string}
-*/
-var NewScanTaskApiModelDisallowedHttpMethodsEnum;
-(function (NewScanTaskApiModelDisallowedHttpMethodsEnum) {
-    NewScanTaskApiModelDisallowedHttpMethodsEnum["Get"] = "GET";
-    NewScanTaskApiModelDisallowedHttpMethodsEnum["Post"] = "POST";
-    NewScanTaskApiModelDisallowedHttpMethodsEnum["Connect"] = "CONNECT";
-    NewScanTaskApiModelDisallowedHttpMethodsEnum["Head"] = "HEAD";
-    NewScanTaskApiModelDisallowedHttpMethodsEnum["Trace"] = "TRACE";
-    NewScanTaskApiModelDisallowedHttpMethodsEnum["Debug"] = "DEBUG";
-    NewScanTaskApiModelDisallowedHttpMethodsEnum["Track"] = "TRACK";
-    NewScanTaskApiModelDisallowedHttpMethodsEnum["Put"] = "PUT";
-    NewScanTaskApiModelDisallowedHttpMethodsEnum["Options"] = "OPTIONS";
-    NewScanTaskApiModelDisallowedHttpMethodsEnum["Delete"] = "DELETE";
-    NewScanTaskApiModelDisallowedHttpMethodsEnum["Link"] = "LINK";
-    NewScanTaskApiModelDisallowedHttpMethodsEnum["Unlink"] = "UNLINK";
-    NewScanTaskApiModelDisallowedHttpMethodsEnum["Patch"] = "PATCH";
-})(NewScanTaskApiModelDisallowedHttpMethodsEnum = exports.NewScanTaskApiModelDisallowedHttpMethodsEnum || (exports.NewScanTaskApiModelDisallowedHttpMethodsEnum = {}));
+ * @export
+ */
+exports.NewScanTaskApiModelDisallowedHttpMethodsEnum = {
+    Get: 'GET',
+    Post: 'POST',
+    Connect: 'CONNECT',
+    Head: 'HEAD',
+    Trace: 'TRACE',
+    Debug: 'DEBUG',
+    Track: 'TRACK',
+    Put: 'PUT',
+    Options: 'OPTIONS',
+    Delete: 'DELETE',
+    Link: 'LINK',
+    Unlink: 'UNLINK',
+    Patch: 'PATCH'
+};
 /**
-* @export
-* @enum {string}
-*/
-var NewScanTaskApiModelAuthenticationProfileOptionEnum;
-(function (NewScanTaskApiModelAuthenticationProfileOptionEnum) {
-    NewScanTaskApiModelAuthenticationProfileOptionEnum["DontUse"] = "DontUse";
-    NewScanTaskApiModelAuthenticationProfileOptionEnum["UseMatchedProfile"] = "UseMatchedProfile";
-    NewScanTaskApiModelAuthenticationProfileOptionEnum["SelectedProfile"] = "SelectedProfile";
-})(NewScanTaskApiModelAuthenticationProfileOptionEnum = exports.NewScanTaskApiModelAuthenticationProfileOptionEnum || (exports.NewScanTaskApiModelAuthenticationProfileOptionEnum = {}));
+ * @export
+ */
+exports.NewScanTaskApiModelAuthenticationProfileOptionEnum = {
+    DontUse: 'DontUse',
+    UseMatchedProfile: 'UseMatchedProfile',
+    SelectedProfile: 'SelectedProfile'
+};
 /**
-* @export
-* @enum {string}
-*/
-var NewScanTaskApiModelScopeEnum;
-(function (NewScanTaskApiModelScopeEnum) {
-    NewScanTaskApiModelScopeEnum["EnteredPathAndBelow"] = "EnteredPathAndBelow";
-    NewScanTaskApiModelScopeEnum["OnlyEnteredUrl"] = "OnlyEnteredUrl";
-    NewScanTaskApiModelScopeEnum["WholeDomain"] = "WholeDomain";
-})(NewScanTaskApiModelScopeEnum = exports.NewScanTaskApiModelScopeEnum || (exports.NewScanTaskApiModelScopeEnum = {}));
+ * @export
+ */
+exports.NewScanTaskApiModelScopeEnum = {
+    EnteredPathAndBelow: 'EnteredPathAndBelow',
+    OnlyEnteredUrl: 'OnlyEnteredUrl',
+    WholeDomain: 'WholeDomain'
+};
 /**
-* @export
-* @enum {string}
-*/
-var NewScanTaskApiModelUrlRewriteModeEnum;
-(function (NewScanTaskApiModelUrlRewriteModeEnum) {
-    NewScanTaskApiModelUrlRewriteModeEnum["None"] = "None";
-    NewScanTaskApiModelUrlRewriteModeEnum["Heuristic"] = "Heuristic";
-    NewScanTaskApiModelUrlRewriteModeEnum["Custom"] = "Custom";
-})(NewScanTaskApiModelUrlRewriteModeEnum = exports.NewScanTaskApiModelUrlRewriteModeEnum || (exports.NewScanTaskApiModelUrlRewriteModeEnum = {}));
+ * @export
+ */
+exports.NewScanTaskApiModelUrlRewriteModeEnum = {
+    None: 'None',
+    Heuristic: 'Heuristic',
+    Custom: 'Custom'
+};
 /**
  * Check if a given object implements the NewScanTaskApiModel interface.
  */

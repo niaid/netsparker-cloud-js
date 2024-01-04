@@ -45,38 +45,39 @@ export interface IssueRequestContentParametersApiModel {
     inputType?: IssueRequestContentParametersApiModelInputTypeEnum;
 }
 
+
 /**
-* @export
-* @enum {string}
-*/
-export enum IssueRequestContentParametersApiModelInputTypeEnum {
-    Hidden = 'Hidden',
-    Text = 'Text',
-    Textarea = 'Textarea',
-    Submit = 'Submit',
-    Reset = 'Reset',
-    Button = 'Button',
-    Image = 'Image',
-    File = 'File',
-    Radio = 'Radio',
-    Select = 'Select',
-    Checkbox = 'Checkbox',
-    Password = 'Password',
-    Color = 'Color',
-    Date = 'Date',
-    Datetime = 'Datetime',
-    DatetimeLocal = 'DatetimeLocal',
-    Email = 'Email',
-    Month = 'Month',
-    Number = 'Number',
-    Range = 'Range',
-    Search = 'Search',
-    Tel = 'Tel',
-    Time = 'Time',
-    Url = 'Url',
-    Week = 'Week',
-    Output = 'Output'
-}
+ * @export
+ */
+export const IssueRequestContentParametersApiModelInputTypeEnum = {
+    Hidden: 'Hidden',
+    Text: 'Text',
+    Textarea: 'Textarea',
+    Submit: 'Submit',
+    Reset: 'Reset',
+    Button: 'Button',
+    Image: 'Image',
+    File: 'File',
+    Radio: 'Radio',
+    Select: 'Select',
+    Checkbox: 'Checkbox',
+    Password: 'Password',
+    Color: 'Color',
+    Date: 'Date',
+    Datetime: 'Datetime',
+    DatetimeLocal: 'DatetimeLocal',
+    Email: 'Email',
+    Month: 'Month',
+    Number: 'Number',
+    Range: 'Range',
+    Search: 'Search',
+    Tel: 'Tel',
+    Time: 'Time',
+    Url: 'Url',
+    Week: 'Week',
+    Output: 'Output'
+} as const;
+export type IssueRequestContentParametersApiModelInputTypeEnum = typeof IssueRequestContentParametersApiModelInputTypeEnum[keyof typeof IssueRequestContentParametersApiModelInputTypeEnum];
 
 
 /**

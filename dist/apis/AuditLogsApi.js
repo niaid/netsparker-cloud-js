@@ -112,14 +112,12 @@ class AuditLogsApi extends runtime.BaseAPI {
 }
 exports.AuditLogsApi = AuditLogsApi;
 /**
-  * @export
-  * @enum {string}
-  */
-var AuditLogsExportCsvSeparatorEnum;
-(function (AuditLogsExportCsvSeparatorEnum) {
-    AuditLogsExportCsvSeparatorEnum["Comma"] = "Comma";
-    AuditLogsExportCsvSeparatorEnum["Semicolon"] = "Semicolon";
-    AuditLogsExportCsvSeparatorEnum["Pipe"] = "Pipe";
-    AuditLogsExportCsvSeparatorEnum["Tab"] = "Tab";
-})(AuditLogsExportCsvSeparatorEnum = exports.AuditLogsExportCsvSeparatorEnum || (exports.AuditLogsExportCsvSeparatorEnum = {}));
+ * @export
+ */
+exports.AuditLogsExportCsvSeparatorEnum = {
+    Comma: 'Comma',
+    Semicolon: 'Semicolon',
+    Pipe: 'Pipe',
+    Tab: 'Tab'
+};
 //# sourceMappingURL=AuditLogsApi.js.map

@@ -11,29 +11,29 @@
  */
 import * as runtime from '../runtime';
 import type { DeleteScanNotificationApiModel, NewScanNotificationApiModel, NotificationPriorityPair, ScanNotificationApiModel, ScanNotificationListApiResult, ScanNotificationScanTaskGroupApiModel, UpdateScanNotificationApiModel } from '../models/index';
-export interface NotificationsApiNotificationsDeleteRequest {
+export interface NotificationsDeleteRequest {
     model: DeleteScanNotificationApiModel;
 }
-export interface NotificationsApiNotificationsGetRequest {
+export interface NotificationsGetRequest {
     id: string;
 }
-export interface NotificationsApiNotificationsGetPrioritiesRequest {
+export interface NotificationsGetPrioritiesRequest {
     event: NotificationsGetPrioritiesEventEnum;
 }
-export interface NotificationsApiNotificationsGetScanGroupsRequest {
+export interface NotificationsGetScanGroupsRequest {
     websiteId: string;
 }
-export interface NotificationsApiNotificationsListRequest {
+export interface NotificationsListRequest {
     page?: number;
     pageSize?: number;
 }
-export interface NotificationsApiNotificationsNewRequest {
+export interface NotificationsNewRequest {
     model: NewScanNotificationApiModel;
 }
-export interface NotificationsApiNotificationsSetPrioritiesRequest {
+export interface NotificationsSetPrioritiesRequest {
     priorities: Array<NotificationPriorityPair>;
 }
-export interface NotificationsApiNotificationsUpdateRequest {
+export interface NotificationsUpdateRequest {
     model: UpdateScanNotificationApiModel;
 }
 /**
@@ -43,77 +43,77 @@ export declare class NotificationsApi extends runtime.BaseAPI {
     /**
      * Deletes an existing scan notification definition.
      */
-    notificationsDeleteRaw(requestParameters: NotificationsApiNotificationsDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    notificationsDeleteRaw(requestParameters: NotificationsDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Deletes an existing scan notification definition.
      */
-    notificationsDelete(requestParameters: NotificationsApiNotificationsDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    notificationsDelete(requestParameters: NotificationsDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Gets the notification.
      */
-    notificationsGetRaw(requestParameters: NotificationsApiNotificationsGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanNotificationApiModel>>;
+    notificationsGetRaw(requestParameters: NotificationsGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanNotificationApiModel>>;
     /**
      * Gets the notification.
      */
-    notificationsGet(requestParameters: NotificationsApiNotificationsGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanNotificationApiModel>;
+    notificationsGet(requestParameters: NotificationsGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanNotificationApiModel>;
     /**
      * Gets the list of notifications grouped by their Scopes and ordered by priorities for the given event.
      */
-    notificationsGetPrioritiesRaw(requestParameters: NotificationsApiNotificationsGetPrioritiesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanNotificationApiModel>>;
+    notificationsGetPrioritiesRaw(requestParameters: NotificationsGetPrioritiesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanNotificationApiModel>>;
     /**
      * Gets the list of notifications grouped by their Scopes and ordered by priorities for the given event.
      */
-    notificationsGetPriorities(requestParameters: NotificationsApiNotificationsGetPrioritiesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanNotificationApiModel>;
+    notificationsGetPriorities(requestParameters: NotificationsGetPrioritiesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanNotificationApiModel>;
     /**
      * Gets the scan groups of website.
      */
-    notificationsGetScanGroupsRaw(requestParameters: NotificationsApiNotificationsGetScanGroupsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanNotificationScanTaskGroupApiModel>>;
+    notificationsGetScanGroupsRaw(requestParameters: NotificationsGetScanGroupsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanNotificationScanTaskGroupApiModel>>;
     /**
      * Gets the scan groups of website.
      */
-    notificationsGetScanGroups(requestParameters: NotificationsApiNotificationsGetScanGroupsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanNotificationScanTaskGroupApiModel>;
+    notificationsGetScanGroups(requestParameters: NotificationsGetScanGroupsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanNotificationScanTaskGroupApiModel>;
     /**
      * Gets the list of notifications.
      */
-    notificationsListRaw(requestParameters: NotificationsApiNotificationsListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanNotificationListApiResult>>;
+    notificationsListRaw(requestParameters: NotificationsListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanNotificationListApiResult>>;
     /**
      * Gets the list of notifications.
      */
-    notificationsList(requestParameters?: NotificationsApiNotificationsListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanNotificationListApiResult>;
+    notificationsList(requestParameters?: NotificationsListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanNotificationListApiResult>;
     /**
      * Creates a new scan notification definition.
      */
-    notificationsNewRaw(requestParameters: NotificationsApiNotificationsNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanNotificationApiModel>>;
+    notificationsNewRaw(requestParameters: NotificationsNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanNotificationApiModel>>;
     /**
      * Creates a new scan notification definition.
      */
-    notificationsNew(requestParameters: NotificationsApiNotificationsNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanNotificationApiModel>;
+    notificationsNew(requestParameters: NotificationsNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanNotificationApiModel>;
     /**
      * Sets the priorities of notifications.
      */
-    notificationsSetPrioritiesRaw(requestParameters: NotificationsApiNotificationsSetPrioritiesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    notificationsSetPrioritiesRaw(requestParameters: NotificationsSetPrioritiesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Sets the priorities of notifications.
      */
-    notificationsSetPriorities(requestParameters: NotificationsApiNotificationsSetPrioritiesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    notificationsSetPriorities(requestParameters: NotificationsSetPrioritiesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Updates an existing scan notification definition.
      */
-    notificationsUpdateRaw(requestParameters: NotificationsApiNotificationsUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanNotificationApiModel>>;
+    notificationsUpdateRaw(requestParameters: NotificationsUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanNotificationApiModel>>;
     /**
      * Updates an existing scan notification definition.
      */
-    notificationsUpdate(requestParameters: NotificationsApiNotificationsUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanNotificationApiModel>;
+    notificationsUpdate(requestParameters: NotificationsUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanNotificationApiModel>;
 }
 /**
-  * @export
-  * @enum {string}
-  */
-export declare enum NotificationsGetPrioritiesEventEnum {
-    NewScan = "NewScan",
-    ScanCompleted = "ScanCompleted",
-    ScanCancelled = "ScanCancelled",
-    ScanFailed = "ScanFailed",
-    ScheduledScanLaunchFailed = "ScheduledScanLaunchFailed",
-    OutOfDateTechnology = "OutOfDateTechnology"
-}
+ * @export
+ */
+export declare const NotificationsGetPrioritiesEventEnum: {
+    readonly NewScan: "NewScan";
+    readonly ScanCompleted: "ScanCompleted";
+    readonly ScanCancelled: "ScanCancelled";
+    readonly ScanFailed: "ScanFailed";
+    readonly ScheduledScanLaunchFailed: "ScheduledScanLaunchFailed";
+    readonly OutOfDateTechnology: "OutOfDateTechnology";
+};
+export type NotificationsGetPrioritiesEventEnum = typeof NotificationsGetPrioritiesEventEnum[keyof typeof NotificationsGetPrioritiesEventEnum];

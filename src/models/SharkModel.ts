@@ -45,16 +45,17 @@ export interface SharkModel {
     sharkBridgeUrl?: string;
 }
 
+
 /**
-* @export
-* @enum {string}
-*/
-export enum SharkModelSharkPlatformTypeEnum {
-    AspNet = 'AspNet',
-    Php = 'Php',
-    Java = 'Java',
-    NodeJs = 'NodeJs'
-}
+ * @export
+ */
+export const SharkModelSharkPlatformTypeEnum = {
+    AspNet: 'AspNet',
+    Php: 'Php',
+    Java: 'Java',
+    NodeJs: 'NodeJs'
+} as const;
+export type SharkModelSharkPlatformTypeEnum = typeof SharkModelSharkPlatformTypeEnum[keyof typeof SharkModelSharkPlatformTypeEnum];
 
 
 /**

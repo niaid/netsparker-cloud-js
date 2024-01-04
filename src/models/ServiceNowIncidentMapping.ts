@@ -46,13 +46,14 @@ export interface ServiceNowIncidentMapping {
     fieldKeyValuePairs?: Array<ServiceNowIncidentMappingFieldKeyValuePair>;
 }
 
+
 /**
-* @export
-* @enum {string}
-*/
-export enum ServiceNowIncidentMappingInvictiChoiceEnum {
-    Severity = 'Severity'
-}
+ * @export
+ */
+export const ServiceNowIncidentMappingInvictiChoiceEnum = {
+    Severity: 'Severity'
+} as const;
+export type ServiceNowIncidentMappingInvictiChoiceEnum = typeof ServiceNowIncidentMappingInvictiChoiceEnum[keyof typeof ServiceNowIncidentMappingInvictiChoiceEnum];
 
 
 /**

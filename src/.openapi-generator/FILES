@@ -217,7 +217,7 @@ models/ScanTimeWindowItemModel.ts
 models/ScanTimeWindowItemViewModel.ts
 models/ScanTimeWindowModel.ts
 models/ScanTimeWindowViewModel.ts
-models/ScansValidateImportedLinksFileRequest.ts
+models/ScansValidateImportedLinksFileReq.ts
 models/ScheduledScanListApiResult.ts
 models/ScheduledScanModel.ts
 models/ScheduledScanRecurrenceApiModel.ts
@@ -279,10 +279,10 @@ models/VersionIssue.ts
 models/VulnerabilityClassification.ts
 models/VulnerabilityContentApiModel.ts
 models/VulnerabilityModel.ts
-models/VulnerabilityTemplate.ts
 models/VulnerabilityTemplateCvss31Vector.ts
 models/VulnerabilityTemplateCvss40Vector.ts
 models/VulnerabilityTemplateCvssVector.ts
+models/VulnerabilityTemplating.ts
 models/WebStorageSetting.ts
 models/WebhookIntegrationInfoModel.ts
 models/WebsiteApiModel.ts

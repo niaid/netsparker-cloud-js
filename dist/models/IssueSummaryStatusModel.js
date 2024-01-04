@@ -16,21 +16,19 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.IssueSummaryStatusModelToJSON = exports.IssueSummaryStatusModelFromJSONTyped = exports.IssueSummaryStatusModelFromJSON = exports.instanceOfIssueSummaryStatusModel = exports.IssueSummaryStatusModelStatusEnum = void 0;
 const runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
-var IssueSummaryStatusModelStatusEnum;
-(function (IssueSummaryStatusModelStatusEnum) {
-    IssueSummaryStatusModelStatusEnum["Present"] = "Present";
-    IssueSummaryStatusModelStatusEnum["FixedUnconfirmed"] = "FixedUnconfirmed";
-    IssueSummaryStatusModelStatusEnum["FixedCantRetest"] = "FixedCantRetest";
-    IssueSummaryStatusModelStatusEnum["FixedConfirmed"] = "FixedConfirmed";
-    IssueSummaryStatusModelStatusEnum["Revived"] = "Revived";
-    IssueSummaryStatusModelStatusEnum["Scanning"] = "Scanning";
-    IssueSummaryStatusModelStatusEnum["Ignored"] = "Ignored";
-    IssueSummaryStatusModelStatusEnum["AcceptedRisk"] = "AcceptedRisk";
-    IssueSummaryStatusModelStatusEnum["FalsePositive"] = "FalsePositive";
-})(IssueSummaryStatusModelStatusEnum = exports.IssueSummaryStatusModelStatusEnum || (exports.IssueSummaryStatusModelStatusEnum = {}));
+ * @export
+ */
+exports.IssueSummaryStatusModelStatusEnum = {
+    Present: 'Present',
+    FixedUnconfirmed: 'FixedUnconfirmed',
+    FixedCantRetest: 'FixedCantRetest',
+    FixedConfirmed: 'FixedConfirmed',
+    Revived: 'Revived',
+    Scanning: 'Scanning',
+    Ignored: 'Ignored',
+    AcceptedRisk: 'AcceptedRisk',
+    FalsePositive: 'FalsePositive'
+};
 /**
  * Check if a given object implements the IssueSummaryStatusModel interface.
  */

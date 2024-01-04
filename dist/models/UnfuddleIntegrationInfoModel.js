@@ -18,54 +18,50 @@ const runtime_1 = require("../runtime");
 const IntegrationCustomFieldVm_1 = require("./IntegrationCustomFieldVm");
 const IntegrationWizardResultModel_1 = require("./IntegrationWizardResultModel");
 /**
-* @export
-* @enum {string}
-*/
-var UnfuddleIntegrationInfoModelTypeEnum;
-(function (UnfuddleIntegrationInfoModelTypeEnum) {
-    UnfuddleIntegrationInfoModelTypeEnum["NetsparkerEnterprise"] = "NetsparkerEnterprise";
-    UnfuddleIntegrationInfoModelTypeEnum["Webhook"] = "Webhook";
-    UnfuddleIntegrationInfoModelTypeEnum["Zapier"] = "Zapier";
-    UnfuddleIntegrationInfoModelTypeEnum["Slack"] = "Slack";
-    UnfuddleIntegrationInfoModelTypeEnum["Mattermost"] = "Mattermost";
-    UnfuddleIntegrationInfoModelTypeEnum["MicrosoftTeams"] = "MicrosoftTeams";
-    UnfuddleIntegrationInfoModelTypeEnum["AzureDevOps"] = "AzureDevOps";
-    UnfuddleIntegrationInfoModelTypeEnum["Bitbucket"] = "Bitbucket";
-    UnfuddleIntegrationInfoModelTypeEnum["Bugzilla"] = "Bugzilla";
-    UnfuddleIntegrationInfoModelTypeEnum["Clubhouse"] = "Clubhouse";
-    UnfuddleIntegrationInfoModelTypeEnum["DefectDojo"] = "DefectDojo";
-    UnfuddleIntegrationInfoModelTypeEnum["PivotalTracker"] = "PivotalTracker";
-    UnfuddleIntegrationInfoModelTypeEnum["Jira"] = "Jira";
-    UnfuddleIntegrationInfoModelTypeEnum["FogBugz"] = "FogBugz";
-    UnfuddleIntegrationInfoModelTypeEnum["GitHub"] = "GitHub";
-    UnfuddleIntegrationInfoModelTypeEnum["PagerDuty"] = "PagerDuty";
-    UnfuddleIntegrationInfoModelTypeEnum["Kafka"] = "Kafka";
-    UnfuddleIntegrationInfoModelTypeEnum["Kenna"] = "Kenna";
-    UnfuddleIntegrationInfoModelTypeEnum["Redmine"] = "Redmine";
-    UnfuddleIntegrationInfoModelTypeEnum["ServiceNow"] = "ServiceNow";
-    UnfuddleIntegrationInfoModelTypeEnum["Tfs"] = "TFS";
-    UnfuddleIntegrationInfoModelTypeEnum["Unfuddle"] = "Unfuddle";
-    UnfuddleIntegrationInfoModelTypeEnum["YouTrack"] = "YouTrack";
-    UnfuddleIntegrationInfoModelTypeEnum["Freshservice"] = "Freshservice";
-    UnfuddleIntegrationInfoModelTypeEnum["Splunk"] = "Splunk";
-    UnfuddleIntegrationInfoModelTypeEnum["JazzTeam"] = "JazzTeam";
-    UnfuddleIntegrationInfoModelTypeEnum["ServiceNowVrm"] = "ServiceNowVRM";
-    UnfuddleIntegrationInfoModelTypeEnum["Asana"] = "Asana";
-    UnfuddleIntegrationInfoModelTypeEnum["Trello"] = "Trello";
-    UnfuddleIntegrationInfoModelTypeEnum["Hashicorp"] = "Hashicorp";
-    UnfuddleIntegrationInfoModelTypeEnum["CyberArk"] = "CyberArk";
-    UnfuddleIntegrationInfoModelTypeEnum["AzureKeyVault"] = "AzureKeyVault";
-    UnfuddleIntegrationInfoModelTypeEnum["GitLab"] = "GitLab";
-})(UnfuddleIntegrationInfoModelTypeEnum = exports.UnfuddleIntegrationInfoModelTypeEnum || (exports.UnfuddleIntegrationInfoModelTypeEnum = {}));
+ * @export
+ */
+exports.UnfuddleIntegrationInfoModelTypeEnum = {
+    Jira: 'Jira',
+    GitHub: 'GitHub',
+    Tfs: 'TFS',
+    FogBugz: 'FogBugz',
+    ServiceNow: 'ServiceNow',
+    Slack: 'Slack',
+    GitLab: 'GitLab',
+    Bitbucket: 'Bitbucket',
+    Unfuddle: 'Unfuddle',
+    Zapier: 'Zapier',
+    AzureDevOps: 'AzureDevOps',
+    Redmine: 'Redmine',
+    Bugzilla: 'Bugzilla',
+    Kafka: 'Kafka',
+    PagerDuty: 'PagerDuty',
+    MicrosoftTeams: 'MicrosoftTeams',
+    Clubhouse: 'Clubhouse',
+    Trello: 'Trello',
+    Asana: 'Asana',
+    Webhook: 'Webhook',
+    Kenna: 'Kenna',
+    Freshservice: 'Freshservice',
+    YouTrack: 'YouTrack',
+    NetsparkerEnterprise: 'NetsparkerEnterprise',
+    Splunk: 'Splunk',
+    Mattermost: 'Mattermost',
+    Hashicorp: 'Hashicorp',
+    PivotalTracker: 'PivotalTracker',
+    CyberArk: 'CyberArk',
+    DefectDojo: 'DefectDojo',
+    JazzTeam: 'JazzTeam',
+    AzureKeyVault: 'AzureKeyVault',
+    ServiceNowVrm: 'ServiceNowVRM'
+};
 /**
-* @export
-* @enum {string}
-*/
-var UnfuddleIntegrationInfoModelTemplateTypeEnum;
-(function (UnfuddleIntegrationInfoModelTemplateTypeEnum) {
-    UnfuddleIntegrationInfoModelTemplateTypeEnum["Standard"] = "Standard";
-    UnfuddleIntegrationInfoModelTemplateTypeEnum["Detailed"] = "Detailed";
-})(UnfuddleIntegrationInfoModelTemplateTypeEnum = exports.UnfuddleIntegrationInfoModelTemplateTypeEnum || (exports.UnfuddleIntegrationInfoModelTemplateTypeEnum = {}));
+ * @export
+ */
+exports.UnfuddleIntegrationInfoModelTemplateTypeEnum = {
+    Standard: 'Standard',
+    Detailed: 'Detailed'
+};
 /**
  * Check if a given object implements the UnfuddleIntegrationInfoModel interface.
  */

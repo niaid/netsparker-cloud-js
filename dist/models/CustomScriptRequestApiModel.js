@@ -16,16 +16,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.CustomScriptRequestApiModelToJSON = exports.CustomScriptRequestApiModelFromJSONTyped = exports.CustomScriptRequestApiModelFromJSON = exports.instanceOfCustomScriptRequestApiModel = exports.CustomScriptRequestApiModelTypeEnum = void 0;
 const runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
-var CustomScriptRequestApiModelTypeEnum;
-(function (CustomScriptRequestApiModelTypeEnum) {
-    CustomScriptRequestApiModelTypeEnum["Active"] = "Active";
-    CustomScriptRequestApiModelTypeEnum["Passive"] = "Passive";
-    CustomScriptRequestApiModelTypeEnum["PerDirectory"] = "PerDirectory";
-    CustomScriptRequestApiModelTypeEnum["Singular"] = "Singular";
-})(CustomScriptRequestApiModelTypeEnum = exports.CustomScriptRequestApiModelTypeEnum || (exports.CustomScriptRequestApiModelTypeEnum = {}));
+ * @export
+ */
+exports.CustomScriptRequestApiModelTypeEnum = {
+    Active: 'Active',
+    Passive: 'Passive',
+    PerDirectory: 'PerDirectory',
+    Singular: 'Singular'
+};
 /**
  * Check if a given object implements the CustomScriptRequestApiModel interface.
  */

@@ -184,83 +184,88 @@ export interface JazzTeamIntegrationInfoModel {
     integrationWizardResultModel?: IntegrationWizardResultModel;
 }
 
+
 /**
-* @export
-* @enum {string}
-*/
-export enum JazzTeamIntegrationInfoModelSeverityEnum {
-    Blocker = 'Blocker',
-    Critical = 'Critical',
-    Major = 'Major',
-    Normal = 'Normal',
-    Minor = 'Minor',
-    Unclassified = 'Unclassified'
-}
+ * @export
+ */
+export const JazzTeamIntegrationInfoModelSeverityEnum = {
+    Blocker: 'Blocker',
+    Critical: 'Critical',
+    Major: 'Major',
+    Normal: 'Normal',
+    Minor: 'Minor',
+    Unclassified: 'Unclassified'
+} as const;
+export type JazzTeamIntegrationInfoModelSeverityEnum = typeof JazzTeamIntegrationInfoModelSeverityEnum[keyof typeof JazzTeamIntegrationInfoModelSeverityEnum];
+
 /**
-* @export
-* @enum {string}
-*/
-export enum JazzTeamIntegrationInfoModelPriorityEnum {
-    High = 'High',
-    Medium = 'Medium',
-    Low = 'Low',
-    Unassigned = 'Unassigned'
-}
+ * @export
+ */
+export const JazzTeamIntegrationInfoModelPriorityEnum = {
+    High: 'High',
+    Medium: 'Medium',
+    Low: 'Low',
+    Unassigned: 'Unassigned'
+} as const;
+export type JazzTeamIntegrationInfoModelPriorityEnum = typeof JazzTeamIntegrationInfoModelPriorityEnum[keyof typeof JazzTeamIntegrationInfoModelPriorityEnum];
+
 /**
-* @export
-* @enum {string}
-*/
-export enum JazzTeamIntegrationInfoModelWorkItemTypeEnum {
-    Task = 'Task',
-    Defect = 'Defect'
-}
+ * @export
+ */
+export const JazzTeamIntegrationInfoModelWorkItemTypeEnum = {
+    Task: 'Task',
+    Defect: 'Defect'
+} as const;
+export type JazzTeamIntegrationInfoModelWorkItemTypeEnum = typeof JazzTeamIntegrationInfoModelWorkItemTypeEnum[keyof typeof JazzTeamIntegrationInfoModelWorkItemTypeEnum];
+
 /**
-* @export
-* @enum {string}
-*/
-export enum JazzTeamIntegrationInfoModelTemplateTypeEnum {
-    Standard = 'Standard',
-    Detailed = 'Detailed'
-}
+ * @export
+ */
+export const JazzTeamIntegrationInfoModelTemplateTypeEnum = {
+    Standard: 'Standard',
+    Detailed: 'Detailed'
+} as const;
+export type JazzTeamIntegrationInfoModelTemplateTypeEnum = typeof JazzTeamIntegrationInfoModelTemplateTypeEnum[keyof typeof JazzTeamIntegrationInfoModelTemplateTypeEnum];
+
 /**
-* @export
-* @enum {string}
-*/
-export enum JazzTeamIntegrationInfoModelTypeEnum {
-    NetsparkerEnterprise = 'NetsparkerEnterprise',
-    Webhook = 'Webhook',
-    Zapier = 'Zapier',
-    Slack = 'Slack',
-    Mattermost = 'Mattermost',
-    MicrosoftTeams = 'MicrosoftTeams',
-    AzureDevOps = 'AzureDevOps',
-    Bitbucket = 'Bitbucket',
-    Bugzilla = 'Bugzilla',
-    Clubhouse = 'Clubhouse',
-    DefectDojo = 'DefectDojo',
-    PivotalTracker = 'PivotalTracker',
-    Jira = 'Jira',
-    FogBugz = 'FogBugz',
-    GitHub = 'GitHub',
-    PagerDuty = 'PagerDuty',
-    Kafka = 'Kafka',
-    Kenna = 'Kenna',
-    Redmine = 'Redmine',
-    ServiceNow = 'ServiceNow',
-    Tfs = 'TFS',
-    Unfuddle = 'Unfuddle',
-    YouTrack = 'YouTrack',
-    Freshservice = 'Freshservice',
-    Splunk = 'Splunk',
-    JazzTeam = 'JazzTeam',
-    ServiceNowVrm = 'ServiceNowVRM',
-    Asana = 'Asana',
-    Trello = 'Trello',
-    Hashicorp = 'Hashicorp',
-    CyberArk = 'CyberArk',
-    AzureKeyVault = 'AzureKeyVault',
-    GitLab = 'GitLab'
-}
+ * @export
+ */
+export const JazzTeamIntegrationInfoModelTypeEnum = {
+    NetsparkerEnterprise: 'NetsparkerEnterprise',
+    Webhook: 'Webhook',
+    Zapier: 'Zapier',
+    Slack: 'Slack',
+    Mattermost: 'Mattermost',
+    MicrosoftTeams: 'MicrosoftTeams',
+    AzureDevOps: 'AzureDevOps',
+    Bitbucket: 'Bitbucket',
+    Bugzilla: 'Bugzilla',
+    Clubhouse: 'Clubhouse',
+    DefectDojo: 'DefectDojo',
+    PivotalTracker: 'PivotalTracker',
+    Jira: 'Jira',
+    FogBugz: 'FogBugz',
+    GitHub: 'GitHub',
+    PagerDuty: 'PagerDuty',
+    Kafka: 'Kafka',
+    Kenna: 'Kenna',
+    Redmine: 'Redmine',
+    ServiceNow: 'ServiceNow',
+    Tfs: 'TFS',
+    Unfuddle: 'Unfuddle',
+    YouTrack: 'YouTrack',
+    Freshservice: 'Freshservice',
+    Splunk: 'Splunk',
+    JazzTeam: 'JazzTeam',
+    ServiceNowVrm: 'ServiceNowVRM',
+    Asana: 'Asana',
+    Trello: 'Trello',
+    Hashicorp: 'Hashicorp',
+    CyberArk: 'CyberArk',
+    AzureKeyVault: 'AzureKeyVault',
+    GitLab: 'GitLab'
+} as const;
+export type JazzTeamIntegrationInfoModelTypeEnum = typeof JazzTeamIntegrationInfoModelTypeEnum[keyof typeof JazzTeamIntegrationInfoModelTypeEnum];
 
 
 /**

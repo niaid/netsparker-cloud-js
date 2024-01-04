@@ -18,63 +18,57 @@ const runtime_1 = require("../runtime");
 const IntegrationCustomFieldVm_1 = require("./IntegrationCustomFieldVm");
 const IntegrationWizardResultModel_1 = require("./IntegrationWizardResultModel");
 /**
-* @export
-* @enum {string}
-*/
-var AzureKeyVaultIntegrationInfoModelAgentModeEnum;
-(function (AzureKeyVaultIntegrationInfoModelAgentModeEnum) {
-    AzureKeyVaultIntegrationInfoModelAgentModeEnum["Cloud"] = "Cloud";
-    AzureKeyVaultIntegrationInfoModelAgentModeEnum["Internal"] = "Internal";
-})(AzureKeyVaultIntegrationInfoModelAgentModeEnum = exports.AzureKeyVaultIntegrationInfoModelAgentModeEnum || (exports.AzureKeyVaultIntegrationInfoModelAgentModeEnum = {}));
+ * @export
+ */
+exports.AzureKeyVaultIntegrationInfoModelAgentModeEnum = {
+    Cloud: 'Cloud',
+    Internal: 'Internal'
+};
 /**
-* @export
-* @enum {string}
-*/
-var AzureKeyVaultIntegrationInfoModelTypeEnum;
-(function (AzureKeyVaultIntegrationInfoModelTypeEnum) {
-    AzureKeyVaultIntegrationInfoModelTypeEnum["NetsparkerEnterprise"] = "NetsparkerEnterprise";
-    AzureKeyVaultIntegrationInfoModelTypeEnum["Webhook"] = "Webhook";
-    AzureKeyVaultIntegrationInfoModelTypeEnum["Zapier"] = "Zapier";
-    AzureKeyVaultIntegrationInfoModelTypeEnum["Slack"] = "Slack";
-    AzureKeyVaultIntegrationInfoModelTypeEnum["Mattermost"] = "Mattermost";
-    AzureKeyVaultIntegrationInfoModelTypeEnum["MicrosoftTeams"] = "MicrosoftTeams";
-    AzureKeyVaultIntegrationInfoModelTypeEnum["AzureDevOps"] = "AzureDevOps";
-    AzureKeyVaultIntegrationInfoModelTypeEnum["Bitbucket"] = "Bitbucket";
-    AzureKeyVaultIntegrationInfoModelTypeEnum["Bugzilla"] = "Bugzilla";
-    AzureKeyVaultIntegrationInfoModelTypeEnum["Clubhouse"] = "Clubhouse";
-    AzureKeyVaultIntegrationInfoModelTypeEnum["DefectDojo"] = "DefectDojo";
-    AzureKeyVaultIntegrationInfoModelTypeEnum["PivotalTracker"] = "PivotalTracker";
-    AzureKeyVaultIntegrationInfoModelTypeEnum["Jira"] = "Jira";
-    AzureKeyVaultIntegrationInfoModelTypeEnum["FogBugz"] = "FogBugz";
-    AzureKeyVaultIntegrationInfoModelTypeEnum["GitHub"] = "GitHub";
-    AzureKeyVaultIntegrationInfoModelTypeEnum["PagerDuty"] = "PagerDuty";
-    AzureKeyVaultIntegrationInfoModelTypeEnum["Kafka"] = "Kafka";
-    AzureKeyVaultIntegrationInfoModelTypeEnum["Kenna"] = "Kenna";
-    AzureKeyVaultIntegrationInfoModelTypeEnum["Redmine"] = "Redmine";
-    AzureKeyVaultIntegrationInfoModelTypeEnum["ServiceNow"] = "ServiceNow";
-    AzureKeyVaultIntegrationInfoModelTypeEnum["Tfs"] = "TFS";
-    AzureKeyVaultIntegrationInfoModelTypeEnum["Unfuddle"] = "Unfuddle";
-    AzureKeyVaultIntegrationInfoModelTypeEnum["YouTrack"] = "YouTrack";
-    AzureKeyVaultIntegrationInfoModelTypeEnum["Freshservice"] = "Freshservice";
-    AzureKeyVaultIntegrationInfoModelTypeEnum["Splunk"] = "Splunk";
-    AzureKeyVaultIntegrationInfoModelTypeEnum["JazzTeam"] = "JazzTeam";
-    AzureKeyVaultIntegrationInfoModelTypeEnum["ServiceNowVrm"] = "ServiceNowVRM";
-    AzureKeyVaultIntegrationInfoModelTypeEnum["Asana"] = "Asana";
-    AzureKeyVaultIntegrationInfoModelTypeEnum["Trello"] = "Trello";
-    AzureKeyVaultIntegrationInfoModelTypeEnum["Hashicorp"] = "Hashicorp";
-    AzureKeyVaultIntegrationInfoModelTypeEnum["CyberArk"] = "CyberArk";
-    AzureKeyVaultIntegrationInfoModelTypeEnum["AzureKeyVault"] = "AzureKeyVault";
-    AzureKeyVaultIntegrationInfoModelTypeEnum["GitLab"] = "GitLab";
-})(AzureKeyVaultIntegrationInfoModelTypeEnum = exports.AzureKeyVaultIntegrationInfoModelTypeEnum || (exports.AzureKeyVaultIntegrationInfoModelTypeEnum = {}));
+ * @export
+ */
+exports.AzureKeyVaultIntegrationInfoModelTypeEnum = {
+    Jira: 'Jira',
+    GitHub: 'GitHub',
+    Tfs: 'TFS',
+    FogBugz: 'FogBugz',
+    ServiceNow: 'ServiceNow',
+    Slack: 'Slack',
+    GitLab: 'GitLab',
+    Bitbucket: 'Bitbucket',
+    Unfuddle: 'Unfuddle',
+    Zapier: 'Zapier',
+    AzureDevOps: 'AzureDevOps',
+    Redmine: 'Redmine',
+    Bugzilla: 'Bugzilla',
+    Kafka: 'Kafka',
+    PagerDuty: 'PagerDuty',
+    MicrosoftTeams: 'MicrosoftTeams',
+    Clubhouse: 'Clubhouse',
+    Trello: 'Trello',
+    Asana: 'Asana',
+    Webhook: 'Webhook',
+    Kenna: 'Kenna',
+    Freshservice: 'Freshservice',
+    YouTrack: 'YouTrack',
+    NetsparkerEnterprise: 'NetsparkerEnterprise',
+    Splunk: 'Splunk',
+    Mattermost: 'Mattermost',
+    Hashicorp: 'Hashicorp',
+    PivotalTracker: 'PivotalTracker',
+    CyberArk: 'CyberArk',
+    DefectDojo: 'DefectDojo',
+    JazzTeam: 'JazzTeam',
+    AzureKeyVault: 'AzureKeyVault',
+    ServiceNowVrm: 'ServiceNowVRM'
+};
 /**
-* @export
-* @enum {string}
-*/
-var AzureKeyVaultIntegrationInfoModelTemplateTypeEnum;
-(function (AzureKeyVaultIntegrationInfoModelTemplateTypeEnum) {
-    AzureKeyVaultIntegrationInfoModelTemplateTypeEnum["Standard"] = "Standard";
-    AzureKeyVaultIntegrationInfoModelTemplateTypeEnum["Detailed"] = "Detailed";
-})(AzureKeyVaultIntegrationInfoModelTemplateTypeEnum = exports.AzureKeyVaultIntegrationInfoModelTemplateTypeEnum || (exports.AzureKeyVaultIntegrationInfoModelTemplateTypeEnum = {}));
+ * @export
+ */
+exports.AzureKeyVaultIntegrationInfoModelTemplateTypeEnum = {
+    Standard: 'Standard',
+    Detailed: 'Detailed'
+};
 /**
  * Check if a given object implements the AzureKeyVaultIntegrationInfoModel interface.
  */

@@ -55,19 +55,19 @@ export interface NewScheduledWithProfileApiModel {
     customRecurrence?: ScheduledScanRecurrenceApiModel;
 }
 /**
-* @export
-* @enum {string}
-*/
-export declare enum NewScheduledWithProfileApiModelScheduleRunTypeEnum {
-    Once = "Once",
-    Daily = "Daily",
-    Weekly = "Weekly",
-    Monthly = "Monthly",
-    Quarterly = "Quarterly",
-    Biannually = "Biannually",
-    Yearly = "Yearly",
-    Custom = "Custom"
-}
+ * @export
+ */
+export declare const NewScheduledWithProfileApiModelScheduleRunTypeEnum: {
+    readonly Once: "Once";
+    readonly Daily: "Daily";
+    readonly Weekly: "Weekly";
+    readonly Monthly: "Monthly";
+    readonly Quarterly: "Quarterly";
+    readonly Biannually: "Biannually";
+    readonly Yearly: "Yearly";
+    readonly Custom: "Custom";
+};
+export type NewScheduledWithProfileApiModelScheduleRunTypeEnum = typeof NewScheduledWithProfileApiModelScheduleRunTypeEnum[keyof typeof NewScheduledWithProfileApiModelScheduleRunTypeEnum];
 /**
  * Check if a given object implements the NewScheduledWithProfileApiModel interface.
  */

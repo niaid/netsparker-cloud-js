@@ -15,25 +15,21 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ExtensionSettingModelToJSON = exports.ExtensionSettingModelFromJSONTyped = exports.ExtensionSettingModelFromJSON = exports.instanceOfExtensionSettingModel = exports.ExtensionSettingModelCrawlOptionEnum = exports.ExtensionSettingModelAttackOptionEnum = void 0;
 /**
-* @export
-* @enum {string}
-*/
-var ExtensionSettingModelAttackOptionEnum;
-(function (ExtensionSettingModelAttackOptionEnum) {
-    ExtensionSettingModelAttackOptionEnum["DoNotAttack"] = "DoNotAttack";
-    ExtensionSettingModelAttackOptionEnum["AttackParameters"] = "AttackParameters";
-    ExtensionSettingModelAttackOptionEnum["AttackParametersAndQueryString"] = "AttackParametersAndQueryString";
-})(ExtensionSettingModelAttackOptionEnum = exports.ExtensionSettingModelAttackOptionEnum || (exports.ExtensionSettingModelAttackOptionEnum = {}));
+ * @export
+ */
+exports.ExtensionSettingModelAttackOptionEnum = {
+    DoNotAttack: 'DoNotAttack',
+    AttackParameters: 'AttackParameters',
+    AttackParametersAndQueryString: 'AttackParametersAndQueryString'
+};
 /**
-* @export
-* @enum {string}
-*/
-var ExtensionSettingModelCrawlOptionEnum;
-(function (ExtensionSettingModelCrawlOptionEnum) {
-    ExtensionSettingModelCrawlOptionEnum["DoNotCrawl"] = "DoNotCrawl";
-    ExtensionSettingModelCrawlOptionEnum["Crawl"] = "Crawl";
-    ExtensionSettingModelCrawlOptionEnum["CrawlOnlyParameter"] = "CrawlOnlyParameter";
-})(ExtensionSettingModelCrawlOptionEnum = exports.ExtensionSettingModelCrawlOptionEnum || (exports.ExtensionSettingModelCrawlOptionEnum = {}));
+ * @export
+ */
+exports.ExtensionSettingModelCrawlOptionEnum = {
+    DoNotCrawl: 'DoNotCrawl',
+    Crawl: 'Crawl',
+    CrawlOnlyParameter: 'CrawlOnlyParameter'
+};
 /**
  * Check if a given object implements the ExtensionSettingModel interface.
  */

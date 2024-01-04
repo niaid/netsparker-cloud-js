@@ -29,20 +29,20 @@ export interface IssueSummaryStatusModel {
     readonly statusDate?: string;
 }
 /**
-* @export
-* @enum {string}
-*/
-export declare enum IssueSummaryStatusModelStatusEnum {
-    Present = "Present",
-    FixedUnconfirmed = "FixedUnconfirmed",
-    FixedCantRetest = "FixedCantRetest",
-    FixedConfirmed = "FixedConfirmed",
-    Revived = "Revived",
-    Scanning = "Scanning",
-    Ignored = "Ignored",
-    AcceptedRisk = "AcceptedRisk",
-    FalsePositive = "FalsePositive"
-}
+ * @export
+ */
+export declare const IssueSummaryStatusModelStatusEnum: {
+    readonly Present: "Present";
+    readonly FixedUnconfirmed: "FixedUnconfirmed";
+    readonly FixedCantRetest: "FixedCantRetest";
+    readonly FixedConfirmed: "FixedConfirmed";
+    readonly Revived: "Revived";
+    readonly Scanning: "Scanning";
+    readonly Ignored: "Ignored";
+    readonly AcceptedRisk: "AcceptedRisk";
+    readonly FalsePositive: "FalsePositive";
+};
+export type IssueSummaryStatusModelStatusEnum = typeof IssueSummaryStatusModelStatusEnum[keyof typeof IssueSummaryStatusModelStatusEnum];
 /**
  * Check if a given object implements the IssueSummaryStatusModel interface.
  */

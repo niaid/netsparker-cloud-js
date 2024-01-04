@@ -18,15 +18,13 @@ const runtime_1 = require("../runtime");
 const UrlRewriteExcludedPathModel_1 = require("./UrlRewriteExcludedPathModel");
 const UrlRewriteRuleModel_1 = require("./UrlRewriteRuleModel");
 /**
-* @export
-* @enum {string}
-*/
-var UrlRewriteSettingUrlRewriteModeEnum;
-(function (UrlRewriteSettingUrlRewriteModeEnum) {
-    UrlRewriteSettingUrlRewriteModeEnum["None"] = "None";
-    UrlRewriteSettingUrlRewriteModeEnum["Heuristic"] = "Heuristic";
-    UrlRewriteSettingUrlRewriteModeEnum["Custom"] = "Custom";
-})(UrlRewriteSettingUrlRewriteModeEnum = exports.UrlRewriteSettingUrlRewriteModeEnum || (exports.UrlRewriteSettingUrlRewriteModeEnum = {}));
+ * @export
+ */
+exports.UrlRewriteSettingUrlRewriteModeEnum = {
+    None: 'None',
+    Heuristic: 'Heuristic',
+    Custom: 'Custom'
+};
 /**
  * Check if a given object implements the UrlRewriteSetting interface.
  */

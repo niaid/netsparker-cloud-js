@@ -22,54 +22,50 @@ const AsanaWorkspace_1 = require("./AsanaWorkspace");
 const IntegrationCustomFieldVm_1 = require("./IntegrationCustomFieldVm");
 const IntegrationWizardResultModel_1 = require("./IntegrationWizardResultModel");
 /**
-* @export
-* @enum {string}
-*/
-var AsanaIntegrationInfoModelTypeEnum;
-(function (AsanaIntegrationInfoModelTypeEnum) {
-    AsanaIntegrationInfoModelTypeEnum["Jira"] = "Jira";
-    AsanaIntegrationInfoModelTypeEnum["GitHub"] = "GitHub";
-    AsanaIntegrationInfoModelTypeEnum["Tfs"] = "TFS";
-    AsanaIntegrationInfoModelTypeEnum["FogBugz"] = "FogBugz";
-    AsanaIntegrationInfoModelTypeEnum["ServiceNow"] = "ServiceNow";
-    AsanaIntegrationInfoModelTypeEnum["Slack"] = "Slack";
-    AsanaIntegrationInfoModelTypeEnum["GitLab"] = "GitLab";
-    AsanaIntegrationInfoModelTypeEnum["Bitbucket"] = "Bitbucket";
-    AsanaIntegrationInfoModelTypeEnum["Unfuddle"] = "Unfuddle";
-    AsanaIntegrationInfoModelTypeEnum["Zapier"] = "Zapier";
-    AsanaIntegrationInfoModelTypeEnum["AzureDevOps"] = "AzureDevOps";
-    AsanaIntegrationInfoModelTypeEnum["Redmine"] = "Redmine";
-    AsanaIntegrationInfoModelTypeEnum["Bugzilla"] = "Bugzilla";
-    AsanaIntegrationInfoModelTypeEnum["Kafka"] = "Kafka";
-    AsanaIntegrationInfoModelTypeEnum["PagerDuty"] = "PagerDuty";
-    AsanaIntegrationInfoModelTypeEnum["MicrosoftTeams"] = "MicrosoftTeams";
-    AsanaIntegrationInfoModelTypeEnum["Clubhouse"] = "Clubhouse";
-    AsanaIntegrationInfoModelTypeEnum["Trello"] = "Trello";
-    AsanaIntegrationInfoModelTypeEnum["Asana"] = "Asana";
-    AsanaIntegrationInfoModelTypeEnum["Webhook"] = "Webhook";
-    AsanaIntegrationInfoModelTypeEnum["Kenna"] = "Kenna";
-    AsanaIntegrationInfoModelTypeEnum["Freshservice"] = "Freshservice";
-    AsanaIntegrationInfoModelTypeEnum["YouTrack"] = "YouTrack";
-    AsanaIntegrationInfoModelTypeEnum["NetsparkerEnterprise"] = "NetsparkerEnterprise";
-    AsanaIntegrationInfoModelTypeEnum["Splunk"] = "Splunk";
-    AsanaIntegrationInfoModelTypeEnum["Mattermost"] = "Mattermost";
-    AsanaIntegrationInfoModelTypeEnum["Hashicorp"] = "Hashicorp";
-    AsanaIntegrationInfoModelTypeEnum["PivotalTracker"] = "PivotalTracker";
-    AsanaIntegrationInfoModelTypeEnum["CyberArk"] = "CyberArk";
-    AsanaIntegrationInfoModelTypeEnum["DefectDojo"] = "DefectDojo";
-    AsanaIntegrationInfoModelTypeEnum["JazzTeam"] = "JazzTeam";
-    AsanaIntegrationInfoModelTypeEnum["AzureKeyVault"] = "AzureKeyVault";
-    AsanaIntegrationInfoModelTypeEnum["ServiceNowVrm"] = "ServiceNowVRM";
-})(AsanaIntegrationInfoModelTypeEnum = exports.AsanaIntegrationInfoModelTypeEnum || (exports.AsanaIntegrationInfoModelTypeEnum = {}));
+ * @export
+ */
+exports.AsanaIntegrationInfoModelTypeEnum = {
+    Jira: 'Jira',
+    GitHub: 'GitHub',
+    Tfs: 'TFS',
+    FogBugz: 'FogBugz',
+    ServiceNow: 'ServiceNow',
+    Slack: 'Slack',
+    GitLab: 'GitLab',
+    Bitbucket: 'Bitbucket',
+    Unfuddle: 'Unfuddle',
+    Zapier: 'Zapier',
+    AzureDevOps: 'AzureDevOps',
+    Redmine: 'Redmine',
+    Bugzilla: 'Bugzilla',
+    Kafka: 'Kafka',
+    PagerDuty: 'PagerDuty',
+    MicrosoftTeams: 'MicrosoftTeams',
+    Clubhouse: 'Clubhouse',
+    Trello: 'Trello',
+    Asana: 'Asana',
+    Webhook: 'Webhook',
+    Kenna: 'Kenna',
+    Freshservice: 'Freshservice',
+    YouTrack: 'YouTrack',
+    NetsparkerEnterprise: 'NetsparkerEnterprise',
+    Splunk: 'Splunk',
+    Mattermost: 'Mattermost',
+    Hashicorp: 'Hashicorp',
+    PivotalTracker: 'PivotalTracker',
+    CyberArk: 'CyberArk',
+    DefectDojo: 'DefectDojo',
+    JazzTeam: 'JazzTeam',
+    AzureKeyVault: 'AzureKeyVault',
+    ServiceNowVrm: 'ServiceNowVRM'
+};
 /**
-* @export
-* @enum {string}
-*/
-var AsanaIntegrationInfoModelTemplateTypeEnum;
-(function (AsanaIntegrationInfoModelTemplateTypeEnum) {
-    AsanaIntegrationInfoModelTemplateTypeEnum["Standard"] = "Standard";
-    AsanaIntegrationInfoModelTemplateTypeEnum["Detailed"] = "Detailed";
-})(AsanaIntegrationInfoModelTemplateTypeEnum = exports.AsanaIntegrationInfoModelTemplateTypeEnum || (exports.AsanaIntegrationInfoModelTemplateTypeEnum = {}));
+ * @export
+ */
+exports.AsanaIntegrationInfoModelTemplateTypeEnum = {
+    Standard: 'Standard',
+    Detailed: 'Detailed'
+};
 /**
  * Check if a given object implements the AsanaIntegrationInfoModel interface.
  */

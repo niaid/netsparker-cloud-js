@@ -25,15 +25,15 @@ import {
     CustomScriptUpdateRequestApiModelToJSON,
 } from '../models/index';
 
-export interface CustomScriptApiCustomScriptDeleteRequest {
+export interface CustomScriptDeleteRequest {
     ids: Array<string>;
 }
 
-export interface CustomScriptApiCustomScriptNewRequest {
+export interface CustomScriptNewRequest {
     model: Array<CustomScriptRequestApiModel>;
 }
 
-export interface CustomScriptApiCustomScriptUpdateRequest {
+export interface CustomScriptUpdateRequest {
     model: Array<CustomScriptUpdateRequestApiModel>;
 }
 
@@ -45,7 +45,7 @@ export class CustomScriptApi extends runtime.BaseAPI {
     /**
      * Deletes Custom Scripts
      */
-    async customScriptDeleteRaw(requestParameters: CustomScriptApiCustomScriptDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>> {
+    async customScriptDeleteRaw(requestParameters: CustomScriptDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>> {
         if (requestParameters.ids === null || requestParameters.ids === undefined) {
             throw new runtime.RequiredError('ids','Required parameter requestParameters.ids was null or undefined when calling customScriptDelete.');
         }
@@ -70,7 +70,7 @@ export class CustomScriptApi extends runtime.BaseAPI {
     /**
      * Deletes Custom Scripts
      */
-    async customScriptDelete(requestParameters: CustomScriptApiCustomScriptDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object> {
+    async customScriptDelete(requestParameters: CustomScriptDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object> {
         const response = await this.customScriptDeleteRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -104,7 +104,7 @@ export class CustomScriptApi extends runtime.BaseAPI {
     /**
      * Creates Custom Scripts
      */
-    async customScriptNewRaw(requestParameters: CustomScriptApiCustomScriptNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>> {
+    async customScriptNewRaw(requestParameters: CustomScriptNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>> {
         if (requestParameters.model === null || requestParameters.model === undefined) {
             throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling customScriptNew.');
         }
@@ -129,7 +129,7 @@ export class CustomScriptApi extends runtime.BaseAPI {
     /**
      * Creates Custom Scripts
      */
-    async customScriptNew(requestParameters: CustomScriptApiCustomScriptNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object> {
+    async customScriptNew(requestParameters: CustomScriptNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object> {
         const response = await this.customScriptNewRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -137,7 +137,7 @@ export class CustomScriptApi extends runtime.BaseAPI {
     /**
      * Updates Custom Scripts
      */
-    async customScriptUpdateRaw(requestParameters: CustomScriptApiCustomScriptUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>> {
+    async customScriptUpdateRaw(requestParameters: CustomScriptUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>> {
         if (requestParameters.model === null || requestParameters.model === undefined) {
             throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling customScriptUpdate.');
         }
@@ -162,7 +162,7 @@ export class CustomScriptApi extends runtime.BaseAPI {
     /**
      * Updates Custom Scripts
      */
-    async customScriptUpdate(requestParameters: CustomScriptApiCustomScriptUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object> {
+    async customScriptUpdate(requestParameters: CustomScriptUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object> {
         const response = await this.customScriptUpdateRaw(requestParameters, initOverrides);
         return await response.value();
     }

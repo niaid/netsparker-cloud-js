@@ -16,32 +16,32 @@ import { exists, mapValues } from '../runtime';
 /**
  * 
  * @export
- * @interface ScansValidateImportedLinksFileRequest
+ * @interface ScansValidateImportedLinksFileReq
  */
-export interface ScansValidateImportedLinksFileRequest {
+export interface ScansValidateImportedLinksFileReq {
     /**
      * Upload Imported Links File
      * @type {Blob}
-     * @memberof ScansValidateImportedLinksFileRequest
+     * @memberof ScansValidateImportedLinksFileReq
      */
     file: Blob;
 }
 
 /**
- * Check if a given object implements the ScansValidateImportedLinksFileRequest interface.
+ * Check if a given object implements the ScansValidateImportedLinksFileReq interface.
  */
-export function instanceOfScansValidateImportedLinksFileRequest(value: object): boolean {
+export function instanceOfScansValidateImportedLinksFileReq(value: object): boolean {
     let isInstance = true;
     isInstance = isInstance && "file" in value;
 
     return isInstance;
 }
 
-export function ScansValidateImportedLinksFileRequestFromJSON(json: any): ScansValidateImportedLinksFileRequest {
-    return ScansValidateImportedLinksFileRequestFromJSONTyped(json, false);
+export function ScansValidateImportedLinksFileReqFromJSON(json: any): ScansValidateImportedLinksFileReq {
+    return ScansValidateImportedLinksFileReqFromJSONTyped(json, false);
 }
 
-export function ScansValidateImportedLinksFileRequestFromJSONTyped(json: any, ignoreDiscriminator: boolean): ScansValidateImportedLinksFileRequest {
+export function ScansValidateImportedLinksFileReqFromJSONTyped(json: any, ignoreDiscriminator: boolean): ScansValidateImportedLinksFileReq {
     if ((json === undefined) || (json === null)) {
         return json;
     }
@@ -51,7 +51,7 @@ export function ScansValidateImportedLinksFileRequestFromJSONTyped(json: any, ig
     };
 }
 
-export function ScansValidateImportedLinksFileRequestToJSON(value?: ScansValidateImportedLinksFileRequest | null): any {
+export function ScansValidateImportedLinksFileReqToJSON(value?: ScansValidateImportedLinksFileReq | null): any {
     if (value === undefined) {
         return undefined;
     }

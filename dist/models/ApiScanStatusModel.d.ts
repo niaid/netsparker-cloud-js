@@ -41,22 +41,22 @@ export interface ApiScanStatusModel {
     state?: ApiScanStatusModelStateEnum;
 }
 /**
-* @export
-* @enum {string}
-*/
-export declare enum ApiScanStatusModelStateEnum {
-    Queued = "Queued",
-    Scanning = "Scanning",
-    Archiving = "Archiving",
-    Complete = "Complete",
-    Failed = "Failed",
-    Cancelled = "Cancelled",
-    Delayed = "Delayed",
-    Pausing = "Pausing",
-    Paused = "Paused",
-    Resuming = "Resuming",
-    AsyncArchiving = "AsyncArchiving"
-}
+ * @export
+ */
+export declare const ApiScanStatusModelStateEnum: {
+    readonly Queued: "Queued";
+    readonly Scanning: "Scanning";
+    readonly Archiving: "Archiving";
+    readonly Complete: "Complete";
+    readonly Failed: "Failed";
+    readonly Cancelled: "Cancelled";
+    readonly Delayed: "Delayed";
+    readonly Pausing: "Pausing";
+    readonly Paused: "Paused";
+    readonly Resuming: "Resuming";
+    readonly AsyncArchiving: "AsyncArchiving";
+};
+export type ApiScanStatusModelStateEnum = typeof ApiScanStatusModelStateEnum[keyof typeof ApiScanStatusModelStateEnum];
 /**
  * Check if a given object implements the ApiScanStatusModel interface.
  */

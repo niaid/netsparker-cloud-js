@@ -18,65 +18,59 @@ const runtime_1 = require("../runtime");
 const IntegrationCustomFieldVm_1 = require("./IntegrationCustomFieldVm");
 const IntegrationWizardResultModel_1 = require("./IntegrationWizardResultModel");
 /**
-* @export
-* @enum {string}
-*/
-var PivotalTrackerIntegrationInfoModelStoryTypeEnum;
-(function (PivotalTrackerIntegrationInfoModelStoryTypeEnum) {
-    PivotalTrackerIntegrationInfoModelStoryTypeEnum["Bug"] = "Bug";
-    PivotalTrackerIntegrationInfoModelStoryTypeEnum["Feature"] = "Feature";
-    PivotalTrackerIntegrationInfoModelStoryTypeEnum["Chore"] = "Chore";
-    PivotalTrackerIntegrationInfoModelStoryTypeEnum["Release"] = "Release";
-})(PivotalTrackerIntegrationInfoModelStoryTypeEnum = exports.PivotalTrackerIntegrationInfoModelStoryTypeEnum || (exports.PivotalTrackerIntegrationInfoModelStoryTypeEnum = {}));
+ * @export
+ */
+exports.PivotalTrackerIntegrationInfoModelStoryTypeEnum = {
+    Bug: 'Bug',
+    Feature: 'Feature',
+    Chore: 'Chore',
+    Release: 'Release'
+};
 /**
-* @export
-* @enum {string}
-*/
-var PivotalTrackerIntegrationInfoModelTypeEnum;
-(function (PivotalTrackerIntegrationInfoModelTypeEnum) {
-    PivotalTrackerIntegrationInfoModelTypeEnum["NetsparkerEnterprise"] = "NetsparkerEnterprise";
-    PivotalTrackerIntegrationInfoModelTypeEnum["Webhook"] = "Webhook";
-    PivotalTrackerIntegrationInfoModelTypeEnum["Zapier"] = "Zapier";
-    PivotalTrackerIntegrationInfoModelTypeEnum["Slack"] = "Slack";
-    PivotalTrackerIntegrationInfoModelTypeEnum["Mattermost"] = "Mattermost";
-    PivotalTrackerIntegrationInfoModelTypeEnum["MicrosoftTeams"] = "MicrosoftTeams";
-    PivotalTrackerIntegrationInfoModelTypeEnum["AzureDevOps"] = "AzureDevOps";
-    PivotalTrackerIntegrationInfoModelTypeEnum["Bitbucket"] = "Bitbucket";
-    PivotalTrackerIntegrationInfoModelTypeEnum["Bugzilla"] = "Bugzilla";
-    PivotalTrackerIntegrationInfoModelTypeEnum["Clubhouse"] = "Clubhouse";
-    PivotalTrackerIntegrationInfoModelTypeEnum["DefectDojo"] = "DefectDojo";
-    PivotalTrackerIntegrationInfoModelTypeEnum["PivotalTracker"] = "PivotalTracker";
-    PivotalTrackerIntegrationInfoModelTypeEnum["Jira"] = "Jira";
-    PivotalTrackerIntegrationInfoModelTypeEnum["FogBugz"] = "FogBugz";
-    PivotalTrackerIntegrationInfoModelTypeEnum["GitHub"] = "GitHub";
-    PivotalTrackerIntegrationInfoModelTypeEnum["PagerDuty"] = "PagerDuty";
-    PivotalTrackerIntegrationInfoModelTypeEnum["Kafka"] = "Kafka";
-    PivotalTrackerIntegrationInfoModelTypeEnum["Kenna"] = "Kenna";
-    PivotalTrackerIntegrationInfoModelTypeEnum["Redmine"] = "Redmine";
-    PivotalTrackerIntegrationInfoModelTypeEnum["ServiceNow"] = "ServiceNow";
-    PivotalTrackerIntegrationInfoModelTypeEnum["Tfs"] = "TFS";
-    PivotalTrackerIntegrationInfoModelTypeEnum["Unfuddle"] = "Unfuddle";
-    PivotalTrackerIntegrationInfoModelTypeEnum["YouTrack"] = "YouTrack";
-    PivotalTrackerIntegrationInfoModelTypeEnum["Freshservice"] = "Freshservice";
-    PivotalTrackerIntegrationInfoModelTypeEnum["Splunk"] = "Splunk";
-    PivotalTrackerIntegrationInfoModelTypeEnum["JazzTeam"] = "JazzTeam";
-    PivotalTrackerIntegrationInfoModelTypeEnum["ServiceNowVrm"] = "ServiceNowVRM";
-    PivotalTrackerIntegrationInfoModelTypeEnum["Asana"] = "Asana";
-    PivotalTrackerIntegrationInfoModelTypeEnum["Trello"] = "Trello";
-    PivotalTrackerIntegrationInfoModelTypeEnum["Hashicorp"] = "Hashicorp";
-    PivotalTrackerIntegrationInfoModelTypeEnum["CyberArk"] = "CyberArk";
-    PivotalTrackerIntegrationInfoModelTypeEnum["AzureKeyVault"] = "AzureKeyVault";
-    PivotalTrackerIntegrationInfoModelTypeEnum["GitLab"] = "GitLab";
-})(PivotalTrackerIntegrationInfoModelTypeEnum = exports.PivotalTrackerIntegrationInfoModelTypeEnum || (exports.PivotalTrackerIntegrationInfoModelTypeEnum = {}));
+ * @export
+ */
+exports.PivotalTrackerIntegrationInfoModelTypeEnum = {
+    NetsparkerEnterprise: 'NetsparkerEnterprise',
+    Webhook: 'Webhook',
+    Zapier: 'Zapier',
+    Slack: 'Slack',
+    Mattermost: 'Mattermost',
+    MicrosoftTeams: 'MicrosoftTeams',
+    AzureDevOps: 'AzureDevOps',
+    Bitbucket: 'Bitbucket',
+    Bugzilla: 'Bugzilla',
+    Clubhouse: 'Clubhouse',
+    DefectDojo: 'DefectDojo',
+    PivotalTracker: 'PivotalTracker',
+    Jira: 'Jira',
+    FogBugz: 'FogBugz',
+    GitHub: 'GitHub',
+    PagerDuty: 'PagerDuty',
+    Kafka: 'Kafka',
+    Kenna: 'Kenna',
+    Redmine: 'Redmine',
+    ServiceNow: 'ServiceNow',
+    Tfs: 'TFS',
+    Unfuddle: 'Unfuddle',
+    YouTrack: 'YouTrack',
+    Freshservice: 'Freshservice',
+    Splunk: 'Splunk',
+    JazzTeam: 'JazzTeam',
+    ServiceNowVrm: 'ServiceNowVRM',
+    Asana: 'Asana',
+    Trello: 'Trello',
+    Hashicorp: 'Hashicorp',
+    CyberArk: 'CyberArk',
+    AzureKeyVault: 'AzureKeyVault',
+    GitLab: 'GitLab'
+};
 /**
-* @export
-* @enum {string}
-*/
-var PivotalTrackerIntegrationInfoModelTemplateTypeEnum;
-(function (PivotalTrackerIntegrationInfoModelTemplateTypeEnum) {
-    PivotalTrackerIntegrationInfoModelTemplateTypeEnum["Standard"] = "Standard";
-    PivotalTrackerIntegrationInfoModelTemplateTypeEnum["Detailed"] = "Detailed";
-})(PivotalTrackerIntegrationInfoModelTemplateTypeEnum = exports.PivotalTrackerIntegrationInfoModelTemplateTypeEnum || (exports.PivotalTrackerIntegrationInfoModelTemplateTypeEnum = {}));
+ * @export
+ */
+exports.PivotalTrackerIntegrationInfoModelTemplateTypeEnum = {
+    Standard: 'Standard',
+    Detailed: 'Detailed'
+};
 /**
  * Check if a given object implements the PivotalTrackerIntegrationInfoModel interface.
  */

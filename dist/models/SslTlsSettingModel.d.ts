@@ -59,21 +59,21 @@ export interface SslTlsSettingModel {
     tls13Enabled?: boolean;
 }
 /**
-* @export
-* @enum {string}
-*/
-export declare enum SslTlsSettingModelExternalDomainInvalidCertificateActionEnum {
-    Ignore = "Ignore",
-    Reject = "Reject"
-}
+ * @export
+ */
+export declare const SslTlsSettingModelExternalDomainInvalidCertificateActionEnum: {
+    readonly Ignore: "Ignore";
+    readonly Reject: "Reject";
+};
+export type SslTlsSettingModelExternalDomainInvalidCertificateActionEnum = typeof SslTlsSettingModelExternalDomainInvalidCertificateActionEnum[keyof typeof SslTlsSettingModelExternalDomainInvalidCertificateActionEnum];
 /**
-* @export
-* @enum {string}
-*/
-export declare enum SslTlsSettingModelTargetUrlInvalidCertificateActionEnum {
-    Ignore = "Ignore",
-    Reject = "Reject"
-}
+ * @export
+ */
+export declare const SslTlsSettingModelTargetUrlInvalidCertificateActionEnum: {
+    readonly Ignore: "Ignore";
+    readonly Reject: "Reject";
+};
+export type SslTlsSettingModelTargetUrlInvalidCertificateActionEnum = typeof SslTlsSettingModelTargetUrlInvalidCertificateActionEnum[keyof typeof SslTlsSettingModelTargetUrlInvalidCertificateActionEnum];
 /**
  * Check if a given object implements the SslTlsSettingModel interface.
  */

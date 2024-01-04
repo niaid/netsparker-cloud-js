@@ -133,52 +133,52 @@ export interface YouTrackIntegrationInfoModel {
     integrationWizardResultModel?: IntegrationWizardResultModel;
 }
 /**
-* @export
-* @enum {string}
-*/
-export declare enum YouTrackIntegrationInfoModelTypeEnum {
-    Jira = "Jira",
-    GitHub = "GitHub",
-    Tfs = "TFS",
-    FogBugz = "FogBugz",
-    ServiceNow = "ServiceNow",
-    Slack = "Slack",
-    GitLab = "GitLab",
-    Bitbucket = "Bitbucket",
-    Unfuddle = "Unfuddle",
-    Zapier = "Zapier",
-    AzureDevOps = "AzureDevOps",
-    Redmine = "Redmine",
-    Bugzilla = "Bugzilla",
-    Kafka = "Kafka",
-    PagerDuty = "PagerDuty",
-    MicrosoftTeams = "MicrosoftTeams",
-    Clubhouse = "Clubhouse",
-    Trello = "Trello",
-    Asana = "Asana",
-    Webhook = "Webhook",
-    Kenna = "Kenna",
-    Freshservice = "Freshservice",
-    YouTrack = "YouTrack",
-    NetsparkerEnterprise = "NetsparkerEnterprise",
-    Splunk = "Splunk",
-    Mattermost = "Mattermost",
-    Hashicorp = "Hashicorp",
-    PivotalTracker = "PivotalTracker",
-    CyberArk = "CyberArk",
-    DefectDojo = "DefectDojo",
-    JazzTeam = "JazzTeam",
-    AzureKeyVault = "AzureKeyVault",
-    ServiceNowVrm = "ServiceNowVRM"
-}
+ * @export
+ */
+export declare const YouTrackIntegrationInfoModelTypeEnum: {
+    readonly NetsparkerEnterprise: "NetsparkerEnterprise";
+    readonly Webhook: "Webhook";
+    readonly Zapier: "Zapier";
+    readonly Slack: "Slack";
+    readonly Mattermost: "Mattermost";
+    readonly MicrosoftTeams: "MicrosoftTeams";
+    readonly AzureDevOps: "AzureDevOps";
+    readonly Bitbucket: "Bitbucket";
+    readonly Bugzilla: "Bugzilla";
+    readonly Clubhouse: "Clubhouse";
+    readonly DefectDojo: "DefectDojo";
+    readonly PivotalTracker: "PivotalTracker";
+    readonly Jira: "Jira";
+    readonly FogBugz: "FogBugz";
+    readonly GitHub: "GitHub";
+    readonly PagerDuty: "PagerDuty";
+    readonly Kafka: "Kafka";
+    readonly Kenna: "Kenna";
+    readonly Redmine: "Redmine";
+    readonly ServiceNow: "ServiceNow";
+    readonly Tfs: "TFS";
+    readonly Unfuddle: "Unfuddle";
+    readonly YouTrack: "YouTrack";
+    readonly Freshservice: "Freshservice";
+    readonly Splunk: "Splunk";
+    readonly JazzTeam: "JazzTeam";
+    readonly ServiceNowVrm: "ServiceNowVRM";
+    readonly Asana: "Asana";
+    readonly Trello: "Trello";
+    readonly Hashicorp: "Hashicorp";
+    readonly CyberArk: "CyberArk";
+    readonly AzureKeyVault: "AzureKeyVault";
+    readonly GitLab: "GitLab";
+};
+export type YouTrackIntegrationInfoModelTypeEnum = typeof YouTrackIntegrationInfoModelTypeEnum[keyof typeof YouTrackIntegrationInfoModelTypeEnum];
 /**
-* @export
-* @enum {string}
-*/
-export declare enum YouTrackIntegrationInfoModelTemplateTypeEnum {
-    Standard = "Standard",
-    Detailed = "Detailed"
-}
+ * @export
+ */
+export declare const YouTrackIntegrationInfoModelTemplateTypeEnum: {
+    readonly Standard: "Standard";
+    readonly Detailed: "Detailed";
+};
+export type YouTrackIntegrationInfoModelTemplateTypeEnum = typeof YouTrackIntegrationInfoModelTemplateTypeEnum[keyof typeof YouTrackIntegrationInfoModelTemplateTypeEnum];
 /**
  * Check if a given object implements the YouTrackIntegrationInfoModel interface.
  */

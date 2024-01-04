@@ -75,35 +75,37 @@ export interface IntegrationUserMappingItemModel {
     userId: string;
 }
 
+
 /**
-* @export
-* @enum {string}
-*/
-export enum IntegrationUserMappingItemModelIntegrationSystemEnum {
-    Teamcity = 'Teamcity',
-    Jenkins = 'Jenkins',
-    Bamboo = 'Bamboo',
-    GitLab = 'GitLab',
-    AzureDevOps = 'AzureDevOps',
-    Jira = 'Jira',
-    CircleCi = 'CircleCI',
-    TravisCi = 'TravisCI',
-    UrbanCodeDeploy = 'UrbanCodeDeploy',
-    GitHubActions = 'GitHubActions'
-}
+ * @export
+ */
+export const IntegrationUserMappingItemModelIntegrationSystemEnum = {
+    Teamcity: 'Teamcity',
+    Jenkins: 'Jenkins',
+    Bamboo: 'Bamboo',
+    GitLab: 'GitLab',
+    AzureDevOps: 'AzureDevOps',
+    Jira: 'Jira',
+    CircleCi: 'CircleCI',
+    TravisCi: 'TravisCI',
+    UrbanCodeDeploy: 'UrbanCodeDeploy',
+    GitHubActions: 'GitHubActions'
+} as const;
+export type IntegrationUserMappingItemModelIntegrationSystemEnum = typeof IntegrationUserMappingItemModelIntegrationSystemEnum[keyof typeof IntegrationUserMappingItemModelIntegrationSystemEnum];
+
 /**
-* @export
-* @enum {string}
-*/
-export enum IntegrationUserMappingItemModelResultEnum {
-    NotFound = 'NotFound',
-    BadRequest = 'BadRequest',
-    Duplicate = 'Duplicate',
-    Saved = 'Saved',
-    Edited = 'Edited',
-    Deleted = 'Deleted',
-    Exist = 'Exist'
-}
+ * @export
+ */
+export const IntegrationUserMappingItemModelResultEnum = {
+    NotFound: 'NotFound',
+    BadRequest: 'BadRequest',
+    Duplicate: 'Duplicate',
+    Saved: 'Saved',
+    Edited: 'Edited',
+    Deleted: 'Deleted',
+    Exist: 'Exist'
+} as const;
+export type IntegrationUserMappingItemModelResultEnum = typeof IntegrationUserMappingItemModelResultEnum[keyof typeof IntegrationUserMappingItemModelResultEnum];
 
 
 /**

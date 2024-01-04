@@ -33,28 +33,29 @@ export interface ImportLinksValidationApiModel {
     importType?: ImportLinksValidationApiModelImportTypeEnum;
 }
 
+
 /**
-* @export
-* @enum {string}
-*/
-export enum ImportLinksValidationApiModelImportTypeEnum {
-    None = 'None',
-    Fiddler = 'Fiddler',
-    Burp = 'Burp',
-    Swagger = 'Swagger',
-    OwaspZap = 'OwaspZap',
-    AspNet = 'AspNet',
-    HttpArchive = 'HttpArchive',
-    Wadl = 'Wadl',
-    Wsdl = 'Wsdl',
-    Postman = 'Postman',
-    InvictiSessionFile = 'InvictiSessionFile',
-    CsvImporter = 'CsvImporter',
-    Iodocs = 'Iodocs',
-    WordPress = 'WordPress',
-    Raml = 'Raml',
-    GraphQl = 'GraphQl'
-}
+ * @export
+ */
+export const ImportLinksValidationApiModelImportTypeEnum = {
+    None: 'None',
+    Fiddler: 'Fiddler',
+    Burp: 'Burp',
+    Swagger: 'Swagger',
+    OwaspZap: 'OwaspZap',
+    AspNet: 'AspNet',
+    HttpArchive: 'HttpArchive',
+    Wadl: 'Wadl',
+    Wsdl: 'Wsdl',
+    Postman: 'Postman',
+    InvictiSessionFile: 'InvictiSessionFile',
+    CsvImporter: 'CsvImporter',
+    Iodocs: 'Iodocs',
+    WordPress: 'WordPress',
+    Raml: 'Raml',
+    GraphQl: 'GraphQl'
+} as const;
+export type ImportLinksValidationApiModelImportTypeEnum = typeof ImportLinksValidationApiModelImportTypeEnum[keyof typeof ImportLinksValidationApiModelImportTypeEnum];
 
 
 /**

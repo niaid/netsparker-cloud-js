@@ -18,54 +18,50 @@ const runtime_1 = require("../runtime");
 const IntegrationCustomFieldVm_1 = require("./IntegrationCustomFieldVm");
 const IntegrationWizardResultModel_1 = require("./IntegrationWizardResultModel");
 /**
-* @export
-* @enum {string}
-*/
-var AzureDevOpsIntegrationInfoModelTypeEnum;
-(function (AzureDevOpsIntegrationInfoModelTypeEnum) {
-    AzureDevOpsIntegrationInfoModelTypeEnum["NetsparkerEnterprise"] = "NetsparkerEnterprise";
-    AzureDevOpsIntegrationInfoModelTypeEnum["Webhook"] = "Webhook";
-    AzureDevOpsIntegrationInfoModelTypeEnum["Zapier"] = "Zapier";
-    AzureDevOpsIntegrationInfoModelTypeEnum["Slack"] = "Slack";
-    AzureDevOpsIntegrationInfoModelTypeEnum["Mattermost"] = "Mattermost";
-    AzureDevOpsIntegrationInfoModelTypeEnum["MicrosoftTeams"] = "MicrosoftTeams";
-    AzureDevOpsIntegrationInfoModelTypeEnum["AzureDevOps"] = "AzureDevOps";
-    AzureDevOpsIntegrationInfoModelTypeEnum["Bitbucket"] = "Bitbucket";
-    AzureDevOpsIntegrationInfoModelTypeEnum["Bugzilla"] = "Bugzilla";
-    AzureDevOpsIntegrationInfoModelTypeEnum["Clubhouse"] = "Clubhouse";
-    AzureDevOpsIntegrationInfoModelTypeEnum["DefectDojo"] = "DefectDojo";
-    AzureDevOpsIntegrationInfoModelTypeEnum["PivotalTracker"] = "PivotalTracker";
-    AzureDevOpsIntegrationInfoModelTypeEnum["Jira"] = "Jira";
-    AzureDevOpsIntegrationInfoModelTypeEnum["FogBugz"] = "FogBugz";
-    AzureDevOpsIntegrationInfoModelTypeEnum["GitHub"] = "GitHub";
-    AzureDevOpsIntegrationInfoModelTypeEnum["PagerDuty"] = "PagerDuty";
-    AzureDevOpsIntegrationInfoModelTypeEnum["Kafka"] = "Kafka";
-    AzureDevOpsIntegrationInfoModelTypeEnum["Kenna"] = "Kenna";
-    AzureDevOpsIntegrationInfoModelTypeEnum["Redmine"] = "Redmine";
-    AzureDevOpsIntegrationInfoModelTypeEnum["ServiceNow"] = "ServiceNow";
-    AzureDevOpsIntegrationInfoModelTypeEnum["Tfs"] = "TFS";
-    AzureDevOpsIntegrationInfoModelTypeEnum["Unfuddle"] = "Unfuddle";
-    AzureDevOpsIntegrationInfoModelTypeEnum["YouTrack"] = "YouTrack";
-    AzureDevOpsIntegrationInfoModelTypeEnum["Freshservice"] = "Freshservice";
-    AzureDevOpsIntegrationInfoModelTypeEnum["Splunk"] = "Splunk";
-    AzureDevOpsIntegrationInfoModelTypeEnum["JazzTeam"] = "JazzTeam";
-    AzureDevOpsIntegrationInfoModelTypeEnum["ServiceNowVrm"] = "ServiceNowVRM";
-    AzureDevOpsIntegrationInfoModelTypeEnum["Asana"] = "Asana";
-    AzureDevOpsIntegrationInfoModelTypeEnum["Trello"] = "Trello";
-    AzureDevOpsIntegrationInfoModelTypeEnum["Hashicorp"] = "Hashicorp";
-    AzureDevOpsIntegrationInfoModelTypeEnum["CyberArk"] = "CyberArk";
-    AzureDevOpsIntegrationInfoModelTypeEnum["AzureKeyVault"] = "AzureKeyVault";
-    AzureDevOpsIntegrationInfoModelTypeEnum["GitLab"] = "GitLab";
-})(AzureDevOpsIntegrationInfoModelTypeEnum = exports.AzureDevOpsIntegrationInfoModelTypeEnum || (exports.AzureDevOpsIntegrationInfoModelTypeEnum = {}));
+ * @export
+ */
+exports.AzureDevOpsIntegrationInfoModelTypeEnum = {
+    Jira: 'Jira',
+    GitHub: 'GitHub',
+    Tfs: 'TFS',
+    FogBugz: 'FogBugz',
+    ServiceNow: 'ServiceNow',
+    Slack: 'Slack',
+    GitLab: 'GitLab',
+    Bitbucket: 'Bitbucket',
+    Unfuddle: 'Unfuddle',
+    Zapier: 'Zapier',
+    AzureDevOps: 'AzureDevOps',
+    Redmine: 'Redmine',
+    Bugzilla: 'Bugzilla',
+    Kafka: 'Kafka',
+    PagerDuty: 'PagerDuty',
+    MicrosoftTeams: 'MicrosoftTeams',
+    Clubhouse: 'Clubhouse',
+    Trello: 'Trello',
+    Asana: 'Asana',
+    Webhook: 'Webhook',
+    Kenna: 'Kenna',
+    Freshservice: 'Freshservice',
+    YouTrack: 'YouTrack',
+    NetsparkerEnterprise: 'NetsparkerEnterprise',
+    Splunk: 'Splunk',
+    Mattermost: 'Mattermost',
+    Hashicorp: 'Hashicorp',
+    PivotalTracker: 'PivotalTracker',
+    CyberArk: 'CyberArk',
+    DefectDojo: 'DefectDojo',
+    JazzTeam: 'JazzTeam',
+    AzureKeyVault: 'AzureKeyVault',
+    ServiceNowVrm: 'ServiceNowVRM'
+};
 /**
-* @export
-* @enum {string}
-*/
-var AzureDevOpsIntegrationInfoModelTemplateTypeEnum;
-(function (AzureDevOpsIntegrationInfoModelTemplateTypeEnum) {
-    AzureDevOpsIntegrationInfoModelTemplateTypeEnum["Standard"] = "Standard";
-    AzureDevOpsIntegrationInfoModelTemplateTypeEnum["Detailed"] = "Detailed";
-})(AzureDevOpsIntegrationInfoModelTemplateTypeEnum = exports.AzureDevOpsIntegrationInfoModelTemplateTypeEnum || (exports.AzureDevOpsIntegrationInfoModelTemplateTypeEnum = {}));
+ * @export
+ */
+exports.AzureDevOpsIntegrationInfoModelTemplateTypeEnum = {
+    Standard: 'Standard',
+    Detailed: 'Detailed'
+};
 /**
  * Check if a given object implements the AzureDevOpsIntegrationInfoModel interface.
  */

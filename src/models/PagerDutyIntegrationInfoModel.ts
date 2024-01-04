@@ -190,69 +190,73 @@ export interface PagerDutyIntegrationInfoModel {
     integrationWizardResultModel?: IntegrationWizardResultModel;
 }
 
+
 /**
-* @export
-* @enum {string}
-*/
-export enum PagerDutyIntegrationInfoModelServiceTypeEnum {
-    Service = 'service',
-    ServiceReference = 'service_reference'
-}
+ * @export
+ */
+export const PagerDutyIntegrationInfoModelServiceTypeEnum = {
+    Service: 'service',
+    ServiceReference: 'service_reference'
+} as const;
+export type PagerDutyIntegrationInfoModelServiceTypeEnum = typeof PagerDutyIntegrationInfoModelServiceTypeEnum[keyof typeof PagerDutyIntegrationInfoModelServiceTypeEnum];
+
 /**
-* @export
-* @enum {string}
-*/
-export enum PagerDutyIntegrationInfoModelUrgencyEnum {
-    High = 'high',
-    Low = 'low'
-}
+ * @export
+ */
+export const PagerDutyIntegrationInfoModelUrgencyEnum = {
+    High: 'high',
+    Low: 'low'
+} as const;
+export type PagerDutyIntegrationInfoModelUrgencyEnum = typeof PagerDutyIntegrationInfoModelUrgencyEnum[keyof typeof PagerDutyIntegrationInfoModelUrgencyEnum];
+
 /**
-* @export
-* @enum {string}
-*/
-export enum PagerDutyIntegrationInfoModelTypeEnum {
-    NetsparkerEnterprise = 'NetsparkerEnterprise',
-    Webhook = 'Webhook',
-    Zapier = 'Zapier',
-    Slack = 'Slack',
-    Mattermost = 'Mattermost',
-    MicrosoftTeams = 'MicrosoftTeams',
-    AzureDevOps = 'AzureDevOps',
-    Bitbucket = 'Bitbucket',
-    Bugzilla = 'Bugzilla',
-    Clubhouse = 'Clubhouse',
-    DefectDojo = 'DefectDojo',
-    PivotalTracker = 'PivotalTracker',
-    Jira = 'Jira',
-    FogBugz = 'FogBugz',
-    GitHub = 'GitHub',
-    PagerDuty = 'PagerDuty',
-    Kafka = 'Kafka',
-    Kenna = 'Kenna',
-    Redmine = 'Redmine',
-    ServiceNow = 'ServiceNow',
-    Tfs = 'TFS',
-    Unfuddle = 'Unfuddle',
-    YouTrack = 'YouTrack',
-    Freshservice = 'Freshservice',
-    Splunk = 'Splunk',
-    JazzTeam = 'JazzTeam',
-    ServiceNowVrm = 'ServiceNowVRM',
-    Asana = 'Asana',
-    Trello = 'Trello',
-    Hashicorp = 'Hashicorp',
-    CyberArk = 'CyberArk',
-    AzureKeyVault = 'AzureKeyVault',
-    GitLab = 'GitLab'
-}
+ * @export
+ */
+export const PagerDutyIntegrationInfoModelTypeEnum = {
+    Jira: 'Jira',
+    GitHub: 'GitHub',
+    Tfs: 'TFS',
+    FogBugz: 'FogBugz',
+    ServiceNow: 'ServiceNow',
+    Slack: 'Slack',
+    GitLab: 'GitLab',
+    Bitbucket: 'Bitbucket',
+    Unfuddle: 'Unfuddle',
+    Zapier: 'Zapier',
+    AzureDevOps: 'AzureDevOps',
+    Redmine: 'Redmine',
+    Bugzilla: 'Bugzilla',
+    Kafka: 'Kafka',
+    PagerDuty: 'PagerDuty',
+    MicrosoftTeams: 'MicrosoftTeams',
+    Clubhouse: 'Clubhouse',
+    Trello: 'Trello',
+    Asana: 'Asana',
+    Webhook: 'Webhook',
+    Kenna: 'Kenna',
+    Freshservice: 'Freshservice',
+    YouTrack: 'YouTrack',
+    NetsparkerEnterprise: 'NetsparkerEnterprise',
+    Splunk: 'Splunk',
+    Mattermost: 'Mattermost',
+    Hashicorp: 'Hashicorp',
+    PivotalTracker: 'PivotalTracker',
+    CyberArk: 'CyberArk',
+    DefectDojo: 'DefectDojo',
+    JazzTeam: 'JazzTeam',
+    AzureKeyVault: 'AzureKeyVault',
+    ServiceNowVrm: 'ServiceNowVRM'
+} as const;
+export type PagerDutyIntegrationInfoModelTypeEnum = typeof PagerDutyIntegrationInfoModelTypeEnum[keyof typeof PagerDutyIntegrationInfoModelTypeEnum];
+
 /**
-* @export
-* @enum {string}
-*/
-export enum PagerDutyIntegrationInfoModelTemplateTypeEnum {
-    Standard = 'Standard',
-    Detailed = 'Detailed'
-}
+ * @export
+ */
+export const PagerDutyIntegrationInfoModelTemplateTypeEnum = {
+    Standard: 'Standard',
+    Detailed: 'Detailed'
+} as const;
+export type PagerDutyIntegrationInfoModelTemplateTypeEnum = typeof PagerDutyIntegrationInfoModelTemplateTypeEnum[keyof typeof PagerDutyIntegrationInfoModelTemplateTypeEnum];
 
 
 /**

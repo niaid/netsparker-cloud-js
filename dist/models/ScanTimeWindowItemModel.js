@@ -16,19 +16,17 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ScanTimeWindowItemModelToJSON = exports.ScanTimeWindowItemModelFromJSONTyped = exports.ScanTimeWindowItemModelFromJSON = exports.instanceOfScanTimeWindowItemModel = exports.ScanTimeWindowItemModelDayEnum = void 0;
 const runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
-var ScanTimeWindowItemModelDayEnum;
-(function (ScanTimeWindowItemModelDayEnum) {
-    ScanTimeWindowItemModelDayEnum["Sunday"] = "Sunday";
-    ScanTimeWindowItemModelDayEnum["Monday"] = "Monday";
-    ScanTimeWindowItemModelDayEnum["Tuesday"] = "Tuesday";
-    ScanTimeWindowItemModelDayEnum["Wednesday"] = "Wednesday";
-    ScanTimeWindowItemModelDayEnum["Thursday"] = "Thursday";
-    ScanTimeWindowItemModelDayEnum["Friday"] = "Friday";
-    ScanTimeWindowItemModelDayEnum["Saturday"] = "Saturday";
-})(ScanTimeWindowItemModelDayEnum = exports.ScanTimeWindowItemModelDayEnum || (exports.ScanTimeWindowItemModelDayEnum = {}));
+ * @export
+ */
+exports.ScanTimeWindowItemModelDayEnum = {
+    Sunday: 'Sunday',
+    Monday: 'Monday',
+    Tuesday: 'Tuesday',
+    Wednesday: 'Wednesday',
+    Thursday: 'Thursday',
+    Friday: 'Friday',
+    Saturday: 'Saturday'
+};
 /**
  * Check if a given object implements the ScanTimeWindowItemModel interface.
  */

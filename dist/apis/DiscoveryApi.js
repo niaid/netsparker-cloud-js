@@ -438,40 +438,32 @@ class DiscoveryApi extends runtime.BaseAPI {
 }
 exports.DiscoveryApi = DiscoveryApi;
 /**
-  * @export
-  * @enum {string}
-  */
-var DiscoveryConnectionByIdTypeEnum;
-(function (DiscoveryConnectionByIdTypeEnum) {
-    DiscoveryConnectionByIdTypeEnum["Aws"] = "Aws";
-})(DiscoveryConnectionByIdTypeEnum = exports.DiscoveryConnectionByIdTypeEnum || (exports.DiscoveryConnectionByIdTypeEnum = {}));
+ * @export
+ */
+exports.DiscoveryConnectionByIdTypeEnum = {
+    Aws: 'Aws'
+};
 /**
-  * @export
-  * @enum {string}
-  */
-var DiscoveryConnectionsTypeEnum;
-(function (DiscoveryConnectionsTypeEnum) {
-    DiscoveryConnectionsTypeEnum["Aws"] = "Aws";
-})(DiscoveryConnectionsTypeEnum = exports.DiscoveryConnectionsTypeEnum || (exports.DiscoveryConnectionsTypeEnum = {}));
+ * @export
+ */
+exports.DiscoveryConnectionsTypeEnum = {
+    Aws: 'Aws'
+};
 /**
-  * @export
-  * @enum {string}
-  */
-var DiscoveryExportCsvSeparatorEnum;
-(function (DiscoveryExportCsvSeparatorEnum) {
-    DiscoveryExportCsvSeparatorEnum["Comma"] = "Comma";
-    DiscoveryExportCsvSeparatorEnum["Semicolon"] = "Semicolon";
-    DiscoveryExportCsvSeparatorEnum["Pipe"] = "Pipe";
-    DiscoveryExportCsvSeparatorEnum["Tab"] = "Tab";
-})(DiscoveryExportCsvSeparatorEnum = exports.DiscoveryExportCsvSeparatorEnum || (exports.DiscoveryExportCsvSeparatorEnum = {}));
+ * @export
+ */
+exports.DiscoveryExportCsvSeparatorEnum = {
+    Comma: 'Comma',
+    Semicolon: 'Semicolon',
+    Pipe: 'Pipe',
+    Tab: 'Tab'
+};
 /**
-  * @export
-  * @enum {string}
-  */
-var DiscoveryListByFilterStatusEnum;
-(function (DiscoveryListByFilterStatusEnum) {
-    DiscoveryListByFilterStatusEnum["Discovered"] = "Discovered";
-    DiscoveryListByFilterStatusEnum["Ignored"] = "Ignored";
-    DiscoveryListByFilterStatusEnum["Created"] = "Created";
-})(DiscoveryListByFilterStatusEnum = exports.DiscoveryListByFilterStatusEnum || (exports.DiscoveryListByFilterStatusEnum = {}));
+ * @export
+ */
+exports.DiscoveryListByFilterStatusEnum = {
+    Discovered: 'Discovered',
+    Ignored: 'Ignored',
+    Created: 'Created'
+};
 //# sourceMappingURL=DiscoveryApi.js.map

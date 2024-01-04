@@ -28,11 +28,11 @@ import {
     UserHealthCheckApiModelToJSON,
 } from '../models/index';
 
-export interface AccountApiAccountLicenseValidateRequest {
+export interface AccountLicenseValidateRequest {
     username: string;
 }
 
-export interface AccountApiAccountScanControl0Request {
+export interface AccountScanControl0Request {
     model: ScanControlApiModel;
 }
 
@@ -70,7 +70,7 @@ export class AccountApi extends runtime.BaseAPI {
     /**
      * If user info and license validated it returns success, otherwise fails
      */
-    async accountLicenseValidateRaw(requestParameters: AccountApiAccountLicenseValidateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async accountLicenseValidateRaw(requestParameters: AccountLicenseValidateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters.username === null || requestParameters.username === undefined) {
             throw new runtime.RequiredError('username','Required parameter requestParameters.username was null or undefined when calling accountLicenseValidate.');
         }
@@ -96,7 +96,7 @@ export class AccountApi extends runtime.BaseAPI {
     /**
      * If user info and license validated it returns success, otherwise fails
      */
-    async accountLicenseValidate(requestParameters: AccountApiAccountLicenseValidateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+    async accountLicenseValidate(requestParameters: AccountLicenseValidateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
         await this.accountLicenseValidateRaw(requestParameters, initOverrides);
     }
 
@@ -179,7 +179,7 @@ export class AccountApi extends runtime.BaseAPI {
     /**
      * Sets the scan control settings of account
      */
-    async accountScanControl_1Raw(requestParameters: AccountApiAccountScanControl0Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>> {
+    async accountScanControl_1Raw(requestParameters: AccountScanControl0Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>> {
         if (requestParameters.model === null || requestParameters.model === undefined) {
             throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling accountScanControl_1.');
         }
@@ -204,7 +204,7 @@ export class AccountApi extends runtime.BaseAPI {
     /**
      * Sets the scan control settings of account
      */
-    async accountScanControl_1(requestParameters: AccountApiAccountScanControl0Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object> {
+    async accountScanControl_1(requestParameters: AccountScanControl0Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object> {
         const response = await this.accountScanControl_1Raw(requestParameters, initOverrides);
         return await response.value();
     }

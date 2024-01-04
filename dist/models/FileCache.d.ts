@@ -59,30 +59,30 @@ export interface FileCache {
     apiURL?: string;
 }
 /**
-* @export
-* @enum {string}
-*/
-export declare enum FileCacheImporterTypeEnum {
-    None = "None",
-    Fiddler = "Fiddler",
-    Burp = "Burp",
-    Swagger = "Swagger",
-    OwaspZap = "OwaspZap",
-    AspNet = "AspNet",
-    HttpArchive = "HttpArchive",
-    Wadl = "Wadl",
-    Wsdl = "Wsdl",
-    Postman = "Postman",
-    Netsparker = "Netsparker",
-    HttpRequestImporter = "HttpRequestImporter",
-    LinkImporter = "LinkImporter",
-    CsvImporter = "CsvImporter",
-    Iodocs = "Iodocs",
-    WordPress = "WordPress",
-    Raml = "Raml",
-    GraphQl = "GraphQl",
-    AcxXml = "AcxXml"
-}
+ * @export
+ */
+export declare const FileCacheImporterTypeEnum: {
+    readonly None: "None";
+    readonly Fiddler: "Fiddler";
+    readonly Burp: "Burp";
+    readonly Swagger: "Swagger";
+    readonly OwaspZap: "OwaspZap";
+    readonly AspNet: "AspNet";
+    readonly HttpArchive: "HttpArchive";
+    readonly Wadl: "Wadl";
+    readonly Wsdl: "Wsdl";
+    readonly Postman: "Postman";
+    readonly Netsparker: "Netsparker";
+    readonly HttpRequestImporter: "HttpRequestImporter";
+    readonly LinkImporter: "LinkImporter";
+    readonly CsvImporter: "CsvImporter";
+    readonly Iodocs: "Iodocs";
+    readonly WordPress: "WordPress";
+    readonly Raml: "Raml";
+    readonly GraphQl: "GraphQl";
+    readonly AcxXml: "AcxXml";
+};
+export type FileCacheImporterTypeEnum = typeof FileCacheImporterTypeEnum[keyof typeof FileCacheImporterTypeEnum];
 /**
  * Check if a given object implements the FileCache interface.
  */

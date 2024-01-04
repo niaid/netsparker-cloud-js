@@ -142,26 +142,28 @@ export interface OAuth2SettingApiModel {
     basicAuthenticationSetting?: BasicAuthenticationSettingApiModel;
 }
 
+
 /**
-* @export
-* @enum {string}
-*/
-export enum OAuth2SettingApiModelFlowTypeEnum {
-    AuthorizationCode = 'AuthorizationCode',
-    Implicit = 'Implicit',
-    ResourceOwnerPasswordCredentials = 'ResourceOwnerPasswordCredentials',
-    ClientCredentials = 'ClientCredentials',
-    Custom = 'Custom'
-}
+ * @export
+ */
+export const OAuth2SettingApiModelFlowTypeEnum = {
+    AuthorizationCode: 'AuthorizationCode',
+    Implicit: 'Implicit',
+    ResourceOwnerPasswordCredentials: 'ResourceOwnerPasswordCredentials',
+    ClientCredentials: 'ClientCredentials',
+    Custom: 'Custom'
+} as const;
+export type OAuth2SettingApiModelFlowTypeEnum = typeof OAuth2SettingApiModelFlowTypeEnum[keyof typeof OAuth2SettingApiModelFlowTypeEnum];
+
 /**
-* @export
-* @enum {string}
-*/
-export enum OAuth2SettingApiModelAuthenticationTypeEnum {
-    None = 'None',
-    Form = 'Form',
-    Basic = 'Basic'
-}
+ * @export
+ */
+export const OAuth2SettingApiModelAuthenticationTypeEnum = {
+    None: 'None',
+    Form: 'Form',
+    Basic: 'Basic'
+} as const;
+export type OAuth2SettingApiModelAuthenticationTypeEnum = typeof OAuth2SettingApiModelAuthenticationTypeEnum[keyof typeof OAuth2SettingApiModelAuthenticationTypeEnum];
 
 
 /**

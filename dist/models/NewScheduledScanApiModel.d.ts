@@ -332,73 +332,73 @@ export interface NewScheduledScanApiModel {
     comments?: string;
 }
 /**
-* @export
-* @enum {string}
-*/
-export declare enum NewScheduledScanApiModelScheduleRunTypeEnum {
-    Once = "Once",
-    Daily = "Daily",
-    Weekly = "Weekly",
-    Monthly = "Monthly",
-    Quarterly = "Quarterly",
-    Biannually = "Biannually",
-    Yearly = "Yearly",
-    Custom = "Custom"
-}
+ * @export
+ */
+export declare const NewScheduledScanApiModelScheduleRunTypeEnum: {
+    readonly Once: "Once";
+    readonly Daily: "Daily";
+    readonly Weekly: "Weekly";
+    readonly Monthly: "Monthly";
+    readonly Quarterly: "Quarterly";
+    readonly Biannually: "Biannually";
+    readonly Yearly: "Yearly";
+    readonly Custom: "Custom";
+};
+export type NewScheduledScanApiModelScheduleRunTypeEnum = typeof NewScheduledScanApiModelScheduleRunTypeEnum[keyof typeof NewScheduledScanApiModelScheduleRunTypeEnum];
 /**
-* @export
-* @enum {string}
-*/
-export declare enum NewScheduledScanApiModelCreateTypeEnum {
-    Website = "Website",
-    WebsiteGroup = "WebsiteGroup"
-}
+ * @export
+ */
+export declare const NewScheduledScanApiModelCreateTypeEnum: {
+    readonly Website: "Website";
+    readonly WebsiteGroup: "WebsiteGroup";
+};
+export type NewScheduledScanApiModelCreateTypeEnum = typeof NewScheduledScanApiModelCreateTypeEnum[keyof typeof NewScheduledScanApiModelCreateTypeEnum];
 /**
-* @export
-* @enum {string}
-*/
-export declare enum NewScheduledScanApiModelDisallowedHttpMethodsEnum {
-    Get = "GET",
-    Post = "POST",
-    Connect = "CONNECT",
-    Head = "HEAD",
-    Trace = "TRACE",
-    Debug = "DEBUG",
-    Track = "TRACK",
-    Put = "PUT",
-    Options = "OPTIONS",
-    Delete = "DELETE",
-    Link = "LINK",
-    Unlink = "UNLINK",
-    Patch = "PATCH"
-}
+ * @export
+ */
+export declare const NewScheduledScanApiModelDisallowedHttpMethodsEnum: {
+    readonly Get: "GET";
+    readonly Post: "POST";
+    readonly Connect: "CONNECT";
+    readonly Head: "HEAD";
+    readonly Trace: "TRACE";
+    readonly Debug: "DEBUG";
+    readonly Track: "TRACK";
+    readonly Put: "PUT";
+    readonly Options: "OPTIONS";
+    readonly Delete: "DELETE";
+    readonly Link: "LINK";
+    readonly Unlink: "UNLINK";
+    readonly Patch: "PATCH";
+};
+export type NewScheduledScanApiModelDisallowedHttpMethodsEnum = typeof NewScheduledScanApiModelDisallowedHttpMethodsEnum[keyof typeof NewScheduledScanApiModelDisallowedHttpMethodsEnum];
 /**
-* @export
-* @enum {string}
-*/
-export declare enum NewScheduledScanApiModelAuthenticationProfileOptionEnum {
-    DontUse = "DontUse",
-    UseMatchedProfile = "UseMatchedProfile",
-    SelectedProfile = "SelectedProfile"
-}
+ * @export
+ */
+export declare const NewScheduledScanApiModelAuthenticationProfileOptionEnum: {
+    readonly DontUse: "DontUse";
+    readonly UseMatchedProfile: "UseMatchedProfile";
+    readonly SelectedProfile: "SelectedProfile";
+};
+export type NewScheduledScanApiModelAuthenticationProfileOptionEnum = typeof NewScheduledScanApiModelAuthenticationProfileOptionEnum[keyof typeof NewScheduledScanApiModelAuthenticationProfileOptionEnum];
 /**
-* @export
-* @enum {string}
-*/
-export declare enum NewScheduledScanApiModelScopeEnum {
-    EnteredPathAndBelow = "EnteredPathAndBelow",
-    OnlyEnteredUrl = "OnlyEnteredUrl",
-    WholeDomain = "WholeDomain"
-}
+ * @export
+ */
+export declare const NewScheduledScanApiModelScopeEnum: {
+    readonly EnteredPathAndBelow: "EnteredPathAndBelow";
+    readonly OnlyEnteredUrl: "OnlyEnteredUrl";
+    readonly WholeDomain: "WholeDomain";
+};
+export type NewScheduledScanApiModelScopeEnum = typeof NewScheduledScanApiModelScopeEnum[keyof typeof NewScheduledScanApiModelScopeEnum];
 /**
-* @export
-* @enum {string}
-*/
-export declare enum NewScheduledScanApiModelUrlRewriteModeEnum {
-    None = "None",
-    Heuristic = "Heuristic",
-    Custom = "Custom"
-}
+ * @export
+ */
+export declare const NewScheduledScanApiModelUrlRewriteModeEnum: {
+    readonly None: "None";
+    readonly Heuristic: "Heuristic";
+    readonly Custom: "Custom";
+};
+export type NewScheduledScanApiModelUrlRewriteModeEnum = typeof NewScheduledScanApiModelUrlRewriteModeEnum[keyof typeof NewScheduledScanApiModelUrlRewriteModeEnum];
 /**
  * Check if a given object implements the NewScheduledScanApiModel interface.
  */

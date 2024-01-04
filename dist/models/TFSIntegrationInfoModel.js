@@ -18,54 +18,50 @@ const runtime_1 = require("../runtime");
 const IntegrationCustomFieldVm_1 = require("./IntegrationCustomFieldVm");
 const IntegrationWizardResultModel_1 = require("./IntegrationWizardResultModel");
 /**
-* @export
-* @enum {string}
-*/
-var TFSIntegrationInfoModelTypeEnum;
-(function (TFSIntegrationInfoModelTypeEnum) {
-    TFSIntegrationInfoModelTypeEnum["NetsparkerEnterprise"] = "NetsparkerEnterprise";
-    TFSIntegrationInfoModelTypeEnum["Webhook"] = "Webhook";
-    TFSIntegrationInfoModelTypeEnum["Zapier"] = "Zapier";
-    TFSIntegrationInfoModelTypeEnum["Slack"] = "Slack";
-    TFSIntegrationInfoModelTypeEnum["Mattermost"] = "Mattermost";
-    TFSIntegrationInfoModelTypeEnum["MicrosoftTeams"] = "MicrosoftTeams";
-    TFSIntegrationInfoModelTypeEnum["AzureDevOps"] = "AzureDevOps";
-    TFSIntegrationInfoModelTypeEnum["Bitbucket"] = "Bitbucket";
-    TFSIntegrationInfoModelTypeEnum["Bugzilla"] = "Bugzilla";
-    TFSIntegrationInfoModelTypeEnum["Clubhouse"] = "Clubhouse";
-    TFSIntegrationInfoModelTypeEnum["DefectDojo"] = "DefectDojo";
-    TFSIntegrationInfoModelTypeEnum["PivotalTracker"] = "PivotalTracker";
-    TFSIntegrationInfoModelTypeEnum["Jira"] = "Jira";
-    TFSIntegrationInfoModelTypeEnum["FogBugz"] = "FogBugz";
-    TFSIntegrationInfoModelTypeEnum["GitHub"] = "GitHub";
-    TFSIntegrationInfoModelTypeEnum["PagerDuty"] = "PagerDuty";
-    TFSIntegrationInfoModelTypeEnum["Kafka"] = "Kafka";
-    TFSIntegrationInfoModelTypeEnum["Kenna"] = "Kenna";
-    TFSIntegrationInfoModelTypeEnum["Redmine"] = "Redmine";
-    TFSIntegrationInfoModelTypeEnum["ServiceNow"] = "ServiceNow";
-    TFSIntegrationInfoModelTypeEnum["Tfs"] = "TFS";
-    TFSIntegrationInfoModelTypeEnum["Unfuddle"] = "Unfuddle";
-    TFSIntegrationInfoModelTypeEnum["YouTrack"] = "YouTrack";
-    TFSIntegrationInfoModelTypeEnum["Freshservice"] = "Freshservice";
-    TFSIntegrationInfoModelTypeEnum["Splunk"] = "Splunk";
-    TFSIntegrationInfoModelTypeEnum["JazzTeam"] = "JazzTeam";
-    TFSIntegrationInfoModelTypeEnum["ServiceNowVrm"] = "ServiceNowVRM";
-    TFSIntegrationInfoModelTypeEnum["Asana"] = "Asana";
-    TFSIntegrationInfoModelTypeEnum["Trello"] = "Trello";
-    TFSIntegrationInfoModelTypeEnum["Hashicorp"] = "Hashicorp";
-    TFSIntegrationInfoModelTypeEnum["CyberArk"] = "CyberArk";
-    TFSIntegrationInfoModelTypeEnum["AzureKeyVault"] = "AzureKeyVault";
-    TFSIntegrationInfoModelTypeEnum["GitLab"] = "GitLab";
-})(TFSIntegrationInfoModelTypeEnum = exports.TFSIntegrationInfoModelTypeEnum || (exports.TFSIntegrationInfoModelTypeEnum = {}));
+ * @export
+ */
+exports.TFSIntegrationInfoModelTypeEnum = {
+    Jira: 'Jira',
+    GitHub: 'GitHub',
+    Tfs: 'TFS',
+    FogBugz: 'FogBugz',
+    ServiceNow: 'ServiceNow',
+    Slack: 'Slack',
+    GitLab: 'GitLab',
+    Bitbucket: 'Bitbucket',
+    Unfuddle: 'Unfuddle',
+    Zapier: 'Zapier',
+    AzureDevOps: 'AzureDevOps',
+    Redmine: 'Redmine',
+    Bugzilla: 'Bugzilla',
+    Kafka: 'Kafka',
+    PagerDuty: 'PagerDuty',
+    MicrosoftTeams: 'MicrosoftTeams',
+    Clubhouse: 'Clubhouse',
+    Trello: 'Trello',
+    Asana: 'Asana',
+    Webhook: 'Webhook',
+    Kenna: 'Kenna',
+    Freshservice: 'Freshservice',
+    YouTrack: 'YouTrack',
+    NetsparkerEnterprise: 'NetsparkerEnterprise',
+    Splunk: 'Splunk',
+    Mattermost: 'Mattermost',
+    Hashicorp: 'Hashicorp',
+    PivotalTracker: 'PivotalTracker',
+    CyberArk: 'CyberArk',
+    DefectDojo: 'DefectDojo',
+    JazzTeam: 'JazzTeam',
+    AzureKeyVault: 'AzureKeyVault',
+    ServiceNowVrm: 'ServiceNowVRM'
+};
 /**
-* @export
-* @enum {string}
-*/
-var TFSIntegrationInfoModelTemplateTypeEnum;
-(function (TFSIntegrationInfoModelTemplateTypeEnum) {
-    TFSIntegrationInfoModelTemplateTypeEnum["Standard"] = "Standard";
-    TFSIntegrationInfoModelTemplateTypeEnum["Detailed"] = "Detailed";
-})(TFSIntegrationInfoModelTemplateTypeEnum = exports.TFSIntegrationInfoModelTemplateTypeEnum || (exports.TFSIntegrationInfoModelTemplateTypeEnum = {}));
+ * @export
+ */
+exports.TFSIntegrationInfoModelTemplateTypeEnum = {
+    Standard: 'Standard',
+    Detailed: 'Detailed'
+};
 /**
  * Check if a given object implements the TFSIntegrationInfoModel interface.
  */

@@ -130,26 +130,28 @@ export interface OAuth2SettingModel {
     threeLegged?: ThreeLeggedFields;
 }
 
+
 /**
-* @export
-* @enum {string}
-*/
-export enum OAuth2SettingModelSelectedFlowTypeEnum {
-    AuthorizationCode = 'AuthorizationCode',
-    Implicit = 'Implicit',
-    ResourceOwnerPasswordCredentials = 'ResourceOwnerPasswordCredentials',
-    ClientCredentials = 'ClientCredentials',
-    Custom = 'Custom'
-}
+ * @export
+ */
+export const OAuth2SettingModelSelectedFlowTypeEnum = {
+    AuthorizationCode: 'AuthorizationCode',
+    Implicit: 'Implicit',
+    ResourceOwnerPasswordCredentials: 'ResourceOwnerPasswordCredentials',
+    ClientCredentials: 'ClientCredentials',
+    Custom: 'Custom'
+} as const;
+export type OAuth2SettingModelSelectedFlowTypeEnum = typeof OAuth2SettingModelSelectedFlowTypeEnum[keyof typeof OAuth2SettingModelSelectedFlowTypeEnum];
+
 /**
-* @export
-* @enum {string}
-*/
-export enum OAuth2SettingModelSelectedAuthenticationTypeEnum {
-    None = 'None',
-    Form = 'Form',
-    Basic = 'Basic'
-}
+ * @export
+ */
+export const OAuth2SettingModelSelectedAuthenticationTypeEnum = {
+    None: 'None',
+    Form: 'Form',
+    Basic: 'Basic'
+} as const;
+export type OAuth2SettingModelSelectedAuthenticationTypeEnum = typeof OAuth2SettingModelSelectedAuthenticationTypeEnum[keyof typeof OAuth2SettingModelSelectedAuthenticationTypeEnum];
 
 
 /**

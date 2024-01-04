@@ -82,34 +82,36 @@ export interface SecurityCheckGroupModel {
     name?: string;
 }
 
+
 /**
-* @export
-* @enum {string}
-*/
-export enum SecurityCheckGroupModelTypeEnum {
-    Engine = 'Engine',
-    ResourceModifier = 'ResourceModifier'
-}
+ * @export
+ */
+export const SecurityCheckGroupModelTypeEnum = {
+    Engine: 'Engine',
+    ResourceModifier: 'ResourceModifier'
+} as const;
+export type SecurityCheckGroupModelTypeEnum = typeof SecurityCheckGroupModelTypeEnum[keyof typeof SecurityCheckGroupModelTypeEnum];
+
 /**
-* @export
-* @enum {string}
-*/
-export enum SecurityCheckGroupModelEngineGroupEnum {
-    SqlInjection = 'SqlInjection',
-    Xss = 'Xss',
-    CommandInjection = 'CommandInjection',
-    FileInclusion = 'FileInclusion',
-    Ssrf = 'Ssrf',
-    Xxe = 'Xxe',
-    StaticResources = 'StaticResources',
-    ResourceFinder = 'ResourceFinder',
-    ApacheStrutsRce = 'ApacheStrutsRce',
-    CodeEvaluation = 'CodeEvaluation',
-    CustomScriptChecks = 'CustomScriptChecks',
-    HeaderInjection = 'HeaderInjection',
-    NoSqlInjection = 'NoSqlInjection',
-    WordpressDetection = 'WordpressDetection'
-}
+ * @export
+ */
+export const SecurityCheckGroupModelEngineGroupEnum = {
+    SqlInjection: 'SqlInjection',
+    Xss: 'Xss',
+    CommandInjection: 'CommandInjection',
+    FileInclusion: 'FileInclusion',
+    Ssrf: 'Ssrf',
+    Xxe: 'Xxe',
+    StaticResources: 'StaticResources',
+    ResourceFinder: 'ResourceFinder',
+    ApacheStrutsRce: 'ApacheStrutsRce',
+    CodeEvaluation: 'CodeEvaluation',
+    CustomScriptChecks: 'CustomScriptChecks',
+    HeaderInjection: 'HeaderInjection',
+    NoSqlInjection: 'NoSqlInjection',
+    WordpressDetection: 'WordpressDetection'
+} as const;
+export type SecurityCheckGroupModelEngineGroupEnum = typeof SecurityCheckGroupModelEngineGroupEnum[keyof typeof SecurityCheckGroupModelEngineGroupEnum];
 
 
 /**

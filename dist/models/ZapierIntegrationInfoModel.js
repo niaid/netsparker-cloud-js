@@ -18,54 +18,50 @@ const runtime_1 = require("../runtime");
 const IntegrationCustomFieldVm_1 = require("./IntegrationCustomFieldVm");
 const IntegrationWizardResultModel_1 = require("./IntegrationWizardResultModel");
 /**
-* @export
-* @enum {string}
-*/
-var ZapierIntegrationInfoModelTypeEnum;
-(function (ZapierIntegrationInfoModelTypeEnum) {
-    ZapierIntegrationInfoModelTypeEnum["NetsparkerEnterprise"] = "NetsparkerEnterprise";
-    ZapierIntegrationInfoModelTypeEnum["Webhook"] = "Webhook";
-    ZapierIntegrationInfoModelTypeEnum["Zapier"] = "Zapier";
-    ZapierIntegrationInfoModelTypeEnum["Slack"] = "Slack";
-    ZapierIntegrationInfoModelTypeEnum["Mattermost"] = "Mattermost";
-    ZapierIntegrationInfoModelTypeEnum["MicrosoftTeams"] = "MicrosoftTeams";
-    ZapierIntegrationInfoModelTypeEnum["AzureDevOps"] = "AzureDevOps";
-    ZapierIntegrationInfoModelTypeEnum["Bitbucket"] = "Bitbucket";
-    ZapierIntegrationInfoModelTypeEnum["Bugzilla"] = "Bugzilla";
-    ZapierIntegrationInfoModelTypeEnum["Clubhouse"] = "Clubhouse";
-    ZapierIntegrationInfoModelTypeEnum["DefectDojo"] = "DefectDojo";
-    ZapierIntegrationInfoModelTypeEnum["PivotalTracker"] = "PivotalTracker";
-    ZapierIntegrationInfoModelTypeEnum["Jira"] = "Jira";
-    ZapierIntegrationInfoModelTypeEnum["FogBugz"] = "FogBugz";
-    ZapierIntegrationInfoModelTypeEnum["GitHub"] = "GitHub";
-    ZapierIntegrationInfoModelTypeEnum["PagerDuty"] = "PagerDuty";
-    ZapierIntegrationInfoModelTypeEnum["Kafka"] = "Kafka";
-    ZapierIntegrationInfoModelTypeEnum["Kenna"] = "Kenna";
-    ZapierIntegrationInfoModelTypeEnum["Redmine"] = "Redmine";
-    ZapierIntegrationInfoModelTypeEnum["ServiceNow"] = "ServiceNow";
-    ZapierIntegrationInfoModelTypeEnum["Tfs"] = "TFS";
-    ZapierIntegrationInfoModelTypeEnum["Unfuddle"] = "Unfuddle";
-    ZapierIntegrationInfoModelTypeEnum["YouTrack"] = "YouTrack";
-    ZapierIntegrationInfoModelTypeEnum["Freshservice"] = "Freshservice";
-    ZapierIntegrationInfoModelTypeEnum["Splunk"] = "Splunk";
-    ZapierIntegrationInfoModelTypeEnum["JazzTeam"] = "JazzTeam";
-    ZapierIntegrationInfoModelTypeEnum["ServiceNowVrm"] = "ServiceNowVRM";
-    ZapierIntegrationInfoModelTypeEnum["Asana"] = "Asana";
-    ZapierIntegrationInfoModelTypeEnum["Trello"] = "Trello";
-    ZapierIntegrationInfoModelTypeEnum["Hashicorp"] = "Hashicorp";
-    ZapierIntegrationInfoModelTypeEnum["CyberArk"] = "CyberArk";
-    ZapierIntegrationInfoModelTypeEnum["AzureKeyVault"] = "AzureKeyVault";
-    ZapierIntegrationInfoModelTypeEnum["GitLab"] = "GitLab";
-})(ZapierIntegrationInfoModelTypeEnum = exports.ZapierIntegrationInfoModelTypeEnum || (exports.ZapierIntegrationInfoModelTypeEnum = {}));
+ * @export
+ */
+exports.ZapierIntegrationInfoModelTypeEnum = {
+    NetsparkerEnterprise: 'NetsparkerEnterprise',
+    Webhook: 'Webhook',
+    Zapier: 'Zapier',
+    Slack: 'Slack',
+    Mattermost: 'Mattermost',
+    MicrosoftTeams: 'MicrosoftTeams',
+    AzureDevOps: 'AzureDevOps',
+    Bitbucket: 'Bitbucket',
+    Bugzilla: 'Bugzilla',
+    Clubhouse: 'Clubhouse',
+    DefectDojo: 'DefectDojo',
+    PivotalTracker: 'PivotalTracker',
+    Jira: 'Jira',
+    FogBugz: 'FogBugz',
+    GitHub: 'GitHub',
+    PagerDuty: 'PagerDuty',
+    Kafka: 'Kafka',
+    Kenna: 'Kenna',
+    Redmine: 'Redmine',
+    ServiceNow: 'ServiceNow',
+    Tfs: 'TFS',
+    Unfuddle: 'Unfuddle',
+    YouTrack: 'YouTrack',
+    Freshservice: 'Freshservice',
+    Splunk: 'Splunk',
+    JazzTeam: 'JazzTeam',
+    ServiceNowVrm: 'ServiceNowVRM',
+    Asana: 'Asana',
+    Trello: 'Trello',
+    Hashicorp: 'Hashicorp',
+    CyberArk: 'CyberArk',
+    AzureKeyVault: 'AzureKeyVault',
+    GitLab: 'GitLab'
+};
 /**
-* @export
-* @enum {string}
-*/
-var ZapierIntegrationInfoModelTemplateTypeEnum;
-(function (ZapierIntegrationInfoModelTemplateTypeEnum) {
-    ZapierIntegrationInfoModelTemplateTypeEnum["Standard"] = "Standard";
-    ZapierIntegrationInfoModelTemplateTypeEnum["Detailed"] = "Detailed";
-})(ZapierIntegrationInfoModelTemplateTypeEnum = exports.ZapierIntegrationInfoModelTemplateTypeEnum || (exports.ZapierIntegrationInfoModelTemplateTypeEnum = {}));
+ * @export
+ */
+exports.ZapierIntegrationInfoModelTemplateTypeEnum = {
+    Standard: 'Standard',
+    Detailed: 'Detailed'
+};
 /**
  * Check if a given object implements the ZapierIntegrationInfoModel interface.
  */

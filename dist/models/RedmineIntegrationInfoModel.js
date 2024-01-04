@@ -18,54 +18,50 @@ const runtime_1 = require("../runtime");
 const IntegrationCustomFieldVm_1 = require("./IntegrationCustomFieldVm");
 const IntegrationWizardResultModel_1 = require("./IntegrationWizardResultModel");
 /**
-* @export
-* @enum {string}
-*/
-var RedmineIntegrationInfoModelTypeEnum;
-(function (RedmineIntegrationInfoModelTypeEnum) {
-    RedmineIntegrationInfoModelTypeEnum["NetsparkerEnterprise"] = "NetsparkerEnterprise";
-    RedmineIntegrationInfoModelTypeEnum["Webhook"] = "Webhook";
-    RedmineIntegrationInfoModelTypeEnum["Zapier"] = "Zapier";
-    RedmineIntegrationInfoModelTypeEnum["Slack"] = "Slack";
-    RedmineIntegrationInfoModelTypeEnum["Mattermost"] = "Mattermost";
-    RedmineIntegrationInfoModelTypeEnum["MicrosoftTeams"] = "MicrosoftTeams";
-    RedmineIntegrationInfoModelTypeEnum["AzureDevOps"] = "AzureDevOps";
-    RedmineIntegrationInfoModelTypeEnum["Bitbucket"] = "Bitbucket";
-    RedmineIntegrationInfoModelTypeEnum["Bugzilla"] = "Bugzilla";
-    RedmineIntegrationInfoModelTypeEnum["Clubhouse"] = "Clubhouse";
-    RedmineIntegrationInfoModelTypeEnum["DefectDojo"] = "DefectDojo";
-    RedmineIntegrationInfoModelTypeEnum["PivotalTracker"] = "PivotalTracker";
-    RedmineIntegrationInfoModelTypeEnum["Jira"] = "Jira";
-    RedmineIntegrationInfoModelTypeEnum["FogBugz"] = "FogBugz";
-    RedmineIntegrationInfoModelTypeEnum["GitHub"] = "GitHub";
-    RedmineIntegrationInfoModelTypeEnum["PagerDuty"] = "PagerDuty";
-    RedmineIntegrationInfoModelTypeEnum["Kafka"] = "Kafka";
-    RedmineIntegrationInfoModelTypeEnum["Kenna"] = "Kenna";
-    RedmineIntegrationInfoModelTypeEnum["Redmine"] = "Redmine";
-    RedmineIntegrationInfoModelTypeEnum["ServiceNow"] = "ServiceNow";
-    RedmineIntegrationInfoModelTypeEnum["Tfs"] = "TFS";
-    RedmineIntegrationInfoModelTypeEnum["Unfuddle"] = "Unfuddle";
-    RedmineIntegrationInfoModelTypeEnum["YouTrack"] = "YouTrack";
-    RedmineIntegrationInfoModelTypeEnum["Freshservice"] = "Freshservice";
-    RedmineIntegrationInfoModelTypeEnum["Splunk"] = "Splunk";
-    RedmineIntegrationInfoModelTypeEnum["JazzTeam"] = "JazzTeam";
-    RedmineIntegrationInfoModelTypeEnum["ServiceNowVrm"] = "ServiceNowVRM";
-    RedmineIntegrationInfoModelTypeEnum["Asana"] = "Asana";
-    RedmineIntegrationInfoModelTypeEnum["Trello"] = "Trello";
-    RedmineIntegrationInfoModelTypeEnum["Hashicorp"] = "Hashicorp";
-    RedmineIntegrationInfoModelTypeEnum["CyberArk"] = "CyberArk";
-    RedmineIntegrationInfoModelTypeEnum["AzureKeyVault"] = "AzureKeyVault";
-    RedmineIntegrationInfoModelTypeEnum["GitLab"] = "GitLab";
-})(RedmineIntegrationInfoModelTypeEnum = exports.RedmineIntegrationInfoModelTypeEnum || (exports.RedmineIntegrationInfoModelTypeEnum = {}));
+ * @export
+ */
+exports.RedmineIntegrationInfoModelTypeEnum = {
+    Jira: 'Jira',
+    GitHub: 'GitHub',
+    Tfs: 'TFS',
+    FogBugz: 'FogBugz',
+    ServiceNow: 'ServiceNow',
+    Slack: 'Slack',
+    GitLab: 'GitLab',
+    Bitbucket: 'Bitbucket',
+    Unfuddle: 'Unfuddle',
+    Zapier: 'Zapier',
+    AzureDevOps: 'AzureDevOps',
+    Redmine: 'Redmine',
+    Bugzilla: 'Bugzilla',
+    Kafka: 'Kafka',
+    PagerDuty: 'PagerDuty',
+    MicrosoftTeams: 'MicrosoftTeams',
+    Clubhouse: 'Clubhouse',
+    Trello: 'Trello',
+    Asana: 'Asana',
+    Webhook: 'Webhook',
+    Kenna: 'Kenna',
+    Freshservice: 'Freshservice',
+    YouTrack: 'YouTrack',
+    NetsparkerEnterprise: 'NetsparkerEnterprise',
+    Splunk: 'Splunk',
+    Mattermost: 'Mattermost',
+    Hashicorp: 'Hashicorp',
+    PivotalTracker: 'PivotalTracker',
+    CyberArk: 'CyberArk',
+    DefectDojo: 'DefectDojo',
+    JazzTeam: 'JazzTeam',
+    AzureKeyVault: 'AzureKeyVault',
+    ServiceNowVrm: 'ServiceNowVRM'
+};
 /**
-* @export
-* @enum {string}
-*/
-var RedmineIntegrationInfoModelTemplateTypeEnum;
-(function (RedmineIntegrationInfoModelTemplateTypeEnum) {
-    RedmineIntegrationInfoModelTemplateTypeEnum["Standard"] = "Standard";
-    RedmineIntegrationInfoModelTemplateTypeEnum["Detailed"] = "Detailed";
-})(RedmineIntegrationInfoModelTemplateTypeEnum = exports.RedmineIntegrationInfoModelTemplateTypeEnum || (exports.RedmineIntegrationInfoModelTemplateTypeEnum = {}));
+ * @export
+ */
+exports.RedmineIntegrationInfoModelTemplateTypeEnum = {
+    Standard: 'Standard',
+    Detailed: 'Detailed'
+};
 /**
  * Check if a given object implements the RedmineIntegrationInfoModel interface.
  */

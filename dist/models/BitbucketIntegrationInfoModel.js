@@ -18,54 +18,50 @@ const runtime_1 = require("../runtime");
 const IntegrationCustomFieldVm_1 = require("./IntegrationCustomFieldVm");
 const IntegrationWizardResultModel_1 = require("./IntegrationWizardResultModel");
 /**
-* @export
-* @enum {string}
-*/
-var BitbucketIntegrationInfoModelTypeEnum;
-(function (BitbucketIntegrationInfoModelTypeEnum) {
-    BitbucketIntegrationInfoModelTypeEnum["Jira"] = "Jira";
-    BitbucketIntegrationInfoModelTypeEnum["GitHub"] = "GitHub";
-    BitbucketIntegrationInfoModelTypeEnum["Tfs"] = "TFS";
-    BitbucketIntegrationInfoModelTypeEnum["FogBugz"] = "FogBugz";
-    BitbucketIntegrationInfoModelTypeEnum["ServiceNow"] = "ServiceNow";
-    BitbucketIntegrationInfoModelTypeEnum["Slack"] = "Slack";
-    BitbucketIntegrationInfoModelTypeEnum["GitLab"] = "GitLab";
-    BitbucketIntegrationInfoModelTypeEnum["Bitbucket"] = "Bitbucket";
-    BitbucketIntegrationInfoModelTypeEnum["Unfuddle"] = "Unfuddle";
-    BitbucketIntegrationInfoModelTypeEnum["Zapier"] = "Zapier";
-    BitbucketIntegrationInfoModelTypeEnum["AzureDevOps"] = "AzureDevOps";
-    BitbucketIntegrationInfoModelTypeEnum["Redmine"] = "Redmine";
-    BitbucketIntegrationInfoModelTypeEnum["Bugzilla"] = "Bugzilla";
-    BitbucketIntegrationInfoModelTypeEnum["Kafka"] = "Kafka";
-    BitbucketIntegrationInfoModelTypeEnum["PagerDuty"] = "PagerDuty";
-    BitbucketIntegrationInfoModelTypeEnum["MicrosoftTeams"] = "MicrosoftTeams";
-    BitbucketIntegrationInfoModelTypeEnum["Clubhouse"] = "Clubhouse";
-    BitbucketIntegrationInfoModelTypeEnum["Trello"] = "Trello";
-    BitbucketIntegrationInfoModelTypeEnum["Asana"] = "Asana";
-    BitbucketIntegrationInfoModelTypeEnum["Webhook"] = "Webhook";
-    BitbucketIntegrationInfoModelTypeEnum["Kenna"] = "Kenna";
-    BitbucketIntegrationInfoModelTypeEnum["Freshservice"] = "Freshservice";
-    BitbucketIntegrationInfoModelTypeEnum["YouTrack"] = "YouTrack";
-    BitbucketIntegrationInfoModelTypeEnum["NetsparkerEnterprise"] = "NetsparkerEnterprise";
-    BitbucketIntegrationInfoModelTypeEnum["Splunk"] = "Splunk";
-    BitbucketIntegrationInfoModelTypeEnum["Mattermost"] = "Mattermost";
-    BitbucketIntegrationInfoModelTypeEnum["Hashicorp"] = "Hashicorp";
-    BitbucketIntegrationInfoModelTypeEnum["PivotalTracker"] = "PivotalTracker";
-    BitbucketIntegrationInfoModelTypeEnum["CyberArk"] = "CyberArk";
-    BitbucketIntegrationInfoModelTypeEnum["DefectDojo"] = "DefectDojo";
-    BitbucketIntegrationInfoModelTypeEnum["JazzTeam"] = "JazzTeam";
-    BitbucketIntegrationInfoModelTypeEnum["AzureKeyVault"] = "AzureKeyVault";
-    BitbucketIntegrationInfoModelTypeEnum["ServiceNowVrm"] = "ServiceNowVRM";
-})(BitbucketIntegrationInfoModelTypeEnum = exports.BitbucketIntegrationInfoModelTypeEnum || (exports.BitbucketIntegrationInfoModelTypeEnum = {}));
+ * @export
+ */
+exports.BitbucketIntegrationInfoModelTypeEnum = {
+    Jira: 'Jira',
+    GitHub: 'GitHub',
+    Tfs: 'TFS',
+    FogBugz: 'FogBugz',
+    ServiceNow: 'ServiceNow',
+    Slack: 'Slack',
+    GitLab: 'GitLab',
+    Bitbucket: 'Bitbucket',
+    Unfuddle: 'Unfuddle',
+    Zapier: 'Zapier',
+    AzureDevOps: 'AzureDevOps',
+    Redmine: 'Redmine',
+    Bugzilla: 'Bugzilla',
+    Kafka: 'Kafka',
+    PagerDuty: 'PagerDuty',
+    MicrosoftTeams: 'MicrosoftTeams',
+    Clubhouse: 'Clubhouse',
+    Trello: 'Trello',
+    Asana: 'Asana',
+    Webhook: 'Webhook',
+    Kenna: 'Kenna',
+    Freshservice: 'Freshservice',
+    YouTrack: 'YouTrack',
+    NetsparkerEnterprise: 'NetsparkerEnterprise',
+    Splunk: 'Splunk',
+    Mattermost: 'Mattermost',
+    Hashicorp: 'Hashicorp',
+    PivotalTracker: 'PivotalTracker',
+    CyberArk: 'CyberArk',
+    DefectDojo: 'DefectDojo',
+    JazzTeam: 'JazzTeam',
+    AzureKeyVault: 'AzureKeyVault',
+    ServiceNowVrm: 'ServiceNowVRM'
+};
 /**
-* @export
-* @enum {string}
-*/
-var BitbucketIntegrationInfoModelTemplateTypeEnum;
-(function (BitbucketIntegrationInfoModelTemplateTypeEnum) {
-    BitbucketIntegrationInfoModelTemplateTypeEnum["Standard"] = "Standard";
-    BitbucketIntegrationInfoModelTemplateTypeEnum["Detailed"] = "Detailed";
-})(BitbucketIntegrationInfoModelTemplateTypeEnum = exports.BitbucketIntegrationInfoModelTemplateTypeEnum || (exports.BitbucketIntegrationInfoModelTemplateTypeEnum = {}));
+ * @export
+ */
+exports.BitbucketIntegrationInfoModelTemplateTypeEnum = {
+    Standard: 'Standard',
+    Detailed: 'Detailed'
+};
 /**
  * Check if a given object implements the BitbucketIntegrationInfoModel interface.
  */

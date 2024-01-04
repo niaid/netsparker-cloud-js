@@ -81,26 +81,26 @@ export interface NewScanNotificationApiModel {
     scope: NewScanNotificationApiModelScopeEnum;
 }
 /**
-* @export
-* @enum {string}
-*/
-export declare enum NewScanNotificationApiModelEventEnum {
-    NewScan = "NewScan",
-    ScanCompleted = "ScanCompleted",
-    ScanCancelled = "ScanCancelled",
-    ScanFailed = "ScanFailed",
-    ScheduledScanLaunchFailed = "ScheduledScanLaunchFailed",
-    OutOfDateTechnology = "OutOfDateTechnology"
-}
+ * @export
+ */
+export declare const NewScanNotificationApiModelEventEnum: {
+    readonly NewScan: "NewScan";
+    readonly ScanCompleted: "ScanCompleted";
+    readonly ScanCancelled: "ScanCancelled";
+    readonly ScanFailed: "ScanFailed";
+    readonly ScheduledScanLaunchFailed: "ScheduledScanLaunchFailed";
+    readonly OutOfDateTechnology: "OutOfDateTechnology";
+};
+export type NewScanNotificationApiModelEventEnum = typeof NewScanNotificationApiModelEventEnum[keyof typeof NewScanNotificationApiModelEventEnum];
 /**
-* @export
-* @enum {string}
-*/
-export declare enum NewScanNotificationApiModelScopeEnum {
-    AnyWebsite = "AnyWebsite",
-    WebsiteGroup = "WebsiteGroup",
-    Website = "Website"
-}
+ * @export
+ */
+export declare const NewScanNotificationApiModelScopeEnum: {
+    readonly AnyWebsite: "AnyWebsite";
+    readonly WebsiteGroup: "WebsiteGroup";
+    readonly Website: "Website";
+};
+export type NewScanNotificationApiModelScopeEnum = typeof NewScanNotificationApiModelScopeEnum[keyof typeof NewScanNotificationApiModelScopeEnum];
 /**
  * Check if a given object implements the NewScanNotificationApiModel interface.
  */

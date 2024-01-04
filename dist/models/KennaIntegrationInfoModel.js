@@ -18,63 +18,57 @@ const runtime_1 = require("../runtime");
 const IntegrationCustomFieldVm_1 = require("./IntegrationCustomFieldVm");
 const IntegrationWizardResultModel_1 = require("./IntegrationWizardResultModel");
 /**
-* @export
-* @enum {string}
-*/
-var KennaIntegrationInfoModelAssetApplicationIdentifierTypeEnum;
-(function (KennaIntegrationInfoModelAssetApplicationIdentifierTypeEnum) {
-    KennaIntegrationInfoModelAssetApplicationIdentifierTypeEnum["WebsiteName"] = "WebsiteName";
-    KennaIntegrationInfoModelAssetApplicationIdentifierTypeEnum["Static"] = "Static";
-})(KennaIntegrationInfoModelAssetApplicationIdentifierTypeEnum = exports.KennaIntegrationInfoModelAssetApplicationIdentifierTypeEnum || (exports.KennaIntegrationInfoModelAssetApplicationIdentifierTypeEnum = {}));
+ * @export
+ */
+exports.KennaIntegrationInfoModelAssetApplicationIdentifierTypeEnum = {
+    WebsiteName: 'WebsiteName',
+    Static: 'Static'
+};
 /**
-* @export
-* @enum {string}
-*/
-var KennaIntegrationInfoModelTypeEnum;
-(function (KennaIntegrationInfoModelTypeEnum) {
-    KennaIntegrationInfoModelTypeEnum["NetsparkerEnterprise"] = "NetsparkerEnterprise";
-    KennaIntegrationInfoModelTypeEnum["Webhook"] = "Webhook";
-    KennaIntegrationInfoModelTypeEnum["Zapier"] = "Zapier";
-    KennaIntegrationInfoModelTypeEnum["Slack"] = "Slack";
-    KennaIntegrationInfoModelTypeEnum["Mattermost"] = "Mattermost";
-    KennaIntegrationInfoModelTypeEnum["MicrosoftTeams"] = "MicrosoftTeams";
-    KennaIntegrationInfoModelTypeEnum["AzureDevOps"] = "AzureDevOps";
-    KennaIntegrationInfoModelTypeEnum["Bitbucket"] = "Bitbucket";
-    KennaIntegrationInfoModelTypeEnum["Bugzilla"] = "Bugzilla";
-    KennaIntegrationInfoModelTypeEnum["Clubhouse"] = "Clubhouse";
-    KennaIntegrationInfoModelTypeEnum["DefectDojo"] = "DefectDojo";
-    KennaIntegrationInfoModelTypeEnum["PivotalTracker"] = "PivotalTracker";
-    KennaIntegrationInfoModelTypeEnum["Jira"] = "Jira";
-    KennaIntegrationInfoModelTypeEnum["FogBugz"] = "FogBugz";
-    KennaIntegrationInfoModelTypeEnum["GitHub"] = "GitHub";
-    KennaIntegrationInfoModelTypeEnum["PagerDuty"] = "PagerDuty";
-    KennaIntegrationInfoModelTypeEnum["Kafka"] = "Kafka";
-    KennaIntegrationInfoModelTypeEnum["Kenna"] = "Kenna";
-    KennaIntegrationInfoModelTypeEnum["Redmine"] = "Redmine";
-    KennaIntegrationInfoModelTypeEnum["ServiceNow"] = "ServiceNow";
-    KennaIntegrationInfoModelTypeEnum["Tfs"] = "TFS";
-    KennaIntegrationInfoModelTypeEnum["Unfuddle"] = "Unfuddle";
-    KennaIntegrationInfoModelTypeEnum["YouTrack"] = "YouTrack";
-    KennaIntegrationInfoModelTypeEnum["Freshservice"] = "Freshservice";
-    KennaIntegrationInfoModelTypeEnum["Splunk"] = "Splunk";
-    KennaIntegrationInfoModelTypeEnum["JazzTeam"] = "JazzTeam";
-    KennaIntegrationInfoModelTypeEnum["ServiceNowVrm"] = "ServiceNowVRM";
-    KennaIntegrationInfoModelTypeEnum["Asana"] = "Asana";
-    KennaIntegrationInfoModelTypeEnum["Trello"] = "Trello";
-    KennaIntegrationInfoModelTypeEnum["Hashicorp"] = "Hashicorp";
-    KennaIntegrationInfoModelTypeEnum["CyberArk"] = "CyberArk";
-    KennaIntegrationInfoModelTypeEnum["AzureKeyVault"] = "AzureKeyVault";
-    KennaIntegrationInfoModelTypeEnum["GitLab"] = "GitLab";
-})(KennaIntegrationInfoModelTypeEnum = exports.KennaIntegrationInfoModelTypeEnum || (exports.KennaIntegrationInfoModelTypeEnum = {}));
+ * @export
+ */
+exports.KennaIntegrationInfoModelTypeEnum = {
+    Jira: 'Jira',
+    GitHub: 'GitHub',
+    Tfs: 'TFS',
+    FogBugz: 'FogBugz',
+    ServiceNow: 'ServiceNow',
+    Slack: 'Slack',
+    GitLab: 'GitLab',
+    Bitbucket: 'Bitbucket',
+    Unfuddle: 'Unfuddle',
+    Zapier: 'Zapier',
+    AzureDevOps: 'AzureDevOps',
+    Redmine: 'Redmine',
+    Bugzilla: 'Bugzilla',
+    Kafka: 'Kafka',
+    PagerDuty: 'PagerDuty',
+    MicrosoftTeams: 'MicrosoftTeams',
+    Clubhouse: 'Clubhouse',
+    Trello: 'Trello',
+    Asana: 'Asana',
+    Webhook: 'Webhook',
+    Kenna: 'Kenna',
+    Freshservice: 'Freshservice',
+    YouTrack: 'YouTrack',
+    NetsparkerEnterprise: 'NetsparkerEnterprise',
+    Splunk: 'Splunk',
+    Mattermost: 'Mattermost',
+    Hashicorp: 'Hashicorp',
+    PivotalTracker: 'PivotalTracker',
+    CyberArk: 'CyberArk',
+    DefectDojo: 'DefectDojo',
+    JazzTeam: 'JazzTeam',
+    AzureKeyVault: 'AzureKeyVault',
+    ServiceNowVrm: 'ServiceNowVRM'
+};
 /**
-* @export
-* @enum {string}
-*/
-var KennaIntegrationInfoModelTemplateTypeEnum;
-(function (KennaIntegrationInfoModelTemplateTypeEnum) {
-    KennaIntegrationInfoModelTemplateTypeEnum["Standard"] = "Standard";
-    KennaIntegrationInfoModelTemplateTypeEnum["Detailed"] = "Detailed";
-})(KennaIntegrationInfoModelTemplateTypeEnum = exports.KennaIntegrationInfoModelTemplateTypeEnum || (exports.KennaIntegrationInfoModelTemplateTypeEnum = {}));
+ * @export
+ */
+exports.KennaIntegrationInfoModelTemplateTypeEnum = {
+    Standard: 'Standard',
+    Detailed: 'Detailed'
+};
 /**
  * Check if a given object implements the KennaIntegrationInfoModel interface.
  */

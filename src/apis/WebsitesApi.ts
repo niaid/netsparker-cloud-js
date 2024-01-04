@@ -46,50 +46,50 @@ import {
     WebsiteListApiResultToJSON,
 } from '../models/index';
 
-export interface WebsitesApiWebsitesDeleteRequest {
+export interface WebsitesDeleteRequest {
     model: DeleteWebsiteApiModel;
 }
 
-export interface WebsitesApiWebsitesGetByIdRequest {
+export interface WebsitesGetByIdRequest {
     id: string;
 }
 
-export interface WebsitesApiWebsitesGetByQueryRequest {
+export interface WebsitesGetByQueryRequest {
     query: string;
 }
 
-export interface WebsitesApiWebsitesGetWebsitesByGroupRequest {
+export interface WebsitesGetWebsitesByGroupRequest {
     query: string;
     page?: number;
     pageSize?: number;
 }
 
-export interface WebsitesApiWebsitesListRequest {
+export interface WebsitesListRequest {
     page?: number;
     pageSize?: number;
 }
 
-export interface WebsitesApiWebsitesNewRequest {
+export interface WebsitesNewRequest {
     model: NewWebsiteApiModel;
 }
 
-export interface WebsitesApiWebsitesSendVerificationEmailRequest {
+export interface WebsitesSendVerificationEmailRequest {
     websiteUrl: string;
 }
 
-export interface WebsitesApiWebsitesStartVerificationRequest {
+export interface WebsitesStartVerificationRequest {
     model: StartVerificationApiModel;
 }
 
-export interface WebsitesApiWebsitesUpdateRequest {
+export interface WebsitesUpdateRequest {
     model: UpdateWebsiteApiModel;
 }
 
-export interface WebsitesApiWebsitesVerificationFileRequest {
+export interface WebsitesVerificationFileRequest {
     websiteUrl: string;
 }
 
-export interface WebsitesApiWebsitesVerifyRequest {
+export interface WebsitesVerifyRequest {
     model: VerifyApiModel;
 }
 
@@ -101,7 +101,7 @@ export class WebsitesApi extends runtime.BaseAPI {
     /**
      * Deletes a website.
      */
-    async websitesDeleteRaw(requestParameters: WebsitesApiWebsitesDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>> {
+    async websitesDeleteRaw(requestParameters: WebsitesDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>> {
         if (requestParameters.model === null || requestParameters.model === undefined) {
             throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling websitesDelete.');
         }
@@ -130,7 +130,7 @@ export class WebsitesApi extends runtime.BaseAPI {
     /**
      * Deletes a website.
      */
-    async websitesDelete(requestParameters: WebsitesApiWebsitesDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string> {
+    async websitesDelete(requestParameters: WebsitesDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string> {
         const response = await this.websitesDeleteRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -138,7 +138,7 @@ export class WebsitesApi extends runtime.BaseAPI {
     /**
      * Gets website by id.
      */
-    async websitesGetByIdRaw(requestParameters: WebsitesApiWebsitesGetByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteApiModel>> {
+    async websitesGetByIdRaw(requestParameters: WebsitesGetByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteApiModel>> {
         if (requestParameters.id === null || requestParameters.id === undefined) {
             throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling websitesGetById.');
         }
@@ -160,7 +160,7 @@ export class WebsitesApi extends runtime.BaseAPI {
     /**
      * Gets website by id.
      */
-    async websitesGetById(requestParameters: WebsitesApiWebsitesGetByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebsiteApiModel> {
+    async websitesGetById(requestParameters: WebsitesGetByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebsiteApiModel> {
         const response = await this.websitesGetByIdRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -168,7 +168,7 @@ export class WebsitesApi extends runtime.BaseAPI {
     /**
      * Gets website by name or URL.
      */
-    async websitesGetByQueryRaw(requestParameters: WebsitesApiWebsitesGetByQueryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteApiModel>> {
+    async websitesGetByQueryRaw(requestParameters: WebsitesGetByQueryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteApiModel>> {
         if (requestParameters.query === null || requestParameters.query === undefined) {
             throw new runtime.RequiredError('query','Required parameter requestParameters.query was null or undefined when calling websitesGetByQuery.');
         }
@@ -194,7 +194,7 @@ export class WebsitesApi extends runtime.BaseAPI {
     /**
      * Gets website by name or URL.
      */
-    async websitesGetByQuery(requestParameters: WebsitesApiWebsitesGetByQueryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebsiteApiModel> {
+    async websitesGetByQuery(requestParameters: WebsitesGetByQueryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebsiteApiModel> {
         const response = await this.websitesGetByQueryRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -202,7 +202,7 @@ export class WebsitesApi extends runtime.BaseAPI {
     /**
      * Gets the list of websites by group name or id.
      */
-    async websitesGetWebsitesByGroupRaw(requestParameters: WebsitesApiWebsitesGetWebsitesByGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteListApiResult>> {
+    async websitesGetWebsitesByGroupRaw(requestParameters: WebsitesGetWebsitesByGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteListApiResult>> {
         if (requestParameters.query === null || requestParameters.query === undefined) {
             throw new runtime.RequiredError('query','Required parameter requestParameters.query was null or undefined when calling websitesGetWebsitesByGroup.');
         }
@@ -236,7 +236,7 @@ export class WebsitesApi extends runtime.BaseAPI {
     /**
      * Gets the list of websites by group name or id.
      */
-    async websitesGetWebsitesByGroup(requestParameters: WebsitesApiWebsitesGetWebsitesByGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebsiteListApiResult> {
+    async websitesGetWebsitesByGroup(requestParameters: WebsitesGetWebsitesByGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebsiteListApiResult> {
         const response = await this.websitesGetWebsitesByGroupRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -244,7 +244,7 @@ export class WebsitesApi extends runtime.BaseAPI {
     /**
      * Gets the list of websites.
      */
-    async websitesListRaw(requestParameters: WebsitesApiWebsitesListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteListApiResult>> {
+    async websitesListRaw(requestParameters: WebsitesListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteListApiResult>> {
         const queryParameters: any = {};
 
         if (requestParameters.page !== undefined) {
@@ -270,7 +270,7 @@ export class WebsitesApi extends runtime.BaseAPI {
     /**
      * Gets the list of websites.
      */
-    async websitesList(requestParameters: WebsitesApiWebsitesListRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebsiteListApiResult> {
+    async websitesList(requestParameters: WebsitesListRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebsiteListApiResult> {
         const response = await this.websitesListRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -278,7 +278,7 @@ export class WebsitesApi extends runtime.BaseAPI {
     /**
      * Creates a new website.
      */
-    async websitesNewRaw(requestParameters: WebsitesApiWebsitesNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteApiModel>> {
+    async websitesNewRaw(requestParameters: WebsitesNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteApiModel>> {
         if (requestParameters.model === null || requestParameters.model === undefined) {
             throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling websitesNew.');
         }
@@ -303,7 +303,7 @@ export class WebsitesApi extends runtime.BaseAPI {
     /**
      * Creates a new website.
      */
-    async websitesNew(requestParameters: WebsitesApiWebsitesNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebsiteApiModel> {
+    async websitesNew(requestParameters: WebsitesNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebsiteApiModel> {
         const response = await this.websitesNewRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -311,7 +311,7 @@ export class WebsitesApi extends runtime.BaseAPI {
     /**
      * Sends the verification email if verification limit not exceeded yet.
      */
-    async websitesSendVerificationEmailRaw(requestParameters: WebsitesApiWebsitesSendVerificationEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SendVerificationEmailModel>> {
+    async websitesSendVerificationEmailRaw(requestParameters: WebsitesSendVerificationEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SendVerificationEmailModel>> {
         if (requestParameters.websiteUrl === null || requestParameters.websiteUrl === undefined) {
             throw new runtime.RequiredError('websiteUrl','Required parameter requestParameters.websiteUrl was null or undefined when calling websitesSendVerificationEmail.');
         }
@@ -336,7 +336,7 @@ export class WebsitesApi extends runtime.BaseAPI {
     /**
      * Sends the verification email if verification limit not exceeded yet.
      */
-    async websitesSendVerificationEmail(requestParameters: WebsitesApiWebsitesSendVerificationEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SendVerificationEmailModel> {
+    async websitesSendVerificationEmail(requestParameters: WebsitesSendVerificationEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<SendVerificationEmailModel> {
         const response = await this.websitesSendVerificationEmailRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -344,7 +344,7 @@ export class WebsitesApi extends runtime.BaseAPI {
     /**
      * Starts the verification with specified method.
      */
-    async websitesStartVerificationRaw(requestParameters: WebsitesApiWebsitesStartVerificationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StartVerificationResult>> {
+    async websitesStartVerificationRaw(requestParameters: WebsitesStartVerificationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StartVerificationResult>> {
         if (requestParameters.model === null || requestParameters.model === undefined) {
             throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling websitesStartVerification.');
         }
@@ -369,7 +369,7 @@ export class WebsitesApi extends runtime.BaseAPI {
     /**
      * Starts the verification with specified method.
      */
-    async websitesStartVerification(requestParameters: WebsitesApiWebsitesStartVerificationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StartVerificationResult> {
+    async websitesStartVerification(requestParameters: WebsitesStartVerificationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<StartVerificationResult> {
         const response = await this.websitesStartVerificationRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -377,7 +377,7 @@ export class WebsitesApi extends runtime.BaseAPI {
     /**
      * Updates a website.
      */
-    async websitesUpdateRaw(requestParameters: WebsitesApiWebsitesUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteApiModel>> {
+    async websitesUpdateRaw(requestParameters: WebsitesUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteApiModel>> {
         if (requestParameters.model === null || requestParameters.model === undefined) {
             throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling websitesUpdate.');
         }
@@ -402,7 +402,7 @@ export class WebsitesApi extends runtime.BaseAPI {
     /**
      * Updates a website.
      */
-    async websitesUpdate(requestParameters: WebsitesApiWebsitesUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebsiteApiModel> {
+    async websitesUpdate(requestParameters: WebsitesUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<WebsiteApiModel> {
         const response = await this.websitesUpdateRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -410,7 +410,7 @@ export class WebsitesApi extends runtime.BaseAPI {
     /**
      * Renders verification file.
      */
-    async websitesVerificationFileRaw(requestParameters: WebsitesApiWebsitesVerificationFileRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
+    async websitesVerificationFileRaw(requestParameters: WebsitesVerificationFileRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         if (requestParameters.websiteUrl === null || requestParameters.websiteUrl === undefined) {
             throw new runtime.RequiredError('websiteUrl','Required parameter requestParameters.websiteUrl was null or undefined when calling websitesVerificationFile.');
         }
@@ -436,14 +436,14 @@ export class WebsitesApi extends runtime.BaseAPI {
     /**
      * Renders verification file.
      */
-    async websitesVerificationFile(requestParameters: WebsitesApiWebsitesVerificationFileRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
+    async websitesVerificationFile(requestParameters: WebsitesVerificationFileRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void> {
         await this.websitesVerificationFileRaw(requestParameters, initOverrides);
     }
 
     /**
      * Executes verification process.
      */
-    async websitesVerifyRaw(requestParameters: WebsitesApiWebsitesVerifyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>> {
+    async websitesVerifyRaw(requestParameters: WebsitesVerifyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>> {
         if (requestParameters.model === null || requestParameters.model === undefined) {
             throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling websitesVerify.');
         }
@@ -472,7 +472,7 @@ export class WebsitesApi extends runtime.BaseAPI {
     /**
      * Executes verification process.
      */
-    async websitesVerify(requestParameters: WebsitesApiWebsitesVerifyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string> {
+    async websitesVerify(requestParameters: WebsitesVerifyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string> {
         const response = await this.websitesVerifyRaw(requestParameters, initOverrides);
         return await response.value();
     }

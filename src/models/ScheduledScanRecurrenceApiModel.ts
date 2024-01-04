@@ -81,80 +81,86 @@ export interface ScheduledScanRecurrenceApiModel {
     dayOfWeek?: ScheduledScanRecurrenceApiModelDayOfWeekEnum;
 }
 
+
 /**
-* @export
-* @enum {string}
-*/
-export enum ScheduledScanRecurrenceApiModelRepeatTypeEnum {
-    Days = 'Days',
-    Weeks = 'Weeks',
-    Months = 'Months',
-    Years = 'Years'
-}
+ * @export
+ */
+export const ScheduledScanRecurrenceApiModelRepeatTypeEnum = {
+    Days: 'Days',
+    Weeks: 'Weeks',
+    Months: 'Months',
+    Years: 'Years'
+} as const;
+export type ScheduledScanRecurrenceApiModelRepeatTypeEnum = typeof ScheduledScanRecurrenceApiModelRepeatTypeEnum[keyof typeof ScheduledScanRecurrenceApiModelRepeatTypeEnum];
+
 /**
-* @export
-* @enum {string}
-*/
-export enum ScheduledScanRecurrenceApiModelEndingTypeEnum {
-    Never = 'Never',
-    Date = 'Date',
-    Occurences = 'Occurences'
-}
+ * @export
+ */
+export const ScheduledScanRecurrenceApiModelEndingTypeEnum = {
+    Never: 'Never',
+    Date: 'Date',
+    Occurences: 'Occurences'
+} as const;
+export type ScheduledScanRecurrenceApiModelEndingTypeEnum = typeof ScheduledScanRecurrenceApiModelEndingTypeEnum[keyof typeof ScheduledScanRecurrenceApiModelEndingTypeEnum];
+
 /**
-* @export
-* @enum {string}
-*/
-export enum ScheduledScanRecurrenceApiModelDaysOfWeekEnum {
-    Sunday = 'Sunday',
-    Monday = 'Monday',
-    Tuesday = 'Tuesday',
-    Wednesday = 'Wednesday',
-    Thursday = 'Thursday',
-    Friday = 'Friday',
-    Saturday = 'Saturday'
-}
+ * @export
+ */
+export const ScheduledScanRecurrenceApiModelDaysOfWeekEnum = {
+    Sunday: 'Sunday',
+    Monday: 'Monday',
+    Tuesday: 'Tuesday',
+    Wednesday: 'Wednesday',
+    Thursday: 'Thursday',
+    Friday: 'Friday',
+    Saturday: 'Saturday'
+} as const;
+export type ScheduledScanRecurrenceApiModelDaysOfWeekEnum = typeof ScheduledScanRecurrenceApiModelDaysOfWeekEnum[keyof typeof ScheduledScanRecurrenceApiModelDaysOfWeekEnum];
+
 /**
-* @export
-* @enum {string}
-*/
-export enum ScheduledScanRecurrenceApiModelMonthsOfYearEnum {
-    January = 'January',
-    February = 'February',
-    March = 'March',
-    April = 'April',
-    May = 'May',
-    June = 'June',
-    July = 'July',
-    August = 'August',
-    September = 'September',
-    October = 'October',
-    November = 'November',
-    December = 'December'
-}
+ * @export
+ */
+export const ScheduledScanRecurrenceApiModelMonthsOfYearEnum = {
+    January: 'January',
+    February: 'February',
+    March: 'March',
+    April: 'April',
+    May: 'May',
+    June: 'June',
+    July: 'July',
+    August: 'August',
+    September: 'September',
+    October: 'October',
+    November: 'November',
+    December: 'December'
+} as const;
+export type ScheduledScanRecurrenceApiModelMonthsOfYearEnum = typeof ScheduledScanRecurrenceApiModelMonthsOfYearEnum[keyof typeof ScheduledScanRecurrenceApiModelMonthsOfYearEnum];
+
 /**
-* @export
-* @enum {string}
-*/
-export enum ScheduledScanRecurrenceApiModelOrdinalEnum {
-    First = 'First',
-    Second = 'Second',
-    Third = 'Third',
-    Fourth = 'Fourth',
-    Last = 'Last'
-}
+ * @export
+ */
+export const ScheduledScanRecurrenceApiModelOrdinalEnum = {
+    First: 'First',
+    Second: 'Second',
+    Third: 'Third',
+    Fourth: 'Fourth',
+    Last: 'Last'
+} as const;
+export type ScheduledScanRecurrenceApiModelOrdinalEnum = typeof ScheduledScanRecurrenceApiModelOrdinalEnum[keyof typeof ScheduledScanRecurrenceApiModelOrdinalEnum];
+
 /**
-* @export
-* @enum {string}
-*/
-export enum ScheduledScanRecurrenceApiModelDayOfWeekEnum {
-    Sunday = 'Sunday',
-    Monday = 'Monday',
-    Tuesday = 'Tuesday',
-    Wednesday = 'Wednesday',
-    Thursday = 'Thursday',
-    Friday = 'Friday',
-    Saturday = 'Saturday'
-}
+ * @export
+ */
+export const ScheduledScanRecurrenceApiModelDayOfWeekEnum = {
+    Sunday: 'Sunday',
+    Monday: 'Monday',
+    Tuesday: 'Tuesday',
+    Wednesday: 'Wednesday',
+    Thursday: 'Thursday',
+    Friday: 'Friday',
+    Saturday: 'Saturday'
+} as const;
+export type ScheduledScanRecurrenceApiModelDayOfWeekEnum = typeof ScheduledScanRecurrenceApiModelDayOfWeekEnum[keyof typeof ScheduledScanRecurrenceApiModelDayOfWeekEnum];
 
 
 /**

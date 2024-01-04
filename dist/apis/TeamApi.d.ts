@@ -11,20 +11,20 @@
  */
 import * as runtime from '../runtime';
 import type { NewTeamApiModel, TeamApiModelListApiResult, TeamApiViewModel, UpdateTeamApiModel } from '../models/index';
-export interface TeamApiTeamDeleteRequest {
+export interface TeamDeleteRequest {
     id: string;
 }
-export interface TeamApiTeamGetRequest {
+export interface TeamGetRequest {
     id: string;
 }
-export interface TeamApiTeamListRequest {
+export interface TeamListRequest {
     page?: number;
     pageSize?: number;
 }
-export interface TeamApiTeamNewRequest {
+export interface TeamNewRequest {
     model: NewTeamApiModel;
 }
-export interface TeamApiTeamUpdateRequest {
+export interface TeamUpdateRequest {
     model: UpdateTeamApiModel;
 }
 /**
@@ -34,41 +34,41 @@ export declare class TeamApi extends runtime.BaseAPI {
     /**
      * Deletes a team
      */
-    teamDeleteRaw(requestParameters: TeamApiTeamDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
+    teamDeleteRaw(requestParameters: TeamDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
     /**
      * Deletes a team
      */
-    teamDelete(requestParameters: TeamApiTeamDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
+    teamDelete(requestParameters: TeamDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
     /**
      * Gets the team by the specified id.
      */
-    teamGetRaw(requestParameters: TeamApiTeamGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TeamApiViewModel>>;
+    teamGetRaw(requestParameters: TeamGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TeamApiViewModel>>;
     /**
      * Gets the team by the specified id.
      */
-    teamGet(requestParameters: TeamApiTeamGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TeamApiViewModel>;
+    teamGet(requestParameters: TeamGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TeamApiViewModel>;
     /**
      * Gets the list of teams.
      */
-    teamListRaw(requestParameters: TeamApiTeamListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TeamApiModelListApiResult>>;
+    teamListRaw(requestParameters: TeamListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TeamApiModelListApiResult>>;
     /**
      * Gets the list of teams.
      */
-    teamList(requestParameters?: TeamApiTeamListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TeamApiModelListApiResult>;
+    teamList(requestParameters?: TeamListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TeamApiModelListApiResult>;
     /**
      * Creates a new team
      */
-    teamNewRaw(requestParameters: TeamApiTeamNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TeamApiViewModel>>;
+    teamNewRaw(requestParameters: TeamNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TeamApiViewModel>>;
     /**
      * Creates a new team
      */
-    teamNew(requestParameters: TeamApiTeamNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TeamApiViewModel>;
+    teamNew(requestParameters: TeamNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TeamApiViewModel>;
     /**
      * Updates a team
      */
-    teamUpdateRaw(requestParameters: TeamApiTeamUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TeamApiViewModel>>;
+    teamUpdateRaw(requestParameters: TeamUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TeamApiViewModel>>;
     /**
      * Updates a team
      */
-    teamUpdate(requestParameters: TeamApiTeamUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TeamApiViewModel>;
+    teamUpdate(requestParameters: TeamUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TeamApiViewModel>;
 }

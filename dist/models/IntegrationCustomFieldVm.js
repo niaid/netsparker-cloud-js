@@ -17,17 +17,15 @@ exports.IntegrationCustomFieldVmToJSON = exports.IntegrationCustomFieldVmFromJSO
 const runtime_1 = require("../runtime");
 const FileCache_1 = require("./FileCache");
 /**
-* @export
-* @enum {string}
-*/
-var IntegrationCustomFieldVmInputTypeEnum;
-(function (IntegrationCustomFieldVmInputTypeEnum) {
-    IntegrationCustomFieldVmInputTypeEnum["Text"] = "Text";
-    IntegrationCustomFieldVmInputTypeEnum["Password"] = "Password";
-    IntegrationCustomFieldVmInputTypeEnum["Textarea"] = "Textarea";
-    IntegrationCustomFieldVmInputTypeEnum["FileUpload"] = "FileUpload";
-    IntegrationCustomFieldVmInputTypeEnum["Complex"] = "Complex";
-})(IntegrationCustomFieldVmInputTypeEnum = exports.IntegrationCustomFieldVmInputTypeEnum || (exports.IntegrationCustomFieldVmInputTypeEnum = {}));
+ * @export
+ */
+exports.IntegrationCustomFieldVmInputTypeEnum = {
+    Text: 'Text',
+    Password: 'Password',
+    Textarea: 'Textarea',
+    FileUpload: 'FileUpload',
+    Complex: 'Complex'
+};
 /**
  * Check if a given object implements the IntegrationCustomFieldVm interface.
  */

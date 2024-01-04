@@ -16,18 +16,16 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.JiraPriorityMappingToJSON = exports.JiraPriorityMappingFromJSONTyped = exports.JiraPriorityMappingFromJSON = exports.instanceOfJiraPriorityMapping = exports.JiraPriorityMappingIcSeverityEnum = void 0;
 const runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
-var JiraPriorityMappingIcSeverityEnum;
-(function (JiraPriorityMappingIcSeverityEnum) {
-    JiraPriorityMappingIcSeverityEnum["BestPractice"] = "BestPractice";
-    JiraPriorityMappingIcSeverityEnum["Information"] = "Information";
-    JiraPriorityMappingIcSeverityEnum["Low"] = "Low";
-    JiraPriorityMappingIcSeverityEnum["Medium"] = "Medium";
-    JiraPriorityMappingIcSeverityEnum["High"] = "High";
-    JiraPriorityMappingIcSeverityEnum["Critical"] = "Critical";
-})(JiraPriorityMappingIcSeverityEnum = exports.JiraPriorityMappingIcSeverityEnum || (exports.JiraPriorityMappingIcSeverityEnum = {}));
+ * @export
+ */
+exports.JiraPriorityMappingIcSeverityEnum = {
+    BestPractice: 'BestPractice',
+    Information: 'Information',
+    Low: 'Low',
+    Medium: 'Medium',
+    High: 'High',
+    Critical: 'Critical'
+};
 /**
  * Check if a given object implements the JiraPriorityMapping interface.
  */

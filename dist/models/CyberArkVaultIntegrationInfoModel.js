@@ -18,63 +18,57 @@ const runtime_1 = require("../runtime");
 const IntegrationCustomFieldVm_1 = require("./IntegrationCustomFieldVm");
 const IntegrationWizardResultModel_1 = require("./IntegrationWizardResultModel");
 /**
-* @export
-* @enum {string}
-*/
-var CyberArkVaultIntegrationInfoModelAgentModeEnum;
-(function (CyberArkVaultIntegrationInfoModelAgentModeEnum) {
-    CyberArkVaultIntegrationInfoModelAgentModeEnum["Cloud"] = "Cloud";
-    CyberArkVaultIntegrationInfoModelAgentModeEnum["Internal"] = "Internal";
-})(CyberArkVaultIntegrationInfoModelAgentModeEnum = exports.CyberArkVaultIntegrationInfoModelAgentModeEnum || (exports.CyberArkVaultIntegrationInfoModelAgentModeEnum = {}));
+ * @export
+ */
+exports.CyberArkVaultIntegrationInfoModelAgentModeEnum = {
+    Cloud: 'Cloud',
+    Internal: 'Internal'
+};
 /**
-* @export
-* @enum {string}
-*/
-var CyberArkVaultIntegrationInfoModelTypeEnum;
-(function (CyberArkVaultIntegrationInfoModelTypeEnum) {
-    CyberArkVaultIntegrationInfoModelTypeEnum["Jira"] = "Jira";
-    CyberArkVaultIntegrationInfoModelTypeEnum["GitHub"] = "GitHub";
-    CyberArkVaultIntegrationInfoModelTypeEnum["Tfs"] = "TFS";
-    CyberArkVaultIntegrationInfoModelTypeEnum["FogBugz"] = "FogBugz";
-    CyberArkVaultIntegrationInfoModelTypeEnum["ServiceNow"] = "ServiceNow";
-    CyberArkVaultIntegrationInfoModelTypeEnum["Slack"] = "Slack";
-    CyberArkVaultIntegrationInfoModelTypeEnum["GitLab"] = "GitLab";
-    CyberArkVaultIntegrationInfoModelTypeEnum["Bitbucket"] = "Bitbucket";
-    CyberArkVaultIntegrationInfoModelTypeEnum["Unfuddle"] = "Unfuddle";
-    CyberArkVaultIntegrationInfoModelTypeEnum["Zapier"] = "Zapier";
-    CyberArkVaultIntegrationInfoModelTypeEnum["AzureDevOps"] = "AzureDevOps";
-    CyberArkVaultIntegrationInfoModelTypeEnum["Redmine"] = "Redmine";
-    CyberArkVaultIntegrationInfoModelTypeEnum["Bugzilla"] = "Bugzilla";
-    CyberArkVaultIntegrationInfoModelTypeEnum["Kafka"] = "Kafka";
-    CyberArkVaultIntegrationInfoModelTypeEnum["PagerDuty"] = "PagerDuty";
-    CyberArkVaultIntegrationInfoModelTypeEnum["MicrosoftTeams"] = "MicrosoftTeams";
-    CyberArkVaultIntegrationInfoModelTypeEnum["Clubhouse"] = "Clubhouse";
-    CyberArkVaultIntegrationInfoModelTypeEnum["Trello"] = "Trello";
-    CyberArkVaultIntegrationInfoModelTypeEnum["Asana"] = "Asana";
-    CyberArkVaultIntegrationInfoModelTypeEnum["Webhook"] = "Webhook";
-    CyberArkVaultIntegrationInfoModelTypeEnum["Kenna"] = "Kenna";
-    CyberArkVaultIntegrationInfoModelTypeEnum["Freshservice"] = "Freshservice";
-    CyberArkVaultIntegrationInfoModelTypeEnum["YouTrack"] = "YouTrack";
-    CyberArkVaultIntegrationInfoModelTypeEnum["NetsparkerEnterprise"] = "NetsparkerEnterprise";
-    CyberArkVaultIntegrationInfoModelTypeEnum["Splunk"] = "Splunk";
-    CyberArkVaultIntegrationInfoModelTypeEnum["Mattermost"] = "Mattermost";
-    CyberArkVaultIntegrationInfoModelTypeEnum["Hashicorp"] = "Hashicorp";
-    CyberArkVaultIntegrationInfoModelTypeEnum["PivotalTracker"] = "PivotalTracker";
-    CyberArkVaultIntegrationInfoModelTypeEnum["CyberArk"] = "CyberArk";
-    CyberArkVaultIntegrationInfoModelTypeEnum["DefectDojo"] = "DefectDojo";
-    CyberArkVaultIntegrationInfoModelTypeEnum["JazzTeam"] = "JazzTeam";
-    CyberArkVaultIntegrationInfoModelTypeEnum["AzureKeyVault"] = "AzureKeyVault";
-    CyberArkVaultIntegrationInfoModelTypeEnum["ServiceNowVrm"] = "ServiceNowVRM";
-})(CyberArkVaultIntegrationInfoModelTypeEnum = exports.CyberArkVaultIntegrationInfoModelTypeEnum || (exports.CyberArkVaultIntegrationInfoModelTypeEnum = {}));
+ * @export
+ */
+exports.CyberArkVaultIntegrationInfoModelTypeEnum = {
+    NetsparkerEnterprise: 'NetsparkerEnterprise',
+    Webhook: 'Webhook',
+    Zapier: 'Zapier',
+    Slack: 'Slack',
+    Mattermost: 'Mattermost',
+    MicrosoftTeams: 'MicrosoftTeams',
+    AzureDevOps: 'AzureDevOps',
+    Bitbucket: 'Bitbucket',
+    Bugzilla: 'Bugzilla',
+    Clubhouse: 'Clubhouse',
+    DefectDojo: 'DefectDojo',
+    PivotalTracker: 'PivotalTracker',
+    Jira: 'Jira',
+    FogBugz: 'FogBugz',
+    GitHub: 'GitHub',
+    PagerDuty: 'PagerDuty',
+    Kafka: 'Kafka',
+    Tfs: 'TFS',
+    ServiceNow: 'ServiceNow',
+    GitLab: 'GitLab',
+    Unfuddle: 'Unfuddle',
+    Redmine: 'Redmine',
+    Trello: 'Trello',
+    Asana: 'Asana',
+    Kenna: 'Kenna',
+    Freshservice: 'Freshservice',
+    YouTrack: 'YouTrack',
+    Splunk: 'Splunk',
+    Hashicorp: 'Hashicorp',
+    CyberArk: 'CyberArk',
+    JazzTeam: 'JazzTeam',
+    AzureKeyVault: 'AzureKeyVault',
+    ServiceNowVrm: 'ServiceNowVRM'
+};
 /**
-* @export
-* @enum {string}
-*/
-var CyberArkVaultIntegrationInfoModelTemplateTypeEnum;
-(function (CyberArkVaultIntegrationInfoModelTemplateTypeEnum) {
-    CyberArkVaultIntegrationInfoModelTemplateTypeEnum["Standard"] = "Standard";
-    CyberArkVaultIntegrationInfoModelTemplateTypeEnum["Detailed"] = "Detailed";
-})(CyberArkVaultIntegrationInfoModelTemplateTypeEnum = exports.CyberArkVaultIntegrationInfoModelTemplateTypeEnum || (exports.CyberArkVaultIntegrationInfoModelTemplateTypeEnum = {}));
+ * @export
+ */
+exports.CyberArkVaultIntegrationInfoModelTemplateTypeEnum = {
+    Standard: 'Standard',
+    Detailed: 'Detailed'
+};
 /**
  * Check if a given object implements the CyberArkVaultIntegrationInfoModel interface.
  */

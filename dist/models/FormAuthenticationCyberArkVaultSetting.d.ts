@@ -71,13 +71,13 @@ export interface FormAuthenticationCyberArkVaultSetting {
     agentMode?: FormAuthenticationCyberArkVaultSettingAgentModeEnum;
 }
 /**
-* @export
-* @enum {string}
-*/
-export declare enum FormAuthenticationCyberArkVaultSettingAgentModeEnum {
-    Cloud = "Cloud",
-    Internal = "Internal"
-}
+ * @export
+ */
+export declare const FormAuthenticationCyberArkVaultSettingAgentModeEnum: {
+    readonly Cloud: "Cloud";
+    readonly Internal: "Internal";
+};
+export type FormAuthenticationCyberArkVaultSettingAgentModeEnum = typeof FormAuthenticationCyberArkVaultSettingAgentModeEnum[keyof typeof FormAuthenticationCyberArkVaultSettingAgentModeEnum];
 /**
  * Check if a given object implements the FormAuthenticationCyberArkVaultSetting interface.
  */

@@ -18,35 +18,31 @@ const runtime_1 = require("../runtime");
 const ScanPolicyPatternModel_1 = require("./ScanPolicyPatternModel");
 const SecurityCheckSetting_1 = require("./SecurityCheckSetting");
 /**
-* @export
-* @enum {string}
-*/
-var SecurityCheckGroupModelTypeEnum;
-(function (SecurityCheckGroupModelTypeEnum) {
-    SecurityCheckGroupModelTypeEnum["Engine"] = "Engine";
-    SecurityCheckGroupModelTypeEnum["ResourceModifier"] = "ResourceModifier";
-})(SecurityCheckGroupModelTypeEnum = exports.SecurityCheckGroupModelTypeEnum || (exports.SecurityCheckGroupModelTypeEnum = {}));
+ * @export
+ */
+exports.SecurityCheckGroupModelTypeEnum = {
+    Engine: 'Engine',
+    ResourceModifier: 'ResourceModifier'
+};
 /**
-* @export
-* @enum {string}
-*/
-var SecurityCheckGroupModelEngineGroupEnum;
-(function (SecurityCheckGroupModelEngineGroupEnum) {
-    SecurityCheckGroupModelEngineGroupEnum["SqlInjection"] = "SqlInjection";
-    SecurityCheckGroupModelEngineGroupEnum["Xss"] = "Xss";
-    SecurityCheckGroupModelEngineGroupEnum["CommandInjection"] = "CommandInjection";
-    SecurityCheckGroupModelEngineGroupEnum["FileInclusion"] = "FileInclusion";
-    SecurityCheckGroupModelEngineGroupEnum["Ssrf"] = "Ssrf";
-    SecurityCheckGroupModelEngineGroupEnum["Xxe"] = "Xxe";
-    SecurityCheckGroupModelEngineGroupEnum["StaticResources"] = "StaticResources";
-    SecurityCheckGroupModelEngineGroupEnum["ResourceFinder"] = "ResourceFinder";
-    SecurityCheckGroupModelEngineGroupEnum["ApacheStrutsRce"] = "ApacheStrutsRce";
-    SecurityCheckGroupModelEngineGroupEnum["CodeEvaluation"] = "CodeEvaluation";
-    SecurityCheckGroupModelEngineGroupEnum["CustomScriptChecks"] = "CustomScriptChecks";
-    SecurityCheckGroupModelEngineGroupEnum["HeaderInjection"] = "HeaderInjection";
-    SecurityCheckGroupModelEngineGroupEnum["NoSqlInjection"] = "NoSqlInjection";
-    SecurityCheckGroupModelEngineGroupEnum["WordpressDetection"] = "WordpressDetection";
-})(SecurityCheckGroupModelEngineGroupEnum = exports.SecurityCheckGroupModelEngineGroupEnum || (exports.SecurityCheckGroupModelEngineGroupEnum = {}));
+ * @export
+ */
+exports.SecurityCheckGroupModelEngineGroupEnum = {
+    SqlInjection: 'SqlInjection',
+    Xss: 'Xss',
+    CommandInjection: 'CommandInjection',
+    FileInclusion: 'FileInclusion',
+    Ssrf: 'Ssrf',
+    Xxe: 'Xxe',
+    StaticResources: 'StaticResources',
+    ResourceFinder: 'ResourceFinder',
+    ApacheStrutsRce: 'ApacheStrutsRce',
+    CodeEvaluation: 'CodeEvaluation',
+    CustomScriptChecks: 'CustomScriptChecks',
+    HeaderInjection: 'HeaderInjection',
+    NoSqlInjection: 'NoSqlInjection',
+    WordpressDetection: 'WordpressDetection'
+};
 /**
  * Check if a given object implements the SecurityCheckGroupModel interface.
  */

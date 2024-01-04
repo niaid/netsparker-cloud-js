@@ -41,37 +41,37 @@ export interface IssueRequestContentParametersApiModel {
     inputType?: IssueRequestContentParametersApiModelInputTypeEnum;
 }
 /**
-* @export
-* @enum {string}
-*/
-export declare enum IssueRequestContentParametersApiModelInputTypeEnum {
-    Hidden = "Hidden",
-    Text = "Text",
-    Textarea = "Textarea",
-    Submit = "Submit",
-    Reset = "Reset",
-    Button = "Button",
-    Image = "Image",
-    File = "File",
-    Radio = "Radio",
-    Select = "Select",
-    Checkbox = "Checkbox",
-    Password = "Password",
-    Color = "Color",
-    Date = "Date",
-    Datetime = "Datetime",
-    DatetimeLocal = "DatetimeLocal",
-    Email = "Email",
-    Month = "Month",
-    Number = "Number",
-    Range = "Range",
-    Search = "Search",
-    Tel = "Tel",
-    Time = "Time",
-    Url = "Url",
-    Week = "Week",
-    Output = "Output"
-}
+ * @export
+ */
+export declare const IssueRequestContentParametersApiModelInputTypeEnum: {
+    readonly Hidden: "Hidden";
+    readonly Text: "Text";
+    readonly Textarea: "Textarea";
+    readonly Submit: "Submit";
+    readonly Reset: "Reset";
+    readonly Button: "Button";
+    readonly Image: "Image";
+    readonly File: "File";
+    readonly Radio: "Radio";
+    readonly Select: "Select";
+    readonly Checkbox: "Checkbox";
+    readonly Password: "Password";
+    readonly Color: "Color";
+    readonly Date: "Date";
+    readonly Datetime: "Datetime";
+    readonly DatetimeLocal: "DatetimeLocal";
+    readonly Email: "Email";
+    readonly Month: "Month";
+    readonly Number: "Number";
+    readonly Range: "Range";
+    readonly Search: "Search";
+    readonly Tel: "Tel";
+    readonly Time: "Time";
+    readonly Url: "Url";
+    readonly Week: "Week";
+    readonly Output: "Output";
+};
+export type IssueRequestContentParametersApiModelInputTypeEnum = typeof IssueRequestContentParametersApiModelInputTypeEnum[keyof typeof IssueRequestContentParametersApiModelInputTypeEnum];
 /**
  * Check if a given object implements the IssueRequestContentParametersApiModel interface.
  */

@@ -196,69 +196,73 @@ export interface HashicorpVaultIntegrationInfoModel {
     integrationWizardResultModel?: IntegrationWizardResultModel;
 }
 
+
 /**
-* @export
-* @enum {string}
-*/
-export enum HashicorpVaultIntegrationInfoModelAgentModeEnum {
-    Cloud = 'Cloud',
-    Internal = 'Internal'
-}
+ * @export
+ */
+export const HashicorpVaultIntegrationInfoModelAgentModeEnum = {
+    Cloud: 'Cloud',
+    Internal: 'Internal'
+} as const;
+export type HashicorpVaultIntegrationInfoModelAgentModeEnum = typeof HashicorpVaultIntegrationInfoModelAgentModeEnum[keyof typeof HashicorpVaultIntegrationInfoModelAgentModeEnum];
+
 /**
-* @export
-* @enum {string}
-*/
-export enum HashicorpVaultIntegrationInfoModelAuthTypeEnum {
-    Token = 'Token',
-    TlsCert = 'TLSCert'
-}
+ * @export
+ */
+export const HashicorpVaultIntegrationInfoModelAuthTypeEnum = {
+    Token: 'Token',
+    TlsCert: 'TLSCert'
+} as const;
+export type HashicorpVaultIntegrationInfoModelAuthTypeEnum = typeof HashicorpVaultIntegrationInfoModelAuthTypeEnum[keyof typeof HashicorpVaultIntegrationInfoModelAuthTypeEnum];
+
 /**
-* @export
-* @enum {string}
-*/
-export enum HashicorpVaultIntegrationInfoModelTypeEnum {
-    NetsparkerEnterprise = 'NetsparkerEnterprise',
-    Webhook = 'Webhook',
-    Zapier = 'Zapier',
-    Slack = 'Slack',
-    Mattermost = 'Mattermost',
-    MicrosoftTeams = 'MicrosoftTeams',
-    AzureDevOps = 'AzureDevOps',
-    Bitbucket = 'Bitbucket',
-    Bugzilla = 'Bugzilla',
-    Clubhouse = 'Clubhouse',
-    DefectDojo = 'DefectDojo',
-    PivotalTracker = 'PivotalTracker',
-    Jira = 'Jira',
-    FogBugz = 'FogBugz',
-    GitHub = 'GitHub',
-    PagerDuty = 'PagerDuty',
-    Kafka = 'Kafka',
-    Kenna = 'Kenna',
-    Redmine = 'Redmine',
-    ServiceNow = 'ServiceNow',
-    Tfs = 'TFS',
-    Unfuddle = 'Unfuddle',
-    YouTrack = 'YouTrack',
-    Freshservice = 'Freshservice',
-    Splunk = 'Splunk',
-    JazzTeam = 'JazzTeam',
-    ServiceNowVrm = 'ServiceNowVRM',
-    Asana = 'Asana',
-    Trello = 'Trello',
-    Hashicorp = 'Hashicorp',
-    CyberArk = 'CyberArk',
-    AzureKeyVault = 'AzureKeyVault',
-    GitLab = 'GitLab'
-}
+ * @export
+ */
+export const HashicorpVaultIntegrationInfoModelTypeEnum = {
+    Jira: 'Jira',
+    GitHub: 'GitHub',
+    Tfs: 'TFS',
+    FogBugz: 'FogBugz',
+    ServiceNow: 'ServiceNow',
+    Slack: 'Slack',
+    GitLab: 'GitLab',
+    Bitbucket: 'Bitbucket',
+    Unfuddle: 'Unfuddle',
+    Zapier: 'Zapier',
+    AzureDevOps: 'AzureDevOps',
+    Redmine: 'Redmine',
+    Bugzilla: 'Bugzilla',
+    Kafka: 'Kafka',
+    PagerDuty: 'PagerDuty',
+    MicrosoftTeams: 'MicrosoftTeams',
+    Clubhouse: 'Clubhouse',
+    Trello: 'Trello',
+    Asana: 'Asana',
+    Webhook: 'Webhook',
+    Kenna: 'Kenna',
+    Freshservice: 'Freshservice',
+    YouTrack: 'YouTrack',
+    NetsparkerEnterprise: 'NetsparkerEnterprise',
+    Splunk: 'Splunk',
+    Mattermost: 'Mattermost',
+    Hashicorp: 'Hashicorp',
+    PivotalTracker: 'PivotalTracker',
+    CyberArk: 'CyberArk',
+    DefectDojo: 'DefectDojo',
+    JazzTeam: 'JazzTeam',
+    AzureKeyVault: 'AzureKeyVault',
+    ServiceNowVrm: 'ServiceNowVRM'
+} as const;
+export type HashicorpVaultIntegrationInfoModelTypeEnum = typeof HashicorpVaultIntegrationInfoModelTypeEnum[keyof typeof HashicorpVaultIntegrationInfoModelTypeEnum];
+
 /**
-* @export
-* @enum {string}
-*/
-export enum HashicorpVaultIntegrationInfoModelTemplateTypeEnum {
-    Standard = 'Standard',
-    Detailed = 'Detailed'
-}
+ * @export
+ */
+export const HashicorpVaultIntegrationInfoModelTemplateTypeEnum = {
+    Standard: 'Standard',
+    Detailed: 'Detailed'
+} as const;
+export type HashicorpVaultIntegrationInfoModelTemplateTypeEnum = typeof HashicorpVaultIntegrationInfoModelTemplateTypeEnum[keyof typeof HashicorpVaultIntegrationInfoModelTemplateTypeEnum];
 
 
 /**

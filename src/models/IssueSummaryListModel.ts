@@ -58,33 +58,35 @@ export interface IssueSummaryListModel {
     statusByDate?: Array<IssueSummaryStatusModel>;
 }
 
+
 /**
-* @export
-* @enum {string}
-*/
-export enum IssueSummaryListModelStateEnum {
-    Present = 'Present',
-    FixedUnconfirmed = 'FixedUnconfirmed',
-    FixedCantRetest = 'FixedCantRetest',
-    FixedConfirmed = 'FixedConfirmed',
-    Revived = 'Revived',
-    Scanning = 'Scanning',
-    Ignored = 'Ignored',
-    AcceptedRisk = 'AcceptedRisk',
-    FalsePositive = 'FalsePositive'
-}
+ * @export
+ */
+export const IssueSummaryListModelStateEnum = {
+    Present: 'Present',
+    FixedUnconfirmed: 'FixedUnconfirmed',
+    FixedCantRetest: 'FixedCantRetest',
+    FixedConfirmed: 'FixedConfirmed',
+    Revived: 'Revived',
+    Scanning: 'Scanning',
+    Ignored: 'Ignored',
+    AcceptedRisk: 'AcceptedRisk',
+    FalsePositive: 'FalsePositive'
+} as const;
+export type IssueSummaryListModelStateEnum = typeof IssueSummaryListModelStateEnum[keyof typeof IssueSummaryListModelStateEnum];
+
 /**
-* @export
-* @enum {string}
-*/
-export enum IssueSummaryListModelSeverityEnum {
-    BestPractice = 'BestPractice',
-    Information = 'Information',
-    Low = 'Low',
-    Medium = 'Medium',
-    High = 'High',
-    Critical = 'Critical'
-}
+ * @export
+ */
+export const IssueSummaryListModelSeverityEnum = {
+    BestPractice: 'BestPractice',
+    Information: 'Information',
+    Low: 'Low',
+    Medium: 'Medium',
+    High: 'High',
+    Critical: 'Critical'
+} as const;
+export type IssueSummaryListModelSeverityEnum = typeof IssueSummaryListModelSeverityEnum[keyof typeof IssueSummaryListModelSeverityEnum];
 
 
 /**

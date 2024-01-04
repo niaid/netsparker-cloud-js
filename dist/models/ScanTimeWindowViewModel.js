@@ -17,14 +17,12 @@ exports.ScanTimeWindowViewModelToJSON = exports.ScanTimeWindowViewModelFromJSONT
 const runtime_1 = require("../runtime");
 const ScanTimeWindowItemViewModel_1 = require("./ScanTimeWindowItemViewModel");
 /**
-* @export
-* @enum {string}
-*/
-var ScanTimeWindowViewModelScanCreateTypeEnum;
-(function (ScanTimeWindowViewModelScanCreateTypeEnum) {
-    ScanTimeWindowViewModelScanCreateTypeEnum["Website"] = "Website";
-    ScanTimeWindowViewModelScanCreateTypeEnum["WebsiteGroup"] = "WebsiteGroup";
-})(ScanTimeWindowViewModelScanCreateTypeEnum = exports.ScanTimeWindowViewModelScanCreateTypeEnum || (exports.ScanTimeWindowViewModelScanCreateTypeEnum = {}));
+ * @export
+ */
+exports.ScanTimeWindowViewModelScanCreateTypeEnum = {
+    Website: 'Website',
+    WebsiteGroup: 'WebsiteGroup'
+};
 /**
  * Check if a given object implements the ScanTimeWindowViewModel interface.
  */

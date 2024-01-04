@@ -9,12 +9,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import * as runtime from "../runtime";
-import type { ApiScanStatusModel, AuthVerificationApiResult, BaseScanApiModel, FormAuthenticationVerificationApiModel, IncrementalApiModel, NewGroupScanApiModel, NewScanTaskApiModel, NewScanTaskWithProfileApiModel, NewScheduledIncrementalScanApiModel, NewScheduledScanApiModel, NewScheduledWithProfileApiModel, ScanTaskListApiResult, ScanTaskModel, ScansValidateImportedLinksFileRequest, ScheduledScanListApiResult, TestScanProfileCredentialsRequestModel, UpdateScheduledIncrementalScanApiModel, UpdateScheduledScanApiModel, UpdateScheduledScanModel, VulnerabilityModel } from "../models/index";
-export interface ScansApiScansCancelRequest {
+import * as runtime from '../runtime';
+import type { ApiScanStatusModel, AuthVerificationApiResult, BaseScanApiModel, FormAuthenticationVerificationApiModel, IncrementalApiModel, NewGroupScanApiModel, NewScanTaskApiModel, NewScanTaskWithProfileApiModel, NewScheduledIncrementalScanApiModel, NewScheduledScanApiModel, NewScheduledWithProfileApiModel, ScanTaskListApiResult, ScanTaskModel, ScansValidateImportedLinksFileReq, ScheduledScanListApiResult, TestScanProfileCredentialsRequestModel, UpdateScheduledIncrementalScanApiModel, UpdateScheduledScanApiModel, UpdateScheduledScanModel, VulnerabilityModel } from '../models/index';
+export interface ScansCancelRequest {
     id: string;
 }
-export interface ScansApiScansCustomReportRequest {
+export interface ScansCustomReportRequest {
     id: string;
     reportName: string;
     excludeIgnoreds?: boolean;
@@ -22,31 +22,31 @@ export interface ScansApiScansCustomReportRequest {
     onlyUnconfirmedVulnerabilities?: boolean;
     reportFormat?: ScansCustomReportReportFormatEnum;
 }
-export interface ScansApiScansDeleteRequest {
+export interface ScansDeleteRequest {
     ids: Array<string>;
 }
-export interface ScansApiScansDetailRequest {
+export interface ScansDetailRequest {
     id: string;
 }
-export interface ScansApiScansDownloadPciScanReportRequest {
+export interface ScansDownloadPciScanReportRequest {
     scanId: string;
     reportType: ScansDownloadPciScanReportReportTypeEnum;
 }
-export interface ScansApiScansDownloadScanFileRequest {
+export interface ScansDownloadScanFileRequest {
     scanId: string;
     isWindowsCompatible?: boolean;
 }
-export interface ScansApiScansDownloadScanFileCheckRequest {
+export interface ScansDownloadScanFileCheckRequest {
     scanId: string;
 }
-export interface ScansApiScansIncrementalRequest {
+export interface ScansIncrementalRequest {
     model: IncrementalApiModel;
 }
-export interface ScansApiScansListRequest {
+export interface ScansListRequest {
     page?: number;
     pageSize?: number;
 }
-export interface ScansApiScansListByStateRequest {
+export interface ScansListByStateRequest {
     scanTaskState: ScansListByStateScanTaskStateEnum;
     targetUrlCriteria?: string;
     page?: number;
@@ -54,39 +54,39 @@ export interface ScansApiScansListByStateRequest {
     startDate?: Date;
     endDate?: Date;
 }
-export interface ScansApiScansListByStateChangedRequest {
+export interface ScansListByStateChangedRequest {
     startDate: Date;
     endDate: Date;
     page?: number;
     pageSize?: number;
 }
-export interface ScansApiScansListByWebsiteRequest {
+export interface ScansListByWebsiteRequest {
     websiteUrl?: string;
     targetUrl?: string;
     page?: number;
     pageSize?: number;
     initiatedDateSortType?: ScansListByWebsiteInitiatedDateSortTypeEnum;
 }
-export interface ScansApiScansListScheduledRequest {
+export interface ScansListScheduledRequest {
     page?: number;
     pageSize?: number;
 }
-export interface ScansApiScansNewRequest {
+export interface ScansNewRequest {
     model: NewScanTaskApiModel;
 }
-export interface ScansApiScansNewFromScanRequest {
+export interface ScansNewFromScanRequest {
     id: string;
 }
-export interface ScansApiScansNewGroupScanRequest {
+export interface ScansNewGroupScanRequest {
     model: NewGroupScanApiModel;
 }
-export interface ScansApiScansNewWithProfileRequest {
+export interface ScansNewWithProfileRequest {
     model: NewScanTaskWithProfileApiModel;
 }
-export interface ScansApiScansPauseRequest {
+export interface ScansPauseRequest {
     id: string;
 }
-export interface ScansApiScansReportRequest {
+export interface ScansReportRequest {
     format: ScansReportFormatEnum;
     id: string;
     type: ScansReportTypeEnum;
@@ -97,45 +97,45 @@ export interface ScansApiScansReportRequest {
     excludeAddressedIssues?: boolean;
     excludeHistoryOfIssues?: boolean;
 }
-export interface ScansApiScansResultRequest {
+export interface ScansResultRequest {
     id: string;
 }
-export interface ScansApiScansResumeRequest {
+export interface ScansResumeRequest {
     id: string;
 }
-export interface ScansApiScansRetestRequest {
+export interface ScansRetestRequest {
     model: BaseScanApiModel;
 }
-export interface ScansApiScansScheduleRequest {
+export interface ScansScheduleRequest {
     model: NewScheduledScanApiModel;
 }
-export interface ScansApiScansScheduleIncrementalRequest {
+export interface ScansScheduleIncrementalRequest {
     model: NewScheduledIncrementalScanApiModel;
 }
-export interface ScansApiScansScheduleWithProfileRequest {
+export interface ScansScheduleWithProfileRequest {
     model: NewScheduledWithProfileApiModel;
 }
-export interface ScansApiScansStatusRequest {
+export interface ScansStatusRequest {
     id: string;
 }
-export interface ScansApiScansTestScanProfileCredentialsRequest {
+export interface ScansTestScanProfileCredentialsRequest {
     model: TestScanProfileCredentialsRequestModel;
 }
-export interface ScansApiScansUnscheduleRequest {
+export interface ScansUnscheduleRequest {
     id: string;
 }
-export interface ScansApiScansUpdateScheduledRequest {
+export interface ScansUpdateScheduledRequest {
     model: UpdateScheduledScanApiModel;
 }
-export interface ScansApiScansUpdateScheduledIncrementalRequest {
+export interface ScansUpdateScheduledIncrementalRequest {
     model: UpdateScheduledIncrementalScanApiModel;
 }
-export interface ScansApiScansValidateImportedLinksFileOperationRequest {
+export interface ScansValidateImportedLinksFileRequest {
     siteUrl: string;
-    scansValidateImportedLinksFileRequest: ScansValidateImportedLinksFileRequest;
+    scansValidateImportedLinksFileReq: ScansValidateImportedLinksFileReq;
     importType?: ScansValidateImportedLinksFileImportTypeEnum;
 }
-export interface ScansApiScansVerifyFormAuthRequest {
+export interface ScansVerifyFormAuthRequest {
     model: FormAuthenticationVerificationApiModel;
 }
 /**
@@ -145,147 +145,147 @@ export declare class ScansApi extends runtime.BaseAPI {
     /**
      * Stops a scan in progress.
      */
-    scansCancelRaw(requestParameters: ScansApiScansCancelRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
+    scansCancelRaw(requestParameters: ScansCancelRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
     /**
      * Stops a scan in progress.
      */
-    scansCancel(requestParameters: ScansApiScansCancelRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
+    scansCancel(requestParameters: ScansCancelRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
     /**
      * Returns the custom report of a scan in the specified format.
      */
-    scansCustomReportRaw(requestParameters: ScansApiScansCustomReportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    scansCustomReportRaw(requestParameters: ScansCustomReportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Returns the custom report of a scan in the specified format.
      */
-    scansCustomReport(requestParameters: ScansApiScansCustomReportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    scansCustomReport(requestParameters: ScansCustomReportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Deletes scan data.
      */
-    scansDeleteRaw(requestParameters: ScansApiScansDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
+    scansDeleteRaw(requestParameters: ScansDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
     /**
      * Deletes scan data.
      */
-    scansDelete(requestParameters: ScansApiScansDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
+    scansDelete(requestParameters: ScansDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
     /**
      * Gets the detail of a scan.
      */
-    scansDetailRaw(requestParameters: ScansApiScansDetailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanTaskModel>>;
+    scansDetailRaw(requestParameters: ScansDetailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanTaskModel>>;
     /**
      * Gets the detail of a scan.
      */
-    scansDetail(requestParameters: ScansApiScansDetailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanTaskModel>;
+    scansDetail(requestParameters: ScansDetailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanTaskModel>;
     /**
      * Downloads the pci scan report based on report type
      */
-    scansDownloadPciScanReportRaw(requestParameters: ScansApiScansDownloadPciScanReportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Blob>>;
+    scansDownloadPciScanReportRaw(requestParameters: ScansDownloadPciScanReportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Blob>>;
     /**
      * Downloads the pci scan report based on report type
      */
-    scansDownloadPciScanReport(requestParameters: ScansApiScansDownloadPciScanReportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Blob>;
+    scansDownloadPciScanReport(requestParameters: ScansDownloadPciScanReportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Blob>;
     /**
      * Downloads the scan file as zip
      */
-    scansDownloadScanFileRaw(requestParameters: ScansApiScansDownloadScanFileRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Blob>>;
+    scansDownloadScanFileRaw(requestParameters: ScansDownloadScanFileRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Blob>>;
     /**
      * Downloads the scan file as zip
      */
-    scansDownloadScanFile(requestParameters: ScansApiScansDownloadScanFileRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Blob>;
+    scansDownloadScanFile(requestParameters: ScansDownloadScanFileRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Blob>;
     /**
      * Downloads the scan file as zip
      */
-    scansDownloadScanFileCheckRaw(requestParameters: ScansApiScansDownloadScanFileCheckRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>>;
+    scansDownloadScanFileCheckRaw(requestParameters: ScansDownloadScanFileCheckRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>>;
     /**
      * Downloads the scan file as zip
      */
-    scansDownloadScanFileCheck(requestParameters: ScansApiScansDownloadScanFileCheckRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object>;
+    scansDownloadScanFileCheck(requestParameters: ScansDownloadScanFileCheckRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object>;
     /**
      * Launches an incremental scan based on the provided base scan identifier.
      */
-    scansIncrementalRaw(requestParameters: ScansApiScansIncrementalRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanTaskModel>>;
+    scansIncrementalRaw(requestParameters: ScansIncrementalRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanTaskModel>>;
     /**
      * Launches an incremental scan based on the provided base scan identifier.
      */
-    scansIncremental(requestParameters: ScansApiScansIncrementalRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanTaskModel>;
+    scansIncremental(requestParameters: ScansIncrementalRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanTaskModel>;
     /**
      * Gets the list of scans and their details.
      */
-    scansListRaw(requestParameters: ScansApiScansListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanTaskListApiResult>>;
+    scansListRaw(requestParameters: ScansListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanTaskListApiResult>>;
     /**
      * Gets the list of scans and their details.
      */
-    scansList(requestParameters?: ScansApiScansListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanTaskListApiResult>;
+    scansList(requestParameters?: ScansListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanTaskListApiResult>;
     /**
      * Gets the list of scans by state
      */
-    scansListByStateRaw(requestParameters: ScansApiScansListByStateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanTaskListApiResult>>;
+    scansListByStateRaw(requestParameters: ScansListByStateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanTaskListApiResult>>;
     /**
      * Gets the list of scans by state
      */
-    scansListByState(requestParameters: ScansApiScansListByStateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanTaskListApiResult>;
+    scansListByState(requestParameters: ScansListByStateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanTaskListApiResult>;
     /**
      * Gets the list of scans by stateChanged
      */
-    scansListByStateChangedRaw(requestParameters: ScansApiScansListByStateChangedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanTaskListApiResult>>;
+    scansListByStateChangedRaw(requestParameters: ScansListByStateChangedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanTaskListApiResult>>;
     /**
      * Gets the list of scans by stateChanged
      */
-    scansListByStateChanged(requestParameters: ScansApiScansListByStateChangedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanTaskListApiResult>;
+    scansListByStateChanged(requestParameters: ScansListByStateChangedRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanTaskListApiResult>;
     /**
      * Gets the list of scans and their details.
      */
-    scansListByWebsiteRaw(requestParameters: ScansApiScansListByWebsiteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanTaskListApiResult>>;
+    scansListByWebsiteRaw(requestParameters: ScansListByWebsiteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanTaskListApiResult>>;
     /**
      * Gets the list of scans and their details.
      */
-    scansListByWebsite(requestParameters?: ScansApiScansListByWebsiteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanTaskListApiResult>;
+    scansListByWebsite(requestParameters?: ScansListByWebsiteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanTaskListApiResult>;
     /**
      * Gets the list of scheduled scans which are scheduled to be launched in the future.
      */
-    scansListScheduledRaw(requestParameters: ScansApiScansListScheduledRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScheduledScanListApiResult>>;
+    scansListScheduledRaw(requestParameters: ScansListScheduledRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScheduledScanListApiResult>>;
     /**
      * Gets the list of scheduled scans which are scheduled to be launched in the future.
      */
-    scansListScheduled(requestParameters?: ScansApiScansListScheduledRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScheduledScanListApiResult>;
+    scansListScheduled(requestParameters?: ScansListScheduledRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScheduledScanListApiResult>;
     /**
      * Launches a new scan.
      */
-    scansNewRaw(requestParameters: ScansApiScansNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<ScanTaskModel>>>;
+    scansNewRaw(requestParameters: ScansNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<ScanTaskModel>>>;
     /**
      * Launches a new scan.
      */
-    scansNew(requestParameters: ScansApiScansNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<ScanTaskModel>>;
+    scansNew(requestParameters: ScansNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<ScanTaskModel>>;
     /**
      * Launches a new scan with same configuration from the scan specified with scan id.
      */
-    scansNewFromScanRaw(requestParameters: ScansApiScansNewFromScanRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanTaskModel>>;
+    scansNewFromScanRaw(requestParameters: ScansNewFromScanRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanTaskModel>>;
     /**
      * Launches a new scan with same configuration from the scan specified with scan id.
      */
-    scansNewFromScan(requestParameters: ScansApiScansNewFromScanRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanTaskModel>;
+    scansNewFromScan(requestParameters: ScansNewFromScanRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanTaskModel>;
     /**
      * Launches a new group scan.
      */
-    scansNewGroupScanRaw(requestParameters: ScansApiScansNewGroupScanRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<ScanTaskModel>>>;
+    scansNewGroupScanRaw(requestParameters: ScansNewGroupScanRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<ScanTaskModel>>>;
     /**
      * Launches a new group scan.
      */
-    scansNewGroupScan(requestParameters: ScansApiScansNewGroupScanRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<ScanTaskModel>>;
+    scansNewGroupScan(requestParameters: ScansNewGroupScanRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<ScanTaskModel>>;
     /**
      * Launches a new scan with profile id.
      */
-    scansNewWithProfileRaw(requestParameters: ScansApiScansNewWithProfileRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanTaskModel>>;
+    scansNewWithProfileRaw(requestParameters: ScansNewWithProfileRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanTaskModel>>;
     /**
      * Launches a new scan with profile id.
      */
-    scansNewWithProfile(requestParameters: ScansApiScansNewWithProfileRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanTaskModel>;
+    scansNewWithProfile(requestParameters: ScansNewWithProfileRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanTaskModel>;
     /**
      * Pauses a scan in progress.
      */
-    scansPauseRaw(requestParameters: ScansApiScansPauseRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
+    scansPauseRaw(requestParameters: ScansPauseRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
     /**
      * Pauses a scan in progress.
      */
-    scansPause(requestParameters: ScansApiScansPauseRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
+    scansPause(requestParameters: ScansPauseRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
     /**
      * Pausing scans in Scanning status.
      */
@@ -297,27 +297,27 @@ export declare class ScansApi extends runtime.BaseAPI {
     /**
      * Returns the report of a scan in the specified format.
      */
-    scansReportRaw(requestParameters: ScansApiScansReportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Blob>>;
+    scansReportRaw(requestParameters: ScansReportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Blob>>;
     /**
      * Returns the report of a scan in the specified format.
      */
-    scansReport(requestParameters: ScansApiScansReportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Blob>;
+    scansReport(requestParameters: ScansReportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Blob>;
     /**
      * Gets the result of a scan.
      */
-    scansResultRaw(requestParameters: ScansApiScansResultRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<VulnerabilityModel>>>;
+    scansResultRaw(requestParameters: ScansResultRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<Array<VulnerabilityModel>>>;
     /**
      * Gets the result of a scan.
      */
-    scansResult(requestParameters: ScansApiScansResultRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<VulnerabilityModel>>;
+    scansResult(requestParameters: ScansResultRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<Array<VulnerabilityModel>>;
     /**
      * Resumes a paused scan.
      */
-    scansResumeRaw(requestParameters: ScansApiScansResumeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
+    scansResumeRaw(requestParameters: ScansResumeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
     /**
      * Resumes a paused scan.
      */
-    scansResume(requestParameters: ScansApiScansResumeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
+    scansResume(requestParameters: ScansResumeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
     /**
      * Resuming \"Paused scans\" with the Pause active scan endpoint.
      */
@@ -329,206 +329,206 @@ export declare class ScansApi extends runtime.BaseAPI {
     /**
      * Launches a retest scan based on the provided base scan identifier.
      */
-    scansRetestRaw(requestParameters: ScansApiScansRetestRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanTaskModel>>;
+    scansRetestRaw(requestParameters: ScansRetestRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ScanTaskModel>>;
     /**
      * Launches a retest scan based on the provided base scan identifier.
      */
-    scansRetest(requestParameters: ScansApiScansRetestRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanTaskModel>;
+    scansRetest(requestParameters: ScansRetestRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ScanTaskModel>;
     /**
      * Schedules a scan to be launched in the future.
      */
-    scansScheduleRaw(requestParameters: ScansApiScansScheduleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UpdateScheduledScanModel>>;
+    scansScheduleRaw(requestParameters: ScansScheduleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UpdateScheduledScanModel>>;
     /**
      * Schedules a scan to be launched in the future.
      */
-    scansSchedule(requestParameters: ScansApiScansScheduleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UpdateScheduledScanModel>;
+    scansSchedule(requestParameters: ScansScheduleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UpdateScheduledScanModel>;
     /**
      * Schedules an incremental scan to be launched in the future.
      */
-    scansScheduleIncrementalRaw(requestParameters: ScansApiScansScheduleIncrementalRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UpdateScheduledScanModel>>;
+    scansScheduleIncrementalRaw(requestParameters: ScansScheduleIncrementalRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UpdateScheduledScanModel>>;
     /**
      * Schedules an incremental scan to be launched in the future.
      */
-    scansScheduleIncremental(requestParameters: ScansApiScansScheduleIncrementalRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UpdateScheduledScanModel>;
+    scansScheduleIncremental(requestParameters: ScansScheduleIncrementalRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UpdateScheduledScanModel>;
     /**
      * Schedules a scan by a profile to be launched in the future.
      */
-    scansScheduleWithProfileRaw(requestParameters: ScansApiScansScheduleWithProfileRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UpdateScheduledScanModel>>;
+    scansScheduleWithProfileRaw(requestParameters: ScansScheduleWithProfileRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UpdateScheduledScanModel>>;
     /**
      * Schedules a scan by a profile to be launched in the future.
      */
-    scansScheduleWithProfile(requestParameters: ScansApiScansScheduleWithProfileRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UpdateScheduledScanModel>;
+    scansScheduleWithProfile(requestParameters: ScansScheduleWithProfileRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UpdateScheduledScanModel>;
     /**
      * Gets the status of a scan.
      */
-    scansStatusRaw(requestParameters: ScansApiScansStatusRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiScanStatusModel>>;
+    scansStatusRaw(requestParameters: ScansStatusRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<ApiScanStatusModel>>;
     /**
      * Gets the status of a scan.
      */
-    scansStatus(requestParameters: ScansApiScansStatusRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiScanStatusModel>;
+    scansStatus(requestParameters: ScansStatusRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<ApiScanStatusModel>;
     /**
      * Tests the credentials of scan profile for specific url.
      */
-    scansTestScanProfileCredentialsRaw(requestParameters: ScansApiScansTestScanProfileCredentialsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TestScanProfileCredentialsRequestModel>>;
+    scansTestScanProfileCredentialsRaw(requestParameters: ScansTestScanProfileCredentialsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TestScanProfileCredentialsRequestModel>>;
     /**
      * Tests the credentials of scan profile for specific url.
      */
-    scansTestScanProfileCredentials(requestParameters: ScansApiScansTestScanProfileCredentialsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TestScanProfileCredentialsRequestModel>;
+    scansTestScanProfileCredentials(requestParameters: ScansTestScanProfileCredentialsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TestScanProfileCredentialsRequestModel>;
     /**
      * Removes and deletes a scheduled scan.
      */
-    scansUnscheduleRaw(requestParameters: ScansApiScansUnscheduleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    scansUnscheduleRaw(requestParameters: ScansUnscheduleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Removes and deletes a scheduled scan.
      */
-    scansUnschedule(requestParameters: ScansApiScansUnscheduleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    scansUnschedule(requestParameters: ScansUnscheduleRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Updates a scheduled scan.
      */
-    scansUpdateScheduledRaw(requestParameters: ScansApiScansUpdateScheduledRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UpdateScheduledScanApiModel>>;
+    scansUpdateScheduledRaw(requestParameters: ScansUpdateScheduledRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UpdateScheduledScanApiModel>>;
     /**
      * Updates a scheduled scan.
      */
-    scansUpdateScheduled(requestParameters: ScansApiScansUpdateScheduledRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UpdateScheduledScanApiModel>;
+    scansUpdateScheduled(requestParameters: ScansUpdateScheduledRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UpdateScheduledScanApiModel>;
     /**
      * Updates an incremental scheduled scan.
      */
-    scansUpdateScheduledIncrementalRaw(requestParameters: ScansApiScansUpdateScheduledIncrementalRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UpdateScheduledIncrementalScanApiModel>>;
+    scansUpdateScheduledIncrementalRaw(requestParameters: ScansUpdateScheduledIncrementalRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<UpdateScheduledIncrementalScanApiModel>>;
     /**
      * Updates an incremental scheduled scan.
      */
-    scansUpdateScheduledIncremental(requestParameters: ScansApiScansUpdateScheduledIncrementalRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UpdateScheduledIncrementalScanApiModel>;
+    scansUpdateScheduledIncremental(requestParameters: ScansUpdateScheduledIncrementalRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<UpdateScheduledIncrementalScanApiModel>;
     /**
      */
-    scansValidateImportedLinksFileRaw(requestParameters: ScansApiScansValidateImportedLinksFileOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>>;
+    scansValidateImportedLinksFileRaw(requestParameters: ScansValidateImportedLinksFileRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>>;
     /**
      */
-    scansValidateImportedLinksFile(requestParameters: ScansApiScansValidateImportedLinksFileOperationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object>;
-    /**
-     * Verifies the specified form authentication settings.
-     */
-    scansVerifyFormAuthRaw(requestParameters: ScansApiScansVerifyFormAuthRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AuthVerificationApiResult>>;
+    scansValidateImportedLinksFile(requestParameters: ScansValidateImportedLinksFileRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<object>;
     /**
      * Verifies the specified form authentication settings.
      */
-    scansVerifyFormAuth(requestParameters: ScansApiScansVerifyFormAuthRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AuthVerificationApiResult>;
+    scansVerifyFormAuthRaw(requestParameters: ScansVerifyFormAuthRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AuthVerificationApiResult>>;
+    /**
+     * Verifies the specified form authentication settings.
+     */
+    scansVerifyFormAuth(requestParameters: ScansVerifyFormAuthRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AuthVerificationApiResult>;
 }
 /**
  * @export
- * @enum {string}
  */
-export declare enum ScansCustomReportReportFormatEnum {
-    Xml = "Xml",
-    Csv = "Csv",
-    Pdf = "Pdf",
-    Html = "Html",
-    Txt = "Txt",
-    Json = "Json"
-}
+export declare const ScansCustomReportReportFormatEnum: {
+    readonly Xml: "Xml";
+    readonly Csv: "Csv";
+    readonly Pdf: "Pdf";
+    readonly Html: "Html";
+    readonly Txt: "Txt";
+    readonly Json: "Json";
+};
+export type ScansCustomReportReportFormatEnum = typeof ScansCustomReportReportFormatEnum[keyof typeof ScansCustomReportReportFormatEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum ScansDownloadPciScanReportReportTypeEnum {
-    Attestation = "Attestation",
-    Detailed = "Detailed",
-    Executive = "Executive"
-}
+export declare const ScansDownloadPciScanReportReportTypeEnum: {
+    readonly Attestation: "Attestation";
+    readonly Detailed: "Detailed";
+    readonly Executive: "Executive";
+};
+export type ScansDownloadPciScanReportReportTypeEnum = typeof ScansDownloadPciScanReportReportTypeEnum[keyof typeof ScansDownloadPciScanReportReportTypeEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum ScansListByStateScanTaskStateEnum {
-    Queued = "Queued",
-    Scanning = "Scanning",
-    Archiving = "Archiving",
-    Complete = "Complete",
-    Failed = "Failed",
-    Cancelled = "Cancelled",
-    Delayed = "Delayed",
-    Pausing = "Pausing",
-    Paused = "Paused",
-    Resuming = "Resuming",
-    AsyncArchiving = "AsyncArchiving"
-}
+export declare const ScansListByStateScanTaskStateEnum: {
+    readonly Queued: "Queued";
+    readonly Scanning: "Scanning";
+    readonly Archiving: "Archiving";
+    readonly Complete: "Complete";
+    readonly Failed: "Failed";
+    readonly Cancelled: "Cancelled";
+    readonly Delayed: "Delayed";
+    readonly Pausing: "Pausing";
+    readonly Paused: "Paused";
+    readonly Resuming: "Resuming";
+    readonly AsyncArchiving: "AsyncArchiving";
+};
+export type ScansListByStateScanTaskStateEnum = typeof ScansListByStateScanTaskStateEnum[keyof typeof ScansListByStateScanTaskStateEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum ScansListByWebsiteInitiatedDateSortTypeEnum {
-    Ascending = "Ascending",
-    Descending = "Descending"
-}
+export declare const ScansListByWebsiteInitiatedDateSortTypeEnum: {
+    readonly Ascending: "Ascending";
+    readonly Descending: "Descending";
+};
+export type ScansListByWebsiteInitiatedDateSortTypeEnum = typeof ScansListByWebsiteInitiatedDateSortTypeEnum[keyof typeof ScansListByWebsiteInitiatedDateSortTypeEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum ScansReportFormatEnum {
-    Xml = "Xml",
-    Csv = "Csv",
-    Pdf = "Pdf",
-    Html = "Html",
-    Txt = "Txt",
-    Json = "Json"
-}
+export declare const ScansReportFormatEnum: {
+    readonly Xml: "Xml";
+    readonly Csv: "Csv";
+    readonly Pdf: "Pdf";
+    readonly Html: "Html";
+    readonly Txt: "Txt";
+    readonly Json: "Json";
+};
+export type ScansReportFormatEnum = typeof ScansReportFormatEnum[keyof typeof ScansReportFormatEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum ScansReportTypeEnum {
-    Crawled = "Crawled",
-    Scanned = "Scanned",
-    Vulnerabilities = "Vulnerabilities",
-    ScanDetail = "ScanDetail",
-    ModSecurityWafRules = "ModSecurityWafRules",
-    OwaspTopTen2013 = "OwaspTopTen2013",
-    HipaaCompliance = "HIPAACompliance",
-    Pci32 = "Pci32",
-    KnowledgeBase = "KnowledgeBase",
-    ExecutiveSummary = "ExecutiveSummary",
-    FullScanDetail = "FullScanDetail",
-    OwaspTopTen2017 = "OwaspTopTen2017",
-    CustomReport = "CustomReport",
-    Iso27001Compliance = "Iso27001Compliance",
-    F5BigIpAsmWafRules = "F5BigIpAsmWafRules",
-    Wasc = "WASC",
-    SansTop25 = "SansTop25",
-    Asvs40 = "Asvs40",
-    Nistsp80053 = "Nistsp80053",
-    DisaStig = "DisaStig",
-    OwaspApiTop10 = "OwaspApiTop10",
-    OwaspTopTen2021 = "OwaspTopTen2021",
-    VulnerabilitiesPerWebsite = "VulnerabilitiesPerWebsite",
-    OwaspApiTopTen2023 = "OwaspApiTopTen2023",
-    PciDss40 = "PciDss40"
-}
+export declare const ScansReportTypeEnum: {
+    readonly Crawled: "Crawled";
+    readonly Scanned: "Scanned";
+    readonly Vulnerabilities: "Vulnerabilities";
+    readonly ScanDetail: "ScanDetail";
+    readonly ModSecurityWafRules: "ModSecurityWafRules";
+    readonly OwaspTopTen2013: "OwaspTopTen2013";
+    readonly HipaaCompliance: "HIPAACompliance";
+    readonly Pci32: "Pci32";
+    readonly KnowledgeBase: "KnowledgeBase";
+    readonly ExecutiveSummary: "ExecutiveSummary";
+    readonly FullScanDetail: "FullScanDetail";
+    readonly OwaspTopTen2017: "OwaspTopTen2017";
+    readonly CustomReport: "CustomReport";
+    readonly Iso27001Compliance: "Iso27001Compliance";
+    readonly F5BigIpAsmWafRules: "F5BigIpAsmWafRules";
+    readonly Wasc: "WASC";
+    readonly SansTop25: "SansTop25";
+    readonly Asvs40: "Asvs40";
+    readonly Nistsp80053: "Nistsp80053";
+    readonly DisaStig: "DisaStig";
+    readonly OwaspApiTop10: "OwaspApiTop10";
+    readonly OwaspTopTen2021: "OwaspTopTen2021";
+    readonly VulnerabilitiesPerWebsite: "VulnerabilitiesPerWebsite";
+    readonly OwaspApiTopTen2023: "OwaspApiTopTen2023";
+    readonly PciDss40: "PciDss40";
+};
+export type ScansReportTypeEnum = typeof ScansReportTypeEnum[keyof typeof ScansReportTypeEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum ScansReportContentFormatEnum {
-    Html = "Html",
-    Markdown = "Markdown"
-}
+export declare const ScansReportContentFormatEnum: {
+    readonly Html: "Html";
+    readonly Markdown: "Markdown";
+};
+export type ScansReportContentFormatEnum = typeof ScansReportContentFormatEnum[keyof typeof ScansReportContentFormatEnum];
 /**
  * @export
- * @enum {string}
  */
-export declare enum ScansValidateImportedLinksFileImportTypeEnum {
-    None = "None",
-    Fiddler = "Fiddler",
-    Burp = "Burp",
-    Swagger = "Swagger",
-    OwaspZap = "OwaspZap",
-    AspNet = "AspNet",
-    HttpArchive = "HttpArchive",
-    Wadl = "Wadl",
-    Wsdl = "Wsdl",
-    Postman = "Postman",
-    InvictiSessionFile = "InvictiSessionFile",
-    CsvImporter = "CsvImporter",
-    Iodocs = "Iodocs",
-    WordPress = "WordPress",
-    Raml = "Raml",
-    GraphQl = "GraphQl"
-}
+export declare const ScansValidateImportedLinksFileImportTypeEnum: {
+    readonly None: "None";
+    readonly Fiddler: "Fiddler";
+    readonly Burp: "Burp";
+    readonly Swagger: "Swagger";
+    readonly OwaspZap: "OwaspZap";
+    readonly AspNet: "AspNet";
+    readonly HttpArchive: "HttpArchive";
+    readonly Wadl: "Wadl";
+    readonly Wsdl: "Wsdl";
+    readonly Postman: "Postman";
+    readonly InvictiSessionFile: "InvictiSessionFile";
+    readonly CsvImporter: "CsvImporter";
+    readonly Iodocs: "Iodocs";
+    readonly WordPress: "WordPress";
+    readonly Raml: "Raml";
+    readonly GraphQl: "GraphQl";
+};
+export type ScansValidateImportedLinksFileImportTypeEnum = typeof ScansValidateImportedLinksFileImportTypeEnum[keyof typeof ScansValidateImportedLinksFileImportTypeEnum];

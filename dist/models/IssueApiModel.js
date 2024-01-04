@@ -22,1547 +22,1543 @@ const IssueRequestContentParametersApiModel_1 = require("./IssueRequestContentPa
 const VersionIssue_1 = require("./VersionIssue");
 const VulnerabilityClassification_1 = require("./VulnerabilityClassification");
 /**
-* @export
-* @enum {string}
-*/
-var IssueApiModelSeverityEnum;
-(function (IssueApiModelSeverityEnum) {
-    IssueApiModelSeverityEnum["BestPractice"] = "BestPractice";
-    IssueApiModelSeverityEnum["Information"] = "Information";
-    IssueApiModelSeverityEnum["Low"] = "Low";
-    IssueApiModelSeverityEnum["Medium"] = "Medium";
-    IssueApiModelSeverityEnum["High"] = "High";
-    IssueApiModelSeverityEnum["Critical"] = "Critical";
-})(IssueApiModelSeverityEnum = exports.IssueApiModelSeverityEnum || (exports.IssueApiModelSeverityEnum = {}));
+ * @export
+ */
+exports.IssueApiModelSeverityEnum = {
+    BestPractice: 'BestPractice',
+    Information: 'Information',
+    Low: 'Low',
+    Medium: 'Medium',
+    High: 'High',
+    Critical: 'Critical'
+};
 /**
-* @export
-* @enum {string}
-*/
-var IssueApiModelTypeEnum;
-(function (IssueApiModelTypeEnum) {
-    IssueApiModelTypeEnum["Custom"] = "Custom";
-    IssueApiModelTypeEnum["Sca"] = "Sca";
-    IssueApiModelTypeEnum["None"] = "None";
-    IssueApiModelTypeEnum["HighlyPossibleSqlInjection"] = "HighlyPossibleSqlInjection";
-    IssueApiModelTypeEnum["Xss"] = "Xss";
-    IssueApiModelTypeEnum["PossibleXss"] = "PossibleXss";
-    IssueApiModelTypeEnum["PermanentXss"] = "PermanentXss";
-    IssueApiModelTypeEnum["PossiblePermanentXss"] = "PossiblePermanentXss";
-    IssueApiModelTypeEnum["InternalServerError"] = "InternalServerError";
-    IssueApiModelTypeEnum["ForbiddenResource"] = "ForbiddenResource";
-    IssueApiModelTypeEnum["PassiveVulns"] = "PassiveVulns";
-    IssueApiModelTypeEnum["PossibleBlindSqlInjection"] = "PossibleBlindSqlInjection";
-    IssueApiModelTypeEnum["NtlmAuthrizationRequired"] = "NtlmAuthrizationRequired";
-    IssueApiModelTypeEnum["BasicAuthorisationRequired"] = "BasicAuthorisationRequired";
-    IssueApiModelTypeEnum["DigestAuthorizationRequired"] = "DigestAuthorizationRequired";
-    IssueApiModelTypeEnum["ClearTextBasicAuth"] = "ClearTextBasicAuth";
-    IssueApiModelTypeEnum["ConfirmedBlindSqlInjection"] = "ConfirmedBlindSqlInjection";
-    IssueApiModelTypeEnum["PossibleSqlInjection"] = "PossibleSqlInjection";
-    IssueApiModelTypeEnum["ConfirmedSqlInjection"] = "ConfirmedSqlInjection";
-    IssueApiModelTypeEnum["FileUploadFound"] = "FileUploadFound";
-    IssueApiModelTypeEnum["AutoCompleteEnabled"] = "AutoCompleteEnabled";
-    IssueApiModelTypeEnum["PasswordOverHttp"] = "PasswordOverHttp";
-    IssueApiModelTypeEnum["PasswordFormOverHttp"] = "PasswordFormOverHttp";
-    IssueApiModelTypeEnum["InternalIpLeakage"] = "InternalIPLeakage";
-    IssueApiModelTypeEnum["CookieNotMarkedAsSecure"] = "CookieNotMarkedAsSecure";
-    IssueApiModelTypeEnum["CookieNotMarkedAsHttpOnly"] = "CookieNotMarkedAsHttpOnly";
-    IssueApiModelTypeEnum["ConfirmedBooleanSqlInjection"] = "ConfirmedBooleanSqlInjection";
-    IssueApiModelTypeEnum["PossibleBooleanSqlInjection"] = "PossibleBooleanSqlInjection";
-    IssueApiModelTypeEnum["PasswordToHttp"] = "PasswordToHttp";
-    IssueApiModelTypeEnum["CommandInjection"] = "CommandInjection";
-    IssueApiModelTypeEnum["BlindCommandInjection"] = "BlindCommandInjection";
-    IssueApiModelTypeEnum["PossibleBlindCommandInjection"] = "PossibleBlindCommandInjection";
-    IssueApiModelTypeEnum["HeaderInjection"] = "HeaderInjection";
-    IssueApiModelTypeEnum["MySqlIdentified"] = "MySqlIdentified";
-    IssueApiModelTypeEnum["MsSqlIdentified"] = "MsSqlIdentified";
-    IssueApiModelTypeEnum["MsAccessIdentified"] = "MsAccessIdentified";
-    IssueApiModelTypeEnum["DbConnectedAsAdmin"] = "DbConnectedAsAdmin";
-    IssueApiModelTypeEnum["AspNetIdentified"] = "AspNetIdentified";
-    IssueApiModelTypeEnum["AspNetVersionDisclosure"] = "AspNetVersionDisclosure";
-    IssueApiModelTypeEnum["IisDirectoryListing"] = "IisDirectoryListing";
-    IssueApiModelTypeEnum["ApacheDirectoryListing"] = "ApacheDirectoryListing";
-    IssueApiModelTypeEnum["TomcatDirectoryListing"] = "TomcatDirectoryListing";
-    IssueApiModelTypeEnum["PhpSourceCodeDisclosure"] = "PhpSourceCodeDisclosure";
-    IssueApiModelTypeEnum["AspNetSourceCodeDisclosure"] = "AspNetSourceCodeDisclosure";
-    IssueApiModelTypeEnum["GenericSourceCodeDisclosure"] = "GenericSourceCodeDisclosure";
-    IssueApiModelTypeEnum["PossibleInternalUnixPathLeakage"] = "PossibleInternalUnixPathLeakage";
-    IssueApiModelTypeEnum["MsOfficeDocumentInformationDisclosure"] = "MsOfficeDocumentInformationDisclosure";
-    IssueApiModelTypeEnum["PhpInfoIdentified"] = "PhpInfoIdentified";
-    IssueApiModelTypeEnum["PossibleLocalFileInclusion"] = "PossibleLocalFileInclusion";
-    IssueApiModelTypeEnum["OracleIdentified"] = "OracleIdentified";
-    IssueApiModelTypeEnum["PostgreSqlIdentified"] = "PostgreSqlIdentified";
-    IssueApiModelTypeEnum["HighPossibilityLfi"] = "HighPossibilityLfi";
-    IssueApiModelTypeEnum["Lfi"] = "Lfi";
-    IssueApiModelTypeEnum["PossibleInternalWindowsPathLeakage"] = "PossibleInternalWindowsPathLeakage";
-    IssueApiModelTypeEnum["EmailDisclosure"] = "EmailDisclosure";
-    IssueApiModelTypeEnum["SocialSecurityNumberDisclosure"] = "SocialSecurityNumberDisclosure";
-    IssueApiModelTypeEnum["ApacheVersionDisclosure"] = "ApacheVersionDisclosure";
-    IssueApiModelTypeEnum["TomcatVersionDisclosure"] = "TomcatVersionDisclosure";
-    IssueApiModelTypeEnum["PhpVersionDisclosure"] = "PhpVersionDisclosure";
-    IssueApiModelTypeEnum["IisVersionDisclosure"] = "IisVersionDisclosure";
-    IssueApiModelTypeEnum["WebLogicVersionDisclosure"] = "WebLogicVersionDisclosure";
-    IssueApiModelTypeEnum["LighttpdVersionDisclosure"] = "LighttpdVersionDisclosure";
-    IssueApiModelTypeEnum["SharePointVersionDisclosure"] = "SharePointVersionDisclosure";
-    IssueApiModelTypeEnum["ApacheCoyoteVersionDisclosure"] = "ApacheCoyoteVersionDisclosure";
-    IssueApiModelTypeEnum["OracleApplicationServerVersionDisclosure"] = "OracleApplicationServerVersionDisclosure";
-    IssueApiModelTypeEnum["OpenSslVersionDisclosure"] = "OpenSslVersionDisclosure";
-    IssueApiModelTypeEnum["ApacheModuleVersionDisclosure"] = "ApacheModuleVersionDisclosure";
-    IssueApiModelTypeEnum["PerlVersionDisclosure"] = "PerlVersionDisclosure";
-    IssueApiModelTypeEnum["FrontPageVersionDisclosure"] = "FrontPageVersionDisclosure";
-    IssueApiModelTypeEnum["PythonVersionDisclosure"] = "PythonVersionDisclosure";
-    IssueApiModelTypeEnum["JavaServletVersionDisclosure"] = "JavaServletVersionDisclosure";
-    IssueApiModelTypeEnum["SitemapIdentified"] = "SitemapIdentified";
-    IssueApiModelTypeEnum["CrossDomainXml"] = "CrossDomainXml";
-    IssueApiModelTypeEnum["RobotsIdentified"] = "RobotsIdentified";
-    IssueApiModelTypeEnum["SpecialCase"] = "SpecialCase";
-    IssueApiModelTypeEnum["SpecialCaseNoCookies"] = "SpecialCaseNoCookies";
-    IssueApiModelTypeEnum["SpecialCaseNoBasicAuthentication"] = "SpecialCaseNoBasicAuthentication";
-    IssueApiModelTypeEnum["ApacheServerStatus"] = "ApacheServerStatus";
-    IssueApiModelTypeEnum["ApacheServerInfo"] = "ApacheServerInfo";
-    IssueApiModelTypeEnum["ClientAccessPolicy"] = "ClientAccessPolicy";
-    IssueApiModelTypeEnum["OpenCrossDomainXml"] = "OpenCrossDomainXml";
-    IssueApiModelTypeEnum["OpenClientAccessPolicy"] = "OpenClientAccessPolicy";
-    IssueApiModelTypeEnum["HighPossibleBooleanSqlInjection"] = "HighPossibleBooleanSqlInjection";
-    IssueApiModelTypeEnum["DatabaseErrorMessages"] = "DatabaseErrorMessages";
-    IssueApiModelTypeEnum["ProgrammingErrorMessages"] = "ProgrammingErrorMessages";
-    IssueApiModelTypeEnum["ApacheMultiViewsEnabled"] = "ApacheMultiViewsEnabled";
-    IssueApiModelTypeEnum["BackupFileFound"] = "BackupFileFound";
-    IssueApiModelTypeEnum["BackupSourceCodeFound"] = "BackupSourceCodeFound";
-    IssueApiModelTypeEnum["TraceTrackIdentified"] = "TraceTrackIdentified";
-    IssueApiModelTypeEnum["TraceaxdFound"] = "TraceaxdFound";
-    IssueApiModelTypeEnum["ElmahaxdFound"] = "ElmahaxdFound";
-    IssueApiModelTypeEnum["AspNetDebugEnabled"] = "AspNetDebugEnabled";
-    IssueApiModelTypeEnum["LfiCodeInclusion"] = "LfiCodeInclusion";
-    IssueApiModelTypeEnum["AspNetStackTrace"] = "AspNetStackTrace";
-    IssueApiModelTypeEnum["SvnDisclosure"] = "SvnDisclosure";
-    IssueApiModelTypeEnum["GitDisclosure"] = "GitDisclosure";
-    IssueApiModelTypeEnum["CvsDisclosure"] = "CvsDisclosure";
-    IssueApiModelTypeEnum["Rfi"] = "Rfi";
-    IssueApiModelTypeEnum["PossibleRfi"] = "PossibleRfi";
-    IssueApiModelTypeEnum["PossibleCi"] = "PossibleCi";
-    IssueApiModelTypeEnum["XssViaRfi"] = "XssViaRfi";
-    IssueApiModelTypeEnum["RceAsp"] = "RceAsp";
-    IssueApiModelTypeEnum["PossibleRceAsp"] = "PossibleRceAsp";
-    IssueApiModelTypeEnum["RcePhp"] = "RcePhp";
-    IssueApiModelTypeEnum["PossibleRcePhp"] = "PossibleRcePhp";
-    IssueApiModelTypeEnum["RcePerl"] = "RcePerl";
-    IssueApiModelTypeEnum["PossibleRcePerl"] = "PossibleRcePerl";
-    IssueApiModelTypeEnum["ViewStateMacNotEnabled"] = "ViewStateMacNotEnabled";
-    IssueApiModelTypeEnum["ViewStateNotEncrypted"] = "ViewStateNotEncrypted";
-    IssueApiModelTypeEnum["ViewStateAnalyzer"] = "ViewStateAnalyzer";
-    IssueApiModelTypeEnum["OpenRedirect"] = "OpenRedirect";
-    IssueApiModelTypeEnum["TomcatExceptionReport"] = "TomcatExceptionReport";
-    IssueApiModelTypeEnum["DjangoStackTraceDisclosure"] = "DjangoStackTraceDisclosure";
-    IssueApiModelTypeEnum["Struts2DevModeEnabled"] = "Struts2DevModeEnabled";
-    IssueApiModelTypeEnum["AspNetDirectoryListing"] = "AspNetDirectoryListing";
-    IssueApiModelTypeEnum["MySqlUsernameDisclosure"] = "MySqlUsernameDisclosure";
-    IssueApiModelTypeEnum["MsSqlUsernameDisclosure"] = "MsSqlUsernameDisclosure";
-    IssueApiModelTypeEnum["WinUsernameDisclosure"] = "WinUsernameDisclosure";
-    IssueApiModelTypeEnum["RceViaLfi"] = "RceViaLfi";
-    IssueApiModelTypeEnum["XssProtectionDisabled"] = "XssProtectionDisabled";
-    IssueApiModelTypeEnum["MdbFound"] = "MdbFound";
-    IssueApiModelTypeEnum["WeakCredentials"] = "WeakCredentials";
-    IssueApiModelTypeEnum["PythonStackTraceDisclosure"] = "PythonStackTraceDisclosure";
-    IssueApiModelTypeEnum["ColdFusionStackTraceDisclosure"] = "ColdFusionStackTraceDisclosure";
-    IssueApiModelTypeEnum["DefaultIis7Page"] = "DefaultIis7Page";
-    IssueApiModelTypeEnum["DefaultIis6Page"] = "DefaultIis6Page";
-    IssueApiModelTypeEnum["DefaultApachePage"] = "DefaultApachePage";
-    IssueApiModelTypeEnum["SinatraStackTraceDisclosure"] = "SinatraStackTraceDisclosure";
-    IssueApiModelTypeEnum["SqliteFound"] = "SqliteFound";
-    IssueApiModelTypeEnum["OutlookFileFound"] = "OutlookFileFound";
-    IssueApiModelTypeEnum["DsStoreFileFound"] = "DsStoreFileFound";
-    IssueApiModelTypeEnum["FrameInjection"] = "FrameInjection";
-    IssueApiModelTypeEnum["DefaultTomcatPage"] = "DefaultTomcatPage";
-    IssueApiModelTypeEnum["TomcatSourceCodeDisclosure"] = "TomcatSourceCodeDisclosure";
-    IssueApiModelTypeEnum["WebBackdoorIdentified"] = "WebBackdoorIdentified";
-    IssueApiModelTypeEnum["PassiveWebBackdoorIdentified"] = "PassiveWebBackdoorIdentified";
-    IssueApiModelTypeEnum["PossibleAdminFile"] = "PossibleAdminFile";
-    IssueApiModelTypeEnum["PossibleConfigFile"] = "PossibleConfigFile";
-    IssueApiModelTypeEnum["PossibleReadmeFile"] = "PossibleReadmeFile";
-    IssueApiModelTypeEnum["PossibleInstallationFile"] = "PossibleInstallationFile";
-    IssueApiModelTypeEnum["PossibleLogFile"] = "PossibleLogFile";
-    IssueApiModelTypeEnum["PossibleSqlFile"] = "PossibleSqlFile";
-    IssueApiModelTypeEnum["PossibleTestFile"] = "PossibleTestFile";
-    IssueApiModelTypeEnum["TomcatOutOfDate"] = "TomcatOutOfDate";
-    IssueApiModelTypeEnum["ApacheOutOfDate"] = "ApacheOutOfDate";
-    IssueApiModelTypeEnum["MsSqlOutOfDate"] = "MsSqlOutOfDate";
-    IssueApiModelTypeEnum["MySqlOutOfDate"] = "MySqlOutOfDate";
-    IssueApiModelTypeEnum["HsqlDbOutOfDate"] = "HsqlDbOutOfDate";
-    IssueApiModelTypeEnum["PhpOutOfDate"] = "PhpOutOfDate";
-    IssueApiModelTypeEnum["OpenSslOutOfDate"] = "OpenSslOutOfDate";
-    IssueApiModelTypeEnum["RedirectBodyTooLarge"] = "RedirectBodyTooLarge";
-    IssueApiModelTypeEnum["RedirectTwoResponses"] = "RedirectTwoResponses";
-    IssueApiModelTypeEnum["SslVersion2Support"] = "SslVersion2Support";
-    IssueApiModelTypeEnum["WeakCiphersDetected"] = "WeakCiphersDetected";
-    IssueApiModelTypeEnum["AnonAuthDetected"] = "AnonAuthDetected";
-    IssueApiModelTypeEnum["WeakSignatureAlgorithmDetected"] = "WeakSignatureAlgorithmDetected";
-    IssueApiModelTypeEnum["InvalidSslCertificate"] = "InvalidSslCertificate";
-    IssueApiModelTypeEnum["SslVersion3Support"] = "SslVersion3Support";
-    IssueApiModelTypeEnum["IntermediateWeakSignatureAlgorithmDetected"] = "IntermediateWeakSignatureAlgorithmDetected";
-    IssueApiModelTypeEnum["MvcVersionDisclosure"] = "MvcVersionDisclosure";
-    IssueApiModelTypeEnum["MongrelVersionDisclosure"] = "MongrelVersionDisclosure";
-    IssueApiModelTypeEnum["NginxVersionDisclosure"] = "NginxVersionDisclosure";
-    IssueApiModelTypeEnum["MySqldoSDetected"] = "MySQLDoSDetected";
-    IssueApiModelTypeEnum["GrailsStackTraceDisclosure"] = "GrailsStackTraceDisclosure";
-    IssueApiModelTypeEnum["PossibleElInjection"] = "PossibleElInjection";
-    IssueApiModelTypeEnum["ElInjection"] = "ElInjection";
-    IssueApiModelTypeEnum["ApacheMyFacesStackTraceDisclosure"] = "ApacheMyFacesStackTraceDisclosure";
-    IssueApiModelTypeEnum["PasswordOverQuerystring"] = "PasswordOverQuerystring";
-    IssueApiModelTypeEnum["ColdFusionSourceCodeDisclosure"] = "ColdFusionSourceCodeDisclosure";
-    IssueApiModelTypeEnum["AwStatsIdentified"] = "AWStatsIdentified";
-    IssueApiModelTypeEnum["MintIdentified"] = "MintIdentified";
-    IssueApiModelTypeEnum["PiwikIdentified"] = "PiwikIdentified";
-    IssueApiModelTypeEnum["WsftpLogFileIdentified"] = "WSFTPLogFileIdentified";
-    IssueApiModelTypeEnum["WebConfigIdentified"] = "WebConfigIdentified";
-    IssueApiModelTypeEnum["LighttpdDirectoryListing"] = "LighttpdDirectoryListing";
-    IssueApiModelTypeEnum["NginxDirectoryListing"] = "NginxDirectoryListing";
-    IssueApiModelTypeEnum["LiteSpeedDirectoryListing"] = "LiteSpeedDirectoryListing";
-    IssueApiModelTypeEnum["GenericEmailDisclosure"] = "GenericEmailDisclosure";
-    IssueApiModelTypeEnum["DefaultIis8Page"] = "DefaultIis8Page";
-    IssueApiModelTypeEnum["ShellScriptIdentified"] = "ShellScriptIdentified";
-    IssueApiModelTypeEnum["PossibleDatabaseConnectionStringIdentified"] = "PossibleDatabaseConnectionStringIdentified";
-    IssueApiModelTypeEnum["UncServerAndShareDisclosure"] = "UNCServerAndShareDisclosure";
-    IssueApiModelTypeEnum["HstsNotEnabled"] = "HstsNotEnabled";
-    IssueApiModelTypeEnum["HstsMaxAge"] = "HstsMaxAge";
-    IssueApiModelTypeEnum["HstsViaHttp"] = "HstsViaHttp";
-    IssueApiModelTypeEnum["HstsErrors"] = "HstsErrors";
-    IssueApiModelTypeEnum["WordPressOutOfDate"] = "WordPressOutOfDate";
-    IssueApiModelTypeEnum["DrupalOutOfDate"] = "DrupalOutOfDate";
-    IssueApiModelTypeEnum["JoomlaOutOfDate"] = "JoomlaOutOfDate";
-    IssueApiModelTypeEnum["MediaWikiOutOfDate"] = "MediaWikiOutOfDate";
-    IssueApiModelTypeEnum["MovableTypeOutOfDate"] = "MovableTypeOutOfDate";
-    IssueApiModelTypeEnum["OscommerceOutOfDate"] = "OscommerceOutOfDate";
-    IssueApiModelTypeEnum["PhpBbOutOfDate"] = "PhpBBOutOfDate";
-    IssueApiModelTypeEnum["TWikiOutOfDate"] = "TWikiOutOfDate";
-    IssueApiModelTypeEnum["WordPressIdentified"] = "WordPressIdentified";
-    IssueApiModelTypeEnum["DrupalIdentified"] = "DrupalIdentified";
-    IssueApiModelTypeEnum["JoomlaIdentified"] = "JoomlaIdentified";
-    IssueApiModelTypeEnum["MediaWikiIdentified"] = "MediaWikiIdentified";
-    IssueApiModelTypeEnum["MovableTypeIdentified"] = "MovableTypeIdentified";
-    IssueApiModelTypeEnum["OscommerceIdentified"] = "OscommerceIdentified";
-    IssueApiModelTypeEnum["PhpBbIdentified"] = "PhpBBIdentified";
-    IssueApiModelTypeEnum["TWikiIdentified"] = "TWikiIdentified";
-    IssueApiModelTypeEnum["RceRorXml"] = "RceRorXml";
-    IssueApiModelTypeEnum["RceRorJson"] = "RceRorJson";
-    IssueApiModelTypeEnum["PossibleRceRorXml"] = "PossibleRceRorXml";
-    IssueApiModelTypeEnum["PossibleRceRorJson"] = "PossibleRceRorJson";
-    IssueApiModelTypeEnum["ModSslVersionDisclosure"] = "ModSslVersionDisclosure";
-    IssueApiModelTypeEnum["PhpmyAdminIdentified"] = "PHPMyAdminIdentified";
-    IssueApiModelTypeEnum["WebalizerIdentified"] = "WebalizerIdentified";
-    IssueApiModelTypeEnum["RubyVersionDisclosure"] = "RubyVersionDisclosure";
-    IssueApiModelTypeEnum["WebrickVersionDisclosure"] = "WebrickVersionDisclosure";
-    IssueApiModelTypeEnum["OptionsMethodEnabled"] = "OptionsMethodEnabled";
-    IssueApiModelTypeEnum["WebDavEnabled"] = "WebDavEnabled";
-    IssueApiModelTypeEnum["WebDavDirectoryHasWritePermissions"] = "WebDavDirectoryHasWritePermissions";
-    IssueApiModelTypeEnum["CodeExecutionViaWebDav"] = "CodeExecutionViaWebDav";
-    IssueApiModelTypeEnum["WebDavDirectoryListing"] = "WebDavDirectoryListing";
-    IssueApiModelTypeEnum["CsrfDetected"] = "CsrfDetected";
-    IssueApiModelTypeEnum["CsrfInLoginFormDetected"] = "CsrfInLoginFormDetected";
-    IssueApiModelTypeEnum["CookieLeakageInAntiCsrfTokenDetected"] = "CookieLeakageInAntiCsrfTokenDetected";
-    IssueApiModelTypeEnum["MisconfiguredFrame"] = "MisconfiguredFrame";
-    IssueApiModelTypeEnum["InsecureFrameExternal"] = "InsecureFrameExternal";
-    IssueApiModelTypeEnum["DomBasedXss"] = "DomBasedXss";
-    IssueApiModelTypeEnum["NuSoapVersionDisclosure"] = "NuSoapVersionDisclosure";
-    IssueApiModelTypeEnum["NuSoapOutOfDate"] = "NuSoapOutOfDate";
-    IssueApiModelTypeEnum["AutoCompleteEnabledPasswordField"] = "AutoCompleteEnabledPasswordField";
-    IssueApiModelTypeEnum["NginxOutOfDate"] = "NginxOutOfDate";
-    IssueApiModelTypeEnum["PerlSourceCodeDisclosure"] = "PerlSourceCodeDisclosure";
-    IssueApiModelTypeEnum["PythonSourceCodeDisclosure"] = "PythonSourceCodeDisclosure";
-    IssueApiModelTypeEnum["RubySourceCodeDisclosure"] = "RubySourceCodeDisclosure";
-    IssueApiModelTypeEnum["JavaSourceCodeDisclosure"] = "JavaSourceCodeDisclosure";
-    IssueApiModelTypeEnum["OpenSslHeartbleedVulnerability"] = "OpenSslHeartbleedVulnerability";
-    IssueApiModelTypeEnum["NginxIdentified"] = "NginxIdentified";
-    IssueApiModelTypeEnum["ApacheIdentified"] = "ApacheIdentified";
-    IssueApiModelTypeEnum["JavaStackTraceDisclosure"] = "JavaStackTraceDisclosure";
-    IssueApiModelTypeEnum["MissingXFrameOptionsHeader"] = "MissingXFrameOptionsHeader";
-    IssueApiModelTypeEnum["MissingContentTypeHeader"] = "MissingContentTypeHeader";
-    IssueApiModelTypeEnum["CommandInjectionShellshock"] = "CommandInjectionShellshock";
-    IssueApiModelTypeEnum["PossibleReflectedFileDownload"] = "PossibleReflectedFileDownload";
-    IssueApiModelTypeEnum["InsecureJsonpEndpoint"] = "InsecureJsonpEndpoint";
-    IssueApiModelTypeEnum["InsecureReflectedContent"] = "InsecureReflectedContent";
-    IssueApiModelTypeEnum["MisconfiguredAccessControlOrigin"] = "MisconfiguredAccessControlOrigin";
-    IssueApiModelTypeEnum["PassiveMixedContent"] = "PassiveMixedContent";
-    IssueApiModelTypeEnum["Teapot"] = "Teapot";
-    IssueApiModelTypeEnum["PossibleXxe"] = "PossibleXxe";
-    IssueApiModelTypeEnum["Xxe"] = "Xxe";
-    IssueApiModelTypeEnum["UnrestrictedFileUpload"] = "UnrestrictedFileUpload";
-    IssueApiModelTypeEnum["CodeExecutionViaFileUpload"] = "CodeExecutionViaFileUpload";
-    IssueApiModelTypeEnum["PossibleCreditCardDisclosure"] = "PossibleCreditCardDisclosure";
-    IssueApiModelTypeEnum["RsaPrivateKeyDetected"] = "RsaPrivateKeyDetected";
-    IssueApiModelTypeEnum["RceInHttpSys"] = "RceInHttpSys";
-    IssueApiModelTypeEnum["OpenRedirectInPost"] = "OpenRedirectInPost";
-    IssueApiModelTypeEnum["FormHijacking"] = "FormHijacking";
-    IssueApiModelTypeEnum["BaseTagHijacking"] = "BaseTagHijacking";
-    IssueApiModelTypeEnum["WindowsShortFilename"] = "WindowsShortFilename";
-    IssueApiModelTypeEnum["RorDatabaseConfigurationFileDetected"] = "RorDatabaseConfigurationFileDetected";
-    IssueApiModelTypeEnum["RorDevelopmentModeEnabled"] = "RorDevelopmentModeEnabled";
-    IssueApiModelTypeEnum["RorVersionDisclosure"] = "RorVersionDisclosure";
-    IssueApiModelTypeEnum["RubyGemsVersionDisclosure"] = "RubyGemsVersionDisclosure";
-    IssueApiModelTypeEnum["RubyGemsOutOfDate"] = "RubyGemsOutOfDate";
-    IssueApiModelTypeEnum["RubyOutOfDate"] = "RubyOutOfDate";
-    IssueApiModelTypeEnum["RorOutOfDate"] = "RorOutOfDate";
-    IssueApiModelTypeEnum["PythonOutOfDate"] = "PythonOutOfDate";
-    IssueApiModelTypeEnum["PerlOutOfDate"] = "PerlOutOfDate";
-    IssueApiModelTypeEnum["DjangoDebugModeEnabled"] = "DjangoDebugModeEnabled";
-    IssueApiModelTypeEnum["DjangoVersionDisclosure"] = "DjangoVersionDisclosure";
-    IssueApiModelTypeEnum["DjangoOutOfDate"] = "DjangoOutOfDate";
-    IssueApiModelTypeEnum["PhpLiteAdminIdentified"] = "PhpLiteAdminIdentified";
-    IssueApiModelTypeEnum["AdminerIdentified"] = "AdminerIdentified";
-    IssueApiModelTypeEnum["MicrosoftIisLogFileIdentified"] = "MicrosoftIisLogFileIdentified";
-    IssueApiModelTypeEnum["PhpMoAdminIdentified"] = "PhpMoAdminIdentified";
-    IssueApiModelTypeEnum["DbNinjaIdentified"] = "DbNinjaIdentified";
-    IssueApiModelTypeEnum["LaravelEnvironmentConfigurationFileDetected"] = "LaravelEnvironmentConfigurationFileDetected";
-    IssueApiModelTypeEnum["LaravelDebugModeEnabled"] = "LaravelDebugModeEnabled";
-    IssueApiModelTypeEnum["LaravelStackTraceDisclosure"] = "LaravelStackTraceDisclosure";
-    IssueApiModelTypeEnum["SublimeSftpConfigFileDetected"] = "SublimeSftpConfigFileDetected";
-    IssueApiModelTypeEnum["RorStackTraceDisclosure"] = "RorStackTraceDisclosure";
-    IssueApiModelTypeEnum["JqueryOutOfDate"] = "JqueryOutOfDate";
-    IssueApiModelTypeEnum["JqueryMigrateOutOfDate"] = "JqueryMigrateOutOfDate";
-    IssueApiModelTypeEnum["JqueryMobileOutOfDate"] = "JqueryMobileOutOfDate";
-    IssueApiModelTypeEnum["JqueryUiDialogOutOfDate"] = "JqueryUiDialogOutOfDate";
-    IssueApiModelTypeEnum["JqueryUiAutocompleteOutOfDate"] = "JqueryUiAutocompleteOutOfDate";
-    IssueApiModelTypeEnum["JqueryUiTooltipOutOfDate"] = "JqueryUiTooltipOutOfDate";
-    IssueApiModelTypeEnum["PrettyPhotoOutOfDate"] = "PrettyPhotoOutOfDate";
-    IssueApiModelTypeEnum["JPlayerOutOfDate"] = "jPlayerOutOfDate";
-    IssueApiModelTypeEnum["YuiOutOfDate"] = "YuiOutOfDate";
-    IssueApiModelTypeEnum["PrototypejsOutOfDate"] = "PrototypejsOutOfDate";
-    IssueApiModelTypeEnum["EmberOutOfDate"] = "EmberOutOfDate";
-    IssueApiModelTypeEnum["DojoOutOfDate"] = "DojoOutOfDate";
-    IssueApiModelTypeEnum["AngularjsOutOfDate"] = "AngularjsOutOfDate";
-    IssueApiModelTypeEnum["BackbonejsOutOfDate"] = "BackbonejsOutOfDate";
-    IssueApiModelTypeEnum["MustachejsOutOfDate"] = "MustachejsOutOfDate";
-    IssueApiModelTypeEnum["HandlebarsjsOutOfDate"] = "HandlebarsjsOutOfDate";
-    IssueApiModelTypeEnum["EasyXdmOutOfDate"] = "EasyXdmOutOfDate";
-    IssueApiModelTypeEnum["PluploadOutOfDate"] = "PluploadOutOfDate";
-    IssueApiModelTypeEnum["DomPurifyOutOfDate"] = "DomPurifyOutOfDate";
-    IssueApiModelTypeEnum["DwrOutOfDate"] = "DwrOutOfDate";
-    IssueApiModelTypeEnum["InsecureHttpUsage"] = "InsecureHttpUsage";
-    IssueApiModelTypeEnum["OpenCartIdentified"] = "OpenCartIdentified";
-    IssueApiModelTypeEnum["OpenCartOutOfDate"] = "OpenCartOutOfDate";
-    IssueApiModelTypeEnum["MissingXssProtectionHeader"] = "MissingXssProtectionHeader";
-    IssueApiModelTypeEnum["VideojsOutOfDate"] = "VideojsOutOfDate";
-    IssueApiModelTypeEnum["TlsVersion1Support"] = "TlsVersion1Support";
-    IssueApiModelTypeEnum["SameSiteCookieNotImplemented"] = "SameSiteCookieNotImplemented";
-    IssueApiModelTypeEnum["ReverseTabnabbing"] = "ReverseTabnabbing";
-    IssueApiModelTypeEnum["SubResourceIntegrityNotImplemented"] = "SubResourceIntegrityNotImplemented";
-    IssueApiModelTypeEnum["SubResourceIntegrityHashInvalid"] = "SubResourceIntegrityHashInvalid";
-    IssueApiModelTypeEnum["PossibleSsrf"] = "PossibleSsrf";
-    IssueApiModelTypeEnum["OutOfBandSqlInjection"] = "OutOfBandSqlInjection";
-    IssueApiModelTypeEnum["OutOfBandXxe"] = "OutOfBandXxe";
-    IssueApiModelTypeEnum["BlindXss"] = "BlindXss";
-    IssueApiModelTypeEnum["OutOfBandRfi"] = "OutOfBandRfi";
-    IssueApiModelTypeEnum["OutOfBandRcePhp"] = "OutOfBandRcePhp";
-    IssueApiModelTypeEnum["OutOfBandCommandInjection"] = "OutOfBandCommandInjection";
-    IssueApiModelTypeEnum["SsrfAws"] = "SsrfAws";
-    IssueApiModelTypeEnum["PossibleSsrfAws"] = "PossibleSsrfAws";
-    IssueApiModelTypeEnum["SsrfElmah"] = "SsrfElmah";
-    IssueApiModelTypeEnum["PossibleSsrfElmah"] = "PossibleSsrfElmah";
-    IssueApiModelTypeEnum["SsrfTrace"] = "SsrfTrace";
-    IssueApiModelTypeEnum["PossibleSsrfTrace"] = "PossibleSsrfTrace";
-    IssueApiModelTypeEnum["OutOfBandRceAsp"] = "OutOfBandRceAsp";
-    IssueApiModelTypeEnum["OutOfBandRcePerl"] = "OutOfBandRcePerl";
-    IssueApiModelTypeEnum["DomBasedOpenRedirect"] = "DomBasedOpenRedirect";
-    IssueApiModelTypeEnum["DeprecatedCspHeader"] = "DeprecatedCspHeader";
-    IssueApiModelTypeEnum["CspNotImplemented"] = "CspNotImplemented";
-    IssueApiModelTypeEnum["InvalidCspMetaTag"] = "InvalidCspMetaTag";
-    IssueApiModelTypeEnum["InvalidCspInsructionInMeta"] = "InvalidCspInsructionInMeta";
-    IssueApiModelTypeEnum["CspKeywordUsedAsTarget"] = "CspKeywordUsedAsTarget";
-    IssueApiModelTypeEnum["UnsafeCspInstructionDetected"] = "UnsafeCspInstructionDetected";
-    IssueApiModelTypeEnum["NonceDetectedInCsp"] = "NonceDetectedInCsp";
-    IssueApiModelTypeEnum["NoScriptTagDetectedWithNonce"] = "NoScriptTagDetectedWithNonce";
-    IssueApiModelTypeEnum["SameNonceValueDetected"] = "SameNonceValueDetected";
-    IssueApiModelTypeEnum["DefaultSrcUsedInCsp"] = "DefaultSrcUsedInCsp";
-    IssueApiModelTypeEnum["InsecureReportUriDetectedInCsp"] = "InsecureReportUriDetectedInCsp";
-    IssueApiModelTypeEnum["ReportUriWithDifferentHostDetectedInCsp"] = "ReportUriWithDifferentHostDetectedInCsp";
-    IssueApiModelTypeEnum["WildcardDetectedInScheme"] = "WildcardDetectedInScheme";
-    IssueApiModelTypeEnum["WildcardDetectedInDomain"] = "WildcardDetectedInDomain";
-    IssueApiModelTypeEnum["WildcardDetectedInPort"] = "WildcardDetectedInPort";
-    IssueApiModelTypeEnum["UnsupportedHashDetectedInScriptInstruction"] = "UnsupportedHashDetectedInScriptInstruction";
-    IssueApiModelTypeEnum["InsecureNonceValueDetected"] = "InsecureNonceValueDetected";
-    IssueApiModelTypeEnum["SsrfElmahMvc"] = "SsrfElmahMvc";
-    IssueApiModelTypeEnum["PossibleSsrfElmahMvc"] = "PossibleSsrfElmahMvc";
-    IssueApiModelTypeEnum["DeprecatedHeaderDetectedWithCspHeader"] = "DeprecatedHeaderDetectedWithCspHeader";
-    IssueApiModelTypeEnum["InvalidNonceDetectedInCsp"] = "InvalidNonceDetectedInCsp";
-    IssueApiModelTypeEnum["NoScriptTagDetectedWithHash"] = "NoScriptTagDetectedWithHash";
-    IssueApiModelTypeEnum["DataCspDirectiveDetected"] = "DataCspDirectiveDetected";
-    IssueApiModelTypeEnum["CspReportOnlyHeaderDetectedWithoutReportUri"] = "CspReportOnlyHeaderDetectedWithoutReportUri";
-    IssueApiModelTypeEnum["CspReportOnlyUsedInMeta"] = "CspReportOnlyUsedInMeta";
-    IssueApiModelTypeEnum["SingleHeaderMultipleCookies"] = "SingleHeaderMultipleCookies";
-    IssueApiModelTypeEnum["OutOfBandRceRoRXml"] = "OutOfBandRceRoRXml";
-    IssueApiModelTypeEnum["OutOfBandRceRoRJson"] = "OutOfBandRceRoRJson";
-    IssueApiModelTypeEnum["ObjectSrcNotUsed"] = "ObjectSrcNotUsed";
-    IssueApiModelTypeEnum["ApacheMultiChoiceEnabled"] = "ApacheMultiChoiceEnabled";
-    IssueApiModelTypeEnum["HttpOrHttpsDetectedOnScriptSrc"] = "HttpOrHttpsDetectedOnScriptSrc";
-    IssueApiModelTypeEnum["InsecureTargetUriDetectedInCsp"] = "InsecureTargetUriDetectedInCsp";
-    IssueApiModelTypeEnum["PossibleTimeBasedSsrf"] = "PossibleTimeBasedSsrf";
-    IssueApiModelTypeEnum["PossibleBlindXss"] = "PossibleBlindXss";
-    IssueApiModelTypeEnum["PossibleSsrfSsh"] = "PossibleSsrfSsh";
-    IssueApiModelTypeEnum["PossibleSsrfMySql"] = "PossibleSsrfMySql";
-    IssueApiModelTypeEnum["RceApacheStruts"] = "RceApacheStruts";
-    IssueApiModelTypeEnum["PossibleRceApacheStruts"] = "PossibleRceApacheStruts";
-    IssueApiModelTypeEnum["ControllableCookie"] = "ControllableCookie";
-    IssueApiModelTypeEnum["ReferrerPolicyNotImplemented"] = "ReferrerPolicyNotImplemented";
-    IssueApiModelTypeEnum["ReferrerPolicyReferrerLeakToSameProtocol"] = "ReferrerPolicyReferrerLeakToSameProtocol";
-    IssueApiModelTypeEnum["ReferrerPolicyOriginLeakToCrossSite"] = "ReferrerPolicyOriginLeakToCrossSite";
-    IssueApiModelTypeEnum["ReferrerPolicySameProtocolLeak"] = "ReferrerPolicySameProtocolLeak";
-    IssueApiModelTypeEnum["ReferrerPolicyCrossOriginLeak"] = "ReferrerPolicyCrossOriginLeak";
-    IssueApiModelTypeEnum["ReferrerPolicyStrictCrossOriginLeak"] = "ReferrerPolicyStrictCrossOriginLeak";
-    IssueApiModelTypeEnum["ReferrerPolicyCrossSiteReferrerLeak"] = "ReferrerPolicyCrossSiteReferrerLeak";
-    IssueApiModelTypeEnum["ReferrerPolicyUnknown"] = "ReferrerPolicyUnknown";
-    IssueApiModelTypeEnum["ReferrerPolicyFallbackMissing"] = "ReferrerPolicyFallbackMissing";
-    IssueApiModelTypeEnum["MsSqlDatabaseNameDisclosure"] = "MsSqlDatabaseNameDisclosure";
-    IssueApiModelTypeEnum["MySqlDatabaseNameDisclosure"] = "MySqlDatabaseNameDisclosure";
-    IssueApiModelTypeEnum["ActiveMixedContent"] = "ActiveMixedContent";
-    IssueApiModelTypeEnum["MixedContentScript"] = "MixedContentScript";
-    IssueApiModelTypeEnum["MixedContentResource"] = "MixedContentResource";
-    IssueApiModelTypeEnum["KnockoutjsOutOfDate"] = "KnockoutjsOutOfDate";
-    IssueApiModelTypeEnum["BootstrapjsOutOfDate"] = "BootstrapjsOutOfDate";
-    IssueApiModelTypeEnum["TypeaheadjsOutOfDate"] = "TypeaheadjsOutOfDate";
-    IssueApiModelTypeEnum["FootablejsOutOfDate"] = "FootablejsOutOfDate";
-    IssueApiModelTypeEnum["SortablejsOutOfDate"] = "SortablejsOutOfDate";
-    IssueApiModelTypeEnum["ImagePickerOutOfDate"] = "ImagePickerOutOfDate";
-    IssueApiModelTypeEnum["JqueryValidationOutOfDate"] = "JqueryValidationOutOfDate";
-    IssueApiModelTypeEnum["AspNetSignalROutOfDate"] = "AspNetSignalROutOfDate";
-    IssueApiModelTypeEnum["Select2OutOfDate"] = "Select2OutOfDate";
-    IssueApiModelTypeEnum["MomentjsOutOfDate"] = "MomentjsOutOfDate";
-    IssueApiModelTypeEnum["Html5ShivOutOfDate"] = "Html5ShivOutOfDate";
-    IssueApiModelTypeEnum["IonRangeSliderOutOfDate"] = "IonRangeSliderOutOfDate";
-    IssueApiModelTypeEnum["JsTreeOutOfDate"] = "JsTreeOutOfDate";
-    IssueApiModelTypeEnum["ModernizrOutOfDate"] = "ModernizrOutOfDate";
-    IssueApiModelTypeEnum["RespondjsOutOfDate"] = "RespondjsOutOfDate";
-    IssueApiModelTypeEnum["FuelUxOutOfDate"] = "FuelUxOutOfDate";
-    IssueApiModelTypeEnum["BootboxOutOfDate"] = "BootboxOutOfDate";
-    IssueApiModelTypeEnum["KnockoutMappingOutOfDate"] = "KnockoutMappingOutOfDate";
-    IssueApiModelTypeEnum["JqueryMaskOutOfDate"] = "JqueryMaskOutOfDate";
-    IssueApiModelTypeEnum["Bootstrap3DateTimePickerOutOfDate"] = "Bootstrap3DateTimePickerOutOfDate";
-    IssueApiModelTypeEnum["BootstrapToggleOutOfDate"] = "BootstrapToggleOutOfDate";
-    IssueApiModelTypeEnum["JavaScriptCookieOutOfDate"] = "JavaScriptCookieOutOfDate";
-    IssueApiModelTypeEnum["MixedContentFont"] = "MixedContentFont";
-    IssueApiModelTypeEnum["MixedContentXhrEndpoint"] = "MixedContentXhrEndpoint";
-    IssueApiModelTypeEnum["PossibleRceNodeJs"] = "PossibleRceNodeJs";
-    IssueApiModelTypeEnum["RceNodeJs"] = "RceNodeJs";
-    IssueApiModelTypeEnum["ReactOutOfDate"] = "ReactOutOfDate";
-    IssueApiModelTypeEnum["PossibleSsrfApacheServerStatus"] = "PossibleSsrfApacheServerStatus";
-    IssueApiModelTypeEnum["DefaultIis85Page"] = "DefaultIis85Page";
-    IssueApiModelTypeEnum["DefaultIis100Page"] = "DefaultIis100Page";
-    IssueApiModelTypeEnum["DefaultIis75Page"] = "DefaultIis75Page";
-    IssueApiModelTypeEnum["DefaultIis7XPage"] = "DefaultIis7XPage";
-    IssueApiModelTypeEnum["CkeditorOutOfDate"] = "CkeditorOutOfDate";
-    IssueApiModelTypeEnum["WordPressSetupConfigurationFile"] = "WordPressSetupConfigurationFile";
-    IssueApiModelTypeEnum["PossibleOutOfBandCommandInjectionStruts052"] = "PossibleOutOfBandCommandInjectionStruts052";
-    IssueApiModelTypeEnum["OutOfBandCommandInjectionStruts053"] = "OutOfBandCommandInjectionStruts053";
-    IssueApiModelTypeEnum["LighttpdOutOfDate"] = "LighttpdOutOfDate";
-    IssueApiModelTypeEnum["PostgreSqlOutOfDate"] = "PostgreSqlOutOfDate";
-    IssueApiModelTypeEnum["RceApacheStrutsS0253"] = "RceApacheStrutsS0253";
-    IssueApiModelTypeEnum["PossibleRceApacheStrutsS0253"] = "PossibleRceApacheStrutsS0253";
-    IssueApiModelTypeEnum["RceApacheStrutsS2046"] = "RceApacheStrutsS2046";
-    IssueApiModelTypeEnum["PossibleRceApacheStrutsS2046"] = "PossibleRceApacheStrutsS2046";
-    IssueApiModelTypeEnum["RceApacheStrutsS2045"] = "RceApacheStrutsS2045";
-    IssueApiModelTypeEnum["PossibleRceApacheStrutsS2045"] = "PossibleRceApacheStrutsS2045";
-    IssueApiModelTypeEnum["AbanteCartIdentified"] = "AbanteCartIdentified";
-    IssueApiModelTypeEnum["AbanteCartOutOfDate"] = "AbanteCartOutOfDate";
-    IssueApiModelTypeEnum["AmpacheIdentified"] = "AmpacheIdentified";
-    IssueApiModelTypeEnum["AmpacheOutOfDate"] = "AmpacheOutOfDate";
-    IssueApiModelTypeEnum["AtutorIdentified"] = "AtutorIdentified";
-    IssueApiModelTypeEnum["AtutorOutOfDate"] = "AtutorOutOfDate";
-    IssueApiModelTypeEnum["ChamiloIdentified"] = "ChamiloIdentified";
-    IssueApiModelTypeEnum["ChamiloOutOfDate"] = "ChamiloOutOfDate";
-    IssueApiModelTypeEnum["ClarolineIdentified"] = "ClarolineIdentified";
-    IssueApiModelTypeEnum["ClarolineOutOfDate"] = "ClarolineOutOfDate";
-    IssueApiModelTypeEnum["CollabtiveIdentified"] = "CollabtiveIdentified";
-    IssueApiModelTypeEnum["CollabtiveOutOfDate"] = "CollabtiveOutOfDate";
-    IssueApiModelTypeEnum["Concrete5Identified"] = "Concrete5Identified";
-    IssueApiModelTypeEnum["Concrete5OutOfDate"] = "Concrete5OutOfDate";
-    IssueApiModelTypeEnum["CoppermineIdentified"] = "CoppermineIdentified";
-    IssueApiModelTypeEnum["CoppermineOutOfDate"] = "CoppermineOutOfDate";
-    IssueApiModelTypeEnum["CubeCartIdentified"] = "CubeCartIdentified";
-    IssueApiModelTypeEnum["CubeCartOutOfDate"] = "CubeCartOutOfDate";
-    IssueApiModelTypeEnum["DokuWikiIdentified"] = "DokuWikiIdentified";
-    IssueApiModelTypeEnum["DokuWikiOutOfDate"] = "DokuWikiOutOfDate";
-    IssueApiModelTypeEnum["DotClearIdentified"] = "DotClearIdentified";
-    IssueApiModelTypeEnum["DotClearOutOfDate"] = "DotClearOutOfDate";
-    IssueApiModelTypeEnum["E107Identified"] = "E107Identified";
-    IssueApiModelTypeEnum["E107OutOfDate"] = "E107OutOfDate";
-    IssueApiModelTypeEnum["FamilyConnectionsIdentified"] = "FamilyConnectionsIdentified";
-    IssueApiModelTypeEnum["FamilyConnectionsOutOfDate"] = "FamilyConnectionsOutOfDate";
-    IssueApiModelTypeEnum["FluxBbIdentified"] = "FluxBBIdentified";
-    IssueApiModelTypeEnum["FluxBbOutOfDate"] = "FluxBBOutOfDate";
-    IssueApiModelTypeEnum["FormToolsIdentified"] = "FormToolsIdentified";
-    IssueApiModelTypeEnum["FormToolsOutOfDate"] = "FormToolsOutOfDate";
-    IssueApiModelTypeEnum["FrontAccountingIdentified"] = "FrontAccountingIdentified";
-    IssueApiModelTypeEnum["FrontAccountingOutOfDate"] = "FrontAccountingOutOfDate";
-    IssueApiModelTypeEnum["GibbonEduIdentified"] = "GibbonEduIdentified";
-    IssueApiModelTypeEnum["GibbonEduOutOfDate"] = "GibbonEduOutOfDate";
-    IssueApiModelTypeEnum["HeskIdentified"] = "HeskIdentified";
-    IssueApiModelTypeEnum["HeskOutOfDate"] = "HeskOutOfDate";
-    IssueApiModelTypeEnum["LimeSurveyIdentified"] = "LimeSurveyIdentified";
-    IssueApiModelTypeEnum["LimeSurveyOutOfDate"] = "LimeSurveyOutOfDate";
-    IssueApiModelTypeEnum["LiveHelperChatIdentified"] = "LiveHelperChatIdentified";
-    IssueApiModelTypeEnum["LiveHelperChatOutOfDate"] = "LiveHelperChatOutOfDate";
-    IssueApiModelTypeEnum["LogaholicIdentified"] = "LogaholicIdentified";
-    IssueApiModelTypeEnum["LogaholicOutOfDate"] = "LogaholicOutOfDate";
-    IssueApiModelTypeEnum["MibewMessengerIdentified"] = "MibewMessengerIdentified";
-    IssueApiModelTypeEnum["MibewMessengerOutOfDate"] = "MibewMessengerOutOfDate";
-    IssueApiModelTypeEnum["ModXIdentified"] = "ModXIdentified";
-    IssueApiModelTypeEnum["ModXOutOfDate"] = "ModXOutOfDate";
-    IssueApiModelTypeEnum["MoodleIdentified"] = "MoodleIdentified";
-    IssueApiModelTypeEnum["MoodleOutOfDate"] = "MoodleOutOfDate";
-    IssueApiModelTypeEnum["MyBbIdentified"] = "MyBBIdentified";
-    IssueApiModelTypeEnum["MyBbOutOfDate"] = "MyBBOutOfDate";
-    IssueApiModelTypeEnum["OmekaIdentified"] = "OmekaIdentified";
-    IssueApiModelTypeEnum["OmekaOutOfDate"] = "OmekaOutOfDate";
-    IssueApiModelTypeEnum["OsClassIdentified"] = "OsClassIdentified";
-    IssueApiModelTypeEnum["OsClassOutOfDate"] = "OsClassOutOfDate";
-    IssueApiModelTypeEnum["OsTicketIdentified"] = "OsTicketIdentified";
-    IssueApiModelTypeEnum["OsTicketOutOfDate"] = "OsTicketOutOfDate";
-    IssueApiModelTypeEnum["PrestashopIdentified"] = "PrestashopIdentified";
-    IssueApiModelTypeEnum["PrestashopOutOfDate"] = "PrestashopOutOfDate";
-    IssueApiModelTypeEnum["EspoCrmIdentified"] = "EspoCrmIdentified";
-    IssueApiModelTypeEnum["EspoCrmOutOfDate"] = "EspoCrmOutOfDate";
-    IssueApiModelTypeEnum["ElggIdentified"] = "ElggIdentified";
-    IssueApiModelTypeEnum["ElggOutOfDate"] = "ElggOutOfDate";
-    IssueApiModelTypeEnum["PhorumIdentified"] = "PhorumIdentified";
-    IssueApiModelTypeEnum["PhorumOutOfDate"] = "PhorumOutOfDate";
-    IssueApiModelTypeEnum["PhpFusionIdentified"] = "PhpFusionIdentified";
-    IssueApiModelTypeEnum["PhpFusionOutOfDate"] = "PhpFusionOutOfDate";
-    IssueApiModelTypeEnum["PhpAddressBookIdentified"] = "PhpAddressBookIdentified";
-    IssueApiModelTypeEnum["PhpAddressBookOutOfDate"] = "PhpAddressBookOutOfDate";
-    IssueApiModelTypeEnum["PhpListIdentified"] = "PhpListIdentified";
-    IssueApiModelTypeEnum["PhpListOutOfDate"] = "PhpListOutOfDate";
-    IssueApiModelTypeEnum["PmWikiIdentified"] = "PmWikiIdentified";
-    IssueApiModelTypeEnum["PmWikiOutOfDate"] = "PmWikiOutOfDate";
-    IssueApiModelTypeEnum["PodcastGeneratorIdentified"] = "PodcastGeneratorIdentified";
-    IssueApiModelTypeEnum["PodcastGeneratorOutOfDate"] = "PodcastGeneratorOutOfDate";
-    IssueApiModelTypeEnum["ProjectSendIdentified"] = "ProjectSendIdentified";
-    IssueApiModelTypeEnum["ProjectSendOutOfDate"] = "ProjectSendOutOfDate";
-    IssueApiModelTypeEnum["Question2AnswerIdentified"] = "Question2AnswerIdentified";
-    IssueApiModelTypeEnum["Question2AnswerOutOfDate"] = "Question2AnswerOutOfDate";
-    IssueApiModelTypeEnum["RukovoditelIdentified"] = "RukovoditelIdentified";
-    IssueApiModelTypeEnum["RukovoditelOutOfDate"] = "RukovoditelOutOfDate";
-    IssueApiModelTypeEnum["SeoPanelIdentified"] = "SeoPanelIdentified";
-    IssueApiModelTypeEnum["SeoPanelOutOfDate"] = "SeoPanelOutOfDate";
-    IssueApiModelTypeEnum["SerendipityIdentified"] = "SerendipityIdentified";
-    IssueApiModelTypeEnum["SerendipityOutOfDate"] = "SerendipityOutOfDate";
-    IssueApiModelTypeEnum["TcExamIdentified"] = "TcExamIdentified";
-    IssueApiModelTypeEnum["TcExamOutOfDate"] = "TcExamOutOfDate";
-    IssueApiModelTypeEnum["VanillaForumsIdentified"] = "VanillaForumsIdentified";
-    IssueApiModelTypeEnum["VanillaForumsOutOfDate"] = "VanillaForumsOutOfDate";
-    IssueApiModelTypeEnum["WebErpIdentified"] = "WebErpIdentified";
-    IssueApiModelTypeEnum["WebErpOutOfDate"] = "WebErpOutOfDate";
-    IssueApiModelTypeEnum["WeBidIdentified"] = "WeBidIdentified";
-    IssueApiModelTypeEnum["WeBidOutOfDate"] = "WeBidOutOfDate";
-    IssueApiModelTypeEnum["XoopsIdentified"] = "XoopsIdentified";
-    IssueApiModelTypeEnum["XoopsOutOfDate"] = "XoopsOutOfDate";
-    IssueApiModelTypeEnum["YetiForceCrmIdentified"] = "YetiForceCrmIdentified";
-    IssueApiModelTypeEnum["YetiForceCrmOutOfDate"] = "YetiForceCrmOutOfDate";
-    IssueApiModelTypeEnum["YourlsIdentified"] = "YourlsIdentified";
-    IssueApiModelTypeEnum["YourlsOutOfDate"] = "YourlsOutOfDate";
-    IssueApiModelTypeEnum["ZenCartIdentified"] = "ZenCartIdentified";
-    IssueApiModelTypeEnum["ZenCartOutOfDate"] = "ZenCartOutOfDate";
-    IssueApiModelTypeEnum["ZenPhotoIdentified"] = "ZenPhotoIdentified";
-    IssueApiModelTypeEnum["ZenPhotoOutOfDate"] = "ZenPhotoOutOfDate";
-    IssueApiModelTypeEnum["PiwigoIdentified"] = "PiwigoIdentified";
-    IssueApiModelTypeEnum["PiwigoOutOfDate"] = "PiwigoOutOfDate";
-    IssueApiModelTypeEnum["ZurmoIdentified"] = "ZurmoIdentified";
-    IssueApiModelTypeEnum["ZurmoOutOfDate"] = "ZurmoOutOfDate";
-    IssueApiModelTypeEnum["OwnCloudIdentified"] = "OwnCloudIdentified";
-    IssueApiModelTypeEnum["OwnCloudOutOfDate"] = "OwnCloudOutOfDate";
-    IssueApiModelTypeEnum["PhpMyFaqIdentified"] = "PhpMyFaqIdentified";
-    IssueApiModelTypeEnum["PhpMyFaqOutOfDate"] = "PhpMyFaqOutOfDate";
-    IssueApiModelTypeEnum["RoundcubeIdentified"] = "RoundcubeIdentified";
-    IssueApiModelTypeEnum["RoundcubeOutOfDate"] = "RoundcubeOutOfDate";
-    IssueApiModelTypeEnum["ZikulaIdentified"] = "ZikulaIdentified";
-    IssueApiModelTypeEnum["ZikulaOutOfDate"] = "ZikulaOutOfDate";
-    IssueApiModelTypeEnum["WeakRobotOracleDetected"] = "WeakRobotOracleDetected";
-    IssueApiModelTypeEnum["StrongRobotOracleDetected"] = "StrongRobotOracleDetected";
-    IssueApiModelTypeEnum["ZeptojsOutOfDate"] = "ZeptojsOutOfDate";
-    IssueApiModelTypeEnum["HammerjsOutOfDate"] = "HammerjsOutOfDate";
-    IssueApiModelTypeEnum["VuejsOutOfDate"] = "VuejsOutOfDate";
-    IssueApiModelTypeEnum["PhaserOutOfDate"] = "PhaserOutOfDate";
-    IssueApiModelTypeEnum["ChartjsOutOfDate"] = "ChartjsOutOfDate";
-    IssueApiModelTypeEnum["RamdaOutOfDate"] = "RamdaOutOfDate";
-    IssueApiModelTypeEnum["RevealJsOutOfDate"] = "RevealJsOutOfDate";
-    IssueApiModelTypeEnum["PixiJsOutOfDate"] = "PixiJsOutOfDate";
-    IssueApiModelTypeEnum["FabricJsOutOfDate"] = "FabricJsOutOfDate";
-    IssueApiModelTypeEnum["SemanticUiOutOfDate"] = "SemanticUIOutOfDate";
-    IssueApiModelTypeEnum["LeafletOutOfDate"] = "LeafletOutOfDate";
-    IssueApiModelTypeEnum["PossibleOutOfBandCommandInjection"] = "PossibleOutOfBandCommandInjection";
-    IssueApiModelTypeEnum["FoundationOutOfDate"] = "FoundationOutOfDate";
-    IssueApiModelTypeEnum["ThreeJsOutOfDate"] = "ThreeJsOutOfDate";
-    IssueApiModelTypeEnum["PdfJsOutOfDate"] = "PdfJsOutOfDate";
-    IssueApiModelTypeEnum["ExpressJsIdentified"] = "ExpressJsIdentified";
-    IssueApiModelTypeEnum["PossibleSsti"] = "PossibleSsti";
-    IssueApiModelTypeEnum["Ssti"] = "Ssti";
-    IssueApiModelTypeEnum["PossibleCodeExecutionViaSsti"] = "PossibleCodeExecutionViaSsti";
-    IssueApiModelTypeEnum["CodeExecutionViaSsti"] = "CodeExecutionViaSsti";
-    IssueApiModelTypeEnum["PossibleCodeExecutionViaSstiTwig"] = "PossibleCodeExecutionViaSstiTwig";
-    IssueApiModelTypeEnum["CodeExecutionViaSstiTwig"] = "CodeExecutionViaSstiTwig";
-    IssueApiModelTypeEnum["PossibleCodeExecutionViaSstiMako"] = "PossibleCodeExecutionViaSstiMako";
-    IssueApiModelTypeEnum["CodeExecutionViaSstiMako"] = "CodeExecutionViaSstiMako";
-    IssueApiModelTypeEnum["PossibleCodeExecutionViaSstiSmarty"] = "PossibleCodeExecutionViaSstiSmarty";
-    IssueApiModelTypeEnum["CodeExecutionViaSstiSmarty"] = "CodeExecutionViaSstiSmarty";
-    IssueApiModelTypeEnum["PossibleCodeExecutionViaSstiNunjucks"] = "PossibleCodeExecutionViaSstiNunjucks";
-    IssueApiModelTypeEnum["CodeExecutionViaSstiNunjucks"] = "CodeExecutionViaSstiNunjucks";
-    IssueApiModelTypeEnum["PossibleCodeExecutionViaSstiJade"] = "PossibleCodeExecutionViaSstiJade";
-    IssueApiModelTypeEnum["CodeExecutionViaSstiJade"] = "CodeExecutionViaSstiJade";
-    IssueApiModelTypeEnum["PossibleSstiDot"] = "PossibleSstiDot";
-    IssueApiModelTypeEnum["SstiDot"] = "SstiDot";
-    IssueApiModelTypeEnum["PossibleCodeExecutionViaSstiDot"] = "PossibleCodeExecutionViaSstiDot";
-    IssueApiModelTypeEnum["CodeExecutionViaSstiDot"] = "CodeExecutionViaSstiDot";
-    IssueApiModelTypeEnum["PossibleSstiEjs"] = "PossibleSstiEjs";
-    IssueApiModelTypeEnum["SstiEjs"] = "SstiEjs";
-    IssueApiModelTypeEnum["PossibleCodeExecutionViaSstiEjs"] = "PossibleCodeExecutionViaSstiEjs";
-    IssueApiModelTypeEnum["CodeExecutionViaSstiEjs"] = "CodeExecutionViaSstiEjs";
-    IssueApiModelTypeEnum["PossibleCodeExecutionViaSstiMarko"] = "PossibleCodeExecutionViaSstiMarko";
-    IssueApiModelTypeEnum["CodeExecutionViaSstiMarko"] = "CodeExecutionViaSstiMarko";
-    IssueApiModelTypeEnum["PossibleCodeExecutionViaSstiTornado"] = "PossibleCodeExecutionViaSstiTornado";
-    IssueApiModelTypeEnum["CodeExecutionViaSstiTornado"] = "CodeExecutionViaSstiTornado";
-    IssueApiModelTypeEnum["PossibleCodeExecutionViaSstiFreeMarker"] = "PossibleCodeExecutionViaSstiFreeMarker";
-    IssueApiModelTypeEnum["CodeExecutionViaSstiFreeMarker"] = "CodeExecutionViaSstiFreeMarker";
-    IssueApiModelTypeEnum["PossibleSstiVelocity"] = "PossibleSstiVelocity";
-    IssueApiModelTypeEnum["SstiVelocity"] = "SstiVelocity";
-    IssueApiModelTypeEnum["PossibleCodeExecutionViaSstiVelocity"] = "PossibleCodeExecutionViaSstiVelocity";
-    IssueApiModelTypeEnum["CodeExecutionViaSstiVelocity"] = "CodeExecutionViaSstiVelocity";
-    IssueApiModelTypeEnum["PossibleSstiErb"] = "PossibleSstiErb";
-    IssueApiModelTypeEnum["SstiErb"] = "SstiErb";
-    IssueApiModelTypeEnum["PossibleCodeExecutionViaSstiErb"] = "PossibleCodeExecutionViaSstiErb";
-    IssueApiModelTypeEnum["CodeExecutionViaSstiErb"] = "CodeExecutionViaSstiErb";
-    IssueApiModelTypeEnum["PossibleCodeExecutionViaSstiSlim"] = "PossibleCodeExecutionViaSstiSlim";
-    IssueApiModelTypeEnum["CodeExecutionViaSstiSlim"] = "CodeExecutionViaSstiSlim";
-    IssueApiModelTypeEnum["PossibleCodeExecutionViaSstiJinja"] = "PossibleCodeExecutionViaSstiJinja";
-    IssueApiModelTypeEnum["CodeExecutionViaSstiJinja"] = "CodeExecutionViaSstiJinja";
-    IssueApiModelTypeEnum["PossibleSstiFreeMarker"] = "PossibleSstiFreeMarker";
-    IssueApiModelTypeEnum["SstiFreeMarker"] = "SstiFreeMarker";
-    IssueApiModelTypeEnum["OutOfBandCodeExecutionViaSsti"] = "OutOfBandCodeExecutionViaSsti";
-    IssueApiModelTypeEnum["OutOfBandCodeExecutionViaSstiMako"] = "OutOfBandCodeExecutionViaSstiMako";
-    IssueApiModelTypeEnum["OutOfBandCodeExecutionViaSstiTornado"] = "OutOfBandCodeExecutionViaSstiTornado";
-    IssueApiModelTypeEnum["OutOfBandCodeExecutionViaSstiJinja"] = "OutOfBandCodeExecutionViaSstiJinja";
-    IssueApiModelTypeEnum["OutOfBandCodeExecutionViaSstiMarko"] = "OutOfBandCodeExecutionViaSstiMarko";
-    IssueApiModelTypeEnum["OutOfBandCodeExecutionViaSstiDot"] = "OutOfBandCodeExecutionViaSstiDot";
-    IssueApiModelTypeEnum["OutOfBandCodeExecutionViaSstiNunjucks"] = "OutOfBandCodeExecutionViaSstiNunjucks";
-    IssueApiModelTypeEnum["OutOfBandCodeExecutionViaSstiJade"] = "OutOfBandCodeExecutionViaSstiJade";
-    IssueApiModelTypeEnum["OutOfBandCodeExecutionViaSstiSmarty"] = "OutOfBandCodeExecutionViaSstiSmarty";
-    IssueApiModelTypeEnum["ExpectCtIsMissing"] = "ExpectCtIsMissing";
-    IssueApiModelTypeEnum["ExpectCtShouldBeServedOverTls"] = "ExpectCtShouldBeServedOverTls";
-    IssueApiModelTypeEnum["ExpectCtReportOnlyModeIsEnabled"] = "ExpectCtReportOnlyModeIsEnabled";
-    IssueApiModelTypeEnum["ExpectCtErrors"] = "ExpectCtErrors";
-    IssueApiModelTypeEnum["AuthenticationRequired"] = "AuthenticationRequired";
-    IssueApiModelTypeEnum["CaddyWebServerIdentified"] = "CaddyWebServerIdentified";
-    IssueApiModelTypeEnum["AahGoServerIdentified"] = "AahGoServerIdentified";
-    IssueApiModelTypeEnum["JbossApplicationServerIdentified"] = "JbossApplicationServerIdentified";
-    IssueApiModelTypeEnum["JbossApplicationServerVersionDisclosure"] = "JbossApplicationServerVersionDisclosure";
-    IssueApiModelTypeEnum["Ckeditor5OutOfDate"] = "Ckeditor5OutOfDate";
-    IssueApiModelTypeEnum["CakePhpIdentified"] = "CakePhpIdentified";
-    IssueApiModelTypeEnum["CakePhpStackTraceDisclosure"] = "CakePhpStackTraceDisclosure";
-    IssueApiModelTypeEnum["DefaultPageCakePhp"] = "DefaultPageCakePhp";
-    IssueApiModelTypeEnum["CakePhpVersionDisclosure"] = "CakePhpVersionDisclosure";
-    IssueApiModelTypeEnum["CakePhpOutOfDate"] = "CakePhpOutOfDate";
-    IssueApiModelTypeEnum["CherryPyVersionDisclosure"] = "CherryPyVersionDisclosure";
-    IssueApiModelTypeEnum["CherryPyOutOfDate"] = "CherryPyOutOfDate";
-    IssueApiModelTypeEnum["OutOfBandCodeExecutionViaSstiEjs"] = "OutOfBandCodeExecutionViaSstiEjs";
-    IssueApiModelTypeEnum["OutOfBandCodeExecutionViaSstiTwig"] = "OutOfBandCodeExecutionViaSstiTwig";
-    IssueApiModelTypeEnum["OutOfBandCodeExecutionViaSstiFreeMarker"] = "OutOfBandCodeExecutionViaSstiFreeMarker";
-    IssueApiModelTypeEnum["OutOfBandCodeExecutionViaSstiVelocity"] = "OutOfBandCodeExecutionViaSstiVelocity";
-    IssueApiModelTypeEnum["CherryPyStackTraceDisclosure"] = "CherryPyStackTraceDisclosure";
-    IssueApiModelTypeEnum["IntrojsOutOfDate"] = "IntrojsOutOfDate";
-    IssueApiModelTypeEnum["AxiosOutOfDate"] = "AxiosOutOfDate";
-    IssueApiModelTypeEnum["Fingerprintjs2OutOfDate"] = "Fingerprintjs2OutOfDate";
-    IssueApiModelTypeEnum["XRegExpOutOfDate"] = "XRegExpOutOfDate";
-    IssueApiModelTypeEnum["DataTablesOutOfDate"] = "DataTablesOutOfDate";
-    IssueApiModelTypeEnum["LazyjsOutOfDate"] = "LazyjsOutOfDate";
-    IssueApiModelTypeEnum["FancyBoxOutOfDate"] = "FancyBoxOutOfDate";
-    IssueApiModelTypeEnum["UnderscorejsOutOfDate"] = "UnderscorejsOutOfDate";
-    IssueApiModelTypeEnum["LightboxOutOfDate"] = "LightboxOutOfDate";
-    IssueApiModelTypeEnum["JbossApplicationServerOutOfDate"] = "JbossApplicationServerOutOfDate";
-    IssueApiModelTypeEnum["SweetAlert2OutOfDate"] = "SweetAlert2OutOfDate";
-    IssueApiModelTypeEnum["LodashOutOfDate"] = "LodashOutOfDate";
-    IssueApiModelTypeEnum["BluebirdOutOfDate"] = "BluebirdOutOfDate";
-    IssueApiModelTypeEnum["PolymerOutOfDate"] = "PolymerOutOfDate";
-    IssueApiModelTypeEnum["ReviveAdserverIdentified"] = "ReviveAdserverIdentified";
-    IssueApiModelTypeEnum["ReviveAdserverOutOfDate"] = "ReviveAdserverOutOfDate";
-    IssueApiModelTypeEnum["B2evolutionIdentified"] = "B2evolutionIdentified";
-    IssueApiModelTypeEnum["B2evolutionOutOfDate"] = "B2evolutionOutOfDate";
-    IssueApiModelTypeEnum["DolphinIdentified"] = "DolphinIdentified";
-    IssueApiModelTypeEnum["DolphinOutOfDate"] = "DolphinOutOfDate";
-    IssueApiModelTypeEnum["Ph7CmsIdentified"] = "PH7CMSIdentified";
-    IssueApiModelTypeEnum["Ph7CmsOutOfDate"] = "PH7CMSOutOfDate";
-    IssueApiModelTypeEnum["QdPmIdentified"] = "QdPMIdentified";
-    IssueApiModelTypeEnum["QdPmOutOfDate"] = "QdPMOutOfDate";
-    IssueApiModelTypeEnum["VtigerIdentified"] = "VtigerIdentified";
-    IssueApiModelTypeEnum["VtigerOutOfDate"] = "VtigerOutOfDate";
-    IssueApiModelTypeEnum["DolibarrIdentified"] = "DolibarrIdentified";
-    IssueApiModelTypeEnum["DolibarrOutOfDate"] = "DolibarrOutOfDate";
-    IssueApiModelTypeEnum["ClipBucketIdentified"] = "ClipBucketIdentified";
-    IssueApiModelTypeEnum["ClipBucketOutOfDate"] = "ClipBucketOutOfDate";
-    IssueApiModelTypeEnum["ContaoIdentified"] = "ContaoIdentified";
-    IssueApiModelTypeEnum["ContaoOutOfDate"] = "ContaoOutOfDate";
-    IssueApiModelTypeEnum["MisconfiguredXFrameOptionsHeader"] = "MisconfiguredXFrameOptionsHeader";
-    IssueApiModelTypeEnum["RubyErrorDisclosure"] = "RubyErrorDisclosure";
-    IssueApiModelTypeEnum["WpEngineConfigurationFileDetected"] = "WpEngineConfigurationFileDetected";
-    IssueApiModelTypeEnum["SessionCookieNotMarkedAsSecure"] = "SessionCookieNotMarkedAsSecure";
-    IssueApiModelTypeEnum["PossibleHeaderInjection"] = "PossibleHeaderInjection";
-    IssueApiModelTypeEnum["OracleOutOfDate"] = "OracleOutOfDate";
-    IssueApiModelTypeEnum["TsWebIdentified"] = "TsWebIdentified";
-    IssueApiModelTypeEnum["DrupalRce"] = "DrupalRce";
-    IssueApiModelTypeEnum["MithrilOutOfDate"] = "MithrilOutOfDate";
-    IssueApiModelTypeEnum["EfJsOutOfDate"] = "EfJsOutOfDate";
-    IssueApiModelTypeEnum["MathJsOutOfDate"] = "MathJsOutOfDate";
-    IssueApiModelTypeEnum["ListJsOutOfDate"] = "ListJsOutOfDate";
-    IssueApiModelTypeEnum["RequireJsOutOfDate"] = "RequireJsOutOfDate";
-    IssueApiModelTypeEnum["RiotJsOutOfDate"] = "RiotJsOutOfDate";
-    IssueApiModelTypeEnum["InfernoOutOfDate"] = "InfernoOutOfDate";
-    IssueApiModelTypeEnum["MarionetteJsOutOfDate"] = "MarionetteJsOutOfDate";
-    IssueApiModelTypeEnum["GsapOutOfDate"] = "GsapOutOfDate";
-    IssueApiModelTypeEnum["TravisYamlIdentified"] = "TravisYamlIdentified";
-    IssueApiModelTypeEnum["UnicodeTransformationIssue"] = "UnicodeTransformationIssue";
-    IssueApiModelTypeEnum["MalwareIdentified"] = "MalwareIdentified";
-    IssueApiModelTypeEnum["RorFileContentDisclosure"] = "RorFileContentDisclosure";
-    IssueApiModelTypeEnum["AppSiteAssociationIdentified"] = "AppSiteAssociationIdentified";
-    IssueApiModelTypeEnum["OpenSearchIdentified"] = "OpenSearchIdentified";
-    IssueApiModelTypeEnum["ServletSourceCodeDisclosure"] = "ServletSourceCodeDisclosure";
-    IssueApiModelTypeEnum["JspSourceCodeDisclosure"] = "JspSourceCodeDisclosure";
-    IssueApiModelTypeEnum["HtaccessIdentified"] = "HtaccessIdentified";
-    IssueApiModelTypeEnum["RcePython"] = "RcePython";
-    IssueApiModelTypeEnum["PossibleRcePython"] = "PossibleRcePython";
-    IssueApiModelTypeEnum["OutOfBandRcePython"] = "OutOfBandRcePython";
-    IssueApiModelTypeEnum["RceRuby"] = "RceRuby";
-    IssueApiModelTypeEnum["PossibleRceRuby"] = "PossibleRceRuby";
-    IssueApiModelTypeEnum["OutOfBandRceRuby"] = "OutOfBandRceRuby";
-    IssueApiModelTypeEnum["SwaggerJsonIdentified"] = "SwaggerJsonIdentified";
-    IssueApiModelTypeEnum["SslNotImplemented"] = "SslNotImplemented";
-    IssueApiModelTypeEnum["SecurityTxtIdentified"] = "SecurityTxtIdentified";
-    IssueApiModelTypeEnum["RceApacheStrutsS2016"] = "RceApacheStrutsS2016";
-    IssueApiModelTypeEnum["PossibleRceApacheStrutsS2016"] = "PossibleRceApacheStrutsS2016";
-    IssueApiModelTypeEnum["SlickOutOfDate"] = "SlickOutOfDate";
-    IssueApiModelTypeEnum["ScrollRevealOutOfDate"] = "ScrollRevealOutOfDate";
-    IssueApiModelTypeEnum["MathJaxOutOfDate"] = "MathJaxOutOfDate";
-    IssueApiModelTypeEnum["RickshawOutOfDate"] = "RickshawOutOfDate";
-    IssueApiModelTypeEnum["HighchartsOutOfDate"] = "HighchartsOutOfDate";
-    IssueApiModelTypeEnum["SnapSvgOutOfDate"] = "SnapSvgOutOfDate";
-    IssueApiModelTypeEnum["FlickityOutOfDate"] = "FlickityOutOfDate";
-    IssueApiModelTypeEnum["D3JsOutOfDate"] = "D3JsOutOfDate";
-    IssueApiModelTypeEnum["GoogleChartsOutOfDate"] = "GoogleChartsOutOfDate";
-    IssueApiModelTypeEnum["HiawathaVersionDisclosure"] = "HiawathaVersionDisclosure";
-    IssueApiModelTypeEnum["CherokeeVersionDisclosure"] = "CherokeeVersionDisclosure";
-    IssueApiModelTypeEnum["HiawathaOutOfDate"] = "HiawathaOutOfDate";
-    IssueApiModelTypeEnum["CherokeeOutOfDate"] = "CherokeeOutOfDate";
-    IssueApiModelTypeEnum["WebLogicOutOfDate"] = "WebLogicOutOfDate";
-    IssueApiModelTypeEnum["WebCacheDeception"] = "WebCacheDeception";
-    IssueApiModelTypeEnum["IisOutOfDate"] = "IisOutOfDate";
-    IssueApiModelTypeEnum["ImmutablejsOutOfDate"] = "ImmutablejsOutOfDate";
-    IssueApiModelTypeEnum["AxwaySecureTransportDetected"] = "AxwaySecureTransportDetected";
-    IssueApiModelTypeEnum["MisconfiguredXFrameOptionsHeaderMultipleDirectives"] = "MisconfiguredXFrameOptionsHeaderMultipleDirectives";
-    IssueApiModelTypeEnum["TlsVersion11Support"] = "TlsVersion11Support";
-    IssueApiModelTypeEnum["PossibleSsrfOracleCloud"] = "PossibleSsrfOracleCloud";
-    IssueApiModelTypeEnum["PossibleSsrfPacketCloud"] = "PossibleSsrfPacketCloud";
-    IssueApiModelTypeEnum["ExtJsOutOfDate"] = "ExtJsOutOfDate";
-    IssueApiModelTypeEnum["PossibleHpp"] = "PossibleHpp";
-    IssueApiModelTypeEnum["PossibleBreachAttack"] = "PossibleBreachAttack";
-    IssueApiModelTypeEnum["TelerikWebUiVersionDisclosure"] = "TelerikWebUiVersionDisclosure";
-    IssueApiModelTypeEnum["TelerikWebUiOutOfDate"] = "TelerikWebUiOutOfDate";
-    IssueApiModelTypeEnum["JavaVersionDisclosure"] = "JavaVersionDisclosure";
-    IssueApiModelTypeEnum["GlassFishVersionDisclosure"] = "GlassFishVersionDisclosure";
-    IssueApiModelTypeEnum["JavaOutOfDate"] = "JavaOutOfDate";
-    IssueApiModelTypeEnum["GlassFishOutOfDate"] = "GlassFishOutOfDate";
-    IssueApiModelTypeEnum["WafIdentified"] = "WafIdentified";
-    IssueApiModelTypeEnum["AkamaiCdnIdentified"] = "AkamaiCdnIdentified";
-    IssueApiModelTypeEnum["AzureCdnIdentified"] = "AzureCdnIdentified";
-    IssueApiModelTypeEnum["GoogleCloudCdnIdentified"] = "GoogleCloudCdnIdentified";
-    IssueApiModelTypeEnum["ArvanCloudCdnIdentified"] = "ArvanCloudCdnIdentified";
-    IssueApiModelTypeEnum["FastlyCdnIdentified"] = "FastlyCdnIdentified";
-    IssueApiModelTypeEnum["IncapsulaCdnIdentified"] = "IncapsulaCdnIdentified";
-    IssueApiModelTypeEnum["SucuriCdnIdentified"] = "SucuriCdnIdentified";
-    IssueApiModelTypeEnum["NetlifyCdnIdentified"] = "NetlifyCdnIdentified";
-    IssueApiModelTypeEnum["MaxCdnIdentified"] = "MaxCdnIdentified";
-    IssueApiModelTypeEnum["KeyCdnIdentified"] = "KeyCdnIdentified";
-    IssueApiModelTypeEnum["FirebladeCdnIdentified"] = "FirebladeCdnIdentified";
-    IssueApiModelTypeEnum["AireeCdnIdentified"] = "AireeCdnIdentified";
-    IssueApiModelTypeEnum["West263CdnIdentified"] = "West263CdnIdentified";
-    IssueApiModelTypeEnum["InstartCdnIdentified"] = "InstartCdnIdentified";
-    IssueApiModelTypeEnum["QratorCdnIdentified"] = "QratorCdnIdentified";
-    IssueApiModelTypeEnum["PowerCdnIdentified"] = "PowerCdnIdentified";
-    IssueApiModelTypeEnum["Cdn77Identified"] = "Cdn77Identified";
-    IssueApiModelTypeEnum["F5BigIpProxyIdentified"] = "F5BigIpProxyIdentified";
-    IssueApiModelTypeEnum["EnvoyProxyIdentified"] = "EnvoyProxyIdentified";
-    IssueApiModelTypeEnum["CitrixNetScalerProxyIdentified"] = "CitrixNetScalerProxyIdentified";
-    IssueApiModelTypeEnum["ApacheTrafficServerProxyIdentified"] = "ApacheTrafficServerProxyIdentified";
-    IssueApiModelTypeEnum["HaProxyIdentified"] = "HaProxyIdentified";
-    IssueApiModelTypeEnum["SkipperProxyIdentified"] = "SkipperProxyIdentified";
-    IssueApiModelTypeEnum["LoginPageIdentified"] = "LoginPageIdentified";
-    IssueApiModelTypeEnum["SameSiteCookieNotMarkedAsSecure"] = "SameSiteCookieNotMarkedAsSecure";
-    IssueApiModelTypeEnum["LiferayPortalIdentified"] = "LiferayPortalIdentified";
-    IssueApiModelTypeEnum["LiferayPortalOutOfDate"] = "LiferayPortalOutOfDate";
-    IssueApiModelTypeEnum["ApacheTrafficServerVersionDisclosure"] = "ApacheTrafficServerVersionDisclosure";
-    IssueApiModelTypeEnum["ApacheTrafficServerOutOfDate"] = "ApacheTrafficServerOutOfDate";
-    IssueApiModelTypeEnum["UndertowWebServerVersionDisclosure"] = "UndertowWebServerVersionDisclosure";
-    IssueApiModelTypeEnum["UndertowWebServerOutOfDate"] = "UndertowWebServerOutOfDate";
-    IssueApiModelTypeEnum["JenkinsVersionDisclosure"] = "JenkinsVersionDisclosure";
-    IssueApiModelTypeEnum["JenkinsOutOfDate"] = "JenkinsOutOfDate";
-    IssueApiModelTypeEnum["KestrelIdentified"] = "KestrelIdentified";
-    IssueApiModelTypeEnum["TableauServerIdentified"] = "TableauServerIdentified";
-    IssueApiModelTypeEnum["BomgarIdentified"] = "BomgarIdentified";
-    IssueApiModelTypeEnum["JolokiaVersionDisclosure"] = "JolokiaVersionDisclosure";
-    IssueApiModelTypeEnum["JolokiaOutOfDate"] = "JolokiaOutOfDate";
-    IssueApiModelTypeEnum["F5BigIpLocalFileInclusion"] = "F5BigIpLocalFileInclusion";
-    IssueApiModelTypeEnum["PossibleF5BigIpLocalFileInclusion"] = "PossibleF5BigIpLocalFileInclusion";
-    IssueApiModelTypeEnum["PossibleSstiPebble"] = "PossibleSstiPebble";
-    IssueApiModelTypeEnum["SstiPebble"] = "SstiPebble";
-    IssueApiModelTypeEnum["PossibleCodeExecutionViaSstiPebble"] = "PossibleCodeExecutionViaSstiPebble";
-    IssueApiModelTypeEnum["CodeExecutionViaSstiPebble"] = "CodeExecutionViaSstiPebble";
-    IssueApiModelTypeEnum["SugarCrmIdentified"] = "SugarCrmIdentified";
-    IssueApiModelTypeEnum["SugarCrmOutOfDate"] = "SugarCrmOutOfDate";
-    IssueApiModelTypeEnum["GrafanaVersionDisclosure"] = "GrafanaVersionDisclosure";
-    IssueApiModelTypeEnum["GrafanaOutOfDate"] = "GrafanaOutOfDate";
-    IssueApiModelTypeEnum["PossibleSstiJinJava"] = "PossibleSstiJinJava";
-    IssueApiModelTypeEnum["SstiJinJava"] = "SstiJinJava";
-    IssueApiModelTypeEnum["PossibleCodeExecutionViaSstiJinJava"] = "PossibleCodeExecutionViaSstiJinJava";
-    IssueApiModelTypeEnum["CodeExecutionViaSstiJinJava"] = "CodeExecutionViaSstiJinJava";
-    IssueApiModelTypeEnum["PossibleSstiAspNetRazor"] = "PossibleSstiAspNetRazor";
-    IssueApiModelTypeEnum["SstiAspNetRazor"] = "SstiAspNetRazor";
-    IssueApiModelTypeEnum["PossibleCodeExecutionViaSstiAspNetRazor"] = "PossibleCodeExecutionViaSstiAspNetRazor";
-    IssueApiModelTypeEnum["CodeExecutionViaSstiAspNetRazor"] = "CodeExecutionViaSstiAspNetRazor";
-    IssueApiModelTypeEnum["PhpMagicQuotesGpcDisabled"] = "PhpMagicQuotesGpcDisabled";
-    IssueApiModelTypeEnum["PhpRegisterGlobalsEnabled"] = "PhpRegisterGlobalsEnabled";
-    IssueApiModelTypeEnum["PhpDisplayErrorsEnabled"] = "PhpDisplayErrorsEnabled";
-    IssueApiModelTypeEnum["PhpAllowUrlFopenEnabled"] = "PhpAllowUrlFopenEnabled";
-    IssueApiModelTypeEnum["PhpAllowUrlIncludeEnabled"] = "PhpAllowUrlIncludeEnabled";
-    IssueApiModelTypeEnum["PhpSessionUseTransSidEnabled"] = "PhpSessionUseTransSidEnabled";
-    IssueApiModelTypeEnum["PhpOpenBaseDirIsNotSet"] = "PhpOpenBaseDirIsNotSet";
-    IssueApiModelTypeEnum["PhpEnableDlEnabled"] = "PhpEnableDlEnabled";
-    IssueApiModelTypeEnum["AspNetApplicationTraceEnabled"] = "AspNetApplicationTraceEnabled";
-    IssueApiModelTypeEnum["AspNetCookilessSessionStateEnabled"] = "AspNetCookilessSessionStateEnabled";
-    IssueApiModelTypeEnum["AspNetCookilessAuthenticationEnabled"] = "AspNetCookilessAuthenticationEnabled";
-    IssueApiModelTypeEnum["AspNetNoSslAuth"] = "AspNetNoSslAuth";
-    IssueApiModelTypeEnum["AspNetLoginCredentialsPlainText"] = "AspNetLoginCredentialsPlainText";
-    IssueApiModelTypeEnum["AspNetValidateRequestDisabled"] = "AspNetValidateRequestDisabled";
-    IssueApiModelTypeEnum["AspNetViewStateUserKeyNotSet"] = "AspNetViewStateUserKeyNotSet";
-    IssueApiModelTypeEnum["JettyVersionDisclosure"] = "JettyVersionDisclosure";
-    IssueApiModelTypeEnum["TornadoWebServerVersionDisclosure"] = "TornadoWebServerVersionDisclosure";
-    IssueApiModelTypeEnum["TracyDebuggingToolVersionDisclosure"] = "TracyDebuggingToolVersionDisclosure";
-    IssueApiModelTypeEnum["AspNetCustomErrorsDisabled"] = "AspNetCustomErrorsDisabled";
-    IssueApiModelTypeEnum["WhoopsFrameworkIdentified"] = "WhoopsFrameworkIdentified";
-    IssueApiModelTypeEnum["PhpUseOnlyCookiesIsDisabled"] = "PhpUseOnlyCookiesIsDisabled";
-    IssueApiModelTypeEnum["CrushFtpServerIdentified"] = "CrushFtpServerIdentified";
-    IssueApiModelTypeEnum["RceWebLogic"] = "RceWebLogic";
-    IssueApiModelTypeEnum["WeblogicAuthenticationBypass"] = "WeblogicAuthenticationBypass";
-    IssueApiModelTypeEnum["ArbitraryFileCreation"] = "ArbitraryFileCreation";
-    IssueApiModelTypeEnum["ArbitraryFileDeletion"] = "ArbitraryFileDeletion";
-    IssueApiModelTypeEnum["WerkzeugIdentified"] = "WerkzeugIdentified";
-    IssueApiModelTypeEnum["WerkzeugVersionDisclosure"] = "WerkzeugVersionDisclosure";
-    IssueApiModelTypeEnum["WerkzeugOutOfDate"] = "WerkzeugOutOfDate";
-    IssueApiModelTypeEnum["OpenRestyIdentified"] = "OpenRestyIdentified";
-    IssueApiModelTypeEnum["OpenRestyVersionDisclosure"] = "OpenRestyVersionDisclosure";
-    IssueApiModelTypeEnum["OpenRestyOutOfDate"] = "OpenRestyOutOfDate";
-    IssueApiModelTypeEnum["LiteSpeedWebServerIdentified"] = "LiteSpeedWebServerIdentified";
-    IssueApiModelTypeEnum["TwistedWebHttpServerIdentified"] = "TwistedWebHTTPServerIdentified";
-    IssueApiModelTypeEnum["TwistedWebHttpServerVersionDisclosure"] = "TwistedWebHTTPServerVersionDisclosure";
-    IssueApiModelTypeEnum["TwistedWebHttpServerOutOfDate"] = "TwistedWebHTTPServerOutOfDate";
-    IssueApiModelTypeEnum["NextJsReactFrameworkIdentified"] = "NextJsReactFrameworkIdentified";
-    IssueApiModelTypeEnum["NextJsReactFrameworkVersionDisclosure"] = "NextJsReactFrameworkVersionDisclosure";
-    IssueApiModelTypeEnum["NextJsReactFrameworkOutOfDate"] = "NextJsReactFrameworkOutOfDate";
-    IssueApiModelTypeEnum["DaiquiriVersionDisclosure"] = "DaiquiriVersionDisclosure";
-    IssueApiModelTypeEnum["W3TotalCacheOutOfDate"] = "W3TotalCacheOutOfDate";
-    IssueApiModelTypeEnum["W3TotalCacheIdentified"] = "W3TotalCacheIdentified";
-    IssueApiModelTypeEnum["W3TotalCacheVersionDisclosure"] = "W3TotalCacheVersionDisclosure";
-    IssueApiModelTypeEnum["PhusionPassengerIdentified"] = "PhusionPassengerIdentified";
-    IssueApiModelTypeEnum["PhusionPassengerVersionDisclosure"] = "PhusionPassengerVersionDisclosure";
-    IssueApiModelTypeEnum["PhusionPassengerOutOfDate"] = "PhusionPassengerOutOfDate";
-    IssueApiModelTypeEnum["SqlInjectionIast"] = "SqlInjectionIast";
-    IssueApiModelTypeEnum["LfiIast"] = "LfiIast";
-    IssueApiModelTypeEnum["RcePhpIast"] = "RcePhpIast";
-    IssueApiModelTypeEnum["HeaderInjectionIast"] = "HeaderInjectionIast";
-    IssueApiModelTypeEnum["CommandInjectionIast"] = "CommandInjectionIast";
-    IssueApiModelTypeEnum["AxwaySecureTransportIdentified"] = "AxwaySecureTransportIdentified";
-    IssueApiModelTypeEnum["AxwaySecureTransportVersionDisclosure"] = "AxwaySecureTransportVersionDisclosure";
-    IssueApiModelTypeEnum["AxwaySecureTransportOutOfDate"] = "AxwaySecureTransportOutOfDate";
-    IssueApiModelTypeEnum["BurpCollaboratorServerIdentified"] = "BurpCollaboratorServerIdentified";
-    IssueApiModelTypeEnum["ResinApplicationServerIdentified"] = "ResinApplicationServerIdentified";
-    IssueApiModelTypeEnum["ResinApplicationServerVersionDisclosure"] = "ResinApplicationServerVersionDisclosure";
-    IssueApiModelTypeEnum["ResinApplicationServerOutOfDate"] = "ResinApplicationServerOutOfDate";
-    IssueApiModelTypeEnum["TracSoftwareProjectManagementToolIdentified"] = "TracSoftwareProjectManagementToolIdentified";
-    IssueApiModelTypeEnum["TracSoftwareProjectManagementToolVersionDisclosure"] = "TracSoftwareProjectManagementToolVersionDisclosure";
-    IssueApiModelTypeEnum["TracSoftwareProjectManagementToolOutOfDate"] = "TracSoftwareProjectManagementToolOutOfDate";
-    IssueApiModelTypeEnum["TornadoWebServerIdentified"] = "TornadoWebServerIdentified";
-    IssueApiModelTypeEnum["TornadoWebServerOutOfDate"] = "TornadoWebServerOutOfDate";
-    IssueApiModelTypeEnum["JettyWebServerIdentified"] = "JettyWebServerIdentified";
-    IssueApiModelTypeEnum["JettyWebServerOutOfDate"] = "JettyWebServerOutOfDate";
-    IssueApiModelTypeEnum["TracyDebuggingToolOutOfDate"] = "TracyDebuggingToolOutOfDate";
-    IssueApiModelTypeEnum["ZopeWebServerVersionDisclosure"] = "ZopeWebServerVersionDisclosure";
-    IssueApiModelTypeEnum["ZopeWebServerOutOfDate"] = "ZopeWebServerOutOfDate";
-    IssueApiModelTypeEnum["ArtifactoryIdentified"] = "ArtifactoryIdentified";
-    IssueApiModelTypeEnum["ArtifactoryVersionDisclosure"] = "ArtifactoryVersionDisclosure";
-    IssueApiModelTypeEnum["ArtifactoryOutOfDate"] = "ArtifactoryOutOfDate";
-    IssueApiModelTypeEnum["JBossEapIdentified"] = "JBossEAPIdentified";
-    IssueApiModelTypeEnum["WildFlyIdentified"] = "WildFlyIdentified";
-    IssueApiModelTypeEnum["GunicornIdentified"] = "GunicornIdentified";
-    IssueApiModelTypeEnum["GunicornVersionDisclosure"] = "GunicornVersionDisclosure";
-    IssueApiModelTypeEnum["GunicornOutOfDate"] = "GunicornOutOfDate";
-    IssueApiModelTypeEnum["JBossCsIdentified"] = "JBossCSIdentified";
-    IssueApiModelTypeEnum["WebSealIdentified"] = "WebSealIdentified";
-    IssueApiModelTypeEnum["OracleHttpIdentified"] = "OracleHTTPIdentified";
-    IssueApiModelTypeEnum["SonicWallSslvpnIdentified"] = "SonicWallSSLVPNIdentified";
-    IssueApiModelTypeEnum["PloneCmsIdentified"] = "PloneCMSIdentified";
-    IssueApiModelTypeEnum["PloneCmsVersionDisclosure"] = "PloneCMSVersionDisclosure";
-    IssueApiModelTypeEnum["PloneCmsOutOfDate"] = "PloneCMSOutOfDate";
-    IssueApiModelTypeEnum["GlassFishIdentified"] = "GlassFishIdentified";
-    IssueApiModelTypeEnum["IbmrtcIdentified"] = "IBMRTCIdentified";
-    IssueApiModelTypeEnum["IbmrtcVersionDisclosure"] = "IBMRTCVersionDisclosure";
-    IssueApiModelTypeEnum["IbmrtcOutOfDate"] = "IBMRTCOutOfDate";
-    IssueApiModelTypeEnum["NexusIdentified"] = "NexusIdentified";
-    IssueApiModelTypeEnum["NexusVersionDisclosure"] = "NexusVersionDisclosure";
-    IssueApiModelTypeEnum["NexusOutOfDate"] = "NexusOutOfDate";
-    IssueApiModelTypeEnum["IbmhttpServerIdentified"] = "IBMHTTPServerIdentified";
-    IssueApiModelTypeEnum["IbmhttpServerVersionDisclosure"] = "IBMHTTPServerVersionDisclosure";
-    IssueApiModelTypeEnum["IbmhttpServerOutOfDate"] = "IBMHTTPServerOutOfDate";
-    IssueApiModelTypeEnum["PythonWsgiServerIdentified"] = "PythonWSGIServerIdentified";
-    IssueApiModelTypeEnum["PythonWsgiServerVersionDisclosure"] = "PythonWSGIServerVersionDisclosure";
-    IssueApiModelTypeEnum["PythonWsgiServerOutOfDate"] = "PythonWSGIServerOutOfDate";
-    IssueApiModelTypeEnum["PlayFrameworkIdentified"] = "PlayFrameworkIdentified";
-    IssueApiModelTypeEnum["VarnishCacheIdentified"] = "VarnishCacheIdentified";
-    IssueApiModelTypeEnum["RestletFrameworkIdentified"] = "RestletFrameworkIdentified";
-    IssueApiModelTypeEnum["RestletFrameworkVersionDisclosure"] = "RestletFrameworkVersionDisclosure";
-    IssueApiModelTypeEnum["RestletFrameworkOutOfDate"] = "RestletFrameworkOutOfDate";
-    IssueApiModelTypeEnum["ZopeWebServerIdentified"] = "ZopeWebServerIdentified";
-    IssueApiModelTypeEnum["WebSealOutOfDate"] = "WebSealOutOfDate";
-    IssueApiModelTypeEnum["WebSealVersionDisclosure"] = "WebSealVersionDisclosure";
-    IssueApiModelTypeEnum["CowboyIdentified"] = "CowboyIdentified";
-    IssueApiModelTypeEnum["CowboyOutOfDate"] = "CowboyOutOfDate";
-    IssueApiModelTypeEnum["CowboyVersionDisclosure"] = "CowboyVersionDisclosure";
-    IssueApiModelTypeEnum["LiferayPortalVersionDisclosure"] = "LiferayPortalVersionDisclosure";
-    IssueApiModelTypeEnum["RevokedSslCertificate"] = "RevokedSslCertificate";
-    IssueApiModelTypeEnum["SslCertificateHostnameMismatch"] = "SslCertificateHostnameMismatch";
-    IssueApiModelTypeEnum["SslCertificateSignedByUntrustedRoot"] = "SslCertificateSignedByUntrustedRoot";
-    IssueApiModelTypeEnum["ExpiredSslCertificate"] = "ExpiredSslCertificate";
-    IssueApiModelTypeEnum["JwtNoneAlgorithmAllowed"] = "JwtNoneAlgorithmAllowed";
-    IssueApiModelTypeEnum["JwtSignatureNotChecked"] = "JwtSignatureNotChecked";
-    IssueApiModelTypeEnum["JwtInsecureSecretDetected"] = "JwtInsecureSecretDetected";
-    IssueApiModelTypeEnum["JwtSqlInjectionInKid"] = "JwtSqlInjectionInKid";
-    IssueApiModelTypeEnum["ZshHistoryFileDetected"] = "ZshHistoryFileDetected";
-    IssueApiModelTypeEnum["JwtPathTraversalInKid"] = "JwtPathTraversalInKid";
-    IssueApiModelTypeEnum["JwtJkuHijack"] = "JwtJkuHijack";
-    IssueApiModelTypeEnum["JwtJkuForgeryWithOpenRedirect"] = "JwtJkuForgeryWithOpenRedirect";
-    IssueApiModelTypeEnum["DaiquiriIdentified"] = "DaiquiriIdentified";
-    IssueApiModelTypeEnum["Typo3CmsIdentified"] = "Typo3CmsIdentified";
-    IssueApiModelTypeEnum["Typo3CmsOutOfDate"] = "Typo3CmsOutOfDate";
-    IssueApiModelTypeEnum["SslCertificateAboutToExpire"] = "SslCertificateAboutToExpire";
-    IssueApiModelTypeEnum["MagentoIdentified"] = "MagentoIdentified";
-    IssueApiModelTypeEnum["MagentoOutOfDate"] = "MagentoOutOfDate";
-    IssueApiModelTypeEnum["PleskLinIdentified"] = "PleskLinIdentified";
-    IssueApiModelTypeEnum["PleskWinIdentified"] = "PleskWinIdentified";
-    IssueApiModelTypeEnum["LighthouseIdentified"] = "LighthouseIdentified";
-    IssueApiModelTypeEnum["BitNinjaCaptchaServerIdentified"] = "BitNinjaCaptchaServerIdentified";
-    IssueApiModelTypeEnum["PardotServerIdentified"] = "PardotServerIdentified";
-    IssueApiModelTypeEnum["MasheryProxyIdentified"] = "MasheryProxyIdentified";
-    IssueApiModelTypeEnum["DaiquiriOutOfDate"] = "DaiquiriOutOfDate";
-    IssueApiModelTypeEnum["AtlassianProxyIdentified"] = "AtlassianProxyIdentified";
-    IssueApiModelTypeEnum["AtlassianProxyVersionDisclosure"] = "AtlassianProxyVersionDisclosure";
-    IssueApiModelTypeEnum["AtlassianProxyOutOfDate"] = "AtlassianProxyOutOfDate";
-    IssueApiModelTypeEnum["WindowsAzureWebIdentified"] = "WindowsAzureWebIdentified";
-    IssueApiModelTypeEnum["TaleoWebServerIdentified"] = "TaleoWebServerIdentified";
-    IssueApiModelTypeEnum["TaleoWebServerVersionDisclosure"] = "TaleoWebServerVersionDisclosure";
-    IssueApiModelTypeEnum["TaleoWebServerOutOfDate"] = "TaleoWebServerOutOfDate";
-    IssueApiModelTypeEnum["CraftCmsIdentified"] = "CraftCmsIdentified";
-    IssueApiModelTypeEnum["DataDomeIdentified"] = "DataDomeIdentified";
-    IssueApiModelTypeEnum["OpenVpnAccessServerIdentified"] = "OpenVpnAccessServerIdentified";
-    IssueApiModelTypeEnum["SquarespaceIdentified"] = "SquarespaceIdentified";
-    IssueApiModelTypeEnum["SquidIdentified"] = "SquidIdentified";
-    IssueApiModelTypeEnum["SugarCrmVersionDisclosure"] = "SugarCrmVersionDisclosure";
-    IssueApiModelTypeEnum["HubSpotIdentified"] = "HubSpotIdentified";
-    IssueApiModelTypeEnum["KongServerIdentified"] = "KongServerIdentified";
-    IssueApiModelTypeEnum["KongServerVersionDisclosure"] = "KongServerVersionDisclosure";
-    IssueApiModelTypeEnum["KongServerOutOfDate"] = "KongServerOutOfDate";
-    IssueApiModelTypeEnum["VegurIdentified"] = "VegurIdentified";
-    IssueApiModelTypeEnum["JavaServerPageIdentified"] = "JavaServerPageIdentified";
-    IssueApiModelTypeEnum["JavaServerPageVersionDisclosure"] = "JavaServerPageVersionDisclosure";
-    IssueApiModelTypeEnum["TomcatIdentified"] = "TomcatIdentified";
-    IssueApiModelTypeEnum["PhpIdentified"] = "PHPIdentified";
-    IssueApiModelTypeEnum["IisIdentified"] = "IisIdentified";
-    IssueApiModelTypeEnum["WebLogicIdentified"] = "WebLogicIdentified";
-    IssueApiModelTypeEnum["LighttpdIdentified"] = "LighttpdIdentified";
-    IssueApiModelTypeEnum["SharePointIdentified"] = "SharePointIdentified";
-    IssueApiModelTypeEnum["ApacheCoyoteIdentified"] = "ApacheCoyoteIdentified";
-    IssueApiModelTypeEnum["OracleApplicationServerIdentified"] = "OracleApplicationServerIdentified";
-    IssueApiModelTypeEnum["OpenSslIdentified"] = "OpenSslIdentified";
-    IssueApiModelTypeEnum["ApacheModuleIdentified"] = "ApacheModuleIdentified";
-    IssueApiModelTypeEnum["PerlIdentified"] = "PerlIdentified";
-    IssueApiModelTypeEnum["FrontPageIdentified"] = "FrontPageIdentified";
-    IssueApiModelTypeEnum["PythonIdentified"] = "PythonIdentified";
-    IssueApiModelTypeEnum["JavaServletIdentified"] = "JavaServletIdentified";
-    IssueApiModelTypeEnum["MvcIdentified"] = "MvcIdentified";
-    IssueApiModelTypeEnum["MongrelIdentified"] = "MongrelIdentified";
-    IssueApiModelTypeEnum["NuSoapIdentified"] = "NuSoapIdentified";
-    IssueApiModelTypeEnum["RorIdentified"] = "RorIdentified";
-    IssueApiModelTypeEnum["RubyGemsIdentified"] = "RubyGemsIdentified";
-    IssueApiModelTypeEnum["DjangoIdentified"] = "DjangoIdentified";
-    IssueApiModelTypeEnum["CherryPyIdentified"] = "CherryPyIdentified";
-    IssueApiModelTypeEnum["HiawathaIdentified"] = "HiawathaIdentified";
-    IssueApiModelTypeEnum["CherokeeIdentified"] = "CherokeeIdentified";
-    IssueApiModelTypeEnum["TelerikWebUiIdentified"] = "TelerikWebUiIdentified";
-    IssueApiModelTypeEnum["JavaIdentified"] = "JavaIdentified";
-    IssueApiModelTypeEnum["ApacheTrafficServerIdentified"] = "ApacheTrafficServerIdentified";
-    IssueApiModelTypeEnum["UndertowWebServerIdentified"] = "UndertowWebServerIdentified";
-    IssueApiModelTypeEnum["JenkinsIdentified"] = "JenkinsIdentified";
-    IssueApiModelTypeEnum["JolokiaIdentified"] = "JolokiaIdentified";
-    IssueApiModelTypeEnum["GrafanaIdentified"] = "GrafanaIdentified";
-    IssueApiModelTypeEnum["TracyDebuggingToolIdentified"] = "TracyDebuggingToolIdentified";
-    IssueApiModelTypeEnum["LiferayDxpIdentified"] = "LiferayDXPIdentified";
-    IssueApiModelTypeEnum["LiferayDxpVersionDisclosure"] = "LiferayDXPVersionDisclosure";
-    IssueApiModelTypeEnum["LiferayDxpOutOfDate"] = "LiferayDXPOutOfDate";
-    IssueApiModelTypeEnum["JavaServerPageOutOfDate"] = "JavaServerPageOutOfDate";
-    IssueApiModelTypeEnum["SquidVersionDisclosure"] = "SquidVersionDisclosure";
-    IssueApiModelTypeEnum["SquidOutOfDate"] = "SquidOutOfDate";
-    IssueApiModelTypeEnum["SharePointOutOfDate"] = "SharePointOutOfDate";
-    IssueApiModelTypeEnum["ApacheCoyoteOutOfDate"] = "ApacheCoyoteOutOfDate";
-    IssueApiModelTypeEnum["OracleApplicationServerOutOfDate"] = "OracleApplicationServerOutOfDate";
-    IssueApiModelTypeEnum["FrontPageOutOfDate"] = "FrontPageOutOfDate";
-    IssueApiModelTypeEnum["MvcOutOfDate"] = "MvcOutOfDate";
-    IssueApiModelTypeEnum["MongrelOutOfDate"] = "MongrelOutOfDate";
-    IssueApiModelTypeEnum["IbmBpmIdentified"] = "IbmBpmIdentified";
-    IssueApiModelTypeEnum["PhpMyAdminVersionDisclosure"] = "PhpMyAdminVersionDisclosure";
-    IssueApiModelTypeEnum["ShopifyIdentified"] = "ShopifyIdentified";
-    IssueApiModelTypeEnum["AtlassianConfluenceIdentified"] = "AtlassianConfluenceIdentified";
-    IssueApiModelTypeEnum["AtlassianConfluenceVersionDisclosure"] = "AtlassianConfluenceVersionDisclosure";
-    IssueApiModelTypeEnum["AtlassianConfluenceOutOfDate"] = "AtlassianConfluenceOutOfDate";
-    IssueApiModelTypeEnum["AtlassianJiraIdentified"] = "AtlassianJiraIdentified";
-    IssueApiModelTypeEnum["AtlassianJiraVersionDisclosure"] = "AtlassianJiraVersionDisclosure";
-    IssueApiModelTypeEnum["AtlassianJiraOutOfDate"] = "AtlassianJiraOutOfDate";
-    IssueApiModelTypeEnum["OutOfBandRceJavaLog4j"] = "OutOfBandRceJavaLog4j";
-    IssueApiModelTypeEnum["GqlIdentified"] = "GqlIdentified";
-    IssueApiModelTypeEnum["GrapheneIdentified"] = "GrapheneIdentified";
-    IssueApiModelTypeEnum["AriadneIdentified"] = "AriadneIdentified";
-    IssueApiModelTypeEnum["ApolloIdentified"] = "ApolloIdentified";
-    IssueApiModelTypeEnum["GraphqlGoIdentified"] = "GraphqlGoIdentified";
-    IssueApiModelTypeEnum["GqlgenIdentified"] = "GqlgenIdentified";
-    IssueApiModelTypeEnum["WpGraphQlIdentified"] = "WPGraphQLIdentified";
-    IssueApiModelTypeEnum["GraphQlApiWordPressIdentified"] = "GraphQLApiWordPressIdentified";
-    IssueApiModelTypeEnum["GraphQlRubyIdentified"] = "GraphQLRubyIdentified";
-    IssueApiModelTypeEnum["GraphQlphpIdentified"] = "GraphQLPHPIdentified";
-    IssueApiModelTypeEnum["HasuraIdentified"] = "HasuraIdentified";
-    IssueApiModelTypeEnum["GraphQlJavaIdentified"] = "GraphQLJavaIdentified";
-    IssueApiModelTypeEnum["JuniperIdentified"] = "JuniperIdentified";
-    IssueApiModelTypeEnum["SangriaIdentified"] = "SangriaIdentified";
-    IssueApiModelTypeEnum["TartifletteIdentified"] = "TartifletteIdentified";
-    IssueApiModelTypeEnum["DgraphIdentified"] = "DgraphIdentified";
-    IssueApiModelTypeEnum["DirectusIdentified"] = "DirectusIdentified";
-    IssueApiModelTypeEnum["XssViaFileUpload"] = "XssViaFileUpload";
-    IssueApiModelTypeEnum["NodeJsExpressDevModeEnabled"] = "NodeJsExpressDevModeEnabled";
-    IssueApiModelTypeEnum["NodeJsExpressSessionWeakSecret"] = "NodeJsExpressSessionWeakSecret";
-    IssueApiModelTypeEnum["NodeJsUncaughtException"] = "NodeJsUncaughtException";
-    IssueApiModelTypeEnum["NodeJsUnhandledRejection"] = "NodeJsUnhandledRejection";
-    IssueApiModelTypeEnum["JavaVerbTamperingMisconfiguredSecurityConstraint"] = "JavaVerbTamperingMisconfiguredSecurityConstraint";
-    IssueApiModelTypeEnum["JavaLongSessionTimeout"] = "JavaLongSessionTimeout";
-    IssueApiModelTypeEnum["JavaUnsafeSessionTrackingValue"] = "JavaUnsafeSessionTrackingValue";
-    IssueApiModelTypeEnum["JavaUnconfiguredCustomErrorPage"] = "JavaUnconfiguredCustomErrorPage";
-    IssueApiModelTypeEnum["JavaSpringBootActuatorAllEndpointsExposed"] = "JavaSpringBootActuatorAllEndpointsExposed";
-    IssueApiModelTypeEnum["JavaSpringBootActuatorShutdownExposed"] = "JavaSpringBootActuatorShutdownExposed";
-    IssueApiModelTypeEnum["JavaSpringBootDevToolsEnabled"] = "JavaSpringBootDevToolsEnabled";
-    IssueApiModelTypeEnum["JavaSpringBootUnsafeSessionTrackingValue"] = "JavaSpringBootUnsafeSessionTrackingValue";
-    IssueApiModelTypeEnum["JavaSpringLongSessionTimeout"] = "JavaSpringLongSessionTimeout";
-    IssueApiModelTypeEnum["JavaSpringH2ConsoleEnabled"] = "JavaSpringH2ConsoleEnabled";
-    IssueApiModelTypeEnum["JavaSpringDataSourceCredsStoredAsPlainText"] = "JavaSpringDataSourceCredsStoredAsPlainText";
-    IssueApiModelTypeEnum["JavaSpringMongoDbCredsStoredAsPlainText"] = "JavaSpringMongoDbCredsStoredAsPlainText";
-    IssueApiModelTypeEnum["JavaSpringBootAdminEnabled"] = "JavaSpringBootAdminEnabled";
-    IssueApiModelTypeEnum["JavaSpringBootActuatorEndpointSecurityDisabled"] = "JavaSpringBootActuatorEndpointSecurityDisabled";
-    IssueApiModelTypeEnum["JavaSpringHtmlEscapingDisabled"] = "JavaSpringHtmlEscapingDisabled";
-    IssueApiModelTypeEnum["StrutsConfigBrowserEnabled"] = "StrutsConfigBrowserEnabled";
-    IssueApiModelTypeEnum["StrutsDevModeEnabled"] = "StrutsDevModeEnabled";
-    IssueApiModelTypeEnum["AxisSystemConfigurationListingEnabled"] = "AxisSystemConfigurationListingEnabled";
-    IssueApiModelTypeEnum["AxisDevModeEnabled"] = "AxisDevModeEnabled";
-    IssueApiModelTypeEnum["OutOfBandRceNode"] = "OutOfBandRceNode";
-    IssueApiModelTypeEnum["HsqldbIdentified"] = "HsqldbIdentified";
-    IssueApiModelTypeEnum["PossibleRceSpring"] = "PossibleRceSpring";
-    IssueApiModelTypeEnum["SqLiteIdentified"] = "SqLiteIdentified";
-    IssueApiModelTypeEnum["SqLiteOutOfDate"] = "SqLiteOutOfDate";
-    IssueApiModelTypeEnum["ConfirmedErrorBasedMongoDbInjection"] = "ConfirmedErrorBasedMongoDbInjection";
-    IssueApiModelTypeEnum["PossibleErrorBasedMongoDbInjection"] = "PossibleErrorBasedMongoDbInjection";
-    IssueApiModelTypeEnum["ConfirmedBooleanBasedMongoDbInjection"] = "ConfirmedBooleanBasedMongoDbInjection";
-    IssueApiModelTypeEnum["PossibleBooleanBasedMongoDbInjection"] = "PossibleBooleanBasedMongoDbInjection";
-    IssueApiModelTypeEnum["ConfirmedBlindMongoDbInjection"] = "ConfirmedBlindMongoDbInjection";
-    IssueApiModelTypeEnum["PossibleBlindMongoDbInjection"] = "PossibleBlindMongoDbInjection";
-    IssueApiModelTypeEnum["ConfirmedOperatorMongoDbInjection"] = "ConfirmedOperatorMongoDbInjection";
-    IssueApiModelTypeEnum["PossibleOperatorMongoDbInjection"] = "PossibleOperatorMongoDbInjection";
-    IssueApiModelTypeEnum["MongoDbIdentified"] = "MongoDbIdentified";
-    IssueApiModelTypeEnum["SwaggerUiOutOfDate"] = "SwaggerUIOutOfDate";
-    IssueApiModelTypeEnum["MailHeaderInjectionIast"] = "MailHeaderInjectionIast";
-    IssueApiModelTypeEnum["OutOfBandRceText4Shell"] = "OutOfBandRceText4Shell";
-    IssueApiModelTypeEnum["SensitiveDataExposure"] = "SensitiveDataExposure";
-    IssueApiModelTypeEnum["SensitiveDataAmazonAwsAccessKeyId"] = "SensitiveDataAmazonAwsAccessKeyId";
-    IssueApiModelTypeEnum["SensitiveDataAmazonAwsSecretKey"] = "SensitiveDataAmazonAwsSecretKey";
-    IssueApiModelTypeEnum["SensitiveDataFacebookAppSecret"] = "SensitiveDataFacebookAppSecret";
-    IssueApiModelTypeEnum["SensitiveDataFacebookAppId"] = "SensitiveDataFacebookAppId";
-    IssueApiModelTypeEnum["SensitiveDataTwitterApiSecretKey"] = "SensitiveDataTwitterApiSecretKey";
-    IssueApiModelTypeEnum["SensitiveDataTwitterAccessTokenSecret"] = "SensitiveDataTwitterAccessTokenSecret";
-    IssueApiModelTypeEnum["SensitiveDataHerokuApiKey"] = "SensitiveDataHerokuApiKey";
-    IssueApiModelTypeEnum["SensitiveDataSshKey"] = "SensitiveDataSshKey";
-    IssueApiModelTypeEnum["SensitiveDataSendGridApiKey"] = "SensitiveDataSendGridApiKey";
-    IssueApiModelTypeEnum["SensitiveDataGoogleCloudApiKey"] = "SensitiveDataGoogleCloudApiKey";
-    IssueApiModelTypeEnum["SensitiveDataMailGunApiKey"] = "SensitiveDataMailGunApiKey";
-    IssueApiModelTypeEnum["SensitiveDataNuGetApiKey"] = "SensitiveDataNuGetApiKey";
-    IssueApiModelTypeEnum["SensitiveDataSlackWebhook"] = "SensitiveDataSlackWebhook";
-    IssueApiModelTypeEnum["SensitiveDataSlackToken"] = "SensitiveDataSlackToken";
-    IssueApiModelTypeEnum["SensitiveDataSlackV1XToken"] = "SensitiveDataSlackV1XToken";
-    IssueApiModelTypeEnum["SensitiveDataStripeApiKey"] = "SensitiveDataStripeApiKey";
-    IssueApiModelTypeEnum["SensitiveDataMailChimpApiKey"] = "SensitiveDataMailChimpApiKey";
-    IssueApiModelTypeEnum["SensitiveDataLinkedInApiKey"] = "SensitiveDataLinkedInApiKey";
-    IssueApiModelTypeEnum["SensitiveDataDatabaseConnectionStringMongoDbMySql"] = "SensitiveDataDatabaseConnectionStringMongoDbMySql";
-    IssueApiModelTypeEnum["SensitiveDataDatabaseConnectionStringPostgres"] = "SensitiveDataDatabaseConnectionStringPostgres";
-    IssueApiModelTypeEnum["SensitiveDataJdbcDbConnectionString"] = "SensitiveDataJdbcDbConnectionString";
-    IssueApiModelTypeEnum["SensitiveDataWordPressAuthenticationKey"] = "SensitiveDataWordPressAuthenticationKey";
-    IssueApiModelTypeEnum["SensitiveDataSymfonyApplicationSecret"] = "SensitiveDataSymfonyApplicationSecret";
-    IssueApiModelTypeEnum["SensitiveDataMapboxToken"] = "SensitiveDataMapboxToken";
-    IssueApiModelTypeEnum["SensitiveDataAmazonSessMtpPassword"] = "SensitiveDataAmazonSessMtpPassword";
-    IssueApiModelTypeEnum["SensitiveDataSentryAuthToken"] = "SensitiveDataSentryAuthToken";
-    IssueApiModelTypeEnum["SensitiveDataTeamsWebhook"] = "SensitiveDataTeamsWebhook";
-    IssueApiModelTypeEnum["SensitiveDataTwilioApiKey"] = "SensitiveDataTwilioApiKey";
-    IssueApiModelTypeEnum["SensitiveDataPaypalAccessToken"] = "SensitiveDataPaypalAccessToken";
-    IssueApiModelTypeEnum["SensitiveDataSquareAccessToken"] = "SensitiveDataSquareAccessToken";
-    IssueApiModelTypeEnum["SensitiveDataSquareOAuthSecret"] = "SensitiveDataSquareOAuthSecret";
-    IssueApiModelTypeEnum["SensitiveDataPicaticApiKey"] = "SensitiveDataPicaticApiKey";
-    IssueApiModelTypeEnum["SensitiveDataAmazonMwsAuthToken"] = "SensitiveDataAmazonMwsAuthToken";
-    IssueApiModelTypeEnum["SensitiveDataGoogleOAuthAccessToken"] = "SensitiveDataGoogleOAuthAccessToken";
-    IssueApiModelTypeEnum["SensitiveDataFacebookAccessToken"] = "SensitiveDataFacebookAccessToken";
-    IssueApiModelTypeEnum["SensitiveDataSonarQubeUserToken"] = "SensitiveDataSonarQubeUserToken";
-    IssueApiModelTypeEnum["SensitiveDataNexmoSecret"] = "SensitiveDataNexmoSecret";
-    IssueApiModelTypeEnum["SensitiveDataTelegramBotApiToken"] = "SensitiveDataTelegramBotApiToken";
-    IssueApiModelTypeEnum["SensitiveDataDeviseSecretKey"] = "SensitiveDataDeviseSecretKey";
-    IssueApiModelTypeEnum["SensitiveDataGitlabPersonalAccessToken"] = "SensitiveDataGitlabPersonalAccessToken";
-    IssueApiModelTypeEnum["SensitiveDataConsulToken"] = "SensitiveDataConsulToken";
-    IssueApiModelTypeEnum["SensitiveDataOmiseSecretKey"] = "SensitiveDataOmiseSecretKey";
-    IssueApiModelTypeEnum["SensitiveDataNpmAccessToken"] = "SensitiveDataNpmAccessToken";
-    IssueApiModelTypeEnum["GuidV1OnCookie"] = "GuidV1OnCookie";
-    IssueApiModelTypeEnum["JwtDetected"] = "JwtDetected";
-    IssueApiModelTypeEnum["CloudflareIdentified"] = "CloudflareIdentified";
-    IssueApiModelTypeEnum["CloudflareBmIdentified"] = "CloudflareBMIdentified";
-    IssueApiModelTypeEnum["CloudflareBIdentified"] = "CloudflareBIdentified";
-    IssueApiModelTypeEnum["CdnJsIdentified"] = "CdnJsIdentified";
-    IssueApiModelTypeEnum["WindowsServerIdentified"] = "WindowsServerIdentified";
-    IssueApiModelTypeEnum["WindowsCeosIdentified"] = "WindowsCEOSIdentified";
-    IssueApiModelTypeEnum["PossibleSsrfEquinix"] = "PossibleSsrfEquinix";
-    IssueApiModelTypeEnum["VarnishVersionDisclosure"] = "VarnishVersionDisclosure";
-    IssueApiModelTypeEnum["ApacheShiroStackTrace"] = "ApacheShiroStackTrace";
-    IssueApiModelTypeEnum["ApacheShiroIdentified"] = "ApacheShiroIdentified";
-    IssueApiModelTypeEnum["StackPathCdnIdentified"] = "StackPathCdnIdentified";
-    IssueApiModelTypeEnum["JBossWebConsole"] = "JBossWebConsole";
-    IssueApiModelTypeEnum["AemDetected"] = "AEMDetected";
-    IssueApiModelTypeEnum["JavaServletOutOfDate"] = "JavaServletOutOfDate";
-    IssueApiModelTypeEnum["JsDelivrCdnIdentified"] = "JsDelivrCdnIdentified";
-    IssueApiModelTypeEnum["ModSslOutOfDate"] = "Mod_SslOutOfDate";
-    IssueApiModelTypeEnum["ModSslIdentified"] = "Mod_SslIdentified";
-    IssueApiModelTypeEnum["ModSslVersionDisclosure2"] = "Mod_SslVersionDisclosure";
-    IssueApiModelTypeEnum["SpringFrameworkIdentified"] = "SpringFrameworkIdentified";
-    IssueApiModelTypeEnum["JavaMelodyInterfaceDetected"] = "JavaMelodyInterfaceDetected";
-    IssueApiModelTypeEnum["BootstrapTableOutOfDate"] = "BootstrapTableOutOfDate";
-    IssueApiModelTypeEnum["BootstrapSelectOutOfDate"] = "BootstrapSelectOutOfDate";
-    IssueApiModelTypeEnum["BootstrapTypeaheadOutOfDate"] = "BootstrapTypeaheadOutOfDate";
-    IssueApiModelTypeEnum["LuaIdentified"] = "LuaIdentified";
-    IssueApiModelTypeEnum["LuaVersionDisclosure"] = "LuaVersionDisclosure";
-    IssueApiModelTypeEnum["LuaOutOfDate"] = "LuaOutOfDate";
-    IssueApiModelTypeEnum["SpringActuatorEndpointDetected"] = "SpringActuatorEndpointDetected";
-    IssueApiModelTypeEnum["MsExchangeVersionDisclosure"] = "MsExchangeVersionDisclosure";
-    IssueApiModelTypeEnum["MsExchangeOutOfDate"] = "MsExchangeOutOfDate";
-    IssueApiModelTypeEnum["OutOfBandCodeExecutionViaJwtKid"] = "OutOfBandCodeExecutionViaJwtKid";
-    IssueApiModelTypeEnum["MongoDbInjectionIast"] = "MongoDbInjectionIast";
-    IssueApiModelTypeEnum["LdapInjectionIast"] = "LdapInjectionIast";
-    IssueApiModelTypeEnum["XPathInjectionIast"] = "XPathInjectionIast";
-    IssueApiModelTypeEnum["ServerSideTemplateInjectionIast"] = "ServerSideTemplateInjectionIast";
-    IssueApiModelTypeEnum["XxeInjectionIast"] = "XxeInjectionIast";
-    IssueApiModelTypeEnum["JetBrainsIdeaDirectoryDetected"] = "JetBrainsIdeaDirectoryDetected";
-    IssueApiModelTypeEnum["NodeJsStackTraceDisclosure"] = "NodeJsStackTraceDisclosure";
-    IssueApiModelTypeEnum["ItHitWebDavNetVersionDisclosure"] = "ItHitWebDavNetVersionDisclosure";
-    IssueApiModelTypeEnum["ItHitWebDavNetOutOfDate"] = "ItHitWebDavNetOutOfDate";
-    IssueApiModelTypeEnum["EzProxyIdentified"] = "EzProxyIdentified";
-    IssueApiModelTypeEnum["CanvasJsOutOfDate"] = "CanvasJSOutOfDate";
-    IssueApiModelTypeEnum["WordPressVersionDisclosure"] = "WordPressVersionDisclosure";
-    IssueApiModelTypeEnum["JoomlaVersionDisclosure"] = "JoomlaVersionDisclosure";
-    IssueApiModelTypeEnum["DrupalVersionDisclosure"] = "DrupalVersionDisclosure";
-    IssueApiModelTypeEnum["MovableTypeVersionDisclosure"] = "MovableTypeVersionDisclosure";
-    IssueApiModelTypeEnum["MediaWikiVersionDisclosure"] = "MediaWikiVersionDisclosure";
-    IssueApiModelTypeEnum["OscommerceVersionDisclosure"] = "OscommerceVersionDisclosure";
-    IssueApiModelTypeEnum["PhpBbVersionDisclosure"] = "PhpBBVersionDisclosure";
-    IssueApiModelTypeEnum["OpenCartVersionDisclosure"] = "OpenCartVersionDisclosure";
-    IssueApiModelTypeEnum["OsTicketVersionDisclosure"] = "OsTicketVersionDisclosure";
-    IssueApiModelTypeEnum["PrestashopVersionDisclosure"] = "PrestashopVersionDisclosure";
-    IssueApiModelTypeEnum["AbanteCartVersionDisclosure"] = "AbanteCartVersionDisclosure";
-    IssueApiModelTypeEnum["AmpacheVersionDisclosure"] = "AmpacheVersionDisclosure";
-    IssueApiModelTypeEnum["AtutorVersionDisclosure"] = "AtutorVersionDisclosure";
-    IssueApiModelTypeEnum["ClarolineVersionDisclosure"] = "ClarolineVersionDisclosure";
-    IssueApiModelTypeEnum["Concrete5VersionDisclosure"] = "Concrete5VersionDisclosure";
-    IssueApiModelTypeEnum["CoppermineVersionDisclosure"] = "CoppermineVersionDisclosure";
-    IssueApiModelTypeEnum["CubeCartVersionDisclosure"] = "CubeCartVersionDisclosure";
-    IssueApiModelTypeEnum["CollabtiveVersionDisclosure"] = "CollabtiveVersionDisclosure";
-    IssueApiModelTypeEnum["DotClearVersionDisclosure"] = "DotClearVersionDisclosure";
-    IssueApiModelTypeEnum["E107VersionDisclosure"] = "E107VersionDisclosure";
-    IssueApiModelTypeEnum["FamilyConnectionsVersionDisclosure"] = "FamilyConnectionsVersionDisclosure";
-    IssueApiModelTypeEnum["FluxBbVersionDisclosure"] = "FluxBBVersionDisclosure";
-    IssueApiModelTypeEnum["FormToolsVersionDisclosure"] = "FormToolsVersionDisclosure";
-    IssueApiModelTypeEnum["ChamiloVersionDisclosure"] = "ChamiloVersionDisclosure";
-    IssueApiModelTypeEnum["FrontAccountingVersionDisclosure"] = "FrontAccountingVersionDisclosure";
-    IssueApiModelTypeEnum["GibbonEduVersionDisclosure"] = "GibbonEduVersionDisclosure";
-    IssueApiModelTypeEnum["HeskVersionDisclosure"] = "HeskVersionDisclosure";
-    IssueApiModelTypeEnum["LimeSurveyVersionDisclosure"] = "LimeSurveyVersionDisclosure";
-    IssueApiModelTypeEnum["MibewMessengerVersionDisclosure"] = "MibewMessengerVersionDisclosure";
-    IssueApiModelTypeEnum["ModXVersionDisclosure"] = "ModXVersionDisclosure";
-    IssueApiModelTypeEnum["MoodleVersionDisclosure"] = "MoodleVersionDisclosure";
-    IssueApiModelTypeEnum["MyBbVersionDisclosure"] = "MyBBVersionDisclosure";
-    IssueApiModelTypeEnum["OmekaVersionDisclosure"] = "OmekaVersionDisclosure";
-    IssueApiModelTypeEnum["OsClassVersionDisclosure"] = "OsClassVersionDisclosure";
-    IssueApiModelTypeEnum["EspoCrmVersionDisclosure"] = "EspoCrmVersionDisclosure";
-    IssueApiModelTypeEnum["ElggVersionDisclosure"] = "ElggVersionDisclosure";
-    IssueApiModelTypeEnum["PhorumVersionDisclosure"] = "PhorumVersionDisclosure";
-    IssueApiModelTypeEnum["PhpFusionVersionDisclosure"] = "PhpFusionVersionDisclosure";
-    IssueApiModelTypeEnum["PhpAddressBookVersionDisclosure"] = "PhpAddressBookVersionDisclosure";
-    IssueApiModelTypeEnum["PhpListVersionDisclosure"] = "PhpListVersionDisclosure";
-    IssueApiModelTypeEnum["PmWikiVersionDisclosure"] = "PmWikiVersionDisclosure";
-    IssueApiModelTypeEnum["PodcastGeneratorVersionDisclosure"] = "PodcastGeneratorVersionDisclosure";
-    IssueApiModelTypeEnum["ProjectSendVersionDisclosure"] = "ProjectSendVersionDisclosure";
-    IssueApiModelTypeEnum["Question2AnswerVersionDisclosure"] = "Question2AnswerVersionDisclosure";
-    IssueApiModelTypeEnum["RukovoditelVersionDisclosure"] = "RukovoditelVersionDisclosure";
-    IssueApiModelTypeEnum["SeoPanelVersionDisclosure"] = "SeoPanelVersionDisclosure";
-    IssueApiModelTypeEnum["SerendipityVersionDisclosure"] = "SerendipityVersionDisclosure";
-    IssueApiModelTypeEnum["TcExamVersionDisclosure"] = "TcExamVersionDisclosure";
-    IssueApiModelTypeEnum["VanillaForumsVersionDisclosure"] = "VanillaForumsVersionDisclosure";
-    IssueApiModelTypeEnum["WebErpVersionDisclosure"] = "WebErpVersionDisclosure";
-    IssueApiModelTypeEnum["WeBidVersionDisclosure"] = "WeBidVersionDisclosure";
-    IssueApiModelTypeEnum["XoopsVersionDisclosure"] = "XoopsVersionDisclosure";
-    IssueApiModelTypeEnum["YetiForceCrmVersionDisclosure"] = "YetiForceCrmVersionDisclosure";
-    IssueApiModelTypeEnum["YourlsVersionDisclosure"] = "YourlsVersionDisclosure";
-    IssueApiModelTypeEnum["ZenCartVersionDisclosure"] = "ZenCartVersionDisclosure";
-    IssueApiModelTypeEnum["ZenPhotoVersionDisclosure"] = "ZenPhotoVersionDisclosure";
-    IssueApiModelTypeEnum["PiwigoVersionDisclosure"] = "PiwigoVersionDisclosure";
-    IssueApiModelTypeEnum["OwnCloudVersionDisclosure"] = "OwnCloudVersionDisclosure";
-    IssueApiModelTypeEnum["PhpMyFaqVersionDisclosure"] = "PhpMyFaqVersionDisclosure";
-    IssueApiModelTypeEnum["RoundcubeVersionDisclosure"] = "RoundcubeVersionDisclosure";
-    IssueApiModelTypeEnum["ZikulaVersionDisclosure"] = "ZikulaVersionDisclosure";
-    IssueApiModelTypeEnum["ReviveAdserverVersionDisclosure"] = "ReviveAdserverVersionDisclosure";
-    IssueApiModelTypeEnum["B2evolutionVersionDisclosure"] = "B2evolutionVersionDisclosure";
-    IssueApiModelTypeEnum["DolphinVersionDisclosure"] = "DolphinVersionDisclosure";
-    IssueApiModelTypeEnum["Ph7CmsVersionDisclosure"] = "PH7CMSVersionDisclosure";
-    IssueApiModelTypeEnum["QdPmVersionDisclosure"] = "QdPMVersionDisclosure";
-    IssueApiModelTypeEnum["DolibarrVersionDisclosure"] = "DolibarrVersionDisclosure";
-    IssueApiModelTypeEnum["ClipBucketVersionDisclosure"] = "ClipBucketVersionDisclosure";
-    IssueApiModelTypeEnum["ContaoVersionDisclosure"] = "ContaoVersionDisclosure";
-    IssueApiModelTypeEnum["Typo3CmsVersionDisclosure"] = "Typo3CmsVersionDisclosure";
-    IssueApiModelTypeEnum["MagentoVersionDisclosure"] = "MagentoVersionDisclosure";
-    IssueApiModelTypeEnum["PopperJsOutOfDate"] = "PopperJSOutOfDate";
-    IssueApiModelTypeEnum["SailsJsIdentified"] = "SailsJsIdentified";
-    IssueApiModelTypeEnum["ActionheroJsIdentified"] = "ActionheroJsIdentified";
-    IssueApiModelTypeEnum["OutOfBandXxeSamlConsumer"] = "OutOfBandXxeSamlConsumer";
-    IssueApiModelTypeEnum["OutOfBandXsltSamlConsumer"] = "OutOfBandXsltSamlConsumer";
-    IssueApiModelTypeEnum["PossibleSsrfKeyInfoSamlConsumer"] = "PossibleSsrfKeyInfoSamlConsumer";
-    IssueApiModelTypeEnum["PossibleXssSamlConsumer"] = "PossibleXssSamlConsumer";
-    IssueApiModelTypeEnum["RetiredHashSaml"] = "RetiredHashSaml";
-    IssueApiModelTypeEnum["SamlResponseWithoutSignature"] = "SamlResponseWithoutSignature";
-    IssueApiModelTypeEnum["NoSamlResponseSignatureCheck"] = "NoSamlResponseSignatureCheck";
-    IssueApiModelTypeEnum["SamlResponseSignatureExclusion"] = "SamlResponseSignatureExclusion";
-    IssueApiModelTypeEnum["GraphQlStackTraceDisclosure"] = "GraphQLStackTraceDisclosure";
-    IssueApiModelTypeEnum["JqueryIdentified"] = "JqueryIdentified";
-    IssueApiModelTypeEnum["JqueryMigrateIdentified"] = "JqueryMigrateIdentified";
-    IssueApiModelTypeEnum["JqueryMobileIdentified"] = "JqueryMobileIdentified";
-    IssueApiModelTypeEnum["JqueryUiDialogIdentified"] = "JqueryUiDialogIdentified";
-    IssueApiModelTypeEnum["JqueryUiAutocompleteIdentified"] = "JqueryUiAutocompleteIdentified";
-    IssueApiModelTypeEnum["JqueryUiTooltipIdentified"] = "JqueryUiTooltipIdentified";
-    IssueApiModelTypeEnum["PrettyPhotoIdentified"] = "PrettyPhotoIdentified";
-    IssueApiModelTypeEnum["JPlayerIdentified"] = "jPlayerIdentified";
-    IssueApiModelTypeEnum["YuiIdentified"] = "YuiIdentified";
-    IssueApiModelTypeEnum["PrototypejsIdentified"] = "PrototypejsIdentified";
-    IssueApiModelTypeEnum["EmberIdentified"] = "EmberIdentified";
-    IssueApiModelTypeEnum["AngularjsIdentified"] = "AngularjsIdentified";
-    IssueApiModelTypeEnum["BackbonejsIdentified"] = "BackbonejsIdentified";
-    IssueApiModelTypeEnum["MustachejsIdentified"] = "MustachejsIdentified";
-    IssueApiModelTypeEnum["HandlebarsjsIdentified"] = "HandlebarsjsIdentified";
-    IssueApiModelTypeEnum["EasyXdmIdentified"] = "EasyXdmIdentified";
-    IssueApiModelTypeEnum["PluploadIdentified"] = "PluploadIdentified";
-    IssueApiModelTypeEnum["DomPurifyIdentified"] = "DomPurifyIdentified";
-    IssueApiModelTypeEnum["DwrIdentified"] = "DwrIdentified";
-    IssueApiModelTypeEnum["VideojsIdentified"] = "VideojsIdentified";
-    IssueApiModelTypeEnum["CkeditorIdentified"] = "CkeditorIdentified";
-    IssueApiModelTypeEnum["TypeaheadjsIdentified"] = "TypeaheadjsIdentified";
-    IssueApiModelTypeEnum["BootboxIdentified"] = "BootboxIdentified";
-    IssueApiModelTypeEnum["BootstrapjsIdentified"] = "BootstrapjsIdentified";
-    IssueApiModelTypeEnum["Bootstrap3DateTimePickerIdentified"] = "Bootstrap3DateTimePickerIdentified";
-    IssueApiModelTypeEnum["BootstrapToggleIdentified"] = "BootstrapToggleIdentified";
-    IssueApiModelTypeEnum["FootablejsIdentified"] = "FootablejsIdentified";
-    IssueApiModelTypeEnum["ImagePickerIdentified"] = "ImagePickerIdentified";
-    IssueApiModelTypeEnum["RespondjsIdentified"] = "RespondjsIdentified";
-    IssueApiModelTypeEnum["IonRangeSliderIdentified"] = "IonRangeSliderIdentified";
-    IssueApiModelTypeEnum["JsTreeIdentified"] = "JsTreeIdentified";
-    IssueApiModelTypeEnum["ModernizrIdentified"] = "ModernizrIdentified";
-    IssueApiModelTypeEnum["MomentjsIdentified"] = "MomentjsIdentified";
-    IssueApiModelTypeEnum["Select2Identified"] = "Select2Identified";
-    IssueApiModelTypeEnum["Html5ShivIdentified"] = "Html5ShivIdentified";
-    IssueApiModelTypeEnum["SortablejsIdentified"] = "SortablejsIdentified";
-    IssueApiModelTypeEnum["KnockoutjsIdentified"] = "KnockoutjsIdentified";
-    IssueApiModelTypeEnum["JavaScriptCookieIdentified"] = "JavaScriptCookieIdentified";
-    IssueApiModelTypeEnum["JqueryMaskIdentified"] = "JqueryMaskIdentified";
-    IssueApiModelTypeEnum["JqueryValidationIdentified"] = "JqueryValidationIdentified";
-    IssueApiModelTypeEnum["KnockoutMappingIdentified"] = "KnockoutMappingIdentified";
-    IssueApiModelTypeEnum["ReactIdentified"] = "ReactIdentified";
-    IssueApiModelTypeEnum["ZeptojsIdentified"] = "ZeptojsIdentified";
-    IssueApiModelTypeEnum["HammerjsIdentified"] = "HammerjsIdentified";
-    IssueApiModelTypeEnum["PhaserIdentified"] = "PhaserIdentified";
-    IssueApiModelTypeEnum["RamdaIdentified"] = "RamdaIdentified";
-    IssueApiModelTypeEnum["VuejsIdentified"] = "VuejsIdentified";
-    IssueApiModelTypeEnum["RevealJsIdentified"] = "RevealJsIdentified";
-    IssueApiModelTypeEnum["ChartjsIdentified"] = "ChartjsIdentified";
-    IssueApiModelTypeEnum["LeafletIdentified"] = "LeafletIdentified";
-    IssueApiModelTypeEnum["FoundationIdentified"] = "FoundationIdentified";
-    IssueApiModelTypeEnum["SemanticUiIdentified"] = "SemanticUIIdentified";
-    IssueApiModelTypeEnum["PixiJsIdentified"] = "PixiJsIdentified";
-    IssueApiModelTypeEnum["ThreeJsIdentified"] = "ThreeJsIdentified";
-    IssueApiModelTypeEnum["PdfJsIdentified"] = "PdfJsIdentified";
-    IssueApiModelTypeEnum["FabricJsIdentified"] = "FabricJsIdentified";
-    IssueApiModelTypeEnum["LightboxIdentified"] = "LightboxIdentified";
-    IssueApiModelTypeEnum["UnderscorejsIdentified"] = "UnderscorejsIdentified";
-    IssueApiModelTypeEnum["FancyBoxIdentified"] = "FancyBoxIdentified";
-    IssueApiModelTypeEnum["LazyjsIdentified"] = "LazyjsIdentified";
-    IssueApiModelTypeEnum["DataTablesIdentified"] = "DataTablesIdentified";
-    IssueApiModelTypeEnum["XRegExpIdentified"] = "XRegExpIdentified";
-    IssueApiModelTypeEnum["Fingerprintjs2Identified"] = "Fingerprintjs2Identified";
-    IssueApiModelTypeEnum["SweetAlert2Identified"] = "SweetAlert2Identified";
-    IssueApiModelTypeEnum["IntrojsIdentified"] = "IntrojsIdentified";
-    IssueApiModelTypeEnum["LodashIdentified"] = "LodashIdentified";
-    IssueApiModelTypeEnum["AxiosIdentified"] = "AxiosIdentified";
-    IssueApiModelTypeEnum["PolymerIdentified"] = "PolymerIdentified";
-    IssueApiModelTypeEnum["BluebirdIdentified"] = "BluebirdIdentified";
-    IssueApiModelTypeEnum["ListJsIdentified"] = "ListJsIdentified";
-    IssueApiModelTypeEnum["MithrilIdentified"] = "MithrilIdentified";
-    IssueApiModelTypeEnum["MathJsIdentified"] = "MathJsIdentified";
-    IssueApiModelTypeEnum["RiotJsIdentified"] = "RiotJsIdentified";
-    IssueApiModelTypeEnum["RequireJsIdentified"] = "RequireJsIdentified";
-    IssueApiModelTypeEnum["EfJsIdentified"] = "EfJsIdentified";
-    IssueApiModelTypeEnum["MarionetteJsIdentified"] = "MarionetteJsIdentified";
-    IssueApiModelTypeEnum["GsapIdentified"] = "GsapIdentified";
-    IssueApiModelTypeEnum["InfernoIdentified"] = "InfernoIdentified";
-    IssueApiModelTypeEnum["D3JsIdentified"] = "D3JsIdentified";
-    IssueApiModelTypeEnum["HighchartsIdentified"] = "HighchartsIdentified";
-    IssueApiModelTypeEnum["RickshawIdentified"] = "RickshawIdentified";
-    IssueApiModelTypeEnum["MathJaxIdentified"] = "MathJaxIdentified";
-    IssueApiModelTypeEnum["ScrollRevealIdentified"] = "ScrollRevealIdentified";
-    IssueApiModelTypeEnum["SlickIdentified"] = "SlickIdentified";
-    IssueApiModelTypeEnum["FlickityIdentified"] = "FlickityIdentified";
-    IssueApiModelTypeEnum["SnapSvgIdentified"] = "SnapSvgIdentified";
-    IssueApiModelTypeEnum["ExtJsIdentified"] = "ExtJsIdentified";
-    IssueApiModelTypeEnum["JqueryVersionDisclosure"] = "JqueryVersionDisclosure";
-    IssueApiModelTypeEnum["JqueryMigrateVersionDisclosure"] = "JqueryMigrateVersionDisclosure";
-    IssueApiModelTypeEnum["JqueryMobileVersionDisclosure"] = "JqueryMobileVersionDisclosure";
-    IssueApiModelTypeEnum["JqueryUiDialogVersionDisclosure"] = "JqueryUiDialogVersionDisclosure";
-    IssueApiModelTypeEnum["JqueryUiAutocompleteVersionDisclosure"] = "JqueryUiAutocompleteVersionDisclosure";
-    IssueApiModelTypeEnum["JqueryUiTooltipVersionDisclosure"] = "JqueryUiTooltipVersionDisclosure";
-    IssueApiModelTypeEnum["PrettyPhotoVersionDisclosure"] = "PrettyPhotoVersionDisclosure";
-    IssueApiModelTypeEnum["JPlayerVersionDisclosure"] = "jPlayerVersionDisclosure";
-    IssueApiModelTypeEnum["YuiVersionDisclosure"] = "YuiVersionDisclosure";
-    IssueApiModelTypeEnum["PrototypejsVersionDisclosure"] = "PrototypejsVersionDisclosure";
-    IssueApiModelTypeEnum["EmberVersionDisclosure"] = "EmberVersionDisclosure";
-    IssueApiModelTypeEnum["AngularjsVersionDisclosure"] = "AngularjsVersionDisclosure";
-    IssueApiModelTypeEnum["BackbonejsVersionDisclosure"] = "BackbonejsVersionDisclosure";
-    IssueApiModelTypeEnum["MustachejsVersionDisclosure"] = "MustachejsVersionDisclosure";
-    IssueApiModelTypeEnum["HandlebarsjsVersionDisclosure"] = "HandlebarsjsVersionDisclosure";
-    IssueApiModelTypeEnum["EasyXdmVersionDisclosure"] = "EasyXdmVersionDisclosure";
-    IssueApiModelTypeEnum["PluploadVersionDisclosure"] = "PluploadVersionDisclosure";
-    IssueApiModelTypeEnum["DomPurifyVersionDisclosure"] = "DomPurifyVersionDisclosure";
-    IssueApiModelTypeEnum["DwrVersionDisclosure"] = "DwrVersionDisclosure";
-    IssueApiModelTypeEnum["VideojsVersionDisclosure"] = "VideojsVersionDisclosure";
-    IssueApiModelTypeEnum["CkeditorVersionDisclosure"] = "CkeditorVersionDisclosure";
-    IssueApiModelTypeEnum["TypeaheadjsVersionDisclosure"] = "TypeaheadjsVersionDisclosure";
-    IssueApiModelTypeEnum["BootboxVersionDisclosure"] = "BootboxVersionDisclosure";
-    IssueApiModelTypeEnum["BootstrapjsVersionDisclosure"] = "BootstrapjsVersionDisclosure";
-    IssueApiModelTypeEnum["Bootstrap3DateTimePickerVersionDisclosure"] = "Bootstrap3DateTimePickerVersionDisclosure";
-    IssueApiModelTypeEnum["BootstrapToggleVersionDisclosure"] = "BootstrapToggleVersionDisclosure";
-    IssueApiModelTypeEnum["FootablejsVersionDisclosure"] = "FootablejsVersionDisclosure";
-    IssueApiModelTypeEnum["ImagePickerVersionDisclosure"] = "ImagePickerVersionDisclosure";
-    IssueApiModelTypeEnum["RespondjsVersionDisclosure"] = "RespondjsVersionDisclosure";
-    IssueApiModelTypeEnum["IonRangeSliderVersionDisclosure"] = "IonRangeSliderVersionDisclosure";
-    IssueApiModelTypeEnum["JsTreeVersionDisclosure"] = "JsTreeVersionDisclosure";
-    IssueApiModelTypeEnum["ModernizrVersionDisclosure"] = "ModernizrVersionDisclosure";
-    IssueApiModelTypeEnum["MomentjsVersionDisclosure"] = "MomentjsVersionDisclosure";
-    IssueApiModelTypeEnum["Select2VersionDisclosure"] = "Select2VersionDisclosure";
-    IssueApiModelTypeEnum["Html5ShivVersionDisclosure"] = "Html5ShivVersionDisclosure";
-    IssueApiModelTypeEnum["SortablejsVersionDisclosure"] = "SortablejsVersionDisclosure";
-    IssueApiModelTypeEnum["KnockoutjsVersionDisclosure"] = "KnockoutjsVersionDisclosure";
-    IssueApiModelTypeEnum["JavaScriptCookieVersionDisclosure"] = "JavaScriptCookieVersionDisclosure";
-    IssueApiModelTypeEnum["JqueryMaskVersionDisclosure"] = "JqueryMaskVersionDisclosure";
-    IssueApiModelTypeEnum["JqueryValidationVersionDisclosure"] = "JqueryValidationVersionDisclosure";
-    IssueApiModelTypeEnum["KnockoutMappingVersionDisclosure"] = "KnockoutMappingVersionDisclosure";
-    IssueApiModelTypeEnum["ReactVersionDisclosure"] = "ReactVersionDisclosure";
-    IssueApiModelTypeEnum["ZeptojsVersionDisclosure"] = "ZeptojsVersionDisclosure";
-    IssueApiModelTypeEnum["HammerjsVersionDisclosure"] = "HammerjsVersionDisclosure";
-    IssueApiModelTypeEnum["PhaserVersionDisclosure"] = "PhaserVersionDisclosure";
-    IssueApiModelTypeEnum["RamdaVersionDisclosure"] = "RamdaVersionDisclosure";
-    IssueApiModelTypeEnum["VuejsVersionDisclosure"] = "VuejsVersionDisclosure";
-    IssueApiModelTypeEnum["RevealJsVersionDisclosure"] = "RevealJsVersionDisclosure";
-    IssueApiModelTypeEnum["ChartjsVersionDisclosure"] = "ChartjsVersionDisclosure";
-    IssueApiModelTypeEnum["LeafletVersionDisclosure"] = "LeafletVersionDisclosure";
-    IssueApiModelTypeEnum["FoundationVersionDisclosure"] = "FoundationVersionDisclosure";
-    IssueApiModelTypeEnum["SemanticUiVersionDisclosure"] = "SemanticUIVersionDisclosure";
-    IssueApiModelTypeEnum["PixiJsVersionDisclosure"] = "PixiJsVersionDisclosure";
-    IssueApiModelTypeEnum["ThreeJsVersionDisclosure"] = "ThreeJsVersionDisclosure";
-    IssueApiModelTypeEnum["PdfJsVersionDisclosure"] = "PdfJsVersionDisclosure";
-    IssueApiModelTypeEnum["FabricJsVersionDisclosure"] = "FabricJsVersionDisclosure";
-    IssueApiModelTypeEnum["LightboxVersionDisclosure"] = "LightboxVersionDisclosure";
-    IssueApiModelTypeEnum["UnderscorejsVersionDisclosure"] = "UnderscorejsVersionDisclosure";
-    IssueApiModelTypeEnum["FancyBoxVersionDisclosure"] = "FancyBoxVersionDisclosure";
-    IssueApiModelTypeEnum["LazyjsVersionDisclosure"] = "LazyjsVersionDisclosure";
-    IssueApiModelTypeEnum["DataTablesVersionDisclosure"] = "DataTablesVersionDisclosure";
-    IssueApiModelTypeEnum["XRegExpVersionDisclosure"] = "XRegExpVersionDisclosure";
-    IssueApiModelTypeEnum["Fingerprintjs2VersionDisclosure"] = "Fingerprintjs2VersionDisclosure";
-    IssueApiModelTypeEnum["SweetAlert2VersionDisclosure"] = "SweetAlert2VersionDisclosure";
-    IssueApiModelTypeEnum["IntrojsVersionDisclosure"] = "IntrojsVersionDisclosure";
-    IssueApiModelTypeEnum["LodashVersionDisclosure"] = "LodashVersionDisclosure";
-    IssueApiModelTypeEnum["AxiosVersionDisclosure"] = "AxiosVersionDisclosure";
-    IssueApiModelTypeEnum["PolymerVersionDisclosure"] = "PolymerVersionDisclosure";
-    IssueApiModelTypeEnum["BluebirdVersionDisclosure"] = "BluebirdVersionDisclosure";
-    IssueApiModelTypeEnum["ListJsVersionDisclosure"] = "ListJsVersionDisclosure";
-    IssueApiModelTypeEnum["MithrilVersionDisclosure"] = "MithrilVersionDisclosure";
-    IssueApiModelTypeEnum["MathJsVersionDisclosure"] = "MathJsVersionDisclosure";
-    IssueApiModelTypeEnum["RiotJsVersionDisclosure"] = "RiotJsVersionDisclosure";
-    IssueApiModelTypeEnum["RequireJsVersionDisclosure"] = "RequireJsVersionDisclosure";
-    IssueApiModelTypeEnum["EfJsVersionDisclosure"] = "EfJsVersionDisclosure";
-    IssueApiModelTypeEnum["MarionetteJsVersionDisclosure"] = "MarionetteJsVersionDisclosure";
-    IssueApiModelTypeEnum["GsapVersionDisclosure"] = "GsapVersionDisclosure";
-    IssueApiModelTypeEnum["InfernoVersionDisclosure"] = "InfernoVersionDisclosure";
-    IssueApiModelTypeEnum["D3JsVersionDisclosure"] = "D3JsVersionDisclosure";
-    IssueApiModelTypeEnum["HighchartsVersionDisclosure"] = "HighchartsVersionDisclosure";
-    IssueApiModelTypeEnum["RickshawVersionDisclosure"] = "RickshawVersionDisclosure";
-    IssueApiModelTypeEnum["MathJaxVersionDisclosure"] = "MathJaxVersionDisclosure";
-    IssueApiModelTypeEnum["ScrollRevealVersionDisclosure"] = "ScrollRevealVersionDisclosure";
-    IssueApiModelTypeEnum["SlickVersionDisclosure"] = "SlickVersionDisclosure";
-    IssueApiModelTypeEnum["FlickityVersionDisclosure"] = "FlickityVersionDisclosure";
-    IssueApiModelTypeEnum["SnapSvgVersionDisclosure"] = "SnapSvgVersionDisclosure";
-    IssueApiModelTypeEnum["ExtJsVersionDisclosure"] = "ExtJsVersionDisclosure";
-    IssueApiModelTypeEnum["AspNetSignalRIdentified"] = "AspNetSignalRIdentified";
-    IssueApiModelTypeEnum["FuelUxIdentified"] = "FuelUxIdentified";
-    IssueApiModelTypeEnum["SwaggerUiIdentified"] = "SwaggerUIIdentified";
-    IssueApiModelTypeEnum["BootstrapTableIdentified"] = "BootstrapTableIdentified";
-    IssueApiModelTypeEnum["BootstrapSelectIdentified"] = "BootstrapSelectIdentified";
-    IssueApiModelTypeEnum["BootstrapTypeaheadIdentified"] = "BootstrapTypeaheadIdentified";
-    IssueApiModelTypeEnum["AspNetSignalRVersionDisclosure"] = "AspNetSignalRVersionDisclosure";
-    IssueApiModelTypeEnum["FuelUxVersionDisclosure"] = "FuelUxVersionDisclosure";
-    IssueApiModelTypeEnum["SwaggerUiVersionDisclosure"] = "SwaggerUIVersionDisclosure";
-    IssueApiModelTypeEnum["BootstrapTableVersionDisclosure"] = "BootstrapTableVersionDisclosure";
-    IssueApiModelTypeEnum["BootstrapSelectVersionDisclosure"] = "BootstrapSelectVersionDisclosure";
-    IssueApiModelTypeEnum["BootstrapTypeaheadVersionDisclosure"] = "BootstrapTypeaheadVersionDisclosure";
-    IssueApiModelTypeEnum["ConfirmedWordpressThemeDetected"] = "ConfirmedWordpressThemeDetected";
-    IssueApiModelTypeEnum["PossibleWordpressThemeDetected"] = "PossibleWordpressThemeDetected";
-    IssueApiModelTypeEnum["ConfirmedWordpressPluginDetected"] = "ConfirmedWordpressPluginDetected";
-    IssueApiModelTypeEnum["PossibleWordpressPluginDetected"] = "PossibleWordpressPluginDetected";
-    IssueApiModelTypeEnum["WordpressThemeHelloElementorIdentified"] = "WordpressThemeHelloElementorIdentified";
-    IssueApiModelTypeEnum["WordpressThemeTwentyTwentyThreeIdentified"] = "WordpressThemeTwentyTwentyThreeIdentified";
-    IssueApiModelTypeEnum["WordpressThemeTwentyTwentyTwoIdentified"] = "WordpressThemeTwentyTwentyTwoIdentified";
-    IssueApiModelTypeEnum["WordpressThemeAstraIdentified"] = "WordpressThemeAstraIdentified";
-    IssueApiModelTypeEnum["WordpressThemeTwentyTwentyOneIdentified"] = "WordpressThemeTwentyTwentyOneIdentified";
-    IssueApiModelTypeEnum["WordpressThemeTwentyTwentyIdentified"] = "WordpressThemeTwentyTwentyIdentified";
-    IssueApiModelTypeEnum["WordpressThemeOceanWpIdentified"] = "WordpressThemeOceanWPIdentified";
-    IssueApiModelTypeEnum["WordpressThemeTwentySeventeenIdentified"] = "WordpressThemeTwentySeventeenIdentified";
-    IssueApiModelTypeEnum["WordpressThemeKadenceIdentified"] = "WordpressThemeKadenceIdentified";
-    IssueApiModelTypeEnum["WordpressThemeTwentySixteenIdentified"] = "WordpressThemeTwentySixteenIdentified";
-    IssueApiModelTypeEnum["WordpressThemeTwentyNineteenIdentified"] = "WordpressThemeTwentyNineteenIdentified";
-    IssueApiModelTypeEnum["WordpressThemePopularFxIdentified"] = "WordpressThemePopularFXIdentified";
-    IssueApiModelTypeEnum["WordpressThemeGeneratePressIdentified"] = "WordpressThemeGeneratePressIdentified";
-    IssueApiModelTypeEnum["WordpressThemeInspiroIdentified"] = "WordpressThemeInspiroIdentified";
-    IssueApiModelTypeEnum["WordpressThemeGoIdentified"] = "WordpressThemeGoIdentified";
-    IssueApiModelTypeEnum["WordpressThemeHelloElementorOutOfDate"] = "WordpressThemeHelloElementorOutOfDate";
-    IssueApiModelTypeEnum["WordpressThemeTwentyTwentyThreeOutOfDate"] = "WordpressThemeTwentyTwentyThreeOutOfDate";
-    IssueApiModelTypeEnum["WordpressThemeTwentyTwentyTwoOutOfDate"] = "WordpressThemeTwentyTwentyTwoOutOfDate";
-    IssueApiModelTypeEnum["WordpressThemeAstraOutOfDate"] = "WordpressThemeAstraOutOfDate";
-    IssueApiModelTypeEnum["WordpressThemeTwentyTwentyOneOutOfDate"] = "WordpressThemeTwentyTwentyOneOutOfDate";
-    IssueApiModelTypeEnum["WordpressThemeTwentyTwentyOutOfDate"] = "WordpressThemeTwentyTwentyOutOfDate";
-    IssueApiModelTypeEnum["WordpressThemeOceanWpOutOfDate"] = "WordpressThemeOceanWPOutOfDate";
-    IssueApiModelTypeEnum["WordpressThemeTwentySeventeenOutOfDate"] = "WordpressThemeTwentySeventeenOutOfDate";
-    IssueApiModelTypeEnum["WordpressThemeKadenceOutOfDate"] = "WordpressThemeKadenceOutOfDate";
-    IssueApiModelTypeEnum["WordpressThemeTwentySixteenOutOfDate"] = "WordpressThemeTwentySixteenOutOfDate";
-    IssueApiModelTypeEnum["WordpressThemeTwentyNineteenOutOfDate"] = "WordpressThemeTwentyNineteenOutOfDate";
-    IssueApiModelTypeEnum["WordpressThemePopularFxOutOfDate"] = "WordpressThemePopularFXOutOfDate";
-    IssueApiModelTypeEnum["WordpressThemeGeneratePressOutOfDate"] = "WordpressThemeGeneratePressOutOfDate";
-    IssueApiModelTypeEnum["WordpressThemeInspiroOutOfDate"] = "WordpressThemeInspiroOutOfDate";
-    IssueApiModelTypeEnum["WordpressThemeGoOutOfDate"] = "WordpressThemeGoOutOfDate";
-    IssueApiModelTypeEnum["WordpressThemeHelloElementorVersionDisclosure"] = "WordpressThemeHelloElementorVersionDisclosure";
-    IssueApiModelTypeEnum["WordpressThemeTwentyTwentyThreeVersionDisclosure"] = "WordpressThemeTwentyTwentyThreeVersionDisclosure";
-    IssueApiModelTypeEnum["WordpressThemeTwentyTwentyTwoVersionDisclosure"] = "WordpressThemeTwentyTwentyTwoVersionDisclosure";
-    IssueApiModelTypeEnum["WordpressThemeAstraVersionDisclosure"] = "WordpressThemeAstraVersionDisclosure";
-    IssueApiModelTypeEnum["WordpressThemeTwentyTwentyOneVersionDisclosure"] = "WordpressThemeTwentyTwentyOneVersionDisclosure";
-    IssueApiModelTypeEnum["WordpressThemeTwentyTwentyVersionDisclosure"] = "WordpressThemeTwentyTwentyVersionDisclosure";
-    IssueApiModelTypeEnum["WordpressThemeOceanWpVersionDisclosure"] = "WordpressThemeOceanWPVersionDisclosure";
-    IssueApiModelTypeEnum["WordpressThemeTwentySeventeenVersionDisclosure"] = "WordpressThemeTwentySeventeenVersionDisclosure";
-    IssueApiModelTypeEnum["WordpressThemeKadenceVersionDisclosure"] = "WordpressThemeKadenceVersionDisclosure";
-    IssueApiModelTypeEnum["WordpressThemeTwentySixteenVersionDisclosure"] = "WordpressThemeTwentySixteenVersionDisclosure";
-    IssueApiModelTypeEnum["WordpressThemeTwentyNineteenVersionDisclosure"] = "WordpressThemeTwentyNineteenVersionDisclosure";
-    IssueApiModelTypeEnum["WordpressThemePopularFxVersionDisclosure"] = "WordpressThemePopularFXVersionDisclosure";
-    IssueApiModelTypeEnum["WordpressThemeGeneratePressVersionDisclosure"] = "WordpressThemeGeneratePressVersionDisclosure";
-    IssueApiModelTypeEnum["WordpressThemeInspiroVersionDisclosure"] = "WordpressThemeInspiroVersionDisclosure";
-    IssueApiModelTypeEnum["WordpressThemeGoVersionDisclosure"] = "WordpressThemeGoVersionDisclosure";
-    IssueApiModelTypeEnum["WordpressPluginLoginWithPhoneNumberIdentified"] = "WordpressPluginLoginWithPhoneNumberIdentified";
-    IssueApiModelTypeEnum["WordpressPluginInstagramFeedIdentified"] = "WordpressPluginInstagramFeedIdentified";
-    IssueApiModelTypeEnum["WordpressPluginContactFormSevenIdentified"] = "WordpressPluginContactFormSevenIdentified";
-    IssueApiModelTypeEnum["WordpressPluginYoastSeoIdentified"] = "WordpressPluginYoastSeoIdentified";
-    IssueApiModelTypeEnum["WordpressPluginElementorIdentified"] = "WordpressPluginElementorIdentified";
-    IssueApiModelTypeEnum["WordpressPluginClassicEditorIdentified"] = "WordpressPluginClassicEditorIdentified";
-    IssueApiModelTypeEnum["WordpressPluginAkismetIdentified"] = "WordpressPluginAkismetIdentified";
-    IssueApiModelTypeEnum["WordpressPluginWooCommerceIdentified"] = "WordpressPluginWooCommerceIdentified";
-    IssueApiModelTypeEnum["WordpressPluginWpFormsIdentified"] = "WordpressPluginWpFormsIdentified";
-    IssueApiModelTypeEnum["WordpressPluginReallySimpleSslIdentified"] = "WordpressPluginReallySimpleSslIdentified";
-    IssueApiModelTypeEnum["WordpressPluginJetpackIdentified"] = "WordpressPluginJetpackIdentified";
-    IssueApiModelTypeEnum["WordpressPluginAllInOneWpMigrationIdentified"] = "WordpressPluginAllInOneWpMigrationIdentified";
-    IssueApiModelTypeEnum["WordpressPluginWordfenceSecurityIdentified"] = "WordpressPluginWordfenceSecurityIdentified";
-    IssueApiModelTypeEnum["WordpressPluginYoastDuplicatePostIdentified"] = "WordpressPluginYoastDuplicatePostIdentified";
-    IssueApiModelTypeEnum["WordpressPluginWordpressImporterIdentified"] = "WordpressPluginWordpressImporterIdentified";
-    IssueApiModelTypeEnum["WordpressPluginLiteSpeedCacheIdentified"] = "WordpressPluginLiteSpeedCacheIdentified";
-    IssueApiModelTypeEnum["WordpressPluginUpdraftPlusIdentified"] = "WordpressPluginUpdraftPlusIdentified";
-    IssueApiModelTypeEnum["WordpressPluginJupiterXIdentified"] = "WordpressPluginJupiterXIdentified";
-    IssueApiModelTypeEnum["WordpressPluginLoginWithPhoneNumberOutOfDate"] = "WordpressPluginLoginWithPhoneNumberOutOfDate";
-    IssueApiModelTypeEnum["WordpressPluginInstagramFeedOutOfDate"] = "WordpressPluginInstagramFeedOutOfDate";
-    IssueApiModelTypeEnum["WordpressPluginContactFormSevenOutOfDate"] = "WordpressPluginContactFormSevenOutOfDate";
-    IssueApiModelTypeEnum["WordpressPluginYoastSeoOutOfDate"] = "WordpressPluginYoastSeoOutOfDate";
-    IssueApiModelTypeEnum["WordpressPluginElementorOutOfDate"] = "WordpressPluginElementorOutOfDate";
-    IssueApiModelTypeEnum["WordpressPluginClassicEditorOutOfDate"] = "WordpressPluginClassicEditorOutOfDate";
-    IssueApiModelTypeEnum["WordpressPluginAkismetOutOfDate"] = "WordpressPluginAkismetOutOfDate";
-    IssueApiModelTypeEnum["WordpressPluginWooCommerceOutOfDate"] = "WordpressPluginWooCommerceOutOfDate";
-    IssueApiModelTypeEnum["WordpressPluginWpFormsOutOfDate"] = "WordpressPluginWpFormsOutOfDate";
-    IssueApiModelTypeEnum["WordpressPluginReallySimpleSslOutOfDate"] = "WordpressPluginReallySimpleSslOutOfDate";
-    IssueApiModelTypeEnum["WordpressPluginJetpackOutOfDate"] = "WordpressPluginJetpackOutOfDate";
-    IssueApiModelTypeEnum["WordpressPluginAllInOneWpMigrationOutOfDate"] = "WordpressPluginAllInOneWpMigrationOutOfDate";
-    IssueApiModelTypeEnum["WordpressPluginWordfenceSecurityOutOfDate"] = "WordpressPluginWordfenceSecurityOutOfDate";
-    IssueApiModelTypeEnum["WordpressPluginYoastDuplicatePostOutOfDate"] = "WordpressPluginYoastDuplicatePostOutOfDate";
-    IssueApiModelTypeEnum["WordpressPluginWordpressImporterOutOfDate"] = "WordpressPluginWordpressImporterOutOfDate";
-    IssueApiModelTypeEnum["WordpressPluginLiteSpeedCacheOutOfDate"] = "WordpressPluginLiteSpeedCacheOutOfDate";
-    IssueApiModelTypeEnum["WordpressPluginUpdraftPlusOutOfDate"] = "WordpressPluginUpdraftPlusOutOfDate";
-    IssueApiModelTypeEnum["WordpressPluginJupiterXOutOfDate"] = "WordpressPluginJupiterXOutOfDate";
-    IssueApiModelTypeEnum["WordpressPluginInstagramFeedVersionDisclosure"] = "WordpressPluginInstagramFeedVersionDisclosure";
-    IssueApiModelTypeEnum["WordpressPluginContactFormSevenVersionDisclosure"] = "WordpressPluginContactFormSevenVersionDisclosure";
-    IssueApiModelTypeEnum["WordpressPluginYoastSeoVersionDisclosure"] = "WordpressPluginYoastSeoVersionDisclosure";
-    IssueApiModelTypeEnum["WordpressPluginLoginWithPhoneNumberVersionDisclosure"] = "WordpressPluginLoginWithPhoneNumberVersionDisclosure";
-    IssueApiModelTypeEnum["WordpressPluginElementorVersionDisclosure"] = "WordpressPluginElementorVersionDisclosure";
-    IssueApiModelTypeEnum["WordpressPluginClassicEditorVersionDisclosure"] = "WordpressPluginClassicEditorVersionDisclosure";
-    IssueApiModelTypeEnum["WordpressPluginAkismetVersionDisclosure"] = "WordpressPluginAkismetVersionDisclosure";
-    IssueApiModelTypeEnum["WordpressPluginWooCommerceVersionDisclosure"] = "WordpressPluginWooCommerceVersionDisclosure";
-    IssueApiModelTypeEnum["WordpressPluginWpFormsVersionDisclosure"] = "WordpressPluginWpFormsVersionDisclosure";
-    IssueApiModelTypeEnum["WordpressPluginReallySimpleSslVersionDisclosure"] = "WordpressPluginReallySimpleSslVersionDisclosure";
-    IssueApiModelTypeEnum["WordpressPluginJetpackVersionDisclosure"] = "WordpressPluginJetpackVersionDisclosure";
-    IssueApiModelTypeEnum["WordpressPluginAllInOneWpMigrationVersionDisclosure"] = "WordpressPluginAllInOneWpMigrationVersionDisclosure";
-    IssueApiModelTypeEnum["WordpressPluginWordfenceSecurityVersionDisclosure"] = "WordpressPluginWordfenceSecurityVersionDisclosure";
-    IssueApiModelTypeEnum["WordpressPluginYoastDuplicatePostVersionDisclosure"] = "WordpressPluginYoastDuplicatePostVersionDisclosure";
-    IssueApiModelTypeEnum["WordpressPluginWordpressImporterVersionDisclosure"] = "WordpressPluginWordpressImporterVersionDisclosure";
-    IssueApiModelTypeEnum["WordpressPluginLiteSpeedCacheVersionDisclosure"] = "WordpressPluginLiteSpeedCacheVersionDisclosure";
-    IssueApiModelTypeEnum["WordpressPluginUpdraftPlusVersionDisclosure"] = "WordpressPluginUpdraftPlusVersionDisclosure";
-    IssueApiModelTypeEnum["WordpressPluginJupiterXVersionDisclosure"] = "WordpressPluginJupiterXVersionDisclosure";
-    IssueApiModelTypeEnum["DockerDisclosure"] = "DockerDisclosure";
-    IssueApiModelTypeEnum["DockerComposeDisclosure"] = "DockerComposeDisclosure";
-    IssueApiModelTypeEnum["DockerRunDisclosure"] = "DockerRunDisclosure";
-    IssueApiModelTypeEnum["DockerIgnoreDisclosure"] = "DockerIgnoreDisclosure";
-    IssueApiModelTypeEnum["DockerCloudDisclosure"] = "DockerCloudDisclosure";
-    IssueApiModelTypeEnum["CanvasJsIdentified"] = "CanvasJSIdentified";
-    IssueApiModelTypeEnum["CanvasJsVersionDisclosure"] = "CanvasJSVersionDisclosure";
-    IssueApiModelTypeEnum["PopperJsIdentified"] = "PopperJSIdentified";
-    IssueApiModelTypeEnum["PopperJsVersionDisclosure"] = "PopperJSVersionDisclosure";
-    IssueApiModelTypeEnum["HotChocolateIdentified"] = "HotChocolateIdentified";
-    IssueApiModelTypeEnum["JQueryPlaceholderJsOutOfDate"] = "JQueryPlaceholderJSOutOfDate";
-    IssueApiModelTypeEnum["JQueryPlaceholderJsVersionDisclosure"] = "JQueryPlaceholderJSVersionDisclosure";
-    IssueApiModelTypeEnum["JQueryPlaceholderJsIdentified"] = "JQueryPlaceholderJSIdentified";
-    IssueApiModelTypeEnum["MovEitTransferSqlInjection"] = "MOVEitTransferSqlInjection";
-    IssueApiModelTypeEnum["MovEitTransferVersionDisclosure"] = "MOVEitTransferVersionDisclosure";
-    IssueApiModelTypeEnum["MovEitTransferIdentified"] = "MOVEitTransferIdentified";
-    IssueApiModelTypeEnum["DianaJlIdentified"] = "DianaJlIdentified";
-    IssueApiModelTypeEnum["MissingXContentTypeOptionsHeader"] = "MissingXContentTypeOptionsHeader";
-})(IssueApiModelTypeEnum = exports.IssueApiModelTypeEnum || (exports.IssueApiModelTypeEnum = {}));
+ * @export
+ */
+exports.IssueApiModelTypeEnum = {
+    Custom: 'Custom',
+    Sca: 'Sca',
+    None: 'None',
+    HighlyPossibleSqlInjection: 'HighlyPossibleSqlInjection',
+    Xss: 'Xss',
+    PossibleXss: 'PossibleXss',
+    PermanentXss: 'PermanentXss',
+    PossiblePermanentXss: 'PossiblePermanentXss',
+    InternalServerError: 'InternalServerError',
+    ForbiddenResource: 'ForbiddenResource',
+    PassiveVulns: 'PassiveVulns',
+    PossibleBlindSqlInjection: 'PossibleBlindSqlInjection',
+    NtlmAuthrizationRequired: 'NtlmAuthrizationRequired',
+    BasicAuthorisationRequired: 'BasicAuthorisationRequired',
+    DigestAuthorizationRequired: 'DigestAuthorizationRequired',
+    ClearTextBasicAuth: 'ClearTextBasicAuth',
+    ConfirmedBlindSqlInjection: 'ConfirmedBlindSqlInjection',
+    PossibleSqlInjection: 'PossibleSqlInjection',
+    ConfirmedSqlInjection: 'ConfirmedSqlInjection',
+    FileUploadFound: 'FileUploadFound',
+    AutoCompleteEnabled: 'AutoCompleteEnabled',
+    PasswordOverHttp: 'PasswordOverHttp',
+    PasswordFormOverHttp: 'PasswordFormOverHttp',
+    InternalIpLeakage: 'InternalIPLeakage',
+    CookieNotMarkedAsSecure: 'CookieNotMarkedAsSecure',
+    CookieNotMarkedAsHttpOnly: 'CookieNotMarkedAsHttpOnly',
+    ConfirmedBooleanSqlInjection: 'ConfirmedBooleanSqlInjection',
+    PossibleBooleanSqlInjection: 'PossibleBooleanSqlInjection',
+    PasswordToHttp: 'PasswordToHttp',
+    CommandInjection: 'CommandInjection',
+    BlindCommandInjection: 'BlindCommandInjection',
+    PossibleBlindCommandInjection: 'PossibleBlindCommandInjection',
+    HeaderInjection: 'HeaderInjection',
+    MySqlIdentified: 'MySqlIdentified',
+    MsSqlIdentified: 'MsSqlIdentified',
+    MsAccessIdentified: 'MsAccessIdentified',
+    DbConnectedAsAdmin: 'DbConnectedAsAdmin',
+    AspNetIdentified: 'AspNetIdentified',
+    AspNetVersionDisclosure: 'AspNetVersionDisclosure',
+    IisDirectoryListing: 'IisDirectoryListing',
+    ApacheDirectoryListing: 'ApacheDirectoryListing',
+    TomcatDirectoryListing: 'TomcatDirectoryListing',
+    PhpSourceCodeDisclosure: 'PhpSourceCodeDisclosure',
+    AspNetSourceCodeDisclosure: 'AspNetSourceCodeDisclosure',
+    GenericSourceCodeDisclosure: 'GenericSourceCodeDisclosure',
+    PossibleInternalUnixPathLeakage: 'PossibleInternalUnixPathLeakage',
+    MsOfficeDocumentInformationDisclosure: 'MsOfficeDocumentInformationDisclosure',
+    PhpInfoIdentified: 'PhpInfoIdentified',
+    PossibleLocalFileInclusion: 'PossibleLocalFileInclusion',
+    OracleIdentified: 'OracleIdentified',
+    PostgreSqlIdentified: 'PostgreSqlIdentified',
+    HighPossibilityLfi: 'HighPossibilityLfi',
+    Lfi: 'Lfi',
+    PossibleInternalWindowsPathLeakage: 'PossibleInternalWindowsPathLeakage',
+    EmailDisclosure: 'EmailDisclosure',
+    SocialSecurityNumberDisclosure: 'SocialSecurityNumberDisclosure',
+    ApacheVersionDisclosure: 'ApacheVersionDisclosure',
+    TomcatVersionDisclosure: 'TomcatVersionDisclosure',
+    PhpVersionDisclosure: 'PhpVersionDisclosure',
+    IisVersionDisclosure: 'IisVersionDisclosure',
+    WebLogicVersionDisclosure: 'WebLogicVersionDisclosure',
+    LighttpdVersionDisclosure: 'LighttpdVersionDisclosure',
+    SharePointVersionDisclosure: 'SharePointVersionDisclosure',
+    ApacheCoyoteVersionDisclosure: 'ApacheCoyoteVersionDisclosure',
+    OracleApplicationServerVersionDisclosure: 'OracleApplicationServerVersionDisclosure',
+    OpenSslVersionDisclosure: 'OpenSslVersionDisclosure',
+    ApacheModuleVersionDisclosure: 'ApacheModuleVersionDisclosure',
+    PerlVersionDisclosure: 'PerlVersionDisclosure',
+    FrontPageVersionDisclosure: 'FrontPageVersionDisclosure',
+    PythonVersionDisclosure: 'PythonVersionDisclosure',
+    JavaServletVersionDisclosure: 'JavaServletVersionDisclosure',
+    SitemapIdentified: 'SitemapIdentified',
+    CrossDomainXml: 'CrossDomainXml',
+    RobotsIdentified: 'RobotsIdentified',
+    SpecialCase: 'SpecialCase',
+    SpecialCaseNoCookies: 'SpecialCaseNoCookies',
+    SpecialCaseNoBasicAuthentication: 'SpecialCaseNoBasicAuthentication',
+    ApacheServerStatus: 'ApacheServerStatus',
+    ApacheServerInfo: 'ApacheServerInfo',
+    ClientAccessPolicy: 'ClientAccessPolicy',
+    OpenCrossDomainXml: 'OpenCrossDomainXml',
+    OpenClientAccessPolicy: 'OpenClientAccessPolicy',
+    HighPossibleBooleanSqlInjection: 'HighPossibleBooleanSqlInjection',
+    DatabaseErrorMessages: 'DatabaseErrorMessages',
+    ProgrammingErrorMessages: 'ProgrammingErrorMessages',
+    ApacheMultiViewsEnabled: 'ApacheMultiViewsEnabled',
+    BackupFileFound: 'BackupFileFound',
+    BackupSourceCodeFound: 'BackupSourceCodeFound',
+    TraceTrackIdentified: 'TraceTrackIdentified',
+    TraceaxdFound: 'TraceaxdFound',
+    ElmahaxdFound: 'ElmahaxdFound',
+    AspNetDebugEnabled: 'AspNetDebugEnabled',
+    LfiCodeInclusion: 'LfiCodeInclusion',
+    AspNetStackTrace: 'AspNetStackTrace',
+    SvnDisclosure: 'SvnDisclosure',
+    GitDisclosure: 'GitDisclosure',
+    CvsDisclosure: 'CvsDisclosure',
+    Rfi: 'Rfi',
+    PossibleRfi: 'PossibleRfi',
+    PossibleCi: 'PossibleCi',
+    XssViaRfi: 'XssViaRfi',
+    RceAsp: 'RceAsp',
+    PossibleRceAsp: 'PossibleRceAsp',
+    RcePhp: 'RcePhp',
+    PossibleRcePhp: 'PossibleRcePhp',
+    RcePerl: 'RcePerl',
+    PossibleRcePerl: 'PossibleRcePerl',
+    ViewStateMacNotEnabled: 'ViewStateMacNotEnabled',
+    ViewStateNotEncrypted: 'ViewStateNotEncrypted',
+    ViewStateAnalyzer: 'ViewStateAnalyzer',
+    OpenRedirect: 'OpenRedirect',
+    TomcatExceptionReport: 'TomcatExceptionReport',
+    DjangoStackTraceDisclosure: 'DjangoStackTraceDisclosure',
+    Struts2DevModeEnabled: 'Struts2DevModeEnabled',
+    AspNetDirectoryListing: 'AspNetDirectoryListing',
+    MySqlUsernameDisclosure: 'MySqlUsernameDisclosure',
+    MsSqlUsernameDisclosure: 'MsSqlUsernameDisclosure',
+    WinUsernameDisclosure: 'WinUsernameDisclosure',
+    RceViaLfi: 'RceViaLfi',
+    XssProtectionDisabled: 'XssProtectionDisabled',
+    MdbFound: 'MdbFound',
+    WeakCredentials: 'WeakCredentials',
+    PythonStackTraceDisclosure: 'PythonStackTraceDisclosure',
+    ColdFusionStackTraceDisclosure: 'ColdFusionStackTraceDisclosure',
+    DefaultIis7Page: 'DefaultIis7Page',
+    DefaultIis6Page: 'DefaultIis6Page',
+    DefaultApachePage: 'DefaultApachePage',
+    SinatraStackTraceDisclosure: 'SinatraStackTraceDisclosure',
+    SqliteFound: 'SqliteFound',
+    OutlookFileFound: 'OutlookFileFound',
+    DsStoreFileFound: 'DsStoreFileFound',
+    FrameInjection: 'FrameInjection',
+    DefaultTomcatPage: 'DefaultTomcatPage',
+    TomcatSourceCodeDisclosure: 'TomcatSourceCodeDisclosure',
+    WebBackdoorIdentified: 'WebBackdoorIdentified',
+    PassiveWebBackdoorIdentified: 'PassiveWebBackdoorIdentified',
+    PossibleAdminFile: 'PossibleAdminFile',
+    PossibleConfigFile: 'PossibleConfigFile',
+    PossibleReadmeFile: 'PossibleReadmeFile',
+    PossibleInstallationFile: 'PossibleInstallationFile',
+    PossibleLogFile: 'PossibleLogFile',
+    PossibleSqlFile: 'PossibleSqlFile',
+    PossibleTestFile: 'PossibleTestFile',
+    TomcatOutOfDate: 'TomcatOutOfDate',
+    ApacheOutOfDate: 'ApacheOutOfDate',
+    MsSqlOutOfDate: 'MsSqlOutOfDate',
+    MySqlOutOfDate: 'MySqlOutOfDate',
+    HsqlDbOutOfDate: 'HsqlDbOutOfDate',
+    PhpOutOfDate: 'PhpOutOfDate',
+    OpenSslOutOfDate: 'OpenSslOutOfDate',
+    RedirectBodyTooLarge: 'RedirectBodyTooLarge',
+    RedirectTwoResponses: 'RedirectTwoResponses',
+    SslVersion2Support: 'SslVersion2Support',
+    WeakCiphersDetected: 'WeakCiphersDetected',
+    AnonAuthDetected: 'AnonAuthDetected',
+    WeakSignatureAlgorithmDetected: 'WeakSignatureAlgorithmDetected',
+    InvalidSslCertificate: 'InvalidSslCertificate',
+    SslVersion3Support: 'SslVersion3Support',
+    IntermediateWeakSignatureAlgorithmDetected: 'IntermediateWeakSignatureAlgorithmDetected',
+    MvcVersionDisclosure: 'MvcVersionDisclosure',
+    MongrelVersionDisclosure: 'MongrelVersionDisclosure',
+    NginxVersionDisclosure: 'NginxVersionDisclosure',
+    MySqldoSDetected: 'MySQLDoSDetected',
+    GrailsStackTraceDisclosure: 'GrailsStackTraceDisclosure',
+    PossibleElInjection: 'PossibleElInjection',
+    ElInjection: 'ElInjection',
+    ApacheMyFacesStackTraceDisclosure: 'ApacheMyFacesStackTraceDisclosure',
+    PasswordOverQuerystring: 'PasswordOverQuerystring',
+    ColdFusionSourceCodeDisclosure: 'ColdFusionSourceCodeDisclosure',
+    AwStatsIdentified: 'AWStatsIdentified',
+    MintIdentified: 'MintIdentified',
+    PiwikIdentified: 'PiwikIdentified',
+    WsftpLogFileIdentified: 'WSFTPLogFileIdentified',
+    WebConfigIdentified: 'WebConfigIdentified',
+    LighttpdDirectoryListing: 'LighttpdDirectoryListing',
+    NginxDirectoryListing: 'NginxDirectoryListing',
+    LiteSpeedDirectoryListing: 'LiteSpeedDirectoryListing',
+    GenericEmailDisclosure: 'GenericEmailDisclosure',
+    DefaultIis8Page: 'DefaultIis8Page',
+    ShellScriptIdentified: 'ShellScriptIdentified',
+    PossibleDatabaseConnectionStringIdentified: 'PossibleDatabaseConnectionStringIdentified',
+    UncServerAndShareDisclosure: 'UNCServerAndShareDisclosure',
+    HstsNotEnabled: 'HstsNotEnabled',
+    HstsMaxAge: 'HstsMaxAge',
+    HstsViaHttp: 'HstsViaHttp',
+    HstsErrors: 'HstsErrors',
+    WordPressOutOfDate: 'WordPressOutOfDate',
+    DrupalOutOfDate: 'DrupalOutOfDate',
+    JoomlaOutOfDate: 'JoomlaOutOfDate',
+    MediaWikiOutOfDate: 'MediaWikiOutOfDate',
+    MovableTypeOutOfDate: 'MovableTypeOutOfDate',
+    OscommerceOutOfDate: 'OscommerceOutOfDate',
+    PhpBbOutOfDate: 'PhpBBOutOfDate',
+    TWikiOutOfDate: 'TWikiOutOfDate',
+    WordPressIdentified: 'WordPressIdentified',
+    DrupalIdentified: 'DrupalIdentified',
+    JoomlaIdentified: 'JoomlaIdentified',
+    MediaWikiIdentified: 'MediaWikiIdentified',
+    MovableTypeIdentified: 'MovableTypeIdentified',
+    OscommerceIdentified: 'OscommerceIdentified',
+    PhpBbIdentified: 'PhpBBIdentified',
+    TWikiIdentified: 'TWikiIdentified',
+    RceRorXml: 'RceRorXml',
+    RceRorJson: 'RceRorJson',
+    PossibleRceRorXml: 'PossibleRceRorXml',
+    PossibleRceRorJson: 'PossibleRceRorJson',
+    ModSslVersionDisclosure: 'ModSslVersionDisclosure',
+    PhpmyAdminIdentified: 'PHPMyAdminIdentified',
+    WebalizerIdentified: 'WebalizerIdentified',
+    RubyVersionDisclosure: 'RubyVersionDisclosure',
+    WebrickVersionDisclosure: 'WebrickVersionDisclosure',
+    OptionsMethodEnabled: 'OptionsMethodEnabled',
+    WebDavEnabled: 'WebDavEnabled',
+    WebDavDirectoryHasWritePermissions: 'WebDavDirectoryHasWritePermissions',
+    CodeExecutionViaWebDav: 'CodeExecutionViaWebDav',
+    WebDavDirectoryListing: 'WebDavDirectoryListing',
+    CsrfDetected: 'CsrfDetected',
+    CsrfInLoginFormDetected: 'CsrfInLoginFormDetected',
+    CookieLeakageInAntiCsrfTokenDetected: 'CookieLeakageInAntiCsrfTokenDetected',
+    MisconfiguredFrame: 'MisconfiguredFrame',
+    InsecureFrameExternal: 'InsecureFrameExternal',
+    DomBasedXss: 'DomBasedXss',
+    NuSoapVersionDisclosure: 'NuSoapVersionDisclosure',
+    NuSoapOutOfDate: 'NuSoapOutOfDate',
+    AutoCompleteEnabledPasswordField: 'AutoCompleteEnabledPasswordField',
+    NginxOutOfDate: 'NginxOutOfDate',
+    PerlSourceCodeDisclosure: 'PerlSourceCodeDisclosure',
+    PythonSourceCodeDisclosure: 'PythonSourceCodeDisclosure',
+    RubySourceCodeDisclosure: 'RubySourceCodeDisclosure',
+    JavaSourceCodeDisclosure: 'JavaSourceCodeDisclosure',
+    OpenSslHeartbleedVulnerability: 'OpenSslHeartbleedVulnerability',
+    NginxIdentified: 'NginxIdentified',
+    ApacheIdentified: 'ApacheIdentified',
+    JavaStackTraceDisclosure: 'JavaStackTraceDisclosure',
+    MissingXFrameOptionsHeader: 'MissingXFrameOptionsHeader',
+    MissingContentTypeHeader: 'MissingContentTypeHeader',
+    CommandInjectionShellshock: 'CommandInjectionShellshock',
+    PossibleReflectedFileDownload: 'PossibleReflectedFileDownload',
+    InsecureJsonpEndpoint: 'InsecureJsonpEndpoint',
+    InsecureReflectedContent: 'InsecureReflectedContent',
+    MisconfiguredAccessControlOrigin: 'MisconfiguredAccessControlOrigin',
+    PassiveMixedContent: 'PassiveMixedContent',
+    Teapot: 'Teapot',
+    PossibleXxe: 'PossibleXxe',
+    Xxe: 'Xxe',
+    UnrestrictedFileUpload: 'UnrestrictedFileUpload',
+    CodeExecutionViaFileUpload: 'CodeExecutionViaFileUpload',
+    PossibleCreditCardDisclosure: 'PossibleCreditCardDisclosure',
+    RsaPrivateKeyDetected: 'RsaPrivateKeyDetected',
+    RceInHttpSys: 'RceInHttpSys',
+    OpenRedirectInPost: 'OpenRedirectInPost',
+    FormHijacking: 'FormHijacking',
+    BaseTagHijacking: 'BaseTagHijacking',
+    WindowsShortFilename: 'WindowsShortFilename',
+    RorDatabaseConfigurationFileDetected: 'RorDatabaseConfigurationFileDetected',
+    RorDevelopmentModeEnabled: 'RorDevelopmentModeEnabled',
+    RorVersionDisclosure: 'RorVersionDisclosure',
+    RubyGemsVersionDisclosure: 'RubyGemsVersionDisclosure',
+    RubyGemsOutOfDate: 'RubyGemsOutOfDate',
+    RubyOutOfDate: 'RubyOutOfDate',
+    RorOutOfDate: 'RorOutOfDate',
+    PythonOutOfDate: 'PythonOutOfDate',
+    PerlOutOfDate: 'PerlOutOfDate',
+    DjangoDebugModeEnabled: 'DjangoDebugModeEnabled',
+    DjangoVersionDisclosure: 'DjangoVersionDisclosure',
+    DjangoOutOfDate: 'DjangoOutOfDate',
+    PhpLiteAdminIdentified: 'PhpLiteAdminIdentified',
+    AdminerIdentified: 'AdminerIdentified',
+    MicrosoftIisLogFileIdentified: 'MicrosoftIisLogFileIdentified',
+    PhpMoAdminIdentified: 'PhpMoAdminIdentified',
+    DbNinjaIdentified: 'DbNinjaIdentified',
+    LaravelEnvironmentConfigurationFileDetected: 'LaravelEnvironmentConfigurationFileDetected',
+    LaravelDebugModeEnabled: 'LaravelDebugModeEnabled',
+    LaravelStackTraceDisclosure: 'LaravelStackTraceDisclosure',
+    SublimeSftpConfigFileDetected: 'SublimeSftpConfigFileDetected',
+    RorStackTraceDisclosure: 'RorStackTraceDisclosure',
+    JqueryOutOfDate: 'JqueryOutOfDate',
+    JqueryMigrateOutOfDate: 'JqueryMigrateOutOfDate',
+    JqueryMobileOutOfDate: 'JqueryMobileOutOfDate',
+    JqueryUiDialogOutOfDate: 'JqueryUiDialogOutOfDate',
+    JqueryUiAutocompleteOutOfDate: 'JqueryUiAutocompleteOutOfDate',
+    JqueryUiTooltipOutOfDate: 'JqueryUiTooltipOutOfDate',
+    PrettyPhotoOutOfDate: 'PrettyPhotoOutOfDate',
+    JPlayerOutOfDate: 'jPlayerOutOfDate',
+    YuiOutOfDate: 'YuiOutOfDate',
+    PrototypejsOutOfDate: 'PrototypejsOutOfDate',
+    EmberOutOfDate: 'EmberOutOfDate',
+    DojoOutOfDate: 'DojoOutOfDate',
+    AngularjsOutOfDate: 'AngularjsOutOfDate',
+    BackbonejsOutOfDate: 'BackbonejsOutOfDate',
+    MustachejsOutOfDate: 'MustachejsOutOfDate',
+    HandlebarsjsOutOfDate: 'HandlebarsjsOutOfDate',
+    EasyXdmOutOfDate: 'EasyXdmOutOfDate',
+    PluploadOutOfDate: 'PluploadOutOfDate',
+    DomPurifyOutOfDate: 'DomPurifyOutOfDate',
+    DwrOutOfDate: 'DwrOutOfDate',
+    InsecureHttpUsage: 'InsecureHttpUsage',
+    OpenCartIdentified: 'OpenCartIdentified',
+    OpenCartOutOfDate: 'OpenCartOutOfDate',
+    MissingXssProtectionHeader: 'MissingXssProtectionHeader',
+    VideojsOutOfDate: 'VideojsOutOfDate',
+    TlsVersion1Support: 'TlsVersion1Support',
+    SameSiteCookieNotImplemented: 'SameSiteCookieNotImplemented',
+    ReverseTabnabbing: 'ReverseTabnabbing',
+    SubResourceIntegrityNotImplemented: 'SubResourceIntegrityNotImplemented',
+    SubResourceIntegrityHashInvalid: 'SubResourceIntegrityHashInvalid',
+    PossibleSsrf: 'PossibleSsrf',
+    OutOfBandSqlInjection: 'OutOfBandSqlInjection',
+    OutOfBandXxe: 'OutOfBandXxe',
+    BlindXss: 'BlindXss',
+    OutOfBandRfi: 'OutOfBandRfi',
+    OutOfBandRcePhp: 'OutOfBandRcePhp',
+    OutOfBandCommandInjection: 'OutOfBandCommandInjection',
+    SsrfAws: 'SsrfAws',
+    PossibleSsrfAws: 'PossibleSsrfAws',
+    SsrfElmah: 'SsrfElmah',
+    PossibleSsrfElmah: 'PossibleSsrfElmah',
+    SsrfTrace: 'SsrfTrace',
+    PossibleSsrfTrace: 'PossibleSsrfTrace',
+    OutOfBandRceAsp: 'OutOfBandRceAsp',
+    OutOfBandRcePerl: 'OutOfBandRcePerl',
+    DomBasedOpenRedirect: 'DomBasedOpenRedirect',
+    DeprecatedCspHeader: 'DeprecatedCspHeader',
+    CspNotImplemented: 'CspNotImplemented',
+    InvalidCspMetaTag: 'InvalidCspMetaTag',
+    InvalidCspInsructionInMeta: 'InvalidCspInsructionInMeta',
+    CspKeywordUsedAsTarget: 'CspKeywordUsedAsTarget',
+    UnsafeCspInstructionDetected: 'UnsafeCspInstructionDetected',
+    NonceDetectedInCsp: 'NonceDetectedInCsp',
+    NoScriptTagDetectedWithNonce: 'NoScriptTagDetectedWithNonce',
+    SameNonceValueDetected: 'SameNonceValueDetected',
+    DefaultSrcUsedInCsp: 'DefaultSrcUsedInCsp',
+    InsecureReportUriDetectedInCsp: 'InsecureReportUriDetectedInCsp',
+    ReportUriWithDifferentHostDetectedInCsp: 'ReportUriWithDifferentHostDetectedInCsp',
+    WildcardDetectedInScheme: 'WildcardDetectedInScheme',
+    WildcardDetectedInDomain: 'WildcardDetectedInDomain',
+    WildcardDetectedInPort: 'WildcardDetectedInPort',
+    UnsupportedHashDetectedInScriptInstruction: 'UnsupportedHashDetectedInScriptInstruction',
+    InsecureNonceValueDetected: 'InsecureNonceValueDetected',
+    SsrfElmahMvc: 'SsrfElmahMvc',
+    PossibleSsrfElmahMvc: 'PossibleSsrfElmahMvc',
+    DeprecatedHeaderDetectedWithCspHeader: 'DeprecatedHeaderDetectedWithCspHeader',
+    InvalidNonceDetectedInCsp: 'InvalidNonceDetectedInCsp',
+    NoScriptTagDetectedWithHash: 'NoScriptTagDetectedWithHash',
+    DataCspDirectiveDetected: 'DataCspDirectiveDetected',
+    CspReportOnlyHeaderDetectedWithoutReportUri: 'CspReportOnlyHeaderDetectedWithoutReportUri',
+    CspReportOnlyUsedInMeta: 'CspReportOnlyUsedInMeta',
+    SingleHeaderMultipleCookies: 'SingleHeaderMultipleCookies',
+    OutOfBandRceRoRXml: 'OutOfBandRceRoRXml',
+    OutOfBandRceRoRJson: 'OutOfBandRceRoRJson',
+    ObjectSrcNotUsed: 'ObjectSrcNotUsed',
+    ApacheMultiChoiceEnabled: 'ApacheMultiChoiceEnabled',
+    HttpOrHttpsDetectedOnScriptSrc: 'HttpOrHttpsDetectedOnScriptSrc',
+    InsecureTargetUriDetectedInCsp: 'InsecureTargetUriDetectedInCsp',
+    PossibleTimeBasedSsrf: 'PossibleTimeBasedSsrf',
+    PossibleBlindXss: 'PossibleBlindXss',
+    PossibleSsrfSsh: 'PossibleSsrfSsh',
+    PossibleSsrfMySql: 'PossibleSsrfMySql',
+    RceApacheStruts: 'RceApacheStruts',
+    PossibleRceApacheStruts: 'PossibleRceApacheStruts',
+    ControllableCookie: 'ControllableCookie',
+    ReferrerPolicyNotImplemented: 'ReferrerPolicyNotImplemented',
+    ReferrerPolicyReferrerLeakToSameProtocol: 'ReferrerPolicyReferrerLeakToSameProtocol',
+    ReferrerPolicyOriginLeakToCrossSite: 'ReferrerPolicyOriginLeakToCrossSite',
+    ReferrerPolicySameProtocolLeak: 'ReferrerPolicySameProtocolLeak',
+    ReferrerPolicyCrossOriginLeak: 'ReferrerPolicyCrossOriginLeak',
+    ReferrerPolicyStrictCrossOriginLeak: 'ReferrerPolicyStrictCrossOriginLeak',
+    ReferrerPolicyCrossSiteReferrerLeak: 'ReferrerPolicyCrossSiteReferrerLeak',
+    ReferrerPolicyUnknown: 'ReferrerPolicyUnknown',
+    ReferrerPolicyFallbackMissing: 'ReferrerPolicyFallbackMissing',
+    MsSqlDatabaseNameDisclosure: 'MsSqlDatabaseNameDisclosure',
+    MySqlDatabaseNameDisclosure: 'MySqlDatabaseNameDisclosure',
+    ActiveMixedContent: 'ActiveMixedContent',
+    MixedContentScript: 'MixedContentScript',
+    MixedContentResource: 'MixedContentResource',
+    KnockoutjsOutOfDate: 'KnockoutjsOutOfDate',
+    BootstrapjsOutOfDate: 'BootstrapjsOutOfDate',
+    TypeaheadjsOutOfDate: 'TypeaheadjsOutOfDate',
+    FootablejsOutOfDate: 'FootablejsOutOfDate',
+    SortablejsOutOfDate: 'SortablejsOutOfDate',
+    ImagePickerOutOfDate: 'ImagePickerOutOfDate',
+    JqueryValidationOutOfDate: 'JqueryValidationOutOfDate',
+    AspNetSignalROutOfDate: 'AspNetSignalROutOfDate',
+    Select2OutOfDate: 'Select2OutOfDate',
+    MomentjsOutOfDate: 'MomentjsOutOfDate',
+    Html5ShivOutOfDate: 'Html5ShivOutOfDate',
+    IonRangeSliderOutOfDate: 'IonRangeSliderOutOfDate',
+    JsTreeOutOfDate: 'JsTreeOutOfDate',
+    ModernizrOutOfDate: 'ModernizrOutOfDate',
+    RespondjsOutOfDate: 'RespondjsOutOfDate',
+    FuelUxOutOfDate: 'FuelUxOutOfDate',
+    BootboxOutOfDate: 'BootboxOutOfDate',
+    KnockoutMappingOutOfDate: 'KnockoutMappingOutOfDate',
+    JqueryMaskOutOfDate: 'JqueryMaskOutOfDate',
+    Bootstrap3DateTimePickerOutOfDate: 'Bootstrap3DateTimePickerOutOfDate',
+    BootstrapToggleOutOfDate: 'BootstrapToggleOutOfDate',
+    JavaScriptCookieOutOfDate: 'JavaScriptCookieOutOfDate',
+    MixedContentFont: 'MixedContentFont',
+    MixedContentXhrEndpoint: 'MixedContentXhrEndpoint',
+    PossibleRceNodeJs: 'PossibleRceNodeJs',
+    RceNodeJs: 'RceNodeJs',
+    ReactOutOfDate: 'ReactOutOfDate',
+    PossibleSsrfApacheServerStatus: 'PossibleSsrfApacheServerStatus',
+    DefaultIis85Page: 'DefaultIis85Page',
+    DefaultIis100Page: 'DefaultIis100Page',
+    DefaultIis75Page: 'DefaultIis75Page',
+    DefaultIis7XPage: 'DefaultIis7XPage',
+    CkeditorOutOfDate: 'CkeditorOutOfDate',
+    WordPressSetupConfigurationFile: 'WordPressSetupConfigurationFile',
+    PossibleOutOfBandCommandInjectionStruts052: 'PossibleOutOfBandCommandInjectionStruts052',
+    OutOfBandCommandInjectionStruts053: 'OutOfBandCommandInjectionStruts053',
+    LighttpdOutOfDate: 'LighttpdOutOfDate',
+    PostgreSqlOutOfDate: 'PostgreSqlOutOfDate',
+    RceApacheStrutsS0253: 'RceApacheStrutsS0253',
+    PossibleRceApacheStrutsS0253: 'PossibleRceApacheStrutsS0253',
+    RceApacheStrutsS2046: 'RceApacheStrutsS2046',
+    PossibleRceApacheStrutsS2046: 'PossibleRceApacheStrutsS2046',
+    RceApacheStrutsS2045: 'RceApacheStrutsS2045',
+    PossibleRceApacheStrutsS2045: 'PossibleRceApacheStrutsS2045',
+    AbanteCartIdentified: 'AbanteCartIdentified',
+    AbanteCartOutOfDate: 'AbanteCartOutOfDate',
+    AmpacheIdentified: 'AmpacheIdentified',
+    AmpacheOutOfDate: 'AmpacheOutOfDate',
+    AtutorIdentified: 'AtutorIdentified',
+    AtutorOutOfDate: 'AtutorOutOfDate',
+    ChamiloIdentified: 'ChamiloIdentified',
+    ChamiloOutOfDate: 'ChamiloOutOfDate',
+    ClarolineIdentified: 'ClarolineIdentified',
+    ClarolineOutOfDate: 'ClarolineOutOfDate',
+    CollabtiveIdentified: 'CollabtiveIdentified',
+    CollabtiveOutOfDate: 'CollabtiveOutOfDate',
+    Concrete5Identified: 'Concrete5Identified',
+    Concrete5OutOfDate: 'Concrete5OutOfDate',
+    CoppermineIdentified: 'CoppermineIdentified',
+    CoppermineOutOfDate: 'CoppermineOutOfDate',
+    CubeCartIdentified: 'CubeCartIdentified',
+    CubeCartOutOfDate: 'CubeCartOutOfDate',
+    DokuWikiIdentified: 'DokuWikiIdentified',
+    DokuWikiOutOfDate: 'DokuWikiOutOfDate',
+    DotClearIdentified: 'DotClearIdentified',
+    DotClearOutOfDate: 'DotClearOutOfDate',
+    E107Identified: 'E107Identified',
+    E107OutOfDate: 'E107OutOfDate',
+    FamilyConnectionsIdentified: 'FamilyConnectionsIdentified',
+    FamilyConnectionsOutOfDate: 'FamilyConnectionsOutOfDate',
+    FluxBbIdentified: 'FluxBBIdentified',
+    FluxBbOutOfDate: 'FluxBBOutOfDate',
+    FormToolsIdentified: 'FormToolsIdentified',
+    FormToolsOutOfDate: 'FormToolsOutOfDate',
+    FrontAccountingIdentified: 'FrontAccountingIdentified',
+    FrontAccountingOutOfDate: 'FrontAccountingOutOfDate',
+    GibbonEduIdentified: 'GibbonEduIdentified',
+    GibbonEduOutOfDate: 'GibbonEduOutOfDate',
+    HeskIdentified: 'HeskIdentified',
+    HeskOutOfDate: 'HeskOutOfDate',
+    LimeSurveyIdentified: 'LimeSurveyIdentified',
+    LimeSurveyOutOfDate: 'LimeSurveyOutOfDate',
+    LiveHelperChatIdentified: 'LiveHelperChatIdentified',
+    LiveHelperChatOutOfDate: 'LiveHelperChatOutOfDate',
+    LogaholicIdentified: 'LogaholicIdentified',
+    LogaholicOutOfDate: 'LogaholicOutOfDate',
+    MibewMessengerIdentified: 'MibewMessengerIdentified',
+    MibewMessengerOutOfDate: 'MibewMessengerOutOfDate',
+    ModXIdentified: 'ModXIdentified',
+    ModXOutOfDate: 'ModXOutOfDate',
+    MoodleIdentified: 'MoodleIdentified',
+    MoodleOutOfDate: 'MoodleOutOfDate',
+    MyBbIdentified: 'MyBBIdentified',
+    MyBbOutOfDate: 'MyBBOutOfDate',
+    OmekaIdentified: 'OmekaIdentified',
+    OmekaOutOfDate: 'OmekaOutOfDate',
+    OsClassIdentified: 'OsClassIdentified',
+    OsClassOutOfDate: 'OsClassOutOfDate',
+    OsTicketIdentified: 'OsTicketIdentified',
+    OsTicketOutOfDate: 'OsTicketOutOfDate',
+    PrestashopIdentified: 'PrestashopIdentified',
+    PrestashopOutOfDate: 'PrestashopOutOfDate',
+    EspoCrmIdentified: 'EspoCrmIdentified',
+    EspoCrmOutOfDate: 'EspoCrmOutOfDate',
+    ElggIdentified: 'ElggIdentified',
+    ElggOutOfDate: 'ElggOutOfDate',
+    PhorumIdentified: 'PhorumIdentified',
+    PhorumOutOfDate: 'PhorumOutOfDate',
+    PhpFusionIdentified: 'PhpFusionIdentified',
+    PhpFusionOutOfDate: 'PhpFusionOutOfDate',
+    PhpAddressBookIdentified: 'PhpAddressBookIdentified',
+    PhpAddressBookOutOfDate: 'PhpAddressBookOutOfDate',
+    PhpListIdentified: 'PhpListIdentified',
+    PhpListOutOfDate: 'PhpListOutOfDate',
+    PmWikiIdentified: 'PmWikiIdentified',
+    PmWikiOutOfDate: 'PmWikiOutOfDate',
+    PodcastGeneratorIdentified: 'PodcastGeneratorIdentified',
+    PodcastGeneratorOutOfDate: 'PodcastGeneratorOutOfDate',
+    ProjectSendIdentified: 'ProjectSendIdentified',
+    ProjectSendOutOfDate: 'ProjectSendOutOfDate',
+    Question2AnswerIdentified: 'Question2AnswerIdentified',
+    Question2AnswerOutOfDate: 'Question2AnswerOutOfDate',
+    RukovoditelIdentified: 'RukovoditelIdentified',
+    RukovoditelOutOfDate: 'RukovoditelOutOfDate',
+    SeoPanelIdentified: 'SeoPanelIdentified',
+    SeoPanelOutOfDate: 'SeoPanelOutOfDate',
+    SerendipityIdentified: 'SerendipityIdentified',
+    SerendipityOutOfDate: 'SerendipityOutOfDate',
+    TcExamIdentified: 'TcExamIdentified',
+    TcExamOutOfDate: 'TcExamOutOfDate',
+    VanillaForumsIdentified: 'VanillaForumsIdentified',
+    VanillaForumsOutOfDate: 'VanillaForumsOutOfDate',
+    WebErpIdentified: 'WebErpIdentified',
+    WebErpOutOfDate: 'WebErpOutOfDate',
+    WeBidIdentified: 'WeBidIdentified',
+    WeBidOutOfDate: 'WeBidOutOfDate',
+    XoopsIdentified: 'XoopsIdentified',
+    XoopsOutOfDate: 'XoopsOutOfDate',
+    YetiForceCrmIdentified: 'YetiForceCrmIdentified',
+    YetiForceCrmOutOfDate: 'YetiForceCrmOutOfDate',
+    YourlsIdentified: 'YourlsIdentified',
+    YourlsOutOfDate: 'YourlsOutOfDate',
+    ZenCartIdentified: 'ZenCartIdentified',
+    ZenCartOutOfDate: 'ZenCartOutOfDate',
+    ZenPhotoIdentified: 'ZenPhotoIdentified',
+    ZenPhotoOutOfDate: 'ZenPhotoOutOfDate',
+    PiwigoIdentified: 'PiwigoIdentified',
+    PiwigoOutOfDate: 'PiwigoOutOfDate',
+    ZurmoIdentified: 'ZurmoIdentified',
+    ZurmoOutOfDate: 'ZurmoOutOfDate',
+    OwnCloudIdentified: 'OwnCloudIdentified',
+    OwnCloudOutOfDate: 'OwnCloudOutOfDate',
+    PhpMyFaqIdentified: 'PhpMyFaqIdentified',
+    PhpMyFaqOutOfDate: 'PhpMyFaqOutOfDate',
+    RoundcubeIdentified: 'RoundcubeIdentified',
+    RoundcubeOutOfDate: 'RoundcubeOutOfDate',
+    ZikulaIdentified: 'ZikulaIdentified',
+    ZikulaOutOfDate: 'ZikulaOutOfDate',
+    WeakRobotOracleDetected: 'WeakRobotOracleDetected',
+    StrongRobotOracleDetected: 'StrongRobotOracleDetected',
+    ZeptojsOutOfDate: 'ZeptojsOutOfDate',
+    HammerjsOutOfDate: 'HammerjsOutOfDate',
+    VuejsOutOfDate: 'VuejsOutOfDate',
+    PhaserOutOfDate: 'PhaserOutOfDate',
+    ChartjsOutOfDate: 'ChartjsOutOfDate',
+    RamdaOutOfDate: 'RamdaOutOfDate',
+    RevealJsOutOfDate: 'RevealJsOutOfDate',
+    PixiJsOutOfDate: 'PixiJsOutOfDate',
+    FabricJsOutOfDate: 'FabricJsOutOfDate',
+    SemanticUiOutOfDate: 'SemanticUIOutOfDate',
+    LeafletOutOfDate: 'LeafletOutOfDate',
+    PossibleOutOfBandCommandInjection: 'PossibleOutOfBandCommandInjection',
+    FoundationOutOfDate: 'FoundationOutOfDate',
+    ThreeJsOutOfDate: 'ThreeJsOutOfDate',
+    PdfJsOutOfDate: 'PdfJsOutOfDate',
+    ExpressJsIdentified: 'ExpressJsIdentified',
+    PossibleSsti: 'PossibleSsti',
+    Ssti: 'Ssti',
+    PossibleCodeExecutionViaSsti: 'PossibleCodeExecutionViaSsti',
+    CodeExecutionViaSsti: 'CodeExecutionViaSsti',
+    PossibleCodeExecutionViaSstiTwig: 'PossibleCodeExecutionViaSstiTwig',
+    CodeExecutionViaSstiTwig: 'CodeExecutionViaSstiTwig',
+    PossibleCodeExecutionViaSstiMako: 'PossibleCodeExecutionViaSstiMako',
+    CodeExecutionViaSstiMako: 'CodeExecutionViaSstiMako',
+    PossibleCodeExecutionViaSstiSmarty: 'PossibleCodeExecutionViaSstiSmarty',
+    CodeExecutionViaSstiSmarty: 'CodeExecutionViaSstiSmarty',
+    PossibleCodeExecutionViaSstiNunjucks: 'PossibleCodeExecutionViaSstiNunjucks',
+    CodeExecutionViaSstiNunjucks: 'CodeExecutionViaSstiNunjucks',
+    PossibleCodeExecutionViaSstiJade: 'PossibleCodeExecutionViaSstiJade',
+    CodeExecutionViaSstiJade: 'CodeExecutionViaSstiJade',
+    PossibleSstiDot: 'PossibleSstiDot',
+    SstiDot: 'SstiDot',
+    PossibleCodeExecutionViaSstiDot: 'PossibleCodeExecutionViaSstiDot',
+    CodeExecutionViaSstiDot: 'CodeExecutionViaSstiDot',
+    PossibleSstiEjs: 'PossibleSstiEjs',
+    SstiEjs: 'SstiEjs',
+    PossibleCodeExecutionViaSstiEjs: 'PossibleCodeExecutionViaSstiEjs',
+    CodeExecutionViaSstiEjs: 'CodeExecutionViaSstiEjs',
+    PossibleCodeExecutionViaSstiMarko: 'PossibleCodeExecutionViaSstiMarko',
+    CodeExecutionViaSstiMarko: 'CodeExecutionViaSstiMarko',
+    PossibleCodeExecutionViaSstiTornado: 'PossibleCodeExecutionViaSstiTornado',
+    CodeExecutionViaSstiTornado: 'CodeExecutionViaSstiTornado',
+    PossibleCodeExecutionViaSstiFreeMarker: 'PossibleCodeExecutionViaSstiFreeMarker',
+    CodeExecutionViaSstiFreeMarker: 'CodeExecutionViaSstiFreeMarker',
+    PossibleSstiVelocity: 'PossibleSstiVelocity',
+    SstiVelocity: 'SstiVelocity',
+    PossibleCodeExecutionViaSstiVelocity: 'PossibleCodeExecutionViaSstiVelocity',
+    CodeExecutionViaSstiVelocity: 'CodeExecutionViaSstiVelocity',
+    PossibleSstiErb: 'PossibleSstiErb',
+    SstiErb: 'SstiErb',
+    PossibleCodeExecutionViaSstiErb: 'PossibleCodeExecutionViaSstiErb',
+    CodeExecutionViaSstiErb: 'CodeExecutionViaSstiErb',
+    PossibleCodeExecutionViaSstiSlim: 'PossibleCodeExecutionViaSstiSlim',
+    CodeExecutionViaSstiSlim: 'CodeExecutionViaSstiSlim',
+    PossibleCodeExecutionViaSstiJinja: 'PossibleCodeExecutionViaSstiJinja',
+    CodeExecutionViaSstiJinja: 'CodeExecutionViaSstiJinja',
+    PossibleSstiFreeMarker: 'PossibleSstiFreeMarker',
+    SstiFreeMarker: 'SstiFreeMarker',
+    OutOfBandCodeExecutionViaSsti: 'OutOfBandCodeExecutionViaSsti',
+    OutOfBandCodeExecutionViaSstiMako: 'OutOfBandCodeExecutionViaSstiMako',
+    OutOfBandCodeExecutionViaSstiTornado: 'OutOfBandCodeExecutionViaSstiTornado',
+    OutOfBandCodeExecutionViaSstiJinja: 'OutOfBandCodeExecutionViaSstiJinja',
+    OutOfBandCodeExecutionViaSstiMarko: 'OutOfBandCodeExecutionViaSstiMarko',
+    OutOfBandCodeExecutionViaSstiDot: 'OutOfBandCodeExecutionViaSstiDot',
+    OutOfBandCodeExecutionViaSstiNunjucks: 'OutOfBandCodeExecutionViaSstiNunjucks',
+    OutOfBandCodeExecutionViaSstiJade: 'OutOfBandCodeExecutionViaSstiJade',
+    OutOfBandCodeExecutionViaSstiSmarty: 'OutOfBandCodeExecutionViaSstiSmarty',
+    ExpectCtIsMissing: 'ExpectCtIsMissing',
+    ExpectCtShouldBeServedOverTls: 'ExpectCtShouldBeServedOverTls',
+    ExpectCtReportOnlyModeIsEnabled: 'ExpectCtReportOnlyModeIsEnabled',
+    ExpectCtErrors: 'ExpectCtErrors',
+    AuthenticationRequired: 'AuthenticationRequired',
+    CaddyWebServerIdentified: 'CaddyWebServerIdentified',
+    AahGoServerIdentified: 'AahGoServerIdentified',
+    JbossApplicationServerIdentified: 'JbossApplicationServerIdentified',
+    JbossApplicationServerVersionDisclosure: 'JbossApplicationServerVersionDisclosure',
+    Ckeditor5OutOfDate: 'Ckeditor5OutOfDate',
+    CakePhpIdentified: 'CakePhpIdentified',
+    CakePhpStackTraceDisclosure: 'CakePhpStackTraceDisclosure',
+    DefaultPageCakePhp: 'DefaultPageCakePhp',
+    CakePhpVersionDisclosure: 'CakePhpVersionDisclosure',
+    CakePhpOutOfDate: 'CakePhpOutOfDate',
+    CherryPyVersionDisclosure: 'CherryPyVersionDisclosure',
+    CherryPyOutOfDate: 'CherryPyOutOfDate',
+    OutOfBandCodeExecutionViaSstiEjs: 'OutOfBandCodeExecutionViaSstiEjs',
+    OutOfBandCodeExecutionViaSstiTwig: 'OutOfBandCodeExecutionViaSstiTwig',
+    OutOfBandCodeExecutionViaSstiFreeMarker: 'OutOfBandCodeExecutionViaSstiFreeMarker',
+    OutOfBandCodeExecutionViaSstiVelocity: 'OutOfBandCodeExecutionViaSstiVelocity',
+    CherryPyStackTraceDisclosure: 'CherryPyStackTraceDisclosure',
+    IntrojsOutOfDate: 'IntrojsOutOfDate',
+    AxiosOutOfDate: 'AxiosOutOfDate',
+    Fingerprintjs2OutOfDate: 'Fingerprintjs2OutOfDate',
+    XRegExpOutOfDate: 'XRegExpOutOfDate',
+    DataTablesOutOfDate: 'DataTablesOutOfDate',
+    LazyjsOutOfDate: 'LazyjsOutOfDate',
+    FancyBoxOutOfDate: 'FancyBoxOutOfDate',
+    UnderscorejsOutOfDate: 'UnderscorejsOutOfDate',
+    LightboxOutOfDate: 'LightboxOutOfDate',
+    JbossApplicationServerOutOfDate: 'JbossApplicationServerOutOfDate',
+    SweetAlert2OutOfDate: 'SweetAlert2OutOfDate',
+    LodashOutOfDate: 'LodashOutOfDate',
+    BluebirdOutOfDate: 'BluebirdOutOfDate',
+    PolymerOutOfDate: 'PolymerOutOfDate',
+    ReviveAdserverIdentified: 'ReviveAdserverIdentified',
+    ReviveAdserverOutOfDate: 'ReviveAdserverOutOfDate',
+    B2evolutionIdentified: 'B2evolutionIdentified',
+    B2evolutionOutOfDate: 'B2evolutionOutOfDate',
+    DolphinIdentified: 'DolphinIdentified',
+    DolphinOutOfDate: 'DolphinOutOfDate',
+    Ph7CmsIdentified: 'PH7CMSIdentified',
+    Ph7CmsOutOfDate: 'PH7CMSOutOfDate',
+    QdPmIdentified: 'QdPMIdentified',
+    QdPmOutOfDate: 'QdPMOutOfDate',
+    VtigerIdentified: 'VtigerIdentified',
+    VtigerOutOfDate: 'VtigerOutOfDate',
+    DolibarrIdentified: 'DolibarrIdentified',
+    DolibarrOutOfDate: 'DolibarrOutOfDate',
+    ClipBucketIdentified: 'ClipBucketIdentified',
+    ClipBucketOutOfDate: 'ClipBucketOutOfDate',
+    ContaoIdentified: 'ContaoIdentified',
+    ContaoOutOfDate: 'ContaoOutOfDate',
+    MisconfiguredXFrameOptionsHeader: 'MisconfiguredXFrameOptionsHeader',
+    RubyErrorDisclosure: 'RubyErrorDisclosure',
+    WpEngineConfigurationFileDetected: 'WpEngineConfigurationFileDetected',
+    SessionCookieNotMarkedAsSecure: 'SessionCookieNotMarkedAsSecure',
+    PossibleHeaderInjection: 'PossibleHeaderInjection',
+    OracleOutOfDate: 'OracleOutOfDate',
+    TsWebIdentified: 'TsWebIdentified',
+    DrupalRce: 'DrupalRce',
+    MithrilOutOfDate: 'MithrilOutOfDate',
+    EfJsOutOfDate: 'EfJsOutOfDate',
+    MathJsOutOfDate: 'MathJsOutOfDate',
+    ListJsOutOfDate: 'ListJsOutOfDate',
+    RequireJsOutOfDate: 'RequireJsOutOfDate',
+    RiotJsOutOfDate: 'RiotJsOutOfDate',
+    InfernoOutOfDate: 'InfernoOutOfDate',
+    MarionetteJsOutOfDate: 'MarionetteJsOutOfDate',
+    GsapOutOfDate: 'GsapOutOfDate',
+    TravisYamlIdentified: 'TravisYamlIdentified',
+    UnicodeTransformationIssue: 'UnicodeTransformationIssue',
+    MalwareIdentified: 'MalwareIdentified',
+    RorFileContentDisclosure: 'RorFileContentDisclosure',
+    AppSiteAssociationIdentified: 'AppSiteAssociationIdentified',
+    OpenSearchIdentified: 'OpenSearchIdentified',
+    ServletSourceCodeDisclosure: 'ServletSourceCodeDisclosure',
+    JspSourceCodeDisclosure: 'JspSourceCodeDisclosure',
+    HtaccessIdentified: 'HtaccessIdentified',
+    RcePython: 'RcePython',
+    PossibleRcePython: 'PossibleRcePython',
+    OutOfBandRcePython: 'OutOfBandRcePython',
+    RceRuby: 'RceRuby',
+    PossibleRceRuby: 'PossibleRceRuby',
+    OutOfBandRceRuby: 'OutOfBandRceRuby',
+    SwaggerJsonIdentified: 'SwaggerJsonIdentified',
+    SslNotImplemented: 'SslNotImplemented',
+    SecurityTxtIdentified: 'SecurityTxtIdentified',
+    RceApacheStrutsS2016: 'RceApacheStrutsS2016',
+    PossibleRceApacheStrutsS2016: 'PossibleRceApacheStrutsS2016',
+    SlickOutOfDate: 'SlickOutOfDate',
+    ScrollRevealOutOfDate: 'ScrollRevealOutOfDate',
+    MathJaxOutOfDate: 'MathJaxOutOfDate',
+    RickshawOutOfDate: 'RickshawOutOfDate',
+    HighchartsOutOfDate: 'HighchartsOutOfDate',
+    SnapSvgOutOfDate: 'SnapSvgOutOfDate',
+    FlickityOutOfDate: 'FlickityOutOfDate',
+    D3JsOutOfDate: 'D3JsOutOfDate',
+    GoogleChartsOutOfDate: 'GoogleChartsOutOfDate',
+    HiawathaVersionDisclosure: 'HiawathaVersionDisclosure',
+    CherokeeVersionDisclosure: 'CherokeeVersionDisclosure',
+    HiawathaOutOfDate: 'HiawathaOutOfDate',
+    CherokeeOutOfDate: 'CherokeeOutOfDate',
+    WebLogicOutOfDate: 'WebLogicOutOfDate',
+    WebCacheDeception: 'WebCacheDeception',
+    IisOutOfDate: 'IisOutOfDate',
+    ImmutablejsOutOfDate: 'ImmutablejsOutOfDate',
+    AxwaySecureTransportDetected: 'AxwaySecureTransportDetected',
+    MisconfiguredXFrameOptionsHeaderMultipleDirectives: 'MisconfiguredXFrameOptionsHeaderMultipleDirectives',
+    TlsVersion11Support: 'TlsVersion11Support',
+    PossibleSsrfOracleCloud: 'PossibleSsrfOracleCloud',
+    PossibleSsrfPacketCloud: 'PossibleSsrfPacketCloud',
+    ExtJsOutOfDate: 'ExtJsOutOfDate',
+    PossibleHpp: 'PossibleHpp',
+    PossibleBreachAttack: 'PossibleBreachAttack',
+    TelerikWebUiVersionDisclosure: 'TelerikWebUiVersionDisclosure',
+    TelerikWebUiOutOfDate: 'TelerikWebUiOutOfDate',
+    JavaVersionDisclosure: 'JavaVersionDisclosure',
+    GlassFishVersionDisclosure: 'GlassFishVersionDisclosure',
+    JavaOutOfDate: 'JavaOutOfDate',
+    GlassFishOutOfDate: 'GlassFishOutOfDate',
+    WafIdentified: 'WafIdentified',
+    AkamaiCdnIdentified: 'AkamaiCdnIdentified',
+    AzureCdnIdentified: 'AzureCdnIdentified',
+    GoogleCloudCdnIdentified: 'GoogleCloudCdnIdentified',
+    ArvanCloudCdnIdentified: 'ArvanCloudCdnIdentified',
+    FastlyCdnIdentified: 'FastlyCdnIdentified',
+    IncapsulaCdnIdentified: 'IncapsulaCdnIdentified',
+    SucuriCdnIdentified: 'SucuriCdnIdentified',
+    NetlifyCdnIdentified: 'NetlifyCdnIdentified',
+    MaxCdnIdentified: 'MaxCdnIdentified',
+    KeyCdnIdentified: 'KeyCdnIdentified',
+    FirebladeCdnIdentified: 'FirebladeCdnIdentified',
+    AireeCdnIdentified: 'AireeCdnIdentified',
+    West263CdnIdentified: 'West263CdnIdentified',
+    InstartCdnIdentified: 'InstartCdnIdentified',
+    QratorCdnIdentified: 'QratorCdnIdentified',
+    PowerCdnIdentified: 'PowerCdnIdentified',
+    Cdn77Identified: 'Cdn77Identified',
+    F5BigIpProxyIdentified: 'F5BigIpProxyIdentified',
+    EnvoyProxyIdentified: 'EnvoyProxyIdentified',
+    CitrixNetScalerProxyIdentified: 'CitrixNetScalerProxyIdentified',
+    ApacheTrafficServerProxyIdentified: 'ApacheTrafficServerProxyIdentified',
+    HaProxyIdentified: 'HaProxyIdentified',
+    SkipperProxyIdentified: 'SkipperProxyIdentified',
+    LoginPageIdentified: 'LoginPageIdentified',
+    SameSiteCookieNotMarkedAsSecure: 'SameSiteCookieNotMarkedAsSecure',
+    LiferayPortalIdentified: 'LiferayPortalIdentified',
+    LiferayPortalOutOfDate: 'LiferayPortalOutOfDate',
+    ApacheTrafficServerVersionDisclosure: 'ApacheTrafficServerVersionDisclosure',
+    ApacheTrafficServerOutOfDate: 'ApacheTrafficServerOutOfDate',
+    UndertowWebServerVersionDisclosure: 'UndertowWebServerVersionDisclosure',
+    UndertowWebServerOutOfDate: 'UndertowWebServerOutOfDate',
+    JenkinsVersionDisclosure: 'JenkinsVersionDisclosure',
+    JenkinsOutOfDate: 'JenkinsOutOfDate',
+    KestrelIdentified: 'KestrelIdentified',
+    TableauServerIdentified: 'TableauServerIdentified',
+    BomgarIdentified: 'BomgarIdentified',
+    JolokiaVersionDisclosure: 'JolokiaVersionDisclosure',
+    JolokiaOutOfDate: 'JolokiaOutOfDate',
+    F5BigIpLocalFileInclusion: 'F5BigIpLocalFileInclusion',
+    PossibleF5BigIpLocalFileInclusion: 'PossibleF5BigIpLocalFileInclusion',
+    PossibleSstiPebble: 'PossibleSstiPebble',
+    SstiPebble: 'SstiPebble',
+    PossibleCodeExecutionViaSstiPebble: 'PossibleCodeExecutionViaSstiPebble',
+    CodeExecutionViaSstiPebble: 'CodeExecutionViaSstiPebble',
+    SugarCrmIdentified: 'SugarCrmIdentified',
+    SugarCrmOutOfDate: 'SugarCrmOutOfDate',
+    GrafanaVersionDisclosure: 'GrafanaVersionDisclosure',
+    GrafanaOutOfDate: 'GrafanaOutOfDate',
+    PossibleSstiJinJava: 'PossibleSstiJinJava',
+    SstiJinJava: 'SstiJinJava',
+    PossibleCodeExecutionViaSstiJinJava: 'PossibleCodeExecutionViaSstiJinJava',
+    CodeExecutionViaSstiJinJava: 'CodeExecutionViaSstiJinJava',
+    PossibleSstiAspNetRazor: 'PossibleSstiAspNetRazor',
+    SstiAspNetRazor: 'SstiAspNetRazor',
+    PossibleCodeExecutionViaSstiAspNetRazor: 'PossibleCodeExecutionViaSstiAspNetRazor',
+    CodeExecutionViaSstiAspNetRazor: 'CodeExecutionViaSstiAspNetRazor',
+    PhpMagicQuotesGpcDisabled: 'PhpMagicQuotesGpcDisabled',
+    PhpRegisterGlobalsEnabled: 'PhpRegisterGlobalsEnabled',
+    PhpDisplayErrorsEnabled: 'PhpDisplayErrorsEnabled',
+    PhpAllowUrlFopenEnabled: 'PhpAllowUrlFopenEnabled',
+    PhpAllowUrlIncludeEnabled: 'PhpAllowUrlIncludeEnabled',
+    PhpSessionUseTransSidEnabled: 'PhpSessionUseTransSidEnabled',
+    PhpOpenBaseDirIsNotSet: 'PhpOpenBaseDirIsNotSet',
+    PhpEnableDlEnabled: 'PhpEnableDlEnabled',
+    AspNetApplicationTraceEnabled: 'AspNetApplicationTraceEnabled',
+    AspNetCookilessSessionStateEnabled: 'AspNetCookilessSessionStateEnabled',
+    AspNetCookilessAuthenticationEnabled: 'AspNetCookilessAuthenticationEnabled',
+    AspNetNoSslAuth: 'AspNetNoSslAuth',
+    AspNetLoginCredentialsPlainText: 'AspNetLoginCredentialsPlainText',
+    AspNetValidateRequestDisabled: 'AspNetValidateRequestDisabled',
+    AspNetViewStateUserKeyNotSet: 'AspNetViewStateUserKeyNotSet',
+    JettyVersionDisclosure: 'JettyVersionDisclosure',
+    TornadoWebServerVersionDisclosure: 'TornadoWebServerVersionDisclosure',
+    TracyDebuggingToolVersionDisclosure: 'TracyDebuggingToolVersionDisclosure',
+    AspNetCustomErrorsDisabled: 'AspNetCustomErrorsDisabled',
+    WhoopsFrameworkIdentified: 'WhoopsFrameworkIdentified',
+    PhpUseOnlyCookiesIsDisabled: 'PhpUseOnlyCookiesIsDisabled',
+    CrushFtpServerIdentified: 'CrushFtpServerIdentified',
+    RceWebLogic: 'RceWebLogic',
+    WeblogicAuthenticationBypass: 'WeblogicAuthenticationBypass',
+    ArbitraryFileCreation: 'ArbitraryFileCreation',
+    ArbitraryFileDeletion: 'ArbitraryFileDeletion',
+    WerkzeugIdentified: 'WerkzeugIdentified',
+    WerkzeugVersionDisclosure: 'WerkzeugVersionDisclosure',
+    WerkzeugOutOfDate: 'WerkzeugOutOfDate',
+    OpenRestyIdentified: 'OpenRestyIdentified',
+    OpenRestyVersionDisclosure: 'OpenRestyVersionDisclosure',
+    OpenRestyOutOfDate: 'OpenRestyOutOfDate',
+    LiteSpeedWebServerIdentified: 'LiteSpeedWebServerIdentified',
+    TwistedWebHttpServerIdentified: 'TwistedWebHTTPServerIdentified',
+    TwistedWebHttpServerVersionDisclosure: 'TwistedWebHTTPServerVersionDisclosure',
+    TwistedWebHttpServerOutOfDate: 'TwistedWebHTTPServerOutOfDate',
+    NextJsReactFrameworkIdentified: 'NextJsReactFrameworkIdentified',
+    NextJsReactFrameworkVersionDisclosure: 'NextJsReactFrameworkVersionDisclosure',
+    NextJsReactFrameworkOutOfDate: 'NextJsReactFrameworkOutOfDate',
+    DaiquiriVersionDisclosure: 'DaiquiriVersionDisclosure',
+    W3TotalCacheOutOfDate: 'W3TotalCacheOutOfDate',
+    W3TotalCacheIdentified: 'W3TotalCacheIdentified',
+    W3TotalCacheVersionDisclosure: 'W3TotalCacheVersionDisclosure',
+    PhusionPassengerIdentified: 'PhusionPassengerIdentified',
+    PhusionPassengerVersionDisclosure: 'PhusionPassengerVersionDisclosure',
+    PhusionPassengerOutOfDate: 'PhusionPassengerOutOfDate',
+    SqlInjectionIast: 'SqlInjectionIast',
+    LfiIast: 'LfiIast',
+    RcePhpIast: 'RcePhpIast',
+    HeaderInjectionIast: 'HeaderInjectionIast',
+    CommandInjectionIast: 'CommandInjectionIast',
+    AxwaySecureTransportIdentified: 'AxwaySecureTransportIdentified',
+    AxwaySecureTransportVersionDisclosure: 'AxwaySecureTransportVersionDisclosure',
+    AxwaySecureTransportOutOfDate: 'AxwaySecureTransportOutOfDate',
+    BurpCollaboratorServerIdentified: 'BurpCollaboratorServerIdentified',
+    ResinApplicationServerIdentified: 'ResinApplicationServerIdentified',
+    ResinApplicationServerVersionDisclosure: 'ResinApplicationServerVersionDisclosure',
+    ResinApplicationServerOutOfDate: 'ResinApplicationServerOutOfDate',
+    TracSoftwareProjectManagementToolIdentified: 'TracSoftwareProjectManagementToolIdentified',
+    TracSoftwareProjectManagementToolVersionDisclosure: 'TracSoftwareProjectManagementToolVersionDisclosure',
+    TracSoftwareProjectManagementToolOutOfDate: 'TracSoftwareProjectManagementToolOutOfDate',
+    TornadoWebServerIdentified: 'TornadoWebServerIdentified',
+    TornadoWebServerOutOfDate: 'TornadoWebServerOutOfDate',
+    JettyWebServerIdentified: 'JettyWebServerIdentified',
+    JettyWebServerOutOfDate: 'JettyWebServerOutOfDate',
+    TracyDebuggingToolOutOfDate: 'TracyDebuggingToolOutOfDate',
+    ZopeWebServerVersionDisclosure: 'ZopeWebServerVersionDisclosure',
+    ZopeWebServerOutOfDate: 'ZopeWebServerOutOfDate',
+    ArtifactoryIdentified: 'ArtifactoryIdentified',
+    ArtifactoryVersionDisclosure: 'ArtifactoryVersionDisclosure',
+    ArtifactoryOutOfDate: 'ArtifactoryOutOfDate',
+    JBossEapIdentified: 'JBossEAPIdentified',
+    WildFlyIdentified: 'WildFlyIdentified',
+    GunicornIdentified: 'GunicornIdentified',
+    GunicornVersionDisclosure: 'GunicornVersionDisclosure',
+    GunicornOutOfDate: 'GunicornOutOfDate',
+    JBossCsIdentified: 'JBossCSIdentified',
+    WebSealIdentified: 'WebSealIdentified',
+    OracleHttpIdentified: 'OracleHTTPIdentified',
+    SonicWallSslvpnIdentified: 'SonicWallSSLVPNIdentified',
+    PloneCmsIdentified: 'PloneCMSIdentified',
+    PloneCmsVersionDisclosure: 'PloneCMSVersionDisclosure',
+    PloneCmsOutOfDate: 'PloneCMSOutOfDate',
+    GlassFishIdentified: 'GlassFishIdentified',
+    IbmrtcIdentified: 'IBMRTCIdentified',
+    IbmrtcVersionDisclosure: 'IBMRTCVersionDisclosure',
+    IbmrtcOutOfDate: 'IBMRTCOutOfDate',
+    NexusIdentified: 'NexusIdentified',
+    NexusVersionDisclosure: 'NexusVersionDisclosure',
+    NexusOutOfDate: 'NexusOutOfDate',
+    IbmhttpServerIdentified: 'IBMHTTPServerIdentified',
+    IbmhttpServerVersionDisclosure: 'IBMHTTPServerVersionDisclosure',
+    IbmhttpServerOutOfDate: 'IBMHTTPServerOutOfDate',
+    PythonWsgiServerIdentified: 'PythonWSGIServerIdentified',
+    PythonWsgiServerVersionDisclosure: 'PythonWSGIServerVersionDisclosure',
+    PythonWsgiServerOutOfDate: 'PythonWSGIServerOutOfDate',
+    PlayFrameworkIdentified: 'PlayFrameworkIdentified',
+    VarnishCacheIdentified: 'VarnishCacheIdentified',
+    RestletFrameworkIdentified: 'RestletFrameworkIdentified',
+    RestletFrameworkVersionDisclosure: 'RestletFrameworkVersionDisclosure',
+    RestletFrameworkOutOfDate: 'RestletFrameworkOutOfDate',
+    ZopeWebServerIdentified: 'ZopeWebServerIdentified',
+    WebSealOutOfDate: 'WebSealOutOfDate',
+    WebSealVersionDisclosure: 'WebSealVersionDisclosure',
+    CowboyIdentified: 'CowboyIdentified',
+    CowboyOutOfDate: 'CowboyOutOfDate',
+    CowboyVersionDisclosure: 'CowboyVersionDisclosure',
+    LiferayPortalVersionDisclosure: 'LiferayPortalVersionDisclosure',
+    RevokedSslCertificate: 'RevokedSslCertificate',
+    SslCertificateHostnameMismatch: 'SslCertificateHostnameMismatch',
+    SslCertificateSignedByUntrustedRoot: 'SslCertificateSignedByUntrustedRoot',
+    ExpiredSslCertificate: 'ExpiredSslCertificate',
+    JwtNoneAlgorithmAllowed: 'JwtNoneAlgorithmAllowed',
+    JwtSignatureNotChecked: 'JwtSignatureNotChecked',
+    JwtInsecureSecretDetected: 'JwtInsecureSecretDetected',
+    JwtSqlInjectionInKid: 'JwtSqlInjectionInKid',
+    ZshHistoryFileDetected: 'ZshHistoryFileDetected',
+    JwtPathTraversalInKid: 'JwtPathTraversalInKid',
+    JwtJkuHijack: 'JwtJkuHijack',
+    JwtJkuForgeryWithOpenRedirect: 'JwtJkuForgeryWithOpenRedirect',
+    DaiquiriIdentified: 'DaiquiriIdentified',
+    Typo3CmsIdentified: 'Typo3CmsIdentified',
+    Typo3CmsOutOfDate: 'Typo3CmsOutOfDate',
+    SslCertificateAboutToExpire: 'SslCertificateAboutToExpire',
+    MagentoIdentified: 'MagentoIdentified',
+    MagentoOutOfDate: 'MagentoOutOfDate',
+    PleskLinIdentified: 'PleskLinIdentified',
+    PleskWinIdentified: 'PleskWinIdentified',
+    LighthouseIdentified: 'LighthouseIdentified',
+    BitNinjaCaptchaServerIdentified: 'BitNinjaCaptchaServerIdentified',
+    PardotServerIdentified: 'PardotServerIdentified',
+    MasheryProxyIdentified: 'MasheryProxyIdentified',
+    DaiquiriOutOfDate: 'DaiquiriOutOfDate',
+    AtlassianProxyIdentified: 'AtlassianProxyIdentified',
+    AtlassianProxyVersionDisclosure: 'AtlassianProxyVersionDisclosure',
+    AtlassianProxyOutOfDate: 'AtlassianProxyOutOfDate',
+    WindowsAzureWebIdentified: 'WindowsAzureWebIdentified',
+    TaleoWebServerIdentified: 'TaleoWebServerIdentified',
+    TaleoWebServerVersionDisclosure: 'TaleoWebServerVersionDisclosure',
+    TaleoWebServerOutOfDate: 'TaleoWebServerOutOfDate',
+    CraftCmsIdentified: 'CraftCmsIdentified',
+    DataDomeIdentified: 'DataDomeIdentified',
+    OpenVpnAccessServerIdentified: 'OpenVpnAccessServerIdentified',
+    SquarespaceIdentified: 'SquarespaceIdentified',
+    SquidIdentified: 'SquidIdentified',
+    SugarCrmVersionDisclosure: 'SugarCrmVersionDisclosure',
+    HubSpotIdentified: 'HubSpotIdentified',
+    KongServerIdentified: 'KongServerIdentified',
+    KongServerVersionDisclosure: 'KongServerVersionDisclosure',
+    KongServerOutOfDate: 'KongServerOutOfDate',
+    VegurIdentified: 'VegurIdentified',
+    JavaServerPageIdentified: 'JavaServerPageIdentified',
+    JavaServerPageVersionDisclosure: 'JavaServerPageVersionDisclosure',
+    TomcatIdentified: 'TomcatIdentified',
+    PhpIdentified: 'PHPIdentified',
+    IisIdentified: 'IisIdentified',
+    WebLogicIdentified: 'WebLogicIdentified',
+    LighttpdIdentified: 'LighttpdIdentified',
+    SharePointIdentified: 'SharePointIdentified',
+    ApacheCoyoteIdentified: 'ApacheCoyoteIdentified',
+    OracleApplicationServerIdentified: 'OracleApplicationServerIdentified',
+    OpenSslIdentified: 'OpenSslIdentified',
+    ApacheModuleIdentified: 'ApacheModuleIdentified',
+    PerlIdentified: 'PerlIdentified',
+    FrontPageIdentified: 'FrontPageIdentified',
+    PythonIdentified: 'PythonIdentified',
+    JavaServletIdentified: 'JavaServletIdentified',
+    MvcIdentified: 'MvcIdentified',
+    MongrelIdentified: 'MongrelIdentified',
+    NuSoapIdentified: 'NuSoapIdentified',
+    RorIdentified: 'RorIdentified',
+    RubyGemsIdentified: 'RubyGemsIdentified',
+    DjangoIdentified: 'DjangoIdentified',
+    CherryPyIdentified: 'CherryPyIdentified',
+    HiawathaIdentified: 'HiawathaIdentified',
+    CherokeeIdentified: 'CherokeeIdentified',
+    TelerikWebUiIdentified: 'TelerikWebUiIdentified',
+    JavaIdentified: 'JavaIdentified',
+    ApacheTrafficServerIdentified: 'ApacheTrafficServerIdentified',
+    UndertowWebServerIdentified: 'UndertowWebServerIdentified',
+    JenkinsIdentified: 'JenkinsIdentified',
+    JolokiaIdentified: 'JolokiaIdentified',
+    GrafanaIdentified: 'GrafanaIdentified',
+    TracyDebuggingToolIdentified: 'TracyDebuggingToolIdentified',
+    LiferayDxpIdentified: 'LiferayDXPIdentified',
+    LiferayDxpVersionDisclosure: 'LiferayDXPVersionDisclosure',
+    LiferayDxpOutOfDate: 'LiferayDXPOutOfDate',
+    JavaServerPageOutOfDate: 'JavaServerPageOutOfDate',
+    SquidVersionDisclosure: 'SquidVersionDisclosure',
+    SquidOutOfDate: 'SquidOutOfDate',
+    SharePointOutOfDate: 'SharePointOutOfDate',
+    ApacheCoyoteOutOfDate: 'ApacheCoyoteOutOfDate',
+    OracleApplicationServerOutOfDate: 'OracleApplicationServerOutOfDate',
+    FrontPageOutOfDate: 'FrontPageOutOfDate',
+    MvcOutOfDate: 'MvcOutOfDate',
+    MongrelOutOfDate: 'MongrelOutOfDate',
+    IbmBpmIdentified: 'IbmBpmIdentified',
+    PhpMyAdminVersionDisclosure: 'PhpMyAdminVersionDisclosure',
+    ShopifyIdentified: 'ShopifyIdentified',
+    AtlassianConfluenceIdentified: 'AtlassianConfluenceIdentified',
+    AtlassianConfluenceVersionDisclosure: 'AtlassianConfluenceVersionDisclosure',
+    AtlassianConfluenceOutOfDate: 'AtlassianConfluenceOutOfDate',
+    AtlassianJiraIdentified: 'AtlassianJiraIdentified',
+    AtlassianJiraVersionDisclosure: 'AtlassianJiraVersionDisclosure',
+    AtlassianJiraOutOfDate: 'AtlassianJiraOutOfDate',
+    OutOfBandRceJavaLog4j: 'OutOfBandRceJavaLog4j',
+    GqlIdentified: 'GqlIdentified',
+    GrapheneIdentified: 'GrapheneIdentified',
+    AriadneIdentified: 'AriadneIdentified',
+    ApolloIdentified: 'ApolloIdentified',
+    GraphqlGoIdentified: 'GraphqlGoIdentified',
+    GqlgenIdentified: 'GqlgenIdentified',
+    WpGraphQlIdentified: 'WPGraphQLIdentified',
+    GraphQlApiWordPressIdentified: 'GraphQLApiWordPressIdentified',
+    GraphQlRubyIdentified: 'GraphQLRubyIdentified',
+    GraphQlphpIdentified: 'GraphQLPHPIdentified',
+    HasuraIdentified: 'HasuraIdentified',
+    GraphQlJavaIdentified: 'GraphQLJavaIdentified',
+    JuniperIdentified: 'JuniperIdentified',
+    SangriaIdentified: 'SangriaIdentified',
+    TartifletteIdentified: 'TartifletteIdentified',
+    DgraphIdentified: 'DgraphIdentified',
+    DirectusIdentified: 'DirectusIdentified',
+    XssViaFileUpload: 'XssViaFileUpload',
+    NodeJsExpressDevModeEnabled: 'NodeJsExpressDevModeEnabled',
+    NodeJsExpressSessionWeakSecret: 'NodeJsExpressSessionWeakSecret',
+    NodeJsUncaughtException: 'NodeJsUncaughtException',
+    NodeJsUnhandledRejection: 'NodeJsUnhandledRejection',
+    JavaVerbTamperingMisconfiguredSecurityConstraint: 'JavaVerbTamperingMisconfiguredSecurityConstraint',
+    JavaLongSessionTimeout: 'JavaLongSessionTimeout',
+    JavaUnsafeSessionTrackingValue: 'JavaUnsafeSessionTrackingValue',
+    JavaUnconfiguredCustomErrorPage: 'JavaUnconfiguredCustomErrorPage',
+    JavaSpringBootActuatorAllEndpointsExposed: 'JavaSpringBootActuatorAllEndpointsExposed',
+    JavaSpringBootActuatorShutdownExposed: 'JavaSpringBootActuatorShutdownExposed',
+    JavaSpringBootDevToolsEnabled: 'JavaSpringBootDevToolsEnabled',
+    JavaSpringBootUnsafeSessionTrackingValue: 'JavaSpringBootUnsafeSessionTrackingValue',
+    JavaSpringLongSessionTimeout: 'JavaSpringLongSessionTimeout',
+    JavaSpringH2ConsoleEnabled: 'JavaSpringH2ConsoleEnabled',
+    JavaSpringDataSourceCredsStoredAsPlainText: 'JavaSpringDataSourceCredsStoredAsPlainText',
+    JavaSpringMongoDbCredsStoredAsPlainText: 'JavaSpringMongoDbCredsStoredAsPlainText',
+    JavaSpringBootAdminEnabled: 'JavaSpringBootAdminEnabled',
+    JavaSpringBootActuatorEndpointSecurityDisabled: 'JavaSpringBootActuatorEndpointSecurityDisabled',
+    JavaSpringHtmlEscapingDisabled: 'JavaSpringHtmlEscapingDisabled',
+    StrutsConfigBrowserEnabled: 'StrutsConfigBrowserEnabled',
+    StrutsDevModeEnabled: 'StrutsDevModeEnabled',
+    AxisSystemConfigurationListingEnabled: 'AxisSystemConfigurationListingEnabled',
+    AxisDevModeEnabled: 'AxisDevModeEnabled',
+    OutOfBandRceNode: 'OutOfBandRceNode',
+    HsqldbIdentified: 'HsqldbIdentified',
+    PossibleRceSpring: 'PossibleRceSpring',
+    SqLiteIdentified: 'SqLiteIdentified',
+    SqLiteOutOfDate: 'SqLiteOutOfDate',
+    ConfirmedErrorBasedMongoDbInjection: 'ConfirmedErrorBasedMongoDbInjection',
+    PossibleErrorBasedMongoDbInjection: 'PossibleErrorBasedMongoDbInjection',
+    ConfirmedBooleanBasedMongoDbInjection: 'ConfirmedBooleanBasedMongoDbInjection',
+    PossibleBooleanBasedMongoDbInjection: 'PossibleBooleanBasedMongoDbInjection',
+    ConfirmedBlindMongoDbInjection: 'ConfirmedBlindMongoDbInjection',
+    PossibleBlindMongoDbInjection: 'PossibleBlindMongoDbInjection',
+    ConfirmedOperatorMongoDbInjection: 'ConfirmedOperatorMongoDbInjection',
+    PossibleOperatorMongoDbInjection: 'PossibleOperatorMongoDbInjection',
+    MongoDbIdentified: 'MongoDbIdentified',
+    SwaggerUiOutOfDate: 'SwaggerUIOutOfDate',
+    MailHeaderInjectionIast: 'MailHeaderInjectionIast',
+    OutOfBandRceText4Shell: 'OutOfBandRceText4Shell',
+    SensitiveDataExposure: 'SensitiveDataExposure',
+    SensitiveDataAmazonAwsAccessKeyId: 'SensitiveDataAmazonAwsAccessKeyId',
+    SensitiveDataAmazonAwsSecretKey: 'SensitiveDataAmazonAwsSecretKey',
+    SensitiveDataFacebookAppSecret: 'SensitiveDataFacebookAppSecret',
+    SensitiveDataFacebookAppId: 'SensitiveDataFacebookAppId',
+    SensitiveDataTwitterApiSecretKey: 'SensitiveDataTwitterApiSecretKey',
+    SensitiveDataTwitterAccessTokenSecret: 'SensitiveDataTwitterAccessTokenSecret',
+    SensitiveDataHerokuApiKey: 'SensitiveDataHerokuApiKey',
+    SensitiveDataSshKey: 'SensitiveDataSshKey',
+    SensitiveDataSendGridApiKey: 'SensitiveDataSendGridApiKey',
+    SensitiveDataGoogleCloudApiKey: 'SensitiveDataGoogleCloudApiKey',
+    SensitiveDataMailGunApiKey: 'SensitiveDataMailGunApiKey',
+    SensitiveDataNuGetApiKey: 'SensitiveDataNuGetApiKey',
+    SensitiveDataSlackWebhook: 'SensitiveDataSlackWebhook',
+    SensitiveDataSlackToken: 'SensitiveDataSlackToken',
+    SensitiveDataSlackV1XToken: 'SensitiveDataSlackV1XToken',
+    SensitiveDataStripeApiKey: 'SensitiveDataStripeApiKey',
+    SensitiveDataMailChimpApiKey: 'SensitiveDataMailChimpApiKey',
+    SensitiveDataLinkedInApiKey: 'SensitiveDataLinkedInApiKey',
+    SensitiveDataDatabaseConnectionStringMongoDbMySql: 'SensitiveDataDatabaseConnectionStringMongoDbMySql',
+    SensitiveDataDatabaseConnectionStringPostgres: 'SensitiveDataDatabaseConnectionStringPostgres',
+    SensitiveDataJdbcDbConnectionString: 'SensitiveDataJdbcDbConnectionString',
+    SensitiveDataWordPressAuthenticationKey: 'SensitiveDataWordPressAuthenticationKey',
+    SensitiveDataSymfonyApplicationSecret: 'SensitiveDataSymfonyApplicationSecret',
+    SensitiveDataMapboxToken: 'SensitiveDataMapboxToken',
+    SensitiveDataAmazonSessMtpPassword: 'SensitiveDataAmazonSessMtpPassword',
+    SensitiveDataSentryAuthToken: 'SensitiveDataSentryAuthToken',
+    SensitiveDataTeamsWebhook: 'SensitiveDataTeamsWebhook',
+    SensitiveDataTwilioApiKey: 'SensitiveDataTwilioApiKey',
+    SensitiveDataPaypalAccessToken: 'SensitiveDataPaypalAccessToken',
+    SensitiveDataSquareAccessToken: 'SensitiveDataSquareAccessToken',
+    SensitiveDataSquareOAuthSecret: 'SensitiveDataSquareOAuthSecret',
+    SensitiveDataPicaticApiKey: 'SensitiveDataPicaticApiKey',
+    SensitiveDataAmazonMwsAuthToken: 'SensitiveDataAmazonMwsAuthToken',
+    SensitiveDataGoogleOAuthAccessToken: 'SensitiveDataGoogleOAuthAccessToken',
+    SensitiveDataFacebookAccessToken: 'SensitiveDataFacebookAccessToken',
+    SensitiveDataSonarQubeUserToken: 'SensitiveDataSonarQubeUserToken',
+    SensitiveDataNexmoSecret: 'SensitiveDataNexmoSecret',
+    SensitiveDataTelegramBotApiToken: 'SensitiveDataTelegramBotApiToken',
+    SensitiveDataDeviseSecretKey: 'SensitiveDataDeviseSecretKey',
+    SensitiveDataGitlabPersonalAccessToken: 'SensitiveDataGitlabPersonalAccessToken',
+    SensitiveDataConsulToken: 'SensitiveDataConsulToken',
+    SensitiveDataOmiseSecretKey: 'SensitiveDataOmiseSecretKey',
+    SensitiveDataNpmAccessToken: 'SensitiveDataNpmAccessToken',
+    GuidV1OnCookie: 'GuidV1OnCookie',
+    JwtDetected: 'JwtDetected',
+    CloudflareIdentified: 'CloudflareIdentified',
+    CloudflareBmIdentified: 'CloudflareBMIdentified',
+    CloudflareBIdentified: 'CloudflareBIdentified',
+    CdnJsIdentified: 'CdnJsIdentified',
+    WindowsServerIdentified: 'WindowsServerIdentified',
+    WindowsCeosIdentified: 'WindowsCEOSIdentified',
+    PossibleSsrfEquinix: 'PossibleSsrfEquinix',
+    VarnishVersionDisclosure: 'VarnishVersionDisclosure',
+    ApacheShiroStackTrace: 'ApacheShiroStackTrace',
+    ApacheShiroIdentified: 'ApacheShiroIdentified',
+    StackPathCdnIdentified: 'StackPathCdnIdentified',
+    JBossWebConsole: 'JBossWebConsole',
+    AemDetected: 'AEMDetected',
+    JavaServletOutOfDate: 'JavaServletOutOfDate',
+    JsDelivrCdnIdentified: 'JsDelivrCdnIdentified',
+    ModSslOutOfDate: 'Mod_SslOutOfDate',
+    ModSslIdentified: 'Mod_SslIdentified',
+    ModSslVersionDisclosure2: 'Mod_SslVersionDisclosure',
+    SpringFrameworkIdentified: 'SpringFrameworkIdentified',
+    JavaMelodyInterfaceDetected: 'JavaMelodyInterfaceDetected',
+    BootstrapTableOutOfDate: 'BootstrapTableOutOfDate',
+    BootstrapSelectOutOfDate: 'BootstrapSelectOutOfDate',
+    BootstrapTypeaheadOutOfDate: 'BootstrapTypeaheadOutOfDate',
+    LuaIdentified: 'LuaIdentified',
+    LuaVersionDisclosure: 'LuaVersionDisclosure',
+    LuaOutOfDate: 'LuaOutOfDate',
+    SpringActuatorEndpointDetected: 'SpringActuatorEndpointDetected',
+    MsExchangeVersionDisclosure: 'MsExchangeVersionDisclosure',
+    MsExchangeOutOfDate: 'MsExchangeOutOfDate',
+    OutOfBandCodeExecutionViaJwtKid: 'OutOfBandCodeExecutionViaJwtKid',
+    MongoDbInjectionIast: 'MongoDbInjectionIast',
+    LdapInjectionIast: 'LdapInjectionIast',
+    XPathInjectionIast: 'XPathInjectionIast',
+    ServerSideTemplateInjectionIast: 'ServerSideTemplateInjectionIast',
+    XxeInjectionIast: 'XxeInjectionIast',
+    JetBrainsIdeaDirectoryDetected: 'JetBrainsIdeaDirectoryDetected',
+    NodeJsStackTraceDisclosure: 'NodeJsStackTraceDisclosure',
+    ItHitWebDavNetVersionDisclosure: 'ItHitWebDavNetVersionDisclosure',
+    ItHitWebDavNetOutOfDate: 'ItHitWebDavNetOutOfDate',
+    EzProxyIdentified: 'EzProxyIdentified',
+    CanvasJsOutOfDate: 'CanvasJSOutOfDate',
+    WordPressVersionDisclosure: 'WordPressVersionDisclosure',
+    JoomlaVersionDisclosure: 'JoomlaVersionDisclosure',
+    DrupalVersionDisclosure: 'DrupalVersionDisclosure',
+    MovableTypeVersionDisclosure: 'MovableTypeVersionDisclosure',
+    MediaWikiVersionDisclosure: 'MediaWikiVersionDisclosure',
+    OscommerceVersionDisclosure: 'OscommerceVersionDisclosure',
+    PhpBbVersionDisclosure: 'PhpBBVersionDisclosure',
+    OpenCartVersionDisclosure: 'OpenCartVersionDisclosure',
+    OsTicketVersionDisclosure: 'OsTicketVersionDisclosure',
+    PrestashopVersionDisclosure: 'PrestashopVersionDisclosure',
+    AbanteCartVersionDisclosure: 'AbanteCartVersionDisclosure',
+    AmpacheVersionDisclosure: 'AmpacheVersionDisclosure',
+    AtutorVersionDisclosure: 'AtutorVersionDisclosure',
+    ClarolineVersionDisclosure: 'ClarolineVersionDisclosure',
+    Concrete5VersionDisclosure: 'Concrete5VersionDisclosure',
+    CoppermineVersionDisclosure: 'CoppermineVersionDisclosure',
+    CubeCartVersionDisclosure: 'CubeCartVersionDisclosure',
+    CollabtiveVersionDisclosure: 'CollabtiveVersionDisclosure',
+    DotClearVersionDisclosure: 'DotClearVersionDisclosure',
+    E107VersionDisclosure: 'E107VersionDisclosure',
+    FamilyConnectionsVersionDisclosure: 'FamilyConnectionsVersionDisclosure',
+    FluxBbVersionDisclosure: 'FluxBBVersionDisclosure',
+    FormToolsVersionDisclosure: 'FormToolsVersionDisclosure',
+    ChamiloVersionDisclosure: 'ChamiloVersionDisclosure',
+    FrontAccountingVersionDisclosure: 'FrontAccountingVersionDisclosure',
+    GibbonEduVersionDisclosure: 'GibbonEduVersionDisclosure',
+    HeskVersionDisclosure: 'HeskVersionDisclosure',
+    LimeSurveyVersionDisclosure: 'LimeSurveyVersionDisclosure',
+    MibewMessengerVersionDisclosure: 'MibewMessengerVersionDisclosure',
+    ModXVersionDisclosure: 'ModXVersionDisclosure',
+    MoodleVersionDisclosure: 'MoodleVersionDisclosure',
+    MyBbVersionDisclosure: 'MyBBVersionDisclosure',
+    OmekaVersionDisclosure: 'OmekaVersionDisclosure',
+    OsClassVersionDisclosure: 'OsClassVersionDisclosure',
+    EspoCrmVersionDisclosure: 'EspoCrmVersionDisclosure',
+    ElggVersionDisclosure: 'ElggVersionDisclosure',
+    PhorumVersionDisclosure: 'PhorumVersionDisclosure',
+    PhpFusionVersionDisclosure: 'PhpFusionVersionDisclosure',
+    PhpAddressBookVersionDisclosure: 'PhpAddressBookVersionDisclosure',
+    PhpListVersionDisclosure: 'PhpListVersionDisclosure',
+    PmWikiVersionDisclosure: 'PmWikiVersionDisclosure',
+    PodcastGeneratorVersionDisclosure: 'PodcastGeneratorVersionDisclosure',
+    ProjectSendVersionDisclosure: 'ProjectSendVersionDisclosure',
+    Question2AnswerVersionDisclosure: 'Question2AnswerVersionDisclosure',
+    RukovoditelVersionDisclosure: 'RukovoditelVersionDisclosure',
+    SeoPanelVersionDisclosure: 'SeoPanelVersionDisclosure',
+    SerendipityVersionDisclosure: 'SerendipityVersionDisclosure',
+    TcExamVersionDisclosure: 'TcExamVersionDisclosure',
+    VanillaForumsVersionDisclosure: 'VanillaForumsVersionDisclosure',
+    WebErpVersionDisclosure: 'WebErpVersionDisclosure',
+    WeBidVersionDisclosure: 'WeBidVersionDisclosure',
+    XoopsVersionDisclosure: 'XoopsVersionDisclosure',
+    YetiForceCrmVersionDisclosure: 'YetiForceCrmVersionDisclosure',
+    YourlsVersionDisclosure: 'YourlsVersionDisclosure',
+    ZenCartVersionDisclosure: 'ZenCartVersionDisclosure',
+    ZenPhotoVersionDisclosure: 'ZenPhotoVersionDisclosure',
+    PiwigoVersionDisclosure: 'PiwigoVersionDisclosure',
+    OwnCloudVersionDisclosure: 'OwnCloudVersionDisclosure',
+    PhpMyFaqVersionDisclosure: 'PhpMyFaqVersionDisclosure',
+    RoundcubeVersionDisclosure: 'RoundcubeVersionDisclosure',
+    ZikulaVersionDisclosure: 'ZikulaVersionDisclosure',
+    ReviveAdserverVersionDisclosure: 'ReviveAdserverVersionDisclosure',
+    B2evolutionVersionDisclosure: 'B2evolutionVersionDisclosure',
+    DolphinVersionDisclosure: 'DolphinVersionDisclosure',
+    Ph7CmsVersionDisclosure: 'PH7CMSVersionDisclosure',
+    QdPmVersionDisclosure: 'QdPMVersionDisclosure',
+    DolibarrVersionDisclosure: 'DolibarrVersionDisclosure',
+    ClipBucketVersionDisclosure: 'ClipBucketVersionDisclosure',
+    ContaoVersionDisclosure: 'ContaoVersionDisclosure',
+    Typo3CmsVersionDisclosure: 'Typo3CmsVersionDisclosure',
+    MagentoVersionDisclosure: 'MagentoVersionDisclosure',
+    PopperJsOutOfDate: 'PopperJSOutOfDate',
+    SailsJsIdentified: 'SailsJsIdentified',
+    ActionheroJsIdentified: 'ActionheroJsIdentified',
+    OutOfBandXxeSamlConsumer: 'OutOfBandXxeSamlConsumer',
+    OutOfBandXsltSamlConsumer: 'OutOfBandXsltSamlConsumer',
+    PossibleSsrfKeyInfoSamlConsumer: 'PossibleSsrfKeyInfoSamlConsumer',
+    PossibleXssSamlConsumer: 'PossibleXssSamlConsumer',
+    RetiredHashSaml: 'RetiredHashSaml',
+    SamlResponseWithoutSignature: 'SamlResponseWithoutSignature',
+    NoSamlResponseSignatureCheck: 'NoSamlResponseSignatureCheck',
+    SamlResponseSignatureExclusion: 'SamlResponseSignatureExclusion',
+    GraphQlStackTraceDisclosure: 'GraphQLStackTraceDisclosure',
+    JqueryIdentified: 'JqueryIdentified',
+    JqueryMigrateIdentified: 'JqueryMigrateIdentified',
+    JqueryMobileIdentified: 'JqueryMobileIdentified',
+    JqueryUiDialogIdentified: 'JqueryUiDialogIdentified',
+    JqueryUiAutocompleteIdentified: 'JqueryUiAutocompleteIdentified',
+    JqueryUiTooltipIdentified: 'JqueryUiTooltipIdentified',
+    PrettyPhotoIdentified: 'PrettyPhotoIdentified',
+    JPlayerIdentified: 'jPlayerIdentified',
+    YuiIdentified: 'YuiIdentified',
+    PrototypejsIdentified: 'PrototypejsIdentified',
+    EmberIdentified: 'EmberIdentified',
+    AngularjsIdentified: 'AngularjsIdentified',
+    BackbonejsIdentified: 'BackbonejsIdentified',
+    MustachejsIdentified: 'MustachejsIdentified',
+    HandlebarsjsIdentified: 'HandlebarsjsIdentified',
+    EasyXdmIdentified: 'EasyXdmIdentified',
+    PluploadIdentified: 'PluploadIdentified',
+    DomPurifyIdentified: 'DomPurifyIdentified',
+    DwrIdentified: 'DwrIdentified',
+    VideojsIdentified: 'VideojsIdentified',
+    CkeditorIdentified: 'CkeditorIdentified',
+    TypeaheadjsIdentified: 'TypeaheadjsIdentified',
+    BootboxIdentified: 'BootboxIdentified',
+    BootstrapjsIdentified: 'BootstrapjsIdentified',
+    Bootstrap3DateTimePickerIdentified: 'Bootstrap3DateTimePickerIdentified',
+    BootstrapToggleIdentified: 'BootstrapToggleIdentified',
+    FootablejsIdentified: 'FootablejsIdentified',
+    ImagePickerIdentified: 'ImagePickerIdentified',
+    RespondjsIdentified: 'RespondjsIdentified',
+    IonRangeSliderIdentified: 'IonRangeSliderIdentified',
+    JsTreeIdentified: 'JsTreeIdentified',
+    ModernizrIdentified: 'ModernizrIdentified',
+    MomentjsIdentified: 'MomentjsIdentified',
+    Select2Identified: 'Select2Identified',
+    Html5ShivIdentified: 'Html5ShivIdentified',
+    SortablejsIdentified: 'SortablejsIdentified',
+    KnockoutjsIdentified: 'KnockoutjsIdentified',
+    JavaScriptCookieIdentified: 'JavaScriptCookieIdentified',
+    JqueryMaskIdentified: 'JqueryMaskIdentified',
+    JqueryValidationIdentified: 'JqueryValidationIdentified',
+    KnockoutMappingIdentified: 'KnockoutMappingIdentified',
+    ReactIdentified: 'ReactIdentified',
+    ZeptojsIdentified: 'ZeptojsIdentified',
+    HammerjsIdentified: 'HammerjsIdentified',
+    PhaserIdentified: 'PhaserIdentified',
+    RamdaIdentified: 'RamdaIdentified',
+    VuejsIdentified: 'VuejsIdentified',
+    RevealJsIdentified: 'RevealJsIdentified',
+    ChartjsIdentified: 'ChartjsIdentified',
+    LeafletIdentified: 'LeafletIdentified',
+    FoundationIdentified: 'FoundationIdentified',
+    SemanticUiIdentified: 'SemanticUIIdentified',
+    PixiJsIdentified: 'PixiJsIdentified',
+    ThreeJsIdentified: 'ThreeJsIdentified',
+    PdfJsIdentified: 'PdfJsIdentified',
+    FabricJsIdentified: 'FabricJsIdentified',
+    LightboxIdentified: 'LightboxIdentified',
+    UnderscorejsIdentified: 'UnderscorejsIdentified',
+    FancyBoxIdentified: 'FancyBoxIdentified',
+    LazyjsIdentified: 'LazyjsIdentified',
+    DataTablesIdentified: 'DataTablesIdentified',
+    XRegExpIdentified: 'XRegExpIdentified',
+    Fingerprintjs2Identified: 'Fingerprintjs2Identified',
+    SweetAlert2Identified: 'SweetAlert2Identified',
+    IntrojsIdentified: 'IntrojsIdentified',
+    LodashIdentified: 'LodashIdentified',
+    AxiosIdentified: 'AxiosIdentified',
+    PolymerIdentified: 'PolymerIdentified',
+    BluebirdIdentified: 'BluebirdIdentified',
+    ListJsIdentified: 'ListJsIdentified',
+    MithrilIdentified: 'MithrilIdentified',
+    MathJsIdentified: 'MathJsIdentified',
+    RiotJsIdentified: 'RiotJsIdentified',
+    RequireJsIdentified: 'RequireJsIdentified',
+    EfJsIdentified: 'EfJsIdentified',
+    MarionetteJsIdentified: 'MarionetteJsIdentified',
+    GsapIdentified: 'GsapIdentified',
+    InfernoIdentified: 'InfernoIdentified',
+    D3JsIdentified: 'D3JsIdentified',
+    HighchartsIdentified: 'HighchartsIdentified',
+    RickshawIdentified: 'RickshawIdentified',
+    MathJaxIdentified: 'MathJaxIdentified',
+    ScrollRevealIdentified: 'ScrollRevealIdentified',
+    SlickIdentified: 'SlickIdentified',
+    FlickityIdentified: 'FlickityIdentified',
+    SnapSvgIdentified: 'SnapSvgIdentified',
+    ExtJsIdentified: 'ExtJsIdentified',
+    JqueryVersionDisclosure: 'JqueryVersionDisclosure',
+    JqueryMigrateVersionDisclosure: 'JqueryMigrateVersionDisclosure',
+    JqueryMobileVersionDisclosure: 'JqueryMobileVersionDisclosure',
+    JqueryUiDialogVersionDisclosure: 'JqueryUiDialogVersionDisclosure',
+    JqueryUiAutocompleteVersionDisclosure: 'JqueryUiAutocompleteVersionDisclosure',
+    JqueryUiTooltipVersionDisclosure: 'JqueryUiTooltipVersionDisclosure',
+    PrettyPhotoVersionDisclosure: 'PrettyPhotoVersionDisclosure',
+    JPlayerVersionDisclosure: 'jPlayerVersionDisclosure',
+    YuiVersionDisclosure: 'YuiVersionDisclosure',
+    PrototypejsVersionDisclosure: 'PrototypejsVersionDisclosure',
+    EmberVersionDisclosure: 'EmberVersionDisclosure',
+    AngularjsVersionDisclosure: 'AngularjsVersionDisclosure',
+    BackbonejsVersionDisclosure: 'BackbonejsVersionDisclosure',
+    MustachejsVersionDisclosure: 'MustachejsVersionDisclosure',
+    HandlebarsjsVersionDisclosure: 'HandlebarsjsVersionDisclosure',
+    EasyXdmVersionDisclosure: 'EasyXdmVersionDisclosure',
+    PluploadVersionDisclosure: 'PluploadVersionDisclosure',
+    DomPurifyVersionDisclosure: 'DomPurifyVersionDisclosure',
+    DwrVersionDisclosure: 'DwrVersionDisclosure',
+    VideojsVersionDisclosure: 'VideojsVersionDisclosure',
+    CkeditorVersionDisclosure: 'CkeditorVersionDisclosure',
+    TypeaheadjsVersionDisclosure: 'TypeaheadjsVersionDisclosure',
+    BootboxVersionDisclosure: 'BootboxVersionDisclosure',
+    BootstrapjsVersionDisclosure: 'BootstrapjsVersionDisclosure',
+    Bootstrap3DateTimePickerVersionDisclosure: 'Bootstrap3DateTimePickerVersionDisclosure',
+    BootstrapToggleVersionDisclosure: 'BootstrapToggleVersionDisclosure',
+    FootablejsVersionDisclosure: 'FootablejsVersionDisclosure',
+    ImagePickerVersionDisclosure: 'ImagePickerVersionDisclosure',
+    RespondjsVersionDisclosure: 'RespondjsVersionDisclosure',
+    IonRangeSliderVersionDisclosure: 'IonRangeSliderVersionDisclosure',
+    JsTreeVersionDisclosure: 'JsTreeVersionDisclosure',
+    ModernizrVersionDisclosure: 'ModernizrVersionDisclosure',
+    MomentjsVersionDisclosure: 'MomentjsVersionDisclosure',
+    Select2VersionDisclosure: 'Select2VersionDisclosure',
+    Html5ShivVersionDisclosure: 'Html5ShivVersionDisclosure',
+    SortablejsVersionDisclosure: 'SortablejsVersionDisclosure',
+    KnockoutjsVersionDisclosure: 'KnockoutjsVersionDisclosure',
+    JavaScriptCookieVersionDisclosure: 'JavaScriptCookieVersionDisclosure',
+    JqueryMaskVersionDisclosure: 'JqueryMaskVersionDisclosure',
+    JqueryValidationVersionDisclosure: 'JqueryValidationVersionDisclosure',
+    KnockoutMappingVersionDisclosure: 'KnockoutMappingVersionDisclosure',
+    ReactVersionDisclosure: 'ReactVersionDisclosure',
+    ZeptojsVersionDisclosure: 'ZeptojsVersionDisclosure',
+    HammerjsVersionDisclosure: 'HammerjsVersionDisclosure',
+    PhaserVersionDisclosure: 'PhaserVersionDisclosure',
+    RamdaVersionDisclosure: 'RamdaVersionDisclosure',
+    VuejsVersionDisclosure: 'VuejsVersionDisclosure',
+    RevealJsVersionDisclosure: 'RevealJsVersionDisclosure',
+    ChartjsVersionDisclosure: 'ChartjsVersionDisclosure',
+    LeafletVersionDisclosure: 'LeafletVersionDisclosure',
+    FoundationVersionDisclosure: 'FoundationVersionDisclosure',
+    SemanticUiVersionDisclosure: 'SemanticUIVersionDisclosure',
+    PixiJsVersionDisclosure: 'PixiJsVersionDisclosure',
+    ThreeJsVersionDisclosure: 'ThreeJsVersionDisclosure',
+    PdfJsVersionDisclosure: 'PdfJsVersionDisclosure',
+    FabricJsVersionDisclosure: 'FabricJsVersionDisclosure',
+    LightboxVersionDisclosure: 'LightboxVersionDisclosure',
+    UnderscorejsVersionDisclosure: 'UnderscorejsVersionDisclosure',
+    FancyBoxVersionDisclosure: 'FancyBoxVersionDisclosure',
+    LazyjsVersionDisclosure: 'LazyjsVersionDisclosure',
+    DataTablesVersionDisclosure: 'DataTablesVersionDisclosure',
+    XRegExpVersionDisclosure: 'XRegExpVersionDisclosure',
+    Fingerprintjs2VersionDisclosure: 'Fingerprintjs2VersionDisclosure',
+    SweetAlert2VersionDisclosure: 'SweetAlert2VersionDisclosure',
+    IntrojsVersionDisclosure: 'IntrojsVersionDisclosure',
+    LodashVersionDisclosure: 'LodashVersionDisclosure',
+    AxiosVersionDisclosure: 'AxiosVersionDisclosure',
+    PolymerVersionDisclosure: 'PolymerVersionDisclosure',
+    BluebirdVersionDisclosure: 'BluebirdVersionDisclosure',
+    ListJsVersionDisclosure: 'ListJsVersionDisclosure',
+    MithrilVersionDisclosure: 'MithrilVersionDisclosure',
+    MathJsVersionDisclosure: 'MathJsVersionDisclosure',
+    RiotJsVersionDisclosure: 'RiotJsVersionDisclosure',
+    RequireJsVersionDisclosure: 'RequireJsVersionDisclosure',
+    EfJsVersionDisclosure: 'EfJsVersionDisclosure',
+    MarionetteJsVersionDisclosure: 'MarionetteJsVersionDisclosure',
+    GsapVersionDisclosure: 'GsapVersionDisclosure',
+    InfernoVersionDisclosure: 'InfernoVersionDisclosure',
+    D3JsVersionDisclosure: 'D3JsVersionDisclosure',
+    HighchartsVersionDisclosure: 'HighchartsVersionDisclosure',
+    RickshawVersionDisclosure: 'RickshawVersionDisclosure',
+    MathJaxVersionDisclosure: 'MathJaxVersionDisclosure',
+    ScrollRevealVersionDisclosure: 'ScrollRevealVersionDisclosure',
+    SlickVersionDisclosure: 'SlickVersionDisclosure',
+    FlickityVersionDisclosure: 'FlickityVersionDisclosure',
+    SnapSvgVersionDisclosure: 'SnapSvgVersionDisclosure',
+    ExtJsVersionDisclosure: 'ExtJsVersionDisclosure',
+    AspNetSignalRIdentified: 'AspNetSignalRIdentified',
+    FuelUxIdentified: 'FuelUxIdentified',
+    SwaggerUiIdentified: 'SwaggerUIIdentified',
+    BootstrapTableIdentified: 'BootstrapTableIdentified',
+    BootstrapSelectIdentified: 'BootstrapSelectIdentified',
+    BootstrapTypeaheadIdentified: 'BootstrapTypeaheadIdentified',
+    AspNetSignalRVersionDisclosure: 'AspNetSignalRVersionDisclosure',
+    FuelUxVersionDisclosure: 'FuelUxVersionDisclosure',
+    SwaggerUiVersionDisclosure: 'SwaggerUIVersionDisclosure',
+    BootstrapTableVersionDisclosure: 'BootstrapTableVersionDisclosure',
+    BootstrapSelectVersionDisclosure: 'BootstrapSelectVersionDisclosure',
+    BootstrapTypeaheadVersionDisclosure: 'BootstrapTypeaheadVersionDisclosure',
+    ConfirmedWordpressThemeDetected: 'ConfirmedWordpressThemeDetected',
+    PossibleWordpressThemeDetected: 'PossibleWordpressThemeDetected',
+    ConfirmedWordpressPluginDetected: 'ConfirmedWordpressPluginDetected',
+    PossibleWordpressPluginDetected: 'PossibleWordpressPluginDetected',
+    WordpressThemeHelloElementorIdentified: 'WordpressThemeHelloElementorIdentified',
+    WordpressThemeTwentyTwentyThreeIdentified: 'WordpressThemeTwentyTwentyThreeIdentified',
+    WordpressThemeTwentyTwentyTwoIdentified: 'WordpressThemeTwentyTwentyTwoIdentified',
+    WordpressThemeAstraIdentified: 'WordpressThemeAstraIdentified',
+    WordpressThemeTwentyTwentyOneIdentified: 'WordpressThemeTwentyTwentyOneIdentified',
+    WordpressThemeTwentyTwentyIdentified: 'WordpressThemeTwentyTwentyIdentified',
+    WordpressThemeOceanWpIdentified: 'WordpressThemeOceanWPIdentified',
+    WordpressThemeTwentySeventeenIdentified: 'WordpressThemeTwentySeventeenIdentified',
+    WordpressThemeKadenceIdentified: 'WordpressThemeKadenceIdentified',
+    WordpressThemeTwentySixteenIdentified: 'WordpressThemeTwentySixteenIdentified',
+    WordpressThemeTwentyNineteenIdentified: 'WordpressThemeTwentyNineteenIdentified',
+    WordpressThemePopularFxIdentified: 'WordpressThemePopularFXIdentified',
+    WordpressThemeGeneratePressIdentified: 'WordpressThemeGeneratePressIdentified',
+    WordpressThemeInspiroIdentified: 'WordpressThemeInspiroIdentified',
+    WordpressThemeGoIdentified: 'WordpressThemeGoIdentified',
+    WordpressThemeHelloElementorOutOfDate: 'WordpressThemeHelloElementorOutOfDate',
+    WordpressThemeTwentyTwentyThreeOutOfDate: 'WordpressThemeTwentyTwentyThreeOutOfDate',
+    WordpressThemeTwentyTwentyTwoOutOfDate: 'WordpressThemeTwentyTwentyTwoOutOfDate',
+    WordpressThemeAstraOutOfDate: 'WordpressThemeAstraOutOfDate',
+    WordpressThemeTwentyTwentyOneOutOfDate: 'WordpressThemeTwentyTwentyOneOutOfDate',
+    WordpressThemeTwentyTwentyOutOfDate: 'WordpressThemeTwentyTwentyOutOfDate',
+    WordpressThemeOceanWpOutOfDate: 'WordpressThemeOceanWPOutOfDate',
+    WordpressThemeTwentySeventeenOutOfDate: 'WordpressThemeTwentySeventeenOutOfDate',
+    WordpressThemeKadenceOutOfDate: 'WordpressThemeKadenceOutOfDate',
+    WordpressThemeTwentySixteenOutOfDate: 'WordpressThemeTwentySixteenOutOfDate',
+    WordpressThemeTwentyNineteenOutOfDate: 'WordpressThemeTwentyNineteenOutOfDate',
+    WordpressThemePopularFxOutOfDate: 'WordpressThemePopularFXOutOfDate',
+    WordpressThemeGeneratePressOutOfDate: 'WordpressThemeGeneratePressOutOfDate',
+    WordpressThemeInspiroOutOfDate: 'WordpressThemeInspiroOutOfDate',
+    WordpressThemeGoOutOfDate: 'WordpressThemeGoOutOfDate',
+    WordpressThemeHelloElementorVersionDisclosure: 'WordpressThemeHelloElementorVersionDisclosure',
+    WordpressThemeTwentyTwentyThreeVersionDisclosure: 'WordpressThemeTwentyTwentyThreeVersionDisclosure',
+    WordpressThemeTwentyTwentyTwoVersionDisclosure: 'WordpressThemeTwentyTwentyTwoVersionDisclosure',
+    WordpressThemeAstraVersionDisclosure: 'WordpressThemeAstraVersionDisclosure',
+    WordpressThemeTwentyTwentyOneVersionDisclosure: 'WordpressThemeTwentyTwentyOneVersionDisclosure',
+    WordpressThemeTwentyTwentyVersionDisclosure: 'WordpressThemeTwentyTwentyVersionDisclosure',
+    WordpressThemeOceanWpVersionDisclosure: 'WordpressThemeOceanWPVersionDisclosure',
+    WordpressThemeTwentySeventeenVersionDisclosure: 'WordpressThemeTwentySeventeenVersionDisclosure',
+    WordpressThemeKadenceVersionDisclosure: 'WordpressThemeKadenceVersionDisclosure',
+    WordpressThemeTwentySixteenVersionDisclosure: 'WordpressThemeTwentySixteenVersionDisclosure',
+    WordpressThemeTwentyNineteenVersionDisclosure: 'WordpressThemeTwentyNineteenVersionDisclosure',
+    WordpressThemePopularFxVersionDisclosure: 'WordpressThemePopularFXVersionDisclosure',
+    WordpressThemeGeneratePressVersionDisclosure: 'WordpressThemeGeneratePressVersionDisclosure',
+    WordpressThemeInspiroVersionDisclosure: 'WordpressThemeInspiroVersionDisclosure',
+    WordpressThemeGoVersionDisclosure: 'WordpressThemeGoVersionDisclosure',
+    WordpressPluginLoginWithPhoneNumberIdentified: 'WordpressPluginLoginWithPhoneNumberIdentified',
+    WordpressPluginInstagramFeedIdentified: 'WordpressPluginInstagramFeedIdentified',
+    WordpressPluginContactFormSevenIdentified: 'WordpressPluginContactFormSevenIdentified',
+    WordpressPluginYoastSeoIdentified: 'WordpressPluginYoastSeoIdentified',
+    WordpressPluginElementorIdentified: 'WordpressPluginElementorIdentified',
+    WordpressPluginClassicEditorIdentified: 'WordpressPluginClassicEditorIdentified',
+    WordpressPluginAkismetIdentified: 'WordpressPluginAkismetIdentified',
+    WordpressPluginWooCommerceIdentified: 'WordpressPluginWooCommerceIdentified',
+    WordpressPluginWpFormsIdentified: 'WordpressPluginWpFormsIdentified',
+    WordpressPluginReallySimpleSslIdentified: 'WordpressPluginReallySimpleSslIdentified',
+    WordpressPluginJetpackIdentified: 'WordpressPluginJetpackIdentified',
+    WordpressPluginAllInOneWpMigrationIdentified: 'WordpressPluginAllInOneWpMigrationIdentified',
+    WordpressPluginWordfenceSecurityIdentified: 'WordpressPluginWordfenceSecurityIdentified',
+    WordpressPluginYoastDuplicatePostIdentified: 'WordpressPluginYoastDuplicatePostIdentified',
+    WordpressPluginWordpressImporterIdentified: 'WordpressPluginWordpressImporterIdentified',
+    WordpressPluginLiteSpeedCacheIdentified: 'WordpressPluginLiteSpeedCacheIdentified',
+    WordpressPluginUpdraftPlusIdentified: 'WordpressPluginUpdraftPlusIdentified',
+    WordpressPluginJupiterXIdentified: 'WordpressPluginJupiterXIdentified',
+    WordpressPluginLoginWithPhoneNumberOutOfDate: 'WordpressPluginLoginWithPhoneNumberOutOfDate',
+    WordpressPluginInstagramFeedOutOfDate: 'WordpressPluginInstagramFeedOutOfDate',
+    WordpressPluginContactFormSevenOutOfDate: 'WordpressPluginContactFormSevenOutOfDate',
+    WordpressPluginYoastSeoOutOfDate: 'WordpressPluginYoastSeoOutOfDate',
+    WordpressPluginElementorOutOfDate: 'WordpressPluginElementorOutOfDate',
+    WordpressPluginClassicEditorOutOfDate: 'WordpressPluginClassicEditorOutOfDate',
+    WordpressPluginAkismetOutOfDate: 'WordpressPluginAkismetOutOfDate',
+    WordpressPluginWooCommerceOutOfDate: 'WordpressPluginWooCommerceOutOfDate',
+    WordpressPluginWpFormsOutOfDate: 'WordpressPluginWpFormsOutOfDate',
+    WordpressPluginReallySimpleSslOutOfDate: 'WordpressPluginReallySimpleSslOutOfDate',
+    WordpressPluginJetpackOutOfDate: 'WordpressPluginJetpackOutOfDate',
+    WordpressPluginAllInOneWpMigrationOutOfDate: 'WordpressPluginAllInOneWpMigrationOutOfDate',
+    WordpressPluginWordfenceSecurityOutOfDate: 'WordpressPluginWordfenceSecurityOutOfDate',
+    WordpressPluginYoastDuplicatePostOutOfDate: 'WordpressPluginYoastDuplicatePostOutOfDate',
+    WordpressPluginWordpressImporterOutOfDate: 'WordpressPluginWordpressImporterOutOfDate',
+    WordpressPluginLiteSpeedCacheOutOfDate: 'WordpressPluginLiteSpeedCacheOutOfDate',
+    WordpressPluginUpdraftPlusOutOfDate: 'WordpressPluginUpdraftPlusOutOfDate',
+    WordpressPluginJupiterXOutOfDate: 'WordpressPluginJupiterXOutOfDate',
+    WordpressPluginInstagramFeedVersionDisclosure: 'WordpressPluginInstagramFeedVersionDisclosure',
+    WordpressPluginContactFormSevenVersionDisclosure: 'WordpressPluginContactFormSevenVersionDisclosure',
+    WordpressPluginYoastSeoVersionDisclosure: 'WordpressPluginYoastSeoVersionDisclosure',
+    WordpressPluginLoginWithPhoneNumberVersionDisclosure: 'WordpressPluginLoginWithPhoneNumberVersionDisclosure',
+    WordpressPluginElementorVersionDisclosure: 'WordpressPluginElementorVersionDisclosure',
+    WordpressPluginClassicEditorVersionDisclosure: 'WordpressPluginClassicEditorVersionDisclosure',
+    WordpressPluginAkismetVersionDisclosure: 'WordpressPluginAkismetVersionDisclosure',
+    WordpressPluginWooCommerceVersionDisclosure: 'WordpressPluginWooCommerceVersionDisclosure',
+    WordpressPluginWpFormsVersionDisclosure: 'WordpressPluginWpFormsVersionDisclosure',
+    WordpressPluginReallySimpleSslVersionDisclosure: 'WordpressPluginReallySimpleSslVersionDisclosure',
+    WordpressPluginJetpackVersionDisclosure: 'WordpressPluginJetpackVersionDisclosure',
+    WordpressPluginAllInOneWpMigrationVersionDisclosure: 'WordpressPluginAllInOneWpMigrationVersionDisclosure',
+    WordpressPluginWordfenceSecurityVersionDisclosure: 'WordpressPluginWordfenceSecurityVersionDisclosure',
+    WordpressPluginYoastDuplicatePostVersionDisclosure: 'WordpressPluginYoastDuplicatePostVersionDisclosure',
+    WordpressPluginWordpressImporterVersionDisclosure: 'WordpressPluginWordpressImporterVersionDisclosure',
+    WordpressPluginLiteSpeedCacheVersionDisclosure: 'WordpressPluginLiteSpeedCacheVersionDisclosure',
+    WordpressPluginUpdraftPlusVersionDisclosure: 'WordpressPluginUpdraftPlusVersionDisclosure',
+    WordpressPluginJupiterXVersionDisclosure: 'WordpressPluginJupiterXVersionDisclosure',
+    DockerDisclosure: 'DockerDisclosure',
+    DockerComposeDisclosure: 'DockerComposeDisclosure',
+    DockerRunDisclosure: 'DockerRunDisclosure',
+    DockerIgnoreDisclosure: 'DockerIgnoreDisclosure',
+    DockerCloudDisclosure: 'DockerCloudDisclosure',
+    CanvasJsIdentified: 'CanvasJSIdentified',
+    CanvasJsVersionDisclosure: 'CanvasJSVersionDisclosure',
+    PopperJsIdentified: 'PopperJSIdentified',
+    PopperJsVersionDisclosure: 'PopperJSVersionDisclosure',
+    HotChocolateIdentified: 'HotChocolateIdentified',
+    JQueryPlaceholderJsOutOfDate: 'JQueryPlaceholderJSOutOfDate',
+    JQueryPlaceholderJsVersionDisclosure: 'JQueryPlaceholderJSVersionDisclosure',
+    JQueryPlaceholderJsIdentified: 'JQueryPlaceholderJSIdentified',
+    MovEitTransferSqlInjection: 'MOVEitTransferSqlInjection',
+    MovEitTransferVersionDisclosure: 'MOVEitTransferVersionDisclosure',
+    MovEitTransferIdentified: 'MOVEitTransferIdentified',
+    DianaJlIdentified: 'DianaJlIdentified',
+    MissingXContentTypeOptionsHeader: 'MissingXContentTypeOptionsHeader'
+};
 /**
  * Check if a given object implements the IssueApiModel interface.
  */

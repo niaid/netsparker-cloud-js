@@ -358,128 +358,112 @@ class IssuesApi extends runtime.BaseAPI {
 }
 exports.IssuesApi = IssuesApi;
 /**
-  * @export
-  * @enum {string}
-  */
-var IssuesAddressedIssuesSeverityEnum;
-(function (IssuesAddressedIssuesSeverityEnum) {
-    IssuesAddressedIssuesSeverityEnum["BestPractice"] = "BestPractice";
-    IssuesAddressedIssuesSeverityEnum["Information"] = "Information";
-    IssuesAddressedIssuesSeverityEnum["Low"] = "Low";
-    IssuesAddressedIssuesSeverityEnum["Medium"] = "Medium";
-    IssuesAddressedIssuesSeverityEnum["High"] = "High";
-    IssuesAddressedIssuesSeverityEnum["Critical"] = "Critical";
-})(IssuesAddressedIssuesSeverityEnum = exports.IssuesAddressedIssuesSeverityEnum || (exports.IssuesAddressedIssuesSeverityEnum = {}));
+ * @export
+ */
+exports.IssuesAddressedIssuesSeverityEnum = {
+    BestPractice: 'BestPractice',
+    Information: 'Information',
+    Low: 'Low',
+    Medium: 'Medium',
+    High: 'High',
+    Critical: 'Critical'
+};
 /**
-  * @export
-  * @enum {string}
-  */
-var IssuesAllIssuesSeverityEnum;
-(function (IssuesAllIssuesSeverityEnum) {
-    IssuesAllIssuesSeverityEnum["BestPractice"] = "BestPractice";
-    IssuesAllIssuesSeverityEnum["Information"] = "Information";
-    IssuesAllIssuesSeverityEnum["Low"] = "Low";
-    IssuesAllIssuesSeverityEnum["Medium"] = "Medium";
-    IssuesAllIssuesSeverityEnum["High"] = "High";
-    IssuesAllIssuesSeverityEnum["Critical"] = "Critical";
-})(IssuesAllIssuesSeverityEnum = exports.IssuesAllIssuesSeverityEnum || (exports.IssuesAllIssuesSeverityEnum = {}));
+ * @export
+ */
+exports.IssuesAllIssuesSeverityEnum = {
+    BestPractice: 'BestPractice',
+    Information: 'Information',
+    Low: 'Low',
+    Medium: 'Medium',
+    High: 'High',
+    Critical: 'Critical'
+};
 /**
-  * @export
-  * @enum {string}
-  */
-var IssuesAllIssuesSortTypeEnum;
-(function (IssuesAllIssuesSortTypeEnum) {
-    IssuesAllIssuesSortTypeEnum["Ascending"] = "Ascending";
-    IssuesAllIssuesSortTypeEnum["Descending"] = "Descending";
-})(IssuesAllIssuesSortTypeEnum = exports.IssuesAllIssuesSortTypeEnum || (exports.IssuesAllIssuesSortTypeEnum = {}));
+ * @export
+ */
+exports.IssuesAllIssuesSortTypeEnum = {
+    Ascending: 'Ascending',
+    Descending: 'Descending'
+};
 /**
-  * @export
-  * @enum {string}
-  */
-var IssuesAllIssuesIntegrationEnum;
-(function (IssuesAllIssuesIntegrationEnum) {
-    IssuesAllIssuesIntegrationEnum["Jira"] = "Jira";
-    IssuesAllIssuesIntegrationEnum["GitHub"] = "GitHub";
-    IssuesAllIssuesIntegrationEnum["Tfs"] = "TFS";
-    IssuesAllIssuesIntegrationEnum["FogBugz"] = "FogBugz";
-    IssuesAllIssuesIntegrationEnum["ServiceNow"] = "ServiceNow";
-    IssuesAllIssuesIntegrationEnum["Slack"] = "Slack";
-    IssuesAllIssuesIntegrationEnum["GitLab"] = "GitLab";
-    IssuesAllIssuesIntegrationEnum["Bitbucket"] = "Bitbucket";
-    IssuesAllIssuesIntegrationEnum["Unfuddle"] = "Unfuddle";
-    IssuesAllIssuesIntegrationEnum["Zapier"] = "Zapier";
-    IssuesAllIssuesIntegrationEnum["AzureDevOps"] = "AzureDevOps";
-    IssuesAllIssuesIntegrationEnum["Redmine"] = "Redmine";
-    IssuesAllIssuesIntegrationEnum["Bugzilla"] = "Bugzilla";
-    IssuesAllIssuesIntegrationEnum["Kafka"] = "Kafka";
-    IssuesAllIssuesIntegrationEnum["PagerDuty"] = "PagerDuty";
-    IssuesAllIssuesIntegrationEnum["MicrosoftTeams"] = "MicrosoftTeams";
-    IssuesAllIssuesIntegrationEnum["Clubhouse"] = "Clubhouse";
-    IssuesAllIssuesIntegrationEnum["Trello"] = "Trello";
-    IssuesAllIssuesIntegrationEnum["Asana"] = "Asana";
-    IssuesAllIssuesIntegrationEnum["Webhook"] = "Webhook";
-    IssuesAllIssuesIntegrationEnum["Kenna"] = "Kenna";
-    IssuesAllIssuesIntegrationEnum["Freshservice"] = "Freshservice";
-    IssuesAllIssuesIntegrationEnum["YouTrack"] = "YouTrack";
-    IssuesAllIssuesIntegrationEnum["NetsparkerEnterprise"] = "NetsparkerEnterprise";
-    IssuesAllIssuesIntegrationEnum["Splunk"] = "Splunk";
-    IssuesAllIssuesIntegrationEnum["Mattermost"] = "Mattermost";
-    IssuesAllIssuesIntegrationEnum["Hashicorp"] = "Hashicorp";
-    IssuesAllIssuesIntegrationEnum["PivotalTracker"] = "PivotalTracker";
-    IssuesAllIssuesIntegrationEnum["CyberArk"] = "CyberArk";
-    IssuesAllIssuesIntegrationEnum["DefectDojo"] = "DefectDojo";
-    IssuesAllIssuesIntegrationEnum["JazzTeam"] = "JazzTeam";
-    IssuesAllIssuesIntegrationEnum["AzureKeyVault"] = "AzureKeyVault";
-    IssuesAllIssuesIntegrationEnum["ServiceNowVrm"] = "ServiceNowVRM";
-})(IssuesAllIssuesIntegrationEnum = exports.IssuesAllIssuesIntegrationEnum || (exports.IssuesAllIssuesIntegrationEnum = {}));
+ * @export
+ */
+exports.IssuesAllIssuesIntegrationEnum = {
+    Jira: 'Jira',
+    GitHub: 'GitHub',
+    Tfs: 'TFS',
+    FogBugz: 'FogBugz',
+    ServiceNow: 'ServiceNow',
+    Slack: 'Slack',
+    GitLab: 'GitLab',
+    Bitbucket: 'Bitbucket',
+    Unfuddle: 'Unfuddle',
+    Zapier: 'Zapier',
+    AzureDevOps: 'AzureDevOps',
+    Redmine: 'Redmine',
+    Bugzilla: 'Bugzilla',
+    Kafka: 'Kafka',
+    PagerDuty: 'PagerDuty',
+    MicrosoftTeams: 'MicrosoftTeams',
+    Clubhouse: 'Clubhouse',
+    Trello: 'Trello',
+    Asana: 'Asana',
+    Webhook: 'Webhook',
+    Kenna: 'Kenna',
+    Freshservice: 'Freshservice',
+    YouTrack: 'YouTrack',
+    NetsparkerEnterprise: 'NetsparkerEnterprise',
+    Splunk: 'Splunk',
+    Mattermost: 'Mattermost',
+    Hashicorp: 'Hashicorp',
+    PivotalTracker: 'PivotalTracker',
+    CyberArk: 'CyberArk',
+    DefectDojo: 'DefectDojo',
+    JazzTeam: 'JazzTeam',
+    AzureKeyVault: 'AzureKeyVault',
+    ServiceNowVrm: 'ServiceNowVRM'
+};
 /**
-  * @export
-  * @enum {string}
-  */
-var IssuesReportCsvSeparatorEnum;
-(function (IssuesReportCsvSeparatorEnum) {
-    IssuesReportCsvSeparatorEnum["Comma"] = "Comma";
-    IssuesReportCsvSeparatorEnum["Semicolon"] = "Semicolon";
-    IssuesReportCsvSeparatorEnum["Pipe"] = "Pipe";
-    IssuesReportCsvSeparatorEnum["Tab"] = "Tab";
-})(IssuesReportCsvSeparatorEnum = exports.IssuesReportCsvSeparatorEnum || (exports.IssuesReportCsvSeparatorEnum = {}));
+ * @export
+ */
+exports.IssuesReportCsvSeparatorEnum = {
+    Comma: 'Comma',
+    Semicolon: 'Semicolon',
+    Pipe: 'Pipe',
+    Tab: 'Tab'
+};
 /**
-  * @export
-  * @enum {string}
-  */
-var IssuesReportSeverityEnum;
-(function (IssuesReportSeverityEnum) {
-    IssuesReportSeverityEnum["BestPractice"] = "BestPractice";
-    IssuesReportSeverityEnum["Information"] = "Information";
-    IssuesReportSeverityEnum["Low"] = "Low";
-    IssuesReportSeverityEnum["Medium"] = "Medium";
-    IssuesReportSeverityEnum["High"] = "High";
-    IssuesReportSeverityEnum["Critical"] = "Critical";
-})(IssuesReportSeverityEnum = exports.IssuesReportSeverityEnum || (exports.IssuesReportSeverityEnum = {}));
+ * @export
+ */
+exports.IssuesReportSeverityEnum = {
+    BestPractice: 'BestPractice',
+    Information: 'Information',
+    Low: 'Low',
+    Medium: 'Medium',
+    High: 'High',
+    Critical: 'Critical'
+};
 /**
-  * @export
-  * @enum {string}
-  */
-var IssuesTodoSeverityEnum;
-(function (IssuesTodoSeverityEnum) {
-    IssuesTodoSeverityEnum["BestPractice"] = "BestPractice";
-    IssuesTodoSeverityEnum["Information"] = "Information";
-    IssuesTodoSeverityEnum["Low"] = "Low";
-    IssuesTodoSeverityEnum["Medium"] = "Medium";
-    IssuesTodoSeverityEnum["High"] = "High";
-    IssuesTodoSeverityEnum["Critical"] = "Critical";
-})(IssuesTodoSeverityEnum = exports.IssuesTodoSeverityEnum || (exports.IssuesTodoSeverityEnum = {}));
+ * @export
+ */
+exports.IssuesTodoSeverityEnum = {
+    BestPractice: 'BestPractice',
+    Information: 'Information',
+    Low: 'Low',
+    Medium: 'Medium',
+    High: 'High',
+    Critical: 'Critical'
+};
 /**
-  * @export
-  * @enum {string}
-  */
-var IssuesWaitingForRetestSeverityEnum;
-(function (IssuesWaitingForRetestSeverityEnum) {
-    IssuesWaitingForRetestSeverityEnum["BestPractice"] = "BestPractice";
-    IssuesWaitingForRetestSeverityEnum["Information"] = "Information";
-    IssuesWaitingForRetestSeverityEnum["Low"] = "Low";
-    IssuesWaitingForRetestSeverityEnum["Medium"] = "Medium";
-    IssuesWaitingForRetestSeverityEnum["High"] = "High";
-    IssuesWaitingForRetestSeverityEnum["Critical"] = "Critical";
-})(IssuesWaitingForRetestSeverityEnum = exports.IssuesWaitingForRetestSeverityEnum || (exports.IssuesWaitingForRetestSeverityEnum = {}));
+ * @export
+ */
+exports.IssuesWaitingForRetestSeverityEnum = {
+    BestPractice: 'BestPractice',
+    Information: 'Information',
+    Low: 'Low',
+    Medium: 'Medium',
+    High: 'High',
+    Critical: 'Critical'
+};
 //# sourceMappingURL=IssuesApi.js.map

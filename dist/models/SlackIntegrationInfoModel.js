@@ -18,54 +18,50 @@ const runtime_1 = require("../runtime");
 const IntegrationCustomFieldVm_1 = require("./IntegrationCustomFieldVm");
 const IntegrationWizardResultModel_1 = require("./IntegrationWizardResultModel");
 /**
-* @export
-* @enum {string}
-*/
-var SlackIntegrationInfoModelTypeEnum;
-(function (SlackIntegrationInfoModelTypeEnum) {
-    SlackIntegrationInfoModelTypeEnum["NetsparkerEnterprise"] = "NetsparkerEnterprise";
-    SlackIntegrationInfoModelTypeEnum["Webhook"] = "Webhook";
-    SlackIntegrationInfoModelTypeEnum["Zapier"] = "Zapier";
-    SlackIntegrationInfoModelTypeEnum["Slack"] = "Slack";
-    SlackIntegrationInfoModelTypeEnum["Mattermost"] = "Mattermost";
-    SlackIntegrationInfoModelTypeEnum["MicrosoftTeams"] = "MicrosoftTeams";
-    SlackIntegrationInfoModelTypeEnum["AzureDevOps"] = "AzureDevOps";
-    SlackIntegrationInfoModelTypeEnum["Bitbucket"] = "Bitbucket";
-    SlackIntegrationInfoModelTypeEnum["Bugzilla"] = "Bugzilla";
-    SlackIntegrationInfoModelTypeEnum["Clubhouse"] = "Clubhouse";
-    SlackIntegrationInfoModelTypeEnum["DefectDojo"] = "DefectDojo";
-    SlackIntegrationInfoModelTypeEnum["PivotalTracker"] = "PivotalTracker";
-    SlackIntegrationInfoModelTypeEnum["Jira"] = "Jira";
-    SlackIntegrationInfoModelTypeEnum["FogBugz"] = "FogBugz";
-    SlackIntegrationInfoModelTypeEnum["GitHub"] = "GitHub";
-    SlackIntegrationInfoModelTypeEnum["PagerDuty"] = "PagerDuty";
-    SlackIntegrationInfoModelTypeEnum["Kafka"] = "Kafka";
-    SlackIntegrationInfoModelTypeEnum["Kenna"] = "Kenna";
-    SlackIntegrationInfoModelTypeEnum["Redmine"] = "Redmine";
-    SlackIntegrationInfoModelTypeEnum["ServiceNow"] = "ServiceNow";
-    SlackIntegrationInfoModelTypeEnum["Tfs"] = "TFS";
-    SlackIntegrationInfoModelTypeEnum["Unfuddle"] = "Unfuddle";
-    SlackIntegrationInfoModelTypeEnum["YouTrack"] = "YouTrack";
-    SlackIntegrationInfoModelTypeEnum["Freshservice"] = "Freshservice";
-    SlackIntegrationInfoModelTypeEnum["Splunk"] = "Splunk";
-    SlackIntegrationInfoModelTypeEnum["JazzTeam"] = "JazzTeam";
-    SlackIntegrationInfoModelTypeEnum["ServiceNowVrm"] = "ServiceNowVRM";
-    SlackIntegrationInfoModelTypeEnum["Asana"] = "Asana";
-    SlackIntegrationInfoModelTypeEnum["Trello"] = "Trello";
-    SlackIntegrationInfoModelTypeEnum["Hashicorp"] = "Hashicorp";
-    SlackIntegrationInfoModelTypeEnum["CyberArk"] = "CyberArk";
-    SlackIntegrationInfoModelTypeEnum["AzureKeyVault"] = "AzureKeyVault";
-    SlackIntegrationInfoModelTypeEnum["GitLab"] = "GitLab";
-})(SlackIntegrationInfoModelTypeEnum = exports.SlackIntegrationInfoModelTypeEnum || (exports.SlackIntegrationInfoModelTypeEnum = {}));
+ * @export
+ */
+exports.SlackIntegrationInfoModelTypeEnum = {
+    Jira: 'Jira',
+    GitHub: 'GitHub',
+    Tfs: 'TFS',
+    FogBugz: 'FogBugz',
+    ServiceNow: 'ServiceNow',
+    Slack: 'Slack',
+    GitLab: 'GitLab',
+    Bitbucket: 'Bitbucket',
+    Unfuddle: 'Unfuddle',
+    Zapier: 'Zapier',
+    AzureDevOps: 'AzureDevOps',
+    Redmine: 'Redmine',
+    Bugzilla: 'Bugzilla',
+    Kafka: 'Kafka',
+    PagerDuty: 'PagerDuty',
+    MicrosoftTeams: 'MicrosoftTeams',
+    Clubhouse: 'Clubhouse',
+    Trello: 'Trello',
+    Asana: 'Asana',
+    Webhook: 'Webhook',
+    Kenna: 'Kenna',
+    Freshservice: 'Freshservice',
+    YouTrack: 'YouTrack',
+    NetsparkerEnterprise: 'NetsparkerEnterprise',
+    Splunk: 'Splunk',
+    Mattermost: 'Mattermost',
+    Hashicorp: 'Hashicorp',
+    PivotalTracker: 'PivotalTracker',
+    CyberArk: 'CyberArk',
+    DefectDojo: 'DefectDojo',
+    JazzTeam: 'JazzTeam',
+    AzureKeyVault: 'AzureKeyVault',
+    ServiceNowVrm: 'ServiceNowVRM'
+};
 /**
-* @export
-* @enum {string}
-*/
-var SlackIntegrationInfoModelTemplateTypeEnum;
-(function (SlackIntegrationInfoModelTemplateTypeEnum) {
-    SlackIntegrationInfoModelTemplateTypeEnum["Standard"] = "Standard";
-    SlackIntegrationInfoModelTemplateTypeEnum["Detailed"] = "Detailed";
-})(SlackIntegrationInfoModelTemplateTypeEnum = exports.SlackIntegrationInfoModelTemplateTypeEnum || (exports.SlackIntegrationInfoModelTemplateTypeEnum = {}));
+ * @export
+ */
+exports.SlackIntegrationInfoModelTemplateTypeEnum = {
+    Standard: 'Standard',
+    Detailed: 'Detailed'
+};
 /**
  * Check if a given object implements the SlackIntegrationInfoModel interface.
  */

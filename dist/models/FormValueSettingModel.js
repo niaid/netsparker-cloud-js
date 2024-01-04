@@ -16,39 +16,33 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.FormValueSettingModelToJSON = exports.FormValueSettingModelFromJSONTyped = exports.FormValueSettingModelFromJSON = exports.instanceOfFormValueSettingModel = exports.FormValueSettingModelMatchTargetValueEnum = exports.FormValueSettingModelMatchTargetEnum = exports.FormValueSettingModelMatchEnum = void 0;
 const runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
-var FormValueSettingModelMatchEnum;
-(function (FormValueSettingModelMatchEnum) {
-    FormValueSettingModelMatchEnum["RegEx"] = "RegEx";
-    FormValueSettingModelMatchEnum["Exact"] = "Exact";
-    FormValueSettingModelMatchEnum["Contains"] = "Contains";
-    FormValueSettingModelMatchEnum["Starts"] = "Starts";
-    FormValueSettingModelMatchEnum["Ends"] = "Ends";
-})(FormValueSettingModelMatchEnum = exports.FormValueSettingModelMatchEnum || (exports.FormValueSettingModelMatchEnum = {}));
+ * @export
+ */
+exports.FormValueSettingModelMatchEnum = {
+    RegEx: 'RegEx',
+    Exact: 'Exact',
+    Contains: 'Contains',
+    Starts: 'Starts',
+    Ends: 'Ends'
+};
 /**
-* @export
-* @enum {string}
-*/
-var FormValueSettingModelMatchTargetEnum;
-(function (FormValueSettingModelMatchTargetEnum) {
-    FormValueSettingModelMatchTargetEnum["Name"] = "Name";
-    FormValueSettingModelMatchTargetEnum["Label"] = "Label";
-    FormValueSettingModelMatchTargetEnum["Placeholder"] = "Placeholder";
-    FormValueSettingModelMatchTargetEnum["Id"] = "Id";
-})(FormValueSettingModelMatchTargetEnum = exports.FormValueSettingModelMatchTargetEnum || (exports.FormValueSettingModelMatchTargetEnum = {}));
+ * @export
+ */
+exports.FormValueSettingModelMatchTargetEnum = {
+    Name: 'Name',
+    Label: 'Label',
+    Placeholder: 'Placeholder',
+    Id: 'Id'
+};
 /**
-* @export
-* @enum {string}
-*/
-var FormValueSettingModelMatchTargetValueEnum;
-(function (FormValueSettingModelMatchTargetValueEnum) {
-    FormValueSettingModelMatchTargetValueEnum["Name"] = "Name";
-    FormValueSettingModelMatchTargetValueEnum["Label"] = "Label";
-    FormValueSettingModelMatchTargetValueEnum["Placeholder"] = "Placeholder";
-    FormValueSettingModelMatchTargetValueEnum["Id"] = "Id";
-})(FormValueSettingModelMatchTargetValueEnum = exports.FormValueSettingModelMatchTargetValueEnum || (exports.FormValueSettingModelMatchTargetValueEnum = {}));
+ * @export
+ */
+exports.FormValueSettingModelMatchTargetValueEnum = {
+    Name: 'Name',
+    Label: 'Label',
+    Placeholder: 'Placeholder',
+    Id: 'Id'
+};
 /**
  * Check if a given object implements the FormValueSettingModel interface.
  */

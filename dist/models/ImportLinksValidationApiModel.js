@@ -16,28 +16,26 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.ImportLinksValidationApiModelToJSON = exports.ImportLinksValidationApiModelFromJSONTyped = exports.ImportLinksValidationApiModelFromJSON = exports.instanceOfImportLinksValidationApiModel = exports.ImportLinksValidationApiModelImportTypeEnum = void 0;
 const runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
-var ImportLinksValidationApiModelImportTypeEnum;
-(function (ImportLinksValidationApiModelImportTypeEnum) {
-    ImportLinksValidationApiModelImportTypeEnum["None"] = "None";
-    ImportLinksValidationApiModelImportTypeEnum["Fiddler"] = "Fiddler";
-    ImportLinksValidationApiModelImportTypeEnum["Burp"] = "Burp";
-    ImportLinksValidationApiModelImportTypeEnum["Swagger"] = "Swagger";
-    ImportLinksValidationApiModelImportTypeEnum["OwaspZap"] = "OwaspZap";
-    ImportLinksValidationApiModelImportTypeEnum["AspNet"] = "AspNet";
-    ImportLinksValidationApiModelImportTypeEnum["HttpArchive"] = "HttpArchive";
-    ImportLinksValidationApiModelImportTypeEnum["Wadl"] = "Wadl";
-    ImportLinksValidationApiModelImportTypeEnum["Wsdl"] = "Wsdl";
-    ImportLinksValidationApiModelImportTypeEnum["Postman"] = "Postman";
-    ImportLinksValidationApiModelImportTypeEnum["InvictiSessionFile"] = "InvictiSessionFile";
-    ImportLinksValidationApiModelImportTypeEnum["CsvImporter"] = "CsvImporter";
-    ImportLinksValidationApiModelImportTypeEnum["Iodocs"] = "Iodocs";
-    ImportLinksValidationApiModelImportTypeEnum["WordPress"] = "WordPress";
-    ImportLinksValidationApiModelImportTypeEnum["Raml"] = "Raml";
-    ImportLinksValidationApiModelImportTypeEnum["GraphQl"] = "GraphQl";
-})(ImportLinksValidationApiModelImportTypeEnum = exports.ImportLinksValidationApiModelImportTypeEnum || (exports.ImportLinksValidationApiModelImportTypeEnum = {}));
+ * @export
+ */
+exports.ImportLinksValidationApiModelImportTypeEnum = {
+    None: 'None',
+    Fiddler: 'Fiddler',
+    Burp: 'Burp',
+    Swagger: 'Swagger',
+    OwaspZap: 'OwaspZap',
+    AspNet: 'AspNet',
+    HttpArchive: 'HttpArchive',
+    Wadl: 'Wadl',
+    Wsdl: 'Wsdl',
+    Postman: 'Postman',
+    InvictiSessionFile: 'InvictiSessionFile',
+    CsvImporter: 'CsvImporter',
+    Iodocs: 'Iodocs',
+    WordPress: 'WordPress',
+    Raml: 'Raml',
+    GraphQl: 'GraphQl'
+};
 /**
  * Check if a given object implements the ImportLinksValidationApiModel interface.
  */

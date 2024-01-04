@@ -133,60 +133,60 @@ export interface CyberArkVaultIntegrationInfoModel {
     integrationWizardResultModel?: IntegrationWizardResultModel;
 }
 /**
-* @export
-* @enum {string}
-*/
-export declare enum CyberArkVaultIntegrationInfoModelAgentModeEnum {
-    Cloud = "Cloud",
-    Internal = "Internal"
-}
+ * @export
+ */
+export declare const CyberArkVaultIntegrationInfoModelAgentModeEnum: {
+    readonly Cloud: "Cloud";
+    readonly Internal: "Internal";
+};
+export type CyberArkVaultIntegrationInfoModelAgentModeEnum = typeof CyberArkVaultIntegrationInfoModelAgentModeEnum[keyof typeof CyberArkVaultIntegrationInfoModelAgentModeEnum];
 /**
-* @export
-* @enum {string}
-*/
-export declare enum CyberArkVaultIntegrationInfoModelTypeEnum {
-    Jira = "Jira",
-    GitHub = "GitHub",
-    Tfs = "TFS",
-    FogBugz = "FogBugz",
-    ServiceNow = "ServiceNow",
-    Slack = "Slack",
-    GitLab = "GitLab",
-    Bitbucket = "Bitbucket",
-    Unfuddle = "Unfuddle",
-    Zapier = "Zapier",
-    AzureDevOps = "AzureDevOps",
-    Redmine = "Redmine",
-    Bugzilla = "Bugzilla",
-    Kafka = "Kafka",
-    PagerDuty = "PagerDuty",
-    MicrosoftTeams = "MicrosoftTeams",
-    Clubhouse = "Clubhouse",
-    Trello = "Trello",
-    Asana = "Asana",
-    Webhook = "Webhook",
-    Kenna = "Kenna",
-    Freshservice = "Freshservice",
-    YouTrack = "YouTrack",
-    NetsparkerEnterprise = "NetsparkerEnterprise",
-    Splunk = "Splunk",
-    Mattermost = "Mattermost",
-    Hashicorp = "Hashicorp",
-    PivotalTracker = "PivotalTracker",
-    CyberArk = "CyberArk",
-    DefectDojo = "DefectDojo",
-    JazzTeam = "JazzTeam",
-    AzureKeyVault = "AzureKeyVault",
-    ServiceNowVrm = "ServiceNowVRM"
-}
+ * @export
+ */
+export declare const CyberArkVaultIntegrationInfoModelTypeEnum: {
+    readonly NetsparkerEnterprise: "NetsparkerEnterprise";
+    readonly Webhook: "Webhook";
+    readonly Zapier: "Zapier";
+    readonly Slack: "Slack";
+    readonly Mattermost: "Mattermost";
+    readonly MicrosoftTeams: "MicrosoftTeams";
+    readonly AzureDevOps: "AzureDevOps";
+    readonly Bitbucket: "Bitbucket";
+    readonly Bugzilla: "Bugzilla";
+    readonly Clubhouse: "Clubhouse";
+    readonly DefectDojo: "DefectDojo";
+    readonly PivotalTracker: "PivotalTracker";
+    readonly Jira: "Jira";
+    readonly FogBugz: "FogBugz";
+    readonly GitHub: "GitHub";
+    readonly PagerDuty: "PagerDuty";
+    readonly Kafka: "Kafka";
+    readonly Tfs: "TFS";
+    readonly ServiceNow: "ServiceNow";
+    readonly GitLab: "GitLab";
+    readonly Unfuddle: "Unfuddle";
+    readonly Redmine: "Redmine";
+    readonly Trello: "Trello";
+    readonly Asana: "Asana";
+    readonly Kenna: "Kenna";
+    readonly Freshservice: "Freshservice";
+    readonly YouTrack: "YouTrack";
+    readonly Splunk: "Splunk";
+    readonly Hashicorp: "Hashicorp";
+    readonly CyberArk: "CyberArk";
+    readonly JazzTeam: "JazzTeam";
+    readonly AzureKeyVault: "AzureKeyVault";
+    readonly ServiceNowVrm: "ServiceNowVRM";
+};
+export type CyberArkVaultIntegrationInfoModelTypeEnum = typeof CyberArkVaultIntegrationInfoModelTypeEnum[keyof typeof CyberArkVaultIntegrationInfoModelTypeEnum];
 /**
-* @export
-* @enum {string}
-*/
-export declare enum CyberArkVaultIntegrationInfoModelTemplateTypeEnum {
-    Standard = "Standard",
-    Detailed = "Detailed"
-}
+ * @export
+ */
+export declare const CyberArkVaultIntegrationInfoModelTemplateTypeEnum: {
+    readonly Standard: "Standard";
+    readonly Detailed: "Detailed";
+};
+export type CyberArkVaultIntegrationInfoModelTemplateTypeEnum = typeof CyberArkVaultIntegrationInfoModelTemplateTypeEnum[keyof typeof CyberArkVaultIntegrationInfoModelTemplateTypeEnum];
 /**
  * Check if a given object implements the CyberArkVaultIntegrationInfoModel interface.
  */

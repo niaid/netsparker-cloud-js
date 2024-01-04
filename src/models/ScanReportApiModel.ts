@@ -93,57 +93,60 @@ export interface ScanReportApiModel {
     excludeHistoryOfIssues?: boolean;
 }
 
+
 /**
-* @export
-* @enum {string}
-*/
-export enum ScanReportApiModelContentFormatEnum {
-    Html = 'Html',
-    Markdown = 'Markdown'
-}
+ * @export
+ */
+export const ScanReportApiModelContentFormatEnum = {
+    Html: 'Html',
+    Markdown: 'Markdown'
+} as const;
+export type ScanReportApiModelContentFormatEnum = typeof ScanReportApiModelContentFormatEnum[keyof typeof ScanReportApiModelContentFormatEnum];
+
 /**
-* @export
-* @enum {string}
-*/
-export enum ScanReportApiModelFormatEnum {
-    Xml = 'Xml',
-    Csv = 'Csv',
-    Pdf = 'Pdf',
-    Html = 'Html',
-    Txt = 'Txt',
-    Json = 'Json'
-}
+ * @export
+ */
+export const ScanReportApiModelFormatEnum = {
+    Xml: 'Xml',
+    Csv: 'Csv',
+    Pdf: 'Pdf',
+    Html: 'Html',
+    Txt: 'Txt',
+    Json: 'Json'
+} as const;
+export type ScanReportApiModelFormatEnum = typeof ScanReportApiModelFormatEnum[keyof typeof ScanReportApiModelFormatEnum];
+
 /**
-* @export
-* @enum {string}
-*/
-export enum ScanReportApiModelTypeEnum {
-    Crawled = 'Crawled',
-    Scanned = 'Scanned',
-    Vulnerabilities = 'Vulnerabilities',
-    ScanDetail = 'ScanDetail',
-    ModSecurityWafRules = 'ModSecurityWafRules',
-    OwaspTopTen2013 = 'OwaspTopTen2013',
-    HipaaCompliance = 'HIPAACompliance',
-    Pci32 = 'Pci32',
-    KnowledgeBase = 'KnowledgeBase',
-    ExecutiveSummary = 'ExecutiveSummary',
-    FullScanDetail = 'FullScanDetail',
-    OwaspTopTen2017 = 'OwaspTopTen2017',
-    CustomReport = 'CustomReport',
-    Iso27001Compliance = 'Iso27001Compliance',
-    F5BigIpAsmWafRules = 'F5BigIpAsmWafRules',
-    Wasc = 'WASC',
-    SansTop25 = 'SansTop25',
-    Asvs40 = 'Asvs40',
-    Nistsp80053 = 'Nistsp80053',
-    DisaStig = 'DisaStig',
-    OwaspApiTop10 = 'OwaspApiTop10',
-    OwaspTopTen2021 = 'OwaspTopTen2021',
-    VulnerabilitiesPerWebsite = 'VulnerabilitiesPerWebsite',
-    OwaspApiTopTen2023 = 'OwaspApiTopTen2023',
-    PciDss40 = 'PciDss40'
-}
+ * @export
+ */
+export const ScanReportApiModelTypeEnum = {
+    Crawled: 'Crawled',
+    Scanned: 'Scanned',
+    Vulnerabilities: 'Vulnerabilities',
+    ScanDetail: 'ScanDetail',
+    ModSecurityWafRules: 'ModSecurityWafRules',
+    OwaspTopTen2013: 'OwaspTopTen2013',
+    HipaaCompliance: 'HIPAACompliance',
+    Pci32: 'Pci32',
+    KnowledgeBase: 'KnowledgeBase',
+    ExecutiveSummary: 'ExecutiveSummary',
+    FullScanDetail: 'FullScanDetail',
+    OwaspTopTen2017: 'OwaspTopTen2017',
+    CustomReport: 'CustomReport',
+    Iso27001Compliance: 'Iso27001Compliance',
+    F5BigIpAsmWafRules: 'F5BigIpAsmWafRules',
+    Wasc: 'WASC',
+    SansTop25: 'SansTop25',
+    Asvs40: 'Asvs40',
+    Nistsp80053: 'Nistsp80053',
+    DisaStig: 'DisaStig',
+    OwaspApiTop10: 'OwaspApiTop10',
+    OwaspTopTen2021: 'OwaspTopTen2021',
+    VulnerabilitiesPerWebsite: 'VulnerabilitiesPerWebsite',
+    OwaspApiTopTen2023: 'OwaspApiTopTen2023',
+    PciDss40: 'PciDss40'
+} as const;
+export type ScanReportApiModelTypeEnum = typeof ScanReportApiModelTypeEnum[keyof typeof ScanReportApiModelTypeEnum];
 
 
 /**

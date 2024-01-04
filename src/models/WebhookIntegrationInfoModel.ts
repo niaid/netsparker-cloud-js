@@ -184,72 +184,76 @@ export interface WebhookIntegrationInfoModel {
     integrationWizardResultModel?: IntegrationWizardResultModel;
 }
 
+
 /**
-* @export
-* @enum {string}
-*/
-export enum WebhookIntegrationInfoModelHttpMethodTypeEnum {
-    Get = 'Get',
-    Post = 'Post',
-    Put = 'Put'
-}
+ * @export
+ */
+export const WebhookIntegrationInfoModelHttpMethodTypeEnum = {
+    Get: 'Get',
+    Post: 'Post',
+    Put: 'Put'
+} as const;
+export type WebhookIntegrationInfoModelHttpMethodTypeEnum = typeof WebhookIntegrationInfoModelHttpMethodTypeEnum[keyof typeof WebhookIntegrationInfoModelHttpMethodTypeEnum];
+
 /**
-* @export
-* @enum {string}
-*/
-export enum WebhookIntegrationInfoModelParameterTypeEnum {
-    Form = 'Form',
-    Json = 'Json',
-    Xml = 'Xml',
-    QueryString = 'QueryString'
-}
+ * @export
+ */
+export const WebhookIntegrationInfoModelParameterTypeEnum = {
+    Form: 'Form',
+    Json: 'Json',
+    Xml: 'Xml',
+    QueryString: 'QueryString'
+} as const;
+export type WebhookIntegrationInfoModelParameterTypeEnum = typeof WebhookIntegrationInfoModelParameterTypeEnum[keyof typeof WebhookIntegrationInfoModelParameterTypeEnum];
+
 /**
-* @export
-* @enum {string}
-*/
-export enum WebhookIntegrationInfoModelTypeEnum {
-    NetsparkerEnterprise = 'NetsparkerEnterprise',
-    Webhook = 'Webhook',
-    Zapier = 'Zapier',
-    Slack = 'Slack',
-    Mattermost = 'Mattermost',
-    MicrosoftTeams = 'MicrosoftTeams',
-    AzureDevOps = 'AzureDevOps',
-    Bitbucket = 'Bitbucket',
-    Bugzilla = 'Bugzilla',
-    Clubhouse = 'Clubhouse',
-    DefectDojo = 'DefectDojo',
-    PivotalTracker = 'PivotalTracker',
-    Jira = 'Jira',
-    FogBugz = 'FogBugz',
-    GitHub = 'GitHub',
-    PagerDuty = 'PagerDuty',
-    Kafka = 'Kafka',
-    Kenna = 'Kenna',
-    Redmine = 'Redmine',
-    ServiceNow = 'ServiceNow',
-    Tfs = 'TFS',
-    Unfuddle = 'Unfuddle',
-    YouTrack = 'YouTrack',
-    Freshservice = 'Freshservice',
-    Splunk = 'Splunk',
-    JazzTeam = 'JazzTeam',
-    ServiceNowVrm = 'ServiceNowVRM',
-    Asana = 'Asana',
-    Trello = 'Trello',
-    Hashicorp = 'Hashicorp',
-    CyberArk = 'CyberArk',
-    AzureKeyVault = 'AzureKeyVault',
-    GitLab = 'GitLab'
-}
+ * @export
+ */
+export const WebhookIntegrationInfoModelTypeEnum = {
+    Jira: 'Jira',
+    GitHub: 'GitHub',
+    Tfs: 'TFS',
+    FogBugz: 'FogBugz',
+    ServiceNow: 'ServiceNow',
+    Slack: 'Slack',
+    GitLab: 'GitLab',
+    Bitbucket: 'Bitbucket',
+    Unfuddle: 'Unfuddle',
+    Zapier: 'Zapier',
+    AzureDevOps: 'AzureDevOps',
+    Redmine: 'Redmine',
+    Bugzilla: 'Bugzilla',
+    Kafka: 'Kafka',
+    PagerDuty: 'PagerDuty',
+    MicrosoftTeams: 'MicrosoftTeams',
+    Clubhouse: 'Clubhouse',
+    Trello: 'Trello',
+    Asana: 'Asana',
+    Webhook: 'Webhook',
+    Kenna: 'Kenna',
+    Freshservice: 'Freshservice',
+    YouTrack: 'YouTrack',
+    NetsparkerEnterprise: 'NetsparkerEnterprise',
+    Splunk: 'Splunk',
+    Mattermost: 'Mattermost',
+    Hashicorp: 'Hashicorp',
+    PivotalTracker: 'PivotalTracker',
+    CyberArk: 'CyberArk',
+    DefectDojo: 'DefectDojo',
+    JazzTeam: 'JazzTeam',
+    AzureKeyVault: 'AzureKeyVault',
+    ServiceNowVrm: 'ServiceNowVRM'
+} as const;
+export type WebhookIntegrationInfoModelTypeEnum = typeof WebhookIntegrationInfoModelTypeEnum[keyof typeof WebhookIntegrationInfoModelTypeEnum];
+
 /**
-* @export
-* @enum {string}
-*/
-export enum WebhookIntegrationInfoModelTemplateTypeEnum {
-    Standard = 'Standard',
-    Detailed = 'Detailed'
-}
+ * @export
+ */
+export const WebhookIntegrationInfoModelTemplateTypeEnum = {
+    Standard: 'Standard',
+    Detailed: 'Detailed'
+} as const;
+export type WebhookIntegrationInfoModelTemplateTypeEnum = typeof WebhookIntegrationInfoModelTemplateTypeEnum[keyof typeof WebhookIntegrationInfoModelTemplateTypeEnum];
 
 
 /**

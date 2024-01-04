@@ -175,68 +175,68 @@ export interface PagerDutyIntegrationInfoModel {
     integrationWizardResultModel?: IntegrationWizardResultModel;
 }
 /**
-* @export
-* @enum {string}
-*/
-export declare enum PagerDutyIntegrationInfoModelServiceTypeEnum {
-    Service = "service",
-    ServiceReference = "service_reference"
-}
+ * @export
+ */
+export declare const PagerDutyIntegrationInfoModelServiceTypeEnum: {
+    readonly Service: "service";
+    readonly ServiceReference: "service_reference";
+};
+export type PagerDutyIntegrationInfoModelServiceTypeEnum = typeof PagerDutyIntegrationInfoModelServiceTypeEnum[keyof typeof PagerDutyIntegrationInfoModelServiceTypeEnum];
 /**
-* @export
-* @enum {string}
-*/
-export declare enum PagerDutyIntegrationInfoModelUrgencyEnum {
-    High = "high",
-    Low = "low"
-}
+ * @export
+ */
+export declare const PagerDutyIntegrationInfoModelUrgencyEnum: {
+    readonly High: "high";
+    readonly Low: "low";
+};
+export type PagerDutyIntegrationInfoModelUrgencyEnum = typeof PagerDutyIntegrationInfoModelUrgencyEnum[keyof typeof PagerDutyIntegrationInfoModelUrgencyEnum];
 /**
-* @export
-* @enum {string}
-*/
-export declare enum PagerDutyIntegrationInfoModelTypeEnum {
-    NetsparkerEnterprise = "NetsparkerEnterprise",
-    Webhook = "Webhook",
-    Zapier = "Zapier",
-    Slack = "Slack",
-    Mattermost = "Mattermost",
-    MicrosoftTeams = "MicrosoftTeams",
-    AzureDevOps = "AzureDevOps",
-    Bitbucket = "Bitbucket",
-    Bugzilla = "Bugzilla",
-    Clubhouse = "Clubhouse",
-    DefectDojo = "DefectDojo",
-    PivotalTracker = "PivotalTracker",
-    Jira = "Jira",
-    FogBugz = "FogBugz",
-    GitHub = "GitHub",
-    PagerDuty = "PagerDuty",
-    Kafka = "Kafka",
-    Kenna = "Kenna",
-    Redmine = "Redmine",
-    ServiceNow = "ServiceNow",
-    Tfs = "TFS",
-    Unfuddle = "Unfuddle",
-    YouTrack = "YouTrack",
-    Freshservice = "Freshservice",
-    Splunk = "Splunk",
-    JazzTeam = "JazzTeam",
-    ServiceNowVrm = "ServiceNowVRM",
-    Asana = "Asana",
-    Trello = "Trello",
-    Hashicorp = "Hashicorp",
-    CyberArk = "CyberArk",
-    AzureKeyVault = "AzureKeyVault",
-    GitLab = "GitLab"
-}
+ * @export
+ */
+export declare const PagerDutyIntegrationInfoModelTypeEnum: {
+    readonly Jira: "Jira";
+    readonly GitHub: "GitHub";
+    readonly Tfs: "TFS";
+    readonly FogBugz: "FogBugz";
+    readonly ServiceNow: "ServiceNow";
+    readonly Slack: "Slack";
+    readonly GitLab: "GitLab";
+    readonly Bitbucket: "Bitbucket";
+    readonly Unfuddle: "Unfuddle";
+    readonly Zapier: "Zapier";
+    readonly AzureDevOps: "AzureDevOps";
+    readonly Redmine: "Redmine";
+    readonly Bugzilla: "Bugzilla";
+    readonly Kafka: "Kafka";
+    readonly PagerDuty: "PagerDuty";
+    readonly MicrosoftTeams: "MicrosoftTeams";
+    readonly Clubhouse: "Clubhouse";
+    readonly Trello: "Trello";
+    readonly Asana: "Asana";
+    readonly Webhook: "Webhook";
+    readonly Kenna: "Kenna";
+    readonly Freshservice: "Freshservice";
+    readonly YouTrack: "YouTrack";
+    readonly NetsparkerEnterprise: "NetsparkerEnterprise";
+    readonly Splunk: "Splunk";
+    readonly Mattermost: "Mattermost";
+    readonly Hashicorp: "Hashicorp";
+    readonly PivotalTracker: "PivotalTracker";
+    readonly CyberArk: "CyberArk";
+    readonly DefectDojo: "DefectDojo";
+    readonly JazzTeam: "JazzTeam";
+    readonly AzureKeyVault: "AzureKeyVault";
+    readonly ServiceNowVrm: "ServiceNowVRM";
+};
+export type PagerDutyIntegrationInfoModelTypeEnum = typeof PagerDutyIntegrationInfoModelTypeEnum[keyof typeof PagerDutyIntegrationInfoModelTypeEnum];
 /**
-* @export
-* @enum {string}
-*/
-export declare enum PagerDutyIntegrationInfoModelTemplateTypeEnum {
-    Standard = "Standard",
-    Detailed = "Detailed"
-}
+ * @export
+ */
+export declare const PagerDutyIntegrationInfoModelTemplateTypeEnum: {
+    readonly Standard: "Standard";
+    readonly Detailed: "Detailed";
+};
+export type PagerDutyIntegrationInfoModelTemplateTypeEnum = typeof PagerDutyIntegrationInfoModelTemplateTypeEnum[keyof typeof PagerDutyIntegrationInfoModelTemplateTypeEnum];
 /**
  * Check if a given object implements the PagerDutyIntegrationInfoModel interface.
  */

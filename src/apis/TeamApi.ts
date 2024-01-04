@@ -34,24 +34,24 @@ import {
     UpdateTeamApiModelToJSON,
 } from '../models/index';
 
-export interface TeamApiTeamDeleteRequest {
+export interface TeamDeleteRequest {
     id: string;
 }
 
-export interface TeamApiTeamGetRequest {
+export interface TeamGetRequest {
     id: string;
 }
 
-export interface TeamApiTeamListRequest {
+export interface TeamListRequest {
     page?: number;
     pageSize?: number;
 }
 
-export interface TeamApiTeamNewRequest {
+export interface TeamNewRequest {
     model: NewTeamApiModel;
 }
 
-export interface TeamApiTeamUpdateRequest {
+export interface TeamUpdateRequest {
     model: UpdateTeamApiModel;
 }
 
@@ -63,7 +63,7 @@ export class TeamApi extends runtime.BaseAPI {
     /**
      * Deletes a team
      */
-    async teamDeleteRaw(requestParameters: TeamApiTeamDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>> {
+    async teamDeleteRaw(requestParameters: TeamDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>> {
         if (requestParameters.id === null || requestParameters.id === undefined) {
             throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling teamDelete.');
         }
@@ -89,7 +89,7 @@ export class TeamApi extends runtime.BaseAPI {
     /**
      * Deletes a team
      */
-    async teamDelete(requestParameters: TeamApiTeamDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string> {
+    async teamDelete(requestParameters: TeamDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string> {
         const response = await this.teamDeleteRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -97,7 +97,7 @@ export class TeamApi extends runtime.BaseAPI {
     /**
      * Gets the team by the specified id.
      */
-    async teamGetRaw(requestParameters: TeamApiTeamGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TeamApiViewModel>> {
+    async teamGetRaw(requestParameters: TeamGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TeamApiViewModel>> {
         if (requestParameters.id === null || requestParameters.id === undefined) {
             throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling teamGet.');
         }
@@ -119,7 +119,7 @@ export class TeamApi extends runtime.BaseAPI {
     /**
      * Gets the team by the specified id.
      */
-    async teamGet(requestParameters: TeamApiTeamGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TeamApiViewModel> {
+    async teamGet(requestParameters: TeamGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TeamApiViewModel> {
         const response = await this.teamGetRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -127,7 +127,7 @@ export class TeamApi extends runtime.BaseAPI {
     /**
      * Gets the list of teams.
      */
-    async teamListRaw(requestParameters: TeamApiTeamListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TeamApiModelListApiResult>> {
+    async teamListRaw(requestParameters: TeamListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TeamApiModelListApiResult>> {
         const queryParameters: any = {};
 
         if (requestParameters.page !== undefined) {
@@ -153,7 +153,7 @@ export class TeamApi extends runtime.BaseAPI {
     /**
      * Gets the list of teams.
      */
-    async teamList(requestParameters: TeamApiTeamListRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TeamApiModelListApiResult> {
+    async teamList(requestParameters: TeamListRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TeamApiModelListApiResult> {
         const response = await this.teamListRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -161,7 +161,7 @@ export class TeamApi extends runtime.BaseAPI {
     /**
      * Creates a new team
      */
-    async teamNewRaw(requestParameters: TeamApiTeamNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TeamApiViewModel>> {
+    async teamNewRaw(requestParameters: TeamNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TeamApiViewModel>> {
         if (requestParameters.model === null || requestParameters.model === undefined) {
             throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling teamNew.');
         }
@@ -186,7 +186,7 @@ export class TeamApi extends runtime.BaseAPI {
     /**
      * Creates a new team
      */
-    async teamNew(requestParameters: TeamApiTeamNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TeamApiViewModel> {
+    async teamNew(requestParameters: TeamNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TeamApiViewModel> {
         const response = await this.teamNewRaw(requestParameters, initOverrides);
         return await response.value();
     }
@@ -194,7 +194,7 @@ export class TeamApi extends runtime.BaseAPI {
     /**
      * Updates a team
      */
-    async teamUpdateRaw(requestParameters: TeamApiTeamUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TeamApiViewModel>> {
+    async teamUpdateRaw(requestParameters: TeamUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TeamApiViewModel>> {
         if (requestParameters.model === null || requestParameters.model === undefined) {
             throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling teamUpdate.');
         }
@@ -219,7 +219,7 @@ export class TeamApi extends runtime.BaseAPI {
     /**
      * Updates a team
      */
-    async teamUpdate(requestParameters: TeamApiTeamUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TeamApiViewModel> {
+    async teamUpdate(requestParameters: TeamUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<TeamApiViewModel> {
         const response = await this.teamUpdateRaw(requestParameters, initOverrides);
         return await response.value();
     }

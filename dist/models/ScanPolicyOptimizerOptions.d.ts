@@ -95,76 +95,76 @@ export interface ScanPolicyOptimizerOptions {
     webServer?: ScanPolicyOptimizerOptionsWebServerEnum;
 }
 /**
-* @export
-* @enum {string}
-*/
-export declare enum ScanPolicyOptimizerOptionsAppServerEnum {
-    All = "All",
-    Aspnet = "Aspnet",
-    Php = "Php",
-    Rails = "Rails",
-    Java = "Java",
-    Perl = "Perl",
-    Python = "Python",
-    NodeJs = "NodeJs",
-    Other = "Other"
-}
+ * @export
+ */
+export declare const ScanPolicyOptimizerOptionsAppServerEnum: {
+    readonly All: "All";
+    readonly Aspnet: "Aspnet";
+    readonly Php: "Php";
+    readonly Rails: "Rails";
+    readonly Java: "Java";
+    readonly Perl: "Perl";
+    readonly Python: "Python";
+    readonly NodeJs: "NodeJs";
+    readonly Other: "Other";
+};
+export type ScanPolicyOptimizerOptionsAppServerEnum = typeof ScanPolicyOptimizerOptionsAppServerEnum[keyof typeof ScanPolicyOptimizerOptionsAppServerEnum];
 /**
-* @export
-* @enum {string}
-*/
-export declare enum ScanPolicyOptimizerOptionsDatabaseServerEnum {
-    All = "All",
-    MsSql = "MsSql",
-    MySql = "MySql",
-    Oracle = "Oracle",
-    PostgreSql = "PostgreSql",
-    MsAccess = "MsAccess",
-    HsqlDb = "HsqlDb",
-    Sqlite = "Sqlite",
-    MongoDb = "MongoDb",
-    Other = "Other"
-}
+ * @export
+ */
+export declare const ScanPolicyOptimizerOptionsDatabaseServerEnum: {
+    readonly All: "All";
+    readonly MsSql: "MsSql";
+    readonly MySql: "MySql";
+    readonly Oracle: "Oracle";
+    readonly PostgreSql: "PostgreSql";
+    readonly MsAccess: "MsAccess";
+    readonly HsqlDb: "HsqlDb";
+    readonly Sqlite: "Sqlite";
+    readonly MongoDb: "MongoDb";
+    readonly Other: "Other";
+};
+export type ScanPolicyOptimizerOptionsDatabaseServerEnum = typeof ScanPolicyOptimizerOptionsDatabaseServerEnum[keyof typeof ScanPolicyOptimizerOptionsDatabaseServerEnum];
 /**
-* @export
-* @enum {string}
-*/
-export declare enum ScanPolicyOptimizerOptionsDomParserPresetEnum {
-    None = "None",
-    Default = "Default",
-    Spa = "Spa",
-    LargeSpa = "LargeSpa"
-}
+ * @export
+ */
+export declare const ScanPolicyOptimizerOptionsDomParserPresetEnum: {
+    readonly None: "None";
+    readonly Default: "Default";
+    readonly Spa: "Spa";
+    readonly LargeSpa: "LargeSpa";
+};
+export type ScanPolicyOptimizerOptionsDomParserPresetEnum = typeof ScanPolicyOptimizerOptionsDomParserPresetEnum[keyof typeof ScanPolicyOptimizerOptionsDomParserPresetEnum];
 /**
-* @export
-* @enum {string}
-*/
-export declare enum ScanPolicyOptimizerOptionsOperatingSystemEnum {
-    All = "All",
-    Windows = "Windows",
-    Unix = "Unix"
-}
+ * @export
+ */
+export declare const ScanPolicyOptimizerOptionsOperatingSystemEnum: {
+    readonly All: "All";
+    readonly Windows: "Windows";
+    readonly Unix: "Unix";
+};
+export type ScanPolicyOptimizerOptionsOperatingSystemEnum = typeof ScanPolicyOptimizerOptionsOperatingSystemEnum[keyof typeof ScanPolicyOptimizerOptionsOperatingSystemEnum];
 /**
-* @export
-* @enum {string}
-*/
-export declare enum ScanPolicyOptimizerOptionsSuggestionStatusEnum {
-    Always = "Always",
-    NotNow = "NotNow",
-    Never = "Never"
-}
+ * @export
+ */
+export declare const ScanPolicyOptimizerOptionsSuggestionStatusEnum: {
+    readonly Always: "Always";
+    readonly NotNow: "NotNow";
+    readonly Never: "Never";
+};
+export type ScanPolicyOptimizerOptionsSuggestionStatusEnum = typeof ScanPolicyOptimizerOptionsSuggestionStatusEnum[keyof typeof ScanPolicyOptimizerOptionsSuggestionStatusEnum];
 /**
-* @export
-* @enum {string}
-*/
-export declare enum ScanPolicyOptimizerOptionsWebServerEnum {
-    All = "All",
-    Iis = "Iis",
-    Apache = "Apache",
-    ApacheTomcat = "ApacheTomcat",
-    Nginx = "Nginx",
-    Other = "Other"
-}
+ * @export
+ */
+export declare const ScanPolicyOptimizerOptionsWebServerEnum: {
+    readonly All: "All";
+    readonly Iis: "Iis";
+    readonly Apache: "Apache";
+    readonly ApacheTomcat: "ApacheTomcat";
+    readonly Nginx: "Nginx";
+    readonly Other: "Other";
+};
+export type ScanPolicyOptimizerOptionsWebServerEnum = typeof ScanPolicyOptimizerOptionsWebServerEnum[keyof typeof ScanPolicyOptimizerOptionsWebServerEnum];
 /**
  * Check if a given object implements the ScanPolicyOptimizerOptions interface.
  */

@@ -16,23 +16,19 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.SslTlsSettingModelToJSON = exports.SslTlsSettingModelFromJSONTyped = exports.SslTlsSettingModelFromJSON = exports.instanceOfSslTlsSettingModel = exports.SslTlsSettingModelTargetUrlInvalidCertificateActionEnum = exports.SslTlsSettingModelExternalDomainInvalidCertificateActionEnum = void 0;
 const runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
-var SslTlsSettingModelExternalDomainInvalidCertificateActionEnum;
-(function (SslTlsSettingModelExternalDomainInvalidCertificateActionEnum) {
-    SslTlsSettingModelExternalDomainInvalidCertificateActionEnum["Ignore"] = "Ignore";
-    SslTlsSettingModelExternalDomainInvalidCertificateActionEnum["Reject"] = "Reject";
-})(SslTlsSettingModelExternalDomainInvalidCertificateActionEnum = exports.SslTlsSettingModelExternalDomainInvalidCertificateActionEnum || (exports.SslTlsSettingModelExternalDomainInvalidCertificateActionEnum = {}));
+ * @export
+ */
+exports.SslTlsSettingModelExternalDomainInvalidCertificateActionEnum = {
+    Ignore: 'Ignore',
+    Reject: 'Reject'
+};
 /**
-* @export
-* @enum {string}
-*/
-var SslTlsSettingModelTargetUrlInvalidCertificateActionEnum;
-(function (SslTlsSettingModelTargetUrlInvalidCertificateActionEnum) {
-    SslTlsSettingModelTargetUrlInvalidCertificateActionEnum["Ignore"] = "Ignore";
-    SslTlsSettingModelTargetUrlInvalidCertificateActionEnum["Reject"] = "Reject";
-})(SslTlsSettingModelTargetUrlInvalidCertificateActionEnum = exports.SslTlsSettingModelTargetUrlInvalidCertificateActionEnum || (exports.SslTlsSettingModelTargetUrlInvalidCertificateActionEnum = {}));
+ * @export
+ */
+exports.SslTlsSettingModelTargetUrlInvalidCertificateActionEnum = {
+    Ignore: 'Ignore',
+    Reject: 'Reject'
+};
 /**
  * Check if a given object implements the SslTlsSettingModel interface.
  */

@@ -47,22 +47,22 @@ export interface OtpSettings {
     algorithm?: OtpSettingsAlgorithmEnum;
 }
 /**
-* @export
-* @enum {string}
-*/
-export declare enum OtpSettingsOtpTypeEnum {
-    Totp = "Totp",
-    Hotp = "Hotp"
-}
+ * @export
+ */
+export declare const OtpSettingsOtpTypeEnum: {
+    readonly Totp: "Totp";
+    readonly Hotp: "Hotp";
+};
+export type OtpSettingsOtpTypeEnum = typeof OtpSettingsOtpTypeEnum[keyof typeof OtpSettingsOtpTypeEnum];
 /**
-* @export
-* @enum {string}
-*/
-export declare enum OtpSettingsAlgorithmEnum {
-    Sha1 = "Sha1",
-    Sha256 = "Sha256",
-    Sha512 = "Sha512"
-}
+ * @export
+ */
+export declare const OtpSettingsAlgorithmEnum: {
+    readonly Sha1: "Sha1";
+    readonly Sha256: "Sha256";
+    readonly Sha512: "Sha512";
+};
+export type OtpSettingsAlgorithmEnum = typeof OtpSettingsAlgorithmEnum[keyof typeof OtpSettingsAlgorithmEnum];
 /**
  * Check if a given object implements the OtpSettings interface.
  */

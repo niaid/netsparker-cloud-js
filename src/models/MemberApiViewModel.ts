@@ -145,14 +145,15 @@ export interface MemberApiViewModel {
     websiteCount?: number;
 }
 
+
 /**
-* @export
-* @enum {string}
-*/
-export enum MemberApiViewModelStateEnum {
-    Enabled = 'Enabled',
-    Disabled = 'Disabled'
-}
+ * @export
+ */
+export const MemberApiViewModelStateEnum = {
+    Enabled: 'Enabled',
+    Disabled: 'Disabled'
+} as const;
+export type MemberApiViewModelStateEnum = typeof MemberApiViewModelStateEnum[keyof typeof MemberApiViewModelStateEnum];
 
 
 /**

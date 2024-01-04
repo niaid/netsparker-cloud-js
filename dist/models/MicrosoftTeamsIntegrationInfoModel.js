@@ -18,54 +18,50 @@ const runtime_1 = require("../runtime");
 const IntegrationCustomFieldVm_1 = require("./IntegrationCustomFieldVm");
 const IntegrationWizardResultModel_1 = require("./IntegrationWizardResultModel");
 /**
-* @export
-* @enum {string}
-*/
-var MicrosoftTeamsIntegrationInfoModelTypeEnum;
-(function (MicrosoftTeamsIntegrationInfoModelTypeEnum) {
-    MicrosoftTeamsIntegrationInfoModelTypeEnum["NetsparkerEnterprise"] = "NetsparkerEnterprise";
-    MicrosoftTeamsIntegrationInfoModelTypeEnum["Webhook"] = "Webhook";
-    MicrosoftTeamsIntegrationInfoModelTypeEnum["Zapier"] = "Zapier";
-    MicrosoftTeamsIntegrationInfoModelTypeEnum["Slack"] = "Slack";
-    MicrosoftTeamsIntegrationInfoModelTypeEnum["Mattermost"] = "Mattermost";
-    MicrosoftTeamsIntegrationInfoModelTypeEnum["MicrosoftTeams"] = "MicrosoftTeams";
-    MicrosoftTeamsIntegrationInfoModelTypeEnum["AzureDevOps"] = "AzureDevOps";
-    MicrosoftTeamsIntegrationInfoModelTypeEnum["Bitbucket"] = "Bitbucket";
-    MicrosoftTeamsIntegrationInfoModelTypeEnum["Bugzilla"] = "Bugzilla";
-    MicrosoftTeamsIntegrationInfoModelTypeEnum["Clubhouse"] = "Clubhouse";
-    MicrosoftTeamsIntegrationInfoModelTypeEnum["DefectDojo"] = "DefectDojo";
-    MicrosoftTeamsIntegrationInfoModelTypeEnum["PivotalTracker"] = "PivotalTracker";
-    MicrosoftTeamsIntegrationInfoModelTypeEnum["Jira"] = "Jira";
-    MicrosoftTeamsIntegrationInfoModelTypeEnum["FogBugz"] = "FogBugz";
-    MicrosoftTeamsIntegrationInfoModelTypeEnum["GitHub"] = "GitHub";
-    MicrosoftTeamsIntegrationInfoModelTypeEnum["PagerDuty"] = "PagerDuty";
-    MicrosoftTeamsIntegrationInfoModelTypeEnum["Kafka"] = "Kafka";
-    MicrosoftTeamsIntegrationInfoModelTypeEnum["Kenna"] = "Kenna";
-    MicrosoftTeamsIntegrationInfoModelTypeEnum["Redmine"] = "Redmine";
-    MicrosoftTeamsIntegrationInfoModelTypeEnum["ServiceNow"] = "ServiceNow";
-    MicrosoftTeamsIntegrationInfoModelTypeEnum["Tfs"] = "TFS";
-    MicrosoftTeamsIntegrationInfoModelTypeEnum["Unfuddle"] = "Unfuddle";
-    MicrosoftTeamsIntegrationInfoModelTypeEnum["YouTrack"] = "YouTrack";
-    MicrosoftTeamsIntegrationInfoModelTypeEnum["Freshservice"] = "Freshservice";
-    MicrosoftTeamsIntegrationInfoModelTypeEnum["Splunk"] = "Splunk";
-    MicrosoftTeamsIntegrationInfoModelTypeEnum["JazzTeam"] = "JazzTeam";
-    MicrosoftTeamsIntegrationInfoModelTypeEnum["ServiceNowVrm"] = "ServiceNowVRM";
-    MicrosoftTeamsIntegrationInfoModelTypeEnum["Asana"] = "Asana";
-    MicrosoftTeamsIntegrationInfoModelTypeEnum["Trello"] = "Trello";
-    MicrosoftTeamsIntegrationInfoModelTypeEnum["Hashicorp"] = "Hashicorp";
-    MicrosoftTeamsIntegrationInfoModelTypeEnum["CyberArk"] = "CyberArk";
-    MicrosoftTeamsIntegrationInfoModelTypeEnum["AzureKeyVault"] = "AzureKeyVault";
-    MicrosoftTeamsIntegrationInfoModelTypeEnum["GitLab"] = "GitLab";
-})(MicrosoftTeamsIntegrationInfoModelTypeEnum = exports.MicrosoftTeamsIntegrationInfoModelTypeEnum || (exports.MicrosoftTeamsIntegrationInfoModelTypeEnum = {}));
+ * @export
+ */
+exports.MicrosoftTeamsIntegrationInfoModelTypeEnum = {
+    Jira: 'Jira',
+    GitHub: 'GitHub',
+    Tfs: 'TFS',
+    FogBugz: 'FogBugz',
+    ServiceNow: 'ServiceNow',
+    Slack: 'Slack',
+    GitLab: 'GitLab',
+    Bitbucket: 'Bitbucket',
+    Unfuddle: 'Unfuddle',
+    Zapier: 'Zapier',
+    AzureDevOps: 'AzureDevOps',
+    Redmine: 'Redmine',
+    Bugzilla: 'Bugzilla',
+    Kafka: 'Kafka',
+    PagerDuty: 'PagerDuty',
+    MicrosoftTeams: 'MicrosoftTeams',
+    Clubhouse: 'Clubhouse',
+    Trello: 'Trello',
+    Asana: 'Asana',
+    Webhook: 'Webhook',
+    Kenna: 'Kenna',
+    Freshservice: 'Freshservice',
+    YouTrack: 'YouTrack',
+    NetsparkerEnterprise: 'NetsparkerEnterprise',
+    Splunk: 'Splunk',
+    Mattermost: 'Mattermost',
+    Hashicorp: 'Hashicorp',
+    PivotalTracker: 'PivotalTracker',
+    CyberArk: 'CyberArk',
+    DefectDojo: 'DefectDojo',
+    JazzTeam: 'JazzTeam',
+    AzureKeyVault: 'AzureKeyVault',
+    ServiceNowVrm: 'ServiceNowVRM'
+};
 /**
-* @export
-* @enum {string}
-*/
-var MicrosoftTeamsIntegrationInfoModelTemplateTypeEnum;
-(function (MicrosoftTeamsIntegrationInfoModelTemplateTypeEnum) {
-    MicrosoftTeamsIntegrationInfoModelTemplateTypeEnum["Standard"] = "Standard";
-    MicrosoftTeamsIntegrationInfoModelTemplateTypeEnum["Detailed"] = "Detailed";
-})(MicrosoftTeamsIntegrationInfoModelTemplateTypeEnum = exports.MicrosoftTeamsIntegrationInfoModelTemplateTypeEnum || (exports.MicrosoftTeamsIntegrationInfoModelTemplateTypeEnum = {}));
+ * @export
+ */
+exports.MicrosoftTeamsIntegrationInfoModelTemplateTypeEnum = {
+    Standard: 'Standard',
+    Detailed: 'Detailed'
+};
 /**
  * Check if a given object implements the MicrosoftTeamsIntegrationInfoModel interface.
  */

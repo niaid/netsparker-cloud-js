@@ -65,21 +65,21 @@ export interface NewWebsiteApiModel {
     tags?: Array<string>;
 }
 /**
-* @export
-* @enum {string}
-*/
-export declare enum NewWebsiteApiModelAgentModeEnum {
-    Cloud = "Cloud",
-    Internal = "Internal"
-}
+ * @export
+ */
+export declare const NewWebsiteApiModelAgentModeEnum: {
+    readonly Cloud: "Cloud";
+    readonly Internal: "Internal";
+};
+export type NewWebsiteApiModelAgentModeEnum = typeof NewWebsiteApiModelAgentModeEnum[keyof typeof NewWebsiteApiModelAgentModeEnum];
 /**
-* @export
-* @enum {string}
-*/
-export declare enum NewWebsiteApiModelLicenseTypeEnum {
-    Subscription = "Subscription",
-    Credit = "Credit"
-}
+ * @export
+ */
+export declare const NewWebsiteApiModelLicenseTypeEnum: {
+    readonly Subscription: "Subscription";
+    readonly Credit: "Credit";
+};
+export type NewWebsiteApiModelLicenseTypeEnum = typeof NewWebsiteApiModelLicenseTypeEnum[keyof typeof NewWebsiteApiModelLicenseTypeEnum];
 /**
  * Check if a given object implements the NewWebsiteApiModel interface.
  */

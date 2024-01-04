@@ -16,1547 +16,1543 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.VersionIssueToJSON = exports.VersionIssueFromJSONTyped = exports.VersionIssueFromJSON = exports.instanceOfVersionIssue = exports.VersionIssueOwnerVulnerabilityTypeEnum = exports.VersionIssueSeverityEnum = void 0;
 const runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
-var VersionIssueSeverityEnum;
-(function (VersionIssueSeverityEnum) {
-    VersionIssueSeverityEnum["BestPractice"] = "BestPractice";
-    VersionIssueSeverityEnum["Information"] = "Information";
-    VersionIssueSeverityEnum["Low"] = "Low";
-    VersionIssueSeverityEnum["Medium"] = "Medium";
-    VersionIssueSeverityEnum["High"] = "High";
-    VersionIssueSeverityEnum["Critical"] = "Critical";
-})(VersionIssueSeverityEnum = exports.VersionIssueSeverityEnum || (exports.VersionIssueSeverityEnum = {}));
+ * @export
+ */
+exports.VersionIssueSeverityEnum = {
+    BestPractice: 'BestPractice',
+    Information: 'Information',
+    Low: 'Low',
+    Medium: 'Medium',
+    High: 'High',
+    Critical: 'Critical'
+};
 /**
-* @export
-* @enum {string}
-*/
-var VersionIssueOwnerVulnerabilityTypeEnum;
-(function (VersionIssueOwnerVulnerabilityTypeEnum) {
-    VersionIssueOwnerVulnerabilityTypeEnum["Custom"] = "Custom";
-    VersionIssueOwnerVulnerabilityTypeEnum["Sca"] = "Sca";
-    VersionIssueOwnerVulnerabilityTypeEnum["None"] = "None";
-    VersionIssueOwnerVulnerabilityTypeEnum["HighlyPossibleSqlInjection"] = "HighlyPossibleSqlInjection";
-    VersionIssueOwnerVulnerabilityTypeEnum["Xss"] = "Xss";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleXss"] = "PossibleXss";
-    VersionIssueOwnerVulnerabilityTypeEnum["PermanentXss"] = "PermanentXss";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossiblePermanentXss"] = "PossiblePermanentXss";
-    VersionIssueOwnerVulnerabilityTypeEnum["InternalServerError"] = "InternalServerError";
-    VersionIssueOwnerVulnerabilityTypeEnum["ForbiddenResource"] = "ForbiddenResource";
-    VersionIssueOwnerVulnerabilityTypeEnum["PassiveVulns"] = "PassiveVulns";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleBlindSqlInjection"] = "PossibleBlindSqlInjection";
-    VersionIssueOwnerVulnerabilityTypeEnum["NtlmAuthrizationRequired"] = "NtlmAuthrizationRequired";
-    VersionIssueOwnerVulnerabilityTypeEnum["BasicAuthorisationRequired"] = "BasicAuthorisationRequired";
-    VersionIssueOwnerVulnerabilityTypeEnum["DigestAuthorizationRequired"] = "DigestAuthorizationRequired";
-    VersionIssueOwnerVulnerabilityTypeEnum["ClearTextBasicAuth"] = "ClearTextBasicAuth";
-    VersionIssueOwnerVulnerabilityTypeEnum["ConfirmedBlindSqlInjection"] = "ConfirmedBlindSqlInjection";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleSqlInjection"] = "PossibleSqlInjection";
-    VersionIssueOwnerVulnerabilityTypeEnum["ConfirmedSqlInjection"] = "ConfirmedSqlInjection";
-    VersionIssueOwnerVulnerabilityTypeEnum["FileUploadFound"] = "FileUploadFound";
-    VersionIssueOwnerVulnerabilityTypeEnum["AutoCompleteEnabled"] = "AutoCompleteEnabled";
-    VersionIssueOwnerVulnerabilityTypeEnum["PasswordOverHttp"] = "PasswordOverHttp";
-    VersionIssueOwnerVulnerabilityTypeEnum["PasswordFormOverHttp"] = "PasswordFormOverHttp";
-    VersionIssueOwnerVulnerabilityTypeEnum["InternalIpLeakage"] = "InternalIPLeakage";
-    VersionIssueOwnerVulnerabilityTypeEnum["CookieNotMarkedAsSecure"] = "CookieNotMarkedAsSecure";
-    VersionIssueOwnerVulnerabilityTypeEnum["CookieNotMarkedAsHttpOnly"] = "CookieNotMarkedAsHttpOnly";
-    VersionIssueOwnerVulnerabilityTypeEnum["ConfirmedBooleanSqlInjection"] = "ConfirmedBooleanSqlInjection";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleBooleanSqlInjection"] = "PossibleBooleanSqlInjection";
-    VersionIssueOwnerVulnerabilityTypeEnum["PasswordToHttp"] = "PasswordToHttp";
-    VersionIssueOwnerVulnerabilityTypeEnum["CommandInjection"] = "CommandInjection";
-    VersionIssueOwnerVulnerabilityTypeEnum["BlindCommandInjection"] = "BlindCommandInjection";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleBlindCommandInjection"] = "PossibleBlindCommandInjection";
-    VersionIssueOwnerVulnerabilityTypeEnum["HeaderInjection"] = "HeaderInjection";
-    VersionIssueOwnerVulnerabilityTypeEnum["MySqlIdentified"] = "MySqlIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["MsSqlIdentified"] = "MsSqlIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["MsAccessIdentified"] = "MsAccessIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["DbConnectedAsAdmin"] = "DbConnectedAsAdmin";
-    VersionIssueOwnerVulnerabilityTypeEnum["AspNetIdentified"] = "AspNetIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["AspNetVersionDisclosure"] = "AspNetVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["IisDirectoryListing"] = "IisDirectoryListing";
-    VersionIssueOwnerVulnerabilityTypeEnum["ApacheDirectoryListing"] = "ApacheDirectoryListing";
-    VersionIssueOwnerVulnerabilityTypeEnum["TomcatDirectoryListing"] = "TomcatDirectoryListing";
-    VersionIssueOwnerVulnerabilityTypeEnum["PhpSourceCodeDisclosure"] = "PhpSourceCodeDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["AspNetSourceCodeDisclosure"] = "AspNetSourceCodeDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["GenericSourceCodeDisclosure"] = "GenericSourceCodeDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleInternalUnixPathLeakage"] = "PossibleInternalUnixPathLeakage";
-    VersionIssueOwnerVulnerabilityTypeEnum["MsOfficeDocumentInformationDisclosure"] = "MsOfficeDocumentInformationDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["PhpInfoIdentified"] = "PhpInfoIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleLocalFileInclusion"] = "PossibleLocalFileInclusion";
-    VersionIssueOwnerVulnerabilityTypeEnum["OracleIdentified"] = "OracleIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["PostgreSqlIdentified"] = "PostgreSqlIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["HighPossibilityLfi"] = "HighPossibilityLfi";
-    VersionIssueOwnerVulnerabilityTypeEnum["Lfi"] = "Lfi";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleInternalWindowsPathLeakage"] = "PossibleInternalWindowsPathLeakage";
-    VersionIssueOwnerVulnerabilityTypeEnum["EmailDisclosure"] = "EmailDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["SocialSecurityNumberDisclosure"] = "SocialSecurityNumberDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["ApacheVersionDisclosure"] = "ApacheVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["TomcatVersionDisclosure"] = "TomcatVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["PhpVersionDisclosure"] = "PhpVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["IisVersionDisclosure"] = "IisVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["WebLogicVersionDisclosure"] = "WebLogicVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["LighttpdVersionDisclosure"] = "LighttpdVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["SharePointVersionDisclosure"] = "SharePointVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["ApacheCoyoteVersionDisclosure"] = "ApacheCoyoteVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["OracleApplicationServerVersionDisclosure"] = "OracleApplicationServerVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["OpenSslVersionDisclosure"] = "OpenSslVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["ApacheModuleVersionDisclosure"] = "ApacheModuleVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["PerlVersionDisclosure"] = "PerlVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["FrontPageVersionDisclosure"] = "FrontPageVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["PythonVersionDisclosure"] = "PythonVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["JavaServletVersionDisclosure"] = "JavaServletVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["SitemapIdentified"] = "SitemapIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["CrossDomainXml"] = "CrossDomainXml";
-    VersionIssueOwnerVulnerabilityTypeEnum["RobotsIdentified"] = "RobotsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["SpecialCase"] = "SpecialCase";
-    VersionIssueOwnerVulnerabilityTypeEnum["SpecialCaseNoCookies"] = "SpecialCaseNoCookies";
-    VersionIssueOwnerVulnerabilityTypeEnum["SpecialCaseNoBasicAuthentication"] = "SpecialCaseNoBasicAuthentication";
-    VersionIssueOwnerVulnerabilityTypeEnum["ApacheServerStatus"] = "ApacheServerStatus";
-    VersionIssueOwnerVulnerabilityTypeEnum["ApacheServerInfo"] = "ApacheServerInfo";
-    VersionIssueOwnerVulnerabilityTypeEnum["ClientAccessPolicy"] = "ClientAccessPolicy";
-    VersionIssueOwnerVulnerabilityTypeEnum["OpenCrossDomainXml"] = "OpenCrossDomainXml";
-    VersionIssueOwnerVulnerabilityTypeEnum["OpenClientAccessPolicy"] = "OpenClientAccessPolicy";
-    VersionIssueOwnerVulnerabilityTypeEnum["HighPossibleBooleanSqlInjection"] = "HighPossibleBooleanSqlInjection";
-    VersionIssueOwnerVulnerabilityTypeEnum["DatabaseErrorMessages"] = "DatabaseErrorMessages";
-    VersionIssueOwnerVulnerabilityTypeEnum["ProgrammingErrorMessages"] = "ProgrammingErrorMessages";
-    VersionIssueOwnerVulnerabilityTypeEnum["ApacheMultiViewsEnabled"] = "ApacheMultiViewsEnabled";
-    VersionIssueOwnerVulnerabilityTypeEnum["BackupFileFound"] = "BackupFileFound";
-    VersionIssueOwnerVulnerabilityTypeEnum["BackupSourceCodeFound"] = "BackupSourceCodeFound";
-    VersionIssueOwnerVulnerabilityTypeEnum["TraceTrackIdentified"] = "TraceTrackIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["TraceaxdFound"] = "TraceaxdFound";
-    VersionIssueOwnerVulnerabilityTypeEnum["ElmahaxdFound"] = "ElmahaxdFound";
-    VersionIssueOwnerVulnerabilityTypeEnum["AspNetDebugEnabled"] = "AspNetDebugEnabled";
-    VersionIssueOwnerVulnerabilityTypeEnum["LfiCodeInclusion"] = "LfiCodeInclusion";
-    VersionIssueOwnerVulnerabilityTypeEnum["AspNetStackTrace"] = "AspNetStackTrace";
-    VersionIssueOwnerVulnerabilityTypeEnum["SvnDisclosure"] = "SvnDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["GitDisclosure"] = "GitDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["CvsDisclosure"] = "CvsDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["Rfi"] = "Rfi";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleRfi"] = "PossibleRfi";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleCi"] = "PossibleCi";
-    VersionIssueOwnerVulnerabilityTypeEnum["XssViaRfi"] = "XssViaRfi";
-    VersionIssueOwnerVulnerabilityTypeEnum["RceAsp"] = "RceAsp";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleRceAsp"] = "PossibleRceAsp";
-    VersionIssueOwnerVulnerabilityTypeEnum["RcePhp"] = "RcePhp";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleRcePhp"] = "PossibleRcePhp";
-    VersionIssueOwnerVulnerabilityTypeEnum["RcePerl"] = "RcePerl";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleRcePerl"] = "PossibleRcePerl";
-    VersionIssueOwnerVulnerabilityTypeEnum["ViewStateMacNotEnabled"] = "ViewStateMacNotEnabled";
-    VersionIssueOwnerVulnerabilityTypeEnum["ViewStateNotEncrypted"] = "ViewStateNotEncrypted";
-    VersionIssueOwnerVulnerabilityTypeEnum["ViewStateAnalyzer"] = "ViewStateAnalyzer";
-    VersionIssueOwnerVulnerabilityTypeEnum["OpenRedirect"] = "OpenRedirect";
-    VersionIssueOwnerVulnerabilityTypeEnum["TomcatExceptionReport"] = "TomcatExceptionReport";
-    VersionIssueOwnerVulnerabilityTypeEnum["DjangoStackTraceDisclosure"] = "DjangoStackTraceDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["Struts2DevModeEnabled"] = "Struts2DevModeEnabled";
-    VersionIssueOwnerVulnerabilityTypeEnum["AspNetDirectoryListing"] = "AspNetDirectoryListing";
-    VersionIssueOwnerVulnerabilityTypeEnum["MySqlUsernameDisclosure"] = "MySqlUsernameDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["MsSqlUsernameDisclosure"] = "MsSqlUsernameDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["WinUsernameDisclosure"] = "WinUsernameDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["RceViaLfi"] = "RceViaLfi";
-    VersionIssueOwnerVulnerabilityTypeEnum["XssProtectionDisabled"] = "XssProtectionDisabled";
-    VersionIssueOwnerVulnerabilityTypeEnum["MdbFound"] = "MdbFound";
-    VersionIssueOwnerVulnerabilityTypeEnum["WeakCredentials"] = "WeakCredentials";
-    VersionIssueOwnerVulnerabilityTypeEnum["PythonStackTraceDisclosure"] = "PythonStackTraceDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["ColdFusionStackTraceDisclosure"] = "ColdFusionStackTraceDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["DefaultIis7Page"] = "DefaultIis7Page";
-    VersionIssueOwnerVulnerabilityTypeEnum["DefaultIis6Page"] = "DefaultIis6Page";
-    VersionIssueOwnerVulnerabilityTypeEnum["DefaultApachePage"] = "DefaultApachePage";
-    VersionIssueOwnerVulnerabilityTypeEnum["SinatraStackTraceDisclosure"] = "SinatraStackTraceDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["SqliteFound"] = "SqliteFound";
-    VersionIssueOwnerVulnerabilityTypeEnum["OutlookFileFound"] = "OutlookFileFound";
-    VersionIssueOwnerVulnerabilityTypeEnum["DsStoreFileFound"] = "DsStoreFileFound";
-    VersionIssueOwnerVulnerabilityTypeEnum["FrameInjection"] = "FrameInjection";
-    VersionIssueOwnerVulnerabilityTypeEnum["DefaultTomcatPage"] = "DefaultTomcatPage";
-    VersionIssueOwnerVulnerabilityTypeEnum["TomcatSourceCodeDisclosure"] = "TomcatSourceCodeDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["WebBackdoorIdentified"] = "WebBackdoorIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["PassiveWebBackdoorIdentified"] = "PassiveWebBackdoorIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleAdminFile"] = "PossibleAdminFile";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleConfigFile"] = "PossibleConfigFile";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleReadmeFile"] = "PossibleReadmeFile";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleInstallationFile"] = "PossibleInstallationFile";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleLogFile"] = "PossibleLogFile";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleSqlFile"] = "PossibleSqlFile";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleTestFile"] = "PossibleTestFile";
-    VersionIssueOwnerVulnerabilityTypeEnum["TomcatOutOfDate"] = "TomcatOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["ApacheOutOfDate"] = "ApacheOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["MsSqlOutOfDate"] = "MsSqlOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["MySqlOutOfDate"] = "MySqlOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["HsqlDbOutOfDate"] = "HsqlDbOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["PhpOutOfDate"] = "PhpOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["OpenSslOutOfDate"] = "OpenSslOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["RedirectBodyTooLarge"] = "RedirectBodyTooLarge";
-    VersionIssueOwnerVulnerabilityTypeEnum["RedirectTwoResponses"] = "RedirectTwoResponses";
-    VersionIssueOwnerVulnerabilityTypeEnum["SslVersion2Support"] = "SslVersion2Support";
-    VersionIssueOwnerVulnerabilityTypeEnum["WeakCiphersDetected"] = "WeakCiphersDetected";
-    VersionIssueOwnerVulnerabilityTypeEnum["AnonAuthDetected"] = "AnonAuthDetected";
-    VersionIssueOwnerVulnerabilityTypeEnum["WeakSignatureAlgorithmDetected"] = "WeakSignatureAlgorithmDetected";
-    VersionIssueOwnerVulnerabilityTypeEnum["InvalidSslCertificate"] = "InvalidSslCertificate";
-    VersionIssueOwnerVulnerabilityTypeEnum["SslVersion3Support"] = "SslVersion3Support";
-    VersionIssueOwnerVulnerabilityTypeEnum["IntermediateWeakSignatureAlgorithmDetected"] = "IntermediateWeakSignatureAlgorithmDetected";
-    VersionIssueOwnerVulnerabilityTypeEnum["MvcVersionDisclosure"] = "MvcVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["MongrelVersionDisclosure"] = "MongrelVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["NginxVersionDisclosure"] = "NginxVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["MySqldoSDetected"] = "MySQLDoSDetected";
-    VersionIssueOwnerVulnerabilityTypeEnum["GrailsStackTraceDisclosure"] = "GrailsStackTraceDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleElInjection"] = "PossibleElInjection";
-    VersionIssueOwnerVulnerabilityTypeEnum["ElInjection"] = "ElInjection";
-    VersionIssueOwnerVulnerabilityTypeEnum["ApacheMyFacesStackTraceDisclosure"] = "ApacheMyFacesStackTraceDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["PasswordOverQuerystring"] = "PasswordOverQuerystring";
-    VersionIssueOwnerVulnerabilityTypeEnum["ColdFusionSourceCodeDisclosure"] = "ColdFusionSourceCodeDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["AwStatsIdentified"] = "AWStatsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["MintIdentified"] = "MintIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["PiwikIdentified"] = "PiwikIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["WsftpLogFileIdentified"] = "WSFTPLogFileIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["WebConfigIdentified"] = "WebConfigIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["LighttpdDirectoryListing"] = "LighttpdDirectoryListing";
-    VersionIssueOwnerVulnerabilityTypeEnum["NginxDirectoryListing"] = "NginxDirectoryListing";
-    VersionIssueOwnerVulnerabilityTypeEnum["LiteSpeedDirectoryListing"] = "LiteSpeedDirectoryListing";
-    VersionIssueOwnerVulnerabilityTypeEnum["GenericEmailDisclosure"] = "GenericEmailDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["DefaultIis8Page"] = "DefaultIis8Page";
-    VersionIssueOwnerVulnerabilityTypeEnum["ShellScriptIdentified"] = "ShellScriptIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleDatabaseConnectionStringIdentified"] = "PossibleDatabaseConnectionStringIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["UncServerAndShareDisclosure"] = "UNCServerAndShareDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["HstsNotEnabled"] = "HstsNotEnabled";
-    VersionIssueOwnerVulnerabilityTypeEnum["HstsMaxAge"] = "HstsMaxAge";
-    VersionIssueOwnerVulnerabilityTypeEnum["HstsViaHttp"] = "HstsViaHttp";
-    VersionIssueOwnerVulnerabilityTypeEnum["HstsErrors"] = "HstsErrors";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordPressOutOfDate"] = "WordPressOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["DrupalOutOfDate"] = "DrupalOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["JoomlaOutOfDate"] = "JoomlaOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["MediaWikiOutOfDate"] = "MediaWikiOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["MovableTypeOutOfDate"] = "MovableTypeOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["OscommerceOutOfDate"] = "OscommerceOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["PhpBbOutOfDate"] = "PhpBBOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["TWikiOutOfDate"] = "TWikiOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordPressIdentified"] = "WordPressIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["DrupalIdentified"] = "DrupalIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["JoomlaIdentified"] = "JoomlaIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["MediaWikiIdentified"] = "MediaWikiIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["MovableTypeIdentified"] = "MovableTypeIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["OscommerceIdentified"] = "OscommerceIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["PhpBbIdentified"] = "PhpBBIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["TWikiIdentified"] = "TWikiIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["RceRorXml"] = "RceRorXml";
-    VersionIssueOwnerVulnerabilityTypeEnum["RceRorJson"] = "RceRorJson";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleRceRorXml"] = "PossibleRceRorXml";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleRceRorJson"] = "PossibleRceRorJson";
-    VersionIssueOwnerVulnerabilityTypeEnum["ModSslVersionDisclosure"] = "ModSslVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["PhpmyAdminIdentified"] = "PHPMyAdminIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["WebalizerIdentified"] = "WebalizerIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["RubyVersionDisclosure"] = "RubyVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["WebrickVersionDisclosure"] = "WebrickVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["OptionsMethodEnabled"] = "OptionsMethodEnabled";
-    VersionIssueOwnerVulnerabilityTypeEnum["WebDavEnabled"] = "WebDavEnabled";
-    VersionIssueOwnerVulnerabilityTypeEnum["WebDavDirectoryHasWritePermissions"] = "WebDavDirectoryHasWritePermissions";
-    VersionIssueOwnerVulnerabilityTypeEnum["CodeExecutionViaWebDav"] = "CodeExecutionViaWebDav";
-    VersionIssueOwnerVulnerabilityTypeEnum["WebDavDirectoryListing"] = "WebDavDirectoryListing";
-    VersionIssueOwnerVulnerabilityTypeEnum["CsrfDetected"] = "CsrfDetected";
-    VersionIssueOwnerVulnerabilityTypeEnum["CsrfInLoginFormDetected"] = "CsrfInLoginFormDetected";
-    VersionIssueOwnerVulnerabilityTypeEnum["CookieLeakageInAntiCsrfTokenDetected"] = "CookieLeakageInAntiCsrfTokenDetected";
-    VersionIssueOwnerVulnerabilityTypeEnum["MisconfiguredFrame"] = "MisconfiguredFrame";
-    VersionIssueOwnerVulnerabilityTypeEnum["InsecureFrameExternal"] = "InsecureFrameExternal";
-    VersionIssueOwnerVulnerabilityTypeEnum["DomBasedXss"] = "DomBasedXss";
-    VersionIssueOwnerVulnerabilityTypeEnum["NuSoapVersionDisclosure"] = "NuSoapVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["NuSoapOutOfDate"] = "NuSoapOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["AutoCompleteEnabledPasswordField"] = "AutoCompleteEnabledPasswordField";
-    VersionIssueOwnerVulnerabilityTypeEnum["NginxOutOfDate"] = "NginxOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["PerlSourceCodeDisclosure"] = "PerlSourceCodeDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["PythonSourceCodeDisclosure"] = "PythonSourceCodeDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["RubySourceCodeDisclosure"] = "RubySourceCodeDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["JavaSourceCodeDisclosure"] = "JavaSourceCodeDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["OpenSslHeartbleedVulnerability"] = "OpenSslHeartbleedVulnerability";
-    VersionIssueOwnerVulnerabilityTypeEnum["NginxIdentified"] = "NginxIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["ApacheIdentified"] = "ApacheIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["JavaStackTraceDisclosure"] = "JavaStackTraceDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["MissingXFrameOptionsHeader"] = "MissingXFrameOptionsHeader";
-    VersionIssueOwnerVulnerabilityTypeEnum["MissingContentTypeHeader"] = "MissingContentTypeHeader";
-    VersionIssueOwnerVulnerabilityTypeEnum["CommandInjectionShellshock"] = "CommandInjectionShellshock";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleReflectedFileDownload"] = "PossibleReflectedFileDownload";
-    VersionIssueOwnerVulnerabilityTypeEnum["InsecureJsonpEndpoint"] = "InsecureJsonpEndpoint";
-    VersionIssueOwnerVulnerabilityTypeEnum["InsecureReflectedContent"] = "InsecureReflectedContent";
-    VersionIssueOwnerVulnerabilityTypeEnum["MisconfiguredAccessControlOrigin"] = "MisconfiguredAccessControlOrigin";
-    VersionIssueOwnerVulnerabilityTypeEnum["PassiveMixedContent"] = "PassiveMixedContent";
-    VersionIssueOwnerVulnerabilityTypeEnum["Teapot"] = "Teapot";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleXxe"] = "PossibleXxe";
-    VersionIssueOwnerVulnerabilityTypeEnum["Xxe"] = "Xxe";
-    VersionIssueOwnerVulnerabilityTypeEnum["UnrestrictedFileUpload"] = "UnrestrictedFileUpload";
-    VersionIssueOwnerVulnerabilityTypeEnum["CodeExecutionViaFileUpload"] = "CodeExecutionViaFileUpload";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleCreditCardDisclosure"] = "PossibleCreditCardDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["RsaPrivateKeyDetected"] = "RsaPrivateKeyDetected";
-    VersionIssueOwnerVulnerabilityTypeEnum["RceInHttpSys"] = "RceInHttpSys";
-    VersionIssueOwnerVulnerabilityTypeEnum["OpenRedirectInPost"] = "OpenRedirectInPost";
-    VersionIssueOwnerVulnerabilityTypeEnum["FormHijacking"] = "FormHijacking";
-    VersionIssueOwnerVulnerabilityTypeEnum["BaseTagHijacking"] = "BaseTagHijacking";
-    VersionIssueOwnerVulnerabilityTypeEnum["WindowsShortFilename"] = "WindowsShortFilename";
-    VersionIssueOwnerVulnerabilityTypeEnum["RorDatabaseConfigurationFileDetected"] = "RorDatabaseConfigurationFileDetected";
-    VersionIssueOwnerVulnerabilityTypeEnum["RorDevelopmentModeEnabled"] = "RorDevelopmentModeEnabled";
-    VersionIssueOwnerVulnerabilityTypeEnum["RorVersionDisclosure"] = "RorVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["RubyGemsVersionDisclosure"] = "RubyGemsVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["RubyGemsOutOfDate"] = "RubyGemsOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["RubyOutOfDate"] = "RubyOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["RorOutOfDate"] = "RorOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["PythonOutOfDate"] = "PythonOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["PerlOutOfDate"] = "PerlOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["DjangoDebugModeEnabled"] = "DjangoDebugModeEnabled";
-    VersionIssueOwnerVulnerabilityTypeEnum["DjangoVersionDisclosure"] = "DjangoVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["DjangoOutOfDate"] = "DjangoOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["PhpLiteAdminIdentified"] = "PhpLiteAdminIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["AdminerIdentified"] = "AdminerIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["MicrosoftIisLogFileIdentified"] = "MicrosoftIisLogFileIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["PhpMoAdminIdentified"] = "PhpMoAdminIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["DbNinjaIdentified"] = "DbNinjaIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["LaravelEnvironmentConfigurationFileDetected"] = "LaravelEnvironmentConfigurationFileDetected";
-    VersionIssueOwnerVulnerabilityTypeEnum["LaravelDebugModeEnabled"] = "LaravelDebugModeEnabled";
-    VersionIssueOwnerVulnerabilityTypeEnum["LaravelStackTraceDisclosure"] = "LaravelStackTraceDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["SublimeSftpConfigFileDetected"] = "SublimeSftpConfigFileDetected";
-    VersionIssueOwnerVulnerabilityTypeEnum["RorStackTraceDisclosure"] = "RorStackTraceDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["JqueryOutOfDate"] = "JqueryOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["JqueryMigrateOutOfDate"] = "JqueryMigrateOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["JqueryMobileOutOfDate"] = "JqueryMobileOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["JqueryUiDialogOutOfDate"] = "JqueryUiDialogOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["JqueryUiAutocompleteOutOfDate"] = "JqueryUiAutocompleteOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["JqueryUiTooltipOutOfDate"] = "JqueryUiTooltipOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["PrettyPhotoOutOfDate"] = "PrettyPhotoOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["JPlayerOutOfDate"] = "jPlayerOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["YuiOutOfDate"] = "YuiOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["PrototypejsOutOfDate"] = "PrototypejsOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["EmberOutOfDate"] = "EmberOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["DojoOutOfDate"] = "DojoOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["AngularjsOutOfDate"] = "AngularjsOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["BackbonejsOutOfDate"] = "BackbonejsOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["MustachejsOutOfDate"] = "MustachejsOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["HandlebarsjsOutOfDate"] = "HandlebarsjsOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["EasyXdmOutOfDate"] = "EasyXdmOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["PluploadOutOfDate"] = "PluploadOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["DomPurifyOutOfDate"] = "DomPurifyOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["DwrOutOfDate"] = "DwrOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["InsecureHttpUsage"] = "InsecureHttpUsage";
-    VersionIssueOwnerVulnerabilityTypeEnum["OpenCartIdentified"] = "OpenCartIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["OpenCartOutOfDate"] = "OpenCartOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["MissingXssProtectionHeader"] = "MissingXssProtectionHeader";
-    VersionIssueOwnerVulnerabilityTypeEnum["VideojsOutOfDate"] = "VideojsOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["TlsVersion1Support"] = "TlsVersion1Support";
-    VersionIssueOwnerVulnerabilityTypeEnum["SameSiteCookieNotImplemented"] = "SameSiteCookieNotImplemented";
-    VersionIssueOwnerVulnerabilityTypeEnum["ReverseTabnabbing"] = "ReverseTabnabbing";
-    VersionIssueOwnerVulnerabilityTypeEnum["SubResourceIntegrityNotImplemented"] = "SubResourceIntegrityNotImplemented";
-    VersionIssueOwnerVulnerabilityTypeEnum["SubResourceIntegrityHashInvalid"] = "SubResourceIntegrityHashInvalid";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleSsrf"] = "PossibleSsrf";
-    VersionIssueOwnerVulnerabilityTypeEnum["OutOfBandSqlInjection"] = "OutOfBandSqlInjection";
-    VersionIssueOwnerVulnerabilityTypeEnum["OutOfBandXxe"] = "OutOfBandXxe";
-    VersionIssueOwnerVulnerabilityTypeEnum["BlindXss"] = "BlindXss";
-    VersionIssueOwnerVulnerabilityTypeEnum["OutOfBandRfi"] = "OutOfBandRfi";
-    VersionIssueOwnerVulnerabilityTypeEnum["OutOfBandRcePhp"] = "OutOfBandRcePhp";
-    VersionIssueOwnerVulnerabilityTypeEnum["OutOfBandCommandInjection"] = "OutOfBandCommandInjection";
-    VersionIssueOwnerVulnerabilityTypeEnum["SsrfAws"] = "SsrfAws";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleSsrfAws"] = "PossibleSsrfAws";
-    VersionIssueOwnerVulnerabilityTypeEnum["SsrfElmah"] = "SsrfElmah";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleSsrfElmah"] = "PossibleSsrfElmah";
-    VersionIssueOwnerVulnerabilityTypeEnum["SsrfTrace"] = "SsrfTrace";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleSsrfTrace"] = "PossibleSsrfTrace";
-    VersionIssueOwnerVulnerabilityTypeEnum["OutOfBandRceAsp"] = "OutOfBandRceAsp";
-    VersionIssueOwnerVulnerabilityTypeEnum["OutOfBandRcePerl"] = "OutOfBandRcePerl";
-    VersionIssueOwnerVulnerabilityTypeEnum["DomBasedOpenRedirect"] = "DomBasedOpenRedirect";
-    VersionIssueOwnerVulnerabilityTypeEnum["DeprecatedCspHeader"] = "DeprecatedCspHeader";
-    VersionIssueOwnerVulnerabilityTypeEnum["CspNotImplemented"] = "CspNotImplemented";
-    VersionIssueOwnerVulnerabilityTypeEnum["InvalidCspMetaTag"] = "InvalidCspMetaTag";
-    VersionIssueOwnerVulnerabilityTypeEnum["InvalidCspInsructionInMeta"] = "InvalidCspInsructionInMeta";
-    VersionIssueOwnerVulnerabilityTypeEnum["CspKeywordUsedAsTarget"] = "CspKeywordUsedAsTarget";
-    VersionIssueOwnerVulnerabilityTypeEnum["UnsafeCspInstructionDetected"] = "UnsafeCspInstructionDetected";
-    VersionIssueOwnerVulnerabilityTypeEnum["NonceDetectedInCsp"] = "NonceDetectedInCsp";
-    VersionIssueOwnerVulnerabilityTypeEnum["NoScriptTagDetectedWithNonce"] = "NoScriptTagDetectedWithNonce";
-    VersionIssueOwnerVulnerabilityTypeEnum["SameNonceValueDetected"] = "SameNonceValueDetected";
-    VersionIssueOwnerVulnerabilityTypeEnum["DefaultSrcUsedInCsp"] = "DefaultSrcUsedInCsp";
-    VersionIssueOwnerVulnerabilityTypeEnum["InsecureReportUriDetectedInCsp"] = "InsecureReportUriDetectedInCsp";
-    VersionIssueOwnerVulnerabilityTypeEnum["ReportUriWithDifferentHostDetectedInCsp"] = "ReportUriWithDifferentHostDetectedInCsp";
-    VersionIssueOwnerVulnerabilityTypeEnum["WildcardDetectedInScheme"] = "WildcardDetectedInScheme";
-    VersionIssueOwnerVulnerabilityTypeEnum["WildcardDetectedInDomain"] = "WildcardDetectedInDomain";
-    VersionIssueOwnerVulnerabilityTypeEnum["WildcardDetectedInPort"] = "WildcardDetectedInPort";
-    VersionIssueOwnerVulnerabilityTypeEnum["UnsupportedHashDetectedInScriptInstruction"] = "UnsupportedHashDetectedInScriptInstruction";
-    VersionIssueOwnerVulnerabilityTypeEnum["InsecureNonceValueDetected"] = "InsecureNonceValueDetected";
-    VersionIssueOwnerVulnerabilityTypeEnum["SsrfElmahMvc"] = "SsrfElmahMvc";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleSsrfElmahMvc"] = "PossibleSsrfElmahMvc";
-    VersionIssueOwnerVulnerabilityTypeEnum["DeprecatedHeaderDetectedWithCspHeader"] = "DeprecatedHeaderDetectedWithCspHeader";
-    VersionIssueOwnerVulnerabilityTypeEnum["InvalidNonceDetectedInCsp"] = "InvalidNonceDetectedInCsp";
-    VersionIssueOwnerVulnerabilityTypeEnum["NoScriptTagDetectedWithHash"] = "NoScriptTagDetectedWithHash";
-    VersionIssueOwnerVulnerabilityTypeEnum["DataCspDirectiveDetected"] = "DataCspDirectiveDetected";
-    VersionIssueOwnerVulnerabilityTypeEnum["CspReportOnlyHeaderDetectedWithoutReportUri"] = "CspReportOnlyHeaderDetectedWithoutReportUri";
-    VersionIssueOwnerVulnerabilityTypeEnum["CspReportOnlyUsedInMeta"] = "CspReportOnlyUsedInMeta";
-    VersionIssueOwnerVulnerabilityTypeEnum["SingleHeaderMultipleCookies"] = "SingleHeaderMultipleCookies";
-    VersionIssueOwnerVulnerabilityTypeEnum["OutOfBandRceRoRXml"] = "OutOfBandRceRoRXml";
-    VersionIssueOwnerVulnerabilityTypeEnum["OutOfBandRceRoRJson"] = "OutOfBandRceRoRJson";
-    VersionIssueOwnerVulnerabilityTypeEnum["ObjectSrcNotUsed"] = "ObjectSrcNotUsed";
-    VersionIssueOwnerVulnerabilityTypeEnum["ApacheMultiChoiceEnabled"] = "ApacheMultiChoiceEnabled";
-    VersionIssueOwnerVulnerabilityTypeEnum["HttpOrHttpsDetectedOnScriptSrc"] = "HttpOrHttpsDetectedOnScriptSrc";
-    VersionIssueOwnerVulnerabilityTypeEnum["InsecureTargetUriDetectedInCsp"] = "InsecureTargetUriDetectedInCsp";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleTimeBasedSsrf"] = "PossibleTimeBasedSsrf";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleBlindXss"] = "PossibleBlindXss";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleSsrfSsh"] = "PossibleSsrfSsh";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleSsrfMySql"] = "PossibleSsrfMySql";
-    VersionIssueOwnerVulnerabilityTypeEnum["RceApacheStruts"] = "RceApacheStruts";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleRceApacheStruts"] = "PossibleRceApacheStruts";
-    VersionIssueOwnerVulnerabilityTypeEnum["ControllableCookie"] = "ControllableCookie";
-    VersionIssueOwnerVulnerabilityTypeEnum["ReferrerPolicyNotImplemented"] = "ReferrerPolicyNotImplemented";
-    VersionIssueOwnerVulnerabilityTypeEnum["ReferrerPolicyReferrerLeakToSameProtocol"] = "ReferrerPolicyReferrerLeakToSameProtocol";
-    VersionIssueOwnerVulnerabilityTypeEnum["ReferrerPolicyOriginLeakToCrossSite"] = "ReferrerPolicyOriginLeakToCrossSite";
-    VersionIssueOwnerVulnerabilityTypeEnum["ReferrerPolicySameProtocolLeak"] = "ReferrerPolicySameProtocolLeak";
-    VersionIssueOwnerVulnerabilityTypeEnum["ReferrerPolicyCrossOriginLeak"] = "ReferrerPolicyCrossOriginLeak";
-    VersionIssueOwnerVulnerabilityTypeEnum["ReferrerPolicyStrictCrossOriginLeak"] = "ReferrerPolicyStrictCrossOriginLeak";
-    VersionIssueOwnerVulnerabilityTypeEnum["ReferrerPolicyCrossSiteReferrerLeak"] = "ReferrerPolicyCrossSiteReferrerLeak";
-    VersionIssueOwnerVulnerabilityTypeEnum["ReferrerPolicyUnknown"] = "ReferrerPolicyUnknown";
-    VersionIssueOwnerVulnerabilityTypeEnum["ReferrerPolicyFallbackMissing"] = "ReferrerPolicyFallbackMissing";
-    VersionIssueOwnerVulnerabilityTypeEnum["MsSqlDatabaseNameDisclosure"] = "MsSqlDatabaseNameDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["MySqlDatabaseNameDisclosure"] = "MySqlDatabaseNameDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["ActiveMixedContent"] = "ActiveMixedContent";
-    VersionIssueOwnerVulnerabilityTypeEnum["MixedContentScript"] = "MixedContentScript";
-    VersionIssueOwnerVulnerabilityTypeEnum["MixedContentResource"] = "MixedContentResource";
-    VersionIssueOwnerVulnerabilityTypeEnum["KnockoutjsOutOfDate"] = "KnockoutjsOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["BootstrapjsOutOfDate"] = "BootstrapjsOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["TypeaheadjsOutOfDate"] = "TypeaheadjsOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["FootablejsOutOfDate"] = "FootablejsOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["SortablejsOutOfDate"] = "SortablejsOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["ImagePickerOutOfDate"] = "ImagePickerOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["JqueryValidationOutOfDate"] = "JqueryValidationOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["AspNetSignalROutOfDate"] = "AspNetSignalROutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["Select2OutOfDate"] = "Select2OutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["MomentjsOutOfDate"] = "MomentjsOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["Html5ShivOutOfDate"] = "Html5ShivOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["IonRangeSliderOutOfDate"] = "IonRangeSliderOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["JsTreeOutOfDate"] = "JsTreeOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["ModernizrOutOfDate"] = "ModernizrOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["RespondjsOutOfDate"] = "RespondjsOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["FuelUxOutOfDate"] = "FuelUxOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["BootboxOutOfDate"] = "BootboxOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["KnockoutMappingOutOfDate"] = "KnockoutMappingOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["JqueryMaskOutOfDate"] = "JqueryMaskOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["Bootstrap3DateTimePickerOutOfDate"] = "Bootstrap3DateTimePickerOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["BootstrapToggleOutOfDate"] = "BootstrapToggleOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["JavaScriptCookieOutOfDate"] = "JavaScriptCookieOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["MixedContentFont"] = "MixedContentFont";
-    VersionIssueOwnerVulnerabilityTypeEnum["MixedContentXhrEndpoint"] = "MixedContentXhrEndpoint";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleRceNodeJs"] = "PossibleRceNodeJs";
-    VersionIssueOwnerVulnerabilityTypeEnum["RceNodeJs"] = "RceNodeJs";
-    VersionIssueOwnerVulnerabilityTypeEnum["ReactOutOfDate"] = "ReactOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleSsrfApacheServerStatus"] = "PossibleSsrfApacheServerStatus";
-    VersionIssueOwnerVulnerabilityTypeEnum["DefaultIis85Page"] = "DefaultIis85Page";
-    VersionIssueOwnerVulnerabilityTypeEnum["DefaultIis100Page"] = "DefaultIis100Page";
-    VersionIssueOwnerVulnerabilityTypeEnum["DefaultIis75Page"] = "DefaultIis75Page";
-    VersionIssueOwnerVulnerabilityTypeEnum["DefaultIis7XPage"] = "DefaultIis7XPage";
-    VersionIssueOwnerVulnerabilityTypeEnum["CkeditorOutOfDate"] = "CkeditorOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordPressSetupConfigurationFile"] = "WordPressSetupConfigurationFile";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleOutOfBandCommandInjectionStruts052"] = "PossibleOutOfBandCommandInjectionStruts052";
-    VersionIssueOwnerVulnerabilityTypeEnum["OutOfBandCommandInjectionStruts053"] = "OutOfBandCommandInjectionStruts053";
-    VersionIssueOwnerVulnerabilityTypeEnum["LighttpdOutOfDate"] = "LighttpdOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["PostgreSqlOutOfDate"] = "PostgreSqlOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["RceApacheStrutsS0253"] = "RceApacheStrutsS0253";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleRceApacheStrutsS0253"] = "PossibleRceApacheStrutsS0253";
-    VersionIssueOwnerVulnerabilityTypeEnum["RceApacheStrutsS2046"] = "RceApacheStrutsS2046";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleRceApacheStrutsS2046"] = "PossibleRceApacheStrutsS2046";
-    VersionIssueOwnerVulnerabilityTypeEnum["RceApacheStrutsS2045"] = "RceApacheStrutsS2045";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleRceApacheStrutsS2045"] = "PossibleRceApacheStrutsS2045";
-    VersionIssueOwnerVulnerabilityTypeEnum["AbanteCartIdentified"] = "AbanteCartIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["AbanteCartOutOfDate"] = "AbanteCartOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["AmpacheIdentified"] = "AmpacheIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["AmpacheOutOfDate"] = "AmpacheOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["AtutorIdentified"] = "AtutorIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["AtutorOutOfDate"] = "AtutorOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["ChamiloIdentified"] = "ChamiloIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["ChamiloOutOfDate"] = "ChamiloOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["ClarolineIdentified"] = "ClarolineIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["ClarolineOutOfDate"] = "ClarolineOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["CollabtiveIdentified"] = "CollabtiveIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["CollabtiveOutOfDate"] = "CollabtiveOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["Concrete5Identified"] = "Concrete5Identified";
-    VersionIssueOwnerVulnerabilityTypeEnum["Concrete5OutOfDate"] = "Concrete5OutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["CoppermineIdentified"] = "CoppermineIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["CoppermineOutOfDate"] = "CoppermineOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["CubeCartIdentified"] = "CubeCartIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["CubeCartOutOfDate"] = "CubeCartOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["DokuWikiIdentified"] = "DokuWikiIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["DokuWikiOutOfDate"] = "DokuWikiOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["DotClearIdentified"] = "DotClearIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["DotClearOutOfDate"] = "DotClearOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["E107Identified"] = "E107Identified";
-    VersionIssueOwnerVulnerabilityTypeEnum["E107OutOfDate"] = "E107OutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["FamilyConnectionsIdentified"] = "FamilyConnectionsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["FamilyConnectionsOutOfDate"] = "FamilyConnectionsOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["FluxBbIdentified"] = "FluxBBIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["FluxBbOutOfDate"] = "FluxBBOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["FormToolsIdentified"] = "FormToolsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["FormToolsOutOfDate"] = "FormToolsOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["FrontAccountingIdentified"] = "FrontAccountingIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["FrontAccountingOutOfDate"] = "FrontAccountingOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["GibbonEduIdentified"] = "GibbonEduIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["GibbonEduOutOfDate"] = "GibbonEduOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["HeskIdentified"] = "HeskIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["HeskOutOfDate"] = "HeskOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["LimeSurveyIdentified"] = "LimeSurveyIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["LimeSurveyOutOfDate"] = "LimeSurveyOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["LiveHelperChatIdentified"] = "LiveHelperChatIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["LiveHelperChatOutOfDate"] = "LiveHelperChatOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["LogaholicIdentified"] = "LogaholicIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["LogaholicOutOfDate"] = "LogaholicOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["MibewMessengerIdentified"] = "MibewMessengerIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["MibewMessengerOutOfDate"] = "MibewMessengerOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["ModXIdentified"] = "ModXIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["ModXOutOfDate"] = "ModXOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["MoodleIdentified"] = "MoodleIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["MoodleOutOfDate"] = "MoodleOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["MyBbIdentified"] = "MyBBIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["MyBbOutOfDate"] = "MyBBOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["OmekaIdentified"] = "OmekaIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["OmekaOutOfDate"] = "OmekaOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["OsClassIdentified"] = "OsClassIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["OsClassOutOfDate"] = "OsClassOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["OsTicketIdentified"] = "OsTicketIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["OsTicketOutOfDate"] = "OsTicketOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["PrestashopIdentified"] = "PrestashopIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["PrestashopOutOfDate"] = "PrestashopOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["EspoCrmIdentified"] = "EspoCrmIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["EspoCrmOutOfDate"] = "EspoCrmOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["ElggIdentified"] = "ElggIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["ElggOutOfDate"] = "ElggOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["PhorumIdentified"] = "PhorumIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["PhorumOutOfDate"] = "PhorumOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["PhpFusionIdentified"] = "PhpFusionIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["PhpFusionOutOfDate"] = "PhpFusionOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["PhpAddressBookIdentified"] = "PhpAddressBookIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["PhpAddressBookOutOfDate"] = "PhpAddressBookOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["PhpListIdentified"] = "PhpListIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["PhpListOutOfDate"] = "PhpListOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["PmWikiIdentified"] = "PmWikiIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["PmWikiOutOfDate"] = "PmWikiOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["PodcastGeneratorIdentified"] = "PodcastGeneratorIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["PodcastGeneratorOutOfDate"] = "PodcastGeneratorOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["ProjectSendIdentified"] = "ProjectSendIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["ProjectSendOutOfDate"] = "ProjectSendOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["Question2AnswerIdentified"] = "Question2AnswerIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["Question2AnswerOutOfDate"] = "Question2AnswerOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["RukovoditelIdentified"] = "RukovoditelIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["RukovoditelOutOfDate"] = "RukovoditelOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["SeoPanelIdentified"] = "SeoPanelIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["SeoPanelOutOfDate"] = "SeoPanelOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["SerendipityIdentified"] = "SerendipityIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["SerendipityOutOfDate"] = "SerendipityOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["TcExamIdentified"] = "TcExamIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["TcExamOutOfDate"] = "TcExamOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["VanillaForumsIdentified"] = "VanillaForumsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["VanillaForumsOutOfDate"] = "VanillaForumsOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["WebErpIdentified"] = "WebErpIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["WebErpOutOfDate"] = "WebErpOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["WeBidIdentified"] = "WeBidIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["WeBidOutOfDate"] = "WeBidOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["XoopsIdentified"] = "XoopsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["XoopsOutOfDate"] = "XoopsOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["YetiForceCrmIdentified"] = "YetiForceCrmIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["YetiForceCrmOutOfDate"] = "YetiForceCrmOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["YourlsIdentified"] = "YourlsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["YourlsOutOfDate"] = "YourlsOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["ZenCartIdentified"] = "ZenCartIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["ZenCartOutOfDate"] = "ZenCartOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["ZenPhotoIdentified"] = "ZenPhotoIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["ZenPhotoOutOfDate"] = "ZenPhotoOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["PiwigoIdentified"] = "PiwigoIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["PiwigoOutOfDate"] = "PiwigoOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["ZurmoIdentified"] = "ZurmoIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["ZurmoOutOfDate"] = "ZurmoOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["OwnCloudIdentified"] = "OwnCloudIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["OwnCloudOutOfDate"] = "OwnCloudOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["PhpMyFaqIdentified"] = "PhpMyFaqIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["PhpMyFaqOutOfDate"] = "PhpMyFaqOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["RoundcubeIdentified"] = "RoundcubeIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["RoundcubeOutOfDate"] = "RoundcubeOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["ZikulaIdentified"] = "ZikulaIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["ZikulaOutOfDate"] = "ZikulaOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["WeakRobotOracleDetected"] = "WeakRobotOracleDetected";
-    VersionIssueOwnerVulnerabilityTypeEnum["StrongRobotOracleDetected"] = "StrongRobotOracleDetected";
-    VersionIssueOwnerVulnerabilityTypeEnum["ZeptojsOutOfDate"] = "ZeptojsOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["HammerjsOutOfDate"] = "HammerjsOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["VuejsOutOfDate"] = "VuejsOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["PhaserOutOfDate"] = "PhaserOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["ChartjsOutOfDate"] = "ChartjsOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["RamdaOutOfDate"] = "RamdaOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["RevealJsOutOfDate"] = "RevealJsOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["PixiJsOutOfDate"] = "PixiJsOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["FabricJsOutOfDate"] = "FabricJsOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["SemanticUiOutOfDate"] = "SemanticUIOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["LeafletOutOfDate"] = "LeafletOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleOutOfBandCommandInjection"] = "PossibleOutOfBandCommandInjection";
-    VersionIssueOwnerVulnerabilityTypeEnum["FoundationOutOfDate"] = "FoundationOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["ThreeJsOutOfDate"] = "ThreeJsOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["PdfJsOutOfDate"] = "PdfJsOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["ExpressJsIdentified"] = "ExpressJsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleSsti"] = "PossibleSsti";
-    VersionIssueOwnerVulnerabilityTypeEnum["Ssti"] = "Ssti";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleCodeExecutionViaSsti"] = "PossibleCodeExecutionViaSsti";
-    VersionIssueOwnerVulnerabilityTypeEnum["CodeExecutionViaSsti"] = "CodeExecutionViaSsti";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleCodeExecutionViaSstiTwig"] = "PossibleCodeExecutionViaSstiTwig";
-    VersionIssueOwnerVulnerabilityTypeEnum["CodeExecutionViaSstiTwig"] = "CodeExecutionViaSstiTwig";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleCodeExecutionViaSstiMako"] = "PossibleCodeExecutionViaSstiMako";
-    VersionIssueOwnerVulnerabilityTypeEnum["CodeExecutionViaSstiMako"] = "CodeExecutionViaSstiMako";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleCodeExecutionViaSstiSmarty"] = "PossibleCodeExecutionViaSstiSmarty";
-    VersionIssueOwnerVulnerabilityTypeEnum["CodeExecutionViaSstiSmarty"] = "CodeExecutionViaSstiSmarty";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleCodeExecutionViaSstiNunjucks"] = "PossibleCodeExecutionViaSstiNunjucks";
-    VersionIssueOwnerVulnerabilityTypeEnum["CodeExecutionViaSstiNunjucks"] = "CodeExecutionViaSstiNunjucks";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleCodeExecutionViaSstiJade"] = "PossibleCodeExecutionViaSstiJade";
-    VersionIssueOwnerVulnerabilityTypeEnum["CodeExecutionViaSstiJade"] = "CodeExecutionViaSstiJade";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleSstiDot"] = "PossibleSstiDot";
-    VersionIssueOwnerVulnerabilityTypeEnum["SstiDot"] = "SstiDot";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleCodeExecutionViaSstiDot"] = "PossibleCodeExecutionViaSstiDot";
-    VersionIssueOwnerVulnerabilityTypeEnum["CodeExecutionViaSstiDot"] = "CodeExecutionViaSstiDot";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleSstiEjs"] = "PossibleSstiEjs";
-    VersionIssueOwnerVulnerabilityTypeEnum["SstiEjs"] = "SstiEjs";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleCodeExecutionViaSstiEjs"] = "PossibleCodeExecutionViaSstiEjs";
-    VersionIssueOwnerVulnerabilityTypeEnum["CodeExecutionViaSstiEjs"] = "CodeExecutionViaSstiEjs";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleCodeExecutionViaSstiMarko"] = "PossibleCodeExecutionViaSstiMarko";
-    VersionIssueOwnerVulnerabilityTypeEnum["CodeExecutionViaSstiMarko"] = "CodeExecutionViaSstiMarko";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleCodeExecutionViaSstiTornado"] = "PossibleCodeExecutionViaSstiTornado";
-    VersionIssueOwnerVulnerabilityTypeEnum["CodeExecutionViaSstiTornado"] = "CodeExecutionViaSstiTornado";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleCodeExecutionViaSstiFreeMarker"] = "PossibleCodeExecutionViaSstiFreeMarker";
-    VersionIssueOwnerVulnerabilityTypeEnum["CodeExecutionViaSstiFreeMarker"] = "CodeExecutionViaSstiFreeMarker";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleSstiVelocity"] = "PossibleSstiVelocity";
-    VersionIssueOwnerVulnerabilityTypeEnum["SstiVelocity"] = "SstiVelocity";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleCodeExecutionViaSstiVelocity"] = "PossibleCodeExecutionViaSstiVelocity";
-    VersionIssueOwnerVulnerabilityTypeEnum["CodeExecutionViaSstiVelocity"] = "CodeExecutionViaSstiVelocity";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleSstiErb"] = "PossibleSstiErb";
-    VersionIssueOwnerVulnerabilityTypeEnum["SstiErb"] = "SstiErb";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleCodeExecutionViaSstiErb"] = "PossibleCodeExecutionViaSstiErb";
-    VersionIssueOwnerVulnerabilityTypeEnum["CodeExecutionViaSstiErb"] = "CodeExecutionViaSstiErb";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleCodeExecutionViaSstiSlim"] = "PossibleCodeExecutionViaSstiSlim";
-    VersionIssueOwnerVulnerabilityTypeEnum["CodeExecutionViaSstiSlim"] = "CodeExecutionViaSstiSlim";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleCodeExecutionViaSstiJinja"] = "PossibleCodeExecutionViaSstiJinja";
-    VersionIssueOwnerVulnerabilityTypeEnum["CodeExecutionViaSstiJinja"] = "CodeExecutionViaSstiJinja";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleSstiFreeMarker"] = "PossibleSstiFreeMarker";
-    VersionIssueOwnerVulnerabilityTypeEnum["SstiFreeMarker"] = "SstiFreeMarker";
-    VersionIssueOwnerVulnerabilityTypeEnum["OutOfBandCodeExecutionViaSsti"] = "OutOfBandCodeExecutionViaSsti";
-    VersionIssueOwnerVulnerabilityTypeEnum["OutOfBandCodeExecutionViaSstiMako"] = "OutOfBandCodeExecutionViaSstiMako";
-    VersionIssueOwnerVulnerabilityTypeEnum["OutOfBandCodeExecutionViaSstiTornado"] = "OutOfBandCodeExecutionViaSstiTornado";
-    VersionIssueOwnerVulnerabilityTypeEnum["OutOfBandCodeExecutionViaSstiJinja"] = "OutOfBandCodeExecutionViaSstiJinja";
-    VersionIssueOwnerVulnerabilityTypeEnum["OutOfBandCodeExecutionViaSstiMarko"] = "OutOfBandCodeExecutionViaSstiMarko";
-    VersionIssueOwnerVulnerabilityTypeEnum["OutOfBandCodeExecutionViaSstiDot"] = "OutOfBandCodeExecutionViaSstiDot";
-    VersionIssueOwnerVulnerabilityTypeEnum["OutOfBandCodeExecutionViaSstiNunjucks"] = "OutOfBandCodeExecutionViaSstiNunjucks";
-    VersionIssueOwnerVulnerabilityTypeEnum["OutOfBandCodeExecutionViaSstiJade"] = "OutOfBandCodeExecutionViaSstiJade";
-    VersionIssueOwnerVulnerabilityTypeEnum["OutOfBandCodeExecutionViaSstiSmarty"] = "OutOfBandCodeExecutionViaSstiSmarty";
-    VersionIssueOwnerVulnerabilityTypeEnum["ExpectCtIsMissing"] = "ExpectCtIsMissing";
-    VersionIssueOwnerVulnerabilityTypeEnum["ExpectCtShouldBeServedOverTls"] = "ExpectCtShouldBeServedOverTls";
-    VersionIssueOwnerVulnerabilityTypeEnum["ExpectCtReportOnlyModeIsEnabled"] = "ExpectCtReportOnlyModeIsEnabled";
-    VersionIssueOwnerVulnerabilityTypeEnum["ExpectCtErrors"] = "ExpectCtErrors";
-    VersionIssueOwnerVulnerabilityTypeEnum["AuthenticationRequired"] = "AuthenticationRequired";
-    VersionIssueOwnerVulnerabilityTypeEnum["CaddyWebServerIdentified"] = "CaddyWebServerIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["AahGoServerIdentified"] = "AahGoServerIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["JbossApplicationServerIdentified"] = "JbossApplicationServerIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["JbossApplicationServerVersionDisclosure"] = "JbossApplicationServerVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["Ckeditor5OutOfDate"] = "Ckeditor5OutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["CakePhpIdentified"] = "CakePhpIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["CakePhpStackTraceDisclosure"] = "CakePhpStackTraceDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["DefaultPageCakePhp"] = "DefaultPageCakePhp";
-    VersionIssueOwnerVulnerabilityTypeEnum["CakePhpVersionDisclosure"] = "CakePhpVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["CakePhpOutOfDate"] = "CakePhpOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["CherryPyVersionDisclosure"] = "CherryPyVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["CherryPyOutOfDate"] = "CherryPyOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["OutOfBandCodeExecutionViaSstiEjs"] = "OutOfBandCodeExecutionViaSstiEjs";
-    VersionIssueOwnerVulnerabilityTypeEnum["OutOfBandCodeExecutionViaSstiTwig"] = "OutOfBandCodeExecutionViaSstiTwig";
-    VersionIssueOwnerVulnerabilityTypeEnum["OutOfBandCodeExecutionViaSstiFreeMarker"] = "OutOfBandCodeExecutionViaSstiFreeMarker";
-    VersionIssueOwnerVulnerabilityTypeEnum["OutOfBandCodeExecutionViaSstiVelocity"] = "OutOfBandCodeExecutionViaSstiVelocity";
-    VersionIssueOwnerVulnerabilityTypeEnum["CherryPyStackTraceDisclosure"] = "CherryPyStackTraceDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["IntrojsOutOfDate"] = "IntrojsOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["AxiosOutOfDate"] = "AxiosOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["Fingerprintjs2OutOfDate"] = "Fingerprintjs2OutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["XRegExpOutOfDate"] = "XRegExpOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["DataTablesOutOfDate"] = "DataTablesOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["LazyjsOutOfDate"] = "LazyjsOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["FancyBoxOutOfDate"] = "FancyBoxOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["UnderscorejsOutOfDate"] = "UnderscorejsOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["LightboxOutOfDate"] = "LightboxOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["JbossApplicationServerOutOfDate"] = "JbossApplicationServerOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["SweetAlert2OutOfDate"] = "SweetAlert2OutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["LodashOutOfDate"] = "LodashOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["BluebirdOutOfDate"] = "BluebirdOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["PolymerOutOfDate"] = "PolymerOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["ReviveAdserverIdentified"] = "ReviveAdserverIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["ReviveAdserverOutOfDate"] = "ReviveAdserverOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["B2evolutionIdentified"] = "B2evolutionIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["B2evolutionOutOfDate"] = "B2evolutionOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["DolphinIdentified"] = "DolphinIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["DolphinOutOfDate"] = "DolphinOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["Ph7CmsIdentified"] = "PH7CMSIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["Ph7CmsOutOfDate"] = "PH7CMSOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["QdPmIdentified"] = "QdPMIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["QdPmOutOfDate"] = "QdPMOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["VtigerIdentified"] = "VtigerIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["VtigerOutOfDate"] = "VtigerOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["DolibarrIdentified"] = "DolibarrIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["DolibarrOutOfDate"] = "DolibarrOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["ClipBucketIdentified"] = "ClipBucketIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["ClipBucketOutOfDate"] = "ClipBucketOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["ContaoIdentified"] = "ContaoIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["ContaoOutOfDate"] = "ContaoOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["MisconfiguredXFrameOptionsHeader"] = "MisconfiguredXFrameOptionsHeader";
-    VersionIssueOwnerVulnerabilityTypeEnum["RubyErrorDisclosure"] = "RubyErrorDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["WpEngineConfigurationFileDetected"] = "WpEngineConfigurationFileDetected";
-    VersionIssueOwnerVulnerabilityTypeEnum["SessionCookieNotMarkedAsSecure"] = "SessionCookieNotMarkedAsSecure";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleHeaderInjection"] = "PossibleHeaderInjection";
-    VersionIssueOwnerVulnerabilityTypeEnum["OracleOutOfDate"] = "OracleOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["TsWebIdentified"] = "TsWebIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["DrupalRce"] = "DrupalRce";
-    VersionIssueOwnerVulnerabilityTypeEnum["MithrilOutOfDate"] = "MithrilOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["EfJsOutOfDate"] = "EfJsOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["MathJsOutOfDate"] = "MathJsOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["ListJsOutOfDate"] = "ListJsOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["RequireJsOutOfDate"] = "RequireJsOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["RiotJsOutOfDate"] = "RiotJsOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["InfernoOutOfDate"] = "InfernoOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["MarionetteJsOutOfDate"] = "MarionetteJsOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["GsapOutOfDate"] = "GsapOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["TravisYamlIdentified"] = "TravisYamlIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["UnicodeTransformationIssue"] = "UnicodeTransformationIssue";
-    VersionIssueOwnerVulnerabilityTypeEnum["MalwareIdentified"] = "MalwareIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["RorFileContentDisclosure"] = "RorFileContentDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["AppSiteAssociationIdentified"] = "AppSiteAssociationIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["OpenSearchIdentified"] = "OpenSearchIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["ServletSourceCodeDisclosure"] = "ServletSourceCodeDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["JspSourceCodeDisclosure"] = "JspSourceCodeDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["HtaccessIdentified"] = "HtaccessIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["RcePython"] = "RcePython";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleRcePython"] = "PossibleRcePython";
-    VersionIssueOwnerVulnerabilityTypeEnum["OutOfBandRcePython"] = "OutOfBandRcePython";
-    VersionIssueOwnerVulnerabilityTypeEnum["RceRuby"] = "RceRuby";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleRceRuby"] = "PossibleRceRuby";
-    VersionIssueOwnerVulnerabilityTypeEnum["OutOfBandRceRuby"] = "OutOfBandRceRuby";
-    VersionIssueOwnerVulnerabilityTypeEnum["SwaggerJsonIdentified"] = "SwaggerJsonIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["SslNotImplemented"] = "SslNotImplemented";
-    VersionIssueOwnerVulnerabilityTypeEnum["SecurityTxtIdentified"] = "SecurityTxtIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["RceApacheStrutsS2016"] = "RceApacheStrutsS2016";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleRceApacheStrutsS2016"] = "PossibleRceApacheStrutsS2016";
-    VersionIssueOwnerVulnerabilityTypeEnum["SlickOutOfDate"] = "SlickOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["ScrollRevealOutOfDate"] = "ScrollRevealOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["MathJaxOutOfDate"] = "MathJaxOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["RickshawOutOfDate"] = "RickshawOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["HighchartsOutOfDate"] = "HighchartsOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["SnapSvgOutOfDate"] = "SnapSvgOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["FlickityOutOfDate"] = "FlickityOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["D3JsOutOfDate"] = "D3JsOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["GoogleChartsOutOfDate"] = "GoogleChartsOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["HiawathaVersionDisclosure"] = "HiawathaVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["CherokeeVersionDisclosure"] = "CherokeeVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["HiawathaOutOfDate"] = "HiawathaOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["CherokeeOutOfDate"] = "CherokeeOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["WebLogicOutOfDate"] = "WebLogicOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["WebCacheDeception"] = "WebCacheDeception";
-    VersionIssueOwnerVulnerabilityTypeEnum["IisOutOfDate"] = "IisOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["ImmutablejsOutOfDate"] = "ImmutablejsOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["AxwaySecureTransportDetected"] = "AxwaySecureTransportDetected";
-    VersionIssueOwnerVulnerabilityTypeEnum["MisconfiguredXFrameOptionsHeaderMultipleDirectives"] = "MisconfiguredXFrameOptionsHeaderMultipleDirectives";
-    VersionIssueOwnerVulnerabilityTypeEnum["TlsVersion11Support"] = "TlsVersion11Support";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleSsrfOracleCloud"] = "PossibleSsrfOracleCloud";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleSsrfPacketCloud"] = "PossibleSsrfPacketCloud";
-    VersionIssueOwnerVulnerabilityTypeEnum["ExtJsOutOfDate"] = "ExtJsOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleHpp"] = "PossibleHpp";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleBreachAttack"] = "PossibleBreachAttack";
-    VersionIssueOwnerVulnerabilityTypeEnum["TelerikWebUiVersionDisclosure"] = "TelerikWebUiVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["TelerikWebUiOutOfDate"] = "TelerikWebUiOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["JavaVersionDisclosure"] = "JavaVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["GlassFishVersionDisclosure"] = "GlassFishVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["JavaOutOfDate"] = "JavaOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["GlassFishOutOfDate"] = "GlassFishOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["WafIdentified"] = "WafIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["AkamaiCdnIdentified"] = "AkamaiCdnIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["AzureCdnIdentified"] = "AzureCdnIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["GoogleCloudCdnIdentified"] = "GoogleCloudCdnIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["ArvanCloudCdnIdentified"] = "ArvanCloudCdnIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["FastlyCdnIdentified"] = "FastlyCdnIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["IncapsulaCdnIdentified"] = "IncapsulaCdnIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["SucuriCdnIdentified"] = "SucuriCdnIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["NetlifyCdnIdentified"] = "NetlifyCdnIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["MaxCdnIdentified"] = "MaxCdnIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["KeyCdnIdentified"] = "KeyCdnIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["FirebladeCdnIdentified"] = "FirebladeCdnIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["AireeCdnIdentified"] = "AireeCdnIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["West263CdnIdentified"] = "West263CdnIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["InstartCdnIdentified"] = "InstartCdnIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["QratorCdnIdentified"] = "QratorCdnIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["PowerCdnIdentified"] = "PowerCdnIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["Cdn77Identified"] = "Cdn77Identified";
-    VersionIssueOwnerVulnerabilityTypeEnum["F5BigIpProxyIdentified"] = "F5BigIpProxyIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["EnvoyProxyIdentified"] = "EnvoyProxyIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["CitrixNetScalerProxyIdentified"] = "CitrixNetScalerProxyIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["ApacheTrafficServerProxyIdentified"] = "ApacheTrafficServerProxyIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["HaProxyIdentified"] = "HaProxyIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["SkipperProxyIdentified"] = "SkipperProxyIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["LoginPageIdentified"] = "LoginPageIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["SameSiteCookieNotMarkedAsSecure"] = "SameSiteCookieNotMarkedAsSecure";
-    VersionIssueOwnerVulnerabilityTypeEnum["LiferayPortalIdentified"] = "LiferayPortalIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["LiferayPortalOutOfDate"] = "LiferayPortalOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["ApacheTrafficServerVersionDisclosure"] = "ApacheTrafficServerVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["ApacheTrafficServerOutOfDate"] = "ApacheTrafficServerOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["UndertowWebServerVersionDisclosure"] = "UndertowWebServerVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["UndertowWebServerOutOfDate"] = "UndertowWebServerOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["JenkinsVersionDisclosure"] = "JenkinsVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["JenkinsOutOfDate"] = "JenkinsOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["KestrelIdentified"] = "KestrelIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["TableauServerIdentified"] = "TableauServerIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["BomgarIdentified"] = "BomgarIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["JolokiaVersionDisclosure"] = "JolokiaVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["JolokiaOutOfDate"] = "JolokiaOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["F5BigIpLocalFileInclusion"] = "F5BigIpLocalFileInclusion";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleF5BigIpLocalFileInclusion"] = "PossibleF5BigIpLocalFileInclusion";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleSstiPebble"] = "PossibleSstiPebble";
-    VersionIssueOwnerVulnerabilityTypeEnum["SstiPebble"] = "SstiPebble";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleCodeExecutionViaSstiPebble"] = "PossibleCodeExecutionViaSstiPebble";
-    VersionIssueOwnerVulnerabilityTypeEnum["CodeExecutionViaSstiPebble"] = "CodeExecutionViaSstiPebble";
-    VersionIssueOwnerVulnerabilityTypeEnum["SugarCrmIdentified"] = "SugarCrmIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["SugarCrmOutOfDate"] = "SugarCrmOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["GrafanaVersionDisclosure"] = "GrafanaVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["GrafanaOutOfDate"] = "GrafanaOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleSstiJinJava"] = "PossibleSstiJinJava";
-    VersionIssueOwnerVulnerabilityTypeEnum["SstiJinJava"] = "SstiJinJava";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleCodeExecutionViaSstiJinJava"] = "PossibleCodeExecutionViaSstiJinJava";
-    VersionIssueOwnerVulnerabilityTypeEnum["CodeExecutionViaSstiJinJava"] = "CodeExecutionViaSstiJinJava";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleSstiAspNetRazor"] = "PossibleSstiAspNetRazor";
-    VersionIssueOwnerVulnerabilityTypeEnum["SstiAspNetRazor"] = "SstiAspNetRazor";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleCodeExecutionViaSstiAspNetRazor"] = "PossibleCodeExecutionViaSstiAspNetRazor";
-    VersionIssueOwnerVulnerabilityTypeEnum["CodeExecutionViaSstiAspNetRazor"] = "CodeExecutionViaSstiAspNetRazor";
-    VersionIssueOwnerVulnerabilityTypeEnum["PhpMagicQuotesGpcDisabled"] = "PhpMagicQuotesGpcDisabled";
-    VersionIssueOwnerVulnerabilityTypeEnum["PhpRegisterGlobalsEnabled"] = "PhpRegisterGlobalsEnabled";
-    VersionIssueOwnerVulnerabilityTypeEnum["PhpDisplayErrorsEnabled"] = "PhpDisplayErrorsEnabled";
-    VersionIssueOwnerVulnerabilityTypeEnum["PhpAllowUrlFopenEnabled"] = "PhpAllowUrlFopenEnabled";
-    VersionIssueOwnerVulnerabilityTypeEnum["PhpAllowUrlIncludeEnabled"] = "PhpAllowUrlIncludeEnabled";
-    VersionIssueOwnerVulnerabilityTypeEnum["PhpSessionUseTransSidEnabled"] = "PhpSessionUseTransSidEnabled";
-    VersionIssueOwnerVulnerabilityTypeEnum["PhpOpenBaseDirIsNotSet"] = "PhpOpenBaseDirIsNotSet";
-    VersionIssueOwnerVulnerabilityTypeEnum["PhpEnableDlEnabled"] = "PhpEnableDlEnabled";
-    VersionIssueOwnerVulnerabilityTypeEnum["AspNetApplicationTraceEnabled"] = "AspNetApplicationTraceEnabled";
-    VersionIssueOwnerVulnerabilityTypeEnum["AspNetCookilessSessionStateEnabled"] = "AspNetCookilessSessionStateEnabled";
-    VersionIssueOwnerVulnerabilityTypeEnum["AspNetCookilessAuthenticationEnabled"] = "AspNetCookilessAuthenticationEnabled";
-    VersionIssueOwnerVulnerabilityTypeEnum["AspNetNoSslAuth"] = "AspNetNoSslAuth";
-    VersionIssueOwnerVulnerabilityTypeEnum["AspNetLoginCredentialsPlainText"] = "AspNetLoginCredentialsPlainText";
-    VersionIssueOwnerVulnerabilityTypeEnum["AspNetValidateRequestDisabled"] = "AspNetValidateRequestDisabled";
-    VersionIssueOwnerVulnerabilityTypeEnum["AspNetViewStateUserKeyNotSet"] = "AspNetViewStateUserKeyNotSet";
-    VersionIssueOwnerVulnerabilityTypeEnum["JettyVersionDisclosure"] = "JettyVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["TornadoWebServerVersionDisclosure"] = "TornadoWebServerVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["TracyDebuggingToolVersionDisclosure"] = "TracyDebuggingToolVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["AspNetCustomErrorsDisabled"] = "AspNetCustomErrorsDisabled";
-    VersionIssueOwnerVulnerabilityTypeEnum["WhoopsFrameworkIdentified"] = "WhoopsFrameworkIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["PhpUseOnlyCookiesIsDisabled"] = "PhpUseOnlyCookiesIsDisabled";
-    VersionIssueOwnerVulnerabilityTypeEnum["CrushFtpServerIdentified"] = "CrushFtpServerIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["RceWebLogic"] = "RceWebLogic";
-    VersionIssueOwnerVulnerabilityTypeEnum["WeblogicAuthenticationBypass"] = "WeblogicAuthenticationBypass";
-    VersionIssueOwnerVulnerabilityTypeEnum["ArbitraryFileCreation"] = "ArbitraryFileCreation";
-    VersionIssueOwnerVulnerabilityTypeEnum["ArbitraryFileDeletion"] = "ArbitraryFileDeletion";
-    VersionIssueOwnerVulnerabilityTypeEnum["WerkzeugIdentified"] = "WerkzeugIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["WerkzeugVersionDisclosure"] = "WerkzeugVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["WerkzeugOutOfDate"] = "WerkzeugOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["OpenRestyIdentified"] = "OpenRestyIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["OpenRestyVersionDisclosure"] = "OpenRestyVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["OpenRestyOutOfDate"] = "OpenRestyOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["LiteSpeedWebServerIdentified"] = "LiteSpeedWebServerIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["TwistedWebHttpServerIdentified"] = "TwistedWebHTTPServerIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["TwistedWebHttpServerVersionDisclosure"] = "TwistedWebHTTPServerVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["TwistedWebHttpServerOutOfDate"] = "TwistedWebHTTPServerOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["NextJsReactFrameworkIdentified"] = "NextJsReactFrameworkIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["NextJsReactFrameworkVersionDisclosure"] = "NextJsReactFrameworkVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["NextJsReactFrameworkOutOfDate"] = "NextJsReactFrameworkOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["DaiquiriVersionDisclosure"] = "DaiquiriVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["W3TotalCacheOutOfDate"] = "W3TotalCacheOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["W3TotalCacheIdentified"] = "W3TotalCacheIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["W3TotalCacheVersionDisclosure"] = "W3TotalCacheVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["PhusionPassengerIdentified"] = "PhusionPassengerIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["PhusionPassengerVersionDisclosure"] = "PhusionPassengerVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["PhusionPassengerOutOfDate"] = "PhusionPassengerOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["SqlInjectionIast"] = "SqlInjectionIast";
-    VersionIssueOwnerVulnerabilityTypeEnum["LfiIast"] = "LfiIast";
-    VersionIssueOwnerVulnerabilityTypeEnum["RcePhpIast"] = "RcePhpIast";
-    VersionIssueOwnerVulnerabilityTypeEnum["HeaderInjectionIast"] = "HeaderInjectionIast";
-    VersionIssueOwnerVulnerabilityTypeEnum["CommandInjectionIast"] = "CommandInjectionIast";
-    VersionIssueOwnerVulnerabilityTypeEnum["AxwaySecureTransportIdentified"] = "AxwaySecureTransportIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["AxwaySecureTransportVersionDisclosure"] = "AxwaySecureTransportVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["AxwaySecureTransportOutOfDate"] = "AxwaySecureTransportOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["BurpCollaboratorServerIdentified"] = "BurpCollaboratorServerIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["ResinApplicationServerIdentified"] = "ResinApplicationServerIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["ResinApplicationServerVersionDisclosure"] = "ResinApplicationServerVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["ResinApplicationServerOutOfDate"] = "ResinApplicationServerOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["TracSoftwareProjectManagementToolIdentified"] = "TracSoftwareProjectManagementToolIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["TracSoftwareProjectManagementToolVersionDisclosure"] = "TracSoftwareProjectManagementToolVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["TracSoftwareProjectManagementToolOutOfDate"] = "TracSoftwareProjectManagementToolOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["TornadoWebServerIdentified"] = "TornadoWebServerIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["TornadoWebServerOutOfDate"] = "TornadoWebServerOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["JettyWebServerIdentified"] = "JettyWebServerIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["JettyWebServerOutOfDate"] = "JettyWebServerOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["TracyDebuggingToolOutOfDate"] = "TracyDebuggingToolOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["ZopeWebServerVersionDisclosure"] = "ZopeWebServerVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["ZopeWebServerOutOfDate"] = "ZopeWebServerOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["ArtifactoryIdentified"] = "ArtifactoryIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["ArtifactoryVersionDisclosure"] = "ArtifactoryVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["ArtifactoryOutOfDate"] = "ArtifactoryOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["JBossEapIdentified"] = "JBossEAPIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["WildFlyIdentified"] = "WildFlyIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["GunicornIdentified"] = "GunicornIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["GunicornVersionDisclosure"] = "GunicornVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["GunicornOutOfDate"] = "GunicornOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["JBossCsIdentified"] = "JBossCSIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["WebSealIdentified"] = "WebSealIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["OracleHttpIdentified"] = "OracleHTTPIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["SonicWallSslvpnIdentified"] = "SonicWallSSLVPNIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["PloneCmsIdentified"] = "PloneCMSIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["PloneCmsVersionDisclosure"] = "PloneCMSVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["PloneCmsOutOfDate"] = "PloneCMSOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["GlassFishIdentified"] = "GlassFishIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["IbmrtcIdentified"] = "IBMRTCIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["IbmrtcVersionDisclosure"] = "IBMRTCVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["IbmrtcOutOfDate"] = "IBMRTCOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["NexusIdentified"] = "NexusIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["NexusVersionDisclosure"] = "NexusVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["NexusOutOfDate"] = "NexusOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["IbmhttpServerIdentified"] = "IBMHTTPServerIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["IbmhttpServerVersionDisclosure"] = "IBMHTTPServerVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["IbmhttpServerOutOfDate"] = "IBMHTTPServerOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["PythonWsgiServerIdentified"] = "PythonWSGIServerIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["PythonWsgiServerVersionDisclosure"] = "PythonWSGIServerVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["PythonWsgiServerOutOfDate"] = "PythonWSGIServerOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["PlayFrameworkIdentified"] = "PlayFrameworkIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["VarnishCacheIdentified"] = "VarnishCacheIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["RestletFrameworkIdentified"] = "RestletFrameworkIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["RestletFrameworkVersionDisclosure"] = "RestletFrameworkVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["RestletFrameworkOutOfDate"] = "RestletFrameworkOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["ZopeWebServerIdentified"] = "ZopeWebServerIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["WebSealOutOfDate"] = "WebSealOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["WebSealVersionDisclosure"] = "WebSealVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["CowboyIdentified"] = "CowboyIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["CowboyOutOfDate"] = "CowboyOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["CowboyVersionDisclosure"] = "CowboyVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["LiferayPortalVersionDisclosure"] = "LiferayPortalVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["RevokedSslCertificate"] = "RevokedSslCertificate";
-    VersionIssueOwnerVulnerabilityTypeEnum["SslCertificateHostnameMismatch"] = "SslCertificateHostnameMismatch";
-    VersionIssueOwnerVulnerabilityTypeEnum["SslCertificateSignedByUntrustedRoot"] = "SslCertificateSignedByUntrustedRoot";
-    VersionIssueOwnerVulnerabilityTypeEnum["ExpiredSslCertificate"] = "ExpiredSslCertificate";
-    VersionIssueOwnerVulnerabilityTypeEnum["JwtNoneAlgorithmAllowed"] = "JwtNoneAlgorithmAllowed";
-    VersionIssueOwnerVulnerabilityTypeEnum["JwtSignatureNotChecked"] = "JwtSignatureNotChecked";
-    VersionIssueOwnerVulnerabilityTypeEnum["JwtInsecureSecretDetected"] = "JwtInsecureSecretDetected";
-    VersionIssueOwnerVulnerabilityTypeEnum["JwtSqlInjectionInKid"] = "JwtSqlInjectionInKid";
-    VersionIssueOwnerVulnerabilityTypeEnum["ZshHistoryFileDetected"] = "ZshHistoryFileDetected";
-    VersionIssueOwnerVulnerabilityTypeEnum["JwtPathTraversalInKid"] = "JwtPathTraversalInKid";
-    VersionIssueOwnerVulnerabilityTypeEnum["JwtJkuHijack"] = "JwtJkuHijack";
-    VersionIssueOwnerVulnerabilityTypeEnum["JwtJkuForgeryWithOpenRedirect"] = "JwtJkuForgeryWithOpenRedirect";
-    VersionIssueOwnerVulnerabilityTypeEnum["DaiquiriIdentified"] = "DaiquiriIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["Typo3CmsIdentified"] = "Typo3CmsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["Typo3CmsOutOfDate"] = "Typo3CmsOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["SslCertificateAboutToExpire"] = "SslCertificateAboutToExpire";
-    VersionIssueOwnerVulnerabilityTypeEnum["MagentoIdentified"] = "MagentoIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["MagentoOutOfDate"] = "MagentoOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["PleskLinIdentified"] = "PleskLinIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["PleskWinIdentified"] = "PleskWinIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["LighthouseIdentified"] = "LighthouseIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["BitNinjaCaptchaServerIdentified"] = "BitNinjaCaptchaServerIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["PardotServerIdentified"] = "PardotServerIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["MasheryProxyIdentified"] = "MasheryProxyIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["DaiquiriOutOfDate"] = "DaiquiriOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["AtlassianProxyIdentified"] = "AtlassianProxyIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["AtlassianProxyVersionDisclosure"] = "AtlassianProxyVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["AtlassianProxyOutOfDate"] = "AtlassianProxyOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["WindowsAzureWebIdentified"] = "WindowsAzureWebIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["TaleoWebServerIdentified"] = "TaleoWebServerIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["TaleoWebServerVersionDisclosure"] = "TaleoWebServerVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["TaleoWebServerOutOfDate"] = "TaleoWebServerOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["CraftCmsIdentified"] = "CraftCmsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["DataDomeIdentified"] = "DataDomeIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["OpenVpnAccessServerIdentified"] = "OpenVpnAccessServerIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["SquarespaceIdentified"] = "SquarespaceIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["SquidIdentified"] = "SquidIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["SugarCrmVersionDisclosure"] = "SugarCrmVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["HubSpotIdentified"] = "HubSpotIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["KongServerIdentified"] = "KongServerIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["KongServerVersionDisclosure"] = "KongServerVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["KongServerOutOfDate"] = "KongServerOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["VegurIdentified"] = "VegurIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["JavaServerPageIdentified"] = "JavaServerPageIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["JavaServerPageVersionDisclosure"] = "JavaServerPageVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["TomcatIdentified"] = "TomcatIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["PhpIdentified"] = "PHPIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["IisIdentified"] = "IisIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["WebLogicIdentified"] = "WebLogicIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["LighttpdIdentified"] = "LighttpdIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["SharePointIdentified"] = "SharePointIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["ApacheCoyoteIdentified"] = "ApacheCoyoteIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["OracleApplicationServerIdentified"] = "OracleApplicationServerIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["OpenSslIdentified"] = "OpenSslIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["ApacheModuleIdentified"] = "ApacheModuleIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["PerlIdentified"] = "PerlIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["FrontPageIdentified"] = "FrontPageIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["PythonIdentified"] = "PythonIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["JavaServletIdentified"] = "JavaServletIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["MvcIdentified"] = "MvcIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["MongrelIdentified"] = "MongrelIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["NuSoapIdentified"] = "NuSoapIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["RorIdentified"] = "RorIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["RubyGemsIdentified"] = "RubyGemsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["DjangoIdentified"] = "DjangoIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["CherryPyIdentified"] = "CherryPyIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["HiawathaIdentified"] = "HiawathaIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["CherokeeIdentified"] = "CherokeeIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["TelerikWebUiIdentified"] = "TelerikWebUiIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["JavaIdentified"] = "JavaIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["ApacheTrafficServerIdentified"] = "ApacheTrafficServerIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["UndertowWebServerIdentified"] = "UndertowWebServerIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["JenkinsIdentified"] = "JenkinsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["JolokiaIdentified"] = "JolokiaIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["GrafanaIdentified"] = "GrafanaIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["TracyDebuggingToolIdentified"] = "TracyDebuggingToolIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["LiferayDxpIdentified"] = "LiferayDXPIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["LiferayDxpVersionDisclosure"] = "LiferayDXPVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["LiferayDxpOutOfDate"] = "LiferayDXPOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["JavaServerPageOutOfDate"] = "JavaServerPageOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["SquidVersionDisclosure"] = "SquidVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["SquidOutOfDate"] = "SquidOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["SharePointOutOfDate"] = "SharePointOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["ApacheCoyoteOutOfDate"] = "ApacheCoyoteOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["OracleApplicationServerOutOfDate"] = "OracleApplicationServerOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["FrontPageOutOfDate"] = "FrontPageOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["MvcOutOfDate"] = "MvcOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["MongrelOutOfDate"] = "MongrelOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["IbmBpmIdentified"] = "IbmBpmIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["PhpMyAdminVersionDisclosure"] = "PhpMyAdminVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["ShopifyIdentified"] = "ShopifyIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["AtlassianConfluenceIdentified"] = "AtlassianConfluenceIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["AtlassianConfluenceVersionDisclosure"] = "AtlassianConfluenceVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["AtlassianConfluenceOutOfDate"] = "AtlassianConfluenceOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["AtlassianJiraIdentified"] = "AtlassianJiraIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["AtlassianJiraVersionDisclosure"] = "AtlassianJiraVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["AtlassianJiraOutOfDate"] = "AtlassianJiraOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["OutOfBandRceJavaLog4j"] = "OutOfBandRceJavaLog4j";
-    VersionIssueOwnerVulnerabilityTypeEnum["GqlIdentified"] = "GqlIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["GrapheneIdentified"] = "GrapheneIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["AriadneIdentified"] = "AriadneIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["ApolloIdentified"] = "ApolloIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["GraphqlGoIdentified"] = "GraphqlGoIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["GqlgenIdentified"] = "GqlgenIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["WpGraphQlIdentified"] = "WPGraphQLIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["GraphQlApiWordPressIdentified"] = "GraphQLApiWordPressIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["GraphQlRubyIdentified"] = "GraphQLRubyIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["GraphQlphpIdentified"] = "GraphQLPHPIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["HasuraIdentified"] = "HasuraIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["GraphQlJavaIdentified"] = "GraphQLJavaIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["JuniperIdentified"] = "JuniperIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["SangriaIdentified"] = "SangriaIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["TartifletteIdentified"] = "TartifletteIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["DgraphIdentified"] = "DgraphIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["DirectusIdentified"] = "DirectusIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["XssViaFileUpload"] = "XssViaFileUpload";
-    VersionIssueOwnerVulnerabilityTypeEnum["NodeJsExpressDevModeEnabled"] = "NodeJsExpressDevModeEnabled";
-    VersionIssueOwnerVulnerabilityTypeEnum["NodeJsExpressSessionWeakSecret"] = "NodeJsExpressSessionWeakSecret";
-    VersionIssueOwnerVulnerabilityTypeEnum["NodeJsUncaughtException"] = "NodeJsUncaughtException";
-    VersionIssueOwnerVulnerabilityTypeEnum["NodeJsUnhandledRejection"] = "NodeJsUnhandledRejection";
-    VersionIssueOwnerVulnerabilityTypeEnum["JavaVerbTamperingMisconfiguredSecurityConstraint"] = "JavaVerbTamperingMisconfiguredSecurityConstraint";
-    VersionIssueOwnerVulnerabilityTypeEnum["JavaLongSessionTimeout"] = "JavaLongSessionTimeout";
-    VersionIssueOwnerVulnerabilityTypeEnum["JavaUnsafeSessionTrackingValue"] = "JavaUnsafeSessionTrackingValue";
-    VersionIssueOwnerVulnerabilityTypeEnum["JavaUnconfiguredCustomErrorPage"] = "JavaUnconfiguredCustomErrorPage";
-    VersionIssueOwnerVulnerabilityTypeEnum["JavaSpringBootActuatorAllEndpointsExposed"] = "JavaSpringBootActuatorAllEndpointsExposed";
-    VersionIssueOwnerVulnerabilityTypeEnum["JavaSpringBootActuatorShutdownExposed"] = "JavaSpringBootActuatorShutdownExposed";
-    VersionIssueOwnerVulnerabilityTypeEnum["JavaSpringBootDevToolsEnabled"] = "JavaSpringBootDevToolsEnabled";
-    VersionIssueOwnerVulnerabilityTypeEnum["JavaSpringBootUnsafeSessionTrackingValue"] = "JavaSpringBootUnsafeSessionTrackingValue";
-    VersionIssueOwnerVulnerabilityTypeEnum["JavaSpringLongSessionTimeout"] = "JavaSpringLongSessionTimeout";
-    VersionIssueOwnerVulnerabilityTypeEnum["JavaSpringH2ConsoleEnabled"] = "JavaSpringH2ConsoleEnabled";
-    VersionIssueOwnerVulnerabilityTypeEnum["JavaSpringDataSourceCredsStoredAsPlainText"] = "JavaSpringDataSourceCredsStoredAsPlainText";
-    VersionIssueOwnerVulnerabilityTypeEnum["JavaSpringMongoDbCredsStoredAsPlainText"] = "JavaSpringMongoDbCredsStoredAsPlainText";
-    VersionIssueOwnerVulnerabilityTypeEnum["JavaSpringBootAdminEnabled"] = "JavaSpringBootAdminEnabled";
-    VersionIssueOwnerVulnerabilityTypeEnum["JavaSpringBootActuatorEndpointSecurityDisabled"] = "JavaSpringBootActuatorEndpointSecurityDisabled";
-    VersionIssueOwnerVulnerabilityTypeEnum["JavaSpringHtmlEscapingDisabled"] = "JavaSpringHtmlEscapingDisabled";
-    VersionIssueOwnerVulnerabilityTypeEnum["StrutsConfigBrowserEnabled"] = "StrutsConfigBrowserEnabled";
-    VersionIssueOwnerVulnerabilityTypeEnum["StrutsDevModeEnabled"] = "StrutsDevModeEnabled";
-    VersionIssueOwnerVulnerabilityTypeEnum["AxisSystemConfigurationListingEnabled"] = "AxisSystemConfigurationListingEnabled";
-    VersionIssueOwnerVulnerabilityTypeEnum["AxisDevModeEnabled"] = "AxisDevModeEnabled";
-    VersionIssueOwnerVulnerabilityTypeEnum["OutOfBandRceNode"] = "OutOfBandRceNode";
-    VersionIssueOwnerVulnerabilityTypeEnum["HsqldbIdentified"] = "HsqldbIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleRceSpring"] = "PossibleRceSpring";
-    VersionIssueOwnerVulnerabilityTypeEnum["SqLiteIdentified"] = "SqLiteIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["SqLiteOutOfDate"] = "SqLiteOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["ConfirmedErrorBasedMongoDbInjection"] = "ConfirmedErrorBasedMongoDbInjection";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleErrorBasedMongoDbInjection"] = "PossibleErrorBasedMongoDbInjection";
-    VersionIssueOwnerVulnerabilityTypeEnum["ConfirmedBooleanBasedMongoDbInjection"] = "ConfirmedBooleanBasedMongoDbInjection";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleBooleanBasedMongoDbInjection"] = "PossibleBooleanBasedMongoDbInjection";
-    VersionIssueOwnerVulnerabilityTypeEnum["ConfirmedBlindMongoDbInjection"] = "ConfirmedBlindMongoDbInjection";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleBlindMongoDbInjection"] = "PossibleBlindMongoDbInjection";
-    VersionIssueOwnerVulnerabilityTypeEnum["ConfirmedOperatorMongoDbInjection"] = "ConfirmedOperatorMongoDbInjection";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleOperatorMongoDbInjection"] = "PossibleOperatorMongoDbInjection";
-    VersionIssueOwnerVulnerabilityTypeEnum["MongoDbIdentified"] = "MongoDbIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["SwaggerUiOutOfDate"] = "SwaggerUIOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["MailHeaderInjectionIast"] = "MailHeaderInjectionIast";
-    VersionIssueOwnerVulnerabilityTypeEnum["OutOfBandRceText4Shell"] = "OutOfBandRceText4Shell";
-    VersionIssueOwnerVulnerabilityTypeEnum["SensitiveDataExposure"] = "SensitiveDataExposure";
-    VersionIssueOwnerVulnerabilityTypeEnum["SensitiveDataAmazonAwsAccessKeyId"] = "SensitiveDataAmazonAwsAccessKeyId";
-    VersionIssueOwnerVulnerabilityTypeEnum["SensitiveDataAmazonAwsSecretKey"] = "SensitiveDataAmazonAwsSecretKey";
-    VersionIssueOwnerVulnerabilityTypeEnum["SensitiveDataFacebookAppSecret"] = "SensitiveDataFacebookAppSecret";
-    VersionIssueOwnerVulnerabilityTypeEnum["SensitiveDataFacebookAppId"] = "SensitiveDataFacebookAppId";
-    VersionIssueOwnerVulnerabilityTypeEnum["SensitiveDataTwitterApiSecretKey"] = "SensitiveDataTwitterApiSecretKey";
-    VersionIssueOwnerVulnerabilityTypeEnum["SensitiveDataTwitterAccessTokenSecret"] = "SensitiveDataTwitterAccessTokenSecret";
-    VersionIssueOwnerVulnerabilityTypeEnum["SensitiveDataHerokuApiKey"] = "SensitiveDataHerokuApiKey";
-    VersionIssueOwnerVulnerabilityTypeEnum["SensitiveDataSshKey"] = "SensitiveDataSshKey";
-    VersionIssueOwnerVulnerabilityTypeEnum["SensitiveDataSendGridApiKey"] = "SensitiveDataSendGridApiKey";
-    VersionIssueOwnerVulnerabilityTypeEnum["SensitiveDataGoogleCloudApiKey"] = "SensitiveDataGoogleCloudApiKey";
-    VersionIssueOwnerVulnerabilityTypeEnum["SensitiveDataMailGunApiKey"] = "SensitiveDataMailGunApiKey";
-    VersionIssueOwnerVulnerabilityTypeEnum["SensitiveDataNuGetApiKey"] = "SensitiveDataNuGetApiKey";
-    VersionIssueOwnerVulnerabilityTypeEnum["SensitiveDataSlackWebhook"] = "SensitiveDataSlackWebhook";
-    VersionIssueOwnerVulnerabilityTypeEnum["SensitiveDataSlackToken"] = "SensitiveDataSlackToken";
-    VersionIssueOwnerVulnerabilityTypeEnum["SensitiveDataSlackV1XToken"] = "SensitiveDataSlackV1XToken";
-    VersionIssueOwnerVulnerabilityTypeEnum["SensitiveDataStripeApiKey"] = "SensitiveDataStripeApiKey";
-    VersionIssueOwnerVulnerabilityTypeEnum["SensitiveDataMailChimpApiKey"] = "SensitiveDataMailChimpApiKey";
-    VersionIssueOwnerVulnerabilityTypeEnum["SensitiveDataLinkedInApiKey"] = "SensitiveDataLinkedInApiKey";
-    VersionIssueOwnerVulnerabilityTypeEnum["SensitiveDataDatabaseConnectionStringMongoDbMySql"] = "SensitiveDataDatabaseConnectionStringMongoDbMySql";
-    VersionIssueOwnerVulnerabilityTypeEnum["SensitiveDataDatabaseConnectionStringPostgres"] = "SensitiveDataDatabaseConnectionStringPostgres";
-    VersionIssueOwnerVulnerabilityTypeEnum["SensitiveDataJdbcDbConnectionString"] = "SensitiveDataJdbcDbConnectionString";
-    VersionIssueOwnerVulnerabilityTypeEnum["SensitiveDataWordPressAuthenticationKey"] = "SensitiveDataWordPressAuthenticationKey";
-    VersionIssueOwnerVulnerabilityTypeEnum["SensitiveDataSymfonyApplicationSecret"] = "SensitiveDataSymfonyApplicationSecret";
-    VersionIssueOwnerVulnerabilityTypeEnum["SensitiveDataMapboxToken"] = "SensitiveDataMapboxToken";
-    VersionIssueOwnerVulnerabilityTypeEnum["SensitiveDataAmazonSessMtpPassword"] = "SensitiveDataAmazonSessMtpPassword";
-    VersionIssueOwnerVulnerabilityTypeEnum["SensitiveDataSentryAuthToken"] = "SensitiveDataSentryAuthToken";
-    VersionIssueOwnerVulnerabilityTypeEnum["SensitiveDataTeamsWebhook"] = "SensitiveDataTeamsWebhook";
-    VersionIssueOwnerVulnerabilityTypeEnum["SensitiveDataTwilioApiKey"] = "SensitiveDataTwilioApiKey";
-    VersionIssueOwnerVulnerabilityTypeEnum["SensitiveDataPaypalAccessToken"] = "SensitiveDataPaypalAccessToken";
-    VersionIssueOwnerVulnerabilityTypeEnum["SensitiveDataSquareAccessToken"] = "SensitiveDataSquareAccessToken";
-    VersionIssueOwnerVulnerabilityTypeEnum["SensitiveDataSquareOAuthSecret"] = "SensitiveDataSquareOAuthSecret";
-    VersionIssueOwnerVulnerabilityTypeEnum["SensitiveDataPicaticApiKey"] = "SensitiveDataPicaticApiKey";
-    VersionIssueOwnerVulnerabilityTypeEnum["SensitiveDataAmazonMwsAuthToken"] = "SensitiveDataAmazonMwsAuthToken";
-    VersionIssueOwnerVulnerabilityTypeEnum["SensitiveDataGoogleOAuthAccessToken"] = "SensitiveDataGoogleOAuthAccessToken";
-    VersionIssueOwnerVulnerabilityTypeEnum["SensitiveDataFacebookAccessToken"] = "SensitiveDataFacebookAccessToken";
-    VersionIssueOwnerVulnerabilityTypeEnum["SensitiveDataSonarQubeUserToken"] = "SensitiveDataSonarQubeUserToken";
-    VersionIssueOwnerVulnerabilityTypeEnum["SensitiveDataNexmoSecret"] = "SensitiveDataNexmoSecret";
-    VersionIssueOwnerVulnerabilityTypeEnum["SensitiveDataTelegramBotApiToken"] = "SensitiveDataTelegramBotApiToken";
-    VersionIssueOwnerVulnerabilityTypeEnum["SensitiveDataDeviseSecretKey"] = "SensitiveDataDeviseSecretKey";
-    VersionIssueOwnerVulnerabilityTypeEnum["SensitiveDataGitlabPersonalAccessToken"] = "SensitiveDataGitlabPersonalAccessToken";
-    VersionIssueOwnerVulnerabilityTypeEnum["SensitiveDataConsulToken"] = "SensitiveDataConsulToken";
-    VersionIssueOwnerVulnerabilityTypeEnum["SensitiveDataOmiseSecretKey"] = "SensitiveDataOmiseSecretKey";
-    VersionIssueOwnerVulnerabilityTypeEnum["SensitiveDataNpmAccessToken"] = "SensitiveDataNpmAccessToken";
-    VersionIssueOwnerVulnerabilityTypeEnum["GuidV1OnCookie"] = "GuidV1OnCookie";
-    VersionIssueOwnerVulnerabilityTypeEnum["JwtDetected"] = "JwtDetected";
-    VersionIssueOwnerVulnerabilityTypeEnum["CloudflareIdentified"] = "CloudflareIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["CloudflareBmIdentified"] = "CloudflareBMIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["CloudflareBIdentified"] = "CloudflareBIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["CdnJsIdentified"] = "CdnJsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["WindowsServerIdentified"] = "WindowsServerIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["WindowsCeosIdentified"] = "WindowsCEOSIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleSsrfEquinix"] = "PossibleSsrfEquinix";
-    VersionIssueOwnerVulnerabilityTypeEnum["VarnishVersionDisclosure"] = "VarnishVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["ApacheShiroStackTrace"] = "ApacheShiroStackTrace";
-    VersionIssueOwnerVulnerabilityTypeEnum["ApacheShiroIdentified"] = "ApacheShiroIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["StackPathCdnIdentified"] = "StackPathCdnIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["JBossWebConsole"] = "JBossWebConsole";
-    VersionIssueOwnerVulnerabilityTypeEnum["AemDetected"] = "AEMDetected";
-    VersionIssueOwnerVulnerabilityTypeEnum["JavaServletOutOfDate"] = "JavaServletOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["JsDelivrCdnIdentified"] = "JsDelivrCdnIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["ModSslOutOfDate"] = "Mod_SslOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["ModSslIdentified"] = "Mod_SslIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["ModSslVersionDisclosure2"] = "Mod_SslVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["SpringFrameworkIdentified"] = "SpringFrameworkIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["JavaMelodyInterfaceDetected"] = "JavaMelodyInterfaceDetected";
-    VersionIssueOwnerVulnerabilityTypeEnum["BootstrapTableOutOfDate"] = "BootstrapTableOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["BootstrapSelectOutOfDate"] = "BootstrapSelectOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["BootstrapTypeaheadOutOfDate"] = "BootstrapTypeaheadOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["LuaIdentified"] = "LuaIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["LuaVersionDisclosure"] = "LuaVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["LuaOutOfDate"] = "LuaOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["SpringActuatorEndpointDetected"] = "SpringActuatorEndpointDetected";
-    VersionIssueOwnerVulnerabilityTypeEnum["MsExchangeVersionDisclosure"] = "MsExchangeVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["MsExchangeOutOfDate"] = "MsExchangeOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["OutOfBandCodeExecutionViaJwtKid"] = "OutOfBandCodeExecutionViaJwtKid";
-    VersionIssueOwnerVulnerabilityTypeEnum["MongoDbInjectionIast"] = "MongoDbInjectionIast";
-    VersionIssueOwnerVulnerabilityTypeEnum["LdapInjectionIast"] = "LdapInjectionIast";
-    VersionIssueOwnerVulnerabilityTypeEnum["XPathInjectionIast"] = "XPathInjectionIast";
-    VersionIssueOwnerVulnerabilityTypeEnum["ServerSideTemplateInjectionIast"] = "ServerSideTemplateInjectionIast";
-    VersionIssueOwnerVulnerabilityTypeEnum["XxeInjectionIast"] = "XxeInjectionIast";
-    VersionIssueOwnerVulnerabilityTypeEnum["JetBrainsIdeaDirectoryDetected"] = "JetBrainsIdeaDirectoryDetected";
-    VersionIssueOwnerVulnerabilityTypeEnum["NodeJsStackTraceDisclosure"] = "NodeJsStackTraceDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["ItHitWebDavNetVersionDisclosure"] = "ItHitWebDavNetVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["ItHitWebDavNetOutOfDate"] = "ItHitWebDavNetOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["EzProxyIdentified"] = "EzProxyIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["CanvasJsOutOfDate"] = "CanvasJSOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordPressVersionDisclosure"] = "WordPressVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["JoomlaVersionDisclosure"] = "JoomlaVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["DrupalVersionDisclosure"] = "DrupalVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["MovableTypeVersionDisclosure"] = "MovableTypeVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["MediaWikiVersionDisclosure"] = "MediaWikiVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["OscommerceVersionDisclosure"] = "OscommerceVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["PhpBbVersionDisclosure"] = "PhpBBVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["OpenCartVersionDisclosure"] = "OpenCartVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["OsTicketVersionDisclosure"] = "OsTicketVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["PrestashopVersionDisclosure"] = "PrestashopVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["AbanteCartVersionDisclosure"] = "AbanteCartVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["AmpacheVersionDisclosure"] = "AmpacheVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["AtutorVersionDisclosure"] = "AtutorVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["ClarolineVersionDisclosure"] = "ClarolineVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["Concrete5VersionDisclosure"] = "Concrete5VersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["CoppermineVersionDisclosure"] = "CoppermineVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["CubeCartVersionDisclosure"] = "CubeCartVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["CollabtiveVersionDisclosure"] = "CollabtiveVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["DotClearVersionDisclosure"] = "DotClearVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["E107VersionDisclosure"] = "E107VersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["FamilyConnectionsVersionDisclosure"] = "FamilyConnectionsVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["FluxBbVersionDisclosure"] = "FluxBBVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["FormToolsVersionDisclosure"] = "FormToolsVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["ChamiloVersionDisclosure"] = "ChamiloVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["FrontAccountingVersionDisclosure"] = "FrontAccountingVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["GibbonEduVersionDisclosure"] = "GibbonEduVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["HeskVersionDisclosure"] = "HeskVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["LimeSurveyVersionDisclosure"] = "LimeSurveyVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["MibewMessengerVersionDisclosure"] = "MibewMessengerVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["ModXVersionDisclosure"] = "ModXVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["MoodleVersionDisclosure"] = "MoodleVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["MyBbVersionDisclosure"] = "MyBBVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["OmekaVersionDisclosure"] = "OmekaVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["OsClassVersionDisclosure"] = "OsClassVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["EspoCrmVersionDisclosure"] = "EspoCrmVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["ElggVersionDisclosure"] = "ElggVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["PhorumVersionDisclosure"] = "PhorumVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["PhpFusionVersionDisclosure"] = "PhpFusionVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["PhpAddressBookVersionDisclosure"] = "PhpAddressBookVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["PhpListVersionDisclosure"] = "PhpListVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["PmWikiVersionDisclosure"] = "PmWikiVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["PodcastGeneratorVersionDisclosure"] = "PodcastGeneratorVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["ProjectSendVersionDisclosure"] = "ProjectSendVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["Question2AnswerVersionDisclosure"] = "Question2AnswerVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["RukovoditelVersionDisclosure"] = "RukovoditelVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["SeoPanelVersionDisclosure"] = "SeoPanelVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["SerendipityVersionDisclosure"] = "SerendipityVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["TcExamVersionDisclosure"] = "TcExamVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["VanillaForumsVersionDisclosure"] = "VanillaForumsVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["WebErpVersionDisclosure"] = "WebErpVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["WeBidVersionDisclosure"] = "WeBidVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["XoopsVersionDisclosure"] = "XoopsVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["YetiForceCrmVersionDisclosure"] = "YetiForceCrmVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["YourlsVersionDisclosure"] = "YourlsVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["ZenCartVersionDisclosure"] = "ZenCartVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["ZenPhotoVersionDisclosure"] = "ZenPhotoVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["PiwigoVersionDisclosure"] = "PiwigoVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["OwnCloudVersionDisclosure"] = "OwnCloudVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["PhpMyFaqVersionDisclosure"] = "PhpMyFaqVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["RoundcubeVersionDisclosure"] = "RoundcubeVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["ZikulaVersionDisclosure"] = "ZikulaVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["ReviveAdserverVersionDisclosure"] = "ReviveAdserverVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["B2evolutionVersionDisclosure"] = "B2evolutionVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["DolphinVersionDisclosure"] = "DolphinVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["Ph7CmsVersionDisclosure"] = "PH7CMSVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["QdPmVersionDisclosure"] = "QdPMVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["DolibarrVersionDisclosure"] = "DolibarrVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["ClipBucketVersionDisclosure"] = "ClipBucketVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["ContaoVersionDisclosure"] = "ContaoVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["Typo3CmsVersionDisclosure"] = "Typo3CmsVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["MagentoVersionDisclosure"] = "MagentoVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["PopperJsOutOfDate"] = "PopperJSOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["SailsJsIdentified"] = "SailsJsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["ActionheroJsIdentified"] = "ActionheroJsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["OutOfBandXxeSamlConsumer"] = "OutOfBandXxeSamlConsumer";
-    VersionIssueOwnerVulnerabilityTypeEnum["OutOfBandXsltSamlConsumer"] = "OutOfBandXsltSamlConsumer";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleSsrfKeyInfoSamlConsumer"] = "PossibleSsrfKeyInfoSamlConsumer";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleXssSamlConsumer"] = "PossibleXssSamlConsumer";
-    VersionIssueOwnerVulnerabilityTypeEnum["RetiredHashSaml"] = "RetiredHashSaml";
-    VersionIssueOwnerVulnerabilityTypeEnum["SamlResponseWithoutSignature"] = "SamlResponseWithoutSignature";
-    VersionIssueOwnerVulnerabilityTypeEnum["NoSamlResponseSignatureCheck"] = "NoSamlResponseSignatureCheck";
-    VersionIssueOwnerVulnerabilityTypeEnum["SamlResponseSignatureExclusion"] = "SamlResponseSignatureExclusion";
-    VersionIssueOwnerVulnerabilityTypeEnum["GraphQlStackTraceDisclosure"] = "GraphQLStackTraceDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["JqueryIdentified"] = "JqueryIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["JqueryMigrateIdentified"] = "JqueryMigrateIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["JqueryMobileIdentified"] = "JqueryMobileIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["JqueryUiDialogIdentified"] = "JqueryUiDialogIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["JqueryUiAutocompleteIdentified"] = "JqueryUiAutocompleteIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["JqueryUiTooltipIdentified"] = "JqueryUiTooltipIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["PrettyPhotoIdentified"] = "PrettyPhotoIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["JPlayerIdentified"] = "jPlayerIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["YuiIdentified"] = "YuiIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["PrototypejsIdentified"] = "PrototypejsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["EmberIdentified"] = "EmberIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["AngularjsIdentified"] = "AngularjsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["BackbonejsIdentified"] = "BackbonejsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["MustachejsIdentified"] = "MustachejsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["HandlebarsjsIdentified"] = "HandlebarsjsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["EasyXdmIdentified"] = "EasyXdmIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["PluploadIdentified"] = "PluploadIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["DomPurifyIdentified"] = "DomPurifyIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["DwrIdentified"] = "DwrIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["VideojsIdentified"] = "VideojsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["CkeditorIdentified"] = "CkeditorIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["TypeaheadjsIdentified"] = "TypeaheadjsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["BootboxIdentified"] = "BootboxIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["BootstrapjsIdentified"] = "BootstrapjsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["Bootstrap3DateTimePickerIdentified"] = "Bootstrap3DateTimePickerIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["BootstrapToggleIdentified"] = "BootstrapToggleIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["FootablejsIdentified"] = "FootablejsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["ImagePickerIdentified"] = "ImagePickerIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["RespondjsIdentified"] = "RespondjsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["IonRangeSliderIdentified"] = "IonRangeSliderIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["JsTreeIdentified"] = "JsTreeIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["ModernizrIdentified"] = "ModernizrIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["MomentjsIdentified"] = "MomentjsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["Select2Identified"] = "Select2Identified";
-    VersionIssueOwnerVulnerabilityTypeEnum["Html5ShivIdentified"] = "Html5ShivIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["SortablejsIdentified"] = "SortablejsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["KnockoutjsIdentified"] = "KnockoutjsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["JavaScriptCookieIdentified"] = "JavaScriptCookieIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["JqueryMaskIdentified"] = "JqueryMaskIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["JqueryValidationIdentified"] = "JqueryValidationIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["KnockoutMappingIdentified"] = "KnockoutMappingIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["ReactIdentified"] = "ReactIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["ZeptojsIdentified"] = "ZeptojsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["HammerjsIdentified"] = "HammerjsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["PhaserIdentified"] = "PhaserIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["RamdaIdentified"] = "RamdaIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["VuejsIdentified"] = "VuejsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["RevealJsIdentified"] = "RevealJsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["ChartjsIdentified"] = "ChartjsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["LeafletIdentified"] = "LeafletIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["FoundationIdentified"] = "FoundationIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["SemanticUiIdentified"] = "SemanticUIIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["PixiJsIdentified"] = "PixiJsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["ThreeJsIdentified"] = "ThreeJsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["PdfJsIdentified"] = "PdfJsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["FabricJsIdentified"] = "FabricJsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["LightboxIdentified"] = "LightboxIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["UnderscorejsIdentified"] = "UnderscorejsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["FancyBoxIdentified"] = "FancyBoxIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["LazyjsIdentified"] = "LazyjsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["DataTablesIdentified"] = "DataTablesIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["XRegExpIdentified"] = "XRegExpIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["Fingerprintjs2Identified"] = "Fingerprintjs2Identified";
-    VersionIssueOwnerVulnerabilityTypeEnum["SweetAlert2Identified"] = "SweetAlert2Identified";
-    VersionIssueOwnerVulnerabilityTypeEnum["IntrojsIdentified"] = "IntrojsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["LodashIdentified"] = "LodashIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["AxiosIdentified"] = "AxiosIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["PolymerIdentified"] = "PolymerIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["BluebirdIdentified"] = "BluebirdIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["ListJsIdentified"] = "ListJsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["MithrilIdentified"] = "MithrilIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["MathJsIdentified"] = "MathJsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["RiotJsIdentified"] = "RiotJsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["RequireJsIdentified"] = "RequireJsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["EfJsIdentified"] = "EfJsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["MarionetteJsIdentified"] = "MarionetteJsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["GsapIdentified"] = "GsapIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["InfernoIdentified"] = "InfernoIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["D3JsIdentified"] = "D3JsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["HighchartsIdentified"] = "HighchartsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["RickshawIdentified"] = "RickshawIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["MathJaxIdentified"] = "MathJaxIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["ScrollRevealIdentified"] = "ScrollRevealIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["SlickIdentified"] = "SlickIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["FlickityIdentified"] = "FlickityIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["SnapSvgIdentified"] = "SnapSvgIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["ExtJsIdentified"] = "ExtJsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["JqueryVersionDisclosure"] = "JqueryVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["JqueryMigrateVersionDisclosure"] = "JqueryMigrateVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["JqueryMobileVersionDisclosure"] = "JqueryMobileVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["JqueryUiDialogVersionDisclosure"] = "JqueryUiDialogVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["JqueryUiAutocompleteVersionDisclosure"] = "JqueryUiAutocompleteVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["JqueryUiTooltipVersionDisclosure"] = "JqueryUiTooltipVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["PrettyPhotoVersionDisclosure"] = "PrettyPhotoVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["JPlayerVersionDisclosure"] = "jPlayerVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["YuiVersionDisclosure"] = "YuiVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["PrototypejsVersionDisclosure"] = "PrototypejsVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["EmberVersionDisclosure"] = "EmberVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["AngularjsVersionDisclosure"] = "AngularjsVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["BackbonejsVersionDisclosure"] = "BackbonejsVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["MustachejsVersionDisclosure"] = "MustachejsVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["HandlebarsjsVersionDisclosure"] = "HandlebarsjsVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["EasyXdmVersionDisclosure"] = "EasyXdmVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["PluploadVersionDisclosure"] = "PluploadVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["DomPurifyVersionDisclosure"] = "DomPurifyVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["DwrVersionDisclosure"] = "DwrVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["VideojsVersionDisclosure"] = "VideojsVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["CkeditorVersionDisclosure"] = "CkeditorVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["TypeaheadjsVersionDisclosure"] = "TypeaheadjsVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["BootboxVersionDisclosure"] = "BootboxVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["BootstrapjsVersionDisclosure"] = "BootstrapjsVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["Bootstrap3DateTimePickerVersionDisclosure"] = "Bootstrap3DateTimePickerVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["BootstrapToggleVersionDisclosure"] = "BootstrapToggleVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["FootablejsVersionDisclosure"] = "FootablejsVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["ImagePickerVersionDisclosure"] = "ImagePickerVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["RespondjsVersionDisclosure"] = "RespondjsVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["IonRangeSliderVersionDisclosure"] = "IonRangeSliderVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["JsTreeVersionDisclosure"] = "JsTreeVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["ModernizrVersionDisclosure"] = "ModernizrVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["MomentjsVersionDisclosure"] = "MomentjsVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["Select2VersionDisclosure"] = "Select2VersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["Html5ShivVersionDisclosure"] = "Html5ShivVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["SortablejsVersionDisclosure"] = "SortablejsVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["KnockoutjsVersionDisclosure"] = "KnockoutjsVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["JavaScriptCookieVersionDisclosure"] = "JavaScriptCookieVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["JqueryMaskVersionDisclosure"] = "JqueryMaskVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["JqueryValidationVersionDisclosure"] = "JqueryValidationVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["KnockoutMappingVersionDisclosure"] = "KnockoutMappingVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["ReactVersionDisclosure"] = "ReactVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["ZeptojsVersionDisclosure"] = "ZeptojsVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["HammerjsVersionDisclosure"] = "HammerjsVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["PhaserVersionDisclosure"] = "PhaserVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["RamdaVersionDisclosure"] = "RamdaVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["VuejsVersionDisclosure"] = "VuejsVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["RevealJsVersionDisclosure"] = "RevealJsVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["ChartjsVersionDisclosure"] = "ChartjsVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["LeafletVersionDisclosure"] = "LeafletVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["FoundationVersionDisclosure"] = "FoundationVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["SemanticUiVersionDisclosure"] = "SemanticUIVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["PixiJsVersionDisclosure"] = "PixiJsVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["ThreeJsVersionDisclosure"] = "ThreeJsVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["PdfJsVersionDisclosure"] = "PdfJsVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["FabricJsVersionDisclosure"] = "FabricJsVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["LightboxVersionDisclosure"] = "LightboxVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["UnderscorejsVersionDisclosure"] = "UnderscorejsVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["FancyBoxVersionDisclosure"] = "FancyBoxVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["LazyjsVersionDisclosure"] = "LazyjsVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["DataTablesVersionDisclosure"] = "DataTablesVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["XRegExpVersionDisclosure"] = "XRegExpVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["Fingerprintjs2VersionDisclosure"] = "Fingerprintjs2VersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["SweetAlert2VersionDisclosure"] = "SweetAlert2VersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["IntrojsVersionDisclosure"] = "IntrojsVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["LodashVersionDisclosure"] = "LodashVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["AxiosVersionDisclosure"] = "AxiosVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["PolymerVersionDisclosure"] = "PolymerVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["BluebirdVersionDisclosure"] = "BluebirdVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["ListJsVersionDisclosure"] = "ListJsVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["MithrilVersionDisclosure"] = "MithrilVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["MathJsVersionDisclosure"] = "MathJsVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["RiotJsVersionDisclosure"] = "RiotJsVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["RequireJsVersionDisclosure"] = "RequireJsVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["EfJsVersionDisclosure"] = "EfJsVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["MarionetteJsVersionDisclosure"] = "MarionetteJsVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["GsapVersionDisclosure"] = "GsapVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["InfernoVersionDisclosure"] = "InfernoVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["D3JsVersionDisclosure"] = "D3JsVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["HighchartsVersionDisclosure"] = "HighchartsVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["RickshawVersionDisclosure"] = "RickshawVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["MathJaxVersionDisclosure"] = "MathJaxVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["ScrollRevealVersionDisclosure"] = "ScrollRevealVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["SlickVersionDisclosure"] = "SlickVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["FlickityVersionDisclosure"] = "FlickityVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["SnapSvgVersionDisclosure"] = "SnapSvgVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["ExtJsVersionDisclosure"] = "ExtJsVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["AspNetSignalRIdentified"] = "AspNetSignalRIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["FuelUxIdentified"] = "FuelUxIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["SwaggerUiIdentified"] = "SwaggerUIIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["BootstrapTableIdentified"] = "BootstrapTableIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["BootstrapSelectIdentified"] = "BootstrapSelectIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["BootstrapTypeaheadIdentified"] = "BootstrapTypeaheadIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["AspNetSignalRVersionDisclosure"] = "AspNetSignalRVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["FuelUxVersionDisclosure"] = "FuelUxVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["SwaggerUiVersionDisclosure"] = "SwaggerUIVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["BootstrapTableVersionDisclosure"] = "BootstrapTableVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["BootstrapSelectVersionDisclosure"] = "BootstrapSelectVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["BootstrapTypeaheadVersionDisclosure"] = "BootstrapTypeaheadVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["ConfirmedWordpressThemeDetected"] = "ConfirmedWordpressThemeDetected";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleWordpressThemeDetected"] = "PossibleWordpressThemeDetected";
-    VersionIssueOwnerVulnerabilityTypeEnum["ConfirmedWordpressPluginDetected"] = "ConfirmedWordpressPluginDetected";
-    VersionIssueOwnerVulnerabilityTypeEnum["PossibleWordpressPluginDetected"] = "PossibleWordpressPluginDetected";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressThemeHelloElementorIdentified"] = "WordpressThemeHelloElementorIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressThemeTwentyTwentyThreeIdentified"] = "WordpressThemeTwentyTwentyThreeIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressThemeTwentyTwentyTwoIdentified"] = "WordpressThemeTwentyTwentyTwoIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressThemeAstraIdentified"] = "WordpressThemeAstraIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressThemeTwentyTwentyOneIdentified"] = "WordpressThemeTwentyTwentyOneIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressThemeTwentyTwentyIdentified"] = "WordpressThemeTwentyTwentyIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressThemeOceanWpIdentified"] = "WordpressThemeOceanWPIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressThemeTwentySeventeenIdentified"] = "WordpressThemeTwentySeventeenIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressThemeKadenceIdentified"] = "WordpressThemeKadenceIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressThemeTwentySixteenIdentified"] = "WordpressThemeTwentySixteenIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressThemeTwentyNineteenIdentified"] = "WordpressThemeTwentyNineteenIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressThemePopularFxIdentified"] = "WordpressThemePopularFXIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressThemeGeneratePressIdentified"] = "WordpressThemeGeneratePressIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressThemeInspiroIdentified"] = "WordpressThemeInspiroIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressThemeGoIdentified"] = "WordpressThemeGoIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressThemeHelloElementorOutOfDate"] = "WordpressThemeHelloElementorOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressThemeTwentyTwentyThreeOutOfDate"] = "WordpressThemeTwentyTwentyThreeOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressThemeTwentyTwentyTwoOutOfDate"] = "WordpressThemeTwentyTwentyTwoOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressThemeAstraOutOfDate"] = "WordpressThemeAstraOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressThemeTwentyTwentyOneOutOfDate"] = "WordpressThemeTwentyTwentyOneOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressThemeTwentyTwentyOutOfDate"] = "WordpressThemeTwentyTwentyOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressThemeOceanWpOutOfDate"] = "WordpressThemeOceanWPOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressThemeTwentySeventeenOutOfDate"] = "WordpressThemeTwentySeventeenOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressThemeKadenceOutOfDate"] = "WordpressThemeKadenceOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressThemeTwentySixteenOutOfDate"] = "WordpressThemeTwentySixteenOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressThemeTwentyNineteenOutOfDate"] = "WordpressThemeTwentyNineteenOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressThemePopularFxOutOfDate"] = "WordpressThemePopularFXOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressThemeGeneratePressOutOfDate"] = "WordpressThemeGeneratePressOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressThemeInspiroOutOfDate"] = "WordpressThemeInspiroOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressThemeGoOutOfDate"] = "WordpressThemeGoOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressThemeHelloElementorVersionDisclosure"] = "WordpressThemeHelloElementorVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressThemeTwentyTwentyThreeVersionDisclosure"] = "WordpressThemeTwentyTwentyThreeVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressThemeTwentyTwentyTwoVersionDisclosure"] = "WordpressThemeTwentyTwentyTwoVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressThemeAstraVersionDisclosure"] = "WordpressThemeAstraVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressThemeTwentyTwentyOneVersionDisclosure"] = "WordpressThemeTwentyTwentyOneVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressThemeTwentyTwentyVersionDisclosure"] = "WordpressThemeTwentyTwentyVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressThemeOceanWpVersionDisclosure"] = "WordpressThemeOceanWPVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressThemeTwentySeventeenVersionDisclosure"] = "WordpressThemeTwentySeventeenVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressThemeKadenceVersionDisclosure"] = "WordpressThemeKadenceVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressThemeTwentySixteenVersionDisclosure"] = "WordpressThemeTwentySixteenVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressThemeTwentyNineteenVersionDisclosure"] = "WordpressThemeTwentyNineteenVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressThemePopularFxVersionDisclosure"] = "WordpressThemePopularFXVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressThemeGeneratePressVersionDisclosure"] = "WordpressThemeGeneratePressVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressThemeInspiroVersionDisclosure"] = "WordpressThemeInspiroVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressThemeGoVersionDisclosure"] = "WordpressThemeGoVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginLoginWithPhoneNumberIdentified"] = "WordpressPluginLoginWithPhoneNumberIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginInstagramFeedIdentified"] = "WordpressPluginInstagramFeedIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginContactFormSevenIdentified"] = "WordpressPluginContactFormSevenIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginYoastSeoIdentified"] = "WordpressPluginYoastSeoIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginElementorIdentified"] = "WordpressPluginElementorIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginClassicEditorIdentified"] = "WordpressPluginClassicEditorIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginAkismetIdentified"] = "WordpressPluginAkismetIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginWooCommerceIdentified"] = "WordpressPluginWooCommerceIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginWpFormsIdentified"] = "WordpressPluginWpFormsIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginReallySimpleSslIdentified"] = "WordpressPluginReallySimpleSslIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginJetpackIdentified"] = "WordpressPluginJetpackIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginAllInOneWpMigrationIdentified"] = "WordpressPluginAllInOneWpMigrationIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginWordfenceSecurityIdentified"] = "WordpressPluginWordfenceSecurityIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginYoastDuplicatePostIdentified"] = "WordpressPluginYoastDuplicatePostIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginWordpressImporterIdentified"] = "WordpressPluginWordpressImporterIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginLiteSpeedCacheIdentified"] = "WordpressPluginLiteSpeedCacheIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginUpdraftPlusIdentified"] = "WordpressPluginUpdraftPlusIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginJupiterXIdentified"] = "WordpressPluginJupiterXIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginLoginWithPhoneNumberOutOfDate"] = "WordpressPluginLoginWithPhoneNumberOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginInstagramFeedOutOfDate"] = "WordpressPluginInstagramFeedOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginContactFormSevenOutOfDate"] = "WordpressPluginContactFormSevenOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginYoastSeoOutOfDate"] = "WordpressPluginYoastSeoOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginElementorOutOfDate"] = "WordpressPluginElementorOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginClassicEditorOutOfDate"] = "WordpressPluginClassicEditorOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginAkismetOutOfDate"] = "WordpressPluginAkismetOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginWooCommerceOutOfDate"] = "WordpressPluginWooCommerceOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginWpFormsOutOfDate"] = "WordpressPluginWpFormsOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginReallySimpleSslOutOfDate"] = "WordpressPluginReallySimpleSslOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginJetpackOutOfDate"] = "WordpressPluginJetpackOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginAllInOneWpMigrationOutOfDate"] = "WordpressPluginAllInOneWpMigrationOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginWordfenceSecurityOutOfDate"] = "WordpressPluginWordfenceSecurityOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginYoastDuplicatePostOutOfDate"] = "WordpressPluginYoastDuplicatePostOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginWordpressImporterOutOfDate"] = "WordpressPluginWordpressImporterOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginLiteSpeedCacheOutOfDate"] = "WordpressPluginLiteSpeedCacheOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginUpdraftPlusOutOfDate"] = "WordpressPluginUpdraftPlusOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginJupiterXOutOfDate"] = "WordpressPluginJupiterXOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginInstagramFeedVersionDisclosure"] = "WordpressPluginInstagramFeedVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginContactFormSevenVersionDisclosure"] = "WordpressPluginContactFormSevenVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginYoastSeoVersionDisclosure"] = "WordpressPluginYoastSeoVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginLoginWithPhoneNumberVersionDisclosure"] = "WordpressPluginLoginWithPhoneNumberVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginElementorVersionDisclosure"] = "WordpressPluginElementorVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginClassicEditorVersionDisclosure"] = "WordpressPluginClassicEditorVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginAkismetVersionDisclosure"] = "WordpressPluginAkismetVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginWooCommerceVersionDisclosure"] = "WordpressPluginWooCommerceVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginWpFormsVersionDisclosure"] = "WordpressPluginWpFormsVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginReallySimpleSslVersionDisclosure"] = "WordpressPluginReallySimpleSslVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginJetpackVersionDisclosure"] = "WordpressPluginJetpackVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginAllInOneWpMigrationVersionDisclosure"] = "WordpressPluginAllInOneWpMigrationVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginWordfenceSecurityVersionDisclosure"] = "WordpressPluginWordfenceSecurityVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginYoastDuplicatePostVersionDisclosure"] = "WordpressPluginYoastDuplicatePostVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginWordpressImporterVersionDisclosure"] = "WordpressPluginWordpressImporterVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginLiteSpeedCacheVersionDisclosure"] = "WordpressPluginLiteSpeedCacheVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginUpdraftPlusVersionDisclosure"] = "WordpressPluginUpdraftPlusVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["WordpressPluginJupiterXVersionDisclosure"] = "WordpressPluginJupiterXVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["DockerDisclosure"] = "DockerDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["DockerComposeDisclosure"] = "DockerComposeDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["DockerRunDisclosure"] = "DockerRunDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["DockerIgnoreDisclosure"] = "DockerIgnoreDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["DockerCloudDisclosure"] = "DockerCloudDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["CanvasJsIdentified"] = "CanvasJSIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["CanvasJsVersionDisclosure"] = "CanvasJSVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["PopperJsIdentified"] = "PopperJSIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["PopperJsVersionDisclosure"] = "PopperJSVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["HotChocolateIdentified"] = "HotChocolateIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["JQueryPlaceholderJsOutOfDate"] = "JQueryPlaceholderJSOutOfDate";
-    VersionIssueOwnerVulnerabilityTypeEnum["JQueryPlaceholderJsVersionDisclosure"] = "JQueryPlaceholderJSVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["JQueryPlaceholderJsIdentified"] = "JQueryPlaceholderJSIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["MovEitTransferSqlInjection"] = "MOVEitTransferSqlInjection";
-    VersionIssueOwnerVulnerabilityTypeEnum["MovEitTransferVersionDisclosure"] = "MOVEitTransferVersionDisclosure";
-    VersionIssueOwnerVulnerabilityTypeEnum["MovEitTransferIdentified"] = "MOVEitTransferIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["DianaJlIdentified"] = "DianaJlIdentified";
-    VersionIssueOwnerVulnerabilityTypeEnum["MissingXContentTypeOptionsHeader"] = "MissingXContentTypeOptionsHeader";
-})(VersionIssueOwnerVulnerabilityTypeEnum = exports.VersionIssueOwnerVulnerabilityTypeEnum || (exports.VersionIssueOwnerVulnerabilityTypeEnum = {}));
+ * @export
+ */
+exports.VersionIssueOwnerVulnerabilityTypeEnum = {
+    Custom: 'Custom',
+    Sca: 'Sca',
+    None: 'None',
+    HighlyPossibleSqlInjection: 'HighlyPossibleSqlInjection',
+    Xss: 'Xss',
+    PossibleXss: 'PossibleXss',
+    PermanentXss: 'PermanentXss',
+    PossiblePermanentXss: 'PossiblePermanentXss',
+    InternalServerError: 'InternalServerError',
+    ForbiddenResource: 'ForbiddenResource',
+    PassiveVulns: 'PassiveVulns',
+    PossibleBlindSqlInjection: 'PossibleBlindSqlInjection',
+    NtlmAuthrizationRequired: 'NtlmAuthrizationRequired',
+    BasicAuthorisationRequired: 'BasicAuthorisationRequired',
+    DigestAuthorizationRequired: 'DigestAuthorizationRequired',
+    ClearTextBasicAuth: 'ClearTextBasicAuth',
+    ConfirmedBlindSqlInjection: 'ConfirmedBlindSqlInjection',
+    PossibleSqlInjection: 'PossibleSqlInjection',
+    ConfirmedSqlInjection: 'ConfirmedSqlInjection',
+    FileUploadFound: 'FileUploadFound',
+    AutoCompleteEnabled: 'AutoCompleteEnabled',
+    PasswordOverHttp: 'PasswordOverHttp',
+    PasswordFormOverHttp: 'PasswordFormOverHttp',
+    InternalIpLeakage: 'InternalIPLeakage',
+    CookieNotMarkedAsSecure: 'CookieNotMarkedAsSecure',
+    CookieNotMarkedAsHttpOnly: 'CookieNotMarkedAsHttpOnly',
+    ConfirmedBooleanSqlInjection: 'ConfirmedBooleanSqlInjection',
+    PossibleBooleanSqlInjection: 'PossibleBooleanSqlInjection',
+    PasswordToHttp: 'PasswordToHttp',
+    CommandInjection: 'CommandInjection',
+    BlindCommandInjection: 'BlindCommandInjection',
+    PossibleBlindCommandInjection: 'PossibleBlindCommandInjection',
+    HeaderInjection: 'HeaderInjection',
+    MySqlIdentified: 'MySqlIdentified',
+    MsSqlIdentified: 'MsSqlIdentified',
+    MsAccessIdentified: 'MsAccessIdentified',
+    DbConnectedAsAdmin: 'DbConnectedAsAdmin',
+    AspNetIdentified: 'AspNetIdentified',
+    AspNetVersionDisclosure: 'AspNetVersionDisclosure',
+    IisDirectoryListing: 'IisDirectoryListing',
+    ApacheDirectoryListing: 'ApacheDirectoryListing',
+    TomcatDirectoryListing: 'TomcatDirectoryListing',
+    PhpSourceCodeDisclosure: 'PhpSourceCodeDisclosure',
+    AspNetSourceCodeDisclosure: 'AspNetSourceCodeDisclosure',
+    GenericSourceCodeDisclosure: 'GenericSourceCodeDisclosure',
+    PossibleInternalUnixPathLeakage: 'PossibleInternalUnixPathLeakage',
+    MsOfficeDocumentInformationDisclosure: 'MsOfficeDocumentInformationDisclosure',
+    PhpInfoIdentified: 'PhpInfoIdentified',
+    PossibleLocalFileInclusion: 'PossibleLocalFileInclusion',
+    OracleIdentified: 'OracleIdentified',
+    PostgreSqlIdentified: 'PostgreSqlIdentified',
+    HighPossibilityLfi: 'HighPossibilityLfi',
+    Lfi: 'Lfi',
+    PossibleInternalWindowsPathLeakage: 'PossibleInternalWindowsPathLeakage',
+    EmailDisclosure: 'EmailDisclosure',
+    SocialSecurityNumberDisclosure: 'SocialSecurityNumberDisclosure',
+    ApacheVersionDisclosure: 'ApacheVersionDisclosure',
+    TomcatVersionDisclosure: 'TomcatVersionDisclosure',
+    PhpVersionDisclosure: 'PhpVersionDisclosure',
+    IisVersionDisclosure: 'IisVersionDisclosure',
+    WebLogicVersionDisclosure: 'WebLogicVersionDisclosure',
+    LighttpdVersionDisclosure: 'LighttpdVersionDisclosure',
+    SharePointVersionDisclosure: 'SharePointVersionDisclosure',
+    ApacheCoyoteVersionDisclosure: 'ApacheCoyoteVersionDisclosure',
+    OracleApplicationServerVersionDisclosure: 'OracleApplicationServerVersionDisclosure',
+    OpenSslVersionDisclosure: 'OpenSslVersionDisclosure',
+    ApacheModuleVersionDisclosure: 'ApacheModuleVersionDisclosure',
+    PerlVersionDisclosure: 'PerlVersionDisclosure',
+    FrontPageVersionDisclosure: 'FrontPageVersionDisclosure',
+    PythonVersionDisclosure: 'PythonVersionDisclosure',
+    JavaServletVersionDisclosure: 'JavaServletVersionDisclosure',
+    SitemapIdentified: 'SitemapIdentified',
+    CrossDomainXml: 'CrossDomainXml',
+    RobotsIdentified: 'RobotsIdentified',
+    SpecialCase: 'SpecialCase',
+    SpecialCaseNoCookies: 'SpecialCaseNoCookies',
+    SpecialCaseNoBasicAuthentication: 'SpecialCaseNoBasicAuthentication',
+    ApacheServerStatus: 'ApacheServerStatus',
+    ApacheServerInfo: 'ApacheServerInfo',
+    ClientAccessPolicy: 'ClientAccessPolicy',
+    OpenCrossDomainXml: 'OpenCrossDomainXml',
+    OpenClientAccessPolicy: 'OpenClientAccessPolicy',
+    HighPossibleBooleanSqlInjection: 'HighPossibleBooleanSqlInjection',
+    DatabaseErrorMessages: 'DatabaseErrorMessages',
+    ProgrammingErrorMessages: 'ProgrammingErrorMessages',
+    ApacheMultiViewsEnabled: 'ApacheMultiViewsEnabled',
+    BackupFileFound: 'BackupFileFound',
+    BackupSourceCodeFound: 'BackupSourceCodeFound',
+    TraceTrackIdentified: 'TraceTrackIdentified',
+    TraceaxdFound: 'TraceaxdFound',
+    ElmahaxdFound: 'ElmahaxdFound',
+    AspNetDebugEnabled: 'AspNetDebugEnabled',
+    LfiCodeInclusion: 'LfiCodeInclusion',
+    AspNetStackTrace: 'AspNetStackTrace',
+    SvnDisclosure: 'SvnDisclosure',
+    GitDisclosure: 'GitDisclosure',
+    CvsDisclosure: 'CvsDisclosure',
+    Rfi: 'Rfi',
+    PossibleRfi: 'PossibleRfi',
+    PossibleCi: 'PossibleCi',
+    XssViaRfi: 'XssViaRfi',
+    RceAsp: 'RceAsp',
+    PossibleRceAsp: 'PossibleRceAsp',
+    RcePhp: 'RcePhp',
+    PossibleRcePhp: 'PossibleRcePhp',
+    RcePerl: 'RcePerl',
+    PossibleRcePerl: 'PossibleRcePerl',
+    ViewStateMacNotEnabled: 'ViewStateMacNotEnabled',
+    ViewStateNotEncrypted: 'ViewStateNotEncrypted',
+    ViewStateAnalyzer: 'ViewStateAnalyzer',
+    OpenRedirect: 'OpenRedirect',
+    TomcatExceptionReport: 'TomcatExceptionReport',
+    DjangoStackTraceDisclosure: 'DjangoStackTraceDisclosure',
+    Struts2DevModeEnabled: 'Struts2DevModeEnabled',
+    AspNetDirectoryListing: 'AspNetDirectoryListing',
+    MySqlUsernameDisclosure: 'MySqlUsernameDisclosure',
+    MsSqlUsernameDisclosure: 'MsSqlUsernameDisclosure',
+    WinUsernameDisclosure: 'WinUsernameDisclosure',
+    RceViaLfi: 'RceViaLfi',
+    XssProtectionDisabled: 'XssProtectionDisabled',
+    MdbFound: 'MdbFound',
+    WeakCredentials: 'WeakCredentials',
+    PythonStackTraceDisclosure: 'PythonStackTraceDisclosure',
+    ColdFusionStackTraceDisclosure: 'ColdFusionStackTraceDisclosure',
+    DefaultIis7Page: 'DefaultIis7Page',
+    DefaultIis6Page: 'DefaultIis6Page',
+    DefaultApachePage: 'DefaultApachePage',
+    SinatraStackTraceDisclosure: 'SinatraStackTraceDisclosure',
+    SqliteFound: 'SqliteFound',
+    OutlookFileFound: 'OutlookFileFound',
+    DsStoreFileFound: 'DsStoreFileFound',
+    FrameInjection: 'FrameInjection',
+    DefaultTomcatPage: 'DefaultTomcatPage',
+    TomcatSourceCodeDisclosure: 'TomcatSourceCodeDisclosure',
+    WebBackdoorIdentified: 'WebBackdoorIdentified',
+    PassiveWebBackdoorIdentified: 'PassiveWebBackdoorIdentified',
+    PossibleAdminFile: 'PossibleAdminFile',
+    PossibleConfigFile: 'PossibleConfigFile',
+    PossibleReadmeFile: 'PossibleReadmeFile',
+    PossibleInstallationFile: 'PossibleInstallationFile',
+    PossibleLogFile: 'PossibleLogFile',
+    PossibleSqlFile: 'PossibleSqlFile',
+    PossibleTestFile: 'PossibleTestFile',
+    TomcatOutOfDate: 'TomcatOutOfDate',
+    ApacheOutOfDate: 'ApacheOutOfDate',
+    MsSqlOutOfDate: 'MsSqlOutOfDate',
+    MySqlOutOfDate: 'MySqlOutOfDate',
+    HsqlDbOutOfDate: 'HsqlDbOutOfDate',
+    PhpOutOfDate: 'PhpOutOfDate',
+    OpenSslOutOfDate: 'OpenSslOutOfDate',
+    RedirectBodyTooLarge: 'RedirectBodyTooLarge',
+    RedirectTwoResponses: 'RedirectTwoResponses',
+    SslVersion2Support: 'SslVersion2Support',
+    WeakCiphersDetected: 'WeakCiphersDetected',
+    AnonAuthDetected: 'AnonAuthDetected',
+    WeakSignatureAlgorithmDetected: 'WeakSignatureAlgorithmDetected',
+    InvalidSslCertificate: 'InvalidSslCertificate',
+    SslVersion3Support: 'SslVersion3Support',
+    IntermediateWeakSignatureAlgorithmDetected: 'IntermediateWeakSignatureAlgorithmDetected',
+    MvcVersionDisclosure: 'MvcVersionDisclosure',
+    MongrelVersionDisclosure: 'MongrelVersionDisclosure',
+    NginxVersionDisclosure: 'NginxVersionDisclosure',
+    MySqldoSDetected: 'MySQLDoSDetected',
+    GrailsStackTraceDisclosure: 'GrailsStackTraceDisclosure',
+    PossibleElInjection: 'PossibleElInjection',
+    ElInjection: 'ElInjection',
+    ApacheMyFacesStackTraceDisclosure: 'ApacheMyFacesStackTraceDisclosure',
+    PasswordOverQuerystring: 'PasswordOverQuerystring',
+    ColdFusionSourceCodeDisclosure: 'ColdFusionSourceCodeDisclosure',
+    AwStatsIdentified: 'AWStatsIdentified',
+    MintIdentified: 'MintIdentified',
+    PiwikIdentified: 'PiwikIdentified',
+    WsftpLogFileIdentified: 'WSFTPLogFileIdentified',
+    WebConfigIdentified: 'WebConfigIdentified',
+    LighttpdDirectoryListing: 'LighttpdDirectoryListing',
+    NginxDirectoryListing: 'NginxDirectoryListing',
+    LiteSpeedDirectoryListing: 'LiteSpeedDirectoryListing',
+    GenericEmailDisclosure: 'GenericEmailDisclosure',
+    DefaultIis8Page: 'DefaultIis8Page',
+    ShellScriptIdentified: 'ShellScriptIdentified',
+    PossibleDatabaseConnectionStringIdentified: 'PossibleDatabaseConnectionStringIdentified',
+    UncServerAndShareDisclosure: 'UNCServerAndShareDisclosure',
+    HstsNotEnabled: 'HstsNotEnabled',
+    HstsMaxAge: 'HstsMaxAge',
+    HstsViaHttp: 'HstsViaHttp',
+    HstsErrors: 'HstsErrors',
+    WordPressOutOfDate: 'WordPressOutOfDate',
+    DrupalOutOfDate: 'DrupalOutOfDate',
+    JoomlaOutOfDate: 'JoomlaOutOfDate',
+    MediaWikiOutOfDate: 'MediaWikiOutOfDate',
+    MovableTypeOutOfDate: 'MovableTypeOutOfDate',
+    OscommerceOutOfDate: 'OscommerceOutOfDate',
+    PhpBbOutOfDate: 'PhpBBOutOfDate',
+    TWikiOutOfDate: 'TWikiOutOfDate',
+    WordPressIdentified: 'WordPressIdentified',
+    DrupalIdentified: 'DrupalIdentified',
+    JoomlaIdentified: 'JoomlaIdentified',
+    MediaWikiIdentified: 'MediaWikiIdentified',
+    MovableTypeIdentified: 'MovableTypeIdentified',
+    OscommerceIdentified: 'OscommerceIdentified',
+    PhpBbIdentified: 'PhpBBIdentified',
+    TWikiIdentified: 'TWikiIdentified',
+    RceRorXml: 'RceRorXml',
+    RceRorJson: 'RceRorJson',
+    PossibleRceRorXml: 'PossibleRceRorXml',
+    PossibleRceRorJson: 'PossibleRceRorJson',
+    ModSslVersionDisclosure: 'ModSslVersionDisclosure',
+    PhpmyAdminIdentified: 'PHPMyAdminIdentified',
+    WebalizerIdentified: 'WebalizerIdentified',
+    RubyVersionDisclosure: 'RubyVersionDisclosure',
+    WebrickVersionDisclosure: 'WebrickVersionDisclosure',
+    OptionsMethodEnabled: 'OptionsMethodEnabled',
+    WebDavEnabled: 'WebDavEnabled',
+    WebDavDirectoryHasWritePermissions: 'WebDavDirectoryHasWritePermissions',
+    CodeExecutionViaWebDav: 'CodeExecutionViaWebDav',
+    WebDavDirectoryListing: 'WebDavDirectoryListing',
+    CsrfDetected: 'CsrfDetected',
+    CsrfInLoginFormDetected: 'CsrfInLoginFormDetected',
+    CookieLeakageInAntiCsrfTokenDetected: 'CookieLeakageInAntiCsrfTokenDetected',
+    MisconfiguredFrame: 'MisconfiguredFrame',
+    InsecureFrameExternal: 'InsecureFrameExternal',
+    DomBasedXss: 'DomBasedXss',
+    NuSoapVersionDisclosure: 'NuSoapVersionDisclosure',
+    NuSoapOutOfDate: 'NuSoapOutOfDate',
+    AutoCompleteEnabledPasswordField: 'AutoCompleteEnabledPasswordField',
+    NginxOutOfDate: 'NginxOutOfDate',
+    PerlSourceCodeDisclosure: 'PerlSourceCodeDisclosure',
+    PythonSourceCodeDisclosure: 'PythonSourceCodeDisclosure',
+    RubySourceCodeDisclosure: 'RubySourceCodeDisclosure',
+    JavaSourceCodeDisclosure: 'JavaSourceCodeDisclosure',
+    OpenSslHeartbleedVulnerability: 'OpenSslHeartbleedVulnerability',
+    NginxIdentified: 'NginxIdentified',
+    ApacheIdentified: 'ApacheIdentified',
+    JavaStackTraceDisclosure: 'JavaStackTraceDisclosure',
+    MissingXFrameOptionsHeader: 'MissingXFrameOptionsHeader',
+    MissingContentTypeHeader: 'MissingContentTypeHeader',
+    CommandInjectionShellshock: 'CommandInjectionShellshock',
+    PossibleReflectedFileDownload: 'PossibleReflectedFileDownload',
+    InsecureJsonpEndpoint: 'InsecureJsonpEndpoint',
+    InsecureReflectedContent: 'InsecureReflectedContent',
+    MisconfiguredAccessControlOrigin: 'MisconfiguredAccessControlOrigin',
+    PassiveMixedContent: 'PassiveMixedContent',
+    Teapot: 'Teapot',
+    PossibleXxe: 'PossibleXxe',
+    Xxe: 'Xxe',
+    UnrestrictedFileUpload: 'UnrestrictedFileUpload',
+    CodeExecutionViaFileUpload: 'CodeExecutionViaFileUpload',
+    PossibleCreditCardDisclosure: 'PossibleCreditCardDisclosure',
+    RsaPrivateKeyDetected: 'RsaPrivateKeyDetected',
+    RceInHttpSys: 'RceInHttpSys',
+    OpenRedirectInPost: 'OpenRedirectInPost',
+    FormHijacking: 'FormHijacking',
+    BaseTagHijacking: 'BaseTagHijacking',
+    WindowsShortFilename: 'WindowsShortFilename',
+    RorDatabaseConfigurationFileDetected: 'RorDatabaseConfigurationFileDetected',
+    RorDevelopmentModeEnabled: 'RorDevelopmentModeEnabled',
+    RorVersionDisclosure: 'RorVersionDisclosure',
+    RubyGemsVersionDisclosure: 'RubyGemsVersionDisclosure',
+    RubyGemsOutOfDate: 'RubyGemsOutOfDate',
+    RubyOutOfDate: 'RubyOutOfDate',
+    RorOutOfDate: 'RorOutOfDate',
+    PythonOutOfDate: 'PythonOutOfDate',
+    PerlOutOfDate: 'PerlOutOfDate',
+    DjangoDebugModeEnabled: 'DjangoDebugModeEnabled',
+    DjangoVersionDisclosure: 'DjangoVersionDisclosure',
+    DjangoOutOfDate: 'DjangoOutOfDate',
+    PhpLiteAdminIdentified: 'PhpLiteAdminIdentified',
+    AdminerIdentified: 'AdminerIdentified',
+    MicrosoftIisLogFileIdentified: 'MicrosoftIisLogFileIdentified',
+    PhpMoAdminIdentified: 'PhpMoAdminIdentified',
+    DbNinjaIdentified: 'DbNinjaIdentified',
+    LaravelEnvironmentConfigurationFileDetected: 'LaravelEnvironmentConfigurationFileDetected',
+    LaravelDebugModeEnabled: 'LaravelDebugModeEnabled',
+    LaravelStackTraceDisclosure: 'LaravelStackTraceDisclosure',
+    SublimeSftpConfigFileDetected: 'SublimeSftpConfigFileDetected',
+    RorStackTraceDisclosure: 'RorStackTraceDisclosure',
+    JqueryOutOfDate: 'JqueryOutOfDate',
+    JqueryMigrateOutOfDate: 'JqueryMigrateOutOfDate',
+    JqueryMobileOutOfDate: 'JqueryMobileOutOfDate',
+    JqueryUiDialogOutOfDate: 'JqueryUiDialogOutOfDate',
+    JqueryUiAutocompleteOutOfDate: 'JqueryUiAutocompleteOutOfDate',
+    JqueryUiTooltipOutOfDate: 'JqueryUiTooltipOutOfDate',
+    PrettyPhotoOutOfDate: 'PrettyPhotoOutOfDate',
+    JPlayerOutOfDate: 'jPlayerOutOfDate',
+    YuiOutOfDate: 'YuiOutOfDate',
+    PrototypejsOutOfDate: 'PrototypejsOutOfDate',
+    EmberOutOfDate: 'EmberOutOfDate',
+    DojoOutOfDate: 'DojoOutOfDate',
+    AngularjsOutOfDate: 'AngularjsOutOfDate',
+    BackbonejsOutOfDate: 'BackbonejsOutOfDate',
+    MustachejsOutOfDate: 'MustachejsOutOfDate',
+    HandlebarsjsOutOfDate: 'HandlebarsjsOutOfDate',
+    EasyXdmOutOfDate: 'EasyXdmOutOfDate',
+    PluploadOutOfDate: 'PluploadOutOfDate',
+    DomPurifyOutOfDate: 'DomPurifyOutOfDate',
+    DwrOutOfDate: 'DwrOutOfDate',
+    InsecureHttpUsage: 'InsecureHttpUsage',
+    OpenCartIdentified: 'OpenCartIdentified',
+    OpenCartOutOfDate: 'OpenCartOutOfDate',
+    MissingXssProtectionHeader: 'MissingXssProtectionHeader',
+    VideojsOutOfDate: 'VideojsOutOfDate',
+    TlsVersion1Support: 'TlsVersion1Support',
+    SameSiteCookieNotImplemented: 'SameSiteCookieNotImplemented',
+    ReverseTabnabbing: 'ReverseTabnabbing',
+    SubResourceIntegrityNotImplemented: 'SubResourceIntegrityNotImplemented',
+    SubResourceIntegrityHashInvalid: 'SubResourceIntegrityHashInvalid',
+    PossibleSsrf: 'PossibleSsrf',
+    OutOfBandSqlInjection: 'OutOfBandSqlInjection',
+    OutOfBandXxe: 'OutOfBandXxe',
+    BlindXss: 'BlindXss',
+    OutOfBandRfi: 'OutOfBandRfi',
+    OutOfBandRcePhp: 'OutOfBandRcePhp',
+    OutOfBandCommandInjection: 'OutOfBandCommandInjection',
+    SsrfAws: 'SsrfAws',
+    PossibleSsrfAws: 'PossibleSsrfAws',
+    SsrfElmah: 'SsrfElmah',
+    PossibleSsrfElmah: 'PossibleSsrfElmah',
+    SsrfTrace: 'SsrfTrace',
+    PossibleSsrfTrace: 'PossibleSsrfTrace',
+    OutOfBandRceAsp: 'OutOfBandRceAsp',
+    OutOfBandRcePerl: 'OutOfBandRcePerl',
+    DomBasedOpenRedirect: 'DomBasedOpenRedirect',
+    DeprecatedCspHeader: 'DeprecatedCspHeader',
+    CspNotImplemented: 'CspNotImplemented',
+    InvalidCspMetaTag: 'InvalidCspMetaTag',
+    InvalidCspInsructionInMeta: 'InvalidCspInsructionInMeta',
+    CspKeywordUsedAsTarget: 'CspKeywordUsedAsTarget',
+    UnsafeCspInstructionDetected: 'UnsafeCspInstructionDetected',
+    NonceDetectedInCsp: 'NonceDetectedInCsp',
+    NoScriptTagDetectedWithNonce: 'NoScriptTagDetectedWithNonce',
+    SameNonceValueDetected: 'SameNonceValueDetected',
+    DefaultSrcUsedInCsp: 'DefaultSrcUsedInCsp',
+    InsecureReportUriDetectedInCsp: 'InsecureReportUriDetectedInCsp',
+    ReportUriWithDifferentHostDetectedInCsp: 'ReportUriWithDifferentHostDetectedInCsp',
+    WildcardDetectedInScheme: 'WildcardDetectedInScheme',
+    WildcardDetectedInDomain: 'WildcardDetectedInDomain',
+    WildcardDetectedInPort: 'WildcardDetectedInPort',
+    UnsupportedHashDetectedInScriptInstruction: 'UnsupportedHashDetectedInScriptInstruction',
+    InsecureNonceValueDetected: 'InsecureNonceValueDetected',
+    SsrfElmahMvc: 'SsrfElmahMvc',
+    PossibleSsrfElmahMvc: 'PossibleSsrfElmahMvc',
+    DeprecatedHeaderDetectedWithCspHeader: 'DeprecatedHeaderDetectedWithCspHeader',
+    InvalidNonceDetectedInCsp: 'InvalidNonceDetectedInCsp',
+    NoScriptTagDetectedWithHash: 'NoScriptTagDetectedWithHash',
+    DataCspDirectiveDetected: 'DataCspDirectiveDetected',
+    CspReportOnlyHeaderDetectedWithoutReportUri: 'CspReportOnlyHeaderDetectedWithoutReportUri',
+    CspReportOnlyUsedInMeta: 'CspReportOnlyUsedInMeta',
+    SingleHeaderMultipleCookies: 'SingleHeaderMultipleCookies',
+    OutOfBandRceRoRXml: 'OutOfBandRceRoRXml',
+    OutOfBandRceRoRJson: 'OutOfBandRceRoRJson',
+    ObjectSrcNotUsed: 'ObjectSrcNotUsed',
+    ApacheMultiChoiceEnabled: 'ApacheMultiChoiceEnabled',
+    HttpOrHttpsDetectedOnScriptSrc: 'HttpOrHttpsDetectedOnScriptSrc',
+    InsecureTargetUriDetectedInCsp: 'InsecureTargetUriDetectedInCsp',
+    PossibleTimeBasedSsrf: 'PossibleTimeBasedSsrf',
+    PossibleBlindXss: 'PossibleBlindXss',
+    PossibleSsrfSsh: 'PossibleSsrfSsh',
+    PossibleSsrfMySql: 'PossibleSsrfMySql',
+    RceApacheStruts: 'RceApacheStruts',
+    PossibleRceApacheStruts: 'PossibleRceApacheStruts',
+    ControllableCookie: 'ControllableCookie',
+    ReferrerPolicyNotImplemented: 'ReferrerPolicyNotImplemented',
+    ReferrerPolicyReferrerLeakToSameProtocol: 'ReferrerPolicyReferrerLeakToSameProtocol',
+    ReferrerPolicyOriginLeakToCrossSite: 'ReferrerPolicyOriginLeakToCrossSite',
+    ReferrerPolicySameProtocolLeak: 'ReferrerPolicySameProtocolLeak',
+    ReferrerPolicyCrossOriginLeak: 'ReferrerPolicyCrossOriginLeak',
+    ReferrerPolicyStrictCrossOriginLeak: 'ReferrerPolicyStrictCrossOriginLeak',
+    ReferrerPolicyCrossSiteReferrerLeak: 'ReferrerPolicyCrossSiteReferrerLeak',
+    ReferrerPolicyUnknown: 'ReferrerPolicyUnknown',
+    ReferrerPolicyFallbackMissing: 'ReferrerPolicyFallbackMissing',
+    MsSqlDatabaseNameDisclosure: 'MsSqlDatabaseNameDisclosure',
+    MySqlDatabaseNameDisclosure: 'MySqlDatabaseNameDisclosure',
+    ActiveMixedContent: 'ActiveMixedContent',
+    MixedContentScript: 'MixedContentScript',
+    MixedContentResource: 'MixedContentResource',
+    KnockoutjsOutOfDate: 'KnockoutjsOutOfDate',
+    BootstrapjsOutOfDate: 'BootstrapjsOutOfDate',
+    TypeaheadjsOutOfDate: 'TypeaheadjsOutOfDate',
+    FootablejsOutOfDate: 'FootablejsOutOfDate',
+    SortablejsOutOfDate: 'SortablejsOutOfDate',
+    ImagePickerOutOfDate: 'ImagePickerOutOfDate',
+    JqueryValidationOutOfDate: 'JqueryValidationOutOfDate',
+    AspNetSignalROutOfDate: 'AspNetSignalROutOfDate',
+    Select2OutOfDate: 'Select2OutOfDate',
+    MomentjsOutOfDate: 'MomentjsOutOfDate',
+    Html5ShivOutOfDate: 'Html5ShivOutOfDate',
+    IonRangeSliderOutOfDate: 'IonRangeSliderOutOfDate',
+    JsTreeOutOfDate: 'JsTreeOutOfDate',
+    ModernizrOutOfDate: 'ModernizrOutOfDate',
+    RespondjsOutOfDate: 'RespondjsOutOfDate',
+    FuelUxOutOfDate: 'FuelUxOutOfDate',
+    BootboxOutOfDate: 'BootboxOutOfDate',
+    KnockoutMappingOutOfDate: 'KnockoutMappingOutOfDate',
+    JqueryMaskOutOfDate: 'JqueryMaskOutOfDate',
+    Bootstrap3DateTimePickerOutOfDate: 'Bootstrap3DateTimePickerOutOfDate',
+    BootstrapToggleOutOfDate: 'BootstrapToggleOutOfDate',
+    JavaScriptCookieOutOfDate: 'JavaScriptCookieOutOfDate',
+    MixedContentFont: 'MixedContentFont',
+    MixedContentXhrEndpoint: 'MixedContentXhrEndpoint',
+    PossibleRceNodeJs: 'PossibleRceNodeJs',
+    RceNodeJs: 'RceNodeJs',
+    ReactOutOfDate: 'ReactOutOfDate',
+    PossibleSsrfApacheServerStatus: 'PossibleSsrfApacheServerStatus',
+    DefaultIis85Page: 'DefaultIis85Page',
+    DefaultIis100Page: 'DefaultIis100Page',
+    DefaultIis75Page: 'DefaultIis75Page',
+    DefaultIis7XPage: 'DefaultIis7XPage',
+    CkeditorOutOfDate: 'CkeditorOutOfDate',
+    WordPressSetupConfigurationFile: 'WordPressSetupConfigurationFile',
+    PossibleOutOfBandCommandInjectionStruts052: 'PossibleOutOfBandCommandInjectionStruts052',
+    OutOfBandCommandInjectionStruts053: 'OutOfBandCommandInjectionStruts053',
+    LighttpdOutOfDate: 'LighttpdOutOfDate',
+    PostgreSqlOutOfDate: 'PostgreSqlOutOfDate',
+    RceApacheStrutsS0253: 'RceApacheStrutsS0253',
+    PossibleRceApacheStrutsS0253: 'PossibleRceApacheStrutsS0253',
+    RceApacheStrutsS2046: 'RceApacheStrutsS2046',
+    PossibleRceApacheStrutsS2046: 'PossibleRceApacheStrutsS2046',
+    RceApacheStrutsS2045: 'RceApacheStrutsS2045',
+    PossibleRceApacheStrutsS2045: 'PossibleRceApacheStrutsS2045',
+    AbanteCartIdentified: 'AbanteCartIdentified',
+    AbanteCartOutOfDate: 'AbanteCartOutOfDate',
+    AmpacheIdentified: 'AmpacheIdentified',
+    AmpacheOutOfDate: 'AmpacheOutOfDate',
+    AtutorIdentified: 'AtutorIdentified',
+    AtutorOutOfDate: 'AtutorOutOfDate',
+    ChamiloIdentified: 'ChamiloIdentified',
+    ChamiloOutOfDate: 'ChamiloOutOfDate',
+    ClarolineIdentified: 'ClarolineIdentified',
+    ClarolineOutOfDate: 'ClarolineOutOfDate',
+    CollabtiveIdentified: 'CollabtiveIdentified',
+    CollabtiveOutOfDate: 'CollabtiveOutOfDate',
+    Concrete5Identified: 'Concrete5Identified',
+    Concrete5OutOfDate: 'Concrete5OutOfDate',
+    CoppermineIdentified: 'CoppermineIdentified',
+    CoppermineOutOfDate: 'CoppermineOutOfDate',
+    CubeCartIdentified: 'CubeCartIdentified',
+    CubeCartOutOfDate: 'CubeCartOutOfDate',
+    DokuWikiIdentified: 'DokuWikiIdentified',
+    DokuWikiOutOfDate: 'DokuWikiOutOfDate',
+    DotClearIdentified: 'DotClearIdentified',
+    DotClearOutOfDate: 'DotClearOutOfDate',
+    E107Identified: 'E107Identified',
+    E107OutOfDate: 'E107OutOfDate',
+    FamilyConnectionsIdentified: 'FamilyConnectionsIdentified',
+    FamilyConnectionsOutOfDate: 'FamilyConnectionsOutOfDate',
+    FluxBbIdentified: 'FluxBBIdentified',
+    FluxBbOutOfDate: 'FluxBBOutOfDate',
+    FormToolsIdentified: 'FormToolsIdentified',
+    FormToolsOutOfDate: 'FormToolsOutOfDate',
+    FrontAccountingIdentified: 'FrontAccountingIdentified',
+    FrontAccountingOutOfDate: 'FrontAccountingOutOfDate',
+    GibbonEduIdentified: 'GibbonEduIdentified',
+    GibbonEduOutOfDate: 'GibbonEduOutOfDate',
+    HeskIdentified: 'HeskIdentified',
+    HeskOutOfDate: 'HeskOutOfDate',
+    LimeSurveyIdentified: 'LimeSurveyIdentified',
+    LimeSurveyOutOfDate: 'LimeSurveyOutOfDate',
+    LiveHelperChatIdentified: 'LiveHelperChatIdentified',
+    LiveHelperChatOutOfDate: 'LiveHelperChatOutOfDate',
+    LogaholicIdentified: 'LogaholicIdentified',
+    LogaholicOutOfDate: 'LogaholicOutOfDate',
+    MibewMessengerIdentified: 'MibewMessengerIdentified',
+    MibewMessengerOutOfDate: 'MibewMessengerOutOfDate',
+    ModXIdentified: 'ModXIdentified',
+    ModXOutOfDate: 'ModXOutOfDate',
+    MoodleIdentified: 'MoodleIdentified',
+    MoodleOutOfDate: 'MoodleOutOfDate',
+    MyBbIdentified: 'MyBBIdentified',
+    MyBbOutOfDate: 'MyBBOutOfDate',
+    OmekaIdentified: 'OmekaIdentified',
+    OmekaOutOfDate: 'OmekaOutOfDate',
+    OsClassIdentified: 'OsClassIdentified',
+    OsClassOutOfDate: 'OsClassOutOfDate',
+    OsTicketIdentified: 'OsTicketIdentified',
+    OsTicketOutOfDate: 'OsTicketOutOfDate',
+    PrestashopIdentified: 'PrestashopIdentified',
+    PrestashopOutOfDate: 'PrestashopOutOfDate',
+    EspoCrmIdentified: 'EspoCrmIdentified',
+    EspoCrmOutOfDate: 'EspoCrmOutOfDate',
+    ElggIdentified: 'ElggIdentified',
+    ElggOutOfDate: 'ElggOutOfDate',
+    PhorumIdentified: 'PhorumIdentified',
+    PhorumOutOfDate: 'PhorumOutOfDate',
+    PhpFusionIdentified: 'PhpFusionIdentified',
+    PhpFusionOutOfDate: 'PhpFusionOutOfDate',
+    PhpAddressBookIdentified: 'PhpAddressBookIdentified',
+    PhpAddressBookOutOfDate: 'PhpAddressBookOutOfDate',
+    PhpListIdentified: 'PhpListIdentified',
+    PhpListOutOfDate: 'PhpListOutOfDate',
+    PmWikiIdentified: 'PmWikiIdentified',
+    PmWikiOutOfDate: 'PmWikiOutOfDate',
+    PodcastGeneratorIdentified: 'PodcastGeneratorIdentified',
+    PodcastGeneratorOutOfDate: 'PodcastGeneratorOutOfDate',
+    ProjectSendIdentified: 'ProjectSendIdentified',
+    ProjectSendOutOfDate: 'ProjectSendOutOfDate',
+    Question2AnswerIdentified: 'Question2AnswerIdentified',
+    Question2AnswerOutOfDate: 'Question2AnswerOutOfDate',
+    RukovoditelIdentified: 'RukovoditelIdentified',
+    RukovoditelOutOfDate: 'RukovoditelOutOfDate',
+    SeoPanelIdentified: 'SeoPanelIdentified',
+    SeoPanelOutOfDate: 'SeoPanelOutOfDate',
+    SerendipityIdentified: 'SerendipityIdentified',
+    SerendipityOutOfDate: 'SerendipityOutOfDate',
+    TcExamIdentified: 'TcExamIdentified',
+    TcExamOutOfDate: 'TcExamOutOfDate',
+    VanillaForumsIdentified: 'VanillaForumsIdentified',
+    VanillaForumsOutOfDate: 'VanillaForumsOutOfDate',
+    WebErpIdentified: 'WebErpIdentified',
+    WebErpOutOfDate: 'WebErpOutOfDate',
+    WeBidIdentified: 'WeBidIdentified',
+    WeBidOutOfDate: 'WeBidOutOfDate',
+    XoopsIdentified: 'XoopsIdentified',
+    XoopsOutOfDate: 'XoopsOutOfDate',
+    YetiForceCrmIdentified: 'YetiForceCrmIdentified',
+    YetiForceCrmOutOfDate: 'YetiForceCrmOutOfDate',
+    YourlsIdentified: 'YourlsIdentified',
+    YourlsOutOfDate: 'YourlsOutOfDate',
+    ZenCartIdentified: 'ZenCartIdentified',
+    ZenCartOutOfDate: 'ZenCartOutOfDate',
+    ZenPhotoIdentified: 'ZenPhotoIdentified',
+    ZenPhotoOutOfDate: 'ZenPhotoOutOfDate',
+    PiwigoIdentified: 'PiwigoIdentified',
+    PiwigoOutOfDate: 'PiwigoOutOfDate',
+    ZurmoIdentified: 'ZurmoIdentified',
+    ZurmoOutOfDate: 'ZurmoOutOfDate',
+    OwnCloudIdentified: 'OwnCloudIdentified',
+    OwnCloudOutOfDate: 'OwnCloudOutOfDate',
+    PhpMyFaqIdentified: 'PhpMyFaqIdentified',
+    PhpMyFaqOutOfDate: 'PhpMyFaqOutOfDate',
+    RoundcubeIdentified: 'RoundcubeIdentified',
+    RoundcubeOutOfDate: 'RoundcubeOutOfDate',
+    ZikulaIdentified: 'ZikulaIdentified',
+    ZikulaOutOfDate: 'ZikulaOutOfDate',
+    WeakRobotOracleDetected: 'WeakRobotOracleDetected',
+    StrongRobotOracleDetected: 'StrongRobotOracleDetected',
+    ZeptojsOutOfDate: 'ZeptojsOutOfDate',
+    HammerjsOutOfDate: 'HammerjsOutOfDate',
+    VuejsOutOfDate: 'VuejsOutOfDate',
+    PhaserOutOfDate: 'PhaserOutOfDate',
+    ChartjsOutOfDate: 'ChartjsOutOfDate',
+    RamdaOutOfDate: 'RamdaOutOfDate',
+    RevealJsOutOfDate: 'RevealJsOutOfDate',
+    PixiJsOutOfDate: 'PixiJsOutOfDate',
+    FabricJsOutOfDate: 'FabricJsOutOfDate',
+    SemanticUiOutOfDate: 'SemanticUIOutOfDate',
+    LeafletOutOfDate: 'LeafletOutOfDate',
+    PossibleOutOfBandCommandInjection: 'PossibleOutOfBandCommandInjection',
+    FoundationOutOfDate: 'FoundationOutOfDate',
+    ThreeJsOutOfDate: 'ThreeJsOutOfDate',
+    PdfJsOutOfDate: 'PdfJsOutOfDate',
+    ExpressJsIdentified: 'ExpressJsIdentified',
+    PossibleSsti: 'PossibleSsti',
+    Ssti: 'Ssti',
+    PossibleCodeExecutionViaSsti: 'PossibleCodeExecutionViaSsti',
+    CodeExecutionViaSsti: 'CodeExecutionViaSsti',
+    PossibleCodeExecutionViaSstiTwig: 'PossibleCodeExecutionViaSstiTwig',
+    CodeExecutionViaSstiTwig: 'CodeExecutionViaSstiTwig',
+    PossibleCodeExecutionViaSstiMako: 'PossibleCodeExecutionViaSstiMako',
+    CodeExecutionViaSstiMako: 'CodeExecutionViaSstiMako',
+    PossibleCodeExecutionViaSstiSmarty: 'PossibleCodeExecutionViaSstiSmarty',
+    CodeExecutionViaSstiSmarty: 'CodeExecutionViaSstiSmarty',
+    PossibleCodeExecutionViaSstiNunjucks: 'PossibleCodeExecutionViaSstiNunjucks',
+    CodeExecutionViaSstiNunjucks: 'CodeExecutionViaSstiNunjucks',
+    PossibleCodeExecutionViaSstiJade: 'PossibleCodeExecutionViaSstiJade',
+    CodeExecutionViaSstiJade: 'CodeExecutionViaSstiJade',
+    PossibleSstiDot: 'PossibleSstiDot',
+    SstiDot: 'SstiDot',
+    PossibleCodeExecutionViaSstiDot: 'PossibleCodeExecutionViaSstiDot',
+    CodeExecutionViaSstiDot: 'CodeExecutionViaSstiDot',
+    PossibleSstiEjs: 'PossibleSstiEjs',
+    SstiEjs: 'SstiEjs',
+    PossibleCodeExecutionViaSstiEjs: 'PossibleCodeExecutionViaSstiEjs',
+    CodeExecutionViaSstiEjs: 'CodeExecutionViaSstiEjs',
+    PossibleCodeExecutionViaSstiMarko: 'PossibleCodeExecutionViaSstiMarko',
+    CodeExecutionViaSstiMarko: 'CodeExecutionViaSstiMarko',
+    PossibleCodeExecutionViaSstiTornado: 'PossibleCodeExecutionViaSstiTornado',
+    CodeExecutionViaSstiTornado: 'CodeExecutionViaSstiTornado',
+    PossibleCodeExecutionViaSstiFreeMarker: 'PossibleCodeExecutionViaSstiFreeMarker',
+    CodeExecutionViaSstiFreeMarker: 'CodeExecutionViaSstiFreeMarker',
+    PossibleSstiVelocity: 'PossibleSstiVelocity',
+    SstiVelocity: 'SstiVelocity',
+    PossibleCodeExecutionViaSstiVelocity: 'PossibleCodeExecutionViaSstiVelocity',
+    CodeExecutionViaSstiVelocity: 'CodeExecutionViaSstiVelocity',
+    PossibleSstiErb: 'PossibleSstiErb',
+    SstiErb: 'SstiErb',
+    PossibleCodeExecutionViaSstiErb: 'PossibleCodeExecutionViaSstiErb',
+    CodeExecutionViaSstiErb: 'CodeExecutionViaSstiErb',
+    PossibleCodeExecutionViaSstiSlim: 'PossibleCodeExecutionViaSstiSlim',
+    CodeExecutionViaSstiSlim: 'CodeExecutionViaSstiSlim',
+    PossibleCodeExecutionViaSstiJinja: 'PossibleCodeExecutionViaSstiJinja',
+    CodeExecutionViaSstiJinja: 'CodeExecutionViaSstiJinja',
+    PossibleSstiFreeMarker: 'PossibleSstiFreeMarker',
+    SstiFreeMarker: 'SstiFreeMarker',
+    OutOfBandCodeExecutionViaSsti: 'OutOfBandCodeExecutionViaSsti',
+    OutOfBandCodeExecutionViaSstiMako: 'OutOfBandCodeExecutionViaSstiMako',
+    OutOfBandCodeExecutionViaSstiTornado: 'OutOfBandCodeExecutionViaSstiTornado',
+    OutOfBandCodeExecutionViaSstiJinja: 'OutOfBandCodeExecutionViaSstiJinja',
+    OutOfBandCodeExecutionViaSstiMarko: 'OutOfBandCodeExecutionViaSstiMarko',
+    OutOfBandCodeExecutionViaSstiDot: 'OutOfBandCodeExecutionViaSstiDot',
+    OutOfBandCodeExecutionViaSstiNunjucks: 'OutOfBandCodeExecutionViaSstiNunjucks',
+    OutOfBandCodeExecutionViaSstiJade: 'OutOfBandCodeExecutionViaSstiJade',
+    OutOfBandCodeExecutionViaSstiSmarty: 'OutOfBandCodeExecutionViaSstiSmarty',
+    ExpectCtIsMissing: 'ExpectCtIsMissing',
+    ExpectCtShouldBeServedOverTls: 'ExpectCtShouldBeServedOverTls',
+    ExpectCtReportOnlyModeIsEnabled: 'ExpectCtReportOnlyModeIsEnabled',
+    ExpectCtErrors: 'ExpectCtErrors',
+    AuthenticationRequired: 'AuthenticationRequired',
+    CaddyWebServerIdentified: 'CaddyWebServerIdentified',
+    AahGoServerIdentified: 'AahGoServerIdentified',
+    JbossApplicationServerIdentified: 'JbossApplicationServerIdentified',
+    JbossApplicationServerVersionDisclosure: 'JbossApplicationServerVersionDisclosure',
+    Ckeditor5OutOfDate: 'Ckeditor5OutOfDate',
+    CakePhpIdentified: 'CakePhpIdentified',
+    CakePhpStackTraceDisclosure: 'CakePhpStackTraceDisclosure',
+    DefaultPageCakePhp: 'DefaultPageCakePhp',
+    CakePhpVersionDisclosure: 'CakePhpVersionDisclosure',
+    CakePhpOutOfDate: 'CakePhpOutOfDate',
+    CherryPyVersionDisclosure: 'CherryPyVersionDisclosure',
+    CherryPyOutOfDate: 'CherryPyOutOfDate',
+    OutOfBandCodeExecutionViaSstiEjs: 'OutOfBandCodeExecutionViaSstiEjs',
+    OutOfBandCodeExecutionViaSstiTwig: 'OutOfBandCodeExecutionViaSstiTwig',
+    OutOfBandCodeExecutionViaSstiFreeMarker: 'OutOfBandCodeExecutionViaSstiFreeMarker',
+    OutOfBandCodeExecutionViaSstiVelocity: 'OutOfBandCodeExecutionViaSstiVelocity',
+    CherryPyStackTraceDisclosure: 'CherryPyStackTraceDisclosure',
+    IntrojsOutOfDate: 'IntrojsOutOfDate',
+    AxiosOutOfDate: 'AxiosOutOfDate',
+    Fingerprintjs2OutOfDate: 'Fingerprintjs2OutOfDate',
+    XRegExpOutOfDate: 'XRegExpOutOfDate',
+    DataTablesOutOfDate: 'DataTablesOutOfDate',
+    LazyjsOutOfDate: 'LazyjsOutOfDate',
+    FancyBoxOutOfDate: 'FancyBoxOutOfDate',
+    UnderscorejsOutOfDate: 'UnderscorejsOutOfDate',
+    LightboxOutOfDate: 'LightboxOutOfDate',
+    JbossApplicationServerOutOfDate: 'JbossApplicationServerOutOfDate',
+    SweetAlert2OutOfDate: 'SweetAlert2OutOfDate',
+    LodashOutOfDate: 'LodashOutOfDate',
+    BluebirdOutOfDate: 'BluebirdOutOfDate',
+    PolymerOutOfDate: 'PolymerOutOfDate',
+    ReviveAdserverIdentified: 'ReviveAdserverIdentified',
+    ReviveAdserverOutOfDate: 'ReviveAdserverOutOfDate',
+    B2evolutionIdentified: 'B2evolutionIdentified',
+    B2evolutionOutOfDate: 'B2evolutionOutOfDate',
+    DolphinIdentified: 'DolphinIdentified',
+    DolphinOutOfDate: 'DolphinOutOfDate',
+    Ph7CmsIdentified: 'PH7CMSIdentified',
+    Ph7CmsOutOfDate: 'PH7CMSOutOfDate',
+    QdPmIdentified: 'QdPMIdentified',
+    QdPmOutOfDate: 'QdPMOutOfDate',
+    VtigerIdentified: 'VtigerIdentified',
+    VtigerOutOfDate: 'VtigerOutOfDate',
+    DolibarrIdentified: 'DolibarrIdentified',
+    DolibarrOutOfDate: 'DolibarrOutOfDate',
+    ClipBucketIdentified: 'ClipBucketIdentified',
+    ClipBucketOutOfDate: 'ClipBucketOutOfDate',
+    ContaoIdentified: 'ContaoIdentified',
+    ContaoOutOfDate: 'ContaoOutOfDate',
+    MisconfiguredXFrameOptionsHeader: 'MisconfiguredXFrameOptionsHeader',
+    RubyErrorDisclosure: 'RubyErrorDisclosure',
+    WpEngineConfigurationFileDetected: 'WpEngineConfigurationFileDetected',
+    SessionCookieNotMarkedAsSecure: 'SessionCookieNotMarkedAsSecure',
+    PossibleHeaderInjection: 'PossibleHeaderInjection',
+    OracleOutOfDate: 'OracleOutOfDate',
+    TsWebIdentified: 'TsWebIdentified',
+    DrupalRce: 'DrupalRce',
+    MithrilOutOfDate: 'MithrilOutOfDate',
+    EfJsOutOfDate: 'EfJsOutOfDate',
+    MathJsOutOfDate: 'MathJsOutOfDate',
+    ListJsOutOfDate: 'ListJsOutOfDate',
+    RequireJsOutOfDate: 'RequireJsOutOfDate',
+    RiotJsOutOfDate: 'RiotJsOutOfDate',
+    InfernoOutOfDate: 'InfernoOutOfDate',
+    MarionetteJsOutOfDate: 'MarionetteJsOutOfDate',
+    GsapOutOfDate: 'GsapOutOfDate',
+    TravisYamlIdentified: 'TravisYamlIdentified',
+    UnicodeTransformationIssue: 'UnicodeTransformationIssue',
+    MalwareIdentified: 'MalwareIdentified',
+    RorFileContentDisclosure: 'RorFileContentDisclosure',
+    AppSiteAssociationIdentified: 'AppSiteAssociationIdentified',
+    OpenSearchIdentified: 'OpenSearchIdentified',
+    ServletSourceCodeDisclosure: 'ServletSourceCodeDisclosure',
+    JspSourceCodeDisclosure: 'JspSourceCodeDisclosure',
+    HtaccessIdentified: 'HtaccessIdentified',
+    RcePython: 'RcePython',
+    PossibleRcePython: 'PossibleRcePython',
+    OutOfBandRcePython: 'OutOfBandRcePython',
+    RceRuby: 'RceRuby',
+    PossibleRceRuby: 'PossibleRceRuby',
+    OutOfBandRceRuby: 'OutOfBandRceRuby',
+    SwaggerJsonIdentified: 'SwaggerJsonIdentified',
+    SslNotImplemented: 'SslNotImplemented',
+    SecurityTxtIdentified: 'SecurityTxtIdentified',
+    RceApacheStrutsS2016: 'RceApacheStrutsS2016',
+    PossibleRceApacheStrutsS2016: 'PossibleRceApacheStrutsS2016',
+    SlickOutOfDate: 'SlickOutOfDate',
+    ScrollRevealOutOfDate: 'ScrollRevealOutOfDate',
+    MathJaxOutOfDate: 'MathJaxOutOfDate',
+    RickshawOutOfDate: 'RickshawOutOfDate',
+    HighchartsOutOfDate: 'HighchartsOutOfDate',
+    SnapSvgOutOfDate: 'SnapSvgOutOfDate',
+    FlickityOutOfDate: 'FlickityOutOfDate',
+    D3JsOutOfDate: 'D3JsOutOfDate',
+    GoogleChartsOutOfDate: 'GoogleChartsOutOfDate',
+    HiawathaVersionDisclosure: 'HiawathaVersionDisclosure',
+    CherokeeVersionDisclosure: 'CherokeeVersionDisclosure',
+    HiawathaOutOfDate: 'HiawathaOutOfDate',
+    CherokeeOutOfDate: 'CherokeeOutOfDate',
+    WebLogicOutOfDate: 'WebLogicOutOfDate',
+    WebCacheDeception: 'WebCacheDeception',
+    IisOutOfDate: 'IisOutOfDate',
+    ImmutablejsOutOfDate: 'ImmutablejsOutOfDate',
+    AxwaySecureTransportDetected: 'AxwaySecureTransportDetected',
+    MisconfiguredXFrameOptionsHeaderMultipleDirectives: 'MisconfiguredXFrameOptionsHeaderMultipleDirectives',
+    TlsVersion11Support: 'TlsVersion11Support',
+    PossibleSsrfOracleCloud: 'PossibleSsrfOracleCloud',
+    PossibleSsrfPacketCloud: 'PossibleSsrfPacketCloud',
+    ExtJsOutOfDate: 'ExtJsOutOfDate',
+    PossibleHpp: 'PossibleHpp',
+    PossibleBreachAttack: 'PossibleBreachAttack',
+    TelerikWebUiVersionDisclosure: 'TelerikWebUiVersionDisclosure',
+    TelerikWebUiOutOfDate: 'TelerikWebUiOutOfDate',
+    JavaVersionDisclosure: 'JavaVersionDisclosure',
+    GlassFishVersionDisclosure: 'GlassFishVersionDisclosure',
+    JavaOutOfDate: 'JavaOutOfDate',
+    GlassFishOutOfDate: 'GlassFishOutOfDate',
+    WafIdentified: 'WafIdentified',
+    AkamaiCdnIdentified: 'AkamaiCdnIdentified',
+    AzureCdnIdentified: 'AzureCdnIdentified',
+    GoogleCloudCdnIdentified: 'GoogleCloudCdnIdentified',
+    ArvanCloudCdnIdentified: 'ArvanCloudCdnIdentified',
+    FastlyCdnIdentified: 'FastlyCdnIdentified',
+    IncapsulaCdnIdentified: 'IncapsulaCdnIdentified',
+    SucuriCdnIdentified: 'SucuriCdnIdentified',
+    NetlifyCdnIdentified: 'NetlifyCdnIdentified',
+    MaxCdnIdentified: 'MaxCdnIdentified',
+    KeyCdnIdentified: 'KeyCdnIdentified',
+    FirebladeCdnIdentified: 'FirebladeCdnIdentified',
+    AireeCdnIdentified: 'AireeCdnIdentified',
+    West263CdnIdentified: 'West263CdnIdentified',
+    InstartCdnIdentified: 'InstartCdnIdentified',
+    QratorCdnIdentified: 'QratorCdnIdentified',
+    PowerCdnIdentified: 'PowerCdnIdentified',
+    Cdn77Identified: 'Cdn77Identified',
+    F5BigIpProxyIdentified: 'F5BigIpProxyIdentified',
+    EnvoyProxyIdentified: 'EnvoyProxyIdentified',
+    CitrixNetScalerProxyIdentified: 'CitrixNetScalerProxyIdentified',
+    ApacheTrafficServerProxyIdentified: 'ApacheTrafficServerProxyIdentified',
+    HaProxyIdentified: 'HaProxyIdentified',
+    SkipperProxyIdentified: 'SkipperProxyIdentified',
+    LoginPageIdentified: 'LoginPageIdentified',
+    SameSiteCookieNotMarkedAsSecure: 'SameSiteCookieNotMarkedAsSecure',
+    LiferayPortalIdentified: 'LiferayPortalIdentified',
+    LiferayPortalOutOfDate: 'LiferayPortalOutOfDate',
+    ApacheTrafficServerVersionDisclosure: 'ApacheTrafficServerVersionDisclosure',
+    ApacheTrafficServerOutOfDate: 'ApacheTrafficServerOutOfDate',
+    UndertowWebServerVersionDisclosure: 'UndertowWebServerVersionDisclosure',
+    UndertowWebServerOutOfDate: 'UndertowWebServerOutOfDate',
+    JenkinsVersionDisclosure: 'JenkinsVersionDisclosure',
+    JenkinsOutOfDate: 'JenkinsOutOfDate',
+    KestrelIdentified: 'KestrelIdentified',
+    TableauServerIdentified: 'TableauServerIdentified',
+    BomgarIdentified: 'BomgarIdentified',
+    JolokiaVersionDisclosure: 'JolokiaVersionDisclosure',
+    JolokiaOutOfDate: 'JolokiaOutOfDate',
+    F5BigIpLocalFileInclusion: 'F5BigIpLocalFileInclusion',
+    PossibleF5BigIpLocalFileInclusion: 'PossibleF5BigIpLocalFileInclusion',
+    PossibleSstiPebble: 'PossibleSstiPebble',
+    SstiPebble: 'SstiPebble',
+    PossibleCodeExecutionViaSstiPebble: 'PossibleCodeExecutionViaSstiPebble',
+    CodeExecutionViaSstiPebble: 'CodeExecutionViaSstiPebble',
+    SugarCrmIdentified: 'SugarCrmIdentified',
+    SugarCrmOutOfDate: 'SugarCrmOutOfDate',
+    GrafanaVersionDisclosure: 'GrafanaVersionDisclosure',
+    GrafanaOutOfDate: 'GrafanaOutOfDate',
+    PossibleSstiJinJava: 'PossibleSstiJinJava',
+    SstiJinJava: 'SstiJinJava',
+    PossibleCodeExecutionViaSstiJinJava: 'PossibleCodeExecutionViaSstiJinJava',
+    CodeExecutionViaSstiJinJava: 'CodeExecutionViaSstiJinJava',
+    PossibleSstiAspNetRazor: 'PossibleSstiAspNetRazor',
+    SstiAspNetRazor: 'SstiAspNetRazor',
+    PossibleCodeExecutionViaSstiAspNetRazor: 'PossibleCodeExecutionViaSstiAspNetRazor',
+    CodeExecutionViaSstiAspNetRazor: 'CodeExecutionViaSstiAspNetRazor',
+    PhpMagicQuotesGpcDisabled: 'PhpMagicQuotesGpcDisabled',
+    PhpRegisterGlobalsEnabled: 'PhpRegisterGlobalsEnabled',
+    PhpDisplayErrorsEnabled: 'PhpDisplayErrorsEnabled',
+    PhpAllowUrlFopenEnabled: 'PhpAllowUrlFopenEnabled',
+    PhpAllowUrlIncludeEnabled: 'PhpAllowUrlIncludeEnabled',
+    PhpSessionUseTransSidEnabled: 'PhpSessionUseTransSidEnabled',
+    PhpOpenBaseDirIsNotSet: 'PhpOpenBaseDirIsNotSet',
+    PhpEnableDlEnabled: 'PhpEnableDlEnabled',
+    AspNetApplicationTraceEnabled: 'AspNetApplicationTraceEnabled',
+    AspNetCookilessSessionStateEnabled: 'AspNetCookilessSessionStateEnabled',
+    AspNetCookilessAuthenticationEnabled: 'AspNetCookilessAuthenticationEnabled',
+    AspNetNoSslAuth: 'AspNetNoSslAuth',
+    AspNetLoginCredentialsPlainText: 'AspNetLoginCredentialsPlainText',
+    AspNetValidateRequestDisabled: 'AspNetValidateRequestDisabled',
+    AspNetViewStateUserKeyNotSet: 'AspNetViewStateUserKeyNotSet',
+    JettyVersionDisclosure: 'JettyVersionDisclosure',
+    TornadoWebServerVersionDisclosure: 'TornadoWebServerVersionDisclosure',
+    TracyDebuggingToolVersionDisclosure: 'TracyDebuggingToolVersionDisclosure',
+    AspNetCustomErrorsDisabled: 'AspNetCustomErrorsDisabled',
+    WhoopsFrameworkIdentified: 'WhoopsFrameworkIdentified',
+    PhpUseOnlyCookiesIsDisabled: 'PhpUseOnlyCookiesIsDisabled',
+    CrushFtpServerIdentified: 'CrushFtpServerIdentified',
+    RceWebLogic: 'RceWebLogic',
+    WeblogicAuthenticationBypass: 'WeblogicAuthenticationBypass',
+    ArbitraryFileCreation: 'ArbitraryFileCreation',
+    ArbitraryFileDeletion: 'ArbitraryFileDeletion',
+    WerkzeugIdentified: 'WerkzeugIdentified',
+    WerkzeugVersionDisclosure: 'WerkzeugVersionDisclosure',
+    WerkzeugOutOfDate: 'WerkzeugOutOfDate',
+    OpenRestyIdentified: 'OpenRestyIdentified',
+    OpenRestyVersionDisclosure: 'OpenRestyVersionDisclosure',
+    OpenRestyOutOfDate: 'OpenRestyOutOfDate',
+    LiteSpeedWebServerIdentified: 'LiteSpeedWebServerIdentified',
+    TwistedWebHttpServerIdentified: 'TwistedWebHTTPServerIdentified',
+    TwistedWebHttpServerVersionDisclosure: 'TwistedWebHTTPServerVersionDisclosure',
+    TwistedWebHttpServerOutOfDate: 'TwistedWebHTTPServerOutOfDate',
+    NextJsReactFrameworkIdentified: 'NextJsReactFrameworkIdentified',
+    NextJsReactFrameworkVersionDisclosure: 'NextJsReactFrameworkVersionDisclosure',
+    NextJsReactFrameworkOutOfDate: 'NextJsReactFrameworkOutOfDate',
+    DaiquiriVersionDisclosure: 'DaiquiriVersionDisclosure',
+    W3TotalCacheOutOfDate: 'W3TotalCacheOutOfDate',
+    W3TotalCacheIdentified: 'W3TotalCacheIdentified',
+    W3TotalCacheVersionDisclosure: 'W3TotalCacheVersionDisclosure',
+    PhusionPassengerIdentified: 'PhusionPassengerIdentified',
+    PhusionPassengerVersionDisclosure: 'PhusionPassengerVersionDisclosure',
+    PhusionPassengerOutOfDate: 'PhusionPassengerOutOfDate',
+    SqlInjectionIast: 'SqlInjectionIast',
+    LfiIast: 'LfiIast',
+    RcePhpIast: 'RcePhpIast',
+    HeaderInjectionIast: 'HeaderInjectionIast',
+    CommandInjectionIast: 'CommandInjectionIast',
+    AxwaySecureTransportIdentified: 'AxwaySecureTransportIdentified',
+    AxwaySecureTransportVersionDisclosure: 'AxwaySecureTransportVersionDisclosure',
+    AxwaySecureTransportOutOfDate: 'AxwaySecureTransportOutOfDate',
+    BurpCollaboratorServerIdentified: 'BurpCollaboratorServerIdentified',
+    ResinApplicationServerIdentified: 'ResinApplicationServerIdentified',
+    ResinApplicationServerVersionDisclosure: 'ResinApplicationServerVersionDisclosure',
+    ResinApplicationServerOutOfDate: 'ResinApplicationServerOutOfDate',
+    TracSoftwareProjectManagementToolIdentified: 'TracSoftwareProjectManagementToolIdentified',
+    TracSoftwareProjectManagementToolVersionDisclosure: 'TracSoftwareProjectManagementToolVersionDisclosure',
+    TracSoftwareProjectManagementToolOutOfDate: 'TracSoftwareProjectManagementToolOutOfDate',
+    TornadoWebServerIdentified: 'TornadoWebServerIdentified',
+    TornadoWebServerOutOfDate: 'TornadoWebServerOutOfDate',
+    JettyWebServerIdentified: 'JettyWebServerIdentified',
+    JettyWebServerOutOfDate: 'JettyWebServerOutOfDate',
+    TracyDebuggingToolOutOfDate: 'TracyDebuggingToolOutOfDate',
+    ZopeWebServerVersionDisclosure: 'ZopeWebServerVersionDisclosure',
+    ZopeWebServerOutOfDate: 'ZopeWebServerOutOfDate',
+    ArtifactoryIdentified: 'ArtifactoryIdentified',
+    ArtifactoryVersionDisclosure: 'ArtifactoryVersionDisclosure',
+    ArtifactoryOutOfDate: 'ArtifactoryOutOfDate',
+    JBossEapIdentified: 'JBossEAPIdentified',
+    WildFlyIdentified: 'WildFlyIdentified',
+    GunicornIdentified: 'GunicornIdentified',
+    GunicornVersionDisclosure: 'GunicornVersionDisclosure',
+    GunicornOutOfDate: 'GunicornOutOfDate',
+    JBossCsIdentified: 'JBossCSIdentified',
+    WebSealIdentified: 'WebSealIdentified',
+    OracleHttpIdentified: 'OracleHTTPIdentified',
+    SonicWallSslvpnIdentified: 'SonicWallSSLVPNIdentified',
+    PloneCmsIdentified: 'PloneCMSIdentified',
+    PloneCmsVersionDisclosure: 'PloneCMSVersionDisclosure',
+    PloneCmsOutOfDate: 'PloneCMSOutOfDate',
+    GlassFishIdentified: 'GlassFishIdentified',
+    IbmrtcIdentified: 'IBMRTCIdentified',
+    IbmrtcVersionDisclosure: 'IBMRTCVersionDisclosure',
+    IbmrtcOutOfDate: 'IBMRTCOutOfDate',
+    NexusIdentified: 'NexusIdentified',
+    NexusVersionDisclosure: 'NexusVersionDisclosure',
+    NexusOutOfDate: 'NexusOutOfDate',
+    IbmhttpServerIdentified: 'IBMHTTPServerIdentified',
+    IbmhttpServerVersionDisclosure: 'IBMHTTPServerVersionDisclosure',
+    IbmhttpServerOutOfDate: 'IBMHTTPServerOutOfDate',
+    PythonWsgiServerIdentified: 'PythonWSGIServerIdentified',
+    PythonWsgiServerVersionDisclosure: 'PythonWSGIServerVersionDisclosure',
+    PythonWsgiServerOutOfDate: 'PythonWSGIServerOutOfDate',
+    PlayFrameworkIdentified: 'PlayFrameworkIdentified',
+    VarnishCacheIdentified: 'VarnishCacheIdentified',
+    RestletFrameworkIdentified: 'RestletFrameworkIdentified',
+    RestletFrameworkVersionDisclosure: 'RestletFrameworkVersionDisclosure',
+    RestletFrameworkOutOfDate: 'RestletFrameworkOutOfDate',
+    ZopeWebServerIdentified: 'ZopeWebServerIdentified',
+    WebSealOutOfDate: 'WebSealOutOfDate',
+    WebSealVersionDisclosure: 'WebSealVersionDisclosure',
+    CowboyIdentified: 'CowboyIdentified',
+    CowboyOutOfDate: 'CowboyOutOfDate',
+    CowboyVersionDisclosure: 'CowboyVersionDisclosure',
+    LiferayPortalVersionDisclosure: 'LiferayPortalVersionDisclosure',
+    RevokedSslCertificate: 'RevokedSslCertificate',
+    SslCertificateHostnameMismatch: 'SslCertificateHostnameMismatch',
+    SslCertificateSignedByUntrustedRoot: 'SslCertificateSignedByUntrustedRoot',
+    ExpiredSslCertificate: 'ExpiredSslCertificate',
+    JwtNoneAlgorithmAllowed: 'JwtNoneAlgorithmAllowed',
+    JwtSignatureNotChecked: 'JwtSignatureNotChecked',
+    JwtInsecureSecretDetected: 'JwtInsecureSecretDetected',
+    JwtSqlInjectionInKid: 'JwtSqlInjectionInKid',
+    ZshHistoryFileDetected: 'ZshHistoryFileDetected',
+    JwtPathTraversalInKid: 'JwtPathTraversalInKid',
+    JwtJkuHijack: 'JwtJkuHijack',
+    JwtJkuForgeryWithOpenRedirect: 'JwtJkuForgeryWithOpenRedirect',
+    DaiquiriIdentified: 'DaiquiriIdentified',
+    Typo3CmsIdentified: 'Typo3CmsIdentified',
+    Typo3CmsOutOfDate: 'Typo3CmsOutOfDate',
+    SslCertificateAboutToExpire: 'SslCertificateAboutToExpire',
+    MagentoIdentified: 'MagentoIdentified',
+    MagentoOutOfDate: 'MagentoOutOfDate',
+    PleskLinIdentified: 'PleskLinIdentified',
+    PleskWinIdentified: 'PleskWinIdentified',
+    LighthouseIdentified: 'LighthouseIdentified',
+    BitNinjaCaptchaServerIdentified: 'BitNinjaCaptchaServerIdentified',
+    PardotServerIdentified: 'PardotServerIdentified',
+    MasheryProxyIdentified: 'MasheryProxyIdentified',
+    DaiquiriOutOfDate: 'DaiquiriOutOfDate',
+    AtlassianProxyIdentified: 'AtlassianProxyIdentified',
+    AtlassianProxyVersionDisclosure: 'AtlassianProxyVersionDisclosure',
+    AtlassianProxyOutOfDate: 'AtlassianProxyOutOfDate',
+    WindowsAzureWebIdentified: 'WindowsAzureWebIdentified',
+    TaleoWebServerIdentified: 'TaleoWebServerIdentified',
+    TaleoWebServerVersionDisclosure: 'TaleoWebServerVersionDisclosure',
+    TaleoWebServerOutOfDate: 'TaleoWebServerOutOfDate',
+    CraftCmsIdentified: 'CraftCmsIdentified',
+    DataDomeIdentified: 'DataDomeIdentified',
+    OpenVpnAccessServerIdentified: 'OpenVpnAccessServerIdentified',
+    SquarespaceIdentified: 'SquarespaceIdentified',
+    SquidIdentified: 'SquidIdentified',
+    SugarCrmVersionDisclosure: 'SugarCrmVersionDisclosure',
+    HubSpotIdentified: 'HubSpotIdentified',
+    KongServerIdentified: 'KongServerIdentified',
+    KongServerVersionDisclosure: 'KongServerVersionDisclosure',
+    KongServerOutOfDate: 'KongServerOutOfDate',
+    VegurIdentified: 'VegurIdentified',
+    JavaServerPageIdentified: 'JavaServerPageIdentified',
+    JavaServerPageVersionDisclosure: 'JavaServerPageVersionDisclosure',
+    TomcatIdentified: 'TomcatIdentified',
+    PhpIdentified: 'PHPIdentified',
+    IisIdentified: 'IisIdentified',
+    WebLogicIdentified: 'WebLogicIdentified',
+    LighttpdIdentified: 'LighttpdIdentified',
+    SharePointIdentified: 'SharePointIdentified',
+    ApacheCoyoteIdentified: 'ApacheCoyoteIdentified',
+    OracleApplicationServerIdentified: 'OracleApplicationServerIdentified',
+    OpenSslIdentified: 'OpenSslIdentified',
+    ApacheModuleIdentified: 'ApacheModuleIdentified',
+    PerlIdentified: 'PerlIdentified',
+    FrontPageIdentified: 'FrontPageIdentified',
+    PythonIdentified: 'PythonIdentified',
+    JavaServletIdentified: 'JavaServletIdentified',
+    MvcIdentified: 'MvcIdentified',
+    MongrelIdentified: 'MongrelIdentified',
+    NuSoapIdentified: 'NuSoapIdentified',
+    RorIdentified: 'RorIdentified',
+    RubyGemsIdentified: 'RubyGemsIdentified',
+    DjangoIdentified: 'DjangoIdentified',
+    CherryPyIdentified: 'CherryPyIdentified',
+    HiawathaIdentified: 'HiawathaIdentified',
+    CherokeeIdentified: 'CherokeeIdentified',
+    TelerikWebUiIdentified: 'TelerikWebUiIdentified',
+    JavaIdentified: 'JavaIdentified',
+    ApacheTrafficServerIdentified: 'ApacheTrafficServerIdentified',
+    UndertowWebServerIdentified: 'UndertowWebServerIdentified',
+    JenkinsIdentified: 'JenkinsIdentified',
+    JolokiaIdentified: 'JolokiaIdentified',
+    GrafanaIdentified: 'GrafanaIdentified',
+    TracyDebuggingToolIdentified: 'TracyDebuggingToolIdentified',
+    LiferayDxpIdentified: 'LiferayDXPIdentified',
+    LiferayDxpVersionDisclosure: 'LiferayDXPVersionDisclosure',
+    LiferayDxpOutOfDate: 'LiferayDXPOutOfDate',
+    JavaServerPageOutOfDate: 'JavaServerPageOutOfDate',
+    SquidVersionDisclosure: 'SquidVersionDisclosure',
+    SquidOutOfDate: 'SquidOutOfDate',
+    SharePointOutOfDate: 'SharePointOutOfDate',
+    ApacheCoyoteOutOfDate: 'ApacheCoyoteOutOfDate',
+    OracleApplicationServerOutOfDate: 'OracleApplicationServerOutOfDate',
+    FrontPageOutOfDate: 'FrontPageOutOfDate',
+    MvcOutOfDate: 'MvcOutOfDate',
+    MongrelOutOfDate: 'MongrelOutOfDate',
+    IbmBpmIdentified: 'IbmBpmIdentified',
+    PhpMyAdminVersionDisclosure: 'PhpMyAdminVersionDisclosure',
+    ShopifyIdentified: 'ShopifyIdentified',
+    AtlassianConfluenceIdentified: 'AtlassianConfluenceIdentified',
+    AtlassianConfluenceVersionDisclosure: 'AtlassianConfluenceVersionDisclosure',
+    AtlassianConfluenceOutOfDate: 'AtlassianConfluenceOutOfDate',
+    AtlassianJiraIdentified: 'AtlassianJiraIdentified',
+    AtlassianJiraVersionDisclosure: 'AtlassianJiraVersionDisclosure',
+    AtlassianJiraOutOfDate: 'AtlassianJiraOutOfDate',
+    OutOfBandRceJavaLog4j: 'OutOfBandRceJavaLog4j',
+    GqlIdentified: 'GqlIdentified',
+    GrapheneIdentified: 'GrapheneIdentified',
+    AriadneIdentified: 'AriadneIdentified',
+    ApolloIdentified: 'ApolloIdentified',
+    GraphqlGoIdentified: 'GraphqlGoIdentified',
+    GqlgenIdentified: 'GqlgenIdentified',
+    WpGraphQlIdentified: 'WPGraphQLIdentified',
+    GraphQlApiWordPressIdentified: 'GraphQLApiWordPressIdentified',
+    GraphQlRubyIdentified: 'GraphQLRubyIdentified',
+    GraphQlphpIdentified: 'GraphQLPHPIdentified',
+    HasuraIdentified: 'HasuraIdentified',
+    GraphQlJavaIdentified: 'GraphQLJavaIdentified',
+    JuniperIdentified: 'JuniperIdentified',
+    SangriaIdentified: 'SangriaIdentified',
+    TartifletteIdentified: 'TartifletteIdentified',
+    DgraphIdentified: 'DgraphIdentified',
+    DirectusIdentified: 'DirectusIdentified',
+    XssViaFileUpload: 'XssViaFileUpload',
+    NodeJsExpressDevModeEnabled: 'NodeJsExpressDevModeEnabled',
+    NodeJsExpressSessionWeakSecret: 'NodeJsExpressSessionWeakSecret',
+    NodeJsUncaughtException: 'NodeJsUncaughtException',
+    NodeJsUnhandledRejection: 'NodeJsUnhandledRejection',
+    JavaVerbTamperingMisconfiguredSecurityConstraint: 'JavaVerbTamperingMisconfiguredSecurityConstraint',
+    JavaLongSessionTimeout: 'JavaLongSessionTimeout',
+    JavaUnsafeSessionTrackingValue: 'JavaUnsafeSessionTrackingValue',
+    JavaUnconfiguredCustomErrorPage: 'JavaUnconfiguredCustomErrorPage',
+    JavaSpringBootActuatorAllEndpointsExposed: 'JavaSpringBootActuatorAllEndpointsExposed',
+    JavaSpringBootActuatorShutdownExposed: 'JavaSpringBootActuatorShutdownExposed',
+    JavaSpringBootDevToolsEnabled: 'JavaSpringBootDevToolsEnabled',
+    JavaSpringBootUnsafeSessionTrackingValue: 'JavaSpringBootUnsafeSessionTrackingValue',
+    JavaSpringLongSessionTimeout: 'JavaSpringLongSessionTimeout',
+    JavaSpringH2ConsoleEnabled: 'JavaSpringH2ConsoleEnabled',
+    JavaSpringDataSourceCredsStoredAsPlainText: 'JavaSpringDataSourceCredsStoredAsPlainText',
+    JavaSpringMongoDbCredsStoredAsPlainText: 'JavaSpringMongoDbCredsStoredAsPlainText',
+    JavaSpringBootAdminEnabled: 'JavaSpringBootAdminEnabled',
+    JavaSpringBootActuatorEndpointSecurityDisabled: 'JavaSpringBootActuatorEndpointSecurityDisabled',
+    JavaSpringHtmlEscapingDisabled: 'JavaSpringHtmlEscapingDisabled',
+    StrutsConfigBrowserEnabled: 'StrutsConfigBrowserEnabled',
+    StrutsDevModeEnabled: 'StrutsDevModeEnabled',
+    AxisSystemConfigurationListingEnabled: 'AxisSystemConfigurationListingEnabled',
+    AxisDevModeEnabled: 'AxisDevModeEnabled',
+    OutOfBandRceNode: 'OutOfBandRceNode',
+    HsqldbIdentified: 'HsqldbIdentified',
+    PossibleRceSpring: 'PossibleRceSpring',
+    SqLiteIdentified: 'SqLiteIdentified',
+    SqLiteOutOfDate: 'SqLiteOutOfDate',
+    ConfirmedErrorBasedMongoDbInjection: 'ConfirmedErrorBasedMongoDbInjection',
+    PossibleErrorBasedMongoDbInjection: 'PossibleErrorBasedMongoDbInjection',
+    ConfirmedBooleanBasedMongoDbInjection: 'ConfirmedBooleanBasedMongoDbInjection',
+    PossibleBooleanBasedMongoDbInjection: 'PossibleBooleanBasedMongoDbInjection',
+    ConfirmedBlindMongoDbInjection: 'ConfirmedBlindMongoDbInjection',
+    PossibleBlindMongoDbInjection: 'PossibleBlindMongoDbInjection',
+    ConfirmedOperatorMongoDbInjection: 'ConfirmedOperatorMongoDbInjection',
+    PossibleOperatorMongoDbInjection: 'PossibleOperatorMongoDbInjection',
+    MongoDbIdentified: 'MongoDbIdentified',
+    SwaggerUiOutOfDate: 'SwaggerUIOutOfDate',
+    MailHeaderInjectionIast: 'MailHeaderInjectionIast',
+    OutOfBandRceText4Shell: 'OutOfBandRceText4Shell',
+    SensitiveDataExposure: 'SensitiveDataExposure',
+    SensitiveDataAmazonAwsAccessKeyId: 'SensitiveDataAmazonAwsAccessKeyId',
+    SensitiveDataAmazonAwsSecretKey: 'SensitiveDataAmazonAwsSecretKey',
+    SensitiveDataFacebookAppSecret: 'SensitiveDataFacebookAppSecret',
+    SensitiveDataFacebookAppId: 'SensitiveDataFacebookAppId',
+    SensitiveDataTwitterApiSecretKey: 'SensitiveDataTwitterApiSecretKey',
+    SensitiveDataTwitterAccessTokenSecret: 'SensitiveDataTwitterAccessTokenSecret',
+    SensitiveDataHerokuApiKey: 'SensitiveDataHerokuApiKey',
+    SensitiveDataSshKey: 'SensitiveDataSshKey',
+    SensitiveDataSendGridApiKey: 'SensitiveDataSendGridApiKey',
+    SensitiveDataGoogleCloudApiKey: 'SensitiveDataGoogleCloudApiKey',
+    SensitiveDataMailGunApiKey: 'SensitiveDataMailGunApiKey',
+    SensitiveDataNuGetApiKey: 'SensitiveDataNuGetApiKey',
+    SensitiveDataSlackWebhook: 'SensitiveDataSlackWebhook',
+    SensitiveDataSlackToken: 'SensitiveDataSlackToken',
+    SensitiveDataSlackV1XToken: 'SensitiveDataSlackV1XToken',
+    SensitiveDataStripeApiKey: 'SensitiveDataStripeApiKey',
+    SensitiveDataMailChimpApiKey: 'SensitiveDataMailChimpApiKey',
+    SensitiveDataLinkedInApiKey: 'SensitiveDataLinkedInApiKey',
+    SensitiveDataDatabaseConnectionStringMongoDbMySql: 'SensitiveDataDatabaseConnectionStringMongoDbMySql',
+    SensitiveDataDatabaseConnectionStringPostgres: 'SensitiveDataDatabaseConnectionStringPostgres',
+    SensitiveDataJdbcDbConnectionString: 'SensitiveDataJdbcDbConnectionString',
+    SensitiveDataWordPressAuthenticationKey: 'SensitiveDataWordPressAuthenticationKey',
+    SensitiveDataSymfonyApplicationSecret: 'SensitiveDataSymfonyApplicationSecret',
+    SensitiveDataMapboxToken: 'SensitiveDataMapboxToken',
+    SensitiveDataAmazonSessMtpPassword: 'SensitiveDataAmazonSessMtpPassword',
+    SensitiveDataSentryAuthToken: 'SensitiveDataSentryAuthToken',
+    SensitiveDataTeamsWebhook: 'SensitiveDataTeamsWebhook',
+    SensitiveDataTwilioApiKey: 'SensitiveDataTwilioApiKey',
+    SensitiveDataPaypalAccessToken: 'SensitiveDataPaypalAccessToken',
+    SensitiveDataSquareAccessToken: 'SensitiveDataSquareAccessToken',
+    SensitiveDataSquareOAuthSecret: 'SensitiveDataSquareOAuthSecret',
+    SensitiveDataPicaticApiKey: 'SensitiveDataPicaticApiKey',
+    SensitiveDataAmazonMwsAuthToken: 'SensitiveDataAmazonMwsAuthToken',
+    SensitiveDataGoogleOAuthAccessToken: 'SensitiveDataGoogleOAuthAccessToken',
+    SensitiveDataFacebookAccessToken: 'SensitiveDataFacebookAccessToken',
+    SensitiveDataSonarQubeUserToken: 'SensitiveDataSonarQubeUserToken',
+    SensitiveDataNexmoSecret: 'SensitiveDataNexmoSecret',
+    SensitiveDataTelegramBotApiToken: 'SensitiveDataTelegramBotApiToken',
+    SensitiveDataDeviseSecretKey: 'SensitiveDataDeviseSecretKey',
+    SensitiveDataGitlabPersonalAccessToken: 'SensitiveDataGitlabPersonalAccessToken',
+    SensitiveDataConsulToken: 'SensitiveDataConsulToken',
+    SensitiveDataOmiseSecretKey: 'SensitiveDataOmiseSecretKey',
+    SensitiveDataNpmAccessToken: 'SensitiveDataNpmAccessToken',
+    GuidV1OnCookie: 'GuidV1OnCookie',
+    JwtDetected: 'JwtDetected',
+    CloudflareIdentified: 'CloudflareIdentified',
+    CloudflareBmIdentified: 'CloudflareBMIdentified',
+    CloudflareBIdentified: 'CloudflareBIdentified',
+    CdnJsIdentified: 'CdnJsIdentified',
+    WindowsServerIdentified: 'WindowsServerIdentified',
+    WindowsCeosIdentified: 'WindowsCEOSIdentified',
+    PossibleSsrfEquinix: 'PossibleSsrfEquinix',
+    VarnishVersionDisclosure: 'VarnishVersionDisclosure',
+    ApacheShiroStackTrace: 'ApacheShiroStackTrace',
+    ApacheShiroIdentified: 'ApacheShiroIdentified',
+    StackPathCdnIdentified: 'StackPathCdnIdentified',
+    JBossWebConsole: 'JBossWebConsole',
+    AemDetected: 'AEMDetected',
+    JavaServletOutOfDate: 'JavaServletOutOfDate',
+    JsDelivrCdnIdentified: 'JsDelivrCdnIdentified',
+    ModSslOutOfDate: 'Mod_SslOutOfDate',
+    ModSslIdentified: 'Mod_SslIdentified',
+    ModSslVersionDisclosure2: 'Mod_SslVersionDisclosure',
+    SpringFrameworkIdentified: 'SpringFrameworkIdentified',
+    JavaMelodyInterfaceDetected: 'JavaMelodyInterfaceDetected',
+    BootstrapTableOutOfDate: 'BootstrapTableOutOfDate',
+    BootstrapSelectOutOfDate: 'BootstrapSelectOutOfDate',
+    BootstrapTypeaheadOutOfDate: 'BootstrapTypeaheadOutOfDate',
+    LuaIdentified: 'LuaIdentified',
+    LuaVersionDisclosure: 'LuaVersionDisclosure',
+    LuaOutOfDate: 'LuaOutOfDate',
+    SpringActuatorEndpointDetected: 'SpringActuatorEndpointDetected',
+    MsExchangeVersionDisclosure: 'MsExchangeVersionDisclosure',
+    MsExchangeOutOfDate: 'MsExchangeOutOfDate',
+    OutOfBandCodeExecutionViaJwtKid: 'OutOfBandCodeExecutionViaJwtKid',
+    MongoDbInjectionIast: 'MongoDbInjectionIast',
+    LdapInjectionIast: 'LdapInjectionIast',
+    XPathInjectionIast: 'XPathInjectionIast',
+    ServerSideTemplateInjectionIast: 'ServerSideTemplateInjectionIast',
+    XxeInjectionIast: 'XxeInjectionIast',
+    JetBrainsIdeaDirectoryDetected: 'JetBrainsIdeaDirectoryDetected',
+    NodeJsStackTraceDisclosure: 'NodeJsStackTraceDisclosure',
+    ItHitWebDavNetVersionDisclosure: 'ItHitWebDavNetVersionDisclosure',
+    ItHitWebDavNetOutOfDate: 'ItHitWebDavNetOutOfDate',
+    EzProxyIdentified: 'EzProxyIdentified',
+    CanvasJsOutOfDate: 'CanvasJSOutOfDate',
+    WordPressVersionDisclosure: 'WordPressVersionDisclosure',
+    JoomlaVersionDisclosure: 'JoomlaVersionDisclosure',
+    DrupalVersionDisclosure: 'DrupalVersionDisclosure',
+    MovableTypeVersionDisclosure: 'MovableTypeVersionDisclosure',
+    MediaWikiVersionDisclosure: 'MediaWikiVersionDisclosure',
+    OscommerceVersionDisclosure: 'OscommerceVersionDisclosure',
+    PhpBbVersionDisclosure: 'PhpBBVersionDisclosure',
+    OpenCartVersionDisclosure: 'OpenCartVersionDisclosure',
+    OsTicketVersionDisclosure: 'OsTicketVersionDisclosure',
+    PrestashopVersionDisclosure: 'PrestashopVersionDisclosure',
+    AbanteCartVersionDisclosure: 'AbanteCartVersionDisclosure',
+    AmpacheVersionDisclosure: 'AmpacheVersionDisclosure',
+    AtutorVersionDisclosure: 'AtutorVersionDisclosure',
+    ClarolineVersionDisclosure: 'ClarolineVersionDisclosure',
+    Concrete5VersionDisclosure: 'Concrete5VersionDisclosure',
+    CoppermineVersionDisclosure: 'CoppermineVersionDisclosure',
+    CubeCartVersionDisclosure: 'CubeCartVersionDisclosure',
+    CollabtiveVersionDisclosure: 'CollabtiveVersionDisclosure',
+    DotClearVersionDisclosure: 'DotClearVersionDisclosure',
+    E107VersionDisclosure: 'E107VersionDisclosure',
+    FamilyConnectionsVersionDisclosure: 'FamilyConnectionsVersionDisclosure',
+    FluxBbVersionDisclosure: 'FluxBBVersionDisclosure',
+    FormToolsVersionDisclosure: 'FormToolsVersionDisclosure',
+    ChamiloVersionDisclosure: 'ChamiloVersionDisclosure',
+    FrontAccountingVersionDisclosure: 'FrontAccountingVersionDisclosure',
+    GibbonEduVersionDisclosure: 'GibbonEduVersionDisclosure',
+    HeskVersionDisclosure: 'HeskVersionDisclosure',
+    LimeSurveyVersionDisclosure: 'LimeSurveyVersionDisclosure',
+    MibewMessengerVersionDisclosure: 'MibewMessengerVersionDisclosure',
+    ModXVersionDisclosure: 'ModXVersionDisclosure',
+    MoodleVersionDisclosure: 'MoodleVersionDisclosure',
+    MyBbVersionDisclosure: 'MyBBVersionDisclosure',
+    OmekaVersionDisclosure: 'OmekaVersionDisclosure',
+    OsClassVersionDisclosure: 'OsClassVersionDisclosure',
+    EspoCrmVersionDisclosure: 'EspoCrmVersionDisclosure',
+    ElggVersionDisclosure: 'ElggVersionDisclosure',
+    PhorumVersionDisclosure: 'PhorumVersionDisclosure',
+    PhpFusionVersionDisclosure: 'PhpFusionVersionDisclosure',
+    PhpAddressBookVersionDisclosure: 'PhpAddressBookVersionDisclosure',
+    PhpListVersionDisclosure: 'PhpListVersionDisclosure',
+    PmWikiVersionDisclosure: 'PmWikiVersionDisclosure',
+    PodcastGeneratorVersionDisclosure: 'PodcastGeneratorVersionDisclosure',
+    ProjectSendVersionDisclosure: 'ProjectSendVersionDisclosure',
+    Question2AnswerVersionDisclosure: 'Question2AnswerVersionDisclosure',
+    RukovoditelVersionDisclosure: 'RukovoditelVersionDisclosure',
+    SeoPanelVersionDisclosure: 'SeoPanelVersionDisclosure',
+    SerendipityVersionDisclosure: 'SerendipityVersionDisclosure',
+    TcExamVersionDisclosure: 'TcExamVersionDisclosure',
+    VanillaForumsVersionDisclosure: 'VanillaForumsVersionDisclosure',
+    WebErpVersionDisclosure: 'WebErpVersionDisclosure',
+    WeBidVersionDisclosure: 'WeBidVersionDisclosure',
+    XoopsVersionDisclosure: 'XoopsVersionDisclosure',
+    YetiForceCrmVersionDisclosure: 'YetiForceCrmVersionDisclosure',
+    YourlsVersionDisclosure: 'YourlsVersionDisclosure',
+    ZenCartVersionDisclosure: 'ZenCartVersionDisclosure',
+    ZenPhotoVersionDisclosure: 'ZenPhotoVersionDisclosure',
+    PiwigoVersionDisclosure: 'PiwigoVersionDisclosure',
+    OwnCloudVersionDisclosure: 'OwnCloudVersionDisclosure',
+    PhpMyFaqVersionDisclosure: 'PhpMyFaqVersionDisclosure',
+    RoundcubeVersionDisclosure: 'RoundcubeVersionDisclosure',
+    ZikulaVersionDisclosure: 'ZikulaVersionDisclosure',
+    ReviveAdserverVersionDisclosure: 'ReviveAdserverVersionDisclosure',
+    B2evolutionVersionDisclosure: 'B2evolutionVersionDisclosure',
+    DolphinVersionDisclosure: 'DolphinVersionDisclosure',
+    Ph7CmsVersionDisclosure: 'PH7CMSVersionDisclosure',
+    QdPmVersionDisclosure: 'QdPMVersionDisclosure',
+    DolibarrVersionDisclosure: 'DolibarrVersionDisclosure',
+    ClipBucketVersionDisclosure: 'ClipBucketVersionDisclosure',
+    ContaoVersionDisclosure: 'ContaoVersionDisclosure',
+    Typo3CmsVersionDisclosure: 'Typo3CmsVersionDisclosure',
+    MagentoVersionDisclosure: 'MagentoVersionDisclosure',
+    PopperJsOutOfDate: 'PopperJSOutOfDate',
+    SailsJsIdentified: 'SailsJsIdentified',
+    ActionheroJsIdentified: 'ActionheroJsIdentified',
+    OutOfBandXxeSamlConsumer: 'OutOfBandXxeSamlConsumer',
+    OutOfBandXsltSamlConsumer: 'OutOfBandXsltSamlConsumer',
+    PossibleSsrfKeyInfoSamlConsumer: 'PossibleSsrfKeyInfoSamlConsumer',
+    PossibleXssSamlConsumer: 'PossibleXssSamlConsumer',
+    RetiredHashSaml: 'RetiredHashSaml',
+    SamlResponseWithoutSignature: 'SamlResponseWithoutSignature',
+    NoSamlResponseSignatureCheck: 'NoSamlResponseSignatureCheck',
+    SamlResponseSignatureExclusion: 'SamlResponseSignatureExclusion',
+    GraphQlStackTraceDisclosure: 'GraphQLStackTraceDisclosure',
+    JqueryIdentified: 'JqueryIdentified',
+    JqueryMigrateIdentified: 'JqueryMigrateIdentified',
+    JqueryMobileIdentified: 'JqueryMobileIdentified',
+    JqueryUiDialogIdentified: 'JqueryUiDialogIdentified',
+    JqueryUiAutocompleteIdentified: 'JqueryUiAutocompleteIdentified',
+    JqueryUiTooltipIdentified: 'JqueryUiTooltipIdentified',
+    PrettyPhotoIdentified: 'PrettyPhotoIdentified',
+    JPlayerIdentified: 'jPlayerIdentified',
+    YuiIdentified: 'YuiIdentified',
+    PrototypejsIdentified: 'PrototypejsIdentified',
+    EmberIdentified: 'EmberIdentified',
+    AngularjsIdentified: 'AngularjsIdentified',
+    BackbonejsIdentified: 'BackbonejsIdentified',
+    MustachejsIdentified: 'MustachejsIdentified',
+    HandlebarsjsIdentified: 'HandlebarsjsIdentified',
+    EasyXdmIdentified: 'EasyXdmIdentified',
+    PluploadIdentified: 'PluploadIdentified',
+    DomPurifyIdentified: 'DomPurifyIdentified',
+    DwrIdentified: 'DwrIdentified',
+    VideojsIdentified: 'VideojsIdentified',
+    CkeditorIdentified: 'CkeditorIdentified',
+    TypeaheadjsIdentified: 'TypeaheadjsIdentified',
+    BootboxIdentified: 'BootboxIdentified',
+    BootstrapjsIdentified: 'BootstrapjsIdentified',
+    Bootstrap3DateTimePickerIdentified: 'Bootstrap3DateTimePickerIdentified',
+    BootstrapToggleIdentified: 'BootstrapToggleIdentified',
+    FootablejsIdentified: 'FootablejsIdentified',
+    ImagePickerIdentified: 'ImagePickerIdentified',
+    RespondjsIdentified: 'RespondjsIdentified',
+    IonRangeSliderIdentified: 'IonRangeSliderIdentified',
+    JsTreeIdentified: 'JsTreeIdentified',
+    ModernizrIdentified: 'ModernizrIdentified',
+    MomentjsIdentified: 'MomentjsIdentified',
+    Select2Identified: 'Select2Identified',
+    Html5ShivIdentified: 'Html5ShivIdentified',
+    SortablejsIdentified: 'SortablejsIdentified',
+    KnockoutjsIdentified: 'KnockoutjsIdentified',
+    JavaScriptCookieIdentified: 'JavaScriptCookieIdentified',
+    JqueryMaskIdentified: 'JqueryMaskIdentified',
+    JqueryValidationIdentified: 'JqueryValidationIdentified',
+    KnockoutMappingIdentified: 'KnockoutMappingIdentified',
+    ReactIdentified: 'ReactIdentified',
+    ZeptojsIdentified: 'ZeptojsIdentified',
+    HammerjsIdentified: 'HammerjsIdentified',
+    PhaserIdentified: 'PhaserIdentified',
+    RamdaIdentified: 'RamdaIdentified',
+    VuejsIdentified: 'VuejsIdentified',
+    RevealJsIdentified: 'RevealJsIdentified',
+    ChartjsIdentified: 'ChartjsIdentified',
+    LeafletIdentified: 'LeafletIdentified',
+    FoundationIdentified: 'FoundationIdentified',
+    SemanticUiIdentified: 'SemanticUIIdentified',
+    PixiJsIdentified: 'PixiJsIdentified',
+    ThreeJsIdentified: 'ThreeJsIdentified',
+    PdfJsIdentified: 'PdfJsIdentified',
+    FabricJsIdentified: 'FabricJsIdentified',
+    LightboxIdentified: 'LightboxIdentified',
+    UnderscorejsIdentified: 'UnderscorejsIdentified',
+    FancyBoxIdentified: 'FancyBoxIdentified',
+    LazyjsIdentified: 'LazyjsIdentified',
+    DataTablesIdentified: 'DataTablesIdentified',
+    XRegExpIdentified: 'XRegExpIdentified',
+    Fingerprintjs2Identified: 'Fingerprintjs2Identified',
+    SweetAlert2Identified: 'SweetAlert2Identified',
+    IntrojsIdentified: 'IntrojsIdentified',
+    LodashIdentified: 'LodashIdentified',
+    AxiosIdentified: 'AxiosIdentified',
+    PolymerIdentified: 'PolymerIdentified',
+    BluebirdIdentified: 'BluebirdIdentified',
+    ListJsIdentified: 'ListJsIdentified',
+    MithrilIdentified: 'MithrilIdentified',
+    MathJsIdentified: 'MathJsIdentified',
+    RiotJsIdentified: 'RiotJsIdentified',
+    RequireJsIdentified: 'RequireJsIdentified',
+    EfJsIdentified: 'EfJsIdentified',
+    MarionetteJsIdentified: 'MarionetteJsIdentified',
+    GsapIdentified: 'GsapIdentified',
+    InfernoIdentified: 'InfernoIdentified',
+    D3JsIdentified: 'D3JsIdentified',
+    HighchartsIdentified: 'HighchartsIdentified',
+    RickshawIdentified: 'RickshawIdentified',
+    MathJaxIdentified: 'MathJaxIdentified',
+    ScrollRevealIdentified: 'ScrollRevealIdentified',
+    SlickIdentified: 'SlickIdentified',
+    FlickityIdentified: 'FlickityIdentified',
+    SnapSvgIdentified: 'SnapSvgIdentified',
+    ExtJsIdentified: 'ExtJsIdentified',
+    JqueryVersionDisclosure: 'JqueryVersionDisclosure',
+    JqueryMigrateVersionDisclosure: 'JqueryMigrateVersionDisclosure',
+    JqueryMobileVersionDisclosure: 'JqueryMobileVersionDisclosure',
+    JqueryUiDialogVersionDisclosure: 'JqueryUiDialogVersionDisclosure',
+    JqueryUiAutocompleteVersionDisclosure: 'JqueryUiAutocompleteVersionDisclosure',
+    JqueryUiTooltipVersionDisclosure: 'JqueryUiTooltipVersionDisclosure',
+    PrettyPhotoVersionDisclosure: 'PrettyPhotoVersionDisclosure',
+    JPlayerVersionDisclosure: 'jPlayerVersionDisclosure',
+    YuiVersionDisclosure: 'YuiVersionDisclosure',
+    PrototypejsVersionDisclosure: 'PrototypejsVersionDisclosure',
+    EmberVersionDisclosure: 'EmberVersionDisclosure',
+    AngularjsVersionDisclosure: 'AngularjsVersionDisclosure',
+    BackbonejsVersionDisclosure: 'BackbonejsVersionDisclosure',
+    MustachejsVersionDisclosure: 'MustachejsVersionDisclosure',
+    HandlebarsjsVersionDisclosure: 'HandlebarsjsVersionDisclosure',
+    EasyXdmVersionDisclosure: 'EasyXdmVersionDisclosure',
+    PluploadVersionDisclosure: 'PluploadVersionDisclosure',
+    DomPurifyVersionDisclosure: 'DomPurifyVersionDisclosure',
+    DwrVersionDisclosure: 'DwrVersionDisclosure',
+    VideojsVersionDisclosure: 'VideojsVersionDisclosure',
+    CkeditorVersionDisclosure: 'CkeditorVersionDisclosure',
+    TypeaheadjsVersionDisclosure: 'TypeaheadjsVersionDisclosure',
+    BootboxVersionDisclosure: 'BootboxVersionDisclosure',
+    BootstrapjsVersionDisclosure: 'BootstrapjsVersionDisclosure',
+    Bootstrap3DateTimePickerVersionDisclosure: 'Bootstrap3DateTimePickerVersionDisclosure',
+    BootstrapToggleVersionDisclosure: 'BootstrapToggleVersionDisclosure',
+    FootablejsVersionDisclosure: 'FootablejsVersionDisclosure',
+    ImagePickerVersionDisclosure: 'ImagePickerVersionDisclosure',
+    RespondjsVersionDisclosure: 'RespondjsVersionDisclosure',
+    IonRangeSliderVersionDisclosure: 'IonRangeSliderVersionDisclosure',
+    JsTreeVersionDisclosure: 'JsTreeVersionDisclosure',
+    ModernizrVersionDisclosure: 'ModernizrVersionDisclosure',
+    MomentjsVersionDisclosure: 'MomentjsVersionDisclosure',
+    Select2VersionDisclosure: 'Select2VersionDisclosure',
+    Html5ShivVersionDisclosure: 'Html5ShivVersionDisclosure',
+    SortablejsVersionDisclosure: 'SortablejsVersionDisclosure',
+    KnockoutjsVersionDisclosure: 'KnockoutjsVersionDisclosure',
+    JavaScriptCookieVersionDisclosure: 'JavaScriptCookieVersionDisclosure',
+    JqueryMaskVersionDisclosure: 'JqueryMaskVersionDisclosure',
+    JqueryValidationVersionDisclosure: 'JqueryValidationVersionDisclosure',
+    KnockoutMappingVersionDisclosure: 'KnockoutMappingVersionDisclosure',
+    ReactVersionDisclosure: 'ReactVersionDisclosure',
+    ZeptojsVersionDisclosure: 'ZeptojsVersionDisclosure',
+    HammerjsVersionDisclosure: 'HammerjsVersionDisclosure',
+    PhaserVersionDisclosure: 'PhaserVersionDisclosure',
+    RamdaVersionDisclosure: 'RamdaVersionDisclosure',
+    VuejsVersionDisclosure: 'VuejsVersionDisclosure',
+    RevealJsVersionDisclosure: 'RevealJsVersionDisclosure',
+    ChartjsVersionDisclosure: 'ChartjsVersionDisclosure',
+    LeafletVersionDisclosure: 'LeafletVersionDisclosure',
+    FoundationVersionDisclosure: 'FoundationVersionDisclosure',
+    SemanticUiVersionDisclosure: 'SemanticUIVersionDisclosure',
+    PixiJsVersionDisclosure: 'PixiJsVersionDisclosure',
+    ThreeJsVersionDisclosure: 'ThreeJsVersionDisclosure',
+    PdfJsVersionDisclosure: 'PdfJsVersionDisclosure',
+    FabricJsVersionDisclosure: 'FabricJsVersionDisclosure',
+    LightboxVersionDisclosure: 'LightboxVersionDisclosure',
+    UnderscorejsVersionDisclosure: 'UnderscorejsVersionDisclosure',
+    FancyBoxVersionDisclosure: 'FancyBoxVersionDisclosure',
+    LazyjsVersionDisclosure: 'LazyjsVersionDisclosure',
+    DataTablesVersionDisclosure: 'DataTablesVersionDisclosure',
+    XRegExpVersionDisclosure: 'XRegExpVersionDisclosure',
+    Fingerprintjs2VersionDisclosure: 'Fingerprintjs2VersionDisclosure',
+    SweetAlert2VersionDisclosure: 'SweetAlert2VersionDisclosure',
+    IntrojsVersionDisclosure: 'IntrojsVersionDisclosure',
+    LodashVersionDisclosure: 'LodashVersionDisclosure',
+    AxiosVersionDisclosure: 'AxiosVersionDisclosure',
+    PolymerVersionDisclosure: 'PolymerVersionDisclosure',
+    BluebirdVersionDisclosure: 'BluebirdVersionDisclosure',
+    ListJsVersionDisclosure: 'ListJsVersionDisclosure',
+    MithrilVersionDisclosure: 'MithrilVersionDisclosure',
+    MathJsVersionDisclosure: 'MathJsVersionDisclosure',
+    RiotJsVersionDisclosure: 'RiotJsVersionDisclosure',
+    RequireJsVersionDisclosure: 'RequireJsVersionDisclosure',
+    EfJsVersionDisclosure: 'EfJsVersionDisclosure',
+    MarionetteJsVersionDisclosure: 'MarionetteJsVersionDisclosure',
+    GsapVersionDisclosure: 'GsapVersionDisclosure',
+    InfernoVersionDisclosure: 'InfernoVersionDisclosure',
+    D3JsVersionDisclosure: 'D3JsVersionDisclosure',
+    HighchartsVersionDisclosure: 'HighchartsVersionDisclosure',
+    RickshawVersionDisclosure: 'RickshawVersionDisclosure',
+    MathJaxVersionDisclosure: 'MathJaxVersionDisclosure',
+    ScrollRevealVersionDisclosure: 'ScrollRevealVersionDisclosure',
+    SlickVersionDisclosure: 'SlickVersionDisclosure',
+    FlickityVersionDisclosure: 'FlickityVersionDisclosure',
+    SnapSvgVersionDisclosure: 'SnapSvgVersionDisclosure',
+    ExtJsVersionDisclosure: 'ExtJsVersionDisclosure',
+    AspNetSignalRIdentified: 'AspNetSignalRIdentified',
+    FuelUxIdentified: 'FuelUxIdentified',
+    SwaggerUiIdentified: 'SwaggerUIIdentified',
+    BootstrapTableIdentified: 'BootstrapTableIdentified',
+    BootstrapSelectIdentified: 'BootstrapSelectIdentified',
+    BootstrapTypeaheadIdentified: 'BootstrapTypeaheadIdentified',
+    AspNetSignalRVersionDisclosure: 'AspNetSignalRVersionDisclosure',
+    FuelUxVersionDisclosure: 'FuelUxVersionDisclosure',
+    SwaggerUiVersionDisclosure: 'SwaggerUIVersionDisclosure',
+    BootstrapTableVersionDisclosure: 'BootstrapTableVersionDisclosure',
+    BootstrapSelectVersionDisclosure: 'BootstrapSelectVersionDisclosure',
+    BootstrapTypeaheadVersionDisclosure: 'BootstrapTypeaheadVersionDisclosure',
+    ConfirmedWordpressThemeDetected: 'ConfirmedWordpressThemeDetected',
+    PossibleWordpressThemeDetected: 'PossibleWordpressThemeDetected',
+    ConfirmedWordpressPluginDetected: 'ConfirmedWordpressPluginDetected',
+    PossibleWordpressPluginDetected: 'PossibleWordpressPluginDetected',
+    WordpressThemeHelloElementorIdentified: 'WordpressThemeHelloElementorIdentified',
+    WordpressThemeTwentyTwentyThreeIdentified: 'WordpressThemeTwentyTwentyThreeIdentified',
+    WordpressThemeTwentyTwentyTwoIdentified: 'WordpressThemeTwentyTwentyTwoIdentified',
+    WordpressThemeAstraIdentified: 'WordpressThemeAstraIdentified',
+    WordpressThemeTwentyTwentyOneIdentified: 'WordpressThemeTwentyTwentyOneIdentified',
+    WordpressThemeTwentyTwentyIdentified: 'WordpressThemeTwentyTwentyIdentified',
+    WordpressThemeOceanWpIdentified: 'WordpressThemeOceanWPIdentified',
+    WordpressThemeTwentySeventeenIdentified: 'WordpressThemeTwentySeventeenIdentified',
+    WordpressThemeKadenceIdentified: 'WordpressThemeKadenceIdentified',
+    WordpressThemeTwentySixteenIdentified: 'WordpressThemeTwentySixteenIdentified',
+    WordpressThemeTwentyNineteenIdentified: 'WordpressThemeTwentyNineteenIdentified',
+    WordpressThemePopularFxIdentified: 'WordpressThemePopularFXIdentified',
+    WordpressThemeGeneratePressIdentified: 'WordpressThemeGeneratePressIdentified',
+    WordpressThemeInspiroIdentified: 'WordpressThemeInspiroIdentified',
+    WordpressThemeGoIdentified: 'WordpressThemeGoIdentified',
+    WordpressThemeHelloElementorOutOfDate: 'WordpressThemeHelloElementorOutOfDate',
+    WordpressThemeTwentyTwentyThreeOutOfDate: 'WordpressThemeTwentyTwentyThreeOutOfDate',
+    WordpressThemeTwentyTwentyTwoOutOfDate: 'WordpressThemeTwentyTwentyTwoOutOfDate',
+    WordpressThemeAstraOutOfDate: 'WordpressThemeAstraOutOfDate',
+    WordpressThemeTwentyTwentyOneOutOfDate: 'WordpressThemeTwentyTwentyOneOutOfDate',
+    WordpressThemeTwentyTwentyOutOfDate: 'WordpressThemeTwentyTwentyOutOfDate',
+    WordpressThemeOceanWpOutOfDate: 'WordpressThemeOceanWPOutOfDate',
+    WordpressThemeTwentySeventeenOutOfDate: 'WordpressThemeTwentySeventeenOutOfDate',
+    WordpressThemeKadenceOutOfDate: 'WordpressThemeKadenceOutOfDate',
+    WordpressThemeTwentySixteenOutOfDate: 'WordpressThemeTwentySixteenOutOfDate',
+    WordpressThemeTwentyNineteenOutOfDate: 'WordpressThemeTwentyNineteenOutOfDate',
+    WordpressThemePopularFxOutOfDate: 'WordpressThemePopularFXOutOfDate',
+    WordpressThemeGeneratePressOutOfDate: 'WordpressThemeGeneratePressOutOfDate',
+    WordpressThemeInspiroOutOfDate: 'WordpressThemeInspiroOutOfDate',
+    WordpressThemeGoOutOfDate: 'WordpressThemeGoOutOfDate',
+    WordpressThemeHelloElementorVersionDisclosure: 'WordpressThemeHelloElementorVersionDisclosure',
+    WordpressThemeTwentyTwentyThreeVersionDisclosure: 'WordpressThemeTwentyTwentyThreeVersionDisclosure',
+    WordpressThemeTwentyTwentyTwoVersionDisclosure: 'WordpressThemeTwentyTwentyTwoVersionDisclosure',
+    WordpressThemeAstraVersionDisclosure: 'WordpressThemeAstraVersionDisclosure',
+    WordpressThemeTwentyTwentyOneVersionDisclosure: 'WordpressThemeTwentyTwentyOneVersionDisclosure',
+    WordpressThemeTwentyTwentyVersionDisclosure: 'WordpressThemeTwentyTwentyVersionDisclosure',
+    WordpressThemeOceanWpVersionDisclosure: 'WordpressThemeOceanWPVersionDisclosure',
+    WordpressThemeTwentySeventeenVersionDisclosure: 'WordpressThemeTwentySeventeenVersionDisclosure',
+    WordpressThemeKadenceVersionDisclosure: 'WordpressThemeKadenceVersionDisclosure',
+    WordpressThemeTwentySixteenVersionDisclosure: 'WordpressThemeTwentySixteenVersionDisclosure',
+    WordpressThemeTwentyNineteenVersionDisclosure: 'WordpressThemeTwentyNineteenVersionDisclosure',
+    WordpressThemePopularFxVersionDisclosure: 'WordpressThemePopularFXVersionDisclosure',
+    WordpressThemeGeneratePressVersionDisclosure: 'WordpressThemeGeneratePressVersionDisclosure',
+    WordpressThemeInspiroVersionDisclosure: 'WordpressThemeInspiroVersionDisclosure',
+    WordpressThemeGoVersionDisclosure: 'WordpressThemeGoVersionDisclosure',
+    WordpressPluginLoginWithPhoneNumberIdentified: 'WordpressPluginLoginWithPhoneNumberIdentified',
+    WordpressPluginInstagramFeedIdentified: 'WordpressPluginInstagramFeedIdentified',
+    WordpressPluginContactFormSevenIdentified: 'WordpressPluginContactFormSevenIdentified',
+    WordpressPluginYoastSeoIdentified: 'WordpressPluginYoastSeoIdentified',
+    WordpressPluginElementorIdentified: 'WordpressPluginElementorIdentified',
+    WordpressPluginClassicEditorIdentified: 'WordpressPluginClassicEditorIdentified',
+    WordpressPluginAkismetIdentified: 'WordpressPluginAkismetIdentified',
+    WordpressPluginWooCommerceIdentified: 'WordpressPluginWooCommerceIdentified',
+    WordpressPluginWpFormsIdentified: 'WordpressPluginWpFormsIdentified',
+    WordpressPluginReallySimpleSslIdentified: 'WordpressPluginReallySimpleSslIdentified',
+    WordpressPluginJetpackIdentified: 'WordpressPluginJetpackIdentified',
+    WordpressPluginAllInOneWpMigrationIdentified: 'WordpressPluginAllInOneWpMigrationIdentified',
+    WordpressPluginWordfenceSecurityIdentified: 'WordpressPluginWordfenceSecurityIdentified',
+    WordpressPluginYoastDuplicatePostIdentified: 'WordpressPluginYoastDuplicatePostIdentified',
+    WordpressPluginWordpressImporterIdentified: 'WordpressPluginWordpressImporterIdentified',
+    WordpressPluginLiteSpeedCacheIdentified: 'WordpressPluginLiteSpeedCacheIdentified',
+    WordpressPluginUpdraftPlusIdentified: 'WordpressPluginUpdraftPlusIdentified',
+    WordpressPluginJupiterXIdentified: 'WordpressPluginJupiterXIdentified',
+    WordpressPluginLoginWithPhoneNumberOutOfDate: 'WordpressPluginLoginWithPhoneNumberOutOfDate',
+    WordpressPluginInstagramFeedOutOfDate: 'WordpressPluginInstagramFeedOutOfDate',
+    WordpressPluginContactFormSevenOutOfDate: 'WordpressPluginContactFormSevenOutOfDate',
+    WordpressPluginYoastSeoOutOfDate: 'WordpressPluginYoastSeoOutOfDate',
+    WordpressPluginElementorOutOfDate: 'WordpressPluginElementorOutOfDate',
+    WordpressPluginClassicEditorOutOfDate: 'WordpressPluginClassicEditorOutOfDate',
+    WordpressPluginAkismetOutOfDate: 'WordpressPluginAkismetOutOfDate',
+    WordpressPluginWooCommerceOutOfDate: 'WordpressPluginWooCommerceOutOfDate',
+    WordpressPluginWpFormsOutOfDate: 'WordpressPluginWpFormsOutOfDate',
+    WordpressPluginReallySimpleSslOutOfDate: 'WordpressPluginReallySimpleSslOutOfDate',
+    WordpressPluginJetpackOutOfDate: 'WordpressPluginJetpackOutOfDate',
+    WordpressPluginAllInOneWpMigrationOutOfDate: 'WordpressPluginAllInOneWpMigrationOutOfDate',
+    WordpressPluginWordfenceSecurityOutOfDate: 'WordpressPluginWordfenceSecurityOutOfDate',
+    WordpressPluginYoastDuplicatePostOutOfDate: 'WordpressPluginYoastDuplicatePostOutOfDate',
+    WordpressPluginWordpressImporterOutOfDate: 'WordpressPluginWordpressImporterOutOfDate',
+    WordpressPluginLiteSpeedCacheOutOfDate: 'WordpressPluginLiteSpeedCacheOutOfDate',
+    WordpressPluginUpdraftPlusOutOfDate: 'WordpressPluginUpdraftPlusOutOfDate',
+    WordpressPluginJupiterXOutOfDate: 'WordpressPluginJupiterXOutOfDate',
+    WordpressPluginInstagramFeedVersionDisclosure: 'WordpressPluginInstagramFeedVersionDisclosure',
+    WordpressPluginContactFormSevenVersionDisclosure: 'WordpressPluginContactFormSevenVersionDisclosure',
+    WordpressPluginYoastSeoVersionDisclosure: 'WordpressPluginYoastSeoVersionDisclosure',
+    WordpressPluginLoginWithPhoneNumberVersionDisclosure: 'WordpressPluginLoginWithPhoneNumberVersionDisclosure',
+    WordpressPluginElementorVersionDisclosure: 'WordpressPluginElementorVersionDisclosure',
+    WordpressPluginClassicEditorVersionDisclosure: 'WordpressPluginClassicEditorVersionDisclosure',
+    WordpressPluginAkismetVersionDisclosure: 'WordpressPluginAkismetVersionDisclosure',
+    WordpressPluginWooCommerceVersionDisclosure: 'WordpressPluginWooCommerceVersionDisclosure',
+    WordpressPluginWpFormsVersionDisclosure: 'WordpressPluginWpFormsVersionDisclosure',
+    WordpressPluginReallySimpleSslVersionDisclosure: 'WordpressPluginReallySimpleSslVersionDisclosure',
+    WordpressPluginJetpackVersionDisclosure: 'WordpressPluginJetpackVersionDisclosure',
+    WordpressPluginAllInOneWpMigrationVersionDisclosure: 'WordpressPluginAllInOneWpMigrationVersionDisclosure',
+    WordpressPluginWordfenceSecurityVersionDisclosure: 'WordpressPluginWordfenceSecurityVersionDisclosure',
+    WordpressPluginYoastDuplicatePostVersionDisclosure: 'WordpressPluginYoastDuplicatePostVersionDisclosure',
+    WordpressPluginWordpressImporterVersionDisclosure: 'WordpressPluginWordpressImporterVersionDisclosure',
+    WordpressPluginLiteSpeedCacheVersionDisclosure: 'WordpressPluginLiteSpeedCacheVersionDisclosure',
+    WordpressPluginUpdraftPlusVersionDisclosure: 'WordpressPluginUpdraftPlusVersionDisclosure',
+    WordpressPluginJupiterXVersionDisclosure: 'WordpressPluginJupiterXVersionDisclosure',
+    DockerDisclosure: 'DockerDisclosure',
+    DockerComposeDisclosure: 'DockerComposeDisclosure',
+    DockerRunDisclosure: 'DockerRunDisclosure',
+    DockerIgnoreDisclosure: 'DockerIgnoreDisclosure',
+    DockerCloudDisclosure: 'DockerCloudDisclosure',
+    CanvasJsIdentified: 'CanvasJSIdentified',
+    CanvasJsVersionDisclosure: 'CanvasJSVersionDisclosure',
+    PopperJsIdentified: 'PopperJSIdentified',
+    PopperJsVersionDisclosure: 'PopperJSVersionDisclosure',
+    HotChocolateIdentified: 'HotChocolateIdentified',
+    JQueryPlaceholderJsOutOfDate: 'JQueryPlaceholderJSOutOfDate',
+    JQueryPlaceholderJsVersionDisclosure: 'JQueryPlaceholderJSVersionDisclosure',
+    JQueryPlaceholderJsIdentified: 'JQueryPlaceholderJSIdentified',
+    MovEitTransferSqlInjection: 'MOVEitTransferSqlInjection',
+    MovEitTransferVersionDisclosure: 'MOVEitTransferVersionDisclosure',
+    MovEitTransferIdentified: 'MOVEitTransferIdentified',
+    DianaJlIdentified: 'DianaJlIdentified',
+    MissingXContentTypeOptionsHeader: 'MissingXContentTypeOptionsHeader'
+};
 /**
  * Check if a given object implements the VersionIssue interface.
  */

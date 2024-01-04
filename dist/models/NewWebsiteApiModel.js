@@ -16,23 +16,19 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.NewWebsiteApiModelToJSON = exports.NewWebsiteApiModelFromJSONTyped = exports.NewWebsiteApiModelFromJSON = exports.instanceOfNewWebsiteApiModel = exports.NewWebsiteApiModelLicenseTypeEnum = exports.NewWebsiteApiModelAgentModeEnum = void 0;
 const runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
-var NewWebsiteApiModelAgentModeEnum;
-(function (NewWebsiteApiModelAgentModeEnum) {
-    NewWebsiteApiModelAgentModeEnum["Cloud"] = "Cloud";
-    NewWebsiteApiModelAgentModeEnum["Internal"] = "Internal";
-})(NewWebsiteApiModelAgentModeEnum = exports.NewWebsiteApiModelAgentModeEnum || (exports.NewWebsiteApiModelAgentModeEnum = {}));
+ * @export
+ */
+exports.NewWebsiteApiModelAgentModeEnum = {
+    Cloud: 'Cloud',
+    Internal: 'Internal'
+};
 /**
-* @export
-* @enum {string}
-*/
-var NewWebsiteApiModelLicenseTypeEnum;
-(function (NewWebsiteApiModelLicenseTypeEnum) {
-    NewWebsiteApiModelLicenseTypeEnum["Subscription"] = "Subscription";
-    NewWebsiteApiModelLicenseTypeEnum["Credit"] = "Credit";
-})(NewWebsiteApiModelLicenseTypeEnum = exports.NewWebsiteApiModelLicenseTypeEnum || (exports.NewWebsiteApiModelLicenseTypeEnum = {}));
+ * @export
+ */
+exports.NewWebsiteApiModelLicenseTypeEnum = {
+    Subscription: 'Subscription',
+    Credit: 'Credit'
+};
 /**
  * Check if a given object implements the NewWebsiteApiModel interface.
  */

@@ -11,14 +11,14 @@
  */
 import * as runtime from '../runtime';
 import type { AgentListApiResult, AgentStatusModel, DeleteAgentModel } from '../models/index';
-export interface AgentsApiAgentsDeleteRequest {
+export interface AgentsDeleteRequest {
     model: DeleteAgentModel;
 }
-export interface AgentsApiAgentsListRequest {
+export interface AgentsListRequest {
     page?: number;
     pageSize?: number;
 }
-export interface AgentsApiAgentsSetStatusRequest {
+export interface AgentsSetStatusRequest {
     model: AgentStatusModel;
 }
 /**
@@ -28,25 +28,25 @@ export declare class AgentsApi extends runtime.BaseAPI {
     /**
      * Sets agent status as terminated.  Before deleting an agent, please make sure that you\'ve stopped the related service from the Windows Services Manager screen.  If it is running, the agent will reappear on the page despite removal.
      */
-    agentsDeleteRaw(requestParameters: AgentsApiAgentsDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    agentsDeleteRaw(requestParameters: AgentsDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Sets agent status as terminated.  Before deleting an agent, please make sure that you\'ve stopped the related service from the Windows Services Manager screen.  If it is running, the agent will reappear on the page despite removal.
      */
-    agentsDelete(requestParameters: AgentsApiAgentsDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    agentsDelete(requestParameters: AgentsDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
      * Gets the list of agents.
      */
-    agentsListRaw(requestParameters: AgentsApiAgentsListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AgentListApiResult>>;
+    agentsListRaw(requestParameters: AgentsListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AgentListApiResult>>;
     /**
      * Gets the list of agents.
      */
-    agentsList(requestParameters?: AgentsApiAgentsListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AgentListApiResult>;
+    agentsList(requestParameters?: AgentsListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<AgentListApiResult>;
     /**
      * Sets agent status enable or disable.
      */
-    agentsSetStatusRaw(requestParameters: AgentsApiAgentsSetStatusRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
+    agentsSetStatusRaw(requestParameters: AgentsSetStatusRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>>;
     /**
      * Sets agent status enable or disable.
      */
-    agentsSetStatus(requestParameters: AgentsApiAgentsSetStatusRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
+    agentsSetStatus(requestParameters: AgentsSetStatusRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
 }

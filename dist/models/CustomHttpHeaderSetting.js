@@ -16,15 +16,13 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.CustomHttpHeaderSettingToJSON = exports.CustomHttpHeaderSettingFromJSONTyped = exports.CustomHttpHeaderSettingFromJSON = exports.instanceOfCustomHttpHeaderSetting = exports.CustomHttpHeaderSettingAttackModeEnum = void 0;
 const runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
-var CustomHttpHeaderSettingAttackModeEnum;
-(function (CustomHttpHeaderSettingAttackModeEnum) {
-    CustomHttpHeaderSettingAttackModeEnum["None"] = "None";
-    CustomHttpHeaderSettingAttackModeEnum["Optimized"] = "Optimized";
-    CustomHttpHeaderSettingAttackModeEnum["Full"] = "Full";
-})(CustomHttpHeaderSettingAttackModeEnum = exports.CustomHttpHeaderSettingAttackModeEnum || (exports.CustomHttpHeaderSettingAttackModeEnum = {}));
+ * @export
+ */
+exports.CustomHttpHeaderSettingAttackModeEnum = {
+    None: 'None',
+    Optimized: 'Optimized',
+    Full: 'Full'
+};
 /**
  * Check if a given object implements the CustomHttpHeaderSetting interface.
  */

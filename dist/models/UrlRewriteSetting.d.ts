@@ -68,14 +68,14 @@ export interface UrlRewriteSetting {
     urlRewriteExcludedLinks?: Array<UrlRewriteExcludedPathModel>;
 }
 /**
-* @export
-* @enum {string}
-*/
-export declare enum UrlRewriteSettingUrlRewriteModeEnum {
-    None = "None",
-    Heuristic = "Heuristic",
-    Custom = "Custom"
-}
+ * @export
+ */
+export declare const UrlRewriteSettingUrlRewriteModeEnum: {
+    readonly None: "None";
+    readonly Heuristic: "Heuristic";
+    readonly Custom: "Custom";
+};
+export type UrlRewriteSettingUrlRewriteModeEnum = typeof UrlRewriteSettingUrlRewriteModeEnum[keyof typeof UrlRewriteSettingUrlRewriteModeEnum];
 /**
  * Check if a given object implements the UrlRewriteSetting interface.
  */

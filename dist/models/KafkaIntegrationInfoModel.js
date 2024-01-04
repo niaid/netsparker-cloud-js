@@ -18,64 +18,58 @@ const runtime_1 = require("../runtime");
 const IntegrationCustomFieldVm_1 = require("./IntegrationCustomFieldVm");
 const IntegrationWizardResultModel_1 = require("./IntegrationWizardResultModel");
 /**
-* @export
-* @enum {string}
-*/
-var KafkaIntegrationInfoModelDataSerializationEnum;
-(function (KafkaIntegrationInfoModelDataSerializationEnum) {
-    KafkaIntegrationInfoModelDataSerializationEnum["JsonSerialized"] = "JsonSerialized";
-    KafkaIntegrationInfoModelDataSerializationEnum["FlattenedJsonSerialized"] = "FlattenedJsonSerialized";
-    KafkaIntegrationInfoModelDataSerializationEnum["AvroSerialized"] = "AvroSerialized";
-})(KafkaIntegrationInfoModelDataSerializationEnum = exports.KafkaIntegrationInfoModelDataSerializationEnum || (exports.KafkaIntegrationInfoModelDataSerializationEnum = {}));
+ * @export
+ */
+exports.KafkaIntegrationInfoModelDataSerializationEnum = {
+    JsonSerialized: 'JsonSerialized',
+    FlattenedJsonSerialized: 'FlattenedJsonSerialized',
+    AvroSerialized: 'AvroSerialized'
+};
 /**
-* @export
-* @enum {string}
-*/
-var KafkaIntegrationInfoModelTypeEnum;
-(function (KafkaIntegrationInfoModelTypeEnum) {
-    KafkaIntegrationInfoModelTypeEnum["Jira"] = "Jira";
-    KafkaIntegrationInfoModelTypeEnum["GitHub"] = "GitHub";
-    KafkaIntegrationInfoModelTypeEnum["Tfs"] = "TFS";
-    KafkaIntegrationInfoModelTypeEnum["FogBugz"] = "FogBugz";
-    KafkaIntegrationInfoModelTypeEnum["ServiceNow"] = "ServiceNow";
-    KafkaIntegrationInfoModelTypeEnum["Slack"] = "Slack";
-    KafkaIntegrationInfoModelTypeEnum["GitLab"] = "GitLab";
-    KafkaIntegrationInfoModelTypeEnum["Bitbucket"] = "Bitbucket";
-    KafkaIntegrationInfoModelTypeEnum["Unfuddle"] = "Unfuddle";
-    KafkaIntegrationInfoModelTypeEnum["Zapier"] = "Zapier";
-    KafkaIntegrationInfoModelTypeEnum["AzureDevOps"] = "AzureDevOps";
-    KafkaIntegrationInfoModelTypeEnum["Redmine"] = "Redmine";
-    KafkaIntegrationInfoModelTypeEnum["Bugzilla"] = "Bugzilla";
-    KafkaIntegrationInfoModelTypeEnum["Kafka"] = "Kafka";
-    KafkaIntegrationInfoModelTypeEnum["PagerDuty"] = "PagerDuty";
-    KafkaIntegrationInfoModelTypeEnum["MicrosoftTeams"] = "MicrosoftTeams";
-    KafkaIntegrationInfoModelTypeEnum["Clubhouse"] = "Clubhouse";
-    KafkaIntegrationInfoModelTypeEnum["Trello"] = "Trello";
-    KafkaIntegrationInfoModelTypeEnum["Asana"] = "Asana";
-    KafkaIntegrationInfoModelTypeEnum["Webhook"] = "Webhook";
-    KafkaIntegrationInfoModelTypeEnum["Kenna"] = "Kenna";
-    KafkaIntegrationInfoModelTypeEnum["Freshservice"] = "Freshservice";
-    KafkaIntegrationInfoModelTypeEnum["YouTrack"] = "YouTrack";
-    KafkaIntegrationInfoModelTypeEnum["NetsparkerEnterprise"] = "NetsparkerEnterprise";
-    KafkaIntegrationInfoModelTypeEnum["Splunk"] = "Splunk";
-    KafkaIntegrationInfoModelTypeEnum["Mattermost"] = "Mattermost";
-    KafkaIntegrationInfoModelTypeEnum["Hashicorp"] = "Hashicorp";
-    KafkaIntegrationInfoModelTypeEnum["PivotalTracker"] = "PivotalTracker";
-    KafkaIntegrationInfoModelTypeEnum["CyberArk"] = "CyberArk";
-    KafkaIntegrationInfoModelTypeEnum["DefectDojo"] = "DefectDojo";
-    KafkaIntegrationInfoModelTypeEnum["JazzTeam"] = "JazzTeam";
-    KafkaIntegrationInfoModelTypeEnum["AzureKeyVault"] = "AzureKeyVault";
-    KafkaIntegrationInfoModelTypeEnum["ServiceNowVrm"] = "ServiceNowVRM";
-})(KafkaIntegrationInfoModelTypeEnum = exports.KafkaIntegrationInfoModelTypeEnum || (exports.KafkaIntegrationInfoModelTypeEnum = {}));
+ * @export
+ */
+exports.KafkaIntegrationInfoModelTypeEnum = {
+    Jira: 'Jira',
+    GitHub: 'GitHub',
+    Tfs: 'TFS',
+    FogBugz: 'FogBugz',
+    ServiceNow: 'ServiceNow',
+    Slack: 'Slack',
+    GitLab: 'GitLab',
+    Bitbucket: 'Bitbucket',
+    Unfuddle: 'Unfuddle',
+    Zapier: 'Zapier',
+    AzureDevOps: 'AzureDevOps',
+    Redmine: 'Redmine',
+    Bugzilla: 'Bugzilla',
+    Kafka: 'Kafka',
+    PagerDuty: 'PagerDuty',
+    MicrosoftTeams: 'MicrosoftTeams',
+    Clubhouse: 'Clubhouse',
+    Trello: 'Trello',
+    Asana: 'Asana',
+    Webhook: 'Webhook',
+    Kenna: 'Kenna',
+    Freshservice: 'Freshservice',
+    YouTrack: 'YouTrack',
+    NetsparkerEnterprise: 'NetsparkerEnterprise',
+    Splunk: 'Splunk',
+    Mattermost: 'Mattermost',
+    Hashicorp: 'Hashicorp',
+    PivotalTracker: 'PivotalTracker',
+    CyberArk: 'CyberArk',
+    DefectDojo: 'DefectDojo',
+    JazzTeam: 'JazzTeam',
+    AzureKeyVault: 'AzureKeyVault',
+    ServiceNowVrm: 'ServiceNowVRM'
+};
 /**
-* @export
-* @enum {string}
-*/
-var KafkaIntegrationInfoModelTemplateTypeEnum;
-(function (KafkaIntegrationInfoModelTemplateTypeEnum) {
-    KafkaIntegrationInfoModelTemplateTypeEnum["Standard"] = "Standard";
-    KafkaIntegrationInfoModelTemplateTypeEnum["Detailed"] = "Detailed";
-})(KafkaIntegrationInfoModelTemplateTypeEnum = exports.KafkaIntegrationInfoModelTemplateTypeEnum || (exports.KafkaIntegrationInfoModelTemplateTypeEnum = {}));
+ * @export
+ */
+exports.KafkaIntegrationInfoModelTemplateTypeEnum = {
+    Standard: 'Standard',
+    Detailed: 'Detailed'
+};
 /**
  * Check if a given object implements the KafkaIntegrationInfoModel interface.
  */

@@ -184,53 +184,55 @@ export interface ServiceNowVRMModel {
     integrationWizardResultModel?: IntegrationWizardResultModel;
 }
 
+
 /**
-* @export
-* @enum {string}
-*/
-export enum ServiceNowVRMModelTypeEnum {
-    Jira = 'Jira',
-    GitHub = 'GitHub',
-    Tfs = 'TFS',
-    FogBugz = 'FogBugz',
-    ServiceNow = 'ServiceNow',
-    Slack = 'Slack',
-    GitLab = 'GitLab',
-    Bitbucket = 'Bitbucket',
-    Unfuddle = 'Unfuddle',
-    Zapier = 'Zapier',
-    AzureDevOps = 'AzureDevOps',
-    Redmine = 'Redmine',
-    Bugzilla = 'Bugzilla',
-    Kafka = 'Kafka',
-    PagerDuty = 'PagerDuty',
-    MicrosoftTeams = 'MicrosoftTeams',
-    Clubhouse = 'Clubhouse',
-    Trello = 'Trello',
-    Asana = 'Asana',
-    Webhook = 'Webhook',
-    Kenna = 'Kenna',
-    Freshservice = 'Freshservice',
-    YouTrack = 'YouTrack',
-    NetsparkerEnterprise = 'NetsparkerEnterprise',
-    Splunk = 'Splunk',
-    Mattermost = 'Mattermost',
-    Hashicorp = 'Hashicorp',
-    PivotalTracker = 'PivotalTracker',
-    CyberArk = 'CyberArk',
-    DefectDojo = 'DefectDojo',
-    JazzTeam = 'JazzTeam',
-    AzureKeyVault = 'AzureKeyVault',
-    ServiceNowVrm = 'ServiceNowVRM'
-}
+ * @export
+ */
+export const ServiceNowVRMModelTypeEnum = {
+    NetsparkerEnterprise: 'NetsparkerEnterprise',
+    Webhook: 'Webhook',
+    Zapier: 'Zapier',
+    Slack: 'Slack',
+    Mattermost: 'Mattermost',
+    MicrosoftTeams: 'MicrosoftTeams',
+    AzureDevOps: 'AzureDevOps',
+    Bitbucket: 'Bitbucket',
+    Bugzilla: 'Bugzilla',
+    Clubhouse: 'Clubhouse',
+    DefectDojo: 'DefectDojo',
+    PivotalTracker: 'PivotalTracker',
+    Jira: 'Jira',
+    FogBugz: 'FogBugz',
+    GitHub: 'GitHub',
+    PagerDuty: 'PagerDuty',
+    Kafka: 'Kafka',
+    Kenna: 'Kenna',
+    Redmine: 'Redmine',
+    ServiceNow: 'ServiceNow',
+    Tfs: 'TFS',
+    Unfuddle: 'Unfuddle',
+    YouTrack: 'YouTrack',
+    Freshservice: 'Freshservice',
+    Splunk: 'Splunk',
+    JazzTeam: 'JazzTeam',
+    ServiceNowVrm: 'ServiceNowVRM',
+    Asana: 'Asana',
+    Trello: 'Trello',
+    Hashicorp: 'Hashicorp',
+    CyberArk: 'CyberArk',
+    AzureKeyVault: 'AzureKeyVault',
+    GitLab: 'GitLab'
+} as const;
+export type ServiceNowVRMModelTypeEnum = typeof ServiceNowVRMModelTypeEnum[keyof typeof ServiceNowVRMModelTypeEnum];
+
 /**
-* @export
-* @enum {string}
-*/
-export enum ServiceNowVRMModelTemplateTypeEnum {
-    Standard = 'Standard',
-    Detailed = 'Detailed'
-}
+ * @export
+ */
+export const ServiceNowVRMModelTemplateTypeEnum = {
+    Standard: 'Standard',
+    Detailed: 'Detailed'
+} as const;
+export type ServiceNowVRMModelTemplateTypeEnum = typeof ServiceNowVRMModelTemplateTypeEnum[keyof typeof ServiceNowVRMModelTemplateTypeEnum];
 
 
 /**

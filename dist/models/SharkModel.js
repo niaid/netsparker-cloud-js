@@ -16,16 +16,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 exports.SharkModelToJSON = exports.SharkModelFromJSONTyped = exports.SharkModelFromJSON = exports.instanceOfSharkModel = exports.SharkModelSharkPlatformTypeEnum = void 0;
 const runtime_1 = require("../runtime");
 /**
-* @export
-* @enum {string}
-*/
-var SharkModelSharkPlatformTypeEnum;
-(function (SharkModelSharkPlatformTypeEnum) {
-    SharkModelSharkPlatformTypeEnum["AspNet"] = "AspNet";
-    SharkModelSharkPlatformTypeEnum["Php"] = "Php";
-    SharkModelSharkPlatformTypeEnum["Java"] = "Java";
-    SharkModelSharkPlatformTypeEnum["NodeJs"] = "NodeJs";
-})(SharkModelSharkPlatformTypeEnum = exports.SharkModelSharkPlatformTypeEnum || (exports.SharkModelSharkPlatformTypeEnum = {}));
+ * @export
+ */
+exports.SharkModelSharkPlatformTypeEnum = {
+    AspNet: 'AspNet',
+    Php: 'Php',
+    Java: 'Java',
+    NodeJs: 'NodeJs'
+};
 /**
  * Check if a given object implements the SharkModel interface.
  */

@@ -17,14 +17,12 @@ exports.UpdateMemberApiModelToJSON = exports.UpdateMemberApiModelFromJSONTyped =
 const runtime_1 = require("../runtime");
 const RoleWebsiteGroupMappingApiModel_1 = require("./RoleWebsiteGroupMappingApiModel");
 /**
-* @export
-* @enum {string}
-*/
-var UpdateMemberApiModelStateEnum;
-(function (UpdateMemberApiModelStateEnum) {
-    UpdateMemberApiModelStateEnum["Enabled"] = "Enabled";
-    UpdateMemberApiModelStateEnum["Disabled"] = "Disabled";
-})(UpdateMemberApiModelStateEnum = exports.UpdateMemberApiModelStateEnum || (exports.UpdateMemberApiModelStateEnum = {}));
+ * @export
+ */
+exports.UpdateMemberApiModelStateEnum = {
+    Enabled: 'Enabled',
+    Disabled: 'Disabled'
+};
 /**
  * Check if a given object implements the UpdateMemberApiModel interface.
  */

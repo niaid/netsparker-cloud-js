@@ -22,54 +22,50 @@ const TrelloLabel_1 = require("./TrelloLabel");
 const TrelloList_1 = require("./TrelloList");
 const TrelloMember_1 = require("./TrelloMember");
 /**
-* @export
-* @enum {string}
-*/
-var TrelloIntegrationInfoModelTypeEnum;
-(function (TrelloIntegrationInfoModelTypeEnum) {
-    TrelloIntegrationInfoModelTypeEnum["Jira"] = "Jira";
-    TrelloIntegrationInfoModelTypeEnum["GitHub"] = "GitHub";
-    TrelloIntegrationInfoModelTypeEnum["Tfs"] = "TFS";
-    TrelloIntegrationInfoModelTypeEnum["FogBugz"] = "FogBugz";
-    TrelloIntegrationInfoModelTypeEnum["ServiceNow"] = "ServiceNow";
-    TrelloIntegrationInfoModelTypeEnum["Slack"] = "Slack";
-    TrelloIntegrationInfoModelTypeEnum["GitLab"] = "GitLab";
-    TrelloIntegrationInfoModelTypeEnum["Bitbucket"] = "Bitbucket";
-    TrelloIntegrationInfoModelTypeEnum["Unfuddle"] = "Unfuddle";
-    TrelloIntegrationInfoModelTypeEnum["Zapier"] = "Zapier";
-    TrelloIntegrationInfoModelTypeEnum["AzureDevOps"] = "AzureDevOps";
-    TrelloIntegrationInfoModelTypeEnum["Redmine"] = "Redmine";
-    TrelloIntegrationInfoModelTypeEnum["Bugzilla"] = "Bugzilla";
-    TrelloIntegrationInfoModelTypeEnum["Kafka"] = "Kafka";
-    TrelloIntegrationInfoModelTypeEnum["PagerDuty"] = "PagerDuty";
-    TrelloIntegrationInfoModelTypeEnum["MicrosoftTeams"] = "MicrosoftTeams";
-    TrelloIntegrationInfoModelTypeEnum["Clubhouse"] = "Clubhouse";
-    TrelloIntegrationInfoModelTypeEnum["Trello"] = "Trello";
-    TrelloIntegrationInfoModelTypeEnum["Asana"] = "Asana";
-    TrelloIntegrationInfoModelTypeEnum["Webhook"] = "Webhook";
-    TrelloIntegrationInfoModelTypeEnum["Kenna"] = "Kenna";
-    TrelloIntegrationInfoModelTypeEnum["Freshservice"] = "Freshservice";
-    TrelloIntegrationInfoModelTypeEnum["YouTrack"] = "YouTrack";
-    TrelloIntegrationInfoModelTypeEnum["NetsparkerEnterprise"] = "NetsparkerEnterprise";
-    TrelloIntegrationInfoModelTypeEnum["Splunk"] = "Splunk";
-    TrelloIntegrationInfoModelTypeEnum["Mattermost"] = "Mattermost";
-    TrelloIntegrationInfoModelTypeEnum["Hashicorp"] = "Hashicorp";
-    TrelloIntegrationInfoModelTypeEnum["PivotalTracker"] = "PivotalTracker";
-    TrelloIntegrationInfoModelTypeEnum["CyberArk"] = "CyberArk";
-    TrelloIntegrationInfoModelTypeEnum["DefectDojo"] = "DefectDojo";
-    TrelloIntegrationInfoModelTypeEnum["JazzTeam"] = "JazzTeam";
-    TrelloIntegrationInfoModelTypeEnum["AzureKeyVault"] = "AzureKeyVault";
-    TrelloIntegrationInfoModelTypeEnum["ServiceNowVrm"] = "ServiceNowVRM";
-})(TrelloIntegrationInfoModelTypeEnum = exports.TrelloIntegrationInfoModelTypeEnum || (exports.TrelloIntegrationInfoModelTypeEnum = {}));
+ * @export
+ */
+exports.TrelloIntegrationInfoModelTypeEnum = {
+    Jira: 'Jira',
+    GitHub: 'GitHub',
+    Tfs: 'TFS',
+    FogBugz: 'FogBugz',
+    ServiceNow: 'ServiceNow',
+    Slack: 'Slack',
+    GitLab: 'GitLab',
+    Bitbucket: 'Bitbucket',
+    Unfuddle: 'Unfuddle',
+    Zapier: 'Zapier',
+    AzureDevOps: 'AzureDevOps',
+    Redmine: 'Redmine',
+    Bugzilla: 'Bugzilla',
+    Kafka: 'Kafka',
+    PagerDuty: 'PagerDuty',
+    MicrosoftTeams: 'MicrosoftTeams',
+    Clubhouse: 'Clubhouse',
+    Trello: 'Trello',
+    Asana: 'Asana',
+    Webhook: 'Webhook',
+    Kenna: 'Kenna',
+    Freshservice: 'Freshservice',
+    YouTrack: 'YouTrack',
+    NetsparkerEnterprise: 'NetsparkerEnterprise',
+    Splunk: 'Splunk',
+    Mattermost: 'Mattermost',
+    Hashicorp: 'Hashicorp',
+    PivotalTracker: 'PivotalTracker',
+    CyberArk: 'CyberArk',
+    DefectDojo: 'DefectDojo',
+    JazzTeam: 'JazzTeam',
+    AzureKeyVault: 'AzureKeyVault',
+    ServiceNowVrm: 'ServiceNowVRM'
+};
 /**
-* @export
-* @enum {string}
-*/
-var TrelloIntegrationInfoModelTemplateTypeEnum;
-(function (TrelloIntegrationInfoModelTemplateTypeEnum) {
-    TrelloIntegrationInfoModelTemplateTypeEnum["Standard"] = "Standard";
-    TrelloIntegrationInfoModelTemplateTypeEnum["Detailed"] = "Detailed";
-})(TrelloIntegrationInfoModelTemplateTypeEnum = exports.TrelloIntegrationInfoModelTemplateTypeEnum || (exports.TrelloIntegrationInfoModelTemplateTypeEnum = {}));
+ * @export
+ */
+exports.TrelloIntegrationInfoModelTemplateTypeEnum = {
+    Standard: 'Standard',
+    Detailed: 'Detailed'
+};
 /**
  * Check if a given object implements the TrelloIntegrationInfoModel interface.
  */

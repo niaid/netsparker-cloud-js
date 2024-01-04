@@ -157,60 +157,60 @@ export interface KennaIntegrationInfoModel {
     integrationWizardResultModel?: IntegrationWizardResultModel;
 }
 /**
-* @export
-* @enum {string}
-*/
-export declare enum KennaIntegrationInfoModelAssetApplicationIdentifierTypeEnum {
-    WebsiteName = "WebsiteName",
-    Static = "Static"
-}
+ * @export
+ */
+export declare const KennaIntegrationInfoModelAssetApplicationIdentifierTypeEnum: {
+    readonly WebsiteName: "WebsiteName";
+    readonly Static: "Static";
+};
+export type KennaIntegrationInfoModelAssetApplicationIdentifierTypeEnum = typeof KennaIntegrationInfoModelAssetApplicationIdentifierTypeEnum[keyof typeof KennaIntegrationInfoModelAssetApplicationIdentifierTypeEnum];
 /**
-* @export
-* @enum {string}
-*/
-export declare enum KennaIntegrationInfoModelTypeEnum {
-    NetsparkerEnterprise = "NetsparkerEnterprise",
-    Webhook = "Webhook",
-    Zapier = "Zapier",
-    Slack = "Slack",
-    Mattermost = "Mattermost",
-    MicrosoftTeams = "MicrosoftTeams",
-    AzureDevOps = "AzureDevOps",
-    Bitbucket = "Bitbucket",
-    Bugzilla = "Bugzilla",
-    Clubhouse = "Clubhouse",
-    DefectDojo = "DefectDojo",
-    PivotalTracker = "PivotalTracker",
-    Jira = "Jira",
-    FogBugz = "FogBugz",
-    GitHub = "GitHub",
-    PagerDuty = "PagerDuty",
-    Kafka = "Kafka",
-    Kenna = "Kenna",
-    Redmine = "Redmine",
-    ServiceNow = "ServiceNow",
-    Tfs = "TFS",
-    Unfuddle = "Unfuddle",
-    YouTrack = "YouTrack",
-    Freshservice = "Freshservice",
-    Splunk = "Splunk",
-    JazzTeam = "JazzTeam",
-    ServiceNowVrm = "ServiceNowVRM",
-    Asana = "Asana",
-    Trello = "Trello",
-    Hashicorp = "Hashicorp",
-    CyberArk = "CyberArk",
-    AzureKeyVault = "AzureKeyVault",
-    GitLab = "GitLab"
-}
+ * @export
+ */
+export declare const KennaIntegrationInfoModelTypeEnum: {
+    readonly Jira: "Jira";
+    readonly GitHub: "GitHub";
+    readonly Tfs: "TFS";
+    readonly FogBugz: "FogBugz";
+    readonly ServiceNow: "ServiceNow";
+    readonly Slack: "Slack";
+    readonly GitLab: "GitLab";
+    readonly Bitbucket: "Bitbucket";
+    readonly Unfuddle: "Unfuddle";
+    readonly Zapier: "Zapier";
+    readonly AzureDevOps: "AzureDevOps";
+    readonly Redmine: "Redmine";
+    readonly Bugzilla: "Bugzilla";
+    readonly Kafka: "Kafka";
+    readonly PagerDuty: "PagerDuty";
+    readonly MicrosoftTeams: "MicrosoftTeams";
+    readonly Clubhouse: "Clubhouse";
+    readonly Trello: "Trello";
+    readonly Asana: "Asana";
+    readonly Webhook: "Webhook";
+    readonly Kenna: "Kenna";
+    readonly Freshservice: "Freshservice";
+    readonly YouTrack: "YouTrack";
+    readonly NetsparkerEnterprise: "NetsparkerEnterprise";
+    readonly Splunk: "Splunk";
+    readonly Mattermost: "Mattermost";
+    readonly Hashicorp: "Hashicorp";
+    readonly PivotalTracker: "PivotalTracker";
+    readonly CyberArk: "CyberArk";
+    readonly DefectDojo: "DefectDojo";
+    readonly JazzTeam: "JazzTeam";
+    readonly AzureKeyVault: "AzureKeyVault";
+    readonly ServiceNowVrm: "ServiceNowVRM";
+};
+export type KennaIntegrationInfoModelTypeEnum = typeof KennaIntegrationInfoModelTypeEnum[keyof typeof KennaIntegrationInfoModelTypeEnum];
 /**
-* @export
-* @enum {string}
-*/
-export declare enum KennaIntegrationInfoModelTemplateTypeEnum {
-    Standard = "Standard",
-    Detailed = "Detailed"
-}
+ * @export
+ */
+export declare const KennaIntegrationInfoModelTemplateTypeEnum: {
+    readonly Standard: "Standard";
+    readonly Detailed: "Detailed";
+};
+export type KennaIntegrationInfoModelTemplateTypeEnum = typeof KennaIntegrationInfoModelTemplateTypeEnum[keyof typeof KennaIntegrationInfoModelTemplateTypeEnum];
 /**
  * Check if a given object implements the KennaIntegrationInfoModel interface.
  */
