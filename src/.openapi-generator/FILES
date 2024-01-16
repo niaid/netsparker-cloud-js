@@ -80,7 +80,7 @@ models/CustomScriptRequestApiModel.ts
 models/CustomScriptUpdateRequestApiModel.ts
 models/CustomTemplateContentModel.ts
 models/CustomTemplateModel.ts
-models/CvssMetricModel.ts
+models/CvssMetricInfo.ts
 models/CvssScoreValue.ts
 models/CyberArkVaultIntegrationInfoModel.ts
 models/DefectDojoIntegrationInfoModel.ts
@@ -279,8 +279,6 @@ models/VersionIssue.ts
 models/VulnerabilityClassification.ts
 models/VulnerabilityContentApiModel.ts
 models/VulnerabilityModel.ts
-models/VulnerabilityTemplateCvss31Vector.ts
-models/VulnerabilityTemplateCvss40Vector.ts
 models/VulnerabilityTemplateCvssVector.ts
 models/VulnerabilityTemplating.ts
 models/WebStorageSetting.ts

@@ -21,7 +21,6 @@ const ApiFileModel_1 = require("./ApiFileModel");
  */
 function instanceOfClientCertificateAuthenticationApiModel(value) {
     let isInstance = true;
-    isInstance = isInstance && "file" in value;
     return isInstance;
 }
 exports.instanceOfClientCertificateAuthenticationApiModel = instanceOfClientCertificateAuthenticationApiModel;
@@ -34,7 +33,7 @@ function ClientCertificateAuthenticationApiModelFromJSONTyped(json, ignoreDiscri
         return json;
     }
     return {
-        'file': (0, ApiFileModel_1.ApiFileModelFromJSON)(json['File']),
+        'file': !(0, runtime_1.exists)(json, 'File') ? undefined : (0, ApiFileModel_1.ApiFileModelFromJSON)(json['File']),
         'isEnabled': !(0, runtime_1.exists)(json, 'IsEnabled') ? undefined : json['IsEnabled'],
         'password': !(0, runtime_1.exists)(json, 'Password') ? undefined : json['Password'],
     };

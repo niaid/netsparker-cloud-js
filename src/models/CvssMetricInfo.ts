@@ -21,39 +21,39 @@ import {
 } from './CvssScoreValue';
 
 /**
- * Represents base model for a CVSS entity.
+ * 
  * @export
- * @interface CvssMetricModel
+ * @interface CvssMetricInfo
  */
-export interface CvssMetricModel {
+export interface CvssMetricInfo {
     /**
      * 
      * @type {CvssScoreValue}
-     * @memberof CvssMetricModel
+     * @memberof CvssMetricInfo
      */
     score?: CvssScoreValue;
     /**
-     * Gets or sets the metrics of a cvss
+     * 
      * @type {{ [key: string]: string; }}
-     * @memberof CvssMetricModel
+     * @memberof CvssMetricInfo
      */
     metrics?: { [key: string]: string; };
 }
 
 /**
- * Check if a given object implements the CvssMetricModel interface.
+ * Check if a given object implements the CvssMetricInfo interface.
  */
-export function instanceOfCvssMetricModel(value: object): boolean {
+export function instanceOfCvssMetricInfo(value: object): boolean {
     let isInstance = true;
 
     return isInstance;
 }
 
-export function CvssMetricModelFromJSON(json: any): CvssMetricModel {
-    return CvssMetricModelFromJSONTyped(json, false);
+export function CvssMetricInfoFromJSON(json: any): CvssMetricInfo {
+    return CvssMetricInfoFromJSONTyped(json, false);
 }
 
-export function CvssMetricModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): CvssMetricModel {
+export function CvssMetricInfoFromJSONTyped(json: any, ignoreDiscriminator: boolean): CvssMetricInfo {
     if ((json === undefined) || (json === null)) {
         return json;
     }
@@ -64,7 +64,7 @@ export function CvssMetricModelFromJSONTyped(json: any, ignoreDiscriminator: boo
     };
 }
 
-export function CvssMetricModelToJSON(value?: CvssMetricModel | null): any {
+export function CvssMetricInfoToJSON(value?: CvssMetricInfo | null): any {
     if (value === undefined) {
         return undefined;
     }

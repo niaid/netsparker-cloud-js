@@ -13,12 +13,12 @@
  */
 
 import { exists, mapValues } from '../runtime';
-import type { CvssMetricModel } from './CvssMetricModel';
+import type { CvssMetricInfo } from './CvssMetricInfo';
 import {
-    CvssMetricModelFromJSON,
-    CvssMetricModelFromJSONTyped,
-    CvssMetricModelToJSON,
-} from './CvssMetricModel';
+    CvssMetricInfoFromJSON,
+    CvssMetricInfoFromJSONTyped,
+    CvssMetricInfoToJSON,
+} from './CvssMetricInfo';
 
 /**
  * Gets the parsed cvss vector
@@ -28,34 +28,34 @@ import {
 export interface IssueApiModelCvssVector {
     /**
      * 
-     * @type {CvssMetricModel}
+     * @type {CvssMetricInfo}
      * @memberof IssueApiModelCvssVector
      */
-    base?: CvssMetricModel;
+    base?: CvssMetricInfo;
     /**
      * 
-     * @type {CvssMetricModel}
+     * @type {CvssMetricInfo}
      * @memberof IssueApiModelCvssVector
      */
-    temporal?: CvssMetricModel;
+    temporal?: CvssMetricInfo;
     /**
      * 
-     * @type {CvssMetricModel}
+     * @type {CvssMetricInfo}
      * @memberof IssueApiModelCvssVector
      */
-    environmental?: CvssMetricModel;
+    environmental?: CvssMetricInfo;
     /**
      * 
-     * @type {CvssMetricModel}
+     * @type {CvssMetricInfo}
      * @memberof IssueApiModelCvssVector
      */
-    threat?: CvssMetricModel;
+    threat?: CvssMetricInfo;
     /**
      * 
-     * @type {CvssMetricModel}
+     * @type {CvssMetricInfo}
      * @memberof IssueApiModelCvssVector
      */
-    supplemental?: CvssMetricModel;
+    supplemental?: CvssMetricInfo;
 }
 
 /**
@@ -77,11 +77,11 @@ export function IssueApiModelCvssVectorFromJSONTyped(json: any, ignoreDiscrimina
     }
     return {
         
-        'base': !exists(json, 'Base') ? undefined : CvssMetricModelFromJSON(json['Base']),
-        'temporal': !exists(json, 'Temporal') ? undefined : CvssMetricModelFromJSON(json['Temporal']),
-        'environmental': !exists(json, 'Environmental') ? undefined : CvssMetricModelFromJSON(json['Environmental']),
-        'threat': !exists(json, 'Threat') ? undefined : CvssMetricModelFromJSON(json['Threat']),
-        'supplemental': !exists(json, 'Supplemental') ? undefined : CvssMetricModelFromJSON(json['Supplemental']),
+        'base': !exists(json, 'Base') ? undefined : CvssMetricInfoFromJSON(json['Base']),
+        'temporal': !exists(json, 'Temporal') ? undefined : CvssMetricInfoFromJSON(json['Temporal']),
+        'environmental': !exists(json, 'Environmental') ? undefined : CvssMetricInfoFromJSON(json['Environmental']),
+        'threat': !exists(json, 'Threat') ? undefined : CvssMetricInfoFromJSON(json['Threat']),
+        'supplemental': !exists(json, 'Supplemental') ? undefined : CvssMetricInfoFromJSON(json['Supplemental']),
     };
 }
 
@@ -94,11 +94,11 @@ export function IssueApiModelCvssVectorToJSON(value?: IssueApiModelCvssVector | 
     }
     return {
         
-        'Base': CvssMetricModelToJSON(value.base),
-        'Temporal': CvssMetricModelToJSON(value.temporal),
-        'Environmental': CvssMetricModelToJSON(value.environmental),
-        'Threat': CvssMetricModelToJSON(value.threat),
-        'Supplemental': CvssMetricModelToJSON(value.supplemental),
+        'Base': CvssMetricInfoToJSON(value.base),
+        'Temporal': CvssMetricInfoToJSON(value.temporal),
+        'Environmental': CvssMetricInfoToJSON(value.environmental),
+        'Threat': CvssMetricInfoToJSON(value.threat),
+        'Supplemental': CvssMetricInfoToJSON(value.supplemental),
     };
 }
 

@@ -13,7 +13,7 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AgentListApiModelToJSON = exports.AgentListApiModelFromJSONTyped = exports.AgentListApiModelFromJSON = exports.instanceOfAgentListApiModel = exports.AgentListApiModelStateEnum = void 0;
+exports.AgentListApiModelToJSON = exports.AgentListApiModelFromJSONTyped = exports.AgentListApiModelFromJSON = exports.instanceOfAgentListApiModel = exports.AgentListApiModelStorageHealthStateEnum = exports.AgentListApiModelStateEnum = void 0;
 const runtime_1 = require("../runtime");
 /**
  * @export
@@ -26,6 +26,14 @@ exports.AgentListApiModelStateEnum = {
     NotAvailable: 'NotAvailable',
     Disabled: 'Disabled',
     Updating: 'Updating'
+};
+/**
+ * @export
+ */
+exports.AgentListApiModelStorageHealthStateEnum = {
+    Healthy: 'Healthy',
+    BelowThreshold: 'BelowThreshold',
+    CriticallyLow: 'CriticallyLow'
 };
 /**
  * Check if a given object implements the AgentListApiModel interface.
@@ -59,6 +67,7 @@ function AgentListApiModelFromJSONTyped(json, ignoreDiscriminator) {
         'osArchitecture': !(0, runtime_1.exists)(json, 'OsArchitecture') ? undefined : json['OsArchitecture'],
         'processArchitecture': !(0, runtime_1.exists)(json, 'ProcessArchitecture') ? undefined : json['ProcessArchitecture'],
         'isAgentNeedsUpdate': !(0, runtime_1.exists)(json, 'IsAgentNeedsUpdate') ? undefined : json['IsAgentNeedsUpdate'],
+        'storageHealthState': !(0, runtime_1.exists)(json, 'StorageHealthState') ? undefined : json['StorageHealthState'],
     };
 }
 exports.AgentListApiModelFromJSONTyped = AgentListApiModelFromJSONTyped;
@@ -85,6 +94,7 @@ function AgentListApiModelToJSON(value) {
         'OsArchitecture': value.osArchitecture,
         'ProcessArchitecture': value.processArchitecture,
         'IsAgentNeedsUpdate': value.isAgentNeedsUpdate,
+        'StorageHealthState': value.storageHealthState,
     };
 }
 exports.AgentListApiModelToJSON = AgentListApiModelToJSON;

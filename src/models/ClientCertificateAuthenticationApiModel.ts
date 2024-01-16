@@ -31,7 +31,7 @@ export interface ClientCertificateAuthenticationApiModel {
      * @type {ApiFileModel}
      * @memberof ClientCertificateAuthenticationApiModel
      */
-    file: ApiFileModel;
+    file?: ApiFileModel;
     /**
      * Gets or sets a value indicating whether client certificate authentication is enabled.
      * @type {boolean}
@@ -51,7 +51,6 @@ export interface ClientCertificateAuthenticationApiModel {
  */
 export function instanceOfClientCertificateAuthenticationApiModel(value: object): boolean {
     let isInstance = true;
-    isInstance = isInstance && "file" in value;
 
     return isInstance;
 }
@@ -66,7 +65,7 @@ export function ClientCertificateAuthenticationApiModelFromJSONTyped(json: any, 
     }
     return {
         
-        'file': ApiFileModelFromJSON(json['File']),
+        'file': !exists(json, 'File') ? undefined : ApiFileModelFromJSON(json['File']),
         'isEnabled': !exists(json, 'IsEnabled') ? undefined : json['IsEnabled'],
         'password': !exists(json, 'Password') ? undefined : json['Password'],
     };

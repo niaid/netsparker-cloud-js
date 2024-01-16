@@ -10,25 +10,25 @@
  * Do not edit the class manually.
  */
 /**
- * Information model about the uploaded certificate.
+ *
  * @export
  * @interface CertificateInfoModel
  */
 export interface CertificateInfoModel {
     /**
-     * Common Name of Certificate
+     *
      * @type {string}
      * @memberof CertificateInfoModel
      */
     cN?: string;
     /**
-     * Expression Date of Certificate
+     *
      * @type {string}
      * @memberof CertificateInfoModel
      */
     expresionDate?: string;
     /**
-     * Thumbprint of Certificate
+     *
      * @type {string}
      * @memberof CertificateInfoModel
      */

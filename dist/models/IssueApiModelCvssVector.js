@@ -15,7 +15,7 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.IssueApiModelCvssVectorToJSON = exports.IssueApiModelCvssVectorFromJSONTyped = exports.IssueApiModelCvssVectorFromJSON = exports.instanceOfIssueApiModelCvssVector = void 0;
 const runtime_1 = require("../runtime");
-const CvssMetricModel_1 = require("./CvssMetricModel");
+const CvssMetricInfo_1 = require("./CvssMetricInfo");
 /**
  * Check if a given object implements the IssueApiModelCvssVector interface.
  */
@@ -33,11 +33,11 @@ function IssueApiModelCvssVectorFromJSONTyped(json, ignoreDiscriminator) {
         return json;
     }
     return {
-        'base': !(0, runtime_1.exists)(json, 'Base') ? undefined : (0, CvssMetricModel_1.CvssMetricModelFromJSON)(json['Base']),
-        'temporal': !(0, runtime_1.exists)(json, 'Temporal') ? undefined : (0, CvssMetricModel_1.CvssMetricModelFromJSON)(json['Temporal']),
-        'environmental': !(0, runtime_1.exists)(json, 'Environmental') ? undefined : (0, CvssMetricModel_1.CvssMetricModelFromJSON)(json['Environmental']),
-        'threat': !(0, runtime_1.exists)(json, 'Threat') ? undefined : (0, CvssMetricModel_1.CvssMetricModelFromJSON)(json['Threat']),
-        'supplemental': !(0, runtime_1.exists)(json, 'Supplemental') ? undefined : (0, CvssMetricModel_1.CvssMetricModelFromJSON)(json['Supplemental']),
+        'base': !(0, runtime_1.exists)(json, 'Base') ? undefined : (0, CvssMetricInfo_1.CvssMetricInfoFromJSON)(json['Base']),
+        'temporal': !(0, runtime_1.exists)(json, 'Temporal') ? undefined : (0, CvssMetricInfo_1.CvssMetricInfoFromJSON)(json['Temporal']),
+        'environmental': !(0, runtime_1.exists)(json, 'Environmental') ? undefined : (0, CvssMetricInfo_1.CvssMetricInfoFromJSON)(json['Environmental']),
+        'threat': !(0, runtime_1.exists)(json, 'Threat') ? undefined : (0, CvssMetricInfo_1.CvssMetricInfoFromJSON)(json['Threat']),
+        'supplemental': !(0, runtime_1.exists)(json, 'Supplemental') ? undefined : (0, CvssMetricInfo_1.CvssMetricInfoFromJSON)(json['Supplemental']),
     };
 }
 exports.IssueApiModelCvssVectorFromJSONTyped = IssueApiModelCvssVectorFromJSONTyped;
@@ -49,11 +49,11 @@ function IssueApiModelCvssVectorToJSON(value) {
         return null;
     }
     return {
-        'Base': (0, CvssMetricModel_1.CvssMetricModelToJSON)(value.base),
-        'Temporal': (0, CvssMetricModel_1.CvssMetricModelToJSON)(value.temporal),
-        'Environmental': (0, CvssMetricModel_1.CvssMetricModelToJSON)(value.environmental),
-        'Threat': (0, CvssMetricModel_1.CvssMetricModelToJSON)(value.threat),
-        'Supplemental': (0, CvssMetricModel_1.CvssMetricModelToJSON)(value.supplemental),
+        'Base': (0, CvssMetricInfo_1.CvssMetricInfoToJSON)(value.base),
+        'Temporal': (0, CvssMetricInfo_1.CvssMetricInfoToJSON)(value.temporal),
+        'Environmental': (0, CvssMetricInfo_1.CvssMetricInfoToJSON)(value.environmental),
+        'Threat': (0, CvssMetricInfo_1.CvssMetricInfoToJSON)(value.threat),
+        'Supplemental': (0, CvssMetricInfo_1.CvssMetricInfoToJSON)(value.supplemental),
     };
 }
 exports.IssueApiModelCvssVectorToJSON = IssueApiModelCvssVectorToJSON;

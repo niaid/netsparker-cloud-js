@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { CvssMetricModel } from './CvssMetricModel';
+import type { CvssMetricInfo } from './CvssMetricInfo';
 /**
  * Gets the parsed cvss vector
  * @export
@@ -18,34 +18,34 @@ import type { CvssMetricModel } from './CvssMetricModel';
 export interface IssueApiModelCvssVector {
     /**
      *
-     * @type {CvssMetricModel}
+     * @type {CvssMetricInfo}
      * @memberof IssueApiModelCvssVector
      */
-    base?: CvssMetricModel;
+    base?: CvssMetricInfo;
     /**
      *
-     * @type {CvssMetricModel}
+     * @type {CvssMetricInfo}
      * @memberof IssueApiModelCvssVector
      */
-    temporal?: CvssMetricModel;
+    temporal?: CvssMetricInfo;
     /**
      *
-     * @type {CvssMetricModel}
+     * @type {CvssMetricInfo}
      * @memberof IssueApiModelCvssVector
      */
-    environmental?: CvssMetricModel;
+    environmental?: CvssMetricInfo;
     /**
      *
-     * @type {CvssMetricModel}
+     * @type {CvssMetricInfo}
      * @memberof IssueApiModelCvssVector
      */
-    threat?: CvssMetricModel;
+    threat?: CvssMetricInfo;
     /**
      *
-     * @type {CvssMetricModel}
+     * @type {CvssMetricInfo}
      * @memberof IssueApiModelCvssVector
      */
-    supplemental?: CvssMetricModel;
+    supplemental?: CvssMetricInfo;
 }
 /**
  * Check if a given object implements the IssueApiModelCvssVector interface.

@@ -109,6 +109,12 @@ export interface AgentListApiModel {
      * @memberof AgentListApiModel
      */
     isAgentNeedsUpdate?: boolean;
+    /**
+     * 
+     * @type {string}
+     * @memberof AgentListApiModel
+     */
+    storageHealthState?: AgentListApiModelStorageHealthStateEnum;
 }
 
 
@@ -125,6 +131,16 @@ export const AgentListApiModelStateEnum = {
     Updating: 'Updating'
 } as const;
 export type AgentListApiModelStateEnum = typeof AgentListApiModelStateEnum[keyof typeof AgentListApiModelStateEnum];
+
+/**
+ * @export
+ */
+export const AgentListApiModelStorageHealthStateEnum = {
+    Healthy: 'Healthy',
+    BelowThreshold: 'BelowThreshold',
+    CriticallyLow: 'CriticallyLow'
+} as const;
+export type AgentListApiModelStorageHealthStateEnum = typeof AgentListApiModelStorageHealthStateEnum[keyof typeof AgentListApiModelStorageHealthStateEnum];
 
 
 /**
@@ -161,6 +177,7 @@ export function AgentListApiModelFromJSONTyped(json: any, ignoreDiscriminator: b
         'osArchitecture': !exists(json, 'OsArchitecture') ? undefined : json['OsArchitecture'],
         'processArchitecture': !exists(json, 'ProcessArchitecture') ? undefined : json['ProcessArchitecture'],
         'isAgentNeedsUpdate': !exists(json, 'IsAgentNeedsUpdate') ? undefined : json['IsAgentNeedsUpdate'],
+        'storageHealthState': !exists(json, 'StorageHealthState') ? undefined : json['StorageHealthState'],
     };
 }
 
@@ -188,6 +205,7 @@ export function AgentListApiModelToJSON(value?: AgentListApiModel | null): any {
         'OsArchitecture': value.osArchitecture,
         'ProcessArchitecture': value.processArchitecture,
         'IsAgentNeedsUpdate': value.isAgentNeedsUpdate,
+        'StorageHealthState': value.storageHealthState,
     };
 }
 

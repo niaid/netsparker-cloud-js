@@ -21,7 +21,7 @@ export interface ClientCertificateAuthenticationApiModel {
      * @type {ApiFileModel}
      * @memberof ClientCertificateAuthenticationApiModel
      */
-    file: ApiFileModel;
+    file?: ApiFileModel;
     /**
      * Gets or sets a value indicating whether client certificate authentication is enabled.
      * @type {boolean}

@@ -13,22 +13,22 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.CvssMetricModelToJSON = exports.CvssMetricModelFromJSONTyped = exports.CvssMetricModelFromJSON = exports.instanceOfCvssMetricModel = void 0;
+exports.CvssMetricInfoToJSON = exports.CvssMetricInfoFromJSONTyped = exports.CvssMetricInfoFromJSON = exports.instanceOfCvssMetricInfo = void 0;
 const runtime_1 = require("../runtime");
 const CvssScoreValue_1 = require("./CvssScoreValue");
 /**
- * Check if a given object implements the CvssMetricModel interface.
+ * Check if a given object implements the CvssMetricInfo interface.
  */
-function instanceOfCvssMetricModel(value) {
+function instanceOfCvssMetricInfo(value) {
     let isInstance = true;
     return isInstance;
 }
-exports.instanceOfCvssMetricModel = instanceOfCvssMetricModel;
-function CvssMetricModelFromJSON(json) {
-    return CvssMetricModelFromJSONTyped(json, false);
+exports.instanceOfCvssMetricInfo = instanceOfCvssMetricInfo;
+function CvssMetricInfoFromJSON(json) {
+    return CvssMetricInfoFromJSONTyped(json, false);
 }
-exports.CvssMetricModelFromJSON = CvssMetricModelFromJSON;
-function CvssMetricModelFromJSONTyped(json, ignoreDiscriminator) {
+exports.CvssMetricInfoFromJSON = CvssMetricInfoFromJSON;
+function CvssMetricInfoFromJSONTyped(json, ignoreDiscriminator) {
     if ((json === undefined) || (json === null)) {
         return json;
     }
@@ -37,8 +37,8 @@ function CvssMetricModelFromJSONTyped(json, ignoreDiscriminator) {
         'metrics': !(0, runtime_1.exists)(json, 'Metrics') ? undefined : json['Metrics'],
     };
 }
-exports.CvssMetricModelFromJSONTyped = CvssMetricModelFromJSONTyped;
-function CvssMetricModelToJSON(value) {
+exports.CvssMetricInfoFromJSONTyped = CvssMetricInfoFromJSONTyped;
+function CvssMetricInfoToJSON(value) {
     if (value === undefined) {
         return undefined;
     }
@@ -50,5 +50,5 @@ function CvssMetricModelToJSON(value) {
         'Metrics': value.metrics,
     };
 }
-exports.CvssMetricModelToJSON = CvssMetricModelToJSON;
-//# sourceMappingURL=CvssMetricModel.js.map
+exports.CvssMetricInfoToJSON = CvssMetricInfoToJSON;
+//# sourceMappingURL=CvssMetricInfo.js.map

@@ -105,6 +105,12 @@ export interface AgentListApiModel {
      * @memberof AgentListApiModel
      */
     isAgentNeedsUpdate?: boolean;
+    /**
+     *
+     * @type {string}
+     * @memberof AgentListApiModel
+     */
+    storageHealthState?: AgentListApiModelStorageHealthStateEnum;
 }
 /**
  * @export
@@ -119,6 +125,15 @@ export declare const AgentListApiModelStateEnum: {
     readonly Updating: "Updating";
 };
 export type AgentListApiModelStateEnum = typeof AgentListApiModelStateEnum[keyof typeof AgentListApiModelStateEnum];
+/**
+ * @export
+ */
+export declare const AgentListApiModelStorageHealthStateEnum: {
+    readonly Healthy: "Healthy";
+    readonly BelowThreshold: "BelowThreshold";
+    readonly CriticallyLow: "CriticallyLow";
+};
+export type AgentListApiModelStorageHealthStateEnum = typeof AgentListApiModelStorageHealthStateEnum[keyof typeof AgentListApiModelStorageHealthStateEnum];
 /**
  * Check if a given object implements the AgentListApiModel interface.
  */

@@ -10,103 +10,103 @@
  * Do not edit the class manually.
  */
 /**
- * Stores the characteristics of a version-related issue type.
+ *
  * @export
  * @interface VersionIssue
  */
 export interface VersionIssue {
     /**
-     * Gets or sets a description of the steps required to exploit this vulnerability type.
+     *
      * @type {string}
      * @memberof VersionIssue
      */
     exploit?: string;
     /**
-     * Gets or sets the external references relating to this vulnerability type.
+     *
      * @type {string}
      * @memberof VersionIssue
      */
     externalReferences?: string;
     /**
-     * Gets or sets a value that identifies the application ordinal in which this vulnerability type first occurred.
+     *
      * @type {number}
      * @memberof VersionIssue
      */
     fromVersionOrdinal?: number;
     /**
-     * Gets or sets a value that identifies the application version in which this vulnerability type first occurred.
+     *
      * @type {string}
      * @memberof VersionIssue
      */
     fromVersion?: string;
     /**
-     * Gets or sets the unique vulnerability database key of this vulnerability type.
+     *
      * @type {number}
      * @memberof VersionIssue
      */
     id?: number;
     /**
-     * Gets or sets a description of the impact of this vulnerability type.
+     *
      * @type {string}
      * @memberof VersionIssue
      */
     impact?: string;
     /**
-     * Gets or sets a description of the remedy for this vulnerability type.
+     *
      * @type {string}
      * @memberof VersionIssue
      */
     remedy?: string;
     /**
-     * Gets or sets the severity level associated with this vulnerability type.
+     *
      * @type {string}
      * @memberof VersionIssue
      */
     severity?: VersionIssueSeverityEnum;
     /**
-     * Gets or sets a summary of this vulnerability type.
+     *
      * @type {string}
      * @memberof VersionIssue
      */
     summary?: string;
     /**
-     * Gets or sets the title of this vulnerability type.
+     *
      * @type {string}
      * @memberof VersionIssue
      */
     title?: string;
     /**
-     * Gets or sets a value that identifies the application ordinal in which this vulnerability type last occurred.
+     *
      * @type {number}
      * @memberof VersionIssue
      */
     toVersionOrdinal?: number;
     /**
-     * Gets or sets a value that identifies the application version in which this vulnerability type last occurred.
+     *
      * @type {string}
      * @memberof VersionIssue
      */
     toVersion?: string;
     /**
-     * Gets or sets a code that identifies the generic type of this vulnerability.
+     *
      * @type {string}
      * @memberof VersionIssue
      */
     vulnerability?: string;
     /**
-     * Gets or sets the unique identifier for application.
+     *
      * @type {number}
      * @memberof VersionIssue
      */
     application?: number;
     /**
-     * Gets or sets the BDU BDU specification for version issue.
+     *
      * @type {string}
      * @memberof VersionIssue
      */
     bdu?: string;
     /**
-     * Gets or sets the Cvss specification for version issue.
+     *
      * @type {string}
      * @memberof VersionIssue
      */
