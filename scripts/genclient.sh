@@ -25,6 +25,8 @@ echo "generating updated client in: ${CLIENT_OUT}"
 
 docker run --rm -v "${PWD}:/local" openapitools/openapi-generator-cli generate \
     -i /local/${CLIENT_SPEC} \
-    -g typescript-node \
+    -g typescript-fetch \
+    --additional-properties=typescriptThreePlus=true,supportsES6=true,enumClassPrefix=true \
+    --model-name-mappings Scans_validate_imported_links_file_request=ScansValidateImportedLinksFileReq,ModelA=NewModelA,VulnerabilityTemplate=VulnerabilityTemplating \
     --skip-validate-spec \
-    -o /local/${CLIENT_OUT}
+    -o /local/${CLIENT_OUT} \
