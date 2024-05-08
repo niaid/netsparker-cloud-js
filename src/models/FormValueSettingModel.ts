@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a model for carrying out form value settings.
  * @export
@@ -109,12 +109,10 @@ export type FormValueSettingModelMatchTargetValueEnum = typeof FormValueSettingM
  * Check if a given object implements the FormValueSettingModel interface.
  */
 export function instanceOfFormValueSettingModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "matchTargetValue" in value;
-    isInstance = isInstance && "name" in value;
-    isInstance = isInstance && "value" in value;
-
-    return isInstance;
+    if (!('matchTargetValue' in value)) return false;
+    if (!('name' in value)) return false;
+    if (!('value' in value)) return false;
+    return true;
 }
 
 export function FormValueSettingModelFromJSON(json: any): FormValueSettingModel {
@@ -122,39 +120,36 @@ export function FormValueSettingModelFromJSON(json: any): FormValueSettingModel 
 }
 
 export function FormValueSettingModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): FormValueSettingModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'force': !exists(json, 'Force') ? undefined : json['Force'],
-        'match': !exists(json, 'Match') ? undefined : json['Match'],
-        'matchTarget': !exists(json, 'MatchTarget') ? undefined : json['MatchTarget'],
+        'force': json['Force'] == null ? undefined : json['Force'],
+        'match': json['Match'] == null ? undefined : json['Match'],
+        'matchTarget': json['MatchTarget'] == null ? undefined : json['MatchTarget'],
         'matchTargetValue': json['MatchTargetValue'],
         'name': json['Name'],
-        'pattern': !exists(json, 'Pattern') ? undefined : json['Pattern'],
-        'type': !exists(json, 'Type') ? undefined : json['Type'],
+        'pattern': json['Pattern'] == null ? undefined : json['Pattern'],
+        'type': json['Type'] == null ? undefined : json['Type'],
         'value': json['Value'],
     };
 }
 
 export function FormValueSettingModelToJSON(value?: FormValueSettingModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Force': value.force,
-        'Match': value.match,
-        'MatchTarget': value.matchTarget,
-        'MatchTargetValue': value.matchTargetValue,
-        'Name': value.name,
-        'Pattern': value.pattern,
-        'Type': value.type,
-        'Value': value.value,
+        'Force': value['force'],
+        'Match': value['match'],
+        'MatchTarget': value['matchTarget'],
+        'MatchTargetValue': value['matchTargetValue'],
+        'Name': value['name'],
+        'Pattern': value['pattern'],
+        'Type': value['type'],
+        'Value': value['value'],
     };
 }
 

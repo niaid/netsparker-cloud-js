@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AgentSelectionModelToJSON = exports.AgentSelectionModelFromJSONTyped = exports.AgentSelectionModelFromJSON = exports.instanceOfAgentSelectionModel = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the AgentSelectionModel interface.
  */
 function instanceOfAgentSelectionModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfAgentSelectionModel = instanceOfAgentSelectionModel;
 function AgentSelectionModelFromJSON(json) {
@@ -28,25 +26,22 @@ function AgentSelectionModelFromJSON(json) {
 }
 exports.AgentSelectionModelFromJSON = AgentSelectionModelFromJSON;
 function AgentSelectionModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'agentId': !(0, runtime_1.exists)(json, 'AgentId') ? undefined : json['AgentId'],
-        'websiteId': !(0, runtime_1.exists)(json, 'WebsiteId') ? undefined : json['WebsiteId'],
+        'agentId': json['AgentId'] == null ? undefined : json['AgentId'],
+        'websiteId': json['WebsiteId'] == null ? undefined : json['WebsiteId'],
     };
 }
 exports.AgentSelectionModelFromJSONTyped = AgentSelectionModelFromJSONTyped;
 function AgentSelectionModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'AgentId': value.agentId,
-        'WebsiteId': value.websiteId,
+        'AgentId': value['agentId'],
+        'WebsiteId': value['websiteId'],
     };
 }
 exports.AgentSelectionModelToJSON = AgentSelectionModelToJSON;

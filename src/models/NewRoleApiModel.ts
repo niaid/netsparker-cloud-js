@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * 
  * @export
@@ -37,10 +37,8 @@ export interface NewRoleApiModel {
  * Check if a given object implements the NewRoleApiModel interface.
  */
 export function instanceOfNewRoleApiModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "name" in value;
-
-    return isInstance;
+    if (!('name' in value)) return false;
+    return true;
 }
 
 export function NewRoleApiModelFromJSON(json: any): NewRoleApiModel {
@@ -48,27 +46,24 @@ export function NewRoleApiModelFromJSON(json: any): NewRoleApiModel {
 }
 
 export function NewRoleApiModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): NewRoleApiModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
         'name': json['Name'],
-        'permissions': !exists(json, 'Permissions') ? undefined : json['Permissions'],
+        'permissions': json['Permissions'] == null ? undefined : json['Permissions'],
     };
 }
 
 export function NewRoleApiModelToJSON(value?: NewRoleApiModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Name': value.name,
-        'Permissions': value.permissions,
+        'Name': value['name'],
+        'Permissions': value['permissions'],
     };
 }
 

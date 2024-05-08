@@ -14,7 +14,6 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.IssueSummaryStatusModelToJSON = exports.IssueSummaryStatusModelFromJSONTyped = exports.IssueSummaryStatusModelFromJSON = exports.instanceOfIssueSummaryStatusModel = exports.IssueSummaryStatusModelStatusEnum = void 0;
-const runtime_1 = require("../runtime");
 /**
  * @export
  */
@@ -33,8 +32,7 @@ exports.IssueSummaryStatusModelStatusEnum = {
  * Check if a given object implements the IssueSummaryStatusModel interface.
  */
 function instanceOfIssueSummaryStatusModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfIssueSummaryStatusModel = instanceOfIssueSummaryStatusModel;
 function IssueSummaryStatusModelFromJSON(json) {
@@ -42,24 +40,21 @@ function IssueSummaryStatusModelFromJSON(json) {
 }
 exports.IssueSummaryStatusModelFromJSON = IssueSummaryStatusModelFromJSON;
 function IssueSummaryStatusModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'status': !(0, runtime_1.exists)(json, 'Status') ? undefined : json['Status'],
-        'statusDate': !(0, runtime_1.exists)(json, 'StatusDate') ? undefined : json['StatusDate'],
+        'status': json['Status'] == null ? undefined : json['Status'],
+        'statusDate': json['StatusDate'] == null ? undefined : json['StatusDate'],
     };
 }
 exports.IssueSummaryStatusModelFromJSONTyped = IssueSummaryStatusModelFromJSONTyped;
 function IssueSummaryStatusModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Status': value.status,
+        'Status': value['status'],
     };
 }
 exports.IssueSummaryStatusModelToJSON = IssueSummaryStatusModelToJSON;

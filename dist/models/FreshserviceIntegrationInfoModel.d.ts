@@ -9,10 +9,11 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import type { FreshServiceRequesterUser } from './FreshServiceRequesterUser';
+import type { FreshServiceUserAgent } from './FreshServiceUserAgent';
 import type { FreshserviceEntity } from './FreshserviceEntity';
-import type { FreshserviceUser } from './FreshserviceUser';
-import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
 import type { IntegrationWizardResultModel } from './IntegrationWizardResultModel';
+import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
 /**
  * The Freshservice integration info
  * @export
@@ -63,10 +64,10 @@ export interface FreshserviceIntegrationInfoModel {
     integrationWizardResultModel?: IntegrationWizardResultModel;
     /**
      * The Requesters List.
-     * @type {Array<FreshserviceUser>}
+     * @type {Array<FreshServiceRequesterUser>}
      * @memberof FreshserviceIntegrationInfoModel
      */
-    requesters?: Array<FreshserviceUser>;
+    requesters?: Array<FreshServiceRequesterUser>;
     /**
      * The Groups List.
      * @type {Array<FreshserviceEntity>}
@@ -75,10 +76,10 @@ export interface FreshserviceIntegrationInfoModel {
     groups?: Array<FreshserviceEntity>;
     /**
      * The Agents List.
-     * @type {Array<FreshserviceUser>}
+     * @type {Array<FreshServiceUserAgent>}
      * @memberof FreshserviceIntegrationInfoModel
      */
-    agents?: Array<FreshserviceUser>;
+    agents?: Array<FreshServiceUserAgent>;
     /**
      * The Priorities List.
      * @type {Array<FreshserviceEntity>}
@@ -175,6 +176,18 @@ export interface FreshserviceIntegrationInfoModel {
      * @memberof FreshserviceIntegrationInfoModel
      */
     titleFormat: string;
+    /**
+     *
+     * @type {string}
+     * @memberof FreshserviceIntegrationInfoModel
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof FreshserviceIntegrationInfoModel
+     */
+    state?: FreshserviceIntegrationInfoModelStateEnum;
 }
 /**
  * @export
@@ -224,9 +237,17 @@ export declare const FreshserviceIntegrationInfoModelTemplateTypeEnum: {
 };
 export type FreshserviceIntegrationInfoModelTemplateTypeEnum = typeof FreshserviceIntegrationInfoModelTemplateTypeEnum[keyof typeof FreshserviceIntegrationInfoModelTemplateTypeEnum];
 /**
+ * @export
+ */
+export declare const FreshserviceIntegrationInfoModelStateEnum: {
+    readonly Active: "Active";
+    readonly Suspended: "Suspended";
+};
+export type FreshserviceIntegrationInfoModelStateEnum = typeof FreshserviceIntegrationInfoModelStateEnum[keyof typeof FreshserviceIntegrationInfoModelStateEnum];
+/**
  * Check if a given object implements the FreshserviceIntegrationInfoModel interface.
  */
 export declare function instanceOfFreshserviceIntegrationInfoModel(value: object): boolean;
 export declare function FreshserviceIntegrationInfoModelFromJSON(json: any): FreshserviceIntegrationInfoModel;
 export declare function FreshserviceIntegrationInfoModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): FreshserviceIntegrationInfoModel;
-export declare function FreshserviceIntegrationInfoModelToJSON(value?: FreshserviceIntegrationInfoModel | null): any;
+export declare function FreshserviceIntegrationInfoModelToJSON(value?: Omit<FreshserviceIntegrationInfoModel, 'Type' | 'GenericErrorMessage' | 'Identifier' | 'TestMessageBody' | 'TestMessageTitle' | 'WebhookUrl'> | null): any;

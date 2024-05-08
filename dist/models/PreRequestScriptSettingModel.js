@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PreRequestScriptSettingModelToJSON = exports.PreRequestScriptSettingModelFromJSONTyped = exports.PreRequestScriptSettingModelFromJSON = exports.instanceOfPreRequestScriptSettingModel = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the PreRequestScriptSettingModel interface.
  */
 function instanceOfPreRequestScriptSettingModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfPreRequestScriptSettingModel = instanceOfPreRequestScriptSettingModel;
 function PreRequestScriptSettingModelFromJSON(json) {
@@ -28,25 +26,22 @@ function PreRequestScriptSettingModelFromJSON(json) {
 }
 exports.PreRequestScriptSettingModelFromJSON = PreRequestScriptSettingModelFromJSON;
 function PreRequestScriptSettingModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'isEnabled': !(0, runtime_1.exists)(json, 'IsEnabled') ? undefined : json['IsEnabled'],
-        'content': !(0, runtime_1.exists)(json, 'Content') ? undefined : json['Content'],
+        'isEnabled': json['IsEnabled'] == null ? undefined : json['IsEnabled'],
+        'content': json['Content'] == null ? undefined : json['Content'],
     };
 }
 exports.PreRequestScriptSettingModelFromJSONTyped = PreRequestScriptSettingModelFromJSONTyped;
 function PreRequestScriptSettingModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'IsEnabled': value.isEnabled,
-        'Content': value.content,
+        'IsEnabled': value['isEnabled'],
+        'Content': value['content'],
     };
 }
 exports.PreRequestScriptSettingModelToJSON = PreRequestScriptSettingModelToJSON;

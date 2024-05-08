@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents credentials for Basic, NTML, Kerberos, Digest or Negotiate authentication.
  * @export
@@ -93,12 +93,10 @@ export type BasicAuthenticationCredentialModelAuthenticationTypeEnum = typeof Ba
  * Check if a given object implements the BasicAuthenticationCredentialModel interface.
  */
 export function instanceOfBasicAuthenticationCredentialModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "password" in value;
-    isInstance = isInstance && "uriPrefix" in value;
-    isInstance = isInstance && "userName" in value;
-
-    return isInstance;
+    if (!('password' in value)) return false;
+    if (!('uriPrefix' in value)) return false;
+    if (!('userName' in value)) return false;
+    return true;
 }
 
 export function BasicAuthenticationCredentialModelFromJSON(json: any): BasicAuthenticationCredentialModel {
@@ -106,41 +104,38 @@ export function BasicAuthenticationCredentialModelFromJSON(json: any): BasicAuth
 }
 
 export function BasicAuthenticationCredentialModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): BasicAuthenticationCredentialModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'authenticationType': !exists(json, 'AuthenticationType') ? undefined : json['AuthenticationType'],
-        'domain': !exists(json, 'Domain') ? undefined : json['Domain'],
+        'authenticationType': json['AuthenticationType'] == null ? undefined : json['AuthenticationType'],
+        'domain': json['Domain'] == null ? undefined : json['Domain'],
         'password': json['Password'],
         'uriPrefix': json['UriPrefix'],
         'userName': json['UserName'],
-        'originalUriPrefix': !exists(json, 'OriginalUriPrefix') ? undefined : json['OriginalUriPrefix'],
-        'originalUserName': !exists(json, 'OriginalUserName') ? undefined : json['OriginalUserName'],
-        'originalPassword': !exists(json, 'OriginalPassword') ? undefined : json['OriginalPassword'],
-        'isReplacedCredentials': !exists(json, 'IsReplacedCredentials') ? undefined : json['IsReplacedCredentials'],
+        'originalUriPrefix': json['OriginalUriPrefix'] == null ? undefined : json['OriginalUriPrefix'],
+        'originalUserName': json['OriginalUserName'] == null ? undefined : json['OriginalUserName'],
+        'originalPassword': json['OriginalPassword'] == null ? undefined : json['OriginalPassword'],
+        'isReplacedCredentials': json['IsReplacedCredentials'] == null ? undefined : json['IsReplacedCredentials'],
     };
 }
 
 export function BasicAuthenticationCredentialModelToJSON(value?: BasicAuthenticationCredentialModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'AuthenticationType': value.authenticationType,
-        'Domain': value.domain,
-        'Password': value.password,
-        'UriPrefix': value.uriPrefix,
-        'UserName': value.userName,
-        'OriginalUriPrefix': value.originalUriPrefix,
-        'OriginalUserName': value.originalUserName,
-        'OriginalPassword': value.originalPassword,
-        'IsReplacedCredentials': value.isReplacedCredentials,
+        'AuthenticationType': value['authenticationType'],
+        'Domain': value['domain'],
+        'Password': value['password'],
+        'UriPrefix': value['uriPrefix'],
+        'UserName': value['userName'],
+        'OriginalUriPrefix': value['originalUriPrefix'],
+        'OriginalUserName': value['originalUserName'],
+        'OriginalPassword': value['originalPassword'],
+        'IsReplacedCredentials': value['isReplacedCredentials'],
     };
 }
 

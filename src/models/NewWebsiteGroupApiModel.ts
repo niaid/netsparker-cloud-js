@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a model for creating a new website group.
  * @export
@@ -43,10 +43,8 @@ export interface NewWebsiteGroupApiModel {
  * Check if a given object implements the NewWebsiteGroupApiModel interface.
  */
 export function instanceOfNewWebsiteGroupApiModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "name" in value;
-
-    return isInstance;
+    if (!('name' in value)) return false;
+    return true;
 }
 
 export function NewWebsiteGroupApiModelFromJSON(json: any): NewWebsiteGroupApiModel {
@@ -54,29 +52,26 @@ export function NewWebsiteGroupApiModelFromJSON(json: any): NewWebsiteGroupApiMo
 }
 
 export function NewWebsiteGroupApiModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): NewWebsiteGroupApiModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
         'name': json['Name'],
-        'description': !exists(json, 'Description') ? undefined : json['Description'],
-        'tags': !exists(json, 'Tags') ? undefined : json['Tags'],
+        'description': json['Description'] == null ? undefined : json['Description'],
+        'tags': json['Tags'] == null ? undefined : json['Tags'],
     };
 }
 
 export function NewWebsiteGroupApiModelToJSON(value?: NewWebsiteGroupApiModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Name': value.name,
-        'Description': value.description,
-        'Tags': value.tags,
+        'Name': value['name'],
+        'Description': value['description'],
+        'Tags': value['tags'],
     };
 }
 

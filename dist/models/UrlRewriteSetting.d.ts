@@ -9,8 +9,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { UrlRewriteExcludedPathModel } from './UrlRewriteExcludedPathModel';
 import type { UrlRewriteRuleModel } from './UrlRewriteRuleModel';
+import type { UrlRewriteExcludedPathModel } from './UrlRewriteExcludedPathModel';
 /**
  * Represents a class that carries out url rewrite settings.
  * @export

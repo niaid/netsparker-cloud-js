@@ -45,4 +45,4 @@ export type CvssScoreValueSeverityEnum = typeof CvssScoreValueSeverityEnum[keyof
 export declare function instanceOfCvssScoreValue(value: object): boolean;
 export declare function CvssScoreValueFromJSON(json: any): CvssScoreValue;
 export declare function CvssScoreValueFromJSONTyped(json: any, ignoreDiscriminator: boolean): CvssScoreValue;
-export declare function CvssScoreValueToJSON(value?: CvssScoreValue | null): any;
+export declare function CvssScoreValueToJSON(value?: Omit<CvssScoreValue, 'Severity' | 'Value'> | null): any;

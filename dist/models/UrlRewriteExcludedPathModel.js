@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UrlRewriteExcludedPathModelToJSON = exports.UrlRewriteExcludedPathModelFromJSONTyped = exports.UrlRewriteExcludedPathModelFromJSON = exports.instanceOfUrlRewriteExcludedPathModel = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the UrlRewriteExcludedPathModel interface.
  */
 function instanceOfUrlRewriteExcludedPathModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfUrlRewriteExcludedPathModel = instanceOfUrlRewriteExcludedPathModel;
 function UrlRewriteExcludedPathModelFromJSON(json) {
@@ -28,25 +26,22 @@ function UrlRewriteExcludedPathModelFromJSON(json) {
 }
 exports.UrlRewriteExcludedPathModelFromJSON = UrlRewriteExcludedPathModelFromJSON;
 function UrlRewriteExcludedPathModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'excludedPath': !(0, runtime_1.exists)(json, 'ExcludedPath') ? undefined : json['ExcludedPath'],
-        'isRegex': !(0, runtime_1.exists)(json, 'IsRegex') ? undefined : json['IsRegex'],
+        'excludedPath': json['ExcludedPath'] == null ? undefined : json['ExcludedPath'],
+        'isRegex': json['IsRegex'] == null ? undefined : json['IsRegex'],
     };
 }
 exports.UrlRewriteExcludedPathModelFromJSONTyped = UrlRewriteExcludedPathModelFromJSONTyped;
 function UrlRewriteExcludedPathModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'ExcludedPath': value.excludedPath,
-        'IsRegex': value.isRegex,
+        'ExcludedPath': value['excludedPath'],
+        'IsRegex': value['isRegex'],
     };
 }
 exports.UrlRewriteExcludedPathModelToJSON = UrlRewriteExcludedPathModelToJSON;

@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a model for carrying out website groups data.
  * @export
@@ -55,9 +55,7 @@ export interface WebsiteGroupModel {
  * Check if a given object implements the WebsiteGroupModel interface.
  */
 export function instanceOfWebsiteGroupModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function WebsiteGroupModelFromJSON(json: any): WebsiteGroupModel {
@@ -65,32 +63,29 @@ export function WebsiteGroupModelFromJSON(json: any): WebsiteGroupModel {
 }
 
 export function WebsiteGroupModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): WebsiteGroupModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'displayName': !exists(json, 'DisplayName') ? undefined : json['DisplayName'],
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'notVerifiedWebsiteCount': !exists(json, 'NotVerifiedWebsiteCount') ? undefined : json['NotVerifiedWebsiteCount'],
-        'verifiedWebsiteCount': !exists(json, 'VerifiedWebsiteCount') ? undefined : json['VerifiedWebsiteCount'],
+        'displayName': json['DisplayName'] == null ? undefined : json['DisplayName'],
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'name': json['Name'] == null ? undefined : json['Name'],
+        'notVerifiedWebsiteCount': json['NotVerifiedWebsiteCount'] == null ? undefined : json['NotVerifiedWebsiteCount'],
+        'verifiedWebsiteCount': json['VerifiedWebsiteCount'] == null ? undefined : json['VerifiedWebsiteCount'],
     };
 }
 
-export function WebsiteGroupModelToJSON(value?: WebsiteGroupModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+export function WebsiteGroupModelToJSON(value?: Omit<WebsiteGroupModel, 'DisplayName'> | null): any {
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Id': value.id,
-        'Name': value.name,
-        'NotVerifiedWebsiteCount': value.notVerifiedWebsiteCount,
-        'VerifiedWebsiteCount': value.verifiedWebsiteCount,
+        'Id': value['id'],
+        'Name': value['name'],
+        'NotVerifiedWebsiteCount': value['notVerifiedWebsiteCount'],
+        'VerifiedWebsiteCount': value['verifiedWebsiteCount'],
     };
 }
 

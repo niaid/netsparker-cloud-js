@@ -14,14 +14,12 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ServiceNowIncidentMappingFieldKeyValuePairToJSON = exports.ServiceNowIncidentMappingFieldKeyValuePairFromJSONTyped = exports.ServiceNowIncidentMappingFieldKeyValuePairFromJSON = exports.instanceOfServiceNowIncidentMappingFieldKeyValuePair = void 0;
-const runtime_1 = require("../runtime");
 const ServiceNowIncidentFieldPairValue_1 = require("./ServiceNowIncidentFieldPairValue");
 /**
  * Check if a given object implements the ServiceNowIncidentMappingFieldKeyValuePair interface.
  */
 function instanceOfServiceNowIncidentMappingFieldKeyValuePair(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfServiceNowIncidentMappingFieldKeyValuePair = instanceOfServiceNowIncidentMappingFieldKeyValuePair;
 function ServiceNowIncidentMappingFieldKeyValuePairFromJSON(json) {
@@ -29,25 +27,22 @@ function ServiceNowIncidentMappingFieldKeyValuePairFromJSON(json) {
 }
 exports.ServiceNowIncidentMappingFieldKeyValuePairFromJSON = ServiceNowIncidentMappingFieldKeyValuePairFromJSON;
 function ServiceNowIncidentMappingFieldKeyValuePairFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'serviceNowField': !(0, runtime_1.exists)(json, 'ServiceNowField') ? undefined : json['ServiceNowField'],
-        'serviceNowValue': !(0, runtime_1.exists)(json, 'ServiceNowValue') ? undefined : (0, ServiceNowIncidentFieldPairValue_1.ServiceNowIncidentFieldPairValueFromJSON)(json['ServiceNowValue']),
+        'serviceNowField': json['ServiceNowField'] == null ? undefined : json['ServiceNowField'],
+        'serviceNowValue': json['ServiceNowValue'] == null ? undefined : (0, ServiceNowIncidentFieldPairValue_1.ServiceNowIncidentFieldPairValueFromJSON)(json['ServiceNowValue']),
     };
 }
 exports.ServiceNowIncidentMappingFieldKeyValuePairFromJSONTyped = ServiceNowIncidentMappingFieldKeyValuePairFromJSONTyped;
 function ServiceNowIncidentMappingFieldKeyValuePairToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'ServiceNowField': value.serviceNowField,
-        'ServiceNowValue': (0, ServiceNowIncidentFieldPairValue_1.ServiceNowIncidentFieldPairValueToJSON)(value.serviceNowValue),
+        'ServiceNowField': value['serviceNowField'],
+        'ServiceNowValue': (0, ServiceNowIncidentFieldPairValue_1.ServiceNowIncidentFieldPairValueToJSON)(value['serviceNowValue']),
     };
 }
 exports.ServiceNowIncidentMappingFieldKeyValuePairToJSON = ServiceNowIncidentMappingFieldKeyValuePairToJSON;

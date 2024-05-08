@@ -18,9 +18,9 @@ exports.ContentTypeModelToJSON = exports.ContentTypeModelFromJSONTyped = exports
  * Check if a given object implements the ContentTypeModel interface.
  */
 function instanceOfContentTypeModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "value" in value;
-    return isInstance;
+    if (!('value' in value))
+        return false;
+    return true;
 }
 exports.instanceOfContentTypeModel = instanceOfContentTypeModel;
 function ContentTypeModelFromJSON(json) {
@@ -28,7 +28,7 @@ function ContentTypeModelFromJSON(json) {
 }
 exports.ContentTypeModelFromJSON = ContentTypeModelFromJSON;
 function ContentTypeModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -37,14 +37,11 @@ function ContentTypeModelFromJSONTyped(json, ignoreDiscriminator) {
 }
 exports.ContentTypeModelFromJSONTyped = ContentTypeModelFromJSONTyped;
 function ContentTypeModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Value': value.value,
+        'Value': value['value'],
     };
 }
 exports.ContentTypeModelToJSON = ContentTypeModelToJSON;

@@ -78,4 +78,4 @@ export interface ScanPolicySettingItemApiModel {
 export declare function instanceOfScanPolicySettingItemApiModel(value: object): boolean;
 export declare function ScanPolicySettingItemApiModelFromJSON(json: any): ScanPolicySettingItemApiModel;
 export declare function ScanPolicySettingItemApiModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): ScanPolicySettingItemApiModel;
-export declare function ScanPolicySettingItemApiModelToJSON(value?: ScanPolicySettingItemApiModel | null): any;
+export declare function ScanPolicySettingItemApiModelToJSON(value?: Omit<ScanPolicySettingItemApiModel, 'NameWithAccessModifier'> | null): any;

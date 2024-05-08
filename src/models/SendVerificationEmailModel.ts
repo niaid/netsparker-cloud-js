@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a verification result model.
  * @export
@@ -37,9 +37,7 @@ export interface SendVerificationEmailModel {
  * Check if a given object implements the SendVerificationEmailModel interface.
  */
 export function instanceOfSendVerificationEmailModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function SendVerificationEmailModelFromJSON(json: any): SendVerificationEmailModel {
@@ -47,27 +45,24 @@ export function SendVerificationEmailModelFromJSON(json: any): SendVerificationE
 }
 
 export function SendVerificationEmailModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): SendVerificationEmailModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'isMailSent': !exists(json, 'IsMailSent') ? undefined : json['IsMailSent'],
-        'verificationMessage': !exists(json, 'VerificationMessage') ? undefined : json['VerificationMessage'],
+        'isMailSent': json['IsMailSent'] == null ? undefined : json['IsMailSent'],
+        'verificationMessage': json['VerificationMessage'] == null ? undefined : json['VerificationMessage'],
     };
 }
 
 export function SendVerificationEmailModelToJSON(value?: SendVerificationEmailModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'IsMailSent': value.isMailSent,
-        'VerificationMessage': value.verificationMessage,
+        'IsMailSent': value['isMailSent'],
+        'VerificationMessage': value['verificationMessage'],
     };
 }
 

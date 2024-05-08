@@ -195,6 +195,7 @@ export declare const AuditLogDtoTypeEnum: {
     readonly ScanFailed: "ScanFailed";
     readonly AgentCommandDelete: "AgentCommandDelete";
     readonly ImportWebsite: "ImportWebsite";
+    readonly LimitingRole: "LimitingRole";
 };
 export type AuditLogDtoTypeEnum = typeof AuditLogDtoTypeEnum[keyof typeof AuditLogDtoTypeEnum];
 /**

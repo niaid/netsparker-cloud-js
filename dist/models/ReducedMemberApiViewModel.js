@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ReducedMemberApiViewModelToJSON = exports.ReducedMemberApiViewModelFromJSONTyped = exports.ReducedMemberApiViewModelFromJSON = exports.instanceOfReducedMemberApiViewModel = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the ReducedMemberApiViewModel interface.
  */
 function instanceOfReducedMemberApiViewModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfReducedMemberApiViewModel = instanceOfReducedMemberApiViewModel;
 function ReducedMemberApiViewModelFromJSON(json) {
@@ -28,31 +26,28 @@ function ReducedMemberApiViewModelFromJSON(json) {
 }
 exports.ReducedMemberApiViewModelFromJSON = ReducedMemberApiViewModelFromJSON;
 function ReducedMemberApiViewModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
-        'accountId': !(0, runtime_1.exists)(json, 'AccountId') ? undefined : json['AccountId'],
-        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
-        'email': !(0, runtime_1.exists)(json, 'Email') ? undefined : json['Email'],
-        'alternateLoginEmail': !(0, runtime_1.exists)(json, 'AlternateLoginEmail') ? undefined : json['AlternateLoginEmail'],
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'accountId': json['AccountId'] == null ? undefined : json['AccountId'],
+        'name': json['Name'] == null ? undefined : json['Name'],
+        'email': json['Email'] == null ? undefined : json['Email'],
+        'alternateLoginEmail': json['AlternateLoginEmail'] == null ? undefined : json['AlternateLoginEmail'],
     };
 }
 exports.ReducedMemberApiViewModelFromJSONTyped = ReducedMemberApiViewModelFromJSONTyped;
 function ReducedMemberApiViewModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Id': value.id,
-        'AccountId': value.accountId,
-        'Name': value.name,
-        'Email': value.email,
-        'AlternateLoginEmail': value.alternateLoginEmail,
+        'Id': value['id'],
+        'AccountId': value['accountId'],
+        'Name': value['name'],
+        'Email': value['email'],
+        'AlternateLoginEmail': value['alternateLoginEmail'],
     };
 }
 exports.ReducedMemberApiViewModelToJSON = ReducedMemberApiViewModelToJSON;

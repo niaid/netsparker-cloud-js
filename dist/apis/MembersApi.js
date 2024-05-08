@@ -47,13 +47,13 @@ class MembersApi extends runtime.BaseAPI {
      * Deletes a member
      */
     async membersDeleteRaw(requestParameters, initOverrides) {
-        if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling membersDelete.');
+        if (requestParameters['id'] == null) {
+            throw new runtime.RequiredError('id', 'Required parameter "id" was null or undefined when calling membersDelete().');
         }
         const queryParameters = {};
         const headerParameters = {};
         const response = await this.request({
-            path: `/api/1.0/members/delete/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
+            path: `/api/1.0/members/delete/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -76,12 +76,12 @@ class MembersApi extends runtime.BaseAPI {
      * Deletes member invitation
      */
     async membersDeleteInvitationRaw(requestParameters, initOverrides) {
-        if (requestParameters.email === null || requestParameters.email === undefined) {
-            throw new runtime.RequiredError('email', 'Required parameter requestParameters.email was null or undefined when calling membersDeleteInvitation.');
+        if (requestParameters['email'] == null) {
+            throw new runtime.RequiredError('email', 'Required parameter "email" was null or undefined when calling membersDeleteInvitation().');
         }
         const queryParameters = {};
-        if (requestParameters.email !== undefined) {
-            queryParameters['email'] = requestParameters.email;
+        if (requestParameters['email'] != null) {
+            queryParameters['email'] = requestParameters['email'];
         }
         const headerParameters = {};
         const response = await this.request({
@@ -102,13 +102,13 @@ class MembersApi extends runtime.BaseAPI {
      * Gets the member by the specified id.
      */
     async membersGetRaw(requestParameters, initOverrides) {
-        if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling membersGet.');
+        if (requestParameters['id'] == null) {
+            throw new runtime.RequiredError('id', 'Required parameter "id" was null or undefined when calling membersGet().');
         }
         const queryParameters = {};
         const headerParameters = {};
         const response = await this.request({
-            path: `/api/1.0/members/get/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
+            path: `/api/1.0/members/get/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -126,12 +126,12 @@ class MembersApi extends runtime.BaseAPI {
      * Gets user api token.
      */
     async membersGetApiTokenRaw(requestParameters, initOverrides) {
-        if (requestParameters.email === null || requestParameters.email === undefined) {
-            throw new runtime.RequiredError('email', 'Required parameter requestParameters.email was null or undefined when calling membersGetApiToken.');
+        if (requestParameters['email'] == null) {
+            throw new runtime.RequiredError('email', 'Required parameter "email" was null or undefined when calling membersGetApiToken().');
         }
         const queryParameters = {};
-        if (requestParameters.email !== undefined) {
-            queryParameters['email'] = requestParameters.email;
+        if (requestParameters['email'] != null) {
+            queryParameters['email'] = requestParameters['email'];
         }
         const headerParameters = {};
         const response = await this.request({
@@ -153,12 +153,12 @@ class MembersApi extends runtime.BaseAPI {
      * Gets user by email.
      */
     async membersGetByEmailRaw(requestParameters, initOverrides) {
-        if (requestParameters.email === null || requestParameters.email === undefined) {
-            throw new runtime.RequiredError('email', 'Required parameter requestParameters.email was null or undefined when calling membersGetByEmail.');
+        if (requestParameters['email'] == null) {
+            throw new runtime.RequiredError('email', 'Required parameter "email" was null or undefined when calling membersGetByEmail().');
         }
         const queryParameters = {};
-        if (requestParameters.email !== undefined) {
-            queryParameters['email'] = requestParameters.email;
+        if (requestParameters['email'] != null) {
+            queryParameters['email'] = requestParameters['email'];
         }
         const headerParameters = {};
         const response = await this.request({
@@ -180,12 +180,12 @@ class MembersApi extends runtime.BaseAPI {
      * Gets the member invitation by the specified id.
      */
     async membersGetInvitationRaw(requestParameters, initOverrides) {
-        if (requestParameters.invitationId === null || requestParameters.invitationId === undefined) {
-            throw new runtime.RequiredError('invitationId', 'Required parameter requestParameters.invitationId was null or undefined when calling membersGetInvitation.');
+        if (requestParameters['invitationId'] == null) {
+            throw new runtime.RequiredError('invitationId', 'Required parameter "invitationId" was null or undefined when calling membersGetInvitation().');
         }
         const queryParameters = {};
-        if (requestParameters.invitationId !== undefined) {
-            queryParameters['invitationId'] = requestParameters.invitationId;
+        if (requestParameters['invitationId'] != null) {
+            queryParameters['invitationId'] = requestParameters['invitationId'];
         }
         const headerParameters = {};
         const response = await this.request({
@@ -229,11 +229,11 @@ class MembersApi extends runtime.BaseAPI {
      */
     async membersInvitationListRaw(requestParameters, initOverrides) {
         const queryParameters = {};
-        if (requestParameters.page !== undefined) {
-            queryParameters['page'] = requestParameters.page;
+        if (requestParameters['page'] != null) {
+            queryParameters['page'] = requestParameters['page'];
         }
-        if (requestParameters.pageSize !== undefined) {
-            queryParameters['pageSize'] = requestParameters.pageSize;
+        if (requestParameters['pageSize'] != null) {
+            queryParameters['pageSize'] = requestParameters['pageSize'];
         }
         const headerParameters = {};
         const response = await this.request({
@@ -256,11 +256,11 @@ class MembersApi extends runtime.BaseAPI {
      */
     async membersListRaw(requestParameters, initOverrides) {
         const queryParameters = {};
-        if (requestParameters.page !== undefined) {
-            queryParameters['page'] = requestParameters.page;
+        if (requestParameters['page'] != null) {
+            queryParameters['page'] = requestParameters['page'];
         }
-        if (requestParameters.pageSize !== undefined) {
-            queryParameters['pageSize'] = requestParameters.pageSize;
+        if (requestParameters['pageSize'] != null) {
+            queryParameters['pageSize'] = requestParameters['pageSize'];
         }
         const headerParameters = {};
         const response = await this.request({
@@ -282,8 +282,8 @@ class MembersApi extends runtime.BaseAPI {
      * Creates a new member.
      */
     async membersNewRaw(requestParameters, initOverrides) {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model', 'Required parameter requestParameters.model was null or undefined when calling membersNew.');
+        if (requestParameters['model'] == null) {
+            throw new runtime.RequiredError('model', 'Required parameter "model" was null or undefined when calling membersNew().');
         }
         const queryParameters = {};
         const headerParameters = {};
@@ -293,7 +293,7 @@ class MembersApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: (0, index_1.NewMemberApiModelToJSON)(requestParameters.model),
+            body: (0, index_1.NewMemberApiModelToJSON)(requestParameters['model']),
         }, initOverrides);
         return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.MemberApiViewModelFromJSON)(jsonValue));
     }
@@ -308,8 +308,8 @@ class MembersApi extends runtime.BaseAPI {
      * Creates a new member invitation
      */
     async membersNewInvitationRaw(requestParameters, initOverrides) {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model', 'Required parameter requestParameters.model was null or undefined when calling membersNewInvitation.');
+        if (requestParameters['model'] == null) {
+            throw new runtime.RequiredError('model', 'Required parameter "model" was null or undefined when calling membersNewInvitation().');
         }
         const queryParameters = {};
         const headerParameters = {};
@@ -319,7 +319,7 @@ class MembersApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: (0, index_1.NewMemberInvitationApiModelToJSON)(requestParameters.model),
+            body: (0, index_1.NewMemberInvitationApiModelToJSON)(requestParameters['model']),
         }, initOverrides);
         return new runtime.VoidApiResponse(response);
     }
@@ -333,12 +333,12 @@ class MembersApi extends runtime.BaseAPI {
      * Sends member invitation email
      */
     async membersSendInvitationEmailRaw(requestParameters, initOverrides) {
-        if (requestParameters.invitationId === null || requestParameters.invitationId === undefined) {
-            throw new runtime.RequiredError('invitationId', 'Required parameter requestParameters.invitationId was null or undefined when calling membersSendInvitationEmail.');
+        if (requestParameters['invitationId'] == null) {
+            throw new runtime.RequiredError('invitationId', 'Required parameter "invitationId" was null or undefined when calling membersSendInvitationEmail().');
         }
         const queryParameters = {};
-        if (requestParameters.invitationId !== undefined) {
-            queryParameters['invitationId'] = requestParameters.invitationId;
+        if (requestParameters['invitationId'] != null) {
+            queryParameters['invitationId'] = requestParameters['invitationId'];
         }
         const headerParameters = {};
         const response = await this.request({
@@ -359,8 +359,8 @@ class MembersApi extends runtime.BaseAPI {
      * Updates a member
      */
     async membersUpdateRaw(requestParameters, initOverrides) {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model', 'Required parameter requestParameters.model was null or undefined when calling membersUpdate.');
+        if (requestParameters['model'] == null) {
+            throw new runtime.RequiredError('model', 'Required parameter "model" was null or undefined when calling membersUpdate().');
         }
         const queryParameters = {};
         const headerParameters = {};
@@ -370,7 +370,7 @@ class MembersApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: (0, index_1.UpdateMemberApiModelToJSON)(requestParameters.model),
+            body: (0, index_1.UpdateMemberApiModelToJSON)(requestParameters['model']),
         }, initOverrides);
         return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.MemberApiViewModelFromJSON)(jsonValue));
     }

@@ -14,9 +14,8 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SecurityCheckGroupModelToJSON = exports.SecurityCheckGroupModelFromJSONTyped = exports.SecurityCheckGroupModelFromJSON = exports.instanceOfSecurityCheckGroupModel = exports.SecurityCheckGroupModelEngineGroupEnum = exports.SecurityCheckGroupModelTypeEnum = void 0;
-const runtime_1 = require("../runtime");
-const ScanPolicyPatternModel_1 = require("./ScanPolicyPatternModel");
 const SecurityCheckSetting_1 = require("./SecurityCheckSetting");
+const ScanPolicyPatternModel_1 = require("./ScanPolicyPatternModel");
 /**
  * @export
  */
@@ -47,8 +46,7 @@ exports.SecurityCheckGroupModelEngineGroupEnum = {
  * Check if a given object implements the SecurityCheckGroupModel interface.
  */
 function instanceOfSecurityCheckGroupModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfSecurityCheckGroupModel = instanceOfSecurityCheckGroupModel;
 function SecurityCheckGroupModelFromJSON(json) {
@@ -56,37 +54,34 @@ function SecurityCheckGroupModelFromJSON(json) {
 }
 exports.SecurityCheckGroupModelFromJSON = SecurityCheckGroupModelFromJSON;
 function SecurityCheckGroupModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'patterns': !(0, runtime_1.exists)(json, 'Patterns') ? undefined : (json['Patterns'].map(ScanPolicyPatternModel_1.ScanPolicyPatternModelFromJSON)),
-        'settings': !(0, runtime_1.exists)(json, 'Settings') ? undefined : (json['Settings'].map(SecurityCheckSetting_1.SecurityCheckSettingFromJSON)),
-        'type': !(0, runtime_1.exists)(json, 'Type') ? undefined : json['Type'],
-        'engineGroup': !(0, runtime_1.exists)(json, 'EngineGroup') ? undefined : json['EngineGroup'],
-        'description': !(0, runtime_1.exists)(json, 'Description') ? undefined : json['Description'],
-        'enabled': !(0, runtime_1.exists)(json, 'Enabled') ? undefined : json['Enabled'],
-        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
-        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
+        'patterns': json['Patterns'] == null ? undefined : (json['Patterns'].map(ScanPolicyPatternModel_1.ScanPolicyPatternModelFromJSON)),
+        'settings': json['Settings'] == null ? undefined : (json['Settings'].map(SecurityCheckSetting_1.SecurityCheckSettingFromJSON)),
+        'type': json['Type'] == null ? undefined : json['Type'],
+        'engineGroup': json['EngineGroup'] == null ? undefined : json['EngineGroup'],
+        'description': json['Description'] == null ? undefined : json['Description'],
+        'enabled': json['Enabled'] == null ? undefined : json['Enabled'],
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'name': json['Name'] == null ? undefined : json['Name'],
     };
 }
 exports.SecurityCheckGroupModelFromJSONTyped = SecurityCheckGroupModelFromJSONTyped;
 function SecurityCheckGroupModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Patterns': value.patterns === undefined ? undefined : (value.patterns.map(ScanPolicyPatternModel_1.ScanPolicyPatternModelToJSON)),
-        'Settings': value.settings === undefined ? undefined : (value.settings.map(SecurityCheckSetting_1.SecurityCheckSettingToJSON)),
-        'Type': value.type,
-        'EngineGroup': value.engineGroup,
-        'Description': value.description,
-        'Enabled': value.enabled,
-        'Id': value.id,
-        'Name': value.name,
+        'Patterns': value['patterns'] == null ? undefined : (value['patterns'].map(ScanPolicyPatternModel_1.ScanPolicyPatternModelToJSON)),
+        'Settings': value['settings'] == null ? undefined : (value['settings'].map(SecurityCheckSetting_1.SecurityCheckSettingToJSON)),
+        'Type': value['type'],
+        'EngineGroup': value['engineGroup'],
+        'Description': value['description'],
+        'Enabled': value['enabled'],
+        'Id': value['id'],
+        'Name': value['name'],
     };
 }
 exports.SecurityCheckGroupModelToJSON = SecurityCheckGroupModelToJSON;

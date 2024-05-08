@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 import type { BasicAuthenticationCredentialModel } from './BasicAuthenticationCredentialModel';
 import {
     BasicAuthenticationCredentialModelFromJSON,
@@ -50,9 +50,7 @@ export interface BasicAuthenticationSettingModel {
  * Check if a given object implements the BasicAuthenticationSettingModel interface.
  */
 export function instanceOfBasicAuthenticationSettingModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function BasicAuthenticationSettingModelFromJSON(json: any): BasicAuthenticationSettingModel {
@@ -60,29 +58,26 @@ export function BasicAuthenticationSettingModelFromJSON(json: any): BasicAuthent
 }
 
 export function BasicAuthenticationSettingModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): BasicAuthenticationSettingModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'credentials': !exists(json, 'Credentials') ? undefined : ((json['Credentials'] as Array<any>).map(BasicAuthenticationCredentialModelFromJSON)),
-        'isEnabled': !exists(json, 'IsEnabled') ? undefined : json['IsEnabled'],
-        'noChallenge': !exists(json, 'NoChallenge') ? undefined : json['NoChallenge'],
+        'credentials': json['Credentials'] == null ? undefined : ((json['Credentials'] as Array<any>).map(BasicAuthenticationCredentialModelFromJSON)),
+        'isEnabled': json['IsEnabled'] == null ? undefined : json['IsEnabled'],
+        'noChallenge': json['NoChallenge'] == null ? undefined : json['NoChallenge'],
     };
 }
 
 export function BasicAuthenticationSettingModelToJSON(value?: BasicAuthenticationSettingModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Credentials': value.credentials === undefined ? undefined : ((value.credentials as Array<any>).map(BasicAuthenticationCredentialModelToJSON)),
-        'IsEnabled': value.isEnabled,
-        'NoChallenge': value.noChallenge,
+        'Credentials': value['credentials'] == null ? undefined : ((value['credentials'] as Array<any>).map(BasicAuthenticationCredentialModelToJSON)),
+        'IsEnabled': value['isEnabled'],
+        'NoChallenge': value['noChallenge'],
     };
 }
 

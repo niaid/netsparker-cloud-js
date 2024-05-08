@@ -18,9 +18,9 @@ exports.ScansValidateImportedLinksFileReqToJSON = exports.ScansValidateImportedL
  * Check if a given object implements the ScansValidateImportedLinksFileReq interface.
  */
 function instanceOfScansValidateImportedLinksFileReq(value) {
-    let isInstance = true;
-    isInstance = isInstance && "file" in value;
-    return isInstance;
+    if (!('file' in value))
+        return false;
+    return true;
 }
 exports.instanceOfScansValidateImportedLinksFileReq = instanceOfScansValidateImportedLinksFileReq;
 function ScansValidateImportedLinksFileReqFromJSON(json) {
@@ -28,7 +28,7 @@ function ScansValidateImportedLinksFileReqFromJSON(json) {
 }
 exports.ScansValidateImportedLinksFileReqFromJSON = ScansValidateImportedLinksFileReqFromJSON;
 function ScansValidateImportedLinksFileReqFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -37,14 +37,11 @@ function ScansValidateImportedLinksFileReqFromJSONTyped(json, ignoreDiscriminato
 }
 exports.ScansValidateImportedLinksFileReqFromJSONTyped = ScansValidateImportedLinksFileReqFromJSONTyped;
 function ScansValidateImportedLinksFileReqToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'File': value.file,
+        'File': value['file'],
     };
 }
 exports.ScansValidateImportedLinksFileReqToJSON = ScansValidateImportedLinksFileReqToJSON;

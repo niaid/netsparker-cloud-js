@@ -1584,6 +1584,7 @@ export declare const VersionIssueOwnerVulnerabilityTypeEnum: {
     readonly WordpressThemeGeneratePressVersionDisclosure: "WordpressThemeGeneratePressVersionDisclosure";
     readonly WordpressThemeInspiroVersionDisclosure: "WordpressThemeInspiroVersionDisclosure";
     readonly WordpressThemeGoVersionDisclosure: "WordpressThemeGoVersionDisclosure";
+    readonly WordpressPluginUltimateMemberIdentified: "WordpressPluginUltimateMemberIdentified";
     readonly WordpressPluginLoginWithPhoneNumberIdentified: "WordpressPluginLoginWithPhoneNumberIdentified";
     readonly WordpressPluginInstagramFeedIdentified: "WordpressPluginInstagramFeedIdentified";
     readonly WordpressPluginContactFormSevenIdentified: "WordpressPluginContactFormSevenIdentified";
@@ -1602,6 +1603,7 @@ export declare const VersionIssueOwnerVulnerabilityTypeEnum: {
     readonly WordpressPluginLiteSpeedCacheIdentified: "WordpressPluginLiteSpeedCacheIdentified";
     readonly WordpressPluginUpdraftPlusIdentified: "WordpressPluginUpdraftPlusIdentified";
     readonly WordpressPluginJupiterXIdentified: "WordpressPluginJupiterXIdentified";
+    readonly WordpressPluginUltimateMemberOutOfDate: "WordpressPluginUltimateMemberOutOfDate";
     readonly WordpressPluginLoginWithPhoneNumberOutOfDate: "WordpressPluginLoginWithPhoneNumberOutOfDate";
     readonly WordpressPluginInstagramFeedOutOfDate: "WordpressPluginInstagramFeedOutOfDate";
     readonly WordpressPluginContactFormSevenOutOfDate: "WordpressPluginContactFormSevenOutOfDate";
@@ -1623,6 +1625,7 @@ export declare const VersionIssueOwnerVulnerabilityTypeEnum: {
     readonly WordpressPluginInstagramFeedVersionDisclosure: "WordpressPluginInstagramFeedVersionDisclosure";
     readonly WordpressPluginContactFormSevenVersionDisclosure: "WordpressPluginContactFormSevenVersionDisclosure";
     readonly WordpressPluginYoastSeoVersionDisclosure: "WordpressPluginYoastSeoVersionDisclosure";
+    readonly WordpressPluginUltimateMemberVersionDisclosure: "WordpressPluginUltimateMemberVersionDisclosure";
     readonly WordpressPluginLoginWithPhoneNumberVersionDisclosure: "WordpressPluginLoginWithPhoneNumberVersionDisclosure";
     readonly WordpressPluginElementorVersionDisclosure: "WordpressPluginElementorVersionDisclosure";
     readonly WordpressPluginClassicEditorVersionDisclosure: "WordpressPluginClassicEditorVersionDisclosure";
@@ -1656,6 +1659,33 @@ export declare const VersionIssueOwnerVulnerabilityTypeEnum: {
     readonly MovEitTransferIdentified: "MOVEitTransferIdentified";
     readonly DianaJlIdentified: "DianaJlIdentified";
     readonly MissingXContentTypeOptionsHeader: "MissingXContentTypeOptionsHeader";
+    readonly JwkIdentified: "JwkIdentified";
+    readonly PrivateJwkIdentified: "PrivateJwkIdentified";
+    readonly DotCmsOutOfDate: "DotCMSOutOfDate";
+    readonly DotCmsVersionDisclosure: "DotCMSVersionDisclosure";
+    readonly DotCmsIdentified: "DotCMSIdentified";
+    readonly WordpressPluginBackupMigrationIdentified: "WordpressPluginBackupMigrationIdentified";
+    readonly WordpressPluginBackupMigrationOutOfDate: "WordpressPluginBackupMigrationOutOfDate";
+    readonly WordpressPluginBackupMigrationVersionDisclosure: "WordpressPluginBackupMigrationVersionDisclosure";
+    readonly TinyMceVersionDisclosure: "TinyMCEVersionDisclosure";
+    readonly TinyMceIdentified: "TinyMCEIdentified";
+    readonly TinyMceOutOfDate: "TinyMCEOutOfDate";
+    readonly PossiblePrototypePollution: "PossiblePrototypePollution";
+    readonly PhpStackTraceDisclosure: "PhpStackTraceDisclosure";
+    readonly ActiveMqRce: "ActiveMqRCE";
+    readonly TorchServeApiIdentified: "TorchServeApiIdentified";
+    readonly TorchServeApiSsrf: "TorchServeApiSsrf";
+    readonly VmWareAriaRce: "VmWareAriaRCE";
+    readonly WordPressConfigDisclosure: "WordPressConfigDisclosure";
+    readonly AuthenticationBypassIvanti: "AuthenticationBypassIvanti";
+    readonly RceIvanti: "RceIvanti";
+    readonly PrototypePollution: "PrototypePollution";
+    readonly SmallSslKeyLength: "SmallSSLKeyLength";
+    readonly WpadminDetected: "WpadminDetected";
+    readonly OracleEbsRce: "OracleEbsRce";
+    readonly AngularVersionDisclosure: "AngularVersionDisclosure";
+    readonly AngularIdentified: "AngularIdentified";
+    readonly AngularOutOfDate: "AngularOutOfDate";
 };
 export type VersionIssueOwnerVulnerabilityTypeEnum = typeof VersionIssueOwnerVulnerabilityTypeEnum[keyof typeof VersionIssueOwnerVulnerabilityTypeEnum];
 /**

@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * 
  * @export
@@ -62,10 +62,8 @@ export type ImportLinksValidationApiModelImportTypeEnum = typeof ImportLinksVali
  * Check if a given object implements the ImportLinksValidationApiModel interface.
  */
 export function instanceOfImportLinksValidationApiModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "siteUrl" in value;
-
-    return isInstance;
+    if (!('siteUrl' in value)) return false;
+    return true;
 }
 
 export function ImportLinksValidationApiModelFromJSON(json: any): ImportLinksValidationApiModel {
@@ -73,27 +71,24 @@ export function ImportLinksValidationApiModelFromJSON(json: any): ImportLinksVal
 }
 
 export function ImportLinksValidationApiModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): ImportLinksValidationApiModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
         'siteUrl': json['SiteUrl'],
-        'importType': !exists(json, 'ImportType') ? undefined : json['ImportType'],
+        'importType': json['ImportType'] == null ? undefined : json['ImportType'],
     };
 }
 
 export function ImportLinksValidationApiModelToJSON(value?: ImportLinksValidationApiModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'SiteUrl': value.siteUrl,
-        'ImportType': value.importType,
+        'SiteUrl': value['siteUrl'],
+        'ImportType': value['importType'],
     };
 }
 

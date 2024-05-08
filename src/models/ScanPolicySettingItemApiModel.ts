@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 import type { ScanPolicyOptimizerOptions } from './ScanPolicyOptimizerOptions';
 import {
     ScanPolicyOptimizerOptionsFromJSON,
@@ -92,9 +92,7 @@ export interface ScanPolicySettingItemApiModel {
  * Check if a given object implements the ScanPolicySettingItemApiModel interface.
  */
 export function instanceOfScanPolicySettingItemApiModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function ScanPolicySettingItemApiModelFromJSON(json: any): ScanPolicySettingItemApiModel {
@@ -102,40 +100,37 @@ export function ScanPolicySettingItemApiModelFromJSON(json: any): ScanPolicySett
 }
 
 export function ScanPolicySettingItemApiModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): ScanPolicySettingItemApiModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'description': !exists(json, 'Description') ? undefined : json['Description'],
-        'groups': !exists(json, 'Groups') ? undefined : ((json['Groups'] as Array<any>).map(WebsiteGroupModelFromJSON)),
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'isDefault': !exists(json, 'IsDefault') ? undefined : json['IsDefault'],
-        'isShared': !exists(json, 'IsShared') ? undefined : json['IsShared'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'optimizerOptions': !exists(json, 'OptimizerOptions') ? undefined : ScanPolicyOptimizerOptionsFromJSON(json['OptimizerOptions']),
-        'isAccountDefault': !exists(json, 'IsAccountDefault') ? undefined : json['IsAccountDefault'],
-        'nameWithAccessModifier': !exists(json, 'NameWithAccessModifier') ? undefined : json['NameWithAccessModifier'],
+        'description': json['Description'] == null ? undefined : json['Description'],
+        'groups': json['Groups'] == null ? undefined : ((json['Groups'] as Array<any>).map(WebsiteGroupModelFromJSON)),
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'isDefault': json['IsDefault'] == null ? undefined : json['IsDefault'],
+        'isShared': json['IsShared'] == null ? undefined : json['IsShared'],
+        'name': json['Name'] == null ? undefined : json['Name'],
+        'optimizerOptions': json['OptimizerOptions'] == null ? undefined : ScanPolicyOptimizerOptionsFromJSON(json['OptimizerOptions']),
+        'isAccountDefault': json['IsAccountDefault'] == null ? undefined : json['IsAccountDefault'],
+        'nameWithAccessModifier': json['NameWithAccessModifier'] == null ? undefined : json['NameWithAccessModifier'],
     };
 }
 
-export function ScanPolicySettingItemApiModelToJSON(value?: ScanPolicySettingItemApiModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+export function ScanPolicySettingItemApiModelToJSON(value?: Omit<ScanPolicySettingItemApiModel, 'NameWithAccessModifier'> | null): any {
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Description': value.description,
-        'Groups': value.groups === undefined ? undefined : ((value.groups as Array<any>).map(WebsiteGroupModelToJSON)),
-        'Id': value.id,
-        'IsDefault': value.isDefault,
-        'IsShared': value.isShared,
-        'Name': value.name,
-        'OptimizerOptions': ScanPolicyOptimizerOptionsToJSON(value.optimizerOptions),
-        'IsAccountDefault': value.isAccountDefault,
+        'Description': value['description'],
+        'Groups': value['groups'] == null ? undefined : ((value['groups'] as Array<any>).map(WebsiteGroupModelToJSON)),
+        'Id': value['id'],
+        'IsDefault': value['isDefault'],
+        'IsShared': value['isShared'],
+        'Name': value['name'],
+        'OptimizerOptions': ScanPolicyOptimizerOptionsToJSON(value['optimizerOptions']),
+        'IsAccountDefault': value['isAccountDefault'],
     };
 }
 

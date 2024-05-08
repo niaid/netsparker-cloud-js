@@ -9,16 +9,16 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { AdditionalWebsiteModel } from './AdditionalWebsiteModel';
-import type { BusinessLogicRecorderSettingModel } from './BusinessLogicRecorderSettingModel';
+import type { UrlRewriteRuleModel } from './UrlRewriteRuleModel';
 import type { PciScanTaskViewModel } from './PciScanTaskViewModel';
+import type { VcsCommitInfo } from './VcsCommitInfo';
+import type { BusinessLogicRecorderSettingModel } from './BusinessLogicRecorderSettingModel';
 import type { ReducedScanTaskProfile } from './ReducedScanTaskProfile';
+import type { AdditionalWebsiteModel } from './AdditionalWebsiteModel';
 import type { ScanTimeWindowModel } from './ScanTimeWindowModel';
 import type { UrlRewriteExcludedPathModel } from './UrlRewriteExcludedPathModel';
-import type { UrlRewriteRuleModel } from './UrlRewriteRuleModel';
-import type { VcsCommitInfo } from './VcsCommitInfo';
 /**
- * Represents a model for carrying {Invicti.Cloud.Core.Models.ScanTask} content.
+ * Represents a model for carrying {Invicti.Enterprise.Scans.ScanTask} content.
  * @export
  * @interface ScanTaskModel
  */
@@ -200,25 +200,25 @@ export interface ScanTaskModel {
      */
     reportPolicyDescription?: string;
     /**
-     * Gets or sets the foreign key reference to the related {Invicti.Cloud.Core.Models.ReportPolicySetting} instance.
+     * Gets or sets the foreign key reference to the related {Invicti.Enterprise.Reporting.ReportPolicySetting} instance.
      * @type {string}
      * @memberof ScanTaskModel
      */
     reportPolicyId?: string;
     /**
-     * Gets or sets the foreign key reference to the related {Invicti.Cloud.Core.Models.ReportPolicySetting} User instance.
+     * Gets or sets the foreign key reference to the related {Invicti.Enterprise.Reporting.ReportPolicySetting} User instance.
      * @type {string}
      * @memberof ScanTaskModel
      */
     reportPolicyUserId?: string;
     /**
-     * Gets or sets the foreign key reference to the related {Invicti.Cloud.Core.Models.ReportPolicySetting} IsDefault instance.
+     * Gets or sets the foreign key reference to the related {Invicti.Enterprise.Reporting.ReportPolicySetting} IsDefault instance.
      * @type {boolean}
      * @memberof ScanTaskModel
      */
     reportPolicyIsDefault?: boolean;
     /**
-     * Gets or sets the foreign key reference to the related {Invicti.Cloud.Core.Models.ReportPolicySetting} IsDefault instance.
+     * Gets or sets the foreign key reference to the related {Invicti.Enterprise.Reporting.ReportPolicySetting} IsDefault instance.
      * @type {boolean}
      * @memberof ScanTaskModel
      */
@@ -755,4 +755,4 @@ export type ScanTaskModelThreatLevelEnum = typeof ScanTaskModelThreatLevelEnum[k
 export declare function instanceOfScanTaskModel(value: object): boolean;
 export declare function ScanTaskModelFromJSON(json: any): ScanTaskModel;
 export declare function ScanTaskModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): ScanTaskModel;
-export declare function ScanTaskModelToJSON(value?: ScanTaskModel | null): any;
+export declare function ScanTaskModelToJSON(value?: Omit<ScanTaskModel, 'FailureReasonString' | 'IsCompleted' | 'Percentage'> | null): any;

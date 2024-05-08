@@ -14,7 +14,6 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.NewWebsiteApiModelToJSON = exports.NewWebsiteApiModelFromJSONTyped = exports.NewWebsiteApiModelFromJSON = exports.instanceOfNewWebsiteApiModel = exports.NewWebsiteApiModelLicenseTypeEnum = exports.NewWebsiteApiModelAgentModeEnum = void 0;
-const runtime_1 = require("../runtime");
 /**
  * @export
  */
@@ -33,11 +32,13 @@ exports.NewWebsiteApiModelLicenseTypeEnum = {
  * Check if a given object implements the NewWebsiteApiModel interface.
  */
 function instanceOfNewWebsiteApiModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "rootUrl" in value;
-    isInstance = isInstance && "licenseType" in value;
-    isInstance = isInstance && "name" in value;
-    return isInstance;
+    if (!('rootUrl' in value))
+        return false;
+    if (!('licenseType' in value))
+        return false;
+    if (!('name' in value))
+        return false;
+    return true;
 }
 exports.instanceOfNewWebsiteApiModel = instanceOfNewWebsiteApiModel;
 function NewWebsiteApiModelFromJSON(json) {
@@ -45,37 +46,34 @@ function NewWebsiteApiModelFromJSON(json) {
 }
 exports.NewWebsiteApiModelFromJSON = NewWebsiteApiModelFromJSON;
 function NewWebsiteApiModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'agentMode': !(0, runtime_1.exists)(json, 'AgentMode') ? undefined : json['AgentMode'],
+        'agentMode': json['AgentMode'] == null ? undefined : json['AgentMode'],
         'rootUrl': json['RootUrl'],
-        'groups': !(0, runtime_1.exists)(json, 'Groups') ? undefined : json['Groups'],
+        'groups': json['Groups'] == null ? undefined : json['Groups'],
         'licenseType': json['LicenseType'],
         'name': json['Name'],
-        'description': !(0, runtime_1.exists)(json, 'Description') ? undefined : json['Description'],
-        'technicalContactEmail': !(0, runtime_1.exists)(json, 'TechnicalContactEmail') ? undefined : json['TechnicalContactEmail'],
-        'tags': !(0, runtime_1.exists)(json, 'Tags') ? undefined : json['Tags'],
+        'description': json['Description'] == null ? undefined : json['Description'],
+        'technicalContactEmail': json['TechnicalContactEmail'] == null ? undefined : json['TechnicalContactEmail'],
+        'tags': json['Tags'] == null ? undefined : json['Tags'],
     };
 }
 exports.NewWebsiteApiModelFromJSONTyped = NewWebsiteApiModelFromJSONTyped;
 function NewWebsiteApiModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'AgentMode': value.agentMode,
-        'RootUrl': value.rootUrl,
-        'Groups': value.groups,
-        'LicenseType': value.licenseType,
-        'Name': value.name,
-        'Description': value.description,
-        'TechnicalContactEmail': value.technicalContactEmail,
-        'Tags': value.tags,
+        'AgentMode': value['agentMode'],
+        'RootUrl': value['rootUrl'],
+        'Groups': value['groups'],
+        'LicenseType': value['licenseType'],
+        'Name': value['name'],
+        'Description': value['description'],
+        'TechnicalContactEmail': value['technicalContactEmail'],
+        'Tags': value['tags'],
     };
 }
 exports.NewWebsiteApiModelToJSON = NewWebsiteApiModelToJSON;

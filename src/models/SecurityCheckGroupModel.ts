@@ -12,19 +12,19 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
-import type { ScanPolicyPatternModel } from './ScanPolicyPatternModel';
-import {
-    ScanPolicyPatternModelFromJSON,
-    ScanPolicyPatternModelFromJSONTyped,
-    ScanPolicyPatternModelToJSON,
-} from './ScanPolicyPatternModel';
+import { mapValues } from '../runtime';
 import type { SecurityCheckSetting } from './SecurityCheckSetting';
 import {
     SecurityCheckSettingFromJSON,
     SecurityCheckSettingFromJSONTyped,
     SecurityCheckSettingToJSON,
 } from './SecurityCheckSetting';
+import type { ScanPolicyPatternModel } from './ScanPolicyPatternModel';
+import {
+    ScanPolicyPatternModelFromJSON,
+    ScanPolicyPatternModelFromJSONTyped,
+    ScanPolicyPatternModelToJSON,
+} from './ScanPolicyPatternModel';
 
 /**
  * Represents a model for carrying out security check groups.
@@ -118,9 +118,7 @@ export type SecurityCheckGroupModelEngineGroupEnum = typeof SecurityCheckGroupMo
  * Check if a given object implements the SecurityCheckGroupModel interface.
  */
 export function instanceOfSecurityCheckGroupModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function SecurityCheckGroupModelFromJSON(json: any): SecurityCheckGroupModel {
@@ -128,39 +126,36 @@ export function SecurityCheckGroupModelFromJSON(json: any): SecurityCheckGroupMo
 }
 
 export function SecurityCheckGroupModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): SecurityCheckGroupModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'patterns': !exists(json, 'Patterns') ? undefined : ((json['Patterns'] as Array<any>).map(ScanPolicyPatternModelFromJSON)),
-        'settings': !exists(json, 'Settings') ? undefined : ((json['Settings'] as Array<any>).map(SecurityCheckSettingFromJSON)),
-        'type': !exists(json, 'Type') ? undefined : json['Type'],
-        'engineGroup': !exists(json, 'EngineGroup') ? undefined : json['EngineGroup'],
-        'description': !exists(json, 'Description') ? undefined : json['Description'],
-        'enabled': !exists(json, 'Enabled') ? undefined : json['Enabled'],
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
+        'patterns': json['Patterns'] == null ? undefined : ((json['Patterns'] as Array<any>).map(ScanPolicyPatternModelFromJSON)),
+        'settings': json['Settings'] == null ? undefined : ((json['Settings'] as Array<any>).map(SecurityCheckSettingFromJSON)),
+        'type': json['Type'] == null ? undefined : json['Type'],
+        'engineGroup': json['EngineGroup'] == null ? undefined : json['EngineGroup'],
+        'description': json['Description'] == null ? undefined : json['Description'],
+        'enabled': json['Enabled'] == null ? undefined : json['Enabled'],
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'name': json['Name'] == null ? undefined : json['Name'],
     };
 }
 
 export function SecurityCheckGroupModelToJSON(value?: SecurityCheckGroupModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Patterns': value.patterns === undefined ? undefined : ((value.patterns as Array<any>).map(ScanPolicyPatternModelToJSON)),
-        'Settings': value.settings === undefined ? undefined : ((value.settings as Array<any>).map(SecurityCheckSettingToJSON)),
-        'Type': value.type,
-        'EngineGroup': value.engineGroup,
-        'Description': value.description,
-        'Enabled': value.enabled,
-        'Id': value.id,
-        'Name': value.name,
+        'Patterns': value['patterns'] == null ? undefined : ((value['patterns'] as Array<any>).map(ScanPolicyPatternModelToJSON)),
+        'Settings': value['settings'] == null ? undefined : ((value['settings'] as Array<any>).map(SecurityCheckSettingToJSON)),
+        'Type': value['type'],
+        'EngineGroup': value['engineGroup'],
+        'Description': value['description'],
+        'Enabled': value['enabled'],
+        'Id': value['id'],
+        'Name': value['name'],
     };
 }
 

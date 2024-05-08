@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UrlRewriteRuleModelToJSON = exports.UrlRewriteRuleModelFromJSONTyped = exports.UrlRewriteRuleModelFromJSON = exports.instanceOfUrlRewriteRuleModel = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the UrlRewriteRuleModel interface.
  */
 function instanceOfUrlRewriteRuleModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfUrlRewriteRuleModel = instanceOfUrlRewriteRuleModel;
 function UrlRewriteRuleModelFromJSON(json) {
@@ -28,25 +26,22 @@ function UrlRewriteRuleModelFromJSON(json) {
 }
 exports.UrlRewriteRuleModelFromJSON = UrlRewriteRuleModelFromJSON;
 function UrlRewriteRuleModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'placeholderPattern': !(0, runtime_1.exists)(json, 'PlaceholderPattern') ? undefined : json['PlaceholderPattern'],
-        'regexPattern': !(0, runtime_1.exists)(json, 'RegexPattern') ? undefined : json['RegexPattern'],
+        'placeholderPattern': json['PlaceholderPattern'] == null ? undefined : json['PlaceholderPattern'],
+        'regexPattern': json['RegexPattern'] == null ? undefined : json['RegexPattern'],
     };
 }
 exports.UrlRewriteRuleModelFromJSONTyped = UrlRewriteRuleModelFromJSONTyped;
 function UrlRewriteRuleModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'PlaceholderPattern': value.placeholderPattern,
-        'RegexPattern': value.regexPattern,
+        'PlaceholderPattern': value['placeholderPattern'],
+        'RegexPattern': value['regexPattern'],
     };
 }
 exports.UrlRewriteRuleModelToJSON = UrlRewriteRuleModelToJSON;

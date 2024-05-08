@@ -14,14 +14,12 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.HttpRequestSettingModelToJSON = exports.HttpRequestSettingModelFromJSONTyped = exports.HttpRequestSettingModelFromJSON = exports.instanceOfHttpRequestSettingModel = void 0;
-const runtime_1 = require("../runtime");
 const ScanPolicyUserAgentModel_1 = require("./ScanPolicyUserAgentModel");
 /**
  * Check if a given object implements the HttpRequestSettingModel interface.
  */
 function instanceOfHttpRequestSettingModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfHttpRequestSettingModel = instanceOfHttpRequestSettingModel;
 function HttpRequestSettingModelFromJSON(json) {
@@ -29,55 +27,52 @@ function HttpRequestSettingModelFromJSON(json) {
 }
 exports.HttpRequestSettingModelFromJSON = HttpRequestSettingModelFromJSON;
 function HttpRequestSettingModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'accept': !(0, runtime_1.exists)(json, 'Accept') ? undefined : json['Accept'],
-        'acceptCharset': !(0, runtime_1.exists)(json, 'AcceptCharset') ? undefined : json['AcceptCharset'],
-        'acceptLanguage': !(0, runtime_1.exists)(json, 'AcceptLanguage') ? undefined : json['AcceptLanguage'],
-        'enableCookies': !(0, runtime_1.exists)(json, 'EnableCookies') ? undefined : json['EnableCookies'],
-        'enableGzipAndDeflate': !(0, runtime_1.exists)(json, 'EnableGzipAndDeflate') ? undefined : json['EnableGzipAndDeflate'],
-        'httpKeepAlive': !(0, runtime_1.exists)(json, 'HttpKeepAlive') ? undefined : json['HttpKeepAlive'],
-        'logHttpRequests': !(0, runtime_1.exists)(json, 'LogHttpRequests') ? undefined : json['LogHttpRequests'],
-        'requestsPerSecond': !(0, runtime_1.exists)(json, 'RequestsPerSecond') ? undefined : json['RequestsPerSecond'],
-        'concurrentConnectionCount': !(0, runtime_1.exists)(json, 'ConcurrentConnectionCount') ? undefined : json['ConcurrentConnectionCount'],
-        'requestTimeout': !(0, runtime_1.exists)(json, 'RequestTimeout') ? undefined : json['RequestTimeout'],
-        'connectionTimeout': !(0, runtime_1.exists)(json, 'ConnectionTimeout') ? undefined : json['ConnectionTimeout'],
-        'userAgent': !(0, runtime_1.exists)(json, 'UserAgent') ? undefined : json['UserAgent'],
-        'userAgents': !(0, runtime_1.exists)(json, 'UserAgents') ? undefined : json['UserAgents'],
-        'customUserAgents': !(0, runtime_1.exists)(json, 'CustomUserAgents') ? undefined : json['CustomUserAgents'],
-        'customUserAgent': !(0, runtime_1.exists)(json, 'CustomUserAgent') ? undefined : (0, ScanPolicyUserAgentModel_1.ScanPolicyUserAgentModelFromJSON)(json['CustomUserAgent']),
-        'forceUserAgent': !(0, runtime_1.exists)(json, 'ForceUserAgent') ? undefined : json['ForceUserAgent'],
-        'authorizationHeaderName': !(0, runtime_1.exists)(json, 'AuthorizationHeaderName') ? undefined : json['AuthorizationHeaderName'],
+        'accept': json['Accept'] == null ? undefined : json['Accept'],
+        'acceptCharset': json['AcceptCharset'] == null ? undefined : json['AcceptCharset'],
+        'acceptLanguage': json['AcceptLanguage'] == null ? undefined : json['AcceptLanguage'],
+        'enableCookies': json['EnableCookies'] == null ? undefined : json['EnableCookies'],
+        'enableGzipAndDeflate': json['EnableGzipAndDeflate'] == null ? undefined : json['EnableGzipAndDeflate'],
+        'httpKeepAlive': json['HttpKeepAlive'] == null ? undefined : json['HttpKeepAlive'],
+        'logHttpRequests': json['LogHttpRequests'] == null ? undefined : json['LogHttpRequests'],
+        'requestsPerSecond': json['RequestsPerSecond'] == null ? undefined : json['RequestsPerSecond'],
+        'concurrentConnectionCount': json['ConcurrentConnectionCount'] == null ? undefined : json['ConcurrentConnectionCount'],
+        'requestTimeout': json['RequestTimeout'] == null ? undefined : json['RequestTimeout'],
+        'connectionTimeout': json['ConnectionTimeout'] == null ? undefined : json['ConnectionTimeout'],
+        'userAgent': json['UserAgent'] == null ? undefined : json['UserAgent'],
+        'userAgents': json['UserAgents'] == null ? undefined : json['UserAgents'],
+        'customUserAgents': json['CustomUserAgents'] == null ? undefined : json['CustomUserAgents'],
+        'customUserAgent': json['CustomUserAgent'] == null ? undefined : (0, ScanPolicyUserAgentModel_1.ScanPolicyUserAgentModelFromJSON)(json['CustomUserAgent']),
+        'forceUserAgent': json['ForceUserAgent'] == null ? undefined : json['ForceUserAgent'],
+        'authorizationHeaderName': json['AuthorizationHeaderName'] == null ? undefined : json['AuthorizationHeaderName'],
     };
 }
 exports.HttpRequestSettingModelFromJSONTyped = HttpRequestSettingModelFromJSONTyped;
 function HttpRequestSettingModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Accept': value.accept,
-        'AcceptCharset': value.acceptCharset,
-        'AcceptLanguage': value.acceptLanguage,
-        'EnableCookies': value.enableCookies,
-        'EnableGzipAndDeflate': value.enableGzipAndDeflate,
-        'HttpKeepAlive': value.httpKeepAlive,
-        'LogHttpRequests': value.logHttpRequests,
-        'RequestsPerSecond': value.requestsPerSecond,
-        'ConcurrentConnectionCount': value.concurrentConnectionCount,
-        'RequestTimeout': value.requestTimeout,
-        'ConnectionTimeout': value.connectionTimeout,
-        'UserAgent': value.userAgent,
-        'UserAgents': value.userAgents,
-        'CustomUserAgents': value.customUserAgents,
-        'CustomUserAgent': (0, ScanPolicyUserAgentModel_1.ScanPolicyUserAgentModelToJSON)(value.customUserAgent),
-        'ForceUserAgent': value.forceUserAgent,
-        'AuthorizationHeaderName': value.authorizationHeaderName,
+        'Accept': value['accept'],
+        'AcceptCharset': value['acceptCharset'],
+        'AcceptLanguage': value['acceptLanguage'],
+        'EnableCookies': value['enableCookies'],
+        'EnableGzipAndDeflate': value['enableGzipAndDeflate'],
+        'HttpKeepAlive': value['httpKeepAlive'],
+        'LogHttpRequests': value['logHttpRequests'],
+        'RequestsPerSecond': value['requestsPerSecond'],
+        'ConcurrentConnectionCount': value['concurrentConnectionCount'],
+        'RequestTimeout': value['requestTimeout'],
+        'ConnectionTimeout': value['connectionTimeout'],
+        'UserAgent': value['userAgent'],
+        'UserAgents': value['userAgents'],
+        'CustomUserAgents': value['customUserAgents'],
+        'CustomUserAgent': (0, ScanPolicyUserAgentModel_1.ScanPolicyUserAgentModelToJSON)(value['customUserAgent']),
+        'ForceUserAgent': value['forceUserAgent'],
+        'AuthorizationHeaderName': value['authorizationHeaderName'],
     };
 }
 exports.HttpRequestSettingModelToJSON = HttpRequestSettingModelToJSON;

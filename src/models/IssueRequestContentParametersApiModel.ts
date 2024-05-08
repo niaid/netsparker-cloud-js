@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Issue request content parameters api response mapping class.
  * @export
@@ -84,9 +84,7 @@ export type IssueRequestContentParametersApiModelInputTypeEnum = typeof IssueReq
  * Check if a given object implements the IssueRequestContentParametersApiModel interface.
  */
 export function instanceOfIssueRequestContentParametersApiModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function IssueRequestContentParametersApiModelFromJSON(json: any): IssueRequestContentParametersApiModel {
@@ -94,31 +92,28 @@ export function IssueRequestContentParametersApiModelFromJSON(json: any): IssueR
 }
 
 export function IssueRequestContentParametersApiModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): IssueRequestContentParametersApiModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'value': !exists(json, 'Value') ? undefined : json['Value'],
-        'typeName': !exists(json, 'TypeName') ? undefined : json['TypeName'],
-        'inputType': !exists(json, 'InputType') ? undefined : json['InputType'],
+        'name': json['Name'] == null ? undefined : json['Name'],
+        'value': json['Value'] == null ? undefined : json['Value'],
+        'typeName': json['TypeName'] == null ? undefined : json['TypeName'],
+        'inputType': json['InputType'] == null ? undefined : json['InputType'],
     };
 }
 
 export function IssueRequestContentParametersApiModelToJSON(value?: IssueRequestContentParametersApiModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Name': value.name,
-        'Value': value.value,
-        'TypeName': value.typeName,
-        'InputType': value.inputType,
+        'Name': value['name'],
+        'Value': value['value'],
+        'TypeName': value['typeName'],
+        'InputType': value['inputType'],
     };
 }
 

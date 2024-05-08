@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DiscoveryConnectionsApiModelToJSON = exports.DiscoveryConnectionsApiModelFromJSONTyped = exports.DiscoveryConnectionsApiModelFromJSON = exports.instanceOfDiscoveryConnectionsApiModel = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the DiscoveryConnectionsApiModel interface.
  */
 function instanceOfDiscoveryConnectionsApiModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfDiscoveryConnectionsApiModel = instanceOfDiscoveryConnectionsApiModel;
 function DiscoveryConnectionsApiModelFromJSON(json) {
@@ -28,27 +26,24 @@ function DiscoveryConnectionsApiModelFromJSON(json) {
 }
 exports.DiscoveryConnectionsApiModelFromJSON = DiscoveryConnectionsApiModelFromJSON;
 function DiscoveryConnectionsApiModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'eC2InstanceId': !(0, runtime_1.exists)(json, 'EC2InstanceId') ? undefined : json['EC2InstanceId'],
-        'eC2CreationDate': !(0, runtime_1.exists)(json, 'EC2CreationDate') ? undefined : (new Date(json['EC2CreationDate'])),
-        'platform': !(0, runtime_1.exists)(json, 'Platform') ? undefined : json['Platform'],
+        'eC2InstanceId': json['EC2InstanceId'] == null ? undefined : json['EC2InstanceId'],
+        'eC2CreationDate': json['EC2CreationDate'] == null ? undefined : (new Date(json['EC2CreationDate'])),
+        'platform': json['Platform'] == null ? undefined : json['Platform'],
     };
 }
 exports.DiscoveryConnectionsApiModelFromJSONTyped = DiscoveryConnectionsApiModelFromJSONTyped;
 function DiscoveryConnectionsApiModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'EC2InstanceId': value.eC2InstanceId,
-        'EC2CreationDate': value.eC2CreationDate === undefined ? undefined : (value.eC2CreationDate.toISOString()),
-        'Platform': value.platform,
+        'EC2InstanceId': value['eC2InstanceId'],
+        'EC2CreationDate': value['eC2CreationDate'] == null ? undefined : ((value['eC2CreationDate']).toISOString()),
+        'Platform': value['platform'],
     };
 }
 exports.DiscoveryConnectionsApiModelToJSON = DiscoveryConnectionsApiModelToJSON;

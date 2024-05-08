@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a name / value pair model
  * @export
@@ -49,9 +49,7 @@ export interface NameValuePair {
  * Check if a given object implements the NameValuePair interface.
  */
 export function instanceOfNameValuePair(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function NameValuePairFromJSON(json: any): NameValuePair {
@@ -59,31 +57,28 @@ export function NameValuePairFromJSON(json: any): NameValuePair {
 }
 
 export function NameValuePairFromJSONTyped(json: any, ignoreDiscriminator: boolean): NameValuePair {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'value': !exists(json, 'Value') ? undefined : json['Value'],
-        'isEncoded': !exists(json, 'IsEncoded') ? undefined : json['IsEncoded'],
-        'isEncrypted': !exists(json, 'IsEncrypted') ? undefined : json['IsEncrypted'],
+        'name': json['Name'] == null ? undefined : json['Name'],
+        'value': json['Value'] == null ? undefined : json['Value'],
+        'isEncoded': json['IsEncoded'] == null ? undefined : json['IsEncoded'],
+        'isEncrypted': json['IsEncrypted'] == null ? undefined : json['IsEncrypted'],
     };
 }
 
 export function NameValuePairToJSON(value?: NameValuePair | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Name': value.name,
-        'Value': value.value,
-        'IsEncoded': value.isEncoded,
-        'IsEncrypted': value.isEncrypted,
+        'Name': value['name'],
+        'Value': value['value'],
+        'IsEncoded': value['isEncoded'],
+        'IsEncrypted': value['isEncrypted'],
     };
 }
 

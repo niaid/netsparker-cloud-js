@@ -14,7 +14,6 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.OtpSettingsToJSON = exports.OtpSettingsFromJSONTyped = exports.OtpSettingsFromJSON = exports.instanceOfOtpSettings = exports.OtpSettingsAlgorithmEnum = exports.OtpSettingsOtpTypeEnum = void 0;
-const runtime_1 = require("../runtime");
 /**
  * @export
  */
@@ -34,8 +33,7 @@ exports.OtpSettingsAlgorithmEnum = {
  * Check if a given object implements the OtpSettings interface.
  */
 function instanceOfOtpSettings(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfOtpSettings = instanceOfOtpSettings;
 function OtpSettingsFromJSON(json) {
@@ -43,31 +41,28 @@ function OtpSettingsFromJSON(json) {
 }
 exports.OtpSettingsFromJSON = OtpSettingsFromJSON;
 function OtpSettingsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'otpType': !(0, runtime_1.exists)(json, 'OtpType') ? undefined : json['OtpType'],
-        'secretKey': !(0, runtime_1.exists)(json, 'SecretKey') ? undefined : json['SecretKey'],
-        'digit': !(0, runtime_1.exists)(json, 'Digit') ? undefined : json['Digit'],
-        'period': !(0, runtime_1.exists)(json, 'Period') ? undefined : json['Period'],
-        'algorithm': !(0, runtime_1.exists)(json, 'Algorithm') ? undefined : json['Algorithm'],
+        'otpType': json['OtpType'] == null ? undefined : json['OtpType'],
+        'secretKey': json['SecretKey'] == null ? undefined : json['SecretKey'],
+        'digit': json['Digit'] == null ? undefined : json['Digit'],
+        'period': json['Period'] == null ? undefined : json['Period'],
+        'algorithm': json['Algorithm'] == null ? undefined : json['Algorithm'],
     };
 }
 exports.OtpSettingsFromJSONTyped = OtpSettingsFromJSONTyped;
 function OtpSettingsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'OtpType': value.otpType,
-        'SecretKey': value.secretKey,
-        'Digit': value.digit,
-        'Period': value.period,
-        'Algorithm': value.algorithm,
+        'OtpType': value['otpType'],
+        'SecretKey': value['secretKey'],
+        'Digit': value['digit'],
+        'Period': value['period'],
+        'Algorithm': value['algorithm'],
     };
 }
 exports.OtpSettingsToJSON = OtpSettingsToJSON;

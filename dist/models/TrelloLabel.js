@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TrelloLabelToJSON = exports.TrelloLabelFromJSONTyped = exports.TrelloLabelFromJSON = exports.instanceOfTrelloLabel = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the TrelloLabel interface.
  */
 function instanceOfTrelloLabel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfTrelloLabel = instanceOfTrelloLabel;
 function TrelloLabelFromJSON(json) {
@@ -28,27 +26,24 @@ function TrelloLabelFromJSON(json) {
 }
 exports.TrelloLabelFromJSON = TrelloLabelFromJSON;
 function TrelloLabelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'color': !(0, runtime_1.exists)(json, 'color') ? undefined : json['color'],
-        'id': !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
-        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        'color': json['color'] == null ? undefined : json['color'],
+        'id': json['id'] == null ? undefined : json['id'],
+        'name': json['name'] == null ? undefined : json['name'],
     };
 }
 exports.TrelloLabelFromJSONTyped = TrelloLabelFromJSONTyped;
 function TrelloLabelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'color': value.color,
-        'id': value.id,
-        'name': value.name,
+        'color': value['color'],
+        'id': value['id'],
+        'name': value['name'],
     };
 }
 exports.TrelloLabelToJSON = TrelloLabelToJSON;

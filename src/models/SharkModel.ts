@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a model for shark setting
  * @export
@@ -62,9 +62,7 @@ export type SharkModelSharkPlatformTypeEnum = typeof SharkModelSharkPlatformType
  * Check if a given object implements the SharkModel interface.
  */
 export function instanceOfSharkModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function SharkModelFromJSON(json: any): SharkModel {
@@ -72,31 +70,28 @@ export function SharkModelFromJSON(json: any): SharkModel {
 }
 
 export function SharkModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): SharkModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'isSharkEnabled': !exists(json, 'IsSharkEnabled') ? undefined : json['IsSharkEnabled'],
-        'sharkPlatformType': !exists(json, 'SharkPlatformType') ? undefined : json['SharkPlatformType'],
-        'sharkPassword': !exists(json, 'SharkPassword') ? undefined : json['SharkPassword'],
-        'sharkBridgeUrl': !exists(json, 'SharkBridgeUrl') ? undefined : json['SharkBridgeUrl'],
+        'isSharkEnabled': json['IsSharkEnabled'] == null ? undefined : json['IsSharkEnabled'],
+        'sharkPlatformType': json['SharkPlatformType'] == null ? undefined : json['SharkPlatformType'],
+        'sharkPassword': json['SharkPassword'] == null ? undefined : json['SharkPassword'],
+        'sharkBridgeUrl': json['SharkBridgeUrl'] == null ? undefined : json['SharkBridgeUrl'],
     };
 }
 
 export function SharkModelToJSON(value?: SharkModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'IsSharkEnabled': value.isSharkEnabled,
-        'SharkPlatformType': value.sharkPlatformType,
-        'SharkPassword': value.sharkPassword,
-        'SharkBridgeUrl': value.sharkBridgeUrl,
+        'IsSharkEnabled': value['isSharkEnabled'],
+        'SharkPlatformType': value['sharkPlatformType'],
+        'SharkPassword': value['sharkPassword'],
+        'SharkBridgeUrl': value['sharkBridgeUrl'],
     };
 }
 

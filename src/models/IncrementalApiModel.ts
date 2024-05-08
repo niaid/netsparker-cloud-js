@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Contains properties for the incremantal scan.
  * @export
@@ -55,10 +55,8 @@ export interface IncrementalApiModel {
  * Check if a given object implements the IncrementalApiModel interface.
  */
 export function instanceOfIncrementalApiModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "baseScanId" in value;
-
-    return isInstance;
+    if (!('baseScanId' in value)) return false;
+    return true;
 }
 
 export function IncrementalApiModelFromJSON(json: any): IncrementalApiModel {
@@ -66,33 +64,30 @@ export function IncrementalApiModelFromJSON(json: any): IncrementalApiModel {
 }
 
 export function IncrementalApiModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): IncrementalApiModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'isMaxScanDurationEnabled': !exists(json, 'IsMaxScanDurationEnabled') ? undefined : json['IsMaxScanDurationEnabled'],
-        'maxScanDuration': !exists(json, 'MaxScanDuration') ? undefined : json['MaxScanDuration'],
-        'agentGroupName': !exists(json, 'AgentGroupName') ? undefined : json['AgentGroupName'],
-        'agentName': !exists(json, 'AgentName') ? undefined : json['AgentName'],
+        'isMaxScanDurationEnabled': json['IsMaxScanDurationEnabled'] == null ? undefined : json['IsMaxScanDurationEnabled'],
+        'maxScanDuration': json['MaxScanDuration'] == null ? undefined : json['MaxScanDuration'],
+        'agentGroupName': json['AgentGroupName'] == null ? undefined : json['AgentGroupName'],
+        'agentName': json['AgentName'] == null ? undefined : json['AgentName'],
         'baseScanId': json['BaseScanId'],
     };
 }
 
 export function IncrementalApiModelToJSON(value?: IncrementalApiModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'IsMaxScanDurationEnabled': value.isMaxScanDurationEnabled,
-        'MaxScanDuration': value.maxScanDuration,
-        'AgentGroupName': value.agentGroupName,
-        'AgentName': value.agentName,
-        'BaseScanId': value.baseScanId,
+        'IsMaxScanDurationEnabled': value['isMaxScanDurationEnabled'],
+        'MaxScanDuration': value['maxScanDuration'],
+        'AgentGroupName': value['agentGroupName'],
+        'AgentName': value['agentName'],
+        'BaseScanId': value['baseScanId'],
     };
 }
 

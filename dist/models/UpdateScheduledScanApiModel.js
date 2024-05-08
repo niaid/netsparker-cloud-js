@@ -14,23 +14,22 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UpdateScheduledScanApiModelToJSON = exports.UpdateScheduledScanApiModelFromJSONTyped = exports.UpdateScheduledScanApiModelFromJSON = exports.instanceOfUpdateScheduledScanApiModel = exports.UpdateScheduledScanApiModelUrlRewriteModeEnum = exports.UpdateScheduledScanApiModelScopeEnum = exports.UpdateScheduledScanApiModelAuthenticationProfileOptionEnum = exports.UpdateScheduledScanApiModelDisallowedHttpMethodsEnum = exports.UpdateScheduledScanApiModelCreateTypeEnum = exports.UpdateScheduledScanApiModelScheduleRunTypeEnum = void 0;
-const runtime_1 = require("../runtime");
-const AdditionalWebsiteModel_1 = require("./AdditionalWebsiteModel");
-const ApiFileModel_1 = require("./ApiFileModel");
-const BasicAuthenticationSettingModel_1 = require("./BasicAuthenticationSettingModel");
-const BusinessLogicRecorderSettingModel_1 = require("./BusinessLogicRecorderSettingModel");
-const ClientCertificateAuthenticationApiModel_1 = require("./ClientCertificateAuthenticationApiModel");
-const ExcludedLinkModel_1 = require("./ExcludedLinkModel");
-const ExcludedUsageTrackerModel_1 = require("./ExcludedUsageTrackerModel");
-const FormAuthenticationSettingModel_1 = require("./FormAuthenticationSettingModel");
 const HeaderAuthenticationModel_1 = require("./HeaderAuthenticationModel");
-const OAuth2SettingApiModel_1 = require("./OAuth2SettingApiModel");
+const ExcludedLinkModel_1 = require("./ExcludedLinkModel");
 const PreRequestScriptSettingModel_1 = require("./PreRequestScriptSettingModel");
-const ScanTimeWindowModel_1 = require("./ScanTimeWindowModel");
+const FormAuthenticationSettingModel_1 = require("./FormAuthenticationSettingModel");
+const ApiFile_1 = require("./ApiFile");
+const OAuth2SettingApiModel_1 = require("./OAuth2SettingApiModel");
 const ScheduledScanRecurrenceApiModel_1 = require("./ScheduledScanRecurrenceApiModel");
-const SharkModel_1 = require("./SharkModel");
-const UrlRewriteExcludedPathModel_1 = require("./UrlRewriteExcludedPathModel");
+const BusinessLogicRecorderSettingModel_1 = require("./BusinessLogicRecorderSettingModel");
+const AdditionalWebsiteModel_1 = require("./AdditionalWebsiteModel");
+const ExcludedUsageTrackerModel_1 = require("./ExcludedUsageTrackerModel");
+const ClientCertificateAuthenticationApiModel_1 = require("./ClientCertificateAuthenticationApiModel");
+const BasicAuthenticationSettingModel_1 = require("./BasicAuthenticationSettingModel");
 const UrlRewriteRuleModel_1 = require("./UrlRewriteRuleModel");
+const SharkModel_1 = require("./SharkModel");
+const ScanTimeWindowModel_1 = require("./ScanTimeWindowModel");
+const UrlRewriteExcludedPathModel_1 = require("./UrlRewriteExcludedPathModel");
 /**
  * @export
  */
@@ -97,12 +96,15 @@ exports.UpdateScheduledScanApiModelUrlRewriteModeEnum = {
  * Check if a given object implements the UpdateScheduledScanApiModel interface.
  */
 function instanceOfUpdateScheduledScanApiModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "id" in value;
-    isInstance = isInstance && "name" in value;
-    isInstance = isInstance && "nextExecutionTime" in value;
-    isInstance = isInstance && "scheduleRunType" in value;
-    return isInstance;
+    if (!('id' in value))
+        return false;
+    if (!('name' in value))
+        return false;
+    if (!('nextExecutionTime' in value))
+        return false;
+    if (!('scheduleRunType' in value))
+        return false;
+    return true;
 }
 exports.instanceOfUpdateScheduledScanApiModel = instanceOfUpdateScheduledScanApiModel;
 function UpdateScheduledScanApiModelFromJSON(json) {
@@ -110,118 +112,115 @@ function UpdateScheduledScanApiModelFromJSON(json) {
 }
 exports.UpdateScheduledScanApiModelFromJSON = UpdateScheduledScanApiModelFromJSON;
 function UpdateScheduledScanApiModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'disabled': !(0, runtime_1.exists)(json, 'Disabled') ? undefined : json['Disabled'],
+        'disabled': json['Disabled'] == null ? undefined : json['Disabled'],
         'id': json['Id'],
         'name': json['Name'],
         'nextExecutionTime': json['NextExecutionTime'],
         'scheduleRunType': json['ScheduleRunType'],
-        'customRecurrence': !(0, runtime_1.exists)(json, 'CustomRecurrence') ? undefined : (0, ScheduledScanRecurrenceApiModel_1.ScheduledScanRecurrenceApiModelFromJSON)(json['CustomRecurrence']),
-        'targetUri': !(0, runtime_1.exists)(json, 'TargetUri') ? undefined : json['TargetUri'],
-        'isTargetUrlRequired': !(0, runtime_1.exists)(json, 'IsTargetUrlRequired') ? undefined : json['IsTargetUrlRequired'],
-        'createType': !(0, runtime_1.exists)(json, 'CreateType') ? undefined : json['CreateType'],
-        'websiteGroupId': !(0, runtime_1.exists)(json, 'WebsiteGroupId') ? undefined : json['WebsiteGroupId'],
-        'additionalWebsites': !(0, runtime_1.exists)(json, 'AdditionalWebsites') ? undefined : (json['AdditionalWebsites'].map(AdditionalWebsiteModel_1.AdditionalWebsiteModelFromJSON)),
-        'basicAuthenticationApiModel': !(0, runtime_1.exists)(json, 'BasicAuthenticationApiModel') ? undefined : (0, BasicAuthenticationSettingModel_1.BasicAuthenticationSettingModelFromJSON)(json['BasicAuthenticationApiModel']),
-        'clientCertificateAuthenticationSetting': !(0, runtime_1.exists)(json, 'ClientCertificateAuthenticationSetting') ? undefined : (0, ClientCertificateAuthenticationApiModel_1.ClientCertificateAuthenticationApiModelFromJSON)(json['ClientCertificateAuthenticationSetting']),
-        'cookies': !(0, runtime_1.exists)(json, 'Cookies') ? undefined : json['Cookies'],
-        'crawlAndAttack': !(0, runtime_1.exists)(json, 'CrawlAndAttack') ? undefined : json['CrawlAndAttack'],
-        'enableHeuristicChecksInCustomUrlRewrite': !(0, runtime_1.exists)(json, 'EnableHeuristicChecksInCustomUrlRewrite') ? undefined : json['EnableHeuristicChecksInCustomUrlRewrite'],
-        'excludedLinks': !(0, runtime_1.exists)(json, 'ExcludedLinks') ? undefined : (json['ExcludedLinks'].map(ExcludedLinkModel_1.ExcludedLinkModelFromJSON)),
-        'excludedUsageTrackers': !(0, runtime_1.exists)(json, 'ExcludedUsageTrackers') ? undefined : (json['ExcludedUsageTrackers'].map(ExcludedUsageTrackerModel_1.ExcludedUsageTrackerModelFromJSON)),
-        'disallowedHttpMethods': !(0, runtime_1.exists)(json, 'DisallowedHttpMethods') ? undefined : json['DisallowedHttpMethods'],
-        'excludeLinks': !(0, runtime_1.exists)(json, 'ExcludeLinks') ? undefined : json['ExcludeLinks'],
-        'excludeAuthenticationPages': !(0, runtime_1.exists)(json, 'ExcludeAuthenticationPages') ? undefined : json['ExcludeAuthenticationPages'],
-        'findAndFollowNewLinks': !(0, runtime_1.exists)(json, 'FindAndFollowNewLinks') ? undefined : json['FindAndFollowNewLinks'],
-        'formAuthenticationSettingModel': !(0, runtime_1.exists)(json, 'FormAuthenticationSettingModel') ? undefined : (0, FormAuthenticationSettingModel_1.FormAuthenticationSettingModelFromJSON)(json['FormAuthenticationSettingModel']),
-        'headerAuthentication': !(0, runtime_1.exists)(json, 'HeaderAuthentication') ? undefined : (0, HeaderAuthenticationModel_1.HeaderAuthenticationModelFromJSON)(json['HeaderAuthentication']),
-        'sharkSetting': !(0, runtime_1.exists)(json, 'SharkSetting') ? undefined : (0, SharkModel_1.SharkModelFromJSON)(json['SharkSetting']),
-        'authenticationProfileOption': !(0, runtime_1.exists)(json, 'AuthenticationProfileOption') ? undefined : json['AuthenticationProfileOption'],
-        'authenticationProfileId': !(0, runtime_1.exists)(json, 'AuthenticationProfileId') ? undefined : json['AuthenticationProfileId'],
-        'importedLinks': !(0, runtime_1.exists)(json, 'ImportedLinks') ? undefined : json['ImportedLinks'],
-        'importedFiles': !(0, runtime_1.exists)(json, 'ImportedFiles') ? undefined : (json['ImportedFiles'].map(ApiFileModel_1.ApiFileModelFromJSON)),
-        'isMaxScanDurationEnabled': !(0, runtime_1.exists)(json, 'IsMaxScanDurationEnabled') ? undefined : json['IsMaxScanDurationEnabled'],
-        'maxDynamicSignatures': !(0, runtime_1.exists)(json, 'MaxDynamicSignatures') ? undefined : json['MaxDynamicSignatures'],
-        'maxScanDuration': !(0, runtime_1.exists)(json, 'MaxScanDuration') ? undefined : json['MaxScanDuration'],
-        'policyId': !(0, runtime_1.exists)(json, 'PolicyId') ? undefined : json['PolicyId'],
-        'reportPolicyId': !(0, runtime_1.exists)(json, 'ReportPolicyId') ? undefined : json['ReportPolicyId'],
-        'scope': !(0, runtime_1.exists)(json, 'Scope') ? undefined : json['Scope'],
-        'subPathMaxDynamicSignatures': !(0, runtime_1.exists)(json, 'SubPathMaxDynamicSignatures') ? undefined : json['SubPathMaxDynamicSignatures'],
-        'timeWindow': !(0, runtime_1.exists)(json, 'TimeWindow') ? undefined : (0, ScanTimeWindowModel_1.ScanTimeWindowModelFromJSON)(json['TimeWindow']),
-        'urlRewriteAnalyzableExtensions': !(0, runtime_1.exists)(json, 'UrlRewriteAnalyzableExtensions') ? undefined : json['UrlRewriteAnalyzableExtensions'],
-        'urlRewriteBlockSeparators': !(0, runtime_1.exists)(json, 'UrlRewriteBlockSeparators') ? undefined : json['UrlRewriteBlockSeparators'],
-        'urlRewriteMode': !(0, runtime_1.exists)(json, 'UrlRewriteMode') ? undefined : json['UrlRewriteMode'],
-        'urlRewriteRules': !(0, runtime_1.exists)(json, 'UrlRewriteRules') ? undefined : (json['UrlRewriteRules'].map(UrlRewriteRuleModel_1.UrlRewriteRuleModelFromJSON)),
-        'preRequestScriptSetting': !(0, runtime_1.exists)(json, 'PreRequestScriptSetting') ? undefined : (0, PreRequestScriptSettingModel_1.PreRequestScriptSettingModelFromJSON)(json['PreRequestScriptSetting']),
-        'doNotDifferentiateProtocols': !(0, runtime_1.exists)(json, 'DoNotDifferentiateProtocols') ? undefined : json['DoNotDifferentiateProtocols'],
-        'urlRewriteExcludedLinks': !(0, runtime_1.exists)(json, 'UrlRewriteExcludedLinks') ? undefined : (json['UrlRewriteExcludedLinks'].map(UrlRewriteExcludedPathModel_1.UrlRewriteExcludedPathModelFromJSON)),
-        'oAuth2SettingModel': !(0, runtime_1.exists)(json, 'OAuth2SettingModel') ? undefined : (0, OAuth2SettingApiModel_1.OAuth2SettingApiModelFromJSON)(json['OAuth2SettingModel']),
-        'enablePciScanTask': !(0, runtime_1.exists)(json, 'EnablePciScanTask') ? undefined : json['EnablePciScanTask'],
-        'businessLogicRecorderSetting': !(0, runtime_1.exists)(json, 'BusinessLogicRecorderSetting') ? undefined : (0, BusinessLogicRecorderSettingModel_1.BusinessLogicRecorderSettingModelFromJSON)(json['BusinessLogicRecorderSetting']),
-        'tags': !(0, runtime_1.exists)(json, 'Tags') ? undefined : json['Tags'],
-        'comments': !(0, runtime_1.exists)(json, 'Comments') ? undefined : json['Comments'],
+        'customRecurrence': json['CustomRecurrence'] == null ? undefined : (0, ScheduledScanRecurrenceApiModel_1.ScheduledScanRecurrenceApiModelFromJSON)(json['CustomRecurrence']),
+        'targetUri': json['TargetUri'] == null ? undefined : json['TargetUri'],
+        'isTargetUrlRequired': json['IsTargetUrlRequired'] == null ? undefined : json['IsTargetUrlRequired'],
+        'createType': json['CreateType'] == null ? undefined : json['CreateType'],
+        'websiteGroupId': json['WebsiteGroupId'] == null ? undefined : json['WebsiteGroupId'],
+        'additionalWebsites': json['AdditionalWebsites'] == null ? undefined : (json['AdditionalWebsites'].map(AdditionalWebsiteModel_1.AdditionalWebsiteModelFromJSON)),
+        'basicAuthenticationApiModel': json['BasicAuthenticationApiModel'] == null ? undefined : (0, BasicAuthenticationSettingModel_1.BasicAuthenticationSettingModelFromJSON)(json['BasicAuthenticationApiModel']),
+        'clientCertificateAuthenticationSetting': json['ClientCertificateAuthenticationSetting'] == null ? undefined : (0, ClientCertificateAuthenticationApiModel_1.ClientCertificateAuthenticationApiModelFromJSON)(json['ClientCertificateAuthenticationSetting']),
+        'cookies': json['Cookies'] == null ? undefined : json['Cookies'],
+        'crawlAndAttack': json['CrawlAndAttack'] == null ? undefined : json['CrawlAndAttack'],
+        'enableHeuristicChecksInCustomUrlRewrite': json['EnableHeuristicChecksInCustomUrlRewrite'] == null ? undefined : json['EnableHeuristicChecksInCustomUrlRewrite'],
+        'excludedLinks': json['ExcludedLinks'] == null ? undefined : (json['ExcludedLinks'].map(ExcludedLinkModel_1.ExcludedLinkModelFromJSON)),
+        'excludedUsageTrackers': json['ExcludedUsageTrackers'] == null ? undefined : (json['ExcludedUsageTrackers'].map(ExcludedUsageTrackerModel_1.ExcludedUsageTrackerModelFromJSON)),
+        'disallowedHttpMethods': json['DisallowedHttpMethods'] == null ? undefined : json['DisallowedHttpMethods'],
+        'excludeLinks': json['ExcludeLinks'] == null ? undefined : json['ExcludeLinks'],
+        'excludeAuthenticationPages': json['ExcludeAuthenticationPages'] == null ? undefined : json['ExcludeAuthenticationPages'],
+        'findAndFollowNewLinks': json['FindAndFollowNewLinks'] == null ? undefined : json['FindAndFollowNewLinks'],
+        'formAuthenticationSettingModel': json['FormAuthenticationSettingModel'] == null ? undefined : (0, FormAuthenticationSettingModel_1.FormAuthenticationSettingModelFromJSON)(json['FormAuthenticationSettingModel']),
+        'headerAuthentication': json['HeaderAuthentication'] == null ? undefined : (0, HeaderAuthenticationModel_1.HeaderAuthenticationModelFromJSON)(json['HeaderAuthentication']),
+        'sharkSetting': json['SharkSetting'] == null ? undefined : (0, SharkModel_1.SharkModelFromJSON)(json['SharkSetting']),
+        'authenticationProfileOption': json['AuthenticationProfileOption'] == null ? undefined : json['AuthenticationProfileOption'],
+        'authenticationProfileId': json['AuthenticationProfileId'] == null ? undefined : json['AuthenticationProfileId'],
+        'importedLinks': json['ImportedLinks'] == null ? undefined : json['ImportedLinks'],
+        'importedFiles': json['ImportedFiles'] == null ? undefined : (json['ImportedFiles'].map(ApiFile_1.ApiFileFromJSON)),
+        'isMaxScanDurationEnabled': json['IsMaxScanDurationEnabled'] == null ? undefined : json['IsMaxScanDurationEnabled'],
+        'maxDynamicSignatures': json['MaxDynamicSignatures'] == null ? undefined : json['MaxDynamicSignatures'],
+        'maxScanDuration': json['MaxScanDuration'] == null ? undefined : json['MaxScanDuration'],
+        'policyId': json['PolicyId'] == null ? undefined : json['PolicyId'],
+        'reportPolicyId': json['ReportPolicyId'] == null ? undefined : json['ReportPolicyId'],
+        'scope': json['Scope'] == null ? undefined : json['Scope'],
+        'subPathMaxDynamicSignatures': json['SubPathMaxDynamicSignatures'] == null ? undefined : json['SubPathMaxDynamicSignatures'],
+        'timeWindow': json['TimeWindow'] == null ? undefined : (0, ScanTimeWindowModel_1.ScanTimeWindowModelFromJSON)(json['TimeWindow']),
+        'urlRewriteAnalyzableExtensions': json['UrlRewriteAnalyzableExtensions'] == null ? undefined : json['UrlRewriteAnalyzableExtensions'],
+        'urlRewriteBlockSeparators': json['UrlRewriteBlockSeparators'] == null ? undefined : json['UrlRewriteBlockSeparators'],
+        'urlRewriteMode': json['UrlRewriteMode'] == null ? undefined : json['UrlRewriteMode'],
+        'urlRewriteRules': json['UrlRewriteRules'] == null ? undefined : (json['UrlRewriteRules'].map(UrlRewriteRuleModel_1.UrlRewriteRuleModelFromJSON)),
+        'preRequestScriptSetting': json['PreRequestScriptSetting'] == null ? undefined : (0, PreRequestScriptSettingModel_1.PreRequestScriptSettingModelFromJSON)(json['PreRequestScriptSetting']),
+        'doNotDifferentiateProtocols': json['DoNotDifferentiateProtocols'] == null ? undefined : json['DoNotDifferentiateProtocols'],
+        'urlRewriteExcludedLinks': json['UrlRewriteExcludedLinks'] == null ? undefined : (json['UrlRewriteExcludedLinks'].map(UrlRewriteExcludedPathModel_1.UrlRewriteExcludedPathModelFromJSON)),
+        'oAuth2SettingModel': json['OAuth2SettingModel'] == null ? undefined : (0, OAuth2SettingApiModel_1.OAuth2SettingApiModelFromJSON)(json['OAuth2SettingModel']),
+        'enablePciScanTask': json['EnablePciScanTask'] == null ? undefined : json['EnablePciScanTask'],
+        'businessLogicRecorderSetting': json['BusinessLogicRecorderSetting'] == null ? undefined : (0, BusinessLogicRecorderSettingModel_1.BusinessLogicRecorderSettingModelFromJSON)(json['BusinessLogicRecorderSetting']),
+        'tags': json['Tags'] == null ? undefined : json['Tags'],
+        'comments': json['Comments'] == null ? undefined : json['Comments'],
     };
 }
 exports.UpdateScheduledScanApiModelFromJSONTyped = UpdateScheduledScanApiModelFromJSONTyped;
 function UpdateScheduledScanApiModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Disabled': value.disabled,
-        'Id': value.id,
-        'Name': value.name,
-        'NextExecutionTime': value.nextExecutionTime,
-        'ScheduleRunType': value.scheduleRunType,
-        'CustomRecurrence': (0, ScheduledScanRecurrenceApiModel_1.ScheduledScanRecurrenceApiModelToJSON)(value.customRecurrence),
-        'TargetUri': value.targetUri,
-        'CreateType': value.createType,
-        'WebsiteGroupId': value.websiteGroupId,
-        'AdditionalWebsites': value.additionalWebsites === undefined ? undefined : (value.additionalWebsites.map(AdditionalWebsiteModel_1.AdditionalWebsiteModelToJSON)),
-        'BasicAuthenticationApiModel': (0, BasicAuthenticationSettingModel_1.BasicAuthenticationSettingModelToJSON)(value.basicAuthenticationApiModel),
-        'ClientCertificateAuthenticationSetting': (0, ClientCertificateAuthenticationApiModel_1.ClientCertificateAuthenticationApiModelToJSON)(value.clientCertificateAuthenticationSetting),
-        'Cookies': value.cookies,
-        'CrawlAndAttack': value.crawlAndAttack,
-        'EnableHeuristicChecksInCustomUrlRewrite': value.enableHeuristicChecksInCustomUrlRewrite,
-        'ExcludedLinks': value.excludedLinks === undefined ? undefined : (value.excludedLinks.map(ExcludedLinkModel_1.ExcludedLinkModelToJSON)),
-        'ExcludedUsageTrackers': value.excludedUsageTrackers === undefined ? undefined : (value.excludedUsageTrackers.map(ExcludedUsageTrackerModel_1.ExcludedUsageTrackerModelToJSON)),
-        'DisallowedHttpMethods': value.disallowedHttpMethods,
-        'ExcludeLinks': value.excludeLinks,
-        'ExcludeAuthenticationPages': value.excludeAuthenticationPages,
-        'FindAndFollowNewLinks': value.findAndFollowNewLinks,
-        'FormAuthenticationSettingModel': (0, FormAuthenticationSettingModel_1.FormAuthenticationSettingModelToJSON)(value.formAuthenticationSettingModel),
-        'HeaderAuthentication': (0, HeaderAuthenticationModel_1.HeaderAuthenticationModelToJSON)(value.headerAuthentication),
-        'SharkSetting': (0, SharkModel_1.SharkModelToJSON)(value.sharkSetting),
-        'AuthenticationProfileOption': value.authenticationProfileOption,
-        'AuthenticationProfileId': value.authenticationProfileId,
-        'ImportedLinks': value.importedLinks,
-        'ImportedFiles': value.importedFiles === undefined ? undefined : (value.importedFiles.map(ApiFileModel_1.ApiFileModelToJSON)),
-        'IsMaxScanDurationEnabled': value.isMaxScanDurationEnabled,
-        'MaxDynamicSignatures': value.maxDynamicSignatures,
-        'MaxScanDuration': value.maxScanDuration,
-        'PolicyId': value.policyId,
-        'ReportPolicyId': value.reportPolicyId,
-        'Scope': value.scope,
-        'SubPathMaxDynamicSignatures': value.subPathMaxDynamicSignatures,
-        'TimeWindow': (0, ScanTimeWindowModel_1.ScanTimeWindowModelToJSON)(value.timeWindow),
-        'UrlRewriteAnalyzableExtensions': value.urlRewriteAnalyzableExtensions,
-        'UrlRewriteBlockSeparators': value.urlRewriteBlockSeparators,
-        'UrlRewriteMode': value.urlRewriteMode,
-        'UrlRewriteRules': value.urlRewriteRules === undefined ? undefined : (value.urlRewriteRules.map(UrlRewriteRuleModel_1.UrlRewriteRuleModelToJSON)),
-        'PreRequestScriptSetting': (0, PreRequestScriptSettingModel_1.PreRequestScriptSettingModelToJSON)(value.preRequestScriptSetting),
-        'DoNotDifferentiateProtocols': value.doNotDifferentiateProtocols,
-        'UrlRewriteExcludedLinks': value.urlRewriteExcludedLinks === undefined ? undefined : (value.urlRewriteExcludedLinks.map(UrlRewriteExcludedPathModel_1.UrlRewriteExcludedPathModelToJSON)),
-        'OAuth2SettingModel': (0, OAuth2SettingApiModel_1.OAuth2SettingApiModelToJSON)(value.oAuth2SettingModel),
-        'EnablePciScanTask': value.enablePciScanTask,
-        'BusinessLogicRecorderSetting': (0, BusinessLogicRecorderSettingModel_1.BusinessLogicRecorderSettingModelToJSON)(value.businessLogicRecorderSetting),
-        'Tags': value.tags,
-        'Comments': value.comments,
+        'Disabled': value['disabled'],
+        'Id': value['id'],
+        'Name': value['name'],
+        'NextExecutionTime': value['nextExecutionTime'],
+        'ScheduleRunType': value['scheduleRunType'],
+        'CustomRecurrence': (0, ScheduledScanRecurrenceApiModel_1.ScheduledScanRecurrenceApiModelToJSON)(value['customRecurrence']),
+        'TargetUri': value['targetUri'],
+        'CreateType': value['createType'],
+        'WebsiteGroupId': value['websiteGroupId'],
+        'AdditionalWebsites': value['additionalWebsites'] == null ? undefined : (value['additionalWebsites'].map(AdditionalWebsiteModel_1.AdditionalWebsiteModelToJSON)),
+        'BasicAuthenticationApiModel': (0, BasicAuthenticationSettingModel_1.BasicAuthenticationSettingModelToJSON)(value['basicAuthenticationApiModel']),
+        'ClientCertificateAuthenticationSetting': (0, ClientCertificateAuthenticationApiModel_1.ClientCertificateAuthenticationApiModelToJSON)(value['clientCertificateAuthenticationSetting']),
+        'Cookies': value['cookies'],
+        'CrawlAndAttack': value['crawlAndAttack'],
+        'EnableHeuristicChecksInCustomUrlRewrite': value['enableHeuristicChecksInCustomUrlRewrite'],
+        'ExcludedLinks': value['excludedLinks'] == null ? undefined : (value['excludedLinks'].map(ExcludedLinkModel_1.ExcludedLinkModelToJSON)),
+        'ExcludedUsageTrackers': value['excludedUsageTrackers'] == null ? undefined : (value['excludedUsageTrackers'].map(ExcludedUsageTrackerModel_1.ExcludedUsageTrackerModelToJSON)),
+        'DisallowedHttpMethods': value['disallowedHttpMethods'],
+        'ExcludeLinks': value['excludeLinks'],
+        'ExcludeAuthenticationPages': value['excludeAuthenticationPages'],
+        'FindAndFollowNewLinks': value['findAndFollowNewLinks'],
+        'FormAuthenticationSettingModel': (0, FormAuthenticationSettingModel_1.FormAuthenticationSettingModelToJSON)(value['formAuthenticationSettingModel']),
+        'HeaderAuthentication': (0, HeaderAuthenticationModel_1.HeaderAuthenticationModelToJSON)(value['headerAuthentication']),
+        'SharkSetting': (0, SharkModel_1.SharkModelToJSON)(value['sharkSetting']),
+        'AuthenticationProfileOption': value['authenticationProfileOption'],
+        'AuthenticationProfileId': value['authenticationProfileId'],
+        'ImportedLinks': value['importedLinks'],
+        'ImportedFiles': value['importedFiles'] == null ? undefined : (value['importedFiles'].map(ApiFile_1.ApiFileToJSON)),
+        'IsMaxScanDurationEnabled': value['isMaxScanDurationEnabled'],
+        'MaxDynamicSignatures': value['maxDynamicSignatures'],
+        'MaxScanDuration': value['maxScanDuration'],
+        'PolicyId': value['policyId'],
+        'ReportPolicyId': value['reportPolicyId'],
+        'Scope': value['scope'],
+        'SubPathMaxDynamicSignatures': value['subPathMaxDynamicSignatures'],
+        'TimeWindow': (0, ScanTimeWindowModel_1.ScanTimeWindowModelToJSON)(value['timeWindow']),
+        'UrlRewriteAnalyzableExtensions': value['urlRewriteAnalyzableExtensions'],
+        'UrlRewriteBlockSeparators': value['urlRewriteBlockSeparators'],
+        'UrlRewriteMode': value['urlRewriteMode'],
+        'UrlRewriteRules': value['urlRewriteRules'] == null ? undefined : (value['urlRewriteRules'].map(UrlRewriteRuleModel_1.UrlRewriteRuleModelToJSON)),
+        'PreRequestScriptSetting': (0, PreRequestScriptSettingModel_1.PreRequestScriptSettingModelToJSON)(value['preRequestScriptSetting']),
+        'DoNotDifferentiateProtocols': value['doNotDifferentiateProtocols'],
+        'UrlRewriteExcludedLinks': value['urlRewriteExcludedLinks'] == null ? undefined : (value['urlRewriteExcludedLinks'].map(UrlRewriteExcludedPathModel_1.UrlRewriteExcludedPathModelToJSON)),
+        'OAuth2SettingModel': (0, OAuth2SettingApiModel_1.OAuth2SettingApiModelToJSON)(value['oAuth2SettingModel']),
+        'EnablePciScanTask': value['enablePciScanTask'],
+        'BusinessLogicRecorderSetting': (0, BusinessLogicRecorderSettingModel_1.BusinessLogicRecorderSettingModelToJSON)(value['businessLogicRecorderSetting']),
+        'Tags': value['tags'],
+        'Comments': value['comments'],
     };
 }
 exports.UpdateScheduledScanApiModelToJSON = UpdateScheduledScanApiModelToJSON;

@@ -52,4 +52,4 @@ export interface TrelloBoard {
 export declare function instanceOfTrelloBoard(value: object): boolean;
 export declare function TrelloBoardFromJSON(json: any): TrelloBoard;
 export declare function TrelloBoardFromJSONTyped(json: any, ignoreDiscriminator: boolean): TrelloBoard;
-export declare function TrelloBoardToJSON(value?: TrelloBoard | null): any;
+export declare function TrelloBoardToJSON(value?: Omit<TrelloBoard, 'IsActive'> | null): any;

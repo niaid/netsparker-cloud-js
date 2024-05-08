@@ -18,9 +18,9 @@ exports.ExcludedLinkModelToJSON = exports.ExcludedLinkModelFromJSONTyped = expor
  * Check if a given object implements the ExcludedLinkModel interface.
  */
 function instanceOfExcludedLinkModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "regexPattern" in value;
-    return isInstance;
+    if (!('regexPattern' in value))
+        return false;
+    return true;
 }
 exports.instanceOfExcludedLinkModel = instanceOfExcludedLinkModel;
 function ExcludedLinkModelFromJSON(json) {
@@ -28,7 +28,7 @@ function ExcludedLinkModelFromJSON(json) {
 }
 exports.ExcludedLinkModelFromJSON = ExcludedLinkModelFromJSON;
 function ExcludedLinkModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -37,14 +37,11 @@ function ExcludedLinkModelFromJSONTyped(json, ignoreDiscriminator) {
 }
 exports.ExcludedLinkModelFromJSONTyped = ExcludedLinkModelFromJSONTyped;
 function ExcludedLinkModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'RegexPattern': value.regexPattern,
+        'RegexPattern': value['regexPattern'],
     };
 }
 exports.ExcludedLinkModelToJSON = ExcludedLinkModelToJSON;

@@ -105,4 +105,4 @@ export type IntegrationUserMappingItemModelResultEnum = typeof IntegrationUserMa
 export declare function instanceOfIntegrationUserMappingItemModel(value: object): boolean;
 export declare function IntegrationUserMappingItemModelFromJSON(json: any): IntegrationUserMappingItemModel;
 export declare function IntegrationUserMappingItemModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): IntegrationUserMappingItemModel;
-export declare function IntegrationUserMappingItemModelToJSON(value?: IntegrationUserMappingItemModel | null): any;
+export declare function IntegrationUserMappingItemModelToJSON(value?: Omit<IntegrationUserMappingItemModel, 'NameEmail'> | null): any;

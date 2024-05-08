@@ -14,7 +14,6 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.IssueRequestContentParametersApiModelToJSON = exports.IssueRequestContentParametersApiModelFromJSONTyped = exports.IssueRequestContentParametersApiModelFromJSON = exports.instanceOfIssueRequestContentParametersApiModel = exports.IssueRequestContentParametersApiModelInputTypeEnum = void 0;
-const runtime_1 = require("../runtime");
 /**
  * @export
  */
@@ -50,8 +49,7 @@ exports.IssueRequestContentParametersApiModelInputTypeEnum = {
  * Check if a given object implements the IssueRequestContentParametersApiModel interface.
  */
 function instanceOfIssueRequestContentParametersApiModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfIssueRequestContentParametersApiModel = instanceOfIssueRequestContentParametersApiModel;
 function IssueRequestContentParametersApiModelFromJSON(json) {
@@ -59,29 +57,26 @@ function IssueRequestContentParametersApiModelFromJSON(json) {
 }
 exports.IssueRequestContentParametersApiModelFromJSON = IssueRequestContentParametersApiModelFromJSON;
 function IssueRequestContentParametersApiModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
-        'value': !(0, runtime_1.exists)(json, 'Value') ? undefined : json['Value'],
-        'typeName': !(0, runtime_1.exists)(json, 'TypeName') ? undefined : json['TypeName'],
-        'inputType': !(0, runtime_1.exists)(json, 'InputType') ? undefined : json['InputType'],
+        'name': json['Name'] == null ? undefined : json['Name'],
+        'value': json['Value'] == null ? undefined : json['Value'],
+        'typeName': json['TypeName'] == null ? undefined : json['TypeName'],
+        'inputType': json['InputType'] == null ? undefined : json['InputType'],
     };
 }
 exports.IssueRequestContentParametersApiModelFromJSONTyped = IssueRequestContentParametersApiModelFromJSONTyped;
 function IssueRequestContentParametersApiModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Name': value.name,
-        'Value': value.value,
-        'TypeName': value.typeName,
-        'InputType': value.inputType,
+        'Name': value['name'],
+        'Value': value['value'],
+        'TypeName': value['typeName'],
+        'InputType': value['inputType'],
     };
 }
 exports.IssueRequestContentParametersApiModelToJSON = IssueRequestContentParametersApiModelToJSON;

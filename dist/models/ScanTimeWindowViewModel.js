@@ -14,7 +14,6 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ScanTimeWindowViewModelToJSON = exports.ScanTimeWindowViewModelFromJSONTyped = exports.ScanTimeWindowViewModelFromJSON = exports.instanceOfScanTimeWindowViewModel = exports.ScanTimeWindowViewModelScanCreateTypeEnum = void 0;
-const runtime_1 = require("../runtime");
 const ScanTimeWindowItemViewModel_1 = require("./ScanTimeWindowItemViewModel");
 /**
  * @export
@@ -27,8 +26,7 @@ exports.ScanTimeWindowViewModelScanCreateTypeEnum = {
  * Check if a given object implements the ScanTimeWindowViewModel interface.
  */
 function instanceOfScanTimeWindowViewModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfScanTimeWindowViewModel = instanceOfScanTimeWindowViewModel;
 function ScanTimeWindowViewModelFromJSON(json) {
@@ -36,33 +34,30 @@ function ScanTimeWindowViewModelFromJSON(json) {
 }
 exports.ScanTimeWindowViewModelFromJSON = ScanTimeWindowViewModelFromJSON;
 function ScanTimeWindowViewModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'isEnabled': !(0, runtime_1.exists)(json, 'IsEnabled') ? undefined : json['IsEnabled'],
-        'isEnabledForWebsite': !(0, runtime_1.exists)(json, 'IsEnabledForWebsite') ? undefined : json['IsEnabledForWebsite'],
-        'isEnabledForWebsiteGroup': !(0, runtime_1.exists)(json, 'IsEnabledForWebsiteGroup') ? undefined : json['IsEnabledForWebsiteGroup'],
-        'items': !(0, runtime_1.exists)(json, 'Items') ? undefined : (json['Items'].map(ScanTimeWindowItemViewModel_1.ScanTimeWindowItemViewModelFromJSON)),
-        'timeZone': !(0, runtime_1.exists)(json, 'TimeZone') ? undefined : json['TimeZone'],
-        'scanCreateType': !(0, runtime_1.exists)(json, 'ScanCreateType') ? undefined : json['ScanCreateType'],
+        'isEnabled': json['IsEnabled'] == null ? undefined : json['IsEnabled'],
+        'isEnabledForWebsite': json['IsEnabledForWebsite'] == null ? undefined : json['IsEnabledForWebsite'],
+        'isEnabledForWebsiteGroup': json['IsEnabledForWebsiteGroup'] == null ? undefined : json['IsEnabledForWebsiteGroup'],
+        'items': json['Items'] == null ? undefined : (json['Items'].map(ScanTimeWindowItemViewModel_1.ScanTimeWindowItemViewModelFromJSON)),
+        'timeZone': json['TimeZone'] == null ? undefined : json['TimeZone'],
+        'scanCreateType': json['ScanCreateType'] == null ? undefined : json['ScanCreateType'],
     };
 }
 exports.ScanTimeWindowViewModelFromJSONTyped = ScanTimeWindowViewModelFromJSONTyped;
 function ScanTimeWindowViewModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'IsEnabled': value.isEnabled,
-        'IsEnabledForWebsite': value.isEnabledForWebsite,
-        'IsEnabledForWebsiteGroup': value.isEnabledForWebsiteGroup,
-        'Items': value.items === undefined ? undefined : (value.items.map(ScanTimeWindowItemViewModel_1.ScanTimeWindowItemViewModelToJSON)),
-        'TimeZone': value.timeZone,
-        'ScanCreateType': value.scanCreateType,
+        'IsEnabled': value['isEnabled'],
+        'IsEnabledForWebsite': value['isEnabledForWebsite'],
+        'IsEnabledForWebsiteGroup': value['isEnabledForWebsiteGroup'],
+        'Items': value['items'] == null ? undefined : (value['items'].map(ScanTimeWindowItemViewModel_1.ScanTimeWindowItemViewModelToJSON)),
+        'TimeZone': value['timeZone'],
+        'ScanCreateType': value['scanCreateType'],
     };
 }
 exports.ScanTimeWindowViewModelToJSON = ScanTimeWindowViewModelToJSON;

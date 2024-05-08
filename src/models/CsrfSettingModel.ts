@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Provides the settings for Cross-site Request Forgery checks.
  * @export
@@ -61,9 +61,7 @@ export interface CsrfSettingModel {
  * Check if a given object implements the CsrfSettingModel interface.
  */
 export function instanceOfCsrfSettingModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function CsrfSettingModelFromJSON(json: any): CsrfSettingModel {
@@ -71,35 +69,32 @@ export function CsrfSettingModelFromJSON(json: any): CsrfSettingModel {
 }
 
 export function CsrfSettingModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): CsrfSettingModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'captchaIndicators': !exists(json, 'CaptchaIndicators') ? undefined : json['CaptchaIndicators'],
-        'loginFormValues': !exists(json, 'LoginFormValues') ? undefined : json['LoginFormValues'],
-        'nonFormValues': !exists(json, 'NonFormValues') ? undefined : json['NonFormValues'],
-        'nonInputValues': !exists(json, 'NonInputValues') ? undefined : json['NonInputValues'],
-        'userNameInputs': !exists(json, 'UserNameInputs') ? undefined : json['UserNameInputs'],
-        'authenticatedPagesCheck': !exists(json, 'AuthenticatedPagesCheck') ? undefined : json['AuthenticatedPagesCheck'],
+        'captchaIndicators': json['CaptchaIndicators'] == null ? undefined : json['CaptchaIndicators'],
+        'loginFormValues': json['LoginFormValues'] == null ? undefined : json['LoginFormValues'],
+        'nonFormValues': json['NonFormValues'] == null ? undefined : json['NonFormValues'],
+        'nonInputValues': json['NonInputValues'] == null ? undefined : json['NonInputValues'],
+        'userNameInputs': json['UserNameInputs'] == null ? undefined : json['UserNameInputs'],
+        'authenticatedPagesCheck': json['AuthenticatedPagesCheck'] == null ? undefined : json['AuthenticatedPagesCheck'],
     };
 }
 
 export function CsrfSettingModelToJSON(value?: CsrfSettingModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'CaptchaIndicators': value.captchaIndicators,
-        'LoginFormValues': value.loginFormValues,
-        'NonFormValues': value.nonFormValues,
-        'NonInputValues': value.nonInputValues,
-        'UserNameInputs': value.userNameInputs,
-        'AuthenticatedPagesCheck': value.authenticatedPagesCheck,
+        'CaptchaIndicators': value['captchaIndicators'],
+        'LoginFormValues': value['loginFormValues'],
+        'NonFormValues': value['nonFormValues'],
+        'NonInputValues': value['nonInputValues'],
+        'UserNameInputs': value['userNameInputs'],
+        'AuthenticatedPagesCheck': value['authenticatedPagesCheck'],
     };
 }
 

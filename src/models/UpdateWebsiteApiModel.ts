@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a model for creating a website data.
  * @export
@@ -108,12 +108,10 @@ export type UpdateWebsiteApiModelLicenseTypeEnum = typeof UpdateWebsiteApiModelL
  * Check if a given object implements the UpdateWebsiteApiModel interface.
  */
 export function instanceOfUpdateWebsiteApiModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "rootUrl" in value;
-    isInstance = isInstance && "licenseType" in value;
-    isInstance = isInstance && "name" in value;
-
-    return isInstance;
+    if (!('rootUrl' in value)) return false;
+    if (!('licenseType' in value)) return false;
+    if (!('name' in value)) return false;
+    return true;
 }
 
 export function UpdateWebsiteApiModelFromJSON(json: any): UpdateWebsiteApiModel {
@@ -121,41 +119,38 @@ export function UpdateWebsiteApiModelFromJSON(json: any): UpdateWebsiteApiModel 
 }
 
 export function UpdateWebsiteApiModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): UpdateWebsiteApiModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'defaultProtocol': !exists(json, 'DefaultProtocol') ? undefined : json['DefaultProtocol'],
-        'agentMode': !exists(json, 'AgentMode') ? undefined : json['AgentMode'],
+        'defaultProtocol': json['DefaultProtocol'] == null ? undefined : json['DefaultProtocol'],
+        'agentMode': json['AgentMode'] == null ? undefined : json['AgentMode'],
         'rootUrl': json['RootUrl'],
-        'groups': !exists(json, 'Groups') ? undefined : json['Groups'],
+        'groups': json['Groups'] == null ? undefined : json['Groups'],
         'licenseType': json['LicenseType'],
         'name': json['Name'],
-        'description': !exists(json, 'Description') ? undefined : json['Description'],
-        'technicalContactEmail': !exists(json, 'TechnicalContactEmail') ? undefined : json['TechnicalContactEmail'],
-        'tags': !exists(json, 'Tags') ? undefined : json['Tags'],
+        'description': json['Description'] == null ? undefined : json['Description'],
+        'technicalContactEmail': json['TechnicalContactEmail'] == null ? undefined : json['TechnicalContactEmail'],
+        'tags': json['Tags'] == null ? undefined : json['Tags'],
     };
 }
 
 export function UpdateWebsiteApiModelToJSON(value?: UpdateWebsiteApiModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'DefaultProtocol': value.defaultProtocol,
-        'AgentMode': value.agentMode,
-        'RootUrl': value.rootUrl,
-        'Groups': value.groups,
-        'LicenseType': value.licenseType,
-        'Name': value.name,
-        'Description': value.description,
-        'TechnicalContactEmail': value.technicalContactEmail,
-        'Tags': value.tags,
+        'DefaultProtocol': value['defaultProtocol'],
+        'AgentMode': value['agentMode'],
+        'RootUrl': value['rootUrl'],
+        'Groups': value['groups'],
+        'LicenseType': value['licenseType'],
+        'Name': value['name'],
+        'Description': value['description'],
+        'TechnicalContactEmail': value['technicalContactEmail'],
+        'Tags': value['tags'],
     };
 }
 

@@ -9,8 +9,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { ScanPolicyPatternModel } from './ScanPolicyPatternModel';
 import type { SecurityCheckSetting } from './SecurityCheckSetting';
+import type { ScanPolicyPatternModel } from './ScanPolicyPatternModel';
 /**
  * Represents a model for carrying out security check groups.
  * @export

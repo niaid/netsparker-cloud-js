@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 import type { RoleWebsiteGroupMappingApiModel } from './RoleWebsiteGroupMappingApiModel';
 import {
     RoleWebsiteGroupMappingApiModelFromJSON,
@@ -86,11 +86,9 @@ export interface NewMemberInvitationApiModel {
  * Check if a given object implements the NewMemberInvitationApiModel interface.
  */
 export function instanceOfNewMemberInvitationApiModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "email" in value;
-    isInstance = isInstance && "name" in value;
-
-    return isInstance;
+    if (!('email' in value)) return false;
+    if (!('name' in value)) return false;
+    return true;
 }
 
 export function NewMemberInvitationApiModelFromJSON(json: any): NewMemberInvitationApiModel {
@@ -98,41 +96,38 @@ export function NewMemberInvitationApiModelFromJSON(json: any): NewMemberInvitat
 }
 
 export function NewMemberInvitationApiModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): NewMemberInvitationApiModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
         'email': json['Email'],
-        'alternateLoginEmail': !exists(json, 'AlternateLoginEmail') ? undefined : json['AlternateLoginEmail'],
+        'alternateLoginEmail': json['AlternateLoginEmail'] == null ? undefined : json['AlternateLoginEmail'],
         'name': json['Name'],
-        'phoneNumber': !exists(json, 'PhoneNumber') ? undefined : json['PhoneNumber'],
-        'isApiAccessEnabled': !exists(json, 'IsApiAccessEnabled') ? undefined : json['IsApiAccessEnabled'],
-        'teams': !exists(json, 'Teams') ? undefined : json['Teams'],
-        'roleWebsiteGroupMappings': !exists(json, 'RoleWebsiteGroupMappings') ? undefined : ((json['RoleWebsiteGroupMappings'] as Array<any>).map(RoleWebsiteGroupMappingApiModelFromJSON)),
-        'allowedWebsiteLimit': !exists(json, 'AllowedWebsiteLimit') ? undefined : json['AllowedWebsiteLimit'],
-        'onlySsoLogin': !exists(json, 'OnlySsoLogin') ? undefined : json['OnlySsoLogin'],
+        'phoneNumber': json['PhoneNumber'] == null ? undefined : json['PhoneNumber'],
+        'isApiAccessEnabled': json['IsApiAccessEnabled'] == null ? undefined : json['IsApiAccessEnabled'],
+        'teams': json['Teams'] == null ? undefined : json['Teams'],
+        'roleWebsiteGroupMappings': json['RoleWebsiteGroupMappings'] == null ? undefined : ((json['RoleWebsiteGroupMappings'] as Array<any>).map(RoleWebsiteGroupMappingApiModelFromJSON)),
+        'allowedWebsiteLimit': json['AllowedWebsiteLimit'] == null ? undefined : json['AllowedWebsiteLimit'],
+        'onlySsoLogin': json['OnlySsoLogin'] == null ? undefined : json['OnlySsoLogin'],
     };
 }
 
 export function NewMemberInvitationApiModelToJSON(value?: NewMemberInvitationApiModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Email': value.email,
-        'AlternateLoginEmail': value.alternateLoginEmail,
-        'Name': value.name,
-        'PhoneNumber': value.phoneNumber,
-        'IsApiAccessEnabled': value.isApiAccessEnabled,
-        'Teams': value.teams,
-        'RoleWebsiteGroupMappings': value.roleWebsiteGroupMappings === undefined ? undefined : ((value.roleWebsiteGroupMappings as Array<any>).map(RoleWebsiteGroupMappingApiModelToJSON)),
-        'AllowedWebsiteLimit': value.allowedWebsiteLimit,
-        'OnlySsoLogin': value.onlySsoLogin,
+        'Email': value['email'],
+        'AlternateLoginEmail': value['alternateLoginEmail'],
+        'Name': value['name'],
+        'PhoneNumber': value['phoneNumber'],
+        'IsApiAccessEnabled': value['isApiAccessEnabled'],
+        'Teams': value['teams'],
+        'RoleWebsiteGroupMappings': value['roleWebsiteGroupMappings'] == null ? undefined : ((value['roleWebsiteGroupMappings'] as Array<any>).map(RoleWebsiteGroupMappingApiModelToJSON)),
+        'AllowedWebsiteLimit': value['allowedWebsiteLimit'],
+        'OnlySsoLogin': value['onlySsoLogin'],
     };
 }
 

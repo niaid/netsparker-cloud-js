@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 import type { IssueSummaryListModel } from './IssueSummaryListModel';
 import {
     IssueSummaryListModelFromJSON,
@@ -86,9 +86,7 @@ export interface IssueSummaryApiModel {
  * Check if a given object implements the IssueSummaryApiModel interface.
  */
 export function instanceOfIssueSummaryApiModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function IssueSummaryApiModelFromJSON(json: any): IssueSummaryApiModel {
@@ -96,40 +94,37 @@ export function IssueSummaryApiModelFromJSON(json: any): IssueSummaryApiModel {
 }
 
 export function IssueSummaryApiModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): IssueSummaryApiModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'targetUri': !exists(json, 'TargetUri') ? undefined : json['TargetUri'],
-        'websiteName': !exists(json, 'WebsiteName') ? undefined : json['WebsiteName'],
-        'websiteId': !exists(json, 'WebsiteId') ? undefined : json['WebsiteId'],
-        'lastSuccessfulScanDate': !exists(json, 'LastSuccessfulScanDate') ? undefined : json['LastSuccessfulScanDate'],
-        'scanGroupId': !exists(json, 'ScanGroupId') ? undefined : json['ScanGroupId'],
-        'scanProfileName': !exists(json, 'ScanProfileName') ? undefined : json['ScanProfileName'],
-        'scanProfileTags': !exists(json, 'ScanProfileTags') ? undefined : json['ScanProfileTags'],
-        'scanTaskId': !exists(json, 'ScanTaskId') ? undefined : json['ScanTaskId'],
-        'issueSummaryLists': !exists(json, 'IssueSummaryLists') ? undefined : ((json['IssueSummaryLists'] as Array<any>).map(IssueSummaryListModelFromJSON)),
+        'targetUri': json['TargetUri'] == null ? undefined : json['TargetUri'],
+        'websiteName': json['WebsiteName'] == null ? undefined : json['WebsiteName'],
+        'websiteId': json['WebsiteId'] == null ? undefined : json['WebsiteId'],
+        'lastSuccessfulScanDate': json['LastSuccessfulScanDate'] == null ? undefined : json['LastSuccessfulScanDate'],
+        'scanGroupId': json['ScanGroupId'] == null ? undefined : json['ScanGroupId'],
+        'scanProfileName': json['ScanProfileName'] == null ? undefined : json['ScanProfileName'],
+        'scanProfileTags': json['ScanProfileTags'] == null ? undefined : json['ScanProfileTags'],
+        'scanTaskId': json['ScanTaskId'] == null ? undefined : json['ScanTaskId'],
+        'issueSummaryLists': json['IssueSummaryLists'] == null ? undefined : ((json['IssueSummaryLists'] as Array<any>).map(IssueSummaryListModelFromJSON)),
     };
 }
 
-export function IssueSummaryApiModelToJSON(value?: IssueSummaryApiModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+export function IssueSummaryApiModelToJSON(value?: Omit<IssueSummaryApiModel, 'LastSuccessfulScanDate'> | null): any {
+    if (value == null) {
+        return value;
     }
     return {
         
-        'TargetUri': value.targetUri,
-        'WebsiteName': value.websiteName,
-        'WebsiteId': value.websiteId,
-        'ScanGroupId': value.scanGroupId,
-        'ScanProfileName': value.scanProfileName,
-        'ScanProfileTags': value.scanProfileTags,
-        'ScanTaskId': value.scanTaskId,
-        'IssueSummaryLists': value.issueSummaryLists === undefined ? undefined : ((value.issueSummaryLists as Array<any>).map(IssueSummaryListModelToJSON)),
+        'TargetUri': value['targetUri'],
+        'WebsiteName': value['websiteName'],
+        'WebsiteId': value['websiteId'],
+        'ScanGroupId': value['scanGroupId'],
+        'ScanProfileName': value['scanProfileName'],
+        'ScanProfileTags': value['scanProfileTags'],
+        'ScanTaskId': value['scanTaskId'],
+        'IssueSummaryLists': value['issueSummaryLists'] == null ? undefined : ((value['issueSummaryLists'] as Array<any>).map(IssueSummaryListModelToJSON)),
     };
 }
 

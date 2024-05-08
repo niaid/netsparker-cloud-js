@@ -14,14 +14,13 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.IncrementalApiModelToJSON = exports.IncrementalApiModelFromJSONTyped = exports.IncrementalApiModelFromJSON = exports.instanceOfIncrementalApiModel = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the IncrementalApiModel interface.
  */
 function instanceOfIncrementalApiModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "baseScanId" in value;
-    return isInstance;
+    if (!('baseScanId' in value))
+        return false;
+    return true;
 }
 exports.instanceOfIncrementalApiModel = instanceOfIncrementalApiModel;
 function IncrementalApiModelFromJSON(json) {
@@ -29,31 +28,28 @@ function IncrementalApiModelFromJSON(json) {
 }
 exports.IncrementalApiModelFromJSON = IncrementalApiModelFromJSON;
 function IncrementalApiModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'isMaxScanDurationEnabled': !(0, runtime_1.exists)(json, 'IsMaxScanDurationEnabled') ? undefined : json['IsMaxScanDurationEnabled'],
-        'maxScanDuration': !(0, runtime_1.exists)(json, 'MaxScanDuration') ? undefined : json['MaxScanDuration'],
-        'agentGroupName': !(0, runtime_1.exists)(json, 'AgentGroupName') ? undefined : json['AgentGroupName'],
-        'agentName': !(0, runtime_1.exists)(json, 'AgentName') ? undefined : json['AgentName'],
+        'isMaxScanDurationEnabled': json['IsMaxScanDurationEnabled'] == null ? undefined : json['IsMaxScanDurationEnabled'],
+        'maxScanDuration': json['MaxScanDuration'] == null ? undefined : json['MaxScanDuration'],
+        'agentGroupName': json['AgentGroupName'] == null ? undefined : json['AgentGroupName'],
+        'agentName': json['AgentName'] == null ? undefined : json['AgentName'],
         'baseScanId': json['BaseScanId'],
     };
 }
 exports.IncrementalApiModelFromJSONTyped = IncrementalApiModelFromJSONTyped;
 function IncrementalApiModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'IsMaxScanDurationEnabled': value.isMaxScanDurationEnabled,
-        'MaxScanDuration': value.maxScanDuration,
-        'AgentGroupName': value.agentGroupName,
-        'AgentName': value.agentName,
-        'BaseScanId': value.baseScanId,
+        'IsMaxScanDurationEnabled': value['isMaxScanDurationEnabled'],
+        'MaxScanDuration': value['maxScanDuration'],
+        'AgentGroupName': value['agentGroupName'],
+        'AgentName': value['agentName'],
+        'BaseScanId': value['baseScanId'],
     };
 }
 exports.IncrementalApiModelToJSON = IncrementalApiModelToJSON;

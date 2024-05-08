@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * 
  * @export
@@ -49,9 +49,7 @@ export interface RoleWebsiteGroupMappingDto {
  * Check if a given object implements the RoleWebsiteGroupMappingDto interface.
  */
 export function instanceOfRoleWebsiteGroupMappingDto(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function RoleWebsiteGroupMappingDtoFromJSON(json: any): RoleWebsiteGroupMappingDto {
@@ -59,31 +57,28 @@ export function RoleWebsiteGroupMappingDtoFromJSON(json: any): RoleWebsiteGroupM
 }
 
 export function RoleWebsiteGroupMappingDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): RoleWebsiteGroupMappingDto {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'roleName': !exists(json, 'RoleName') ? undefined : json['RoleName'],
-        'roleId': !exists(json, 'RoleId') ? undefined : json['RoleId'],
-        'websiteGroupName': !exists(json, 'WebsiteGroupName') ? undefined : json['WebsiteGroupName'],
-        'websiteGroupId': !exists(json, 'WebsiteGroupId') ? undefined : json['WebsiteGroupId'],
+        'roleName': json['RoleName'] == null ? undefined : json['RoleName'],
+        'roleId': json['RoleId'] == null ? undefined : json['RoleId'],
+        'websiteGroupName': json['WebsiteGroupName'] == null ? undefined : json['WebsiteGroupName'],
+        'websiteGroupId': json['WebsiteGroupId'] == null ? undefined : json['WebsiteGroupId'],
     };
 }
 
 export function RoleWebsiteGroupMappingDtoToJSON(value?: RoleWebsiteGroupMappingDto | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'RoleName': value.roleName,
-        'RoleId': value.roleId,
-        'WebsiteGroupName': value.websiteGroupName,
-        'WebsiteGroupId': value.websiteGroupId,
+        'RoleName': value['roleName'],
+        'RoleId': value['roleId'],
+        'WebsiteGroupName': value['websiteGroupName'],
+        'WebsiteGroupId': value['websiteGroupId'],
     };
 }
 

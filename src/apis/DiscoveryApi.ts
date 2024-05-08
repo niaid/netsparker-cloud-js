@@ -81,6 +81,10 @@ export interface DiscoveryIgnoreByFilterRequest {
     registeredDomain?: boolean;
 }
 
+export interface DiscoveryIncludeRequest {
+    serviceIds: Array<string>;
+}
+
 export interface DiscoveryListRequest {
     page?: number;
     pageSize?: number;
@@ -112,18 +116,21 @@ export class DiscoveryApi extends runtime.BaseAPI {
      * Get Connection By Id And Type.
      */
     async discoveryConnectionByIdRaw(requestParameters: DiscoveryConnectionByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        if (requestParameters.connectionId === null || requestParameters.connectionId === undefined) {
-            throw new runtime.RequiredError('connectionId','Required parameter requestParameters.connectionId was null or undefined when calling discoveryConnectionById.');
+        if (requestParameters['connectionId'] == null) {
+            throw new runtime.RequiredError(
+                'connectionId',
+                'Required parameter "connectionId" was null or undefined when calling discoveryConnectionById().'
+            );
         }
 
         const queryParameters: any = {};
 
-        if (requestParameters.connectionId !== undefined) {
-            queryParameters['connectionId'] = requestParameters.connectionId;
+        if (requestParameters['connectionId'] != null) {
+            queryParameters['connectionId'] = requestParameters['connectionId'];
         }
 
-        if (requestParameters.type !== undefined) {
-            queryParameters['type'] = requestParameters.type;
+        if (requestParameters['type'] != null) {
+            queryParameters['type'] = requestParameters['type'];
         }
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -151,24 +158,24 @@ export class DiscoveryApi extends runtime.BaseAPI {
     async discoveryConnectionsRaw(requestParameters: DiscoveryConnectionsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         const queryParameters: any = {};
 
-        if (requestParameters.name !== undefined) {
-            queryParameters['name'] = requestParameters.name;
+        if (requestParameters['name'] != null) {
+            queryParameters['name'] = requestParameters['name'];
         }
 
-        if (requestParameters.region !== undefined) {
-            queryParameters['region'] = requestParameters.region;
+        if (requestParameters['region'] != null) {
+            queryParameters['region'] = requestParameters['region'];
         }
 
-        if (requestParameters.type !== undefined) {
-            queryParameters['type'] = requestParameters.type;
+        if (requestParameters['type'] != null) {
+            queryParameters['type'] = requestParameters['type'];
         }
 
-        if (requestParameters.page !== undefined) {
-            queryParameters['page'] = requestParameters.page;
+        if (requestParameters['page'] != null) {
+            queryParameters['page'] = requestParameters['page'];
         }
 
-        if (requestParameters.pageSize !== undefined) {
-            queryParameters['pageSize'] = requestParameters.pageSize;
+        if (requestParameters['pageSize'] != null) {
+            queryParameters['pageSize'] = requestParameters['pageSize'];
         }
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -194,8 +201,11 @@ export class DiscoveryApi extends runtime.BaseAPI {
      * Creates New Connection.
      */
     async discoveryCreateConnectionRaw(requestParameters: DiscoveryCreateConnectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling discoveryCreateConnection.');
+        if (requestParameters['model'] == null) {
+            throw new runtime.RequiredError(
+                'model',
+                'Required parameter "model" was null or undefined when calling discoveryCreateConnection().'
+            );
         }
 
         const queryParameters: any = {};
@@ -209,7 +219,7 @@ export class DiscoveryApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: DiscoveryConnectionsViewModelToJSON(requestParameters.model),
+            body: DiscoveryConnectionsViewModelToJSON(requestParameters['model']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -226,8 +236,11 @@ export class DiscoveryApi extends runtime.BaseAPI {
      * Deletes Connection.
      */
     async discoveryDeleteConnectionRaw(requestParameters: DiscoveryDeleteConnectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling discoveryDeleteConnection.');
+        if (requestParameters['model'] == null) {
+            throw new runtime.RequiredError(
+                'model',
+                'Required parameter "model" was null or undefined when calling discoveryDeleteConnection().'
+            );
         }
 
         const queryParameters: any = {};
@@ -241,7 +254,7 @@ export class DiscoveryApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: DeleteDiscoveryConnectionModelToJSON(requestParameters.model),
+            body: DeleteDiscoveryConnectionModelToJSON(requestParameters['model']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -258,8 +271,11 @@ export class DiscoveryApi extends runtime.BaseAPI {
      * Edits Connection.
      */
     async discoveryEditConnectionRaw(requestParameters: DiscoveryEditConnectionRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling discoveryEditConnection.');
+        if (requestParameters['model'] == null) {
+            throw new runtime.RequiredError(
+                'model',
+                'Required parameter "model" was null or undefined when calling discoveryEditConnection().'
+            );
         }
 
         const queryParameters: any = {};
@@ -273,7 +289,7 @@ export class DiscoveryApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: DiscoveryConnectionsViewModelToJSON(requestParameters.model),
+            body: DiscoveryConnectionsViewModelToJSON(requestParameters['model']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -290,8 +306,11 @@ export class DiscoveryApi extends runtime.BaseAPI {
      * Returns exclude operation result.  This operation note override existing data, append to existing data.  If you want to override please use update-settings endpoint.
      */
     async discoveryExcludeRaw(requestParameters: DiscoveryExcludeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>> {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling discoveryExclude.');
+        if (requestParameters['model'] == null) {
+            throw new runtime.RequiredError(
+                'model',
+                'Required parameter "model" was null or undefined when calling discoveryExclude().'
+            );
         }
 
         const queryParameters: any = {};
@@ -305,7 +324,7 @@ export class DiscoveryApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: ExcludeFilterToJSON(requestParameters.model),
+            body: ExcludeFilterToJSON(requestParameters['model']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse<any>(response);
@@ -325,8 +344,8 @@ export class DiscoveryApi extends runtime.BaseAPI {
     async discoveryExportRaw(requestParameters: DiscoveryExportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>> {
         const queryParameters: any = {};
 
-        if (requestParameters.csvSeparator !== undefined) {
-            queryParameters['csvSeparator'] = requestParameters.csvSeparator;
+        if (requestParameters['csvSeparator'] != null) {
+            queryParameters['csvSeparator'] = requestParameters['csvSeparator'];
         }
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -353,8 +372,11 @@ export class DiscoveryApi extends runtime.BaseAPI {
      * Ignores discovery service with given service ids.
      */
     async discoveryIgnoreRaw(requestParameters: DiscoveryIgnoreRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>> {
-        if (requestParameters.serviceIds === null || requestParameters.serviceIds === undefined) {
-            throw new runtime.RequiredError('serviceIds','Required parameter requestParameters.serviceIds was null or undefined when calling discoveryIgnore.');
+        if (requestParameters['serviceIds'] == null) {
+            throw new runtime.RequiredError(
+                'serviceIds',
+                'Required parameter "serviceIds" was null or undefined when calling discoveryIgnore().'
+            );
         }
 
         const queryParameters: any = {};
@@ -368,7 +390,7 @@ export class DiscoveryApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: requestParameters.serviceIds,
+            body: requestParameters['serviceIds'],
         }, initOverrides);
 
         if (this.isJsonMime(response.headers.get('content-type'))) {
@@ -392,32 +414,32 @@ export class DiscoveryApi extends runtime.BaseAPI {
     async discoveryIgnoreByFilterRaw(requestParameters: DiscoveryIgnoreByFilterRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>> {
         const queryParameters: any = {};
 
-        if (requestParameters.authority !== undefined) {
-            queryParameters['authority'] = requestParameters.authority;
+        if (requestParameters['authority'] != null) {
+            queryParameters['authority'] = requestParameters['authority'];
         }
 
-        if (requestParameters.ipAddress !== undefined) {
-            queryParameters['ipAddress'] = requestParameters.ipAddress;
+        if (requestParameters['ipAddress'] != null) {
+            queryParameters['ipAddress'] = requestParameters['ipAddress'];
         }
 
-        if (requestParameters.secondLevelDomain !== undefined) {
-            queryParameters['secondLevelDomain'] = requestParameters.secondLevelDomain;
+        if (requestParameters['secondLevelDomain'] != null) {
+            queryParameters['secondLevelDomain'] = requestParameters['secondLevelDomain'];
         }
 
-        if (requestParameters.topLevelDomain !== undefined) {
-            queryParameters['topLevelDomain'] = requestParameters.topLevelDomain;
+        if (requestParameters['topLevelDomain'] != null) {
+            queryParameters['topLevelDomain'] = requestParameters['topLevelDomain'];
         }
 
-        if (requestParameters.organizationName !== undefined) {
-            queryParameters['organizationName'] = requestParameters.organizationName;
+        if (requestParameters['organizationName'] != null) {
+            queryParameters['organizationName'] = requestParameters['organizationName'];
         }
 
-        if (requestParameters.distance !== undefined) {
-            queryParameters['distance'] = requestParameters.distance;
+        if (requestParameters['distance'] != null) {
+            queryParameters['distance'] = requestParameters['distance'];
         }
 
-        if (requestParameters.registeredDomain !== undefined) {
-            queryParameters['registeredDomain'] = requestParameters.registeredDomain;
+        if (requestParameters['registeredDomain'] != null) {
+            queryParameters['registeredDomain'] = requestParameters['registeredDomain'];
         }
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -445,17 +467,57 @@ export class DiscoveryApi extends runtime.BaseAPI {
     }
 
     /**
+     * Include discovery service with given service ids.
+     */
+    async discoveryIncludeRaw(requestParameters: DiscoveryIncludeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>> {
+        if (requestParameters['serviceIds'] == null) {
+            throw new runtime.RequiredError(
+                'serviceIds',
+                'Required parameter "serviceIds" was null or undefined when calling discoveryInclude().'
+            );
+        }
+
+        const queryParameters: any = {};
+
+        const headerParameters: runtime.HTTPHeaders = {};
+
+        headerParameters['Content-Type'] = 'application/json';
+
+        const response = await this.request({
+            path: `/api/1.0/discovery/include`,
+            method: 'POST',
+            headers: headerParameters,
+            query: queryParameters,
+            body: requestParameters['serviceIds'],
+        }, initOverrides);
+
+        if (this.isJsonMime(response.headers.get('content-type'))) {
+            return new runtime.JSONApiResponse<string>(response);
+        } else {
+            return new runtime.TextApiResponse(response) as any;
+        }
+    }
+
+    /**
+     * Include discovery service with given service ids.
+     */
+    async discoveryInclude(requestParameters: DiscoveryIncludeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string> {
+        const response = await this.discoveryIncludeRaw(requestParameters, initOverrides);
+        return await response.value();
+    }
+
+    /**
      * Gets the list discovery services.
      */
     async discoveryListRaw(requestParameters: DiscoveryListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DiscoveryServiceListApiResult>> {
         const queryParameters: any = {};
 
-        if (requestParameters.page !== undefined) {
-            queryParameters['page'] = requestParameters.page;
+        if (requestParameters['page'] != null) {
+            queryParameters['page'] = requestParameters['page'];
         }
 
-        if (requestParameters.pageSize !== undefined) {
-            queryParameters['pageSize'] = requestParameters.pageSize;
+        if (requestParameters['pageSize'] != null) {
+            queryParameters['pageSize'] = requestParameters['pageSize'];
         }
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -484,44 +546,44 @@ export class DiscoveryApi extends runtime.BaseAPI {
     async discoveryListByFilterRaw(requestParameters: DiscoveryListByFilterRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DiscoveryServiceListApiResult>> {
         const queryParameters: any = {};
 
-        if (requestParameters.authority !== undefined) {
-            queryParameters['authority'] = requestParameters.authority;
+        if (requestParameters['authority'] != null) {
+            queryParameters['authority'] = requestParameters['authority'];
         }
 
-        if (requestParameters.ipAddress !== undefined) {
-            queryParameters['ipAddress'] = requestParameters.ipAddress;
+        if (requestParameters['ipAddress'] != null) {
+            queryParameters['ipAddress'] = requestParameters['ipAddress'];
         }
 
-        if (requestParameters.secondLevelDomain !== undefined) {
-            queryParameters['secondLevelDomain'] = requestParameters.secondLevelDomain;
+        if (requestParameters['secondLevelDomain'] != null) {
+            queryParameters['secondLevelDomain'] = requestParameters['secondLevelDomain'];
         }
 
-        if (requestParameters.topLevelDomain !== undefined) {
-            queryParameters['topLevelDomain'] = requestParameters.topLevelDomain;
+        if (requestParameters['topLevelDomain'] != null) {
+            queryParameters['topLevelDomain'] = requestParameters['topLevelDomain'];
         }
 
-        if (requestParameters.organizationName !== undefined) {
-            queryParameters['organizationName'] = requestParameters.organizationName;
+        if (requestParameters['organizationName'] != null) {
+            queryParameters['organizationName'] = requestParameters['organizationName'];
         }
 
-        if (requestParameters.distance !== undefined) {
-            queryParameters['distance'] = requestParameters.distance;
+        if (requestParameters['distance'] != null) {
+            queryParameters['distance'] = requestParameters['distance'];
         }
 
-        if (requestParameters.registeredDomain !== undefined) {
-            queryParameters['registeredDomain'] = requestParameters.registeredDomain;
+        if (requestParameters['registeredDomain'] != null) {
+            queryParameters['registeredDomain'] = requestParameters['registeredDomain'];
         }
 
-        if (requestParameters.status !== undefined) {
-            queryParameters['status'] = requestParameters.status;
+        if (requestParameters['status'] != null) {
+            queryParameters['status'] = requestParameters['status'];
         }
 
-        if (requestParameters.page !== undefined) {
-            queryParameters['page'] = requestParameters.page;
+        if (requestParameters['page'] != null) {
+            queryParameters['page'] = requestParameters['page'];
         }
 
-        if (requestParameters.pageSize !== undefined) {
-            queryParameters['pageSize'] = requestParameters.pageSize;
+        if (requestParameters['pageSize'] != null) {
+            queryParameters['pageSize'] = requestParameters['pageSize'];
         }
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -574,8 +636,11 @@ export class DiscoveryApi extends runtime.BaseAPI {
      * Updates discovery settings.
      */
     async discoveryUpdateSettingsRaw(requestParameters: DiscoveryUpdateSettingsRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DiscoverySettingsApiModel>> {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling discoveryUpdateSettings.');
+        if (requestParameters['model'] == null) {
+            throw new runtime.RequiredError(
+                'model',
+                'Required parameter "model" was null or undefined when calling discoveryUpdateSettings().'
+            );
         }
 
         const queryParameters: any = {};
@@ -589,7 +654,7 @@ export class DiscoveryApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: DiscoverySettingsApiModelToJSON(requestParameters.model),
+            body: DiscoverySettingsApiModelToJSON(requestParameters['model']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => DiscoverySettingsApiModelFromJSON(jsonValue));

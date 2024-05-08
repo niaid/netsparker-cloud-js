@@ -12,13 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
-import type { AsanaProject } from './AsanaProject';
-import {
-    AsanaProjectFromJSON,
-    AsanaProjectFromJSONTyped,
-    AsanaProjectToJSON,
-} from './AsanaProject';
+import { mapValues } from '../runtime';
 import type { AsanaTag } from './AsanaTag';
 import {
     AsanaTagFromJSON,
@@ -31,24 +25,30 @@ import {
     AsanaUserFromJSONTyped,
     AsanaUserToJSON,
 } from './AsanaUser';
-import type { AsanaWorkspace } from './AsanaWorkspace';
+import type { AsanaProject } from './AsanaProject';
 import {
-    AsanaWorkspaceFromJSON,
-    AsanaWorkspaceFromJSONTyped,
-    AsanaWorkspaceToJSON,
-} from './AsanaWorkspace';
-import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
-import {
-    IntegrationCustomFieldVmFromJSON,
-    IntegrationCustomFieldVmFromJSONTyped,
-    IntegrationCustomFieldVmToJSON,
-} from './IntegrationCustomFieldVm';
+    AsanaProjectFromJSON,
+    AsanaProjectFromJSONTyped,
+    AsanaProjectToJSON,
+} from './AsanaProject';
 import type { IntegrationWizardResultModel } from './IntegrationWizardResultModel';
 import {
     IntegrationWizardResultModelFromJSON,
     IntegrationWizardResultModelFromJSONTyped,
     IntegrationWizardResultModelToJSON,
 } from './IntegrationWizardResultModel';
+import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
+import {
+    IntegrationCustomFieldVmFromJSON,
+    IntegrationCustomFieldVmFromJSONTyped,
+    IntegrationCustomFieldVmToJSON,
+} from './IntegrationCustomFieldVm';
+import type { AsanaWorkspace } from './AsanaWorkspace';
+import {
+    AsanaWorkspaceFromJSON,
+    AsanaWorkspaceFromJSONTyped,
+    AsanaWorkspaceToJSON,
+} from './AsanaWorkspace';
 
 /**
  * The Asana integration info
@@ -230,6 +230,18 @@ export interface AsanaIntegrationInfoModel {
      * @memberof AsanaIntegrationInfoModel
      */
     titleFormat: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AsanaIntegrationInfoModel
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AsanaIntegrationInfoModel
+     */
+    state?: AsanaIntegrationInfoModelStateEnum;
 }
 
 
@@ -282,18 +294,25 @@ export const AsanaIntegrationInfoModelTemplateTypeEnum = {
 } as const;
 export type AsanaIntegrationInfoModelTemplateTypeEnum = typeof AsanaIntegrationInfoModelTemplateTypeEnum[keyof typeof AsanaIntegrationInfoModelTemplateTypeEnum];
 
+/**
+ * @export
+ */
+export const AsanaIntegrationInfoModelStateEnum = {
+    Active: 'Active',
+    Suspended: 'Suspended'
+} as const;
+export type AsanaIntegrationInfoModelStateEnum = typeof AsanaIntegrationInfoModelStateEnum[keyof typeof AsanaIntegrationInfoModelStateEnum];
+
 
 /**
  * Check if a given object implements the AsanaIntegrationInfoModel interface.
  */
 export function instanceOfAsanaIntegrationInfoModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "accessToken" in value;
-    isInstance = isInstance && "projectId" in value;
-    isInstance = isInstance && "dueDays" in value;
-    isInstance = isInstance && "titleFormat" in value;
-
-    return isInstance;
+    if (!('accessToken' in value)) return false;
+    if (!('projectId' in value)) return false;
+    if (!('dueDays' in value)) return false;
+    if (!('titleFormat' in value)) return false;
+    return true;
 }
 
 export function AsanaIntegrationInfoModelFromJSON(json: any): AsanaIntegrationInfoModel {
@@ -301,73 +320,74 @@ export function AsanaIntegrationInfoModelFromJSON(json: any): AsanaIntegrationIn
 }
 
 export function AsanaIntegrationInfoModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): AsanaIntegrationInfoModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
         'accessToken': json['AccessToken'],
         'projectId': json['ProjectId'],
-        'workspaceId': !exists(json, 'WorkspaceId') ? undefined : json['WorkspaceId'],
-        'assignee': !exists(json, 'Assignee') ? undefined : json['Assignee'],
-        'followerIds': !exists(json, 'FollowerIds') ? undefined : json['FollowerIds'],
+        'workspaceId': json['WorkspaceId'] == null ? undefined : json['WorkspaceId'],
+        'assignee': json['Assignee'] == null ? undefined : json['Assignee'],
+        'followerIds': json['FollowerIds'] == null ? undefined : json['FollowerIds'],
         'dueDays': json['DueDays'],
-        'tagIds': !exists(json, 'TagIds') ? undefined : json['TagIds'],
-        'workspaceList': !exists(json, 'WorkspaceList') ? undefined : ((json['WorkspaceList'] as Array<any>).map(AsanaWorkspaceFromJSON)),
-        'projectList': !exists(json, 'ProjectList') ? undefined : ((json['ProjectList'] as Array<any>).map(AsanaProjectFromJSON)),
-        'assigneeList': !exists(json, 'AssigneeList') ? undefined : ((json['AssigneeList'] as Array<any>).map(AsanaUserFromJSON)),
-        'followerList': !exists(json, 'FollowerList') ? undefined : ((json['FollowerList'] as Array<any>).map(AsanaUserFromJSON)),
-        'tagList': !exists(json, 'TagList') ? undefined : ((json['TagList'] as Array<any>).map(AsanaTagFromJSON)),
-        'followersSelected': !exists(json, 'FollowersSelected') ? undefined : json['FollowersSelected'],
-        'tagsSelected': !exists(json, 'TagsSelected') ? undefined : json['TagsSelected'],
-        'integrationWizardResultModel': !exists(json, 'IntegrationWizardResultModel') ? undefined : IntegrationWizardResultModelFromJSON(json['IntegrationWizardResultModel']),
-        'type': !exists(json, 'Type') ? undefined : json['Type'],
-        'genericErrorMessage': !exists(json, 'GenericErrorMessage') ? undefined : json['GenericErrorMessage'],
-        'identifier': !exists(json, 'Identifier') ? undefined : json['Identifier'],
-        'testMessageBody': !exists(json, 'TestMessageBody') ? undefined : json['TestMessageBody'],
-        'testMessageTitle': !exists(json, 'TestMessageTitle') ? undefined : json['TestMessageTitle'],
-        'webhookUrl': !exists(json, 'WebhookUrl') ? undefined : json['WebhookUrl'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'integrationVersion': !exists(json, 'IntegrationVersion') ? undefined : json['IntegrationVersion'],
-        'accountID': !exists(json, 'AccountID') ? undefined : json['AccountID'],
-        'customFields': !exists(json, 'CustomFields') ? undefined : ((json['CustomFields'] as Array<any>).map(IntegrationCustomFieldVmFromJSON)),
-        'templateType': !exists(json, 'TemplateType') ? undefined : json['TemplateType'],
-        'reopenStatus': !exists(json, 'ReopenStatus') ? undefined : json['ReopenStatus'],
-        'resolvedStatus': !exists(json, 'ResolvedStatus') ? undefined : json['ResolvedStatus'],
+        'tagIds': json['TagIds'] == null ? undefined : json['TagIds'],
+        'workspaceList': json['WorkspaceList'] == null ? undefined : ((json['WorkspaceList'] as Array<any>).map(AsanaWorkspaceFromJSON)),
+        'projectList': json['ProjectList'] == null ? undefined : ((json['ProjectList'] as Array<any>).map(AsanaProjectFromJSON)),
+        'assigneeList': json['AssigneeList'] == null ? undefined : ((json['AssigneeList'] as Array<any>).map(AsanaUserFromJSON)),
+        'followerList': json['FollowerList'] == null ? undefined : ((json['FollowerList'] as Array<any>).map(AsanaUserFromJSON)),
+        'tagList': json['TagList'] == null ? undefined : ((json['TagList'] as Array<any>).map(AsanaTagFromJSON)),
+        'followersSelected': json['FollowersSelected'] == null ? undefined : json['FollowersSelected'],
+        'tagsSelected': json['TagsSelected'] == null ? undefined : json['TagsSelected'],
+        'integrationWizardResultModel': json['IntegrationWizardResultModel'] == null ? undefined : IntegrationWizardResultModelFromJSON(json['IntegrationWizardResultModel']),
+        'type': json['Type'] == null ? undefined : json['Type'],
+        'genericErrorMessage': json['GenericErrorMessage'] == null ? undefined : json['GenericErrorMessage'],
+        'identifier': json['Identifier'] == null ? undefined : json['Identifier'],
+        'testMessageBody': json['TestMessageBody'] == null ? undefined : json['TestMessageBody'],
+        'testMessageTitle': json['TestMessageTitle'] == null ? undefined : json['TestMessageTitle'],
+        'webhookUrl': json['WebhookUrl'] == null ? undefined : json['WebhookUrl'],
+        'name': json['Name'] == null ? undefined : json['Name'],
+        'integrationVersion': json['IntegrationVersion'] == null ? undefined : json['IntegrationVersion'],
+        'accountID': json['AccountID'] == null ? undefined : json['AccountID'],
+        'customFields': json['CustomFields'] == null ? undefined : ((json['CustomFields'] as Array<any>).map(IntegrationCustomFieldVmFromJSON)),
+        'templateType': json['TemplateType'] == null ? undefined : json['TemplateType'],
+        'reopenStatus': json['ReopenStatus'] == null ? undefined : json['ReopenStatus'],
+        'resolvedStatus': json['ResolvedStatus'] == null ? undefined : json['ResolvedStatus'],
         'titleFormat': json['TitleFormat'],
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'state': json['State'] == null ? undefined : json['State'],
     };
 }
 
-export function AsanaIntegrationInfoModelToJSON(value?: AsanaIntegrationInfoModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+export function AsanaIntegrationInfoModelToJSON(value?: Omit<AsanaIntegrationInfoModel, 'FollowersSelected'|'TagsSelected'|'Type'|'GenericErrorMessage'|'Identifier'|'TestMessageBody'|'TestMessageTitle'|'WebhookUrl'> | null): any {
+    if (value == null) {
+        return value;
     }
     return {
         
-        'AccessToken': value.accessToken,
-        'ProjectId': value.projectId,
-        'WorkspaceId': value.workspaceId,
-        'Assignee': value.assignee,
-        'FollowerIds': value.followerIds,
-        'DueDays': value.dueDays,
-        'TagIds': value.tagIds,
-        'WorkspaceList': value.workspaceList === undefined ? undefined : ((value.workspaceList as Array<any>).map(AsanaWorkspaceToJSON)),
-        'ProjectList': value.projectList === undefined ? undefined : ((value.projectList as Array<any>).map(AsanaProjectToJSON)),
-        'AssigneeList': value.assigneeList === undefined ? undefined : ((value.assigneeList as Array<any>).map(AsanaUserToJSON)),
-        'FollowerList': value.followerList === undefined ? undefined : ((value.followerList as Array<any>).map(AsanaUserToJSON)),
-        'TagList': value.tagList === undefined ? undefined : ((value.tagList as Array<any>).map(AsanaTagToJSON)),
-        'IntegrationWizardResultModel': IntegrationWizardResultModelToJSON(value.integrationWizardResultModel),
-        'Name': value.name,
-        'IntegrationVersion': value.integrationVersion,
-        'AccountID': value.accountID,
-        'CustomFields': value.customFields === undefined ? undefined : ((value.customFields as Array<any>).map(IntegrationCustomFieldVmToJSON)),
-        'TemplateType': value.templateType,
-        'ReopenStatus': value.reopenStatus,
-        'ResolvedStatus': value.resolvedStatus,
-        'TitleFormat': value.titleFormat,
+        'AccessToken': value['accessToken'],
+        'ProjectId': value['projectId'],
+        'WorkspaceId': value['workspaceId'],
+        'Assignee': value['assignee'],
+        'FollowerIds': value['followerIds'],
+        'DueDays': value['dueDays'],
+        'TagIds': value['tagIds'],
+        'WorkspaceList': value['workspaceList'] == null ? undefined : ((value['workspaceList'] as Array<any>).map(AsanaWorkspaceToJSON)),
+        'ProjectList': value['projectList'] == null ? undefined : ((value['projectList'] as Array<any>).map(AsanaProjectToJSON)),
+        'AssigneeList': value['assigneeList'] == null ? undefined : ((value['assigneeList'] as Array<any>).map(AsanaUserToJSON)),
+        'FollowerList': value['followerList'] == null ? undefined : ((value['followerList'] as Array<any>).map(AsanaUserToJSON)),
+        'TagList': value['tagList'] == null ? undefined : ((value['tagList'] as Array<any>).map(AsanaTagToJSON)),
+        'IntegrationWizardResultModel': IntegrationWizardResultModelToJSON(value['integrationWizardResultModel']),
+        'Name': value['name'],
+        'IntegrationVersion': value['integrationVersion'],
+        'AccountID': value['accountID'],
+        'CustomFields': value['customFields'] == null ? undefined : ((value['customFields'] as Array<any>).map(IntegrationCustomFieldVmToJSON)),
+        'TemplateType': value['templateType'],
+        'ReopenStatus': value['reopenStatus'],
+        'ResolvedStatus': value['resolvedStatus'],
+        'TitleFormat': value['titleFormat'],
+        'Id': value['id'],
+        'State': value['state'],
     };
 }
 

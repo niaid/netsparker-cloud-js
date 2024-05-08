@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * 
  * @export
@@ -43,9 +43,7 @@ export interface DiscoveryConnectionsApiModel {
  * Check if a given object implements the DiscoveryConnectionsApiModel interface.
  */
 export function instanceOfDiscoveryConnectionsApiModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function DiscoveryConnectionsApiModelFromJSON(json: any): DiscoveryConnectionsApiModel {
@@ -53,29 +51,26 @@ export function DiscoveryConnectionsApiModelFromJSON(json: any): DiscoveryConnec
 }
 
 export function DiscoveryConnectionsApiModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): DiscoveryConnectionsApiModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'eC2InstanceId': !exists(json, 'EC2InstanceId') ? undefined : json['EC2InstanceId'],
-        'eC2CreationDate': !exists(json, 'EC2CreationDate') ? undefined : (new Date(json['EC2CreationDate'])),
-        'platform': !exists(json, 'Platform') ? undefined : json['Platform'],
+        'eC2InstanceId': json['EC2InstanceId'] == null ? undefined : json['EC2InstanceId'],
+        'eC2CreationDate': json['EC2CreationDate'] == null ? undefined : (new Date(json['EC2CreationDate'])),
+        'platform': json['Platform'] == null ? undefined : json['Platform'],
     };
 }
 
 export function DiscoveryConnectionsApiModelToJSON(value?: DiscoveryConnectionsApiModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'EC2InstanceId': value.eC2InstanceId,
-        'EC2CreationDate': value.eC2CreationDate === undefined ? undefined : (value.eC2CreationDate.toISOString()),
-        'Platform': value.platform,
+        'EC2InstanceId': value['eC2InstanceId'],
+        'EC2CreationDate': value['eC2CreationDate'] == null ? undefined : ((value['eC2CreationDate']).toISOString()),
+        'Platform': value['platform'],
     };
 }
 

@@ -14,42 +14,51 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UpdateScanPolicySettingModelToJSON = exports.UpdateScanPolicySettingModelFromJSONTyped = exports.UpdateScanPolicySettingModelFromJSON = exports.instanceOfUpdateScanPolicySettingModel = void 0;
-const runtime_1 = require("../runtime");
-const AttackingSettingModel_1 = require("./AttackingSettingModel");
-const AutoCompleteSettingModel_1 = require("./AutoCompleteSettingModel");
-const BrowserSetting_1 = require("./BrowserSetting");
+const SslTlsSettingModel_1 = require("./SslTlsSettingModel");
+const Custom404SettingModel_1 = require("./Custom404SettingModel");
 const BruteForceSettingModel_1 = require("./BruteForceSettingModel");
 const CrawlingSettingModel_1 = require("./CrawlingSettingModel");
-const CsrfSettingModel_1 = require("./CsrfSettingModel");
-const Custom404SettingModel_1 = require("./Custom404SettingModel");
-const CustomHttpHeaderSetting_1 = require("./CustomHttpHeaderSetting");
-const EmailPatternSetting_1 = require("./EmailPatternSetting");
-const ExtensionSettingModel_1 = require("./ExtensionSettingModel");
-const FormValueSettingModel_1 = require("./FormValueSettingModel");
-const HttpRequestSettingModel_1 = require("./HttpRequestSettingModel");
-const IgnorePatternSettingModel_1 = require("./IgnorePatternSettingModel");
 const JavaScriptSettingsModel_1 = require("./JavaScriptSettingsModel");
-const ProxySettingsModel_1 = require("./ProxySettingsModel");
-const ScopeSettingModel_1 = require("./ScopeSettingModel");
-const SecurityCheckGroupParentModel_1 = require("./SecurityCheckGroupParentModel");
 const SensitiveKeywordSettingModel_1 = require("./SensitiveKeywordSettingModel");
-const SslTlsSettingModel_1 = require("./SslTlsSettingModel");
+const AutoCompleteSettingModel_1 = require("./AutoCompleteSettingModel");
+const FormValueSettingModel_1 = require("./FormValueSettingModel");
+const IgnorePatternSettingModel_1 = require("./IgnorePatternSettingModel");
+const SecurityCheckGroupParentModel_1 = require("./SecurityCheckGroupParentModel");
+const CustomHttpHeaderSetting_1 = require("./CustomHttpHeaderSetting");
+const CsrfSettingModel_1 = require("./CsrfSettingModel");
+const ExtensionSettingModel_1 = require("./ExtensionSettingModel");
+const EmailPatternSetting_1 = require("./EmailPatternSetting");
+const AttackingSettingModel_1 = require("./AttackingSettingModel");
+const HttpRequestSettingModel_1 = require("./HttpRequestSettingModel");
+const ProxySettingsModel_1 = require("./ProxySettingsModel");
+const BrowserSetting_1 = require("./BrowserSetting");
+const ScopeSettingModel_1 = require("./ScopeSettingModel");
 const WebStorageSetting_1 = require("./WebStorageSetting");
 /**
  * Check if a given object implements the UpdateScanPolicySettingModel interface.
  */
 function instanceOfUpdateScanPolicySettingModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "attackingSettings" in value;
-    isInstance = isInstance && "bruteForceSettings" in value;
-    isInstance = isInstance && "crawlingSettings" in value;
-    isInstance = isInstance && "custom404Settings" in value;
-    isInstance = isInstance && "httpRequestSettings" in value;
-    isInstance = isInstance && "javaScriptSettings" in value;
-    isInstance = isInstance && "name" in value;
-    isInstance = isInstance && "scopeSettings" in value;
-    isInstance = isInstance && "sslTlsSettingModel" in value;
-    return isInstance;
+    if (!('id' in value))
+        return false;
+    if (!('attackingSettings' in value))
+        return false;
+    if (!('bruteForceSettings' in value))
+        return false;
+    if (!('crawlingSettings' in value))
+        return false;
+    if (!('custom404Settings' in value))
+        return false;
+    if (!('httpRequestSettings' in value))
+        return false;
+    if (!('javaScriptSettings' in value))
+        return false;
+    if (!('name' in value))
+        return false;
+    if (!('scopeSettings' in value))
+        return false;
+    if (!('sslTlsSettingModel' in value))
+        return false;
+    return true;
 }
 exports.instanceOfUpdateScanPolicySettingModel = instanceOfUpdateScanPolicySettingModel;
 function UpdateScanPolicySettingModelFromJSON(json) {
@@ -57,83 +66,80 @@ function UpdateScanPolicySettingModelFromJSON(json) {
 }
 exports.UpdateScanPolicySettingModelFromJSON = UpdateScanPolicySettingModelFromJSON;
 function UpdateScanPolicySettingModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
-        'isShared': !(0, runtime_1.exists)(json, 'IsShared') ? undefined : json['IsShared'],
-        'fromApi': !(0, runtime_1.exists)(json, 'FromApi') ? undefined : json['FromApi'],
-        'desktopId': !(0, runtime_1.exists)(json, 'DesktopId') ? undefined : json['DesktopId'],
+        'id': json['Id'],
+        'isShared': json['IsShared'] == null ? undefined : json['IsShared'],
+        'fromApi': json['FromApi'] == null ? undefined : json['FromApi'],
+        'desktopId': json['DesktopId'] == null ? undefined : json['DesktopId'],
         'attackingSettings': (0, AttackingSettingModel_1.AttackingSettingModelFromJSON)(json['AttackingSettings']),
-        'autoCompleteSettings': !(0, runtime_1.exists)(json, 'AutoCompleteSettings') ? undefined : (json['AutoCompleteSettings'].map(AutoCompleteSettingModel_1.AutoCompleteSettingModelFromJSON)),
+        'autoCompleteSettings': json['AutoCompleteSettings'] == null ? undefined : (json['AutoCompleteSettings'].map(AutoCompleteSettingModel_1.AutoCompleteSettingModelFromJSON)),
         'bruteForceSettings': (0, BruteForceSettingModel_1.BruteForceSettingModelFromJSON)(json['BruteForceSettings']),
         'crawlingSettings': (0, CrawlingSettingModel_1.CrawlingSettingModelFromJSON)(json['CrawlingSettings']),
-        'csrfSettings': !(0, runtime_1.exists)(json, 'CsrfSettings') ? undefined : (0, CsrfSettingModel_1.CsrfSettingModelFromJSON)(json['CsrfSettings']),
+        'csrfSettings': json['CsrfSettings'] == null ? undefined : (0, CsrfSettingModel_1.CsrfSettingModelFromJSON)(json['CsrfSettings']),
         'custom404Settings': (0, Custom404SettingModel_1.Custom404SettingModelFromJSON)(json['Custom404Settings']),
-        'customHttpHeaderSettings': !(0, runtime_1.exists)(json, 'CustomHttpHeaderSettings') ? undefined : (json['CustomHttpHeaderSettings'].map(CustomHttpHeaderSetting_1.CustomHttpHeaderSettingFromJSON)),
-        'description': !(0, runtime_1.exists)(json, 'Description') ? undefined : json['Description'],
-        'enableKnowledgebase': !(0, runtime_1.exists)(json, 'EnableKnowledgebase') ? undefined : json['EnableKnowledgebase'],
-        'formValueSettings': !(0, runtime_1.exists)(json, 'FormValueSettings') ? undefined : (json['FormValueSettings'].map(FormValueSettingModel_1.FormValueSettingModelFromJSON)),
+        'customHttpHeaderSettings': json['CustomHttpHeaderSettings'] == null ? undefined : (json['CustomHttpHeaderSettings'].map(CustomHttpHeaderSetting_1.CustomHttpHeaderSettingFromJSON)),
+        'description': json['Description'] == null ? undefined : json['Description'],
+        'enableKnowledgebase': json['EnableKnowledgebase'] == null ? undefined : json['EnableKnowledgebase'],
+        'formValueSettings': json['FormValueSettings'] == null ? undefined : (json['FormValueSettings'].map(FormValueSettingModel_1.FormValueSettingModelFromJSON)),
         'httpRequestSettings': (0, HttpRequestSettingModel_1.HttpRequestSettingModelFromJSON)(json['HttpRequestSettings']),
-        'ignoredEmailPatterns': !(0, runtime_1.exists)(json, 'IgnoredEmailPatterns') ? undefined : (json['IgnoredEmailPatterns'].map(EmailPatternSetting_1.EmailPatternSettingFromJSON)),
-        'ignorePatternSettings': !(0, runtime_1.exists)(json, 'IgnorePatternSettings') ? undefined : (json['IgnorePatternSettings'].map(IgnorePatternSettingModel_1.IgnorePatternSettingModelFromJSON)),
+        'ignoredEmailPatterns': json['IgnoredEmailPatterns'] == null ? undefined : (json['IgnoredEmailPatterns'].map(EmailPatternSetting_1.EmailPatternSettingFromJSON)),
+        'ignorePatternSettings': json['IgnorePatternSettings'] == null ? undefined : (json['IgnorePatternSettings'].map(IgnorePatternSettingModel_1.IgnorePatternSettingModelFromJSON)),
         'javaScriptSettings': (0, JavaScriptSettingsModel_1.JavaScriptSettingsModelFromJSON)(json['JavaScriptSettings']),
         'name': json['Name'],
-        'proxySettings': !(0, runtime_1.exists)(json, 'ProxySettings') ? undefined : (0, ProxySettingsModel_1.ProxySettingsModelFromJSON)(json['ProxySettings']),
+        'proxySettings': json['ProxySettings'] == null ? undefined : (0, ProxySettingsModel_1.ProxySettingsModelFromJSON)(json['ProxySettings']),
         'scopeSettings': (0, ScopeSettingModel_1.ScopeSettingModelFromJSON)(json['ScopeSettings']),
-        'securityCheckGroupParents': !(0, runtime_1.exists)(json, 'SecurityCheckGroupParents') ? undefined : (json['SecurityCheckGroupParents'].map(SecurityCheckGroupParentModel_1.SecurityCheckGroupParentModelFromJSON)),
-        'selectedGroups': !(0, runtime_1.exists)(json, 'SelectedGroups') ? undefined : json['SelectedGroups'],
-        'sensitiveKeywordSettings': !(0, runtime_1.exists)(json, 'SensitiveKeywordSettings') ? undefined : (json['SensitiveKeywordSettings'].map(SensitiveKeywordSettingModel_1.SensitiveKeywordSettingModelFromJSON)),
+        'securityCheckGroupParents': json['SecurityCheckGroupParents'] == null ? undefined : (json['SecurityCheckGroupParents'].map(SecurityCheckGroupParentModel_1.SecurityCheckGroupParentModelFromJSON)),
+        'selectedGroups': json['SelectedGroups'] == null ? undefined : json['SelectedGroups'],
+        'sensitiveKeywordSettings': json['SensitiveKeywordSettings'] == null ? undefined : (json['SensitiveKeywordSettings'].map(SensitiveKeywordSettingModel_1.SensitiveKeywordSettingModelFromJSON)),
         'sslTlsSettingModel': (0, SslTlsSettingModel_1.SslTlsSettingModelFromJSON)(json['SslTlsSettingModel']),
-        'webStorageSettings': !(0, runtime_1.exists)(json, 'WebStorageSettings') ? undefined : (json['WebStorageSettings'].map(WebStorageSetting_1.WebStorageSettingFromJSON)),
-        'extensionSettings': !(0, runtime_1.exists)(json, 'ExtensionSettings') ? undefined : (json['ExtensionSettings'].map(ExtensionSettingModel_1.ExtensionSettingModelFromJSON)),
-        'defaultBrowserParameters': !(0, runtime_1.exists)(json, 'DefaultBrowserParameters') ? undefined : (json['DefaultBrowserParameters'].map(BrowserSetting_1.BrowserSettingFromJSON)),
-        'headfulBrowserParameters': !(0, runtime_1.exists)(json, 'HeadfulBrowserParameters') ? undefined : (json['HeadfulBrowserParameters'].map(BrowserSetting_1.BrowserSettingFromJSON)),
-        'resourceFinders': !(0, runtime_1.exists)(json, 'ResourceFinders') ? undefined : json['ResourceFinders'],
-        'clonedScanPolicySettingId': !(0, runtime_1.exists)(json, 'ClonedScanPolicySettingId') ? undefined : json['ClonedScanPolicySettingId'],
+        'webStorageSettings': json['WebStorageSettings'] == null ? undefined : (json['WebStorageSettings'].map(WebStorageSetting_1.WebStorageSettingFromJSON)),
+        'extensionSettings': json['ExtensionSettings'] == null ? undefined : (json['ExtensionSettings'].map(ExtensionSettingModel_1.ExtensionSettingModelFromJSON)),
+        'defaultBrowserParameters': json['DefaultBrowserParameters'] == null ? undefined : (json['DefaultBrowserParameters'].map(BrowserSetting_1.BrowserSettingFromJSON)),
+        'headfulBrowserParameters': json['HeadfulBrowserParameters'] == null ? undefined : (json['HeadfulBrowserParameters'].map(BrowserSetting_1.BrowserSettingFromJSON)),
+        'resourceFinders': json['ResourceFinders'] == null ? undefined : json['ResourceFinders'],
+        'clonedScanPolicySettingId': json['ClonedScanPolicySettingId'] == null ? undefined : json['ClonedScanPolicySettingId'],
     };
 }
 exports.UpdateScanPolicySettingModelFromJSONTyped = UpdateScanPolicySettingModelFromJSONTyped;
 function UpdateScanPolicySettingModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Id': value.id,
-        'IsShared': value.isShared,
-        'FromApi': value.fromApi,
-        'DesktopId': value.desktopId,
-        'AttackingSettings': (0, AttackingSettingModel_1.AttackingSettingModelToJSON)(value.attackingSettings),
-        'AutoCompleteSettings': value.autoCompleteSettings === undefined ? undefined : (value.autoCompleteSettings.map(AutoCompleteSettingModel_1.AutoCompleteSettingModelToJSON)),
-        'BruteForceSettings': (0, BruteForceSettingModel_1.BruteForceSettingModelToJSON)(value.bruteForceSettings),
-        'CrawlingSettings': (0, CrawlingSettingModel_1.CrawlingSettingModelToJSON)(value.crawlingSettings),
-        'CsrfSettings': (0, CsrfSettingModel_1.CsrfSettingModelToJSON)(value.csrfSettings),
-        'Custom404Settings': (0, Custom404SettingModel_1.Custom404SettingModelToJSON)(value.custom404Settings),
-        'CustomHttpHeaderSettings': value.customHttpHeaderSettings === undefined ? undefined : (value.customHttpHeaderSettings.map(CustomHttpHeaderSetting_1.CustomHttpHeaderSettingToJSON)),
-        'Description': value.description,
-        'EnableKnowledgebase': value.enableKnowledgebase,
-        'FormValueSettings': value.formValueSettings === undefined ? undefined : (value.formValueSettings.map(FormValueSettingModel_1.FormValueSettingModelToJSON)),
-        'HttpRequestSettings': (0, HttpRequestSettingModel_1.HttpRequestSettingModelToJSON)(value.httpRequestSettings),
-        'IgnoredEmailPatterns': value.ignoredEmailPatterns === undefined ? undefined : (value.ignoredEmailPatterns.map(EmailPatternSetting_1.EmailPatternSettingToJSON)),
-        'IgnorePatternSettings': value.ignorePatternSettings === undefined ? undefined : (value.ignorePatternSettings.map(IgnorePatternSettingModel_1.IgnorePatternSettingModelToJSON)),
-        'JavaScriptSettings': (0, JavaScriptSettingsModel_1.JavaScriptSettingsModelToJSON)(value.javaScriptSettings),
-        'Name': value.name,
-        'ProxySettings': (0, ProxySettingsModel_1.ProxySettingsModelToJSON)(value.proxySettings),
-        'ScopeSettings': (0, ScopeSettingModel_1.ScopeSettingModelToJSON)(value.scopeSettings),
-        'SecurityCheckGroupParents': value.securityCheckGroupParents === undefined ? undefined : (value.securityCheckGroupParents.map(SecurityCheckGroupParentModel_1.SecurityCheckGroupParentModelToJSON)),
-        'SelectedGroups': value.selectedGroups,
-        'SensitiveKeywordSettings': value.sensitiveKeywordSettings === undefined ? undefined : (value.sensitiveKeywordSettings.map(SensitiveKeywordSettingModel_1.SensitiveKeywordSettingModelToJSON)),
-        'SslTlsSettingModel': (0, SslTlsSettingModel_1.SslTlsSettingModelToJSON)(value.sslTlsSettingModel),
-        'WebStorageSettings': value.webStorageSettings === undefined ? undefined : (value.webStorageSettings.map(WebStorageSetting_1.WebStorageSettingToJSON)),
-        'ExtensionSettings': value.extensionSettings === undefined ? undefined : (value.extensionSettings.map(ExtensionSettingModel_1.ExtensionSettingModelToJSON)),
-        'DefaultBrowserParameters': value.defaultBrowserParameters === undefined ? undefined : (value.defaultBrowserParameters.map(BrowserSetting_1.BrowserSettingToJSON)),
-        'HeadfulBrowserParameters': value.headfulBrowserParameters === undefined ? undefined : (value.headfulBrowserParameters.map(BrowserSetting_1.BrowserSettingToJSON)),
-        'ResourceFinders': value.resourceFinders,
-        'ClonedScanPolicySettingId': value.clonedScanPolicySettingId,
+        'Id': value['id'],
+        'IsShared': value['isShared'],
+        'FromApi': value['fromApi'],
+        'DesktopId': value['desktopId'],
+        'AttackingSettings': (0, AttackingSettingModel_1.AttackingSettingModelToJSON)(value['attackingSettings']),
+        'AutoCompleteSettings': value['autoCompleteSettings'] == null ? undefined : (value['autoCompleteSettings'].map(AutoCompleteSettingModel_1.AutoCompleteSettingModelToJSON)),
+        'BruteForceSettings': (0, BruteForceSettingModel_1.BruteForceSettingModelToJSON)(value['bruteForceSettings']),
+        'CrawlingSettings': (0, CrawlingSettingModel_1.CrawlingSettingModelToJSON)(value['crawlingSettings']),
+        'CsrfSettings': (0, CsrfSettingModel_1.CsrfSettingModelToJSON)(value['csrfSettings']),
+        'Custom404Settings': (0, Custom404SettingModel_1.Custom404SettingModelToJSON)(value['custom404Settings']),
+        'CustomHttpHeaderSettings': value['customHttpHeaderSettings'] == null ? undefined : (value['customHttpHeaderSettings'].map(CustomHttpHeaderSetting_1.CustomHttpHeaderSettingToJSON)),
+        'Description': value['description'],
+        'EnableKnowledgebase': value['enableKnowledgebase'],
+        'FormValueSettings': value['formValueSettings'] == null ? undefined : (value['formValueSettings'].map(FormValueSettingModel_1.FormValueSettingModelToJSON)),
+        'HttpRequestSettings': (0, HttpRequestSettingModel_1.HttpRequestSettingModelToJSON)(value['httpRequestSettings']),
+        'IgnoredEmailPatterns': value['ignoredEmailPatterns'] == null ? undefined : (value['ignoredEmailPatterns'].map(EmailPatternSetting_1.EmailPatternSettingToJSON)),
+        'IgnorePatternSettings': value['ignorePatternSettings'] == null ? undefined : (value['ignorePatternSettings'].map(IgnorePatternSettingModel_1.IgnorePatternSettingModelToJSON)),
+        'JavaScriptSettings': (0, JavaScriptSettingsModel_1.JavaScriptSettingsModelToJSON)(value['javaScriptSettings']),
+        'Name': value['name'],
+        'ProxySettings': (0, ProxySettingsModel_1.ProxySettingsModelToJSON)(value['proxySettings']),
+        'ScopeSettings': (0, ScopeSettingModel_1.ScopeSettingModelToJSON)(value['scopeSettings']),
+        'SecurityCheckGroupParents': value['securityCheckGroupParents'] == null ? undefined : (value['securityCheckGroupParents'].map(SecurityCheckGroupParentModel_1.SecurityCheckGroupParentModelToJSON)),
+        'SelectedGroups': value['selectedGroups'],
+        'SensitiveKeywordSettings': value['sensitiveKeywordSettings'] == null ? undefined : (value['sensitiveKeywordSettings'].map(SensitiveKeywordSettingModel_1.SensitiveKeywordSettingModelToJSON)),
+        'SslTlsSettingModel': (0, SslTlsSettingModel_1.SslTlsSettingModelToJSON)(value['sslTlsSettingModel']),
+        'WebStorageSettings': value['webStorageSettings'] == null ? undefined : (value['webStorageSettings'].map(WebStorageSetting_1.WebStorageSettingToJSON)),
+        'ExtensionSettings': value['extensionSettings'] == null ? undefined : (value['extensionSettings'].map(ExtensionSettingModel_1.ExtensionSettingModelToJSON)),
+        'DefaultBrowserParameters': value['defaultBrowserParameters'] == null ? undefined : (value['defaultBrowserParameters'].map(BrowserSetting_1.BrowserSettingToJSON)),
+        'HeadfulBrowserParameters': value['headfulBrowserParameters'] == null ? undefined : (value['headfulBrowserParameters'].map(BrowserSetting_1.BrowserSettingToJSON)),
+        'ResourceFinders': value['resourceFinders'],
+        'ClonedScanPolicySettingId': value['clonedScanPolicySettingId'],
     };
 }
 exports.UpdateScanPolicySettingModelToJSON = UpdateScanPolicySettingModelToJSON;

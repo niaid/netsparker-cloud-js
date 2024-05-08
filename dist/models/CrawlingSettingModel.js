@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CrawlingSettingModelToJSON = exports.CrawlingSettingModelFromJSONTyped = exports.CrawlingSettingModelFromJSON = exports.instanceOfCrawlingSettingModel = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the CrawlingSettingModel interface.
  */
 function instanceOfCrawlingSettingModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfCrawlingSettingModel = instanceOfCrawlingSettingModel;
 function CrawlingSettingModelFromJSON(json) {
@@ -28,53 +26,52 @@ function CrawlingSettingModelFromJSON(json) {
 }
 exports.CrawlingSettingModelFromJSON = CrawlingSettingModelFromJSON;
 function CrawlingSettingModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'enableParameterBasedNavigation': !(0, runtime_1.exists)(json, 'EnableParameterBasedNavigation') ? undefined : json['EnableParameterBasedNavigation'],
-        'enableRestWebServiceParser': !(0, runtime_1.exists)(json, 'EnableRestWebServiceParser') ? undefined : json['EnableRestWebServiceParser'],
-        'enableSoapWebServiceParser': !(0, runtime_1.exists)(json, 'EnableSoapWebServiceParser') ? undefined : json['EnableSoapWebServiceParser'],
-        'enableTextParser': !(0, runtime_1.exists)(json, 'EnableTextParser') ? undefined : json['EnableTextParser'],
-        'fallbackToGet': !(0, runtime_1.exists)(json, 'FallbackToGet') ? undefined : json['FallbackToGet'],
-        'enableFragmentParsing': !(0, runtime_1.exists)(json, 'EnableFragmentParsing') ? undefined : json['EnableFragmentParsing'],
-        'fileExtensions': !(0, runtime_1.exists)(json, 'FileExtensions') ? undefined : json['FileExtensions'],
-        'maximumCrawlerUrlCount': !(0, runtime_1.exists)(json, 'MaximumCrawlerUrlCount') ? undefined : json['MaximumCrawlerUrlCount'],
-        'maximumSignature': !(0, runtime_1.exists)(json, 'MaximumSignature') ? undefined : json['MaximumSignature'],
-        'navigationParameterPageVisitLimit': !(0, runtime_1.exists)(json, 'NavigationParameterPageVisitLimit') ? undefined : json['NavigationParameterPageVisitLimit'],
-        'navigationParameterRegexPattern': !(0, runtime_1.exists)(json, 'NavigationParameterRegexPattern') ? undefined : json['NavigationParameterRegexPattern'],
-        'pageVisitLimit': !(0, runtime_1.exists)(json, 'PageVisitLimit') ? undefined : json['PageVisitLimit'],
-        'maximumUrlRewriteSignature': !(0, runtime_1.exists)(json, 'MaximumUrlRewriteSignature') ? undefined : json['MaximumUrlRewriteSignature'],
-        'waitResourceFinder': !(0, runtime_1.exists)(json, 'WaitResourceFinder') ? undefined : json['WaitResourceFinder'],
-        'addRelatedLinks': !(0, runtime_1.exists)(json, 'AddRelatedLinks') ? undefined : json['AddRelatedLinks'],
-        'enableQueryBasedParameterBasedNavigation': !(0, runtime_1.exists)(json, 'EnableQueryBasedParameterBasedNavigation') ? undefined : json['EnableQueryBasedParameterBasedNavigation'],
+        'enableParameterBasedNavigation': json['EnableParameterBasedNavigation'] == null ? undefined : json['EnableParameterBasedNavigation'],
+        'enableRestWebServiceParser': json['EnableRestWebServiceParser'] == null ? undefined : json['EnableRestWebServiceParser'],
+        'enableSoapWebServiceParser': json['EnableSoapWebServiceParser'] == null ? undefined : json['EnableSoapWebServiceParser'],
+        'enableTextParser': json['EnableTextParser'] == null ? undefined : json['EnableTextParser'],
+        'fallbackToGet': json['FallbackToGet'] == null ? undefined : json['FallbackToGet'],
+        'enableFragmentParsing': json['EnableFragmentParsing'] == null ? undefined : json['EnableFragmentParsing'],
+        'enableJavascriptParsing': json['EnableJavascriptParsing'] == null ? undefined : json['EnableJavascriptParsing'],
+        'fileExtensions': json['FileExtensions'] == null ? undefined : json['FileExtensions'],
+        'maximumCrawlerUrlCount': json['MaximumCrawlerUrlCount'] == null ? undefined : json['MaximumCrawlerUrlCount'],
+        'maximumSignature': json['MaximumSignature'] == null ? undefined : json['MaximumSignature'],
+        'navigationParameterPageVisitLimit': json['NavigationParameterPageVisitLimit'] == null ? undefined : json['NavigationParameterPageVisitLimit'],
+        'navigationParameterRegexPattern': json['NavigationParameterRegexPattern'] == null ? undefined : json['NavigationParameterRegexPattern'],
+        'pageVisitLimit': json['PageVisitLimit'] == null ? undefined : json['PageVisitLimit'],
+        'maximumUrlRewriteSignature': json['MaximumUrlRewriteSignature'] == null ? undefined : json['MaximumUrlRewriteSignature'],
+        'waitResourceFinder': json['WaitResourceFinder'] == null ? undefined : json['WaitResourceFinder'],
+        'addRelatedLinks': json['AddRelatedLinks'] == null ? undefined : json['AddRelatedLinks'],
+        'enableQueryBasedParameterBasedNavigation': json['EnableQueryBasedParameterBasedNavigation'] == null ? undefined : json['EnableQueryBasedParameterBasedNavigation'],
     };
 }
 exports.CrawlingSettingModelFromJSONTyped = CrawlingSettingModelFromJSONTyped;
 function CrawlingSettingModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'EnableParameterBasedNavigation': value.enableParameterBasedNavigation,
-        'EnableRestWebServiceParser': value.enableRestWebServiceParser,
-        'EnableSoapWebServiceParser': value.enableSoapWebServiceParser,
-        'EnableTextParser': value.enableTextParser,
-        'FallbackToGet': value.fallbackToGet,
-        'EnableFragmentParsing': value.enableFragmentParsing,
-        'FileExtensions': value.fileExtensions,
-        'MaximumCrawlerUrlCount': value.maximumCrawlerUrlCount,
-        'MaximumSignature': value.maximumSignature,
-        'NavigationParameterPageVisitLimit': value.navigationParameterPageVisitLimit,
-        'NavigationParameterRegexPattern': value.navigationParameterRegexPattern,
-        'PageVisitLimit': value.pageVisitLimit,
-        'MaximumUrlRewriteSignature': value.maximumUrlRewriteSignature,
-        'WaitResourceFinder': value.waitResourceFinder,
-        'AddRelatedLinks': value.addRelatedLinks,
-        'EnableQueryBasedParameterBasedNavigation': value.enableQueryBasedParameterBasedNavigation,
+        'EnableParameterBasedNavigation': value['enableParameterBasedNavigation'],
+        'EnableRestWebServiceParser': value['enableRestWebServiceParser'],
+        'EnableSoapWebServiceParser': value['enableSoapWebServiceParser'],
+        'EnableTextParser': value['enableTextParser'],
+        'FallbackToGet': value['fallbackToGet'],
+        'EnableFragmentParsing': value['enableFragmentParsing'],
+        'EnableJavascriptParsing': value['enableJavascriptParsing'],
+        'FileExtensions': value['fileExtensions'],
+        'MaximumCrawlerUrlCount': value['maximumCrawlerUrlCount'],
+        'MaximumSignature': value['maximumSignature'],
+        'NavigationParameterPageVisitLimit': value['navigationParameterPageVisitLimit'],
+        'NavigationParameterRegexPattern': value['navigationParameterRegexPattern'],
+        'PageVisitLimit': value['pageVisitLimit'],
+        'MaximumUrlRewriteSignature': value['maximumUrlRewriteSignature'],
+        'WaitResourceFinder': value['waitResourceFinder'],
+        'AddRelatedLinks': value['addRelatedLinks'],
+        'EnableQueryBasedParameterBasedNavigation': value['enableQueryBasedParameterBasedNavigation'],
     };
 }
 exports.CrawlingSettingModelToJSON = CrawlingSettingModelToJSON;

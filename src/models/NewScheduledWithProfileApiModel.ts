@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 import type { ScheduledScanRecurrenceApiModel } from './ScheduledScanRecurrenceApiModel';
 import {
     ScheduledScanRecurrenceApiModelFromJSON,
@@ -86,14 +86,12 @@ export type NewScheduledWithProfileApiModelScheduleRunTypeEnum = typeof NewSched
  * Check if a given object implements the NewScheduledWithProfileApiModel interface.
  */
 export function instanceOfNewScheduledWithProfileApiModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "profileName" in value;
-    isInstance = isInstance && "targetUri" in value;
-    isInstance = isInstance && "name" in value;
-    isInstance = isInstance && "nextExecutionTime" in value;
-    isInstance = isInstance && "scheduleRunType" in value;
-
-    return isInstance;
+    if (!('profileName' in value)) return false;
+    if (!('targetUri' in value)) return false;
+    if (!('name' in value)) return false;
+    if (!('nextExecutionTime' in value)) return false;
+    if (!('scheduleRunType' in value)) return false;
+    return true;
 }
 
 export function NewScheduledWithProfileApiModelFromJSON(json: any): NewScheduledWithProfileApiModel {
@@ -101,7 +99,7 @@ export function NewScheduledWithProfileApiModelFromJSON(json: any): NewScheduled
 }
 
 export function NewScheduledWithProfileApiModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): NewScheduledWithProfileApiModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -111,25 +109,22 @@ export function NewScheduledWithProfileApiModelFromJSONTyped(json: any, ignoreDi
         'name': json['Name'],
         'nextExecutionTime': json['NextExecutionTime'],
         'scheduleRunType': json['ScheduleRunType'],
-        'customRecurrence': !exists(json, 'CustomRecurrence') ? undefined : ScheduledScanRecurrenceApiModelFromJSON(json['CustomRecurrence']),
+        'customRecurrence': json['CustomRecurrence'] == null ? undefined : ScheduledScanRecurrenceApiModelFromJSON(json['CustomRecurrence']),
     };
 }
 
 export function NewScheduledWithProfileApiModelToJSON(value?: NewScheduledWithProfileApiModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'ProfileName': value.profileName,
-        'TargetUri': value.targetUri,
-        'Name': value.name,
-        'NextExecutionTime': value.nextExecutionTime,
-        'ScheduleRunType': value.scheduleRunType,
-        'CustomRecurrence': ScheduledScanRecurrenceApiModelToJSON(value.customRecurrence),
+        'ProfileName': value['profileName'],
+        'TargetUri': value['targetUri'],
+        'Name': value['name'],
+        'NextExecutionTime': value['nextExecutionTime'],
+        'ScheduleRunType': value['scheduleRunType'],
+        'CustomRecurrence': ScheduledScanRecurrenceApiModelToJSON(value['customRecurrence']),
     };
 }
 

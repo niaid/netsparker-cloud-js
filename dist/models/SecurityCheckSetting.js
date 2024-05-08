@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SecurityCheckSettingToJSON = exports.SecurityCheckSettingFromJSONTyped = exports.SecurityCheckSettingFromJSON = exports.instanceOfSecurityCheckSetting = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the SecurityCheckSetting interface.
  */
 function instanceOfSecurityCheckSetting(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfSecurityCheckSetting = instanceOfSecurityCheckSetting;
 function SecurityCheckSettingFromJSON(json) {
@@ -28,25 +26,22 @@ function SecurityCheckSettingFromJSON(json) {
 }
 exports.SecurityCheckSettingFromJSON = SecurityCheckSettingFromJSON;
 function SecurityCheckSettingFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
-        'value': !(0, runtime_1.exists)(json, 'Value') ? undefined : json['Value'],
+        'name': json['Name'] == null ? undefined : json['Name'],
+        'value': json['Value'] == null ? undefined : json['Value'],
     };
 }
 exports.SecurityCheckSettingFromJSONTyped = SecurityCheckSettingFromJSONTyped;
 function SecurityCheckSettingToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Name': value.name,
-        'Value': value.value,
+        'Name': value['name'],
+        'Value': value['value'],
     };
 }
 exports.SecurityCheckSettingToJSON = SecurityCheckSettingToJSON;

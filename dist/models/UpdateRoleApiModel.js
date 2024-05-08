@@ -14,15 +14,15 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UpdateRoleApiModelToJSON = exports.UpdateRoleApiModelFromJSONTyped = exports.UpdateRoleApiModelFromJSON = exports.instanceOfUpdateRoleApiModel = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the UpdateRoleApiModel interface.
  */
 function instanceOfUpdateRoleApiModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "id" in value;
-    isInstance = isInstance && "name" in value;
-    return isInstance;
+    if (!('id' in value))
+        return false;
+    if (!('name' in value))
+        return false;
+    return true;
 }
 exports.instanceOfUpdateRoleApiModel = instanceOfUpdateRoleApiModel;
 function UpdateRoleApiModelFromJSON(json) {
@@ -30,27 +30,24 @@ function UpdateRoleApiModelFromJSON(json) {
 }
 exports.UpdateRoleApiModelFromJSON = UpdateRoleApiModelFromJSON;
 function UpdateRoleApiModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         'id': json['Id'],
         'name': json['Name'],
-        'permissions': !(0, runtime_1.exists)(json, 'Permissions') ? undefined : json['Permissions'],
+        'permissions': json['Permissions'] == null ? undefined : json['Permissions'],
     };
 }
 exports.UpdateRoleApiModelFromJSONTyped = UpdateRoleApiModelFromJSONTyped;
 function UpdateRoleApiModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Id': value.id,
-        'Name': value.name,
-        'Permissions': value.permissions,
+        'Id': value['id'],
+        'Name': value['name'],
+        'Permissions': value['permissions'],
     };
 }
 exports.UpdateRoleApiModelToJSON = UpdateRoleApiModelToJSON;

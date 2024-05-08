@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * 
  * @export
@@ -201,7 +201,8 @@ export const AuditLogDtoTypeEnum = {
     ScanQueuedAgain: 'ScanQueuedAgain',
     ScanFailed: 'ScanFailed',
     AgentCommandDelete: 'AgentCommandDelete',
-    ImportWebsite: 'ImportWebsite'
+    ImportWebsite: 'ImportWebsite',
+    LimitingRole: 'LimitingRole'
 } as const;
 export type AuditLogDtoTypeEnum = typeof AuditLogDtoTypeEnum[keyof typeof AuditLogDtoTypeEnum];
 
@@ -210,9 +211,7 @@ export type AuditLogDtoTypeEnum = typeof AuditLogDtoTypeEnum[keyof typeof AuditL
  * Check if a given object implements the AuditLogDto interface.
  */
 export function instanceOfAuditLogDto(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function AuditLogDtoFromJSON(json: any): AuditLogDto {
@@ -220,43 +219,40 @@ export function AuditLogDtoFromJSON(json: any): AuditLogDto {
 }
 
 export function AuditLogDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): AuditLogDto {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'accountId': !exists(json, 'AccountId') ? undefined : json['AccountId'],
-        'createdAt': !exists(json, 'CreatedAt') ? undefined : (new Date(json['CreatedAt'])),
-        'endpointType': !exists(json, 'EndpointType') ? undefined : json['EndpointType'],
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'type': !exists(json, 'Type') ? undefined : json['Type'],
-        'userEmail': !exists(json, 'UserEmail') ? undefined : json['UserEmail'],
-        'userId': !exists(json, 'UserId') ? undefined : json['UserId'],
-        'userName': !exists(json, 'UserName') ? undefined : json['UserName'],
-        'message': !exists(json, 'Message') ? undefined : json['Message'],
-        'requestData': !exists(json, 'RequestData') ? undefined : json['RequestData'],
+        'accountId': json['AccountId'] == null ? undefined : json['AccountId'],
+        'createdAt': json['CreatedAt'] == null ? undefined : (new Date(json['CreatedAt'])),
+        'endpointType': json['EndpointType'] == null ? undefined : json['EndpointType'],
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'type': json['Type'] == null ? undefined : json['Type'],
+        'userEmail': json['UserEmail'] == null ? undefined : json['UserEmail'],
+        'userId': json['UserId'] == null ? undefined : json['UserId'],
+        'userName': json['UserName'] == null ? undefined : json['UserName'],
+        'message': json['Message'] == null ? undefined : json['Message'],
+        'requestData': json['RequestData'] == null ? undefined : json['RequestData'],
     };
 }
 
 export function AuditLogDtoToJSON(value?: AuditLogDto | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'AccountId': value.accountId,
-        'CreatedAt': value.createdAt === undefined ? undefined : (value.createdAt.toISOString()),
-        'EndpointType': value.endpointType,
-        'Id': value.id,
-        'Type': value.type,
-        'UserEmail': value.userEmail,
-        'UserId': value.userId,
-        'UserName': value.userName,
-        'Message': value.message,
-        'RequestData': value.requestData,
+        'AccountId': value['accountId'],
+        'CreatedAt': value['createdAt'] == null ? undefined : ((value['createdAt']).toISOString()),
+        'EndpointType': value['endpointType'],
+        'Id': value['id'],
+        'Type': value['type'],
+        'UserEmail': value['userEmail'],
+        'UserId': value['userId'],
+        'UserName': value['userName'],
+        'Message': value['message'],
+        'RequestData': value['requestData'],
     };
 }
 

@@ -14,13 +14,12 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.OAuth2SettingModelToJSON = exports.OAuth2SettingModelFromJSONTyped = exports.OAuth2SettingModelFromJSON = exports.instanceOfOAuth2SettingModel = exports.OAuth2SettingModelSelectedAuthenticationTypeEnum = exports.OAuth2SettingModelSelectedFlowTypeEnum = void 0;
-const runtime_1 = require("../runtime");
 const AccessTokenTableModel_1 = require("./AccessTokenTableModel");
 const AuthorizationCodeTableModel_1 = require("./AuthorizationCodeTableModel");
-const OAuth2SettingEndPointModel_1 = require("./OAuth2SettingEndPointModel");
 const ResponseFields_1 = require("./ResponseFields");
-const SelectOptionModel_1 = require("./SelectOptionModel");
+const OAuth2SettingEndPointModel_1 = require("./OAuth2SettingEndPointModel");
 const ThreeLeggedFields_1 = require("./ThreeLeggedFields");
+const SelectOptionModel_1 = require("./SelectOptionModel");
 /**
  * @export
  */
@@ -43,8 +42,7 @@ exports.OAuth2SettingModelSelectedAuthenticationTypeEnum = {
  * Check if a given object implements the OAuth2SettingModel interface.
  */
 function instanceOfOAuth2SettingModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfOAuth2SettingModel = instanceOfOAuth2SettingModel;
 function OAuth2SettingModelFromJSON(json) {
@@ -52,45 +50,42 @@ function OAuth2SettingModelFromJSON(json) {
 }
 exports.OAuth2SettingModelFromJSON = OAuth2SettingModelFromJSON;
 function OAuth2SettingModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'serializedPolicyData': !(0, runtime_1.exists)(json, 'SerializedPolicyData') ? undefined : json['SerializedPolicyData'],
-        'enabled': !(0, runtime_1.exists)(json, 'Enabled') ? undefined : json['Enabled'],
-        'selectedFlowType': !(0, runtime_1.exists)(json, 'SelectedFlowType') ? undefined : json['SelectedFlowType'],
-        'selectedAuthenticationType': !(0, runtime_1.exists)(json, 'SelectedAuthenticationType') ? undefined : json['SelectedAuthenticationType'],
-        'flowTypes': !(0, runtime_1.exists)(json, 'FlowTypes') ? undefined : (json['FlowTypes'].map(SelectOptionModel_1.SelectOptionModelFromJSON)),
-        'authentications': !(0, runtime_1.exists)(json, 'Authentications') ? undefined : (json['Authentications'].map(SelectOptionModel_1.SelectOptionModelFromJSON)),
-        'accessTokenEndpoint': !(0, runtime_1.exists)(json, 'AccessTokenEndpoint') ? undefined : (0, OAuth2SettingEndPointModel_1.OAuth2SettingEndPointModelFromJSON)(json['AccessTokenEndpoint']),
-        'authorizationCodeEndpoint': !(0, runtime_1.exists)(json, 'AuthorizationCodeEndpoint') ? undefined : (0, OAuth2SettingEndPointModel_1.OAuth2SettingEndPointModelFromJSON)(json['AuthorizationCodeEndpoint']),
-        'accessTokenTable': !(0, runtime_1.exists)(json, 'AccessTokenTable') ? undefined : (0, AccessTokenTableModel_1.AccessTokenTableModelFromJSON)(json['AccessTokenTable']),
-        'authorizationCodeTable': !(0, runtime_1.exists)(json, 'AuthorizationCodeTable') ? undefined : (0, AuthorizationCodeTableModel_1.AuthorizationCodeTableModelFromJSON)(json['AuthorizationCodeTable']),
-        'responseFieldForm': !(0, runtime_1.exists)(json, 'ResponseFieldForm') ? undefined : (0, ResponseFields_1.ResponseFieldsFromJSON)(json['ResponseFieldForm']),
-        'threeLegged': !(0, runtime_1.exists)(json, 'ThreeLegged') ? undefined : (0, ThreeLeggedFields_1.ThreeLeggedFieldsFromJSON)(json['ThreeLegged']),
+        'serializedPolicyData': json['SerializedPolicyData'] == null ? undefined : json['SerializedPolicyData'],
+        'enabled': json['Enabled'] == null ? undefined : json['Enabled'],
+        'selectedFlowType': json['SelectedFlowType'] == null ? undefined : json['SelectedFlowType'],
+        'selectedAuthenticationType': json['SelectedAuthenticationType'] == null ? undefined : json['SelectedAuthenticationType'],
+        'flowTypes': json['FlowTypes'] == null ? undefined : (json['FlowTypes'].map(SelectOptionModel_1.SelectOptionModelFromJSON)),
+        'authentications': json['Authentications'] == null ? undefined : (json['Authentications'].map(SelectOptionModel_1.SelectOptionModelFromJSON)),
+        'accessTokenEndpoint': json['AccessTokenEndpoint'] == null ? undefined : (0, OAuth2SettingEndPointModel_1.OAuth2SettingEndPointModelFromJSON)(json['AccessTokenEndpoint']),
+        'authorizationCodeEndpoint': json['AuthorizationCodeEndpoint'] == null ? undefined : (0, OAuth2SettingEndPointModel_1.OAuth2SettingEndPointModelFromJSON)(json['AuthorizationCodeEndpoint']),
+        'accessTokenTable': json['AccessTokenTable'] == null ? undefined : (0, AccessTokenTableModel_1.AccessTokenTableModelFromJSON)(json['AccessTokenTable']),
+        'authorizationCodeTable': json['AuthorizationCodeTable'] == null ? undefined : (0, AuthorizationCodeTableModel_1.AuthorizationCodeTableModelFromJSON)(json['AuthorizationCodeTable']),
+        'responseFieldForm': json['ResponseFieldForm'] == null ? undefined : (0, ResponseFields_1.ResponseFieldsFromJSON)(json['ResponseFieldForm']),
+        'threeLegged': json['ThreeLegged'] == null ? undefined : (0, ThreeLeggedFields_1.ThreeLeggedFieldsFromJSON)(json['ThreeLegged']),
     };
 }
 exports.OAuth2SettingModelFromJSONTyped = OAuth2SettingModelFromJSONTyped;
 function OAuth2SettingModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'SerializedPolicyData': value.serializedPolicyData,
-        'Enabled': value.enabled,
-        'SelectedFlowType': value.selectedFlowType,
-        'SelectedAuthenticationType': value.selectedAuthenticationType,
-        'FlowTypes': value.flowTypes === undefined ? undefined : (value.flowTypes.map(SelectOptionModel_1.SelectOptionModelToJSON)),
-        'Authentications': value.authentications === undefined ? undefined : (value.authentications.map(SelectOptionModel_1.SelectOptionModelToJSON)),
-        'AccessTokenEndpoint': (0, OAuth2SettingEndPointModel_1.OAuth2SettingEndPointModelToJSON)(value.accessTokenEndpoint),
-        'AuthorizationCodeEndpoint': (0, OAuth2SettingEndPointModel_1.OAuth2SettingEndPointModelToJSON)(value.authorizationCodeEndpoint),
-        'AccessTokenTable': (0, AccessTokenTableModel_1.AccessTokenTableModelToJSON)(value.accessTokenTable),
-        'AuthorizationCodeTable': (0, AuthorizationCodeTableModel_1.AuthorizationCodeTableModelToJSON)(value.authorizationCodeTable),
-        'ResponseFieldForm': (0, ResponseFields_1.ResponseFieldsToJSON)(value.responseFieldForm),
-        'ThreeLegged': (0, ThreeLeggedFields_1.ThreeLeggedFieldsToJSON)(value.threeLegged),
+        'SerializedPolicyData': value['serializedPolicyData'],
+        'Enabled': value['enabled'],
+        'SelectedFlowType': value['selectedFlowType'],
+        'SelectedAuthenticationType': value['selectedAuthenticationType'],
+        'FlowTypes': value['flowTypes'] == null ? undefined : (value['flowTypes'].map(SelectOptionModel_1.SelectOptionModelToJSON)),
+        'Authentications': value['authentications'] == null ? undefined : (value['authentications'].map(SelectOptionModel_1.SelectOptionModelToJSON)),
+        'AccessTokenEndpoint': (0, OAuth2SettingEndPointModel_1.OAuth2SettingEndPointModelToJSON)(value['accessTokenEndpoint']),
+        'AuthorizationCodeEndpoint': (0, OAuth2SettingEndPointModel_1.OAuth2SettingEndPointModelToJSON)(value['authorizationCodeEndpoint']),
+        'AccessTokenTable': (0, AccessTokenTableModel_1.AccessTokenTableModelToJSON)(value['accessTokenTable']),
+        'AuthorizationCodeTable': (0, AuthorizationCodeTableModel_1.AuthorizationCodeTableModelToJSON)(value['authorizationCodeTable']),
+        'ResponseFieldForm': (0, ResponseFields_1.ResponseFieldsToJSON)(value['responseFieldForm']),
+        'ThreeLegged': (0, ThreeLeggedFields_1.ThreeLeggedFieldsToJSON)(value['threeLegged']),
     };
 }
 exports.OAuth2SettingModelToJSON = OAuth2SettingModelToJSON;

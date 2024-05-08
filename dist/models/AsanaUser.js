@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AsanaUserToJSON = exports.AsanaUserFromJSONTyped = exports.AsanaUserFromJSON = exports.instanceOfAsanaUser = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the AsanaUser interface.
  */
 function instanceOfAsanaUser(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfAsanaUser = instanceOfAsanaUser;
 function AsanaUserFromJSON(json) {
@@ -28,28 +26,25 @@ function AsanaUserFromJSON(json) {
 }
 exports.AsanaUserFromJSON = AsanaUserFromJSON;
 function AsanaUserFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'email': !(0, runtime_1.exists)(json, 'email') ? undefined : json['email'],
-        'gid': !(0, runtime_1.exists)(json, 'gid') ? undefined : json['gid'],
-        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        'displayName': !(0, runtime_1.exists)(json, 'DisplayName') ? undefined : json['DisplayName'],
+        'email': json['email'] == null ? undefined : json['email'],
+        'gid': json['gid'] == null ? undefined : json['gid'],
+        'name': json['name'] == null ? undefined : json['name'],
+        'displayName': json['DisplayName'] == null ? undefined : json['DisplayName'],
     };
 }
 exports.AsanaUserFromJSONTyped = AsanaUserFromJSONTyped;
 function AsanaUserToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'email': value.email,
-        'gid': value.gid,
-        'name': value.name,
+        'email': value['email'],
+        'gid': value['gid'],
+        'name': value['name'],
     };
 }
 exports.AsanaUserToJSON = AsanaUserToJSON;

@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a model for carrying out input auto complete settings.
  * @export
@@ -31,10 +31,8 @@ export interface AutoCompleteSettingModel {
  * Check if a given object implements the AutoCompleteSettingModel interface.
  */
 export function instanceOfAutoCompleteSettingModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "value" in value;
-
-    return isInstance;
+    if (!('value' in value)) return false;
+    return true;
 }
 
 export function AutoCompleteSettingModelFromJSON(json: any): AutoCompleteSettingModel {
@@ -42,7 +40,7 @@ export function AutoCompleteSettingModelFromJSON(json: any): AutoCompleteSetting
 }
 
 export function AutoCompleteSettingModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): AutoCompleteSettingModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -52,15 +50,12 @@ export function AutoCompleteSettingModelFromJSONTyped(json: any, ignoreDiscrimin
 }
 
 export function AutoCompleteSettingModelToJSON(value?: AutoCompleteSettingModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Value': value.value,
+        'Value': value['value'],
     };
 }
 

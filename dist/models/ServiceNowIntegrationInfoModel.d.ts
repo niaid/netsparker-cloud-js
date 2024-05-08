@@ -9,11 +9,11 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
-import type { IntegrationWizardResultModel } from './IntegrationWizardResultModel';
 import type { ServiceNowIncidentFieldPairValue } from './ServiceNowIncidentFieldPairValue';
 import type { ServiceNowIncidentMapping } from './ServiceNowIncidentMapping';
 import type { ServiceNowIntegrationInfoModelFieldMappingsDictionary } from './ServiceNowIntegrationInfoModelFieldMappingsDictionary';
+import type { IntegrationWizardResultModel } from './IntegrationWizardResultModel';
+import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
 /**
  * The ServiceNow integration info
  * @export
@@ -220,6 +220,18 @@ export interface ServiceNowIntegrationInfoModel {
      * @memberof ServiceNowIntegrationInfoModel
      */
     integrationWizardResultModel?: IntegrationWizardResultModel;
+    /**
+     *
+     * @type {string}
+     * @memberof ServiceNowIntegrationInfoModel
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof ServiceNowIntegrationInfoModel
+     */
+    state?: ServiceNowIntegrationInfoModelStateEnum;
 }
 /**
  * @export
@@ -307,9 +319,17 @@ export declare const ServiceNowIntegrationInfoModelTypeEnum: {
 };
 export type ServiceNowIntegrationInfoModelTypeEnum = typeof ServiceNowIntegrationInfoModelTypeEnum[keyof typeof ServiceNowIntegrationInfoModelTypeEnum];
 /**
+ * @export
+ */
+export declare const ServiceNowIntegrationInfoModelStateEnum: {
+    readonly Active: "Active";
+    readonly Suspended: "Suspended";
+};
+export type ServiceNowIntegrationInfoModelStateEnum = typeof ServiceNowIntegrationInfoModelStateEnum[keyof typeof ServiceNowIntegrationInfoModelStateEnum];
+/**
  * Check if a given object implements the ServiceNowIntegrationInfoModel interface.
  */
 export declare function instanceOfServiceNowIntegrationInfoModel(value: object): boolean;
 export declare function ServiceNowIntegrationInfoModelFromJSON(json: any): ServiceNowIntegrationInfoModel;
 export declare function ServiceNowIntegrationInfoModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): ServiceNowIntegrationInfoModel;
-export declare function ServiceNowIntegrationInfoModelToJSON(value?: ServiceNowIntegrationInfoModel | null): any;
+export declare function ServiceNowIntegrationInfoModelToJSON(value?: Omit<ServiceNowIntegrationInfoModel, 'ReopenStatus' | 'ResolvedStatus' | 'WebhookUrl' | 'Type' | 'GenericErrorMessage' | 'Identifier' | 'TestMessageBody' | 'TestMessageTitle'> | null): any;

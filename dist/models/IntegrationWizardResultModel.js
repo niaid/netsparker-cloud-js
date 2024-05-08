@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.IntegrationWizardResultModelToJSON = exports.IntegrationWizardResultModelFromJSONTyped = exports.IntegrationWizardResultModelFromJSON = exports.instanceOfIntegrationWizardResultModel = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the IntegrationWizardResultModel interface.
  */
 function instanceOfIntegrationWizardResultModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfIntegrationWizardResultModel = instanceOfIntegrationWizardResultModel;
 function IntegrationWizardResultModelFromJSON(json) {
@@ -28,25 +26,22 @@ function IntegrationWizardResultModelFromJSON(json) {
 }
 exports.IntegrationWizardResultModelFromJSON = IntegrationWizardResultModelFromJSON;
 function IntegrationWizardResultModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'status': !(0, runtime_1.exists)(json, 'Status') ? undefined : json['Status'],
-        'errorMessage': !(0, runtime_1.exists)(json, 'ErrorMessage') ? undefined : json['ErrorMessage'],
+        'status': json['Status'] == null ? undefined : json['Status'],
+        'errorMessage': json['ErrorMessage'] == null ? undefined : json['ErrorMessage'],
     };
 }
 exports.IntegrationWizardResultModelFromJSONTyped = IntegrationWizardResultModelFromJSONTyped;
 function IntegrationWizardResultModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Status': value.status,
-        'ErrorMessage': value.errorMessage,
+        'Status': value['status'],
+        'ErrorMessage': value['errorMessage'],
     };
 }
 exports.IntegrationWizardResultModelToJSON = IntegrationWizardResultModelToJSON;

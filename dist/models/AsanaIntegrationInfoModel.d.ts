@@ -9,12 +9,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { AsanaProject } from './AsanaProject';
 import type { AsanaTag } from './AsanaTag';
 import type { AsanaUser } from './AsanaUser';
-import type { AsanaWorkspace } from './AsanaWorkspace';
-import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
+import type { AsanaProject } from './AsanaProject';
 import type { IntegrationWizardResultModel } from './IntegrationWizardResultModel';
+import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
+import type { AsanaWorkspace } from './AsanaWorkspace';
 /**
  * The Asana integration info
  * @export
@@ -195,6 +195,18 @@ export interface AsanaIntegrationInfoModel {
      * @memberof AsanaIntegrationInfoModel
      */
     titleFormat: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AsanaIntegrationInfoModel
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AsanaIntegrationInfoModel
+     */
+    state?: AsanaIntegrationInfoModelStateEnum;
 }
 /**
  * @export
@@ -244,9 +256,17 @@ export declare const AsanaIntegrationInfoModelTemplateTypeEnum: {
 };
 export type AsanaIntegrationInfoModelTemplateTypeEnum = typeof AsanaIntegrationInfoModelTemplateTypeEnum[keyof typeof AsanaIntegrationInfoModelTemplateTypeEnum];
 /**
+ * @export
+ */
+export declare const AsanaIntegrationInfoModelStateEnum: {
+    readonly Active: "Active";
+    readonly Suspended: "Suspended";
+};
+export type AsanaIntegrationInfoModelStateEnum = typeof AsanaIntegrationInfoModelStateEnum[keyof typeof AsanaIntegrationInfoModelStateEnum];
+/**
  * Check if a given object implements the AsanaIntegrationInfoModel interface.
  */
 export declare function instanceOfAsanaIntegrationInfoModel(value: object): boolean;
 export declare function AsanaIntegrationInfoModelFromJSON(json: any): AsanaIntegrationInfoModel;
 export declare function AsanaIntegrationInfoModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): AsanaIntegrationInfoModel;
-export declare function AsanaIntegrationInfoModelToJSON(value?: AsanaIntegrationInfoModel | null): any;
+export declare function AsanaIntegrationInfoModelToJSON(value?: Omit<AsanaIntegrationInfoModel, 'FollowersSelected' | 'TagsSelected' | 'Type' | 'GenericErrorMessage' | 'Identifier' | 'TestMessageBody' | 'TestMessageTitle' | 'WebhookUrl'> | null): any;

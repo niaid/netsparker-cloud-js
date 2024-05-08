@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents otp settings
  * @export
@@ -76,9 +76,7 @@ export type OtpSettingsAlgorithmEnum = typeof OtpSettingsAlgorithmEnum[keyof typ
  * Check if a given object implements the OtpSettings interface.
  */
 export function instanceOfOtpSettings(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function OtpSettingsFromJSON(json: any): OtpSettings {
@@ -86,33 +84,30 @@ export function OtpSettingsFromJSON(json: any): OtpSettings {
 }
 
 export function OtpSettingsFromJSONTyped(json: any, ignoreDiscriminator: boolean): OtpSettings {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'otpType': !exists(json, 'OtpType') ? undefined : json['OtpType'],
-        'secretKey': !exists(json, 'SecretKey') ? undefined : json['SecretKey'],
-        'digit': !exists(json, 'Digit') ? undefined : json['Digit'],
-        'period': !exists(json, 'Period') ? undefined : json['Period'],
-        'algorithm': !exists(json, 'Algorithm') ? undefined : json['Algorithm'],
+        'otpType': json['OtpType'] == null ? undefined : json['OtpType'],
+        'secretKey': json['SecretKey'] == null ? undefined : json['SecretKey'],
+        'digit': json['Digit'] == null ? undefined : json['Digit'],
+        'period': json['Period'] == null ? undefined : json['Period'],
+        'algorithm': json['Algorithm'] == null ? undefined : json['Algorithm'],
     };
 }
 
 export function OtpSettingsToJSON(value?: OtpSettings | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'OtpType': value.otpType,
-        'SecretKey': value.secretKey,
-        'Digit': value.digit,
-        'Period': value.period,
-        'Algorithm': value.algorithm,
+        'OtpType': value['otpType'],
+        'SecretKey': value['secretKey'],
+        'Digit': value['digit'],
+        'Period': value['period'],
+        'Algorithm': value['algorithm'],
     };
 }
 

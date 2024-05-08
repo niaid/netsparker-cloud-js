@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.FreshserviceEntityToJSON = exports.FreshserviceEntityFromJSONTyped = exports.FreshserviceEntityFromJSON = exports.instanceOfFreshserviceEntity = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the FreshserviceEntity interface.
  */
 function instanceOfFreshserviceEntity(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfFreshserviceEntity = instanceOfFreshserviceEntity;
 function FreshserviceEntityFromJSON(json) {
@@ -28,25 +26,22 @@ function FreshserviceEntityFromJSON(json) {
 }
 exports.FreshserviceEntityFromJSON = FreshserviceEntityFromJSON;
 function FreshserviceEntityFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'id': !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
-        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        'id': json['id'] == null ? undefined : json['id'],
+        'name': json['name'] == null ? undefined : json['name'],
     };
 }
 exports.FreshserviceEntityFromJSONTyped = FreshserviceEntityFromJSONTyped;
 function FreshserviceEntityToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'id': value.id,
-        'name': value.name,
+        'id': value['id'],
+        'name': value['name'],
     };
 }
 exports.FreshserviceEntityToJSON = FreshserviceEntityToJSON;

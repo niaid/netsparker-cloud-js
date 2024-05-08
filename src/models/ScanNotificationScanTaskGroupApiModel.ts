@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a model for scan notification api model
  * @export
@@ -43,9 +43,7 @@ export interface ScanNotificationScanTaskGroupApiModel {
  * Check if a given object implements the ScanNotificationScanTaskGroupApiModel interface.
  */
 export function instanceOfScanNotificationScanTaskGroupApiModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function ScanNotificationScanTaskGroupApiModelFromJSON(json: any): ScanNotificationScanTaskGroupApiModel {
@@ -53,29 +51,26 @@ export function ScanNotificationScanTaskGroupApiModelFromJSON(json: any): ScanNo
 }
 
 export function ScanNotificationScanTaskGroupApiModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): ScanNotificationScanTaskGroupApiModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'websiteId': !exists(json, 'WebsiteId') ? undefined : json['WebsiteId'],
-        'scanTaskGroupName': !exists(json, 'ScanTaskGroupName') ? undefined : json['ScanTaskGroupName'],
-        'scanTaskGroupId': !exists(json, 'ScanTaskGroupId') ? undefined : json['ScanTaskGroupId'],
+        'websiteId': json['WebsiteId'] == null ? undefined : json['WebsiteId'],
+        'scanTaskGroupName': json['ScanTaskGroupName'] == null ? undefined : json['ScanTaskGroupName'],
+        'scanTaskGroupId': json['ScanTaskGroupId'] == null ? undefined : json['ScanTaskGroupId'],
     };
 }
 
 export function ScanNotificationScanTaskGroupApiModelToJSON(value?: ScanNotificationScanTaskGroupApiModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'WebsiteId': value.websiteId,
-        'ScanTaskGroupName': value.scanTaskGroupName,
-        'ScanTaskGroupId': value.scanTaskGroupId,
+        'WebsiteId': value['websiteId'],
+        'ScanTaskGroupName': value['scanTaskGroupName'],
+        'ScanTaskGroupId': value['scanTaskGroupId'],
     };
 }
 

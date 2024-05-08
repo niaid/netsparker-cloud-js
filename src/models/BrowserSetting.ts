@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * 
  * @export
@@ -43,10 +43,8 @@ export interface BrowserSetting {
  * Check if a given object implements the BrowserSetting interface.
  */
 export function instanceOfBrowserSetting(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "name" in value;
-
-    return isInstance;
+    if (!('name' in value)) return false;
+    return true;
 }
 
 export function BrowserSettingFromJSON(json: any): BrowserSetting {
@@ -54,29 +52,26 @@ export function BrowserSettingFromJSON(json: any): BrowserSetting {
 }
 
 export function BrowserSettingFromJSONTyped(json: any, ignoreDiscriminator: boolean): BrowserSetting {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'enabled': !exists(json, 'Enabled') ? undefined : json['Enabled'],
+        'enabled': json['Enabled'] == null ? undefined : json['Enabled'],
         'name': json['Name'],
-        'readOnly': !exists(json, 'ReadOnly') ? undefined : json['ReadOnly'],
+        'readOnly': json['ReadOnly'] == null ? undefined : json['ReadOnly'],
     };
 }
 
 export function BrowserSettingToJSON(value?: BrowserSetting | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Enabled': value.enabled,
-        'Name': value.name,
-        'ReadOnly': value.readOnly,
+        'Enabled': value['enabled'],
+        'Name': value['name'],
+        'ReadOnly': value['readOnly'],
     };
 }
 

@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * 
  * @export
@@ -37,9 +37,7 @@ export interface AuthorizationTokenRule {
  * Check if a given object implements the AuthorizationTokenRule interface.
  */
 export function instanceOfAuthorizationTokenRule(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function AuthorizationTokenRuleFromJSON(json: any): AuthorizationTokenRule {
@@ -47,27 +45,24 @@ export function AuthorizationTokenRuleFromJSON(json: any): AuthorizationTokenRul
 }
 
 export function AuthorizationTokenRuleFromJSONTyped(json: any, ignoreDiscriminator: boolean): AuthorizationTokenRule {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'source': !exists(json, 'Source') ? undefined : json['Source'],
-        'destination': !exists(json, 'Destination') ? undefined : json['Destination'],
+        'source': json['Source'] == null ? undefined : json['Source'],
+        'destination': json['Destination'] == null ? undefined : json['Destination'],
     };
 }
 
 export function AuthorizationTokenRuleToJSON(value?: AuthorizationTokenRule | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Source': value.source,
-        'Destination': value.destination,
+        'Source': value['source'],
+        'Destination': value['destination'],
     };
 }
 

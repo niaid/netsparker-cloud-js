@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SelectOptionModelToJSON = exports.SelectOptionModelFromJSONTyped = exports.SelectOptionModelFromJSON = exports.instanceOfSelectOptionModel = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the SelectOptionModel interface.
  */
 function instanceOfSelectOptionModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfSelectOptionModel = instanceOfSelectOptionModel;
 function SelectOptionModelFromJSON(json) {
@@ -28,25 +26,22 @@ function SelectOptionModelFromJSON(json) {
 }
 exports.SelectOptionModelFromJSON = SelectOptionModelFromJSON;
 function SelectOptionModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'label': !(0, runtime_1.exists)(json, 'Label') ? undefined : json['Label'],
-        'value': !(0, runtime_1.exists)(json, 'Value') ? undefined : json['Value'],
+        'label': json['Label'] == null ? undefined : json['Label'],
+        'value': json['Value'] == null ? undefined : json['Value'],
     };
 }
 exports.SelectOptionModelFromJSONTyped = SelectOptionModelFromJSONTyped;
 function SelectOptionModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Label': value.label,
-        'Value': value.value,
+        'Label': value['label'],
+        'Value': value['value'],
     };
 }
 exports.SelectOptionModelToJSON = SelectOptionModelToJSON;

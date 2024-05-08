@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * FormAuthenticationHashicorpVaultSetting
  * @export
@@ -84,9 +84,7 @@ export type FormAuthenticationHashicorpVaultSecretSettingVersionEnum = typeof Fo
  * Check if a given object implements the FormAuthenticationHashicorpVaultSecretSetting interface.
  */
 export function instanceOfFormAuthenticationHashicorpVaultSecretSetting(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function FormAuthenticationHashicorpVaultSecretSettingFromJSON(json: any): FormAuthenticationHashicorpVaultSecretSetting {
@@ -94,39 +92,36 @@ export function FormAuthenticationHashicorpVaultSecretSettingFromJSON(json: any)
 }
 
 export function FormAuthenticationHashicorpVaultSecretSettingFromJSONTyped(json: any, ignoreDiscriminator: boolean): FormAuthenticationHashicorpVaultSecretSetting {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'integrationId': !exists(json, 'IntegrationId') ? undefined : json['IntegrationId'],
-        'version': !exists(json, 'Version') ? undefined : json['Version'],
-        'secretEngine': !exists(json, 'SecretEngine') ? undefined : json['SecretEngine'],
-        'secret': !exists(json, 'Secret') ? undefined : json['Secret'],
-        'useStaticUsername': !exists(json, 'UseStaticUsername') ? undefined : json['UseStaticUsername'],
-        'staticUsername': !exists(json, 'StaticUsername') ? undefined : json['StaticUsername'],
-        'usernameKey': !exists(json, 'UsernameKey') ? undefined : json['UsernameKey'],
-        'passwordKey': !exists(json, 'PasswordKey') ? undefined : json['PasswordKey'],
+        'integrationId': json['IntegrationId'] == null ? undefined : json['IntegrationId'],
+        'version': json['Version'] == null ? undefined : json['Version'],
+        'secretEngine': json['SecretEngine'] == null ? undefined : json['SecretEngine'],
+        'secret': json['Secret'] == null ? undefined : json['Secret'],
+        'useStaticUsername': json['UseStaticUsername'] == null ? undefined : json['UseStaticUsername'],
+        'staticUsername': json['StaticUsername'] == null ? undefined : json['StaticUsername'],
+        'usernameKey': json['UsernameKey'] == null ? undefined : json['UsernameKey'],
+        'passwordKey': json['PasswordKey'] == null ? undefined : json['PasswordKey'],
     };
 }
 
 export function FormAuthenticationHashicorpVaultSecretSettingToJSON(value?: FormAuthenticationHashicorpVaultSecretSetting | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'IntegrationId': value.integrationId,
-        'Version': value.version,
-        'SecretEngine': value.secretEngine,
-        'Secret': value.secret,
-        'UseStaticUsername': value.useStaticUsername,
-        'StaticUsername': value.staticUsername,
-        'UsernameKey': value.usernameKey,
-        'PasswordKey': value.passwordKey,
+        'IntegrationId': value['integrationId'],
+        'Version': value['version'],
+        'SecretEngine': value['secretEngine'],
+        'Secret': value['secret'],
+        'UseStaticUsername': value['useStaticUsername'],
+        'StaticUsername': value['staticUsername'],
+        'UsernameKey': value['usernameKey'],
+        'PasswordKey': value['passwordKey'],
     };
 }
 

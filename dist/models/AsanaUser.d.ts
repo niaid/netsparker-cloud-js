@@ -46,4 +46,4 @@ export interface AsanaUser {
 export declare function instanceOfAsanaUser(value: object): boolean;
 export declare function AsanaUserFromJSON(json: any): AsanaUser;
 export declare function AsanaUserFromJSONTyped(json: any, ignoreDiscriminator: boolean): AsanaUser;
-export declare function AsanaUserToJSON(value?: AsanaUser | null): any;
+export declare function AsanaUserToJSON(value?: Omit<AsanaUser, 'DisplayName'> | null): any;

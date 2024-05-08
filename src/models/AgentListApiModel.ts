@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Initializes a new instance of the {Netsparker.Cloud.Infrastructure.Models.AgentListApiModel} class.
  * @export
@@ -147,9 +147,7 @@ export type AgentListApiModelStorageHealthStateEnum = typeof AgentListApiModelSt
  * Check if a given object implements the AgentListApiModel interface.
  */
 export function instanceOfAgentListApiModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function AgentListApiModelFromJSON(json: any): AgentListApiModel {
@@ -157,55 +155,52 @@ export function AgentListApiModelFromJSON(json: any): AgentListApiModel {
 }
 
 export function AgentListApiModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): AgentListApiModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'heartbeat': !exists(json, 'Heartbeat') ? undefined : (new Date(json['Heartbeat'])),
-        'ipAddress': !exists(json, 'IpAddress') ? undefined : json['IpAddress'],
-        'launched': !exists(json, 'Launched') ? undefined : (new Date(json['Launched'])),
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'state': !exists(json, 'State') ? undefined : json['State'],
-        'version': !exists(json, 'Version') ? undefined : json['Version'],
-        'autoUpdateEnabled': !exists(json, 'AutoUpdateEnabled') ? undefined : json['AutoUpdateEnabled'],
-        'hasWaitingCommand': !exists(json, 'HasWaitingCommand') ? undefined : json['HasWaitingCommand'],
-        'vdbVersion': !exists(json, 'VdbVersion') ? undefined : json['VdbVersion'],
-        'osDescription': !exists(json, 'OsDescription') ? undefined : json['OsDescription'],
-        'frameworkDescription': !exists(json, 'FrameworkDescription') ? undefined : json['FrameworkDescription'],
-        'osArchitecture': !exists(json, 'OsArchitecture') ? undefined : json['OsArchitecture'],
-        'processArchitecture': !exists(json, 'ProcessArchitecture') ? undefined : json['ProcessArchitecture'],
-        'isAgentNeedsUpdate': !exists(json, 'IsAgentNeedsUpdate') ? undefined : json['IsAgentNeedsUpdate'],
-        'storageHealthState': !exists(json, 'StorageHealthState') ? undefined : json['StorageHealthState'],
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'heartbeat': json['Heartbeat'] == null ? undefined : (new Date(json['Heartbeat'])),
+        'ipAddress': json['IpAddress'] == null ? undefined : json['IpAddress'],
+        'launched': json['Launched'] == null ? undefined : (new Date(json['Launched'])),
+        'name': json['Name'] == null ? undefined : json['Name'],
+        'state': json['State'] == null ? undefined : json['State'],
+        'version': json['Version'] == null ? undefined : json['Version'],
+        'autoUpdateEnabled': json['AutoUpdateEnabled'] == null ? undefined : json['AutoUpdateEnabled'],
+        'hasWaitingCommand': json['HasWaitingCommand'] == null ? undefined : json['HasWaitingCommand'],
+        'vdbVersion': json['VdbVersion'] == null ? undefined : json['VdbVersion'],
+        'osDescription': json['OsDescription'] == null ? undefined : json['OsDescription'],
+        'frameworkDescription': json['FrameworkDescription'] == null ? undefined : json['FrameworkDescription'],
+        'osArchitecture': json['OsArchitecture'] == null ? undefined : json['OsArchitecture'],
+        'processArchitecture': json['ProcessArchitecture'] == null ? undefined : json['ProcessArchitecture'],
+        'isAgentNeedsUpdate': json['IsAgentNeedsUpdate'] == null ? undefined : json['IsAgentNeedsUpdate'],
+        'storageHealthState': json['StorageHealthState'] == null ? undefined : json['StorageHealthState'],
     };
 }
 
 export function AgentListApiModelToJSON(value?: AgentListApiModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Id': value.id,
-        'Heartbeat': value.heartbeat === undefined ? undefined : (value.heartbeat.toISOString()),
-        'IpAddress': value.ipAddress,
-        'Launched': value.launched === undefined ? undefined : (value.launched.toISOString()),
-        'Name': value.name,
-        'State': value.state,
-        'Version': value.version,
-        'AutoUpdateEnabled': value.autoUpdateEnabled,
-        'HasWaitingCommand': value.hasWaitingCommand,
-        'VdbVersion': value.vdbVersion,
-        'OsDescription': value.osDescription,
-        'FrameworkDescription': value.frameworkDescription,
-        'OsArchitecture': value.osArchitecture,
-        'ProcessArchitecture': value.processArchitecture,
-        'IsAgentNeedsUpdate': value.isAgentNeedsUpdate,
-        'StorageHealthState': value.storageHealthState,
+        'Id': value['id'],
+        'Heartbeat': value['heartbeat'] == null ? undefined : ((value['heartbeat']).toISOString()),
+        'IpAddress': value['ipAddress'],
+        'Launched': value['launched'] == null ? undefined : ((value['launched']).toISOString()),
+        'Name': value['name'],
+        'State': value['state'],
+        'Version': value['version'],
+        'AutoUpdateEnabled': value['autoUpdateEnabled'],
+        'HasWaitingCommand': value['hasWaitingCommand'],
+        'VdbVersion': value['vdbVersion'],
+        'OsDescription': value['osDescription'],
+        'FrameworkDescription': value['frameworkDescription'],
+        'OsArchitecture': value['osArchitecture'],
+        'ProcessArchitecture': value['processArchitecture'],
+        'IsAgentNeedsUpdate': value['isAgentNeedsUpdate'],
+        'StorageHealthState': value['storageHealthState'],
     };
 }
 

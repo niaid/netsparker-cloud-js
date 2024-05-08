@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Pci Scan Task view model
  * @export
@@ -79,9 +79,7 @@ export type PciScanTaskViewModelComplianceStatusEnum = typeof PciScanTaskViewMod
  * Check if a given object implements the PciScanTaskViewModel interface.
  */
 export function instanceOfPciScanTaskViewModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function PciScanTaskViewModelFromJSON(json: any): PciScanTaskViewModel {
@@ -89,33 +87,30 @@ export function PciScanTaskViewModelFromJSON(json: any): PciScanTaskViewModel {
 }
 
 export function PciScanTaskViewModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): PciScanTaskViewModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'progress': !exists(json, 'Progress') ? undefined : json['Progress'],
-        'scanState': !exists(json, 'ScanState') ? undefined : json['ScanState'],
-        'complianceStatus': !exists(json, 'ComplianceStatus') ? undefined : json['ComplianceStatus'],
-        'endDate': !exists(json, 'EndDate') ? undefined : (new Date(json['EndDate'])),
+        'name': json['Name'] == null ? undefined : json['Name'],
+        'progress': json['Progress'] == null ? undefined : json['Progress'],
+        'scanState': json['ScanState'] == null ? undefined : json['ScanState'],
+        'complianceStatus': json['ComplianceStatus'] == null ? undefined : json['ComplianceStatus'],
+        'endDate': json['EndDate'] == null ? undefined : (new Date(json['EndDate'])),
     };
 }
 
 export function PciScanTaskViewModelToJSON(value?: PciScanTaskViewModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Name': value.name,
-        'Progress': value.progress,
-        'ScanState': value.scanState,
-        'ComplianceStatus': value.complianceStatus,
-        'EndDate': value.endDate === undefined ? undefined : (value.endDate.toISOString()),
+        'Name': value['name'],
+        'Progress': value['progress'],
+        'ScanState': value['scanState'],
+        'ComplianceStatus': value['complianceStatus'],
+        'EndDate': value['endDate'] == null ? undefined : ((value['endDate']).toISOString()),
     };
 }
 

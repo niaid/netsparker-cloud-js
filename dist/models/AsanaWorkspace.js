@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AsanaWorkspaceToJSON = exports.AsanaWorkspaceFromJSONTyped = exports.AsanaWorkspaceFromJSON = exports.instanceOfAsanaWorkspace = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the AsanaWorkspace interface.
  */
 function instanceOfAsanaWorkspace(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfAsanaWorkspace = instanceOfAsanaWorkspace;
 function AsanaWorkspaceFromJSON(json) {
@@ -28,25 +26,22 @@ function AsanaWorkspaceFromJSON(json) {
 }
 exports.AsanaWorkspaceFromJSON = AsanaWorkspaceFromJSON;
 function AsanaWorkspaceFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'gid': !(0, runtime_1.exists)(json, 'gid') ? undefined : json['gid'],
-        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        'gid': json['gid'] == null ? undefined : json['gid'],
+        'name': json['name'] == null ? undefined : json['name'],
     };
 }
 exports.AsanaWorkspaceFromJSONTyped = AsanaWorkspaceFromJSONTyped;
 function AsanaWorkspaceToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'gid': value.gid,
-        'name': value.name,
+        'gid': value['gid'],
+        'name': value['name'],
     };
 }
 exports.AsanaWorkspaceToJSON = AsanaWorkspaceToJSON;

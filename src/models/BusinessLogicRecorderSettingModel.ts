@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 import type { SequenceViewModel } from './SequenceViewModel';
 import {
     SequenceViewModelFromJSON,
@@ -38,9 +38,7 @@ export interface BusinessLogicRecorderSettingModel {
  * Check if a given object implements the BusinessLogicRecorderSettingModel interface.
  */
 export function instanceOfBusinessLogicRecorderSettingModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function BusinessLogicRecorderSettingModelFromJSON(json: any): BusinessLogicRecorderSettingModel {
@@ -48,25 +46,22 @@ export function BusinessLogicRecorderSettingModelFromJSON(json: any): BusinessLo
 }
 
 export function BusinessLogicRecorderSettingModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): BusinessLogicRecorderSettingModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'sequenceModelList': !exists(json, 'SequenceModelList') ? undefined : ((json['SequenceModelList'] as Array<any>).map(SequenceViewModelFromJSON)),
+        'sequenceModelList': json['SequenceModelList'] == null ? undefined : ((json['SequenceModelList'] as Array<any>).map(SequenceViewModelFromJSON)),
     };
 }
 
 export function BusinessLogicRecorderSettingModelToJSON(value?: BusinessLogicRecorderSettingModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'SequenceModelList': value.sequenceModelList === undefined ? undefined : ((value.sequenceModelList as Array<any>).map(SequenceViewModelToJSON)),
+        'SequenceModelList': value['sequenceModelList'] == null ? undefined : ((value['sequenceModelList'] as Array<any>).map(SequenceViewModelToJSON)),
     };
 }
 

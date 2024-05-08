@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a model for deleting a website.
  * @export
@@ -31,10 +31,8 @@ export interface DeleteWebsiteApiModel {
  * Check if a given object implements the DeleteWebsiteApiModel interface.
  */
 export function instanceOfDeleteWebsiteApiModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "rootUrl" in value;
-
-    return isInstance;
+    if (!('rootUrl' in value)) return false;
+    return true;
 }
 
 export function DeleteWebsiteApiModelFromJSON(json: any): DeleteWebsiteApiModel {
@@ -42,7 +40,7 @@ export function DeleteWebsiteApiModelFromJSON(json: any): DeleteWebsiteApiModel 
 }
 
 export function DeleteWebsiteApiModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): DeleteWebsiteApiModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -52,15 +50,12 @@ export function DeleteWebsiteApiModelFromJSONTyped(json: any, ignoreDiscriminato
 }
 
 export function DeleteWebsiteApiModelToJSON(value?: DeleteWebsiteApiModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'RootUrl': value.rootUrl,
+        'RootUrl': value['rootUrl'],
     };
 }
 

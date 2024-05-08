@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a model for carrying out custom HTTP header settings.
  * @export
@@ -61,10 +61,8 @@ export type CustomHttpHeaderSettingAttackModeEnum = typeof CustomHttpHeaderSetti
  * Check if a given object implements the CustomHttpHeaderSetting interface.
  */
 export function instanceOfCustomHttpHeaderSetting(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "name" in value;
-
-    return isInstance;
+    if (!('name' in value)) return false;
+    return true;
 }
 
 export function CustomHttpHeaderSettingFromJSON(json: any): CustomHttpHeaderSetting {
@@ -72,31 +70,28 @@ export function CustomHttpHeaderSettingFromJSON(json: any): CustomHttpHeaderSett
 }
 
 export function CustomHttpHeaderSettingFromJSONTyped(json: any, ignoreDiscriminator: boolean): CustomHttpHeaderSetting {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'attackMode': !exists(json, 'AttackMode') ? undefined : json['AttackMode'],
-        'enabled': !exists(json, 'Enabled') ? undefined : json['Enabled'],
+        'attackMode': json['AttackMode'] == null ? undefined : json['AttackMode'],
+        'enabled': json['Enabled'] == null ? undefined : json['Enabled'],
         'name': json['Name'],
-        'value': !exists(json, 'Value') ? undefined : json['Value'],
+        'value': json['Value'] == null ? undefined : json['Value'],
     };
 }
 
 export function CustomHttpHeaderSettingToJSON(value?: CustomHttpHeaderSetting | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'AttackMode': value.attackMode,
-        'Enabled': value.enabled,
-        'Name': value.name,
-        'Value': value.value,
+        'AttackMode': value['attackMode'],
+        'Enabled': value['enabled'],
+        'Name': value['name'],
+        'Value': value['value'],
     };
 }
 

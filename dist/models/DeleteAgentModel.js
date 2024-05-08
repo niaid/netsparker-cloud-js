@@ -18,9 +18,9 @@ exports.DeleteAgentModelToJSON = exports.DeleteAgentModelFromJSONTyped = exports
  * Check if a given object implements the DeleteAgentModel interface.
  */
 function instanceOfDeleteAgentModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "agentId" in value;
-    return isInstance;
+    if (!('agentId' in value))
+        return false;
+    return true;
 }
 exports.instanceOfDeleteAgentModel = instanceOfDeleteAgentModel;
 function DeleteAgentModelFromJSON(json) {
@@ -28,7 +28,7 @@ function DeleteAgentModelFromJSON(json) {
 }
 exports.DeleteAgentModelFromJSON = DeleteAgentModelFromJSON;
 function DeleteAgentModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -37,14 +37,11 @@ function DeleteAgentModelFromJSONTyped(json, ignoreDiscriminator) {
 }
 exports.DeleteAgentModelFromJSONTyped = DeleteAgentModelFromJSONTyped;
 function DeleteAgentModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'AgentId': value.agentId,
+        'AgentId': value['agentId'],
     };
 }
 exports.DeleteAgentModelToJSON = DeleteAgentModelToJSON;

@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { ScheduledScanModel } from './ScheduledScanModel';
+import type { ScheduledScanApiModel } from './ScheduledScanApiModel';
 /**
  * Represents a model for carrying out a paged scheduled scan list.
  * @export
@@ -54,10 +54,10 @@ export interface ScheduledScanListApiResult {
     lastItemOnPage?: number;
     /**
      *
-     * @type {Array<ScheduledScanModel>}
+     * @type {Array<ScheduledScanApiModel>}
      * @memberof ScheduledScanListApiResult
      */
-    list?: Array<ScheduledScanModel>;
+    list?: Array<ScheduledScanApiModel>;
     /**
      *
      * @type {number}

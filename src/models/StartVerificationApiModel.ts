@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a model to start verification.
  * @export
@@ -50,11 +50,9 @@ export type StartVerificationApiModelVerificationMethodEnum = typeof StartVerifi
  * Check if a given object implements the StartVerificationApiModel interface.
  */
 export function instanceOfStartVerificationApiModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "verificationMethod" in value;
-    isInstance = isInstance && "websiteUrl" in value;
-
-    return isInstance;
+    if (!('verificationMethod' in value)) return false;
+    if (!('websiteUrl' in value)) return false;
+    return true;
 }
 
 export function StartVerificationApiModelFromJSON(json: any): StartVerificationApiModel {
@@ -62,7 +60,7 @@ export function StartVerificationApiModelFromJSON(json: any): StartVerificationA
 }
 
 export function StartVerificationApiModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): StartVerificationApiModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -73,16 +71,13 @@ export function StartVerificationApiModelFromJSONTyped(json: any, ignoreDiscrimi
 }
 
 export function StartVerificationApiModelToJSON(value?: StartVerificationApiModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'VerificationMethod': value.verificationMethod,
-        'WebsiteUrl': value.websiteUrl,
+        'VerificationMethod': value['verificationMethod'],
+        'WebsiteUrl': value['websiteUrl'],
     };
 }
 

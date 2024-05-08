@@ -18,10 +18,11 @@ exports.NewScanTaskWithProfileApiModelToJSON = exports.NewScanTaskWithProfileApi
  * Check if a given object implements the NewScanTaskWithProfileApiModel interface.
  */
 function instanceOfNewScanTaskWithProfileApiModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "profileName" in value;
-    isInstance = isInstance && "targetUri" in value;
-    return isInstance;
+    if (!('profileName' in value))
+        return false;
+    if (!('targetUri' in value))
+        return false;
+    return true;
 }
 exports.instanceOfNewScanTaskWithProfileApiModel = instanceOfNewScanTaskWithProfileApiModel;
 function NewScanTaskWithProfileApiModelFromJSON(json) {
@@ -29,7 +30,7 @@ function NewScanTaskWithProfileApiModelFromJSON(json) {
 }
 exports.NewScanTaskWithProfileApiModelFromJSON = NewScanTaskWithProfileApiModelFromJSON;
 function NewScanTaskWithProfileApiModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -39,15 +40,12 @@ function NewScanTaskWithProfileApiModelFromJSONTyped(json, ignoreDiscriminator) 
 }
 exports.NewScanTaskWithProfileApiModelFromJSONTyped = NewScanTaskWithProfileApiModelFromJSONTyped;
 function NewScanTaskWithProfileApiModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'ProfileName': value.profileName,
-        'TargetUri': value.targetUri,
+        'ProfileName': value['profileName'],
+        'TargetUri': value['targetUri'],
     };
 }
 exports.NewScanTaskWithProfileApiModelToJSON = NewScanTaskWithProfileApiModelToJSON;

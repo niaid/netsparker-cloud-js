@@ -14,14 +14,12 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.RoleApiViewModelToJSON = exports.RoleApiViewModelFromJSONTyped = exports.RoleApiViewModelFromJSON = exports.instanceOfRoleApiViewModel = void 0;
-const runtime_1 = require("../runtime");
 const PermissionApiModel_1 = require("./PermissionApiModel");
 /**
  * Check if a given object implements the RoleApiViewModel interface.
  */
 function instanceOfRoleApiViewModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfRoleApiViewModel = instanceOfRoleApiViewModel;
 function RoleApiViewModelFromJSON(json) {
@@ -29,27 +27,24 @@ function RoleApiViewModelFromJSON(json) {
 }
 exports.RoleApiViewModelFromJSON = RoleApiViewModelFromJSON;
 function RoleApiViewModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
-        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
-        'permissions': !(0, runtime_1.exists)(json, 'Permissions') ? undefined : (json['Permissions'].map(PermissionApiModel_1.PermissionApiModelFromJSON)),
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'name': json['Name'] == null ? undefined : json['Name'],
+        'permissions': json['Permissions'] == null ? undefined : (json['Permissions'].map(PermissionApiModel_1.PermissionApiModelFromJSON)),
     };
 }
 exports.RoleApiViewModelFromJSONTyped = RoleApiViewModelFromJSONTyped;
 function RoleApiViewModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Id': value.id,
-        'Name': value.name,
-        'Permissions': value.permissions === undefined ? undefined : (value.permissions.map(PermissionApiModel_1.PermissionApiModelToJSON)),
+        'Id': value['id'],
+        'Name': value['name'],
+        'Permissions': value['permissions'] == null ? undefined : (value['permissions'].map(PermissionApiModel_1.PermissionApiModelToJSON)),
     };
 }
 exports.RoleApiViewModelToJSON = RoleApiViewModelToJSON;

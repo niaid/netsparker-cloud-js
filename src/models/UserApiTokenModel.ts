@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a model for carrying out user token model.
  * @export
@@ -37,9 +37,7 @@ export interface UserApiTokenModel {
  * Check if a given object implements the UserApiTokenModel interface.
  */
 export function instanceOfUserApiTokenModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function UserApiTokenModelFromJSON(json: any): UserApiTokenModel {
@@ -47,27 +45,24 @@ export function UserApiTokenModelFromJSON(json: any): UserApiTokenModel {
 }
 
 export function UserApiTokenModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): UserApiTokenModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'token': !exists(json, 'Token') ? undefined : json['Token'],
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'token': json['Token'] == null ? undefined : json['Token'],
     };
 }
 
 export function UserApiTokenModelToJSON(value?: UserApiTokenModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Id': value.id,
-        'Token': value.token,
+        'Id': value['id'],
+        'Token': value['token'],
     };
 }
 

@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a model for carrying out website group data.
  * @export
@@ -67,11 +67,9 @@ export interface WebsiteGroupApiModel {
  * Check if a given object implements the WebsiteGroupApiModel interface.
  */
 export function instanceOfWebsiteGroupApiModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "id" in value;
-    isInstance = isInstance && "name" in value;
-
-    return isInstance;
+    if (!('id' in value)) return false;
+    if (!('name' in value)) return false;
+    return true;
 }
 
 export function WebsiteGroupApiModelFromJSON(json: any): WebsiteGroupApiModel {
@@ -79,37 +77,34 @@ export function WebsiteGroupApiModelFromJSON(json: any): WebsiteGroupApiModel {
 }
 
 export function WebsiteGroupApiModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): WebsiteGroupApiModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'totalWebsites': !exists(json, 'TotalWebsites') ? undefined : json['TotalWebsites'],
-        'createdAt': !exists(json, 'CreatedAt') ? undefined : (new Date(json['CreatedAt'])),
-        'updatedAt': !exists(json, 'UpdatedAt') ? undefined : (new Date(json['UpdatedAt'])),
+        'totalWebsites': json['TotalWebsites'] == null ? undefined : json['TotalWebsites'],
+        'createdAt': json['CreatedAt'] == null ? undefined : (new Date(json['CreatedAt'])),
+        'updatedAt': json['UpdatedAt'] == null ? undefined : (new Date(json['UpdatedAt'])),
         'id': json['Id'],
         'name': json['Name'],
-        'description': !exists(json, 'Description') ? undefined : json['Description'],
-        'tags': !exists(json, 'Tags') ? undefined : json['Tags'],
+        'description': json['Description'] == null ? undefined : json['Description'],
+        'tags': json['Tags'] == null ? undefined : json['Tags'],
     };
 }
 
 export function WebsiteGroupApiModelToJSON(value?: WebsiteGroupApiModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'TotalWebsites': value.totalWebsites,
-        'CreatedAt': value.createdAt === undefined ? undefined : (value.createdAt.toISOString()),
-        'UpdatedAt': value.updatedAt === undefined ? undefined : (value.updatedAt.toISOString()),
-        'Id': value.id,
-        'Name': value.name,
-        'Description': value.description,
-        'Tags': value.tags,
+        'TotalWebsites': value['totalWebsites'],
+        'CreatedAt': value['createdAt'] == null ? undefined : ((value['createdAt']).toISOString()),
+        'UpdatedAt': value['updatedAt'] == null ? undefined : ((value['updatedAt']).toISOString()),
+        'Id': value['id'],
+        'Name': value['name'],
+        'Description': value['description'],
+        'Tags': value['tags'],
     };
 }
 

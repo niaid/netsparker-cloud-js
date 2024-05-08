@@ -16,6 +16,12 @@
  */
 export interface DiscoverySettingsApiModel {
     /**
+     *
+     * @type {string}
+     * @memberof DiscoverySettingsApiModel
+     */
+    includedMainDomains?: string;
+    /**
      * Gets or sets the included SLDS.
      * @type {string}
      * @memberof DiscoverySettingsApiModel
@@ -33,6 +39,12 @@ export interface DiscoverySettingsApiModel {
      * @memberof DiscoverySettingsApiModel
      */
     includedOrganizations?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DiscoverySettingsApiModel
+     */
+    excludedDomains?: string;
     /**
      * Gets or sets the excluded SLDS.
      * @type {string}
@@ -93,6 +105,18 @@ export interface DiscoverySettingsApiModel {
      * @memberof DiscoverySettingsApiModel
      */
     enableSlds?: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof DiscoverySettingsApiModel
+     */
+    isRiskScoringEnabled?: boolean;
+    /**
+     *
+     * @type {boolean}
+     * @memberof DiscoverySettingsApiModel
+     */
+    enableMainDomains?: boolean;
 }
 /**
  * Check if a given object implements the DiscoverySettingsApiModel interface.

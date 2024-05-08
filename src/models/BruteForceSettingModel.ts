@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a model for carrying out authentication brute force settings.
  * @export
@@ -37,9 +37,7 @@ export interface BruteForceSettingModel {
  * Check if a given object implements the BruteForceSettingModel interface.
  */
 export function instanceOfBruteForceSettingModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function BruteForceSettingModelFromJSON(json: any): BruteForceSettingModel {
@@ -47,27 +45,24 @@ export function BruteForceSettingModelFromJSON(json: any): BruteForceSettingMode
 }
 
 export function BruteForceSettingModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): BruteForceSettingModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'enableAuthBruteForce': !exists(json, 'EnableAuthBruteForce') ? undefined : json['EnableAuthBruteForce'],
-        'maxBruteForce': !exists(json, 'MaxBruteForce') ? undefined : json['MaxBruteForce'],
+        'enableAuthBruteForce': json['EnableAuthBruteForce'] == null ? undefined : json['EnableAuthBruteForce'],
+        'maxBruteForce': json['MaxBruteForce'] == null ? undefined : json['MaxBruteForce'],
     };
 }
 
 export function BruteForceSettingModelToJSON(value?: BruteForceSettingModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'EnableAuthBruteForce': value.enableAuthBruteForce,
-        'MaxBruteForce': value.maxBruteForce,
+        'EnableAuthBruteForce': value['enableAuthBruteForce'],
+        'MaxBruteForce': value['maxBruteForce'],
     };
 }
 

@@ -14,14 +14,12 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ClientCertificateAuthenticationApiModelToJSON = exports.ClientCertificateAuthenticationApiModelFromJSONTyped = exports.ClientCertificateAuthenticationApiModelFromJSON = exports.instanceOfClientCertificateAuthenticationApiModel = void 0;
-const runtime_1 = require("../runtime");
-const ApiFileModel_1 = require("./ApiFileModel");
+const ApiFile_1 = require("./ApiFile");
 /**
  * Check if a given object implements the ClientCertificateAuthenticationApiModel interface.
  */
 function instanceOfClientCertificateAuthenticationApiModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfClientCertificateAuthenticationApiModel = instanceOfClientCertificateAuthenticationApiModel;
 function ClientCertificateAuthenticationApiModelFromJSON(json) {
@@ -29,27 +27,24 @@ function ClientCertificateAuthenticationApiModelFromJSON(json) {
 }
 exports.ClientCertificateAuthenticationApiModelFromJSON = ClientCertificateAuthenticationApiModelFromJSON;
 function ClientCertificateAuthenticationApiModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'file': !(0, runtime_1.exists)(json, 'File') ? undefined : (0, ApiFileModel_1.ApiFileModelFromJSON)(json['File']),
-        'isEnabled': !(0, runtime_1.exists)(json, 'IsEnabled') ? undefined : json['IsEnabled'],
-        'password': !(0, runtime_1.exists)(json, 'Password') ? undefined : json['Password'],
+        'file': json['File'] == null ? undefined : (0, ApiFile_1.ApiFileFromJSON)(json['File']),
+        'isEnabled': json['IsEnabled'] == null ? undefined : json['IsEnabled'],
+        'password': json['Password'] == null ? undefined : json['Password'],
     };
 }
 exports.ClientCertificateAuthenticationApiModelFromJSONTyped = ClientCertificateAuthenticationApiModelFromJSONTyped;
 function ClientCertificateAuthenticationApiModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'File': (0, ApiFileModel_1.ApiFileModelToJSON)(value.file),
-        'IsEnabled': value.isEnabled,
-        'Password': value.password,
+        'File': (0, ApiFile_1.ApiFileToJSON)(value['file']),
+        'IsEnabled': value['isEnabled'],
+        'Password': value['password'],
     };
 }
 exports.ClientCertificateAuthenticationApiModelToJSON = ClientCertificateAuthenticationApiModelToJSON;

@@ -14,16 +14,17 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AwsConnectionInfoModelToJSON = exports.AwsConnectionInfoModelFromJSONTyped = exports.AwsConnectionInfoModelFromJSON = exports.instanceOfAwsConnectionInfoModel = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the AwsConnectionInfoModel interface.
  */
 function instanceOfAwsConnectionInfoModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "region" in value;
-    isInstance = isInstance && "accessKeyId" in value;
-    isInstance = isInstance && "secretAccessKey" in value;
-    return isInstance;
+    if (!('region' in value))
+        return false;
+    if (!('accessKeyId' in value))
+        return false;
+    if (!('secretAccessKey' in value))
+        return false;
+    return true;
 }
 exports.instanceOfAwsConnectionInfoModel = instanceOfAwsConnectionInfoModel;
 function AwsConnectionInfoModelFromJSON(json) {
@@ -31,29 +32,26 @@ function AwsConnectionInfoModelFromJSON(json) {
 }
 exports.AwsConnectionInfoModelFromJSON = AwsConnectionInfoModelFromJSON;
 function AwsConnectionInfoModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         'region': json['Region'],
         'accessKeyId': json['AccessKeyId'],
         'secretAccessKey': json['SecretAccessKey'],
-        'showUnreachableDiscoveredWebsites': !(0, runtime_1.exists)(json, 'ShowUnreachableDiscoveredWebsites') ? undefined : json['ShowUnreachableDiscoveredWebsites'],
+        'showUnreachableDiscoveredWebsites': json['ShowUnreachableDiscoveredWebsites'] == null ? undefined : json['ShowUnreachableDiscoveredWebsites'],
     };
 }
 exports.AwsConnectionInfoModelFromJSONTyped = AwsConnectionInfoModelFromJSONTyped;
 function AwsConnectionInfoModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Region': value.region,
-        'AccessKeyId': value.accessKeyId,
-        'SecretAccessKey': value.secretAccessKey,
-        'ShowUnreachableDiscoveredWebsites': value.showUnreachableDiscoveredWebsites,
+        'Region': value['region'],
+        'AccessKeyId': value['accessKeyId'],
+        'SecretAccessKey': value['secretAccessKey'],
+        'ShowUnreachableDiscoveredWebsites': value['showUnreachableDiscoveredWebsites'],
     };
 }
 exports.AwsConnectionInfoModelToJSON = AwsConnectionInfoModelToJSON;

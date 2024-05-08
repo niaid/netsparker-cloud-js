@@ -12,19 +12,19 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
-import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
-import {
-    IntegrationCustomFieldVmFromJSON,
-    IntegrationCustomFieldVmFromJSONTyped,
-    IntegrationCustomFieldVmToJSON,
-} from './IntegrationCustomFieldVm';
+import { mapValues } from '../runtime';
 import type { IntegrationWizardResultModel } from './IntegrationWizardResultModel';
 import {
     IntegrationWizardResultModelFromJSON,
     IntegrationWizardResultModelFromJSONTyped,
     IntegrationWizardResultModelToJSON,
 } from './IntegrationWizardResultModel';
+import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
+import {
+    IntegrationCustomFieldVmFromJSON,
+    IntegrationCustomFieldVmFromJSONTyped,
+    IntegrationCustomFieldVmToJSON,
+} from './IntegrationCustomFieldVm';
 
 /**
  * The Clubhouse integration info
@@ -182,6 +182,18 @@ export interface ClubhouseIntegrationInfoModel {
      * @memberof ClubhouseIntegrationInfoModel
      */
     integrationWizardResultModel?: IntegrationWizardResultModel;
+    /**
+     * 
+     * @type {string}
+     * @memberof ClubhouseIntegrationInfoModel
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof ClubhouseIntegrationInfoModel
+     */
+    state?: ClubhouseIntegrationInfoModelStateEnum;
 }
 
 
@@ -244,18 +256,25 @@ export const ClubhouseIntegrationInfoModelTemplateTypeEnum = {
 } as const;
 export type ClubhouseIntegrationInfoModelTemplateTypeEnum = typeof ClubhouseIntegrationInfoModelTemplateTypeEnum[keyof typeof ClubhouseIntegrationInfoModelTemplateTypeEnum];
 
+/**
+ * @export
+ */
+export const ClubhouseIntegrationInfoModelStateEnum = {
+    Active: 'Active',
+    Suspended: 'Suspended'
+} as const;
+export type ClubhouseIntegrationInfoModelStateEnum = typeof ClubhouseIntegrationInfoModelStateEnum[keyof typeof ClubhouseIntegrationInfoModelStateEnum];
+
 
 /**
  * Check if a given object implements the ClubhouseIntegrationInfoModel interface.
  */
 export function instanceOfClubhouseIntegrationInfoModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "apiToken" in value;
-    isInstance = isInstance && "projectId" in value;
-    isInstance = isInstance && "dueDays" in value;
-    isInstance = isInstance && "titleFormat" in value;
-
-    return isInstance;
+    if (!('apiToken' in value)) return false;
+    if (!('projectId' in value)) return false;
+    if (!('dueDays' in value)) return false;
+    if (!('titleFormat' in value)) return false;
+    return true;
 }
 
 export function ClubhouseIntegrationInfoModelFromJSON(json: any): ClubhouseIntegrationInfoModel {
@@ -263,67 +282,68 @@ export function ClubhouseIntegrationInfoModelFromJSON(json: any): ClubhouseInteg
 }
 
 export function ClubhouseIntegrationInfoModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): ClubhouseIntegrationInfoModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
         'apiToken': json['ApiToken'],
         'projectId': json['ProjectId'],
-        'clubhouseStoryType': !exists(json, 'ClubhouseStoryType') ? undefined : json['ClubhouseStoryType'],
-        'epicId': !exists(json, 'EpicId') ? undefined : json['EpicId'],
-        'stateId': !exists(json, 'StateId') ? undefined : json['StateId'],
-        'requesterId': !exists(json, 'RequesterId') ? undefined : json['RequesterId'],
-        'ownerIds': !exists(json, 'OwnerIds') ? undefined : json['OwnerIds'],
-        'followerIds': !exists(json, 'FollowerIds') ? undefined : json['FollowerIds'],
+        'clubhouseStoryType': json['ClubhouseStoryType'] == null ? undefined : json['ClubhouseStoryType'],
+        'epicId': json['EpicId'] == null ? undefined : json['EpicId'],
+        'stateId': json['StateId'] == null ? undefined : json['StateId'],
+        'requesterId': json['RequesterId'] == null ? undefined : json['RequesterId'],
+        'ownerIds': json['OwnerIds'] == null ? undefined : json['OwnerIds'],
+        'followerIds': json['FollowerIds'] == null ? undefined : json['FollowerIds'],
         'dueDays': json['DueDays'],
-        'labels': !exists(json, 'Labels') ? undefined : json['Labels'],
-        'type': !exists(json, 'Type') ? undefined : json['Type'],
-        'genericErrorMessage': !exists(json, 'GenericErrorMessage') ? undefined : json['GenericErrorMessage'],
-        'identifier': !exists(json, 'Identifier') ? undefined : json['Identifier'],
-        'testMessageBody': !exists(json, 'TestMessageBody') ? undefined : json['TestMessageBody'],
-        'testMessageTitle': !exists(json, 'TestMessageTitle') ? undefined : json['TestMessageTitle'],
-        'webhookUrl': !exists(json, 'WebhookUrl') ? undefined : json['WebhookUrl'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'integrationVersion': !exists(json, 'IntegrationVersion') ? undefined : json['IntegrationVersion'],
-        'accountID': !exists(json, 'AccountID') ? undefined : json['AccountID'],
-        'customFields': !exists(json, 'CustomFields') ? undefined : ((json['CustomFields'] as Array<any>).map(IntegrationCustomFieldVmFromJSON)),
-        'templateType': !exists(json, 'TemplateType') ? undefined : json['TemplateType'],
-        'reopenStatus': !exists(json, 'ReopenStatus') ? undefined : json['ReopenStatus'],
-        'resolvedStatus': !exists(json, 'ResolvedStatus') ? undefined : json['ResolvedStatus'],
+        'labels': json['Labels'] == null ? undefined : json['Labels'],
+        'type': json['Type'] == null ? undefined : json['Type'],
+        'genericErrorMessage': json['GenericErrorMessage'] == null ? undefined : json['GenericErrorMessage'],
+        'identifier': json['Identifier'] == null ? undefined : json['Identifier'],
+        'testMessageBody': json['TestMessageBody'] == null ? undefined : json['TestMessageBody'],
+        'testMessageTitle': json['TestMessageTitle'] == null ? undefined : json['TestMessageTitle'],
+        'webhookUrl': json['WebhookUrl'] == null ? undefined : json['WebhookUrl'],
+        'name': json['Name'] == null ? undefined : json['Name'],
+        'integrationVersion': json['IntegrationVersion'] == null ? undefined : json['IntegrationVersion'],
+        'accountID': json['AccountID'] == null ? undefined : json['AccountID'],
+        'customFields': json['CustomFields'] == null ? undefined : ((json['CustomFields'] as Array<any>).map(IntegrationCustomFieldVmFromJSON)),
+        'templateType': json['TemplateType'] == null ? undefined : json['TemplateType'],
+        'reopenStatus': json['ReopenStatus'] == null ? undefined : json['ReopenStatus'],
+        'resolvedStatus': json['ResolvedStatus'] == null ? undefined : json['ResolvedStatus'],
         'titleFormat': json['TitleFormat'],
-        'integrationWizardResultModel': !exists(json, 'IntegrationWizardResultModel') ? undefined : IntegrationWizardResultModelFromJSON(json['IntegrationWizardResultModel']),
+        'integrationWizardResultModel': json['IntegrationWizardResultModel'] == null ? undefined : IntegrationWizardResultModelFromJSON(json['IntegrationWizardResultModel']),
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'state': json['State'] == null ? undefined : json['State'],
     };
 }
 
-export function ClubhouseIntegrationInfoModelToJSON(value?: ClubhouseIntegrationInfoModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+export function ClubhouseIntegrationInfoModelToJSON(value?: Omit<ClubhouseIntegrationInfoModel, 'Type'|'GenericErrorMessage'|'Identifier'|'TestMessageBody'|'TestMessageTitle'|'WebhookUrl'> | null): any {
+    if (value == null) {
+        return value;
     }
     return {
         
-        'ApiToken': value.apiToken,
-        'ProjectId': value.projectId,
-        'ClubhouseStoryType': value.clubhouseStoryType,
-        'EpicId': value.epicId,
-        'StateId': value.stateId,
-        'RequesterId': value.requesterId,
-        'OwnerIds': value.ownerIds,
-        'FollowerIds': value.followerIds,
-        'DueDays': value.dueDays,
-        'Labels': value.labels,
-        'Name': value.name,
-        'IntegrationVersion': value.integrationVersion,
-        'AccountID': value.accountID,
-        'CustomFields': value.customFields === undefined ? undefined : ((value.customFields as Array<any>).map(IntegrationCustomFieldVmToJSON)),
-        'TemplateType': value.templateType,
-        'ReopenStatus': value.reopenStatus,
-        'ResolvedStatus': value.resolvedStatus,
-        'TitleFormat': value.titleFormat,
-        'IntegrationWizardResultModel': IntegrationWizardResultModelToJSON(value.integrationWizardResultModel),
+        'ApiToken': value['apiToken'],
+        'ProjectId': value['projectId'],
+        'ClubhouseStoryType': value['clubhouseStoryType'],
+        'EpicId': value['epicId'],
+        'StateId': value['stateId'],
+        'RequesterId': value['requesterId'],
+        'OwnerIds': value['ownerIds'],
+        'FollowerIds': value['followerIds'],
+        'DueDays': value['dueDays'],
+        'Labels': value['labels'],
+        'Name': value['name'],
+        'IntegrationVersion': value['integrationVersion'],
+        'AccountID': value['accountID'],
+        'CustomFields': value['customFields'] == null ? undefined : ((value['customFields'] as Array<any>).map(IntegrationCustomFieldVmToJSON)),
+        'TemplateType': value['templateType'],
+        'ReopenStatus': value['reopenStatus'],
+        'ResolvedStatus': value['resolvedStatus'],
+        'TitleFormat': value['titleFormat'],
+        'IntegrationWizardResultModel': IntegrationWizardResultModelToJSON(value['integrationWizardResultModel']),
+        'Id': value['id'],
+        'State': value['state'],
     };
 }
 

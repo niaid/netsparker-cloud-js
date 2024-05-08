@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a container for agent choices of a website.
  * @export
@@ -37,9 +37,7 @@ export interface AgentSelectionModel {
  * Check if a given object implements the AgentSelectionModel interface.
  */
 export function instanceOfAgentSelectionModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function AgentSelectionModelFromJSON(json: any): AgentSelectionModel {
@@ -47,27 +45,24 @@ export function AgentSelectionModelFromJSON(json: any): AgentSelectionModel {
 }
 
 export function AgentSelectionModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): AgentSelectionModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'agentId': !exists(json, 'AgentId') ? undefined : json['AgentId'],
-        'websiteId': !exists(json, 'WebsiteId') ? undefined : json['WebsiteId'],
+        'agentId': json['AgentId'] == null ? undefined : json['AgentId'],
+        'websiteId': json['WebsiteId'] == null ? undefined : json['WebsiteId'],
     };
 }
 
 export function AgentSelectionModelToJSON(value?: AgentSelectionModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'AgentId': value.agentId,
-        'WebsiteId': value.websiteId,
+        'AgentId': value['agentId'],
+        'WebsiteId': value['websiteId'],
     };
 }
 

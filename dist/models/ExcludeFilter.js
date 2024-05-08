@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ExcludeFilterToJSON = exports.ExcludeFilterFromJSONTyped = exports.ExcludeFilterFromJSON = exports.instanceOfExcludeFilter = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the ExcludeFilter interface.
  */
 function instanceOfExcludeFilter(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfExcludeFilter = instanceOfExcludeFilter;
 function ExcludeFilterFromJSON(json) {
@@ -28,31 +26,28 @@ function ExcludeFilterFromJSON(json) {
 }
 exports.ExcludeFilterFromJSON = ExcludeFilterFromJSON;
 function ExcludeFilterFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'excludedSlds': !(0, runtime_1.exists)(json, 'ExcludedSlds') ? undefined : json['ExcludedSlds'],
-        'excludedTlds': !(0, runtime_1.exists)(json, 'ExcludedTlds') ? undefined : json['ExcludedTlds'],
-        'excludedIpAddresses': !(0, runtime_1.exists)(json, 'ExcludedIpAddresses') ? undefined : json['ExcludedIpAddresses'],
-        'excludedDomains': !(0, runtime_1.exists)(json, 'ExcludedDomains') ? undefined : json['ExcludedDomains'],
-        'excludedOrganizations': !(0, runtime_1.exists)(json, 'ExcludedOrganizations') ? undefined : json['ExcludedOrganizations'],
+        'excludedSlds': json['ExcludedSlds'] == null ? undefined : json['ExcludedSlds'],
+        'excludedTlds': json['ExcludedTlds'] == null ? undefined : json['ExcludedTlds'],
+        'excludedIpAddresses': json['ExcludedIpAddresses'] == null ? undefined : json['ExcludedIpAddresses'],
+        'excludedDomains': json['ExcludedDomains'] == null ? undefined : json['ExcludedDomains'],
+        'excludedOrganizations': json['ExcludedOrganizations'] == null ? undefined : json['ExcludedOrganizations'],
     };
 }
 exports.ExcludeFilterFromJSONTyped = ExcludeFilterFromJSONTyped;
 function ExcludeFilterToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'ExcludedSlds': value.excludedSlds,
-        'ExcludedTlds': value.excludedTlds,
-        'ExcludedIpAddresses': value.excludedIpAddresses,
-        'ExcludedDomains': value.excludedDomains,
-        'ExcludedOrganizations': value.excludedOrganizations,
+        'ExcludedSlds': value['excludedSlds'],
+        'ExcludedTlds': value['excludedTlds'],
+        'ExcludedIpAddresses': value['excludedIpAddresses'],
+        'ExcludedDomains': value['excludedDomains'],
+        'ExcludedOrganizations': value['excludedOrganizations'],
     };
 }
 exports.ExcludeFilterToJSON = ExcludeFilterToJSON;

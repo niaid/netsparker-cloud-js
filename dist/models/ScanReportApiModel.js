@@ -14,7 +14,6 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ScanReportApiModelToJSON = exports.ScanReportApiModelFromJSONTyped = exports.ScanReportApiModelFromJSON = exports.instanceOfScanReportApiModel = exports.ScanReportApiModelTypeEnum = exports.ScanReportApiModelFormatEnum = exports.ScanReportApiModelContentFormatEnum = void 0;
-const runtime_1 = require("../runtime");
 /**
  * @export
  */
@@ -67,11 +66,13 @@ exports.ScanReportApiModelTypeEnum = {
  * Check if a given object implements the ScanReportApiModel interface.
  */
 function instanceOfScanReportApiModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "format" in value;
-    isInstance = isInstance && "id" in value;
-    isInstance = isInstance && "type" in value;
-    return isInstance;
+    if (!('format' in value))
+        return false;
+    if (!('id' in value))
+        return false;
+    if (!('type' in value))
+        return false;
+    return true;
 }
 exports.instanceOfScanReportApiModel = instanceOfScanReportApiModel;
 function ScanReportApiModelFromJSON(json) {
@@ -79,39 +80,36 @@ function ScanReportApiModelFromJSON(json) {
 }
 exports.ScanReportApiModelFromJSON = ScanReportApiModelFromJSON;
 function ScanReportApiModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'contentFormat': !(0, runtime_1.exists)(json, 'ContentFormat') ? undefined : json['ContentFormat'],
-        'excludeResponseData': !(0, runtime_1.exists)(json, 'ExcludeResponseData') ? undefined : json['ExcludeResponseData'],
+        'contentFormat': json['ContentFormat'] == null ? undefined : json['ContentFormat'],
+        'excludeResponseData': json['ExcludeResponseData'] == null ? undefined : json['ExcludeResponseData'],
         'format': json['Format'],
         'id': json['Id'],
         'type': json['Type'],
-        'onlyConfirmedIssues': !(0, runtime_1.exists)(json, 'OnlyConfirmedIssues') ? undefined : json['OnlyConfirmedIssues'],
-        'onlyUnconfirmedIssues': !(0, runtime_1.exists)(json, 'OnlyUnconfirmedIssues') ? undefined : json['OnlyUnconfirmedIssues'],
-        'excludeAddressedIssues': !(0, runtime_1.exists)(json, 'ExcludeAddressedIssues') ? undefined : json['ExcludeAddressedIssues'],
-        'excludeHistoryOfIssues': !(0, runtime_1.exists)(json, 'ExcludeHistoryOfIssues') ? undefined : json['ExcludeHistoryOfIssues'],
+        'onlyConfirmedIssues': json['OnlyConfirmedIssues'] == null ? undefined : json['OnlyConfirmedIssues'],
+        'onlyUnconfirmedIssues': json['OnlyUnconfirmedIssues'] == null ? undefined : json['OnlyUnconfirmedIssues'],
+        'excludeAddressedIssues': json['ExcludeAddressedIssues'] == null ? undefined : json['ExcludeAddressedIssues'],
+        'excludeHistoryOfIssues': json['ExcludeHistoryOfIssues'] == null ? undefined : json['ExcludeHistoryOfIssues'],
     };
 }
 exports.ScanReportApiModelFromJSONTyped = ScanReportApiModelFromJSONTyped;
 function ScanReportApiModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'ContentFormat': value.contentFormat,
-        'ExcludeResponseData': value.excludeResponseData,
-        'Format': value.format,
-        'Id': value.id,
-        'Type': value.type,
-        'OnlyConfirmedIssues': value.onlyConfirmedIssues,
-        'OnlyUnconfirmedIssues': value.onlyUnconfirmedIssues,
-        'ExcludeAddressedIssues': value.excludeAddressedIssues,
-        'ExcludeHistoryOfIssues': value.excludeHistoryOfIssues,
+        'ContentFormat': value['contentFormat'],
+        'ExcludeResponseData': value['excludeResponseData'],
+        'Format': value['format'],
+        'Id': value['id'],
+        'Type': value['type'],
+        'OnlyConfirmedIssues': value['onlyConfirmedIssues'],
+        'OnlyUnconfirmedIssues': value['onlyUnconfirmedIssues'],
+        'ExcludeAddressedIssues': value['excludeAddressedIssues'],
+        'ExcludeHistoryOfIssues': value['excludeHistoryOfIssues'],
     };
 }
 exports.ScanReportApiModelToJSON = ScanReportApiModelToJSON;

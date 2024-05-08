@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 import type { PermissionApiModel } from './PermissionApiModel';
 import {
     PermissionApiModelFromJSON,
@@ -50,9 +50,7 @@ export interface RoleApiViewModel {
  * Check if a given object implements the RoleApiViewModel interface.
  */
 export function instanceOfRoleApiViewModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function RoleApiViewModelFromJSON(json: any): RoleApiViewModel {
@@ -60,29 +58,26 @@ export function RoleApiViewModelFromJSON(json: any): RoleApiViewModel {
 }
 
 export function RoleApiViewModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): RoleApiViewModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'permissions': !exists(json, 'Permissions') ? undefined : ((json['Permissions'] as Array<any>).map(PermissionApiModelFromJSON)),
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'name': json['Name'] == null ? undefined : json['Name'],
+        'permissions': json['Permissions'] == null ? undefined : ((json['Permissions'] as Array<any>).map(PermissionApiModelFromJSON)),
     };
 }
 
 export function RoleApiViewModelToJSON(value?: RoleApiViewModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Id': value.id,
-        'Name': value.name,
-        'Permissions': value.permissions === undefined ? undefined : ((value.permissions as Array<any>).map(PermissionApiModelToJSON)),
+        'Id': value['id'],
+        'Name': value['name'],
+        'Permissions': value['permissions'] == null ? undefined : ((value['permissions'] as Array<any>).map(PermissionApiModelToJSON)),
     };
 }
 

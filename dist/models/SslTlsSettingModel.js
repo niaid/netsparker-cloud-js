@@ -14,7 +14,6 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SslTlsSettingModelToJSON = exports.SslTlsSettingModelFromJSONTyped = exports.SslTlsSettingModelFromJSON = exports.instanceOfSslTlsSettingModel = exports.SslTlsSettingModelTargetUrlInvalidCertificateActionEnum = exports.SslTlsSettingModelExternalDomainInvalidCertificateActionEnum = void 0;
-const runtime_1 = require("../runtime");
 /**
  * @export
  */
@@ -33,8 +32,7 @@ exports.SslTlsSettingModelTargetUrlInvalidCertificateActionEnum = {
  * Check if a given object implements the SslTlsSettingModel interface.
  */
 function instanceOfSslTlsSettingModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfSslTlsSettingModel = instanceOfSslTlsSettingModel;
 function SslTlsSettingModelFromJSON(json) {
@@ -42,35 +40,32 @@ function SslTlsSettingModelFromJSON(json) {
 }
 exports.SslTlsSettingModelFromJSON = SslTlsSettingModelFromJSON;
 function SslTlsSettingModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'externalDomainInvalidCertificateAction': !(0, runtime_1.exists)(json, 'ExternalDomainInvalidCertificateAction') ? undefined : json['ExternalDomainInvalidCertificateAction'],
-        'ssl3Enabled': !(0, runtime_1.exists)(json, 'Ssl3Enabled') ? undefined : json['Ssl3Enabled'],
-        'targetUrlInvalidCertificateAction': !(0, runtime_1.exists)(json, 'TargetUrlInvalidCertificateAction') ? undefined : json['TargetUrlInvalidCertificateAction'],
-        'tls10Enabled': !(0, runtime_1.exists)(json, 'Tls10Enabled') ? undefined : json['Tls10Enabled'],
-        'tls11Enabled': !(0, runtime_1.exists)(json, 'Tls11Enabled') ? undefined : json['Tls11Enabled'],
-        'tls12Enabled': !(0, runtime_1.exists)(json, 'Tls12Enabled') ? undefined : json['Tls12Enabled'],
-        'tls13Enabled': !(0, runtime_1.exists)(json, 'Tls13Enabled') ? undefined : json['Tls13Enabled'],
+        'externalDomainInvalidCertificateAction': json['ExternalDomainInvalidCertificateAction'] == null ? undefined : json['ExternalDomainInvalidCertificateAction'],
+        'ssl3Enabled': json['Ssl3Enabled'] == null ? undefined : json['Ssl3Enabled'],
+        'targetUrlInvalidCertificateAction': json['TargetUrlInvalidCertificateAction'] == null ? undefined : json['TargetUrlInvalidCertificateAction'],
+        'tls10Enabled': json['Tls10Enabled'] == null ? undefined : json['Tls10Enabled'],
+        'tls11Enabled': json['Tls11Enabled'] == null ? undefined : json['Tls11Enabled'],
+        'tls12Enabled': json['Tls12Enabled'] == null ? undefined : json['Tls12Enabled'],
+        'tls13Enabled': json['Tls13Enabled'] == null ? undefined : json['Tls13Enabled'],
     };
 }
 exports.SslTlsSettingModelFromJSONTyped = SslTlsSettingModelFromJSONTyped;
 function SslTlsSettingModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'ExternalDomainInvalidCertificateAction': value.externalDomainInvalidCertificateAction,
-        'Ssl3Enabled': value.ssl3Enabled,
-        'TargetUrlInvalidCertificateAction': value.targetUrlInvalidCertificateAction,
-        'Tls10Enabled': value.tls10Enabled,
-        'Tls11Enabled': value.tls11Enabled,
-        'Tls12Enabled': value.tls12Enabled,
-        'Tls13Enabled': value.tls13Enabled,
+        'ExternalDomainInvalidCertificateAction': value['externalDomainInvalidCertificateAction'],
+        'Ssl3Enabled': value['ssl3Enabled'],
+        'TargetUrlInvalidCertificateAction': value['targetUrlInvalidCertificateAction'],
+        'Tls10Enabled': value['tls10Enabled'],
+        'Tls11Enabled': value['tls11Enabled'],
+        'Tls12Enabled': value['tls12Enabled'],
+        'Tls13Enabled': value['tls13Enabled'],
     };
 }
 exports.SslTlsSettingModelToJSON = SslTlsSettingModelToJSON;

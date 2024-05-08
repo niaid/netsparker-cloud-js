@@ -12,19 +12,19 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
-import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
-import {
-    IntegrationCustomFieldVmFromJSON,
-    IntegrationCustomFieldVmFromJSONTyped,
-    IntegrationCustomFieldVmToJSON,
-} from './IntegrationCustomFieldVm';
+import { mapValues } from '../runtime';
 import type { IntegrationWizardResultModel } from './IntegrationWizardResultModel';
 import {
     IntegrationWizardResultModelFromJSON,
     IntegrationWizardResultModelFromJSONTyped,
     IntegrationWizardResultModelToJSON,
 } from './IntegrationWizardResultModel';
+import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
+import {
+    IntegrationCustomFieldVmFromJSON,
+    IntegrationCustomFieldVmFromJSONTyped,
+    IntegrationCustomFieldVmToJSON,
+} from './IntegrationCustomFieldVm';
 
 /**
  * The Jazz Team integration info
@@ -182,6 +182,18 @@ export interface JazzTeamIntegrationInfoModel {
      * @memberof JazzTeamIntegrationInfoModel
      */
     integrationWizardResultModel?: IntegrationWizardResultModel;
+    /**
+     * 
+     * @type {string}
+     * @memberof JazzTeamIntegrationInfoModel
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof JazzTeamIntegrationInfoModel
+     */
+    state?: JazzTeamIntegrationInfoModelStateEnum;
 }
 
 
@@ -267,20 +279,27 @@ export const JazzTeamIntegrationInfoModelTypeEnum = {
 } as const;
 export type JazzTeamIntegrationInfoModelTypeEnum = typeof JazzTeamIntegrationInfoModelTypeEnum[keyof typeof JazzTeamIntegrationInfoModelTypeEnum];
 
+/**
+ * @export
+ */
+export const JazzTeamIntegrationInfoModelStateEnum = {
+    Active: 'Active',
+    Suspended: 'Suspended'
+} as const;
+export type JazzTeamIntegrationInfoModelStateEnum = typeof JazzTeamIntegrationInfoModelStateEnum[keyof typeof JazzTeamIntegrationInfoModelStateEnum];
+
 
 /**
  * Check if a given object implements the JazzTeamIntegrationInfoModel interface.
  */
 export function instanceOfJazzTeamIntegrationInfoModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "serverURL" in value;
-    isInstance = isInstance && "username" in value;
-    isInstance = isInstance && "password" in value;
-    isInstance = isInstance && "projectAreaId" in value;
-    isInstance = isInstance && "categoryName" in value;
-    isInstance = isInstance && "titleFormat" in value;
-
-    return isInstance;
+    if (!('serverURL' in value)) return false;
+    if (!('username' in value)) return false;
+    if (!('password' in value)) return false;
+    if (!('projectAreaId' in value)) return false;
+    if (!('categoryName' in value)) return false;
+    if (!('titleFormat' in value)) return false;
+    return true;
 }
 
 export function JazzTeamIntegrationInfoModelFromJSON(json: any): JazzTeamIntegrationInfoModel {
@@ -288,7 +307,7 @@ export function JazzTeamIntegrationInfoModelFromJSON(json: any): JazzTeamIntegra
 }
 
 export function JazzTeamIntegrationInfoModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): JazzTeamIntegrationInfoModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -298,57 +317,58 @@ export function JazzTeamIntegrationInfoModelFromJSONTyped(json: any, ignoreDiscr
         'password': json['Password'],
         'projectAreaId': json['ProjectAreaId'],
         'categoryName': json['CategoryName'],
-        'tags': !exists(json, 'Tags') ? undefined : json['Tags'],
-        'dueDays': !exists(json, 'DueDays') ? undefined : json['DueDays'],
-        'severity': !exists(json, 'Severity') ? undefined : json['Severity'],
-        'priority': !exists(json, 'Priority') ? undefined : json['Priority'],
-        'workItemType': !exists(json, 'WorkItemType') ? undefined : json['WorkItemType'],
-        'templateType': !exists(json, 'TemplateType') ? undefined : json['TemplateType'],
-        'type': !exists(json, 'Type') ? undefined : json['Type'],
-        'genericErrorMessage': !exists(json, 'GenericErrorMessage') ? undefined : json['GenericErrorMessage'],
-        'identifier': !exists(json, 'Identifier') ? undefined : json['Identifier'],
-        'testMessageBody': !exists(json, 'TestMessageBody') ? undefined : json['TestMessageBody'],
-        'testMessageTitle': !exists(json, 'TestMessageTitle') ? undefined : json['TestMessageTitle'],
-        'webhookUrl': !exists(json, 'WebhookUrl') ? undefined : json['WebhookUrl'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'integrationVersion': !exists(json, 'IntegrationVersion') ? undefined : json['IntegrationVersion'],
-        'accountID': !exists(json, 'AccountID') ? undefined : json['AccountID'],
-        'customFields': !exists(json, 'CustomFields') ? undefined : ((json['CustomFields'] as Array<any>).map(IntegrationCustomFieldVmFromJSON)),
-        'reopenStatus': !exists(json, 'ReopenStatus') ? undefined : json['ReopenStatus'],
-        'resolvedStatus': !exists(json, 'ResolvedStatus') ? undefined : json['ResolvedStatus'],
+        'tags': json['Tags'] == null ? undefined : json['Tags'],
+        'dueDays': json['DueDays'] == null ? undefined : json['DueDays'],
+        'severity': json['Severity'] == null ? undefined : json['Severity'],
+        'priority': json['Priority'] == null ? undefined : json['Priority'],
+        'workItemType': json['WorkItemType'] == null ? undefined : json['WorkItemType'],
+        'templateType': json['TemplateType'] == null ? undefined : json['TemplateType'],
+        'type': json['Type'] == null ? undefined : json['Type'],
+        'genericErrorMessage': json['GenericErrorMessage'] == null ? undefined : json['GenericErrorMessage'],
+        'identifier': json['Identifier'] == null ? undefined : json['Identifier'],
+        'testMessageBody': json['TestMessageBody'] == null ? undefined : json['TestMessageBody'],
+        'testMessageTitle': json['TestMessageTitle'] == null ? undefined : json['TestMessageTitle'],
+        'webhookUrl': json['WebhookUrl'] == null ? undefined : json['WebhookUrl'],
+        'name': json['Name'] == null ? undefined : json['Name'],
+        'integrationVersion': json['IntegrationVersion'] == null ? undefined : json['IntegrationVersion'],
+        'accountID': json['AccountID'] == null ? undefined : json['AccountID'],
+        'customFields': json['CustomFields'] == null ? undefined : ((json['CustomFields'] as Array<any>).map(IntegrationCustomFieldVmFromJSON)),
+        'reopenStatus': json['ReopenStatus'] == null ? undefined : json['ReopenStatus'],
+        'resolvedStatus': json['ResolvedStatus'] == null ? undefined : json['ResolvedStatus'],
         'titleFormat': json['TitleFormat'],
-        'integrationWizardResultModel': !exists(json, 'IntegrationWizardResultModel') ? undefined : IntegrationWizardResultModelFromJSON(json['IntegrationWizardResultModel']),
+        'integrationWizardResultModel': json['IntegrationWizardResultModel'] == null ? undefined : IntegrationWizardResultModelFromJSON(json['IntegrationWizardResultModel']),
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'state': json['State'] == null ? undefined : json['State'],
     };
 }
 
-export function JazzTeamIntegrationInfoModelToJSON(value?: JazzTeamIntegrationInfoModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+export function JazzTeamIntegrationInfoModelToJSON(value?: Omit<JazzTeamIntegrationInfoModel, 'Type'|'GenericErrorMessage'|'Identifier'|'TestMessageBody'|'TestMessageTitle'|'WebhookUrl'> | null): any {
+    if (value == null) {
+        return value;
     }
     return {
         
-        'ServerURL': value.serverURL,
-        'Username': value.username,
-        'Password': value.password,
-        'ProjectAreaId': value.projectAreaId,
-        'CategoryName': value.categoryName,
-        'Tags': value.tags,
-        'DueDays': value.dueDays,
-        'Severity': value.severity,
-        'Priority': value.priority,
-        'WorkItemType': value.workItemType,
-        'TemplateType': value.templateType,
-        'Name': value.name,
-        'IntegrationVersion': value.integrationVersion,
-        'AccountID': value.accountID,
-        'CustomFields': value.customFields === undefined ? undefined : ((value.customFields as Array<any>).map(IntegrationCustomFieldVmToJSON)),
-        'ReopenStatus': value.reopenStatus,
-        'ResolvedStatus': value.resolvedStatus,
-        'TitleFormat': value.titleFormat,
-        'IntegrationWizardResultModel': IntegrationWizardResultModelToJSON(value.integrationWizardResultModel),
+        'ServerURL': value['serverURL'],
+        'Username': value['username'],
+        'Password': value['password'],
+        'ProjectAreaId': value['projectAreaId'],
+        'CategoryName': value['categoryName'],
+        'Tags': value['tags'],
+        'DueDays': value['dueDays'],
+        'Severity': value['severity'],
+        'Priority': value['priority'],
+        'WorkItemType': value['workItemType'],
+        'TemplateType': value['templateType'],
+        'Name': value['name'],
+        'IntegrationVersion': value['integrationVersion'],
+        'AccountID': value['accountID'],
+        'CustomFields': value['customFields'] == null ? undefined : ((value['customFields'] as Array<any>).map(IntegrationCustomFieldVmToJSON)),
+        'ReopenStatus': value['reopenStatus'],
+        'ResolvedStatus': value['resolvedStatus'],
+        'TitleFormat': value['titleFormat'],
+        'IntegrationWizardResultModel': IntegrationWizardResultModelToJSON(value['integrationWizardResultModel']),
+        'Id': value['id'],
+        'State': value['state'],
     };
 }
 

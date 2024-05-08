@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Contains properties that required to start incremental scheduled scan.
  * @export
@@ -91,13 +91,11 @@ export type NewScheduledIncrementalScanApiModelScheduleRunTypeEnum = typeof NewS
  * Check if a given object implements the NewScheduledIncrementalScanApiModel interface.
  */
 export function instanceOfNewScheduledIncrementalScanApiModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "name" in value;
-    isInstance = isInstance && "nextExecutionTime" in value;
-    isInstance = isInstance && "scheduleRunType" in value;
-    isInstance = isInstance && "baseScanId" in value;
-
-    return isInstance;
+    if (!('name' in value)) return false;
+    if (!('nextExecutionTime' in value)) return false;
+    if (!('scheduleRunType' in value)) return false;
+    if (!('baseScanId' in value)) return false;
+    return true;
 }
 
 export function NewScheduledIncrementalScanApiModelFromJSON(json: any): NewScheduledIncrementalScanApiModel {
@@ -105,39 +103,36 @@ export function NewScheduledIncrementalScanApiModelFromJSON(json: any): NewSched
 }
 
 export function NewScheduledIncrementalScanApiModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): NewScheduledIncrementalScanApiModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'isMaxScanDurationEnabled': !exists(json, 'IsMaxScanDurationEnabled') ? undefined : json['IsMaxScanDurationEnabled'],
-        'maxScanDuration': !exists(json, 'MaxScanDuration') ? undefined : json['MaxScanDuration'],
+        'isMaxScanDurationEnabled': json['IsMaxScanDurationEnabled'] == null ? undefined : json['IsMaxScanDurationEnabled'],
+        'maxScanDuration': json['MaxScanDuration'] == null ? undefined : json['MaxScanDuration'],
         'name': json['Name'],
         'nextExecutionTime': json['NextExecutionTime'],
         'scheduleRunType': json['ScheduleRunType'],
-        'tags': !exists(json, 'Tags') ? undefined : json['Tags'],
-        'agentName': !exists(json, 'AgentName') ? undefined : json['AgentName'],
+        'tags': json['Tags'] == null ? undefined : json['Tags'],
+        'agentName': json['AgentName'] == null ? undefined : json['AgentName'],
         'baseScanId': json['BaseScanId'],
     };
 }
 
 export function NewScheduledIncrementalScanApiModelToJSON(value?: NewScheduledIncrementalScanApiModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'IsMaxScanDurationEnabled': value.isMaxScanDurationEnabled,
-        'MaxScanDuration': value.maxScanDuration,
-        'Name': value.name,
-        'NextExecutionTime': value.nextExecutionTime,
-        'ScheduleRunType': value.scheduleRunType,
-        'Tags': value.tags,
-        'AgentName': value.agentName,
-        'BaseScanId': value.baseScanId,
+        'IsMaxScanDurationEnabled': value['isMaxScanDurationEnabled'],
+        'MaxScanDuration': value['maxScanDuration'],
+        'Name': value['name'],
+        'NextExecutionTime': value['nextExecutionTime'],
+        'ScheduleRunType': value['scheduleRunType'],
+        'Tags': value['tags'],
+        'AgentName': value['agentName'],
+        'BaseScanId': value['baseScanId'],
     };
 }
 

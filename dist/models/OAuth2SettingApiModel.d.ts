@@ -9,12 +9,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { BasicAuthenticationSettingApiModel } from './BasicAuthenticationSettingApiModel';
-import type { FormAuthenticationSettingApiModel } from './FormAuthenticationSettingApiModel';
 import type { NameValuePair } from './NameValuePair';
 import type { OAuth2SettingEndpoint } from './OAuth2SettingEndpoint';
 import type { ResponseFields } from './ResponseFields';
+import type { BasicAuthenticationSettingApiModel } from './BasicAuthenticationSettingApiModel';
 import type { ThreeLeggedFields } from './ThreeLeggedFields';
+import type { FormAuthenticationSettingApiModel } from './FormAuthenticationSettingApiModel';
 /**
  * Provides an inputs for OAuth 2.0 Flow.
  * @export

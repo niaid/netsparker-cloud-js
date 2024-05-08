@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Scheduled scan recurrence view model.
  * @export
@@ -179,9 +179,7 @@ export type ScheduledScanRecurrenceViewModelDayOfWeekEnum = typeof ScheduledScan
  * Check if a given object implements the ScheduledScanRecurrenceViewModel interface.
  */
 export function instanceOfScheduledScanRecurrenceViewModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function ScheduledScanRecurrenceViewModelFromJSON(json: any): ScheduledScanRecurrenceViewModel {
@@ -189,47 +187,44 @@ export function ScheduledScanRecurrenceViewModelFromJSON(json: any): ScheduledSc
 }
 
 export function ScheduledScanRecurrenceViewModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): ScheduledScanRecurrenceViewModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'repeatType': !exists(json, 'RepeatType') ? undefined : json['RepeatType'],
-        'interval': !exists(json, 'Interval') ? undefined : json['Interval'],
-        'startDate': !exists(json, 'StartDate') ? undefined : (new Date(json['StartDate'])),
-        'endingType': !exists(json, 'EndingType') ? undefined : json['EndingType'],
-        'daysOfWeek': !exists(json, 'DaysOfWeek') ? undefined : json['DaysOfWeek'],
-        'monthsOfYear': !exists(json, 'MonthsOfYear') ? undefined : json['MonthsOfYear'],
-        'ordinal': !exists(json, 'Ordinal') ? undefined : json['Ordinal'],
-        'endOn': !exists(json, 'EndOn') ? undefined : json['EndOn'],
-        'endOnOccurences': !exists(json, 'EndOnOccurences') ? undefined : json['EndOnOccurences'],
-        'dayOfMonth': !exists(json, 'DayOfMonth') ? undefined : json['DayOfMonth'],
-        'endOnDate': !exists(json, 'EndOnDate') ? undefined : (new Date(json['EndOnDate'])),
-        'dayOfWeek': !exists(json, 'DayOfWeek') ? undefined : json['DayOfWeek'],
+        'repeatType': json['RepeatType'] == null ? undefined : json['RepeatType'],
+        'interval': json['Interval'] == null ? undefined : json['Interval'],
+        'startDate': json['StartDate'] == null ? undefined : (new Date(json['StartDate'])),
+        'endingType': json['EndingType'] == null ? undefined : json['EndingType'],
+        'daysOfWeek': json['DaysOfWeek'] == null ? undefined : json['DaysOfWeek'],
+        'monthsOfYear': json['MonthsOfYear'] == null ? undefined : json['MonthsOfYear'],
+        'ordinal': json['Ordinal'] == null ? undefined : json['Ordinal'],
+        'endOn': json['EndOn'] == null ? undefined : json['EndOn'],
+        'endOnOccurences': json['EndOnOccurences'] == null ? undefined : json['EndOnOccurences'],
+        'dayOfMonth': json['DayOfMonth'] == null ? undefined : json['DayOfMonth'],
+        'endOnDate': json['EndOnDate'] == null ? undefined : (new Date(json['EndOnDate'])),
+        'dayOfWeek': json['DayOfWeek'] == null ? undefined : json['DayOfWeek'],
     };
 }
 
 export function ScheduledScanRecurrenceViewModelToJSON(value?: ScheduledScanRecurrenceViewModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'RepeatType': value.repeatType,
-        'Interval': value.interval,
-        'StartDate': value.startDate === undefined ? undefined : (value.startDate.toISOString()),
-        'EndingType': value.endingType,
-        'DaysOfWeek': value.daysOfWeek,
-        'MonthsOfYear': value.monthsOfYear,
-        'Ordinal': value.ordinal,
-        'EndOn': value.endOn,
-        'EndOnOccurences': value.endOnOccurences,
-        'DayOfMonth': value.dayOfMonth,
-        'EndOnDate': value.endOnDate === undefined ? undefined : (value.endOnDate.toISOString()),
-        'DayOfWeek': value.dayOfWeek,
+        'RepeatType': value['repeatType'],
+        'Interval': value['interval'],
+        'StartDate': value['startDate'] == null ? undefined : ((value['startDate']).toISOString()),
+        'EndingType': value['endingType'],
+        'DaysOfWeek': value['daysOfWeek'],
+        'MonthsOfYear': value['monthsOfYear'],
+        'Ordinal': value['ordinal'],
+        'EndOn': value['endOn'],
+        'EndOnOccurences': value['endOnOccurences'],
+        'DayOfMonth': value['dayOfMonth'],
+        'EndOnDate': value['endOnDate'] == null ? undefined : ((value['endOnDate']).toISOString()),
+        'DayOfWeek': value['dayOfWeek'],
     };
 }
 

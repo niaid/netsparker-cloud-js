@@ -10,8 +10,8 @@
  * Do not edit the class manually.
  */
 import type { CustomHttpHeaderModel } from './CustomHttpHeaderModel';
-import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
 import type { IntegrationWizardResultModel } from './IntegrationWizardResultModel';
+import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
 /**
  * The Webhook integration info
  * @export
@@ -162,6 +162,18 @@ export interface WebhookIntegrationInfoModel {
      * @memberof WebhookIntegrationInfoModel
      */
     integrationWizardResultModel?: IntegrationWizardResultModel;
+    /**
+     *
+     * @type {string}
+     * @memberof WebhookIntegrationInfoModel
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof WebhookIntegrationInfoModel
+     */
+    state?: WebhookIntegrationInfoModelStateEnum;
 }
 /**
  * @export
@@ -186,39 +198,39 @@ export type WebhookIntegrationInfoModelParameterTypeEnum = typeof WebhookIntegra
  * @export
  */
 export declare const WebhookIntegrationInfoModelTypeEnum: {
-    readonly NetsparkerEnterprise: "NetsparkerEnterprise";
-    readonly Webhook: "Webhook";
-    readonly Zapier: "Zapier";
-    readonly Slack: "Slack";
-    readonly Mattermost: "Mattermost";
-    readonly MicrosoftTeams: "MicrosoftTeams";
-    readonly AzureDevOps: "AzureDevOps";
-    readonly Bitbucket: "Bitbucket";
-    readonly Bugzilla: "Bugzilla";
-    readonly Clubhouse: "Clubhouse";
-    readonly DefectDojo: "DefectDojo";
-    readonly PivotalTracker: "PivotalTracker";
     readonly Jira: "Jira";
-    readonly FogBugz: "FogBugz";
     readonly GitHub: "GitHub";
-    readonly PagerDuty: "PagerDuty";
-    readonly Kafka: "Kafka";
-    readonly Kenna: "Kenna";
-    readonly Redmine: "Redmine";
-    readonly ServiceNow: "ServiceNow";
     readonly Tfs: "TFS";
-    readonly Unfuddle: "Unfuddle";
-    readonly YouTrack: "YouTrack";
-    readonly Freshservice: "Freshservice";
-    readonly Splunk: "Splunk";
-    readonly JazzTeam: "JazzTeam";
-    readonly ServiceNowVrm: "ServiceNowVRM";
-    readonly Asana: "Asana";
-    readonly Trello: "Trello";
-    readonly Hashicorp: "Hashicorp";
-    readonly CyberArk: "CyberArk";
-    readonly AzureKeyVault: "AzureKeyVault";
+    readonly FogBugz: "FogBugz";
+    readonly ServiceNow: "ServiceNow";
+    readonly Slack: "Slack";
     readonly GitLab: "GitLab";
+    readonly Bitbucket: "Bitbucket";
+    readonly Unfuddle: "Unfuddle";
+    readonly Zapier: "Zapier";
+    readonly AzureDevOps: "AzureDevOps";
+    readonly Redmine: "Redmine";
+    readonly Bugzilla: "Bugzilla";
+    readonly Kafka: "Kafka";
+    readonly PagerDuty: "PagerDuty";
+    readonly MicrosoftTeams: "MicrosoftTeams";
+    readonly Clubhouse: "Clubhouse";
+    readonly Trello: "Trello";
+    readonly Asana: "Asana";
+    readonly Webhook: "Webhook";
+    readonly Kenna: "Kenna";
+    readonly Freshservice: "Freshservice";
+    readonly YouTrack: "YouTrack";
+    readonly NetsparkerEnterprise: "NetsparkerEnterprise";
+    readonly Splunk: "Splunk";
+    readonly Mattermost: "Mattermost";
+    readonly Hashicorp: "Hashicorp";
+    readonly PivotalTracker: "PivotalTracker";
+    readonly CyberArk: "CyberArk";
+    readonly DefectDojo: "DefectDojo";
+    readonly JazzTeam: "JazzTeam";
+    readonly AzureKeyVault: "AzureKeyVault";
+    readonly ServiceNowVrm: "ServiceNowVRM";
 };
 export type WebhookIntegrationInfoModelTypeEnum = typeof WebhookIntegrationInfoModelTypeEnum[keyof typeof WebhookIntegrationInfoModelTypeEnum];
 /**
@@ -230,9 +242,17 @@ export declare const WebhookIntegrationInfoModelTemplateTypeEnum: {
 };
 export type WebhookIntegrationInfoModelTemplateTypeEnum = typeof WebhookIntegrationInfoModelTemplateTypeEnum[keyof typeof WebhookIntegrationInfoModelTemplateTypeEnum];
 /**
+ * @export
+ */
+export declare const WebhookIntegrationInfoModelStateEnum: {
+    readonly Active: "Active";
+    readonly Suspended: "Suspended";
+};
+export type WebhookIntegrationInfoModelStateEnum = typeof WebhookIntegrationInfoModelStateEnum[keyof typeof WebhookIntegrationInfoModelStateEnum];
+/**
  * Check if a given object implements the WebhookIntegrationInfoModel interface.
  */
 export declare function instanceOfWebhookIntegrationInfoModel(value: object): boolean;
 export declare function WebhookIntegrationInfoModelFromJSON(json: any): WebhookIntegrationInfoModel;
 export declare function WebhookIntegrationInfoModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): WebhookIntegrationInfoModel;
-export declare function WebhookIntegrationInfoModelToJSON(value?: WebhookIntegrationInfoModel | null): any;
+export declare function WebhookIntegrationInfoModelToJSON(value?: Omit<WebhookIntegrationInfoModel, 'Type' | 'GenericErrorMessage' | 'Identifier' | 'TestMessageBody' | 'TestMessageTitle' | 'WebhookUrl'> | null): any;

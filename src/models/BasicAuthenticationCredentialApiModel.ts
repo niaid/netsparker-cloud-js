@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents credentials for Basic, NTML, Kerberos, Digest or Negotiate authentication.
  * @export
@@ -69,9 +69,7 @@ export type BasicAuthenticationCredentialApiModelAuthenticationTypeEnum = typeof
  * Check if a given object implements the BasicAuthenticationCredentialApiModel interface.
  */
 export function instanceOfBasicAuthenticationCredentialApiModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function BasicAuthenticationCredentialApiModelFromJSON(json: any): BasicAuthenticationCredentialApiModel {
@@ -79,33 +77,30 @@ export function BasicAuthenticationCredentialApiModelFromJSON(json: any): BasicA
 }
 
 export function BasicAuthenticationCredentialApiModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): BasicAuthenticationCredentialApiModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'authenticationType': !exists(json, 'AuthenticationType') ? undefined : json['AuthenticationType'],
-        'domain': !exists(json, 'Domain') ? undefined : json['Domain'],
-        'password': !exists(json, 'Password') ? undefined : json['Password'],
-        'uriPrefix': !exists(json, 'UriPrefix') ? undefined : json['UriPrefix'],
-        'userName': !exists(json, 'UserName') ? undefined : json['UserName'],
+        'authenticationType': json['AuthenticationType'] == null ? undefined : json['AuthenticationType'],
+        'domain': json['Domain'] == null ? undefined : json['Domain'],
+        'password': json['Password'] == null ? undefined : json['Password'],
+        'uriPrefix': json['UriPrefix'] == null ? undefined : json['UriPrefix'],
+        'userName': json['UserName'] == null ? undefined : json['UserName'],
     };
 }
 
 export function BasicAuthenticationCredentialApiModelToJSON(value?: BasicAuthenticationCredentialApiModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'AuthenticationType': value.authenticationType,
-        'Domain': value.domain,
-        'Password': value.password,
-        'UriPrefix': value.uriPrefix,
-        'UserName': value.userName,
+        'AuthenticationType': value['authenticationType'],
+        'Domain': value['domain'],
+        'Password': value['password'],
+        'UriPrefix': value['uriPrefix'],
+        'UserName': value['userName'],
     };
 }
 

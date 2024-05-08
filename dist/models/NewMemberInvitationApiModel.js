@@ -14,16 +14,16 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.NewMemberInvitationApiModelToJSON = exports.NewMemberInvitationApiModelFromJSONTyped = exports.NewMemberInvitationApiModelFromJSON = exports.instanceOfNewMemberInvitationApiModel = void 0;
-const runtime_1 = require("../runtime");
 const RoleWebsiteGroupMappingApiModel_1 = require("./RoleWebsiteGroupMappingApiModel");
 /**
  * Check if a given object implements the NewMemberInvitationApiModel interface.
  */
 function instanceOfNewMemberInvitationApiModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "email" in value;
-    isInstance = isInstance && "name" in value;
-    return isInstance;
+    if (!('email' in value))
+        return false;
+    if (!('name' in value))
+        return false;
+    return true;
 }
 exports.instanceOfNewMemberInvitationApiModel = instanceOfNewMemberInvitationApiModel;
 function NewMemberInvitationApiModelFromJSON(json) {
@@ -31,39 +31,36 @@ function NewMemberInvitationApiModelFromJSON(json) {
 }
 exports.NewMemberInvitationApiModelFromJSON = NewMemberInvitationApiModelFromJSON;
 function NewMemberInvitationApiModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         'email': json['Email'],
-        'alternateLoginEmail': !(0, runtime_1.exists)(json, 'AlternateLoginEmail') ? undefined : json['AlternateLoginEmail'],
+        'alternateLoginEmail': json['AlternateLoginEmail'] == null ? undefined : json['AlternateLoginEmail'],
         'name': json['Name'],
-        'phoneNumber': !(0, runtime_1.exists)(json, 'PhoneNumber') ? undefined : json['PhoneNumber'],
-        'isApiAccessEnabled': !(0, runtime_1.exists)(json, 'IsApiAccessEnabled') ? undefined : json['IsApiAccessEnabled'],
-        'teams': !(0, runtime_1.exists)(json, 'Teams') ? undefined : json['Teams'],
-        'roleWebsiteGroupMappings': !(0, runtime_1.exists)(json, 'RoleWebsiteGroupMappings') ? undefined : (json['RoleWebsiteGroupMappings'].map(RoleWebsiteGroupMappingApiModel_1.RoleWebsiteGroupMappingApiModelFromJSON)),
-        'allowedWebsiteLimit': !(0, runtime_1.exists)(json, 'AllowedWebsiteLimit') ? undefined : json['AllowedWebsiteLimit'],
-        'onlySsoLogin': !(0, runtime_1.exists)(json, 'OnlySsoLogin') ? undefined : json['OnlySsoLogin'],
+        'phoneNumber': json['PhoneNumber'] == null ? undefined : json['PhoneNumber'],
+        'isApiAccessEnabled': json['IsApiAccessEnabled'] == null ? undefined : json['IsApiAccessEnabled'],
+        'teams': json['Teams'] == null ? undefined : json['Teams'],
+        'roleWebsiteGroupMappings': json['RoleWebsiteGroupMappings'] == null ? undefined : (json['RoleWebsiteGroupMappings'].map(RoleWebsiteGroupMappingApiModel_1.RoleWebsiteGroupMappingApiModelFromJSON)),
+        'allowedWebsiteLimit': json['AllowedWebsiteLimit'] == null ? undefined : json['AllowedWebsiteLimit'],
+        'onlySsoLogin': json['OnlySsoLogin'] == null ? undefined : json['OnlySsoLogin'],
     };
 }
 exports.NewMemberInvitationApiModelFromJSONTyped = NewMemberInvitationApiModelFromJSONTyped;
 function NewMemberInvitationApiModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Email': value.email,
-        'AlternateLoginEmail': value.alternateLoginEmail,
-        'Name': value.name,
-        'PhoneNumber': value.phoneNumber,
-        'IsApiAccessEnabled': value.isApiAccessEnabled,
-        'Teams': value.teams,
-        'RoleWebsiteGroupMappings': value.roleWebsiteGroupMappings === undefined ? undefined : (value.roleWebsiteGroupMappings.map(RoleWebsiteGroupMappingApiModel_1.RoleWebsiteGroupMappingApiModelToJSON)),
-        'AllowedWebsiteLimit': value.allowedWebsiteLimit,
-        'OnlySsoLogin': value.onlySsoLogin,
+        'Email': value['email'],
+        'AlternateLoginEmail': value['alternateLoginEmail'],
+        'Name': value['name'],
+        'PhoneNumber': value['phoneNumber'],
+        'IsApiAccessEnabled': value['isApiAccessEnabled'],
+        'Teams': value['teams'],
+        'RoleWebsiteGroupMappings': value['roleWebsiteGroupMappings'] == null ? undefined : (value['roleWebsiteGroupMappings'].map(RoleWebsiteGroupMappingApiModel_1.RoleWebsiteGroupMappingApiModelToJSON)),
+        'AllowedWebsiteLimit': value['allowedWebsiteLimit'],
+        'OnlySsoLogin': value['onlySsoLogin'],
     };
 }
 exports.NewMemberInvitationApiModelToJSON = NewMemberInvitationApiModelToJSON;

@@ -14,7 +14,6 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BasicAuthenticationCredentialModelToJSON = exports.BasicAuthenticationCredentialModelFromJSONTyped = exports.BasicAuthenticationCredentialModelFromJSON = exports.instanceOfBasicAuthenticationCredentialModel = exports.BasicAuthenticationCredentialModelAuthenticationTypeEnum = void 0;
-const runtime_1 = require("../runtime");
 /**
  * @export
  */
@@ -29,11 +28,13 @@ exports.BasicAuthenticationCredentialModelAuthenticationTypeEnum = {
  * Check if a given object implements the BasicAuthenticationCredentialModel interface.
  */
 function instanceOfBasicAuthenticationCredentialModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "password" in value;
-    isInstance = isInstance && "uriPrefix" in value;
-    isInstance = isInstance && "userName" in value;
-    return isInstance;
+    if (!('password' in value))
+        return false;
+    if (!('uriPrefix' in value))
+        return false;
+    if (!('userName' in value))
+        return false;
+    return true;
 }
 exports.instanceOfBasicAuthenticationCredentialModel = instanceOfBasicAuthenticationCredentialModel;
 function BasicAuthenticationCredentialModelFromJSON(json) {
@@ -41,39 +42,36 @@ function BasicAuthenticationCredentialModelFromJSON(json) {
 }
 exports.BasicAuthenticationCredentialModelFromJSON = BasicAuthenticationCredentialModelFromJSON;
 function BasicAuthenticationCredentialModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'authenticationType': !(0, runtime_1.exists)(json, 'AuthenticationType') ? undefined : json['AuthenticationType'],
-        'domain': !(0, runtime_1.exists)(json, 'Domain') ? undefined : json['Domain'],
+        'authenticationType': json['AuthenticationType'] == null ? undefined : json['AuthenticationType'],
+        'domain': json['Domain'] == null ? undefined : json['Domain'],
         'password': json['Password'],
         'uriPrefix': json['UriPrefix'],
         'userName': json['UserName'],
-        'originalUriPrefix': !(0, runtime_1.exists)(json, 'OriginalUriPrefix') ? undefined : json['OriginalUriPrefix'],
-        'originalUserName': !(0, runtime_1.exists)(json, 'OriginalUserName') ? undefined : json['OriginalUserName'],
-        'originalPassword': !(0, runtime_1.exists)(json, 'OriginalPassword') ? undefined : json['OriginalPassword'],
-        'isReplacedCredentials': !(0, runtime_1.exists)(json, 'IsReplacedCredentials') ? undefined : json['IsReplacedCredentials'],
+        'originalUriPrefix': json['OriginalUriPrefix'] == null ? undefined : json['OriginalUriPrefix'],
+        'originalUserName': json['OriginalUserName'] == null ? undefined : json['OriginalUserName'],
+        'originalPassword': json['OriginalPassword'] == null ? undefined : json['OriginalPassword'],
+        'isReplacedCredentials': json['IsReplacedCredentials'] == null ? undefined : json['IsReplacedCredentials'],
     };
 }
 exports.BasicAuthenticationCredentialModelFromJSONTyped = BasicAuthenticationCredentialModelFromJSONTyped;
 function BasicAuthenticationCredentialModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'AuthenticationType': value.authenticationType,
-        'Domain': value.domain,
-        'Password': value.password,
-        'UriPrefix': value.uriPrefix,
-        'UserName': value.userName,
-        'OriginalUriPrefix': value.originalUriPrefix,
-        'OriginalUserName': value.originalUserName,
-        'OriginalPassword': value.originalPassword,
-        'IsReplacedCredentials': value.isReplacedCredentials,
+        'AuthenticationType': value['authenticationType'],
+        'Domain': value['domain'],
+        'Password': value['password'],
+        'UriPrefix': value['uriPrefix'],
+        'UserName': value['userName'],
+        'OriginalUriPrefix': value['originalUriPrefix'],
+        'OriginalUserName': value['originalUserName'],
+        'OriginalPassword': value['originalPassword'],
+        'IsReplacedCredentials': value['isReplacedCredentials'],
     };
 }
 exports.BasicAuthenticationCredentialModelToJSON = BasicAuthenticationCredentialModelToJSON;

@@ -14,7 +14,6 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.StartVerificationResultToJSON = exports.StartVerificationResultFromJSONTyped = exports.StartVerificationResultFromJSON = exports.instanceOfStartVerificationResult = exports.StartVerificationResultVerifyOwnershipResultEnum = void 0;
-const runtime_1 = require("../runtime");
 /**
  * @export
  */
@@ -27,8 +26,7 @@ exports.StartVerificationResultVerifyOwnershipResultEnum = {
  * Check if a given object implements the StartVerificationResult interface.
  */
 function instanceOfStartVerificationResult(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfStartVerificationResult = instanceOfStartVerificationResult;
 function StartVerificationResultFromJSON(json) {
@@ -36,27 +34,24 @@ function StartVerificationResultFromJSON(json) {
 }
 exports.StartVerificationResultFromJSON = StartVerificationResultFromJSON;
 function StartVerificationResultFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'data': !(0, runtime_1.exists)(json, 'Data') ? undefined : json['Data'],
-        'message': !(0, runtime_1.exists)(json, 'Message') ? undefined : json['Message'],
-        'verifyOwnershipResult': !(0, runtime_1.exists)(json, 'VerifyOwnershipResult') ? undefined : json['VerifyOwnershipResult'],
+        'data': json['Data'] == null ? undefined : json['Data'],
+        'message': json['Message'] == null ? undefined : json['Message'],
+        'verifyOwnershipResult': json['VerifyOwnershipResult'] == null ? undefined : json['VerifyOwnershipResult'],
     };
 }
 exports.StartVerificationResultFromJSONTyped = StartVerificationResultFromJSONTyped;
 function StartVerificationResultToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Data': value.data,
-        'Message': value.message,
-        'VerifyOwnershipResult': value.verifyOwnershipResult,
+        'Data': value['data'],
+        'Message': value['message'],
+        'VerifyOwnershipResult': value['verifyOwnershipResult'],
     };
 }
 exports.StartVerificationResultToJSON = StartVerificationResultToJSON;

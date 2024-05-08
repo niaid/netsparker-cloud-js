@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a model for carrying scan custom report parameters.
  * @export
@@ -84,11 +84,9 @@ export type ScanCustomReportApiModelReportFormatEnum = typeof ScanCustomReportAp
  * Check if a given object implements the ScanCustomReportApiModel interface.
  */
 export function instanceOfScanCustomReportApiModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "id" in value;
-    isInstance = isInstance && "reportName" in value;
-
-    return isInstance;
+    if (!('id' in value)) return false;
+    if (!('reportName' in value)) return false;
+    return true;
 }
 
 export function ScanCustomReportApiModelFromJSON(json: any): ScanCustomReportApiModel {
@@ -96,35 +94,32 @@ export function ScanCustomReportApiModelFromJSON(json: any): ScanCustomReportApi
 }
 
 export function ScanCustomReportApiModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): ScanCustomReportApiModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'excludeIgnoreds': !exists(json, 'ExcludeIgnoreds') ? undefined : json['ExcludeIgnoreds'],
+        'excludeIgnoreds': json['ExcludeIgnoreds'] == null ? undefined : json['ExcludeIgnoreds'],
         'id': json['Id'],
-        'onlyConfirmedVulnerabilities': !exists(json, 'OnlyConfirmedVulnerabilities') ? undefined : json['OnlyConfirmedVulnerabilities'],
-        'onlyUnconfirmedVulnerabilities': !exists(json, 'OnlyUnconfirmedVulnerabilities') ? undefined : json['OnlyUnconfirmedVulnerabilities'],
+        'onlyConfirmedVulnerabilities': json['OnlyConfirmedVulnerabilities'] == null ? undefined : json['OnlyConfirmedVulnerabilities'],
+        'onlyUnconfirmedVulnerabilities': json['OnlyUnconfirmedVulnerabilities'] == null ? undefined : json['OnlyUnconfirmedVulnerabilities'],
         'reportName': json['ReportName'],
-        'reportFormat': !exists(json, 'ReportFormat') ? undefined : json['ReportFormat'],
+        'reportFormat': json['ReportFormat'] == null ? undefined : json['ReportFormat'],
     };
 }
 
 export function ScanCustomReportApiModelToJSON(value?: ScanCustomReportApiModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'ExcludeIgnoreds': value.excludeIgnoreds,
-        'Id': value.id,
-        'OnlyConfirmedVulnerabilities': value.onlyConfirmedVulnerabilities,
-        'OnlyUnconfirmedVulnerabilities': value.onlyUnconfirmedVulnerabilities,
-        'ReportName': value.reportName,
-        'ReportFormat': value.reportFormat,
+        'ExcludeIgnoreds': value['excludeIgnoreds'],
+        'Id': value['id'],
+        'OnlyConfirmedVulnerabilities': value['onlyConfirmedVulnerabilities'],
+        'OnlyUnconfirmedVulnerabilities': value['onlyUnconfirmedVulnerabilities'],
+        'ReportName': value['reportName'],
+        'ReportFormat': value['reportFormat'],
     };
 }
 

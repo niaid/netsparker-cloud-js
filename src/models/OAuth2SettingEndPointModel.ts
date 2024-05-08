@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 import type { ContentTypeTemplate } from './ContentTypeTemplate';
 import {
     ContentTypeTemplateFromJSON,
@@ -68,9 +68,7 @@ export interface OAuth2SettingEndPointModel {
  * Check if a given object implements the OAuth2SettingEndPointModel interface.
  */
 export function instanceOfOAuth2SettingEndPointModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function OAuth2SettingEndPointModelFromJSON(json: any): OAuth2SettingEndPointModel {
@@ -78,33 +76,30 @@ export function OAuth2SettingEndPointModelFromJSON(json: any): OAuth2SettingEndP
 }
 
 export function OAuth2SettingEndPointModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): OAuth2SettingEndPointModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'url': !exists(json, 'Url') ? undefined : json['Url'],
-        'contentType': !exists(json, 'ContentType') ? undefined : json['ContentType'],
-        'contentTypeTemplates': !exists(json, 'ContentTypeTemplates') ? undefined : ((json['ContentTypeTemplates'] as Array<any>).map(ContentTypeTemplateFromJSON)),
-        'method': !exists(json, 'Method') ? undefined : json['Method'],
-        'methodTemplates': !exists(json, 'MethodTemplates') ? undefined : ((json['MethodTemplates'] as Array<any>).map(SelectOptionModelFromJSON)),
+        'url': json['Url'] == null ? undefined : json['Url'],
+        'contentType': json['ContentType'] == null ? undefined : json['ContentType'],
+        'contentTypeTemplates': json['ContentTypeTemplates'] == null ? undefined : ((json['ContentTypeTemplates'] as Array<any>).map(ContentTypeTemplateFromJSON)),
+        'method': json['Method'] == null ? undefined : json['Method'],
+        'methodTemplates': json['MethodTemplates'] == null ? undefined : ((json['MethodTemplates'] as Array<any>).map(SelectOptionModelFromJSON)),
     };
 }
 
 export function OAuth2SettingEndPointModelToJSON(value?: OAuth2SettingEndPointModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Url': value.url,
-        'ContentType': value.contentType,
-        'ContentTypeTemplates': value.contentTypeTemplates === undefined ? undefined : ((value.contentTypeTemplates as Array<any>).map(ContentTypeTemplateToJSON)),
-        'Method': value.method,
-        'MethodTemplates': value.methodTemplates === undefined ? undefined : ((value.methodTemplates as Array<any>).map(SelectOptionModelToJSON)),
+        'Url': value['url'],
+        'ContentType': value['contentType'],
+        'ContentTypeTemplates': value['contentTypeTemplates'] == null ? undefined : ((value['contentTypeTemplates'] as Array<any>).map(ContentTypeTemplateToJSON)),
+        'Method': value['method'],
+        'MethodTemplates': value['methodTemplates'] == null ? undefined : ((value['methodTemplates'] as Array<any>).map(SelectOptionModelToJSON)),
     };
 }
 

@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 import type { ScanPolicyUserAgentModel } from './ScanPolicyUserAgentModel';
 import {
     ScanPolicyUserAgentModelFromJSON,
@@ -134,9 +134,7 @@ export interface HttpRequestSettingModel {
  * Check if a given object implements the HttpRequestSettingModel interface.
  */
 export function instanceOfHttpRequestSettingModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function HttpRequestSettingModelFromJSON(json: any): HttpRequestSettingModel {
@@ -144,57 +142,54 @@ export function HttpRequestSettingModelFromJSON(json: any): HttpRequestSettingMo
 }
 
 export function HttpRequestSettingModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): HttpRequestSettingModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'accept': !exists(json, 'Accept') ? undefined : json['Accept'],
-        'acceptCharset': !exists(json, 'AcceptCharset') ? undefined : json['AcceptCharset'],
-        'acceptLanguage': !exists(json, 'AcceptLanguage') ? undefined : json['AcceptLanguage'],
-        'enableCookies': !exists(json, 'EnableCookies') ? undefined : json['EnableCookies'],
-        'enableGzipAndDeflate': !exists(json, 'EnableGzipAndDeflate') ? undefined : json['EnableGzipAndDeflate'],
-        'httpKeepAlive': !exists(json, 'HttpKeepAlive') ? undefined : json['HttpKeepAlive'],
-        'logHttpRequests': !exists(json, 'LogHttpRequests') ? undefined : json['LogHttpRequests'],
-        'requestsPerSecond': !exists(json, 'RequestsPerSecond') ? undefined : json['RequestsPerSecond'],
-        'concurrentConnectionCount': !exists(json, 'ConcurrentConnectionCount') ? undefined : json['ConcurrentConnectionCount'],
-        'requestTimeout': !exists(json, 'RequestTimeout') ? undefined : json['RequestTimeout'],
-        'connectionTimeout': !exists(json, 'ConnectionTimeout') ? undefined : json['ConnectionTimeout'],
-        'userAgent': !exists(json, 'UserAgent') ? undefined : json['UserAgent'],
-        'userAgents': !exists(json, 'UserAgents') ? undefined : json['UserAgents'],
-        'customUserAgents': !exists(json, 'CustomUserAgents') ? undefined : json['CustomUserAgents'],
-        'customUserAgent': !exists(json, 'CustomUserAgent') ? undefined : ScanPolicyUserAgentModelFromJSON(json['CustomUserAgent']),
-        'forceUserAgent': !exists(json, 'ForceUserAgent') ? undefined : json['ForceUserAgent'],
-        'authorizationHeaderName': !exists(json, 'AuthorizationHeaderName') ? undefined : json['AuthorizationHeaderName'],
+        'accept': json['Accept'] == null ? undefined : json['Accept'],
+        'acceptCharset': json['AcceptCharset'] == null ? undefined : json['AcceptCharset'],
+        'acceptLanguage': json['AcceptLanguage'] == null ? undefined : json['AcceptLanguage'],
+        'enableCookies': json['EnableCookies'] == null ? undefined : json['EnableCookies'],
+        'enableGzipAndDeflate': json['EnableGzipAndDeflate'] == null ? undefined : json['EnableGzipAndDeflate'],
+        'httpKeepAlive': json['HttpKeepAlive'] == null ? undefined : json['HttpKeepAlive'],
+        'logHttpRequests': json['LogHttpRequests'] == null ? undefined : json['LogHttpRequests'],
+        'requestsPerSecond': json['RequestsPerSecond'] == null ? undefined : json['RequestsPerSecond'],
+        'concurrentConnectionCount': json['ConcurrentConnectionCount'] == null ? undefined : json['ConcurrentConnectionCount'],
+        'requestTimeout': json['RequestTimeout'] == null ? undefined : json['RequestTimeout'],
+        'connectionTimeout': json['ConnectionTimeout'] == null ? undefined : json['ConnectionTimeout'],
+        'userAgent': json['UserAgent'] == null ? undefined : json['UserAgent'],
+        'userAgents': json['UserAgents'] == null ? undefined : json['UserAgents'],
+        'customUserAgents': json['CustomUserAgents'] == null ? undefined : json['CustomUserAgents'],
+        'customUserAgent': json['CustomUserAgent'] == null ? undefined : ScanPolicyUserAgentModelFromJSON(json['CustomUserAgent']),
+        'forceUserAgent': json['ForceUserAgent'] == null ? undefined : json['ForceUserAgent'],
+        'authorizationHeaderName': json['AuthorizationHeaderName'] == null ? undefined : json['AuthorizationHeaderName'],
     };
 }
 
 export function HttpRequestSettingModelToJSON(value?: HttpRequestSettingModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Accept': value.accept,
-        'AcceptCharset': value.acceptCharset,
-        'AcceptLanguage': value.acceptLanguage,
-        'EnableCookies': value.enableCookies,
-        'EnableGzipAndDeflate': value.enableGzipAndDeflate,
-        'HttpKeepAlive': value.httpKeepAlive,
-        'LogHttpRequests': value.logHttpRequests,
-        'RequestsPerSecond': value.requestsPerSecond,
-        'ConcurrentConnectionCount': value.concurrentConnectionCount,
-        'RequestTimeout': value.requestTimeout,
-        'ConnectionTimeout': value.connectionTimeout,
-        'UserAgent': value.userAgent,
-        'UserAgents': value.userAgents,
-        'CustomUserAgents': value.customUserAgents,
-        'CustomUserAgent': ScanPolicyUserAgentModelToJSON(value.customUserAgent),
-        'ForceUserAgent': value.forceUserAgent,
-        'AuthorizationHeaderName': value.authorizationHeaderName,
+        'Accept': value['accept'],
+        'AcceptCharset': value['acceptCharset'],
+        'AcceptLanguage': value['acceptLanguage'],
+        'EnableCookies': value['enableCookies'],
+        'EnableGzipAndDeflate': value['enableGzipAndDeflate'],
+        'HttpKeepAlive': value['httpKeepAlive'],
+        'LogHttpRequests': value['logHttpRequests'],
+        'RequestsPerSecond': value['requestsPerSecond'],
+        'ConcurrentConnectionCount': value['concurrentConnectionCount'],
+        'RequestTimeout': value['requestTimeout'],
+        'ConnectionTimeout': value['connectionTimeout'],
+        'UserAgent': value['userAgent'],
+        'UserAgents': value['userAgents'],
+        'CustomUserAgents': value['customUserAgents'],
+        'CustomUserAgent': ScanPolicyUserAgentModelToJSON(value['customUserAgent']),
+        'ForceUserAgent': value['forceUserAgent'],
+        'AuthorizationHeaderName': value['authorizationHeaderName'],
     };
 }
 

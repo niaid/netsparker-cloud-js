@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * 
  * @export
@@ -43,11 +43,9 @@ export interface UpdateRoleApiModel {
  * Check if a given object implements the UpdateRoleApiModel interface.
  */
 export function instanceOfUpdateRoleApiModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "id" in value;
-    isInstance = isInstance && "name" in value;
-
-    return isInstance;
+    if (!('id' in value)) return false;
+    if (!('name' in value)) return false;
+    return true;
 }
 
 export function UpdateRoleApiModelFromJSON(json: any): UpdateRoleApiModel {
@@ -55,29 +53,26 @@ export function UpdateRoleApiModelFromJSON(json: any): UpdateRoleApiModel {
 }
 
 export function UpdateRoleApiModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): UpdateRoleApiModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
         'id': json['Id'],
         'name': json['Name'],
-        'permissions': !exists(json, 'Permissions') ? undefined : json['Permissions'],
+        'permissions': json['Permissions'] == null ? undefined : json['Permissions'],
     };
 }
 
 export function UpdateRoleApiModelToJSON(value?: UpdateRoleApiModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Id': value.id,
-        'Name': value.name,
-        'Permissions': value.permissions,
+        'Id': value['id'],
+        'Name': value['name'],
+        'Permissions': value['permissions'],
     };
 }
 

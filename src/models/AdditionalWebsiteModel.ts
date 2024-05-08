@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * 
  * @export
@@ -37,9 +37,7 @@ export interface AdditionalWebsiteModel {
  * Check if a given object implements the AdditionalWebsiteModel interface.
  */
 export function instanceOfAdditionalWebsiteModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function AdditionalWebsiteModelFromJSON(json: any): AdditionalWebsiteModel {
@@ -47,27 +45,24 @@ export function AdditionalWebsiteModelFromJSON(json: any): AdditionalWebsiteMode
 }
 
 export function AdditionalWebsiteModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): AdditionalWebsiteModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'canonical': !exists(json, 'Canonical') ? undefined : json['Canonical'],
-        'targetUrl': !exists(json, 'TargetUrl') ? undefined : json['TargetUrl'],
+        'canonical': json['Canonical'] == null ? undefined : json['Canonical'],
+        'targetUrl': json['TargetUrl'] == null ? undefined : json['TargetUrl'],
     };
 }
 
 export function AdditionalWebsiteModelToJSON(value?: AdditionalWebsiteModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Canonical': value.canonical,
-        'TargetUrl': value.targetUrl,
+        'Canonical': value['canonical'],
+        'TargetUrl': value['targetUrl'],
     };
 }
 

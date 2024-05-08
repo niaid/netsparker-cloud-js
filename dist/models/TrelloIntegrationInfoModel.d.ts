@@ -9,12 +9,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
-import type { IntegrationWizardResultModel } from './IntegrationWizardResultModel';
 import type { TrelloBoard } from './TrelloBoard';
-import type { TrelloLabel } from './TrelloLabel';
 import type { TrelloList } from './TrelloList';
 import type { TrelloMember } from './TrelloMember';
+import type { TrelloLabel } from './TrelloLabel';
+import type { IntegrationWizardResultModel } from './IntegrationWizardResultModel';
+import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
 /**
  * The Trello integration info
  * @export
@@ -189,6 +189,18 @@ export interface TrelloIntegrationInfoModel {
      * @memberof TrelloIntegrationInfoModel
      */
     titleFormat: string;
+    /**
+     *
+     * @type {string}
+     * @memberof TrelloIntegrationInfoModel
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof TrelloIntegrationInfoModel
+     */
+    state?: TrelloIntegrationInfoModelStateEnum;
 }
 /**
  * @export
@@ -238,9 +250,17 @@ export declare const TrelloIntegrationInfoModelTemplateTypeEnum: {
 };
 export type TrelloIntegrationInfoModelTemplateTypeEnum = typeof TrelloIntegrationInfoModelTemplateTypeEnum[keyof typeof TrelloIntegrationInfoModelTemplateTypeEnum];
 /**
+ * @export
+ */
+export declare const TrelloIntegrationInfoModelStateEnum: {
+    readonly Active: "Active";
+    readonly Suspended: "Suspended";
+};
+export type TrelloIntegrationInfoModelStateEnum = typeof TrelloIntegrationInfoModelStateEnum[keyof typeof TrelloIntegrationInfoModelStateEnum];
+/**
  * Check if a given object implements the TrelloIntegrationInfoModel interface.
  */
 export declare function instanceOfTrelloIntegrationInfoModel(value: object): boolean;
 export declare function TrelloIntegrationInfoModelFromJSON(json: any): TrelloIntegrationInfoModel;
 export declare function TrelloIntegrationInfoModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): TrelloIntegrationInfoModel;
-export declare function TrelloIntegrationInfoModelToJSON(value?: TrelloIntegrationInfoModel | null): any;
+export declare function TrelloIntegrationInfoModelToJSON(value?: Omit<TrelloIntegrationInfoModel, 'LabelIdsSelected' | 'MemberIdsSelected' | 'Type' | 'GenericErrorMessage' | 'Identifier' | 'TestMessageBody' | 'TestMessageTitle' | 'WebhookUrl'> | null): any;

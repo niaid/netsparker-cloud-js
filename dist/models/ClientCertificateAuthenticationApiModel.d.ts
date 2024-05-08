@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { ApiFileModel } from './ApiFileModel';
+import type { ApiFile } from './ApiFile';
 /**
  * Represents a model for carrying out client certificate authentication settings.
  * @export
@@ -18,10 +18,10 @@ import type { ApiFileModel } from './ApiFileModel';
 export interface ClientCertificateAuthenticationApiModel {
     /**
      *
-     * @type {ApiFileModel}
+     * @type {ApiFile}
      * @memberof ClientCertificateAuthenticationApiModel
      */
-    file?: ApiFileModel;
+    file?: ApiFile;
     /**
      * Gets or sets a value indicating whether client certificate authentication is enabled.
      * @type {boolean}

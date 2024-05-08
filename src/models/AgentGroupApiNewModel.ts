@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a model for creating a agent group.
  * @export
@@ -37,11 +37,9 @@ export interface AgentGroupApiNewModel {
  * Check if a given object implements the AgentGroupApiNewModel interface.
  */
 export function instanceOfAgentGroupApiNewModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "agents" in value;
-    isInstance = isInstance && "name" in value;
-
-    return isInstance;
+    if (!('agents' in value)) return false;
+    if (!('name' in value)) return false;
+    return true;
 }
 
 export function AgentGroupApiNewModelFromJSON(json: any): AgentGroupApiNewModel {
@@ -49,7 +47,7 @@ export function AgentGroupApiNewModelFromJSON(json: any): AgentGroupApiNewModel 
 }
 
 export function AgentGroupApiNewModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): AgentGroupApiNewModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -60,16 +58,13 @@ export function AgentGroupApiNewModelFromJSONTyped(json: any, ignoreDiscriminato
 }
 
 export function AgentGroupApiNewModelToJSON(value?: AgentGroupApiNewModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Agents': value.agents,
-        'Name': value.name,
+        'Agents': value['agents'],
+        'Name': value['name'],
     };
 }
 

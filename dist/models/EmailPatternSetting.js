@@ -18,9 +18,9 @@ exports.EmailPatternSettingToJSON = exports.EmailPatternSettingFromJSONTyped = e
  * Check if a given object implements the EmailPatternSetting interface.
  */
 function instanceOfEmailPatternSetting(value) {
-    let isInstance = true;
-    isInstance = isInstance && "value" in value;
-    return isInstance;
+    if (!('value' in value))
+        return false;
+    return true;
 }
 exports.instanceOfEmailPatternSetting = instanceOfEmailPatternSetting;
 function EmailPatternSettingFromJSON(json) {
@@ -28,7 +28,7 @@ function EmailPatternSettingFromJSON(json) {
 }
 exports.EmailPatternSettingFromJSON = EmailPatternSettingFromJSON;
 function EmailPatternSettingFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -37,14 +37,11 @@ function EmailPatternSettingFromJSONTyped(json, ignoreDiscriminator) {
 }
 exports.EmailPatternSettingFromJSONTyped = EmailPatternSettingFromJSONTyped;
 function EmailPatternSettingToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Value': value.value,
+        'Value': value['value'],
     };
 }
 exports.EmailPatternSettingToJSON = EmailPatternSettingToJSON;

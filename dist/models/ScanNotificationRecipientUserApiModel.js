@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ScanNotificationRecipientUserApiModelToJSON = exports.ScanNotificationRecipientUserApiModelFromJSONTyped = exports.ScanNotificationRecipientUserApiModelFromJSON = exports.instanceOfScanNotificationRecipientUserApiModel = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the ScanNotificationRecipientUserApiModel interface.
  */
 function instanceOfScanNotificationRecipientUserApiModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfScanNotificationRecipientUserApiModel = instanceOfScanNotificationRecipientUserApiModel;
 function ScanNotificationRecipientUserApiModelFromJSON(json) {
@@ -28,27 +26,24 @@ function ScanNotificationRecipientUserApiModelFromJSON(json) {
 }
 exports.ScanNotificationRecipientUserApiModelFromJSON = ScanNotificationRecipientUserApiModelFromJSON;
 function ScanNotificationRecipientUserApiModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'email': !(0, runtime_1.exists)(json, 'Email') ? undefined : json['Email'],
-        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
-        'phoneNumber': !(0, runtime_1.exists)(json, 'PhoneNumber') ? undefined : json['PhoneNumber'],
+        'email': json['Email'] == null ? undefined : json['Email'],
+        'name': json['Name'] == null ? undefined : json['Name'],
+        'phoneNumber': json['PhoneNumber'] == null ? undefined : json['PhoneNumber'],
     };
 }
 exports.ScanNotificationRecipientUserApiModelFromJSONTyped = ScanNotificationRecipientUserApiModelFromJSONTyped;
 function ScanNotificationRecipientUserApiModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Email': value.email,
-        'Name': value.name,
-        'PhoneNumber': value.phoneNumber,
+        'Email': value['email'],
+        'Name': value['name'],
+        'PhoneNumber': value['phoneNumber'],
     };
 }
 exports.ScanNotificationRecipientUserApiModelToJSON = ScanNotificationRecipientUserApiModelToJSON;

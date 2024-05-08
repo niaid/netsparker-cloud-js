@@ -14,14 +14,12 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BasicAuthenticationSettingApiModelToJSON = exports.BasicAuthenticationSettingApiModelFromJSONTyped = exports.BasicAuthenticationSettingApiModelFromJSON = exports.instanceOfBasicAuthenticationSettingApiModel = void 0;
-const runtime_1 = require("../runtime");
 const BasicAuthenticationCredentialApiModel_1 = require("./BasicAuthenticationCredentialApiModel");
 /**
  * Check if a given object implements the BasicAuthenticationSettingApiModel interface.
  */
 function instanceOfBasicAuthenticationSettingApiModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfBasicAuthenticationSettingApiModel = instanceOfBasicAuthenticationSettingApiModel;
 function BasicAuthenticationSettingApiModelFromJSON(json) {
@@ -29,25 +27,22 @@ function BasicAuthenticationSettingApiModelFromJSON(json) {
 }
 exports.BasicAuthenticationSettingApiModelFromJSON = BasicAuthenticationSettingApiModelFromJSON;
 function BasicAuthenticationSettingApiModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'alwaysAuthenticateNoChallenge': !(0, runtime_1.exists)(json, 'AlwaysAuthenticateNoChallenge') ? undefined : json['AlwaysAuthenticateNoChallenge'],
-        'credentials': !(0, runtime_1.exists)(json, 'Credentials') ? undefined : (json['Credentials'].map(BasicAuthenticationCredentialApiModel_1.BasicAuthenticationCredentialApiModelFromJSON)),
+        'alwaysAuthenticateNoChallenge': json['AlwaysAuthenticateNoChallenge'] == null ? undefined : json['AlwaysAuthenticateNoChallenge'],
+        'credentials': json['Credentials'] == null ? undefined : (json['Credentials'].map(BasicAuthenticationCredentialApiModel_1.BasicAuthenticationCredentialApiModelFromJSON)),
     };
 }
 exports.BasicAuthenticationSettingApiModelFromJSONTyped = BasicAuthenticationSettingApiModelFromJSONTyped;
 function BasicAuthenticationSettingApiModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'AlwaysAuthenticateNoChallenge': value.alwaysAuthenticateNoChallenge,
-        'Credentials': value.credentials === undefined ? undefined : (value.credentials.map(BasicAuthenticationCredentialApiModel_1.BasicAuthenticationCredentialApiModelToJSON)),
+        'AlwaysAuthenticateNoChallenge': value['alwaysAuthenticateNoChallenge'],
+        'Credentials': value['credentials'] == null ? undefined : (value['credentials'].map(BasicAuthenticationCredentialApiModel_1.BasicAuthenticationCredentialApiModelToJSON)),
     };
 }
 exports.BasicAuthenticationSettingApiModelToJSON = BasicAuthenticationSettingApiModelToJSON;

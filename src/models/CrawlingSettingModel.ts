@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a model for carrying out crawling settings.
  * @export
@@ -55,6 +55,12 @@ export interface CrawlingSettingModel {
      * @memberof CrawlingSettingModel
      */
     enableFragmentParsing?: boolean;
+    /**
+     * Gets or sets a value indicating whether "parse javascript" is enabled
+     * @type {boolean}
+     * @memberof CrawlingSettingModel
+     */
+    enableJavascriptParsing?: boolean;
     /**
      * Gets or sets the file extensions that will be used in File Extensions RegEx.
      * @type {string}
@@ -121,9 +127,7 @@ export interface CrawlingSettingModel {
  * Check if a given object implements the CrawlingSettingModel interface.
  */
 export function instanceOfCrawlingSettingModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function CrawlingSettingModelFromJSON(json: any): CrawlingSettingModel {
@@ -131,55 +135,54 @@ export function CrawlingSettingModelFromJSON(json: any): CrawlingSettingModel {
 }
 
 export function CrawlingSettingModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): CrawlingSettingModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'enableParameterBasedNavigation': !exists(json, 'EnableParameterBasedNavigation') ? undefined : json['EnableParameterBasedNavigation'],
-        'enableRestWebServiceParser': !exists(json, 'EnableRestWebServiceParser') ? undefined : json['EnableRestWebServiceParser'],
-        'enableSoapWebServiceParser': !exists(json, 'EnableSoapWebServiceParser') ? undefined : json['EnableSoapWebServiceParser'],
-        'enableTextParser': !exists(json, 'EnableTextParser') ? undefined : json['EnableTextParser'],
-        'fallbackToGet': !exists(json, 'FallbackToGet') ? undefined : json['FallbackToGet'],
-        'enableFragmentParsing': !exists(json, 'EnableFragmentParsing') ? undefined : json['EnableFragmentParsing'],
-        'fileExtensions': !exists(json, 'FileExtensions') ? undefined : json['FileExtensions'],
-        'maximumCrawlerUrlCount': !exists(json, 'MaximumCrawlerUrlCount') ? undefined : json['MaximumCrawlerUrlCount'],
-        'maximumSignature': !exists(json, 'MaximumSignature') ? undefined : json['MaximumSignature'],
-        'navigationParameterPageVisitLimit': !exists(json, 'NavigationParameterPageVisitLimit') ? undefined : json['NavigationParameterPageVisitLimit'],
-        'navigationParameterRegexPattern': !exists(json, 'NavigationParameterRegexPattern') ? undefined : json['NavigationParameterRegexPattern'],
-        'pageVisitLimit': !exists(json, 'PageVisitLimit') ? undefined : json['PageVisitLimit'],
-        'maximumUrlRewriteSignature': !exists(json, 'MaximumUrlRewriteSignature') ? undefined : json['MaximumUrlRewriteSignature'],
-        'waitResourceFinder': !exists(json, 'WaitResourceFinder') ? undefined : json['WaitResourceFinder'],
-        'addRelatedLinks': !exists(json, 'AddRelatedLinks') ? undefined : json['AddRelatedLinks'],
-        'enableQueryBasedParameterBasedNavigation': !exists(json, 'EnableQueryBasedParameterBasedNavigation') ? undefined : json['EnableQueryBasedParameterBasedNavigation'],
+        'enableParameterBasedNavigation': json['EnableParameterBasedNavigation'] == null ? undefined : json['EnableParameterBasedNavigation'],
+        'enableRestWebServiceParser': json['EnableRestWebServiceParser'] == null ? undefined : json['EnableRestWebServiceParser'],
+        'enableSoapWebServiceParser': json['EnableSoapWebServiceParser'] == null ? undefined : json['EnableSoapWebServiceParser'],
+        'enableTextParser': json['EnableTextParser'] == null ? undefined : json['EnableTextParser'],
+        'fallbackToGet': json['FallbackToGet'] == null ? undefined : json['FallbackToGet'],
+        'enableFragmentParsing': json['EnableFragmentParsing'] == null ? undefined : json['EnableFragmentParsing'],
+        'enableJavascriptParsing': json['EnableJavascriptParsing'] == null ? undefined : json['EnableJavascriptParsing'],
+        'fileExtensions': json['FileExtensions'] == null ? undefined : json['FileExtensions'],
+        'maximumCrawlerUrlCount': json['MaximumCrawlerUrlCount'] == null ? undefined : json['MaximumCrawlerUrlCount'],
+        'maximumSignature': json['MaximumSignature'] == null ? undefined : json['MaximumSignature'],
+        'navigationParameterPageVisitLimit': json['NavigationParameterPageVisitLimit'] == null ? undefined : json['NavigationParameterPageVisitLimit'],
+        'navigationParameterRegexPattern': json['NavigationParameterRegexPattern'] == null ? undefined : json['NavigationParameterRegexPattern'],
+        'pageVisitLimit': json['PageVisitLimit'] == null ? undefined : json['PageVisitLimit'],
+        'maximumUrlRewriteSignature': json['MaximumUrlRewriteSignature'] == null ? undefined : json['MaximumUrlRewriteSignature'],
+        'waitResourceFinder': json['WaitResourceFinder'] == null ? undefined : json['WaitResourceFinder'],
+        'addRelatedLinks': json['AddRelatedLinks'] == null ? undefined : json['AddRelatedLinks'],
+        'enableQueryBasedParameterBasedNavigation': json['EnableQueryBasedParameterBasedNavigation'] == null ? undefined : json['EnableQueryBasedParameterBasedNavigation'],
     };
 }
 
 export function CrawlingSettingModelToJSON(value?: CrawlingSettingModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'EnableParameterBasedNavigation': value.enableParameterBasedNavigation,
-        'EnableRestWebServiceParser': value.enableRestWebServiceParser,
-        'EnableSoapWebServiceParser': value.enableSoapWebServiceParser,
-        'EnableTextParser': value.enableTextParser,
-        'FallbackToGet': value.fallbackToGet,
-        'EnableFragmentParsing': value.enableFragmentParsing,
-        'FileExtensions': value.fileExtensions,
-        'MaximumCrawlerUrlCount': value.maximumCrawlerUrlCount,
-        'MaximumSignature': value.maximumSignature,
-        'NavigationParameterPageVisitLimit': value.navigationParameterPageVisitLimit,
-        'NavigationParameterRegexPattern': value.navigationParameterRegexPattern,
-        'PageVisitLimit': value.pageVisitLimit,
-        'MaximumUrlRewriteSignature': value.maximumUrlRewriteSignature,
-        'WaitResourceFinder': value.waitResourceFinder,
-        'AddRelatedLinks': value.addRelatedLinks,
-        'EnableQueryBasedParameterBasedNavigation': value.enableQueryBasedParameterBasedNavigation,
+        'EnableParameterBasedNavigation': value['enableParameterBasedNavigation'],
+        'EnableRestWebServiceParser': value['enableRestWebServiceParser'],
+        'EnableSoapWebServiceParser': value['enableSoapWebServiceParser'],
+        'EnableTextParser': value['enableTextParser'],
+        'FallbackToGet': value['fallbackToGet'],
+        'EnableFragmentParsing': value['enableFragmentParsing'],
+        'EnableJavascriptParsing': value['enableJavascriptParsing'],
+        'FileExtensions': value['fileExtensions'],
+        'MaximumCrawlerUrlCount': value['maximumCrawlerUrlCount'],
+        'MaximumSignature': value['maximumSignature'],
+        'NavigationParameterPageVisitLimit': value['navigationParameterPageVisitLimit'],
+        'NavigationParameterRegexPattern': value['navigationParameterRegexPattern'],
+        'PageVisitLimit': value['pageVisitLimit'],
+        'MaximumUrlRewriteSignature': value['maximumUrlRewriteSignature'],
+        'WaitResourceFinder': value['waitResourceFinder'],
+        'AddRelatedLinks': value['addRelatedLinks'],
+        'EnableQueryBasedParameterBasedNavigation': value['enableQueryBasedParameterBasedNavigation'],
     };
 }
 

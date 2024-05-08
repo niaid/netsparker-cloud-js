@@ -14,7 +14,6 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CustomScriptRequestApiModelToJSON = exports.CustomScriptRequestApiModelFromJSONTyped = exports.CustomScriptRequestApiModelFromJSON = exports.instanceOfCustomScriptRequestApiModel = exports.CustomScriptRequestApiModelTypeEnum = void 0;
-const runtime_1 = require("../runtime");
 /**
  * @export
  */
@@ -28,10 +27,11 @@ exports.CustomScriptRequestApiModelTypeEnum = {
  * Check if a given object implements the CustomScriptRequestApiModel interface.
  */
 function instanceOfCustomScriptRequestApiModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "name" in value;
-    isInstance = isInstance && "content" in value;
-    return isInstance;
+    if (!('name' in value))
+        return false;
+    if (!('content' in value))
+        return false;
+    return true;
 }
 exports.instanceOfCustomScriptRequestApiModel = instanceOfCustomScriptRequestApiModel;
 function CustomScriptRequestApiModelFromJSON(json) {
@@ -39,27 +39,24 @@ function CustomScriptRequestApiModelFromJSON(json) {
 }
 exports.CustomScriptRequestApiModelFromJSON = CustomScriptRequestApiModelFromJSON;
 function CustomScriptRequestApiModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'type': !(0, runtime_1.exists)(json, 'Type') ? undefined : json['Type'],
+        'type': json['Type'] == null ? undefined : json['Type'],
         'name': json['Name'],
         'content': json['Content'],
     };
 }
 exports.CustomScriptRequestApiModelFromJSONTyped = CustomScriptRequestApiModelFromJSONTyped;
 function CustomScriptRequestApiModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Type': value.type,
-        'Name': value.name,
-        'Content': value.content,
+        'Type': value['type'],
+        'Name': value['name'],
+        'Content': value['content'],
     };
 }
 exports.CustomScriptRequestApiModelToJSON = CustomScriptRequestApiModelToJSON;

@@ -9,8 +9,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
 import type { IntegrationWizardResultModel } from './IntegrationWizardResultModel';
+import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
 /**
  * The Unfuddle integration info
  * @export
@@ -155,6 +155,18 @@ export interface UnfuddleIntegrationInfoModel {
      * @memberof UnfuddleIntegrationInfoModel
      */
     integrationWizardResultModel?: IntegrationWizardResultModel;
+    /**
+     *
+     * @type {string}
+     * @memberof UnfuddleIntegrationInfoModel
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof UnfuddleIntegrationInfoModel
+     */
+    state?: UnfuddleIntegrationInfoModelStateEnum;
 }
 /**
  * @export
@@ -204,9 +216,17 @@ export declare const UnfuddleIntegrationInfoModelTemplateTypeEnum: {
 };
 export type UnfuddleIntegrationInfoModelTemplateTypeEnum = typeof UnfuddleIntegrationInfoModelTemplateTypeEnum[keyof typeof UnfuddleIntegrationInfoModelTemplateTypeEnum];
 /**
+ * @export
+ */
+export declare const UnfuddleIntegrationInfoModelStateEnum: {
+    readonly Active: "Active";
+    readonly Suspended: "Suspended";
+};
+export type UnfuddleIntegrationInfoModelStateEnum = typeof UnfuddleIntegrationInfoModelStateEnum[keyof typeof UnfuddleIntegrationInfoModelStateEnum];
+/**
  * Check if a given object implements the UnfuddleIntegrationInfoModel interface.
  */
 export declare function instanceOfUnfuddleIntegrationInfoModel(value: object): boolean;
 export declare function UnfuddleIntegrationInfoModelFromJSON(json: any): UnfuddleIntegrationInfoModel;
 export declare function UnfuddleIntegrationInfoModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): UnfuddleIntegrationInfoModel;
-export declare function UnfuddleIntegrationInfoModelToJSON(value?: UnfuddleIntegrationInfoModel | null): any;
+export declare function UnfuddleIntegrationInfoModelToJSON(value?: Omit<UnfuddleIntegrationInfoModel, 'Type' | 'GenericErrorMessage' | 'Identifier' | 'TestMessageBody' | 'TestMessageTitle' | 'WebhookUrl'> | null): any;

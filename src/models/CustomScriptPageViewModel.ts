@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * The custom script page model
  * @export
@@ -37,11 +37,9 @@ export interface CustomScriptPageViewModel {
  * Check if a given object implements the CustomScriptPageViewModel interface.
  */
 export function instanceOfCustomScriptPageViewModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "key" in value;
-    isInstance = isInstance && "value" in value;
-
-    return isInstance;
+    if (!('key' in value)) return false;
+    if (!('value' in value)) return false;
+    return true;
 }
 
 export function CustomScriptPageViewModelFromJSON(json: any): CustomScriptPageViewModel {
@@ -49,7 +47,7 @@ export function CustomScriptPageViewModelFromJSON(json: any): CustomScriptPageVi
 }
 
 export function CustomScriptPageViewModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): CustomScriptPageViewModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -60,16 +58,13 @@ export function CustomScriptPageViewModelFromJSONTyped(json: any, ignoreDiscrimi
 }
 
 export function CustomScriptPageViewModelToJSON(value?: CustomScriptPageViewModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'key': value.key,
-        'value': value.value,
+        'key': value['key'],
+        'value': value['value'],
     };
 }
 

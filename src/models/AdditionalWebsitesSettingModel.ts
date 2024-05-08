@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 import type { AdditionalWebsiteModel } from './AdditionalWebsiteModel';
 import {
     AdditionalWebsiteModelFromJSON,
@@ -38,9 +38,7 @@ export interface AdditionalWebsitesSettingModel {
  * Check if a given object implements the AdditionalWebsitesSettingModel interface.
  */
 export function instanceOfAdditionalWebsitesSettingModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function AdditionalWebsitesSettingModelFromJSON(json: any): AdditionalWebsitesSettingModel {
@@ -48,25 +46,22 @@ export function AdditionalWebsitesSettingModelFromJSON(json: any): AdditionalWeb
 }
 
 export function AdditionalWebsitesSettingModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): AdditionalWebsitesSettingModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'websites': !exists(json, 'Websites') ? undefined : ((json['Websites'] as Array<any>).map(AdditionalWebsiteModelFromJSON)),
+        'websites': json['Websites'] == null ? undefined : ((json['Websites'] as Array<any>).map(AdditionalWebsiteModelFromJSON)),
     };
 }
 
 export function AdditionalWebsitesSettingModelToJSON(value?: AdditionalWebsitesSettingModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Websites': value.websites === undefined ? undefined : ((value.websites as Array<any>).map(AdditionalWebsiteModelToJSON)),
+        'Websites': value['websites'] == null ? undefined : ((value['websites'] as Array<any>).map(AdditionalWebsiteModelToJSON)),
     };
 }
 

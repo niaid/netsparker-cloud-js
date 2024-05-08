@@ -52,6 +52,12 @@ export interface CrawlingSettingModel {
      */
     enableFragmentParsing?: boolean;
     /**
+     * Gets or sets a value indicating whether "parse javascript" is enabled
+     * @type {boolean}
+     * @memberof CrawlingSettingModel
+     */
+    enableJavascriptParsing?: boolean;
+    /**
      * Gets or sets the file extensions that will be used in File Extensions RegEx.
      * @type {string}
      * @memberof CrawlingSettingModel

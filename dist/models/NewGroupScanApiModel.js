@@ -14,7 +14,6 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.NewGroupScanApiModelToJSON = exports.NewGroupScanApiModelFromJSONTyped = exports.NewGroupScanApiModelFromJSON = exports.instanceOfNewGroupScanApiModel = exports.NewGroupScanApiModelAuthenticationProfileOptionEnum = void 0;
-const runtime_1 = require("../runtime");
 const ScanTimeWindowModel_1 = require("./ScanTimeWindowModel");
 /**
  * @export
@@ -28,9 +27,9 @@ exports.NewGroupScanApiModelAuthenticationProfileOptionEnum = {
  * Check if a given object implements the NewGroupScanApiModel interface.
  */
 function instanceOfNewGroupScanApiModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "websiteGroupName" in value;
-    return isInstance;
+    if (!('websiteGroupName' in value))
+        return false;
+    return true;
 }
 exports.instanceOfNewGroupScanApiModel = instanceOfNewGroupScanApiModel;
 function NewGroupScanApiModelFromJSON(json) {
@@ -38,35 +37,32 @@ function NewGroupScanApiModelFromJSON(json) {
 }
 exports.NewGroupScanApiModelFromJSON = NewGroupScanApiModelFromJSON;
 function NewGroupScanApiModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'policyId': !(0, runtime_1.exists)(json, 'PolicyId') ? undefined : json['PolicyId'],
-        'reportPolicyId': !(0, runtime_1.exists)(json, 'ReportPolicyId') ? undefined : json['ReportPolicyId'],
-        'authenticationProfileOption': !(0, runtime_1.exists)(json, 'AuthenticationProfileOption') ? undefined : json['AuthenticationProfileOption'],
-        'authenticationProfileId': !(0, runtime_1.exists)(json, 'AuthenticationProfileId') ? undefined : json['AuthenticationProfileId'],
-        'timeWindow': !(0, runtime_1.exists)(json, 'TimeWindow') ? undefined : (0, ScanTimeWindowModel_1.ScanTimeWindowModelFromJSON)(json['TimeWindow']),
+        'policyId': json['PolicyId'] == null ? undefined : json['PolicyId'],
+        'reportPolicyId': json['ReportPolicyId'] == null ? undefined : json['ReportPolicyId'],
+        'authenticationProfileOption': json['AuthenticationProfileOption'] == null ? undefined : json['AuthenticationProfileOption'],
+        'authenticationProfileId': json['AuthenticationProfileId'] == null ? undefined : json['AuthenticationProfileId'],
+        'timeWindow': json['TimeWindow'] == null ? undefined : (0, ScanTimeWindowModel_1.ScanTimeWindowModelFromJSON)(json['TimeWindow']),
         'websiteGroupName': json['WebsiteGroupName'],
-        'tags': !(0, runtime_1.exists)(json, 'Tags') ? undefined : json['Tags'],
+        'tags': json['Tags'] == null ? undefined : json['Tags'],
     };
 }
 exports.NewGroupScanApiModelFromJSONTyped = NewGroupScanApiModelFromJSONTyped;
 function NewGroupScanApiModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'PolicyId': value.policyId,
-        'ReportPolicyId': value.reportPolicyId,
-        'AuthenticationProfileOption': value.authenticationProfileOption,
-        'AuthenticationProfileId': value.authenticationProfileId,
-        'TimeWindow': (0, ScanTimeWindowModel_1.ScanTimeWindowModelToJSON)(value.timeWindow),
-        'WebsiteGroupName': value.websiteGroupName,
-        'Tags': value.tags,
+        'PolicyId': value['policyId'],
+        'ReportPolicyId': value['reportPolicyId'],
+        'AuthenticationProfileOption': value['authenticationProfileOption'],
+        'AuthenticationProfileId': value['authenticationProfileId'],
+        'TimeWindow': (0, ScanTimeWindowModel_1.ScanTimeWindowModelToJSON)(value['timeWindow']),
+        'WebsiteGroupName': value['websiteGroupName'],
+        'Tags': value['tags'],
     };
 }
 exports.NewGroupScanApiModelToJSON = NewGroupScanApiModelToJSON;

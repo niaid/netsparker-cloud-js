@@ -14,14 +14,12 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SecurityCheckGroupParentModelToJSON = exports.SecurityCheckGroupParentModelFromJSONTyped = exports.SecurityCheckGroupParentModelFromJSON = exports.instanceOfSecurityCheckGroupParentModel = void 0;
-const runtime_1 = require("../runtime");
 const SecurityCheckGroupModel_1 = require("./SecurityCheckGroupModel");
 /**
  * Check if a given object implements the SecurityCheckGroupParentModel interface.
  */
 function instanceOfSecurityCheckGroupParentModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfSecurityCheckGroupParentModel = instanceOfSecurityCheckGroupParentModel;
 function SecurityCheckGroupParentModelFromJSON(json) {
@@ -29,25 +27,22 @@ function SecurityCheckGroupParentModelFromJSON(json) {
 }
 exports.SecurityCheckGroupParentModelFromJSON = SecurityCheckGroupParentModelFromJSON;
 function SecurityCheckGroupParentModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'title': !(0, runtime_1.exists)(json, 'Title') ? undefined : json['Title'],
-        'securityCheckGroups': !(0, runtime_1.exists)(json, 'SecurityCheckGroups') ? undefined : (json['SecurityCheckGroups'].map(SecurityCheckGroupModel_1.SecurityCheckGroupModelFromJSON)),
+        'title': json['Title'] == null ? undefined : json['Title'],
+        'securityCheckGroups': json['SecurityCheckGroups'] == null ? undefined : (json['SecurityCheckGroups'].map(SecurityCheckGroupModel_1.SecurityCheckGroupModelFromJSON)),
     };
 }
 exports.SecurityCheckGroupParentModelFromJSONTyped = SecurityCheckGroupParentModelFromJSONTyped;
 function SecurityCheckGroupParentModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Title': value.title,
-        'SecurityCheckGroups': value.securityCheckGroups === undefined ? undefined : (value.securityCheckGroups.map(SecurityCheckGroupModel_1.SecurityCheckGroupModelToJSON)),
+        'Title': value['title'],
+        'SecurityCheckGroups': value['securityCheckGroups'] == null ? undefined : (value['securityCheckGroups'].map(SecurityCheckGroupModel_1.SecurityCheckGroupModelToJSON)),
     };
 }
 exports.SecurityCheckGroupParentModelToJSON = SecurityCheckGroupParentModelToJSON;

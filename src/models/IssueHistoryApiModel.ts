@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Model for issue api history prop
  * @export
@@ -49,9 +49,7 @@ export interface IssueHistoryApiModel {
  * Check if a given object implements the IssueHistoryApiModel interface.
  */
 export function instanceOfIssueHistoryApiModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function IssueHistoryApiModelFromJSON(json: any): IssueHistoryApiModel {
@@ -59,31 +57,28 @@ export function IssueHistoryApiModelFromJSON(json: any): IssueHistoryApiModel {
 }
 
 export function IssueHistoryApiModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): IssueHistoryApiModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'message': !exists(json, 'Message') ? undefined : json['Message'],
-        'note': !exists(json, 'Note') ? undefined : json['Note'],
-        'owner': !exists(json, 'Owner') ? undefined : json['Owner'],
-        'date': !exists(json, 'Date') ? undefined : json['Date'],
+        'message': json['Message'] == null ? undefined : json['Message'],
+        'note': json['Note'] == null ? undefined : json['Note'],
+        'owner': json['Owner'] == null ? undefined : json['Owner'],
+        'date': json['Date'] == null ? undefined : json['Date'],
     };
 }
 
 export function IssueHistoryApiModelToJSON(value?: IssueHistoryApiModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Message': value.message,
-        'Note': value.note,
-        'Owner': value.owner,
-        'Date': value.date,
+        'Message': value['message'],
+        'Note': value['note'],
+        'Owner': value['owner'],
+        'Date': value['date'],
     };
 }
 

@@ -9,8 +9,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
 import type { IntegrationWizardResultModel } from './IntegrationWizardResultModel';
+import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
 /**
  * The FogBugz integration info
  * @export
@@ -155,44 +155,56 @@ export interface FogBugzIntegrationInfoModel {
      * @memberof FogBugzIntegrationInfoModel
      */
     integrationWizardResultModel?: IntegrationWizardResultModel;
+    /**
+     *
+     * @type {string}
+     * @memberof FogBugzIntegrationInfoModel
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof FogBugzIntegrationInfoModel
+     */
+    state?: FogBugzIntegrationInfoModelStateEnum;
 }
 /**
  * @export
  */
 export declare const FogBugzIntegrationInfoModelTypeEnum: {
-    readonly Jira: "Jira";
-    readonly GitHub: "GitHub";
-    readonly Tfs: "TFS";
-    readonly FogBugz: "FogBugz";
-    readonly ServiceNow: "ServiceNow";
-    readonly Slack: "Slack";
-    readonly GitLab: "GitLab";
-    readonly Bitbucket: "Bitbucket";
-    readonly Unfuddle: "Unfuddle";
-    readonly Zapier: "Zapier";
-    readonly AzureDevOps: "AzureDevOps";
-    readonly Redmine: "Redmine";
-    readonly Bugzilla: "Bugzilla";
-    readonly Kafka: "Kafka";
-    readonly PagerDuty: "PagerDuty";
-    readonly MicrosoftTeams: "MicrosoftTeams";
-    readonly Clubhouse: "Clubhouse";
-    readonly Trello: "Trello";
-    readonly Asana: "Asana";
-    readonly Webhook: "Webhook";
-    readonly Kenna: "Kenna";
-    readonly Freshservice: "Freshservice";
-    readonly YouTrack: "YouTrack";
     readonly NetsparkerEnterprise: "NetsparkerEnterprise";
-    readonly Splunk: "Splunk";
+    readonly Webhook: "Webhook";
+    readonly Zapier: "Zapier";
+    readonly Slack: "Slack";
     readonly Mattermost: "Mattermost";
-    readonly Hashicorp: "Hashicorp";
-    readonly PivotalTracker: "PivotalTracker";
-    readonly CyberArk: "CyberArk";
+    readonly MicrosoftTeams: "MicrosoftTeams";
+    readonly AzureDevOps: "AzureDevOps";
+    readonly Bitbucket: "Bitbucket";
+    readonly Bugzilla: "Bugzilla";
+    readonly Clubhouse: "Clubhouse";
     readonly DefectDojo: "DefectDojo";
+    readonly PivotalTracker: "PivotalTracker";
+    readonly Jira: "Jira";
+    readonly FogBugz: "FogBugz";
+    readonly GitHub: "GitHub";
+    readonly PagerDuty: "PagerDuty";
+    readonly Kafka: "Kafka";
+    readonly Kenna: "Kenna";
+    readonly Redmine: "Redmine";
+    readonly ServiceNow: "ServiceNow";
+    readonly Tfs: "TFS";
+    readonly Unfuddle: "Unfuddle";
+    readonly YouTrack: "YouTrack";
+    readonly Freshservice: "Freshservice";
+    readonly Splunk: "Splunk";
     readonly JazzTeam: "JazzTeam";
-    readonly AzureKeyVault: "AzureKeyVault";
     readonly ServiceNowVrm: "ServiceNowVRM";
+    readonly Asana: "Asana";
+    readonly Trello: "Trello";
+    readonly Hashicorp: "Hashicorp";
+    readonly CyberArk: "CyberArk";
+    readonly AzureKeyVault: "AzureKeyVault";
+    readonly GitLab: "GitLab";
 };
 export type FogBugzIntegrationInfoModelTypeEnum = typeof FogBugzIntegrationInfoModelTypeEnum[keyof typeof FogBugzIntegrationInfoModelTypeEnum];
 /**
@@ -204,9 +216,17 @@ export declare const FogBugzIntegrationInfoModelTemplateTypeEnum: {
 };
 export type FogBugzIntegrationInfoModelTemplateTypeEnum = typeof FogBugzIntegrationInfoModelTemplateTypeEnum[keyof typeof FogBugzIntegrationInfoModelTemplateTypeEnum];
 /**
+ * @export
+ */
+export declare const FogBugzIntegrationInfoModelStateEnum: {
+    readonly Active: "Active";
+    readonly Suspended: "Suspended";
+};
+export type FogBugzIntegrationInfoModelStateEnum = typeof FogBugzIntegrationInfoModelStateEnum[keyof typeof FogBugzIntegrationInfoModelStateEnum];
+/**
  * Check if a given object implements the FogBugzIntegrationInfoModel interface.
  */
 export declare function instanceOfFogBugzIntegrationInfoModel(value: object): boolean;
 export declare function FogBugzIntegrationInfoModelFromJSON(json: any): FogBugzIntegrationInfoModel;
 export declare function FogBugzIntegrationInfoModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): FogBugzIntegrationInfoModel;
-export declare function FogBugzIntegrationInfoModelToJSON(value?: FogBugzIntegrationInfoModel | null): any;
+export declare function FogBugzIntegrationInfoModelToJSON(value?: Omit<FogBugzIntegrationInfoModel, 'WebhookUrl' | 'Type' | 'GenericErrorMessage' | 'Identifier' | 'TestMessageBody' | 'TestMessageTitle'> | null): any;

@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * DeleteWebsiteGroupResponse
  * @export
@@ -52,9 +52,7 @@ export type DeleteWebsiteGroupResponseResultEnum = typeof DeleteWebsiteGroupResp
  * Check if a given object implements the DeleteWebsiteGroupResponse interface.
  */
 export function instanceOfDeleteWebsiteGroupResponse(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function DeleteWebsiteGroupResponseFromJSON(json: any): DeleteWebsiteGroupResponse {
@@ -62,27 +60,24 @@ export function DeleteWebsiteGroupResponseFromJSON(json: any): DeleteWebsiteGrou
 }
 
 export function DeleteWebsiteGroupResponseFromJSONTyped(json: any, ignoreDiscriminator: boolean): DeleteWebsiteGroupResponse {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'result': !exists(json, 'Result') ? undefined : json['Result'],
-        'message': !exists(json, 'Message') ? undefined : json['Message'],
+        'result': json['Result'] == null ? undefined : json['Result'],
+        'message': json['Message'] == null ? undefined : json['Message'],
     };
 }
 
 export function DeleteWebsiteGroupResponseToJSON(value?: DeleteWebsiteGroupResponse | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Result': value.result,
-        'Message': value.message,
+        'Result': value['result'],
+        'Message': value['message'],
     };
 }
 

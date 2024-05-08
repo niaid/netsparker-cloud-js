@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 import type { NotificationEmailSmsFilterApi } from './NotificationEmailSmsFilterApi';
 import {
     NotificationEmailSmsFilterApiFromJSON,
@@ -142,13 +142,11 @@ export type ScanNotificationApiModelScopeEnum = typeof ScanNotificationApiModelS
  * Check if a given object implements the ScanNotificationApiModel interface.
  */
 export function instanceOfScanNotificationApiModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "disabled" in value;
-    isInstance = isInstance && "event" in value;
-    isInstance = isInstance && "name" in value;
-    isInstance = isInstance && "scope" in value;
-
-    return isInstance;
+    if (!('disabled' in value)) return false;
+    if (!('event' in value)) return false;
+    if (!('name' in value)) return false;
+    if (!('scope' in value)) return false;
+    return true;
 }
 
 export function ScanNotificationApiModelFromJSON(json: any): ScanNotificationApiModel {
@@ -156,20 +154,20 @@ export function ScanNotificationApiModelFromJSON(json: any): ScanNotificationApi
 }
 
 export function ScanNotificationApiModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): ScanNotificationApiModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'priority': !exists(json, 'Priority') ? undefined : json['Priority'],
-        'recipients': !exists(json, 'Recipients') ? undefined : ScanNotificationRecipientApiModelFromJSON(json['Recipients']),
-        'websiteGroupName': !exists(json, 'WebsiteGroupName') ? undefined : json['WebsiteGroupName'],
-        'websiteRootUrl': !exists(json, 'WebsiteRootUrl') ? undefined : json['WebsiteRootUrl'],
-        'emailSmsFilter': !exists(json, 'EmailSmsFilter') ? undefined : NotificationEmailSmsFilterApiFromJSON(json['EmailSmsFilter']),
-        'integrationFilter': !exists(json, 'IntegrationFilter') ? undefined : NotificationIntegrationFilterApiFromJSON(json['IntegrationFilter']),
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'priority': json['Priority'] == null ? undefined : json['Priority'],
+        'recipients': json['Recipients'] == null ? undefined : ScanNotificationRecipientApiModelFromJSON(json['Recipients']),
+        'websiteGroupName': json['WebsiteGroupName'] == null ? undefined : json['WebsiteGroupName'],
+        'websiteRootUrl': json['WebsiteRootUrl'] == null ? undefined : json['WebsiteRootUrl'],
+        'emailSmsFilter': json['EmailSmsFilter'] == null ? undefined : NotificationEmailSmsFilterApiFromJSON(json['EmailSmsFilter']),
+        'integrationFilter': json['IntegrationFilter'] == null ? undefined : NotificationIntegrationFilterApiFromJSON(json['IntegrationFilter']),
         'disabled': json['Disabled'],
-        'scanTaskGroupId': !exists(json, 'ScanTaskGroupId') ? undefined : json['ScanTaskGroupId'],
+        'scanTaskGroupId': json['ScanTaskGroupId'] == null ? undefined : json['ScanTaskGroupId'],
         'event': json['Event'],
         'name': json['Name'],
         'scope': json['Scope'],
@@ -177,26 +175,23 @@ export function ScanNotificationApiModelFromJSONTyped(json: any, ignoreDiscrimin
 }
 
 export function ScanNotificationApiModelToJSON(value?: ScanNotificationApiModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Id': value.id,
-        'Priority': value.priority,
-        'Recipients': ScanNotificationRecipientApiModelToJSON(value.recipients),
-        'WebsiteGroupName': value.websiteGroupName,
-        'WebsiteRootUrl': value.websiteRootUrl,
-        'EmailSmsFilter': NotificationEmailSmsFilterApiToJSON(value.emailSmsFilter),
-        'IntegrationFilter': NotificationIntegrationFilterApiToJSON(value.integrationFilter),
-        'Disabled': value.disabled,
-        'ScanTaskGroupId': value.scanTaskGroupId,
-        'Event': value.event,
-        'Name': value.name,
-        'Scope': value.scope,
+        'Id': value['id'],
+        'Priority': value['priority'],
+        'Recipients': ScanNotificationRecipientApiModelToJSON(value['recipients']),
+        'WebsiteGroupName': value['websiteGroupName'],
+        'WebsiteRootUrl': value['websiteRootUrl'],
+        'EmailSmsFilter': NotificationEmailSmsFilterApiToJSON(value['emailSmsFilter']),
+        'IntegrationFilter': NotificationIntegrationFilterApiToJSON(value['integrationFilter']),
+        'Disabled': value['disabled'],
+        'ScanTaskGroupId': value['scanTaskGroupId'],
+        'Event': value['event'],
+        'Name': value['name'],
+        'Scope': value['scope'],
     };
 }
 

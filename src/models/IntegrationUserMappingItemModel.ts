@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a model that carrying user mapping data.
  * @export
@@ -112,12 +112,10 @@ export type IntegrationUserMappingItemModelResultEnum = typeof IntegrationUserMa
  * Check if a given object implements the IntegrationUserMappingItemModel interface.
  */
 export function instanceOfIntegrationUserMappingItemModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "integrationSystem" in value;
-    isInstance = isInstance && "integrationUserName" in value;
-    isInstance = isInstance && "userId" in value;
-
-    return isInstance;
+    if (!('integrationSystem' in value)) return false;
+    if (!('integrationUserName' in value)) return false;
+    if (!('userId' in value)) return false;
+    return true;
 }
 
 export function IntegrationUserMappingItemModelFromJSON(json: any): IntegrationUserMappingItemModel {
@@ -125,40 +123,37 @@ export function IntegrationUserMappingItemModelFromJSON(json: any): IntegrationU
 }
 
 export function IntegrationUserMappingItemModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): IntegrationUserMappingItemModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'email': !exists(json, 'Email') ? undefined : json['Email'],
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
+        'email': json['Email'] == null ? undefined : json['Email'],
+        'id': json['Id'] == null ? undefined : json['Id'],
         'integrationSystem': json['IntegrationSystem'],
         'integrationUserName': json['IntegrationUserName'],
-        'isEdit': !exists(json, 'IsEdit') ? undefined : json['IsEdit'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'nameEmail': !exists(json, 'NameEmail') ? undefined : json['NameEmail'],
-        'result': !exists(json, 'Result') ? undefined : json['Result'],
+        'isEdit': json['IsEdit'] == null ? undefined : json['IsEdit'],
+        'name': json['Name'] == null ? undefined : json['Name'],
+        'nameEmail': json['NameEmail'] == null ? undefined : json['NameEmail'],
+        'result': json['Result'] == null ? undefined : json['Result'],
         'userId': json['UserId'],
     };
 }
 
-export function IntegrationUserMappingItemModelToJSON(value?: IntegrationUserMappingItemModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+export function IntegrationUserMappingItemModelToJSON(value?: Omit<IntegrationUserMappingItemModel, 'NameEmail'> | null): any {
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Email': value.email,
-        'Id': value.id,
-        'IntegrationSystem': value.integrationSystem,
-        'IntegrationUserName': value.integrationUserName,
-        'IsEdit': value.isEdit,
-        'Name': value.name,
-        'Result': value.result,
-        'UserId': value.userId,
+        'Email': value['email'],
+        'Id': value['id'],
+        'IntegrationSystem': value['integrationSystem'],
+        'IntegrationUserName': value['integrationUserName'],
+        'IsEdit': value['isEdit'],
+        'Name': value['name'],
+        'Result': value['result'],
+        'UserId': value['userId'],
     };
 }
 

@@ -14,14 +14,12 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ThreeLeggedFieldsToJSON = exports.ThreeLeggedFieldsFromJSONTyped = exports.ThreeLeggedFieldsFromJSON = exports.instanceOfThreeLeggedFields = void 0;
-const runtime_1 = require("../runtime");
 const OtpSettings_1 = require("./OtpSettings");
 /**
  * Check if a given object implements the ThreeLeggedFields interface.
  */
 function instanceOfThreeLeggedFields(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfThreeLeggedFields = instanceOfThreeLeggedFields;
 function ThreeLeggedFieldsFromJSON(json) {
@@ -29,31 +27,28 @@ function ThreeLeggedFieldsFromJSON(json) {
 }
 exports.ThreeLeggedFieldsFromJSON = ThreeLeggedFieldsFromJSON;
 function ThreeLeggedFieldsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'enabled': !(0, runtime_1.exists)(json, 'Enabled') ? undefined : json['Enabled'],
-        'username': !(0, runtime_1.exists)(json, 'Username') ? undefined : json['Username'],
-        'password': !(0, runtime_1.exists)(json, 'Password') ? undefined : json['Password'],
-        'otpSettings': !(0, runtime_1.exists)(json, 'OtpSettings') ? undefined : (0, OtpSettings_1.OtpSettingsFromJSON)(json['OtpSettings']),
-        'customScripts': !(0, runtime_1.exists)(json, 'CustomScripts') ? undefined : json['CustomScripts'],
+        'enabled': json['Enabled'] == null ? undefined : json['Enabled'],
+        'username': json['Username'] == null ? undefined : json['Username'],
+        'password': json['Password'] == null ? undefined : json['Password'],
+        'otpSettings': json['OtpSettings'] == null ? undefined : (0, OtpSettings_1.OtpSettingsFromJSON)(json['OtpSettings']),
+        'customScripts': json['CustomScripts'] == null ? undefined : json['CustomScripts'],
     };
 }
 exports.ThreeLeggedFieldsFromJSONTyped = ThreeLeggedFieldsFromJSONTyped;
 function ThreeLeggedFieldsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Enabled': value.enabled,
-        'Username': value.username,
-        'Password': value.password,
-        'OtpSettings': (0, OtpSettings_1.OtpSettingsToJSON)(value.otpSettings),
-        'CustomScripts': value.customScripts,
+        'Enabled': value['enabled'],
+        'Username': value['username'],
+        'Password': value['password'],
+        'OtpSettings': (0, OtpSettings_1.OtpSettingsToJSON)(value['otpSettings']),
+        'CustomScripts': value['customScripts'],
     };
 }
 exports.ThreeLeggedFieldsToJSON = ThreeLeggedFieldsToJSON;

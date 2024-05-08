@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * 
  * @export
@@ -140,9 +140,7 @@ export type VcsCommitInfoIntegrationSystemEnum = typeof VcsCommitInfoIntegration
  * Check if a given object implements the VcsCommitInfo interface.
  */
 export function instanceOfVcsCommitInfo(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function VcsCommitInfoFromJSON(json: any): VcsCommitInfo {
@@ -150,54 +148,51 @@ export function VcsCommitInfoFromJSON(json: any): VcsCommitInfo {
 }
 
 export function VcsCommitInfoFromJSONTyped(json: any, ignoreDiscriminator: boolean): VcsCommitInfo {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'ciBuildConfigurationName': !exists(json, 'CiBuildConfigurationName') ? undefined : json['CiBuildConfigurationName'],
-        'ciBuildHasChange': !exists(json, 'CiBuildHasChange') ? undefined : json['CiBuildHasChange'],
-        'ciBuildId': !exists(json, 'CiBuildId') ? undefined : json['CiBuildId'],
-        'ciBuildServerName': !exists(json, 'CiBuildServerName') ? undefined : json['CiBuildServerName'],
-        'ciBuildServerVersion': !exists(json, 'CiBuildServerVersion') ? undefined : json['CiBuildServerVersion'],
-        'ciBuildUrl': !exists(json, 'CiBuildUrl') ? undefined : json['CiBuildUrl'],
-        'ciNcPluginVersion': !exists(json, 'CiNcPluginVersion') ? undefined : json['CiNcPluginVersion'],
-        'ciTimestamp': !exists(json, 'CiTimestamp') ? undefined : (new Date(json['CiTimestamp'])),
-        'comitterId': !exists(json, 'ComitterId') ? undefined : json['ComitterId'],
-        'committer': !exists(json, 'Committer') ? undefined : json['Committer'],
-        'committerName': !exists(json, 'CommitterName') ? undefined : json['CommitterName'],
-        'committerOverride': !exists(json, 'CommitterOverride') ? undefined : json['CommitterOverride'],
-        'integrationSystem': !exists(json, 'IntegrationSystem') ? undefined : json['IntegrationSystem'],
-        'isCommiterExistAndAuthorizedInNc': !exists(json, 'IsCommiterExistAndAuthorizedInNc') ? undefined : json['IsCommiterExistAndAuthorizedInNc'],
-        'vcsName': !exists(json, 'VcsName') ? undefined : json['VcsName'],
-        'vcsVersion': !exists(json, 'VcsVersion') ? undefined : json['VcsVersion'],
+        'ciBuildConfigurationName': json['CiBuildConfigurationName'] == null ? undefined : json['CiBuildConfigurationName'],
+        'ciBuildHasChange': json['CiBuildHasChange'] == null ? undefined : json['CiBuildHasChange'],
+        'ciBuildId': json['CiBuildId'] == null ? undefined : json['CiBuildId'],
+        'ciBuildServerName': json['CiBuildServerName'] == null ? undefined : json['CiBuildServerName'],
+        'ciBuildServerVersion': json['CiBuildServerVersion'] == null ? undefined : json['CiBuildServerVersion'],
+        'ciBuildUrl': json['CiBuildUrl'] == null ? undefined : json['CiBuildUrl'],
+        'ciNcPluginVersion': json['CiNcPluginVersion'] == null ? undefined : json['CiNcPluginVersion'],
+        'ciTimestamp': json['CiTimestamp'] == null ? undefined : (new Date(json['CiTimestamp'])),
+        'comitterId': json['ComitterId'] == null ? undefined : json['ComitterId'],
+        'committer': json['Committer'] == null ? undefined : json['Committer'],
+        'committerName': json['CommitterName'] == null ? undefined : json['CommitterName'],
+        'committerOverride': json['CommitterOverride'] == null ? undefined : json['CommitterOverride'],
+        'integrationSystem': json['IntegrationSystem'] == null ? undefined : json['IntegrationSystem'],
+        'isCommiterExistAndAuthorizedInNc': json['IsCommiterExistAndAuthorizedInNc'] == null ? undefined : json['IsCommiterExistAndAuthorizedInNc'],
+        'vcsName': json['VcsName'] == null ? undefined : json['VcsName'],
+        'vcsVersion': json['VcsVersion'] == null ? undefined : json['VcsVersion'],
     };
 }
 
-export function VcsCommitInfoToJSON(value?: VcsCommitInfo | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+export function VcsCommitInfoToJSON(value?: Omit<VcsCommitInfo, 'CiBuildServerName'> | null): any {
+    if (value == null) {
+        return value;
     }
     return {
         
-        'CiBuildConfigurationName': value.ciBuildConfigurationName,
-        'CiBuildHasChange': value.ciBuildHasChange,
-        'CiBuildId': value.ciBuildId,
-        'CiBuildServerVersion': value.ciBuildServerVersion,
-        'CiBuildUrl': value.ciBuildUrl,
-        'CiNcPluginVersion': value.ciNcPluginVersion,
-        'CiTimestamp': value.ciTimestamp === undefined ? undefined : (value.ciTimestamp.toISOString()),
-        'ComitterId': value.comitterId,
-        'Committer': value.committer,
-        'CommitterName': value.committerName,
-        'CommitterOverride': value.committerOverride,
-        'IntegrationSystem': value.integrationSystem,
-        'IsCommiterExistAndAuthorizedInNc': value.isCommiterExistAndAuthorizedInNc,
-        'VcsName': value.vcsName,
-        'VcsVersion': value.vcsVersion,
+        'CiBuildConfigurationName': value['ciBuildConfigurationName'],
+        'CiBuildHasChange': value['ciBuildHasChange'],
+        'CiBuildId': value['ciBuildId'],
+        'CiBuildServerVersion': value['ciBuildServerVersion'],
+        'CiBuildUrl': value['ciBuildUrl'],
+        'CiNcPluginVersion': value['ciNcPluginVersion'],
+        'CiTimestamp': value['ciTimestamp'] == null ? undefined : ((value['ciTimestamp']).toISOString()),
+        'ComitterId': value['comitterId'],
+        'Committer': value['committer'],
+        'CommitterName': value['committerName'],
+        'CommitterOverride': value['committerOverride'],
+        'IntegrationSystem': value['integrationSystem'],
+        'IsCommiterExistAndAuthorizedInNc': value['isCommiterExistAndAuthorizedInNc'],
+        'VcsName': value['vcsName'],
+        'VcsVersion': value['vcsVersion'],
     };
 }
 

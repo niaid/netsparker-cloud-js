@@ -137,11 +137,9 @@ export declare class IssuesApi extends runtime.BaseAPI {
      */
     issuesUpdate(requestParameters: IssuesUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<void>;
     /**
-     * Gets the list of retest issues.
      */
     issuesWaitingForRetestRaw(requestParameters: IssuesWaitingForRetestRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<IssueApiResult>>;
     /**
-     * Gets the list of retest issues.
      */
     issuesWaitingForRetest(requestParameters?: IssuesWaitingForRetestRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<IssueApiResult>;
 }

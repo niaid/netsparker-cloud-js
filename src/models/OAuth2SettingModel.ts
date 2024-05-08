@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 import type { AccessTokenTableModel } from './AccessTokenTableModel';
 import {
     AccessTokenTableModelFromJSON,
@@ -25,30 +25,30 @@ import {
     AuthorizationCodeTableModelFromJSONTyped,
     AuthorizationCodeTableModelToJSON,
 } from './AuthorizationCodeTableModel';
-import type { OAuth2SettingEndPointModel } from './OAuth2SettingEndPointModel';
-import {
-    OAuth2SettingEndPointModelFromJSON,
-    OAuth2SettingEndPointModelFromJSONTyped,
-    OAuth2SettingEndPointModelToJSON,
-} from './OAuth2SettingEndPointModel';
 import type { ResponseFields } from './ResponseFields';
 import {
     ResponseFieldsFromJSON,
     ResponseFieldsFromJSONTyped,
     ResponseFieldsToJSON,
 } from './ResponseFields';
-import type { SelectOptionModel } from './SelectOptionModel';
+import type { OAuth2SettingEndPointModel } from './OAuth2SettingEndPointModel';
 import {
-    SelectOptionModelFromJSON,
-    SelectOptionModelFromJSONTyped,
-    SelectOptionModelToJSON,
-} from './SelectOptionModel';
+    OAuth2SettingEndPointModelFromJSON,
+    OAuth2SettingEndPointModelFromJSONTyped,
+    OAuth2SettingEndPointModelToJSON,
+} from './OAuth2SettingEndPointModel';
 import type { ThreeLeggedFields } from './ThreeLeggedFields';
 import {
     ThreeLeggedFieldsFromJSON,
     ThreeLeggedFieldsFromJSONTyped,
     ThreeLeggedFieldsToJSON,
 } from './ThreeLeggedFields';
+import type { SelectOptionModel } from './SelectOptionModel';
+import {
+    SelectOptionModelFromJSON,
+    SelectOptionModelFromJSONTyped,
+    SelectOptionModelToJSON,
+} from './SelectOptionModel';
 
 /**
  * Represents oauth2 model.
@@ -158,9 +158,7 @@ export type OAuth2SettingModelSelectedAuthenticationTypeEnum = typeof OAuth2Sett
  * Check if a given object implements the OAuth2SettingModel interface.
  */
 export function instanceOfOAuth2SettingModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function OAuth2SettingModelFromJSON(json: any): OAuth2SettingModel {
@@ -168,47 +166,44 @@ export function OAuth2SettingModelFromJSON(json: any): OAuth2SettingModel {
 }
 
 export function OAuth2SettingModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): OAuth2SettingModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'serializedPolicyData': !exists(json, 'SerializedPolicyData') ? undefined : json['SerializedPolicyData'],
-        'enabled': !exists(json, 'Enabled') ? undefined : json['Enabled'],
-        'selectedFlowType': !exists(json, 'SelectedFlowType') ? undefined : json['SelectedFlowType'],
-        'selectedAuthenticationType': !exists(json, 'SelectedAuthenticationType') ? undefined : json['SelectedAuthenticationType'],
-        'flowTypes': !exists(json, 'FlowTypes') ? undefined : ((json['FlowTypes'] as Array<any>).map(SelectOptionModelFromJSON)),
-        'authentications': !exists(json, 'Authentications') ? undefined : ((json['Authentications'] as Array<any>).map(SelectOptionModelFromJSON)),
-        'accessTokenEndpoint': !exists(json, 'AccessTokenEndpoint') ? undefined : OAuth2SettingEndPointModelFromJSON(json['AccessTokenEndpoint']),
-        'authorizationCodeEndpoint': !exists(json, 'AuthorizationCodeEndpoint') ? undefined : OAuth2SettingEndPointModelFromJSON(json['AuthorizationCodeEndpoint']),
-        'accessTokenTable': !exists(json, 'AccessTokenTable') ? undefined : AccessTokenTableModelFromJSON(json['AccessTokenTable']),
-        'authorizationCodeTable': !exists(json, 'AuthorizationCodeTable') ? undefined : AuthorizationCodeTableModelFromJSON(json['AuthorizationCodeTable']),
-        'responseFieldForm': !exists(json, 'ResponseFieldForm') ? undefined : ResponseFieldsFromJSON(json['ResponseFieldForm']),
-        'threeLegged': !exists(json, 'ThreeLegged') ? undefined : ThreeLeggedFieldsFromJSON(json['ThreeLegged']),
+        'serializedPolicyData': json['SerializedPolicyData'] == null ? undefined : json['SerializedPolicyData'],
+        'enabled': json['Enabled'] == null ? undefined : json['Enabled'],
+        'selectedFlowType': json['SelectedFlowType'] == null ? undefined : json['SelectedFlowType'],
+        'selectedAuthenticationType': json['SelectedAuthenticationType'] == null ? undefined : json['SelectedAuthenticationType'],
+        'flowTypes': json['FlowTypes'] == null ? undefined : ((json['FlowTypes'] as Array<any>).map(SelectOptionModelFromJSON)),
+        'authentications': json['Authentications'] == null ? undefined : ((json['Authentications'] as Array<any>).map(SelectOptionModelFromJSON)),
+        'accessTokenEndpoint': json['AccessTokenEndpoint'] == null ? undefined : OAuth2SettingEndPointModelFromJSON(json['AccessTokenEndpoint']),
+        'authorizationCodeEndpoint': json['AuthorizationCodeEndpoint'] == null ? undefined : OAuth2SettingEndPointModelFromJSON(json['AuthorizationCodeEndpoint']),
+        'accessTokenTable': json['AccessTokenTable'] == null ? undefined : AccessTokenTableModelFromJSON(json['AccessTokenTable']),
+        'authorizationCodeTable': json['AuthorizationCodeTable'] == null ? undefined : AuthorizationCodeTableModelFromJSON(json['AuthorizationCodeTable']),
+        'responseFieldForm': json['ResponseFieldForm'] == null ? undefined : ResponseFieldsFromJSON(json['ResponseFieldForm']),
+        'threeLegged': json['ThreeLegged'] == null ? undefined : ThreeLeggedFieldsFromJSON(json['ThreeLegged']),
     };
 }
 
 export function OAuth2SettingModelToJSON(value?: OAuth2SettingModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'SerializedPolicyData': value.serializedPolicyData,
-        'Enabled': value.enabled,
-        'SelectedFlowType': value.selectedFlowType,
-        'SelectedAuthenticationType': value.selectedAuthenticationType,
-        'FlowTypes': value.flowTypes === undefined ? undefined : ((value.flowTypes as Array<any>).map(SelectOptionModelToJSON)),
-        'Authentications': value.authentications === undefined ? undefined : ((value.authentications as Array<any>).map(SelectOptionModelToJSON)),
-        'AccessTokenEndpoint': OAuth2SettingEndPointModelToJSON(value.accessTokenEndpoint),
-        'AuthorizationCodeEndpoint': OAuth2SettingEndPointModelToJSON(value.authorizationCodeEndpoint),
-        'AccessTokenTable': AccessTokenTableModelToJSON(value.accessTokenTable),
-        'AuthorizationCodeTable': AuthorizationCodeTableModelToJSON(value.authorizationCodeTable),
-        'ResponseFieldForm': ResponseFieldsToJSON(value.responseFieldForm),
-        'ThreeLegged': ThreeLeggedFieldsToJSON(value.threeLegged),
+        'SerializedPolicyData': value['serializedPolicyData'],
+        'Enabled': value['enabled'],
+        'SelectedFlowType': value['selectedFlowType'],
+        'SelectedAuthenticationType': value['selectedAuthenticationType'],
+        'FlowTypes': value['flowTypes'] == null ? undefined : ((value['flowTypes'] as Array<any>).map(SelectOptionModelToJSON)),
+        'Authentications': value['authentications'] == null ? undefined : ((value['authentications'] as Array<any>).map(SelectOptionModelToJSON)),
+        'AccessTokenEndpoint': OAuth2SettingEndPointModelToJSON(value['accessTokenEndpoint']),
+        'AuthorizationCodeEndpoint': OAuth2SettingEndPointModelToJSON(value['authorizationCodeEndpoint']),
+        'AccessTokenTable': AccessTokenTableModelToJSON(value['accessTokenTable']),
+        'AuthorizationCodeTable': AuthorizationCodeTableModelToJSON(value['authorizationCodeTable']),
+        'ResponseFieldForm': ResponseFieldsToJSON(value['responseFieldForm']),
+        'ThreeLegged': ThreeLeggedFieldsToJSON(value['threeLegged']),
     };
 }
 

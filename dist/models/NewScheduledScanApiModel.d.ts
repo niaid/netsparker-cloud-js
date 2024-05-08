@@ -9,22 +9,22 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { AdditionalWebsiteModel } from './AdditionalWebsiteModel';
-import type { ApiFileModel } from './ApiFileModel';
-import type { BasicAuthenticationSettingModel } from './BasicAuthenticationSettingModel';
-import type { BusinessLogicRecorderSettingModel } from './BusinessLogicRecorderSettingModel';
-import type { ClientCertificateAuthenticationApiModel } from './ClientCertificateAuthenticationApiModel';
-import type { ExcludedLinkModel } from './ExcludedLinkModel';
-import type { ExcludedUsageTrackerModel } from './ExcludedUsageTrackerModel';
-import type { FormAuthenticationSettingModel } from './FormAuthenticationSettingModel';
 import type { HeaderAuthenticationModel } from './HeaderAuthenticationModel';
-import type { OAuth2SettingApiModel } from './OAuth2SettingApiModel';
+import type { ExcludedLinkModel } from './ExcludedLinkModel';
 import type { PreRequestScriptSettingModel } from './PreRequestScriptSettingModel';
-import type { ScanTimeWindowModel } from './ScanTimeWindowModel';
+import type { FormAuthenticationSettingModel } from './FormAuthenticationSettingModel';
+import type { ApiFile } from './ApiFile';
+import type { OAuth2SettingApiModel } from './OAuth2SettingApiModel';
 import type { ScheduledScanRecurrenceApiModel } from './ScheduledScanRecurrenceApiModel';
-import type { SharkModel } from './SharkModel';
-import type { UrlRewriteExcludedPathModel } from './UrlRewriteExcludedPathModel';
+import type { BusinessLogicRecorderSettingModel } from './BusinessLogicRecorderSettingModel';
+import type { AdditionalWebsiteModel } from './AdditionalWebsiteModel';
+import type { ExcludedUsageTrackerModel } from './ExcludedUsageTrackerModel';
+import type { ClientCertificateAuthenticationApiModel } from './ClientCertificateAuthenticationApiModel';
+import type { BasicAuthenticationSettingModel } from './BasicAuthenticationSettingModel';
 import type { UrlRewriteRuleModel } from './UrlRewriteRuleModel';
+import type { SharkModel } from './SharkModel';
+import type { ScanTimeWindowModel } from './ScanTimeWindowModel';
+import type { UrlRewriteExcludedPathModel } from './UrlRewriteExcludedPathModel';
 /**
  * Contains properties that required to start scheduled scan.
  * @export
@@ -196,10 +196,10 @@ export interface NewScheduledScanApiModel {
     importedLinks?: Array<string>;
     /**
      * Gets or sets the imported files. If imported files have not contains any URL, the file not added to scan profile.
-     * @type {Array<ApiFileModel>}
+     * @type {Array<ApiFile>}
      * @memberof NewScheduledScanApiModel
      */
-    importedFiles?: Array<ApiFileModel>;
+    importedFiles?: Array<ApiFile>;
     /**
      * Gets or sets a value indicating whether max scan duration is enabled.
      * This is only used for scheduled group scan and regular group scan.
@@ -405,4 +405,4 @@ export type NewScheduledScanApiModelUrlRewriteModeEnum = typeof NewScheduledScan
 export declare function instanceOfNewScheduledScanApiModel(value: object): boolean;
 export declare function NewScheduledScanApiModelFromJSON(json: any): NewScheduledScanApiModel;
 export declare function NewScheduledScanApiModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): NewScheduledScanApiModel;
-export declare function NewScheduledScanApiModelToJSON(value?: NewScheduledScanApiModel | null): any;
+export declare function NewScheduledScanApiModelToJSON(value?: Omit<NewScheduledScanApiModel, 'IsTargetUrlRequired'> | null): any;

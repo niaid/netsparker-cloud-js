@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TrelloListToJSON = exports.TrelloListFromJSONTyped = exports.TrelloListFromJSON = exports.instanceOfTrelloList = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the TrelloList interface.
  */
 function instanceOfTrelloList(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfTrelloList = instanceOfTrelloList;
 function TrelloListFromJSON(json) {
@@ -28,28 +26,25 @@ function TrelloListFromJSON(json) {
 }
 exports.TrelloListFromJSON = TrelloListFromJSON;
 function TrelloListFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'closed': !(0, runtime_1.exists)(json, 'closed') ? undefined : json['closed'],
-        'id': !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
-        'isActive': !(0, runtime_1.exists)(json, 'IsActive') ? undefined : json['IsActive'],
-        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
+        'closed': json['closed'] == null ? undefined : json['closed'],
+        'id': json['id'] == null ? undefined : json['id'],
+        'isActive': json['IsActive'] == null ? undefined : json['IsActive'],
+        'name': json['name'] == null ? undefined : json['name'],
     };
 }
 exports.TrelloListFromJSONTyped = TrelloListFromJSONTyped;
 function TrelloListToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'closed': value.closed,
-        'id': value.id,
-        'name': value.name,
+        'closed': value['closed'],
+        'id': value['id'],
+        'name': value['name'],
     };
 }
 exports.TrelloListToJSON = TrelloListToJSON;

@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AccessTokenTableModelToJSON = exports.AccessTokenTableModelFromJSONTyped = exports.AccessTokenTableModelFromJSON = exports.instanceOfAccessTokenTableModel = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the AccessTokenTableModel interface.
  */
 function instanceOfAccessTokenTableModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfAccessTokenTableModel = instanceOfAccessTokenTableModel;
 function AccessTokenTableModelFromJSON(json) {
@@ -28,25 +26,22 @@ function AccessTokenTableModelFromJSON(json) {
 }
 exports.AccessTokenTableModelFromJSON = AccessTokenTableModelFromJSON;
 function AccessTokenTableModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'fields': !(0, runtime_1.exists)(json, 'Fields') ? undefined : json['Fields'],
-        'items': !(0, runtime_1.exists)(json, 'Items') ? undefined : json['Items'],
+        'fields': json['Fields'] == null ? undefined : json['Fields'],
+        'items': json['Items'] == null ? undefined : json['Items'],
     };
 }
 exports.AccessTokenTableModelFromJSONTyped = AccessTokenTableModelFromJSONTyped;
 function AccessTokenTableModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Fields': value.fields,
-        'Items': value.items,
+        'Fields': value['fields'],
+        'Items': value['items'],
     };
 }
 exports.AccessTokenTableModelToJSON = AccessTokenTableModelToJSON;

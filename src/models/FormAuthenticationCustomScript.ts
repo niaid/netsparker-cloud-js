@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents form authentication custom script.
  * @export
@@ -31,10 +31,8 @@ export interface FormAuthenticationCustomScript {
  * Check if a given object implements the FormAuthenticationCustomScript interface.
  */
 export function instanceOfFormAuthenticationCustomScript(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "value" in value;
-
-    return isInstance;
+    if (!('value' in value)) return false;
+    return true;
 }
 
 export function FormAuthenticationCustomScriptFromJSON(json: any): FormAuthenticationCustomScript {
@@ -42,7 +40,7 @@ export function FormAuthenticationCustomScriptFromJSON(json: any): FormAuthentic
 }
 
 export function FormAuthenticationCustomScriptFromJSONTyped(json: any, ignoreDiscriminator: boolean): FormAuthenticationCustomScript {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -52,15 +50,12 @@ export function FormAuthenticationCustomScriptFromJSONTyped(json: any, ignoreDis
 }
 
 export function FormAuthenticationCustomScriptToJSON(value?: FormAuthenticationCustomScript | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Value': value.value,
+        'Value': value['value'],
     };
 }
 

@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a model for deleting a agent.
  * @export
@@ -31,10 +31,8 @@ export interface DeleteAgentModel {
  * Check if a given object implements the DeleteAgentModel interface.
  */
 export function instanceOfDeleteAgentModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "agentId" in value;
-
-    return isInstance;
+    if (!('agentId' in value)) return false;
+    return true;
 }
 
 export function DeleteAgentModelFromJSON(json: any): DeleteAgentModel {
@@ -42,7 +40,7 @@ export function DeleteAgentModelFromJSON(json: any): DeleteAgentModel {
 }
 
 export function DeleteAgentModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): DeleteAgentModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -52,15 +50,12 @@ export function DeleteAgentModelFromJSONTyped(json: any, ignoreDiscriminator: bo
 }
 
 export function DeleteAgentModelToJSON(value?: DeleteAgentModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'AgentId': value.agentId,
+        'AgentId': value['agentId'],
     };
 }
 

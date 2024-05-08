@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * 
  * @export
@@ -37,9 +37,7 @@ export interface AsanaWorkspace {
  * Check if a given object implements the AsanaWorkspace interface.
  */
 export function instanceOfAsanaWorkspace(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function AsanaWorkspaceFromJSON(json: any): AsanaWorkspace {
@@ -47,27 +45,24 @@ export function AsanaWorkspaceFromJSON(json: any): AsanaWorkspace {
 }
 
 export function AsanaWorkspaceFromJSONTyped(json: any, ignoreDiscriminator: boolean): AsanaWorkspace {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'gid': !exists(json, 'gid') ? undefined : json['gid'],
-        'name': !exists(json, 'name') ? undefined : json['name'],
+        'gid': json['gid'] == null ? undefined : json['gid'],
+        'name': json['name'] == null ? undefined : json['name'],
     };
 }
 
 export function AsanaWorkspaceToJSON(value?: AsanaWorkspace | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'gid': value.gid,
-        'name': value.name,
+        'gid': value['gid'],
+        'name': value['name'],
     };
 }
 

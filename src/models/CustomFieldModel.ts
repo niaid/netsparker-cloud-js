@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a key/value pair of custom data associated with a vulnerability.
  * @export
@@ -37,9 +37,7 @@ export interface CustomFieldModel {
  * Check if a given object implements the CustomFieldModel interface.
  */
 export function instanceOfCustomFieldModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function CustomFieldModelFromJSON(json: any): CustomFieldModel {
@@ -47,27 +45,24 @@ export function CustomFieldModelFromJSON(json: any): CustomFieldModel {
 }
 
 export function CustomFieldModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): CustomFieldModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'values': !exists(json, 'Values') ? undefined : json['Values'],
+        'name': json['Name'] == null ? undefined : json['Name'],
+        'values': json['Values'] == null ? undefined : json['Values'],
     };
 }
 
 export function CustomFieldModelToJSON(value?: CustomFieldModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Name': value.name,
-        'Values': value.values,
+        'Name': value['name'],
+        'Values': value['values'],
     };
 }
 

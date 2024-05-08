@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a scan time window item.
  * @export
@@ -65,9 +65,7 @@ export type ScanTimeWindowItemViewModelDayEnum = typeof ScanTimeWindowItemViewMo
  * Check if a given object implements the ScanTimeWindowItemViewModel interface.
  */
 export function instanceOfScanTimeWindowItemViewModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function ScanTimeWindowItemViewModelFromJSON(json: any): ScanTimeWindowItemViewModel {
@@ -75,31 +73,28 @@ export function ScanTimeWindowItemViewModelFromJSON(json: any): ScanTimeWindowIt
 }
 
 export function ScanTimeWindowItemViewModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): ScanTimeWindowItemViewModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'day': !exists(json, 'Day') ? undefined : json['Day'],
-        'from': !exists(json, 'From') ? undefined : json['From'],
-        'scanningAllowed': !exists(json, 'ScanningAllowed') ? undefined : json['ScanningAllowed'],
-        'to': !exists(json, 'To') ? undefined : json['To'],
+        'day': json['Day'] == null ? undefined : json['Day'],
+        'from': json['From'] == null ? undefined : json['From'],
+        'scanningAllowed': json['ScanningAllowed'] == null ? undefined : json['ScanningAllowed'],
+        'to': json['To'] == null ? undefined : json['To'],
     };
 }
 
 export function ScanTimeWindowItemViewModelToJSON(value?: ScanTimeWindowItemViewModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Day': value.day,
-        'From': value.from,
-        'ScanningAllowed': value.scanningAllowed,
-        'To': value.to,
+        'Day': value['day'],
+        'From': value['from'],
+        'ScanningAllowed': value['scanningAllowed'],
+        'To': value['to'],
     };
 }
 

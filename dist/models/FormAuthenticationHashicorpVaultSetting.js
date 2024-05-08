@@ -14,7 +14,6 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.FormAuthenticationHashicorpVaultSettingToJSON = exports.FormAuthenticationHashicorpVaultSettingFromJSONTyped = exports.FormAuthenticationHashicorpVaultSettingFromJSON = exports.instanceOfFormAuthenticationHashicorpVaultSetting = exports.FormAuthenticationHashicorpVaultSettingAuthTypeEnum = exports.FormAuthenticationHashicorpVaultSettingAgentModeEnum = void 0;
-const runtime_1 = require("../runtime");
 const FormAuthenticationHashicorpVaultSecretSetting_1 = require("./FormAuthenticationHashicorpVaultSecretSetting");
 /**
  * @export
@@ -34,8 +33,7 @@ exports.FormAuthenticationHashicorpVaultSettingAuthTypeEnum = {
  * Check if a given object implements the FormAuthenticationHashicorpVaultSetting interface.
  */
 function instanceOfFormAuthenticationHashicorpVaultSetting(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfFormAuthenticationHashicorpVaultSetting = instanceOfFormAuthenticationHashicorpVaultSetting;
 function FormAuthenticationHashicorpVaultSettingFromJSON(json) {
@@ -43,43 +41,40 @@ function FormAuthenticationHashicorpVaultSettingFromJSON(json) {
 }
 exports.FormAuthenticationHashicorpVaultSettingFromJSON = FormAuthenticationHashicorpVaultSettingFromJSON;
 function FormAuthenticationHashicorpVaultSettingFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
-        'secretSetting': !(0, runtime_1.exists)(json, 'SecretSetting') ? undefined : (0, FormAuthenticationHashicorpVaultSecretSetting_1.FormAuthenticationHashicorpVaultSecretSettingFromJSON)(json['SecretSetting']),
-        'token': !(0, runtime_1.exists)(json, 'Token') ? undefined : json['Token'],
-        'url': !(0, runtime_1.exists)(json, 'Url') ? undefined : json['Url'],
-        'agentMode': !(0, runtime_1.exists)(json, 'AgentMode') ? undefined : json['AgentMode'],
-        'encrypted': !(0, runtime_1.exists)(json, 'Encrypted') ? undefined : json['Encrypted'],
-        'authType': !(0, runtime_1.exists)(json, 'AuthType') ? undefined : json['AuthType'],
-        'certificateFileBytes': !(0, runtime_1.exists)(json, 'CertificateFileBytes') ? undefined : json['CertificateFileBytes'],
-        'certificateFilePassword': !(0, runtime_1.exists)(json, 'CertificateFilePassword') ? undefined : json['CertificateFilePassword'],
-        'path': !(0, runtime_1.exists)(json, 'Path') ? undefined : json['Path'],
-        'namespace': !(0, runtime_1.exists)(json, 'Namespace') ? undefined : json['Namespace'],
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'secretSetting': json['SecretSetting'] == null ? undefined : (0, FormAuthenticationHashicorpVaultSecretSetting_1.FormAuthenticationHashicorpVaultSecretSettingFromJSON)(json['SecretSetting']),
+        'token': json['Token'] == null ? undefined : json['Token'],
+        'url': json['Url'] == null ? undefined : json['Url'],
+        'agentMode': json['AgentMode'] == null ? undefined : json['AgentMode'],
+        'encrypted': json['Encrypted'] == null ? undefined : json['Encrypted'],
+        'authType': json['AuthType'] == null ? undefined : json['AuthType'],
+        'certificateFileBytes': json['CertificateFileBytes'] == null ? undefined : json['CertificateFileBytes'],
+        'certificateFilePassword': json['CertificateFilePassword'] == null ? undefined : json['CertificateFilePassword'],
+        'path': json['Path'] == null ? undefined : json['Path'],
+        'namespace': json['Namespace'] == null ? undefined : json['Namespace'],
     };
 }
 exports.FormAuthenticationHashicorpVaultSettingFromJSONTyped = FormAuthenticationHashicorpVaultSettingFromJSONTyped;
 function FormAuthenticationHashicorpVaultSettingToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Id': value.id,
-        'SecretSetting': (0, FormAuthenticationHashicorpVaultSecretSetting_1.FormAuthenticationHashicorpVaultSecretSettingToJSON)(value.secretSetting),
-        'Token': value.token,
-        'Url': value.url,
-        'AgentMode': value.agentMode,
-        'Encrypted': value.encrypted,
-        'AuthType': value.authType,
-        'CertificateFileBytes': value.certificateFileBytes,
-        'CertificateFilePassword': value.certificateFilePassword,
-        'Path': value.path,
-        'Namespace': value.namespace,
+        'Id': value['id'],
+        'SecretSetting': (0, FormAuthenticationHashicorpVaultSecretSetting_1.FormAuthenticationHashicorpVaultSecretSettingToJSON)(value['secretSetting']),
+        'Token': value['token'],
+        'Url': value['url'],
+        'AgentMode': value['agentMode'],
+        'Encrypted': value['encrypted'],
+        'AuthType': value['authType'],
+        'CertificateFileBytes': value['certificateFileBytes'],
+        'CertificateFilePassword': value['certificateFilePassword'],
+        'Path': value['path'],
+        'Namespace': value['namespace'],
     };
 }
 exports.FormAuthenticationHashicorpVaultSettingToJSON = FormAuthenticationHashicorpVaultSettingToJSON;

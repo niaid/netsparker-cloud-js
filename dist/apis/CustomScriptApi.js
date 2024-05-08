@@ -47,8 +47,8 @@ class CustomScriptApi extends runtime.BaseAPI {
      * Deletes Custom Scripts
      */
     async customScriptDeleteRaw(requestParameters, initOverrides) {
-        if (requestParameters.ids === null || requestParameters.ids === undefined) {
-            throw new runtime.RequiredError('ids', 'Required parameter requestParameters.ids was null or undefined when calling customScriptDelete.');
+        if (requestParameters['ids'] == null) {
+            throw new runtime.RequiredError('ids', 'Required parameter "ids" was null or undefined when calling customScriptDelete().');
         }
         const queryParameters = {};
         const headerParameters = {};
@@ -58,7 +58,7 @@ class CustomScriptApi extends runtime.BaseAPI {
             method: 'DELETE',
             headers: headerParameters,
             query: queryParameters,
-            body: requestParameters.ids,
+            body: requestParameters['ids'],
         }, initOverrides);
         return new runtime.JSONApiResponse(response);
     }
@@ -94,8 +94,8 @@ class CustomScriptApi extends runtime.BaseAPI {
      * Creates Custom Scripts
      */
     async customScriptNewRaw(requestParameters, initOverrides) {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model', 'Required parameter requestParameters.model was null or undefined when calling customScriptNew.');
+        if (requestParameters['model'] == null) {
+            throw new runtime.RequiredError('model', 'Required parameter "model" was null or undefined when calling customScriptNew().');
         }
         const queryParameters = {};
         const headerParameters = {};
@@ -105,7 +105,7 @@ class CustomScriptApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: requestParameters.model.map(index_1.CustomScriptRequestApiModelToJSON),
+            body: requestParameters['model'].map(index_1.CustomScriptRequestApiModelToJSON),
         }, initOverrides);
         return new runtime.JSONApiResponse(response);
     }
@@ -120,8 +120,8 @@ class CustomScriptApi extends runtime.BaseAPI {
      * Updates Custom Scripts
      */
     async customScriptUpdateRaw(requestParameters, initOverrides) {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model', 'Required parameter requestParameters.model was null or undefined when calling customScriptUpdate.');
+        if (requestParameters['model'] == null) {
+            throw new runtime.RequiredError('model', 'Required parameter "model" was null or undefined when calling customScriptUpdate().');
         }
         const queryParameters = {};
         const headerParameters = {};
@@ -131,7 +131,7 @@ class CustomScriptApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: requestParameters.model.map(index_1.CustomScriptUpdateRequestApiModelToJSON),
+            body: requestParameters['model'].map(index_1.CustomScriptUpdateRequestApiModelToJSON),
         }, initOverrides);
         return new runtime.JSONApiResponse(response);
     }

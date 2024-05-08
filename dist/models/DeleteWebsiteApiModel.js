@@ -18,9 +18,9 @@ exports.DeleteWebsiteApiModelToJSON = exports.DeleteWebsiteApiModelFromJSONTyped
  * Check if a given object implements the DeleteWebsiteApiModel interface.
  */
 function instanceOfDeleteWebsiteApiModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "rootUrl" in value;
-    return isInstance;
+    if (!('rootUrl' in value))
+        return false;
+    return true;
 }
 exports.instanceOfDeleteWebsiteApiModel = instanceOfDeleteWebsiteApiModel;
 function DeleteWebsiteApiModelFromJSON(json) {
@@ -28,7 +28,7 @@ function DeleteWebsiteApiModelFromJSON(json) {
 }
 exports.DeleteWebsiteApiModelFromJSON = DeleteWebsiteApiModelFromJSON;
 function DeleteWebsiteApiModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -37,14 +37,11 @@ function DeleteWebsiteApiModelFromJSONTyped(json, ignoreDiscriminator) {
 }
 exports.DeleteWebsiteApiModelFromJSONTyped = DeleteWebsiteApiModelFromJSONTyped;
 function DeleteWebsiteApiModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'RootUrl': value.rootUrl,
+        'RootUrl': value['rootUrl'],
     };
 }
 exports.DeleteWebsiteApiModelToJSON = DeleteWebsiteApiModelToJSON;

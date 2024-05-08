@@ -148,6 +148,12 @@ export interface DiscoveryApiModel {
      * @memberof DiscoveryApiModel
      */
     discoveryConnectionsDetail?: DiscoveryConnectionsApiModel;
+    /**
+     * Gets or sets the risk score of the website.
+     * @type {string}
+     * @memberof DiscoveryApiModel
+     */
+    riskScore?: DiscoveryApiModelRiskScoreEnum;
 }
 /**
  * @export
@@ -167,9 +173,22 @@ export declare const DiscoveryApiModelDiscoverySourceTypeEnum: {
 };
 export type DiscoveryApiModelDiscoverySourceTypeEnum = typeof DiscoveryApiModelDiscoverySourceTypeEnum[keyof typeof DiscoveryApiModelDiscoverySourceTypeEnum];
 /**
+ * @export
+ */
+export declare const DiscoveryApiModelRiskScoreEnum: {
+    readonly Low: "Low";
+    readonly Medium: "Medium";
+    readonly High: "High";
+    readonly Critical: "Critical";
+    readonly Loading: "Loading";
+    readonly Undetermined: "Undetermined";
+    readonly TemporaryUnavailable: "TemporaryUnavailable";
+};
+export type DiscoveryApiModelRiskScoreEnum = typeof DiscoveryApiModelRiskScoreEnum[keyof typeof DiscoveryApiModelRiskScoreEnum];
+/**
  * Check if a given object implements the DiscoveryApiModel interface.
  */
 export declare function instanceOfDiscoveryApiModel(value: object): boolean;
 export declare function DiscoveryApiModelFromJSON(json: any): DiscoveryApiModel;
 export declare function DiscoveryApiModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): DiscoveryApiModel;
-export declare function DiscoveryApiModelToJSON(value?: DiscoveryApiModel | null): any;
+export declare function DiscoveryApiModelToJSON(value?: Omit<DiscoveryApiModel, 'IpAddressCount'> | null): any;

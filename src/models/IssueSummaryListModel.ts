@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 import type { IssueSummaryStatusModel } from './IssueSummaryStatusModel';
 import {
     IssueSummaryStatusModelFromJSON,
@@ -93,9 +93,7 @@ export type IssueSummaryListModelSeverityEnum = typeof IssueSummaryListModelSeve
  * Check if a given object implements the IssueSummaryListModel interface.
  */
 export function instanceOfIssueSummaryListModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function IssueSummaryListModelFromJSON(json: any): IssueSummaryListModel {
@@ -103,33 +101,30 @@ export function IssueSummaryListModelFromJSON(json: any): IssueSummaryListModel 
 }
 
 export function IssueSummaryListModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): IssueSummaryListModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'title': !exists(json, 'Title') ? undefined : json['Title'],
-        'state': !exists(json, 'State') ? undefined : json['State'],
-        'severity': !exists(json, 'Severity') ? undefined : json['Severity'],
-        'url': !exists(json, 'Url') ? undefined : json['Url'],
-        'statusByDate': !exists(json, 'StatusByDate') ? undefined : ((json['StatusByDate'] as Array<any>).map(IssueSummaryStatusModelFromJSON)),
+        'title': json['Title'] == null ? undefined : json['Title'],
+        'state': json['State'] == null ? undefined : json['State'],
+        'severity': json['Severity'] == null ? undefined : json['Severity'],
+        'url': json['Url'] == null ? undefined : json['Url'],
+        'statusByDate': json['StatusByDate'] == null ? undefined : ((json['StatusByDate'] as Array<any>).map(IssueSummaryStatusModelFromJSON)),
     };
 }
 
 export function IssueSummaryListModelToJSON(value?: IssueSummaryListModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Title': value.title,
-        'State': value.state,
-        'Severity': value.severity,
-        'Url': value.url,
-        'StatusByDate': value.statusByDate === undefined ? undefined : ((value.statusByDate as Array<any>).map(IssueSummaryStatusModelToJSON)),
+        'Title': value['title'],
+        'State': value['state'],
+        'Severity': value['severity'],
+        'Url': value['url'],
+        'StatusByDate': value['statusByDate'] == null ? undefined : ((value['statusByDate'] as Array<any>).map(IssueSummaryStatusModelToJSON)),
     };
 }
 

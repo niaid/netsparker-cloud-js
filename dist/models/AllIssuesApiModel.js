@@ -15,12 +15,12 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AllIssuesApiModelToJSON = exports.AllIssuesApiModelFromJSONTyped = exports.AllIssuesApiModelFromJSON = exports.instanceOfAllIssuesApiModel = exports.AllIssuesApiModelTypeEnum = exports.AllIssuesApiModelSeverityEnum = void 0;
 const runtime_1 = require("../runtime");
-const CustomFieldModel_1 = require("./CustomFieldModel");
-const IssueApiModelCvssVector_1 = require("./IssueApiModelCvssVector");
 const IssueHistoryApiModel_1 = require("./IssueHistoryApiModel");
-const IssueRequestContentParametersApiModel_1 = require("./IssueRequestContentParametersApiModel");
 const VersionIssue_1 = require("./VersionIssue");
 const VulnerabilityClassification_1 = require("./VulnerabilityClassification");
+const IssueRequestContentParametersApiModel_1 = require("./IssueRequestContentParametersApiModel");
+const CvssScoreValue_1 = require("./CvssScoreValue");
+const CustomFieldModel_1 = require("./CustomFieldModel");
 /**
  * @export
  */
@@ -1486,6 +1486,7 @@ exports.AllIssuesApiModelTypeEnum = {
     WordpressThemeGeneratePressVersionDisclosure: 'WordpressThemeGeneratePressVersionDisclosure',
     WordpressThemeInspiroVersionDisclosure: 'WordpressThemeInspiroVersionDisclosure',
     WordpressThemeGoVersionDisclosure: 'WordpressThemeGoVersionDisclosure',
+    WordpressPluginUltimateMemberIdentified: 'WordpressPluginUltimateMemberIdentified',
     WordpressPluginLoginWithPhoneNumberIdentified: 'WordpressPluginLoginWithPhoneNumberIdentified',
     WordpressPluginInstagramFeedIdentified: 'WordpressPluginInstagramFeedIdentified',
     WordpressPluginContactFormSevenIdentified: 'WordpressPluginContactFormSevenIdentified',
@@ -1504,6 +1505,7 @@ exports.AllIssuesApiModelTypeEnum = {
     WordpressPluginLiteSpeedCacheIdentified: 'WordpressPluginLiteSpeedCacheIdentified',
     WordpressPluginUpdraftPlusIdentified: 'WordpressPluginUpdraftPlusIdentified',
     WordpressPluginJupiterXIdentified: 'WordpressPluginJupiterXIdentified',
+    WordpressPluginUltimateMemberOutOfDate: 'WordpressPluginUltimateMemberOutOfDate',
     WordpressPluginLoginWithPhoneNumberOutOfDate: 'WordpressPluginLoginWithPhoneNumberOutOfDate',
     WordpressPluginInstagramFeedOutOfDate: 'WordpressPluginInstagramFeedOutOfDate',
     WordpressPluginContactFormSevenOutOfDate: 'WordpressPluginContactFormSevenOutOfDate',
@@ -1525,6 +1527,7 @@ exports.AllIssuesApiModelTypeEnum = {
     WordpressPluginInstagramFeedVersionDisclosure: 'WordpressPluginInstagramFeedVersionDisclosure',
     WordpressPluginContactFormSevenVersionDisclosure: 'WordpressPluginContactFormSevenVersionDisclosure',
     WordpressPluginYoastSeoVersionDisclosure: 'WordpressPluginYoastSeoVersionDisclosure',
+    WordpressPluginUltimateMemberVersionDisclosure: 'WordpressPluginUltimateMemberVersionDisclosure',
     WordpressPluginLoginWithPhoneNumberVersionDisclosure: 'WordpressPluginLoginWithPhoneNumberVersionDisclosure',
     WordpressPluginElementorVersionDisclosure: 'WordpressPluginElementorVersionDisclosure',
     WordpressPluginClassicEditorVersionDisclosure: 'WordpressPluginClassicEditorVersionDisclosure',
@@ -1557,14 +1560,40 @@ exports.AllIssuesApiModelTypeEnum = {
     MovEitTransferVersionDisclosure: 'MOVEitTransferVersionDisclosure',
     MovEitTransferIdentified: 'MOVEitTransferIdentified',
     DianaJlIdentified: 'DianaJlIdentified',
-    MissingXContentTypeOptionsHeader: 'MissingXContentTypeOptionsHeader'
+    MissingXContentTypeOptionsHeader: 'MissingXContentTypeOptionsHeader',
+    JwkIdentified: 'JwkIdentified',
+    PrivateJwkIdentified: 'PrivateJwkIdentified',
+    DotCmsOutOfDate: 'DotCMSOutOfDate',
+    DotCmsVersionDisclosure: 'DotCMSVersionDisclosure',
+    DotCmsIdentified: 'DotCMSIdentified',
+    WordpressPluginBackupMigrationIdentified: 'WordpressPluginBackupMigrationIdentified',
+    WordpressPluginBackupMigrationOutOfDate: 'WordpressPluginBackupMigrationOutOfDate',
+    WordpressPluginBackupMigrationVersionDisclosure: 'WordpressPluginBackupMigrationVersionDisclosure',
+    TinyMceVersionDisclosure: 'TinyMCEVersionDisclosure',
+    TinyMceIdentified: 'TinyMCEIdentified',
+    TinyMceOutOfDate: 'TinyMCEOutOfDate',
+    PossiblePrototypePollution: 'PossiblePrototypePollution',
+    PhpStackTraceDisclosure: 'PhpStackTraceDisclosure',
+    ActiveMqRce: 'ActiveMqRCE',
+    TorchServeApiIdentified: 'TorchServeApiIdentified',
+    TorchServeApiSsrf: 'TorchServeApiSsrf',
+    VmWareAriaRce: 'VmWareAriaRCE',
+    WordPressConfigDisclosure: 'WordPressConfigDisclosure',
+    AuthenticationBypassIvanti: 'AuthenticationBypassIvanti',
+    RceIvanti: 'RceIvanti',
+    PrototypePollution: 'PrototypePollution',
+    SmallSslKeyLength: 'SmallSSLKeyLength',
+    WpadminDetected: 'WpadminDetected',
+    OracleEbsRce: 'OracleEbsRce',
+    AngularVersionDisclosure: 'AngularVersionDisclosure',
+    AngularIdentified: 'AngularIdentified',
+    AngularOutOfDate: 'AngularOutOfDate'
 };
 /**
  * Check if a given object implements the AllIssuesApiModel interface.
  */
 function instanceOfAllIssuesApiModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfAllIssuesApiModel = instanceOfAllIssuesApiModel;
 function AllIssuesApiModelFromJSON(json) {
@@ -1572,104 +1601,102 @@ function AllIssuesApiModelFromJSON(json) {
 }
 exports.AllIssuesApiModelFromJSON = AllIssuesApiModelFromJSON;
 function AllIssuesApiModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'assigneeName': !(0, runtime_1.exists)(json, 'AssigneeName') ? undefined : json['AssigneeName'],
-        'firstSeenDate': !(0, runtime_1.exists)(json, 'FirstSeenDate') ? undefined : json['FirstSeenDate'],
-        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
-        'isAddressed': !(0, runtime_1.exists)(json, 'IsAddressed') ? undefined : json['IsAddressed'],
-        'isDetectedByShark': !(0, runtime_1.exists)(json, 'IsDetectedByShark') ? undefined : json['IsDetectedByShark'],
-        'isPresent': !(0, runtime_1.exists)(json, 'IsPresent') ? undefined : json['IsPresent'],
-        'lastSeenDate': !(0, runtime_1.exists)(json, 'LastSeenDate') ? undefined : json['LastSeenDate'],
-        'lastRevivedDate': !(0, runtime_1.exists)(json, 'LastRevivedDate') ? undefined : json['LastRevivedDate'],
-        'stateFixedConfirmedDate': !(0, runtime_1.exists)(json, 'StateFixedConfirmedDate') ? undefined : json['StateFixedConfirmedDate'],
-        'updatedDate': !(0, runtime_1.exists)(json, 'UpdatedDate') ? undefined : json['UpdatedDate'],
-        'severity': !(0, runtime_1.exists)(json, 'Severity') ? undefined : json['Severity'],
-        'state': !(0, runtime_1.exists)(json, 'State') ? undefined : json['State'],
-        'title': !(0, runtime_1.exists)(json, 'Title') ? undefined : json['Title'],
-        'url': !(0, runtime_1.exists)(json, 'Url') ? undefined : json['Url'],
-        'latestVulnerabilityIsConfirmed': !(0, runtime_1.exists)(json, 'LatestVulnerabilityIsConfirmed') ? undefined : json['LatestVulnerabilityIsConfirmed'],
-        'websiteId': !(0, runtime_1.exists)(json, 'WebsiteId') ? undefined : json['WebsiteId'],
-        'websiteName': !(0, runtime_1.exists)(json, 'WebsiteName') ? undefined : json['WebsiteName'],
-        'websiteRootUrl': !(0, runtime_1.exists)(json, 'WebsiteRootUrl') ? undefined : json['WebsiteRootUrl'],
-        'fixTimeInMinutes': !(0, runtime_1.exists)(json, 'FixTimeInMinutes') ? undefined : json['FixTimeInMinutes'],
-        'certainty': !(0, runtime_1.exists)(json, 'Certainty') ? undefined : json['Certainty'],
-        'parameters': !(0, runtime_1.exists)(json, 'Parameters') ? undefined : (json['Parameters'].map(IssueRequestContentParametersApiModel_1.IssueRequestContentParametersApiModelFromJSON)),
-        'vulnerabilityDetail': !(0, runtime_1.exists)(json, 'VulnerabilityDetail') ? undefined : json['VulnerabilityDetail'],
-        'impact': !(0, runtime_1.exists)(json, 'Impact') ? undefined : json['Impact'],
-        'actions': !(0, runtime_1.exists)(json, 'Actions') ? undefined : json['Actions'],
-        'skills': !(0, runtime_1.exists)(json, 'Skills') ? undefined : json['Skills'],
-        'remedy': !(0, runtime_1.exists)(json, 'Remedy') ? undefined : json['Remedy'],
-        'remedyReferences': !(0, runtime_1.exists)(json, 'RemedyReferences') ? undefined : json['RemedyReferences'],
-        'externalReferences': !(0, runtime_1.exists)(json, 'ExternalReferences') ? undefined : json['ExternalReferences'],
-        'proofOfConcept': !(0, runtime_1.exists)(json, 'ProofOfConcept') ? undefined : json['ProofOfConcept'],
-        'customData': !(0, runtime_1.exists)(json, 'CustomData') ? undefined : json['CustomData'],
-        'customFields': !(0, runtime_1.exists)(json, 'CustomFields') ? undefined : (json['CustomFields'].map(CustomFieldModel_1.CustomFieldModelFromJSON)),
-        'classificationLinks': !(0, runtime_1.exists)(json, 'ClassificationLinks') ? undefined : json['ClassificationLinks'],
-        'cvssVectorString': !(0, runtime_1.exists)(json, 'CvssVectorString') ? undefined : json['CvssVectorString'],
-        'cvss31VectorString': !(0, runtime_1.exists)(json, 'Cvss31VectorString') ? undefined : json['Cvss31VectorString'],
-        'cvss40VectorString': !(0, runtime_1.exists)(json, 'Cvss40VectorString') ? undefined : json['Cvss40VectorString'],
-        'type': !(0, runtime_1.exists)(json, 'Type') ? undefined : json['Type'],
-        'classification': !(0, runtime_1.exists)(json, 'Classification') ? undefined : (0, VulnerabilityClassification_1.VulnerabilityClassificationFromJSON)(json['Classification']),
-        'cvssVector': !(0, runtime_1.exists)(json, 'CvssVector') ? undefined : (0, IssueApiModelCvssVector_1.IssueApiModelCvssVectorFromJSON)(json['CvssVector']),
-        'versionIssues': !(0, runtime_1.exists)(json, 'VersionIssues') ? undefined : (json['VersionIssues'].map(VersionIssue_1.VersionIssueFromJSON)),
-        'isRetest': !(0, runtime_1.exists)(json, 'IsRetest') ? undefined : json['IsRetest'],
-        'isTodo': !(0, runtime_1.exists)(json, 'IsTodo') ? undefined : json['IsTodo'],
-        'latestScanId': !(0, runtime_1.exists)(json, 'LatestScanId') ? undefined : json['LatestScanId'],
-        'history': !(0, runtime_1.exists)(json, 'History') ? undefined : (json['History'].map(IssueHistoryApiModel_1.IssueHistoryApiModelFromJSON)),
-        'tags': !(0, runtime_1.exists)(json, 'Tags') ? undefined : json['Tags'],
+        'assigneeName': json['AssigneeName'] == null ? undefined : json['AssigneeName'],
+        'firstSeenDate': json['FirstSeenDate'] == null ? undefined : json['FirstSeenDate'],
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'isAddressed': json['IsAddressed'] == null ? undefined : json['IsAddressed'],
+        'isDetectedByShark': json['IsDetectedByShark'] == null ? undefined : json['IsDetectedByShark'],
+        'isPresent': json['IsPresent'] == null ? undefined : json['IsPresent'],
+        'lastSeenDate': json['LastSeenDate'] == null ? undefined : json['LastSeenDate'],
+        'lastRevivedDate': json['LastRevivedDate'] == null ? undefined : json['LastRevivedDate'],
+        'stateFixedConfirmedDate': json['StateFixedConfirmedDate'] == null ? undefined : json['StateFixedConfirmedDate'],
+        'updatedDate': json['UpdatedDate'] == null ? undefined : json['UpdatedDate'],
+        'severity': json['Severity'] == null ? undefined : json['Severity'],
+        'state': json['State'] == null ? undefined : json['State'],
+        'title': json['Title'] == null ? undefined : json['Title'],
+        'url': json['Url'] == null ? undefined : json['Url'],
+        'latestVulnerabilityIsConfirmed': json['LatestVulnerabilityIsConfirmed'] == null ? undefined : json['LatestVulnerabilityIsConfirmed'],
+        'websiteId': json['WebsiteId'] == null ? undefined : json['WebsiteId'],
+        'websiteName': json['WebsiteName'] == null ? undefined : json['WebsiteName'],
+        'websiteRootUrl': json['WebsiteRootUrl'] == null ? undefined : json['WebsiteRootUrl'],
+        'fixTimeInMinutes': json['FixTimeInMinutes'] == null ? undefined : json['FixTimeInMinutes'],
+        'certainty': json['Certainty'] == null ? undefined : json['Certainty'],
+        'parameters': json['Parameters'] == null ? undefined : (json['Parameters'].map(IssueRequestContentParametersApiModel_1.IssueRequestContentParametersApiModelFromJSON)),
+        'vulnerabilityDetail': json['VulnerabilityDetail'] == null ? undefined : json['VulnerabilityDetail'],
+        'impact': json['Impact'] == null ? undefined : json['Impact'],
+        'actions': json['Actions'] == null ? undefined : json['Actions'],
+        'skills': json['Skills'] == null ? undefined : json['Skills'],
+        'remedy': json['Remedy'] == null ? undefined : json['Remedy'],
+        'remedyReferences': json['RemedyReferences'] == null ? undefined : json['RemedyReferences'],
+        'externalReferences': json['ExternalReferences'] == null ? undefined : json['ExternalReferences'],
+        'proofOfConcept': json['ProofOfConcept'] == null ? undefined : json['ProofOfConcept'],
+        'customData': json['CustomData'] == null ? undefined : json['CustomData'],
+        'customFields': json['CustomFields'] == null ? undefined : (json['CustomFields'].map(CustomFieldModel_1.CustomFieldModelFromJSON)),
+        'classificationLinks': json['ClassificationLinks'] == null ? undefined : json['ClassificationLinks'],
+        'cvssVectorString': json['CvssVectorString'] == null ? undefined : json['CvssVectorString'],
+        'cvss31VectorString': json['Cvss31VectorString'] == null ? undefined : json['Cvss31VectorString'],
+        'cvss40VectorString': json['Cvss40VectorString'] == null ? undefined : json['Cvss40VectorString'],
+        'type': json['Type'] == null ? undefined : json['Type'],
+        'classification': json['Classification'] == null ? undefined : (0, VulnerabilityClassification_1.VulnerabilityClassificationFromJSON)(json['Classification']),
+        'cvssVector': json['CvssVector'] == null ? undefined : ((0, runtime_1.mapValues)(json['CvssVector'], CvssScoreValue_1.CvssScoreValueFromJSON)),
+        'cvss31Vector': json['Cvss31Vector'] == null ? undefined : ((0, runtime_1.mapValues)(json['Cvss31Vector'], CvssScoreValue_1.CvssScoreValueFromJSON)),
+        'cvss40Vector': json['Cvss40Vector'] == null ? undefined : ((0, runtime_1.mapValues)(json['Cvss40Vector'], CvssScoreValue_1.CvssScoreValueFromJSON)),
+        'versionIssues': json['VersionIssues'] == null ? undefined : (json['VersionIssues'].map(VersionIssue_1.VersionIssueFromJSON)),
+        'isRetest': json['IsRetest'] == null ? undefined : json['IsRetest'],
+        'isTodo': json['IsTodo'] == null ? undefined : json['IsTodo'],
+        'latestScanId': json['LatestScanId'] == null ? undefined : json['LatestScanId'],
+        'history': json['History'] == null ? undefined : (json['History'].map(IssueHistoryApiModel_1.IssueHistoryApiModelFromJSON)),
+        'tags': json['Tags'] == null ? undefined : json['Tags'],
     };
 }
 exports.AllIssuesApiModelFromJSONTyped = AllIssuesApiModelFromJSONTyped;
 function AllIssuesApiModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'AssigneeName': value.assigneeName,
-        'FirstSeenDate': value.firstSeenDate,
-        'Id': value.id,
-        'IsAddressed': value.isAddressed,
-        'IsDetectedByShark': value.isDetectedByShark,
-        'IsPresent': value.isPresent,
-        'LastSeenDate': value.lastSeenDate,
-        'LastRevivedDate': value.lastRevivedDate,
-        'StateFixedConfirmedDate': value.stateFixedConfirmedDate,
-        'UpdatedDate': value.updatedDate,
-        'Severity': value.severity,
-        'State': value.state,
-        'Title': value.title,
-        'Url': value.url,
-        'LatestVulnerabilityIsConfirmed': value.latestVulnerabilityIsConfirmed,
-        'WebsiteId': value.websiteId,
-        'WebsiteName': value.websiteName,
-        'WebsiteRootUrl': value.websiteRootUrl,
-        'FixTimeInMinutes': value.fixTimeInMinutes,
-        'Certainty': value.certainty,
-        'VulnerabilityDetail': value.vulnerabilityDetail,
-        'Impact': value.impact,
-        'Actions': value.actions,
-        'Skills': value.skills,
-        'Remedy': value.remedy,
-        'RemedyReferences': value.remedyReferences,
-        'ExternalReferences': value.externalReferences,
-        'ProofOfConcept': value.proofOfConcept,
-        'CustomData': value.customData,
-        'ClassificationLinks': value.classificationLinks,
-        'CvssVectorString': value.cvssVectorString,
-        'Type': value.type,
-        'Classification': (0, VulnerabilityClassification_1.VulnerabilityClassificationToJSON)(value.classification),
-        'CvssVector': (0, IssueApiModelCvssVector_1.IssueApiModelCvssVectorToJSON)(value.cvssVector),
-        'IsRetest': value.isRetest,
-        'IsTodo': value.isTodo,
-        'LatestScanId': value.latestScanId,
-        'History': value.history === undefined ? undefined : (value.history.map(IssueHistoryApiModel_1.IssueHistoryApiModelToJSON)),
-        'Tags': value.tags,
+        'AssigneeName': value['assigneeName'],
+        'FirstSeenDate': value['firstSeenDate'],
+        'Id': value['id'],
+        'IsAddressed': value['isAddressed'],
+        'IsDetectedByShark': value['isDetectedByShark'],
+        'IsPresent': value['isPresent'],
+        'LastSeenDate': value['lastSeenDate'],
+        'LastRevivedDate': value['lastRevivedDate'],
+        'StateFixedConfirmedDate': value['stateFixedConfirmedDate'],
+        'UpdatedDate': value['updatedDate'],
+        'Severity': value['severity'],
+        'State': value['state'],
+        'Title': value['title'],
+        'Url': value['url'],
+        'LatestVulnerabilityIsConfirmed': value['latestVulnerabilityIsConfirmed'],
+        'WebsiteId': value['websiteId'],
+        'WebsiteName': value['websiteName'],
+        'WebsiteRootUrl': value['websiteRootUrl'],
+        'FixTimeInMinutes': value['fixTimeInMinutes'],
+        'Certainty': value['certainty'],
+        'VulnerabilityDetail': value['vulnerabilityDetail'],
+        'Impact': value['impact'],
+        'Actions': value['actions'],
+        'Skills': value['skills'],
+        'Remedy': value['remedy'],
+        'RemedyReferences': value['remedyReferences'],
+        'ExternalReferences': value['externalReferences'],
+        'ProofOfConcept': value['proofOfConcept'],
+        'CustomData': value['customData'],
+        'ClassificationLinks': value['classificationLinks'],
+        'CvssVectorString': value['cvssVectorString'],
+        'Type': value['type'],
+        'Classification': (0, VulnerabilityClassification_1.VulnerabilityClassificationToJSON)(value['classification']),
+        'IsRetest': value['isRetest'],
+        'IsTodo': value['isTodo'],
+        'LatestScanId': value['latestScanId'],
+        'History': value['history'] == null ? undefined : (value['history'].map(IssueHistoryApiModel_1.IssueHistoryApiModelToJSON)),
+        'Tags': value['tags'],
     };
 }
 exports.AllIssuesApiModelToJSON = AllIssuesApiModelToJSON;

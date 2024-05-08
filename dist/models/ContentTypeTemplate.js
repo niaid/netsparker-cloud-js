@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ContentTypeTemplateToJSON = exports.ContentTypeTemplateFromJSONTyped = exports.ContentTypeTemplateFromJSON = exports.instanceOfContentTypeTemplate = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the ContentTypeTemplate interface.
  */
 function instanceOfContentTypeTemplate(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfContentTypeTemplate = instanceOfContentTypeTemplate;
 function ContentTypeTemplateFromJSON(json) {
@@ -28,23 +26,20 @@ function ContentTypeTemplateFromJSON(json) {
 }
 exports.ContentTypeTemplateFromJSON = ContentTypeTemplateFromJSON;
 function ContentTypeTemplateFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
+        'name': json['Name'] == null ? undefined : json['Name'],
     };
 }
 exports.ContentTypeTemplateFromJSONTyped = ContentTypeTemplateFromJSONTyped;
 function ContentTypeTemplateToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Name': value.name,
+        'Name': value['name'],
     };
 }
 exports.ContentTypeTemplateToJSON = ContentTypeTemplateToJSON;

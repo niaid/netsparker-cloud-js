@@ -14,14 +14,13 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AgentStatusModelToJSON = exports.AgentStatusModelFromJSONTyped = exports.AgentStatusModelFromJSON = exports.instanceOfAgentStatusModel = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the AgentStatusModel interface.
  */
 function instanceOfAgentStatusModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "agentId" in value;
-    return isInstance;
+    if (!('agentId' in value))
+        return false;
+    return true;
 }
 exports.instanceOfAgentStatusModel = instanceOfAgentStatusModel;
 function AgentStatusModelFromJSON(json) {
@@ -29,25 +28,22 @@ function AgentStatusModelFromJSON(json) {
 }
 exports.AgentStatusModelFromJSON = AgentStatusModelFromJSON;
 function AgentStatusModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         'agentId': json['AgentId'],
-        'status': !(0, runtime_1.exists)(json, 'Status') ? undefined : json['Status'],
+        'status': json['Status'] == null ? undefined : json['Status'],
     };
 }
 exports.AgentStatusModelFromJSONTyped = AgentStatusModelFromJSONTyped;
 function AgentStatusModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'AgentId': value.agentId,
-        'Status': value.status,
+        'AgentId': value['agentId'],
+        'Status': value['status'],
     };
 }
 exports.AgentStatusModelToJSON = AgentStatusModelToJSON;

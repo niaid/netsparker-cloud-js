@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a model for update state a agent.
  * @export
@@ -37,10 +37,8 @@ export interface AgentStatusModel {
  * Check if a given object implements the AgentStatusModel interface.
  */
 export function instanceOfAgentStatusModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "agentId" in value;
-
-    return isInstance;
+    if (!('agentId' in value)) return false;
+    return true;
 }
 
 export function AgentStatusModelFromJSON(json: any): AgentStatusModel {
@@ -48,27 +46,24 @@ export function AgentStatusModelFromJSON(json: any): AgentStatusModel {
 }
 
 export function AgentStatusModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): AgentStatusModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
         'agentId': json['AgentId'],
-        'status': !exists(json, 'Status') ? undefined : json['Status'],
+        'status': json['Status'] == null ? undefined : json['Status'],
     };
 }
 
 export function AgentStatusModelToJSON(value?: AgentStatusModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'AgentId': value.agentId,
-        'Status': value.status,
+        'AgentId': value['agentId'],
+        'Status': value['status'],
     };
 }
 

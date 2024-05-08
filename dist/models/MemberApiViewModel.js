@@ -14,7 +14,6 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.MemberApiViewModelToJSON = exports.MemberApiViewModelFromJSONTyped = exports.MemberApiViewModelFromJSON = exports.instanceOfMemberApiViewModel = exports.MemberApiViewModelStateEnum = void 0;
-const runtime_1 = require("../runtime");
 const ReducedTeamDto_1 = require("./ReducedTeamDto");
 const RoleWebsiteGroupMappingDto_1 = require("./RoleWebsiteGroupMappingDto");
 /**
@@ -28,8 +27,7 @@ exports.MemberApiViewModelStateEnum = {
  * Check if a given object implements the MemberApiViewModel interface.
  */
 function instanceOfMemberApiViewModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfMemberApiViewModel = instanceOfMemberApiViewModel;
 function MemberApiViewModelFromJSON(json) {
@@ -37,57 +35,54 @@ function MemberApiViewModelFromJSON(json) {
 }
 exports.MemberApiViewModelFromJSON = MemberApiViewModelFromJSON;
 function MemberApiViewModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
-        'accountId': !(0, runtime_1.exists)(json, 'AccountId') ? undefined : json['AccountId'],
-        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
-        'email': !(0, runtime_1.exists)(json, 'Email') ? undefined : json['Email'],
-        'isApiAccessEnabled': !(0, runtime_1.exists)(json, 'IsApiAccessEnabled') ? undefined : json['IsApiAccessEnabled'],
-        'phoneNumber': !(0, runtime_1.exists)(json, 'PhoneNumber') ? undefined : json['PhoneNumber'],
-        'dateTimeFormat': !(0, runtime_1.exists)(json, 'DateTimeFormat') ? undefined : json['DateTimeFormat'],
-        'timezoneId': !(0, runtime_1.exists)(json, 'TimezoneId') ? undefined : json['TimezoneId'],
-        'state': !(0, runtime_1.exists)(json, 'State') ? undefined : json['State'],
-        'allowedWebsiteLimit': !(0, runtime_1.exists)(json, 'AllowedWebsiteLimit') ? undefined : json['AllowedWebsiteLimit'],
-        'isTwoFactorAuthenticationEnabled': !(0, runtime_1.exists)(json, 'IsTwoFactorAuthenticationEnabled') ? undefined : json['IsTwoFactorAuthenticationEnabled'],
-        'alternateLoginEmail': !(0, runtime_1.exists)(json, 'AlternateLoginEmail') ? undefined : json['AlternateLoginEmail'],
-        'roleWebsiteGroupMappings': !(0, runtime_1.exists)(json, 'RoleWebsiteGroupMappings') ? undefined : (json['RoleWebsiteGroupMappings'].map(RoleWebsiteGroupMappingDto_1.RoleWebsiteGroupMappingDtoFromJSON)),
-        'teams': !(0, runtime_1.exists)(json, 'Teams') ? undefined : (json['Teams'].map(ReducedTeamDto_1.ReducedTeamDtoFromJSON)),
-        'onlySsoLogin': !(0, runtime_1.exists)(json, 'OnlySsoLogin') ? undefined : json['OnlySsoLogin'],
-        'createdAt': !(0, runtime_1.exists)(json, 'CreatedAt') ? undefined : (new Date(json['CreatedAt'])),
-        'lastLoginDate': !(0, runtime_1.exists)(json, 'LastLoginDate') ? undefined : (new Date(json['LastLoginDate'])),
-        'websiteCount': !(0, runtime_1.exists)(json, 'WebsiteCount') ? undefined : json['WebsiteCount'],
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'accountId': json['AccountId'] == null ? undefined : json['AccountId'],
+        'name': json['Name'] == null ? undefined : json['Name'],
+        'email': json['Email'] == null ? undefined : json['Email'],
+        'isApiAccessEnabled': json['IsApiAccessEnabled'] == null ? undefined : json['IsApiAccessEnabled'],
+        'phoneNumber': json['PhoneNumber'] == null ? undefined : json['PhoneNumber'],
+        'dateTimeFormat': json['DateTimeFormat'] == null ? undefined : json['DateTimeFormat'],
+        'timezoneId': json['TimezoneId'] == null ? undefined : json['TimezoneId'],
+        'state': json['State'] == null ? undefined : json['State'],
+        'allowedWebsiteLimit': json['AllowedWebsiteLimit'] == null ? undefined : json['AllowedWebsiteLimit'],
+        'isTwoFactorAuthenticationEnabled': json['IsTwoFactorAuthenticationEnabled'] == null ? undefined : json['IsTwoFactorAuthenticationEnabled'],
+        'alternateLoginEmail': json['AlternateLoginEmail'] == null ? undefined : json['AlternateLoginEmail'],
+        'roleWebsiteGroupMappings': json['RoleWebsiteGroupMappings'] == null ? undefined : (json['RoleWebsiteGroupMappings'].map(RoleWebsiteGroupMappingDto_1.RoleWebsiteGroupMappingDtoFromJSON)),
+        'teams': json['Teams'] == null ? undefined : (json['Teams'].map(ReducedTeamDto_1.ReducedTeamDtoFromJSON)),
+        'onlySsoLogin': json['OnlySsoLogin'] == null ? undefined : json['OnlySsoLogin'],
+        'createdAt': json['CreatedAt'] == null ? undefined : (new Date(json['CreatedAt'])),
+        'lastLoginDate': json['LastLoginDate'] == null ? undefined : (new Date(json['LastLoginDate'])),
+        'websiteCount': json['WebsiteCount'] == null ? undefined : json['WebsiteCount'],
     };
 }
 exports.MemberApiViewModelFromJSONTyped = MemberApiViewModelFromJSONTyped;
 function MemberApiViewModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Id': value.id,
-        'AccountId': value.accountId,
-        'Name': value.name,
-        'Email': value.email,
-        'IsApiAccessEnabled': value.isApiAccessEnabled,
-        'PhoneNumber': value.phoneNumber,
-        'DateTimeFormat': value.dateTimeFormat,
-        'TimezoneId': value.timezoneId,
-        'State': value.state,
-        'AllowedWebsiteLimit': value.allowedWebsiteLimit,
-        'IsTwoFactorAuthenticationEnabled': value.isTwoFactorAuthenticationEnabled,
-        'AlternateLoginEmail': value.alternateLoginEmail,
-        'RoleWebsiteGroupMappings': value.roleWebsiteGroupMappings === undefined ? undefined : (value.roleWebsiteGroupMappings.map(RoleWebsiteGroupMappingDto_1.RoleWebsiteGroupMappingDtoToJSON)),
-        'Teams': value.teams === undefined ? undefined : (value.teams.map(ReducedTeamDto_1.ReducedTeamDtoToJSON)),
-        'OnlySsoLogin': value.onlySsoLogin,
-        'CreatedAt': value.createdAt === undefined ? undefined : (value.createdAt.toISOString()),
-        'LastLoginDate': value.lastLoginDate === undefined ? undefined : (value.lastLoginDate.toISOString()),
-        'WebsiteCount': value.websiteCount,
+        'Id': value['id'],
+        'AccountId': value['accountId'],
+        'Name': value['name'],
+        'Email': value['email'],
+        'IsApiAccessEnabled': value['isApiAccessEnabled'],
+        'PhoneNumber': value['phoneNumber'],
+        'DateTimeFormat': value['dateTimeFormat'],
+        'TimezoneId': value['timezoneId'],
+        'State': value['state'],
+        'AllowedWebsiteLimit': value['allowedWebsiteLimit'],
+        'IsTwoFactorAuthenticationEnabled': value['isTwoFactorAuthenticationEnabled'],
+        'AlternateLoginEmail': value['alternateLoginEmail'],
+        'RoleWebsiteGroupMappings': value['roleWebsiteGroupMappings'] == null ? undefined : (value['roleWebsiteGroupMappings'].map(RoleWebsiteGroupMappingDto_1.RoleWebsiteGroupMappingDtoToJSON)),
+        'Teams': value['teams'] == null ? undefined : (value['teams'].map(ReducedTeamDto_1.ReducedTeamDtoToJSON)),
+        'OnlySsoLogin': value['onlySsoLogin'],
+        'CreatedAt': value['createdAt'] == null ? undefined : ((value['createdAt']).toISOString()),
+        'LastLoginDate': value['lastLoginDate'] == null ? undefined : ((value['lastLoginDate']).toISOString()),
+        'WebsiteCount': value['websiteCount'],
     };
 }
 exports.MemberApiViewModelToJSON = MemberApiViewModelToJSON;

@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CertificateInfoModelToJSON = exports.CertificateInfoModelFromJSONTyped = exports.CertificateInfoModelFromJSON = exports.instanceOfCertificateInfoModel = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the CertificateInfoModel interface.
  */
 function instanceOfCertificateInfoModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfCertificateInfoModel = instanceOfCertificateInfoModel;
 function CertificateInfoModelFromJSON(json) {
@@ -28,27 +26,24 @@ function CertificateInfoModelFromJSON(json) {
 }
 exports.CertificateInfoModelFromJSON = CertificateInfoModelFromJSON;
 function CertificateInfoModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'cN': !(0, runtime_1.exists)(json, 'CN') ? undefined : json['CN'],
-        'expresionDate': !(0, runtime_1.exists)(json, 'ExpresionDate') ? undefined : json['ExpresionDate'],
-        'thumbprint': !(0, runtime_1.exists)(json, 'Thumbprint') ? undefined : json['Thumbprint'],
+        'cN': json['CN'] == null ? undefined : json['CN'],
+        'expresionDate': json['ExpresionDate'] == null ? undefined : json['ExpresionDate'],
+        'thumbprint': json['Thumbprint'] == null ? undefined : json['Thumbprint'],
     };
 }
 exports.CertificateInfoModelFromJSONTyped = CertificateInfoModelFromJSONTyped;
 function CertificateInfoModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'CN': value.cN,
-        'ExpresionDate': value.expresionDate,
-        'Thumbprint': value.thumbprint,
+        'CN': value['cN'],
+        'ExpresionDate': value['expresionDate'],
+        'Thumbprint': value['thumbprint'],
     };
 }
 exports.CertificateInfoModelToJSON = CertificateInfoModelToJSON;

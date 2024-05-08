@@ -12,133 +12,79 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
-import type { AsanaIntegrationInfoModel } from './AsanaIntegrationInfoModel';
+import { mapValues } from '../runtime';
+import type { TFSIntegrationInfoModel } from './TFSIntegrationInfoModel';
 import {
-    AsanaIntegrationInfoModelFromJSON,
-    AsanaIntegrationInfoModelFromJSONTyped,
-    AsanaIntegrationInfoModelToJSON,
-} from './AsanaIntegrationInfoModel';
-import type { AzureDevOpsIntegrationInfoModel } from './AzureDevOpsIntegrationInfoModel';
-import {
-    AzureDevOpsIntegrationInfoModelFromJSON,
-    AzureDevOpsIntegrationInfoModelFromJSONTyped,
-    AzureDevOpsIntegrationInfoModelToJSON,
-} from './AzureDevOpsIntegrationInfoModel';
-import type { AzureKeyVaultIntegrationInfoModel } from './AzureKeyVaultIntegrationInfoModel';
-import {
-    AzureKeyVaultIntegrationInfoModelFromJSON,
-    AzureKeyVaultIntegrationInfoModelFromJSONTyped,
-    AzureKeyVaultIntegrationInfoModelToJSON,
-} from './AzureKeyVaultIntegrationInfoModel';
-import type { BitbucketIntegrationInfoModel } from './BitbucketIntegrationInfoModel';
-import {
-    BitbucketIntegrationInfoModelFromJSON,
-    BitbucketIntegrationInfoModelFromJSONTyped,
-    BitbucketIntegrationInfoModelToJSON,
-} from './BitbucketIntegrationInfoModel';
-import type { BugzillaIntegrationInfoModel } from './BugzillaIntegrationInfoModel';
-import {
-    BugzillaIntegrationInfoModelFromJSON,
-    BugzillaIntegrationInfoModelFromJSONTyped,
-    BugzillaIntegrationInfoModelToJSON,
-} from './BugzillaIntegrationInfoModel';
-import type { ClubhouseIntegrationInfoModel } from './ClubhouseIntegrationInfoModel';
-import {
-    ClubhouseIntegrationInfoModelFromJSON,
-    ClubhouseIntegrationInfoModelFromJSONTyped,
-    ClubhouseIntegrationInfoModelToJSON,
-} from './ClubhouseIntegrationInfoModel';
-import type { CyberArkVaultIntegrationInfoModel } from './CyberArkVaultIntegrationInfoModel';
-import {
-    CyberArkVaultIntegrationInfoModelFromJSON,
-    CyberArkVaultIntegrationInfoModelFromJSONTyped,
-    CyberArkVaultIntegrationInfoModelToJSON,
-} from './CyberArkVaultIntegrationInfoModel';
-import type { DefectDojoIntegrationInfoModel } from './DefectDojoIntegrationInfoModel';
-import {
-    DefectDojoIntegrationInfoModelFromJSON,
-    DefectDojoIntegrationInfoModelFromJSONTyped,
-    DefectDojoIntegrationInfoModelToJSON,
-} from './DefectDojoIntegrationInfoModel';
-import type { FogBugzIntegrationInfoModel } from './FogBugzIntegrationInfoModel';
-import {
-    FogBugzIntegrationInfoModelFromJSON,
-    FogBugzIntegrationInfoModelFromJSONTyped,
-    FogBugzIntegrationInfoModelToJSON,
-} from './FogBugzIntegrationInfoModel';
-import type { FreshserviceIntegrationInfoModel } from './FreshserviceIntegrationInfoModel';
-import {
-    FreshserviceIntegrationInfoModelFromJSON,
-    FreshserviceIntegrationInfoModelFromJSONTyped,
-    FreshserviceIntegrationInfoModelToJSON,
-} from './FreshserviceIntegrationInfoModel';
-import type { GitHubIntegrationInfoModel } from './GitHubIntegrationInfoModel';
-import {
-    GitHubIntegrationInfoModelFromJSON,
-    GitHubIntegrationInfoModelFromJSONTyped,
-    GitHubIntegrationInfoModelToJSON,
-} from './GitHubIntegrationInfoModel';
-import type { GitLabIntegrationInfoModel } from './GitLabIntegrationInfoModel';
-import {
-    GitLabIntegrationInfoModelFromJSON,
-    GitLabIntegrationInfoModelFromJSONTyped,
-    GitLabIntegrationInfoModelToJSON,
-} from './GitLabIntegrationInfoModel';
-import type { HashicorpVaultIntegrationInfoModel } from './HashicorpVaultIntegrationInfoModel';
-import {
-    HashicorpVaultIntegrationInfoModelFromJSON,
-    HashicorpVaultIntegrationInfoModelFromJSONTyped,
-    HashicorpVaultIntegrationInfoModelToJSON,
-} from './HashicorpVaultIntegrationInfoModel';
-import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
-import {
-    IntegrationCustomFieldVmFromJSON,
-    IntegrationCustomFieldVmFromJSONTyped,
-    IntegrationCustomFieldVmToJSON,
-} from './IntegrationCustomFieldVm';
-import type { JazzTeamIntegrationInfoModel } from './JazzTeamIntegrationInfoModel';
-import {
-    JazzTeamIntegrationInfoModelFromJSON,
-    JazzTeamIntegrationInfoModelFromJSONTyped,
-    JazzTeamIntegrationInfoModelToJSON,
-} from './JazzTeamIntegrationInfoModel';
-import type { JiraIntegrationInfoModel } from './JiraIntegrationInfoModel';
-import {
-    JiraIntegrationInfoModelFromJSON,
-    JiraIntegrationInfoModelFromJSONTyped,
-    JiraIntegrationInfoModelToJSON,
-} from './JiraIntegrationInfoModel';
-import type { KafkaIntegrationInfoModel } from './KafkaIntegrationInfoModel';
-import {
-    KafkaIntegrationInfoModelFromJSON,
-    KafkaIntegrationInfoModelFromJSONTyped,
-    KafkaIntegrationInfoModelToJSON,
-} from './KafkaIntegrationInfoModel';
-import type { KennaIntegrationInfoModel } from './KennaIntegrationInfoModel';
-import {
-    KennaIntegrationInfoModelFromJSON,
-    KennaIntegrationInfoModelFromJSONTyped,
-    KennaIntegrationInfoModelToJSON,
-} from './KennaIntegrationInfoModel';
+    TFSIntegrationInfoModelFromJSON,
+    TFSIntegrationInfoModelFromJSONTyped,
+    TFSIntegrationInfoModelToJSON,
+} from './TFSIntegrationInfoModel';
 import type { MattermostIntegrationInfoModel } from './MattermostIntegrationInfoModel';
 import {
     MattermostIntegrationInfoModelFromJSON,
     MattermostIntegrationInfoModelFromJSONTyped,
     MattermostIntegrationInfoModelToJSON,
 } from './MattermostIntegrationInfoModel';
-import type { MicrosoftTeamsIntegrationInfoModel } from './MicrosoftTeamsIntegrationInfoModel';
+import type { ServiceNowIntegrationInfoModel } from './ServiceNowIntegrationInfoModel';
 import {
-    MicrosoftTeamsIntegrationInfoModelFromJSON,
-    MicrosoftTeamsIntegrationInfoModelFromJSONTyped,
-    MicrosoftTeamsIntegrationInfoModelToJSON,
-} from './MicrosoftTeamsIntegrationInfoModel';
-import type { PagerDutyIntegrationInfoModel } from './PagerDutyIntegrationInfoModel';
+    ServiceNowIntegrationInfoModelFromJSON,
+    ServiceNowIntegrationInfoModelFromJSONTyped,
+    ServiceNowIntegrationInfoModelToJSON,
+} from './ServiceNowIntegrationInfoModel';
+import type { JazzTeamIntegrationInfoModel } from './JazzTeamIntegrationInfoModel';
 import {
-    PagerDutyIntegrationInfoModelFromJSON,
-    PagerDutyIntegrationInfoModelFromJSONTyped,
-    PagerDutyIntegrationInfoModelToJSON,
-} from './PagerDutyIntegrationInfoModel';
+    JazzTeamIntegrationInfoModelFromJSON,
+    JazzTeamIntegrationInfoModelFromJSONTyped,
+    JazzTeamIntegrationInfoModelToJSON,
+} from './JazzTeamIntegrationInfoModel';
+import type { GitHubIntegrationInfoModel } from './GitHubIntegrationInfoModel';
+import {
+    GitHubIntegrationInfoModelFromJSON,
+    GitHubIntegrationInfoModelFromJSONTyped,
+    GitHubIntegrationInfoModelToJSON,
+} from './GitHubIntegrationInfoModel';
+import type { YouTrackIntegrationInfoModel } from './YouTrackIntegrationInfoModel';
+import {
+    YouTrackIntegrationInfoModelFromJSON,
+    YouTrackIntegrationInfoModelFromJSONTyped,
+    YouTrackIntegrationInfoModelToJSON,
+} from './YouTrackIntegrationInfoModel';
+import type { AzureDevOpsIntegrationInfoModel } from './AzureDevOpsIntegrationInfoModel';
+import {
+    AzureDevOpsIntegrationInfoModelFromJSON,
+    AzureDevOpsIntegrationInfoModelFromJSONTyped,
+    AzureDevOpsIntegrationInfoModelToJSON,
+} from './AzureDevOpsIntegrationInfoModel';
+import type { BugzillaIntegrationInfoModel } from './BugzillaIntegrationInfoModel';
+import {
+    BugzillaIntegrationInfoModelFromJSON,
+    BugzillaIntegrationInfoModelFromJSONTyped,
+    BugzillaIntegrationInfoModelToJSON,
+} from './BugzillaIntegrationInfoModel';
+import type { SlackIntegrationInfoModel } from './SlackIntegrationInfoModel';
+import {
+    SlackIntegrationInfoModelFromJSON,
+    SlackIntegrationInfoModelFromJSONTyped,
+    SlackIntegrationInfoModelToJSON,
+} from './SlackIntegrationInfoModel';
+import type { WebhookIntegrationInfoModel } from './WebhookIntegrationInfoModel';
+import {
+    WebhookIntegrationInfoModelFromJSON,
+    WebhookIntegrationInfoModelFromJSONTyped,
+    WebhookIntegrationInfoModelToJSON,
+} from './WebhookIntegrationInfoModel';
+import type { JiraIntegrationInfoModel } from './JiraIntegrationInfoModel';
+import {
+    JiraIntegrationInfoModelFromJSON,
+    JiraIntegrationInfoModelFromJSONTyped,
+    JiraIntegrationInfoModelToJSON,
+} from './JiraIntegrationInfoModel';
+import type { KennaIntegrationInfoModel } from './KennaIntegrationInfoModel';
+import {
+    KennaIntegrationInfoModelFromJSON,
+    KennaIntegrationInfoModelFromJSONTyped,
+    KennaIntegrationInfoModelToJSON,
+} from './KennaIntegrationInfoModel';
 import type { PivotalTrackerIntegrationInfoModel } from './PivotalTrackerIntegrationInfoModel';
 import {
     PivotalTrackerIntegrationInfoModelFromJSON,
@@ -151,60 +97,114 @@ import {
     RedmineIntegrationInfoModelFromJSONTyped,
     RedmineIntegrationInfoModelToJSON,
 } from './RedmineIntegrationInfoModel';
-import type { ServiceNowIntegrationInfoModel } from './ServiceNowIntegrationInfoModel';
-import {
-    ServiceNowIntegrationInfoModelFromJSON,
-    ServiceNowIntegrationInfoModelFromJSONTyped,
-    ServiceNowIntegrationInfoModelToJSON,
-} from './ServiceNowIntegrationInfoModel';
-import type { ServiceNowVRMModel } from './ServiceNowVRMModel';
-import {
-    ServiceNowVRMModelFromJSON,
-    ServiceNowVRMModelFromJSONTyped,
-    ServiceNowVRMModelToJSON,
-} from './ServiceNowVRMModel';
-import type { SlackIntegrationInfoModel } from './SlackIntegrationInfoModel';
-import {
-    SlackIntegrationInfoModelFromJSON,
-    SlackIntegrationInfoModelFromJSONTyped,
-    SlackIntegrationInfoModelToJSON,
-} from './SlackIntegrationInfoModel';
-import type { TFSIntegrationInfoModel } from './TFSIntegrationInfoModel';
-import {
-    TFSIntegrationInfoModelFromJSON,
-    TFSIntegrationInfoModelFromJSONTyped,
-    TFSIntegrationInfoModelToJSON,
-} from './TFSIntegrationInfoModel';
-import type { TrelloIntegrationInfoModel } from './TrelloIntegrationInfoModel';
-import {
-    TrelloIntegrationInfoModelFromJSON,
-    TrelloIntegrationInfoModelFromJSONTyped,
-    TrelloIntegrationInfoModelToJSON,
-} from './TrelloIntegrationInfoModel';
 import type { UnfuddleIntegrationInfoModel } from './UnfuddleIntegrationInfoModel';
 import {
     UnfuddleIntegrationInfoModelFromJSON,
     UnfuddleIntegrationInfoModelFromJSONTyped,
     UnfuddleIntegrationInfoModelToJSON,
 } from './UnfuddleIntegrationInfoModel';
-import type { WebhookIntegrationInfoModel } from './WebhookIntegrationInfoModel';
+import type { FogBugzIntegrationInfoModel } from './FogBugzIntegrationInfoModel';
 import {
-    WebhookIntegrationInfoModelFromJSON,
-    WebhookIntegrationInfoModelFromJSONTyped,
-    WebhookIntegrationInfoModelToJSON,
-} from './WebhookIntegrationInfoModel';
-import type { YouTrackIntegrationInfoModel } from './YouTrackIntegrationInfoModel';
+    FogBugzIntegrationInfoModelFromJSON,
+    FogBugzIntegrationInfoModelFromJSONTyped,
+    FogBugzIntegrationInfoModelToJSON,
+} from './FogBugzIntegrationInfoModel';
+import type { KafkaIntegrationInfoModel } from './KafkaIntegrationInfoModel';
 import {
-    YouTrackIntegrationInfoModelFromJSON,
-    YouTrackIntegrationInfoModelFromJSONTyped,
-    YouTrackIntegrationInfoModelToJSON,
-} from './YouTrackIntegrationInfoModel';
+    KafkaIntegrationInfoModelFromJSON,
+    KafkaIntegrationInfoModelFromJSONTyped,
+    KafkaIntegrationInfoModelToJSON,
+} from './KafkaIntegrationInfoModel';
+import type { AzureKeyVaultIntegrationInfoModel } from './AzureKeyVaultIntegrationInfoModel';
+import {
+    AzureKeyVaultIntegrationInfoModelFromJSON,
+    AzureKeyVaultIntegrationInfoModelFromJSONTyped,
+    AzureKeyVaultIntegrationInfoModelToJSON,
+} from './AzureKeyVaultIntegrationInfoModel';
+import type { PagerDutyIntegrationInfoModel } from './PagerDutyIntegrationInfoModel';
+import {
+    PagerDutyIntegrationInfoModelFromJSON,
+    PagerDutyIntegrationInfoModelFromJSONTyped,
+    PagerDutyIntegrationInfoModelToJSON,
+} from './PagerDutyIntegrationInfoModel';
+import type { TrelloIntegrationInfoModel } from './TrelloIntegrationInfoModel';
+import {
+    TrelloIntegrationInfoModelFromJSON,
+    TrelloIntegrationInfoModelFromJSONTyped,
+    TrelloIntegrationInfoModelToJSON,
+} from './TrelloIntegrationInfoModel';
+import type { CyberArkVaultIntegrationInfoModel } from './CyberArkVaultIntegrationInfoModel';
+import {
+    CyberArkVaultIntegrationInfoModelFromJSON,
+    CyberArkVaultIntegrationInfoModelFromJSONTyped,
+    CyberArkVaultIntegrationInfoModelToJSON,
+} from './CyberArkVaultIntegrationInfoModel';
 import type { ZapierIntegrationInfoModel } from './ZapierIntegrationInfoModel';
 import {
     ZapierIntegrationInfoModelFromJSON,
     ZapierIntegrationInfoModelFromJSONTyped,
     ZapierIntegrationInfoModelToJSON,
 } from './ZapierIntegrationInfoModel';
+import type { FreshserviceIntegrationInfoModel } from './FreshserviceIntegrationInfoModel';
+import {
+    FreshserviceIntegrationInfoModelFromJSON,
+    FreshserviceIntegrationInfoModelFromJSONTyped,
+    FreshserviceIntegrationInfoModelToJSON,
+} from './FreshserviceIntegrationInfoModel';
+import type { ClubhouseIntegrationInfoModel } from './ClubhouseIntegrationInfoModel';
+import {
+    ClubhouseIntegrationInfoModelFromJSON,
+    ClubhouseIntegrationInfoModelFromJSONTyped,
+    ClubhouseIntegrationInfoModelToJSON,
+} from './ClubhouseIntegrationInfoModel';
+import type { DefectDojoIntegrationInfoModel } from './DefectDojoIntegrationInfoModel';
+import {
+    DefectDojoIntegrationInfoModelFromJSON,
+    DefectDojoIntegrationInfoModelFromJSONTyped,
+    DefectDojoIntegrationInfoModelToJSON,
+} from './DefectDojoIntegrationInfoModel';
+import type { MicrosoftTeamsIntegrationInfoModel } from './MicrosoftTeamsIntegrationInfoModel';
+import {
+    MicrosoftTeamsIntegrationInfoModelFromJSON,
+    MicrosoftTeamsIntegrationInfoModelFromJSONTyped,
+    MicrosoftTeamsIntegrationInfoModelToJSON,
+} from './MicrosoftTeamsIntegrationInfoModel';
+import type { BitbucketIntegrationInfoModel } from './BitbucketIntegrationInfoModel';
+import {
+    BitbucketIntegrationInfoModelFromJSON,
+    BitbucketIntegrationInfoModelFromJSONTyped,
+    BitbucketIntegrationInfoModelToJSON,
+} from './BitbucketIntegrationInfoModel';
+import type { ServiceNowVRMModel } from './ServiceNowVRMModel';
+import {
+    ServiceNowVRMModelFromJSON,
+    ServiceNowVRMModelFromJSONTyped,
+    ServiceNowVRMModelToJSON,
+} from './ServiceNowVRMModel';
+import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
+import {
+    IntegrationCustomFieldVmFromJSON,
+    IntegrationCustomFieldVmFromJSONTyped,
+    IntegrationCustomFieldVmToJSON,
+} from './IntegrationCustomFieldVm';
+import type { AsanaIntegrationInfoModel } from './AsanaIntegrationInfoModel';
+import {
+    AsanaIntegrationInfoModelFromJSON,
+    AsanaIntegrationInfoModelFromJSONTyped,
+    AsanaIntegrationInfoModelToJSON,
+} from './AsanaIntegrationInfoModel';
+import type { GitLabIntegrationInfoModel } from './GitLabIntegrationInfoModel';
+import {
+    GitLabIntegrationInfoModelFromJSON,
+    GitLabIntegrationInfoModelFromJSONTyped,
+    GitLabIntegrationInfoModelToJSON,
+} from './GitLabIntegrationInfoModel';
+import type { HashicorpVaultIntegrationInfoModel } from './HashicorpVaultIntegrationInfoModel';
+import {
+    HashicorpVaultIntegrationInfoModelFromJSON,
+    HashicorpVaultIntegrationInfoModelFromJSONTyped,
+    HashicorpVaultIntegrationInfoModelToJSON,
+} from './HashicorpVaultIntegrationInfoModel';
 
 /**
  * 
@@ -492,10 +492,8 @@ export type ScanNotificationIntegrationViewModelCategoryEnum = typeof ScanNotifi
  * Check if a given object implements the ScanNotificationIntegrationViewModel interface.
  */
 export function instanceOfScanNotificationIntegrationViewModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "name" in value;
-
-    return isInstance;
+    if (!('name' in value)) return false;
+    return true;
 }
 
 export function ScanNotificationIntegrationViewModelFromJSON(json: any): ScanNotificationIntegrationViewModel {
@@ -503,96 +501,93 @@ export function ScanNotificationIntegrationViewModelFromJSON(json: any): ScanNot
 }
 
 export function ScanNotificationIntegrationViewModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): ScanNotificationIntegrationViewModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
+        'id': json['Id'] == null ? undefined : json['Id'],
         'name': json['Name'],
-        'notFound': !exists(json, 'NotFound') ? undefined : json['NotFound'],
-        'type': !exists(json, 'Type') ? undefined : json['Type'],
-        'category': !exists(json, 'Category') ? undefined : json['Category'],
-        'asanaInfo': !exists(json, 'AsanaInfo') ? undefined : AsanaIntegrationInfoModelFromJSON(json['AsanaInfo']),
-        'azureDevopsInfo': !exists(json, 'AzureDevopsInfo') ? undefined : AzureDevOpsIntegrationInfoModelFromJSON(json['AzureDevopsInfo']),
-        'bitbucketInfo': !exists(json, 'BitbucketInfo') ? undefined : BitbucketIntegrationInfoModelFromJSON(json['BitbucketInfo']),
-        'bugzilla': !exists(json, 'Bugzilla') ? undefined : BugzillaIntegrationInfoModelFromJSON(json['Bugzilla']),
-        'pagerDutyInfo': !exists(json, 'PagerDutyInfo') ? undefined : PagerDutyIntegrationInfoModelFromJSON(json['PagerDutyInfo']),
-        'redmineInfo': !exists(json, 'RedmineInfo') ? undefined : RedmineIntegrationInfoModelFromJSON(json['RedmineInfo']),
-        'serviceNowInfo': !exists(json, 'ServiceNowInfo') ? undefined : ServiceNowIntegrationInfoModelFromJSON(json['ServiceNowInfo']),
-        'serviceNowVRMInfo': !exists(json, 'ServiceNowVRMInfo') ? undefined : ServiceNowVRMModelFromJSON(json['ServiceNowVRMInfo']),
-        'slackInfo': !exists(json, 'SlackInfo') ? undefined : SlackIntegrationInfoModelFromJSON(json['SlackInfo']),
-        'mattermostInfo': !exists(json, 'MattermostInfo') ? undefined : MattermostIntegrationInfoModelFromJSON(json['MattermostInfo']),
-        'tFSInfo': !exists(json, 'TFSInfo') ? undefined : TFSIntegrationInfoModelFromJSON(json['TFSInfo']),
-        'trelloInfo': !exists(json, 'TrelloInfo') ? undefined : TrelloIntegrationInfoModelFromJSON(json['TrelloInfo']),
-        'unfuddleInfo': !exists(json, 'UnfuddleInfo') ? undefined : UnfuddleIntegrationInfoModelFromJSON(json['UnfuddleInfo']),
-        'webhookInfo': !exists(json, 'WebhookInfo') ? undefined : WebhookIntegrationInfoModelFromJSON(json['WebhookInfo']),
-        'zapierInfo': !exists(json, 'ZapierInfo') ? undefined : ZapierIntegrationInfoModelFromJSON(json['ZapierInfo']),
-        'vaultInfo': !exists(json, 'VaultInfo') ? undefined : HashicorpVaultIntegrationInfoModelFromJSON(json['VaultInfo']),
-        'cyberArkVaultInfo': !exists(json, 'CyberArkVaultInfo') ? undefined : CyberArkVaultIntegrationInfoModelFromJSON(json['CyberArkVaultInfo']),
-        'azureVaultInfo': !exists(json, 'AzureVaultInfo') ? undefined : AzureKeyVaultIntegrationInfoModelFromJSON(json['AzureVaultInfo']),
-        'jazzTeamInfo': !exists(json, 'JazzTeamInfo') ? undefined : JazzTeamIntegrationInfoModelFromJSON(json['JazzTeamInfo']),
-        'clubhouseInfo': !exists(json, 'ClubhouseInfo') ? undefined : ClubhouseIntegrationInfoModelFromJSON(json['ClubhouseInfo']),
-        'pivotalTrackerInfo': !exists(json, 'PivotalTrackerInfo') ? undefined : PivotalTrackerIntegrationInfoModelFromJSON(json['PivotalTrackerInfo']),
-        'customFields': !exists(json, 'CustomFields') ? undefined : ((json['CustomFields'] as Array<any>).map(IntegrationCustomFieldVmFromJSON)),
-        'defectDojoInfo': !exists(json, 'DefectDojoInfo') ? undefined : DefectDojoIntegrationInfoModelFromJSON(json['DefectDojoInfo']),
-        'fogBugzInfo': !exists(json, 'FogBugzInfo') ? undefined : FogBugzIntegrationInfoModelFromJSON(json['FogBugzInfo']),
-        'gitHubInfo': !exists(json, 'GitHubInfo') ? undefined : GitHubIntegrationInfoModelFromJSON(json['GitHubInfo']),
-        'gitLabInfo': !exists(json, 'GitLabInfo') ? undefined : GitLabIntegrationInfoModelFromJSON(json['GitLabInfo']),
-        'jiraInfo': !exists(json, 'JiraInfo') ? undefined : JiraIntegrationInfoModelFromJSON(json['JiraInfo']),
-        'kafkaInfo': !exists(json, 'KafkaInfo') ? undefined : KafkaIntegrationInfoModelFromJSON(json['KafkaInfo']),
-        'kennaInfo': !exists(json, 'KennaInfo') ? undefined : KennaIntegrationInfoModelFromJSON(json['KennaInfo']),
-        'freshserviceInfo': !exists(json, 'FreshserviceInfo') ? undefined : FreshserviceIntegrationInfoModelFromJSON(json['FreshserviceInfo']),
-        'youTrackInfo': !exists(json, 'YouTrackInfo') ? undefined : YouTrackIntegrationInfoModelFromJSON(json['YouTrackInfo']),
-        'microsoftTeamsInfo': !exists(json, 'MicrosoftTeamsInfo') ? undefined : MicrosoftTeamsIntegrationInfoModelFromJSON(json['MicrosoftTeamsInfo']),
+        'notFound': json['NotFound'] == null ? undefined : json['NotFound'],
+        'type': json['Type'] == null ? undefined : json['Type'],
+        'category': json['Category'] == null ? undefined : json['Category'],
+        'asanaInfo': json['AsanaInfo'] == null ? undefined : AsanaIntegrationInfoModelFromJSON(json['AsanaInfo']),
+        'azureDevopsInfo': json['AzureDevopsInfo'] == null ? undefined : AzureDevOpsIntegrationInfoModelFromJSON(json['AzureDevopsInfo']),
+        'bitbucketInfo': json['BitbucketInfo'] == null ? undefined : BitbucketIntegrationInfoModelFromJSON(json['BitbucketInfo']),
+        'bugzilla': json['Bugzilla'] == null ? undefined : BugzillaIntegrationInfoModelFromJSON(json['Bugzilla']),
+        'pagerDutyInfo': json['PagerDutyInfo'] == null ? undefined : PagerDutyIntegrationInfoModelFromJSON(json['PagerDutyInfo']),
+        'redmineInfo': json['RedmineInfo'] == null ? undefined : RedmineIntegrationInfoModelFromJSON(json['RedmineInfo']),
+        'serviceNowInfo': json['ServiceNowInfo'] == null ? undefined : ServiceNowIntegrationInfoModelFromJSON(json['ServiceNowInfo']),
+        'serviceNowVRMInfo': json['ServiceNowVRMInfo'] == null ? undefined : ServiceNowVRMModelFromJSON(json['ServiceNowVRMInfo']),
+        'slackInfo': json['SlackInfo'] == null ? undefined : SlackIntegrationInfoModelFromJSON(json['SlackInfo']),
+        'mattermostInfo': json['MattermostInfo'] == null ? undefined : MattermostIntegrationInfoModelFromJSON(json['MattermostInfo']),
+        'tFSInfo': json['TFSInfo'] == null ? undefined : TFSIntegrationInfoModelFromJSON(json['TFSInfo']),
+        'trelloInfo': json['TrelloInfo'] == null ? undefined : TrelloIntegrationInfoModelFromJSON(json['TrelloInfo']),
+        'unfuddleInfo': json['UnfuddleInfo'] == null ? undefined : UnfuddleIntegrationInfoModelFromJSON(json['UnfuddleInfo']),
+        'webhookInfo': json['WebhookInfo'] == null ? undefined : WebhookIntegrationInfoModelFromJSON(json['WebhookInfo']),
+        'zapierInfo': json['ZapierInfo'] == null ? undefined : ZapierIntegrationInfoModelFromJSON(json['ZapierInfo']),
+        'vaultInfo': json['VaultInfo'] == null ? undefined : HashicorpVaultIntegrationInfoModelFromJSON(json['VaultInfo']),
+        'cyberArkVaultInfo': json['CyberArkVaultInfo'] == null ? undefined : CyberArkVaultIntegrationInfoModelFromJSON(json['CyberArkVaultInfo']),
+        'azureVaultInfo': json['AzureVaultInfo'] == null ? undefined : AzureKeyVaultIntegrationInfoModelFromJSON(json['AzureVaultInfo']),
+        'jazzTeamInfo': json['JazzTeamInfo'] == null ? undefined : JazzTeamIntegrationInfoModelFromJSON(json['JazzTeamInfo']),
+        'clubhouseInfo': json['ClubhouseInfo'] == null ? undefined : ClubhouseIntegrationInfoModelFromJSON(json['ClubhouseInfo']),
+        'pivotalTrackerInfo': json['PivotalTrackerInfo'] == null ? undefined : PivotalTrackerIntegrationInfoModelFromJSON(json['PivotalTrackerInfo']),
+        'customFields': json['CustomFields'] == null ? undefined : ((json['CustomFields'] as Array<any>).map(IntegrationCustomFieldVmFromJSON)),
+        'defectDojoInfo': json['DefectDojoInfo'] == null ? undefined : DefectDojoIntegrationInfoModelFromJSON(json['DefectDojoInfo']),
+        'fogBugzInfo': json['FogBugzInfo'] == null ? undefined : FogBugzIntegrationInfoModelFromJSON(json['FogBugzInfo']),
+        'gitHubInfo': json['GitHubInfo'] == null ? undefined : GitHubIntegrationInfoModelFromJSON(json['GitHubInfo']),
+        'gitLabInfo': json['GitLabInfo'] == null ? undefined : GitLabIntegrationInfoModelFromJSON(json['GitLabInfo']),
+        'jiraInfo': json['JiraInfo'] == null ? undefined : JiraIntegrationInfoModelFromJSON(json['JiraInfo']),
+        'kafkaInfo': json['KafkaInfo'] == null ? undefined : KafkaIntegrationInfoModelFromJSON(json['KafkaInfo']),
+        'kennaInfo': json['KennaInfo'] == null ? undefined : KennaIntegrationInfoModelFromJSON(json['KennaInfo']),
+        'freshserviceInfo': json['FreshserviceInfo'] == null ? undefined : FreshserviceIntegrationInfoModelFromJSON(json['FreshserviceInfo']),
+        'youTrackInfo': json['YouTrackInfo'] == null ? undefined : YouTrackIntegrationInfoModelFromJSON(json['YouTrackInfo']),
+        'microsoftTeamsInfo': json['MicrosoftTeamsInfo'] == null ? undefined : MicrosoftTeamsIntegrationInfoModelFromJSON(json['MicrosoftTeamsInfo']),
     };
 }
 
-export function ScanNotificationIntegrationViewModelToJSON(value?: ScanNotificationIntegrationViewModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+export function ScanNotificationIntegrationViewModelToJSON(value?: Omit<ScanNotificationIntegrationViewModel, 'Category'> | null): any {
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Id': value.id,
-        'Name': value.name,
-        'NotFound': value.notFound,
-        'Type': value.type,
-        'AsanaInfo': AsanaIntegrationInfoModelToJSON(value.asanaInfo),
-        'AzureDevopsInfo': AzureDevOpsIntegrationInfoModelToJSON(value.azureDevopsInfo),
-        'BitbucketInfo': BitbucketIntegrationInfoModelToJSON(value.bitbucketInfo),
-        'Bugzilla': BugzillaIntegrationInfoModelToJSON(value.bugzilla),
-        'PagerDutyInfo': PagerDutyIntegrationInfoModelToJSON(value.pagerDutyInfo),
-        'RedmineInfo': RedmineIntegrationInfoModelToJSON(value.redmineInfo),
-        'ServiceNowInfo': ServiceNowIntegrationInfoModelToJSON(value.serviceNowInfo),
-        'ServiceNowVRMInfo': ServiceNowVRMModelToJSON(value.serviceNowVRMInfo),
-        'SlackInfo': SlackIntegrationInfoModelToJSON(value.slackInfo),
-        'MattermostInfo': MattermostIntegrationInfoModelToJSON(value.mattermostInfo),
-        'TFSInfo': TFSIntegrationInfoModelToJSON(value.tFSInfo),
-        'TrelloInfo': TrelloIntegrationInfoModelToJSON(value.trelloInfo),
-        'UnfuddleInfo': UnfuddleIntegrationInfoModelToJSON(value.unfuddleInfo),
-        'WebhookInfo': WebhookIntegrationInfoModelToJSON(value.webhookInfo),
-        'ZapierInfo': ZapierIntegrationInfoModelToJSON(value.zapierInfo),
-        'VaultInfo': HashicorpVaultIntegrationInfoModelToJSON(value.vaultInfo),
-        'CyberArkVaultInfo': CyberArkVaultIntegrationInfoModelToJSON(value.cyberArkVaultInfo),
-        'AzureVaultInfo': AzureKeyVaultIntegrationInfoModelToJSON(value.azureVaultInfo),
-        'JazzTeamInfo': JazzTeamIntegrationInfoModelToJSON(value.jazzTeamInfo),
-        'ClubhouseInfo': ClubhouseIntegrationInfoModelToJSON(value.clubhouseInfo),
-        'PivotalTrackerInfo': PivotalTrackerIntegrationInfoModelToJSON(value.pivotalTrackerInfo),
-        'CustomFields': value.customFields === undefined ? undefined : ((value.customFields as Array<any>).map(IntegrationCustomFieldVmToJSON)),
-        'DefectDojoInfo': DefectDojoIntegrationInfoModelToJSON(value.defectDojoInfo),
-        'FogBugzInfo': FogBugzIntegrationInfoModelToJSON(value.fogBugzInfo),
-        'GitHubInfo': GitHubIntegrationInfoModelToJSON(value.gitHubInfo),
-        'GitLabInfo': GitLabIntegrationInfoModelToJSON(value.gitLabInfo),
-        'JiraInfo': JiraIntegrationInfoModelToJSON(value.jiraInfo),
-        'KafkaInfo': KafkaIntegrationInfoModelToJSON(value.kafkaInfo),
-        'KennaInfo': KennaIntegrationInfoModelToJSON(value.kennaInfo),
-        'FreshserviceInfo': FreshserviceIntegrationInfoModelToJSON(value.freshserviceInfo),
-        'YouTrackInfo': YouTrackIntegrationInfoModelToJSON(value.youTrackInfo),
-        'MicrosoftTeamsInfo': MicrosoftTeamsIntegrationInfoModelToJSON(value.microsoftTeamsInfo),
+        'Id': value['id'],
+        'Name': value['name'],
+        'NotFound': value['notFound'],
+        'Type': value['type'],
+        'AsanaInfo': AsanaIntegrationInfoModelToJSON(value['asanaInfo']),
+        'AzureDevopsInfo': AzureDevOpsIntegrationInfoModelToJSON(value['azureDevopsInfo']),
+        'BitbucketInfo': BitbucketIntegrationInfoModelToJSON(value['bitbucketInfo']),
+        'Bugzilla': BugzillaIntegrationInfoModelToJSON(value['bugzilla']),
+        'PagerDutyInfo': PagerDutyIntegrationInfoModelToJSON(value['pagerDutyInfo']),
+        'RedmineInfo': RedmineIntegrationInfoModelToJSON(value['redmineInfo']),
+        'ServiceNowInfo': ServiceNowIntegrationInfoModelToJSON(value['serviceNowInfo']),
+        'ServiceNowVRMInfo': ServiceNowVRMModelToJSON(value['serviceNowVRMInfo']),
+        'SlackInfo': SlackIntegrationInfoModelToJSON(value['slackInfo']),
+        'MattermostInfo': MattermostIntegrationInfoModelToJSON(value['mattermostInfo']),
+        'TFSInfo': TFSIntegrationInfoModelToJSON(value['tFSInfo']),
+        'TrelloInfo': TrelloIntegrationInfoModelToJSON(value['trelloInfo']),
+        'UnfuddleInfo': UnfuddleIntegrationInfoModelToJSON(value['unfuddleInfo']),
+        'WebhookInfo': WebhookIntegrationInfoModelToJSON(value['webhookInfo']),
+        'ZapierInfo': ZapierIntegrationInfoModelToJSON(value['zapierInfo']),
+        'VaultInfo': HashicorpVaultIntegrationInfoModelToJSON(value['vaultInfo']),
+        'CyberArkVaultInfo': CyberArkVaultIntegrationInfoModelToJSON(value['cyberArkVaultInfo']),
+        'AzureVaultInfo': AzureKeyVaultIntegrationInfoModelToJSON(value['azureVaultInfo']),
+        'JazzTeamInfo': JazzTeamIntegrationInfoModelToJSON(value['jazzTeamInfo']),
+        'ClubhouseInfo': ClubhouseIntegrationInfoModelToJSON(value['clubhouseInfo']),
+        'PivotalTrackerInfo': PivotalTrackerIntegrationInfoModelToJSON(value['pivotalTrackerInfo']),
+        'CustomFields': value['customFields'] == null ? undefined : ((value['customFields'] as Array<any>).map(IntegrationCustomFieldVmToJSON)),
+        'DefectDojoInfo': DefectDojoIntegrationInfoModelToJSON(value['defectDojoInfo']),
+        'FogBugzInfo': FogBugzIntegrationInfoModelToJSON(value['fogBugzInfo']),
+        'GitHubInfo': GitHubIntegrationInfoModelToJSON(value['gitHubInfo']),
+        'GitLabInfo': GitLabIntegrationInfoModelToJSON(value['gitLabInfo']),
+        'JiraInfo': JiraIntegrationInfoModelToJSON(value['jiraInfo']),
+        'KafkaInfo': KafkaIntegrationInfoModelToJSON(value['kafkaInfo']),
+        'KennaInfo': KennaIntegrationInfoModelToJSON(value['kennaInfo']),
+        'FreshserviceInfo': FreshserviceIntegrationInfoModelToJSON(value['freshserviceInfo']),
+        'YouTrackInfo': YouTrackIntegrationInfoModelToJSON(value['youTrackInfo']),
+        'MicrosoftTeamsInfo': MicrosoftTeamsIntegrationInfoModelToJSON(value['microsoftTeamsInfo']),
     };
 }
 

@@ -14,14 +14,13 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.NewWebsiteGroupApiModelToJSON = exports.NewWebsiteGroupApiModelFromJSONTyped = exports.NewWebsiteGroupApiModelFromJSON = exports.instanceOfNewWebsiteGroupApiModel = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the NewWebsiteGroupApiModel interface.
  */
 function instanceOfNewWebsiteGroupApiModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "name" in value;
-    return isInstance;
+    if (!('name' in value))
+        return false;
+    return true;
 }
 exports.instanceOfNewWebsiteGroupApiModel = instanceOfNewWebsiteGroupApiModel;
 function NewWebsiteGroupApiModelFromJSON(json) {
@@ -29,27 +28,24 @@ function NewWebsiteGroupApiModelFromJSON(json) {
 }
 exports.NewWebsiteGroupApiModelFromJSON = NewWebsiteGroupApiModelFromJSON;
 function NewWebsiteGroupApiModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         'name': json['Name'],
-        'description': !(0, runtime_1.exists)(json, 'Description') ? undefined : json['Description'],
-        'tags': !(0, runtime_1.exists)(json, 'Tags') ? undefined : json['Tags'],
+        'description': json['Description'] == null ? undefined : json['Description'],
+        'tags': json['Tags'] == null ? undefined : json['Tags'],
     };
 }
 exports.NewWebsiteGroupApiModelFromJSONTyped = NewWebsiteGroupApiModelFromJSONTyped;
 function NewWebsiteGroupApiModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Name': value.name,
-        'Description': value.description,
-        'Tags': value.tags,
+        'Name': value['name'],
+        'Description': value['description'],
+        'Tags': value['tags'],
     };
 }
 exports.NewWebsiteGroupApiModelToJSON = NewWebsiteGroupApiModelToJSON;

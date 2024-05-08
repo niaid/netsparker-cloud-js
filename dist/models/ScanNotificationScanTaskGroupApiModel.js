@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ScanNotificationScanTaskGroupApiModelToJSON = exports.ScanNotificationScanTaskGroupApiModelFromJSONTyped = exports.ScanNotificationScanTaskGroupApiModelFromJSON = exports.instanceOfScanNotificationScanTaskGroupApiModel = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the ScanNotificationScanTaskGroupApiModel interface.
  */
 function instanceOfScanNotificationScanTaskGroupApiModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfScanNotificationScanTaskGroupApiModel = instanceOfScanNotificationScanTaskGroupApiModel;
 function ScanNotificationScanTaskGroupApiModelFromJSON(json) {
@@ -28,27 +26,24 @@ function ScanNotificationScanTaskGroupApiModelFromJSON(json) {
 }
 exports.ScanNotificationScanTaskGroupApiModelFromJSON = ScanNotificationScanTaskGroupApiModelFromJSON;
 function ScanNotificationScanTaskGroupApiModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'websiteId': !(0, runtime_1.exists)(json, 'WebsiteId') ? undefined : json['WebsiteId'],
-        'scanTaskGroupName': !(0, runtime_1.exists)(json, 'ScanTaskGroupName') ? undefined : json['ScanTaskGroupName'],
-        'scanTaskGroupId': !(0, runtime_1.exists)(json, 'ScanTaskGroupId') ? undefined : json['ScanTaskGroupId'],
+        'websiteId': json['WebsiteId'] == null ? undefined : json['WebsiteId'],
+        'scanTaskGroupName': json['ScanTaskGroupName'] == null ? undefined : json['ScanTaskGroupName'],
+        'scanTaskGroupId': json['ScanTaskGroupId'] == null ? undefined : json['ScanTaskGroupId'],
     };
 }
 exports.ScanNotificationScanTaskGroupApiModelFromJSONTyped = ScanNotificationScanTaskGroupApiModelFromJSONTyped;
 function ScanNotificationScanTaskGroupApiModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'WebsiteId': value.websiteId,
-        'ScanTaskGroupName': value.scanTaskGroupName,
-        'ScanTaskGroupId': value.scanTaskGroupId,
+        'WebsiteId': value['websiteId'],
+        'ScanTaskGroupName': value['scanTaskGroupName'],
+        'ScanTaskGroupId': value['scanTaskGroupId'],
     };
 }
 exports.ScanNotificationScanTaskGroupApiModelToJSON = ScanNotificationScanTaskGroupApiModelToJSON;

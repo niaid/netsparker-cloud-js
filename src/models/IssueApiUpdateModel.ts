@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a class that carries vulnerability information.
  * @export
@@ -56,9 +56,7 @@ export interface IssueApiUpdateModel {
  * Check if a given object implements the IssueApiUpdateModel interface.
  */
 export function instanceOfIssueApiUpdateModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function IssueApiUpdateModelFromJSON(json: any): IssueApiUpdateModel {
@@ -66,33 +64,30 @@ export function IssueApiUpdateModelFromJSON(json: any): IssueApiUpdateModel {
 }
 
 export function IssueApiUpdateModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): IssueApiUpdateModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'issueId': !exists(json, 'IssueId') ? undefined : json['IssueId'],
-        'state': !exists(json, 'State') ? undefined : json['State'],
-        'assigneeId': !exists(json, 'AssigneeId') ? undefined : json['AssigneeId'],
-        'note': !exists(json, 'Note') ? undefined : json['Note'],
-        'tags': !exists(json, 'Tags') ? undefined : json['Tags'],
+        'issueId': json['IssueId'] == null ? undefined : json['IssueId'],
+        'state': json['State'] == null ? undefined : json['State'],
+        'assigneeId': json['AssigneeId'] == null ? undefined : json['AssigneeId'],
+        'note': json['Note'] == null ? undefined : json['Note'],
+        'tags': json['Tags'] == null ? undefined : json['Tags'],
     };
 }
 
 export function IssueApiUpdateModelToJSON(value?: IssueApiUpdateModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'IssueId': value.issueId,
-        'State': value.state,
-        'AssigneeId': value.assigneeId,
-        'Note': value.note,
-        'Tags': value.tags,
+        'IssueId': value['issueId'],
+        'State': value['state'],
+        'AssigneeId': value['assigneeId'],
+        'Note': value['note'],
+        'Tags': value['tags'],
     };
 }
 

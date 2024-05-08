@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * 
  * @export
@@ -65,9 +65,7 @@ export type ScanTimeWindowItemModelDayEnum = typeof ScanTimeWindowItemModelDayEn
  * Check if a given object implements the ScanTimeWindowItemModel interface.
  */
 export function instanceOfScanTimeWindowItemModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function ScanTimeWindowItemModelFromJSON(json: any): ScanTimeWindowItemModel {
@@ -75,31 +73,28 @@ export function ScanTimeWindowItemModelFromJSON(json: any): ScanTimeWindowItemMo
 }
 
 export function ScanTimeWindowItemModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): ScanTimeWindowItemModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'day': !exists(json, 'Day') ? undefined : json['Day'],
-        'from': !exists(json, 'From') ? undefined : json['From'],
-        'scanningAllowed': !exists(json, 'ScanningAllowed') ? undefined : json['ScanningAllowed'],
-        'to': !exists(json, 'To') ? undefined : json['To'],
+        'day': json['Day'] == null ? undefined : json['Day'],
+        'from': json['From'] == null ? undefined : json['From'],
+        'scanningAllowed': json['ScanningAllowed'] == null ? undefined : json['ScanningAllowed'],
+        'to': json['To'] == null ? undefined : json['To'],
     };
 }
 
 export function ScanTimeWindowItemModelToJSON(value?: ScanTimeWindowItemModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Day': value.day,
-        'From': value.from,
-        'ScanningAllowed': value.scanningAllowed,
-        'To': value.to,
+        'Day': value['day'],
+        'From': value['from'],
+        'ScanningAllowed': value['scanningAllowed'],
+        'To': value['to'],
     };
 }
 

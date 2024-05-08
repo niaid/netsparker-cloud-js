@@ -9,8 +9,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
 import type { IntegrationWizardResultModel } from './IntegrationWizardResultModel';
+import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
 /**
  * The Kafka integration info
  * @export
@@ -125,6 +125,18 @@ export interface KafkaIntegrationInfoModel {
      * @memberof KafkaIntegrationInfoModel
      */
     integrationWizardResultModel?: IntegrationWizardResultModel;
+    /**
+     *
+     * @type {string}
+     * @memberof KafkaIntegrationInfoModel
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof KafkaIntegrationInfoModel
+     */
+    state?: KafkaIntegrationInfoModelStateEnum;
 }
 /**
  * @export
@@ -183,9 +195,17 @@ export declare const KafkaIntegrationInfoModelTemplateTypeEnum: {
 };
 export type KafkaIntegrationInfoModelTemplateTypeEnum = typeof KafkaIntegrationInfoModelTemplateTypeEnum[keyof typeof KafkaIntegrationInfoModelTemplateTypeEnum];
 /**
+ * @export
+ */
+export declare const KafkaIntegrationInfoModelStateEnum: {
+    readonly Active: "Active";
+    readonly Suspended: "Suspended";
+};
+export type KafkaIntegrationInfoModelStateEnum = typeof KafkaIntegrationInfoModelStateEnum[keyof typeof KafkaIntegrationInfoModelStateEnum];
+/**
  * Check if a given object implements the KafkaIntegrationInfoModel interface.
  */
 export declare function instanceOfKafkaIntegrationInfoModel(value: object): boolean;
 export declare function KafkaIntegrationInfoModelFromJSON(json: any): KafkaIntegrationInfoModel;
 export declare function KafkaIntegrationInfoModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): KafkaIntegrationInfoModel;
-export declare function KafkaIntegrationInfoModelToJSON(value?: KafkaIntegrationInfoModel | null): any;
+export declare function KafkaIntegrationInfoModelToJSON(value?: Omit<KafkaIntegrationInfoModel, 'Type' | 'GenericErrorMessage' | 'Identifier' | 'TestMessageBody' | 'TestMessageTitle' | 'WebhookUrl'> | null): any;

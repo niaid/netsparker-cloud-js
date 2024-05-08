@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TechnologyApiModelToJSON = exports.TechnologyApiModelFromJSONTyped = exports.TechnologyApiModelFromJSON = exports.instanceOfTechnologyApiModel = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the TechnologyApiModel interface.
  */
 function instanceOfTechnologyApiModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfTechnologyApiModel = instanceOfTechnologyApiModel;
 function TechnologyApiModelFromJSON(json) {
@@ -28,59 +26,56 @@ function TechnologyApiModelFromJSON(json) {
 }
 exports.TechnologyApiModelFromJSON = TechnologyApiModelFromJSON;
 function TechnologyApiModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'category': !(0, runtime_1.exists)(json, 'Category') ? undefined : json['Category'],
-        'displayName': !(0, runtime_1.exists)(json, 'DisplayName') ? undefined : json['DisplayName'],
-        'endOfLife': !(0, runtime_1.exists)(json, 'EndOfLife') ? undefined : json['EndOfLife'],
-        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
-        'identifiedVersion': !(0, runtime_1.exists)(json, 'IdentifiedVersion') ? undefined : json['IdentifiedVersion'],
-        'isNotificationDisabled': !(0, runtime_1.exists)(json, 'IsNotificationDisabled') ? undefined : json['IsNotificationDisabled'],
-        'isOutofDate': !(0, runtime_1.exists)(json, 'IsOutofDate') ? undefined : json['IsOutofDate'],
-        'issueCriticalCount': !(0, runtime_1.exists)(json, 'IssueCriticalCount') ? undefined : json['IssueCriticalCount'],
-        'issueHighCount': !(0, runtime_1.exists)(json, 'IssueHighCount') ? undefined : json['IssueHighCount'],
-        'issueInfoCount': !(0, runtime_1.exists)(json, 'IssueInfoCount') ? undefined : json['IssueInfoCount'],
-        'issueLowCount': !(0, runtime_1.exists)(json, 'IssueLowCount') ? undefined : json['IssueLowCount'],
-        'issueMediumCount': !(0, runtime_1.exists)(json, 'IssueMediumCount') ? undefined : json['IssueMediumCount'],
-        'lastSeenDate': !(0, runtime_1.exists)(json, 'LastSeenDate') ? undefined : json['LastSeenDate'],
-        'latestVersion': !(0, runtime_1.exists)(json, 'LatestVersion') ? undefined : json['LatestVersion'],
-        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
-        'scanTaskId': !(0, runtime_1.exists)(json, 'ScanTaskId') ? undefined : json['ScanTaskId'],
-        'websiteId': !(0, runtime_1.exists)(json, 'WebsiteId') ? undefined : json['WebsiteId'],
-        'websiteName': !(0, runtime_1.exists)(json, 'WebsiteName') ? undefined : json['WebsiteName'],
-        'overallLatestVersion': !(0, runtime_1.exists)(json, 'OverallLatestVersion') ? undefined : json['OverallLatestVersion'],
+        'category': json['Category'] == null ? undefined : json['Category'],
+        'displayName': json['DisplayName'] == null ? undefined : json['DisplayName'],
+        'endOfLife': json['EndOfLife'] == null ? undefined : json['EndOfLife'],
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'identifiedVersion': json['IdentifiedVersion'] == null ? undefined : json['IdentifiedVersion'],
+        'isNotificationDisabled': json['IsNotificationDisabled'] == null ? undefined : json['IsNotificationDisabled'],
+        'isOutofDate': json['IsOutofDate'] == null ? undefined : json['IsOutofDate'],
+        'issueCriticalCount': json['IssueCriticalCount'] == null ? undefined : json['IssueCriticalCount'],
+        'issueHighCount': json['IssueHighCount'] == null ? undefined : json['IssueHighCount'],
+        'issueInfoCount': json['IssueInfoCount'] == null ? undefined : json['IssueInfoCount'],
+        'issueLowCount': json['IssueLowCount'] == null ? undefined : json['IssueLowCount'],
+        'issueMediumCount': json['IssueMediumCount'] == null ? undefined : json['IssueMediumCount'],
+        'lastSeenDate': json['LastSeenDate'] == null ? undefined : json['LastSeenDate'],
+        'latestVersion': json['LatestVersion'] == null ? undefined : json['LatestVersion'],
+        'name': json['Name'] == null ? undefined : json['Name'],
+        'scanTaskId': json['ScanTaskId'] == null ? undefined : json['ScanTaskId'],
+        'websiteId': json['WebsiteId'] == null ? undefined : json['WebsiteId'],
+        'websiteName': json['WebsiteName'] == null ? undefined : json['WebsiteName'],
+        'overallLatestVersion': json['OverallLatestVersion'] == null ? undefined : json['OverallLatestVersion'],
     };
 }
 exports.TechnologyApiModelFromJSONTyped = TechnologyApiModelFromJSONTyped;
 function TechnologyApiModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Category': value.category,
-        'DisplayName': value.displayName,
-        'EndOfLife': value.endOfLife,
-        'Id': value.id,
-        'IdentifiedVersion': value.identifiedVersion,
-        'IsNotificationDisabled': value.isNotificationDisabled,
-        'IsOutofDate': value.isOutofDate,
-        'IssueCriticalCount': value.issueCriticalCount,
-        'IssueHighCount': value.issueHighCount,
-        'IssueInfoCount': value.issueInfoCount,
-        'IssueLowCount': value.issueLowCount,
-        'IssueMediumCount': value.issueMediumCount,
-        'LastSeenDate': value.lastSeenDate,
-        'LatestVersion': value.latestVersion,
-        'Name': value.name,
-        'ScanTaskId': value.scanTaskId,
-        'WebsiteId': value.websiteId,
-        'WebsiteName': value.websiteName,
-        'OverallLatestVersion': value.overallLatestVersion,
+        'Category': value['category'],
+        'DisplayName': value['displayName'],
+        'EndOfLife': value['endOfLife'],
+        'Id': value['id'],
+        'IdentifiedVersion': value['identifiedVersion'],
+        'IsNotificationDisabled': value['isNotificationDisabled'],
+        'IsOutofDate': value['isOutofDate'],
+        'IssueCriticalCount': value['issueCriticalCount'],
+        'IssueHighCount': value['issueHighCount'],
+        'IssueInfoCount': value['issueInfoCount'],
+        'IssueLowCount': value['issueLowCount'],
+        'IssueMediumCount': value['issueMediumCount'],
+        'LastSeenDate': value['lastSeenDate'],
+        'LatestVersion': value['latestVersion'],
+        'Name': value['name'],
+        'ScanTaskId': value['scanTaskId'],
+        'WebsiteId': value['websiteId'],
+        'WebsiteName': value['websiteName'],
+        'OverallLatestVersion': value['overallLatestVersion'],
     };
 }
 exports.TechnologyApiModelToJSON = TechnologyApiModelToJSON;

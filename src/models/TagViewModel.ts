@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Tag View Model
  * @export
@@ -37,9 +37,7 @@ export interface TagViewModel {
  * Check if a given object implements the TagViewModel interface.
  */
 export function instanceOfTagViewModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function TagViewModelFromJSON(json: any): TagViewModel {
@@ -47,27 +45,24 @@ export function TagViewModelFromJSON(json: any): TagViewModel {
 }
 
 export function TagViewModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): TagViewModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'value': !exists(json, 'Value') ? undefined : json['Value'],
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'value': json['Value'] == null ? undefined : json['Value'],
     };
 }
 
 export function TagViewModelToJSON(value?: TagViewModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Id': value.id,
-        'Value': value.value,
+        'Id': value['id'],
+        'Value': value['value'],
     };
 }
 

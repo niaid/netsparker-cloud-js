@@ -14,7 +14,6 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.NotificationEmailSmsFilterApiToJSON = exports.NotificationEmailSmsFilterApiFromJSONTyped = exports.NotificationEmailSmsFilterApiFromJSON = exports.instanceOfNotificationEmailSmsFilterApi = exports.NotificationEmailSmsFilterApiStateEnum = exports.NotificationEmailSmsFilterApiSeverityEnum = void 0;
-const runtime_1 = require("../runtime");
 /**
  * @export
  */
@@ -40,8 +39,7 @@ exports.NotificationEmailSmsFilterApiStateEnum = {
  * Check if a given object implements the NotificationEmailSmsFilterApi interface.
  */
 function instanceOfNotificationEmailSmsFilterApi(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfNotificationEmailSmsFilterApi = instanceOfNotificationEmailSmsFilterApi;
 function NotificationEmailSmsFilterApiFromJSON(json) {
@@ -49,29 +47,26 @@ function NotificationEmailSmsFilterApiFromJSON(json) {
 }
 exports.NotificationEmailSmsFilterApiFromJSON = NotificationEmailSmsFilterApiFromJSON;
 function NotificationEmailSmsFilterApiFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'isConfirmed': !(0, runtime_1.exists)(json, 'IsConfirmed') ? undefined : json['IsConfirmed'],
-        'severity': !(0, runtime_1.exists)(json, 'Severity') ? undefined : json['Severity'],
-        'state': !(0, runtime_1.exists)(json, 'State') ? undefined : json['State'],
-        'certainty': !(0, runtime_1.exists)(json, 'Certainty') ? undefined : json['Certainty'],
+        'isConfirmed': json['IsConfirmed'] == null ? undefined : json['IsConfirmed'],
+        'severity': json['Severity'] == null ? undefined : json['Severity'],
+        'state': json['State'] == null ? undefined : json['State'],
+        'certainty': json['Certainty'] == null ? undefined : json['Certainty'],
     };
 }
 exports.NotificationEmailSmsFilterApiFromJSONTyped = NotificationEmailSmsFilterApiFromJSONTyped;
 function NotificationEmailSmsFilterApiToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'IsConfirmed': value.isConfirmed,
-        'Severity': value.severity,
-        'State': value.state,
-        'Certainty': value.certainty,
+        'IsConfirmed': value['isConfirmed'],
+        'Severity': value['severity'],
+        'State': value['state'],
+        'Certainty': value['certainty'],
     };
 }
 exports.NotificationEmailSmsFilterApiToJSON = NotificationEmailSmsFilterApiToJSON;

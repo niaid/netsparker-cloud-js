@@ -14,7 +14,6 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.IssueSummaryListModelToJSON = exports.IssueSummaryListModelFromJSONTyped = exports.IssueSummaryListModelFromJSON = exports.instanceOfIssueSummaryListModel = exports.IssueSummaryListModelSeverityEnum = exports.IssueSummaryListModelStateEnum = void 0;
-const runtime_1 = require("../runtime");
 const IssueSummaryStatusModel_1 = require("./IssueSummaryStatusModel");
 /**
  * @export
@@ -45,8 +44,7 @@ exports.IssueSummaryListModelSeverityEnum = {
  * Check if a given object implements the IssueSummaryListModel interface.
  */
 function instanceOfIssueSummaryListModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfIssueSummaryListModel = instanceOfIssueSummaryListModel;
 function IssueSummaryListModelFromJSON(json) {
@@ -54,31 +52,28 @@ function IssueSummaryListModelFromJSON(json) {
 }
 exports.IssueSummaryListModelFromJSON = IssueSummaryListModelFromJSON;
 function IssueSummaryListModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'title': !(0, runtime_1.exists)(json, 'Title') ? undefined : json['Title'],
-        'state': !(0, runtime_1.exists)(json, 'State') ? undefined : json['State'],
-        'severity': !(0, runtime_1.exists)(json, 'Severity') ? undefined : json['Severity'],
-        'url': !(0, runtime_1.exists)(json, 'Url') ? undefined : json['Url'],
-        'statusByDate': !(0, runtime_1.exists)(json, 'StatusByDate') ? undefined : (json['StatusByDate'].map(IssueSummaryStatusModel_1.IssueSummaryStatusModelFromJSON)),
+        'title': json['Title'] == null ? undefined : json['Title'],
+        'state': json['State'] == null ? undefined : json['State'],
+        'severity': json['Severity'] == null ? undefined : json['Severity'],
+        'url': json['Url'] == null ? undefined : json['Url'],
+        'statusByDate': json['StatusByDate'] == null ? undefined : (json['StatusByDate'].map(IssueSummaryStatusModel_1.IssueSummaryStatusModelFromJSON)),
     };
 }
 exports.IssueSummaryListModelFromJSONTyped = IssueSummaryListModelFromJSONTyped;
 function IssueSummaryListModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Title': value.title,
-        'State': value.state,
-        'Severity': value.severity,
-        'Url': value.url,
-        'StatusByDate': value.statusByDate === undefined ? undefined : (value.statusByDate.map(IssueSummaryStatusModel_1.IssueSummaryStatusModelToJSON)),
+        'Title': value['title'],
+        'State': value['state'],
+        'Severity': value['severity'],
+        'Url': value['url'],
+        'StatusByDate': value['statusByDate'] == null ? undefined : (value['statusByDate'].map(IssueSummaryStatusModel_1.IssueSummaryStatusModelToJSON)),
     };
 }
 exports.IssueSummaryListModelToJSON = IssueSummaryListModelToJSON;

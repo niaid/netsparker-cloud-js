@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a model for carrying out a scan notification recipient user data
  * @export
@@ -43,9 +43,7 @@ export interface ScanNotificationRecipientUserApiModel {
  * Check if a given object implements the ScanNotificationRecipientUserApiModel interface.
  */
 export function instanceOfScanNotificationRecipientUserApiModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function ScanNotificationRecipientUserApiModelFromJSON(json: any): ScanNotificationRecipientUserApiModel {
@@ -53,29 +51,26 @@ export function ScanNotificationRecipientUserApiModelFromJSON(json: any): ScanNo
 }
 
 export function ScanNotificationRecipientUserApiModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): ScanNotificationRecipientUserApiModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'email': !exists(json, 'Email') ? undefined : json['Email'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'phoneNumber': !exists(json, 'PhoneNumber') ? undefined : json['PhoneNumber'],
+        'email': json['Email'] == null ? undefined : json['Email'],
+        'name': json['Name'] == null ? undefined : json['Name'],
+        'phoneNumber': json['PhoneNumber'] == null ? undefined : json['PhoneNumber'],
     };
 }
 
 export function ScanNotificationRecipientUserApiModelToJSON(value?: ScanNotificationRecipientUserApiModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Email': value.email,
-        'Name': value.name,
-        'PhoneNumber': value.phoneNumber,
+        'Email': value['email'],
+        'Name': value['name'],
+        'PhoneNumber': value['phoneNumber'],
     };
 }
 

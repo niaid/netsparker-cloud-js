@@ -14,14 +14,12 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AdditionalWebsitesSettingModelToJSON = exports.AdditionalWebsitesSettingModelFromJSONTyped = exports.AdditionalWebsitesSettingModelFromJSON = exports.instanceOfAdditionalWebsitesSettingModel = void 0;
-const runtime_1 = require("../runtime");
 const AdditionalWebsiteModel_1 = require("./AdditionalWebsiteModel");
 /**
  * Check if a given object implements the AdditionalWebsitesSettingModel interface.
  */
 function instanceOfAdditionalWebsitesSettingModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfAdditionalWebsitesSettingModel = instanceOfAdditionalWebsitesSettingModel;
 function AdditionalWebsitesSettingModelFromJSON(json) {
@@ -29,23 +27,20 @@ function AdditionalWebsitesSettingModelFromJSON(json) {
 }
 exports.AdditionalWebsitesSettingModelFromJSON = AdditionalWebsitesSettingModelFromJSON;
 function AdditionalWebsitesSettingModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'websites': !(0, runtime_1.exists)(json, 'Websites') ? undefined : (json['Websites'].map(AdditionalWebsiteModel_1.AdditionalWebsiteModelFromJSON)),
+        'websites': json['Websites'] == null ? undefined : (json['Websites'].map(AdditionalWebsiteModel_1.AdditionalWebsiteModelFromJSON)),
     };
 }
 exports.AdditionalWebsitesSettingModelFromJSONTyped = AdditionalWebsitesSettingModelFromJSONTyped;
 function AdditionalWebsitesSettingModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Websites': value.websites === undefined ? undefined : (value.websites.map(AdditionalWebsiteModel_1.AdditionalWebsiteModelToJSON)),
+        'Websites': value['websites'] == null ? undefined : (value['websites'].map(AdditionalWebsiteModel_1.AdditionalWebsiteModelToJSON)),
     };
 }
 exports.AdditionalWebsitesSettingModelToJSON = AdditionalWebsitesSettingModelToJSON;

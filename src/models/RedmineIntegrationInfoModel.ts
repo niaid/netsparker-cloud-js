@@ -12,19 +12,19 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
-import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
-import {
-    IntegrationCustomFieldVmFromJSON,
-    IntegrationCustomFieldVmFromJSONTyped,
-    IntegrationCustomFieldVmToJSON,
-} from './IntegrationCustomFieldVm';
+import { mapValues } from '../runtime';
 import type { IntegrationWizardResultModel } from './IntegrationWizardResultModel';
 import {
     IntegrationWizardResultModelFromJSON,
     IntegrationWizardResultModelFromJSONTyped,
     IntegrationWizardResultModelToJSON,
 } from './IntegrationWizardResultModel';
+import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
+import {
+    IntegrationCustomFieldVmFromJSON,
+    IntegrationCustomFieldVmFromJSONTyped,
+    IntegrationCustomFieldVmToJSON,
+} from './IntegrationCustomFieldVm';
 
 /**
  * The Redmine integration info
@@ -182,6 +182,18 @@ export interface RedmineIntegrationInfoModel {
      * @memberof RedmineIntegrationInfoModel
      */
     integrationWizardResultModel?: IntegrationWizardResultModel;
+    /**
+     * 
+     * @type {string}
+     * @memberof RedmineIntegrationInfoModel
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof RedmineIntegrationInfoModel
+     */
+    state?: RedmineIntegrationInfoModelStateEnum;
 }
 
 
@@ -189,39 +201,39 @@ export interface RedmineIntegrationInfoModel {
  * @export
  */
 export const RedmineIntegrationInfoModelTypeEnum = {
-    NetsparkerEnterprise: 'NetsparkerEnterprise',
-    Webhook: 'Webhook',
-    Zapier: 'Zapier',
-    Slack: 'Slack',
-    Mattermost: 'Mattermost',
-    MicrosoftTeams: 'MicrosoftTeams',
-    AzureDevOps: 'AzureDevOps',
-    Bitbucket: 'Bitbucket',
-    Bugzilla: 'Bugzilla',
-    Clubhouse: 'Clubhouse',
-    DefectDojo: 'DefectDojo',
-    PivotalTracker: 'PivotalTracker',
     Jira: 'Jira',
-    FogBugz: 'FogBugz',
     GitHub: 'GitHub',
-    PagerDuty: 'PagerDuty',
-    Kafka: 'Kafka',
-    Kenna: 'Kenna',
-    Redmine: 'Redmine',
-    ServiceNow: 'ServiceNow',
     Tfs: 'TFS',
+    FogBugz: 'FogBugz',
+    ServiceNow: 'ServiceNow',
+    Slack: 'Slack',
+    GitLab: 'GitLab',
+    Bitbucket: 'Bitbucket',
     Unfuddle: 'Unfuddle',
-    YouTrack: 'YouTrack',
-    Freshservice: 'Freshservice',
-    Splunk: 'Splunk',
-    JazzTeam: 'JazzTeam',
-    ServiceNowVrm: 'ServiceNowVRM',
-    Asana: 'Asana',
+    Zapier: 'Zapier',
+    AzureDevOps: 'AzureDevOps',
+    Redmine: 'Redmine',
+    Bugzilla: 'Bugzilla',
+    Kafka: 'Kafka',
+    PagerDuty: 'PagerDuty',
+    MicrosoftTeams: 'MicrosoftTeams',
+    Clubhouse: 'Clubhouse',
     Trello: 'Trello',
+    Asana: 'Asana',
+    Webhook: 'Webhook',
+    Kenna: 'Kenna',
+    Freshservice: 'Freshservice',
+    YouTrack: 'YouTrack',
+    NetsparkerEnterprise: 'NetsparkerEnterprise',
+    Splunk: 'Splunk',
+    Mattermost: 'Mattermost',
     Hashicorp: 'Hashicorp',
+    PivotalTracker: 'PivotalTracker',
     CyberArk: 'CyberArk',
+    DefectDojo: 'DefectDojo',
+    JazzTeam: 'JazzTeam',
     AzureKeyVault: 'AzureKeyVault',
-    GitLab: 'GitLab'
+    ServiceNowVrm: 'ServiceNowVRM'
 } as const;
 export type RedmineIntegrationInfoModelTypeEnum = typeof RedmineIntegrationInfoModelTypeEnum[keyof typeof RedmineIntegrationInfoModelTypeEnum];
 
@@ -234,19 +246,26 @@ export const RedmineIntegrationInfoModelTemplateTypeEnum = {
 } as const;
 export type RedmineIntegrationInfoModelTemplateTypeEnum = typeof RedmineIntegrationInfoModelTemplateTypeEnum[keyof typeof RedmineIntegrationInfoModelTemplateTypeEnum];
 
+/**
+ * @export
+ */
+export const RedmineIntegrationInfoModelStateEnum = {
+    Active: 'Active',
+    Suspended: 'Suspended'
+} as const;
+export type RedmineIntegrationInfoModelStateEnum = typeof RedmineIntegrationInfoModelStateEnum[keyof typeof RedmineIntegrationInfoModelStateEnum];
+
 
 /**
  * Check if a given object implements the RedmineIntegrationInfoModel interface.
  */
 export function instanceOfRedmineIntegrationInfoModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "url" in value;
-    isInstance = isInstance && "apiAccessKey" in value;
-    isInstance = isInstance && "project" in value;
-    isInstance = isInstance && "priorityId" in value;
-    isInstance = isInstance && "titleFormat" in value;
-
-    return isInstance;
+    if (!('url' in value)) return false;
+    if (!('apiAccessKey' in value)) return false;
+    if (!('project' in value)) return false;
+    if (!('priorityId' in value)) return false;
+    if (!('titleFormat' in value)) return false;
+    return true;
 }
 
 export function RedmineIntegrationInfoModelFromJSON(json: any): RedmineIntegrationInfoModel {
@@ -254,7 +273,7 @@ export function RedmineIntegrationInfoModelFromJSON(json: any): RedmineIntegrati
 }
 
 export function RedmineIntegrationInfoModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): RedmineIntegrationInfoModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -263,58 +282,59 @@ export function RedmineIntegrationInfoModelFromJSONTyped(json: any, ignoreDiscri
         'apiAccessKey': json['ApiAccessKey'],
         'project': json['Project'],
         'priorityId': json['PriorityId'],
-        'trackerId': !exists(json, 'TrackerId') ? undefined : json['TrackerId'],
-        'statusId': !exists(json, 'StatusId') ? undefined : json['StatusId'],
-        'categoryId': !exists(json, 'CategoryId') ? undefined : json['CategoryId'],
-        'assignedTo': !exists(json, 'AssignedTo') ? undefined : json['AssignedTo'],
-        'dueDays': !exists(json, 'DueDays') ? undefined : json['DueDays'],
-        'isPrivate': !exists(json, 'IsPrivate') ? undefined : json['IsPrivate'],
-        'type': !exists(json, 'Type') ? undefined : json['Type'],
-        'genericErrorMessage': !exists(json, 'GenericErrorMessage') ? undefined : json['GenericErrorMessage'],
-        'identifier': !exists(json, 'Identifier') ? undefined : json['Identifier'],
-        'testMessageBody': !exists(json, 'TestMessageBody') ? undefined : json['TestMessageBody'],
-        'testMessageTitle': !exists(json, 'TestMessageTitle') ? undefined : json['TestMessageTitle'],
-        'webhookUrl': !exists(json, 'WebhookUrl') ? undefined : json['WebhookUrl'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'integrationVersion': !exists(json, 'IntegrationVersion') ? undefined : json['IntegrationVersion'],
-        'accountID': !exists(json, 'AccountID') ? undefined : json['AccountID'],
-        'customFields': !exists(json, 'CustomFields') ? undefined : ((json['CustomFields'] as Array<any>).map(IntegrationCustomFieldVmFromJSON)),
-        'templateType': !exists(json, 'TemplateType') ? undefined : json['TemplateType'],
-        'reopenStatus': !exists(json, 'ReopenStatus') ? undefined : json['ReopenStatus'],
-        'resolvedStatus': !exists(json, 'ResolvedStatus') ? undefined : json['ResolvedStatus'],
+        'trackerId': json['TrackerId'] == null ? undefined : json['TrackerId'],
+        'statusId': json['StatusId'] == null ? undefined : json['StatusId'],
+        'categoryId': json['CategoryId'] == null ? undefined : json['CategoryId'],
+        'assignedTo': json['AssignedTo'] == null ? undefined : json['AssignedTo'],
+        'dueDays': json['DueDays'] == null ? undefined : json['DueDays'],
+        'isPrivate': json['IsPrivate'] == null ? undefined : json['IsPrivate'],
+        'type': json['Type'] == null ? undefined : json['Type'],
+        'genericErrorMessage': json['GenericErrorMessage'] == null ? undefined : json['GenericErrorMessage'],
+        'identifier': json['Identifier'] == null ? undefined : json['Identifier'],
+        'testMessageBody': json['TestMessageBody'] == null ? undefined : json['TestMessageBody'],
+        'testMessageTitle': json['TestMessageTitle'] == null ? undefined : json['TestMessageTitle'],
+        'webhookUrl': json['WebhookUrl'] == null ? undefined : json['WebhookUrl'],
+        'name': json['Name'] == null ? undefined : json['Name'],
+        'integrationVersion': json['IntegrationVersion'] == null ? undefined : json['IntegrationVersion'],
+        'accountID': json['AccountID'] == null ? undefined : json['AccountID'],
+        'customFields': json['CustomFields'] == null ? undefined : ((json['CustomFields'] as Array<any>).map(IntegrationCustomFieldVmFromJSON)),
+        'templateType': json['TemplateType'] == null ? undefined : json['TemplateType'],
+        'reopenStatus': json['ReopenStatus'] == null ? undefined : json['ReopenStatus'],
+        'resolvedStatus': json['ResolvedStatus'] == null ? undefined : json['ResolvedStatus'],
         'titleFormat': json['TitleFormat'],
-        'integrationWizardResultModel': !exists(json, 'IntegrationWizardResultModel') ? undefined : IntegrationWizardResultModelFromJSON(json['IntegrationWizardResultModel']),
+        'integrationWizardResultModel': json['IntegrationWizardResultModel'] == null ? undefined : IntegrationWizardResultModelFromJSON(json['IntegrationWizardResultModel']),
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'state': json['State'] == null ? undefined : json['State'],
     };
 }
 
-export function RedmineIntegrationInfoModelToJSON(value?: RedmineIntegrationInfoModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+export function RedmineIntegrationInfoModelToJSON(value?: Omit<RedmineIntegrationInfoModel, 'Type'|'GenericErrorMessage'|'Identifier'|'TestMessageBody'|'TestMessageTitle'|'WebhookUrl'> | null): any {
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Url': value.url,
-        'ApiAccessKey': value.apiAccessKey,
-        'Project': value.project,
-        'PriorityId': value.priorityId,
-        'TrackerId': value.trackerId,
-        'StatusId': value.statusId,
-        'CategoryId': value.categoryId,
-        'AssignedTo': value.assignedTo,
-        'DueDays': value.dueDays,
-        'IsPrivate': value.isPrivate,
-        'Name': value.name,
-        'IntegrationVersion': value.integrationVersion,
-        'AccountID': value.accountID,
-        'CustomFields': value.customFields === undefined ? undefined : ((value.customFields as Array<any>).map(IntegrationCustomFieldVmToJSON)),
-        'TemplateType': value.templateType,
-        'ReopenStatus': value.reopenStatus,
-        'ResolvedStatus': value.resolvedStatus,
-        'TitleFormat': value.titleFormat,
-        'IntegrationWizardResultModel': IntegrationWizardResultModelToJSON(value.integrationWizardResultModel),
+        'Url': value['url'],
+        'ApiAccessKey': value['apiAccessKey'],
+        'Project': value['project'],
+        'PriorityId': value['priorityId'],
+        'TrackerId': value['trackerId'],
+        'StatusId': value['statusId'],
+        'CategoryId': value['categoryId'],
+        'AssignedTo': value['assignedTo'],
+        'DueDays': value['dueDays'],
+        'IsPrivate': value['isPrivate'],
+        'Name': value['name'],
+        'IntegrationVersion': value['integrationVersion'],
+        'AccountID': value['accountID'],
+        'CustomFields': value['customFields'] == null ? undefined : ((value['customFields'] as Array<any>).map(IntegrationCustomFieldVmToJSON)),
+        'TemplateType': value['templateType'],
+        'ReopenStatus': value['reopenStatus'],
+        'ResolvedStatus': value['resolvedStatus'],
+        'TitleFormat': value['titleFormat'],
+        'IntegrationWizardResultModel': IntegrationWizardResultModelToJSON(value['integrationWizardResultModel']),
+        'Id': value['id'],
+        'State': value['state'],
     };
 }
 

@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Agent group model for updating
  * @export
@@ -43,12 +43,10 @@ export interface AgentGroupApiUpdateModel {
  * Check if a given object implements the AgentGroupApiUpdateModel interface.
  */
 export function instanceOfAgentGroupApiUpdateModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "agents" in value;
-    isInstance = isInstance && "id" in value;
-    isInstance = isInstance && "name" in value;
-
-    return isInstance;
+    if (!('agents' in value)) return false;
+    if (!('id' in value)) return false;
+    if (!('name' in value)) return false;
+    return true;
 }
 
 export function AgentGroupApiUpdateModelFromJSON(json: any): AgentGroupApiUpdateModel {
@@ -56,7 +54,7 @@ export function AgentGroupApiUpdateModelFromJSON(json: any): AgentGroupApiUpdate
 }
 
 export function AgentGroupApiUpdateModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): AgentGroupApiUpdateModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -68,17 +66,14 @@ export function AgentGroupApiUpdateModelFromJSONTyped(json: any, ignoreDiscrimin
 }
 
 export function AgentGroupApiUpdateModelToJSON(value?: AgentGroupApiUpdateModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Agents': value.agents,
-        'Id': value.id,
-        'Name': value.name,
+        'Agents': value['agents'],
+        'Id': value['id'],
+        'Name': value['name'],
     };
 }
 

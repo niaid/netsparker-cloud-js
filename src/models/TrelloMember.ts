@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * 
  * @export
@@ -61,9 +61,7 @@ export interface TrelloMember {
  * Check if a given object implements the TrelloMember interface.
  */
 export function instanceOfTrelloMember(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function TrelloMemberFromJSON(json: any): TrelloMember {
@@ -71,35 +69,32 @@ export function TrelloMemberFromJSON(json: any): TrelloMember {
 }
 
 export function TrelloMemberFromJSONTyped(json: any, ignoreDiscriminator: boolean): TrelloMember {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'confirmed': !exists(json, 'confirmed') ? undefined : json['confirmed'],
-        'email': !exists(json, 'email') ? undefined : json['email'],
-        'fullname': !exists(json, 'fullname') ? undefined : json['fullname'],
-        'id': !exists(json, 'id') ? undefined : json['id'],
-        'shortUrl': !exists(json, 'shortUrl') ? undefined : json['shortUrl'],
-        'username': !exists(json, 'username') ? undefined : json['username'],
+        'confirmed': json['confirmed'] == null ? undefined : json['confirmed'],
+        'email': json['email'] == null ? undefined : json['email'],
+        'fullname': json['fullname'] == null ? undefined : json['fullname'],
+        'id': json['id'] == null ? undefined : json['id'],
+        'shortUrl': json['shortUrl'] == null ? undefined : json['shortUrl'],
+        'username': json['username'] == null ? undefined : json['username'],
     };
 }
 
 export function TrelloMemberToJSON(value?: TrelloMember | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'confirmed': value.confirmed,
-        'email': value.email,
-        'fullname': value.fullname,
-        'id': value.id,
-        'shortUrl': value.shortUrl,
-        'username': value.username,
+        'confirmed': value['confirmed'],
+        'email': value['email'],
+        'fullname': value['fullname'],
+        'id': value['id'],
+        'shortUrl': value['shortUrl'],
+        'username': value['username'],
     };
 }
 

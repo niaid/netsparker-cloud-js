@@ -9,8 +9,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { OutsiderRecipient } from './OutsiderRecipient';
 import type { ScanNotificationRecipientUserApiModel } from './ScanNotificationRecipientUserApiModel';
+import type { OutsiderRecipient } from './OutsiderRecipient';
 /**
  * Represents a model for carrying out a scan notification recipient data
  * @export

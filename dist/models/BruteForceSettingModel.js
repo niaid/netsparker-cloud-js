@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BruteForceSettingModelToJSON = exports.BruteForceSettingModelFromJSONTyped = exports.BruteForceSettingModelFromJSON = exports.instanceOfBruteForceSettingModel = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the BruteForceSettingModel interface.
  */
 function instanceOfBruteForceSettingModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfBruteForceSettingModel = instanceOfBruteForceSettingModel;
 function BruteForceSettingModelFromJSON(json) {
@@ -28,25 +26,22 @@ function BruteForceSettingModelFromJSON(json) {
 }
 exports.BruteForceSettingModelFromJSON = BruteForceSettingModelFromJSON;
 function BruteForceSettingModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'enableAuthBruteForce': !(0, runtime_1.exists)(json, 'EnableAuthBruteForce') ? undefined : json['EnableAuthBruteForce'],
-        'maxBruteForce': !(0, runtime_1.exists)(json, 'MaxBruteForce') ? undefined : json['MaxBruteForce'],
+        'enableAuthBruteForce': json['EnableAuthBruteForce'] == null ? undefined : json['EnableAuthBruteForce'],
+        'maxBruteForce': json['MaxBruteForce'] == null ? undefined : json['MaxBruteForce'],
     };
 }
 exports.BruteForceSettingModelFromJSONTyped = BruteForceSettingModelFromJSONTyped;
 function BruteForceSettingModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'EnableAuthBruteForce': value.enableAuthBruteForce,
-        'MaxBruteForce': value.maxBruteForce,
+        'EnableAuthBruteForce': value['enableAuthBruteForce'],
+        'MaxBruteForce': value['maxBruteForce'],
     };
 }
 exports.BruteForceSettingModelToJSON = BruteForceSettingModelToJSON;

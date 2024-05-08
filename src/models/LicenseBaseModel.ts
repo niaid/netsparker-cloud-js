@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Base subscription license model for carrying out license data.
  * @export
@@ -49,9 +49,7 @@ export interface LicenseBaseModel {
  * Check if a given object implements the LicenseBaseModel interface.
  */
 export function instanceOfLicenseBaseModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function LicenseBaseModelFromJSON(json: any): LicenseBaseModel {
@@ -59,31 +57,28 @@ export function LicenseBaseModelFromJSON(json: any): LicenseBaseModel {
 }
 
 export function LicenseBaseModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): LicenseBaseModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'isActive': !exists(json, 'IsActive') ? undefined : json['IsActive'],
-        'key': !exists(json, 'Key') ? undefined : json['Key'],
-        'accountCanCreateSharkScanTask': !exists(json, 'AccountCanCreateSharkScanTask') ? undefined : json['AccountCanCreateSharkScanTask'],
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'isActive': json['IsActive'] == null ? undefined : json['IsActive'],
+        'key': json['Key'] == null ? undefined : json['Key'],
+        'accountCanCreateSharkScanTask': json['AccountCanCreateSharkScanTask'] == null ? undefined : json['AccountCanCreateSharkScanTask'],
     };
 }
 
 export function LicenseBaseModelToJSON(value?: LicenseBaseModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Id': value.id,
-        'IsActive': value.isActive,
-        'Key': value.key,
-        'AccountCanCreateSharkScanTask': value.accountCanCreateSharkScanTask,
+        'Id': value['id'],
+        'IsActive': value['isActive'],
+        'Key': value['key'],
+        'AccountCanCreateSharkScanTask': value['accountCanCreateSharkScanTask'],
     };
 }
 

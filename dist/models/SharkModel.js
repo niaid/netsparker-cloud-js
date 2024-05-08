@@ -14,7 +14,6 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SharkModelToJSON = exports.SharkModelFromJSONTyped = exports.SharkModelFromJSON = exports.instanceOfSharkModel = exports.SharkModelSharkPlatformTypeEnum = void 0;
-const runtime_1 = require("../runtime");
 /**
  * @export
  */
@@ -28,8 +27,7 @@ exports.SharkModelSharkPlatformTypeEnum = {
  * Check if a given object implements the SharkModel interface.
  */
 function instanceOfSharkModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfSharkModel = instanceOfSharkModel;
 function SharkModelFromJSON(json) {
@@ -37,29 +35,26 @@ function SharkModelFromJSON(json) {
 }
 exports.SharkModelFromJSON = SharkModelFromJSON;
 function SharkModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'isSharkEnabled': !(0, runtime_1.exists)(json, 'IsSharkEnabled') ? undefined : json['IsSharkEnabled'],
-        'sharkPlatformType': !(0, runtime_1.exists)(json, 'SharkPlatformType') ? undefined : json['SharkPlatformType'],
-        'sharkPassword': !(0, runtime_1.exists)(json, 'SharkPassword') ? undefined : json['SharkPassword'],
-        'sharkBridgeUrl': !(0, runtime_1.exists)(json, 'SharkBridgeUrl') ? undefined : json['SharkBridgeUrl'],
+        'isSharkEnabled': json['IsSharkEnabled'] == null ? undefined : json['IsSharkEnabled'],
+        'sharkPlatformType': json['SharkPlatformType'] == null ? undefined : json['SharkPlatformType'],
+        'sharkPassword': json['SharkPassword'] == null ? undefined : json['SharkPassword'],
+        'sharkBridgeUrl': json['SharkBridgeUrl'] == null ? undefined : json['SharkBridgeUrl'],
     };
 }
 exports.SharkModelFromJSONTyped = SharkModelFromJSONTyped;
 function SharkModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'IsSharkEnabled': value.isSharkEnabled,
-        'SharkPlatformType': value.sharkPlatformType,
-        'SharkPassword': value.sharkPassword,
-        'SharkBridgeUrl': value.sharkBridgeUrl,
+        'IsSharkEnabled': value['isSharkEnabled'],
+        'SharkPlatformType': value['sharkPlatformType'],
+        'SharkPassword': value['sharkPassword'],
+        'SharkBridgeUrl': value['sharkBridgeUrl'],
     };
 }
 exports.SharkModelToJSON = SharkModelToJSON;

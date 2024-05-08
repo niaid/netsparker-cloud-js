@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * 
  * @export
@@ -51,9 +51,7 @@ export type CvssScoreValueSeverityEnum = typeof CvssScoreValueSeverityEnum[keyof
  * Check if a given object implements the CvssScoreValue interface.
  */
 export function instanceOfCvssScoreValue(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function CvssScoreValueFromJSON(json: any): CvssScoreValue {
@@ -61,22 +59,19 @@ export function CvssScoreValueFromJSON(json: any): CvssScoreValue {
 }
 
 export function CvssScoreValueFromJSONTyped(json: any, ignoreDiscriminator: boolean): CvssScoreValue {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'severity': !exists(json, 'Severity') ? undefined : json['Severity'],
-        'value': !exists(json, 'Value') ? undefined : json['Value'],
+        'severity': json['Severity'] == null ? undefined : json['Severity'],
+        'value': json['Value'] == null ? undefined : json['Value'],
     };
 }
 
-export function CvssScoreValueToJSON(value?: CvssScoreValue | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+export function CvssScoreValueToJSON(value?: Omit<CvssScoreValue, 'Severity'|'Value'> | null): any {
+    if (value == null) {
+        return value;
     }
     return {
         

@@ -12,13 +12,13 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
-import type { ScheduledScanModel } from './ScheduledScanModel';
+import { mapValues } from '../runtime';
+import type { ScheduledScanApiModel } from './ScheduledScanApiModel';
 import {
-    ScheduledScanModelFromJSON,
-    ScheduledScanModelFromJSONTyped,
-    ScheduledScanModelToJSON,
-} from './ScheduledScanModel';
+    ScheduledScanApiModelFromJSON,
+    ScheduledScanApiModelFromJSONTyped,
+    ScheduledScanApiModelToJSON,
+} from './ScheduledScanApiModel';
 
 /**
  * Represents a model for carrying out a paged scheduled scan list.
@@ -64,10 +64,10 @@ export interface ScheduledScanListApiResult {
     lastItemOnPage?: number;
     /**
      * 
-     * @type {Array<ScheduledScanModel>}
+     * @type {Array<ScheduledScanApiModel>}
      * @memberof ScheduledScanListApiResult
      */
-    list?: Array<ScheduledScanModel>;
+    list?: Array<ScheduledScanApiModel>;
     /**
      * 
      * @type {number}
@@ -98,9 +98,7 @@ export interface ScheduledScanListApiResult {
  * Check if a given object implements the ScheduledScanListApiResult interface.
  */
 export function instanceOfScheduledScanListApiResult(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function ScheduledScanListApiResultFromJSON(json: any): ScheduledScanListApiResult {
@@ -108,45 +106,42 @@ export function ScheduledScanListApiResultFromJSON(json: any): ScheduledScanList
 }
 
 export function ScheduledScanListApiResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): ScheduledScanListApiResult {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'firstItemOnPage': !exists(json, 'FirstItemOnPage') ? undefined : json['FirstItemOnPage'],
-        'hasNextPage': !exists(json, 'HasNextPage') ? undefined : json['HasNextPage'],
-        'hasPreviousPage': !exists(json, 'HasPreviousPage') ? undefined : json['HasPreviousPage'],
-        'isFirstPage': !exists(json, 'IsFirstPage') ? undefined : json['IsFirstPage'],
-        'isLastPage': !exists(json, 'IsLastPage') ? undefined : json['IsLastPage'],
-        'lastItemOnPage': !exists(json, 'LastItemOnPage') ? undefined : json['LastItemOnPage'],
-        'list': !exists(json, 'List') ? undefined : ((json['List'] as Array<any>).map(ScheduledScanModelFromJSON)),
-        'pageCount': !exists(json, 'PageCount') ? undefined : json['PageCount'],
-        'pageNumber': !exists(json, 'PageNumber') ? undefined : json['PageNumber'],
-        'pageSize': !exists(json, 'PageSize') ? undefined : json['PageSize'],
-        'totalItemCount': !exists(json, 'TotalItemCount') ? undefined : json['TotalItemCount'],
+        'firstItemOnPage': json['FirstItemOnPage'] == null ? undefined : json['FirstItemOnPage'],
+        'hasNextPage': json['HasNextPage'] == null ? undefined : json['HasNextPage'],
+        'hasPreviousPage': json['HasPreviousPage'] == null ? undefined : json['HasPreviousPage'],
+        'isFirstPage': json['IsFirstPage'] == null ? undefined : json['IsFirstPage'],
+        'isLastPage': json['IsLastPage'] == null ? undefined : json['IsLastPage'],
+        'lastItemOnPage': json['LastItemOnPage'] == null ? undefined : json['LastItemOnPage'],
+        'list': json['List'] == null ? undefined : ((json['List'] as Array<any>).map(ScheduledScanApiModelFromJSON)),
+        'pageCount': json['PageCount'] == null ? undefined : json['PageCount'],
+        'pageNumber': json['PageNumber'] == null ? undefined : json['PageNumber'],
+        'pageSize': json['PageSize'] == null ? undefined : json['PageSize'],
+        'totalItemCount': json['TotalItemCount'] == null ? undefined : json['TotalItemCount'],
     };
 }
 
 export function ScheduledScanListApiResultToJSON(value?: ScheduledScanListApiResult | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'FirstItemOnPage': value.firstItemOnPage,
-        'HasNextPage': value.hasNextPage,
-        'HasPreviousPage': value.hasPreviousPage,
-        'IsFirstPage': value.isFirstPage,
-        'IsLastPage': value.isLastPage,
-        'LastItemOnPage': value.lastItemOnPage,
-        'List': value.list === undefined ? undefined : ((value.list as Array<any>).map(ScheduledScanModelToJSON)),
-        'PageCount': value.pageCount,
-        'PageNumber': value.pageNumber,
-        'PageSize': value.pageSize,
-        'TotalItemCount': value.totalItemCount,
+        'FirstItemOnPage': value['firstItemOnPage'],
+        'HasNextPage': value['hasNextPage'],
+        'HasPreviousPage': value['hasPreviousPage'],
+        'IsFirstPage': value['isFirstPage'],
+        'IsLastPage': value['isLastPage'],
+        'LastItemOnPage': value['lastItemOnPage'],
+        'List': value['list'] == null ? undefined : ((value['list'] as Array<any>).map(ScheduledScanApiModelToJSON)),
+        'PageCount': value['pageCount'],
+        'PageNumber': value['pageNumber'],
+        'PageSize': value['pageSize'],
+        'TotalItemCount': value['totalItemCount'],
     };
 }
 

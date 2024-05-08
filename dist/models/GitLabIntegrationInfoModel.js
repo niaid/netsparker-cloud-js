@@ -13,10 +13,9 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.GitLabIntegrationInfoModelToJSON = exports.GitLabIntegrationInfoModelFromJSONTyped = exports.GitLabIntegrationInfoModelFromJSON = exports.instanceOfGitLabIntegrationInfoModel = exports.GitLabIntegrationInfoModelTemplateTypeEnum = exports.GitLabIntegrationInfoModelTypeEnum = void 0;
-const runtime_1 = require("../runtime");
-const IntegrationCustomFieldVm_1 = require("./IntegrationCustomFieldVm");
+exports.GitLabIntegrationInfoModelToJSON = exports.GitLabIntegrationInfoModelFromJSONTyped = exports.GitLabIntegrationInfoModelFromJSON = exports.instanceOfGitLabIntegrationInfoModel = exports.GitLabIntegrationInfoModelStateEnum = exports.GitLabIntegrationInfoModelTemplateTypeEnum = exports.GitLabIntegrationInfoModelTypeEnum = void 0;
 const IntegrationWizardResultModel_1 = require("./IntegrationWizardResultModel");
+const IntegrationCustomFieldVm_1 = require("./IntegrationCustomFieldVm");
 /**
  * @export
  */
@@ -63,14 +62,23 @@ exports.GitLabIntegrationInfoModelTemplateTypeEnum = {
     Detailed: 'Detailed'
 };
 /**
+ * @export
+ */
+exports.GitLabIntegrationInfoModelStateEnum = {
+    Active: 'Active',
+    Suspended: 'Suspended'
+};
+/**
  * Check if a given object implements the GitLabIntegrationInfoModel interface.
  */
 function instanceOfGitLabIntegrationInfoModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "accessToken" in value;
-    isInstance = isInstance && "projectId" in value;
-    isInstance = isInstance && "titleFormat" in value;
-    return isInstance;
+    if (!('accessToken' in value))
+        return false;
+    if (!('projectId' in value))
+        return false;
+    if (!('titleFormat' in value))
+        return false;
+    return true;
 }
 exports.instanceOfGitLabIntegrationInfoModel = instanceOfGitLabIntegrationInfoModel;
 function GitLabIntegrationInfoModelFromJSON(json) {
@@ -78,61 +86,62 @@ function GitLabIntegrationInfoModelFromJSON(json) {
 }
 exports.GitLabIntegrationInfoModelFromJSON = GitLabIntegrationInfoModelFromJSON;
 function GitLabIntegrationInfoModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         'accessToken': json['AccessToken'],
-        'assigneeId': !(0, runtime_1.exists)(json, 'AssigneeId') ? undefined : json['AssigneeId'],
-        'dueDays': !(0, runtime_1.exists)(json, 'DueDays') ? undefined : json['DueDays'],
-        'labels': !(0, runtime_1.exists)(json, 'Labels') ? undefined : json['Labels'],
-        'milestoneId': !(0, runtime_1.exists)(json, 'MilestoneId') ? undefined : json['MilestoneId'],
-        'onPremiseBaseURL': !(0, runtime_1.exists)(json, 'OnPremiseBaseURL') ? undefined : json['OnPremiseBaseURL'],
+        'assigneeId': json['AssigneeId'] == null ? undefined : json['AssigneeId'],
+        'dueDays': json['DueDays'] == null ? undefined : json['DueDays'],
+        'labels': json['Labels'] == null ? undefined : json['Labels'],
+        'milestoneId': json['MilestoneId'] == null ? undefined : json['MilestoneId'],
+        'onPremiseBaseURL': json['OnPremiseBaseURL'] == null ? undefined : json['OnPremiseBaseURL'],
         'projectId': json['ProjectId'],
-        'weight': !(0, runtime_1.exists)(json, 'Weight') ? undefined : json['Weight'],
-        'type': !(0, runtime_1.exists)(json, 'Type') ? undefined : json['Type'],
-        'genericErrorMessage': !(0, runtime_1.exists)(json, 'GenericErrorMessage') ? undefined : json['GenericErrorMessage'],
-        'identifier': !(0, runtime_1.exists)(json, 'Identifier') ? undefined : json['Identifier'],
-        'testMessageBody': !(0, runtime_1.exists)(json, 'TestMessageBody') ? undefined : json['TestMessageBody'],
-        'testMessageTitle': !(0, runtime_1.exists)(json, 'TestMessageTitle') ? undefined : json['TestMessageTitle'],
-        'webhookUrl': !(0, runtime_1.exists)(json, 'WebhookUrl') ? undefined : json['WebhookUrl'],
-        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
-        'integrationVersion': !(0, runtime_1.exists)(json, 'IntegrationVersion') ? undefined : json['IntegrationVersion'],
-        'accountID': !(0, runtime_1.exists)(json, 'AccountID') ? undefined : json['AccountID'],
-        'customFields': !(0, runtime_1.exists)(json, 'CustomFields') ? undefined : (json['CustomFields'].map(IntegrationCustomFieldVm_1.IntegrationCustomFieldVmFromJSON)),
-        'templateType': !(0, runtime_1.exists)(json, 'TemplateType') ? undefined : json['TemplateType'],
-        'reopenStatus': !(0, runtime_1.exists)(json, 'ReopenStatus') ? undefined : json['ReopenStatus'],
-        'resolvedStatus': !(0, runtime_1.exists)(json, 'ResolvedStatus') ? undefined : json['ResolvedStatus'],
+        'weight': json['Weight'] == null ? undefined : json['Weight'],
+        'type': json['Type'] == null ? undefined : json['Type'],
+        'genericErrorMessage': json['GenericErrorMessage'] == null ? undefined : json['GenericErrorMessage'],
+        'identifier': json['Identifier'] == null ? undefined : json['Identifier'],
+        'testMessageBody': json['TestMessageBody'] == null ? undefined : json['TestMessageBody'],
+        'testMessageTitle': json['TestMessageTitle'] == null ? undefined : json['TestMessageTitle'],
+        'webhookUrl': json['WebhookUrl'] == null ? undefined : json['WebhookUrl'],
+        'name': json['Name'] == null ? undefined : json['Name'],
+        'integrationVersion': json['IntegrationVersion'] == null ? undefined : json['IntegrationVersion'],
+        'accountID': json['AccountID'] == null ? undefined : json['AccountID'],
+        'customFields': json['CustomFields'] == null ? undefined : (json['CustomFields'].map(IntegrationCustomFieldVm_1.IntegrationCustomFieldVmFromJSON)),
+        'templateType': json['TemplateType'] == null ? undefined : json['TemplateType'],
+        'reopenStatus': json['ReopenStatus'] == null ? undefined : json['ReopenStatus'],
+        'resolvedStatus': json['ResolvedStatus'] == null ? undefined : json['ResolvedStatus'],
         'titleFormat': json['TitleFormat'],
-        'integrationWizardResultModel': !(0, runtime_1.exists)(json, 'IntegrationWizardResultModel') ? undefined : (0, IntegrationWizardResultModel_1.IntegrationWizardResultModelFromJSON)(json['IntegrationWizardResultModel']),
+        'integrationWizardResultModel': json['IntegrationWizardResultModel'] == null ? undefined : (0, IntegrationWizardResultModel_1.IntegrationWizardResultModelFromJSON)(json['IntegrationWizardResultModel']),
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'state': json['State'] == null ? undefined : json['State'],
     };
 }
 exports.GitLabIntegrationInfoModelFromJSONTyped = GitLabIntegrationInfoModelFromJSONTyped;
 function GitLabIntegrationInfoModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'AccessToken': value.accessToken,
-        'AssigneeId': value.assigneeId,
-        'DueDays': value.dueDays,
-        'Labels': value.labels,
-        'MilestoneId': value.milestoneId,
-        'OnPremiseBaseURL': value.onPremiseBaseURL,
-        'ProjectId': value.projectId,
-        'Weight': value.weight,
-        'Name': value.name,
-        'IntegrationVersion': value.integrationVersion,
-        'AccountID': value.accountID,
-        'CustomFields': value.customFields === undefined ? undefined : (value.customFields.map(IntegrationCustomFieldVm_1.IntegrationCustomFieldVmToJSON)),
-        'TemplateType': value.templateType,
-        'ReopenStatus': value.reopenStatus,
-        'ResolvedStatus': value.resolvedStatus,
-        'TitleFormat': value.titleFormat,
-        'IntegrationWizardResultModel': (0, IntegrationWizardResultModel_1.IntegrationWizardResultModelToJSON)(value.integrationWizardResultModel),
+        'AccessToken': value['accessToken'],
+        'AssigneeId': value['assigneeId'],
+        'DueDays': value['dueDays'],
+        'Labels': value['labels'],
+        'MilestoneId': value['milestoneId'],
+        'OnPremiseBaseURL': value['onPremiseBaseURL'],
+        'ProjectId': value['projectId'],
+        'Weight': value['weight'],
+        'Name': value['name'],
+        'IntegrationVersion': value['integrationVersion'],
+        'AccountID': value['accountID'],
+        'CustomFields': value['customFields'] == null ? undefined : (value['customFields'].map(IntegrationCustomFieldVm_1.IntegrationCustomFieldVmToJSON)),
+        'TemplateType': value['templateType'],
+        'ReopenStatus': value['reopenStatus'],
+        'ResolvedStatus': value['resolvedStatus'],
+        'TitleFormat': value['titleFormat'],
+        'IntegrationWizardResultModel': (0, IntegrationWizardResultModel_1.IntegrationWizardResultModelToJSON)(value['integrationWizardResultModel']),
+        'Id': value['id'],
+        'State': value['state'],
     };
 }
 exports.GitLabIntegrationInfoModelToJSON = GitLabIntegrationInfoModelToJSON;

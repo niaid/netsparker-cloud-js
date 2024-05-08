@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a model that carries out result of attempt to start verification.
  * @export
@@ -55,9 +55,7 @@ export type StartVerificationResultVerifyOwnershipResultEnum = typeof StartVerif
  * Check if a given object implements the StartVerificationResult interface.
  */
 export function instanceOfStartVerificationResult(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function StartVerificationResultFromJSON(json: any): StartVerificationResult {
@@ -65,29 +63,26 @@ export function StartVerificationResultFromJSON(json: any): StartVerificationRes
 }
 
 export function StartVerificationResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): StartVerificationResult {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'data': !exists(json, 'Data') ? undefined : json['Data'],
-        'message': !exists(json, 'Message') ? undefined : json['Message'],
-        'verifyOwnershipResult': !exists(json, 'VerifyOwnershipResult') ? undefined : json['VerifyOwnershipResult'],
+        'data': json['Data'] == null ? undefined : json['Data'],
+        'message': json['Message'] == null ? undefined : json['Message'],
+        'verifyOwnershipResult': json['VerifyOwnershipResult'] == null ? undefined : json['VerifyOwnershipResult'],
     };
 }
 
 export function StartVerificationResultToJSON(value?: StartVerificationResult | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Data': value.data,
-        'Message': value.message,
-        'VerifyOwnershipResult': value.verifyOwnershipResult,
+        'Data': value['data'],
+        'Message': value['message'],
+        'VerifyOwnershipResult': value['verifyOwnershipResult'],
     };
 }
 

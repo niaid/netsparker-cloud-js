@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ResponseFieldsToJSON = exports.ResponseFieldsFromJSONTyped = exports.ResponseFieldsFromJSON = exports.instanceOfResponseFields = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the ResponseFields interface.
  */
 function instanceOfResponseFields(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfResponseFields = instanceOfResponseFields;
 function ResponseFieldsFromJSON(json) {
@@ -28,31 +26,28 @@ function ResponseFieldsFromJSON(json) {
 }
 exports.ResponseFieldsFromJSON = ResponseFieldsFromJSON;
 function ResponseFieldsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'accessToken': !(0, runtime_1.exists)(json, 'AccessToken') ? undefined : json['AccessToken'],
-        'refreshToken': !(0, runtime_1.exists)(json, 'RefreshToken') ? undefined : json['RefreshToken'],
-        'expire': !(0, runtime_1.exists)(json, 'Expire') ? undefined : json['Expire'],
-        'tokenType': !(0, runtime_1.exists)(json, 'TokenType') ? undefined : json['TokenType'],
-        'isTokenTypeFixed': !(0, runtime_1.exists)(json, 'IsTokenTypeFixed') ? undefined : json['IsTokenTypeFixed'],
+        'accessToken': json['AccessToken'] == null ? undefined : json['AccessToken'],
+        'refreshToken': json['RefreshToken'] == null ? undefined : json['RefreshToken'],
+        'expire': json['Expire'] == null ? undefined : json['Expire'],
+        'tokenType': json['TokenType'] == null ? undefined : json['TokenType'],
+        'isTokenTypeFixed': json['IsTokenTypeFixed'] == null ? undefined : json['IsTokenTypeFixed'],
     };
 }
 exports.ResponseFieldsFromJSONTyped = ResponseFieldsFromJSONTyped;
 function ResponseFieldsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'AccessToken': value.accessToken,
-        'RefreshToken': value.refreshToken,
-        'Expire': value.expire,
-        'TokenType': value.tokenType,
-        'IsTokenTypeFixed': value.isTokenTypeFixed,
+        'AccessToken': value['accessToken'],
+        'RefreshToken': value['refreshToken'],
+        'Expire': value['expire'],
+        'TokenType': value['tokenType'],
+        'IsTokenTypeFixed': value['isTokenTypeFixed'],
     };
 }
 exports.ResponseFieldsToJSON = ResponseFieldsToJSON;

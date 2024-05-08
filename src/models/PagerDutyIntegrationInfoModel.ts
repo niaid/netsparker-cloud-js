@@ -12,19 +12,19 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
-import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
-import {
-    IntegrationCustomFieldVmFromJSON,
-    IntegrationCustomFieldVmFromJSONTyped,
-    IntegrationCustomFieldVmToJSON,
-} from './IntegrationCustomFieldVm';
+import { mapValues } from '../runtime';
 import type { IntegrationWizardResultModel } from './IntegrationWizardResultModel';
 import {
     IntegrationWizardResultModelFromJSON,
     IntegrationWizardResultModelFromJSONTyped,
     IntegrationWizardResultModelToJSON,
 } from './IntegrationWizardResultModel';
+import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
+import {
+    IntegrationCustomFieldVmFromJSON,
+    IntegrationCustomFieldVmFromJSONTyped,
+    IntegrationCustomFieldVmToJSON,
+} from './IntegrationCustomFieldVm';
 
 /**
  * The PagerDuty integration info
@@ -188,6 +188,18 @@ export interface PagerDutyIntegrationInfoModel {
      * @memberof PagerDutyIntegrationInfoModel
      */
     integrationWizardResultModel?: IntegrationWizardResultModel;
+    /**
+     * 
+     * @type {string}
+     * @memberof PagerDutyIntegrationInfoModel
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PagerDutyIntegrationInfoModel
+     */
+    state?: PagerDutyIntegrationInfoModelStateEnum;
 }
 
 
@@ -258,20 +270,27 @@ export const PagerDutyIntegrationInfoModelTemplateTypeEnum = {
 } as const;
 export type PagerDutyIntegrationInfoModelTemplateTypeEnum = typeof PagerDutyIntegrationInfoModelTemplateTypeEnum[keyof typeof PagerDutyIntegrationInfoModelTemplateTypeEnum];
 
+/**
+ * @export
+ */
+export const PagerDutyIntegrationInfoModelStateEnum = {
+    Active: 'Active',
+    Suspended: 'Suspended'
+} as const;
+export type PagerDutyIntegrationInfoModelStateEnum = typeof PagerDutyIntegrationInfoModelStateEnum[keyof typeof PagerDutyIntegrationInfoModelStateEnum];
+
 
 /**
  * Check if a given object implements the PagerDutyIntegrationInfoModel interface.
  */
 export function instanceOfPagerDutyIntegrationInfoModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "apiAccessKey" in value;
-    isInstance = isInstance && "from" in value;
-    isInstance = isInstance && "serviceId" in value;
-    isInstance = isInstance && "serviceType" in value;
-    isInstance = isInstance && "url" in value;
-    isInstance = isInstance && "titleFormat" in value;
-
-    return isInstance;
+    if (!('apiAccessKey' in value)) return false;
+    if (!('from' in value)) return false;
+    if (!('serviceId' in value)) return false;
+    if (!('serviceType' in value)) return false;
+    if (!('url' in value)) return false;
+    if (!('titleFormat' in value)) return false;
+    return true;
 }
 
 export function PagerDutyIntegrationInfoModelFromJSON(json: any): PagerDutyIntegrationInfoModel {
@@ -279,66 +298,67 @@ export function PagerDutyIntegrationInfoModelFromJSON(json: any): PagerDutyInteg
 }
 
 export function PagerDutyIntegrationInfoModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): PagerDutyIntegrationInfoModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
         'apiAccessKey': json['ApiAccessKey'],
-        'apiUrl': !exists(json, 'ApiUrl') ? undefined : json['ApiUrl'],
-        'bodyDetails': !exists(json, 'BodyDetails') ? undefined : json['BodyDetails'],
+        'apiUrl': json['ApiUrl'] == null ? undefined : json['ApiUrl'],
+        'bodyDetails': json['BodyDetails'] == null ? undefined : json['BodyDetails'],
         'from': json['From'],
-        'incidentBodyType': !exists(json, 'IncidentBodyType') ? undefined : json['IncidentBodyType'],
-        'incidentType': !exists(json, 'IncidentType') ? undefined : json['IncidentType'],
+        'incidentBodyType': json['IncidentBodyType'] == null ? undefined : json['IncidentBodyType'],
+        'incidentType': json['IncidentType'] == null ? undefined : json['IncidentType'],
         'serviceId': json['ServiceId'],
         'serviceType': json['ServiceType'],
-        'title': !exists(json, 'Title') ? undefined : json['Title'],
-        'urgency': !exists(json, 'Urgency') ? undefined : json['Urgency'],
+        'title': json['Title'] == null ? undefined : json['Title'],
+        'urgency': json['Urgency'] == null ? undefined : json['Urgency'],
         'url': json['Url'],
-        'type': !exists(json, 'Type') ? undefined : json['Type'],
-        'genericErrorMessage': !exists(json, 'GenericErrorMessage') ? undefined : json['GenericErrorMessage'],
-        'identifier': !exists(json, 'Identifier') ? undefined : json['Identifier'],
-        'testMessageBody': !exists(json, 'TestMessageBody') ? undefined : json['TestMessageBody'],
-        'testMessageTitle': !exists(json, 'TestMessageTitle') ? undefined : json['TestMessageTitle'],
-        'webhookUrl': !exists(json, 'WebhookUrl') ? undefined : json['WebhookUrl'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'integrationVersion': !exists(json, 'IntegrationVersion') ? undefined : json['IntegrationVersion'],
-        'accountID': !exists(json, 'AccountID') ? undefined : json['AccountID'],
-        'customFields': !exists(json, 'CustomFields') ? undefined : ((json['CustomFields'] as Array<any>).map(IntegrationCustomFieldVmFromJSON)),
-        'templateType': !exists(json, 'TemplateType') ? undefined : json['TemplateType'],
-        'reopenStatus': !exists(json, 'ReopenStatus') ? undefined : json['ReopenStatus'],
-        'resolvedStatus': !exists(json, 'ResolvedStatus') ? undefined : json['ResolvedStatus'],
+        'type': json['Type'] == null ? undefined : json['Type'],
+        'genericErrorMessage': json['GenericErrorMessage'] == null ? undefined : json['GenericErrorMessage'],
+        'identifier': json['Identifier'] == null ? undefined : json['Identifier'],
+        'testMessageBody': json['TestMessageBody'] == null ? undefined : json['TestMessageBody'],
+        'testMessageTitle': json['TestMessageTitle'] == null ? undefined : json['TestMessageTitle'],
+        'webhookUrl': json['WebhookUrl'] == null ? undefined : json['WebhookUrl'],
+        'name': json['Name'] == null ? undefined : json['Name'],
+        'integrationVersion': json['IntegrationVersion'] == null ? undefined : json['IntegrationVersion'],
+        'accountID': json['AccountID'] == null ? undefined : json['AccountID'],
+        'customFields': json['CustomFields'] == null ? undefined : ((json['CustomFields'] as Array<any>).map(IntegrationCustomFieldVmFromJSON)),
+        'templateType': json['TemplateType'] == null ? undefined : json['TemplateType'],
+        'reopenStatus': json['ReopenStatus'] == null ? undefined : json['ReopenStatus'],
+        'resolvedStatus': json['ResolvedStatus'] == null ? undefined : json['ResolvedStatus'],
         'titleFormat': json['TitleFormat'],
-        'integrationWizardResultModel': !exists(json, 'IntegrationWizardResultModel') ? undefined : IntegrationWizardResultModelFromJSON(json['IntegrationWizardResultModel']),
+        'integrationWizardResultModel': json['IntegrationWizardResultModel'] == null ? undefined : IntegrationWizardResultModelFromJSON(json['IntegrationWizardResultModel']),
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'state': json['State'] == null ? undefined : json['State'],
     };
 }
 
-export function PagerDutyIntegrationInfoModelToJSON(value?: PagerDutyIntegrationInfoModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+export function PagerDutyIntegrationInfoModelToJSON(value?: Omit<PagerDutyIntegrationInfoModel, 'ApiUrl'|'IncidentBodyType'|'IncidentType'|'Type'|'GenericErrorMessage'|'Identifier'|'TestMessageBody'|'TestMessageTitle'|'WebhookUrl'> | null): any {
+    if (value == null) {
+        return value;
     }
     return {
         
-        'ApiAccessKey': value.apiAccessKey,
-        'BodyDetails': value.bodyDetails,
-        'From': value.from,
-        'ServiceId': value.serviceId,
-        'ServiceType': value.serviceType,
-        'Title': value.title,
-        'Urgency': value.urgency,
-        'Url': value.url,
-        'Name': value.name,
-        'IntegrationVersion': value.integrationVersion,
-        'AccountID': value.accountID,
-        'CustomFields': value.customFields === undefined ? undefined : ((value.customFields as Array<any>).map(IntegrationCustomFieldVmToJSON)),
-        'TemplateType': value.templateType,
-        'ReopenStatus': value.reopenStatus,
-        'ResolvedStatus': value.resolvedStatus,
-        'TitleFormat': value.titleFormat,
-        'IntegrationWizardResultModel': IntegrationWizardResultModelToJSON(value.integrationWizardResultModel),
+        'ApiAccessKey': value['apiAccessKey'],
+        'BodyDetails': value['bodyDetails'],
+        'From': value['from'],
+        'ServiceId': value['serviceId'],
+        'ServiceType': value['serviceType'],
+        'Title': value['title'],
+        'Urgency': value['urgency'],
+        'Url': value['url'],
+        'Name': value['name'],
+        'IntegrationVersion': value['integrationVersion'],
+        'AccountID': value['accountID'],
+        'CustomFields': value['customFields'] == null ? undefined : ((value['customFields'] as Array<any>).map(IntegrationCustomFieldVmToJSON)),
+        'TemplateType': value['templateType'],
+        'ReopenStatus': value['reopenStatus'],
+        'ResolvedStatus': value['resolvedStatus'],
+        'TitleFormat': value['titleFormat'],
+        'IntegrationWizardResultModel': IntegrationWizardResultModelToJSON(value['integrationWizardResultModel']),
+        'Id': value['id'],
+        'State': value['state'],
     };
 }
 

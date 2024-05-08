@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Defines a type for outsider recipient needs.
  * @export
@@ -31,9 +31,7 @@ export interface OutsiderRecipient {
  * Check if a given object implements the OutsiderRecipient interface.
  */
 export function instanceOfOutsiderRecipient(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function OutsiderRecipientFromJSON(json: any): OutsiderRecipient {
@@ -41,25 +39,22 @@ export function OutsiderRecipientFromJSON(json: any): OutsiderRecipient {
 }
 
 export function OutsiderRecipientFromJSONTyped(json: any, ignoreDiscriminator: boolean): OutsiderRecipient {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'email': !exists(json, 'Email') ? undefined : json['Email'],
+        'email': json['Email'] == null ? undefined : json['Email'],
     };
 }
 
 export function OutsiderRecipientToJSON(value?: OutsiderRecipient | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Email': value.email,
+        'Email': value['email'],
     };
 }
 

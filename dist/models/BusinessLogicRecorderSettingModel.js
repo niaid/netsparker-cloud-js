@@ -14,14 +14,12 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BusinessLogicRecorderSettingModelToJSON = exports.BusinessLogicRecorderSettingModelFromJSONTyped = exports.BusinessLogicRecorderSettingModelFromJSON = exports.instanceOfBusinessLogicRecorderSettingModel = void 0;
-const runtime_1 = require("../runtime");
 const SequenceViewModel_1 = require("./SequenceViewModel");
 /**
  * Check if a given object implements the BusinessLogicRecorderSettingModel interface.
  */
 function instanceOfBusinessLogicRecorderSettingModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfBusinessLogicRecorderSettingModel = instanceOfBusinessLogicRecorderSettingModel;
 function BusinessLogicRecorderSettingModelFromJSON(json) {
@@ -29,23 +27,20 @@ function BusinessLogicRecorderSettingModelFromJSON(json) {
 }
 exports.BusinessLogicRecorderSettingModelFromJSON = BusinessLogicRecorderSettingModelFromJSON;
 function BusinessLogicRecorderSettingModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'sequenceModelList': !(0, runtime_1.exists)(json, 'SequenceModelList') ? undefined : (json['SequenceModelList'].map(SequenceViewModel_1.SequenceViewModelFromJSON)),
+        'sequenceModelList': json['SequenceModelList'] == null ? undefined : (json['SequenceModelList'].map(SequenceViewModel_1.SequenceViewModelFromJSON)),
     };
 }
 exports.BusinessLogicRecorderSettingModelFromJSONTyped = BusinessLogicRecorderSettingModelFromJSONTyped;
 function BusinessLogicRecorderSettingModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'SequenceModelList': value.sequenceModelList === undefined ? undefined : (value.sequenceModelList.map(SequenceViewModel_1.SequenceViewModelToJSON)),
+        'SequenceModelList': value['sequenceModelList'] == null ? undefined : (value['sequenceModelList'].map(SequenceViewModel_1.SequenceViewModelToJSON)),
     };
 }
 exports.BusinessLogicRecorderSettingModelToJSON = BusinessLogicRecorderSettingModelToJSON;

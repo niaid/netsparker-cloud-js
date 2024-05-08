@@ -9,23 +9,23 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { AdditionalWebsitesSettingModel } from './AdditionalWebsitesSettingModel';
-import type { AgentSelectionModel } from './AgentSelectionModel';
-import type { BasicAuthenticationSettingModel } from './BasicAuthenticationSettingModel';
+import type { HeaderAuthenticationModel } from './HeaderAuthenticationModel';
+import type { PreRequestScriptSettingModel } from './PreRequestScriptSettingModel';
+import type { TagViewModel } from './TagViewModel';
+import type { FormAuthenticationSettingModel } from './FormAuthenticationSettingModel';
+import type { ScheduledScanUpdateViewModel } from './ScheduledScanUpdateViewModel';
+import type { ScheduledScanRecurrenceViewModel } from './ScheduledScanRecurrenceViewModel';
 import type { BusinessLogicRecorderSettingModel } from './BusinessLogicRecorderSettingModel';
 import type { ClientCertificateAuthenticationViewModel } from './ClientCertificateAuthenticationViewModel';
-import type { FormAuthenticationSettingModel } from './FormAuthenticationSettingModel';
-import type { HeaderAuthenticationModel } from './HeaderAuthenticationModel';
-import type { ImportedLinksSetting } from './ImportedLinksSetting';
 import type { OAuth2SettingModel } from './OAuth2SettingModel';
-import type { PreRequestScriptSettingModel } from './PreRequestScriptSettingModel';
+import type { AgentSelectionModel } from './AgentSelectionModel';
+import type { ImportedLinksSetting } from './ImportedLinksSetting';
 import type { ScanTimeWindowViewModel } from './ScanTimeWindowViewModel';
-import type { ScheduledScanRecurrenceViewModel } from './ScheduledScanRecurrenceViewModel';
-import type { ScheduledScanUpdateViewModel } from './ScheduledScanUpdateViewModel';
-import type { ScopeSetting } from './ScopeSetting';
-import type { SharkModel } from './SharkModel';
-import type { TagViewModel } from './TagViewModel';
+import type { BasicAuthenticationSettingModel } from './BasicAuthenticationSettingModel';
 import type { UrlRewriteSetting } from './UrlRewriteSetting';
+import type { SharkModel } from './SharkModel';
+import type { AdditionalWebsitesSettingModel } from './AdditionalWebsitesSettingModel';
+import type { ScopeSetting } from './ScopeSetting';
 /**
  * Contains properties that required to update scheduled scan.
  * @export
@@ -436,4 +436,4 @@ export type UpdateScheduledScanModelCreateTypeEnum = typeof UpdateScheduledScanM
 export declare function instanceOfUpdateScheduledScanModel(value: object): boolean;
 export declare function UpdateScheduledScanModelFromJSON(json: any): UpdateScheduledScanModel;
 export declare function UpdateScheduledScanModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): UpdateScheduledScanModel;
-export declare function UpdateScheduledScanModelToJSON(value?: UpdateScheduledScanModel | null): any;
+export declare function UpdateScheduledScanModelToJSON(value?: Omit<UpdateScheduledScanModel, 'CustomScriptTemplateType' | 'IsTargetUrlRequired' | 'CanEdit'> | null): any;

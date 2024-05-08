@@ -9,8 +9,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
 import type { IntegrationWizardResultModel } from './IntegrationWizardResultModel';
+import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
 /**
  * The GitHub integration info
  * @export
@@ -149,44 +149,56 @@ export interface GitHubIntegrationInfoModel {
      * @memberof GitHubIntegrationInfoModel
      */
     integrationWizardResultModel?: IntegrationWizardResultModel;
+    /**
+     *
+     * @type {string}
+     * @memberof GitHubIntegrationInfoModel
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof GitHubIntegrationInfoModel
+     */
+    state?: GitHubIntegrationInfoModelStateEnum;
 }
 /**
  * @export
  */
 export declare const GitHubIntegrationInfoModelTypeEnum: {
-    readonly Jira: "Jira";
-    readonly GitHub: "GitHub";
-    readonly Tfs: "TFS";
-    readonly FogBugz: "FogBugz";
-    readonly ServiceNow: "ServiceNow";
-    readonly Slack: "Slack";
-    readonly GitLab: "GitLab";
-    readonly Bitbucket: "Bitbucket";
-    readonly Unfuddle: "Unfuddle";
-    readonly Zapier: "Zapier";
-    readonly AzureDevOps: "AzureDevOps";
-    readonly Redmine: "Redmine";
-    readonly Bugzilla: "Bugzilla";
-    readonly Kafka: "Kafka";
-    readonly PagerDuty: "PagerDuty";
-    readonly MicrosoftTeams: "MicrosoftTeams";
-    readonly Clubhouse: "Clubhouse";
-    readonly Trello: "Trello";
-    readonly Asana: "Asana";
-    readonly Webhook: "Webhook";
-    readonly Kenna: "Kenna";
-    readonly Freshservice: "Freshservice";
-    readonly YouTrack: "YouTrack";
     readonly NetsparkerEnterprise: "NetsparkerEnterprise";
-    readonly Splunk: "Splunk";
+    readonly Webhook: "Webhook";
+    readonly Zapier: "Zapier";
+    readonly Slack: "Slack";
     readonly Mattermost: "Mattermost";
-    readonly Hashicorp: "Hashicorp";
-    readonly PivotalTracker: "PivotalTracker";
-    readonly CyberArk: "CyberArk";
+    readonly MicrosoftTeams: "MicrosoftTeams";
+    readonly AzureDevOps: "AzureDevOps";
+    readonly Bitbucket: "Bitbucket";
+    readonly Bugzilla: "Bugzilla";
+    readonly Clubhouse: "Clubhouse";
     readonly DefectDojo: "DefectDojo";
+    readonly PivotalTracker: "PivotalTracker";
+    readonly Jira: "Jira";
+    readonly FogBugz: "FogBugz";
+    readonly GitHub: "GitHub";
+    readonly PagerDuty: "PagerDuty";
+    readonly Kafka: "Kafka";
+    readonly Kenna: "Kenna";
+    readonly Redmine: "Redmine";
+    readonly ServiceNow: "ServiceNow";
+    readonly Tfs: "TFS";
+    readonly Unfuddle: "Unfuddle";
+    readonly YouTrack: "YouTrack";
+    readonly Freshservice: "Freshservice";
+    readonly Splunk: "Splunk";
     readonly JazzTeam: "JazzTeam";
-    readonly AzureKeyVault: "AzureKeyVault";
     readonly ServiceNowVrm: "ServiceNowVRM";
+    readonly Asana: "Asana";
+    readonly Trello: "Trello";
+    readonly Hashicorp: "Hashicorp";
+    readonly CyberArk: "CyberArk";
+    readonly AzureKeyVault: "AzureKeyVault";
+    readonly GitLab: "GitLab";
 };
 export type GitHubIntegrationInfoModelTypeEnum = typeof GitHubIntegrationInfoModelTypeEnum[keyof typeof GitHubIntegrationInfoModelTypeEnum];
 /**
@@ -198,9 +210,17 @@ export declare const GitHubIntegrationInfoModelTemplateTypeEnum: {
 };
 export type GitHubIntegrationInfoModelTemplateTypeEnum = typeof GitHubIntegrationInfoModelTemplateTypeEnum[keyof typeof GitHubIntegrationInfoModelTemplateTypeEnum];
 /**
+ * @export
+ */
+export declare const GitHubIntegrationInfoModelStateEnum: {
+    readonly Active: "Active";
+    readonly Suspended: "Suspended";
+};
+export type GitHubIntegrationInfoModelStateEnum = typeof GitHubIntegrationInfoModelStateEnum[keyof typeof GitHubIntegrationInfoModelStateEnum];
+/**
  * Check if a given object implements the GitHubIntegrationInfoModel interface.
  */
 export declare function instanceOfGitHubIntegrationInfoModel(value: object): boolean;
 export declare function GitHubIntegrationInfoModelFromJSON(json: any): GitHubIntegrationInfoModel;
 export declare function GitHubIntegrationInfoModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): GitHubIntegrationInfoModel;
-export declare function GitHubIntegrationInfoModelToJSON(value?: GitHubIntegrationInfoModel | null): any;
+export declare function GitHubIntegrationInfoModelToJSON(value?: Omit<GitHubIntegrationInfoModel, 'Type' | 'GenericErrorMessage' | 'Identifier' | 'TestMessageBody' | 'TestMessageTitle' | 'WebhookUrl'> | null): any;

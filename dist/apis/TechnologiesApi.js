@@ -48,17 +48,17 @@ class TechnologiesApi extends runtime.BaseAPI {
      */
     async technologiesListRaw(requestParameters, initOverrides) {
         const queryParameters = {};
-        if (requestParameters.webSiteName !== undefined) {
-            queryParameters['webSiteName'] = requestParameters.webSiteName;
+        if (requestParameters['webSiteName'] != null) {
+            queryParameters['webSiteName'] = requestParameters['webSiteName'];
         }
-        if (requestParameters.technologyName !== undefined) {
-            queryParameters['technologyName'] = requestParameters.technologyName;
+        if (requestParameters['technologyName'] != null) {
+            queryParameters['technologyName'] = requestParameters['technologyName'];
         }
-        if (requestParameters.page !== undefined) {
-            queryParameters['page'] = requestParameters.page;
+        if (requestParameters['page'] != null) {
+            queryParameters['page'] = requestParameters['page'];
         }
-        if (requestParameters.pageSize !== undefined) {
-            queryParameters['pageSize'] = requestParameters.pageSize;
+        if (requestParameters['pageSize'] != null) {
+            queryParameters['pageSize'] = requestParameters['pageSize'];
         }
         const headerParameters = {};
         const response = await this.request({
@@ -81,17 +81,17 @@ class TechnologiesApi extends runtime.BaseAPI {
      */
     async technologiesOutofdateTechnologiesRaw(requestParameters, initOverrides) {
         const queryParameters = {};
-        if (requestParameters.webSiteName !== undefined) {
-            queryParameters['webSiteName'] = requestParameters.webSiteName;
+        if (requestParameters['webSiteName'] != null) {
+            queryParameters['webSiteName'] = requestParameters['webSiteName'];
         }
-        if (requestParameters.technologyName !== undefined) {
-            queryParameters['technologyName'] = requestParameters.technologyName;
+        if (requestParameters['technologyName'] != null) {
+            queryParameters['technologyName'] = requestParameters['technologyName'];
         }
-        if (requestParameters.page !== undefined) {
-            queryParameters['page'] = requestParameters.page;
+        if (requestParameters['page'] != null) {
+            queryParameters['page'] = requestParameters['page'];
         }
-        if (requestParameters.pageSize !== undefined) {
-            queryParameters['pageSize'] = requestParameters.pageSize;
+        if (requestParameters['pageSize'] != null) {
+            queryParameters['pageSize'] = requestParameters['pageSize'];
         }
         const headerParameters = {};
         const response = await this.request({

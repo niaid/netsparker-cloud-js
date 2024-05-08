@@ -134,4 +134,4 @@ export type VcsCommitInfoIntegrationSystemEnum = typeof VcsCommitInfoIntegration
 export declare function instanceOfVcsCommitInfo(value: object): boolean;
 export declare function VcsCommitInfoFromJSON(json: any): VcsCommitInfo;
 export declare function VcsCommitInfoFromJSONTyped(json: any, ignoreDiscriminator: boolean): VcsCommitInfo;
-export declare function VcsCommitInfoToJSON(value?: VcsCommitInfo | null): any;
+export declare function VcsCommitInfoToJSON(value?: Omit<VcsCommitInfo, 'CiBuildServerName'> | null): any;

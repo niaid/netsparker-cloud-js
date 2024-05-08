@@ -47,8 +47,8 @@ class AgentGroupsApi extends runtime.BaseAPI {
      * Deletes the agent group
      */
     async agentGroupsDeleteRaw(requestParameters, initOverrides) {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model', 'Required parameter requestParameters.model was null or undefined when calling agentGroupsDelete.');
+        if (requestParameters['model'] == null) {
+            throw new runtime.RequiredError('model', 'Required parameter "model" was null or undefined when calling agentGroupsDelete().');
         }
         const queryParameters = {};
         const headerParameters = {};
@@ -58,7 +58,7 @@ class AgentGroupsApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: (0, index_1.AgentGroupApiDeleteModelToJSON)(requestParameters.model),
+            body: (0, index_1.AgentGroupApiDeleteModelToJSON)(requestParameters['model']),
         }, initOverrides);
         return new runtime.JSONApiResponse(response);
     }
@@ -74,11 +74,11 @@ class AgentGroupsApi extends runtime.BaseAPI {
      */
     async agentGroupsListRaw(requestParameters, initOverrides) {
         const queryParameters = {};
-        if (requestParameters.page !== undefined) {
-            queryParameters['page'] = requestParameters.page;
+        if (requestParameters['page'] != null) {
+            queryParameters['page'] = requestParameters['page'];
         }
-        if (requestParameters.pageSize !== undefined) {
-            queryParameters['pageSize'] = requestParameters.pageSize;
+        if (requestParameters['pageSize'] != null) {
+            queryParameters['pageSize'] = requestParameters['pageSize'];
         }
         const headerParameters = {};
         const response = await this.request({
@@ -100,8 +100,8 @@ class AgentGroupsApi extends runtime.BaseAPI {
      * Creates a new agent group
      */
     async agentGroupsNewRaw(requestParameters, initOverrides) {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model', 'Required parameter requestParameters.model was null or undefined when calling agentGroupsNew.');
+        if (requestParameters['model'] == null) {
+            throw new runtime.RequiredError('model', 'Required parameter "model" was null or undefined when calling agentGroupsNew().');
         }
         const queryParameters = {};
         const headerParameters = {};
@@ -111,7 +111,7 @@ class AgentGroupsApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: (0, index_1.AgentGroupApiNewModelToJSON)(requestParameters.model),
+            body: (0, index_1.AgentGroupApiNewModelToJSON)(requestParameters['model']),
         }, initOverrides);
         return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.AgentGroupModelFromJSON)(jsonValue));
     }
@@ -126,8 +126,8 @@ class AgentGroupsApi extends runtime.BaseAPI {
      * Updates the agent group
      */
     async agentGroupsUpdateRaw(requestParameters, initOverrides) {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model', 'Required parameter requestParameters.model was null or undefined when calling agentGroupsUpdate.');
+        if (requestParameters['model'] == null) {
+            throw new runtime.RequiredError('model', 'Required parameter "model" was null or undefined when calling agentGroupsUpdate().');
         }
         const queryParameters = {};
         const headerParameters = {};
@@ -137,7 +137,7 @@ class AgentGroupsApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: (0, index_1.AgentGroupApiUpdateModelToJSON)(requestParameters.model),
+            body: (0, index_1.AgentGroupApiUpdateModelToJSON)(requestParameters['model']),
         }, initOverrides);
         return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.AgentGroupModelFromJSON)(jsonValue));
     }

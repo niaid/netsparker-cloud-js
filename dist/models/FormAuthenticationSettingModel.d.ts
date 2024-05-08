@@ -9,11 +9,11 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { AuthorizationTokenRule } from './AuthorizationTokenRule';
-import type { FormAuthenticationCustomScript } from './FormAuthenticationCustomScript';
 import type { FormAuthenticationPersona } from './FormAuthenticationPersona';
 import type { LogoutKeywordPatternModel } from './LogoutKeywordPatternModel';
+import type { FormAuthenticationCustomScript } from './FormAuthenticationCustomScript';
 import type { ScanNotificationIntegrationViewModel } from './ScanNotificationIntegrationViewModel';
+import type { AuthorizationTokenRule } from './AuthorizationTokenRule';
 /**
  * Represents a model for carrying out form authentication settings.
  * @export
@@ -52,6 +52,12 @@ export interface FormAuthenticationSettingModel {
      * @memberof FormAuthenticationSettingModel
      */
     detectBearerToken?: boolean;
+    /**
+     * Gets or sets a value indicating whether to diagnostics logging enabled.
+     * @type {boolean}
+     * @memberof FormAuthenticationSettingModel
+     */
+    enableDiagnosticsLogging?: boolean;
     /**
      * Gets or sets whether logout detection is disabled.
      * @type {boolean}
@@ -131,4 +137,4 @@ export interface FormAuthenticationSettingModel {
 export declare function instanceOfFormAuthenticationSettingModel(value: object): boolean;
 export declare function FormAuthenticationSettingModelFromJSON(json: any): FormAuthenticationSettingModel;
 export declare function FormAuthenticationSettingModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): FormAuthenticationSettingModel;
-export declare function FormAuthenticationSettingModelToJSON(value?: FormAuthenticationSettingModel | null): any;
+export declare function FormAuthenticationSettingModelToJSON(value?: Omit<FormAuthenticationSettingModel, 'DefaultPersonaValidation' | 'IsNotVerified' | 'PersonasValidation'> | null): any;

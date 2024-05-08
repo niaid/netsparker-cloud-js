@@ -75,8 +75,11 @@ export class WebsiteGroupsApi extends runtime.BaseAPI {
      * Deletes a website group.
      */
     async websiteGroupsDeleteRaw(requestParameters: WebsiteGroupsDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DeleteWebsiteGroupResponse>> {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling websiteGroupsDelete.');
+        if (requestParameters['model'] == null) {
+            throw new runtime.RequiredError(
+                'model',
+                'Required parameter "model" was null or undefined when calling websiteGroupsDelete().'
+            );
         }
 
         const queryParameters: any = {};
@@ -90,7 +93,7 @@ export class WebsiteGroupsApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: DeleteWebsiteGroupApiModelToJSON(requestParameters.model),
+            body: DeleteWebsiteGroupApiModelToJSON(requestParameters['model']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => DeleteWebsiteGroupResponseFromJSON(jsonValue));
@@ -108,8 +111,11 @@ export class WebsiteGroupsApi extends runtime.BaseAPI {
      * Deletes a website group with given id
      */
     async websiteGroupsDeleteByIdRaw(requestParameters: WebsiteGroupsDeleteByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<DeleteWebsiteGroupResponse>> {
-        if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling websiteGroupsDeleteById.');
+        if (requestParameters['id'] == null) {
+            throw new runtime.RequiredError(
+                'id',
+                'Required parameter "id" was null or undefined when calling websiteGroupsDeleteById().'
+            );
         }
 
         const queryParameters: any = {};
@@ -117,7 +123,7 @@ export class WebsiteGroupsApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/api/1.0/websitegroups/delete/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
+            path: `/api/1.0/websitegroups/delete/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -138,8 +144,11 @@ export class WebsiteGroupsApi extends runtime.BaseAPI {
      * Gets website group by id.
      */
     async websiteGroupsGetByIdRaw(requestParameters: WebsiteGroupsGetByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteGroupApiModel>> {
-        if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling websiteGroupsGetById.');
+        if (requestParameters['id'] == null) {
+            throw new runtime.RequiredError(
+                'id',
+                'Required parameter "id" was null or undefined when calling websiteGroupsGetById().'
+            );
         }
 
         const queryParameters: any = {};
@@ -147,7 +156,7 @@ export class WebsiteGroupsApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/api/1.0/websitegroups/get/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
+            path: `/api/1.0/websitegroups/get/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -168,14 +177,17 @@ export class WebsiteGroupsApi extends runtime.BaseAPI {
      * Gets website group by name.
      */
     async websiteGroupsGetByQueryRaw(requestParameters: WebsiteGroupsGetByQueryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteGroupApiModel>> {
-        if (requestParameters.query === null || requestParameters.query === undefined) {
-            throw new runtime.RequiredError('query','Required parameter requestParameters.query was null or undefined when calling websiteGroupsGetByQuery.');
+        if (requestParameters['query'] == null) {
+            throw new runtime.RequiredError(
+                'query',
+                'Required parameter "query" was null or undefined when calling websiteGroupsGetByQuery().'
+            );
         }
 
         const queryParameters: any = {};
 
-        if (requestParameters.query !== undefined) {
-            queryParameters['query'] = requestParameters.query;
+        if (requestParameters['query'] != null) {
+            queryParameters['query'] = requestParameters['query'];
         }
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -204,12 +216,12 @@ export class WebsiteGroupsApi extends runtime.BaseAPI {
     async websiteGroupsListRaw(requestParameters: WebsiteGroupsListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteGroupListApiResult>> {
         const queryParameters: any = {};
 
-        if (requestParameters.page !== undefined) {
-            queryParameters['page'] = requestParameters.page;
+        if (requestParameters['page'] != null) {
+            queryParameters['page'] = requestParameters['page'];
         }
 
-        if (requestParameters.pageSize !== undefined) {
-            queryParameters['pageSize'] = requestParameters.pageSize;
+        if (requestParameters['pageSize'] != null) {
+            queryParameters['pageSize'] = requestParameters['pageSize'];
         }
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -236,8 +248,11 @@ export class WebsiteGroupsApi extends runtime.BaseAPI {
      * Creates a new website group.
      */
     async websiteGroupsNewRaw(requestParameters: WebsiteGroupsNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteGroupApiModel>> {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling websiteGroupsNew.');
+        if (requestParameters['model'] == null) {
+            throw new runtime.RequiredError(
+                'model',
+                'Required parameter "model" was null or undefined when calling websiteGroupsNew().'
+            );
         }
 
         const queryParameters: any = {};
@@ -251,7 +266,7 @@ export class WebsiteGroupsApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: NewWebsiteGroupApiModelToJSON(requestParameters.model),
+            body: NewWebsiteGroupApiModelToJSON(requestParameters['model']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => WebsiteGroupApiModelFromJSON(jsonValue));
@@ -269,8 +284,11 @@ export class WebsiteGroupsApi extends runtime.BaseAPI {
      * Updates a website group.
      */
     async websiteGroupsUpdateRaw(requestParameters: WebsiteGroupsUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteGroupApiModel>> {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling websiteGroupsUpdate.');
+        if (requestParameters['model'] == null) {
+            throw new runtime.RequiredError(
+                'model',
+                'Required parameter "model" was null or undefined when calling websiteGroupsUpdate().'
+            );
         }
 
         const queryParameters: any = {};
@@ -284,7 +302,7 @@ export class WebsiteGroupsApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: UpdateWebsiteGroupApiModelToJSON(requestParameters.model),
+            body: UpdateWebsiteGroupApiModelToJSON(requestParameters['model']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => WebsiteGroupApiModelFromJSON(jsonValue));

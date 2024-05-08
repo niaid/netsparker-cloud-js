@@ -49,6 +49,9 @@ export interface DiscoveryIgnoreByFilterRequest {
     distance?: number;
     registeredDomain?: boolean;
 }
+export interface DiscoveryIncludeRequest {
+    serviceIds: Array<string>;
+}
 export interface DiscoveryListRequest {
     page?: number;
     pageSize?: number;
@@ -144,6 +147,14 @@ export declare class DiscoveryApi extends runtime.BaseAPI {
      * Ignores discovery services for selected filters.
      */
     discoveryIgnoreByFilter(requestParameters?: DiscoveryIgnoreByFilterRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
+    /**
+     * Include discovery service with given service ids.
+     */
+    discoveryIncludeRaw(requestParameters: DiscoveryIncludeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>>;
+    /**
+     * Include discovery service with given service ids.
+     */
+    discoveryInclude(requestParameters: DiscoveryIncludeRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<string>;
     /**
      * Gets the list discovery services.
      */

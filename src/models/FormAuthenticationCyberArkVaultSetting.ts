@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Settings of user's cyberark vault
  * @export
@@ -90,9 +90,7 @@ export type FormAuthenticationCyberArkVaultSettingAgentModeEnum = typeof FormAut
  * Check if a given object implements the FormAuthenticationCyberArkVaultSetting interface.
  */
 export function instanceOfFormAuthenticationCyberArkVaultSetting(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function FormAuthenticationCyberArkVaultSettingFromJSON(json: any): FormAuthenticationCyberArkVaultSetting {
@@ -100,41 +98,38 @@ export function FormAuthenticationCyberArkVaultSettingFromJSON(json: any): FormA
 }
 
 export function FormAuthenticationCyberArkVaultSettingFromJSONTyped(json: any, ignoreDiscriminator: boolean): FormAuthenticationCyberArkVaultSetting {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'integrationId': !exists(json, 'IntegrationId') ? undefined : json['IntegrationId'],
-        'cyberArkUseStaticUsername': !exists(json, 'CyberArkUseStaticUsername') ? undefined : json['CyberArkUseStaticUsername'],
-        'cyberArkStaticUsername': !exists(json, 'CyberArkStaticUsername') ? undefined : json['CyberArkStaticUsername'],
-        'cyberArkUserNameQuery': !exists(json, 'CyberArkUserNameQuery') ? undefined : json['CyberArkUserNameQuery'],
-        'cyberArkPasswordQuery': !exists(json, 'CyberArkPasswordQuery') ? undefined : json['CyberArkPasswordQuery'],
-        'url': !exists(json, 'Url') ? undefined : json['Url'],
-        'certificateFilePassword': !exists(json, 'CertificateFilePassword') ? undefined : json['CertificateFilePassword'],
-        'certificateFileKey': !exists(json, 'CertificateFileKey') ? undefined : json['CertificateFileKey'],
-        'agentMode': !exists(json, 'AgentMode') ? undefined : json['AgentMode'],
+        'integrationId': json['IntegrationId'] == null ? undefined : json['IntegrationId'],
+        'cyberArkUseStaticUsername': json['CyberArkUseStaticUsername'] == null ? undefined : json['CyberArkUseStaticUsername'],
+        'cyberArkStaticUsername': json['CyberArkStaticUsername'] == null ? undefined : json['CyberArkStaticUsername'],
+        'cyberArkUserNameQuery': json['CyberArkUserNameQuery'] == null ? undefined : json['CyberArkUserNameQuery'],
+        'cyberArkPasswordQuery': json['CyberArkPasswordQuery'] == null ? undefined : json['CyberArkPasswordQuery'],
+        'url': json['Url'] == null ? undefined : json['Url'],
+        'certificateFilePassword': json['CertificateFilePassword'] == null ? undefined : json['CertificateFilePassword'],
+        'certificateFileKey': json['CertificateFileKey'] == null ? undefined : json['CertificateFileKey'],
+        'agentMode': json['AgentMode'] == null ? undefined : json['AgentMode'],
     };
 }
 
 export function FormAuthenticationCyberArkVaultSettingToJSON(value?: FormAuthenticationCyberArkVaultSetting | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'IntegrationId': value.integrationId,
-        'CyberArkUseStaticUsername': value.cyberArkUseStaticUsername,
-        'CyberArkStaticUsername': value.cyberArkStaticUsername,
-        'CyberArkUserNameQuery': value.cyberArkUserNameQuery,
-        'CyberArkPasswordQuery': value.cyberArkPasswordQuery,
-        'Url': value.url,
-        'CertificateFilePassword': value.certificateFilePassword,
-        'CertificateFileKey': value.certificateFileKey,
-        'AgentMode': value.agentMode,
+        'IntegrationId': value['integrationId'],
+        'CyberArkUseStaticUsername': value['cyberArkUseStaticUsername'],
+        'CyberArkStaticUsername': value['cyberArkStaticUsername'],
+        'CyberArkUserNameQuery': value['cyberArkUserNameQuery'],
+        'CyberArkPasswordQuery': value['cyberArkPasswordQuery'],
+        'Url': value['url'],
+        'CertificateFilePassword': value['certificateFilePassword'],
+        'CertificateFileKey': value['certificateFileKey'],
+        'AgentMode': value['agentMode'],
     };
 }
 

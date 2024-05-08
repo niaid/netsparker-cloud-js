@@ -18,9 +18,9 @@ exports.ExcludedUsageTrackerModelToJSON = exports.ExcludedUsageTrackerModelFromJ
  * Check if a given object implements the ExcludedUsageTrackerModel interface.
  */
 function instanceOfExcludedUsageTrackerModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "url" in value;
-    return isInstance;
+    if (!('url' in value))
+        return false;
+    return true;
 }
 exports.instanceOfExcludedUsageTrackerModel = instanceOfExcludedUsageTrackerModel;
 function ExcludedUsageTrackerModelFromJSON(json) {
@@ -28,7 +28,7 @@ function ExcludedUsageTrackerModelFromJSON(json) {
 }
 exports.ExcludedUsageTrackerModelFromJSON = ExcludedUsageTrackerModelFromJSON;
 function ExcludedUsageTrackerModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -37,14 +37,11 @@ function ExcludedUsageTrackerModelFromJSONTyped(json, ignoreDiscriminator) {
 }
 exports.ExcludedUsageTrackerModelFromJSONTyped = ExcludedUsageTrackerModelFromJSONTyped;
 function ExcludedUsageTrackerModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Url': value.url,
+        'Url': value['url'],
     };
 }
 exports.ExcludedUsageTrackerModelToJSON = ExcludedUsageTrackerModelToJSON;

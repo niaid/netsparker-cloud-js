@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * 
  * @export
@@ -49,9 +49,7 @@ export interface AsanaUser {
  * Check if a given object implements the AsanaUser interface.
  */
 export function instanceOfAsanaUser(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function AsanaUserFromJSON(json: any): AsanaUser {
@@ -59,30 +57,27 @@ export function AsanaUserFromJSON(json: any): AsanaUser {
 }
 
 export function AsanaUserFromJSONTyped(json: any, ignoreDiscriminator: boolean): AsanaUser {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'email': !exists(json, 'email') ? undefined : json['email'],
-        'gid': !exists(json, 'gid') ? undefined : json['gid'],
-        'name': !exists(json, 'name') ? undefined : json['name'],
-        'displayName': !exists(json, 'DisplayName') ? undefined : json['DisplayName'],
+        'email': json['email'] == null ? undefined : json['email'],
+        'gid': json['gid'] == null ? undefined : json['gid'],
+        'name': json['name'] == null ? undefined : json['name'],
+        'displayName': json['DisplayName'] == null ? undefined : json['DisplayName'],
     };
 }
 
-export function AsanaUserToJSON(value?: AsanaUser | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+export function AsanaUserToJSON(value?: Omit<AsanaUser, 'DisplayName'> | null): any {
+    if (value == null) {
+        return value;
     }
     return {
         
-        'email': value.email,
-        'gid': value.gid,
-        'name': value.name,
+        'email': value['email'],
+        'gid': value['gid'],
+        'name': value['name'],
     };
 }
 

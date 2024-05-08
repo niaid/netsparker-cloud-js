@@ -9,8 +9,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
 import type { IntegrationWizardResultModel } from './IntegrationWizardResultModel';
+import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
 /**
  * The Jazz Team integration info
  * @export
@@ -167,6 +167,18 @@ export interface JazzTeamIntegrationInfoModel {
      * @memberof JazzTeamIntegrationInfoModel
      */
     integrationWizardResultModel?: IntegrationWizardResultModel;
+    /**
+     *
+     * @type {string}
+     * @memberof JazzTeamIntegrationInfoModel
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof JazzTeamIntegrationInfoModel
+     */
+    state?: JazzTeamIntegrationInfoModelStateEnum;
 }
 /**
  * @export
@@ -246,9 +258,17 @@ export declare const JazzTeamIntegrationInfoModelTypeEnum: {
 };
 export type JazzTeamIntegrationInfoModelTypeEnum = typeof JazzTeamIntegrationInfoModelTypeEnum[keyof typeof JazzTeamIntegrationInfoModelTypeEnum];
 /**
+ * @export
+ */
+export declare const JazzTeamIntegrationInfoModelStateEnum: {
+    readonly Active: "Active";
+    readonly Suspended: "Suspended";
+};
+export type JazzTeamIntegrationInfoModelStateEnum = typeof JazzTeamIntegrationInfoModelStateEnum[keyof typeof JazzTeamIntegrationInfoModelStateEnum];
+/**
  * Check if a given object implements the JazzTeamIntegrationInfoModel interface.
  */
 export declare function instanceOfJazzTeamIntegrationInfoModel(value: object): boolean;
 export declare function JazzTeamIntegrationInfoModelFromJSON(json: any): JazzTeamIntegrationInfoModel;
 export declare function JazzTeamIntegrationInfoModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): JazzTeamIntegrationInfoModel;
-export declare function JazzTeamIntegrationInfoModelToJSON(value?: JazzTeamIntegrationInfoModel | null): any;
+export declare function JazzTeamIntegrationInfoModelToJSON(value?: Omit<JazzTeamIntegrationInfoModel, 'Type' | 'GenericErrorMessage' | 'Identifier' | 'TestMessageBody' | 'TestMessageTitle' | 'WebhookUrl'> | null): any;

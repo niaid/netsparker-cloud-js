@@ -9,10 +9,10 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
+import type { JiraPriorityMapping } from './JiraPriorityMapping';
+import type { IntegrationWizardResultModel } from './IntegrationWizardResultModel';
 import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
 import type { IntegrationUserMappingItemModel } from './IntegrationUserMappingItemModel';
-import type { IntegrationWizardResultModel } from './IntegrationWizardResultModel';
-import type { JiraPriorityMapping } from './JiraPriorityMapping';
 /**
  * The Jira integration info
  * @export
@@ -164,6 +164,12 @@ export interface JiraIntegrationInfoModel {
      */
     templateType?: JiraIntegrationInfoModelTemplateTypeEnum;
     /**
+     *
+     * @type {boolean}
+     * @memberof JiraIntegrationInfoModel
+     */
+    isRemoveRequestResponse?: boolean;
+    /**
      * Gets or sets type of the jira epic name
      * @type {string}
      * @memberof JiraIntegrationInfoModel
@@ -271,6 +277,18 @@ export interface JiraIntegrationInfoModel {
      * @memberof JiraIntegrationInfoModel
      */
     integrationWizardResultModel?: IntegrationWizardResultModel;
+    /**
+     *
+     * @type {string}
+     * @memberof JiraIntegrationInfoModel
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof JiraIntegrationInfoModel
+     */
+    state?: JiraIntegrationInfoModelStateEnum;
 }
 /**
  * @export
@@ -337,9 +355,17 @@ export declare const JiraIntegrationInfoModelTypeEnum: {
 };
 export type JiraIntegrationInfoModelTypeEnum = typeof JiraIntegrationInfoModelTypeEnum[keyof typeof JiraIntegrationInfoModelTypeEnum];
 /**
+ * @export
+ */
+export declare const JiraIntegrationInfoModelStateEnum: {
+    readonly Active: "Active";
+    readonly Suspended: "Suspended";
+};
+export type JiraIntegrationInfoModelStateEnum = typeof JiraIntegrationInfoModelStateEnum[keyof typeof JiraIntegrationInfoModelStateEnum];
+/**
  * Check if a given object implements the JiraIntegrationInfoModel interface.
  */
 export declare function instanceOfJiraIntegrationInfoModel(value: object): boolean;
 export declare function JiraIntegrationInfoModelFromJSON(json: any): JiraIntegrationInfoModel;
 export declare function JiraIntegrationInfoModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): JiraIntegrationInfoModel;
-export declare function JiraIntegrationInfoModelToJSON(value?: JiraIntegrationInfoModel | null): any;
+export declare function JiraIntegrationInfoModelToJSON(value?: Omit<JiraIntegrationInfoModel, 'IsCloud' | 'ReopenStatus' | 'WebhookUrl' | 'EpicSelectionType' | 'Type' | 'GenericErrorMessage' | 'Identifier' | 'TestMessageBody' | 'TestMessageTitle'> | null): any;

@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * 
  * @export
@@ -1591,6 +1591,7 @@ export const VersionIssueOwnerVulnerabilityTypeEnum = {
     WordpressThemeGeneratePressVersionDisclosure: 'WordpressThemeGeneratePressVersionDisclosure',
     WordpressThemeInspiroVersionDisclosure: 'WordpressThemeInspiroVersionDisclosure',
     WordpressThemeGoVersionDisclosure: 'WordpressThemeGoVersionDisclosure',
+    WordpressPluginUltimateMemberIdentified: 'WordpressPluginUltimateMemberIdentified',
     WordpressPluginLoginWithPhoneNumberIdentified: 'WordpressPluginLoginWithPhoneNumberIdentified',
     WordpressPluginInstagramFeedIdentified: 'WordpressPluginInstagramFeedIdentified',
     WordpressPluginContactFormSevenIdentified: 'WordpressPluginContactFormSevenIdentified',
@@ -1609,6 +1610,7 @@ export const VersionIssueOwnerVulnerabilityTypeEnum = {
     WordpressPluginLiteSpeedCacheIdentified: 'WordpressPluginLiteSpeedCacheIdentified',
     WordpressPluginUpdraftPlusIdentified: 'WordpressPluginUpdraftPlusIdentified',
     WordpressPluginJupiterXIdentified: 'WordpressPluginJupiterXIdentified',
+    WordpressPluginUltimateMemberOutOfDate: 'WordpressPluginUltimateMemberOutOfDate',
     WordpressPluginLoginWithPhoneNumberOutOfDate: 'WordpressPluginLoginWithPhoneNumberOutOfDate',
     WordpressPluginInstagramFeedOutOfDate: 'WordpressPluginInstagramFeedOutOfDate',
     WordpressPluginContactFormSevenOutOfDate: 'WordpressPluginContactFormSevenOutOfDate',
@@ -1630,6 +1632,7 @@ export const VersionIssueOwnerVulnerabilityTypeEnum = {
     WordpressPluginInstagramFeedVersionDisclosure: 'WordpressPluginInstagramFeedVersionDisclosure',
     WordpressPluginContactFormSevenVersionDisclosure: 'WordpressPluginContactFormSevenVersionDisclosure',
     WordpressPluginYoastSeoVersionDisclosure: 'WordpressPluginYoastSeoVersionDisclosure',
+    WordpressPluginUltimateMemberVersionDisclosure: 'WordpressPluginUltimateMemberVersionDisclosure',
     WordpressPluginLoginWithPhoneNumberVersionDisclosure: 'WordpressPluginLoginWithPhoneNumberVersionDisclosure',
     WordpressPluginElementorVersionDisclosure: 'WordpressPluginElementorVersionDisclosure',
     WordpressPluginClassicEditorVersionDisclosure: 'WordpressPluginClassicEditorVersionDisclosure',
@@ -1662,7 +1665,34 @@ export const VersionIssueOwnerVulnerabilityTypeEnum = {
     MovEitTransferVersionDisclosure: 'MOVEitTransferVersionDisclosure',
     MovEitTransferIdentified: 'MOVEitTransferIdentified',
     DianaJlIdentified: 'DianaJlIdentified',
-    MissingXContentTypeOptionsHeader: 'MissingXContentTypeOptionsHeader'
+    MissingXContentTypeOptionsHeader: 'MissingXContentTypeOptionsHeader',
+    JwkIdentified: 'JwkIdentified',
+    PrivateJwkIdentified: 'PrivateJwkIdentified',
+    DotCmsOutOfDate: 'DotCMSOutOfDate',
+    DotCmsVersionDisclosure: 'DotCMSVersionDisclosure',
+    DotCmsIdentified: 'DotCMSIdentified',
+    WordpressPluginBackupMigrationIdentified: 'WordpressPluginBackupMigrationIdentified',
+    WordpressPluginBackupMigrationOutOfDate: 'WordpressPluginBackupMigrationOutOfDate',
+    WordpressPluginBackupMigrationVersionDisclosure: 'WordpressPluginBackupMigrationVersionDisclosure',
+    TinyMceVersionDisclosure: 'TinyMCEVersionDisclosure',
+    TinyMceIdentified: 'TinyMCEIdentified',
+    TinyMceOutOfDate: 'TinyMCEOutOfDate',
+    PossiblePrototypePollution: 'PossiblePrototypePollution',
+    PhpStackTraceDisclosure: 'PhpStackTraceDisclosure',
+    ActiveMqRce: 'ActiveMqRCE',
+    TorchServeApiIdentified: 'TorchServeApiIdentified',
+    TorchServeApiSsrf: 'TorchServeApiSsrf',
+    VmWareAriaRce: 'VmWareAriaRCE',
+    WordPressConfigDisclosure: 'WordPressConfigDisclosure',
+    AuthenticationBypassIvanti: 'AuthenticationBypassIvanti',
+    RceIvanti: 'RceIvanti',
+    PrototypePollution: 'PrototypePollution',
+    SmallSslKeyLength: 'SmallSSLKeyLength',
+    WpadminDetected: 'WpadminDetected',
+    OracleEbsRce: 'OracleEbsRce',
+    AngularVersionDisclosure: 'AngularVersionDisclosure',
+    AngularIdentified: 'AngularIdentified',
+    AngularOutOfDate: 'AngularOutOfDate'
 } as const;
 export type VersionIssueOwnerVulnerabilityTypeEnum = typeof VersionIssueOwnerVulnerabilityTypeEnum[keyof typeof VersionIssueOwnerVulnerabilityTypeEnum];
 
@@ -1671,9 +1701,7 @@ export type VersionIssueOwnerVulnerabilityTypeEnum = typeof VersionIssueOwnerVul
  * Check if a given object implements the VersionIssue interface.
  */
 export function instanceOfVersionIssue(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function VersionIssueFromJSON(json: any): VersionIssue {
@@ -1681,57 +1709,54 @@ export function VersionIssueFromJSON(json: any): VersionIssue {
 }
 
 export function VersionIssueFromJSONTyped(json: any, ignoreDiscriminator: boolean): VersionIssue {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'exploit': !exists(json, 'Exploit') ? undefined : json['Exploit'],
-        'externalReferences': !exists(json, 'ExternalReferences') ? undefined : json['ExternalReferences'],
-        'fromVersionOrdinal': !exists(json, 'FromVersionOrdinal') ? undefined : json['FromVersionOrdinal'],
-        'fromVersion': !exists(json, 'FromVersion') ? undefined : json['FromVersion'],
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'impact': !exists(json, 'Impact') ? undefined : json['Impact'],
-        'remedy': !exists(json, 'Remedy') ? undefined : json['Remedy'],
-        'severity': !exists(json, 'Severity') ? undefined : json['Severity'],
-        'summary': !exists(json, 'Summary') ? undefined : json['Summary'],
-        'title': !exists(json, 'Title') ? undefined : json['Title'],
-        'toVersionOrdinal': !exists(json, 'ToVersionOrdinal') ? undefined : json['ToVersionOrdinal'],
-        'toVersion': !exists(json, 'ToVersion') ? undefined : json['ToVersion'],
-        'vulnerability': !exists(json, 'Vulnerability') ? undefined : json['Vulnerability'],
-        'application': !exists(json, 'Application') ? undefined : json['Application'],
-        'bdu': !exists(json, 'Bdu') ? undefined : json['Bdu'],
-        'cvss': !exists(json, 'Cvss') ? undefined : json['Cvss'],
-        'ownerVulnerabilityType': !exists(json, 'OwnerVulnerabilityType') ? undefined : json['OwnerVulnerabilityType'],
+        'exploit': json['Exploit'] == null ? undefined : json['Exploit'],
+        'externalReferences': json['ExternalReferences'] == null ? undefined : json['ExternalReferences'],
+        'fromVersionOrdinal': json['FromVersionOrdinal'] == null ? undefined : json['FromVersionOrdinal'],
+        'fromVersion': json['FromVersion'] == null ? undefined : json['FromVersion'],
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'impact': json['Impact'] == null ? undefined : json['Impact'],
+        'remedy': json['Remedy'] == null ? undefined : json['Remedy'],
+        'severity': json['Severity'] == null ? undefined : json['Severity'],
+        'summary': json['Summary'] == null ? undefined : json['Summary'],
+        'title': json['Title'] == null ? undefined : json['Title'],
+        'toVersionOrdinal': json['ToVersionOrdinal'] == null ? undefined : json['ToVersionOrdinal'],
+        'toVersion': json['ToVersion'] == null ? undefined : json['ToVersion'],
+        'vulnerability': json['Vulnerability'] == null ? undefined : json['Vulnerability'],
+        'application': json['Application'] == null ? undefined : json['Application'],
+        'bdu': json['Bdu'] == null ? undefined : json['Bdu'],
+        'cvss': json['Cvss'] == null ? undefined : json['Cvss'],
+        'ownerVulnerabilityType': json['OwnerVulnerabilityType'] == null ? undefined : json['OwnerVulnerabilityType'],
     };
 }
 
 export function VersionIssueToJSON(value?: VersionIssue | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Exploit': value.exploit,
-        'ExternalReferences': value.externalReferences,
-        'FromVersionOrdinal': value.fromVersionOrdinal,
-        'FromVersion': value.fromVersion,
-        'Id': value.id,
-        'Impact': value.impact,
-        'Remedy': value.remedy,
-        'Severity': value.severity,
-        'Summary': value.summary,
-        'Title': value.title,
-        'ToVersionOrdinal': value.toVersionOrdinal,
-        'ToVersion': value.toVersion,
-        'Vulnerability': value.vulnerability,
-        'Application': value.application,
-        'Bdu': value.bdu,
-        'Cvss': value.cvss,
-        'OwnerVulnerabilityType': value.ownerVulnerabilityType,
+        'Exploit': value['exploit'],
+        'ExternalReferences': value['externalReferences'],
+        'FromVersionOrdinal': value['fromVersionOrdinal'],
+        'FromVersion': value['fromVersion'],
+        'Id': value['id'],
+        'Impact': value['impact'],
+        'Remedy': value['remedy'],
+        'Severity': value['severity'],
+        'Summary': value['summary'],
+        'Title': value['title'],
+        'ToVersionOrdinal': value['toVersionOrdinal'],
+        'ToVersion': value['toVersion'],
+        'Vulnerability': value['vulnerability'],
+        'Application': value['application'],
+        'Bdu': value['bdu'],
+        'Cvss': value['cvss'],
+        'OwnerVulnerabilityType': value['ownerVulnerabilityType'],
     };
 }
 

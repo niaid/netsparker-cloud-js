@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Exclude filter.
  * @export
@@ -55,9 +55,7 @@ export interface ExcludeFilter {
  * Check if a given object implements the ExcludeFilter interface.
  */
 export function instanceOfExcludeFilter(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function ExcludeFilterFromJSON(json: any): ExcludeFilter {
@@ -65,33 +63,30 @@ export function ExcludeFilterFromJSON(json: any): ExcludeFilter {
 }
 
 export function ExcludeFilterFromJSONTyped(json: any, ignoreDiscriminator: boolean): ExcludeFilter {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'excludedSlds': !exists(json, 'ExcludedSlds') ? undefined : json['ExcludedSlds'],
-        'excludedTlds': !exists(json, 'ExcludedTlds') ? undefined : json['ExcludedTlds'],
-        'excludedIpAddresses': !exists(json, 'ExcludedIpAddresses') ? undefined : json['ExcludedIpAddresses'],
-        'excludedDomains': !exists(json, 'ExcludedDomains') ? undefined : json['ExcludedDomains'],
-        'excludedOrganizations': !exists(json, 'ExcludedOrganizations') ? undefined : json['ExcludedOrganizations'],
+        'excludedSlds': json['ExcludedSlds'] == null ? undefined : json['ExcludedSlds'],
+        'excludedTlds': json['ExcludedTlds'] == null ? undefined : json['ExcludedTlds'],
+        'excludedIpAddresses': json['ExcludedIpAddresses'] == null ? undefined : json['ExcludedIpAddresses'],
+        'excludedDomains': json['ExcludedDomains'] == null ? undefined : json['ExcludedDomains'],
+        'excludedOrganizations': json['ExcludedOrganizations'] == null ? undefined : json['ExcludedOrganizations'],
     };
 }
 
 export function ExcludeFilterToJSON(value?: ExcludeFilter | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'ExcludedSlds': value.excludedSlds,
-        'ExcludedTlds': value.excludedTlds,
-        'ExcludedIpAddresses': value.excludedIpAddresses,
-        'ExcludedDomains': value.excludedDomains,
-        'ExcludedOrganizations': value.excludedOrganizations,
+        'ExcludedSlds': value['excludedSlds'],
+        'ExcludedTlds': value['excludedTlds'],
+        'ExcludedIpAddresses': value['excludedIpAddresses'],
+        'ExcludedDomains': value['excludedDomains'],
+        'ExcludedOrganizations': value['excludedOrganizations'],
     };
 }
 

@@ -9,38 +9,38 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { AsanaIntegrationInfoModel } from './AsanaIntegrationInfoModel';
-import type { AzureDevOpsIntegrationInfoModel } from './AzureDevOpsIntegrationInfoModel';
-import type { AzureKeyVaultIntegrationInfoModel } from './AzureKeyVaultIntegrationInfoModel';
-import type { BitbucketIntegrationInfoModel } from './BitbucketIntegrationInfoModel';
-import type { BugzillaIntegrationInfoModel } from './BugzillaIntegrationInfoModel';
-import type { ClubhouseIntegrationInfoModel } from './ClubhouseIntegrationInfoModel';
-import type { CyberArkVaultIntegrationInfoModel } from './CyberArkVaultIntegrationInfoModel';
-import type { DefectDojoIntegrationInfoModel } from './DefectDojoIntegrationInfoModel';
-import type { FogBugzIntegrationInfoModel } from './FogBugzIntegrationInfoModel';
-import type { FreshserviceIntegrationInfoModel } from './FreshserviceIntegrationInfoModel';
-import type { GitHubIntegrationInfoModel } from './GitHubIntegrationInfoModel';
-import type { GitLabIntegrationInfoModel } from './GitLabIntegrationInfoModel';
-import type { HashicorpVaultIntegrationInfoModel } from './HashicorpVaultIntegrationInfoModel';
-import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
-import type { JazzTeamIntegrationInfoModel } from './JazzTeamIntegrationInfoModel';
-import type { JiraIntegrationInfoModel } from './JiraIntegrationInfoModel';
-import type { KafkaIntegrationInfoModel } from './KafkaIntegrationInfoModel';
-import type { KennaIntegrationInfoModel } from './KennaIntegrationInfoModel';
+import type { TFSIntegrationInfoModel } from './TFSIntegrationInfoModel';
 import type { MattermostIntegrationInfoModel } from './MattermostIntegrationInfoModel';
-import type { MicrosoftTeamsIntegrationInfoModel } from './MicrosoftTeamsIntegrationInfoModel';
-import type { PagerDutyIntegrationInfoModel } from './PagerDutyIntegrationInfoModel';
+import type { ServiceNowIntegrationInfoModel } from './ServiceNowIntegrationInfoModel';
+import type { JazzTeamIntegrationInfoModel } from './JazzTeamIntegrationInfoModel';
+import type { GitHubIntegrationInfoModel } from './GitHubIntegrationInfoModel';
+import type { YouTrackIntegrationInfoModel } from './YouTrackIntegrationInfoModel';
+import type { AzureDevOpsIntegrationInfoModel } from './AzureDevOpsIntegrationInfoModel';
+import type { BugzillaIntegrationInfoModel } from './BugzillaIntegrationInfoModel';
+import type { SlackIntegrationInfoModel } from './SlackIntegrationInfoModel';
+import type { WebhookIntegrationInfoModel } from './WebhookIntegrationInfoModel';
+import type { JiraIntegrationInfoModel } from './JiraIntegrationInfoModel';
+import type { KennaIntegrationInfoModel } from './KennaIntegrationInfoModel';
 import type { PivotalTrackerIntegrationInfoModel } from './PivotalTrackerIntegrationInfoModel';
 import type { RedmineIntegrationInfoModel } from './RedmineIntegrationInfoModel';
-import type { ServiceNowIntegrationInfoModel } from './ServiceNowIntegrationInfoModel';
-import type { ServiceNowVRMModel } from './ServiceNowVRMModel';
-import type { SlackIntegrationInfoModel } from './SlackIntegrationInfoModel';
-import type { TFSIntegrationInfoModel } from './TFSIntegrationInfoModel';
-import type { TrelloIntegrationInfoModel } from './TrelloIntegrationInfoModel';
 import type { UnfuddleIntegrationInfoModel } from './UnfuddleIntegrationInfoModel';
-import type { WebhookIntegrationInfoModel } from './WebhookIntegrationInfoModel';
-import type { YouTrackIntegrationInfoModel } from './YouTrackIntegrationInfoModel';
+import type { FogBugzIntegrationInfoModel } from './FogBugzIntegrationInfoModel';
+import type { KafkaIntegrationInfoModel } from './KafkaIntegrationInfoModel';
+import type { AzureKeyVaultIntegrationInfoModel } from './AzureKeyVaultIntegrationInfoModel';
+import type { PagerDutyIntegrationInfoModel } from './PagerDutyIntegrationInfoModel';
+import type { TrelloIntegrationInfoModel } from './TrelloIntegrationInfoModel';
+import type { CyberArkVaultIntegrationInfoModel } from './CyberArkVaultIntegrationInfoModel';
 import type { ZapierIntegrationInfoModel } from './ZapierIntegrationInfoModel';
+import type { FreshserviceIntegrationInfoModel } from './FreshserviceIntegrationInfoModel';
+import type { ClubhouseIntegrationInfoModel } from './ClubhouseIntegrationInfoModel';
+import type { DefectDojoIntegrationInfoModel } from './DefectDojoIntegrationInfoModel';
+import type { MicrosoftTeamsIntegrationInfoModel } from './MicrosoftTeamsIntegrationInfoModel';
+import type { BitbucketIntegrationInfoModel } from './BitbucketIntegrationInfoModel';
+import type { ServiceNowVRMModel } from './ServiceNowVRMModel';
+import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
+import type { AsanaIntegrationInfoModel } from './AsanaIntegrationInfoModel';
+import type { GitLabIntegrationInfoModel } from './GitLabIntegrationInfoModel';
+import type { HashicorpVaultIntegrationInfoModel } from './HashicorpVaultIntegrationInfoModel';
 /**
  *
  * @export
@@ -324,4 +324,4 @@ export type ScanNotificationIntegrationViewModelCategoryEnum = typeof ScanNotifi
 export declare function instanceOfScanNotificationIntegrationViewModel(value: object): boolean;
 export declare function ScanNotificationIntegrationViewModelFromJSON(json: any): ScanNotificationIntegrationViewModel;
 export declare function ScanNotificationIntegrationViewModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): ScanNotificationIntegrationViewModel;
-export declare function ScanNotificationIntegrationViewModelToJSON(value?: ScanNotificationIntegrationViewModel | null): any;
+export declare function ScanNotificationIntegrationViewModelToJSON(value?: Omit<ScanNotificationIntegrationViewModel, 'Category'> | null): any;

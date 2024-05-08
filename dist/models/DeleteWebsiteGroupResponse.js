@@ -14,7 +14,6 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DeleteWebsiteGroupResponseToJSON = exports.DeleteWebsiteGroupResponseFromJSONTyped = exports.DeleteWebsiteGroupResponseFromJSON = exports.instanceOfDeleteWebsiteGroupResponse = exports.DeleteWebsiteGroupResponseResultEnum = void 0;
-const runtime_1 = require("../runtime");
 /**
  * @export
  */
@@ -30,8 +29,7 @@ exports.DeleteWebsiteGroupResponseResultEnum = {
  * Check if a given object implements the DeleteWebsiteGroupResponse interface.
  */
 function instanceOfDeleteWebsiteGroupResponse(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfDeleteWebsiteGroupResponse = instanceOfDeleteWebsiteGroupResponse;
 function DeleteWebsiteGroupResponseFromJSON(json) {
@@ -39,25 +37,22 @@ function DeleteWebsiteGroupResponseFromJSON(json) {
 }
 exports.DeleteWebsiteGroupResponseFromJSON = DeleteWebsiteGroupResponseFromJSON;
 function DeleteWebsiteGroupResponseFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'result': !(0, runtime_1.exists)(json, 'Result') ? undefined : json['Result'],
-        'message': !(0, runtime_1.exists)(json, 'Message') ? undefined : json['Message'],
+        'result': json['Result'] == null ? undefined : json['Result'],
+        'message': json['Message'] == null ? undefined : json['Message'],
     };
 }
 exports.DeleteWebsiteGroupResponseFromJSONTyped = DeleteWebsiteGroupResponseFromJSONTyped;
 function DeleteWebsiteGroupResponseToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Result': value.result,
-        'Message': value.message,
+        'Result': value['result'],
+        'Message': value['message'],
     };
 }
 exports.DeleteWebsiteGroupResponseToJSON = DeleteWebsiteGroupResponseToJSON;

@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a class that carries out basic scan task profile data.
  * @export
@@ -73,9 +73,7 @@ export interface ReducedScanTaskProfile {
  * Check if a given object implements the ReducedScanTaskProfile interface.
  */
 export function instanceOfReducedScanTaskProfile(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function ReducedScanTaskProfileFromJSON(json: any): ReducedScanTaskProfile {
@@ -83,39 +81,36 @@ export function ReducedScanTaskProfileFromJSON(json: any): ReducedScanTaskProfil
 }
 
 export function ReducedScanTaskProfileFromJSONTyped(json: any, ignoreDiscriminator: boolean): ReducedScanTaskProfile {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'isMine': !exists(json, 'IsMine') ? undefined : json['IsMine'],
-        'isPrimary': !exists(json, 'IsPrimary') ? undefined : json['IsPrimary'],
-        'isShared': !exists(json, 'IsShared') ? undefined : json['IsShared'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'targetUrl': !exists(json, 'TargetUrl') ? undefined : json['TargetUrl'],
-        'scanPolicyName': !exists(json, 'ScanPolicyName') ? undefined : json['ScanPolicyName'],
-        'tags': !exists(json, 'Tags') ? undefined : json['Tags'],
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'isMine': json['IsMine'] == null ? undefined : json['IsMine'],
+        'isPrimary': json['IsPrimary'] == null ? undefined : json['IsPrimary'],
+        'isShared': json['IsShared'] == null ? undefined : json['IsShared'],
+        'name': json['Name'] == null ? undefined : json['Name'],
+        'targetUrl': json['TargetUrl'] == null ? undefined : json['TargetUrl'],
+        'scanPolicyName': json['ScanPolicyName'] == null ? undefined : json['ScanPolicyName'],
+        'tags': json['Tags'] == null ? undefined : json['Tags'],
     };
 }
 
 export function ReducedScanTaskProfileToJSON(value?: ReducedScanTaskProfile | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Id': value.id,
-        'IsMine': value.isMine,
-        'IsPrimary': value.isPrimary,
-        'IsShared': value.isShared,
-        'Name': value.name,
-        'TargetUrl': value.targetUrl,
-        'ScanPolicyName': value.scanPolicyName,
-        'Tags': value.tags,
+        'Id': value['id'],
+        'IsMine': value['isMine'],
+        'IsPrimary': value['isPrimary'],
+        'IsShared': value['isShared'],
+        'Name': value['name'],
+        'TargetUrl': value['targetUrl'],
+        'ScanPolicyName': value['scanPolicyName'],
+        'Tags': value['tags'],
     };
 }
 

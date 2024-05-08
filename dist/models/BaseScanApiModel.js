@@ -14,14 +14,13 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BaseScanApiModelToJSON = exports.BaseScanApiModelFromJSONTyped = exports.BaseScanApiModelFromJSON = exports.instanceOfBaseScanApiModel = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the BaseScanApiModel interface.
  */
 function instanceOfBaseScanApiModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "baseScanId" in value;
-    return isInstance;
+    if (!('baseScanId' in value))
+        return false;
+    return true;
 }
 exports.instanceOfBaseScanApiModel = instanceOfBaseScanApiModel;
 function BaseScanApiModelFromJSON(json) {
@@ -29,25 +28,22 @@ function BaseScanApiModelFromJSON(json) {
 }
 exports.BaseScanApiModelFromJSON = BaseScanApiModelFromJSON;
 function BaseScanApiModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'agentName': !(0, runtime_1.exists)(json, 'AgentName') ? undefined : json['AgentName'],
+        'agentName': json['AgentName'] == null ? undefined : json['AgentName'],
         'baseScanId': json['BaseScanId'],
     };
 }
 exports.BaseScanApiModelFromJSONTyped = BaseScanApiModelFromJSONTyped;
 function BaseScanApiModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'AgentName': value.agentName,
-        'BaseScanId': value.baseScanId,
+        'AgentName': value['agentName'],
+        'BaseScanId': value['baseScanId'],
     };
 }
 exports.BaseScanApiModelToJSON = BaseScanApiModelToJSON;

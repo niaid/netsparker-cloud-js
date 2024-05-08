@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a model that carries out pre-request script settings.
  * @export
@@ -37,9 +37,7 @@ export interface PreRequestScriptSettingModel {
  * Check if a given object implements the PreRequestScriptSettingModel interface.
  */
 export function instanceOfPreRequestScriptSettingModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function PreRequestScriptSettingModelFromJSON(json: any): PreRequestScriptSettingModel {
@@ -47,27 +45,24 @@ export function PreRequestScriptSettingModelFromJSON(json: any): PreRequestScrip
 }
 
 export function PreRequestScriptSettingModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): PreRequestScriptSettingModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'isEnabled': !exists(json, 'IsEnabled') ? undefined : json['IsEnabled'],
-        'content': !exists(json, 'Content') ? undefined : json['Content'],
+        'isEnabled': json['IsEnabled'] == null ? undefined : json['IsEnabled'],
+        'content': json['Content'] == null ? undefined : json['Content'],
     };
 }
 
 export function PreRequestScriptSettingModelToJSON(value?: PreRequestScriptSettingModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'IsEnabled': value.isEnabled,
-        'Content': value.content,
+        'IsEnabled': value['isEnabled'],
+        'Content': value['content'],
     };
 }
 

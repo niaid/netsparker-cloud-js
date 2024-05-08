@@ -14,14 +14,12 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ScopeSettingModelToJSON = exports.ScopeSettingModelFromJSONTyped = exports.ScopeSettingModelFromJSON = exports.instanceOfScopeSettingModel = void 0;
-const runtime_1 = require("../runtime");
 const ContentTypeModel_1 = require("./ContentTypeModel");
 /**
  * Check if a given object implements the ScopeSettingModel interface.
  */
 function instanceOfScopeSettingModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfScopeSettingModel = instanceOfScopeSettingModel;
 function ScopeSettingModelFromJSON(json) {
@@ -29,31 +27,28 @@ function ScopeSettingModelFromJSON(json) {
 }
 exports.ScopeSettingModelFromJSON = ScopeSettingModelFromJSON;
 function ScopeSettingModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'blockAdNetworks': !(0, runtime_1.exists)(json, 'BlockAdNetworks') ? undefined : json['BlockAdNetworks'],
-        'byPassScopeForStaticChecks': !(0, runtime_1.exists)(json, 'ByPassScopeForStaticChecks') ? undefined : json['ByPassScopeForStaticChecks'],
-        'caseSensitiveScope': !(0, runtime_1.exists)(json, 'CaseSensitiveScope') ? undefined : json['CaseSensitiveScope'],
-        'contentTypeCheckEnabled': !(0, runtime_1.exists)(json, 'ContentTypeCheckEnabled') ? undefined : json['ContentTypeCheckEnabled'],
-        'ignoredContentTypes': !(0, runtime_1.exists)(json, 'IgnoredContentTypes') ? undefined : (json['IgnoredContentTypes'].map(ContentTypeModel_1.ContentTypeModelFromJSON)),
+        'blockAdNetworks': json['BlockAdNetworks'] == null ? undefined : json['BlockAdNetworks'],
+        'byPassScopeForStaticChecks': json['ByPassScopeForStaticChecks'] == null ? undefined : json['ByPassScopeForStaticChecks'],
+        'caseSensitiveScope': json['CaseSensitiveScope'] == null ? undefined : json['CaseSensitiveScope'],
+        'contentTypeCheckEnabled': json['ContentTypeCheckEnabled'] == null ? undefined : json['ContentTypeCheckEnabled'],
+        'ignoredContentTypes': json['IgnoredContentTypes'] == null ? undefined : (json['IgnoredContentTypes'].map(ContentTypeModel_1.ContentTypeModelFromJSON)),
     };
 }
 exports.ScopeSettingModelFromJSONTyped = ScopeSettingModelFromJSONTyped;
 function ScopeSettingModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'BlockAdNetworks': value.blockAdNetworks,
-        'ByPassScopeForStaticChecks': value.byPassScopeForStaticChecks,
-        'CaseSensitiveScope': value.caseSensitiveScope,
-        'ContentTypeCheckEnabled': value.contentTypeCheckEnabled,
-        'IgnoredContentTypes': value.ignoredContentTypes === undefined ? undefined : (value.ignoredContentTypes.map(ContentTypeModel_1.ContentTypeModelToJSON)),
+        'BlockAdNetworks': value['blockAdNetworks'],
+        'ByPassScopeForStaticChecks': value['byPassScopeForStaticChecks'],
+        'CaseSensitiveScope': value['caseSensitiveScope'],
+        'ContentTypeCheckEnabled': value['contentTypeCheckEnabled'],
+        'IgnoredContentTypes': value['ignoredContentTypes'] == null ? undefined : (value['ignoredContentTypes'].map(ContentTypeModel_1.ContentTypeModelToJSON)),
     };
 }
 exports.ScopeSettingModelToJSON = ScopeSettingModelToJSON;

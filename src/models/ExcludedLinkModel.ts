@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a model for exclude/include link setting.
  * @export
@@ -31,10 +31,8 @@ export interface ExcludedLinkModel {
  * Check if a given object implements the ExcludedLinkModel interface.
  */
 export function instanceOfExcludedLinkModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "regexPattern" in value;
-
-    return isInstance;
+    if (!('regexPattern' in value)) return false;
+    return true;
 }
 
 export function ExcludedLinkModelFromJSON(json: any): ExcludedLinkModel {
@@ -42,7 +40,7 @@ export function ExcludedLinkModelFromJSON(json: any): ExcludedLinkModel {
 }
 
 export function ExcludedLinkModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): ExcludedLinkModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -52,15 +50,12 @@ export function ExcludedLinkModelFromJSONTyped(json: any, ignoreDiscriminator: b
 }
 
 export function ExcludedLinkModelToJSON(value?: ExcludedLinkModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'RegexPattern': value.regexPattern,
+        'RegexPattern': value['regexPattern'],
     };
 }
 

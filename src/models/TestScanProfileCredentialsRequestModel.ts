@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * The test scan profile credentials request model.
  * @export
@@ -37,11 +37,9 @@ export interface TestScanProfileCredentialsRequestModel {
  * Check if a given object implements the TestScanProfileCredentialsRequestModel interface.
  */
 export function instanceOfTestScanProfileCredentialsRequestModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "profileId" in value;
-    isInstance = isInstance && "url" in value;
-
-    return isInstance;
+    if (!('profileId' in value)) return false;
+    if (!('url' in value)) return false;
+    return true;
 }
 
 export function TestScanProfileCredentialsRequestModelFromJSON(json: any): TestScanProfileCredentialsRequestModel {
@@ -49,7 +47,7 @@ export function TestScanProfileCredentialsRequestModelFromJSON(json: any): TestS
 }
 
 export function TestScanProfileCredentialsRequestModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): TestScanProfileCredentialsRequestModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -60,16 +58,13 @@ export function TestScanProfileCredentialsRequestModelFromJSONTyped(json: any, i
 }
 
 export function TestScanProfileCredentialsRequestModelToJSON(value?: TestScanProfileCredentialsRequestModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'ProfileId': value.profileId,
-        'Url': value.url,
+        'ProfileId': value['profileId'],
+        'Url': value['url'],
     };
 }
 

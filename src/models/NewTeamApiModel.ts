@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 import type { RoleWebsiteGroupMappingApiModel } from './RoleWebsiteGroupMappingApiModel';
 import {
     RoleWebsiteGroupMappingApiModelFromJSON,
@@ -50,10 +50,8 @@ export interface NewTeamApiModel {
  * Check if a given object implements the NewTeamApiModel interface.
  */
 export function instanceOfNewTeamApiModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "name" in value;
-
-    return isInstance;
+    if (!('name' in value)) return false;
+    return true;
 }
 
 export function NewTeamApiModelFromJSON(json: any): NewTeamApiModel {
@@ -61,29 +59,26 @@ export function NewTeamApiModelFromJSON(json: any): NewTeamApiModel {
 }
 
 export function NewTeamApiModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): NewTeamApiModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'roleWebsiteGroupMappings': !exists(json, 'RoleWebsiteGroupMappings') ? undefined : ((json['RoleWebsiteGroupMappings'] as Array<any>).map(RoleWebsiteGroupMappingApiModelFromJSON)),
+        'roleWebsiteGroupMappings': json['RoleWebsiteGroupMappings'] == null ? undefined : ((json['RoleWebsiteGroupMappings'] as Array<any>).map(RoleWebsiteGroupMappingApiModelFromJSON)),
         'name': json['Name'],
-        'members': !exists(json, 'Members') ? undefined : json['Members'],
+        'members': json['Members'] == null ? undefined : json['Members'],
     };
 }
 
 export function NewTeamApiModelToJSON(value?: NewTeamApiModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'RoleWebsiteGroupMappings': value.roleWebsiteGroupMappings === undefined ? undefined : ((value.roleWebsiteGroupMappings as Array<any>).map(RoleWebsiteGroupMappingApiModelToJSON)),
-        'Name': value.name,
-        'Members': value.members,
+        'RoleWebsiteGroupMappings': value['roleWebsiteGroupMappings'] == null ? undefined : ((value['roleWebsiteGroupMappings'] as Array<any>).map(RoleWebsiteGroupMappingApiModelToJSON)),
+        'Name': value['name'],
+        'Members': value['members'],
     };
 }
 

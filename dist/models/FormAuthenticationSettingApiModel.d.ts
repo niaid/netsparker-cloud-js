@@ -9,12 +9,12 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { AuthorizationTokenRule } from './AuthorizationTokenRule';
+import type { FormAuthenticationHashicorpVaultSetting } from './FormAuthenticationHashicorpVaultSetting';
+import type { OtpSettings } from './OtpSettings';
 import type { FormAuthenticationAzureKeyVaultSetting } from './FormAuthenticationAzureKeyVaultSetting';
 import type { FormAuthenticationCustomScript } from './FormAuthenticationCustomScript';
 import type { FormAuthenticationCyberArkVaultSetting } from './FormAuthenticationCyberArkVaultSetting';
-import type { FormAuthenticationHashicorpVaultSetting } from './FormAuthenticationHashicorpVaultSetting';
-import type { OtpSettings } from './OtpSettings';
+import type { AuthorizationTokenRule } from './AuthorizationTokenRule';
 /**
  * Provides credentials for form authentication.
  * @export
@@ -33,6 +33,12 @@ export interface FormAuthenticationSettingApiModel {
      * @memberof FormAuthenticationSettingApiModel
      */
     detectBearerToken?: boolean;
+    /**
+     * Gets or sets a value indicating whether to diagnostics logging enabled.
+     * @type {boolean}
+     * @memberof FormAuthenticationSettingApiModel
+     */
+    enableDiagnosticsLogging?: boolean;
     /**
      * Gets or sets a value indicating whether to detect authorization tokens.
      * @type {boolean}

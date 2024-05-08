@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * 
  * @export
@@ -31,10 +31,8 @@ export interface ScansValidateImportedLinksFileReq {
  * Check if a given object implements the ScansValidateImportedLinksFileReq interface.
  */
 export function instanceOfScansValidateImportedLinksFileReq(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "file" in value;
-
-    return isInstance;
+    if (!('file' in value)) return false;
+    return true;
 }
 
 export function ScansValidateImportedLinksFileReqFromJSON(json: any): ScansValidateImportedLinksFileReq {
@@ -42,7 +40,7 @@ export function ScansValidateImportedLinksFileReqFromJSON(json: any): ScansValid
 }
 
 export function ScansValidateImportedLinksFileReqFromJSONTyped(json: any, ignoreDiscriminator: boolean): ScansValidateImportedLinksFileReq {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -52,15 +50,12 @@ export function ScansValidateImportedLinksFileReqFromJSONTyped(json: any, ignore
 }
 
 export function ScansValidateImportedLinksFileReqToJSON(value?: ScansValidateImportedLinksFileReq | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'File': value.file,
+        'File': value['file'],
     };
 }
 

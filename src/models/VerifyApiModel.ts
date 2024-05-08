@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a model for verifying website.
  * @export
@@ -56,10 +56,8 @@ export type VerifyApiModelVerificationMethodEnum = typeof VerifyApiModelVerifica
  * Check if a given object implements the VerifyApiModel interface.
  */
 export function instanceOfVerifyApiModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "websiteUrl" in value;
-
-    return isInstance;
+    if (!('websiteUrl' in value)) return false;
+    return true;
 }
 
 export function VerifyApiModelFromJSON(json: any): VerifyApiModel {
@@ -67,29 +65,26 @@ export function VerifyApiModelFromJSON(json: any): VerifyApiModel {
 }
 
 export function VerifyApiModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): VerifyApiModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'verificationMethod': !exists(json, 'VerificationMethod') ? undefined : json['VerificationMethod'],
-        'verificationSecret': !exists(json, 'VerificationSecret') ? undefined : json['VerificationSecret'],
+        'verificationMethod': json['VerificationMethod'] == null ? undefined : json['VerificationMethod'],
+        'verificationSecret': json['VerificationSecret'] == null ? undefined : json['VerificationSecret'],
         'websiteUrl': json['WebsiteUrl'],
     };
 }
 
 export function VerifyApiModelToJSON(value?: VerifyApiModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'VerificationMethod': value.verificationMethod,
-        'VerificationSecret': value.verificationSecret,
-        'WebsiteUrl': value.websiteUrl,
+        'VerificationMethod': value['verificationMethod'],
+        'VerificationSecret': value['verificationSecret'],
+        'WebsiteUrl': value['websiteUrl'],
     };
 }
 

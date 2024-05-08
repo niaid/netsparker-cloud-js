@@ -9,8 +9,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
 import type { IntegrationWizardResultModel } from './IntegrationWizardResultModel';
+import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
 /**
  * The YouTrack integration info
  * @export
@@ -131,44 +131,56 @@ export interface YouTrackIntegrationInfoModel {
      * @memberof YouTrackIntegrationInfoModel
      */
     integrationWizardResultModel?: IntegrationWizardResultModel;
+    /**
+     *
+     * @type {string}
+     * @memberof YouTrackIntegrationInfoModel
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof YouTrackIntegrationInfoModel
+     */
+    state?: YouTrackIntegrationInfoModelStateEnum;
 }
 /**
  * @export
  */
 export declare const YouTrackIntegrationInfoModelTypeEnum: {
-    readonly Jira: "Jira";
-    readonly GitHub: "GitHub";
-    readonly Tfs: "TFS";
-    readonly FogBugz: "FogBugz";
-    readonly ServiceNow: "ServiceNow";
-    readonly Slack: "Slack";
-    readonly GitLab: "GitLab";
-    readonly Bitbucket: "Bitbucket";
-    readonly Unfuddle: "Unfuddle";
-    readonly Zapier: "Zapier";
-    readonly AzureDevOps: "AzureDevOps";
-    readonly Redmine: "Redmine";
-    readonly Bugzilla: "Bugzilla";
-    readonly Kafka: "Kafka";
-    readonly PagerDuty: "PagerDuty";
-    readonly MicrosoftTeams: "MicrosoftTeams";
-    readonly Clubhouse: "Clubhouse";
-    readonly Trello: "Trello";
-    readonly Asana: "Asana";
-    readonly Webhook: "Webhook";
-    readonly Kenna: "Kenna";
-    readonly Freshservice: "Freshservice";
-    readonly YouTrack: "YouTrack";
     readonly NetsparkerEnterprise: "NetsparkerEnterprise";
-    readonly Splunk: "Splunk";
+    readonly Webhook: "Webhook";
+    readonly Zapier: "Zapier";
+    readonly Slack: "Slack";
     readonly Mattermost: "Mattermost";
-    readonly Hashicorp: "Hashicorp";
-    readonly PivotalTracker: "PivotalTracker";
-    readonly CyberArk: "CyberArk";
+    readonly MicrosoftTeams: "MicrosoftTeams";
+    readonly AzureDevOps: "AzureDevOps";
+    readonly Bitbucket: "Bitbucket";
+    readonly Bugzilla: "Bugzilla";
+    readonly Clubhouse: "Clubhouse";
     readonly DefectDojo: "DefectDojo";
+    readonly PivotalTracker: "PivotalTracker";
+    readonly Jira: "Jira";
+    readonly FogBugz: "FogBugz";
+    readonly GitHub: "GitHub";
+    readonly PagerDuty: "PagerDuty";
+    readonly Kafka: "Kafka";
+    readonly Kenna: "Kenna";
+    readonly Redmine: "Redmine";
+    readonly ServiceNow: "ServiceNow";
+    readonly Tfs: "TFS";
+    readonly Unfuddle: "Unfuddle";
+    readonly YouTrack: "YouTrack";
+    readonly Freshservice: "Freshservice";
+    readonly Splunk: "Splunk";
     readonly JazzTeam: "JazzTeam";
-    readonly AzureKeyVault: "AzureKeyVault";
     readonly ServiceNowVrm: "ServiceNowVRM";
+    readonly Asana: "Asana";
+    readonly Trello: "Trello";
+    readonly Hashicorp: "Hashicorp";
+    readonly CyberArk: "CyberArk";
+    readonly AzureKeyVault: "AzureKeyVault";
+    readonly GitLab: "GitLab";
 };
 export type YouTrackIntegrationInfoModelTypeEnum = typeof YouTrackIntegrationInfoModelTypeEnum[keyof typeof YouTrackIntegrationInfoModelTypeEnum];
 /**
@@ -180,9 +192,17 @@ export declare const YouTrackIntegrationInfoModelTemplateTypeEnum: {
 };
 export type YouTrackIntegrationInfoModelTemplateTypeEnum = typeof YouTrackIntegrationInfoModelTemplateTypeEnum[keyof typeof YouTrackIntegrationInfoModelTemplateTypeEnum];
 /**
+ * @export
+ */
+export declare const YouTrackIntegrationInfoModelStateEnum: {
+    readonly Active: "Active";
+    readonly Suspended: "Suspended";
+};
+export type YouTrackIntegrationInfoModelStateEnum = typeof YouTrackIntegrationInfoModelStateEnum[keyof typeof YouTrackIntegrationInfoModelStateEnum];
+/**
  * Check if a given object implements the YouTrackIntegrationInfoModel interface.
  */
 export declare function instanceOfYouTrackIntegrationInfoModel(value: object): boolean;
 export declare function YouTrackIntegrationInfoModelFromJSON(json: any): YouTrackIntegrationInfoModel;
 export declare function YouTrackIntegrationInfoModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): YouTrackIntegrationInfoModel;
-export declare function YouTrackIntegrationInfoModelToJSON(value?: YouTrackIntegrationInfoModel | null): any;
+export declare function YouTrackIntegrationInfoModelToJSON(value?: Omit<YouTrackIntegrationInfoModel, 'Type' | 'GenericErrorMessage' | 'Identifier' | 'TestMessageBody' | 'TestMessageTitle' | 'WebhookUrl'> | null): any;

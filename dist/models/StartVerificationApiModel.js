@@ -27,10 +27,11 @@ exports.StartVerificationApiModelVerificationMethodEnum = {
  * Check if a given object implements the StartVerificationApiModel interface.
  */
 function instanceOfStartVerificationApiModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "verificationMethod" in value;
-    isInstance = isInstance && "websiteUrl" in value;
-    return isInstance;
+    if (!('verificationMethod' in value))
+        return false;
+    if (!('websiteUrl' in value))
+        return false;
+    return true;
 }
 exports.instanceOfStartVerificationApiModel = instanceOfStartVerificationApiModel;
 function StartVerificationApiModelFromJSON(json) {
@@ -38,7 +39,7 @@ function StartVerificationApiModelFromJSON(json) {
 }
 exports.StartVerificationApiModelFromJSON = StartVerificationApiModelFromJSON;
 function StartVerificationApiModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -48,15 +49,12 @@ function StartVerificationApiModelFromJSONTyped(json, ignoreDiscriminator) {
 }
 exports.StartVerificationApiModelFromJSONTyped = StartVerificationApiModelFromJSONTyped;
 function StartVerificationApiModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'VerificationMethod': value.verificationMethod,
-        'WebsiteUrl': value.websiteUrl,
+        'VerificationMethod': value['verificationMethod'],
+        'WebsiteUrl': value['websiteUrl'],
     };
 }
 exports.StartVerificationApiModelToJSON = StartVerificationApiModelToJSON;

@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents an URL Rewrite Exclude Path rule
  * @export
@@ -37,9 +37,7 @@ export interface UrlRewriteExcludedPathModel {
  * Check if a given object implements the UrlRewriteExcludedPathModel interface.
  */
 export function instanceOfUrlRewriteExcludedPathModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function UrlRewriteExcludedPathModelFromJSON(json: any): UrlRewriteExcludedPathModel {
@@ -47,27 +45,24 @@ export function UrlRewriteExcludedPathModelFromJSON(json: any): UrlRewriteExclud
 }
 
 export function UrlRewriteExcludedPathModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): UrlRewriteExcludedPathModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'excludedPath': !exists(json, 'ExcludedPath') ? undefined : json['ExcludedPath'],
-        'isRegex': !exists(json, 'IsRegex') ? undefined : json['IsRegex'],
+        'excludedPath': json['ExcludedPath'] == null ? undefined : json['ExcludedPath'],
+        'isRegex': json['IsRegex'] == null ? undefined : json['IsRegex'],
     };
 }
 
 export function UrlRewriteExcludedPathModelToJSON(value?: UrlRewriteExcludedPathModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'ExcludedPath': value.excludedPath,
-        'IsRegex': value.isRegex,
+        'ExcludedPath': value['excludedPath'],
+        'IsRegex': value['isRegex'],
     };
 }
 

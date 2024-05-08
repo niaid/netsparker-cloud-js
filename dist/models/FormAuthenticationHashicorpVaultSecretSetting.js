@@ -14,7 +14,6 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.FormAuthenticationHashicorpVaultSecretSettingToJSON = exports.FormAuthenticationHashicorpVaultSecretSettingFromJSONTyped = exports.FormAuthenticationHashicorpVaultSecretSettingFromJSON = exports.instanceOfFormAuthenticationHashicorpVaultSecretSetting = exports.FormAuthenticationHashicorpVaultSecretSettingVersionEnum = void 0;
-const runtime_1 = require("../runtime");
 /**
  * @export
  */
@@ -26,8 +25,7 @@ exports.FormAuthenticationHashicorpVaultSecretSettingVersionEnum = {
  * Check if a given object implements the FormAuthenticationHashicorpVaultSecretSetting interface.
  */
 function instanceOfFormAuthenticationHashicorpVaultSecretSetting(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfFormAuthenticationHashicorpVaultSecretSetting = instanceOfFormAuthenticationHashicorpVaultSecretSetting;
 function FormAuthenticationHashicorpVaultSecretSettingFromJSON(json) {
@@ -35,37 +33,34 @@ function FormAuthenticationHashicorpVaultSecretSettingFromJSON(json) {
 }
 exports.FormAuthenticationHashicorpVaultSecretSettingFromJSON = FormAuthenticationHashicorpVaultSecretSettingFromJSON;
 function FormAuthenticationHashicorpVaultSecretSettingFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'integrationId': !(0, runtime_1.exists)(json, 'IntegrationId') ? undefined : json['IntegrationId'],
-        'version': !(0, runtime_1.exists)(json, 'Version') ? undefined : json['Version'],
-        'secretEngine': !(0, runtime_1.exists)(json, 'SecretEngine') ? undefined : json['SecretEngine'],
-        'secret': !(0, runtime_1.exists)(json, 'Secret') ? undefined : json['Secret'],
-        'useStaticUsername': !(0, runtime_1.exists)(json, 'UseStaticUsername') ? undefined : json['UseStaticUsername'],
-        'staticUsername': !(0, runtime_1.exists)(json, 'StaticUsername') ? undefined : json['StaticUsername'],
-        'usernameKey': !(0, runtime_1.exists)(json, 'UsernameKey') ? undefined : json['UsernameKey'],
-        'passwordKey': !(0, runtime_1.exists)(json, 'PasswordKey') ? undefined : json['PasswordKey'],
+        'integrationId': json['IntegrationId'] == null ? undefined : json['IntegrationId'],
+        'version': json['Version'] == null ? undefined : json['Version'],
+        'secretEngine': json['SecretEngine'] == null ? undefined : json['SecretEngine'],
+        'secret': json['Secret'] == null ? undefined : json['Secret'],
+        'useStaticUsername': json['UseStaticUsername'] == null ? undefined : json['UseStaticUsername'],
+        'staticUsername': json['StaticUsername'] == null ? undefined : json['StaticUsername'],
+        'usernameKey': json['UsernameKey'] == null ? undefined : json['UsernameKey'],
+        'passwordKey': json['PasswordKey'] == null ? undefined : json['PasswordKey'],
     };
 }
 exports.FormAuthenticationHashicorpVaultSecretSettingFromJSONTyped = FormAuthenticationHashicorpVaultSecretSettingFromJSONTyped;
 function FormAuthenticationHashicorpVaultSecretSettingToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'IntegrationId': value.integrationId,
-        'Version': value.version,
-        'SecretEngine': value.secretEngine,
-        'Secret': value.secret,
-        'UseStaticUsername': value.useStaticUsername,
-        'StaticUsername': value.staticUsername,
-        'UsernameKey': value.usernameKey,
-        'PasswordKey': value.passwordKey,
+        'IntegrationId': value['integrationId'],
+        'Version': value['version'],
+        'SecretEngine': value['secretEngine'],
+        'Secret': value['secret'],
+        'UseStaticUsername': value['useStaticUsername'],
+        'StaticUsername': value['staticUsername'],
+        'UsernameKey': value['usernameKey'],
+        'PasswordKey': value['passwordKey'],
     };
 }
 exports.FormAuthenticationHashicorpVaultSecretSettingToJSON = FormAuthenticationHashicorpVaultSecretSettingToJSON;

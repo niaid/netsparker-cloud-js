@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a model for carrying out input auto complete settings.
  * @export
@@ -31,10 +31,8 @@ export interface ContentTypeModel {
  * Check if a given object implements the ContentTypeModel interface.
  */
 export function instanceOfContentTypeModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "value" in value;
-
-    return isInstance;
+    if (!('value' in value)) return false;
+    return true;
 }
 
 export function ContentTypeModelFromJSON(json: any): ContentTypeModel {
@@ -42,7 +40,7 @@ export function ContentTypeModelFromJSON(json: any): ContentTypeModel {
 }
 
 export function ContentTypeModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): ContentTypeModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -52,15 +50,12 @@ export function ContentTypeModelFromJSONTyped(json: any, ignoreDiscriminator: bo
 }
 
 export function ContentTypeModelToJSON(value?: ContentTypeModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Value': value.value,
+        'Value': value['value'],
     };
 }
 

@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 import type { DiscoveryConnectionsApiModel } from './DiscoveryConnectionsApiModel';
 import {
     DiscoveryConnectionsApiModelFromJSON,
@@ -158,6 +158,12 @@ export interface DiscoveryApiModel {
      * @memberof DiscoveryApiModel
      */
     discoveryConnectionsDetail?: DiscoveryConnectionsApiModel;
+    /**
+     * Gets or sets the risk score of the website.
+     * @type {string}
+     * @memberof DiscoveryApiModel
+     */
+    riskScore?: DiscoveryApiModelRiskScoreEnum;
 }
 
 
@@ -180,14 +186,26 @@ export const DiscoveryApiModelDiscoverySourceTypeEnum = {
 } as const;
 export type DiscoveryApiModelDiscoverySourceTypeEnum = typeof DiscoveryApiModelDiscoverySourceTypeEnum[keyof typeof DiscoveryApiModelDiscoverySourceTypeEnum];
 
+/**
+ * @export
+ */
+export const DiscoveryApiModelRiskScoreEnum = {
+    Low: 'Low',
+    Medium: 'Medium',
+    High: 'High',
+    Critical: 'Critical',
+    Loading: 'Loading',
+    Undetermined: 'Undetermined',
+    TemporaryUnavailable: 'TemporaryUnavailable'
+} as const;
+export type DiscoveryApiModelRiskScoreEnum = typeof DiscoveryApiModelRiskScoreEnum[keyof typeof DiscoveryApiModelRiskScoreEnum];
+
 
 /**
  * Check if a given object implements the DiscoveryApiModel interface.
  */
 export function instanceOfDiscoveryApiModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function DiscoveryApiModelFromJSON(json: any): DiscoveryApiModel {
@@ -195,66 +213,65 @@ export function DiscoveryApiModelFromJSON(json: any): DiscoveryApiModel {
 }
 
 export function DiscoveryApiModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): DiscoveryApiModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'subDomain': !exists(json, 'SubDomain') ? undefined : json['SubDomain'],
-        'secondLevelDomain': !exists(json, 'SecondLevelDomain') ? undefined : json['SecondLevelDomain'],
-        'secondLevelDomainCount': !exists(json, 'SecondLevelDomainCount') ? undefined : json['SecondLevelDomainCount'],
-        'topLevelDomain': !exists(json, 'TopLevelDomain') ? undefined : json['TopLevelDomain'],
-        'topLevelDomainCount': !exists(json, 'TopLevelDomainCount') ? undefined : json['TopLevelDomainCount'],
-        'authority': !exists(json, 'Authority') ? undefined : json['Authority'],
-        'https': !exists(json, 'Https') ? undefined : json['Https'],
-        'ipAddress': !exists(json, 'IpAddress') ? undefined : json['IpAddress'],
-        'ipAddressCount': !exists(json, 'IpAddressCount') ? undefined : json['IpAddressCount'],
-        'organizationName': !exists(json, 'OrganizationName') ? undefined : json['OrganizationName'],
-        'organizationNameCount': !exists(json, 'OrganizationNameCount') ? undefined : json['OrganizationNameCount'],
-        'copyright': !exists(json, 'Copyright') ? undefined : json['Copyright'],
-        'accountId': !exists(json, 'AccountId') ? undefined : json['AccountId'],
-        'websiteId': !exists(json, 'WebsiteId') ? undefined : json['WebsiteId'],
-        'websiteName': !exists(json, 'WebsiteName') ? undefined : json['WebsiteName'],
-        'distance': !exists(json, 'Distance') ? undefined : json['Distance'],
-        'status': !exists(json, 'Status') ? undefined : json['Status'],
-        'tags': !exists(json, 'Tags') ? undefined : json['Tags'],
-        'port': !exists(json, 'Port') ? undefined : json['Port'],
-        'discoverySourceType': !exists(json, 'DiscoverySourceType') ? undefined : json['DiscoverySourceType'],
-        'discoveryConnectionsDetail': !exists(json, 'DiscoveryConnectionsDetail') ? undefined : DiscoveryConnectionsApiModelFromJSON(json['DiscoveryConnectionsDetail']),
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'subDomain': json['SubDomain'] == null ? undefined : json['SubDomain'],
+        'secondLevelDomain': json['SecondLevelDomain'] == null ? undefined : json['SecondLevelDomain'],
+        'secondLevelDomainCount': json['SecondLevelDomainCount'] == null ? undefined : json['SecondLevelDomainCount'],
+        'topLevelDomain': json['TopLevelDomain'] == null ? undefined : json['TopLevelDomain'],
+        'topLevelDomainCount': json['TopLevelDomainCount'] == null ? undefined : json['TopLevelDomainCount'],
+        'authority': json['Authority'] == null ? undefined : json['Authority'],
+        'https': json['Https'] == null ? undefined : json['Https'],
+        'ipAddress': json['IpAddress'] == null ? undefined : json['IpAddress'],
+        'ipAddressCount': json['IpAddressCount'] == null ? undefined : json['IpAddressCount'],
+        'organizationName': json['OrganizationName'] == null ? undefined : json['OrganizationName'],
+        'organizationNameCount': json['OrganizationNameCount'] == null ? undefined : json['OrganizationNameCount'],
+        'copyright': json['Copyright'] == null ? undefined : json['Copyright'],
+        'accountId': json['AccountId'] == null ? undefined : json['AccountId'],
+        'websiteId': json['WebsiteId'] == null ? undefined : json['WebsiteId'],
+        'websiteName': json['WebsiteName'] == null ? undefined : json['WebsiteName'],
+        'distance': json['Distance'] == null ? undefined : json['Distance'],
+        'status': json['Status'] == null ? undefined : json['Status'],
+        'tags': json['Tags'] == null ? undefined : json['Tags'],
+        'port': json['Port'] == null ? undefined : json['Port'],
+        'discoverySourceType': json['DiscoverySourceType'] == null ? undefined : json['DiscoverySourceType'],
+        'discoveryConnectionsDetail': json['DiscoveryConnectionsDetail'] == null ? undefined : DiscoveryConnectionsApiModelFromJSON(json['DiscoveryConnectionsDetail']),
+        'riskScore': json['RiskScore'] == null ? undefined : json['RiskScore'],
     };
 }
 
-export function DiscoveryApiModelToJSON(value?: DiscoveryApiModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+export function DiscoveryApiModelToJSON(value?: Omit<DiscoveryApiModel, 'IpAddressCount'> | null): any {
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Id': value.id,
-        'SubDomain': value.subDomain,
-        'SecondLevelDomain': value.secondLevelDomain,
-        'SecondLevelDomainCount': value.secondLevelDomainCount,
-        'TopLevelDomain': value.topLevelDomain,
-        'TopLevelDomainCount': value.topLevelDomainCount,
-        'Authority': value.authority,
-        'Https': value.https,
-        'IpAddress': value.ipAddress,
-        'OrganizationName': value.organizationName,
-        'OrganizationNameCount': value.organizationNameCount,
-        'Copyright': value.copyright,
-        'AccountId': value.accountId,
-        'WebsiteId': value.websiteId,
-        'WebsiteName': value.websiteName,
-        'Distance': value.distance,
-        'Status': value.status,
-        'Tags': value.tags,
-        'Port': value.port,
-        'DiscoverySourceType': value.discoverySourceType,
-        'DiscoveryConnectionsDetail': DiscoveryConnectionsApiModelToJSON(value.discoveryConnectionsDetail),
+        'Id': value['id'],
+        'SubDomain': value['subDomain'],
+        'SecondLevelDomain': value['secondLevelDomain'],
+        'SecondLevelDomainCount': value['secondLevelDomainCount'],
+        'TopLevelDomain': value['topLevelDomain'],
+        'TopLevelDomainCount': value['topLevelDomainCount'],
+        'Authority': value['authority'],
+        'Https': value['https'],
+        'IpAddress': value['ipAddress'],
+        'OrganizationName': value['organizationName'],
+        'OrganizationNameCount': value['organizationNameCount'],
+        'Copyright': value['copyright'],
+        'AccountId': value['accountId'],
+        'WebsiteId': value['websiteId'],
+        'WebsiteName': value['websiteName'],
+        'Distance': value['distance'],
+        'Status': value['status'],
+        'Tags': value['tags'],
+        'Port': value['port'],
+        'DiscoverySourceType': value['discoverySourceType'],
+        'DiscoveryConnectionsDetail': DiscoveryConnectionsApiModelToJSON(value['discoveryConnectionsDetail']),
+        'RiskScore': value['riskScore'],
     };
 }
 

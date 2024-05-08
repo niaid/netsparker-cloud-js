@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents an email address pattern which is used to ignore email disclosure issues.
  * @export
@@ -31,10 +31,8 @@ export interface EmailPatternSetting {
  * Check if a given object implements the EmailPatternSetting interface.
  */
 export function instanceOfEmailPatternSetting(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "value" in value;
-
-    return isInstance;
+    if (!('value' in value)) return false;
+    return true;
 }
 
 export function EmailPatternSettingFromJSON(json: any): EmailPatternSetting {
@@ -42,7 +40,7 @@ export function EmailPatternSettingFromJSON(json: any): EmailPatternSetting {
 }
 
 export function EmailPatternSettingFromJSONTyped(json: any, ignoreDiscriminator: boolean): EmailPatternSetting {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -52,15 +50,12 @@ export function EmailPatternSettingFromJSONTyped(json: any, ignoreDiscriminator:
 }
 
 export function EmailPatternSettingToJSON(value?: EmailPatternSetting | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Value': value.value,
+        'Value': value['value'],
     };
 }
 

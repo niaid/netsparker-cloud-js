@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 import type { OtpSettings } from './OtpSettings';
 import {
     OtpSettingsFromJSON,
@@ -66,9 +66,7 @@ export interface ThreeLeggedFields {
  * Check if a given object implements the ThreeLeggedFields interface.
  */
 export function instanceOfThreeLeggedFields(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function ThreeLeggedFieldsFromJSON(json: any): ThreeLeggedFields {
@@ -76,33 +74,30 @@ export function ThreeLeggedFieldsFromJSON(json: any): ThreeLeggedFields {
 }
 
 export function ThreeLeggedFieldsFromJSONTyped(json: any, ignoreDiscriminator: boolean): ThreeLeggedFields {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'enabled': !exists(json, 'Enabled') ? undefined : json['Enabled'],
-        'username': !exists(json, 'Username') ? undefined : json['Username'],
-        'password': !exists(json, 'Password') ? undefined : json['Password'],
-        'otpSettings': !exists(json, 'OtpSettings') ? undefined : OtpSettingsFromJSON(json['OtpSettings']),
-        'customScripts': !exists(json, 'CustomScripts') ? undefined : json['CustomScripts'],
+        'enabled': json['Enabled'] == null ? undefined : json['Enabled'],
+        'username': json['Username'] == null ? undefined : json['Username'],
+        'password': json['Password'] == null ? undefined : json['Password'],
+        'otpSettings': json['OtpSettings'] == null ? undefined : OtpSettingsFromJSON(json['OtpSettings']),
+        'customScripts': json['CustomScripts'] == null ? undefined : json['CustomScripts'],
     };
 }
 
 export function ThreeLeggedFieldsToJSON(value?: ThreeLeggedFields | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Enabled': value.enabled,
-        'Username': value.username,
-        'Password': value.password,
-        'OtpSettings': OtpSettingsToJSON(value.otpSettings),
-        'CustomScripts': value.customScripts,
+        'Enabled': value['enabled'],
+        'Username': value['username'],
+        'Password': value['password'],
+        'OtpSettings': OtpSettingsToJSON(value['otpSettings']),
+        'CustomScripts': value['customScripts'],
     };
 }
 

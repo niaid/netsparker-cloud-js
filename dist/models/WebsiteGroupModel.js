@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.WebsiteGroupModelToJSON = exports.WebsiteGroupModelFromJSONTyped = exports.WebsiteGroupModelFromJSON = exports.instanceOfWebsiteGroupModel = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the WebsiteGroupModel interface.
  */
 function instanceOfWebsiteGroupModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfWebsiteGroupModel = instanceOfWebsiteGroupModel;
 function WebsiteGroupModelFromJSON(json) {
@@ -28,30 +26,27 @@ function WebsiteGroupModelFromJSON(json) {
 }
 exports.WebsiteGroupModelFromJSON = WebsiteGroupModelFromJSON;
 function WebsiteGroupModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'displayName': !(0, runtime_1.exists)(json, 'DisplayName') ? undefined : json['DisplayName'],
-        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
-        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
-        'notVerifiedWebsiteCount': !(0, runtime_1.exists)(json, 'NotVerifiedWebsiteCount') ? undefined : json['NotVerifiedWebsiteCount'],
-        'verifiedWebsiteCount': !(0, runtime_1.exists)(json, 'VerifiedWebsiteCount') ? undefined : json['VerifiedWebsiteCount'],
+        'displayName': json['DisplayName'] == null ? undefined : json['DisplayName'],
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'name': json['Name'] == null ? undefined : json['Name'],
+        'notVerifiedWebsiteCount': json['NotVerifiedWebsiteCount'] == null ? undefined : json['NotVerifiedWebsiteCount'],
+        'verifiedWebsiteCount': json['VerifiedWebsiteCount'] == null ? undefined : json['VerifiedWebsiteCount'],
     };
 }
 exports.WebsiteGroupModelFromJSONTyped = WebsiteGroupModelFromJSONTyped;
 function WebsiteGroupModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Id': value.id,
-        'Name': value.name,
-        'NotVerifiedWebsiteCount': value.notVerifiedWebsiteCount,
-        'VerifiedWebsiteCount': value.verifiedWebsiteCount,
+        'Id': value['id'],
+        'Name': value['name'],
+        'NotVerifiedWebsiteCount': value['notVerifiedWebsiteCount'],
+        'VerifiedWebsiteCount': value['verifiedWebsiteCount'],
     };
 }
 exports.WebsiteGroupModelToJSON = WebsiteGroupModelToJSON;

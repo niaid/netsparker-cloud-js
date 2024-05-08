@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 import type { ReducedMemberApiViewModel } from './ReducedMemberApiViewModel';
 import {
     ReducedMemberApiViewModelFromJSON,
@@ -62,9 +62,7 @@ export interface TeamApiViewModel {
  * Check if a given object implements the TeamApiViewModel interface.
  */
 export function instanceOfTeamApiViewModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function TeamApiViewModelFromJSON(json: any): TeamApiViewModel {
@@ -72,31 +70,28 @@ export function TeamApiViewModelFromJSON(json: any): TeamApiViewModel {
 }
 
 export function TeamApiViewModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): TeamApiViewModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'members': !exists(json, 'Members') ? undefined : ((json['Members'] as Array<any>).map(ReducedMemberApiViewModelFromJSON)),
-        'roleWebsiteGroupMappings': !exists(json, 'RoleWebsiteGroupMappings') ? undefined : ((json['RoleWebsiteGroupMappings'] as Array<any>).map(RoleWebsiteGroupMappingDtoFromJSON)),
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'name': json['Name'] == null ? undefined : json['Name'],
+        'members': json['Members'] == null ? undefined : ((json['Members'] as Array<any>).map(ReducedMemberApiViewModelFromJSON)),
+        'roleWebsiteGroupMappings': json['RoleWebsiteGroupMappings'] == null ? undefined : ((json['RoleWebsiteGroupMappings'] as Array<any>).map(RoleWebsiteGroupMappingDtoFromJSON)),
     };
 }
 
 export function TeamApiViewModelToJSON(value?: TeamApiViewModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Id': value.id,
-        'Name': value.name,
-        'Members': value.members === undefined ? undefined : ((value.members as Array<any>).map(ReducedMemberApiViewModelToJSON)),
-        'RoleWebsiteGroupMappings': value.roleWebsiteGroupMappings === undefined ? undefined : ((value.roleWebsiteGroupMappings as Array<any>).map(RoleWebsiteGroupMappingDtoToJSON)),
+        'Id': value['id'],
+        'Name': value['name'],
+        'Members': value['members'] == null ? undefined : ((value['members'] as Array<any>).map(ReducedMemberApiViewModelToJSON)),
+        'RoleWebsiteGroupMappings': value['roleWebsiteGroupMappings'] == null ? undefined : ((value['roleWebsiteGroupMappings'] as Array<any>).map(RoleWebsiteGroupMappingDtoToJSON)),
     };
 }
 

@@ -9,8 +9,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
 import type { IntegrationWizardResultModel } from './IntegrationWizardResultModel';
+import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
 /**
  * The Zapier integration info
  * @export
@@ -107,6 +107,18 @@ export interface ZapierIntegrationInfoModel {
      * @memberof ZapierIntegrationInfoModel
      */
     integrationWizardResultModel?: IntegrationWizardResultModel;
+    /**
+     *
+     * @type {string}
+     * @memberof ZapierIntegrationInfoModel
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof ZapierIntegrationInfoModel
+     */
+    state?: ZapierIntegrationInfoModelStateEnum;
 }
 /**
  * @export
@@ -156,9 +168,17 @@ export declare const ZapierIntegrationInfoModelTemplateTypeEnum: {
 };
 export type ZapierIntegrationInfoModelTemplateTypeEnum = typeof ZapierIntegrationInfoModelTemplateTypeEnum[keyof typeof ZapierIntegrationInfoModelTemplateTypeEnum];
 /**
+ * @export
+ */
+export declare const ZapierIntegrationInfoModelStateEnum: {
+    readonly Active: "Active";
+    readonly Suspended: "Suspended";
+};
+export type ZapierIntegrationInfoModelStateEnum = typeof ZapierIntegrationInfoModelStateEnum[keyof typeof ZapierIntegrationInfoModelStateEnum];
+/**
  * Check if a given object implements the ZapierIntegrationInfoModel interface.
  */
 export declare function instanceOfZapierIntegrationInfoModel(value: object): boolean;
 export declare function ZapierIntegrationInfoModelFromJSON(json: any): ZapierIntegrationInfoModel;
 export declare function ZapierIntegrationInfoModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): ZapierIntegrationInfoModel;
-export declare function ZapierIntegrationInfoModelToJSON(value?: ZapierIntegrationInfoModel | null): any;
+export declare function ZapierIntegrationInfoModelToJSON(value?: Omit<ZapierIntegrationInfoModel, 'Type' | 'GenericErrorMessage' | 'Identifier' | 'TestMessageBody' | 'TestMessageTitle'> | null): any;

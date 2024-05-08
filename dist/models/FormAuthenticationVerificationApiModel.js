@@ -14,18 +14,20 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.FormAuthenticationVerificationApiModelToJSON = exports.FormAuthenticationVerificationApiModelFromJSONTyped = exports.FormAuthenticationVerificationApiModelFromJSON = exports.instanceOfFormAuthenticationVerificationApiModel = void 0;
-const runtime_1 = require("../runtime");
 const OtpSettings_1 = require("./OtpSettings");
 /**
  * Check if a given object implements the FormAuthenticationVerificationApiModel interface.
  */
 function instanceOfFormAuthenticationVerificationApiModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "loginFormUrl" in value;
-    isInstance = isInstance && "password" in value;
-    isInstance = isInstance && "scanTargetUrl" in value;
-    isInstance = isInstance && "username" in value;
-    return isInstance;
+    if (!('loginFormUrl' in value))
+        return false;
+    if (!('password' in value))
+        return false;
+    if (!('scanTargetUrl' in value))
+        return false;
+    if (!('username' in value))
+        return false;
+    return true;
 }
 exports.instanceOfFormAuthenticationVerificationApiModel = instanceOfFormAuthenticationVerificationApiModel;
 function FormAuthenticationVerificationApiModelFromJSON(json) {
@@ -33,7 +35,7 @@ function FormAuthenticationVerificationApiModelFromJSON(json) {
 }
 exports.FormAuthenticationVerificationApiModelFromJSON = FormAuthenticationVerificationApiModelFromJSON;
 function FormAuthenticationVerificationApiModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -41,23 +43,20 @@ function FormAuthenticationVerificationApiModelFromJSONTyped(json, ignoreDiscrim
         'password': json['Password'],
         'scanTargetUrl': json['ScanTargetUrl'],
         'username': json['Username'],
-        'otpSettings': !(0, runtime_1.exists)(json, 'OtpSettings') ? undefined : (0, OtpSettings_1.OtpSettingsFromJSON)(json['OtpSettings']),
+        'otpSettings': json['OtpSettings'] == null ? undefined : (0, OtpSettings_1.OtpSettingsFromJSON)(json['OtpSettings']),
     };
 }
 exports.FormAuthenticationVerificationApiModelFromJSONTyped = FormAuthenticationVerificationApiModelFromJSONTyped;
 function FormAuthenticationVerificationApiModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'LoginFormUrl': value.loginFormUrl,
-        'Password': value.password,
-        'ScanTargetUrl': value.scanTargetUrl,
-        'Username': value.username,
-        'OtpSettings': (0, OtpSettings_1.OtpSettingsToJSON)(value.otpSettings),
+        'LoginFormUrl': value['loginFormUrl'],
+        'Password': value['password'],
+        'ScanTargetUrl': value['scanTargetUrl'],
+        'Username': value['username'],
+        'OtpSettings': (0, OtpSettings_1.OtpSettingsToJSON)(value['otpSettings']),
     };
 }
 exports.FormAuthenticationVerificationApiModelToJSON = FormAuthenticationVerificationApiModelToJSON;

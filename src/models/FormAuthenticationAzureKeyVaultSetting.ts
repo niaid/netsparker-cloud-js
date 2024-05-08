@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * FormAuthenticationAzureKeyVaultSetting
  * @export
@@ -96,9 +96,7 @@ export type FormAuthenticationAzureKeyVaultSettingAgentModeEnum = typeof FormAut
  * Check if a given object implements the FormAuthenticationAzureKeyVaultSetting interface.
  */
 export function instanceOfFormAuthenticationAzureKeyVaultSetting(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function FormAuthenticationAzureKeyVaultSettingFromJSON(json: any): FormAuthenticationAzureKeyVaultSetting {
@@ -106,43 +104,40 @@ export function FormAuthenticationAzureKeyVaultSettingFromJSON(json: any): FormA
 }
 
 export function FormAuthenticationAzureKeyVaultSettingFromJSONTyped(json: any, ignoreDiscriminator: boolean): FormAuthenticationAzureKeyVaultSetting {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'integrationId': !exists(json, 'IntegrationId') ? undefined : json['IntegrationId'],
-        'useStaticUsername': !exists(json, 'UseStaticUsername') ? undefined : json['UseStaticUsername'],
-        'staticUsername': !exists(json, 'StaticUsername') ? undefined : json['StaticUsername'],
-        'usernameKey': !exists(json, 'UsernameKey') ? undefined : json['UsernameKey'],
-        'passwordKey': !exists(json, 'PasswordKey') ? undefined : json['PasswordKey'],
-        'clientID': !exists(json, 'ClientID') ? undefined : json['ClientID'],
-        'clientSecret': !exists(json, 'ClientSecret') ? undefined : json['ClientSecret'],
-        'tenantId': !exists(json, 'TenantId') ? undefined : json['TenantId'],
-        'vaultName': !exists(json, 'VaultName') ? undefined : json['VaultName'],
-        'agentMode': !exists(json, 'AgentMode') ? undefined : json['AgentMode'],
+        'integrationId': json['IntegrationId'] == null ? undefined : json['IntegrationId'],
+        'useStaticUsername': json['UseStaticUsername'] == null ? undefined : json['UseStaticUsername'],
+        'staticUsername': json['StaticUsername'] == null ? undefined : json['StaticUsername'],
+        'usernameKey': json['UsernameKey'] == null ? undefined : json['UsernameKey'],
+        'passwordKey': json['PasswordKey'] == null ? undefined : json['PasswordKey'],
+        'clientID': json['ClientID'] == null ? undefined : json['ClientID'],
+        'clientSecret': json['ClientSecret'] == null ? undefined : json['ClientSecret'],
+        'tenantId': json['TenantId'] == null ? undefined : json['TenantId'],
+        'vaultName': json['VaultName'] == null ? undefined : json['VaultName'],
+        'agentMode': json['AgentMode'] == null ? undefined : json['AgentMode'],
     };
 }
 
 export function FormAuthenticationAzureKeyVaultSettingToJSON(value?: FormAuthenticationAzureKeyVaultSetting | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'IntegrationId': value.integrationId,
-        'UseStaticUsername': value.useStaticUsername,
-        'StaticUsername': value.staticUsername,
-        'UsernameKey': value.usernameKey,
-        'PasswordKey': value.passwordKey,
-        'ClientID': value.clientID,
-        'ClientSecret': value.clientSecret,
-        'TenantId': value.tenantId,
-        'VaultName': value.vaultName,
-        'AgentMode': value.agentMode,
+        'IntegrationId': value['integrationId'],
+        'UseStaticUsername': value['useStaticUsername'],
+        'StaticUsername': value['staticUsername'],
+        'UsernameKey': value['usernameKey'],
+        'PasswordKey': value['passwordKey'],
+        'ClientID': value['clientID'],
+        'ClientSecret': value['clientSecret'],
+        'TenantId': value['tenantId'],
+        'VaultName': value['vaultName'],
+        'AgentMode': value['agentMode'],
     };
 }
 

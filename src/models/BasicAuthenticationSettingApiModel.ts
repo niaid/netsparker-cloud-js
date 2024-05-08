@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 import type { BasicAuthenticationCredentialApiModel } from './BasicAuthenticationCredentialApiModel';
 import {
     BasicAuthenticationCredentialApiModelFromJSON,
@@ -44,9 +44,7 @@ export interface BasicAuthenticationSettingApiModel {
  * Check if a given object implements the BasicAuthenticationSettingApiModel interface.
  */
 export function instanceOfBasicAuthenticationSettingApiModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function BasicAuthenticationSettingApiModelFromJSON(json: any): BasicAuthenticationSettingApiModel {
@@ -54,27 +52,24 @@ export function BasicAuthenticationSettingApiModelFromJSON(json: any): BasicAuth
 }
 
 export function BasicAuthenticationSettingApiModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): BasicAuthenticationSettingApiModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'alwaysAuthenticateNoChallenge': !exists(json, 'AlwaysAuthenticateNoChallenge') ? undefined : json['AlwaysAuthenticateNoChallenge'],
-        'credentials': !exists(json, 'Credentials') ? undefined : ((json['Credentials'] as Array<any>).map(BasicAuthenticationCredentialApiModelFromJSON)),
+        'alwaysAuthenticateNoChallenge': json['AlwaysAuthenticateNoChallenge'] == null ? undefined : json['AlwaysAuthenticateNoChallenge'],
+        'credentials': json['Credentials'] == null ? undefined : ((json['Credentials'] as Array<any>).map(BasicAuthenticationCredentialApiModelFromJSON)),
     };
 }
 
 export function BasicAuthenticationSettingApiModelToJSON(value?: BasicAuthenticationSettingApiModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'AlwaysAuthenticateNoChallenge': value.alwaysAuthenticateNoChallenge,
-        'Credentials': value.credentials === undefined ? undefined : ((value.credentials as Array<any>).map(BasicAuthenticationCredentialApiModelToJSON)),
+        'AlwaysAuthenticateNoChallenge': value['alwaysAuthenticateNoChallenge'],
+        'Credentials': value['credentials'] == null ? undefined : ((value['credentials'] as Array<any>).map(BasicAuthenticationCredentialApiModelToJSON)),
     };
 }
 

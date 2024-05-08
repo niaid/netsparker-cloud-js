@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 import type { NameValuePair } from './NameValuePair';
 import {
     NameValuePairFromJSON,
@@ -44,9 +44,7 @@ export interface AuthorizationCodeTableModel {
  * Check if a given object implements the AuthorizationCodeTableModel interface.
  */
 export function instanceOfAuthorizationCodeTableModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function AuthorizationCodeTableModelFromJSON(json: any): AuthorizationCodeTableModel {
@@ -54,27 +52,24 @@ export function AuthorizationCodeTableModelFromJSON(json: any): AuthorizationCod
 }
 
 export function AuthorizationCodeTableModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): AuthorizationCodeTableModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'fields': !exists(json, 'Fields') ? undefined : json['Fields'],
-        'items': !exists(json, 'Items') ? undefined : ((json['Items'] as Array<any>).map(NameValuePairFromJSON)),
+        'fields': json['Fields'] == null ? undefined : json['Fields'],
+        'items': json['Items'] == null ? undefined : ((json['Items'] as Array<any>).map(NameValuePairFromJSON)),
     };
 }
 
 export function AuthorizationCodeTableModelToJSON(value?: AuthorizationCodeTableModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Fields': value.fields,
-        'Items': value.items === undefined ? undefined : ((value.items as Array<any>).map(NameValuePairToJSON)),
+        'Fields': value['fields'],
+        'Items': value['items'] == null ? undefined : ((value['items'] as Array<any>).map(NameValuePairToJSON)),
     };
 }
 

@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represent a filter model of {Netsparker.Cloud.Infrastructure.Models.IssueReportFilterApiModel} type.
  * @export
@@ -87,9 +87,7 @@ export type IssueReportFilterApiModelSeverityEnum = typeof IssueReportFilterApiM
  * Check if a given object implements the IssueReportFilterApiModel interface.
  */
 export function instanceOfIssueReportFilterApiModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function IssueReportFilterApiModelFromJSON(json: any): IssueReportFilterApiModel {
@@ -97,35 +95,32 @@ export function IssueReportFilterApiModelFromJSON(json: any): IssueReportFilterA
 }
 
 export function IssueReportFilterApiModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): IssueReportFilterApiModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'csvSeparator': !exists(json, 'CsvSeparator') ? undefined : json['CsvSeparator'],
-        'severity': !exists(json, 'Severity') ? undefined : json['Severity'],
-        'websiteGroupName': !exists(json, 'WebsiteGroupName') ? undefined : json['WebsiteGroupName'],
-        'webSiteName': !exists(json, 'WebSiteName') ? undefined : json['WebSiteName'],
-        'startDate': !exists(json, 'StartDate') ? undefined : (new Date(json['StartDate'])),
-        'endDate': !exists(json, 'EndDate') ? undefined : (new Date(json['EndDate'])),
+        'csvSeparator': json['CsvSeparator'] == null ? undefined : json['CsvSeparator'],
+        'severity': json['Severity'] == null ? undefined : json['Severity'],
+        'websiteGroupName': json['WebsiteGroupName'] == null ? undefined : json['WebsiteGroupName'],
+        'webSiteName': json['WebSiteName'] == null ? undefined : json['WebSiteName'],
+        'startDate': json['StartDate'] == null ? undefined : (new Date(json['StartDate'])),
+        'endDate': json['EndDate'] == null ? undefined : (new Date(json['EndDate'])),
     };
 }
 
 export function IssueReportFilterApiModelToJSON(value?: IssueReportFilterApiModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'CsvSeparator': value.csvSeparator,
-        'Severity': value.severity,
-        'WebsiteGroupName': value.websiteGroupName,
-        'WebSiteName': value.webSiteName,
-        'StartDate': value.startDate === undefined ? undefined : (value.startDate.toISOString()),
-        'EndDate': value.endDate === undefined ? undefined : (value.endDate.toISOString()),
+        'CsvSeparator': value['csvSeparator'],
+        'Severity': value['severity'],
+        'WebsiteGroupName': value['websiteGroupName'],
+        'WebSiteName': value['webSiteName'],
+        'StartDate': value['startDate'] == null ? undefined : ((value['startDate']).toISOString()),
+        'EndDate': value['endDate'] == null ? undefined : ((value['endDate']).toISOString()),
     };
 }
 

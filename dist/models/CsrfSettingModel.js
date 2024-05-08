@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CsrfSettingModelToJSON = exports.CsrfSettingModelFromJSONTyped = exports.CsrfSettingModelFromJSON = exports.instanceOfCsrfSettingModel = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the CsrfSettingModel interface.
  */
 function instanceOfCsrfSettingModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfCsrfSettingModel = instanceOfCsrfSettingModel;
 function CsrfSettingModelFromJSON(json) {
@@ -28,33 +26,30 @@ function CsrfSettingModelFromJSON(json) {
 }
 exports.CsrfSettingModelFromJSON = CsrfSettingModelFromJSON;
 function CsrfSettingModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'captchaIndicators': !(0, runtime_1.exists)(json, 'CaptchaIndicators') ? undefined : json['CaptchaIndicators'],
-        'loginFormValues': !(0, runtime_1.exists)(json, 'LoginFormValues') ? undefined : json['LoginFormValues'],
-        'nonFormValues': !(0, runtime_1.exists)(json, 'NonFormValues') ? undefined : json['NonFormValues'],
-        'nonInputValues': !(0, runtime_1.exists)(json, 'NonInputValues') ? undefined : json['NonInputValues'],
-        'userNameInputs': !(0, runtime_1.exists)(json, 'UserNameInputs') ? undefined : json['UserNameInputs'],
-        'authenticatedPagesCheck': !(0, runtime_1.exists)(json, 'AuthenticatedPagesCheck') ? undefined : json['AuthenticatedPagesCheck'],
+        'captchaIndicators': json['CaptchaIndicators'] == null ? undefined : json['CaptchaIndicators'],
+        'loginFormValues': json['LoginFormValues'] == null ? undefined : json['LoginFormValues'],
+        'nonFormValues': json['NonFormValues'] == null ? undefined : json['NonFormValues'],
+        'nonInputValues': json['NonInputValues'] == null ? undefined : json['NonInputValues'],
+        'userNameInputs': json['UserNameInputs'] == null ? undefined : json['UserNameInputs'],
+        'authenticatedPagesCheck': json['AuthenticatedPagesCheck'] == null ? undefined : json['AuthenticatedPagesCheck'],
     };
 }
 exports.CsrfSettingModelFromJSONTyped = CsrfSettingModelFromJSONTyped;
 function CsrfSettingModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'CaptchaIndicators': value.captchaIndicators,
-        'LoginFormValues': value.loginFormValues,
-        'NonFormValues': value.nonFormValues,
-        'NonInputValues': value.nonInputValues,
-        'UserNameInputs': value.userNameInputs,
-        'AuthenticatedPagesCheck': value.authenticatedPagesCheck,
+        'CaptchaIndicators': value['captchaIndicators'],
+        'LoginFormValues': value['loginFormValues'],
+        'NonFormValues': value['nonFormValues'],
+        'NonInputValues': value['nonInputValues'],
+        'UserNameInputs': value['userNameInputs'],
+        'AuthenticatedPagesCheck': value['authenticatedPagesCheck'],
     };
 }
 exports.CsrfSettingModelToJSON = CsrfSettingModelToJSON;

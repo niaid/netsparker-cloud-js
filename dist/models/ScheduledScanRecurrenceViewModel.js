@@ -14,7 +14,6 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ScheduledScanRecurrenceViewModelToJSON = exports.ScheduledScanRecurrenceViewModelFromJSONTyped = exports.ScheduledScanRecurrenceViewModelFromJSON = exports.instanceOfScheduledScanRecurrenceViewModel = exports.ScheduledScanRecurrenceViewModelDayOfWeekEnum = exports.ScheduledScanRecurrenceViewModelOrdinalEnum = exports.ScheduledScanRecurrenceViewModelMonthsOfYearEnum = exports.ScheduledScanRecurrenceViewModelDaysOfWeekEnum = exports.ScheduledScanRecurrenceViewModelEndingTypeEnum = exports.ScheduledScanRecurrenceViewModelRepeatTypeEnum = void 0;
-const runtime_1 = require("../runtime");
 /**
  * @export
  */
@@ -87,8 +86,7 @@ exports.ScheduledScanRecurrenceViewModelDayOfWeekEnum = {
  * Check if a given object implements the ScheduledScanRecurrenceViewModel interface.
  */
 function instanceOfScheduledScanRecurrenceViewModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfScheduledScanRecurrenceViewModel = instanceOfScheduledScanRecurrenceViewModel;
 function ScheduledScanRecurrenceViewModelFromJSON(json) {
@@ -96,45 +94,42 @@ function ScheduledScanRecurrenceViewModelFromJSON(json) {
 }
 exports.ScheduledScanRecurrenceViewModelFromJSON = ScheduledScanRecurrenceViewModelFromJSON;
 function ScheduledScanRecurrenceViewModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'repeatType': !(0, runtime_1.exists)(json, 'RepeatType') ? undefined : json['RepeatType'],
-        'interval': !(0, runtime_1.exists)(json, 'Interval') ? undefined : json['Interval'],
-        'startDate': !(0, runtime_1.exists)(json, 'StartDate') ? undefined : (new Date(json['StartDate'])),
-        'endingType': !(0, runtime_1.exists)(json, 'EndingType') ? undefined : json['EndingType'],
-        'daysOfWeek': !(0, runtime_1.exists)(json, 'DaysOfWeek') ? undefined : json['DaysOfWeek'],
-        'monthsOfYear': !(0, runtime_1.exists)(json, 'MonthsOfYear') ? undefined : json['MonthsOfYear'],
-        'ordinal': !(0, runtime_1.exists)(json, 'Ordinal') ? undefined : json['Ordinal'],
-        'endOn': !(0, runtime_1.exists)(json, 'EndOn') ? undefined : json['EndOn'],
-        'endOnOccurences': !(0, runtime_1.exists)(json, 'EndOnOccurences') ? undefined : json['EndOnOccurences'],
-        'dayOfMonth': !(0, runtime_1.exists)(json, 'DayOfMonth') ? undefined : json['DayOfMonth'],
-        'endOnDate': !(0, runtime_1.exists)(json, 'EndOnDate') ? undefined : (new Date(json['EndOnDate'])),
-        'dayOfWeek': !(0, runtime_1.exists)(json, 'DayOfWeek') ? undefined : json['DayOfWeek'],
+        'repeatType': json['RepeatType'] == null ? undefined : json['RepeatType'],
+        'interval': json['Interval'] == null ? undefined : json['Interval'],
+        'startDate': json['StartDate'] == null ? undefined : (new Date(json['StartDate'])),
+        'endingType': json['EndingType'] == null ? undefined : json['EndingType'],
+        'daysOfWeek': json['DaysOfWeek'] == null ? undefined : json['DaysOfWeek'],
+        'monthsOfYear': json['MonthsOfYear'] == null ? undefined : json['MonthsOfYear'],
+        'ordinal': json['Ordinal'] == null ? undefined : json['Ordinal'],
+        'endOn': json['EndOn'] == null ? undefined : json['EndOn'],
+        'endOnOccurences': json['EndOnOccurences'] == null ? undefined : json['EndOnOccurences'],
+        'dayOfMonth': json['DayOfMonth'] == null ? undefined : json['DayOfMonth'],
+        'endOnDate': json['EndOnDate'] == null ? undefined : (new Date(json['EndOnDate'])),
+        'dayOfWeek': json['DayOfWeek'] == null ? undefined : json['DayOfWeek'],
     };
 }
 exports.ScheduledScanRecurrenceViewModelFromJSONTyped = ScheduledScanRecurrenceViewModelFromJSONTyped;
 function ScheduledScanRecurrenceViewModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'RepeatType': value.repeatType,
-        'Interval': value.interval,
-        'StartDate': value.startDate === undefined ? undefined : (value.startDate.toISOString()),
-        'EndingType': value.endingType,
-        'DaysOfWeek': value.daysOfWeek,
-        'MonthsOfYear': value.monthsOfYear,
-        'Ordinal': value.ordinal,
-        'EndOn': value.endOn,
-        'EndOnOccurences': value.endOnOccurences,
-        'DayOfMonth': value.dayOfMonth,
-        'EndOnDate': value.endOnDate === undefined ? undefined : (value.endOnDate.toISOString()),
-        'DayOfWeek': value.dayOfWeek,
+        'RepeatType': value['repeatType'],
+        'Interval': value['interval'],
+        'StartDate': value['startDate'] == null ? undefined : ((value['startDate']).toISOString()),
+        'EndingType': value['endingType'],
+        'DaysOfWeek': value['daysOfWeek'],
+        'MonthsOfYear': value['monthsOfYear'],
+        'Ordinal': value['ordinal'],
+        'EndOn': value['endOn'],
+        'EndOnOccurences': value['endOnOccurences'],
+        'DayOfMonth': value['dayOfMonth'],
+        'EndOnDate': value['endOnDate'] == null ? undefined : ((value['endOnDate']).toISOString()),
+        'DayOfWeek': value['dayOfWeek'],
     };
 }
 exports.ScheduledScanRecurrenceViewModelToJSON = ScheduledScanRecurrenceViewModelToJSON;

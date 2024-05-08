@@ -9,8 +9,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
 import type { IntegrationWizardResultModel } from './IntegrationWizardResultModel';
+import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
 /**
  * The Azure DevOps integration info
  * @export
@@ -149,6 +149,18 @@ export interface AzureDevOpsIntegrationInfoModel {
      * @memberof AzureDevOpsIntegrationInfoModel
      */
     integrationWizardResultModel?: IntegrationWizardResultModel;
+    /**
+     *
+     * @type {string}
+     * @memberof AzureDevOpsIntegrationInfoModel
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof AzureDevOpsIntegrationInfoModel
+     */
+    state?: AzureDevOpsIntegrationInfoModelStateEnum;
 }
 /**
  * @export
@@ -198,9 +210,17 @@ export declare const AzureDevOpsIntegrationInfoModelTemplateTypeEnum: {
 };
 export type AzureDevOpsIntegrationInfoModelTemplateTypeEnum = typeof AzureDevOpsIntegrationInfoModelTemplateTypeEnum[keyof typeof AzureDevOpsIntegrationInfoModelTemplateTypeEnum];
 /**
+ * @export
+ */
+export declare const AzureDevOpsIntegrationInfoModelStateEnum: {
+    readonly Active: "Active";
+    readonly Suspended: "Suspended";
+};
+export type AzureDevOpsIntegrationInfoModelStateEnum = typeof AzureDevOpsIntegrationInfoModelStateEnum[keyof typeof AzureDevOpsIntegrationInfoModelStateEnum];
+/**
  * Check if a given object implements the AzureDevOpsIntegrationInfoModel interface.
  */
 export declare function instanceOfAzureDevOpsIntegrationInfoModel(value: object): boolean;
 export declare function AzureDevOpsIntegrationInfoModelFromJSON(json: any): AzureDevOpsIntegrationInfoModel;
 export declare function AzureDevOpsIntegrationInfoModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): AzureDevOpsIntegrationInfoModel;
-export declare function AzureDevOpsIntegrationInfoModelToJSON(value?: AzureDevOpsIntegrationInfoModel | null): any;
+export declare function AzureDevOpsIntegrationInfoModelToJSON(value?: Omit<AzureDevOpsIntegrationInfoModel, 'WebhookUrl' | 'Type' | 'GenericErrorMessage' | 'Identifier' | 'TestMessageBody' | 'TestMessageTitle'> | null): any;

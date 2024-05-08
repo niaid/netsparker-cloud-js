@@ -47,8 +47,8 @@ class ScanProfilesApi extends runtime.BaseAPI {
      * Deletes a scan profiles.
      */
     async scanProfilesDeleteRaw(requestParameters, initOverrides) {
-        if (requestParameters.profileId === null || requestParameters.profileId === undefined) {
-            throw new runtime.RequiredError('profileId', 'Required parameter requestParameters.profileId was null or undefined when calling scanProfilesDelete.');
+        if (requestParameters['profileId'] == null) {
+            throw new runtime.RequiredError('profileId', 'Required parameter "profileId" was null or undefined when calling scanProfilesDelete().');
         }
         const queryParameters = {};
         const headerParameters = {};
@@ -58,7 +58,7 @@ class ScanProfilesApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: requestParameters.profileId,
+            body: requestParameters['profileId'],
         }, initOverrides);
         if (this.isJsonMime(response.headers.get('content-type'))) {
             return new runtime.JSONApiResponse(response);
@@ -78,13 +78,13 @@ class ScanProfilesApi extends runtime.BaseAPI {
      * Gets the scan profiles by the specified id.
      */
     async scanProfilesGetByIdRaw(requestParameters, initOverrides) {
-        if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling scanProfilesGetById.');
+        if (requestParameters['id'] == null) {
+            throw new runtime.RequiredError('id', 'Required parameter "id" was null or undefined when calling scanProfilesGetById().');
         }
         const queryParameters = {};
         const headerParameters = {};
         const response = await this.request({
-            path: `/api/1.0/scanprofiles/get/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
+            path: `/api/1.0/scanprofiles/get/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -102,12 +102,12 @@ class ScanProfilesApi extends runtime.BaseAPI {
      * Gets the scan profiles by the specified name.
      */
     async scanProfilesGetByNameRaw(requestParameters, initOverrides) {
-        if (requestParameters.name === null || requestParameters.name === undefined) {
-            throw new runtime.RequiredError('name', 'Required parameter requestParameters.name was null or undefined when calling scanProfilesGetByName.');
+        if (requestParameters['name'] == null) {
+            throw new runtime.RequiredError('name', 'Required parameter "name" was null or undefined when calling scanProfilesGetByName().');
         }
         const queryParameters = {};
-        if (requestParameters.name !== undefined) {
-            queryParameters['name'] = requestParameters.name;
+        if (requestParameters['name'] != null) {
+            queryParameters['name'] = requestParameters['name'];
         }
         const headerParameters = {};
         const response = await this.request({
@@ -130,11 +130,11 @@ class ScanProfilesApi extends runtime.BaseAPI {
      */
     async scanProfilesListRaw(requestParameters, initOverrides) {
         const queryParameters = {};
-        if (requestParameters.page !== undefined) {
-            queryParameters['page'] = requestParameters.page;
+        if (requestParameters['page'] != null) {
+            queryParameters['page'] = requestParameters['page'];
         }
-        if (requestParameters.pageSize !== undefined) {
-            queryParameters['pageSize'] = requestParameters.pageSize;
+        if (requestParameters['pageSize'] != null) {
+            queryParameters['pageSize'] = requestParameters['pageSize'];
         }
         const headerParameters = {};
         const response = await this.request({
@@ -156,8 +156,8 @@ class ScanProfilesApi extends runtime.BaseAPI {
      * Creates a new scan profiles.
      */
     async scanProfilesNewRaw(requestParameters, initOverrides) {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model', 'Required parameter requestParameters.model was null or undefined when calling scanProfilesNew.');
+        if (requestParameters['model'] == null) {
+            throw new runtime.RequiredError('model', 'Required parameter "model" was null or undefined when calling scanProfilesNew().');
         }
         const queryParameters = {};
         const headerParameters = {};
@@ -167,7 +167,7 @@ class ScanProfilesApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: (0, index_1.SaveScanProfileApiModelToJSON)(requestParameters.model),
+            body: (0, index_1.SaveScanProfileApiModelToJSON)(requestParameters['model']),
         }, initOverrides);
         return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.SaveScanProfileApiModelFromJSON)(jsonValue));
     }
@@ -182,8 +182,8 @@ class ScanProfilesApi extends runtime.BaseAPI {
      * Updates a scan profiles.
      */
     async scanProfilesUpdateRaw(requestParameters, initOverrides) {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model', 'Required parameter requestParameters.model was null or undefined when calling scanProfilesUpdate.');
+        if (requestParameters['model'] == null) {
+            throw new runtime.RequiredError('model', 'Required parameter "model" was null or undefined when calling scanProfilesUpdate().');
         }
         const queryParameters = {};
         const headerParameters = {};
@@ -193,7 +193,7 @@ class ScanProfilesApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: (0, index_1.SaveScanProfileApiModelToJSON)(requestParameters.model),
+            body: (0, index_1.SaveScanProfileApiModelToJSON)(requestParameters['model']),
         }, initOverrides);
         return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.SaveScanProfileApiModelFromJSON)(jsonValue));
     }

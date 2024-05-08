@@ -77,4 +77,4 @@ export interface IssueSummaryApiModel {
 export declare function instanceOfIssueSummaryApiModel(value: object): boolean;
 export declare function IssueSummaryApiModelFromJSON(json: any): IssueSummaryApiModel;
 export declare function IssueSummaryApiModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): IssueSummaryApiModel;
-export declare function IssueSummaryApiModelToJSON(value?: IssueSummaryApiModel | null): any;
+export declare function IssueSummaryApiModelToJSON(value?: Omit<IssueSummaryApiModel, 'LastSuccessfulScanDate'> | null): any;

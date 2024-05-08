@@ -14,15 +14,13 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TeamApiViewModelToJSON = exports.TeamApiViewModelFromJSONTyped = exports.TeamApiViewModelFromJSON = exports.instanceOfTeamApiViewModel = void 0;
-const runtime_1 = require("../runtime");
 const ReducedMemberApiViewModel_1 = require("./ReducedMemberApiViewModel");
 const RoleWebsiteGroupMappingDto_1 = require("./RoleWebsiteGroupMappingDto");
 /**
  * Check if a given object implements the TeamApiViewModel interface.
  */
 function instanceOfTeamApiViewModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfTeamApiViewModel = instanceOfTeamApiViewModel;
 function TeamApiViewModelFromJSON(json) {
@@ -30,29 +28,26 @@ function TeamApiViewModelFromJSON(json) {
 }
 exports.TeamApiViewModelFromJSON = TeamApiViewModelFromJSON;
 function TeamApiViewModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
-        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
-        'members': !(0, runtime_1.exists)(json, 'Members') ? undefined : (json['Members'].map(ReducedMemberApiViewModel_1.ReducedMemberApiViewModelFromJSON)),
-        'roleWebsiteGroupMappings': !(0, runtime_1.exists)(json, 'RoleWebsiteGroupMappings') ? undefined : (json['RoleWebsiteGroupMappings'].map(RoleWebsiteGroupMappingDto_1.RoleWebsiteGroupMappingDtoFromJSON)),
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'name': json['Name'] == null ? undefined : json['Name'],
+        'members': json['Members'] == null ? undefined : (json['Members'].map(ReducedMemberApiViewModel_1.ReducedMemberApiViewModelFromJSON)),
+        'roleWebsiteGroupMappings': json['RoleWebsiteGroupMappings'] == null ? undefined : (json['RoleWebsiteGroupMappings'].map(RoleWebsiteGroupMappingDto_1.RoleWebsiteGroupMappingDtoFromJSON)),
     };
 }
 exports.TeamApiViewModelFromJSONTyped = TeamApiViewModelFromJSONTyped;
 function TeamApiViewModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Id': value.id,
-        'Name': value.name,
-        'Members': value.members === undefined ? undefined : (value.members.map(ReducedMemberApiViewModel_1.ReducedMemberApiViewModelToJSON)),
-        'RoleWebsiteGroupMappings': value.roleWebsiteGroupMappings === undefined ? undefined : (value.roleWebsiteGroupMappings.map(RoleWebsiteGroupMappingDto_1.RoleWebsiteGroupMappingDtoToJSON)),
+        'Id': value['id'],
+        'Name': value['name'],
+        'Members': value['members'] == null ? undefined : (value['members'].map(ReducedMemberApiViewModel_1.ReducedMemberApiViewModelToJSON)),
+        'RoleWebsiteGroupMappings': value['roleWebsiteGroupMappings'] == null ? undefined : (value['roleWebsiteGroupMappings'].map(RoleWebsiteGroupMappingDto_1.RoleWebsiteGroupMappingDtoToJSON)),
     };
 }
 exports.TeamApiViewModelToJSON = TeamApiViewModelToJSON;

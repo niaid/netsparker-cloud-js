@@ -71,14 +71,17 @@ export class AccountApi extends runtime.BaseAPI {
      * If user info and license validated it returns success, otherwise fails
      */
     async accountLicenseValidateRaw(requestParameters: AccountLicenseValidateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        if (requestParameters.username === null || requestParameters.username === undefined) {
-            throw new runtime.RequiredError('username','Required parameter requestParameters.username was null or undefined when calling accountLicenseValidate.');
+        if (requestParameters['username'] == null) {
+            throw new runtime.RequiredError(
+                'username',
+                'Required parameter "username" was null or undefined when calling accountLicenseValidate().'
+            );
         }
 
         const queryParameters: any = {};
 
-        if (requestParameters.username !== undefined) {
-            queryParameters['username'] = requestParameters.username;
+        if (requestParameters['username'] != null) {
+            queryParameters['username'] = requestParameters['username'];
         }
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -180,8 +183,11 @@ export class AccountApi extends runtime.BaseAPI {
      * Sets the scan control settings of account
      */
     async accountScanControl_1Raw(requestParameters: AccountScanControl0Request, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<object>> {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling accountScanControl_1.');
+        if (requestParameters['model'] == null) {
+            throw new runtime.RequiredError(
+                'model',
+                'Required parameter "model" was null or undefined when calling accountScanControl_1().'
+            );
         }
 
         const queryParameters: any = {};
@@ -195,7 +201,7 @@ export class AccountApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: ScanControlApiModelToJSON(requestParameters.model),
+            body: ScanControlApiModelToJSON(requestParameters['model']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse<any>(response);

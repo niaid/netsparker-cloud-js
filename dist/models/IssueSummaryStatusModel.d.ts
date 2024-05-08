@@ -49,4 +49,4 @@ export type IssueSummaryStatusModelStatusEnum = typeof IssueSummaryStatusModelSt
 export declare function instanceOfIssueSummaryStatusModel(value: object): boolean;
 export declare function IssueSummaryStatusModelFromJSON(json: any): IssueSummaryStatusModel;
 export declare function IssueSummaryStatusModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): IssueSummaryStatusModel;
-export declare function IssueSummaryStatusModelToJSON(value?: IssueSummaryStatusModel | null): any;
+export declare function IssueSummaryStatusModelToJSON(value?: Omit<IssueSummaryStatusModel, 'StatusDate'> | null): any;
