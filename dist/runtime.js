@@ -13,7 +13,7 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.TextApiResponse = exports.BlobApiResponse = exports.VoidApiResponse = exports.JSONApiResponse = exports.canConsumeForm = exports.mapValues = exports.querystring = exports.COLLECTION_FORMATS = exports.RequiredError = exports.FetchError = exports.ResponseError = exports.BaseAPI = exports.DefaultConfig = exports.Configuration = exports.BASE_PATH = void 0;
+exports.TextApiResponse = exports.BlobApiResponse = exports.VoidApiResponse = exports.JSONApiResponse = exports.canConsumeForm = exports.mapValues = exports.querystring = exports.exists = exports.COLLECTION_FORMATS = exports.RequiredError = exports.FetchError = exports.ResponseError = exports.BaseAPI = exports.DefaultConfig = exports.Configuration = exports.BASE_PATH = void 0;
 exports.BASE_PATH = "https://www.netsparkercloud.com".replace(/\/+$/, "");
 class Configuration {
     configuration;
@@ -255,6 +255,11 @@ exports.COLLECTION_FORMATS = {
     tsv: "\t",
     pipes: "|",
 };
+function exists(json, key) {
+    const value = json[key];
+    return value !== null && value !== undefined;
+}
+exports.exists = exists;
 function querystring(params, prefix = '') {
     return Object.keys(params)
         .map(key => querystringSingleKey(key, params[key], prefix))
