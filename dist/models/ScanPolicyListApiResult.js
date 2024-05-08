@@ -14,14 +14,12 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ScanPolicyListApiResultToJSON = exports.ScanPolicyListApiResultFromJSONTyped = exports.ScanPolicyListApiResultFromJSON = exports.instanceOfScanPolicyListApiResult = void 0;
-const runtime_1 = require("../runtime");
 const ScanPolicySettingItemApiModel_1 = require("./ScanPolicySettingItemApiModel");
 /**
  * Check if a given object implements the ScanPolicyListApiResult interface.
  */
 function instanceOfScanPolicyListApiResult(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfScanPolicyListApiResult = instanceOfScanPolicyListApiResult;
 function ScanPolicyListApiResultFromJSON(json) {
@@ -29,43 +27,40 @@ function ScanPolicyListApiResultFromJSON(json) {
 }
 exports.ScanPolicyListApiResultFromJSON = ScanPolicyListApiResultFromJSON;
 function ScanPolicyListApiResultFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'firstItemOnPage': !(0, runtime_1.exists)(json, 'FirstItemOnPage') ? undefined : json['FirstItemOnPage'],
-        'hasNextPage': !(0, runtime_1.exists)(json, 'HasNextPage') ? undefined : json['HasNextPage'],
-        'hasPreviousPage': !(0, runtime_1.exists)(json, 'HasPreviousPage') ? undefined : json['HasPreviousPage'],
-        'isFirstPage': !(0, runtime_1.exists)(json, 'IsFirstPage') ? undefined : json['IsFirstPage'],
-        'isLastPage': !(0, runtime_1.exists)(json, 'IsLastPage') ? undefined : json['IsLastPage'],
-        'lastItemOnPage': !(0, runtime_1.exists)(json, 'LastItemOnPage') ? undefined : json['LastItemOnPage'],
-        'list': !(0, runtime_1.exists)(json, 'List') ? undefined : (json['List'].map(ScanPolicySettingItemApiModel_1.ScanPolicySettingItemApiModelFromJSON)),
-        'pageCount': !(0, runtime_1.exists)(json, 'PageCount') ? undefined : json['PageCount'],
-        'pageNumber': !(0, runtime_1.exists)(json, 'PageNumber') ? undefined : json['PageNumber'],
-        'pageSize': !(0, runtime_1.exists)(json, 'PageSize') ? undefined : json['PageSize'],
-        'totalItemCount': !(0, runtime_1.exists)(json, 'TotalItemCount') ? undefined : json['TotalItemCount'],
+        'firstItemOnPage': json['FirstItemOnPage'] == null ? undefined : json['FirstItemOnPage'],
+        'hasNextPage': json['HasNextPage'] == null ? undefined : json['HasNextPage'],
+        'hasPreviousPage': json['HasPreviousPage'] == null ? undefined : json['HasPreviousPage'],
+        'isFirstPage': json['IsFirstPage'] == null ? undefined : json['IsFirstPage'],
+        'isLastPage': json['IsLastPage'] == null ? undefined : json['IsLastPage'],
+        'lastItemOnPage': json['LastItemOnPage'] == null ? undefined : json['LastItemOnPage'],
+        'list': json['List'] == null ? undefined : (json['List'].map(ScanPolicySettingItemApiModel_1.ScanPolicySettingItemApiModelFromJSON)),
+        'pageCount': json['PageCount'] == null ? undefined : json['PageCount'],
+        'pageNumber': json['PageNumber'] == null ? undefined : json['PageNumber'],
+        'pageSize': json['PageSize'] == null ? undefined : json['PageSize'],
+        'totalItemCount': json['TotalItemCount'] == null ? undefined : json['TotalItemCount'],
     };
 }
 exports.ScanPolicyListApiResultFromJSONTyped = ScanPolicyListApiResultFromJSONTyped;
 function ScanPolicyListApiResultToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'FirstItemOnPage': value.firstItemOnPage,
-        'HasNextPage': value.hasNextPage,
-        'HasPreviousPage': value.hasPreviousPage,
-        'IsFirstPage': value.isFirstPage,
-        'IsLastPage': value.isLastPage,
-        'LastItemOnPage': value.lastItemOnPage,
-        'List': value.list === undefined ? undefined : (value.list.map(ScanPolicySettingItemApiModel_1.ScanPolicySettingItemApiModelToJSON)),
-        'PageCount': value.pageCount,
-        'PageNumber': value.pageNumber,
-        'PageSize': value.pageSize,
-        'TotalItemCount': value.totalItemCount,
+        'FirstItemOnPage': value['firstItemOnPage'],
+        'HasNextPage': value['hasNextPage'],
+        'HasPreviousPage': value['hasPreviousPage'],
+        'IsFirstPage': value['isFirstPage'],
+        'IsLastPage': value['isLastPage'],
+        'LastItemOnPage': value['lastItemOnPage'],
+        'List': value['list'] == null ? undefined : (value['list'].map(ScanPolicySettingItemApiModel_1.ScanPolicySettingItemApiModelToJSON)),
+        'PageCount': value['pageCount'],
+        'PageNumber': value['pageNumber'],
+        'PageSize': value['pageSize'],
+        'TotalItemCount': value['totalItemCount'],
     };
 }
 exports.ScanPolicyListApiResultToJSON = ScanPolicyListApiResultToJSON;

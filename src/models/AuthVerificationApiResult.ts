@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * 
  * @export
@@ -61,9 +61,7 @@ export type AuthVerificationApiResultLogoutSignatureTypeEnum = typeof AuthVerifi
  * Check if a given object implements the AuthVerificationApiResult interface.
  */
 export function instanceOfAuthVerificationApiResult(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function AuthVerificationApiResultFromJSON(json: any): AuthVerificationApiResult {
@@ -71,31 +69,28 @@ export function AuthVerificationApiResultFromJSON(json: any): AuthVerificationAp
 }
 
 export function AuthVerificationApiResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): AuthVerificationApiResult {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'keywords': !exists(json, 'Keywords') ? undefined : json['Keywords'],
-        'loginRequiredUrl': !exists(json, 'LoginRequiredUrl') ? undefined : json['LoginRequiredUrl'],
-        'logoutSignatureType': !exists(json, 'LogoutSignatureType') ? undefined : json['LogoutSignatureType'],
-        'redirectLocation': !exists(json, 'RedirectLocation') ? undefined : json['RedirectLocation'],
+        'keywords': json['Keywords'] == null ? undefined : json['Keywords'],
+        'loginRequiredUrl': json['LoginRequiredUrl'] == null ? undefined : json['LoginRequiredUrl'],
+        'logoutSignatureType': json['LogoutSignatureType'] == null ? undefined : json['LogoutSignatureType'],
+        'redirectLocation': json['RedirectLocation'] == null ? undefined : json['RedirectLocation'],
     };
 }
 
 export function AuthVerificationApiResultToJSON(value?: AuthVerificationApiResult | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Keywords': value.keywords,
-        'LoginRequiredUrl': value.loginRequiredUrl,
-        'LogoutSignatureType': value.logoutSignatureType,
-        'RedirectLocation': value.redirectLocation,
+        'Keywords': value['keywords'],
+        'LoginRequiredUrl': value['loginRequiredUrl'],
+        'LogoutSignatureType': value['logoutSignatureType'],
+        'RedirectLocation': value['redirectLocation'],
     };
 }
 

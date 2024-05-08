@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CustomFieldModelToJSON = exports.CustomFieldModelFromJSONTyped = exports.CustomFieldModelFromJSON = exports.instanceOfCustomFieldModel = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the CustomFieldModel interface.
  */
 function instanceOfCustomFieldModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfCustomFieldModel = instanceOfCustomFieldModel;
 function CustomFieldModelFromJSON(json) {
@@ -28,25 +26,22 @@ function CustomFieldModelFromJSON(json) {
 }
 exports.CustomFieldModelFromJSON = CustomFieldModelFromJSON;
 function CustomFieldModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
-        'values': !(0, runtime_1.exists)(json, 'Values') ? undefined : json['Values'],
+        'name': json['Name'] == null ? undefined : json['Name'],
+        'values': json['Values'] == null ? undefined : json['Values'],
     };
 }
 exports.CustomFieldModelFromJSONTyped = CustomFieldModelFromJSONTyped;
 function CustomFieldModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Name': value.name,
-        'Values': value.values,
+        'Name': value['name'],
+        'Values': value['values'],
     };
 }
 exports.CustomFieldModelToJSON = CustomFieldModelToJSON;

@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.IssueHistoryApiModelToJSON = exports.IssueHistoryApiModelFromJSONTyped = exports.IssueHistoryApiModelFromJSON = exports.instanceOfIssueHistoryApiModel = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the IssueHistoryApiModel interface.
  */
 function instanceOfIssueHistoryApiModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfIssueHistoryApiModel = instanceOfIssueHistoryApiModel;
 function IssueHistoryApiModelFromJSON(json) {
@@ -28,29 +26,26 @@ function IssueHistoryApiModelFromJSON(json) {
 }
 exports.IssueHistoryApiModelFromJSON = IssueHistoryApiModelFromJSON;
 function IssueHistoryApiModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'message': !(0, runtime_1.exists)(json, 'Message') ? undefined : json['Message'],
-        'note': !(0, runtime_1.exists)(json, 'Note') ? undefined : json['Note'],
-        'owner': !(0, runtime_1.exists)(json, 'Owner') ? undefined : json['Owner'],
-        'date': !(0, runtime_1.exists)(json, 'Date') ? undefined : json['Date'],
+        'message': json['Message'] == null ? undefined : json['Message'],
+        'note': json['Note'] == null ? undefined : json['Note'],
+        'owner': json['Owner'] == null ? undefined : json['Owner'],
+        'date': json['Date'] == null ? undefined : json['Date'],
     };
 }
 exports.IssueHistoryApiModelFromJSONTyped = IssueHistoryApiModelFromJSONTyped;
 function IssueHistoryApiModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Message': value.message,
-        'Note': value.note,
-        'Owner': value.owner,
-        'Date': value.date,
+        'Message': value['message'],
+        'Note': value['note'],
+        'Owner': value['owner'],
+        'Date': value['date'],
     };
 }
 exports.IssueHistoryApiModelToJSON = IssueHistoryApiModelToJSON;

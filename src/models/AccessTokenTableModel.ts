@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 import type { NameValuePair } from './NameValuePair';
 import {
     NameValuePairFromJSON,
@@ -44,9 +44,7 @@ export interface AccessTokenTableModel {
  * Check if a given object implements the AccessTokenTableModel interface.
  */
 export function instanceOfAccessTokenTableModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function AccessTokenTableModelFromJSON(json: any): AccessTokenTableModel {
@@ -54,27 +52,24 @@ export function AccessTokenTableModelFromJSON(json: any): AccessTokenTableModel 
 }
 
 export function AccessTokenTableModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): AccessTokenTableModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'fields': !exists(json, 'Fields') ? undefined : json['Fields'],
-        'items': !exists(json, 'Items') ? undefined : json['Items'],
+        'fields': json['Fields'] == null ? undefined : json['Fields'],
+        'items': json['Items'] == null ? undefined : json['Items'],
     };
 }
 
 export function AccessTokenTableModelToJSON(value?: AccessTokenTableModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Fields': value.fields,
-        'Items': value.items,
+        'Fields': value['fields'],
+        'Items': value['items'],
     };
 }
 

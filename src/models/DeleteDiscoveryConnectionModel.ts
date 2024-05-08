@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * 
  * @export
@@ -47,10 +47,8 @@ export type DeleteDiscoveryConnectionModelTypeEnum = typeof DeleteDiscoveryConne
  * Check if a given object implements the DeleteDiscoveryConnectionModel interface.
  */
 export function instanceOfDeleteDiscoveryConnectionModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "connectionId" in value;
-
-    return isInstance;
+    if (!('connectionId' in value)) return false;
+    return true;
 }
 
 export function DeleteDiscoveryConnectionModelFromJSON(json: any): DeleteDiscoveryConnectionModel {
@@ -58,27 +56,24 @@ export function DeleteDiscoveryConnectionModelFromJSON(json: any): DeleteDiscove
 }
 
 export function DeleteDiscoveryConnectionModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): DeleteDiscoveryConnectionModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
         'connectionId': json['ConnectionId'],
-        'type': !exists(json, 'Type') ? undefined : json['Type'],
+        'type': json['Type'] == null ? undefined : json['Type'],
     };
 }
 
 export function DeleteDiscoveryConnectionModelToJSON(value?: DeleteDiscoveryConnectionModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'ConnectionId': value.connectionId,
-        'Type': value.type,
+        'ConnectionId': value['connectionId'],
+        'Type': value['type'],
     };
 }
 

@@ -14,14 +14,13 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.NewRoleApiModelToJSON = exports.NewRoleApiModelFromJSONTyped = exports.NewRoleApiModelFromJSON = exports.instanceOfNewRoleApiModel = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the NewRoleApiModel interface.
  */
 function instanceOfNewRoleApiModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "name" in value;
-    return isInstance;
+    if (!('name' in value))
+        return false;
+    return true;
 }
 exports.instanceOfNewRoleApiModel = instanceOfNewRoleApiModel;
 function NewRoleApiModelFromJSON(json) {
@@ -29,25 +28,22 @@ function NewRoleApiModelFromJSON(json) {
 }
 exports.NewRoleApiModelFromJSON = NewRoleApiModelFromJSON;
 function NewRoleApiModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         'name': json['Name'],
-        'permissions': !(0, runtime_1.exists)(json, 'Permissions') ? undefined : json['Permissions'],
+        'permissions': json['Permissions'] == null ? undefined : json['Permissions'],
     };
 }
 exports.NewRoleApiModelFromJSONTyped = NewRoleApiModelFromJSONTyped;
 function NewRoleApiModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Name': value.name,
-        'Permissions': value.permissions,
+        'Name': value['name'],
+        'Permissions': value['permissions'],
     };
 }
 exports.NewRoleApiModelToJSON = NewRoleApiModelToJSON;

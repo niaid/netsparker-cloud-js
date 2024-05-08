@@ -12,31 +12,37 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
+import type { FreshServiceRequesterUser } from './FreshServiceRequesterUser';
+import {
+    FreshServiceRequesterUserFromJSON,
+    FreshServiceRequesterUserFromJSONTyped,
+    FreshServiceRequesterUserToJSON,
+} from './FreshServiceRequesterUser';
+import type { FreshServiceUserAgent } from './FreshServiceUserAgent';
+import {
+    FreshServiceUserAgentFromJSON,
+    FreshServiceUserAgentFromJSONTyped,
+    FreshServiceUserAgentToJSON,
+} from './FreshServiceUserAgent';
 import type { FreshserviceEntity } from './FreshserviceEntity';
 import {
     FreshserviceEntityFromJSON,
     FreshserviceEntityFromJSONTyped,
     FreshserviceEntityToJSON,
 } from './FreshserviceEntity';
-import type { FreshserviceUser } from './FreshserviceUser';
-import {
-    FreshserviceUserFromJSON,
-    FreshserviceUserFromJSONTyped,
-    FreshserviceUserToJSON,
-} from './FreshserviceUser';
-import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
-import {
-    IntegrationCustomFieldVmFromJSON,
-    IntegrationCustomFieldVmFromJSONTyped,
-    IntegrationCustomFieldVmToJSON,
-} from './IntegrationCustomFieldVm';
 import type { IntegrationWizardResultModel } from './IntegrationWizardResultModel';
 import {
     IntegrationWizardResultModelFromJSON,
     IntegrationWizardResultModelFromJSONTyped,
     IntegrationWizardResultModelToJSON,
 } from './IntegrationWizardResultModel';
+import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
+import {
+    IntegrationCustomFieldVmFromJSON,
+    IntegrationCustomFieldVmFromJSONTyped,
+    IntegrationCustomFieldVmToJSON,
+} from './IntegrationCustomFieldVm';
 
 /**
  * The Freshservice integration info
@@ -88,10 +94,10 @@ export interface FreshserviceIntegrationInfoModel {
     integrationWizardResultModel?: IntegrationWizardResultModel;
     /**
      * The Requesters List.
-     * @type {Array<FreshserviceUser>}
+     * @type {Array<FreshServiceRequesterUser>}
      * @memberof FreshserviceIntegrationInfoModel
      */
-    requesters?: Array<FreshserviceUser>;
+    requesters?: Array<FreshServiceRequesterUser>;
     /**
      * The Groups List.
      * @type {Array<FreshserviceEntity>}
@@ -100,10 +106,10 @@ export interface FreshserviceIntegrationInfoModel {
     groups?: Array<FreshserviceEntity>;
     /**
      * The Agents List.
-     * @type {Array<FreshserviceUser>}
+     * @type {Array<FreshServiceUserAgent>}
      * @memberof FreshserviceIntegrationInfoModel
      */
-    agents?: Array<FreshserviceUser>;
+    agents?: Array<FreshServiceUserAgent>;
     /**
      * The Priorities List.
      * @type {Array<FreshserviceEntity>}
@@ -200,6 +206,18 @@ export interface FreshserviceIntegrationInfoModel {
      * @memberof FreshserviceIntegrationInfoModel
      */
     titleFormat: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof FreshserviceIntegrationInfoModel
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof FreshserviceIntegrationInfoModel
+     */
+    state?: FreshserviceIntegrationInfoModelStateEnum;
 }
 
 
@@ -252,18 +270,25 @@ export const FreshserviceIntegrationInfoModelTemplateTypeEnum = {
 } as const;
 export type FreshserviceIntegrationInfoModelTemplateTypeEnum = typeof FreshserviceIntegrationInfoModelTemplateTypeEnum[keyof typeof FreshserviceIntegrationInfoModelTemplateTypeEnum];
 
+/**
+ * @export
+ */
+export const FreshserviceIntegrationInfoModelStateEnum = {
+    Active: 'Active',
+    Suspended: 'Suspended'
+} as const;
+export type FreshserviceIntegrationInfoModelStateEnum = typeof FreshserviceIntegrationInfoModelStateEnum[keyof typeof FreshserviceIntegrationInfoModelStateEnum];
+
 
 /**
  * Check if a given object implements the FreshserviceIntegrationInfoModel interface.
  */
 export function instanceOfFreshserviceIntegrationInfoModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "serverUrl" in value;
-    isInstance = isInstance && "apiKey" in value;
-    isInstance = isInstance && "requesterId" in value;
-    isInstance = isInstance && "titleFormat" in value;
-
-    return isInstance;
+    if (!('serverUrl' in value)) return false;
+    if (!('apiKey' in value)) return false;
+    if (!('requesterId' in value)) return false;
+    if (!('titleFormat' in value)) return false;
+    return true;
 }
 
 export function FreshserviceIntegrationInfoModelFromJSON(json: any): FreshserviceIntegrationInfoModel {
@@ -271,7 +296,7 @@ export function FreshserviceIntegrationInfoModelFromJSON(json: any): Freshservic
 }
 
 export function FreshserviceIntegrationInfoModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): FreshserviceIntegrationInfoModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -279,61 +304,62 @@ export function FreshserviceIntegrationInfoModelFromJSONTyped(json: any, ignoreD
         'serverUrl': json['ServerUrl'],
         'apiKey': json['ApiKey'],
         'requesterId': json['RequesterId'],
-        'groupId': !exists(json, 'GroupId') ? undefined : json['GroupId'],
-        'agentId': !exists(json, 'AgentId') ? undefined : json['AgentId'],
-        'priorityId': !exists(json, 'PriorityId') ? undefined : json['PriorityId'],
-        'integrationWizardResultModel': !exists(json, 'IntegrationWizardResultModel') ? undefined : IntegrationWizardResultModelFromJSON(json['IntegrationWizardResultModel']),
-        'requesters': !exists(json, 'Requesters') ? undefined : ((json['Requesters'] as Array<any>).map(FreshserviceUserFromJSON)),
-        'groups': !exists(json, 'Groups') ? undefined : ((json['Groups'] as Array<any>).map(FreshserviceEntityFromJSON)),
-        'agents': !exists(json, 'Agents') ? undefined : ((json['Agents'] as Array<any>).map(FreshserviceUserFromJSON)),
-        'priorities': !exists(json, 'Priorities') ? undefined : ((json['Priorities'] as Array<any>).map(FreshserviceEntityFromJSON)),
-        'dueDays': !exists(json, 'DueDays') ? undefined : json['DueDays'],
-        'type': !exists(json, 'Type') ? undefined : json['Type'],
-        'genericErrorMessage': !exists(json, 'GenericErrorMessage') ? undefined : json['GenericErrorMessage'],
-        'identifier': !exists(json, 'Identifier') ? undefined : json['Identifier'],
-        'testMessageBody': !exists(json, 'TestMessageBody') ? undefined : json['TestMessageBody'],
-        'testMessageTitle': !exists(json, 'TestMessageTitle') ? undefined : json['TestMessageTitle'],
-        'webhookUrl': !exists(json, 'WebhookUrl') ? undefined : json['WebhookUrl'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'integrationVersion': !exists(json, 'IntegrationVersion') ? undefined : json['IntegrationVersion'],
-        'accountID': !exists(json, 'AccountID') ? undefined : json['AccountID'],
-        'customFields': !exists(json, 'CustomFields') ? undefined : ((json['CustomFields'] as Array<any>).map(IntegrationCustomFieldVmFromJSON)),
-        'templateType': !exists(json, 'TemplateType') ? undefined : json['TemplateType'],
-        'reopenStatus': !exists(json, 'ReopenStatus') ? undefined : json['ReopenStatus'],
-        'resolvedStatus': !exists(json, 'ResolvedStatus') ? undefined : json['ResolvedStatus'],
+        'groupId': json['GroupId'] == null ? undefined : json['GroupId'],
+        'agentId': json['AgentId'] == null ? undefined : json['AgentId'],
+        'priorityId': json['PriorityId'] == null ? undefined : json['PriorityId'],
+        'integrationWizardResultModel': json['IntegrationWizardResultModel'] == null ? undefined : IntegrationWizardResultModelFromJSON(json['IntegrationWizardResultModel']),
+        'requesters': json['Requesters'] == null ? undefined : ((json['Requesters'] as Array<any>).map(FreshServiceRequesterUserFromJSON)),
+        'groups': json['Groups'] == null ? undefined : ((json['Groups'] as Array<any>).map(FreshserviceEntityFromJSON)),
+        'agents': json['Agents'] == null ? undefined : ((json['Agents'] as Array<any>).map(FreshServiceUserAgentFromJSON)),
+        'priorities': json['Priorities'] == null ? undefined : ((json['Priorities'] as Array<any>).map(FreshserviceEntityFromJSON)),
+        'dueDays': json['DueDays'] == null ? undefined : json['DueDays'],
+        'type': json['Type'] == null ? undefined : json['Type'],
+        'genericErrorMessage': json['GenericErrorMessage'] == null ? undefined : json['GenericErrorMessage'],
+        'identifier': json['Identifier'] == null ? undefined : json['Identifier'],
+        'testMessageBody': json['TestMessageBody'] == null ? undefined : json['TestMessageBody'],
+        'testMessageTitle': json['TestMessageTitle'] == null ? undefined : json['TestMessageTitle'],
+        'webhookUrl': json['WebhookUrl'] == null ? undefined : json['WebhookUrl'],
+        'name': json['Name'] == null ? undefined : json['Name'],
+        'integrationVersion': json['IntegrationVersion'] == null ? undefined : json['IntegrationVersion'],
+        'accountID': json['AccountID'] == null ? undefined : json['AccountID'],
+        'customFields': json['CustomFields'] == null ? undefined : ((json['CustomFields'] as Array<any>).map(IntegrationCustomFieldVmFromJSON)),
+        'templateType': json['TemplateType'] == null ? undefined : json['TemplateType'],
+        'reopenStatus': json['ReopenStatus'] == null ? undefined : json['ReopenStatus'],
+        'resolvedStatus': json['ResolvedStatus'] == null ? undefined : json['ResolvedStatus'],
         'titleFormat': json['TitleFormat'],
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'state': json['State'] == null ? undefined : json['State'],
     };
 }
 
-export function FreshserviceIntegrationInfoModelToJSON(value?: FreshserviceIntegrationInfoModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+export function FreshserviceIntegrationInfoModelToJSON(value?: Omit<FreshserviceIntegrationInfoModel, 'Type'|'GenericErrorMessage'|'Identifier'|'TestMessageBody'|'TestMessageTitle'|'WebhookUrl'> | null): any {
+    if (value == null) {
+        return value;
     }
     return {
         
-        'ServerUrl': value.serverUrl,
-        'ApiKey': value.apiKey,
-        'RequesterId': value.requesterId,
-        'GroupId': value.groupId,
-        'AgentId': value.agentId,
-        'PriorityId': value.priorityId,
-        'IntegrationWizardResultModel': IntegrationWizardResultModelToJSON(value.integrationWizardResultModel),
-        'Requesters': value.requesters === undefined ? undefined : ((value.requesters as Array<any>).map(FreshserviceUserToJSON)),
-        'Groups': value.groups === undefined ? undefined : ((value.groups as Array<any>).map(FreshserviceEntityToJSON)),
-        'Agents': value.agents === undefined ? undefined : ((value.agents as Array<any>).map(FreshserviceUserToJSON)),
-        'Priorities': value.priorities === undefined ? undefined : ((value.priorities as Array<any>).map(FreshserviceEntityToJSON)),
-        'DueDays': value.dueDays,
-        'Name': value.name,
-        'IntegrationVersion': value.integrationVersion,
-        'AccountID': value.accountID,
-        'CustomFields': value.customFields === undefined ? undefined : ((value.customFields as Array<any>).map(IntegrationCustomFieldVmToJSON)),
-        'TemplateType': value.templateType,
-        'ReopenStatus': value.reopenStatus,
-        'ResolvedStatus': value.resolvedStatus,
-        'TitleFormat': value.titleFormat,
+        'ServerUrl': value['serverUrl'],
+        'ApiKey': value['apiKey'],
+        'RequesterId': value['requesterId'],
+        'GroupId': value['groupId'],
+        'AgentId': value['agentId'],
+        'PriorityId': value['priorityId'],
+        'IntegrationWizardResultModel': IntegrationWizardResultModelToJSON(value['integrationWizardResultModel']),
+        'Requesters': value['requesters'] == null ? undefined : ((value['requesters'] as Array<any>).map(FreshServiceRequesterUserToJSON)),
+        'Groups': value['groups'] == null ? undefined : ((value['groups'] as Array<any>).map(FreshserviceEntityToJSON)),
+        'Agents': value['agents'] == null ? undefined : ((value['agents'] as Array<any>).map(FreshServiceUserAgentToJSON)),
+        'Priorities': value['priorities'] == null ? undefined : ((value['priorities'] as Array<any>).map(FreshserviceEntityToJSON)),
+        'DueDays': value['dueDays'],
+        'Name': value['name'],
+        'IntegrationVersion': value['integrationVersion'],
+        'AccountID': value['accountID'],
+        'CustomFields': value['customFields'] == null ? undefined : ((value['customFields'] as Array<any>).map(IntegrationCustomFieldVmToJSON)),
+        'TemplateType': value['templateType'],
+        'ReopenStatus': value['reopenStatus'],
+        'ResolvedStatus': value['resolvedStatus'],
+        'TitleFormat': value['titleFormat'],
+        'Id': value['id'],
+        'State': value['state'],
     };
 }
 

@@ -47,20 +47,20 @@ class AuditLogsApi extends runtime.BaseAPI {
      */
     async auditLogsExportRaw(requestParameters, initOverrides) {
         const queryParameters = {};
-        if (requestParameters.page !== undefined) {
-            queryParameters['page'] = requestParameters.page;
+        if (requestParameters['page'] != null) {
+            queryParameters['page'] = requestParameters['page'];
         }
-        if (requestParameters.pageSize !== undefined) {
-            queryParameters['pageSize'] = requestParameters.pageSize;
+        if (requestParameters['pageSize'] != null) {
+            queryParameters['pageSize'] = requestParameters['pageSize'];
         }
-        if (requestParameters.csvSeparator !== undefined) {
-            queryParameters['csvSeparator'] = requestParameters.csvSeparator;
+        if (requestParameters['csvSeparator'] != null) {
+            queryParameters['csvSeparator'] = requestParameters['csvSeparator'];
         }
-        if (requestParameters.startDate !== undefined) {
-            queryParameters['startDate'] = requestParameters.startDate.toISOString();
+        if (requestParameters['startDate'] != null) {
+            queryParameters['startDate'] = requestParameters['startDate'].toISOString();
         }
-        if (requestParameters.endDate !== undefined) {
-            queryParameters['endDate'] = requestParameters.endDate.toISOString();
+        if (requestParameters['endDate'] != null) {
+            queryParameters['endDate'] = requestParameters['endDate'].toISOString();
         }
         const headerParameters = {};
         const response = await this.request({
@@ -82,17 +82,17 @@ class AuditLogsApi extends runtime.BaseAPI {
      */
     async auditLogsListRaw(requestParameters, initOverrides) {
         const queryParameters = {};
-        if (requestParameters.page !== undefined) {
-            queryParameters['page'] = requestParameters.page;
+        if (requestParameters['page'] != null) {
+            queryParameters['page'] = requestParameters['page'];
         }
-        if (requestParameters.pageSize !== undefined) {
-            queryParameters['pageSize'] = requestParameters.pageSize;
+        if (requestParameters['pageSize'] != null) {
+            queryParameters['pageSize'] = requestParameters['pageSize'];
         }
-        if (requestParameters.startDate !== undefined) {
-            queryParameters['startDate'] = requestParameters.startDate.toISOString();
+        if (requestParameters['startDate'] != null) {
+            queryParameters['startDate'] = requestParameters['startDate'].toISOString();
         }
-        if (requestParameters.endDate !== undefined) {
-            queryParameters['endDate'] = requestParameters.endDate.toISOString();
+        if (requestParameters['endDate'] != null) {
+            queryParameters['endDate'] = requestParameters['endDate'].toISOString();
         }
         const headerParameters = {};
         const response = await this.request({

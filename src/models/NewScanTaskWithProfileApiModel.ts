@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Contains properties that required to start a scan according to profile specified.
  * @export
@@ -37,11 +37,9 @@ export interface NewScanTaskWithProfileApiModel {
  * Check if a given object implements the NewScanTaskWithProfileApiModel interface.
  */
 export function instanceOfNewScanTaskWithProfileApiModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "profileName" in value;
-    isInstance = isInstance && "targetUri" in value;
-
-    return isInstance;
+    if (!('profileName' in value)) return false;
+    if (!('targetUri' in value)) return false;
+    return true;
 }
 
 export function NewScanTaskWithProfileApiModelFromJSON(json: any): NewScanTaskWithProfileApiModel {
@@ -49,7 +47,7 @@ export function NewScanTaskWithProfileApiModelFromJSON(json: any): NewScanTaskWi
 }
 
 export function NewScanTaskWithProfileApiModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): NewScanTaskWithProfileApiModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -60,16 +58,13 @@ export function NewScanTaskWithProfileApiModelFromJSONTyped(json: any, ignoreDis
 }
 
 export function NewScanTaskWithProfileApiModelToJSON(value?: NewScanTaskWithProfileApiModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'ProfileName': value.profileName,
-        'TargetUri': value.targetUri,
+        'ProfileName': value['profileName'],
+        'TargetUri': value['targetUri'],
     };
 }
 

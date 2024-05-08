@@ -47,8 +47,8 @@ class ScanPoliciesApi extends runtime.BaseAPI {
      * Deletes a scan policy.
      */
     async scanPoliciesDeleteRaw(requestParameters, initOverrides) {
-        if (requestParameters.name === null || requestParameters.name === undefined) {
-            throw new runtime.RequiredError('name', 'Required parameter requestParameters.name was null or undefined when calling scanPoliciesDelete.');
+        if (requestParameters['name'] == null) {
+            throw new runtime.RequiredError('name', 'Required parameter "name" was null or undefined when calling scanPoliciesDelete().');
         }
         const queryParameters = {};
         const headerParameters = {};
@@ -58,7 +58,7 @@ class ScanPoliciesApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: requestParameters.name,
+            body: requestParameters['name'],
         }, initOverrides);
         return new runtime.VoidApiResponse(response);
     }
@@ -72,12 +72,12 @@ class ScanPoliciesApi extends runtime.BaseAPI {
      * Gets the scan policy by the specified name.
      */
     async scanPoliciesFindRaw(requestParameters, initOverrides) {
-        if (requestParameters.name === null || requestParameters.name === undefined) {
-            throw new runtime.RequiredError('name', 'Required parameter requestParameters.name was null or undefined when calling scanPoliciesFind.');
+        if (requestParameters['name'] == null) {
+            throw new runtime.RequiredError('name', 'Required parameter "name" was null or undefined when calling scanPoliciesFind().');
         }
         const queryParameters = {};
-        if (requestParameters.name !== undefined) {
-            queryParameters['name'] = requestParameters.name;
+        if (requestParameters['name'] != null) {
+            queryParameters['name'] = requestParameters['name'];
         }
         const headerParameters = {};
         const response = await this.request({
@@ -99,13 +99,13 @@ class ScanPoliciesApi extends runtime.BaseAPI {
      * Gets the scan policy by the specified id.
      */
     async scanPoliciesGetRaw(requestParameters, initOverrides) {
-        if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling scanPoliciesGet.');
+        if (requestParameters['id'] == null) {
+            throw new runtime.RequiredError('id', 'Required parameter "id" was null or undefined when calling scanPoliciesGet().');
         }
         const queryParameters = {};
         const headerParameters = {};
         const response = await this.request({
-            path: `/api/1.0/scanpolicies/get/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
+            path: `/api/1.0/scanpolicies/get/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -124,11 +124,11 @@ class ScanPoliciesApi extends runtime.BaseAPI {
      */
     async scanPoliciesListRaw(requestParameters, initOverrides) {
         const queryParameters = {};
-        if (requestParameters.page !== undefined) {
-            queryParameters['page'] = requestParameters.page;
+        if (requestParameters['page'] != null) {
+            queryParameters['page'] = requestParameters['page'];
         }
-        if (requestParameters.pageSize !== undefined) {
-            queryParameters['pageSize'] = requestParameters.pageSize;
+        if (requestParameters['pageSize'] != null) {
+            queryParameters['pageSize'] = requestParameters['pageSize'];
         }
         const headerParameters = {};
         const response = await this.request({
@@ -150,8 +150,8 @@ class ScanPoliciesApi extends runtime.BaseAPI {
      * Creates a new scan policy.
      */
     async scanPoliciesNewRaw(requestParameters, initOverrides) {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model', 'Required parameter requestParameters.model was null or undefined when calling scanPoliciesNew.');
+        if (requestParameters['model'] == null) {
+            throw new runtime.RequiredError('model', 'Required parameter "model" was null or undefined when calling scanPoliciesNew().');
         }
         const queryParameters = {};
         const headerParameters = {};
@@ -161,7 +161,7 @@ class ScanPoliciesApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: (0, index_1.NewScanPolicySettingModelToJSON)(requestParameters.model),
+            body: (0, index_1.NewScanPolicySettingModelToJSON)(requestParameters['model']),
         }, initOverrides);
         return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.ScanPolicySettingApiModelFromJSON)(jsonValue));
     }
@@ -176,8 +176,8 @@ class ScanPoliciesApi extends runtime.BaseAPI {
      * Updates a scan policy.
      */
     async scanPoliciesUpdateRaw(requestParameters, initOverrides) {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model', 'Required parameter requestParameters.model was null or undefined when calling scanPoliciesUpdate.');
+        if (requestParameters['model'] == null) {
+            throw new runtime.RequiredError('model', 'Required parameter "model" was null or undefined when calling scanPoliciesUpdate().');
         }
         const queryParameters = {};
         const headerParameters = {};
@@ -187,7 +187,7 @@ class ScanPoliciesApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: (0, index_1.UpdateScanPolicySettingModelToJSON)(requestParameters.model),
+            body: (0, index_1.UpdateScanPolicySettingModelToJSON)(requestParameters['model']),
         }, initOverrides);
         return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.ScanPolicySettingApiModelFromJSON)(jsonValue));
     }

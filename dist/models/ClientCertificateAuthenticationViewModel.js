@@ -14,14 +14,12 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ClientCertificateAuthenticationViewModelToJSON = exports.ClientCertificateAuthenticationViewModelFromJSONTyped = exports.ClientCertificateAuthenticationViewModelFromJSON = exports.instanceOfClientCertificateAuthenticationViewModel = void 0;
-const runtime_1 = require("../runtime");
-const FileCache_1 = require("./FileCache");
+const CachedFile_1 = require("./CachedFile");
 /**
  * Check if a given object implements the ClientCertificateAuthenticationViewModel interface.
  */
 function instanceOfClientCertificateAuthenticationViewModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfClientCertificateAuthenticationViewModel = instanceOfClientCertificateAuthenticationViewModel;
 function ClientCertificateAuthenticationViewModelFromJSON(json) {
@@ -29,29 +27,26 @@ function ClientCertificateAuthenticationViewModelFromJSON(json) {
 }
 exports.ClientCertificateAuthenticationViewModelFromJSON = ClientCertificateAuthenticationViewModelFromJSON;
 function ClientCertificateAuthenticationViewModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'isReplacedCredentials': !(0, runtime_1.exists)(json, 'IsReplacedCredentials') ? undefined : json['IsReplacedCredentials'],
-        'file': !(0, runtime_1.exists)(json, 'File') ? undefined : (0, FileCache_1.FileCacheFromJSON)(json['File']),
-        'isEnabled': !(0, runtime_1.exists)(json, 'IsEnabled') ? undefined : json['IsEnabled'],
-        'password': !(0, runtime_1.exists)(json, 'Password') ? undefined : json['Password'],
+        'isReplacedCredentials': json['IsReplacedCredentials'] == null ? undefined : json['IsReplacedCredentials'],
+        'file': json['File'] == null ? undefined : (0, CachedFile_1.CachedFileFromJSON)(json['File']),
+        'isEnabled': json['IsEnabled'] == null ? undefined : json['IsEnabled'],
+        'password': json['Password'] == null ? undefined : json['Password'],
     };
 }
 exports.ClientCertificateAuthenticationViewModelFromJSONTyped = ClientCertificateAuthenticationViewModelFromJSONTyped;
 function ClientCertificateAuthenticationViewModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'IsReplacedCredentials': value.isReplacedCredentials,
-        'File': (0, FileCache_1.FileCacheToJSON)(value.file),
-        'IsEnabled': value.isEnabled,
-        'Password': value.password,
+        'IsReplacedCredentials': value['isReplacedCredentials'],
+        'File': (0, CachedFile_1.CachedFileToJSON)(value['file']),
+        'IsEnabled': value['isEnabled'],
+        'Password': value['password'],
     };
 }
 exports.ClientCertificateAuthenticationViewModelToJSON = ClientCertificateAuthenticationViewModelToJSON;

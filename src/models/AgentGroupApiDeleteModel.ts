@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a model for deleting a agent group.
  * @export
@@ -31,10 +31,8 @@ export interface AgentGroupApiDeleteModel {
  * Check if a given object implements the AgentGroupApiDeleteModel interface.
  */
 export function instanceOfAgentGroupApiDeleteModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "name" in value;
-
-    return isInstance;
+    if (!('name' in value)) return false;
+    return true;
 }
 
 export function AgentGroupApiDeleteModelFromJSON(json: any): AgentGroupApiDeleteModel {
@@ -42,7 +40,7 @@ export function AgentGroupApiDeleteModelFromJSON(json: any): AgentGroupApiDelete
 }
 
 export function AgentGroupApiDeleteModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): AgentGroupApiDeleteModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -52,15 +50,12 @@ export function AgentGroupApiDeleteModelFromJSONTyped(json: any, ignoreDiscrimin
 }
 
 export function AgentGroupApiDeleteModelToJSON(value?: AgentGroupApiDeleteModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Name': value.name,
+        'Name': value['name'],
     };
 }
 

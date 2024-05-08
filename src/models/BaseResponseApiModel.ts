@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * The class using for response api models.
  * @export
@@ -31,9 +31,7 @@ export interface BaseResponseApiModel {
  * Check if a given object implements the BaseResponseApiModel interface.
  */
 export function instanceOfBaseResponseApiModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function BaseResponseApiModelFromJSON(json: any): BaseResponseApiModel {
@@ -41,25 +39,22 @@ export function BaseResponseApiModelFromJSON(json: any): BaseResponseApiModel {
 }
 
 export function BaseResponseApiModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): BaseResponseApiModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'message': !exists(json, 'Message') ? undefined : json['Message'],
+        'message': json['Message'] == null ? undefined : json['Message'],
     };
 }
 
 export function BaseResponseApiModelToJSON(value?: BaseResponseApiModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Message': value.message,
+        'Message': value['message'],
     };
 }
 

@@ -14,8 +14,7 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.IntegrationCustomFieldVmToJSON = exports.IntegrationCustomFieldVmFromJSONTyped = exports.IntegrationCustomFieldVmFromJSON = exports.instanceOfIntegrationCustomFieldVm = exports.IntegrationCustomFieldVmInputTypeEnum = void 0;
-const runtime_1 = require("../runtime");
-const FileCache_1 = require("./FileCache");
+const CachedFile_1 = require("./CachedFile");
 /**
  * @export
  */
@@ -30,9 +29,9 @@ exports.IntegrationCustomFieldVmInputTypeEnum = {
  * Check if a given object implements the IntegrationCustomFieldVm interface.
  */
 function instanceOfIntegrationCustomFieldVm(value) {
-    let isInstance = true;
-    isInstance = isInstance && "name" in value;
-    return isInstance;
+    if (!('name' in value))
+        return false;
+    return true;
 }
 exports.instanceOfIntegrationCustomFieldVm = instanceOfIntegrationCustomFieldVm;
 function IntegrationCustomFieldVmFromJSON(json) {
@@ -40,29 +39,26 @@ function IntegrationCustomFieldVmFromJSON(json) {
 }
 exports.IntegrationCustomFieldVmFromJSON = IntegrationCustomFieldVmFromJSON;
 function IntegrationCustomFieldVmFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'file': !(0, runtime_1.exists)(json, 'File') ? undefined : (0, FileCache_1.FileCacheFromJSON)(json['File']),
+        'file': json['File'] == null ? undefined : (0, CachedFile_1.CachedFileFromJSON)(json['File']),
         'name': json['Name'],
-        'value': !(0, runtime_1.exists)(json, 'Value') ? undefined : json['Value'],
-        'inputType': !(0, runtime_1.exists)(json, 'InputType') ? undefined : json['InputType'],
+        'value': json['Value'] == null ? undefined : json['Value'],
+        'inputType': json['InputType'] == null ? undefined : json['InputType'],
     };
 }
 exports.IntegrationCustomFieldVmFromJSONTyped = IntegrationCustomFieldVmFromJSONTyped;
 function IntegrationCustomFieldVmToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'File': (0, FileCache_1.FileCacheToJSON)(value.file),
-        'Name': value.name,
-        'Value': value.value,
-        'InputType': value.inputType,
+        'File': (0, CachedFile_1.CachedFileToJSON)(value['file']),
+        'Name': value['name'],
+        'Value': value['value'],
+        'InputType': value['inputType'],
     };
 }
 exports.IntegrationCustomFieldVmToJSON = IntegrationCustomFieldVmToJSON;

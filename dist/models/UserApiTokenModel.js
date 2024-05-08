@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserApiTokenModelToJSON = exports.UserApiTokenModelFromJSONTyped = exports.UserApiTokenModelFromJSON = exports.instanceOfUserApiTokenModel = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the UserApiTokenModel interface.
  */
 function instanceOfUserApiTokenModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfUserApiTokenModel = instanceOfUserApiTokenModel;
 function UserApiTokenModelFromJSON(json) {
@@ -28,25 +26,22 @@ function UserApiTokenModelFromJSON(json) {
 }
 exports.UserApiTokenModelFromJSON = UserApiTokenModelFromJSON;
 function UserApiTokenModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
-        'token': !(0, runtime_1.exists)(json, 'Token') ? undefined : json['Token'],
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'token': json['Token'] == null ? undefined : json['Token'],
     };
 }
 exports.UserApiTokenModelFromJSONTyped = UserApiTokenModelFromJSONTyped;
 function UserApiTokenModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Id': value.id,
-        'Token': value.token,
+        'Id': value['id'],
+        'Token': value['token'],
     };
 }
 exports.UserApiTokenModelToJSON = UserApiTokenModelToJSON;

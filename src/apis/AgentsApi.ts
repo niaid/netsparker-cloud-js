@@ -50,8 +50,11 @@ export class AgentsApi extends runtime.BaseAPI {
      * Sets agent status as terminated.  Before deleting an agent, please make sure that you\'ve stopped the related service from the Windows Services Manager screen.  If it is running, the agent will reappear on the page despite removal.
      */
     async agentsDeleteRaw(requestParameters: AgentsDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling agentsDelete.');
+        if (requestParameters['model'] == null) {
+            throw new runtime.RequiredError(
+                'model',
+                'Required parameter "model" was null or undefined when calling agentsDelete().'
+            );
         }
 
         const queryParameters: any = {};
@@ -65,7 +68,7 @@ export class AgentsApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: DeleteAgentModelToJSON(requestParameters.model),
+            body: DeleteAgentModelToJSON(requestParameters['model']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -84,12 +87,12 @@ export class AgentsApi extends runtime.BaseAPI {
     async agentsListRaw(requestParameters: AgentsListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AgentListApiResult>> {
         const queryParameters: any = {};
 
-        if (requestParameters.page !== undefined) {
-            queryParameters['page'] = requestParameters.page;
+        if (requestParameters['page'] != null) {
+            queryParameters['page'] = requestParameters['page'];
         }
 
-        if (requestParameters.pageSize !== undefined) {
-            queryParameters['pageSize'] = requestParameters.pageSize;
+        if (requestParameters['pageSize'] != null) {
+            queryParameters['pageSize'] = requestParameters['pageSize'];
         }
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -116,8 +119,11 @@ export class AgentsApi extends runtime.BaseAPI {
      * Sets agent status enable or disable.
      */
     async agentsSetStatusRaw(requestParameters: AgentsSetStatusRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling agentsSetStatus.');
+        if (requestParameters['model'] == null) {
+            throw new runtime.RequiredError(
+                'model',
+                'Required parameter "model" was null or undefined when calling agentsSetStatus().'
+            );
         }
 
         const queryParameters: any = {};
@@ -131,7 +137,7 @@ export class AgentsApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AgentStatusModelToJSON(requestParameters.model),
+            body: AgentStatusModelToJSON(requestParameters['model']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);

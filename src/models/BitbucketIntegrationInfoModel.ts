@@ -12,19 +12,19 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
-import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
-import {
-    IntegrationCustomFieldVmFromJSON,
-    IntegrationCustomFieldVmFromJSONTyped,
-    IntegrationCustomFieldVmToJSON,
-} from './IntegrationCustomFieldVm';
+import { mapValues } from '../runtime';
 import type { IntegrationWizardResultModel } from './IntegrationWizardResultModel';
 import {
     IntegrationWizardResultModelFromJSON,
     IntegrationWizardResultModelFromJSONTyped,
     IntegrationWizardResultModelToJSON,
 } from './IntegrationWizardResultModel';
+import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
+import {
+    IntegrationCustomFieldVmFromJSON,
+    IntegrationCustomFieldVmFromJSONTyped,
+    IntegrationCustomFieldVmToJSON,
+} from './IntegrationCustomFieldVm';
 
 /**
  * The Bitbucket integration info
@@ -158,6 +158,18 @@ export interface BitbucketIntegrationInfoModel {
      * @memberof BitbucketIntegrationInfoModel
      */
     integrationWizardResultModel?: IntegrationWizardResultModel;
+    /**
+     * 
+     * @type {string}
+     * @memberof BitbucketIntegrationInfoModel
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof BitbucketIntegrationInfoModel
+     */
+    state?: BitbucketIntegrationInfoModelStateEnum;
 }
 
 
@@ -210,20 +222,27 @@ export const BitbucketIntegrationInfoModelTemplateTypeEnum = {
 } as const;
 export type BitbucketIntegrationInfoModelTemplateTypeEnum = typeof BitbucketIntegrationInfoModelTemplateTypeEnum[keyof typeof BitbucketIntegrationInfoModelTemplateTypeEnum];
 
+/**
+ * @export
+ */
+export const BitbucketIntegrationInfoModelStateEnum = {
+    Active: 'Active',
+    Suspended: 'Suspended'
+} as const;
+export type BitbucketIntegrationInfoModelStateEnum = typeof BitbucketIntegrationInfoModelStateEnum[keyof typeof BitbucketIntegrationInfoModelStateEnum];
+
 
 /**
  * Check if a given object implements the BitbucketIntegrationInfoModel interface.
  */
 export function instanceOfBitbucketIntegrationInfoModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "kind" in value;
-    isInstance = isInstance && "password" in value;
-    isInstance = isInstance && "priority" in value;
-    isInstance = isInstance && "repository" in value;
-    isInstance = isInstance && "usernameOrEmail" in value;
-    isInstance = isInstance && "titleFormat" in value;
-
-    return isInstance;
+    if (!('kind' in value)) return false;
+    if (!('password' in value)) return false;
+    if (!('priority' in value)) return false;
+    if (!('repository' in value)) return false;
+    if (!('usernameOrEmail' in value)) return false;
+    if (!('titleFormat' in value)) return false;
+    return true;
 }
 
 export function BitbucketIntegrationInfoModelFromJSON(json: any): BitbucketIntegrationInfoModel {
@@ -231,7 +250,7 @@ export function BitbucketIntegrationInfoModelFromJSON(json: any): BitbucketInteg
 }
 
 export function BitbucketIntegrationInfoModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): BitbucketIntegrationInfoModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -240,50 +259,51 @@ export function BitbucketIntegrationInfoModelFromJSONTyped(json: any, ignoreDisc
         'password': json['Password'],
         'priority': json['Priority'],
         'repository': json['Repository'],
-        'workspace': !exists(json, 'Workspace') ? undefined : json['Workspace'],
+        'workspace': json['Workspace'] == null ? undefined : json['Workspace'],
         'usernameOrEmail': json['UsernameOrEmail'],
-        'type': !exists(json, 'Type') ? undefined : json['Type'],
-        'genericErrorMessage': !exists(json, 'GenericErrorMessage') ? undefined : json['GenericErrorMessage'],
-        'identifier': !exists(json, 'Identifier') ? undefined : json['Identifier'],
-        'testMessageBody': !exists(json, 'TestMessageBody') ? undefined : json['TestMessageBody'],
-        'testMessageTitle': !exists(json, 'TestMessageTitle') ? undefined : json['TestMessageTitle'],
-        'webhookUrl': !exists(json, 'WebhookUrl') ? undefined : json['WebhookUrl'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'integrationVersion': !exists(json, 'IntegrationVersion') ? undefined : json['IntegrationVersion'],
-        'accountID': !exists(json, 'AccountID') ? undefined : json['AccountID'],
-        'customFields': !exists(json, 'CustomFields') ? undefined : ((json['CustomFields'] as Array<any>).map(IntegrationCustomFieldVmFromJSON)),
-        'templateType': !exists(json, 'TemplateType') ? undefined : json['TemplateType'],
-        'reopenStatus': !exists(json, 'ReopenStatus') ? undefined : json['ReopenStatus'],
-        'resolvedStatus': !exists(json, 'ResolvedStatus') ? undefined : json['ResolvedStatus'],
+        'type': json['Type'] == null ? undefined : json['Type'],
+        'genericErrorMessage': json['GenericErrorMessage'] == null ? undefined : json['GenericErrorMessage'],
+        'identifier': json['Identifier'] == null ? undefined : json['Identifier'],
+        'testMessageBody': json['TestMessageBody'] == null ? undefined : json['TestMessageBody'],
+        'testMessageTitle': json['TestMessageTitle'] == null ? undefined : json['TestMessageTitle'],
+        'webhookUrl': json['WebhookUrl'] == null ? undefined : json['WebhookUrl'],
+        'name': json['Name'] == null ? undefined : json['Name'],
+        'integrationVersion': json['IntegrationVersion'] == null ? undefined : json['IntegrationVersion'],
+        'accountID': json['AccountID'] == null ? undefined : json['AccountID'],
+        'customFields': json['CustomFields'] == null ? undefined : ((json['CustomFields'] as Array<any>).map(IntegrationCustomFieldVmFromJSON)),
+        'templateType': json['TemplateType'] == null ? undefined : json['TemplateType'],
+        'reopenStatus': json['ReopenStatus'] == null ? undefined : json['ReopenStatus'],
+        'resolvedStatus': json['ResolvedStatus'] == null ? undefined : json['ResolvedStatus'],
         'titleFormat': json['TitleFormat'],
-        'integrationWizardResultModel': !exists(json, 'IntegrationWizardResultModel') ? undefined : IntegrationWizardResultModelFromJSON(json['IntegrationWizardResultModel']),
+        'integrationWizardResultModel': json['IntegrationWizardResultModel'] == null ? undefined : IntegrationWizardResultModelFromJSON(json['IntegrationWizardResultModel']),
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'state': json['State'] == null ? undefined : json['State'],
     };
 }
 
-export function BitbucketIntegrationInfoModelToJSON(value?: BitbucketIntegrationInfoModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+export function BitbucketIntegrationInfoModelToJSON(value?: Omit<BitbucketIntegrationInfoModel, 'Type'|'GenericErrorMessage'|'Identifier'|'TestMessageBody'|'TestMessageTitle'|'WebhookUrl'> | null): any {
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Kind': value.kind,
-        'Password': value.password,
-        'Priority': value.priority,
-        'Repository': value.repository,
-        'Workspace': value.workspace,
-        'UsernameOrEmail': value.usernameOrEmail,
-        'Name': value.name,
-        'IntegrationVersion': value.integrationVersion,
-        'AccountID': value.accountID,
-        'CustomFields': value.customFields === undefined ? undefined : ((value.customFields as Array<any>).map(IntegrationCustomFieldVmToJSON)),
-        'TemplateType': value.templateType,
-        'ReopenStatus': value.reopenStatus,
-        'ResolvedStatus': value.resolvedStatus,
-        'TitleFormat': value.titleFormat,
-        'IntegrationWizardResultModel': IntegrationWizardResultModelToJSON(value.integrationWizardResultModel),
+        'Kind': value['kind'],
+        'Password': value['password'],
+        'Priority': value['priority'],
+        'Repository': value['repository'],
+        'Workspace': value['workspace'],
+        'UsernameOrEmail': value['usernameOrEmail'],
+        'Name': value['name'],
+        'IntegrationVersion': value['integrationVersion'],
+        'AccountID': value['accountID'],
+        'CustomFields': value['customFields'] == null ? undefined : ((value['customFields'] as Array<any>).map(IntegrationCustomFieldVmToJSON)),
+        'TemplateType': value['templateType'],
+        'ReopenStatus': value['reopenStatus'],
+        'ResolvedStatus': value['resolvedStatus'],
+        'TitleFormat': value['titleFormat'],
+        'IntegrationWizardResultModel': IntegrationWizardResultModelToJSON(value['integrationWizardResultModel']),
+        'Id': value['id'],
+        'State': value['state'],
     };
 }
 

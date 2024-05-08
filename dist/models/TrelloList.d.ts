@@ -46,4 +46,4 @@ export interface TrelloList {
 export declare function instanceOfTrelloList(value: object): boolean;
 export declare function TrelloListFromJSON(json: any): TrelloList;
 export declare function TrelloListFromJSONTyped(json: any, ignoreDiscriminator: boolean): TrelloList;
-export declare function TrelloListToJSON(value?: TrelloList | null): any;
+export declare function TrelloListToJSON(value?: Omit<TrelloList, 'IsActive'> | null): any;

@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 import type { LicenseBaseModel } from './LicenseBaseModel';
 import {
     LicenseBaseModelFromJSON,
@@ -98,9 +98,7 @@ export interface AccountLicenseApiModel {
  * Check if a given object implements the AccountLicenseApiModel interface.
  */
 export function instanceOfAccountLicenseApiModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function AccountLicenseApiModelFromJSON(json: any): AccountLicenseApiModel {
@@ -108,45 +106,42 @@ export function AccountLicenseApiModelFromJSON(json: any): AccountLicenseApiMode
 }
 
 export function AccountLicenseApiModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): AccountLicenseApiModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'subscriptionMaximumSiteLimit': !exists(json, 'SubscriptionMaximumSiteLimit') ? undefined : json['SubscriptionMaximumSiteLimit'],
-        'subscriptionSiteCount': !exists(json, 'SubscriptionSiteCount') ? undefined : json['SubscriptionSiteCount'],
-        'subscriptionEndDate': !exists(json, 'SubscriptionEndDate') ? undefined : json['SubscriptionEndDate'],
-        'subscriptionStartDate': !exists(json, 'SubscriptionStartDate') ? undefined : json['SubscriptionStartDate'],
-        'isAccountWhitelisted': !exists(json, 'IsAccountWhitelisted') ? undefined : json['IsAccountWhitelisted'],
-        'usedScanCreditCount': !exists(json, 'UsedScanCreditCount') ? undefined : json['UsedScanCreditCount'],
-        'scanCreditCount': !exists(json, 'ScanCreditCount') ? undefined : json['ScanCreditCount'],
-        'isCreditScanEnabled': !exists(json, 'IsCreditScanEnabled') ? undefined : json['IsCreditScanEnabled'],
-        'isSubscriptionEnabled': !exists(json, 'IsSubscriptionEnabled') ? undefined : json['IsSubscriptionEnabled'],
-        'preVerifiedWebsites': !exists(json, 'PreVerifiedWebsites') ? undefined : json['PreVerifiedWebsites'],
-        'licenses': !exists(json, 'Licenses') ? undefined : ((json['Licenses'] as Array<any>).map(LicenseBaseModelFromJSON)),
+        'subscriptionMaximumSiteLimit': json['SubscriptionMaximumSiteLimit'] == null ? undefined : json['SubscriptionMaximumSiteLimit'],
+        'subscriptionSiteCount': json['SubscriptionSiteCount'] == null ? undefined : json['SubscriptionSiteCount'],
+        'subscriptionEndDate': json['SubscriptionEndDate'] == null ? undefined : json['SubscriptionEndDate'],
+        'subscriptionStartDate': json['SubscriptionStartDate'] == null ? undefined : json['SubscriptionStartDate'],
+        'isAccountWhitelisted': json['IsAccountWhitelisted'] == null ? undefined : json['IsAccountWhitelisted'],
+        'usedScanCreditCount': json['UsedScanCreditCount'] == null ? undefined : json['UsedScanCreditCount'],
+        'scanCreditCount': json['ScanCreditCount'] == null ? undefined : json['ScanCreditCount'],
+        'isCreditScanEnabled': json['IsCreditScanEnabled'] == null ? undefined : json['IsCreditScanEnabled'],
+        'isSubscriptionEnabled': json['IsSubscriptionEnabled'] == null ? undefined : json['IsSubscriptionEnabled'],
+        'preVerifiedWebsites': json['PreVerifiedWebsites'] == null ? undefined : json['PreVerifiedWebsites'],
+        'licenses': json['Licenses'] == null ? undefined : ((json['Licenses'] as Array<any>).map(LicenseBaseModelFromJSON)),
     };
 }
 
 export function AccountLicenseApiModelToJSON(value?: AccountLicenseApiModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'SubscriptionMaximumSiteLimit': value.subscriptionMaximumSiteLimit,
-        'SubscriptionSiteCount': value.subscriptionSiteCount,
-        'SubscriptionEndDate': value.subscriptionEndDate,
-        'SubscriptionStartDate': value.subscriptionStartDate,
-        'IsAccountWhitelisted': value.isAccountWhitelisted,
-        'UsedScanCreditCount': value.usedScanCreditCount,
-        'ScanCreditCount': value.scanCreditCount,
-        'IsCreditScanEnabled': value.isCreditScanEnabled,
-        'IsSubscriptionEnabled': value.isSubscriptionEnabled,
-        'PreVerifiedWebsites': value.preVerifiedWebsites,
-        'Licenses': value.licenses === undefined ? undefined : ((value.licenses as Array<any>).map(LicenseBaseModelToJSON)),
+        'SubscriptionMaximumSiteLimit': value['subscriptionMaximumSiteLimit'],
+        'SubscriptionSiteCount': value['subscriptionSiteCount'],
+        'SubscriptionEndDate': value['subscriptionEndDate'],
+        'SubscriptionStartDate': value['subscriptionStartDate'],
+        'IsAccountWhitelisted': value['isAccountWhitelisted'],
+        'UsedScanCreditCount': value['usedScanCreditCount'],
+        'ScanCreditCount': value['scanCreditCount'],
+        'IsCreditScanEnabled': value['isCreditScanEnabled'],
+        'IsSubscriptionEnabled': value['isSubscriptionEnabled'],
+        'PreVerifiedWebsites': value['preVerifiedWebsites'],
+        'Licenses': value['licenses'] == null ? undefined : ((value['licenses'] as Array<any>).map(LicenseBaseModelToJSON)),
     };
 }
 

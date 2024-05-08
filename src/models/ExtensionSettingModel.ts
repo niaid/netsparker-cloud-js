@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * 
  * @export
@@ -65,12 +65,10 @@ export type ExtensionSettingModelCrawlOptionEnum = typeof ExtensionSettingModelC
  * Check if a given object implements the ExtensionSettingModel interface.
  */
 export function instanceOfExtensionSettingModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "attackOption" in value;
-    isInstance = isInstance && "crawlOption" in value;
-    isInstance = isInstance && "extension" in value;
-
-    return isInstance;
+    if (!('attackOption' in value)) return false;
+    if (!('crawlOption' in value)) return false;
+    if (!('extension' in value)) return false;
+    return true;
 }
 
 export function ExtensionSettingModelFromJSON(json: any): ExtensionSettingModel {
@@ -78,7 +76,7 @@ export function ExtensionSettingModelFromJSON(json: any): ExtensionSettingModel 
 }
 
 export function ExtensionSettingModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): ExtensionSettingModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -90,17 +88,14 @@ export function ExtensionSettingModelFromJSONTyped(json: any, ignoreDiscriminato
 }
 
 export function ExtensionSettingModelToJSON(value?: ExtensionSettingModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'AttackOption': value.attackOption,
-        'CrawlOption': value.crawlOption,
-        'Extension': value.extension,
+        'AttackOption': value['attackOption'],
+        'CrawlOption': value['crawlOption'],
+        'Extension': value['extension'],
     };
 }
 

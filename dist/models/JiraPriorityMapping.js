@@ -14,7 +14,6 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.JiraPriorityMappingToJSON = exports.JiraPriorityMappingFromJSONTyped = exports.JiraPriorityMappingFromJSON = exports.instanceOfJiraPriorityMapping = exports.JiraPriorityMappingIcSeverityEnum = void 0;
-const runtime_1 = require("../runtime");
 /**
  * @export
  */
@@ -30,8 +29,7 @@ exports.JiraPriorityMappingIcSeverityEnum = {
  * Check if a given object implements the JiraPriorityMapping interface.
  */
 function instanceOfJiraPriorityMapping(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfJiraPriorityMapping = instanceOfJiraPriorityMapping;
 function JiraPriorityMappingFromJSON(json) {
@@ -39,25 +37,22 @@ function JiraPriorityMappingFromJSON(json) {
 }
 exports.JiraPriorityMappingFromJSON = JiraPriorityMappingFromJSON;
 function JiraPriorityMappingFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'priority': !(0, runtime_1.exists)(json, 'Priority') ? undefined : json['Priority'],
-        'icSeverity': !(0, runtime_1.exists)(json, 'IcSeverity') ? undefined : json['IcSeverity'],
+        'priority': json['Priority'] == null ? undefined : json['Priority'],
+        'icSeverity': json['IcSeverity'] == null ? undefined : json['IcSeverity'],
     };
 }
 exports.JiraPriorityMappingFromJSONTyped = JiraPriorityMappingFromJSONTyped;
 function JiraPriorityMappingToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Priority': value.priority,
-        'IcSeverity': value.icSeverity,
+        'Priority': value['priority'],
+        'IcSeverity': value['icSeverity'],
     };
 }
 exports.JiraPriorityMappingToJSON = JiraPriorityMappingToJSON;

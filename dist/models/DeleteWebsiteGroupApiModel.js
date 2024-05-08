@@ -18,9 +18,9 @@ exports.DeleteWebsiteGroupApiModelToJSON = exports.DeleteWebsiteGroupApiModelFro
  * Check if a given object implements the DeleteWebsiteGroupApiModel interface.
  */
 function instanceOfDeleteWebsiteGroupApiModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "name" in value;
-    return isInstance;
+    if (!('name' in value))
+        return false;
+    return true;
 }
 exports.instanceOfDeleteWebsiteGroupApiModel = instanceOfDeleteWebsiteGroupApiModel;
 function DeleteWebsiteGroupApiModelFromJSON(json) {
@@ -28,7 +28,7 @@ function DeleteWebsiteGroupApiModelFromJSON(json) {
 }
 exports.DeleteWebsiteGroupApiModelFromJSON = DeleteWebsiteGroupApiModelFromJSON;
 function DeleteWebsiteGroupApiModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -37,14 +37,11 @@ function DeleteWebsiteGroupApiModelFromJSONTyped(json, ignoreDiscriminator) {
 }
 exports.DeleteWebsiteGroupApiModelFromJSONTyped = DeleteWebsiteGroupApiModelFromJSONTyped;
 function DeleteWebsiteGroupApiModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Name': value.name,
+        'Name': value['name'],
     };
 }
 exports.DeleteWebsiteGroupApiModelToJSON = DeleteWebsiteGroupApiModelToJSON;

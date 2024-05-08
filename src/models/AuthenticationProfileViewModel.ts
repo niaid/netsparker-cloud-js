@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 import type { CustomScriptPageViewModel } from './CustomScriptPageViewModel';
 import {
     CustomScriptPageViewModelFromJSON,
@@ -62,13 +62,11 @@ export interface AuthenticationProfileViewModel {
  * Check if a given object implements the AuthenticationProfileViewModel interface.
  */
 export function instanceOfAuthenticationProfileViewModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "name" in value;
-    isInstance = isInstance && "triggeredUrl" in value;
-    isInstance = isInstance && "loginUrl" in value;
-    isInstance = isInstance && "customScripts" in value;
-
-    return isInstance;
+    if (!('name' in value)) return false;
+    if (!('triggeredUrl' in value)) return false;
+    if (!('loginUrl' in value)) return false;
+    if (!('customScripts' in value)) return false;
+    return true;
 }
 
 export function AuthenticationProfileViewModelFromJSON(json: any): AuthenticationProfileViewModel {
@@ -76,12 +74,12 @@ export function AuthenticationProfileViewModelFromJSON(json: any): Authenticatio
 }
 
 export function AuthenticationProfileViewModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): AuthenticationProfileViewModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'id': !exists(json, 'id') ? undefined : json['id'],
+        'id': json['id'] == null ? undefined : json['id'],
         'name': json['name'],
         'triggeredUrl': json['triggeredUrl'],
         'loginUrl': json['loginUrl'],
@@ -90,19 +88,16 @@ export function AuthenticationProfileViewModelFromJSONTyped(json: any, ignoreDis
 }
 
 export function AuthenticationProfileViewModelToJSON(value?: AuthenticationProfileViewModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'id': value.id,
-        'name': value.name,
-        'triggeredUrl': value.triggeredUrl,
-        'loginUrl': value.loginUrl,
-        'customScripts': ((value.customScripts as Array<any>).map(CustomScriptPageViewModelToJSON)),
+        'id': value['id'],
+        'name': value['name'],
+        'triggeredUrl': value['triggeredUrl'],
+        'loginUrl': value['loginUrl'],
+        'customScripts': ((value['customScripts'] as Array<any>).map(CustomScriptPageViewModelToJSON)),
     };
 }
 

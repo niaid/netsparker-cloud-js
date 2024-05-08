@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * 
  * @export
@@ -37,9 +37,7 @@ export interface IntegrationWizardResultModel {
  * Check if a given object implements the IntegrationWizardResultModel interface.
  */
 export function instanceOfIntegrationWizardResultModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function IntegrationWizardResultModelFromJSON(json: any): IntegrationWizardResultModel {
@@ -47,27 +45,24 @@ export function IntegrationWizardResultModelFromJSON(json: any): IntegrationWiza
 }
 
 export function IntegrationWizardResultModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): IntegrationWizardResultModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'status': !exists(json, 'Status') ? undefined : json['Status'],
-        'errorMessage': !exists(json, 'ErrorMessage') ? undefined : json['ErrorMessage'],
+        'status': json['Status'] == null ? undefined : json['Status'],
+        'errorMessage': json['ErrorMessage'] == null ? undefined : json['ErrorMessage'],
     };
 }
 
 export function IntegrationWizardResultModelToJSON(value?: IntegrationWizardResultModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Status': value.status,
-        'ErrorMessage': value.errorMessage,
+        'Status': value['status'],
+        'ErrorMessage': value['errorMessage'],
     };
 }
 

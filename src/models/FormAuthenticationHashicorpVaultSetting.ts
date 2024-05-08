@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 import type { FormAuthenticationHashicorpVaultSecretSetting } from './FormAuthenticationHashicorpVaultSecretSetting';
 import {
     FormAuthenticationHashicorpVaultSecretSettingFromJSON,
@@ -118,9 +118,7 @@ export type FormAuthenticationHashicorpVaultSettingAuthTypeEnum = typeof FormAut
  * Check if a given object implements the FormAuthenticationHashicorpVaultSetting interface.
  */
 export function instanceOfFormAuthenticationHashicorpVaultSetting(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function FormAuthenticationHashicorpVaultSettingFromJSON(json: any): FormAuthenticationHashicorpVaultSetting {
@@ -128,45 +126,42 @@ export function FormAuthenticationHashicorpVaultSettingFromJSON(json: any): Form
 }
 
 export function FormAuthenticationHashicorpVaultSettingFromJSONTyped(json: any, ignoreDiscriminator: boolean): FormAuthenticationHashicorpVaultSetting {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'secretSetting': !exists(json, 'SecretSetting') ? undefined : FormAuthenticationHashicorpVaultSecretSettingFromJSON(json['SecretSetting']),
-        'token': !exists(json, 'Token') ? undefined : json['Token'],
-        'url': !exists(json, 'Url') ? undefined : json['Url'],
-        'agentMode': !exists(json, 'AgentMode') ? undefined : json['AgentMode'],
-        'encrypted': !exists(json, 'Encrypted') ? undefined : json['Encrypted'],
-        'authType': !exists(json, 'AuthType') ? undefined : json['AuthType'],
-        'certificateFileBytes': !exists(json, 'CertificateFileBytes') ? undefined : json['CertificateFileBytes'],
-        'certificateFilePassword': !exists(json, 'CertificateFilePassword') ? undefined : json['CertificateFilePassword'],
-        'path': !exists(json, 'Path') ? undefined : json['Path'],
-        'namespace': !exists(json, 'Namespace') ? undefined : json['Namespace'],
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'secretSetting': json['SecretSetting'] == null ? undefined : FormAuthenticationHashicorpVaultSecretSettingFromJSON(json['SecretSetting']),
+        'token': json['Token'] == null ? undefined : json['Token'],
+        'url': json['Url'] == null ? undefined : json['Url'],
+        'agentMode': json['AgentMode'] == null ? undefined : json['AgentMode'],
+        'encrypted': json['Encrypted'] == null ? undefined : json['Encrypted'],
+        'authType': json['AuthType'] == null ? undefined : json['AuthType'],
+        'certificateFileBytes': json['CertificateFileBytes'] == null ? undefined : json['CertificateFileBytes'],
+        'certificateFilePassword': json['CertificateFilePassword'] == null ? undefined : json['CertificateFilePassword'],
+        'path': json['Path'] == null ? undefined : json['Path'],
+        'namespace': json['Namespace'] == null ? undefined : json['Namespace'],
     };
 }
 
 export function FormAuthenticationHashicorpVaultSettingToJSON(value?: FormAuthenticationHashicorpVaultSetting | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Id': value.id,
-        'SecretSetting': FormAuthenticationHashicorpVaultSecretSettingToJSON(value.secretSetting),
-        'Token': value.token,
-        'Url': value.url,
-        'AgentMode': value.agentMode,
-        'Encrypted': value.encrypted,
-        'AuthType': value.authType,
-        'CertificateFileBytes': value.certificateFileBytes,
-        'CertificateFilePassword': value.certificateFilePassword,
-        'Path': value.path,
-        'Namespace': value.namespace,
+        'Id': value['id'],
+        'SecretSetting': FormAuthenticationHashicorpVaultSecretSettingToJSON(value['secretSetting']),
+        'Token': value['token'],
+        'Url': value['url'],
+        'AgentMode': value['agentMode'],
+        'Encrypted': value['encrypted'],
+        'AuthType': value['authType'],
+        'CertificateFileBytes': value['certificateFileBytes'],
+        'CertificateFilePassword': value['certificateFilePassword'],
+        'Path': value['path'],
+        'Namespace': value['namespace'],
     };
 }
 

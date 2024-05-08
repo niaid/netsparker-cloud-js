@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * 
  * @export
@@ -55,9 +55,7 @@ export type IssueSummaryStatusModelStatusEnum = typeof IssueSummaryStatusModelSt
  * Check if a given object implements the IssueSummaryStatusModel interface.
  */
 export function instanceOfIssueSummaryStatusModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function IssueSummaryStatusModelFromJSON(json: any): IssueSummaryStatusModel {
@@ -65,26 +63,23 @@ export function IssueSummaryStatusModelFromJSON(json: any): IssueSummaryStatusMo
 }
 
 export function IssueSummaryStatusModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): IssueSummaryStatusModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'status': !exists(json, 'Status') ? undefined : json['Status'],
-        'statusDate': !exists(json, 'StatusDate') ? undefined : json['StatusDate'],
+        'status': json['Status'] == null ? undefined : json['Status'],
+        'statusDate': json['StatusDate'] == null ? undefined : json['StatusDate'],
     };
 }
 
-export function IssueSummaryStatusModelToJSON(value?: IssueSummaryStatusModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+export function IssueSummaryStatusModelToJSON(value?: Omit<IssueSummaryStatusModel, 'StatusDate'> | null): any {
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Status': value.status,
+        'Status': value['status'],
     };
 }
 

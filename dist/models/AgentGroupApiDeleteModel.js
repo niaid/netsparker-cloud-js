@@ -18,9 +18,9 @@ exports.AgentGroupApiDeleteModelToJSON = exports.AgentGroupApiDeleteModelFromJSO
  * Check if a given object implements the AgentGroupApiDeleteModel interface.
  */
 function instanceOfAgentGroupApiDeleteModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "name" in value;
-    return isInstance;
+    if (!('name' in value))
+        return false;
+    return true;
 }
 exports.instanceOfAgentGroupApiDeleteModel = instanceOfAgentGroupApiDeleteModel;
 function AgentGroupApiDeleteModelFromJSON(json) {
@@ -28,7 +28,7 @@ function AgentGroupApiDeleteModelFromJSON(json) {
 }
 exports.AgentGroupApiDeleteModelFromJSON = AgentGroupApiDeleteModelFromJSON;
 function AgentGroupApiDeleteModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -37,14 +37,11 @@ function AgentGroupApiDeleteModelFromJSONTyped(json, ignoreDiscriminator) {
 }
 exports.AgentGroupApiDeleteModelFromJSONTyped = AgentGroupApiDeleteModelFromJSONTyped;
 function AgentGroupApiDeleteModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Name': value.name,
+        'Name': value['name'],
     };
 }
 exports.AgentGroupApiDeleteModelToJSON = AgentGroupApiDeleteModelToJSON;

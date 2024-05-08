@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ServiceNowIntegrationInfoModelFieldMappingsDictionaryToJSON = exports.ServiceNowIntegrationInfoModelFieldMappingsDictionaryFromJSONTyped = exports.ServiceNowIntegrationInfoModelFieldMappingsDictionaryFromJSON = exports.instanceOfServiceNowIntegrationInfoModelFieldMappingsDictionary = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the ServiceNowIntegrationInfoModelFieldMappingsDictionary interface.
  */
 function instanceOfServiceNowIntegrationInfoModelFieldMappingsDictionary(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfServiceNowIntegrationInfoModelFieldMappingsDictionary = instanceOfServiceNowIntegrationInfoModelFieldMappingsDictionary;
 function ServiceNowIntegrationInfoModelFieldMappingsDictionaryFromJSON(json) {
@@ -28,23 +26,20 @@ function ServiceNowIntegrationInfoModelFieldMappingsDictionaryFromJSON(json) {
 }
 exports.ServiceNowIntegrationInfoModelFieldMappingsDictionaryFromJSON = ServiceNowIntegrationInfoModelFieldMappingsDictionaryFromJSON;
 function ServiceNowIntegrationInfoModelFieldMappingsDictionaryFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'severity': !(0, runtime_1.exists)(json, 'Severity') ? undefined : json['Severity'],
+        'severity': json['Severity'] == null ? undefined : json['Severity'],
     };
 }
 exports.ServiceNowIntegrationInfoModelFieldMappingsDictionaryFromJSONTyped = ServiceNowIntegrationInfoModelFieldMappingsDictionaryFromJSONTyped;
 function ServiceNowIntegrationInfoModelFieldMappingsDictionaryToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Severity': value.severity,
+        'Severity': value['severity'],
     };
 }
 exports.ServiceNowIntegrationInfoModelFieldMappingsDictionaryToJSON = ServiceNowIntegrationInfoModelFieldMappingsDictionaryToJSON;

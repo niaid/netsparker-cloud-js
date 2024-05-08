@@ -9,8 +9,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
 import type { IntegrationWizardResultModel } from './IntegrationWizardResultModel';
+import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
 /**
  * The PagerDuty integration info
  * @export
@@ -173,6 +173,18 @@ export interface PagerDutyIntegrationInfoModel {
      * @memberof PagerDutyIntegrationInfoModel
      */
     integrationWizardResultModel?: IntegrationWizardResultModel;
+    /**
+     *
+     * @type {string}
+     * @memberof PagerDutyIntegrationInfoModel
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PagerDutyIntegrationInfoModel
+     */
+    state?: PagerDutyIntegrationInfoModelStateEnum;
 }
 /**
  * @export
@@ -238,9 +250,17 @@ export declare const PagerDutyIntegrationInfoModelTemplateTypeEnum: {
 };
 export type PagerDutyIntegrationInfoModelTemplateTypeEnum = typeof PagerDutyIntegrationInfoModelTemplateTypeEnum[keyof typeof PagerDutyIntegrationInfoModelTemplateTypeEnum];
 /**
+ * @export
+ */
+export declare const PagerDutyIntegrationInfoModelStateEnum: {
+    readonly Active: "Active";
+    readonly Suspended: "Suspended";
+};
+export type PagerDutyIntegrationInfoModelStateEnum = typeof PagerDutyIntegrationInfoModelStateEnum[keyof typeof PagerDutyIntegrationInfoModelStateEnum];
+/**
  * Check if a given object implements the PagerDutyIntegrationInfoModel interface.
  */
 export declare function instanceOfPagerDutyIntegrationInfoModel(value: object): boolean;
 export declare function PagerDutyIntegrationInfoModelFromJSON(json: any): PagerDutyIntegrationInfoModel;
 export declare function PagerDutyIntegrationInfoModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): PagerDutyIntegrationInfoModel;
-export declare function PagerDutyIntegrationInfoModelToJSON(value?: PagerDutyIntegrationInfoModel | null): any;
+export declare function PagerDutyIntegrationInfoModelToJSON(value?: Omit<PagerDutyIntegrationInfoModel, 'ApiUrl' | 'IncidentBodyType' | 'IncidentType' | 'Type' | 'GenericErrorMessage' | 'Identifier' | 'TestMessageBody' | 'TestMessageTitle' | 'WebhookUrl'> | null): any;

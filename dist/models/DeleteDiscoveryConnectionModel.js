@@ -14,7 +14,6 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DeleteDiscoveryConnectionModelToJSON = exports.DeleteDiscoveryConnectionModelFromJSONTyped = exports.DeleteDiscoveryConnectionModelFromJSON = exports.instanceOfDeleteDiscoveryConnectionModel = exports.DeleteDiscoveryConnectionModelTypeEnum = void 0;
-const runtime_1 = require("../runtime");
 /**
  * @export
  */
@@ -25,9 +24,9 @@ exports.DeleteDiscoveryConnectionModelTypeEnum = {
  * Check if a given object implements the DeleteDiscoveryConnectionModel interface.
  */
 function instanceOfDeleteDiscoveryConnectionModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "connectionId" in value;
-    return isInstance;
+    if (!('connectionId' in value))
+        return false;
+    return true;
 }
 exports.instanceOfDeleteDiscoveryConnectionModel = instanceOfDeleteDiscoveryConnectionModel;
 function DeleteDiscoveryConnectionModelFromJSON(json) {
@@ -35,25 +34,22 @@ function DeleteDiscoveryConnectionModelFromJSON(json) {
 }
 exports.DeleteDiscoveryConnectionModelFromJSON = DeleteDiscoveryConnectionModelFromJSON;
 function DeleteDiscoveryConnectionModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         'connectionId': json['ConnectionId'],
-        'type': !(0, runtime_1.exists)(json, 'Type') ? undefined : json['Type'],
+        'type': json['Type'] == null ? undefined : json['Type'],
     };
 }
 exports.DeleteDiscoveryConnectionModelFromJSONTyped = DeleteDiscoveryConnectionModelFromJSONTyped;
 function DeleteDiscoveryConnectionModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'ConnectionId': value.connectionId,
-        'Type': value.type,
+        'ConnectionId': value['connectionId'],
+        'Type': value['type'],
     };
 }
 exports.DeleteDiscoveryConnectionModelToJSON = DeleteDiscoveryConnectionModelToJSON;

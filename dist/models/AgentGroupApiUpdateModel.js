@@ -18,11 +18,13 @@ exports.AgentGroupApiUpdateModelToJSON = exports.AgentGroupApiUpdateModelFromJSO
  * Check if a given object implements the AgentGroupApiUpdateModel interface.
  */
 function instanceOfAgentGroupApiUpdateModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "agents" in value;
-    isInstance = isInstance && "id" in value;
-    isInstance = isInstance && "name" in value;
-    return isInstance;
+    if (!('agents' in value))
+        return false;
+    if (!('id' in value))
+        return false;
+    if (!('name' in value))
+        return false;
+    return true;
 }
 exports.instanceOfAgentGroupApiUpdateModel = instanceOfAgentGroupApiUpdateModel;
 function AgentGroupApiUpdateModelFromJSON(json) {
@@ -30,7 +32,7 @@ function AgentGroupApiUpdateModelFromJSON(json) {
 }
 exports.AgentGroupApiUpdateModelFromJSON = AgentGroupApiUpdateModelFromJSON;
 function AgentGroupApiUpdateModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -41,16 +43,13 @@ function AgentGroupApiUpdateModelFromJSONTyped(json, ignoreDiscriminator) {
 }
 exports.AgentGroupApiUpdateModelFromJSONTyped = AgentGroupApiUpdateModelFromJSONTyped;
 function AgentGroupApiUpdateModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Agents': value.agents,
-        'Id': value.id,
-        'Name': value.name,
+        'Agents': value['agents'],
+        'Id': value['id'],
+        'Name': value['name'],
     };
 }
 exports.AgentGroupApiUpdateModelToJSON = AgentGroupApiUpdateModelToJSON;

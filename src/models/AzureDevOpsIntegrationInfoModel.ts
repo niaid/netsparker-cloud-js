@@ -12,19 +12,19 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
-import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
-import {
-    IntegrationCustomFieldVmFromJSON,
-    IntegrationCustomFieldVmFromJSONTyped,
-    IntegrationCustomFieldVmToJSON,
-} from './IntegrationCustomFieldVm';
+import { mapValues } from '../runtime';
 import type { IntegrationWizardResultModel } from './IntegrationWizardResultModel';
 import {
     IntegrationWizardResultModelFromJSON,
     IntegrationWizardResultModelFromJSONTyped,
     IntegrationWizardResultModelToJSON,
 } from './IntegrationWizardResultModel';
+import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
+import {
+    IntegrationCustomFieldVmFromJSON,
+    IntegrationCustomFieldVmFromJSONTyped,
+    IntegrationCustomFieldVmToJSON,
+} from './IntegrationCustomFieldVm';
 
 /**
  * The Azure DevOps integration info
@@ -164,6 +164,18 @@ export interface AzureDevOpsIntegrationInfoModel {
      * @memberof AzureDevOpsIntegrationInfoModel
      */
     integrationWizardResultModel?: IntegrationWizardResultModel;
+    /**
+     * 
+     * @type {string}
+     * @memberof AzureDevOpsIntegrationInfoModel
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof AzureDevOpsIntegrationInfoModel
+     */
+    state?: AzureDevOpsIntegrationInfoModelStateEnum;
 }
 
 
@@ -216,18 +228,25 @@ export const AzureDevOpsIntegrationInfoModelTemplateTypeEnum = {
 } as const;
 export type AzureDevOpsIntegrationInfoModelTemplateTypeEnum = typeof AzureDevOpsIntegrationInfoModelTemplateTypeEnum[keyof typeof AzureDevOpsIntegrationInfoModelTemplateTypeEnum];
 
+/**
+ * @export
+ */
+export const AzureDevOpsIntegrationInfoModelStateEnum = {
+    Active: 'Active',
+    Suspended: 'Suspended'
+} as const;
+export type AzureDevOpsIntegrationInfoModelStateEnum = typeof AzureDevOpsIntegrationInfoModelStateEnum[keyof typeof AzureDevOpsIntegrationInfoModelStateEnum];
+
 
 /**
  * Check if a given object implements the AzureDevOpsIntegrationInfoModel interface.
  */
 export function instanceOfAzureDevOpsIntegrationInfoModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "password" in value;
-    isInstance = isInstance && "projectUri" in value;
-    isInstance = isInstance && "workItemTypeName" in value;
-    isInstance = isInstance && "titleFormat" in value;
-
-    return isInstance;
+    if (!('password' in value)) return false;
+    if (!('projectUri' in value)) return false;
+    if (!('workItemTypeName' in value)) return false;
+    if (!('titleFormat' in value)) return false;
+    return true;
 }
 
 export function AzureDevOpsIntegrationInfoModelFromJSON(json: any): AzureDevOpsIntegrationInfoModel {
@@ -235,61 +254,62 @@ export function AzureDevOpsIntegrationInfoModelFromJSON(json: any): AzureDevOpsI
 }
 
 export function AzureDevOpsIntegrationInfoModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): AzureDevOpsIntegrationInfoModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
         'password': json['Password'],
-        'username': !exists(json, 'Username') ? undefined : json['Username'],
-        'assignedTo': !exists(json, 'AssignedTo') ? undefined : json['AssignedTo'],
-        'domain': !exists(json, 'Domain') ? undefined : json['Domain'],
+        'username': json['Username'] == null ? undefined : json['Username'],
+        'assignedTo': json['AssignedTo'] == null ? undefined : json['AssignedTo'],
+        'domain': json['Domain'] == null ? undefined : json['Domain'],
         'projectUri': json['ProjectUri'],
-        'tags': !exists(json, 'Tags') ? undefined : json['Tags'],
+        'tags': json['Tags'] == null ? undefined : json['Tags'],
         'workItemTypeName': json['WorkItemTypeName'],
-        'webhookUrl': !exists(json, 'WebhookUrl') ? undefined : json['WebhookUrl'],
-        'type': !exists(json, 'Type') ? undefined : json['Type'],
-        'genericErrorMessage': !exists(json, 'GenericErrorMessage') ? undefined : json['GenericErrorMessage'],
-        'identifier': !exists(json, 'Identifier') ? undefined : json['Identifier'],
-        'testMessageBody': !exists(json, 'TestMessageBody') ? undefined : json['TestMessageBody'],
-        'testMessageTitle': !exists(json, 'TestMessageTitle') ? undefined : json['TestMessageTitle'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'integrationVersion': !exists(json, 'IntegrationVersion') ? undefined : json['IntegrationVersion'],
-        'accountID': !exists(json, 'AccountID') ? undefined : json['AccountID'],
-        'customFields': !exists(json, 'CustomFields') ? undefined : ((json['CustomFields'] as Array<any>).map(IntegrationCustomFieldVmFromJSON)),
-        'templateType': !exists(json, 'TemplateType') ? undefined : json['TemplateType'],
-        'reopenStatus': !exists(json, 'ReopenStatus') ? undefined : json['ReopenStatus'],
-        'resolvedStatus': !exists(json, 'ResolvedStatus') ? undefined : json['ResolvedStatus'],
+        'webhookUrl': json['WebhookUrl'] == null ? undefined : json['WebhookUrl'],
+        'type': json['Type'] == null ? undefined : json['Type'],
+        'genericErrorMessage': json['GenericErrorMessage'] == null ? undefined : json['GenericErrorMessage'],
+        'identifier': json['Identifier'] == null ? undefined : json['Identifier'],
+        'testMessageBody': json['TestMessageBody'] == null ? undefined : json['TestMessageBody'],
+        'testMessageTitle': json['TestMessageTitle'] == null ? undefined : json['TestMessageTitle'],
+        'name': json['Name'] == null ? undefined : json['Name'],
+        'integrationVersion': json['IntegrationVersion'] == null ? undefined : json['IntegrationVersion'],
+        'accountID': json['AccountID'] == null ? undefined : json['AccountID'],
+        'customFields': json['CustomFields'] == null ? undefined : ((json['CustomFields'] as Array<any>).map(IntegrationCustomFieldVmFromJSON)),
+        'templateType': json['TemplateType'] == null ? undefined : json['TemplateType'],
+        'reopenStatus': json['ReopenStatus'] == null ? undefined : json['ReopenStatus'],
+        'resolvedStatus': json['ResolvedStatus'] == null ? undefined : json['ResolvedStatus'],
         'titleFormat': json['TitleFormat'],
-        'integrationWizardResultModel': !exists(json, 'IntegrationWizardResultModel') ? undefined : IntegrationWizardResultModelFromJSON(json['IntegrationWizardResultModel']),
+        'integrationWizardResultModel': json['IntegrationWizardResultModel'] == null ? undefined : IntegrationWizardResultModelFromJSON(json['IntegrationWizardResultModel']),
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'state': json['State'] == null ? undefined : json['State'],
     };
 }
 
-export function AzureDevOpsIntegrationInfoModelToJSON(value?: AzureDevOpsIntegrationInfoModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+export function AzureDevOpsIntegrationInfoModelToJSON(value?: Omit<AzureDevOpsIntegrationInfoModel, 'WebhookUrl'|'Type'|'GenericErrorMessage'|'Identifier'|'TestMessageBody'|'TestMessageTitle'> | null): any {
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Password': value.password,
-        'Username': value.username,
-        'AssignedTo': value.assignedTo,
-        'Domain': value.domain,
-        'ProjectUri': value.projectUri,
-        'Tags': value.tags,
-        'WorkItemTypeName': value.workItemTypeName,
-        'Name': value.name,
-        'IntegrationVersion': value.integrationVersion,
-        'AccountID': value.accountID,
-        'CustomFields': value.customFields === undefined ? undefined : ((value.customFields as Array<any>).map(IntegrationCustomFieldVmToJSON)),
-        'TemplateType': value.templateType,
-        'ReopenStatus': value.reopenStatus,
-        'ResolvedStatus': value.resolvedStatus,
-        'TitleFormat': value.titleFormat,
-        'IntegrationWizardResultModel': IntegrationWizardResultModelToJSON(value.integrationWizardResultModel),
+        'Password': value['password'],
+        'Username': value['username'],
+        'AssignedTo': value['assignedTo'],
+        'Domain': value['domain'],
+        'ProjectUri': value['projectUri'],
+        'Tags': value['tags'],
+        'WorkItemTypeName': value['workItemTypeName'],
+        'Name': value['name'],
+        'IntegrationVersion': value['integrationVersion'],
+        'AccountID': value['accountID'],
+        'CustomFields': value['customFields'] == null ? undefined : ((value['customFields'] as Array<any>).map(IntegrationCustomFieldVmToJSON)),
+        'TemplateType': value['templateType'],
+        'ReopenStatus': value['reopenStatus'],
+        'ResolvedStatus': value['resolvedStatus'],
+        'TitleFormat': value['titleFormat'],
+        'IntegrationWizardResultModel': IntegrationWizardResultModelToJSON(value['integrationWizardResultModel']),
+        'Id': value['id'],
+        'State': value['state'],
     };
 }
 

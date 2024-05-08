@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * 
  * @export
@@ -62,11 +62,9 @@ export type CustomScriptUpdateRequestApiModelTypeEnum = typeof CustomScriptUpdat
  * Check if a given object implements the CustomScriptUpdateRequestApiModel interface.
  */
 export function instanceOfCustomScriptUpdateRequestApiModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "name" in value;
-    isInstance = isInstance && "content" in value;
-
-    return isInstance;
+    if (!('name' in value)) return false;
+    if (!('content' in value)) return false;
+    return true;
 }
 
 export function CustomScriptUpdateRequestApiModelFromJSON(json: any): CustomScriptUpdateRequestApiModel {
@@ -74,31 +72,28 @@ export function CustomScriptUpdateRequestApiModelFromJSON(json: any): CustomScri
 }
 
 export function CustomScriptUpdateRequestApiModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): CustomScriptUpdateRequestApiModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'type': !exists(json, 'Type') ? undefined : json['Type'],
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'type': json['Type'] == null ? undefined : json['Type'],
         'name': json['Name'],
         'content': json['Content'],
     };
 }
 
 export function CustomScriptUpdateRequestApiModelToJSON(value?: CustomScriptUpdateRequestApiModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Id': value.id,
-        'Type': value.type,
-        'Name': value.name,
-        'Content': value.content,
+        'Id': value['id'],
+        'Type': value['type'],
+        'Name': value['name'],
+        'Content': value['content'],
     };
 }
 

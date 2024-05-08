@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DiscoverySettingsApiModelToJSON = exports.DiscoverySettingsApiModelFromJSONTyped = exports.DiscoverySettingsApiModelFromJSON = exports.instanceOfDiscoverySettingsApiModel = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the DiscoverySettingsApiModel interface.
  */
 function instanceOfDiscoverySettingsApiModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfDiscoverySettingsApiModel = instanceOfDiscoverySettingsApiModel;
 function DiscoverySettingsApiModelFromJSON(json) {
@@ -28,47 +26,52 @@ function DiscoverySettingsApiModelFromJSON(json) {
 }
 exports.DiscoverySettingsApiModelFromJSON = DiscoverySettingsApiModelFromJSON;
 function DiscoverySettingsApiModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'includedSlds': !(0, runtime_1.exists)(json, 'IncludedSlds') ? undefined : json['IncludedSlds'],
-        'includedIpRanges': !(0, runtime_1.exists)(json, 'IncludedIpRanges') ? undefined : json['IncludedIpRanges'],
-        'includedOrganizations': !(0, runtime_1.exists)(json, 'IncludedOrganizations') ? undefined : json['IncludedOrganizations'],
-        'excludedSlds': !(0, runtime_1.exists)(json, 'ExcludedSlds') ? undefined : json['ExcludedSlds'],
-        'excludedTlds': !(0, runtime_1.exists)(json, 'ExcludedTlds') ? undefined : json['ExcludedTlds'],
-        'excludedIpAddresses': !(0, runtime_1.exists)(json, 'ExcludedIpAddresses') ? undefined : json['ExcludedIpAddresses'],
-        'excludedOrganizations': !(0, runtime_1.exists)(json, 'ExcludedOrganizations') ? undefined : json['ExcludedOrganizations'],
-        'onlyRegisteredDomains': !(0, runtime_1.exists)(json, 'OnlyRegisteredDomains') ? undefined : json['OnlyRegisteredDomains'],
-        'sharedHostMatching': !(0, runtime_1.exists)(json, 'SharedHostMatching') ? undefined : json['SharedHostMatching'],
-        'organizationNameMatching': !(0, runtime_1.exists)(json, 'OrganizationNameMatching') ? undefined : json['OrganizationNameMatching'],
-        'emailMatching': !(0, runtime_1.exists)(json, 'EmailMatching') ? undefined : json['EmailMatching'],
-        'websitesMatching': !(0, runtime_1.exists)(json, 'WebsitesMatching') ? undefined : json['WebsitesMatching'],
-        'enableSlds': !(0, runtime_1.exists)(json, 'EnableSlds') ? undefined : json['EnableSlds'],
+        'includedMainDomains': json['IncludedMainDomains'] == null ? undefined : json['IncludedMainDomains'],
+        'includedSlds': json['IncludedSlds'] == null ? undefined : json['IncludedSlds'],
+        'includedIpRanges': json['IncludedIpRanges'] == null ? undefined : json['IncludedIpRanges'],
+        'includedOrganizations': json['IncludedOrganizations'] == null ? undefined : json['IncludedOrganizations'],
+        'excludedDomains': json['ExcludedDomains'] == null ? undefined : json['ExcludedDomains'],
+        'excludedSlds': json['ExcludedSlds'] == null ? undefined : json['ExcludedSlds'],
+        'excludedTlds': json['ExcludedTlds'] == null ? undefined : json['ExcludedTlds'],
+        'excludedIpAddresses': json['ExcludedIpAddresses'] == null ? undefined : json['ExcludedIpAddresses'],
+        'excludedOrganizations': json['ExcludedOrganizations'] == null ? undefined : json['ExcludedOrganizations'],
+        'onlyRegisteredDomains': json['OnlyRegisteredDomains'] == null ? undefined : json['OnlyRegisteredDomains'],
+        'sharedHostMatching': json['SharedHostMatching'] == null ? undefined : json['SharedHostMatching'],
+        'organizationNameMatching': json['OrganizationNameMatching'] == null ? undefined : json['OrganizationNameMatching'],
+        'emailMatching': json['EmailMatching'] == null ? undefined : json['EmailMatching'],
+        'websitesMatching': json['WebsitesMatching'] == null ? undefined : json['WebsitesMatching'],
+        'enableSlds': json['EnableSlds'] == null ? undefined : json['EnableSlds'],
+        'isRiskScoringEnabled': json['IsRiskScoringEnabled'] == null ? undefined : json['IsRiskScoringEnabled'],
+        'enableMainDomains': json['EnableMainDomains'] == null ? undefined : json['EnableMainDomains'],
     };
 }
 exports.DiscoverySettingsApiModelFromJSONTyped = DiscoverySettingsApiModelFromJSONTyped;
 function DiscoverySettingsApiModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'IncludedSlds': value.includedSlds,
-        'IncludedIpRanges': value.includedIpRanges,
-        'IncludedOrganizations': value.includedOrganizations,
-        'ExcludedSlds': value.excludedSlds,
-        'ExcludedTlds': value.excludedTlds,
-        'ExcludedIpAddresses': value.excludedIpAddresses,
-        'ExcludedOrganizations': value.excludedOrganizations,
-        'OnlyRegisteredDomains': value.onlyRegisteredDomains,
-        'SharedHostMatching': value.sharedHostMatching,
-        'OrganizationNameMatching': value.organizationNameMatching,
-        'EmailMatching': value.emailMatching,
-        'WebsitesMatching': value.websitesMatching,
-        'EnableSlds': value.enableSlds,
+        'IncludedMainDomains': value['includedMainDomains'],
+        'IncludedSlds': value['includedSlds'],
+        'IncludedIpRanges': value['includedIpRanges'],
+        'IncludedOrganizations': value['includedOrganizations'],
+        'ExcludedDomains': value['excludedDomains'],
+        'ExcludedSlds': value['excludedSlds'],
+        'ExcludedTlds': value['excludedTlds'],
+        'ExcludedIpAddresses': value['excludedIpAddresses'],
+        'ExcludedOrganizations': value['excludedOrganizations'],
+        'OnlyRegisteredDomains': value['onlyRegisteredDomains'],
+        'SharedHostMatching': value['sharedHostMatching'],
+        'OrganizationNameMatching': value['organizationNameMatching'],
+        'EmailMatching': value['emailMatching'],
+        'WebsitesMatching': value['websitesMatching'],
+        'EnableSlds': value['enableSlds'],
+        'IsRiskScoringEnabled': value['isRiskScoringEnabled'],
+        'EnableMainDomains': value['enableMainDomains'],
     };
 }
 exports.DiscoverySettingsApiModelToJSON = DiscoverySettingsApiModelToJSON;

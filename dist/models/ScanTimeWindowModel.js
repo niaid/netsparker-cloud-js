@@ -14,14 +14,12 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ScanTimeWindowModelToJSON = exports.ScanTimeWindowModelFromJSONTyped = exports.ScanTimeWindowModelFromJSON = exports.instanceOfScanTimeWindowModel = void 0;
-const runtime_1 = require("../runtime");
 const ScanTimeWindowItemModel_1 = require("./ScanTimeWindowItemModel");
 /**
  * Check if a given object implements the ScanTimeWindowModel interface.
  */
 function instanceOfScanTimeWindowModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfScanTimeWindowModel = instanceOfScanTimeWindowModel;
 function ScanTimeWindowModelFromJSON(json) {
@@ -29,23 +27,20 @@ function ScanTimeWindowModelFromJSON(json) {
 }
 exports.ScanTimeWindowModelFromJSON = ScanTimeWindowModelFromJSON;
 function ScanTimeWindowModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'items': !(0, runtime_1.exists)(json, 'Items') ? undefined : (json['Items'].map(ScanTimeWindowItemModel_1.ScanTimeWindowItemModelFromJSON)),
+        'items': json['Items'] == null ? undefined : (json['Items'].map(ScanTimeWindowItemModel_1.ScanTimeWindowItemModelFromJSON)),
     };
 }
 exports.ScanTimeWindowModelFromJSONTyped = ScanTimeWindowModelFromJSONTyped;
 function ScanTimeWindowModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Items': value.items === undefined ? undefined : (value.items.map(ScanTimeWindowItemModel_1.ScanTimeWindowItemModelToJSON)),
+        'Items': value['items'] == null ? undefined : (value['items'].map(ScanTimeWindowItemModel_1.ScanTimeWindowItemModelToJSON)),
     };
 }
 exports.ScanTimeWindowModelToJSON = ScanTimeWindowModelToJSON;

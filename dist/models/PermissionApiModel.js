@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PermissionApiModelToJSON = exports.PermissionApiModelFromJSONTyped = exports.PermissionApiModelFromJSON = exports.instanceOfPermissionApiModel = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the PermissionApiModel interface.
  */
 function instanceOfPermissionApiModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfPermissionApiModel = instanceOfPermissionApiModel;
 function PermissionApiModelFromJSON(json) {
@@ -28,27 +26,24 @@ function PermissionApiModelFromJSON(json) {
 }
 exports.PermissionApiModelFromJSON = PermissionApiModelFromJSON;
 function PermissionApiModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
-        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
-        'information': !(0, runtime_1.exists)(json, 'Information') ? undefined : json['Information'],
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'name': json['Name'] == null ? undefined : json['Name'],
+        'information': json['Information'] == null ? undefined : json['Information'],
     };
 }
 exports.PermissionApiModelFromJSONTyped = PermissionApiModelFromJSONTyped;
 function PermissionApiModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Id': value.id,
-        'Name': value.name,
-        'Information': value.information,
+        'Id': value['id'],
+        'Name': value['name'],
+        'Information': value['information'],
     };
 }
 exports.PermissionApiModelToJSON = PermissionApiModelToJSON;

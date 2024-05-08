@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.FieldPairValueToJSON = exports.FieldPairValueFromJSONTyped = exports.FieldPairValueFromJSON = exports.instanceOfFieldPairValue = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the FieldPairValue interface.
  */
 function instanceOfFieldPairValue(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfFieldPairValue = instanceOfFieldPairValue;
 function FieldPairValueFromJSON(json) {
@@ -28,25 +26,22 @@ function FieldPairValueFromJSON(json) {
 }
 exports.FieldPairValueFromJSON = FieldPairValueFromJSON;
 function FieldPairValueFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
-        'text': !(0, runtime_1.exists)(json, 'Text') ? undefined : json['Text'],
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'text': json['Text'] == null ? undefined : json['Text'],
     };
 }
 exports.FieldPairValueFromJSONTyped = FieldPairValueFromJSONTyped;
 function FieldPairValueToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Id': value.id,
-        'Text': value.text,
+        'Id': value['id'],
+        'Text': value['text'],
     };
 }
 exports.FieldPairValueToJSON = FieldPairValueToJSON;

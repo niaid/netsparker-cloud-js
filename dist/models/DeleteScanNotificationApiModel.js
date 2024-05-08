@@ -18,9 +18,9 @@ exports.DeleteScanNotificationApiModelToJSON = exports.DeleteScanNotificationApi
  * Check if a given object implements the DeleteScanNotificationApiModel interface.
  */
 function instanceOfDeleteScanNotificationApiModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "id" in value;
-    return isInstance;
+    if (!('id' in value))
+        return false;
+    return true;
 }
 exports.instanceOfDeleteScanNotificationApiModel = instanceOfDeleteScanNotificationApiModel;
 function DeleteScanNotificationApiModelFromJSON(json) {
@@ -28,7 +28,7 @@ function DeleteScanNotificationApiModelFromJSON(json) {
 }
 exports.DeleteScanNotificationApiModelFromJSON = DeleteScanNotificationApiModelFromJSON;
 function DeleteScanNotificationApiModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -37,14 +37,11 @@ function DeleteScanNotificationApiModelFromJSONTyped(json, ignoreDiscriminator) 
 }
 exports.DeleteScanNotificationApiModelFromJSONTyped = DeleteScanNotificationApiModelFromJSONTyped;
 function DeleteScanNotificationApiModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Id': value.id,
+        'Id': value['id'],
     };
 }
 exports.DeleteScanNotificationApiModelToJSON = DeleteScanNotificationApiModelToJSON;

@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a model for carrying out custom 404 settings.
  * @export
@@ -49,11 +49,9 @@ export interface Custom404SettingModel {
  * Check if a given object implements the Custom404SettingModel interface.
  */
 export function instanceOfCustom404SettingModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "max404PagesToTest" in value;
-    isInstance = isInstance && "maximum404Signature" in value;
-
-    return isInstance;
+    if (!('max404PagesToTest' in value)) return false;
+    if (!('maximum404Signature' in value)) return false;
+    return true;
 }
 
 export function Custom404SettingModelFromJSON(json: any): Custom404SettingModel {
@@ -61,31 +59,28 @@ export function Custom404SettingModelFromJSON(json: any): Custom404SettingModel 
 }
 
 export function Custom404SettingModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): Custom404SettingModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'custom404RegEx': !exists(json, 'Custom404RegEx') ? undefined : json['Custom404RegEx'],
-        'disableAuto404Detection': !exists(json, 'DisableAuto404Detection') ? undefined : json['DisableAuto404Detection'],
+        'custom404RegEx': json['Custom404RegEx'] == null ? undefined : json['Custom404RegEx'],
+        'disableAuto404Detection': json['DisableAuto404Detection'] == null ? undefined : json['DisableAuto404Detection'],
         'max404PagesToTest': json['Max404PagesToTest'],
         'maximum404Signature': json['Maximum404Signature'],
     };
 }
 
 export function Custom404SettingModelToJSON(value?: Custom404SettingModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Custom404RegEx': value.custom404RegEx,
-        'DisableAuto404Detection': value.disableAuto404Detection,
-        'Max404PagesToTest': value.max404PagesToTest,
-        'Maximum404Signature': value.maximum404Signature,
+        'Custom404RegEx': value['custom404RegEx'],
+        'DisableAuto404Detection': value['disableAuto404Detection'],
+        'Max404PagesToTest': value['max404PagesToTest'],
+        'Maximum404Signature': value['maximum404Signature'],
     };
 }
 

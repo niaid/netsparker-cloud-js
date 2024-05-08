@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * 
  * @export
@@ -31,9 +31,7 @@ export interface ScanControlApiModel {
  * Check if a given object implements the ScanControlApiModel interface.
  */
 export function instanceOfScanControlApiModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function ScanControlApiModelFromJSON(json: any): ScanControlApiModel {
@@ -41,25 +39,22 @@ export function ScanControlApiModelFromJSON(json: any): ScanControlApiModel {
 }
 
 export function ScanControlApiModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): ScanControlApiModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'isScansSuspended': !exists(json, 'IsScansSuspended') ? undefined : json['IsScansSuspended'],
+        'isScansSuspended': json['IsScansSuspended'] == null ? undefined : json['IsScansSuspended'],
     };
 }
 
 export function ScanControlApiModelToJSON(value?: ScanControlApiModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'IsScansSuspended': value.isScansSuspended,
+        'IsScansSuspended': value['isScansSuspended'],
     };
 }
 

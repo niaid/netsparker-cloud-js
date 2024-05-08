@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a scan policy setting, either general or specific to an engine.
  * @export
@@ -37,9 +37,7 @@ export interface SecurityCheckSetting {
  * Check if a given object implements the SecurityCheckSetting interface.
  */
 export function instanceOfSecurityCheckSetting(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function SecurityCheckSettingFromJSON(json: any): SecurityCheckSetting {
@@ -47,27 +45,24 @@ export function SecurityCheckSettingFromJSON(json: any): SecurityCheckSetting {
 }
 
 export function SecurityCheckSettingFromJSONTyped(json: any, ignoreDiscriminator: boolean): SecurityCheckSetting {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'value': !exists(json, 'Value') ? undefined : json['Value'],
+        'name': json['Name'] == null ? undefined : json['Name'],
+        'value': json['Value'] == null ? undefined : json['Value'],
     };
 }
 
 export function SecurityCheckSettingToJSON(value?: SecurityCheckSetting | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Name': value.name,
-        'Value': value.value,
+        'Name': value['name'],
+        'Value': value['value'],
     };
 }
 

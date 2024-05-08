@@ -14,14 +14,13 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.RoleWebsiteGroupMappingApiModelToJSON = exports.RoleWebsiteGroupMappingApiModelFromJSONTyped = exports.RoleWebsiteGroupMappingApiModelFromJSON = exports.instanceOfRoleWebsiteGroupMappingApiModel = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the RoleWebsiteGroupMappingApiModel interface.
  */
 function instanceOfRoleWebsiteGroupMappingApiModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "roleId" in value;
-    return isInstance;
+    if (!('roleId' in value))
+        return false;
+    return true;
 }
 exports.instanceOfRoleWebsiteGroupMappingApiModel = instanceOfRoleWebsiteGroupMappingApiModel;
 function RoleWebsiteGroupMappingApiModelFromJSON(json) {
@@ -29,25 +28,22 @@ function RoleWebsiteGroupMappingApiModelFromJSON(json) {
 }
 exports.RoleWebsiteGroupMappingApiModelFromJSON = RoleWebsiteGroupMappingApiModelFromJSON;
 function RoleWebsiteGroupMappingApiModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'websiteGroupId': !(0, runtime_1.exists)(json, 'WebsiteGroupId') ? undefined : json['WebsiteGroupId'],
+        'websiteGroupId': json['WebsiteGroupId'] == null ? undefined : json['WebsiteGroupId'],
         'roleId': json['RoleId'],
     };
 }
 exports.RoleWebsiteGroupMappingApiModelFromJSONTyped = RoleWebsiteGroupMappingApiModelFromJSONTyped;
 function RoleWebsiteGroupMappingApiModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'WebsiteGroupId': value.websiteGroupId,
-        'RoleId': value.roleId,
+        'WebsiteGroupId': value['websiteGroupId'],
+        'RoleId': value['roleId'],
     };
 }
 exports.RoleWebsiteGroupMappingApiModelToJSON = RoleWebsiteGroupMappingApiModelToJSON;

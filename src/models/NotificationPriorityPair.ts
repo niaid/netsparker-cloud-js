@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a notification priority pair
  * @export
@@ -37,9 +37,7 @@ export interface NotificationPriorityPair {
  * Check if a given object implements the NotificationPriorityPair interface.
  */
 export function instanceOfNotificationPriorityPair(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function NotificationPriorityPairFromJSON(json: any): NotificationPriorityPair {
@@ -47,27 +45,24 @@ export function NotificationPriorityPairFromJSON(json: any): NotificationPriorit
 }
 
 export function NotificationPriorityPairFromJSONTyped(json: any, ignoreDiscriminator: boolean): NotificationPriorityPair {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'priority': !exists(json, 'Priority') ? undefined : json['Priority'],
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'priority': json['Priority'] == null ? undefined : json['Priority'],
     };
 }
 
 export function NotificationPriorityPairToJSON(value?: NotificationPriorityPair | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Id': value.id,
-        'Priority': value.priority,
+        'Id': value['id'],
+        'Priority': value['priority'],
     };
 }
 

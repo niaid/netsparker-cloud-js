@@ -12,19 +12,19 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
-import type { OutsiderRecipient } from './OutsiderRecipient';
-import {
-    OutsiderRecipientFromJSON,
-    OutsiderRecipientFromJSONTyped,
-    OutsiderRecipientToJSON,
-} from './OutsiderRecipient';
+import { mapValues } from '../runtime';
 import type { ScanNotificationRecipientUserApiModel } from './ScanNotificationRecipientUserApiModel';
 import {
     ScanNotificationRecipientUserApiModelFromJSON,
     ScanNotificationRecipientUserApiModelFromJSONTyped,
     ScanNotificationRecipientUserApiModelToJSON,
 } from './ScanNotificationRecipientUserApiModel';
+import type { OutsiderRecipient } from './OutsiderRecipient';
+import {
+    OutsiderRecipientFromJSON,
+    OutsiderRecipientFromJSONTyped,
+    OutsiderRecipientToJSON,
+} from './OutsiderRecipient';
 
 /**
  * Represents a model for carrying out a scan notification recipient data
@@ -106,9 +106,7 @@ export type ScanNotificationRecipientApiModelSpecificSmsRecipientsEnum = typeof 
  * Check if a given object implements the ScanNotificationRecipientApiModel interface.
  */
 export function instanceOfScanNotificationRecipientApiModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function ScanNotificationRecipientApiModelFromJSON(json: any): ScanNotificationRecipientApiModel {
@@ -116,37 +114,34 @@ export function ScanNotificationRecipientApiModelFromJSON(json: any): ScanNotifi
 }
 
 export function ScanNotificationRecipientApiModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): ScanNotificationRecipientApiModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'outsiderRecipients': !exists(json, 'OutsiderRecipients') ? undefined : ((json['OutsiderRecipients'] as Array<any>).map(OutsiderRecipientFromJSON)),
-        'emailRecipientUsers': !exists(json, 'EmailRecipientUsers') ? undefined : ((json['EmailRecipientUsers'] as Array<any>).map(ScanNotificationRecipientUserApiModelFromJSON)),
-        'excludedUsers': !exists(json, 'ExcludedUsers') ? undefined : ((json['ExcludedUsers'] as Array<any>).map(ScanNotificationRecipientUserApiModelFromJSON)),
-        'integrationRecipients': !exists(json, 'IntegrationRecipients') ? undefined : json['IntegrationRecipients'],
-        'smsRecipientUsers': !exists(json, 'SmsRecipientUsers') ? undefined : ((json['SmsRecipientUsers'] as Array<any>).map(ScanNotificationRecipientUserApiModelFromJSON)),
-        'specificEmailRecipients': !exists(json, 'SpecificEmailRecipients') ? undefined : json['SpecificEmailRecipients'],
-        'specificSmsRecipients': !exists(json, 'SpecificSmsRecipients') ? undefined : json['SpecificSmsRecipients'],
+        'outsiderRecipients': json['OutsiderRecipients'] == null ? undefined : ((json['OutsiderRecipients'] as Array<any>).map(OutsiderRecipientFromJSON)),
+        'emailRecipientUsers': json['EmailRecipientUsers'] == null ? undefined : ((json['EmailRecipientUsers'] as Array<any>).map(ScanNotificationRecipientUserApiModelFromJSON)),
+        'excludedUsers': json['ExcludedUsers'] == null ? undefined : ((json['ExcludedUsers'] as Array<any>).map(ScanNotificationRecipientUserApiModelFromJSON)),
+        'integrationRecipients': json['IntegrationRecipients'] == null ? undefined : json['IntegrationRecipients'],
+        'smsRecipientUsers': json['SmsRecipientUsers'] == null ? undefined : ((json['SmsRecipientUsers'] as Array<any>).map(ScanNotificationRecipientUserApiModelFromJSON)),
+        'specificEmailRecipients': json['SpecificEmailRecipients'] == null ? undefined : json['SpecificEmailRecipients'],
+        'specificSmsRecipients': json['SpecificSmsRecipients'] == null ? undefined : json['SpecificSmsRecipients'],
     };
 }
 
 export function ScanNotificationRecipientApiModelToJSON(value?: ScanNotificationRecipientApiModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'OutsiderRecipients': value.outsiderRecipients === undefined ? undefined : ((value.outsiderRecipients as Array<any>).map(OutsiderRecipientToJSON)),
-        'EmailRecipientUsers': value.emailRecipientUsers === undefined ? undefined : ((value.emailRecipientUsers as Array<any>).map(ScanNotificationRecipientUserApiModelToJSON)),
-        'ExcludedUsers': value.excludedUsers === undefined ? undefined : ((value.excludedUsers as Array<any>).map(ScanNotificationRecipientUserApiModelToJSON)),
-        'IntegrationRecipients': value.integrationRecipients,
-        'SmsRecipientUsers': value.smsRecipientUsers === undefined ? undefined : ((value.smsRecipientUsers as Array<any>).map(ScanNotificationRecipientUserApiModelToJSON)),
-        'SpecificEmailRecipients': value.specificEmailRecipients,
-        'SpecificSmsRecipients': value.specificSmsRecipients,
+        'OutsiderRecipients': value['outsiderRecipients'] == null ? undefined : ((value['outsiderRecipients'] as Array<any>).map(OutsiderRecipientToJSON)),
+        'EmailRecipientUsers': value['emailRecipientUsers'] == null ? undefined : ((value['emailRecipientUsers'] as Array<any>).map(ScanNotificationRecipientUserApiModelToJSON)),
+        'ExcludedUsers': value['excludedUsers'] == null ? undefined : ((value['excludedUsers'] as Array<any>).map(ScanNotificationRecipientUserApiModelToJSON)),
+        'IntegrationRecipients': value['integrationRecipients'],
+        'SmsRecipientUsers': value['smsRecipientUsers'] == null ? undefined : ((value['smsRecipientUsers'] as Array<any>).map(ScanNotificationRecipientUserApiModelToJSON)),
+        'SpecificEmailRecipients': value['specificEmailRecipients'],
+        'SpecificSmsRecipients': value['specificSmsRecipients'],
     };
 }
 

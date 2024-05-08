@@ -47,8 +47,11 @@ export class AuthenticationProfilesApi extends runtime.BaseAPI {
      * Deletes an authentication profile.
      */
     async authenticationProfilesDeleteRaw(requestParameters: AuthenticationProfilesDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>> {
-        if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling authenticationProfilesDelete.');
+        if (requestParameters['id'] == null) {
+            throw new runtime.RequiredError(
+                'id',
+                'Required parameter "id" was null or undefined when calling authenticationProfilesDelete().'
+            );
         }
 
         const queryParameters: any = {};
@@ -62,7 +65,7 @@ export class AuthenticationProfilesApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: requestParameters.id as any,
+            body: requestParameters['id'] as any,
         }, initOverrides);
 
         if (this.isJsonMime(response.headers.get('content-type'))) {
@@ -84,8 +87,11 @@ export class AuthenticationProfilesApi extends runtime.BaseAPI {
      * Gets the authentication profiles by the specified id.
      */
     async authenticationProfilesGetRaw(requestParameters: AuthenticationProfilesGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AuthenticationProfileViewModel>> {
-        if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling authenticationProfilesGet.');
+        if (requestParameters['id'] == null) {
+            throw new runtime.RequiredError(
+                'id',
+                'Required parameter "id" was null or undefined when calling authenticationProfilesGet().'
+            );
         }
 
         const queryParameters: any = {};
@@ -93,7 +99,7 @@ export class AuthenticationProfilesApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/api/1.0/authenticationprofiles/get/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
+            path: `/api/1.0/authenticationprofiles/get/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -140,8 +146,11 @@ export class AuthenticationProfilesApi extends runtime.BaseAPI {
      * Creates a new authentication profile.
      */
     async authenticationProfilesNewRaw(requestParameters: AuthenticationProfilesNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AuthenticationProfileViewModel>> {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling authenticationProfilesNew.');
+        if (requestParameters['model'] == null) {
+            throw new runtime.RequiredError(
+                'model',
+                'Required parameter "model" was null or undefined when calling authenticationProfilesNew().'
+            );
         }
 
         const queryParameters: any = {};
@@ -155,7 +164,7 @@ export class AuthenticationProfilesApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AuthenticationProfileViewModelToJSON(requestParameters.model),
+            body: AuthenticationProfileViewModelToJSON(requestParameters['model']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => AuthenticationProfileViewModelFromJSON(jsonValue));
@@ -173,8 +182,11 @@ export class AuthenticationProfilesApi extends runtime.BaseAPI {
      * Updates an authentication profile.
      */
     async authenticationProfilesUpdateRaw(requestParameters: AuthenticationProfilesUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AuthenticationProfileViewModel>> {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling authenticationProfilesUpdate.');
+        if (requestParameters['model'] == null) {
+            throw new runtime.RequiredError(
+                'model',
+                'Required parameter "model" was null or undefined when calling authenticationProfilesUpdate().'
+            );
         }
 
         const queryParameters: any = {};
@@ -188,7 +200,7 @@ export class AuthenticationProfilesApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: AuthenticationProfileViewModelToJSON(requestParameters.model),
+            body: AuthenticationProfileViewModelToJSON(requestParameters['model']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => AuthenticationProfileViewModelFromJSON(jsonValue));

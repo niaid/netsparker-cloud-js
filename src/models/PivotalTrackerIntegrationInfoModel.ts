@@ -12,19 +12,19 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
-import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
-import {
-    IntegrationCustomFieldVmFromJSON,
-    IntegrationCustomFieldVmFromJSONTyped,
-    IntegrationCustomFieldVmToJSON,
-} from './IntegrationCustomFieldVm';
+import { mapValues } from '../runtime';
 import type { IntegrationWizardResultModel } from './IntegrationWizardResultModel';
 import {
     IntegrationWizardResultModelFromJSON,
     IntegrationWizardResultModelFromJSONTyped,
     IntegrationWizardResultModelToJSON,
 } from './IntegrationWizardResultModel';
+import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
+import {
+    IntegrationCustomFieldVmFromJSON,
+    IntegrationCustomFieldVmFromJSONTyped,
+    IntegrationCustomFieldVmToJSON,
+} from './IntegrationCustomFieldVm';
 
 /**
  * The Pivotal integration info
@@ -152,6 +152,18 @@ export interface PivotalTrackerIntegrationInfoModel {
      * @memberof PivotalTrackerIntegrationInfoModel
      */
     integrationWizardResultModel?: IntegrationWizardResultModel;
+    /**
+     * 
+     * @type {string}
+     * @memberof PivotalTrackerIntegrationInfoModel
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof PivotalTrackerIntegrationInfoModel
+     */
+    state?: PivotalTrackerIntegrationInfoModelStateEnum;
 }
 
 
@@ -215,18 +227,25 @@ export const PivotalTrackerIntegrationInfoModelTemplateTypeEnum = {
 } as const;
 export type PivotalTrackerIntegrationInfoModelTemplateTypeEnum = typeof PivotalTrackerIntegrationInfoModelTemplateTypeEnum[keyof typeof PivotalTrackerIntegrationInfoModelTemplateTypeEnum];
 
+/**
+ * @export
+ */
+export const PivotalTrackerIntegrationInfoModelStateEnum = {
+    Active: 'Active',
+    Suspended: 'Suspended'
+} as const;
+export type PivotalTrackerIntegrationInfoModelStateEnum = typeof PivotalTrackerIntegrationInfoModelStateEnum[keyof typeof PivotalTrackerIntegrationInfoModelStateEnum];
+
 
 /**
  * Check if a given object implements the PivotalTrackerIntegrationInfoModel interface.
  */
 export function instanceOfPivotalTrackerIntegrationInfoModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "apiToken" in value;
-    isInstance = isInstance && "projectId" in value;
-    isInstance = isInstance && "storyType" in value;
-    isInstance = isInstance && "titleFormat" in value;
-
-    return isInstance;
+    if (!('apiToken' in value)) return false;
+    if (!('projectId' in value)) return false;
+    if (!('storyType' in value)) return false;
+    if (!('titleFormat' in value)) return false;
+    return true;
 }
 
 export function PivotalTrackerIntegrationInfoModelFromJSON(json: any): PivotalTrackerIntegrationInfoModel {
@@ -234,7 +253,7 @@ export function PivotalTrackerIntegrationInfoModelFromJSON(json: any): PivotalTr
 }
 
 export function PivotalTrackerIntegrationInfoModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): PivotalTrackerIntegrationInfoModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -242,49 +261,50 @@ export function PivotalTrackerIntegrationInfoModelFromJSONTyped(json: any, ignor
         'apiToken': json['ApiToken'],
         'projectId': json['ProjectId'],
         'storyType': json['StoryType'],
-        'ownerIds': !exists(json, 'OwnerIds') ? undefined : json['OwnerIds'],
-        'labels': !exists(json, 'Labels') ? undefined : json['Labels'],
-        'type': !exists(json, 'Type') ? undefined : json['Type'],
-        'genericErrorMessage': !exists(json, 'GenericErrorMessage') ? undefined : json['GenericErrorMessage'],
-        'identifier': !exists(json, 'Identifier') ? undefined : json['Identifier'],
-        'testMessageBody': !exists(json, 'TestMessageBody') ? undefined : json['TestMessageBody'],
-        'testMessageTitle': !exists(json, 'TestMessageTitle') ? undefined : json['TestMessageTitle'],
-        'webhookUrl': !exists(json, 'WebhookUrl') ? undefined : json['WebhookUrl'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'integrationVersion': !exists(json, 'IntegrationVersion') ? undefined : json['IntegrationVersion'],
-        'accountID': !exists(json, 'AccountID') ? undefined : json['AccountID'],
-        'customFields': !exists(json, 'CustomFields') ? undefined : ((json['CustomFields'] as Array<any>).map(IntegrationCustomFieldVmFromJSON)),
-        'templateType': !exists(json, 'TemplateType') ? undefined : json['TemplateType'],
-        'reopenStatus': !exists(json, 'ReopenStatus') ? undefined : json['ReopenStatus'],
-        'resolvedStatus': !exists(json, 'ResolvedStatus') ? undefined : json['ResolvedStatus'],
+        'ownerIds': json['OwnerIds'] == null ? undefined : json['OwnerIds'],
+        'labels': json['Labels'] == null ? undefined : json['Labels'],
+        'type': json['Type'] == null ? undefined : json['Type'],
+        'genericErrorMessage': json['GenericErrorMessage'] == null ? undefined : json['GenericErrorMessage'],
+        'identifier': json['Identifier'] == null ? undefined : json['Identifier'],
+        'testMessageBody': json['TestMessageBody'] == null ? undefined : json['TestMessageBody'],
+        'testMessageTitle': json['TestMessageTitle'] == null ? undefined : json['TestMessageTitle'],
+        'webhookUrl': json['WebhookUrl'] == null ? undefined : json['WebhookUrl'],
+        'name': json['Name'] == null ? undefined : json['Name'],
+        'integrationVersion': json['IntegrationVersion'] == null ? undefined : json['IntegrationVersion'],
+        'accountID': json['AccountID'] == null ? undefined : json['AccountID'],
+        'customFields': json['CustomFields'] == null ? undefined : ((json['CustomFields'] as Array<any>).map(IntegrationCustomFieldVmFromJSON)),
+        'templateType': json['TemplateType'] == null ? undefined : json['TemplateType'],
+        'reopenStatus': json['ReopenStatus'] == null ? undefined : json['ReopenStatus'],
+        'resolvedStatus': json['ResolvedStatus'] == null ? undefined : json['ResolvedStatus'],
         'titleFormat': json['TitleFormat'],
-        'integrationWizardResultModel': !exists(json, 'IntegrationWizardResultModel') ? undefined : IntegrationWizardResultModelFromJSON(json['IntegrationWizardResultModel']),
+        'integrationWizardResultModel': json['IntegrationWizardResultModel'] == null ? undefined : IntegrationWizardResultModelFromJSON(json['IntegrationWizardResultModel']),
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'state': json['State'] == null ? undefined : json['State'],
     };
 }
 
-export function PivotalTrackerIntegrationInfoModelToJSON(value?: PivotalTrackerIntegrationInfoModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+export function PivotalTrackerIntegrationInfoModelToJSON(value?: Omit<PivotalTrackerIntegrationInfoModel, 'Type'|'GenericErrorMessage'|'Identifier'|'TestMessageBody'|'TestMessageTitle'|'WebhookUrl'> | null): any {
+    if (value == null) {
+        return value;
     }
     return {
         
-        'ApiToken': value.apiToken,
-        'ProjectId': value.projectId,
-        'StoryType': value.storyType,
-        'OwnerIds': value.ownerIds,
-        'Labels': value.labels,
-        'Name': value.name,
-        'IntegrationVersion': value.integrationVersion,
-        'AccountID': value.accountID,
-        'CustomFields': value.customFields === undefined ? undefined : ((value.customFields as Array<any>).map(IntegrationCustomFieldVmToJSON)),
-        'TemplateType': value.templateType,
-        'ReopenStatus': value.reopenStatus,
-        'ResolvedStatus': value.resolvedStatus,
-        'TitleFormat': value.titleFormat,
-        'IntegrationWizardResultModel': IntegrationWizardResultModelToJSON(value.integrationWizardResultModel),
+        'ApiToken': value['apiToken'],
+        'ProjectId': value['projectId'],
+        'StoryType': value['storyType'],
+        'OwnerIds': value['ownerIds'],
+        'Labels': value['labels'],
+        'Name': value['name'],
+        'IntegrationVersion': value['integrationVersion'],
+        'AccountID': value['accountID'],
+        'CustomFields': value['customFields'] == null ? undefined : ((value['customFields'] as Array<any>).map(IntegrationCustomFieldVmToJSON)),
+        'TemplateType': value['templateType'],
+        'ReopenStatus': value['reopenStatus'],
+        'ResolvedStatus': value['resolvedStatus'],
+        'TitleFormat': value['titleFormat'],
+        'IntegrationWizardResultModel': IntegrationWizardResultModelToJSON(value['integrationWizardResultModel']),
+        'Id': value['id'],
+        'State': value['state'],
     };
 }
 

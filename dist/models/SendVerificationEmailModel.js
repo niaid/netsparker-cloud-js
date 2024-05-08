@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.SendVerificationEmailModelToJSON = exports.SendVerificationEmailModelFromJSONTyped = exports.SendVerificationEmailModelFromJSON = exports.instanceOfSendVerificationEmailModel = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the SendVerificationEmailModel interface.
  */
 function instanceOfSendVerificationEmailModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfSendVerificationEmailModel = instanceOfSendVerificationEmailModel;
 function SendVerificationEmailModelFromJSON(json) {
@@ -28,25 +26,22 @@ function SendVerificationEmailModelFromJSON(json) {
 }
 exports.SendVerificationEmailModelFromJSON = SendVerificationEmailModelFromJSON;
 function SendVerificationEmailModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'isMailSent': !(0, runtime_1.exists)(json, 'IsMailSent') ? undefined : json['IsMailSent'],
-        'verificationMessage': !(0, runtime_1.exists)(json, 'VerificationMessage') ? undefined : json['VerificationMessage'],
+        'isMailSent': json['IsMailSent'] == null ? undefined : json['IsMailSent'],
+        'verificationMessage': json['VerificationMessage'] == null ? undefined : json['VerificationMessage'],
     };
 }
 exports.SendVerificationEmailModelFromJSONTyped = SendVerificationEmailModelFromJSONTyped;
 function SendVerificationEmailModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'IsMailSent': value.isMailSent,
-        'VerificationMessage': value.verificationMessage,
+        'IsMailSent': value['isMailSent'],
+        'VerificationMessage': value['verificationMessage'],
     };
 }
 exports.SendVerificationEmailModelToJSON = SendVerificationEmailModelToJSON;

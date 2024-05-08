@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Contains properties for the base scan.
  * @export
@@ -37,10 +37,8 @@ export interface BaseScanApiModel {
  * Check if a given object implements the BaseScanApiModel interface.
  */
 export function instanceOfBaseScanApiModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "baseScanId" in value;
-
-    return isInstance;
+    if (!('baseScanId' in value)) return false;
+    return true;
 }
 
 export function BaseScanApiModelFromJSON(json: any): BaseScanApiModel {
@@ -48,27 +46,24 @@ export function BaseScanApiModelFromJSON(json: any): BaseScanApiModel {
 }
 
 export function BaseScanApiModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): BaseScanApiModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'agentName': !exists(json, 'AgentName') ? undefined : json['AgentName'],
+        'agentName': json['AgentName'] == null ? undefined : json['AgentName'],
         'baseScanId': json['BaseScanId'],
     };
 }
 
 export function BaseScanApiModelToJSON(value?: BaseScanApiModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'AgentName': value.agentName,
-        'BaseScanId': value.baseScanId,
+        'AgentName': value['agentName'],
+        'BaseScanId': value['baseScanId'],
     };
 }
 

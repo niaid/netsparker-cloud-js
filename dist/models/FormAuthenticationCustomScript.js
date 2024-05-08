@@ -18,9 +18,9 @@ exports.FormAuthenticationCustomScriptToJSON = exports.FormAuthenticationCustomS
  * Check if a given object implements the FormAuthenticationCustomScript interface.
  */
 function instanceOfFormAuthenticationCustomScript(value) {
-    let isInstance = true;
-    isInstance = isInstance && "value" in value;
-    return isInstance;
+    if (!('value' in value))
+        return false;
+    return true;
 }
 exports.instanceOfFormAuthenticationCustomScript = instanceOfFormAuthenticationCustomScript;
 function FormAuthenticationCustomScriptFromJSON(json) {
@@ -28,7 +28,7 @@ function FormAuthenticationCustomScriptFromJSON(json) {
 }
 exports.FormAuthenticationCustomScriptFromJSON = FormAuthenticationCustomScriptFromJSON;
 function FormAuthenticationCustomScriptFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -37,14 +37,11 @@ function FormAuthenticationCustomScriptFromJSONTyped(json, ignoreDiscriminator) 
 }
 exports.FormAuthenticationCustomScriptFromJSONTyped = FormAuthenticationCustomScriptFromJSONTyped;
 function FormAuthenticationCustomScriptToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Value': value.value,
+        'Value': value['value'],
     };
 }
 exports.FormAuthenticationCustomScriptToJSON = FormAuthenticationCustomScriptToJSON;

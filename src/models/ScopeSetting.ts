@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 import type { ExcludedLinkModel } from './ExcludedLinkModel';
 import {
     ExcludedLinkModelFromJSON,
@@ -112,9 +112,7 @@ export type ScopeSettingScopeEnum = typeof ScopeSettingScopeEnum[keyof typeof Sc
  * Check if a given object implements the ScopeSetting interface.
  */
 export function instanceOfScopeSetting(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function ScopeSettingFromJSON(json: any): ScopeSetting {
@@ -122,37 +120,34 @@ export function ScopeSettingFromJSON(json: any): ScopeSetting {
 }
 
 export function ScopeSettingFromJSONTyped(json: any, ignoreDiscriminator: boolean): ScopeSetting {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'excludedLinks': !exists(json, 'ExcludedLinks') ? undefined : ((json['ExcludedLinks'] as Array<any>).map(ExcludedLinkModelFromJSON)),
-        'excludeLinks': !exists(json, 'ExcludeLinks') ? undefined : json['ExcludeLinks'],
-        'excludedUsageTrackers': !exists(json, 'ExcludedUsageTrackers') ? undefined : ((json['ExcludedUsageTrackers'] as Array<any>).map(ExcludedUsageTrackerModelFromJSON)),
-        'excludeAuthenticationPages': !exists(json, 'ExcludeAuthenticationPages') ? undefined : json['ExcludeAuthenticationPages'],
-        'disallowedHttpMethods': !exists(json, 'DisallowedHttpMethods') ? undefined : json['DisallowedHttpMethods'],
-        'scope': !exists(json, 'Scope') ? undefined : json['Scope'],
-        'doNotDifferentiateProtocols': !exists(json, 'DoNotDifferentiateProtocols') ? undefined : json['DoNotDifferentiateProtocols'],
+        'excludedLinks': json['ExcludedLinks'] == null ? undefined : ((json['ExcludedLinks'] as Array<any>).map(ExcludedLinkModelFromJSON)),
+        'excludeLinks': json['ExcludeLinks'] == null ? undefined : json['ExcludeLinks'],
+        'excludedUsageTrackers': json['ExcludedUsageTrackers'] == null ? undefined : ((json['ExcludedUsageTrackers'] as Array<any>).map(ExcludedUsageTrackerModelFromJSON)),
+        'excludeAuthenticationPages': json['ExcludeAuthenticationPages'] == null ? undefined : json['ExcludeAuthenticationPages'],
+        'disallowedHttpMethods': json['DisallowedHttpMethods'] == null ? undefined : json['DisallowedHttpMethods'],
+        'scope': json['Scope'] == null ? undefined : json['Scope'],
+        'doNotDifferentiateProtocols': json['DoNotDifferentiateProtocols'] == null ? undefined : json['DoNotDifferentiateProtocols'],
     };
 }
 
 export function ScopeSettingToJSON(value?: ScopeSetting | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'ExcludedLinks': value.excludedLinks === undefined ? undefined : ((value.excludedLinks as Array<any>).map(ExcludedLinkModelToJSON)),
-        'ExcludeLinks': value.excludeLinks,
-        'ExcludedUsageTrackers': value.excludedUsageTrackers === undefined ? undefined : ((value.excludedUsageTrackers as Array<any>).map(ExcludedUsageTrackerModelToJSON)),
-        'ExcludeAuthenticationPages': value.excludeAuthenticationPages,
-        'DisallowedHttpMethods': value.disallowedHttpMethods,
-        'Scope': value.scope,
-        'DoNotDifferentiateProtocols': value.doNotDifferentiateProtocols,
+        'ExcludedLinks': value['excludedLinks'] == null ? undefined : ((value['excludedLinks'] as Array<any>).map(ExcludedLinkModelToJSON)),
+        'ExcludeLinks': value['excludeLinks'],
+        'ExcludedUsageTrackers': value['excludedUsageTrackers'] == null ? undefined : ((value['excludedUsageTrackers'] as Array<any>).map(ExcludedUsageTrackerModelToJSON)),
+        'ExcludeAuthenticationPages': value['excludeAuthenticationPages'],
+        'DisallowedHttpMethods': value['disallowedHttpMethods'],
+        'Scope': value['scope'],
+        'DoNotDifferentiateProtocols': value['doNotDifferentiateProtocols'],
     };
 }
 

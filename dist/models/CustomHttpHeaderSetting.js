@@ -14,7 +14,6 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CustomHttpHeaderSettingToJSON = exports.CustomHttpHeaderSettingFromJSONTyped = exports.CustomHttpHeaderSettingFromJSON = exports.instanceOfCustomHttpHeaderSetting = exports.CustomHttpHeaderSettingAttackModeEnum = void 0;
-const runtime_1 = require("../runtime");
 /**
  * @export
  */
@@ -27,9 +26,9 @@ exports.CustomHttpHeaderSettingAttackModeEnum = {
  * Check if a given object implements the CustomHttpHeaderSetting interface.
  */
 function instanceOfCustomHttpHeaderSetting(value) {
-    let isInstance = true;
-    isInstance = isInstance && "name" in value;
-    return isInstance;
+    if (!('name' in value))
+        return false;
+    return true;
 }
 exports.instanceOfCustomHttpHeaderSetting = instanceOfCustomHttpHeaderSetting;
 function CustomHttpHeaderSettingFromJSON(json) {
@@ -37,29 +36,26 @@ function CustomHttpHeaderSettingFromJSON(json) {
 }
 exports.CustomHttpHeaderSettingFromJSON = CustomHttpHeaderSettingFromJSON;
 function CustomHttpHeaderSettingFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'attackMode': !(0, runtime_1.exists)(json, 'AttackMode') ? undefined : json['AttackMode'],
-        'enabled': !(0, runtime_1.exists)(json, 'Enabled') ? undefined : json['Enabled'],
+        'attackMode': json['AttackMode'] == null ? undefined : json['AttackMode'],
+        'enabled': json['Enabled'] == null ? undefined : json['Enabled'],
         'name': json['Name'],
-        'value': !(0, runtime_1.exists)(json, 'Value') ? undefined : json['Value'],
+        'value': json['Value'] == null ? undefined : json['Value'],
     };
 }
 exports.CustomHttpHeaderSettingFromJSONTyped = CustomHttpHeaderSettingFromJSONTyped;
 function CustomHttpHeaderSettingToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'AttackMode': value.attackMode,
-        'Enabled': value.enabled,
-        'Name': value.name,
-        'Value': value.value,
+        'AttackMode': value['attackMode'],
+        'Enabled': value['enabled'],
+        'Name': value['name'],
+        'Value': value['value'],
     };
 }
 exports.CustomHttpHeaderSettingToJSON = CustomHttpHeaderSettingToJSON;

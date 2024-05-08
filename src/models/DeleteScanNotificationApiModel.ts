@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a model for carrying out a delete scan notification data
  * @export
@@ -31,10 +31,8 @@ export interface DeleteScanNotificationApiModel {
  * Check if a given object implements the DeleteScanNotificationApiModel interface.
  */
 export function instanceOfDeleteScanNotificationApiModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "id" in value;
-
-    return isInstance;
+    if (!('id' in value)) return false;
+    return true;
 }
 
 export function DeleteScanNotificationApiModelFromJSON(json: any): DeleteScanNotificationApiModel {
@@ -42,7 +40,7 @@ export function DeleteScanNotificationApiModelFromJSON(json: any): DeleteScanNot
 }
 
 export function DeleteScanNotificationApiModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): DeleteScanNotificationApiModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -52,15 +50,12 @@ export function DeleteScanNotificationApiModelFromJSONTyped(json: any, ignoreDis
 }
 
 export function DeleteScanNotificationApiModelToJSON(value?: DeleteScanNotificationApiModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Id': value.id,
+        'Id': value['id'],
     };
 }
 

@@ -14,15 +14,13 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ScanPolicySettingItemApiModelToJSON = exports.ScanPolicySettingItemApiModelFromJSONTyped = exports.ScanPolicySettingItemApiModelFromJSON = exports.instanceOfScanPolicySettingItemApiModel = void 0;
-const runtime_1 = require("../runtime");
 const ScanPolicyOptimizerOptions_1 = require("./ScanPolicyOptimizerOptions");
 const WebsiteGroupModel_1 = require("./WebsiteGroupModel");
 /**
  * Check if a given object implements the ScanPolicySettingItemApiModel interface.
  */
 function instanceOfScanPolicySettingItemApiModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfScanPolicySettingItemApiModel = instanceOfScanPolicySettingItemApiModel;
 function ScanPolicySettingItemApiModelFromJSON(json) {
@@ -30,38 +28,35 @@ function ScanPolicySettingItemApiModelFromJSON(json) {
 }
 exports.ScanPolicySettingItemApiModelFromJSON = ScanPolicySettingItemApiModelFromJSON;
 function ScanPolicySettingItemApiModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'description': !(0, runtime_1.exists)(json, 'Description') ? undefined : json['Description'],
-        'groups': !(0, runtime_1.exists)(json, 'Groups') ? undefined : (json['Groups'].map(WebsiteGroupModel_1.WebsiteGroupModelFromJSON)),
-        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
-        'isDefault': !(0, runtime_1.exists)(json, 'IsDefault') ? undefined : json['IsDefault'],
-        'isShared': !(0, runtime_1.exists)(json, 'IsShared') ? undefined : json['IsShared'],
-        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
-        'optimizerOptions': !(0, runtime_1.exists)(json, 'OptimizerOptions') ? undefined : (0, ScanPolicyOptimizerOptions_1.ScanPolicyOptimizerOptionsFromJSON)(json['OptimizerOptions']),
-        'isAccountDefault': !(0, runtime_1.exists)(json, 'IsAccountDefault') ? undefined : json['IsAccountDefault'],
-        'nameWithAccessModifier': !(0, runtime_1.exists)(json, 'NameWithAccessModifier') ? undefined : json['NameWithAccessModifier'],
+        'description': json['Description'] == null ? undefined : json['Description'],
+        'groups': json['Groups'] == null ? undefined : (json['Groups'].map(WebsiteGroupModel_1.WebsiteGroupModelFromJSON)),
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'isDefault': json['IsDefault'] == null ? undefined : json['IsDefault'],
+        'isShared': json['IsShared'] == null ? undefined : json['IsShared'],
+        'name': json['Name'] == null ? undefined : json['Name'],
+        'optimizerOptions': json['OptimizerOptions'] == null ? undefined : (0, ScanPolicyOptimizerOptions_1.ScanPolicyOptimizerOptionsFromJSON)(json['OptimizerOptions']),
+        'isAccountDefault': json['IsAccountDefault'] == null ? undefined : json['IsAccountDefault'],
+        'nameWithAccessModifier': json['NameWithAccessModifier'] == null ? undefined : json['NameWithAccessModifier'],
     };
 }
 exports.ScanPolicySettingItemApiModelFromJSONTyped = ScanPolicySettingItemApiModelFromJSONTyped;
 function ScanPolicySettingItemApiModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Description': value.description,
-        'Groups': value.groups === undefined ? undefined : (value.groups.map(WebsiteGroupModel_1.WebsiteGroupModelToJSON)),
-        'Id': value.id,
-        'IsDefault': value.isDefault,
-        'IsShared': value.isShared,
-        'Name': value.name,
-        'OptimizerOptions': (0, ScanPolicyOptimizerOptions_1.ScanPolicyOptimizerOptionsToJSON)(value.optimizerOptions),
-        'IsAccountDefault': value.isAccountDefault,
+        'Description': value['description'],
+        'Groups': value['groups'] == null ? undefined : (value['groups'].map(WebsiteGroupModel_1.WebsiteGroupModelToJSON)),
+        'Id': value['id'],
+        'IsDefault': value['isDefault'],
+        'IsShared': value['isShared'],
+        'Name': value['name'],
+        'OptimizerOptions': (0, ScanPolicyOptimizerOptions_1.ScanPolicyOptimizerOptionsToJSON)(value['optimizerOptions']),
+        'IsAccountDefault': value['isAccountDefault'],
     };
 }
 exports.ScanPolicySettingItemApiModelToJSON = ScanPolicySettingItemApiModelToJSON;

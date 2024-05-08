@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * 
  * @export
@@ -37,10 +37,8 @@ export interface RoleWebsiteGroupMappingApiModel {
  * Check if a given object implements the RoleWebsiteGroupMappingApiModel interface.
  */
 export function instanceOfRoleWebsiteGroupMappingApiModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "roleId" in value;
-
-    return isInstance;
+    if (!('roleId' in value)) return false;
+    return true;
 }
 
 export function RoleWebsiteGroupMappingApiModelFromJSON(json: any): RoleWebsiteGroupMappingApiModel {
@@ -48,27 +46,24 @@ export function RoleWebsiteGroupMappingApiModelFromJSON(json: any): RoleWebsiteG
 }
 
 export function RoleWebsiteGroupMappingApiModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): RoleWebsiteGroupMappingApiModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'websiteGroupId': !exists(json, 'WebsiteGroupId') ? undefined : json['WebsiteGroupId'],
+        'websiteGroupId': json['WebsiteGroupId'] == null ? undefined : json['WebsiteGroupId'],
         'roleId': json['RoleId'],
     };
 }
 
 export function RoleWebsiteGroupMappingApiModelToJSON(value?: RoleWebsiteGroupMappingApiModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'WebsiteGroupId': value.websiteGroupId,
-        'RoleId': value.roleId,
+        'WebsiteGroupId': value['websiteGroupId'],
+        'RoleId': value['roleId'],
     };
 }
 

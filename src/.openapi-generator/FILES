@@ -34,7 +34,7 @@ models/AgentListApiResult.ts
 models/AgentSelectionModel.ts
 models/AgentStatusModel.ts
 models/AllIssuesApiModel.ts
-models/ApiFileModel.ts
+models/ApiFile.ts
 models/ApiScanStatusModel.ts
 models/AsanaIntegrationInfoModel.ts
 models/AsanaProject.ts
@@ -63,6 +63,7 @@ models/BrowserSetting.ts
 models/BruteForceSettingModel.ts
 models/BugzillaIntegrationInfoModel.ts
 models/BusinessLogicRecorderSettingModel.ts
+models/CachedFile.ts
 models/CertificateInfoModel.ts
 models/ClientCertificateAuthenticationApiModel.ts
 models/ClientCertificateAuthenticationViewModel.ts
@@ -78,9 +79,6 @@ models/CustomHttpHeaderSetting.ts
 models/CustomScriptPageViewModel.ts
 models/CustomScriptRequestApiModel.ts
 models/CustomScriptUpdateRequestApiModel.ts
-models/CustomTemplateContentModel.ts
-models/CustomTemplateModel.ts
-models/CvssMetricInfo.ts
 models/CvssScoreValue.ts
 models/CyberArkVaultIntegrationInfoModel.ts
 models/DefectDojoIntegrationInfoModel.ts
@@ -101,7 +99,6 @@ models/ExcludedLinkModel.ts
 models/ExcludedUsageTrackerModel.ts
 models/ExtensionSettingModel.ts
 models/FieldPairValue.ts
-models/FileCache.ts
 models/FogBugzIntegrationInfoModel.ts
 models/FormAuthenticationAzureKeyVaultSetting.ts
 models/FormAuthenticationCustomScript.ts
@@ -113,9 +110,10 @@ models/FormAuthenticationSettingApiModel.ts
 models/FormAuthenticationSettingModel.ts
 models/FormAuthenticationVerificationApiModel.ts
 models/FormValueSettingModel.ts
+models/FreshServiceRequesterUser.ts
+models/FreshServiceUserAgent.ts
 models/FreshserviceEntity.ts
 models/FreshserviceIntegrationInfoModel.ts
-models/FreshserviceUser.ts
 models/GitHubIntegrationInfoModel.ts
 models/GitLabIntegrationInfoModel.ts
 models/HashicorpVaultIntegrationInfoModel.ts
@@ -124,13 +122,13 @@ models/HttpRequestSettingModel.ts
 models/IdNamePair.ts
 models/IgnorePatternSettingModel.ts
 models/ImportLinksValidationApiModel.ts
+models/ImportedLinksApiModel.ts
 models/ImportedLinksSetting.ts
 models/IncrementalApiModel.ts
 models/IntegrationCustomFieldVm.ts
 models/IntegrationUserMappingItemModel.ts
 models/IntegrationWizardResultModel.ts
 models/IssueApiModel.ts
-models/IssueApiModelCvssVector.ts
 models/IssueApiResult.ts
 models/IssueApiUpdateModel.ts
 models/IssueHistoryApiModel.ts
@@ -218,8 +216,8 @@ models/ScanTimeWindowItemViewModel.ts
 models/ScanTimeWindowModel.ts
 models/ScanTimeWindowViewModel.ts
 models/ScansValidateImportedLinksFileReq.ts
+models/ScheduledScanApiModel.ts
 models/ScheduledScanListApiResult.ts
-models/ScheduledScanModel.ts
 models/ScheduledScanRecurrenceApiModel.ts
 models/ScheduledScanRecurrenceViewModel.ts
 models/ScheduledScanUpdateViewModel.ts
@@ -279,7 +277,6 @@ models/VersionIssue.ts
 models/VulnerabilityClassification.ts
 models/VulnerabilityContentApiModel.ts
 models/VulnerabilityModel.ts
-models/VulnerabilityTemplateCvssVector.ts
 models/VulnerabilityTemplating.ts
 models/WebStorageSetting.ts
 models/WebhookIntegrationInfoModel.ts

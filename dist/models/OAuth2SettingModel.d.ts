@@ -11,10 +11,10 @@
  */
 import type { AccessTokenTableModel } from './AccessTokenTableModel';
 import type { AuthorizationCodeTableModel } from './AuthorizationCodeTableModel';
-import type { OAuth2SettingEndPointModel } from './OAuth2SettingEndPointModel';
 import type { ResponseFields } from './ResponseFields';
-import type { SelectOptionModel } from './SelectOptionModel';
+import type { OAuth2SettingEndPointModel } from './OAuth2SettingEndPointModel';
 import type { ThreeLeggedFields } from './ThreeLeggedFields';
+import type { SelectOptionModel } from './SelectOptionModel';
 /**
  * Represents oauth2 model.
  * @export

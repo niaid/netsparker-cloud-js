@@ -14,14 +14,12 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BasicAuthenticationSettingModelToJSON = exports.BasicAuthenticationSettingModelFromJSONTyped = exports.BasicAuthenticationSettingModelFromJSON = exports.instanceOfBasicAuthenticationSettingModel = void 0;
-const runtime_1 = require("../runtime");
 const BasicAuthenticationCredentialModel_1 = require("./BasicAuthenticationCredentialModel");
 /**
  * Check if a given object implements the BasicAuthenticationSettingModel interface.
  */
 function instanceOfBasicAuthenticationSettingModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfBasicAuthenticationSettingModel = instanceOfBasicAuthenticationSettingModel;
 function BasicAuthenticationSettingModelFromJSON(json) {
@@ -29,27 +27,24 @@ function BasicAuthenticationSettingModelFromJSON(json) {
 }
 exports.BasicAuthenticationSettingModelFromJSON = BasicAuthenticationSettingModelFromJSON;
 function BasicAuthenticationSettingModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'credentials': !(0, runtime_1.exists)(json, 'Credentials') ? undefined : (json['Credentials'].map(BasicAuthenticationCredentialModel_1.BasicAuthenticationCredentialModelFromJSON)),
-        'isEnabled': !(0, runtime_1.exists)(json, 'IsEnabled') ? undefined : json['IsEnabled'],
-        'noChallenge': !(0, runtime_1.exists)(json, 'NoChallenge') ? undefined : json['NoChallenge'],
+        'credentials': json['Credentials'] == null ? undefined : (json['Credentials'].map(BasicAuthenticationCredentialModel_1.BasicAuthenticationCredentialModelFromJSON)),
+        'isEnabled': json['IsEnabled'] == null ? undefined : json['IsEnabled'],
+        'noChallenge': json['NoChallenge'] == null ? undefined : json['NoChallenge'],
     };
 }
 exports.BasicAuthenticationSettingModelFromJSONTyped = BasicAuthenticationSettingModelFromJSONTyped;
 function BasicAuthenticationSettingModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Credentials': value.credentials === undefined ? undefined : (value.credentials.map(BasicAuthenticationCredentialModel_1.BasicAuthenticationCredentialModelToJSON)),
-        'IsEnabled': value.isEnabled,
-        'NoChallenge': value.noChallenge,
+        'Credentials': value['credentials'] == null ? undefined : (value['credentials'].map(BasicAuthenticationCredentialModel_1.BasicAuthenticationCredentialModelToJSON)),
+        'IsEnabled': value['isEnabled'],
+        'NoChallenge': value['noChallenge'],
     };
 }
 exports.BasicAuthenticationSettingModelToJSON = BasicAuthenticationSettingModelToJSON;

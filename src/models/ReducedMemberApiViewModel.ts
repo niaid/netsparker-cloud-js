@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * 
  * @export
@@ -55,9 +55,7 @@ export interface ReducedMemberApiViewModel {
  * Check if a given object implements the ReducedMemberApiViewModel interface.
  */
 export function instanceOfReducedMemberApiViewModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function ReducedMemberApiViewModelFromJSON(json: any): ReducedMemberApiViewModel {
@@ -65,33 +63,30 @@ export function ReducedMemberApiViewModelFromJSON(json: any): ReducedMemberApiVi
 }
 
 export function ReducedMemberApiViewModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): ReducedMemberApiViewModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'accountId': !exists(json, 'AccountId') ? undefined : json['AccountId'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'email': !exists(json, 'Email') ? undefined : json['Email'],
-        'alternateLoginEmail': !exists(json, 'AlternateLoginEmail') ? undefined : json['AlternateLoginEmail'],
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'accountId': json['AccountId'] == null ? undefined : json['AccountId'],
+        'name': json['Name'] == null ? undefined : json['Name'],
+        'email': json['Email'] == null ? undefined : json['Email'],
+        'alternateLoginEmail': json['AlternateLoginEmail'] == null ? undefined : json['AlternateLoginEmail'],
     };
 }
 
 export function ReducedMemberApiViewModelToJSON(value?: ReducedMemberApiViewModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Id': value.id,
-        'AccountId': value.accountId,
-        'Name': value.name,
-        'Email': value.email,
-        'AlternateLoginEmail': value.alternateLoginEmail,
+        'Id': value['id'],
+        'AccountId': value['accountId'],
+        'Name': value['name'],
+        'Email': value['email'],
+        'AlternateLoginEmail': value['alternateLoginEmail'],
     };
 }
 

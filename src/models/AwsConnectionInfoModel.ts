@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * 
  * @export
@@ -49,12 +49,10 @@ export interface AwsConnectionInfoModel {
  * Check if a given object implements the AwsConnectionInfoModel interface.
  */
 export function instanceOfAwsConnectionInfoModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "region" in value;
-    isInstance = isInstance && "accessKeyId" in value;
-    isInstance = isInstance && "secretAccessKey" in value;
-
-    return isInstance;
+    if (!('region' in value)) return false;
+    if (!('accessKeyId' in value)) return false;
+    if (!('secretAccessKey' in value)) return false;
+    return true;
 }
 
 export function AwsConnectionInfoModelFromJSON(json: any): AwsConnectionInfoModel {
@@ -62,7 +60,7 @@ export function AwsConnectionInfoModelFromJSON(json: any): AwsConnectionInfoMode
 }
 
 export function AwsConnectionInfoModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): AwsConnectionInfoModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -70,23 +68,20 @@ export function AwsConnectionInfoModelFromJSONTyped(json: any, ignoreDiscriminat
         'region': json['Region'],
         'accessKeyId': json['AccessKeyId'],
         'secretAccessKey': json['SecretAccessKey'],
-        'showUnreachableDiscoveredWebsites': !exists(json, 'ShowUnreachableDiscoveredWebsites') ? undefined : json['ShowUnreachableDiscoveredWebsites'],
+        'showUnreachableDiscoveredWebsites': json['ShowUnreachableDiscoveredWebsites'] == null ? undefined : json['ShowUnreachableDiscoveredWebsites'],
     };
 }
 
 export function AwsConnectionInfoModelToJSON(value?: AwsConnectionInfoModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Region': value.region,
-        'AccessKeyId': value.accessKeyId,
-        'SecretAccessKey': value.secretAccessKey,
-        'ShowUnreachableDiscoveredWebsites': value.showUnreachableDiscoveredWebsites,
+        'Region': value['region'],
+        'AccessKeyId': value['accessKeyId'],
+        'SecretAccessKey': value['secretAccessKey'],
+        'ShowUnreachableDiscoveredWebsites': value['showUnreachableDiscoveredWebsites'],
     };
 }
 

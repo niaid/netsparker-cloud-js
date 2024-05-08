@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * 
  * @export
@@ -37,9 +37,7 @@ export interface ReducedTeamDto {
  * Check if a given object implements the ReducedTeamDto interface.
  */
 export function instanceOfReducedTeamDto(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function ReducedTeamDtoFromJSON(json: any): ReducedTeamDto {
@@ -47,27 +45,24 @@ export function ReducedTeamDtoFromJSON(json: any): ReducedTeamDto {
 }
 
 export function ReducedTeamDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): ReducedTeamDto {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'name': json['Name'] == null ? undefined : json['Name'],
     };
 }
 
 export function ReducedTeamDtoToJSON(value?: ReducedTeamDto | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Id': value.id,
-        'Name': value.name,
+        'Id': value['id'],
+        'Name': value['name'],
     };
 }
 

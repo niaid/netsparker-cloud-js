@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.RoleWebsiteGroupMappingDtoToJSON = exports.RoleWebsiteGroupMappingDtoFromJSONTyped = exports.RoleWebsiteGroupMappingDtoFromJSON = exports.instanceOfRoleWebsiteGroupMappingDto = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the RoleWebsiteGroupMappingDto interface.
  */
 function instanceOfRoleWebsiteGroupMappingDto(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfRoleWebsiteGroupMappingDto = instanceOfRoleWebsiteGroupMappingDto;
 function RoleWebsiteGroupMappingDtoFromJSON(json) {
@@ -28,29 +26,26 @@ function RoleWebsiteGroupMappingDtoFromJSON(json) {
 }
 exports.RoleWebsiteGroupMappingDtoFromJSON = RoleWebsiteGroupMappingDtoFromJSON;
 function RoleWebsiteGroupMappingDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'roleName': !(0, runtime_1.exists)(json, 'RoleName') ? undefined : json['RoleName'],
-        'roleId': !(0, runtime_1.exists)(json, 'RoleId') ? undefined : json['RoleId'],
-        'websiteGroupName': !(0, runtime_1.exists)(json, 'WebsiteGroupName') ? undefined : json['WebsiteGroupName'],
-        'websiteGroupId': !(0, runtime_1.exists)(json, 'WebsiteGroupId') ? undefined : json['WebsiteGroupId'],
+        'roleName': json['RoleName'] == null ? undefined : json['RoleName'],
+        'roleId': json['RoleId'] == null ? undefined : json['RoleId'],
+        'websiteGroupName': json['WebsiteGroupName'] == null ? undefined : json['WebsiteGroupName'],
+        'websiteGroupId': json['WebsiteGroupId'] == null ? undefined : json['WebsiteGroupId'],
     };
 }
 exports.RoleWebsiteGroupMappingDtoFromJSONTyped = RoleWebsiteGroupMappingDtoFromJSONTyped;
 function RoleWebsiteGroupMappingDtoToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'RoleName': value.roleName,
-        'RoleId': value.roleId,
-        'WebsiteGroupName': value.websiteGroupName,
-        'WebsiteGroupId': value.websiteGroupId,
+        'RoleName': value['roleName'],
+        'RoleId': value['roleId'],
+        'WebsiteGroupName': value['websiteGroupName'],
+        'WebsiteGroupId': value['websiteGroupId'],
     };
 }
 exports.RoleWebsiteGroupMappingDtoToJSON = RoleWebsiteGroupMappingDtoToJSON;

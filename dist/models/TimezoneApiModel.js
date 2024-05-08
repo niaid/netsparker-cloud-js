@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TimezoneApiModelToJSON = exports.TimezoneApiModelFromJSONTyped = exports.TimezoneApiModelFromJSON = exports.instanceOfTimezoneApiModel = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the TimezoneApiModel interface.
  */
 function instanceOfTimezoneApiModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfTimezoneApiModel = instanceOfTimezoneApiModel;
 function TimezoneApiModelFromJSON(json) {
@@ -28,25 +26,22 @@ function TimezoneApiModelFromJSON(json) {
 }
 exports.TimezoneApiModelFromJSON = TimezoneApiModelFromJSON;
 function TimezoneApiModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
-        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'name': json['Name'] == null ? undefined : json['Name'],
     };
 }
 exports.TimezoneApiModelFromJSONTyped = TimezoneApiModelFromJSONTyped;
 function TimezoneApiModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Id': value.id,
-        'Name': value.name,
+        'Id': value['id'],
+        'Name': value['name'],
     };
 }
 exports.TimezoneApiModelToJSON = TimezoneApiModelToJSON;

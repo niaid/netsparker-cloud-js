@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a model for carrying out authentication proxy settings.
  * @export
@@ -91,9 +91,7 @@ export interface ProxySettingsModel {
  * Check if a given object implements the ProxySettingsModel interface.
  */
 export function instanceOfProxySettingsModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function ProxySettingsModelFromJSON(json: any): ProxySettingsModel {
@@ -101,45 +99,42 @@ export function ProxySettingsModelFromJSON(json: any): ProxySettingsModel {
 }
 
 export function ProxySettingsModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): ProxySettingsModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'proxyByPassList': !exists(json, 'ProxyByPassList') ? undefined : json['ProxyByPassList'],
-        'enableCustomProxy': !exists(json, 'EnableCustomProxy') ? undefined : json['EnableCustomProxy'],
-        'proxyAddress': !exists(json, 'ProxyAddress') ? undefined : json['ProxyAddress'],
-        'proxyAuthenticationRequired': !exists(json, 'ProxyAuthenticationRequired') ? undefined : json['ProxyAuthenticationRequired'],
-        'proxyDomain': !exists(json, 'ProxyDomain') ? undefined : json['ProxyDomain'],
-        'proxyPassword': !exists(json, 'ProxyPassword') ? undefined : json['ProxyPassword'],
-        'proxyPort': !exists(json, 'ProxyPort') ? undefined : json['ProxyPort'],
-        'proxyUsername': !exists(json, 'ProxyUsername') ? undefined : json['ProxyUsername'],
-        'proxyByPassOnLocal': !exists(json, 'ProxyByPassOnLocal') ? undefined : json['ProxyByPassOnLocal'],
-        'proxyByPassText': !exists(json, 'ProxyByPassText') ? undefined : json['ProxyByPassText'],
-        'usePolicyProxyForExternalCommunication': !exists(json, 'UsePolicyProxyForExternalCommunication') ? undefined : json['UsePolicyProxyForExternalCommunication'],
+        'proxyByPassList': json['ProxyByPassList'] == null ? undefined : json['ProxyByPassList'],
+        'enableCustomProxy': json['EnableCustomProxy'] == null ? undefined : json['EnableCustomProxy'],
+        'proxyAddress': json['ProxyAddress'] == null ? undefined : json['ProxyAddress'],
+        'proxyAuthenticationRequired': json['ProxyAuthenticationRequired'] == null ? undefined : json['ProxyAuthenticationRequired'],
+        'proxyDomain': json['ProxyDomain'] == null ? undefined : json['ProxyDomain'],
+        'proxyPassword': json['ProxyPassword'] == null ? undefined : json['ProxyPassword'],
+        'proxyPort': json['ProxyPort'] == null ? undefined : json['ProxyPort'],
+        'proxyUsername': json['ProxyUsername'] == null ? undefined : json['ProxyUsername'],
+        'proxyByPassOnLocal': json['ProxyByPassOnLocal'] == null ? undefined : json['ProxyByPassOnLocal'],
+        'proxyByPassText': json['ProxyByPassText'] == null ? undefined : json['ProxyByPassText'],
+        'usePolicyProxyForExternalCommunication': json['UsePolicyProxyForExternalCommunication'] == null ? undefined : json['UsePolicyProxyForExternalCommunication'],
     };
 }
 
 export function ProxySettingsModelToJSON(value?: ProxySettingsModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'ProxyByPassList': value.proxyByPassList,
-        'EnableCustomProxy': value.enableCustomProxy,
-        'ProxyAddress': value.proxyAddress,
-        'ProxyAuthenticationRequired': value.proxyAuthenticationRequired,
-        'ProxyDomain': value.proxyDomain,
-        'ProxyPassword': value.proxyPassword,
-        'ProxyPort': value.proxyPort,
-        'ProxyUsername': value.proxyUsername,
-        'ProxyByPassOnLocal': value.proxyByPassOnLocal,
-        'ProxyByPassText': value.proxyByPassText,
-        'UsePolicyProxyForExternalCommunication': value.usePolicyProxyForExternalCommunication,
+        'ProxyByPassList': value['proxyByPassList'],
+        'EnableCustomProxy': value['enableCustomProxy'],
+        'ProxyAddress': value['proxyAddress'],
+        'ProxyAuthenticationRequired': value['proxyAuthenticationRequired'],
+        'ProxyDomain': value['proxyDomain'],
+        'ProxyPassword': value['proxyPassword'],
+        'ProxyPort': value['proxyPort'],
+        'ProxyUsername': value['proxyUsername'],
+        'ProxyByPassOnLocal': value['proxyByPassOnLocal'],
+        'ProxyByPassText': value['proxyByPassText'],
+        'UsePolicyProxyForExternalCommunication': value['usePolicyProxyForExternalCommunication'],
     };
 }
 

@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Provides inputs for OAuth 2.0 Flow End Point.
  * @export
@@ -43,9 +43,7 @@ export interface OAuth2SettingEndpoint {
  * Check if a given object implements the OAuth2SettingEndpoint interface.
  */
 export function instanceOfOAuth2SettingEndpoint(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function OAuth2SettingEndpointFromJSON(json: any): OAuth2SettingEndpoint {
@@ -53,29 +51,26 @@ export function OAuth2SettingEndpointFromJSON(json: any): OAuth2SettingEndpoint 
 }
 
 export function OAuth2SettingEndpointFromJSONTyped(json: any, ignoreDiscriminator: boolean): OAuth2SettingEndpoint {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'url': !exists(json, 'Url') ? undefined : json['Url'],
-        'contentType': !exists(json, 'ContentType') ? undefined : json['ContentType'],
-        'method': !exists(json, 'Method') ? undefined : json['Method'],
+        'url': json['Url'] == null ? undefined : json['Url'],
+        'contentType': json['ContentType'] == null ? undefined : json['ContentType'],
+        'method': json['Method'] == null ? undefined : json['Method'],
     };
 }
 
 export function OAuth2SettingEndpointToJSON(value?: OAuth2SettingEndpoint | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Url': value.url,
-        'ContentType': value.contentType,
-        'Method': value.method,
+        'Url': value['url'],
+        'ContentType': value['contentType'],
+        'Method': value['method'],
     };
 }
 

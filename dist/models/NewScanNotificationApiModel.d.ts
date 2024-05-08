@@ -9,8 +9,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { NewScanNotificationRecipientApiModel } from './NewScanNotificationRecipientApiModel';
 import type { NotificationEmailSmsFilterApi } from './NotificationEmailSmsFilterApi';
+import type { NewScanNotificationRecipientApiModel } from './NewScanNotificationRecipientApiModel';
 import type { NotificationIntegrationFilterApi } from './NotificationIntegrationFilterApi';
 /**
  * Represents a model for carrying out a new scan notification data

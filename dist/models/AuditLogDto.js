@@ -14,7 +14,6 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AuditLogDtoToJSON = exports.AuditLogDtoFromJSONTyped = exports.AuditLogDtoFromJSON = exports.instanceOfAuditLogDto = exports.AuditLogDtoTypeEnum = exports.AuditLogDtoEndpointTypeEnum = void 0;
-const runtime_1 = require("../runtime");
 /**
  * @export
  */
@@ -132,14 +131,14 @@ exports.AuditLogDtoTypeEnum = {
     ScanQueuedAgain: 'ScanQueuedAgain',
     ScanFailed: 'ScanFailed',
     AgentCommandDelete: 'AgentCommandDelete',
-    ImportWebsite: 'ImportWebsite'
+    ImportWebsite: 'ImportWebsite',
+    LimitingRole: 'LimitingRole'
 };
 /**
  * Check if a given object implements the AuditLogDto interface.
  */
 function instanceOfAuditLogDto(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfAuditLogDto = instanceOfAuditLogDto;
 function AuditLogDtoFromJSON(json) {
@@ -147,41 +146,38 @@ function AuditLogDtoFromJSON(json) {
 }
 exports.AuditLogDtoFromJSON = AuditLogDtoFromJSON;
 function AuditLogDtoFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'accountId': !(0, runtime_1.exists)(json, 'AccountId') ? undefined : json['AccountId'],
-        'createdAt': !(0, runtime_1.exists)(json, 'CreatedAt') ? undefined : (new Date(json['CreatedAt'])),
-        'endpointType': !(0, runtime_1.exists)(json, 'EndpointType') ? undefined : json['EndpointType'],
-        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
-        'type': !(0, runtime_1.exists)(json, 'Type') ? undefined : json['Type'],
-        'userEmail': !(0, runtime_1.exists)(json, 'UserEmail') ? undefined : json['UserEmail'],
-        'userId': !(0, runtime_1.exists)(json, 'UserId') ? undefined : json['UserId'],
-        'userName': !(0, runtime_1.exists)(json, 'UserName') ? undefined : json['UserName'],
-        'message': !(0, runtime_1.exists)(json, 'Message') ? undefined : json['Message'],
-        'requestData': !(0, runtime_1.exists)(json, 'RequestData') ? undefined : json['RequestData'],
+        'accountId': json['AccountId'] == null ? undefined : json['AccountId'],
+        'createdAt': json['CreatedAt'] == null ? undefined : (new Date(json['CreatedAt'])),
+        'endpointType': json['EndpointType'] == null ? undefined : json['EndpointType'],
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'type': json['Type'] == null ? undefined : json['Type'],
+        'userEmail': json['UserEmail'] == null ? undefined : json['UserEmail'],
+        'userId': json['UserId'] == null ? undefined : json['UserId'],
+        'userName': json['UserName'] == null ? undefined : json['UserName'],
+        'message': json['Message'] == null ? undefined : json['Message'],
+        'requestData': json['RequestData'] == null ? undefined : json['RequestData'],
     };
 }
 exports.AuditLogDtoFromJSONTyped = AuditLogDtoFromJSONTyped;
 function AuditLogDtoToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'AccountId': value.accountId,
-        'CreatedAt': value.createdAt === undefined ? undefined : (value.createdAt.toISOString()),
-        'EndpointType': value.endpointType,
-        'Id': value.id,
-        'Type': value.type,
-        'UserEmail': value.userEmail,
-        'UserId': value.userId,
-        'UserName': value.userName,
-        'Message': value.message,
-        'RequestData': value.requestData,
+        'AccountId': value['accountId'],
+        'CreatedAt': value['createdAt'] == null ? undefined : ((value['createdAt']).toISOString()),
+        'EndpointType': value['endpointType'],
+        'Id': value['id'],
+        'Type': value['type'],
+        'UserEmail': value['userEmail'],
+        'UserId': value['userId'],
+        'UserName': value['userName'],
+        'Message': value['message'],
+        'RequestData': value['requestData'],
     };
 }
 exports.AuditLogDtoToJSON = AuditLogDtoToJSON;

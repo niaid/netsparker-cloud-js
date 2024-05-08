@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AsanaTagToJSON = exports.AsanaTagFromJSONTyped = exports.AsanaTagFromJSON = exports.instanceOfAsanaTag = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the AsanaTag interface.
  */
 function instanceOfAsanaTag(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfAsanaTag = instanceOfAsanaTag;
 function AsanaTagFromJSON(json) {
@@ -28,25 +26,22 @@ function AsanaTagFromJSON(json) {
 }
 exports.AsanaTagFromJSON = AsanaTagFromJSON;
 function AsanaTagFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'gid': !(0, runtime_1.exists)(json, 'Gid') ? undefined : json['Gid'],
-        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
+        'gid': json['Gid'] == null ? undefined : json['Gid'],
+        'name': json['Name'] == null ? undefined : json['Name'],
     };
 }
 exports.AsanaTagFromJSONTyped = AsanaTagFromJSONTyped;
 function AsanaTagToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Gid': value.gid,
-        'Name': value.name,
+        'Gid': value['gid'],
+        'Name': value['name'],
     };
 }
 exports.AsanaTagToJSON = AsanaTagToJSON;

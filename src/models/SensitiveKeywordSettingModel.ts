@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a model for carrying out sensitive keyword settings.
  * @export
@@ -31,10 +31,8 @@ export interface SensitiveKeywordSettingModel {
  * Check if a given object implements the SensitiveKeywordSettingModel interface.
  */
 export function instanceOfSensitiveKeywordSettingModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "pattern" in value;
-
-    return isInstance;
+    if (!('pattern' in value)) return false;
+    return true;
 }
 
 export function SensitiveKeywordSettingModelFromJSON(json: any): SensitiveKeywordSettingModel {
@@ -42,7 +40,7 @@ export function SensitiveKeywordSettingModelFromJSON(json: any): SensitiveKeywor
 }
 
 export function SensitiveKeywordSettingModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): SensitiveKeywordSettingModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -52,15 +50,12 @@ export function SensitiveKeywordSettingModelFromJSONTyped(json: any, ignoreDiscr
 }
 
 export function SensitiveKeywordSettingModelToJSON(value?: SensitiveKeywordSettingModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Pattern': value.pattern,
+        'Pattern': value['pattern'],
     };
 }
 

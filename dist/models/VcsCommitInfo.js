@@ -14,7 +14,6 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.VcsCommitInfoToJSON = exports.VcsCommitInfoFromJSONTyped = exports.VcsCommitInfoFromJSON = exports.instanceOfVcsCommitInfo = exports.VcsCommitInfoIntegrationSystemEnum = void 0;
-const runtime_1 = require("../runtime");
 /**
  * @export
  */
@@ -34,8 +33,7 @@ exports.VcsCommitInfoIntegrationSystemEnum = {
  * Check if a given object implements the VcsCommitInfo interface.
  */
 function instanceOfVcsCommitInfo(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfVcsCommitInfo = instanceOfVcsCommitInfo;
 function VcsCommitInfoFromJSON(json) {
@@ -43,52 +41,49 @@ function VcsCommitInfoFromJSON(json) {
 }
 exports.VcsCommitInfoFromJSON = VcsCommitInfoFromJSON;
 function VcsCommitInfoFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'ciBuildConfigurationName': !(0, runtime_1.exists)(json, 'CiBuildConfigurationName') ? undefined : json['CiBuildConfigurationName'],
-        'ciBuildHasChange': !(0, runtime_1.exists)(json, 'CiBuildHasChange') ? undefined : json['CiBuildHasChange'],
-        'ciBuildId': !(0, runtime_1.exists)(json, 'CiBuildId') ? undefined : json['CiBuildId'],
-        'ciBuildServerName': !(0, runtime_1.exists)(json, 'CiBuildServerName') ? undefined : json['CiBuildServerName'],
-        'ciBuildServerVersion': !(0, runtime_1.exists)(json, 'CiBuildServerVersion') ? undefined : json['CiBuildServerVersion'],
-        'ciBuildUrl': !(0, runtime_1.exists)(json, 'CiBuildUrl') ? undefined : json['CiBuildUrl'],
-        'ciNcPluginVersion': !(0, runtime_1.exists)(json, 'CiNcPluginVersion') ? undefined : json['CiNcPluginVersion'],
-        'ciTimestamp': !(0, runtime_1.exists)(json, 'CiTimestamp') ? undefined : (new Date(json['CiTimestamp'])),
-        'comitterId': !(0, runtime_1.exists)(json, 'ComitterId') ? undefined : json['ComitterId'],
-        'committer': !(0, runtime_1.exists)(json, 'Committer') ? undefined : json['Committer'],
-        'committerName': !(0, runtime_1.exists)(json, 'CommitterName') ? undefined : json['CommitterName'],
-        'committerOverride': !(0, runtime_1.exists)(json, 'CommitterOverride') ? undefined : json['CommitterOverride'],
-        'integrationSystem': !(0, runtime_1.exists)(json, 'IntegrationSystem') ? undefined : json['IntegrationSystem'],
-        'isCommiterExistAndAuthorizedInNc': !(0, runtime_1.exists)(json, 'IsCommiterExistAndAuthorizedInNc') ? undefined : json['IsCommiterExistAndAuthorizedInNc'],
-        'vcsName': !(0, runtime_1.exists)(json, 'VcsName') ? undefined : json['VcsName'],
-        'vcsVersion': !(0, runtime_1.exists)(json, 'VcsVersion') ? undefined : json['VcsVersion'],
+        'ciBuildConfigurationName': json['CiBuildConfigurationName'] == null ? undefined : json['CiBuildConfigurationName'],
+        'ciBuildHasChange': json['CiBuildHasChange'] == null ? undefined : json['CiBuildHasChange'],
+        'ciBuildId': json['CiBuildId'] == null ? undefined : json['CiBuildId'],
+        'ciBuildServerName': json['CiBuildServerName'] == null ? undefined : json['CiBuildServerName'],
+        'ciBuildServerVersion': json['CiBuildServerVersion'] == null ? undefined : json['CiBuildServerVersion'],
+        'ciBuildUrl': json['CiBuildUrl'] == null ? undefined : json['CiBuildUrl'],
+        'ciNcPluginVersion': json['CiNcPluginVersion'] == null ? undefined : json['CiNcPluginVersion'],
+        'ciTimestamp': json['CiTimestamp'] == null ? undefined : (new Date(json['CiTimestamp'])),
+        'comitterId': json['ComitterId'] == null ? undefined : json['ComitterId'],
+        'committer': json['Committer'] == null ? undefined : json['Committer'],
+        'committerName': json['CommitterName'] == null ? undefined : json['CommitterName'],
+        'committerOverride': json['CommitterOverride'] == null ? undefined : json['CommitterOverride'],
+        'integrationSystem': json['IntegrationSystem'] == null ? undefined : json['IntegrationSystem'],
+        'isCommiterExistAndAuthorizedInNc': json['IsCommiterExistAndAuthorizedInNc'] == null ? undefined : json['IsCommiterExistAndAuthorizedInNc'],
+        'vcsName': json['VcsName'] == null ? undefined : json['VcsName'],
+        'vcsVersion': json['VcsVersion'] == null ? undefined : json['VcsVersion'],
     };
 }
 exports.VcsCommitInfoFromJSONTyped = VcsCommitInfoFromJSONTyped;
 function VcsCommitInfoToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'CiBuildConfigurationName': value.ciBuildConfigurationName,
-        'CiBuildHasChange': value.ciBuildHasChange,
-        'CiBuildId': value.ciBuildId,
-        'CiBuildServerVersion': value.ciBuildServerVersion,
-        'CiBuildUrl': value.ciBuildUrl,
-        'CiNcPluginVersion': value.ciNcPluginVersion,
-        'CiTimestamp': value.ciTimestamp === undefined ? undefined : (value.ciTimestamp.toISOString()),
-        'ComitterId': value.comitterId,
-        'Committer': value.committer,
-        'CommitterName': value.committerName,
-        'CommitterOverride': value.committerOverride,
-        'IntegrationSystem': value.integrationSystem,
-        'IsCommiterExistAndAuthorizedInNc': value.isCommiterExistAndAuthorizedInNc,
-        'VcsName': value.vcsName,
-        'VcsVersion': value.vcsVersion,
+        'CiBuildConfigurationName': value['ciBuildConfigurationName'],
+        'CiBuildHasChange': value['ciBuildHasChange'],
+        'CiBuildId': value['ciBuildId'],
+        'CiBuildServerVersion': value['ciBuildServerVersion'],
+        'CiBuildUrl': value['ciBuildUrl'],
+        'CiNcPluginVersion': value['ciNcPluginVersion'],
+        'CiTimestamp': value['ciTimestamp'] == null ? undefined : ((value['ciTimestamp']).toISOString()),
+        'ComitterId': value['comitterId'],
+        'Committer': value['committer'],
+        'CommitterName': value['committerName'],
+        'CommitterOverride': value['committerOverride'],
+        'IntegrationSystem': value['integrationSystem'],
+        'IsCommiterExistAndAuthorizedInNc': value['isCommiterExistAndAuthorizedInNc'],
+        'VcsName': value['vcsName'],
+        'VcsVersion': value['vcsVersion'],
     };
 }
 exports.VcsCommitInfoToJSON = VcsCommitInfoToJSON;

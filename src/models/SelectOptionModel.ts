@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a name / value pair model.
  * @export
@@ -37,9 +37,7 @@ export interface SelectOptionModel {
  * Check if a given object implements the SelectOptionModel interface.
  */
 export function instanceOfSelectOptionModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function SelectOptionModelFromJSON(json: any): SelectOptionModel {
@@ -47,27 +45,24 @@ export function SelectOptionModelFromJSON(json: any): SelectOptionModel {
 }
 
 export function SelectOptionModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): SelectOptionModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'label': !exists(json, 'Label') ? undefined : json['Label'],
-        'value': !exists(json, 'Value') ? undefined : json['Value'],
+        'label': json['Label'] == null ? undefined : json['Label'],
+        'value': json['Value'] == null ? undefined : json['Value'],
     };
 }
 
 export function SelectOptionModelToJSON(value?: SelectOptionModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Label': value.label,
-        'Value': value.value,
+        'Label': value['label'],
+        'Value': value['value'],
     };
 }
 

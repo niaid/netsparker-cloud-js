@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ScanPolicyPatternModelToJSON = exports.ScanPolicyPatternModelFromJSONTyped = exports.ScanPolicyPatternModelFromJSON = exports.instanceOfScanPolicyPatternModel = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the ScanPolicyPatternModel interface.
  */
 function instanceOfScanPolicyPatternModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfScanPolicyPatternModel = instanceOfScanPolicyPatternModel;
 function ScanPolicyPatternModelFromJSON(json) {
@@ -28,31 +26,28 @@ function ScanPolicyPatternModelFromJSON(json) {
 }
 exports.ScanPolicyPatternModelFromJSON = ScanPolicyPatternModelFromJSON;
 function ScanPolicyPatternModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'customScriptId': !(0, runtime_1.exists)(json, 'CustomScriptId') ? undefined : json['CustomScriptId'],
-        'description': !(0, runtime_1.exists)(json, 'Description') ? undefined : json['Description'],
-        'enabled': !(0, runtime_1.exists)(json, 'Enabled') ? undefined : json['Enabled'],
-        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
-        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
+        'customScriptId': json['CustomScriptId'] == null ? undefined : json['CustomScriptId'],
+        'description': json['Description'] == null ? undefined : json['Description'],
+        'enabled': json['Enabled'] == null ? undefined : json['Enabled'],
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'name': json['Name'] == null ? undefined : json['Name'],
     };
 }
 exports.ScanPolicyPatternModelFromJSONTyped = ScanPolicyPatternModelFromJSONTyped;
 function ScanPolicyPatternModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'CustomScriptId': value.customScriptId,
-        'Description': value.description,
-        'Enabled': value.enabled,
-        'Id': value.id,
-        'Name': value.name,
+        'CustomScriptId': value['customScriptId'],
+        'Description': value['description'],
+        'Enabled': value['enabled'],
+        'Id': value['id'],
+        'Name': value['name'],
     };
 }
 exports.ScanPolicyPatternModelToJSON = ScanPolicyPatternModelToJSON;

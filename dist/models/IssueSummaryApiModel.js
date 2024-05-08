@@ -14,14 +14,12 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.IssueSummaryApiModelToJSON = exports.IssueSummaryApiModelFromJSONTyped = exports.IssueSummaryApiModelFromJSON = exports.instanceOfIssueSummaryApiModel = void 0;
-const runtime_1 = require("../runtime");
 const IssueSummaryListModel_1 = require("./IssueSummaryListModel");
 /**
  * Check if a given object implements the IssueSummaryApiModel interface.
  */
 function instanceOfIssueSummaryApiModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfIssueSummaryApiModel = instanceOfIssueSummaryApiModel;
 function IssueSummaryApiModelFromJSON(json) {
@@ -29,38 +27,35 @@ function IssueSummaryApiModelFromJSON(json) {
 }
 exports.IssueSummaryApiModelFromJSON = IssueSummaryApiModelFromJSON;
 function IssueSummaryApiModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'targetUri': !(0, runtime_1.exists)(json, 'TargetUri') ? undefined : json['TargetUri'],
-        'websiteName': !(0, runtime_1.exists)(json, 'WebsiteName') ? undefined : json['WebsiteName'],
-        'websiteId': !(0, runtime_1.exists)(json, 'WebsiteId') ? undefined : json['WebsiteId'],
-        'lastSuccessfulScanDate': !(0, runtime_1.exists)(json, 'LastSuccessfulScanDate') ? undefined : json['LastSuccessfulScanDate'],
-        'scanGroupId': !(0, runtime_1.exists)(json, 'ScanGroupId') ? undefined : json['ScanGroupId'],
-        'scanProfileName': !(0, runtime_1.exists)(json, 'ScanProfileName') ? undefined : json['ScanProfileName'],
-        'scanProfileTags': !(0, runtime_1.exists)(json, 'ScanProfileTags') ? undefined : json['ScanProfileTags'],
-        'scanTaskId': !(0, runtime_1.exists)(json, 'ScanTaskId') ? undefined : json['ScanTaskId'],
-        'issueSummaryLists': !(0, runtime_1.exists)(json, 'IssueSummaryLists') ? undefined : (json['IssueSummaryLists'].map(IssueSummaryListModel_1.IssueSummaryListModelFromJSON)),
+        'targetUri': json['TargetUri'] == null ? undefined : json['TargetUri'],
+        'websiteName': json['WebsiteName'] == null ? undefined : json['WebsiteName'],
+        'websiteId': json['WebsiteId'] == null ? undefined : json['WebsiteId'],
+        'lastSuccessfulScanDate': json['LastSuccessfulScanDate'] == null ? undefined : json['LastSuccessfulScanDate'],
+        'scanGroupId': json['ScanGroupId'] == null ? undefined : json['ScanGroupId'],
+        'scanProfileName': json['ScanProfileName'] == null ? undefined : json['ScanProfileName'],
+        'scanProfileTags': json['ScanProfileTags'] == null ? undefined : json['ScanProfileTags'],
+        'scanTaskId': json['ScanTaskId'] == null ? undefined : json['ScanTaskId'],
+        'issueSummaryLists': json['IssueSummaryLists'] == null ? undefined : (json['IssueSummaryLists'].map(IssueSummaryListModel_1.IssueSummaryListModelFromJSON)),
     };
 }
 exports.IssueSummaryApiModelFromJSONTyped = IssueSummaryApiModelFromJSONTyped;
 function IssueSummaryApiModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'TargetUri': value.targetUri,
-        'WebsiteName': value.websiteName,
-        'WebsiteId': value.websiteId,
-        'ScanGroupId': value.scanGroupId,
-        'ScanProfileName': value.scanProfileName,
-        'ScanProfileTags': value.scanProfileTags,
-        'ScanTaskId': value.scanTaskId,
-        'IssueSummaryLists': value.issueSummaryLists === undefined ? undefined : (value.issueSummaryLists.map(IssueSummaryListModel_1.IssueSummaryListModelToJSON)),
+        'TargetUri': value['targetUri'],
+        'WebsiteName': value['websiteName'],
+        'WebsiteId': value['websiteId'],
+        'ScanGroupId': value['scanGroupId'],
+        'ScanProfileName': value['scanProfileName'],
+        'ScanProfileTags': value['scanProfileTags'],
+        'ScanTaskId': value['scanTaskId'],
+        'IssueSummaryLists': value['issueSummaryLists'] == null ? undefined : (value['issueSummaryLists'].map(IssueSummaryListModel_1.IssueSummaryListModelToJSON)),
     };
 }
 exports.IssueSummaryApiModelToJSON = IssueSummaryApiModelToJSON;

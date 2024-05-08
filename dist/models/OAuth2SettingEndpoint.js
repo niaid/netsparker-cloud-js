@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.OAuth2SettingEndpointToJSON = exports.OAuth2SettingEndpointFromJSONTyped = exports.OAuth2SettingEndpointFromJSON = exports.instanceOfOAuth2SettingEndpoint = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the OAuth2SettingEndpoint interface.
  */
 function instanceOfOAuth2SettingEndpoint(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfOAuth2SettingEndpoint = instanceOfOAuth2SettingEndpoint;
 function OAuth2SettingEndpointFromJSON(json) {
@@ -28,27 +26,24 @@ function OAuth2SettingEndpointFromJSON(json) {
 }
 exports.OAuth2SettingEndpointFromJSON = OAuth2SettingEndpointFromJSON;
 function OAuth2SettingEndpointFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'url': !(0, runtime_1.exists)(json, 'Url') ? undefined : json['Url'],
-        'contentType': !(0, runtime_1.exists)(json, 'ContentType') ? undefined : json['ContentType'],
-        'method': !(0, runtime_1.exists)(json, 'Method') ? undefined : json['Method'],
+        'url': json['Url'] == null ? undefined : json['Url'],
+        'contentType': json['ContentType'] == null ? undefined : json['ContentType'],
+        'method': json['Method'] == null ? undefined : json['Method'],
     };
 }
 exports.OAuth2SettingEndpointFromJSONTyped = OAuth2SettingEndpointFromJSONTyped;
 function OAuth2SettingEndpointToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Url': value.url,
-        'ContentType': value.contentType,
-        'Method': value.method,
+        'Url': value['url'],
+        'ContentType': value['contentType'],
+        'Method': value['method'],
     };
 }
 exports.OAuth2SettingEndpointToJSON = OAuth2SettingEndpointToJSON;

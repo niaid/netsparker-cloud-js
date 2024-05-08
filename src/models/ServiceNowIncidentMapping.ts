@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 import type { ServiceNowIncidentMappingFieldKeyValuePair } from './ServiceNowIncidentMappingFieldKeyValuePair';
 import {
     ServiceNowIncidentMappingFieldKeyValuePairFromJSON,
@@ -60,9 +60,7 @@ export type ServiceNowIncidentMappingInvictiChoiceEnum = typeof ServiceNowIncide
  * Check if a given object implements the ServiceNowIncidentMapping interface.
  */
 export function instanceOfServiceNowIncidentMapping(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function ServiceNowIncidentMappingFromJSON(json: any): ServiceNowIncidentMapping {
@@ -70,29 +68,26 @@ export function ServiceNowIncidentMappingFromJSON(json: any): ServiceNowIncident
 }
 
 export function ServiceNowIncidentMappingFromJSONTyped(json: any, ignoreDiscriminator: boolean): ServiceNowIncidentMapping {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'invictiChoice': !exists(json, 'InvictiChoice') ? undefined : json['InvictiChoice'],
-        'invictiValue': !exists(json, 'InvictiValue') ? undefined : json['InvictiValue'],
-        'fieldKeyValuePairs': !exists(json, 'FieldKeyValuePairs') ? undefined : ((json['FieldKeyValuePairs'] as Array<any>).map(ServiceNowIncidentMappingFieldKeyValuePairFromJSON)),
+        'invictiChoice': json['InvictiChoice'] == null ? undefined : json['InvictiChoice'],
+        'invictiValue': json['InvictiValue'] == null ? undefined : json['InvictiValue'],
+        'fieldKeyValuePairs': json['FieldKeyValuePairs'] == null ? undefined : ((json['FieldKeyValuePairs'] as Array<any>).map(ServiceNowIncidentMappingFieldKeyValuePairFromJSON)),
     };
 }
 
 export function ServiceNowIncidentMappingToJSON(value?: ServiceNowIncidentMapping | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'InvictiChoice': value.invictiChoice,
-        'InvictiValue': value.invictiValue,
-        'FieldKeyValuePairs': value.fieldKeyValuePairs === undefined ? undefined : ((value.fieldKeyValuePairs as Array<any>).map(ServiceNowIncidentMappingFieldKeyValuePairToJSON)),
+        'InvictiChoice': value['invictiChoice'],
+        'InvictiValue': value['invictiValue'],
+        'FieldKeyValuePairs': value['fieldKeyValuePairs'] == null ? undefined : ((value['fieldKeyValuePairs'] as Array<any>).map(ServiceNowIncidentMappingFieldKeyValuePairToJSON)),
     };
 }
 

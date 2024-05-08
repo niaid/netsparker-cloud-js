@@ -14,7 +14,6 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CvssScoreValueToJSON = exports.CvssScoreValueFromJSONTyped = exports.CvssScoreValueFromJSON = exports.instanceOfCvssScoreValue = exports.CvssScoreValueSeverityEnum = void 0;
-const runtime_1 = require("../runtime");
 /**
  * @export
  */
@@ -29,8 +28,7 @@ exports.CvssScoreValueSeverityEnum = {
  * Check if a given object implements the CvssScoreValue interface.
  */
 function instanceOfCvssScoreValue(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfCvssScoreValue = instanceOfCvssScoreValue;
 function CvssScoreValueFromJSON(json) {
@@ -38,21 +36,18 @@ function CvssScoreValueFromJSON(json) {
 }
 exports.CvssScoreValueFromJSON = CvssScoreValueFromJSON;
 function CvssScoreValueFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'severity': !(0, runtime_1.exists)(json, 'Severity') ? undefined : json['Severity'],
-        'value': !(0, runtime_1.exists)(json, 'Value') ? undefined : json['Value'],
+        'severity': json['Severity'] == null ? undefined : json['Severity'],
+        'value': json['Value'] == null ? undefined : json['Value'],
     };
 }
 exports.CvssScoreValueFromJSONTyped = CvssScoreValueFromJSONTyped;
 function CvssScoreValueToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {};
 }

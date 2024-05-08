@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.OutsiderRecipientToJSON = exports.OutsiderRecipientFromJSONTyped = exports.OutsiderRecipientFromJSON = exports.instanceOfOutsiderRecipient = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the OutsiderRecipient interface.
  */
 function instanceOfOutsiderRecipient(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfOutsiderRecipient = instanceOfOutsiderRecipient;
 function OutsiderRecipientFromJSON(json) {
@@ -28,23 +26,20 @@ function OutsiderRecipientFromJSON(json) {
 }
 exports.OutsiderRecipientFromJSON = OutsiderRecipientFromJSON;
 function OutsiderRecipientFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'email': !(0, runtime_1.exists)(json, 'Email') ? undefined : json['Email'],
+        'email': json['Email'] == null ? undefined : json['Email'],
     };
 }
 exports.OutsiderRecipientFromJSONTyped = OutsiderRecipientFromJSONTyped;
 function OutsiderRecipientToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Email': value.email,
+        'Email': value['email'],
     };
 }
 exports.OutsiderRecipientToJSON = OutsiderRecipientToJSON;

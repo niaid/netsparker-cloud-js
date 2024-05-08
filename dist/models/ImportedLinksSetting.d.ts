@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { FileCache } from './FileCache';
+import type { CachedFile } from './CachedFile';
 /**
  * Represents a class that carries out imported links.
  * @export
@@ -18,10 +18,10 @@ import type { FileCache } from './FileCache';
 export interface ImportedLinksSetting {
     /**
      * Gets or sets the imported files.
-     * @type {Array<FileCache>}
+     * @type {Array<CachedFile>}
      * @memberof ImportedLinksSetting
      */
-    importedFiles?: Array<FileCache>;
+    importedFiles?: Array<CachedFile>;
     /**
      * Gets or sets the imported links.
      * @type {string}

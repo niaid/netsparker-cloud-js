@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.JavaScriptSettingsModelToJSON = exports.JavaScriptSettingsModelFromJSONTyped = exports.JavaScriptSettingsModelFromJSON = exports.instanceOfJavaScriptSettingsModel = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the JavaScriptSettingsModel interface.
  */
 function instanceOfJavaScriptSettingsModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfJavaScriptSettingsModel = instanceOfJavaScriptSettingsModel;
 function JavaScriptSettingsModelFromJSON(json) {
@@ -28,65 +26,62 @@ function JavaScriptSettingsModelFromJSON(json) {
 }
 exports.JavaScriptSettingsModelFromJSON = JavaScriptSettingsModelFromJSON;
 function JavaScriptSettingsModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'bailThreshold': !(0, runtime_1.exists)(json, 'BailThreshold') ? undefined : json['BailThreshold'],
-        'confirmOpenRedirectSimulateTimeout': !(0, runtime_1.exists)(json, 'ConfirmOpenRedirectSimulateTimeout') ? undefined : json['ConfirmOpenRedirectSimulateTimeout'],
-        'confirmXssSimulateTimeout': !(0, runtime_1.exists)(json, 'ConfirmXssSimulateTimeout') ? undefined : json['ConfirmXssSimulateTimeout'],
-        'domParserAllowOutOfScopeXmlHttpRequests': !(0, runtime_1.exists)(json, 'DomParserAllowOutOfScopeXmlHttpRequests') ? undefined : json['DomParserAllowOutOfScopeXmlHttpRequests'],
-        'pushStatePrevention': !(0, runtime_1.exists)(json, 'PushStatePrevention') ? undefined : json['PushStatePrevention'],
-        'domParserDfsLimit': !(0, runtime_1.exists)(json, 'DomParserDfsLimit') ? undefined : json['DomParserDfsLimit'],
-        'domParserDotify': !(0, runtime_1.exists)(json, 'DomParserDotify') ? undefined : json['DomParserDotify'],
-        'domParserExclusionCssSelector': !(0, runtime_1.exists)(json, 'DomParserExclusionCssSelector') ? undefined : json['DomParserExclusionCssSelector'],
-        'domParserExtractResources': !(0, runtime_1.exists)(json, 'DomParserExtractResources') ? undefined : json['DomParserExtractResources'],
-        'domParserFilterColonEvents': !(0, runtime_1.exists)(json, 'DomParserFilterColonEvents') ? undefined : json['DomParserFilterColonEvents'],
-        'domParserFilterDocumentEvents': !(0, runtime_1.exists)(json, 'DomParserFilterDocumentEvents') ? undefined : json['DomParserFilterDocumentEvents'],
-        'domParserIgnoreDocumentEvents': !(0, runtime_1.exists)(json, 'DomParserIgnoreDocumentEvents') ? undefined : json['DomParserIgnoreDocumentEvents'],
-        'domParserLoadUrlTimeout': !(0, runtime_1.exists)(json, 'DomParserLoadUrlTimeout') ? undefined : json['DomParserLoadUrlTimeout'],
-        'domParserMaxOptionElementsPerSelect': !(0, runtime_1.exists)(json, 'DomParserMaxOptionElementsPerSelect') ? undefined : json['DomParserMaxOptionElementsPerSelect'],
-        'domParserPersistentJavaScriptCookies': !(0, runtime_1.exists)(json, 'DomParserPersistentJavaScriptCookies') ? undefined : json['DomParserPersistentJavaScriptCookies'],
-        'domParserPreSimulateWait': !(0, runtime_1.exists)(json, 'DomParserPreSimulateWait') ? undefined : json['DomParserPreSimulateWait'],
-        'domParserSimulationTimeout': !(0, runtime_1.exists)(json, 'DomParserSimulationTimeout') ? undefined : json['DomParserSimulationTimeout'],
-        'enableDomParser': !(0, runtime_1.exists)(json, 'EnableDomParser') ? undefined : json['EnableDomParser'],
-        'intereventTimeout': !(0, runtime_1.exists)(json, 'IntereventTimeout') ? undefined : json['IntereventTimeout'],
-        'skipElementCount': !(0, runtime_1.exists)(json, 'SkipElementCount') ? undefined : json['SkipElementCount'],
-        'skipThreshold': !(0, runtime_1.exists)(json, 'SkipThreshold') ? undefined : json['SkipThreshold'],
-        'domParserExclusionJavascriptEvents': !(0, runtime_1.exists)(json, 'DomParserExclusionJavascriptEvents') ? undefined : json['DomParserExclusionJavascriptEvents'],
+        'bailThreshold': json['BailThreshold'] == null ? undefined : json['BailThreshold'],
+        'confirmOpenRedirectSimulateTimeout': json['ConfirmOpenRedirectSimulateTimeout'] == null ? undefined : json['ConfirmOpenRedirectSimulateTimeout'],
+        'confirmXssSimulateTimeout': json['ConfirmXssSimulateTimeout'] == null ? undefined : json['ConfirmXssSimulateTimeout'],
+        'domParserAllowOutOfScopeXmlHttpRequests': json['DomParserAllowOutOfScopeXmlHttpRequests'] == null ? undefined : json['DomParserAllowOutOfScopeXmlHttpRequests'],
+        'pushStatePrevention': json['PushStatePrevention'] == null ? undefined : json['PushStatePrevention'],
+        'domParserDfsLimit': json['DomParserDfsLimit'] == null ? undefined : json['DomParserDfsLimit'],
+        'domParserDotify': json['DomParserDotify'] == null ? undefined : json['DomParserDotify'],
+        'domParserExclusionCssSelector': json['DomParserExclusionCssSelector'] == null ? undefined : json['DomParserExclusionCssSelector'],
+        'domParserExtractResources': json['DomParserExtractResources'] == null ? undefined : json['DomParserExtractResources'],
+        'domParserFilterColonEvents': json['DomParserFilterColonEvents'] == null ? undefined : json['DomParserFilterColonEvents'],
+        'domParserFilterDocumentEvents': json['DomParserFilterDocumentEvents'] == null ? undefined : json['DomParserFilterDocumentEvents'],
+        'domParserIgnoreDocumentEvents': json['DomParserIgnoreDocumentEvents'] == null ? undefined : json['DomParserIgnoreDocumentEvents'],
+        'domParserLoadUrlTimeout': json['DomParserLoadUrlTimeout'] == null ? undefined : json['DomParserLoadUrlTimeout'],
+        'domParserMaxOptionElementsPerSelect': json['DomParserMaxOptionElementsPerSelect'] == null ? undefined : json['DomParserMaxOptionElementsPerSelect'],
+        'domParserPersistentJavaScriptCookies': json['DomParserPersistentJavaScriptCookies'] == null ? undefined : json['DomParserPersistentJavaScriptCookies'],
+        'domParserPreSimulateWait': json['DomParserPreSimulateWait'] == null ? undefined : json['DomParserPreSimulateWait'],
+        'domParserSimulationTimeout': json['DomParserSimulationTimeout'] == null ? undefined : json['DomParserSimulationTimeout'],
+        'enableDomParser': json['EnableDomParser'] == null ? undefined : json['EnableDomParser'],
+        'intereventTimeout': json['IntereventTimeout'] == null ? undefined : json['IntereventTimeout'],
+        'skipElementCount': json['SkipElementCount'] == null ? undefined : json['SkipElementCount'],
+        'skipThreshold': json['SkipThreshold'] == null ? undefined : json['SkipThreshold'],
+        'domParserExclusionJavascriptEvents': json['DomParserExclusionJavascriptEvents'] == null ? undefined : json['DomParserExclusionJavascriptEvents'],
     };
 }
 exports.JavaScriptSettingsModelFromJSONTyped = JavaScriptSettingsModelFromJSONTyped;
 function JavaScriptSettingsModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'BailThreshold': value.bailThreshold,
-        'ConfirmOpenRedirectSimulateTimeout': value.confirmOpenRedirectSimulateTimeout,
-        'ConfirmXssSimulateTimeout': value.confirmXssSimulateTimeout,
-        'DomParserAllowOutOfScopeXmlHttpRequests': value.domParserAllowOutOfScopeXmlHttpRequests,
-        'PushStatePrevention': value.pushStatePrevention,
-        'DomParserDfsLimit': value.domParserDfsLimit,
-        'DomParserDotify': value.domParserDotify,
-        'DomParserExclusionCssSelector': value.domParserExclusionCssSelector,
-        'DomParserExtractResources': value.domParserExtractResources,
-        'DomParserFilterColonEvents': value.domParserFilterColonEvents,
-        'DomParserFilterDocumentEvents': value.domParserFilterDocumentEvents,
-        'DomParserIgnoreDocumentEvents': value.domParserIgnoreDocumentEvents,
-        'DomParserLoadUrlTimeout': value.domParserLoadUrlTimeout,
-        'DomParserMaxOptionElementsPerSelect': value.domParserMaxOptionElementsPerSelect,
-        'DomParserPersistentJavaScriptCookies': value.domParserPersistentJavaScriptCookies,
-        'DomParserPreSimulateWait': value.domParserPreSimulateWait,
-        'DomParserSimulationTimeout': value.domParserSimulationTimeout,
-        'EnableDomParser': value.enableDomParser,
-        'IntereventTimeout': value.intereventTimeout,
-        'SkipElementCount': value.skipElementCount,
-        'SkipThreshold': value.skipThreshold,
-        'DomParserExclusionJavascriptEvents': value.domParserExclusionJavascriptEvents,
+        'BailThreshold': value['bailThreshold'],
+        'ConfirmOpenRedirectSimulateTimeout': value['confirmOpenRedirectSimulateTimeout'],
+        'ConfirmXssSimulateTimeout': value['confirmXssSimulateTimeout'],
+        'DomParserAllowOutOfScopeXmlHttpRequests': value['domParserAllowOutOfScopeXmlHttpRequests'],
+        'PushStatePrevention': value['pushStatePrevention'],
+        'DomParserDfsLimit': value['domParserDfsLimit'],
+        'DomParserDotify': value['domParserDotify'],
+        'DomParserExclusionCssSelector': value['domParserExclusionCssSelector'],
+        'DomParserExtractResources': value['domParserExtractResources'],
+        'DomParserFilterColonEvents': value['domParserFilterColonEvents'],
+        'DomParserFilterDocumentEvents': value['domParserFilterDocumentEvents'],
+        'DomParserIgnoreDocumentEvents': value['domParserIgnoreDocumentEvents'],
+        'DomParserLoadUrlTimeout': value['domParserLoadUrlTimeout'],
+        'DomParserMaxOptionElementsPerSelect': value['domParserMaxOptionElementsPerSelect'],
+        'DomParserPersistentJavaScriptCookies': value['domParserPersistentJavaScriptCookies'],
+        'DomParserPreSimulateWait': value['domParserPreSimulateWait'],
+        'DomParserSimulationTimeout': value['domParserSimulationTimeout'],
+        'EnableDomParser': value['enableDomParser'],
+        'IntereventTimeout': value['intereventTimeout'],
+        'SkipElementCount': value['skipElementCount'],
+        'SkipThreshold': value['skipThreshold'],
+        'DomParserExclusionJavascriptEvents': value['domParserExclusionJavascriptEvents'],
     };
 }
 exports.JavaScriptSettingsModelToJSON = JavaScriptSettingsModelToJSON;

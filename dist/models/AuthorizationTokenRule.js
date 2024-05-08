@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AuthorizationTokenRuleToJSON = exports.AuthorizationTokenRuleFromJSONTyped = exports.AuthorizationTokenRuleFromJSON = exports.instanceOfAuthorizationTokenRule = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the AuthorizationTokenRule interface.
  */
 function instanceOfAuthorizationTokenRule(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfAuthorizationTokenRule = instanceOfAuthorizationTokenRule;
 function AuthorizationTokenRuleFromJSON(json) {
@@ -28,25 +26,22 @@ function AuthorizationTokenRuleFromJSON(json) {
 }
 exports.AuthorizationTokenRuleFromJSON = AuthorizationTokenRuleFromJSON;
 function AuthorizationTokenRuleFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'source': !(0, runtime_1.exists)(json, 'Source') ? undefined : json['Source'],
-        'destination': !(0, runtime_1.exists)(json, 'Destination') ? undefined : json['Destination'],
+        'source': json['Source'] == null ? undefined : json['Source'],
+        'destination': json['Destination'] == null ? undefined : json['Destination'],
     };
 }
 exports.AuthorizationTokenRuleFromJSONTyped = AuthorizationTokenRuleFromJSONTyped;
 function AuthorizationTokenRuleToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Source': value.source,
-        'Destination': value.destination,
+        'Source': value['source'],
+        'Destination': value['destination'],
     };
 }
 exports.AuthorizationTokenRuleToJSON = AuthorizationTokenRuleToJSON;

@@ -14,14 +14,12 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ImportedLinksSettingToJSON = exports.ImportedLinksSettingFromJSONTyped = exports.ImportedLinksSettingFromJSON = exports.instanceOfImportedLinksSetting = void 0;
-const runtime_1 = require("../runtime");
-const FileCache_1 = require("./FileCache");
+const CachedFile_1 = require("./CachedFile");
 /**
  * Check if a given object implements the ImportedLinksSetting interface.
  */
 function instanceOfImportedLinksSetting(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfImportedLinksSetting = instanceOfImportedLinksSetting;
 function ImportedLinksSettingFromJSON(json) {
@@ -29,27 +27,24 @@ function ImportedLinksSettingFromJSON(json) {
 }
 exports.ImportedLinksSettingFromJSON = ImportedLinksSettingFromJSON;
 function ImportedLinksSettingFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'importedFiles': !(0, runtime_1.exists)(json, 'ImportedFiles') ? undefined : (json['ImportedFiles'].map(FileCache_1.FileCacheFromJSON)),
-        'importedLinks': !(0, runtime_1.exists)(json, 'ImportedLinks') ? undefined : json['ImportedLinks'],
-        'importedURL': !(0, runtime_1.exists)(json, 'ImportedURL') ? undefined : json['ImportedURL'],
+        'importedFiles': json['ImportedFiles'] == null ? undefined : (json['ImportedFiles'].map(CachedFile_1.CachedFileFromJSON)),
+        'importedLinks': json['ImportedLinks'] == null ? undefined : json['ImportedLinks'],
+        'importedURL': json['ImportedURL'] == null ? undefined : json['ImportedURL'],
     };
 }
 exports.ImportedLinksSettingFromJSONTyped = ImportedLinksSettingFromJSONTyped;
 function ImportedLinksSettingToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'ImportedFiles': value.importedFiles === undefined ? undefined : (value.importedFiles.map(FileCache_1.FileCacheToJSON)),
-        'ImportedLinks': value.importedLinks,
-        'ImportedURL': value.importedURL,
+        'ImportedFiles': value['importedFiles'] == null ? undefined : (value['importedFiles'].map(CachedFile_1.CachedFileToJSON)),
+        'ImportedLinks': value['importedLinks'],
+        'ImportedURL': value['importedURL'],
     };
 }
 exports.ImportedLinksSettingToJSON = ImportedLinksSettingToJSON;

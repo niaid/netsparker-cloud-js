@@ -47,8 +47,8 @@ class NotificationsApi extends runtime.BaseAPI {
      * Deletes an existing scan notification definition.
      */
     async notificationsDeleteRaw(requestParameters, initOverrides) {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model', 'Required parameter requestParameters.model was null or undefined when calling notificationsDelete.');
+        if (requestParameters['model'] == null) {
+            throw new runtime.RequiredError('model', 'Required parameter "model" was null or undefined when calling notificationsDelete().');
         }
         const queryParameters = {};
         const headerParameters = {};
@@ -58,7 +58,7 @@ class NotificationsApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: (0, index_1.DeleteScanNotificationApiModelToJSON)(requestParameters.model),
+            body: (0, index_1.DeleteScanNotificationApiModelToJSON)(requestParameters['model']),
         }, initOverrides);
         return new runtime.VoidApiResponse(response);
     }
@@ -72,13 +72,13 @@ class NotificationsApi extends runtime.BaseAPI {
      * Gets the notification.
      */
     async notificationsGetRaw(requestParameters, initOverrides) {
-        if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling notificationsGet.');
+        if (requestParameters['id'] == null) {
+            throw new runtime.RequiredError('id', 'Required parameter "id" was null or undefined when calling notificationsGet().');
         }
         const queryParameters = {};
         const headerParameters = {};
         const response = await this.request({
-            path: `/api/1.0/notifications/get/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
+            path: `/api/1.0/notifications/get/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -96,12 +96,12 @@ class NotificationsApi extends runtime.BaseAPI {
      * Gets the list of notifications grouped by their Scopes and ordered by priorities for the given event.
      */
     async notificationsGetPrioritiesRaw(requestParameters, initOverrides) {
-        if (requestParameters.event === null || requestParameters.event === undefined) {
-            throw new runtime.RequiredError('event', 'Required parameter requestParameters.event was null or undefined when calling notificationsGetPriorities.');
+        if (requestParameters['event'] == null) {
+            throw new runtime.RequiredError('event', 'Required parameter "event" was null or undefined when calling notificationsGetPriorities().');
         }
         const queryParameters = {};
-        if (requestParameters.event !== undefined) {
-            queryParameters['event'] = requestParameters.event;
+        if (requestParameters['event'] != null) {
+            queryParameters['event'] = requestParameters['event'];
         }
         const headerParameters = {};
         const response = await this.request({
@@ -123,12 +123,12 @@ class NotificationsApi extends runtime.BaseAPI {
      * Gets the scan groups of website.
      */
     async notificationsGetScanGroupsRaw(requestParameters, initOverrides) {
-        if (requestParameters.websiteId === null || requestParameters.websiteId === undefined) {
-            throw new runtime.RequiredError('websiteId', 'Required parameter requestParameters.websiteId was null or undefined when calling notificationsGetScanGroups.');
+        if (requestParameters['websiteId'] == null) {
+            throw new runtime.RequiredError('websiteId', 'Required parameter "websiteId" was null or undefined when calling notificationsGetScanGroups().');
         }
         const queryParameters = {};
-        if (requestParameters.websiteId !== undefined) {
-            queryParameters['WebsiteId'] = requestParameters.websiteId;
+        if (requestParameters['websiteId'] != null) {
+            queryParameters['WebsiteId'] = requestParameters['websiteId'];
         }
         const headerParameters = {};
         const response = await this.request({
@@ -151,11 +151,11 @@ class NotificationsApi extends runtime.BaseAPI {
      */
     async notificationsListRaw(requestParameters, initOverrides) {
         const queryParameters = {};
-        if (requestParameters.page !== undefined) {
-            queryParameters['page'] = requestParameters.page;
+        if (requestParameters['page'] != null) {
+            queryParameters['page'] = requestParameters['page'];
         }
-        if (requestParameters.pageSize !== undefined) {
-            queryParameters['pageSize'] = requestParameters.pageSize;
+        if (requestParameters['pageSize'] != null) {
+            queryParameters['pageSize'] = requestParameters['pageSize'];
         }
         const headerParameters = {};
         const response = await this.request({
@@ -177,8 +177,8 @@ class NotificationsApi extends runtime.BaseAPI {
      * Creates a new scan notification definition.
      */
     async notificationsNewRaw(requestParameters, initOverrides) {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model', 'Required parameter requestParameters.model was null or undefined when calling notificationsNew.');
+        if (requestParameters['model'] == null) {
+            throw new runtime.RequiredError('model', 'Required parameter "model" was null or undefined when calling notificationsNew().');
         }
         const queryParameters = {};
         const headerParameters = {};
@@ -188,7 +188,7 @@ class NotificationsApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: (0, index_1.NewScanNotificationApiModelToJSON)(requestParameters.model),
+            body: (0, index_1.NewScanNotificationApiModelToJSON)(requestParameters['model']),
         }, initOverrides);
         return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.ScanNotificationApiModelFromJSON)(jsonValue));
     }
@@ -203,8 +203,8 @@ class NotificationsApi extends runtime.BaseAPI {
      * Sets the priorities of notifications.
      */
     async notificationsSetPrioritiesRaw(requestParameters, initOverrides) {
-        if (requestParameters.priorities === null || requestParameters.priorities === undefined) {
-            throw new runtime.RequiredError('priorities', 'Required parameter requestParameters.priorities was null or undefined when calling notificationsSetPriorities.');
+        if (requestParameters['priorities'] == null) {
+            throw new runtime.RequiredError('priorities', 'Required parameter "priorities" was null or undefined when calling notificationsSetPriorities().');
         }
         const queryParameters = {};
         const headerParameters = {};
@@ -214,7 +214,7 @@ class NotificationsApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: requestParameters.priorities.map(index_1.NotificationPriorityPairToJSON),
+            body: requestParameters['priorities'].map(index_1.NotificationPriorityPairToJSON),
         }, initOverrides);
         return new runtime.VoidApiResponse(response);
     }
@@ -228,8 +228,8 @@ class NotificationsApi extends runtime.BaseAPI {
      * Updates an existing scan notification definition.
      */
     async notificationsUpdateRaw(requestParameters, initOverrides) {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model', 'Required parameter requestParameters.model was null or undefined when calling notificationsUpdate.');
+        if (requestParameters['model'] == null) {
+            throw new runtime.RequiredError('model', 'Required parameter "model" was null or undefined when calling notificationsUpdate().');
         }
         const queryParameters = {};
         const headerParameters = {};
@@ -239,7 +239,7 @@ class NotificationsApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: (0, index_1.UpdateScanNotificationApiModelToJSON)(requestParameters.model),
+            body: (0, index_1.UpdateScanNotificationApiModelToJSON)(requestParameters['model']),
         }, initOverrides);
         return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.ScanNotificationApiModelFromJSON)(jsonValue));
     }

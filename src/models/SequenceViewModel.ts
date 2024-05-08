@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents the Sequence View Model
  * @export
@@ -37,11 +37,9 @@ export interface SequenceViewModel {
  * Check if a given object implements the SequenceViewModel interface.
  */
 export function instanceOfSequenceViewModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "name" in value;
-    isInstance = isInstance && "businessLogicRecorderSettings" in value;
-
-    return isInstance;
+    if (!('name' in value)) return false;
+    if (!('businessLogicRecorderSettings' in value)) return false;
+    return true;
 }
 
 export function SequenceViewModelFromJSON(json: any): SequenceViewModel {
@@ -49,7 +47,7 @@ export function SequenceViewModelFromJSON(json: any): SequenceViewModel {
 }
 
 export function SequenceViewModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): SequenceViewModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -60,16 +58,13 @@ export function SequenceViewModelFromJSONTyped(json: any, ignoreDiscriminator: b
 }
 
 export function SequenceViewModelToJSON(value?: SequenceViewModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Name': value.name,
-        'BusinessLogicRecorderSettings': value.businessLogicRecorderSettings,
+        'Name': value['name'],
+        'BusinessLogicRecorderSettings': value['businessLogicRecorderSettings'],
     };
 }
 

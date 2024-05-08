@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a content type model for oauth2 endpoint.
  * @export
@@ -31,9 +31,7 @@ export interface ContentTypeTemplate {
  * Check if a given object implements the ContentTypeTemplate interface.
  */
 export function instanceOfContentTypeTemplate(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function ContentTypeTemplateFromJSON(json: any): ContentTypeTemplate {
@@ -41,25 +39,22 @@ export function ContentTypeTemplateFromJSON(json: any): ContentTypeTemplate {
 }
 
 export function ContentTypeTemplateFromJSONTyped(json: any, ignoreDiscriminator: boolean): ContentTypeTemplate {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
+        'name': json['Name'] == null ? undefined : json['Name'],
     };
 }
 
 export function ContentTypeTemplateToJSON(value?: ContentTypeTemplate | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Name': value.name,
+        'Name': value['name'],
     };
 }
 

@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * The health check model for user
  * @export
@@ -55,9 +55,7 @@ export interface UserHealthCheckApiModel {
  * Check if a given object implements the UserHealthCheckApiModel interface.
  */
 export function instanceOfUserHealthCheckApiModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function UserHealthCheckApiModelFromJSON(json: any): UserHealthCheckApiModel {
@@ -65,33 +63,30 @@ export function UserHealthCheckApiModelFromJSON(json: any): UserHealthCheckApiMo
 }
 
 export function UserHealthCheckApiModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): UserHealthCheckApiModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'dateFormat': !exists(json, 'DateFormat') ? undefined : json['DateFormat'],
-        'displayName': !exists(json, 'DisplayName') ? undefined : json['DisplayName'],
-        'email': !exists(json, 'Email') ? undefined : json['Email'],
-        'alternateLoginEmail': !exists(json, 'AlternateLoginEmail') ? undefined : json['AlternateLoginEmail'],
-        'timeZoneInfo': !exists(json, 'TimeZoneInfo') ? undefined : json['TimeZoneInfo'],
+        'dateFormat': json['DateFormat'] == null ? undefined : json['DateFormat'],
+        'displayName': json['DisplayName'] == null ? undefined : json['DisplayName'],
+        'email': json['Email'] == null ? undefined : json['Email'],
+        'alternateLoginEmail': json['AlternateLoginEmail'] == null ? undefined : json['AlternateLoginEmail'],
+        'timeZoneInfo': json['TimeZoneInfo'] == null ? undefined : json['TimeZoneInfo'],
     };
 }
 
 export function UserHealthCheckApiModelToJSON(value?: UserHealthCheckApiModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'DateFormat': value.dateFormat,
-        'DisplayName': value.displayName,
-        'Email': value.email,
-        'AlternateLoginEmail': value.alternateLoginEmail,
-        'TimeZoneInfo': value.timeZoneInfo,
+        'DateFormat': value['dateFormat'],
+        'DisplayName': value['displayName'],
+        'Email': value['email'],
+        'AlternateLoginEmail': value['alternateLoginEmail'],
+        'TimeZoneInfo': value['timeZoneInfo'],
     };
 }
 

@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * 
  * @export
@@ -37,9 +37,7 @@ export interface FieldPairValue {
  * Check if a given object implements the FieldPairValue interface.
  */
 export function instanceOfFieldPairValue(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function FieldPairValueFromJSON(json: any): FieldPairValue {
@@ -47,27 +45,24 @@ export function FieldPairValueFromJSON(json: any): FieldPairValue {
 }
 
 export function FieldPairValueFromJSONTyped(json: any, ignoreDiscriminator: boolean): FieldPairValue {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'text': !exists(json, 'Text') ? undefined : json['Text'],
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'text': json['Text'] == null ? undefined : json['Text'],
     };
 }
 
 export function FieldPairValueToJSON(value?: FieldPairValue | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Id': value.id,
-        'Text': value.text,
+        'Id': value['id'],
+        'Text': value['text'],
     };
 }
 

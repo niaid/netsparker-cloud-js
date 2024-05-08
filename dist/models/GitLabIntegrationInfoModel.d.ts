@@ -9,8 +9,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
 import type { IntegrationWizardResultModel } from './IntegrationWizardResultModel';
+import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
 /**
  * The GitLab integration info
  * @export
@@ -155,6 +155,18 @@ export interface GitLabIntegrationInfoModel {
      * @memberof GitLabIntegrationInfoModel
      */
     integrationWizardResultModel?: IntegrationWizardResultModel;
+    /**
+     *
+     * @type {string}
+     * @memberof GitLabIntegrationInfoModel
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof GitLabIntegrationInfoModel
+     */
+    state?: GitLabIntegrationInfoModelStateEnum;
 }
 /**
  * @export
@@ -204,9 +216,17 @@ export declare const GitLabIntegrationInfoModelTemplateTypeEnum: {
 };
 export type GitLabIntegrationInfoModelTemplateTypeEnum = typeof GitLabIntegrationInfoModelTemplateTypeEnum[keyof typeof GitLabIntegrationInfoModelTemplateTypeEnum];
 /**
+ * @export
+ */
+export declare const GitLabIntegrationInfoModelStateEnum: {
+    readonly Active: "Active";
+    readonly Suspended: "Suspended";
+};
+export type GitLabIntegrationInfoModelStateEnum = typeof GitLabIntegrationInfoModelStateEnum[keyof typeof GitLabIntegrationInfoModelStateEnum];
+/**
  * Check if a given object implements the GitLabIntegrationInfoModel interface.
  */
 export declare function instanceOfGitLabIntegrationInfoModel(value: object): boolean;
 export declare function GitLabIntegrationInfoModelFromJSON(json: any): GitLabIntegrationInfoModel;
 export declare function GitLabIntegrationInfoModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): GitLabIntegrationInfoModel;
-export declare function GitLabIntegrationInfoModelToJSON(value?: GitLabIntegrationInfoModel | null): any;
+export declare function GitLabIntegrationInfoModelToJSON(value?: Omit<GitLabIntegrationInfoModel, 'Type' | 'GenericErrorMessage' | 'Identifier' | 'TestMessageBody' | 'TestMessageTitle' | 'WebhookUrl'> | null): any;

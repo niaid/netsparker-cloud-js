@@ -14,7 +14,6 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.VerifyApiModelToJSON = exports.VerifyApiModelFromJSONTyped = exports.VerifyApiModelFromJSON = exports.instanceOfVerifyApiModel = exports.VerifyApiModelVerificationMethodEnum = void 0;
-const runtime_1 = require("../runtime");
 /**
  * @export
  */
@@ -28,9 +27,9 @@ exports.VerifyApiModelVerificationMethodEnum = {
  * Check if a given object implements the VerifyApiModel interface.
  */
 function instanceOfVerifyApiModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "websiteUrl" in value;
-    return isInstance;
+    if (!('websiteUrl' in value))
+        return false;
+    return true;
 }
 exports.instanceOfVerifyApiModel = instanceOfVerifyApiModel;
 function VerifyApiModelFromJSON(json) {
@@ -38,27 +37,24 @@ function VerifyApiModelFromJSON(json) {
 }
 exports.VerifyApiModelFromJSON = VerifyApiModelFromJSON;
 function VerifyApiModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'verificationMethod': !(0, runtime_1.exists)(json, 'VerificationMethod') ? undefined : json['VerificationMethod'],
-        'verificationSecret': !(0, runtime_1.exists)(json, 'VerificationSecret') ? undefined : json['VerificationSecret'],
+        'verificationMethod': json['VerificationMethod'] == null ? undefined : json['VerificationMethod'],
+        'verificationSecret': json['VerificationSecret'] == null ? undefined : json['VerificationSecret'],
         'websiteUrl': json['WebsiteUrl'],
     };
 }
 exports.VerifyApiModelFromJSONTyped = VerifyApiModelFromJSONTyped;
 function VerifyApiModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'VerificationMethod': value.verificationMethod,
-        'VerificationSecret': value.verificationSecret,
-        'WebsiteUrl': value.websiteUrl,
+        'VerificationMethod': value['verificationMethod'],
+        'VerificationSecret': value['verificationSecret'],
+        'WebsiteUrl': value['websiteUrl'],
     };
 }
 exports.VerifyApiModelToJSON = VerifyApiModelToJSON;

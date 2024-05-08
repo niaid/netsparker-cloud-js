@@ -12,31 +12,13 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
-import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
-import {
-    IntegrationCustomFieldVmFromJSON,
-    IntegrationCustomFieldVmFromJSONTyped,
-    IntegrationCustomFieldVmToJSON,
-} from './IntegrationCustomFieldVm';
-import type { IntegrationWizardResultModel } from './IntegrationWizardResultModel';
-import {
-    IntegrationWizardResultModelFromJSON,
-    IntegrationWizardResultModelFromJSONTyped,
-    IntegrationWizardResultModelToJSON,
-} from './IntegrationWizardResultModel';
+import { mapValues } from '../runtime';
 import type { TrelloBoard } from './TrelloBoard';
 import {
     TrelloBoardFromJSON,
     TrelloBoardFromJSONTyped,
     TrelloBoardToJSON,
 } from './TrelloBoard';
-import type { TrelloLabel } from './TrelloLabel';
-import {
-    TrelloLabelFromJSON,
-    TrelloLabelFromJSONTyped,
-    TrelloLabelToJSON,
-} from './TrelloLabel';
 import type { TrelloList } from './TrelloList';
 import {
     TrelloListFromJSON,
@@ -49,6 +31,24 @@ import {
     TrelloMemberFromJSONTyped,
     TrelloMemberToJSON,
 } from './TrelloMember';
+import type { TrelloLabel } from './TrelloLabel';
+import {
+    TrelloLabelFromJSON,
+    TrelloLabelFromJSONTyped,
+    TrelloLabelToJSON,
+} from './TrelloLabel';
+import type { IntegrationWizardResultModel } from './IntegrationWizardResultModel';
+import {
+    IntegrationWizardResultModelFromJSON,
+    IntegrationWizardResultModelFromJSONTyped,
+    IntegrationWizardResultModelToJSON,
+} from './IntegrationWizardResultModel';
+import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
+import {
+    IntegrationCustomFieldVmFromJSON,
+    IntegrationCustomFieldVmFromJSONTyped,
+    IntegrationCustomFieldVmToJSON,
+} from './IntegrationCustomFieldVm';
 
 /**
  * The Trello integration info
@@ -224,6 +224,18 @@ export interface TrelloIntegrationInfoModel {
      * @memberof TrelloIntegrationInfoModel
      */
     titleFormat: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TrelloIntegrationInfoModel
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof TrelloIntegrationInfoModel
+     */
+    state?: TrelloIntegrationInfoModelStateEnum;
 }
 
 
@@ -276,20 +288,27 @@ export const TrelloIntegrationInfoModelTemplateTypeEnum = {
 } as const;
 export type TrelloIntegrationInfoModelTemplateTypeEnum = typeof TrelloIntegrationInfoModelTemplateTypeEnum[keyof typeof TrelloIntegrationInfoModelTemplateTypeEnum];
 
+/**
+ * @export
+ */
+export const TrelloIntegrationInfoModelStateEnum = {
+    Active: 'Active',
+    Suspended: 'Suspended'
+} as const;
+export type TrelloIntegrationInfoModelStateEnum = typeof TrelloIntegrationInfoModelStateEnum[keyof typeof TrelloIntegrationInfoModelStateEnum];
+
 
 /**
  * Check if a given object implements the TrelloIntegrationInfoModel interface.
  */
 export function instanceOfTrelloIntegrationInfoModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "apiKey" in value;
-    isInstance = isInstance && "token" in value;
-    isInstance = isInstance && "listId" in value;
-    isInstance = isInstance && "boardId" in value;
-    isInstance = isInstance && "dueDays" in value;
-    isInstance = isInstance && "titleFormat" in value;
-
-    return isInstance;
+    if (!('apiKey' in value)) return false;
+    if (!('token' in value)) return false;
+    if (!('listId' in value)) return false;
+    if (!('boardId' in value)) return false;
+    if (!('dueDays' in value)) return false;
+    if (!('titleFormat' in value)) return false;
+    return true;
 }
 
 export function TrelloIntegrationInfoModelFromJSON(json: any): TrelloIntegrationInfoModel {
@@ -297,7 +316,7 @@ export function TrelloIntegrationInfoModelFromJSON(json: any): TrelloIntegration
 }
 
 export function TrelloIntegrationInfoModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): TrelloIntegrationInfoModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -305,63 +324,64 @@ export function TrelloIntegrationInfoModelFromJSONTyped(json: any, ignoreDiscrim
         'apiKey': json['ApiKey'],
         'token': json['Token'],
         'listId': json['ListId'],
-        'integrationWizardResultModel': !exists(json, 'IntegrationWizardResultModel') ? undefined : IntegrationWizardResultModelFromJSON(json['IntegrationWizardResultModel']),
+        'integrationWizardResultModel': json['IntegrationWizardResultModel'] == null ? undefined : IntegrationWizardResultModelFromJSON(json['IntegrationWizardResultModel']),
         'boardId': json['BoardId'],
-        'boardIds': !exists(json, 'BoardIds') ? undefined : ((json['BoardIds'] as Array<any>).map(TrelloBoardFromJSON)),
-        'lists': !exists(json, 'Lists') ? undefined : ((json['Lists'] as Array<any>).map(TrelloListFromJSON)),
-        'members': !exists(json, 'Members') ? undefined : ((json['Members'] as Array<any>).map(TrelloMemberFromJSON)),
-        'labels': !exists(json, 'Labels') ? undefined : ((json['Labels'] as Array<any>).map(TrelloLabelFromJSON)),
-        'memberIds': !exists(json, 'MemberIds') ? undefined : json['MemberIds'],
-        'labelIds': !exists(json, 'LabelIds') ? undefined : json['LabelIds'],
-        'labelIdsSelected': !exists(json, 'LabelIdsSelected') ? undefined : json['LabelIdsSelected'],
-        'memberIdsSelected': !exists(json, 'MemberIdsSelected') ? undefined : json['MemberIdsSelected'],
+        'boardIds': json['BoardIds'] == null ? undefined : ((json['BoardIds'] as Array<any>).map(TrelloBoardFromJSON)),
+        'lists': json['Lists'] == null ? undefined : ((json['Lists'] as Array<any>).map(TrelloListFromJSON)),
+        'members': json['Members'] == null ? undefined : ((json['Members'] as Array<any>).map(TrelloMemberFromJSON)),
+        'labels': json['Labels'] == null ? undefined : ((json['Labels'] as Array<any>).map(TrelloLabelFromJSON)),
+        'memberIds': json['MemberIds'] == null ? undefined : json['MemberIds'],
+        'labelIds': json['LabelIds'] == null ? undefined : json['LabelIds'],
+        'labelIdsSelected': json['LabelIdsSelected'] == null ? undefined : json['LabelIdsSelected'],
+        'memberIdsSelected': json['MemberIdsSelected'] == null ? undefined : json['MemberIdsSelected'],
         'dueDays': json['DueDays'],
-        'type': !exists(json, 'Type') ? undefined : json['Type'],
-        'genericErrorMessage': !exists(json, 'GenericErrorMessage') ? undefined : json['GenericErrorMessage'],
-        'identifier': !exists(json, 'Identifier') ? undefined : json['Identifier'],
-        'testMessageBody': !exists(json, 'TestMessageBody') ? undefined : json['TestMessageBody'],
-        'testMessageTitle': !exists(json, 'TestMessageTitle') ? undefined : json['TestMessageTitle'],
-        'webhookUrl': !exists(json, 'WebhookUrl') ? undefined : json['WebhookUrl'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'integrationVersion': !exists(json, 'IntegrationVersion') ? undefined : json['IntegrationVersion'],
-        'accountID': !exists(json, 'AccountID') ? undefined : json['AccountID'],
-        'customFields': !exists(json, 'CustomFields') ? undefined : ((json['CustomFields'] as Array<any>).map(IntegrationCustomFieldVmFromJSON)),
-        'templateType': !exists(json, 'TemplateType') ? undefined : json['TemplateType'],
-        'reopenStatus': !exists(json, 'ReopenStatus') ? undefined : json['ReopenStatus'],
-        'resolvedStatus': !exists(json, 'ResolvedStatus') ? undefined : json['ResolvedStatus'],
+        'type': json['Type'] == null ? undefined : json['Type'],
+        'genericErrorMessage': json['GenericErrorMessage'] == null ? undefined : json['GenericErrorMessage'],
+        'identifier': json['Identifier'] == null ? undefined : json['Identifier'],
+        'testMessageBody': json['TestMessageBody'] == null ? undefined : json['TestMessageBody'],
+        'testMessageTitle': json['TestMessageTitle'] == null ? undefined : json['TestMessageTitle'],
+        'webhookUrl': json['WebhookUrl'] == null ? undefined : json['WebhookUrl'],
+        'name': json['Name'] == null ? undefined : json['Name'],
+        'integrationVersion': json['IntegrationVersion'] == null ? undefined : json['IntegrationVersion'],
+        'accountID': json['AccountID'] == null ? undefined : json['AccountID'],
+        'customFields': json['CustomFields'] == null ? undefined : ((json['CustomFields'] as Array<any>).map(IntegrationCustomFieldVmFromJSON)),
+        'templateType': json['TemplateType'] == null ? undefined : json['TemplateType'],
+        'reopenStatus': json['ReopenStatus'] == null ? undefined : json['ReopenStatus'],
+        'resolvedStatus': json['ResolvedStatus'] == null ? undefined : json['ResolvedStatus'],
         'titleFormat': json['TitleFormat'],
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'state': json['State'] == null ? undefined : json['State'],
     };
 }
 
-export function TrelloIntegrationInfoModelToJSON(value?: TrelloIntegrationInfoModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+export function TrelloIntegrationInfoModelToJSON(value?: Omit<TrelloIntegrationInfoModel, 'LabelIdsSelected'|'MemberIdsSelected'|'Type'|'GenericErrorMessage'|'Identifier'|'TestMessageBody'|'TestMessageTitle'|'WebhookUrl'> | null): any {
+    if (value == null) {
+        return value;
     }
     return {
         
-        'ApiKey': value.apiKey,
-        'Token': value.token,
-        'ListId': value.listId,
-        'IntegrationWizardResultModel': IntegrationWizardResultModelToJSON(value.integrationWizardResultModel),
-        'BoardId': value.boardId,
-        'BoardIds': value.boardIds === undefined ? undefined : ((value.boardIds as Array<any>).map(TrelloBoardToJSON)),
-        'Lists': value.lists === undefined ? undefined : ((value.lists as Array<any>).map(TrelloListToJSON)),
-        'Members': value.members === undefined ? undefined : ((value.members as Array<any>).map(TrelloMemberToJSON)),
-        'Labels': value.labels === undefined ? undefined : ((value.labels as Array<any>).map(TrelloLabelToJSON)),
-        'MemberIds': value.memberIds,
-        'LabelIds': value.labelIds,
-        'DueDays': value.dueDays,
-        'Name': value.name,
-        'IntegrationVersion': value.integrationVersion,
-        'AccountID': value.accountID,
-        'CustomFields': value.customFields === undefined ? undefined : ((value.customFields as Array<any>).map(IntegrationCustomFieldVmToJSON)),
-        'TemplateType': value.templateType,
-        'ReopenStatus': value.reopenStatus,
-        'ResolvedStatus': value.resolvedStatus,
-        'TitleFormat': value.titleFormat,
+        'ApiKey': value['apiKey'],
+        'Token': value['token'],
+        'ListId': value['listId'],
+        'IntegrationWizardResultModel': IntegrationWizardResultModelToJSON(value['integrationWizardResultModel']),
+        'BoardId': value['boardId'],
+        'BoardIds': value['boardIds'] == null ? undefined : ((value['boardIds'] as Array<any>).map(TrelloBoardToJSON)),
+        'Lists': value['lists'] == null ? undefined : ((value['lists'] as Array<any>).map(TrelloListToJSON)),
+        'Members': value['members'] == null ? undefined : ((value['members'] as Array<any>).map(TrelloMemberToJSON)),
+        'Labels': value['labels'] == null ? undefined : ((value['labels'] as Array<any>).map(TrelloLabelToJSON)),
+        'MemberIds': value['memberIds'],
+        'LabelIds': value['labelIds'],
+        'DueDays': value['dueDays'],
+        'Name': value['name'],
+        'IntegrationVersion': value['integrationVersion'],
+        'AccountID': value['accountID'],
+        'CustomFields': value['customFields'] == null ? undefined : ((value['customFields'] as Array<any>).map(IntegrationCustomFieldVmToJSON)),
+        'TemplateType': value['templateType'],
+        'ReopenStatus': value['reopenStatus'],
+        'ResolvedStatus': value['resolvedStatus'],
+        'TitleFormat': value['titleFormat'],
+        'Id': value['id'],
+        'State': value['state'],
     };
 }
 

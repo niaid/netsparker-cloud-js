@@ -14,7 +14,6 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ServiceNowIncidentMappingToJSON = exports.ServiceNowIncidentMappingFromJSONTyped = exports.ServiceNowIncidentMappingFromJSON = exports.instanceOfServiceNowIncidentMapping = exports.ServiceNowIncidentMappingInvictiChoiceEnum = void 0;
-const runtime_1 = require("../runtime");
 const ServiceNowIncidentMappingFieldKeyValuePair_1 = require("./ServiceNowIncidentMappingFieldKeyValuePair");
 /**
  * @export
@@ -26,8 +25,7 @@ exports.ServiceNowIncidentMappingInvictiChoiceEnum = {
  * Check if a given object implements the ServiceNowIncidentMapping interface.
  */
 function instanceOfServiceNowIncidentMapping(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfServiceNowIncidentMapping = instanceOfServiceNowIncidentMapping;
 function ServiceNowIncidentMappingFromJSON(json) {
@@ -35,27 +33,24 @@ function ServiceNowIncidentMappingFromJSON(json) {
 }
 exports.ServiceNowIncidentMappingFromJSON = ServiceNowIncidentMappingFromJSON;
 function ServiceNowIncidentMappingFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'invictiChoice': !(0, runtime_1.exists)(json, 'InvictiChoice') ? undefined : json['InvictiChoice'],
-        'invictiValue': !(0, runtime_1.exists)(json, 'InvictiValue') ? undefined : json['InvictiValue'],
-        'fieldKeyValuePairs': !(0, runtime_1.exists)(json, 'FieldKeyValuePairs') ? undefined : (json['FieldKeyValuePairs'].map(ServiceNowIncidentMappingFieldKeyValuePair_1.ServiceNowIncidentMappingFieldKeyValuePairFromJSON)),
+        'invictiChoice': json['InvictiChoice'] == null ? undefined : json['InvictiChoice'],
+        'invictiValue': json['InvictiValue'] == null ? undefined : json['InvictiValue'],
+        'fieldKeyValuePairs': json['FieldKeyValuePairs'] == null ? undefined : (json['FieldKeyValuePairs'].map(ServiceNowIncidentMappingFieldKeyValuePair_1.ServiceNowIncidentMappingFieldKeyValuePairFromJSON)),
     };
 }
 exports.ServiceNowIncidentMappingFromJSONTyped = ServiceNowIncidentMappingFromJSONTyped;
 function ServiceNowIncidentMappingToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'InvictiChoice': value.invictiChoice,
-        'InvictiValue': value.invictiValue,
-        'FieldKeyValuePairs': value.fieldKeyValuePairs === undefined ? undefined : (value.fieldKeyValuePairs.map(ServiceNowIncidentMappingFieldKeyValuePair_1.ServiceNowIncidentMappingFieldKeyValuePairToJSON)),
+        'InvictiChoice': value['invictiChoice'],
+        'InvictiValue': value['invictiValue'],
+        'FieldKeyValuePairs': value['fieldKeyValuePairs'] == null ? undefined : (value['fieldKeyValuePairs'].map(ServiceNowIncidentMappingFieldKeyValuePair_1.ServiceNowIncidentMappingFieldKeyValuePairToJSON)),
     };
 }
 exports.ServiceNowIncidentMappingToJSON = ServiceNowIncidentMappingToJSON;

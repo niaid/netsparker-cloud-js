@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a model for carrying out a logout keyword pattern.
  * @export
@@ -37,10 +37,8 @@ export interface LogoutKeywordPatternModel {
  * Check if a given object implements the LogoutKeywordPatternModel interface.
  */
 export function instanceOfLogoutKeywordPatternModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "pattern" in value;
-
-    return isInstance;
+    if (!('pattern' in value)) return false;
+    return true;
 }
 
 export function LogoutKeywordPatternModelFromJSON(json: any): LogoutKeywordPatternModel {
@@ -48,27 +46,24 @@ export function LogoutKeywordPatternModelFromJSON(json: any): LogoutKeywordPatte
 }
 
 export function LogoutKeywordPatternModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): LogoutKeywordPatternModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
         'pattern': json['Pattern'],
-        'regex': !exists(json, 'Regex') ? undefined : json['Regex'],
+        'regex': json['Regex'] == null ? undefined : json['Regex'],
     };
 }
 
 export function LogoutKeywordPatternModelToJSON(value?: LogoutKeywordPatternModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Pattern': value.pattern,
-        'Regex': value.regex,
+        'Pattern': value['pattern'],
+        'Regex': value['regex'],
     };
 }
 

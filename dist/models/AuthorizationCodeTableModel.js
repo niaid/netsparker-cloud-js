@@ -14,14 +14,12 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AuthorizationCodeTableModelToJSON = exports.AuthorizationCodeTableModelFromJSONTyped = exports.AuthorizationCodeTableModelFromJSON = exports.instanceOfAuthorizationCodeTableModel = void 0;
-const runtime_1 = require("../runtime");
 const NameValuePair_1 = require("./NameValuePair");
 /**
  * Check if a given object implements the AuthorizationCodeTableModel interface.
  */
 function instanceOfAuthorizationCodeTableModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfAuthorizationCodeTableModel = instanceOfAuthorizationCodeTableModel;
 function AuthorizationCodeTableModelFromJSON(json) {
@@ -29,25 +27,22 @@ function AuthorizationCodeTableModelFromJSON(json) {
 }
 exports.AuthorizationCodeTableModelFromJSON = AuthorizationCodeTableModelFromJSON;
 function AuthorizationCodeTableModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'fields': !(0, runtime_1.exists)(json, 'Fields') ? undefined : json['Fields'],
-        'items': !(0, runtime_1.exists)(json, 'Items') ? undefined : (json['Items'].map(NameValuePair_1.NameValuePairFromJSON)),
+        'fields': json['Fields'] == null ? undefined : json['Fields'],
+        'items': json['Items'] == null ? undefined : (json['Items'].map(NameValuePair_1.NameValuePairFromJSON)),
     };
 }
 exports.AuthorizationCodeTableModelFromJSONTyped = AuthorizationCodeTableModelFromJSONTyped;
 function AuthorizationCodeTableModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Fields': value.fields,
-        'Items': value.items === undefined ? undefined : (value.items.map(NameValuePair_1.NameValuePairToJSON)),
+        'Fields': value['fields'],
+        'Items': value['items'] == null ? undefined : (value['items'].map(NameValuePair_1.NameValuePairToJSON)),
     };
 }
 exports.AuthorizationCodeTableModelToJSON = AuthorizationCodeTableModelToJSON;

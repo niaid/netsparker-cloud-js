@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UserHealthCheckApiModelToJSON = exports.UserHealthCheckApiModelFromJSONTyped = exports.UserHealthCheckApiModelFromJSON = exports.instanceOfUserHealthCheckApiModel = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the UserHealthCheckApiModel interface.
  */
 function instanceOfUserHealthCheckApiModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfUserHealthCheckApiModel = instanceOfUserHealthCheckApiModel;
 function UserHealthCheckApiModelFromJSON(json) {
@@ -28,31 +26,28 @@ function UserHealthCheckApiModelFromJSON(json) {
 }
 exports.UserHealthCheckApiModelFromJSON = UserHealthCheckApiModelFromJSON;
 function UserHealthCheckApiModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'dateFormat': !(0, runtime_1.exists)(json, 'DateFormat') ? undefined : json['DateFormat'],
-        'displayName': !(0, runtime_1.exists)(json, 'DisplayName') ? undefined : json['DisplayName'],
-        'email': !(0, runtime_1.exists)(json, 'Email') ? undefined : json['Email'],
-        'alternateLoginEmail': !(0, runtime_1.exists)(json, 'AlternateLoginEmail') ? undefined : json['AlternateLoginEmail'],
-        'timeZoneInfo': !(0, runtime_1.exists)(json, 'TimeZoneInfo') ? undefined : json['TimeZoneInfo'],
+        'dateFormat': json['DateFormat'] == null ? undefined : json['DateFormat'],
+        'displayName': json['DisplayName'] == null ? undefined : json['DisplayName'],
+        'email': json['Email'] == null ? undefined : json['Email'],
+        'alternateLoginEmail': json['AlternateLoginEmail'] == null ? undefined : json['AlternateLoginEmail'],
+        'timeZoneInfo': json['TimeZoneInfo'] == null ? undefined : json['TimeZoneInfo'],
     };
 }
 exports.UserHealthCheckApiModelFromJSONTyped = UserHealthCheckApiModelFromJSONTyped;
 function UserHealthCheckApiModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'DateFormat': value.dateFormat,
-        'DisplayName': value.displayName,
-        'Email': value.email,
-        'AlternateLoginEmail': value.alternateLoginEmail,
-        'TimeZoneInfo': value.timeZoneInfo,
+        'DateFormat': value['dateFormat'],
+        'DisplayName': value['displayName'],
+        'Email': value['email'],
+        'AlternateLoginEmail': value['alternateLoginEmail'],
+        'TimeZoneInfo': value['timeZoneInfo'],
     };
 }
 exports.UserHealthCheckApiModelToJSON = UserHealthCheckApiModelToJSON;

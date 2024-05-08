@@ -14,7 +14,6 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.NewScanNotificationRecipientApiModelToJSON = exports.NewScanNotificationRecipientApiModelFromJSONTyped = exports.NewScanNotificationRecipientApiModelFromJSON = exports.instanceOfNewScanNotificationRecipientApiModel = exports.NewScanNotificationRecipientApiModelSpecificSmsRecipientsEnum = exports.NewScanNotificationRecipientApiModelSpecificEmailRecipientsEnum = void 0;
-const runtime_1 = require("../runtime");
 /**
  * @export
  */
@@ -39,8 +38,7 @@ exports.NewScanNotificationRecipientApiModelSpecificSmsRecipientsEnum = {
  * Check if a given object implements the NewScanNotificationRecipientApiModel interface.
  */
 function instanceOfNewScanNotificationRecipientApiModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfNewScanNotificationRecipientApiModel = instanceOfNewScanNotificationRecipientApiModel;
 function NewScanNotificationRecipientApiModelFromJSON(json) {
@@ -48,35 +46,32 @@ function NewScanNotificationRecipientApiModelFromJSON(json) {
 }
 exports.NewScanNotificationRecipientApiModelFromJSON = NewScanNotificationRecipientApiModelFromJSON;
 function NewScanNotificationRecipientApiModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'emails': !(0, runtime_1.exists)(json, 'Emails') ? undefined : json['Emails'],
-        'excludedUsers': !(0, runtime_1.exists)(json, 'ExcludedUsers') ? undefined : json['ExcludedUsers'],
-        'integrations': !(0, runtime_1.exists)(json, 'Integrations') ? undefined : json['Integrations'],
-        'phoneNumbers': !(0, runtime_1.exists)(json, 'PhoneNumbers') ? undefined : json['PhoneNumbers'],
-        'outsiderRecipients': !(0, runtime_1.exists)(json, 'OutsiderRecipients') ? undefined : json['OutsiderRecipients'],
-        'specificEmailRecipients': !(0, runtime_1.exists)(json, 'SpecificEmailRecipients') ? undefined : json['SpecificEmailRecipients'],
-        'specificSmsRecipients': !(0, runtime_1.exists)(json, 'SpecificSmsRecipients') ? undefined : json['SpecificSmsRecipients'],
+        'emails': json['Emails'] == null ? undefined : json['Emails'],
+        'excludedUsers': json['ExcludedUsers'] == null ? undefined : json['ExcludedUsers'],
+        'integrations': json['Integrations'] == null ? undefined : json['Integrations'],
+        'phoneNumbers': json['PhoneNumbers'] == null ? undefined : json['PhoneNumbers'],
+        'outsiderRecipients': json['OutsiderRecipients'] == null ? undefined : json['OutsiderRecipients'],
+        'specificEmailRecipients': json['SpecificEmailRecipients'] == null ? undefined : json['SpecificEmailRecipients'],
+        'specificSmsRecipients': json['SpecificSmsRecipients'] == null ? undefined : json['SpecificSmsRecipients'],
     };
 }
 exports.NewScanNotificationRecipientApiModelFromJSONTyped = NewScanNotificationRecipientApiModelFromJSONTyped;
 function NewScanNotificationRecipientApiModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Emails': value.emails,
-        'ExcludedUsers': value.excludedUsers,
-        'Integrations': value.integrations,
-        'PhoneNumbers': value.phoneNumbers,
-        'OutsiderRecipients': value.outsiderRecipients,
-        'SpecificEmailRecipients': value.specificEmailRecipients,
-        'SpecificSmsRecipients': value.specificSmsRecipients,
+        'Emails': value['emails'],
+        'ExcludedUsers': value['excludedUsers'],
+        'Integrations': value['integrations'],
+        'PhoneNumbers': value['phoneNumbers'],
+        'OutsiderRecipients': value['outsiderRecipients'],
+        'SpecificEmailRecipients': value['specificEmailRecipients'],
+        'SpecificSmsRecipients': value['specificSmsRecipients'],
     };
 }
 exports.NewScanNotificationRecipientApiModelToJSON = NewScanNotificationRecipientApiModelToJSON;

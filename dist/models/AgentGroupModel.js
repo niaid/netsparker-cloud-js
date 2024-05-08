@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AgentGroupModelToJSON = exports.AgentGroupModelFromJSONTyped = exports.AgentGroupModelFromJSON = exports.instanceOfAgentGroupModel = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the AgentGroupModel interface.
  */
 function instanceOfAgentGroupModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfAgentGroupModel = instanceOfAgentGroupModel;
 function AgentGroupModelFromJSON(json) {
@@ -28,27 +26,24 @@ function AgentGroupModelFromJSON(json) {
 }
 exports.AgentGroupModelFromJSON = AgentGroupModelFromJSON;
 function AgentGroupModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'agents': !(0, runtime_1.exists)(json, 'Agents') ? undefined : json['Agents'],
-        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
-        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
+        'agents': json['Agents'] == null ? undefined : json['Agents'],
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'name': json['Name'] == null ? undefined : json['Name'],
     };
 }
 exports.AgentGroupModelFromJSONTyped = AgentGroupModelFromJSONTyped;
 function AgentGroupModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Agents': value.agents,
-        'Id': value.id,
-        'Name': value.name,
+        'Agents': value['agents'],
+        'Id': value['id'],
+        'Name': value['name'],
     };
 }
 exports.AgentGroupModelToJSON = AgentGroupModelToJSON;

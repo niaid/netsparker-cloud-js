@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a model for carrying out scan status data for API.
  * @export
@@ -69,9 +69,7 @@ export type ApiScanStatusModelStateEnum = typeof ApiScanStatusModelStateEnum[key
  * Check if a given object implements the ApiScanStatusModel interface.
  */
 export function instanceOfApiScanStatusModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function ApiScanStatusModelFromJSON(json: any): ApiScanStatusModel {
@@ -79,31 +77,28 @@ export function ApiScanStatusModelFromJSON(json: any): ApiScanStatusModel {
 }
 
 export function ApiScanStatusModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): ApiScanStatusModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'completedSteps': !exists(json, 'CompletedSteps') ? undefined : json['CompletedSteps'],
-        'estimatedLaunchTime': !exists(json, 'EstimatedLaunchTime') ? undefined : json['EstimatedLaunchTime'],
-        'estimatedSteps': !exists(json, 'EstimatedSteps') ? undefined : json['EstimatedSteps'],
-        'state': !exists(json, 'State') ? undefined : json['State'],
+        'completedSteps': json['CompletedSteps'] == null ? undefined : json['CompletedSteps'],
+        'estimatedLaunchTime': json['EstimatedLaunchTime'] == null ? undefined : json['EstimatedLaunchTime'],
+        'estimatedSteps': json['EstimatedSteps'] == null ? undefined : json['EstimatedSteps'],
+        'state': json['State'] == null ? undefined : json['State'],
     };
 }
 
 export function ApiScanStatusModelToJSON(value?: ApiScanStatusModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'CompletedSteps': value.completedSteps,
-        'EstimatedLaunchTime': value.estimatedLaunchTime,
-        'EstimatedSteps': value.estimatedSteps,
-        'State': value.state,
+        'CompletedSteps': value['completedSteps'],
+        'EstimatedLaunchTime': value['estimatedLaunchTime'],
+        'EstimatedSteps': value['estimatedSteps'],
+        'State': value['state'],
     };
 }
 

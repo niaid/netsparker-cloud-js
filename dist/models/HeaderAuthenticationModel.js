@@ -14,14 +14,12 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.HeaderAuthenticationModelToJSON = exports.HeaderAuthenticationModelFromJSONTyped = exports.HeaderAuthenticationModelFromJSON = exports.instanceOfHeaderAuthenticationModel = void 0;
-const runtime_1 = require("../runtime");
 const CustomHttpHeaderModel_1 = require("./CustomHttpHeaderModel");
 /**
  * Check if a given object implements the HeaderAuthenticationModel interface.
  */
 function instanceOfHeaderAuthenticationModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfHeaderAuthenticationModel = instanceOfHeaderAuthenticationModel;
 function HeaderAuthenticationModelFromJSON(json) {
@@ -29,25 +27,22 @@ function HeaderAuthenticationModelFromJSON(json) {
 }
 exports.HeaderAuthenticationModelFromJSON = HeaderAuthenticationModelFromJSON;
 function HeaderAuthenticationModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'headers': !(0, runtime_1.exists)(json, 'Headers') ? undefined : (json['Headers'].map(CustomHttpHeaderModel_1.CustomHttpHeaderModelFromJSON)),
-        'isEnabled': !(0, runtime_1.exists)(json, 'IsEnabled') ? undefined : json['IsEnabled'],
+        'headers': json['Headers'] == null ? undefined : (json['Headers'].map(CustomHttpHeaderModel_1.CustomHttpHeaderModelFromJSON)),
+        'isEnabled': json['IsEnabled'] == null ? undefined : json['IsEnabled'],
     };
 }
 exports.HeaderAuthenticationModelFromJSONTyped = HeaderAuthenticationModelFromJSONTyped;
 function HeaderAuthenticationModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Headers': value.headers === undefined ? undefined : (value.headers.map(CustomHttpHeaderModel_1.CustomHttpHeaderModelToJSON)),
-        'IsEnabled': value.isEnabled,
+        'Headers': value['headers'] == null ? undefined : (value['headers'].map(CustomHttpHeaderModel_1.CustomHttpHeaderModelToJSON)),
+        'IsEnabled': value['isEnabled'],
     };
 }
 exports.HeaderAuthenticationModelToJSON = HeaderAuthenticationModelToJSON;

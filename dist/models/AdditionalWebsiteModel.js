@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AdditionalWebsiteModelToJSON = exports.AdditionalWebsiteModelFromJSONTyped = exports.AdditionalWebsiteModelFromJSON = exports.instanceOfAdditionalWebsiteModel = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the AdditionalWebsiteModel interface.
  */
 function instanceOfAdditionalWebsiteModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfAdditionalWebsiteModel = instanceOfAdditionalWebsiteModel;
 function AdditionalWebsiteModelFromJSON(json) {
@@ -28,25 +26,22 @@ function AdditionalWebsiteModelFromJSON(json) {
 }
 exports.AdditionalWebsiteModelFromJSON = AdditionalWebsiteModelFromJSON;
 function AdditionalWebsiteModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'canonical': !(0, runtime_1.exists)(json, 'Canonical') ? undefined : json['Canonical'],
-        'targetUrl': !(0, runtime_1.exists)(json, 'TargetUrl') ? undefined : json['TargetUrl'],
+        'canonical': json['Canonical'] == null ? undefined : json['Canonical'],
+        'targetUrl': json['TargetUrl'] == null ? undefined : json['TargetUrl'],
     };
 }
 exports.AdditionalWebsiteModelFromJSONTyped = AdditionalWebsiteModelFromJSONTyped;
 function AdditionalWebsiteModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Canonical': value.canonical,
-        'TargetUrl': value.targetUrl,
+        'Canonical': value['canonical'],
+        'TargetUrl': value['targetUrl'],
     };
 }
 exports.AdditionalWebsiteModelToJSON = AdditionalWebsiteModelToJSON;

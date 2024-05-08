@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * 
  * @export
@@ -43,9 +43,7 @@ export interface TrelloLabel {
  * Check if a given object implements the TrelloLabel interface.
  */
 export function instanceOfTrelloLabel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function TrelloLabelFromJSON(json: any): TrelloLabel {
@@ -53,29 +51,26 @@ export function TrelloLabelFromJSON(json: any): TrelloLabel {
 }
 
 export function TrelloLabelFromJSONTyped(json: any, ignoreDiscriminator: boolean): TrelloLabel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'color': !exists(json, 'color') ? undefined : json['color'],
-        'id': !exists(json, 'id') ? undefined : json['id'],
-        'name': !exists(json, 'name') ? undefined : json['name'],
+        'color': json['color'] == null ? undefined : json['color'],
+        'id': json['id'] == null ? undefined : json['id'],
+        'name': json['name'] == null ? undefined : json['name'],
     };
 }
 
 export function TrelloLabelToJSON(value?: TrelloLabel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'color': value.color,
-        'id': value.id,
-        'name': value.name,
+        'color': value['color'],
+        'id': value['id'],
+        'name': value['name'],
     };
 }
 

@@ -18,10 +18,11 @@ exports.SequenceViewModelToJSON = exports.SequenceViewModelFromJSONTyped = expor
  * Check if a given object implements the SequenceViewModel interface.
  */
 function instanceOfSequenceViewModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "name" in value;
-    isInstance = isInstance && "businessLogicRecorderSettings" in value;
-    return isInstance;
+    if (!('name' in value))
+        return false;
+    if (!('businessLogicRecorderSettings' in value))
+        return false;
+    return true;
 }
 exports.instanceOfSequenceViewModel = instanceOfSequenceViewModel;
 function SequenceViewModelFromJSON(json) {
@@ -29,7 +30,7 @@ function SequenceViewModelFromJSON(json) {
 }
 exports.SequenceViewModelFromJSON = SequenceViewModelFromJSON;
 function SequenceViewModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -39,15 +40,12 @@ function SequenceViewModelFromJSONTyped(json, ignoreDiscriminator) {
 }
 exports.SequenceViewModelFromJSONTyped = SequenceViewModelFromJSONTyped;
 function SequenceViewModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Name': value.name,
-        'BusinessLogicRecorderSettings': value.businessLogicRecorderSettings,
+        'Name': value['name'],
+        'BusinessLogicRecorderSettings': value['businessLogicRecorderSettings'],
     };
 }
 exports.SequenceViewModelToJSON = SequenceViewModelToJSON;

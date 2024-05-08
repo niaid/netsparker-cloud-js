@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a oauth2 response model.
  * @export
@@ -56,9 +56,7 @@ export interface ResponseFields {
  * Check if a given object implements the ResponseFields interface.
  */
 export function instanceOfResponseFields(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function ResponseFieldsFromJSON(json: any): ResponseFields {
@@ -66,33 +64,30 @@ export function ResponseFieldsFromJSON(json: any): ResponseFields {
 }
 
 export function ResponseFieldsFromJSONTyped(json: any, ignoreDiscriminator: boolean): ResponseFields {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'accessToken': !exists(json, 'AccessToken') ? undefined : json['AccessToken'],
-        'refreshToken': !exists(json, 'RefreshToken') ? undefined : json['RefreshToken'],
-        'expire': !exists(json, 'Expire') ? undefined : json['Expire'],
-        'tokenType': !exists(json, 'TokenType') ? undefined : json['TokenType'],
-        'isTokenTypeFixed': !exists(json, 'IsTokenTypeFixed') ? undefined : json['IsTokenTypeFixed'],
+        'accessToken': json['AccessToken'] == null ? undefined : json['AccessToken'],
+        'refreshToken': json['RefreshToken'] == null ? undefined : json['RefreshToken'],
+        'expire': json['Expire'] == null ? undefined : json['Expire'],
+        'tokenType': json['TokenType'] == null ? undefined : json['TokenType'],
+        'isTokenTypeFixed': json['IsTokenTypeFixed'] == null ? undefined : json['IsTokenTypeFixed'],
     };
 }
 
 export function ResponseFieldsToJSON(value?: ResponseFields | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'AccessToken': value.accessToken,
-        'RefreshToken': value.refreshToken,
-        'Expire': value.expire,
-        'TokenType': value.tokenType,
-        'IsTokenTypeFixed': value.isTokenTypeFixed,
+        'AccessToken': value['accessToken'],
+        'RefreshToken': value['refreshToken'],
+        'Expire': value['expire'],
+        'TokenType': value['tokenType'],
+        'IsTokenTypeFixed': value['isTokenTypeFixed'],
     };
 }
 

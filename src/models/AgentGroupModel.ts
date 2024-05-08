@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a model for carrying out agent group data.
  * @export
@@ -43,9 +43,7 @@ export interface AgentGroupModel {
  * Check if a given object implements the AgentGroupModel interface.
  */
 export function instanceOfAgentGroupModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function AgentGroupModelFromJSON(json: any): AgentGroupModel {
@@ -53,29 +51,26 @@ export function AgentGroupModelFromJSON(json: any): AgentGroupModel {
 }
 
 export function AgentGroupModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): AgentGroupModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'agents': !exists(json, 'Agents') ? undefined : json['Agents'],
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
+        'agents': json['Agents'] == null ? undefined : json['Agents'],
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'name': json['Name'] == null ? undefined : json['Name'],
     };
 }
 
 export function AgentGroupModelToJSON(value?: AgentGroupModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Agents': value.agents,
-        'Id': value.id,
-        'Name': value.name,
+        'Agents': value['agents'],
+        'Id': value['id'],
+        'Name': value['name'],
     };
 }
 

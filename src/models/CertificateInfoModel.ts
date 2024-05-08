@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * 
  * @export
@@ -43,9 +43,7 @@ export interface CertificateInfoModel {
  * Check if a given object implements the CertificateInfoModel interface.
  */
 export function instanceOfCertificateInfoModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function CertificateInfoModelFromJSON(json: any): CertificateInfoModel {
@@ -53,29 +51,26 @@ export function CertificateInfoModelFromJSON(json: any): CertificateInfoModel {
 }
 
 export function CertificateInfoModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): CertificateInfoModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'cN': !exists(json, 'CN') ? undefined : json['CN'],
-        'expresionDate': !exists(json, 'ExpresionDate') ? undefined : json['ExpresionDate'],
-        'thumbprint': !exists(json, 'Thumbprint') ? undefined : json['Thumbprint'],
+        'cN': json['CN'] == null ? undefined : json['CN'],
+        'expresionDate': json['ExpresionDate'] == null ? undefined : json['ExpresionDate'],
+        'thumbprint': json['Thumbprint'] == null ? undefined : json['Thumbprint'],
     };
 }
 
 export function CertificateInfoModelToJSON(value?: CertificateInfoModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'CN': value.cN,
-        'ExpresionDate': value.expresionDate,
-        'Thumbprint': value.thumbprint,
+        'CN': value['cN'],
+        'ExpresionDate': value['expresionDate'],
+        'Thumbprint': value['thumbprint'],
     };
 }
 

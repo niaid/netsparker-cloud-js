@@ -13,11 +13,10 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.HashicorpVaultIntegrationInfoModelToJSON = exports.HashicorpVaultIntegrationInfoModelFromJSONTyped = exports.HashicorpVaultIntegrationInfoModelFromJSON = exports.instanceOfHashicorpVaultIntegrationInfoModel = exports.HashicorpVaultIntegrationInfoModelTemplateTypeEnum = exports.HashicorpVaultIntegrationInfoModelTypeEnum = exports.HashicorpVaultIntegrationInfoModelAuthTypeEnum = exports.HashicorpVaultIntegrationInfoModelAgentModeEnum = void 0;
-const runtime_1 = require("../runtime");
+exports.HashicorpVaultIntegrationInfoModelToJSON = exports.HashicorpVaultIntegrationInfoModelFromJSONTyped = exports.HashicorpVaultIntegrationInfoModelFromJSON = exports.instanceOfHashicorpVaultIntegrationInfoModel = exports.HashicorpVaultIntegrationInfoModelStateEnum = exports.HashicorpVaultIntegrationInfoModelTemplateTypeEnum = exports.HashicorpVaultIntegrationInfoModelTypeEnum = exports.HashicorpVaultIntegrationInfoModelAuthTypeEnum = exports.HashicorpVaultIntegrationInfoModelAgentModeEnum = void 0;
 const CertificateInfoModel_1 = require("./CertificateInfoModel");
-const IntegrationCustomFieldVm_1 = require("./IntegrationCustomFieldVm");
 const IntegrationWizardResultModel_1 = require("./IntegrationWizardResultModel");
+const IntegrationCustomFieldVm_1 = require("./IntegrationCustomFieldVm");
 /**
  * @export
  */
@@ -78,14 +77,23 @@ exports.HashicorpVaultIntegrationInfoModelTemplateTypeEnum = {
     Detailed: 'Detailed'
 };
 /**
+ * @export
+ */
+exports.HashicorpVaultIntegrationInfoModelStateEnum = {
+    Active: 'Active',
+    Suspended: 'Suspended'
+};
+/**
  * Check if a given object implements the HashicorpVaultIntegrationInfoModel interface.
  */
 function instanceOfHashicorpVaultIntegrationInfoModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "token" in value;
-    isInstance = isInstance && "url" in value;
-    isInstance = isInstance && "titleFormat" in value;
-    return isInstance;
+    if (!('token' in value))
+        return false;
+    if (!('url' in value))
+        return false;
+    if (!('titleFormat' in value))
+        return false;
+    return true;
 }
 exports.instanceOfHashicorpVaultIntegrationInfoModel = instanceOfHashicorpVaultIntegrationInfoModel;
 function HashicorpVaultIntegrationInfoModelFromJSON(json) {
@@ -93,67 +101,68 @@ function HashicorpVaultIntegrationInfoModelFromJSON(json) {
 }
 exports.HashicorpVaultIntegrationInfoModelFromJSON = HashicorpVaultIntegrationInfoModelFromJSON;
 function HashicorpVaultIntegrationInfoModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         'token': json['Token'],
-        'agentMode': !(0, runtime_1.exists)(json, 'AgentMode') ? undefined : json['AgentMode'],
-        'authType': !(0, runtime_1.exists)(json, 'AuthType') ? undefined : json['AuthType'],
+        'agentMode': json['AgentMode'] == null ? undefined : json['AgentMode'],
+        'authType': json['AuthType'] == null ? undefined : json['AuthType'],
         'url': json['Url'],
-        'certificateFileEncrypted': !(0, runtime_1.exists)(json, 'CertificateFileEncrypted') ? undefined : json['CertificateFileEncrypted'],
-        'certificateFilePassword': !(0, runtime_1.exists)(json, 'CertificateFilePassword') ? undefined : json['CertificateFilePassword'],
-        'path': !(0, runtime_1.exists)(json, 'Path') ? undefined : json['Path'],
-        'namespace': !(0, runtime_1.exists)(json, 'Namespace') ? undefined : json['Namespace'],
-        'certificateInfoModel': !(0, runtime_1.exists)(json, 'CertificateInfoModel') ? undefined : (0, CertificateInfoModel_1.CertificateInfoModelFromJSON)(json['CertificateInfoModel']),
-        'hasCertificate': !(0, runtime_1.exists)(json, 'HasCertificate') ? undefined : json['HasCertificate'],
-        'updatedAt': !(0, runtime_1.exists)(json, 'UpdatedAt') ? undefined : (new Date(json['UpdatedAt'])),
-        'type': !(0, runtime_1.exists)(json, 'Type') ? undefined : json['Type'],
-        'genericErrorMessage': !(0, runtime_1.exists)(json, 'GenericErrorMessage') ? undefined : json['GenericErrorMessage'],
-        'identifier': !(0, runtime_1.exists)(json, 'Identifier') ? undefined : json['Identifier'],
-        'testMessageBody': !(0, runtime_1.exists)(json, 'TestMessageBody') ? undefined : json['TestMessageBody'],
-        'testMessageTitle': !(0, runtime_1.exists)(json, 'TestMessageTitle') ? undefined : json['TestMessageTitle'],
-        'webhookUrl': !(0, runtime_1.exists)(json, 'WebhookUrl') ? undefined : json['WebhookUrl'],
-        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
-        'integrationVersion': !(0, runtime_1.exists)(json, 'IntegrationVersion') ? undefined : json['IntegrationVersion'],
-        'accountID': !(0, runtime_1.exists)(json, 'AccountID') ? undefined : json['AccountID'],
-        'customFields': !(0, runtime_1.exists)(json, 'CustomFields') ? undefined : (json['CustomFields'].map(IntegrationCustomFieldVm_1.IntegrationCustomFieldVmFromJSON)),
-        'templateType': !(0, runtime_1.exists)(json, 'TemplateType') ? undefined : json['TemplateType'],
-        'reopenStatus': !(0, runtime_1.exists)(json, 'ReopenStatus') ? undefined : json['ReopenStatus'],
-        'resolvedStatus': !(0, runtime_1.exists)(json, 'ResolvedStatus') ? undefined : json['ResolvedStatus'],
+        'certificateFileEncrypted': json['CertificateFileEncrypted'] == null ? undefined : json['CertificateFileEncrypted'],
+        'certificateFilePassword': json['CertificateFilePassword'] == null ? undefined : json['CertificateFilePassword'],
+        'path': json['Path'] == null ? undefined : json['Path'],
+        'namespace': json['Namespace'] == null ? undefined : json['Namespace'],
+        'certificateInfoModel': json['CertificateInfoModel'] == null ? undefined : (0, CertificateInfoModel_1.CertificateInfoModelFromJSON)(json['CertificateInfoModel']),
+        'hasCertificate': json['HasCertificate'] == null ? undefined : json['HasCertificate'],
+        'updatedAt': json['UpdatedAt'] == null ? undefined : (new Date(json['UpdatedAt'])),
+        'type': json['Type'] == null ? undefined : json['Type'],
+        'genericErrorMessage': json['GenericErrorMessage'] == null ? undefined : json['GenericErrorMessage'],
+        'identifier': json['Identifier'] == null ? undefined : json['Identifier'],
+        'testMessageBody': json['TestMessageBody'] == null ? undefined : json['TestMessageBody'],
+        'testMessageTitle': json['TestMessageTitle'] == null ? undefined : json['TestMessageTitle'],
+        'webhookUrl': json['WebhookUrl'] == null ? undefined : json['WebhookUrl'],
+        'name': json['Name'] == null ? undefined : json['Name'],
+        'integrationVersion': json['IntegrationVersion'] == null ? undefined : json['IntegrationVersion'],
+        'accountID': json['AccountID'] == null ? undefined : json['AccountID'],
+        'customFields': json['CustomFields'] == null ? undefined : (json['CustomFields'].map(IntegrationCustomFieldVm_1.IntegrationCustomFieldVmFromJSON)),
+        'templateType': json['TemplateType'] == null ? undefined : json['TemplateType'],
+        'reopenStatus': json['ReopenStatus'] == null ? undefined : json['ReopenStatus'],
+        'resolvedStatus': json['ResolvedStatus'] == null ? undefined : json['ResolvedStatus'],
         'titleFormat': json['TitleFormat'],
-        'integrationWizardResultModel': !(0, runtime_1.exists)(json, 'IntegrationWizardResultModel') ? undefined : (0, IntegrationWizardResultModel_1.IntegrationWizardResultModelFromJSON)(json['IntegrationWizardResultModel']),
+        'integrationWizardResultModel': json['IntegrationWizardResultModel'] == null ? undefined : (0, IntegrationWizardResultModel_1.IntegrationWizardResultModelFromJSON)(json['IntegrationWizardResultModel']),
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'state': json['State'] == null ? undefined : json['State'],
     };
 }
 exports.HashicorpVaultIntegrationInfoModelFromJSONTyped = HashicorpVaultIntegrationInfoModelFromJSONTyped;
 function HashicorpVaultIntegrationInfoModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Token': value.token,
-        'AgentMode': value.agentMode,
-        'AuthType': value.authType,
-        'Url': value.url,
-        'CertificateFileEncrypted': value.certificateFileEncrypted,
-        'CertificateFilePassword': value.certificateFilePassword,
-        'Path': value.path,
-        'Namespace': value.namespace,
-        'CertificateInfoModel': (0, CertificateInfoModel_1.CertificateInfoModelToJSON)(value.certificateInfoModel),
-        'HasCertificate': value.hasCertificate,
-        'UpdatedAt': value.updatedAt === undefined ? undefined : (value.updatedAt.toISOString()),
-        'Name': value.name,
-        'IntegrationVersion': value.integrationVersion,
-        'AccountID': value.accountID,
-        'CustomFields': value.customFields === undefined ? undefined : (value.customFields.map(IntegrationCustomFieldVm_1.IntegrationCustomFieldVmToJSON)),
-        'TemplateType': value.templateType,
-        'ReopenStatus': value.reopenStatus,
-        'ResolvedStatus': value.resolvedStatus,
-        'TitleFormat': value.titleFormat,
-        'IntegrationWizardResultModel': (0, IntegrationWizardResultModel_1.IntegrationWizardResultModelToJSON)(value.integrationWizardResultModel),
+        'Token': value['token'],
+        'AgentMode': value['agentMode'],
+        'AuthType': value['authType'],
+        'Url': value['url'],
+        'CertificateFileEncrypted': value['certificateFileEncrypted'],
+        'CertificateFilePassword': value['certificateFilePassword'],
+        'Path': value['path'],
+        'Namespace': value['namespace'],
+        'CertificateInfoModel': (0, CertificateInfoModel_1.CertificateInfoModelToJSON)(value['certificateInfoModel']),
+        'HasCertificate': value['hasCertificate'],
+        'UpdatedAt': value['updatedAt'] == null ? undefined : ((value['updatedAt']).toISOString()),
+        'Name': value['name'],
+        'IntegrationVersion': value['integrationVersion'],
+        'AccountID': value['accountID'],
+        'CustomFields': value['customFields'] == null ? undefined : (value['customFields'].map(IntegrationCustomFieldVm_1.IntegrationCustomFieldVmToJSON)),
+        'TemplateType': value['templateType'],
+        'ReopenStatus': value['reopenStatus'],
+        'ResolvedStatus': value['resolvedStatus'],
+        'TitleFormat': value['titleFormat'],
+        'IntegrationWizardResultModel': (0, IntegrationWizardResultModel_1.IntegrationWizardResultModelToJSON)(value['integrationWizardResultModel']),
+        'Id': value['id'],
+        'State': value['state'],
     };
 }
 exports.HashicorpVaultIntegrationInfoModelToJSON = HashicorpVaultIntegrationInfoModelToJSON;

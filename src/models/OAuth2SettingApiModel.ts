@@ -12,19 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
-import type { BasicAuthenticationSettingApiModel } from './BasicAuthenticationSettingApiModel';
-import {
-    BasicAuthenticationSettingApiModelFromJSON,
-    BasicAuthenticationSettingApiModelFromJSONTyped,
-    BasicAuthenticationSettingApiModelToJSON,
-} from './BasicAuthenticationSettingApiModel';
-import type { FormAuthenticationSettingApiModel } from './FormAuthenticationSettingApiModel';
-import {
-    FormAuthenticationSettingApiModelFromJSON,
-    FormAuthenticationSettingApiModelFromJSONTyped,
-    FormAuthenticationSettingApiModelToJSON,
-} from './FormAuthenticationSettingApiModel';
+import { mapValues } from '../runtime';
 import type { NameValuePair } from './NameValuePair';
 import {
     NameValuePairFromJSON,
@@ -43,12 +31,24 @@ import {
     ResponseFieldsFromJSONTyped,
     ResponseFieldsToJSON,
 } from './ResponseFields';
+import type { BasicAuthenticationSettingApiModel } from './BasicAuthenticationSettingApiModel';
+import {
+    BasicAuthenticationSettingApiModelFromJSON,
+    BasicAuthenticationSettingApiModelFromJSONTyped,
+    BasicAuthenticationSettingApiModelToJSON,
+} from './BasicAuthenticationSettingApiModel';
 import type { ThreeLeggedFields } from './ThreeLeggedFields';
 import {
     ThreeLeggedFieldsFromJSON,
     ThreeLeggedFieldsFromJSONTyped,
     ThreeLeggedFieldsToJSON,
 } from './ThreeLeggedFields';
+import type { FormAuthenticationSettingApiModel } from './FormAuthenticationSettingApiModel';
+import {
+    FormAuthenticationSettingApiModelFromJSON,
+    FormAuthenticationSettingApiModelFromJSONTyped,
+    FormAuthenticationSettingApiModelToJSON,
+} from './FormAuthenticationSettingApiModel';
 
 /**
  * Provides an inputs for OAuth 2.0 Flow.
@@ -170,9 +170,7 @@ export type OAuth2SettingApiModelAuthenticationTypeEnum = typeof OAuth2SettingAp
  * Check if a given object implements the OAuth2SettingApiModel interface.
  */
 export function instanceOfOAuth2SettingApiModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function OAuth2SettingApiModelFromJSON(json: any): OAuth2SettingApiModel {
@@ -180,51 +178,48 @@ export function OAuth2SettingApiModelFromJSON(json: any): OAuth2SettingApiModel 
 }
 
 export function OAuth2SettingApiModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): OAuth2SettingApiModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'serializedPolicyData': !exists(json, 'SerializedPolicyData') ? undefined : json['SerializedPolicyData'],
-        'flowType': !exists(json, 'FlowType') ? undefined : json['FlowType'],
-        'authenticationType': !exists(json, 'AuthenticationType') ? undefined : json['AuthenticationType'],
-        'accessTokenEndpoint': !exists(json, 'AccessTokenEndpoint') ? undefined : OAuth2SettingEndpointFromJSON(json['AccessTokenEndpoint']),
-        'authorizationCodeEndpoint': !exists(json, 'AuthorizationCodeEndpoint') ? undefined : OAuth2SettingEndpointFromJSON(json['AuthorizationCodeEndpoint']),
-        'accessTokenItems': !exists(json, 'AccessTokenItems') ? undefined : ((json['AccessTokenItems'] as Array<any>).map(NameValuePairFromJSON)),
-        'authorizationCodeItems': !exists(json, 'AuthorizationCodeItems') ? undefined : ((json['AuthorizationCodeItems'] as Array<any>).map(NameValuePairFromJSON)),
-        'responseFields': !exists(json, 'ResponseFields') ? undefined : ResponseFieldsFromJSON(json['ResponseFields']),
-        'threeLeggedFields': !exists(json, 'ThreeLeggedFields') ? undefined : ThreeLeggedFieldsFromJSON(json['ThreeLeggedFields']),
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'enabled': !exists(json, 'Enabled') ? undefined : json['Enabled'],
-        'headers': !exists(json, 'Headers') ? undefined : ((json['Headers'] as Array<any>).map(NameValuePairFromJSON)),
-        'formAuthenticationSetting': !exists(json, 'FormAuthenticationSetting') ? undefined : FormAuthenticationSettingApiModelFromJSON(json['FormAuthenticationSetting']),
-        'basicAuthenticationSetting': !exists(json, 'BasicAuthenticationSetting') ? undefined : BasicAuthenticationSettingApiModelFromJSON(json['BasicAuthenticationSetting']),
+        'serializedPolicyData': json['SerializedPolicyData'] == null ? undefined : json['SerializedPolicyData'],
+        'flowType': json['FlowType'] == null ? undefined : json['FlowType'],
+        'authenticationType': json['AuthenticationType'] == null ? undefined : json['AuthenticationType'],
+        'accessTokenEndpoint': json['AccessTokenEndpoint'] == null ? undefined : OAuth2SettingEndpointFromJSON(json['AccessTokenEndpoint']),
+        'authorizationCodeEndpoint': json['AuthorizationCodeEndpoint'] == null ? undefined : OAuth2SettingEndpointFromJSON(json['AuthorizationCodeEndpoint']),
+        'accessTokenItems': json['AccessTokenItems'] == null ? undefined : ((json['AccessTokenItems'] as Array<any>).map(NameValuePairFromJSON)),
+        'authorizationCodeItems': json['AuthorizationCodeItems'] == null ? undefined : ((json['AuthorizationCodeItems'] as Array<any>).map(NameValuePairFromJSON)),
+        'responseFields': json['ResponseFields'] == null ? undefined : ResponseFieldsFromJSON(json['ResponseFields']),
+        'threeLeggedFields': json['ThreeLeggedFields'] == null ? undefined : ThreeLeggedFieldsFromJSON(json['ThreeLeggedFields']),
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'enabled': json['Enabled'] == null ? undefined : json['Enabled'],
+        'headers': json['Headers'] == null ? undefined : ((json['Headers'] as Array<any>).map(NameValuePairFromJSON)),
+        'formAuthenticationSetting': json['FormAuthenticationSetting'] == null ? undefined : FormAuthenticationSettingApiModelFromJSON(json['FormAuthenticationSetting']),
+        'basicAuthenticationSetting': json['BasicAuthenticationSetting'] == null ? undefined : BasicAuthenticationSettingApiModelFromJSON(json['BasicAuthenticationSetting']),
     };
 }
 
 export function OAuth2SettingApiModelToJSON(value?: OAuth2SettingApiModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'SerializedPolicyData': value.serializedPolicyData,
-        'FlowType': value.flowType,
-        'AuthenticationType': value.authenticationType,
-        'AccessTokenEndpoint': OAuth2SettingEndpointToJSON(value.accessTokenEndpoint),
-        'AuthorizationCodeEndpoint': OAuth2SettingEndpointToJSON(value.authorizationCodeEndpoint),
-        'AccessTokenItems': value.accessTokenItems === undefined ? undefined : ((value.accessTokenItems as Array<any>).map(NameValuePairToJSON)),
-        'AuthorizationCodeItems': value.authorizationCodeItems === undefined ? undefined : ((value.authorizationCodeItems as Array<any>).map(NameValuePairToJSON)),
-        'ResponseFields': ResponseFieldsToJSON(value.responseFields),
-        'ThreeLeggedFields': ThreeLeggedFieldsToJSON(value.threeLeggedFields),
-        'Id': value.id,
-        'Enabled': value.enabled,
-        'Headers': value.headers === undefined ? undefined : ((value.headers as Array<any>).map(NameValuePairToJSON)),
-        'FormAuthenticationSetting': FormAuthenticationSettingApiModelToJSON(value.formAuthenticationSetting),
-        'BasicAuthenticationSetting': BasicAuthenticationSettingApiModelToJSON(value.basicAuthenticationSetting),
+        'SerializedPolicyData': value['serializedPolicyData'],
+        'FlowType': value['flowType'],
+        'AuthenticationType': value['authenticationType'],
+        'AccessTokenEndpoint': OAuth2SettingEndpointToJSON(value['accessTokenEndpoint']),
+        'AuthorizationCodeEndpoint': OAuth2SettingEndpointToJSON(value['authorizationCodeEndpoint']),
+        'AccessTokenItems': value['accessTokenItems'] == null ? undefined : ((value['accessTokenItems'] as Array<any>).map(NameValuePairToJSON)),
+        'AuthorizationCodeItems': value['authorizationCodeItems'] == null ? undefined : ((value['authorizationCodeItems'] as Array<any>).map(NameValuePairToJSON)),
+        'ResponseFields': ResponseFieldsToJSON(value['responseFields']),
+        'ThreeLeggedFields': ThreeLeggedFieldsToJSON(value['threeLeggedFields']),
+        'Id': value['id'],
+        'Enabled': value['enabled'],
+        'Headers': value['headers'] == null ? undefined : ((value['headers'] as Array<any>).map(NameValuePairToJSON)),
+        'FormAuthenticationSetting': FormAuthenticationSettingApiModelToJSON(value['formAuthenticationSetting']),
+        'BasicAuthenticationSetting': BasicAuthenticationSettingApiModelToJSON(value['basicAuthenticationSetting']),
     };
 }
 

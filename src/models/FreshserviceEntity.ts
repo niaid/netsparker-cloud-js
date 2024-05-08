@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * 
  * @export
@@ -37,9 +37,7 @@ export interface FreshserviceEntity {
  * Check if a given object implements the FreshserviceEntity interface.
  */
 export function instanceOfFreshserviceEntity(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function FreshserviceEntityFromJSON(json: any): FreshserviceEntity {
@@ -47,27 +45,24 @@ export function FreshserviceEntityFromJSON(json: any): FreshserviceEntity {
 }
 
 export function FreshserviceEntityFromJSONTyped(json: any, ignoreDiscriminator: boolean): FreshserviceEntity {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'id': !exists(json, 'id') ? undefined : json['id'],
-        'name': !exists(json, 'name') ? undefined : json['name'],
+        'id': json['id'] == null ? undefined : json['id'],
+        'name': json['name'] == null ? undefined : json['name'],
     };
 }
 
 export function FreshserviceEntityToJSON(value?: FreshserviceEntity | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'id': value.id,
-        'name': value.name,
+        'id': value['id'],
+        'name': value['name'],
     };
 }
 

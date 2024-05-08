@@ -12,13 +12,13 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
-import type { FileCache } from './FileCache';
+import { mapValues } from '../runtime';
+import type { CachedFile } from './CachedFile';
 import {
-    FileCacheFromJSON,
-    FileCacheFromJSONTyped,
-    FileCacheToJSON,
-} from './FileCache';
+    CachedFileFromJSON,
+    CachedFileFromJSONTyped,
+    CachedFileToJSON,
+} from './CachedFile';
 
 /**
  * Represents a class that carries out imported links.
@@ -28,10 +28,10 @@ import {
 export interface ImportedLinksSetting {
     /**
      * Gets or sets the imported files.
-     * @type {Array<FileCache>}
+     * @type {Array<CachedFile>}
      * @memberof ImportedLinksSetting
      */
-    importedFiles?: Array<FileCache>;
+    importedFiles?: Array<CachedFile>;
     /**
      * Gets or sets the imported links.
      * @type {string}
@@ -50,9 +50,7 @@ export interface ImportedLinksSetting {
  * Check if a given object implements the ImportedLinksSetting interface.
  */
 export function instanceOfImportedLinksSetting(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function ImportedLinksSettingFromJSON(json: any): ImportedLinksSetting {
@@ -60,29 +58,26 @@ export function ImportedLinksSettingFromJSON(json: any): ImportedLinksSetting {
 }
 
 export function ImportedLinksSettingFromJSONTyped(json: any, ignoreDiscriminator: boolean): ImportedLinksSetting {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'importedFiles': !exists(json, 'ImportedFiles') ? undefined : ((json['ImportedFiles'] as Array<any>).map(FileCacheFromJSON)),
-        'importedLinks': !exists(json, 'ImportedLinks') ? undefined : json['ImportedLinks'],
-        'importedURL': !exists(json, 'ImportedURL') ? undefined : json['ImportedURL'],
+        'importedFiles': json['ImportedFiles'] == null ? undefined : ((json['ImportedFiles'] as Array<any>).map(CachedFileFromJSON)),
+        'importedLinks': json['ImportedLinks'] == null ? undefined : json['ImportedLinks'],
+        'importedURL': json['ImportedURL'] == null ? undefined : json['ImportedURL'],
     };
 }
 
 export function ImportedLinksSettingToJSON(value?: ImportedLinksSetting | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'ImportedFiles': value.importedFiles === undefined ? undefined : ((value.importedFiles as Array<any>).map(FileCacheToJSON)),
-        'ImportedLinks': value.importedLinks,
-        'ImportedURL': value.importedURL,
+        'ImportedFiles': value['importedFiles'] == null ? undefined : ((value['importedFiles'] as Array<any>).map(CachedFileToJSON)),
+        'ImportedLinks': value['importedLinks'],
+        'ImportedURL': value['importedURL'],
     };
 }
 

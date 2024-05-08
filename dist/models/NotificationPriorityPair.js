@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.NotificationPriorityPairToJSON = exports.NotificationPriorityPairFromJSONTyped = exports.NotificationPriorityPairFromJSON = exports.instanceOfNotificationPriorityPair = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the NotificationPriorityPair interface.
  */
 function instanceOfNotificationPriorityPair(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfNotificationPriorityPair = instanceOfNotificationPriorityPair;
 function NotificationPriorityPairFromJSON(json) {
@@ -28,25 +26,22 @@ function NotificationPriorityPairFromJSON(json) {
 }
 exports.NotificationPriorityPairFromJSON = NotificationPriorityPairFromJSON;
 function NotificationPriorityPairFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
-        'priority': !(0, runtime_1.exists)(json, 'Priority') ? undefined : json['Priority'],
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'priority': json['Priority'] == null ? undefined : json['Priority'],
     };
 }
 exports.NotificationPriorityPairFromJSONTyped = NotificationPriorityPairFromJSONTyped;
 function NotificationPriorityPairToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Id': value.id,
-        'Priority': value.priority,
+        'Id': value['id'],
+        'Priority': value['priority'],
     };
 }
 exports.NotificationPriorityPairToJSON = NotificationPriorityPairToJSON;

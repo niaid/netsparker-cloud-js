@@ -14,7 +14,6 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.IssueReportFilterApiModelToJSON = exports.IssueReportFilterApiModelFromJSONTyped = exports.IssueReportFilterApiModelFromJSON = exports.instanceOfIssueReportFilterApiModel = exports.IssueReportFilterApiModelSeverityEnum = exports.IssueReportFilterApiModelCsvSeparatorEnum = void 0;
-const runtime_1 = require("../runtime");
 /**
  * @export
  */
@@ -39,8 +38,7 @@ exports.IssueReportFilterApiModelSeverityEnum = {
  * Check if a given object implements the IssueReportFilterApiModel interface.
  */
 function instanceOfIssueReportFilterApiModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfIssueReportFilterApiModel = instanceOfIssueReportFilterApiModel;
 function IssueReportFilterApiModelFromJSON(json) {
@@ -48,33 +46,30 @@ function IssueReportFilterApiModelFromJSON(json) {
 }
 exports.IssueReportFilterApiModelFromJSON = IssueReportFilterApiModelFromJSON;
 function IssueReportFilterApiModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'csvSeparator': !(0, runtime_1.exists)(json, 'CsvSeparator') ? undefined : json['CsvSeparator'],
-        'severity': !(0, runtime_1.exists)(json, 'Severity') ? undefined : json['Severity'],
-        'websiteGroupName': !(0, runtime_1.exists)(json, 'WebsiteGroupName') ? undefined : json['WebsiteGroupName'],
-        'webSiteName': !(0, runtime_1.exists)(json, 'WebSiteName') ? undefined : json['WebSiteName'],
-        'startDate': !(0, runtime_1.exists)(json, 'StartDate') ? undefined : (new Date(json['StartDate'])),
-        'endDate': !(0, runtime_1.exists)(json, 'EndDate') ? undefined : (new Date(json['EndDate'])),
+        'csvSeparator': json['CsvSeparator'] == null ? undefined : json['CsvSeparator'],
+        'severity': json['Severity'] == null ? undefined : json['Severity'],
+        'websiteGroupName': json['WebsiteGroupName'] == null ? undefined : json['WebsiteGroupName'],
+        'webSiteName': json['WebSiteName'] == null ? undefined : json['WebSiteName'],
+        'startDate': json['StartDate'] == null ? undefined : (new Date(json['StartDate'])),
+        'endDate': json['EndDate'] == null ? undefined : (new Date(json['EndDate'])),
     };
 }
 exports.IssueReportFilterApiModelFromJSONTyped = IssueReportFilterApiModelFromJSONTyped;
 function IssueReportFilterApiModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'CsvSeparator': value.csvSeparator,
-        'Severity': value.severity,
-        'WebsiteGroupName': value.websiteGroupName,
-        'WebSiteName': value.webSiteName,
-        'StartDate': value.startDate === undefined ? undefined : (value.startDate.toISOString()),
-        'EndDate': value.endDate === undefined ? undefined : (value.endDate.toISOString()),
+        'CsvSeparator': value['csvSeparator'],
+        'Severity': value['severity'],
+        'WebsiteGroupName': value['websiteGroupName'],
+        'WebSiteName': value['webSiteName'],
+        'StartDate': value['startDate'] == null ? undefined : ((value['startDate']).toISOString()),
+        'EndDate': value['endDate'] == null ? undefined : ((value['endDate']).toISOString()),
     };
 }
 exports.IssueReportFilterApiModelToJSON = IssueReportFilterApiModelToJSON;

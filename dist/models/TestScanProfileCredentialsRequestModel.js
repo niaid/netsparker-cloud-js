@@ -18,10 +18,11 @@ exports.TestScanProfileCredentialsRequestModelToJSON = exports.TestScanProfileCr
  * Check if a given object implements the TestScanProfileCredentialsRequestModel interface.
  */
 function instanceOfTestScanProfileCredentialsRequestModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "profileId" in value;
-    isInstance = isInstance && "url" in value;
-    return isInstance;
+    if (!('profileId' in value))
+        return false;
+    if (!('url' in value))
+        return false;
+    return true;
 }
 exports.instanceOfTestScanProfileCredentialsRequestModel = instanceOfTestScanProfileCredentialsRequestModel;
 function TestScanProfileCredentialsRequestModelFromJSON(json) {
@@ -29,7 +30,7 @@ function TestScanProfileCredentialsRequestModelFromJSON(json) {
 }
 exports.TestScanProfileCredentialsRequestModelFromJSON = TestScanProfileCredentialsRequestModelFromJSON;
 function TestScanProfileCredentialsRequestModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -39,15 +40,12 @@ function TestScanProfileCredentialsRequestModelFromJSONTyped(json, ignoreDiscrim
 }
 exports.TestScanProfileCredentialsRequestModelFromJSONTyped = TestScanProfileCredentialsRequestModelFromJSONTyped;
 function TestScanProfileCredentialsRequestModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'ProfileId': value.profileId,
-        'Url': value.url,
+        'ProfileId': value['profileId'],
+        'Url': value['url'],
     };
 }
 exports.TestScanProfileCredentialsRequestModelToJSON = TestScanProfileCredentialsRequestModelToJSON;

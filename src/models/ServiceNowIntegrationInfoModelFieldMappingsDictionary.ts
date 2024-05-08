@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * 
  * @export
@@ -31,9 +31,7 @@ export interface ServiceNowIntegrationInfoModelFieldMappingsDictionary {
  * Check if a given object implements the ServiceNowIntegrationInfoModelFieldMappingsDictionary interface.
  */
 export function instanceOfServiceNowIntegrationInfoModelFieldMappingsDictionary(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function ServiceNowIntegrationInfoModelFieldMappingsDictionaryFromJSON(json: any): ServiceNowIntegrationInfoModelFieldMappingsDictionary {
@@ -41,25 +39,22 @@ export function ServiceNowIntegrationInfoModelFieldMappingsDictionaryFromJSON(js
 }
 
 export function ServiceNowIntegrationInfoModelFieldMappingsDictionaryFromJSONTyped(json: any, ignoreDiscriminator: boolean): ServiceNowIntegrationInfoModelFieldMappingsDictionary {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'severity': !exists(json, 'Severity') ? undefined : json['Severity'],
+        'severity': json['Severity'] == null ? undefined : json['Severity'],
     };
 }
 
 export function ServiceNowIntegrationInfoModelFieldMappingsDictionaryToJSON(value?: ServiceNowIntegrationInfoModelFieldMappingsDictionary | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Severity': value.severity,
+        'Severity': value['severity'],
     };
 }
 

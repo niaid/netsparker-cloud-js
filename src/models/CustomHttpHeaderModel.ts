@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a model for carrying out custom headers.
  * @export
@@ -49,10 +49,8 @@ export interface CustomHttpHeaderModel {
  * Check if a given object implements the CustomHttpHeaderModel interface.
  */
 export function instanceOfCustomHttpHeaderModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "name" in value;
-
-    return isInstance;
+    if (!('name' in value)) return false;
+    return true;
 }
 
 export function CustomHttpHeaderModelFromJSON(json: any): CustomHttpHeaderModel {
@@ -60,31 +58,28 @@ export function CustomHttpHeaderModelFromJSON(json: any): CustomHttpHeaderModel 
 }
 
 export function CustomHttpHeaderModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): CustomHttpHeaderModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
         'name': json['Name'],
-        'value': !exists(json, 'Value') ? undefined : json['Value'],
-        'originalName': !exists(json, 'OriginalName') ? undefined : json['OriginalName'],
-        'isReplacedCredentials': !exists(json, 'IsReplacedCredentials') ? undefined : json['IsReplacedCredentials'],
+        'value': json['Value'] == null ? undefined : json['Value'],
+        'originalName': json['OriginalName'] == null ? undefined : json['OriginalName'],
+        'isReplacedCredentials': json['IsReplacedCredentials'] == null ? undefined : json['IsReplacedCredentials'],
     };
 }
 
 export function CustomHttpHeaderModelToJSON(value?: CustomHttpHeaderModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Name': value.name,
-        'Value': value.value,
-        'OriginalName': value.originalName,
-        'IsReplacedCredentials': value.isReplacedCredentials,
+        'Name': value['name'],
+        'Value': value['value'],
+        'OriginalName': value['originalName'],
+        'IsReplacedCredentials': value['isReplacedCredentials'],
     };
 }
 

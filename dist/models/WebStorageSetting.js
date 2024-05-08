@@ -14,7 +14,6 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.WebStorageSettingToJSON = exports.WebStorageSettingFromJSONTyped = exports.WebStorageSettingFromJSON = exports.instanceOfWebStorageSetting = exports.WebStorageSettingTypeEnum = void 0;
-const runtime_1 = require("../runtime");
 /**
  * @export
  */
@@ -26,11 +25,13 @@ exports.WebStorageSettingTypeEnum = {
  * Check if a given object implements the WebStorageSetting interface.
  */
 function instanceOfWebStorageSetting(value) {
-    let isInstance = true;
-    isInstance = isInstance && "key" in value;
-    isInstance = isInstance && "type" in value;
-    isInstance = isInstance && "value" in value;
-    return isInstance;
+    if (!('key' in value))
+        return false;
+    if (!('type' in value))
+        return false;
+    if (!('value' in value))
+        return false;
+    return true;
 }
 exports.instanceOfWebStorageSetting = instanceOfWebStorageSetting;
 function WebStorageSettingFromJSON(json) {
@@ -38,29 +39,26 @@ function WebStorageSettingFromJSON(json) {
 }
 exports.WebStorageSettingFromJSON = WebStorageSettingFromJSON;
 function WebStorageSettingFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         'key': json['Key'],
-        'origin': !(0, runtime_1.exists)(json, 'Origin') ? undefined : json['Origin'],
+        'origin': json['Origin'] == null ? undefined : json['Origin'],
         'type': json['Type'],
         'value': json['Value'],
     };
 }
 exports.WebStorageSettingFromJSONTyped = WebStorageSettingFromJSONTyped;
 function WebStorageSettingToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Key': value.key,
-        'Origin': value.origin,
-        'Type': value.type,
-        'Value': value.value,
+        'Key': value['key'],
+        'Origin': value['origin'],
+        'Type': value['type'],
+        'Value': value['value'],
     };
 }
 exports.WebStorageSettingToJSON = WebStorageSettingToJSON;

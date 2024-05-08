@@ -9,8 +9,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
 import type { IntegrationWizardResultModel } from './IntegrationWizardResultModel';
+import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
 /**
  * The Bitbucket integration info
  * @export
@@ -143,6 +143,18 @@ export interface BitbucketIntegrationInfoModel {
      * @memberof BitbucketIntegrationInfoModel
      */
     integrationWizardResultModel?: IntegrationWizardResultModel;
+    /**
+     *
+     * @type {string}
+     * @memberof BitbucketIntegrationInfoModel
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof BitbucketIntegrationInfoModel
+     */
+    state?: BitbucketIntegrationInfoModelStateEnum;
 }
 /**
  * @export
@@ -192,9 +204,17 @@ export declare const BitbucketIntegrationInfoModelTemplateTypeEnum: {
 };
 export type BitbucketIntegrationInfoModelTemplateTypeEnum = typeof BitbucketIntegrationInfoModelTemplateTypeEnum[keyof typeof BitbucketIntegrationInfoModelTemplateTypeEnum];
 /**
+ * @export
+ */
+export declare const BitbucketIntegrationInfoModelStateEnum: {
+    readonly Active: "Active";
+    readonly Suspended: "Suspended";
+};
+export type BitbucketIntegrationInfoModelStateEnum = typeof BitbucketIntegrationInfoModelStateEnum[keyof typeof BitbucketIntegrationInfoModelStateEnum];
+/**
  * Check if a given object implements the BitbucketIntegrationInfoModel interface.
  */
 export declare function instanceOfBitbucketIntegrationInfoModel(value: object): boolean;
 export declare function BitbucketIntegrationInfoModelFromJSON(json: any): BitbucketIntegrationInfoModel;
 export declare function BitbucketIntegrationInfoModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): BitbucketIntegrationInfoModel;
-export declare function BitbucketIntegrationInfoModelToJSON(value?: BitbucketIntegrationInfoModel | null): any;
+export declare function BitbucketIntegrationInfoModelToJSON(value?: Omit<BitbucketIntegrationInfoModel, 'Type' | 'GenericErrorMessage' | 'Identifier' | 'TestMessageBody' | 'TestMessageTitle' | 'WebhookUrl'> | null): any;

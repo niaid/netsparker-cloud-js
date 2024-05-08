@@ -111,24 +111,24 @@ export class IssuesApi extends runtime.BaseAPI {
     async issuesAddressedIssuesRaw(requestParameters: IssuesAddressedIssuesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<IssueApiResult>> {
         const queryParameters: any = {};
 
-        if (requestParameters.severity !== undefined) {
-            queryParameters['severity'] = requestParameters.severity;
+        if (requestParameters['severity'] != null) {
+            queryParameters['severity'] = requestParameters['severity'];
         }
 
-        if (requestParameters.webSiteName !== undefined) {
-            queryParameters['webSiteName'] = requestParameters.webSiteName;
+        if (requestParameters['webSiteName'] != null) {
+            queryParameters['webSiteName'] = requestParameters['webSiteName'];
         }
 
-        if (requestParameters.websiteGroupName !== undefined) {
-            queryParameters['websiteGroupName'] = requestParameters.websiteGroupName;
+        if (requestParameters['websiteGroupName'] != null) {
+            queryParameters['websiteGroupName'] = requestParameters['websiteGroupName'];
         }
 
-        if (requestParameters.page !== undefined) {
-            queryParameters['page'] = requestParameters.page;
+        if (requestParameters['page'] != null) {
+            queryParameters['page'] = requestParameters['page'];
         }
 
-        if (requestParameters.pageSize !== undefined) {
-            queryParameters['pageSize'] = requestParameters.pageSize;
+        if (requestParameters['pageSize'] != null) {
+            queryParameters['pageSize'] = requestParameters['pageSize'];
         }
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -157,40 +157,40 @@ export class IssuesApi extends runtime.BaseAPI {
     async issuesAllIssuesRaw(requestParameters: IssuesAllIssuesRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<IssueApiResult>> {
         const queryParameters: any = {};
 
-        if (requestParameters.severity !== undefined) {
-            queryParameters['severity'] = requestParameters.severity;
+        if (requestParameters['severity'] != null) {
+            queryParameters['severity'] = requestParameters['severity'];
         }
 
-        if (requestParameters.webSiteName !== undefined) {
-            queryParameters['webSiteName'] = requestParameters.webSiteName;
+        if (requestParameters['webSiteName'] != null) {
+            queryParameters['webSiteName'] = requestParameters['webSiteName'];
         }
 
-        if (requestParameters.websiteGroupName !== undefined) {
-            queryParameters['websiteGroupName'] = requestParameters.websiteGroupName;
+        if (requestParameters['websiteGroupName'] != null) {
+            queryParameters['websiteGroupName'] = requestParameters['websiteGroupName'];
         }
 
-        if (requestParameters.page !== undefined) {
-            queryParameters['page'] = requestParameters.page;
+        if (requestParameters['page'] != null) {
+            queryParameters['page'] = requestParameters['page'];
         }
 
-        if (requestParameters.pageSize !== undefined) {
-            queryParameters['pageSize'] = requestParameters.pageSize;
+        if (requestParameters['pageSize'] != null) {
+            queryParameters['pageSize'] = requestParameters['pageSize'];
         }
 
-        if (requestParameters.sortType !== undefined) {
-            queryParameters['sortType'] = requestParameters.sortType;
+        if (requestParameters['sortType'] != null) {
+            queryParameters['sortType'] = requestParameters['sortType'];
         }
 
-        if (requestParameters.lastSeenDate !== undefined) {
-            queryParameters['lastSeenDate'] = requestParameters.lastSeenDate;
+        if (requestParameters['lastSeenDate'] != null) {
+            queryParameters['lastSeenDate'] = requestParameters['lastSeenDate'];
         }
 
-        if (requestParameters.rawDetails !== undefined) {
-            queryParameters['rawDetails'] = requestParameters.rawDetails;
+        if (requestParameters['rawDetails'] != null) {
+            queryParameters['rawDetails'] = requestParameters['rawDetails'];
         }
 
-        if (requestParameters.integration !== undefined) {
-            queryParameters['integration'] = requestParameters.integration;
+        if (requestParameters['integration'] != null) {
+            queryParameters['integration'] = requestParameters['integration'];
         }
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -217,8 +217,11 @@ export class IssuesApi extends runtime.BaseAPI {
      * Gets issues by id. Returns with encoded(raw html) vulnerability template data by default.
      */
     async issuesGetRaw(requestParameters: IssuesGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<AllIssuesApiModel>> {
-        if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling issuesGet.');
+        if (requestParameters['id'] == null) {
+            throw new runtime.RequiredError(
+                'id',
+                'Required parameter "id" was null or undefined when calling issuesGet().'
+            );
         }
 
         const queryParameters: any = {};
@@ -226,7 +229,7 @@ export class IssuesApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/api/1.0/issues/get/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
+            path: `/api/1.0/issues/get/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -247,8 +250,11 @@ export class IssuesApi extends runtime.BaseAPI {
      * Gets vulnerability request/response content by id.
      */
     async issuesGetVulnerabilityContentRaw(requestParameters: IssuesGetVulnerabilityContentRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<VulnerabilityContentApiModel>> {
-        if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling issuesGetVulnerabilityContent.');
+        if (requestParameters['id'] == null) {
+            throw new runtime.RequiredError(
+                'id',
+                'Required parameter "id" was null or undefined when calling issuesGetVulnerabilityContent().'
+            );
         }
 
         const queryParameters: any = {};
@@ -256,7 +262,7 @@ export class IssuesApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/api/1.0/issues/getvulnerabilitycontent/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
+            path: `/api/1.0/issues/getvulnerabilitycontent/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -279,28 +285,28 @@ export class IssuesApi extends runtime.BaseAPI {
     async issuesReportRaw(requestParameters: IssuesReportRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
         const queryParameters: any = {};
 
-        if (requestParameters.csvSeparator !== undefined) {
-            queryParameters['csvSeparator'] = requestParameters.csvSeparator;
+        if (requestParameters['csvSeparator'] != null) {
+            queryParameters['csvSeparator'] = requestParameters['csvSeparator'];
         }
 
-        if (requestParameters.severity !== undefined) {
-            queryParameters['severity'] = requestParameters.severity;
+        if (requestParameters['severity'] != null) {
+            queryParameters['severity'] = requestParameters['severity'];
         }
 
-        if (requestParameters.websiteGroupName !== undefined) {
-            queryParameters['websiteGroupName'] = requestParameters.websiteGroupName;
+        if (requestParameters['websiteGroupName'] != null) {
+            queryParameters['websiteGroupName'] = requestParameters['websiteGroupName'];
         }
 
-        if (requestParameters.webSiteName !== undefined) {
-            queryParameters['webSiteName'] = requestParameters.webSiteName;
+        if (requestParameters['webSiteName'] != null) {
+            queryParameters['webSiteName'] = requestParameters['webSiteName'];
         }
 
-        if (requestParameters.startDate !== undefined) {
-            queryParameters['startDate'] = (requestParameters.startDate as any).toISOString();
+        if (requestParameters['startDate'] != null) {
+            queryParameters['startDate'] = (requestParameters['startDate'] as any).toISOString();
         }
 
-        if (requestParameters.endDate !== undefined) {
-            queryParameters['endDate'] = (requestParameters.endDate as any).toISOString();
+        if (requestParameters['endDate'] != null) {
+            queryParameters['endDate'] = (requestParameters['endDate'] as any).toISOString();
         }
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -326,38 +332,44 @@ export class IssuesApi extends runtime.BaseAPI {
      * Gets the summary of vulnerabilities
      */
     async issuesSummaryRaw(requestParameters: IssuesSummaryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<IssueSummaryApiResult>> {
-        if (requestParameters.targetUri === null || requestParameters.targetUri === undefined) {
-            throw new runtime.RequiredError('targetUri','Required parameter requestParameters.targetUri was null or undefined when calling issuesSummary.');
+        if (requestParameters['targetUri'] == null) {
+            throw new runtime.RequiredError(
+                'targetUri',
+                'Required parameter "targetUri" was null or undefined when calling issuesSummary().'
+            );
         }
 
-        if (requestParameters.websiteRoot === null || requestParameters.websiteRoot === undefined) {
-            throw new runtime.RequiredError('websiteRoot','Required parameter requestParameters.websiteRoot was null or undefined when calling issuesSummary.');
+        if (requestParameters['websiteRoot'] == null) {
+            throw new runtime.RequiredError(
+                'websiteRoot',
+                'Required parameter "websiteRoot" was null or undefined when calling issuesSummary().'
+            );
         }
 
         const queryParameters: any = {};
 
-        if (requestParameters.targetUri !== undefined) {
-            queryParameters['targetUri'] = requestParameters.targetUri;
+        if (requestParameters['targetUri'] != null) {
+            queryParameters['targetUri'] = requestParameters['targetUri'];
         }
 
-        if (requestParameters.websiteRoot !== undefined) {
-            queryParameters['websiteRoot'] = requestParameters.websiteRoot;
+        if (requestParameters['websiteRoot'] != null) {
+            queryParameters['websiteRoot'] = requestParameters['websiteRoot'];
         }
 
-        if (requestParameters.sinceDate !== undefined) {
-            queryParameters['sinceDate'] = requestParameters.sinceDate;
+        if (requestParameters['sinceDate'] != null) {
+            queryParameters['sinceDate'] = requestParameters['sinceDate'];
         }
 
-        if (requestParameters.scanTaskGroupId !== undefined) {
-            queryParameters['scanTaskGroupId'] = requestParameters.scanTaskGroupId;
+        if (requestParameters['scanTaskGroupId'] != null) {
+            queryParameters['scanTaskGroupId'] = requestParameters['scanTaskGroupId'];
         }
 
-        if (requestParameters.page !== undefined) {
-            queryParameters['page'] = requestParameters.page;
+        if (requestParameters['page'] != null) {
+            queryParameters['page'] = requestParameters['page'];
         }
 
-        if (requestParameters.pageSize !== undefined) {
-            queryParameters['pageSize'] = requestParameters.pageSize;
+        if (requestParameters['pageSize'] != null) {
+            queryParameters['pageSize'] = requestParameters['pageSize'];
         }
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -386,24 +398,24 @@ export class IssuesApi extends runtime.BaseAPI {
     async issuesTodoRaw(requestParameters: IssuesTodoRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<IssueApiResult>> {
         const queryParameters: any = {};
 
-        if (requestParameters.severity !== undefined) {
-            queryParameters['severity'] = requestParameters.severity;
+        if (requestParameters['severity'] != null) {
+            queryParameters['severity'] = requestParameters['severity'];
         }
 
-        if (requestParameters.webSiteName !== undefined) {
-            queryParameters['webSiteName'] = requestParameters.webSiteName;
+        if (requestParameters['webSiteName'] != null) {
+            queryParameters['webSiteName'] = requestParameters['webSiteName'];
         }
 
-        if (requestParameters.websiteGroupName !== undefined) {
-            queryParameters['websiteGroupName'] = requestParameters.websiteGroupName;
+        if (requestParameters['websiteGroupName'] != null) {
+            queryParameters['websiteGroupName'] = requestParameters['websiteGroupName'];
         }
 
-        if (requestParameters.page !== undefined) {
-            queryParameters['page'] = requestParameters.page;
+        if (requestParameters['page'] != null) {
+            queryParameters['page'] = requestParameters['page'];
         }
 
-        if (requestParameters.pageSize !== undefined) {
-            queryParameters['pageSize'] = requestParameters.pageSize;
+        if (requestParameters['pageSize'] != null) {
+            queryParameters['pageSize'] = requestParameters['pageSize'];
         }
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -430,8 +442,11 @@ export class IssuesApi extends runtime.BaseAPI {
      * Updates an existing issue.
      */
     async issuesUpdateRaw(requestParameters: IssuesUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling issuesUpdate.');
+        if (requestParameters['model'] == null) {
+            throw new runtime.RequiredError(
+                'model',
+                'Required parameter "model" was null or undefined when calling issuesUpdate().'
+            );
         }
 
         const queryParameters: any = {};
@@ -445,7 +460,7 @@ export class IssuesApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: IssueApiUpdateModelToJSON(requestParameters.model),
+            body: IssueApiUpdateModelToJSON(requestParameters['model']),
         }, initOverrides);
 
         return new runtime.VoidApiResponse(response);
@@ -459,29 +474,28 @@ export class IssuesApi extends runtime.BaseAPI {
     }
 
     /**
-     * Gets the list of retest issues.
      */
     async issuesWaitingForRetestRaw(requestParameters: IssuesWaitingForRetestRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<IssueApiResult>> {
         const queryParameters: any = {};
 
-        if (requestParameters.severity !== undefined) {
-            queryParameters['severity'] = requestParameters.severity;
+        if (requestParameters['severity'] != null) {
+            queryParameters['severity'] = requestParameters['severity'];
         }
 
-        if (requestParameters.webSiteName !== undefined) {
-            queryParameters['webSiteName'] = requestParameters.webSiteName;
+        if (requestParameters['webSiteName'] != null) {
+            queryParameters['webSiteName'] = requestParameters['webSiteName'];
         }
 
-        if (requestParameters.websiteGroupName !== undefined) {
-            queryParameters['websiteGroupName'] = requestParameters.websiteGroupName;
+        if (requestParameters['websiteGroupName'] != null) {
+            queryParameters['websiteGroupName'] = requestParameters['websiteGroupName'];
         }
 
-        if (requestParameters.page !== undefined) {
-            queryParameters['page'] = requestParameters.page;
+        if (requestParameters['page'] != null) {
+            queryParameters['page'] = requestParameters['page'];
         }
 
-        if (requestParameters.pageSize !== undefined) {
-            queryParameters['pageSize'] = requestParameters.pageSize;
+        if (requestParameters['pageSize'] != null) {
+            queryParameters['pageSize'] = requestParameters['pageSize'];
         }
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -497,7 +511,6 @@ export class IssuesApi extends runtime.BaseAPI {
     }
 
     /**
-     * Gets the list of retest issues.
      */
     async issuesWaitingForRetest(requestParameters: IssuesWaitingForRetestRequest = {}, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<IssueApiResult> {
         const response = await this.issuesWaitingForRetestRaw(requestParameters, initOverrides);

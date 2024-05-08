@@ -9,8 +9,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
 import type { IntegrationWizardResultModel } from './IntegrationWizardResultModel';
+import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
 /**
  * The Mattermost integration info
  * @export
@@ -113,6 +113,18 @@ export interface MattermostIntegrationInfoModel {
      * @memberof MattermostIntegrationInfoModel
      */
     integrationWizardResultModel?: IntegrationWizardResultModel;
+    /**
+     *
+     * @type {string}
+     * @memberof MattermostIntegrationInfoModel
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof MattermostIntegrationInfoModel
+     */
+    state?: MattermostIntegrationInfoModelStateEnum;
 }
 /**
  * @export
@@ -162,9 +174,17 @@ export declare const MattermostIntegrationInfoModelTemplateTypeEnum: {
 };
 export type MattermostIntegrationInfoModelTemplateTypeEnum = typeof MattermostIntegrationInfoModelTemplateTypeEnum[keyof typeof MattermostIntegrationInfoModelTemplateTypeEnum];
 /**
+ * @export
+ */
+export declare const MattermostIntegrationInfoModelStateEnum: {
+    readonly Active: "Active";
+    readonly Suspended: "Suspended";
+};
+export type MattermostIntegrationInfoModelStateEnum = typeof MattermostIntegrationInfoModelStateEnum[keyof typeof MattermostIntegrationInfoModelStateEnum];
+/**
  * Check if a given object implements the MattermostIntegrationInfoModel interface.
  */
 export declare function instanceOfMattermostIntegrationInfoModel(value: object): boolean;
 export declare function MattermostIntegrationInfoModelFromJSON(json: any): MattermostIntegrationInfoModel;
 export declare function MattermostIntegrationInfoModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): MattermostIntegrationInfoModel;
-export declare function MattermostIntegrationInfoModelToJSON(value?: MattermostIntegrationInfoModel | null): any;
+export declare function MattermostIntegrationInfoModelToJSON(value?: Omit<MattermostIntegrationInfoModel, 'Type' | 'GenericErrorMessage' | 'Identifier' | 'TestMessageBody' | 'TestMessageTitle' | 'WebhookUrl'> | null): any;

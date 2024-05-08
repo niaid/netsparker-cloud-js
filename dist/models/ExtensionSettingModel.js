@@ -34,11 +34,13 @@ exports.ExtensionSettingModelCrawlOptionEnum = {
  * Check if a given object implements the ExtensionSettingModel interface.
  */
 function instanceOfExtensionSettingModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "attackOption" in value;
-    isInstance = isInstance && "crawlOption" in value;
-    isInstance = isInstance && "extension" in value;
-    return isInstance;
+    if (!('attackOption' in value))
+        return false;
+    if (!('crawlOption' in value))
+        return false;
+    if (!('extension' in value))
+        return false;
+    return true;
 }
 exports.instanceOfExtensionSettingModel = instanceOfExtensionSettingModel;
 function ExtensionSettingModelFromJSON(json) {
@@ -46,7 +48,7 @@ function ExtensionSettingModelFromJSON(json) {
 }
 exports.ExtensionSettingModelFromJSON = ExtensionSettingModelFromJSON;
 function ExtensionSettingModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -57,16 +59,13 @@ function ExtensionSettingModelFromJSONTyped(json, ignoreDiscriminator) {
 }
 exports.ExtensionSettingModelFromJSONTyped = ExtensionSettingModelFromJSONTyped;
 function ExtensionSettingModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'AttackOption': value.attackOption,
-        'CrawlOption': value.crawlOption,
-        'Extension': value.extension,
+        'AttackOption': value['attackOption'],
+        'CrawlOption': value['crawlOption'],
+        'Extension': value['extension'],
     };
 }
 exports.ExtensionSettingModelToJSON = ExtensionSettingModelToJSON;

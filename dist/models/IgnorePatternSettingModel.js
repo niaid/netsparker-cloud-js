@@ -29,11 +29,13 @@ exports.IgnorePatternSettingModelParameterTypeEnum = {
  * Check if a given object implements the IgnorePatternSettingModel interface.
  */
 function instanceOfIgnorePatternSettingModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "name" in value;
-    isInstance = isInstance && "parameterType" in value;
-    isInstance = isInstance && "pattern" in value;
-    return isInstance;
+    if (!('name' in value))
+        return false;
+    if (!('parameterType' in value))
+        return false;
+    if (!('pattern' in value))
+        return false;
+    return true;
 }
 exports.instanceOfIgnorePatternSettingModel = instanceOfIgnorePatternSettingModel;
 function IgnorePatternSettingModelFromJSON(json) {
@@ -41,7 +43,7 @@ function IgnorePatternSettingModelFromJSON(json) {
 }
 exports.IgnorePatternSettingModelFromJSON = IgnorePatternSettingModelFromJSON;
 function IgnorePatternSettingModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -52,16 +54,13 @@ function IgnorePatternSettingModelFromJSONTyped(json, ignoreDiscriminator) {
 }
 exports.IgnorePatternSettingModelFromJSONTyped = IgnorePatternSettingModelFromJSONTyped;
 function IgnorePatternSettingModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Name': value.name,
-        'ParameterType': value.parameterType,
-        'Pattern': value.pattern,
+        'Name': value['name'],
+        'ParameterType': value['parameterType'],
+        'Pattern': value['pattern'],
     };
 }
 exports.IgnorePatternSettingModelToJSON = IgnorePatternSettingModelToJSON;

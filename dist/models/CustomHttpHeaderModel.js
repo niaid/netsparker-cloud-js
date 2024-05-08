@@ -14,14 +14,13 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.CustomHttpHeaderModelToJSON = exports.CustomHttpHeaderModelFromJSONTyped = exports.CustomHttpHeaderModelFromJSON = exports.instanceOfCustomHttpHeaderModel = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the CustomHttpHeaderModel interface.
  */
 function instanceOfCustomHttpHeaderModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "name" in value;
-    return isInstance;
+    if (!('name' in value))
+        return false;
+    return true;
 }
 exports.instanceOfCustomHttpHeaderModel = instanceOfCustomHttpHeaderModel;
 function CustomHttpHeaderModelFromJSON(json) {
@@ -29,29 +28,26 @@ function CustomHttpHeaderModelFromJSON(json) {
 }
 exports.CustomHttpHeaderModelFromJSON = CustomHttpHeaderModelFromJSON;
 function CustomHttpHeaderModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         'name': json['Name'],
-        'value': !(0, runtime_1.exists)(json, 'Value') ? undefined : json['Value'],
-        'originalName': !(0, runtime_1.exists)(json, 'OriginalName') ? undefined : json['OriginalName'],
-        'isReplacedCredentials': !(0, runtime_1.exists)(json, 'IsReplacedCredentials') ? undefined : json['IsReplacedCredentials'],
+        'value': json['Value'] == null ? undefined : json['Value'],
+        'originalName': json['OriginalName'] == null ? undefined : json['OriginalName'],
+        'isReplacedCredentials': json['IsReplacedCredentials'] == null ? undefined : json['IsReplacedCredentials'],
     };
 }
 exports.CustomHttpHeaderModelFromJSONTyped = CustomHttpHeaderModelFromJSONTyped;
 function CustomHttpHeaderModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Name': value.name,
-        'Value': value.value,
-        'OriginalName': value.originalName,
-        'IsReplacedCredentials': value.isReplacedCredentials,
+        'Name': value['name'],
+        'Value': value['value'],
+        'OriginalName': value['originalName'],
+        'IsReplacedCredentials': value['isReplacedCredentials'],
     };
 }
 exports.CustomHttpHeaderModelToJSON = CustomHttpHeaderModelToJSON;

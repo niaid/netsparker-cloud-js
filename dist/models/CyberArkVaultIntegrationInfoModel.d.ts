@@ -9,8 +9,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
 import type { IntegrationWizardResultModel } from './IntegrationWizardResultModel';
+import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
 /**
  *
  * @export
@@ -131,6 +131,18 @@ export interface CyberArkVaultIntegrationInfoModel {
      * @memberof CyberArkVaultIntegrationInfoModel
      */
     integrationWizardResultModel?: IntegrationWizardResultModel;
+    /**
+     *
+     * @type {string}
+     * @memberof CyberArkVaultIntegrationInfoModel
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof CyberArkVaultIntegrationInfoModel
+     */
+    state?: CyberArkVaultIntegrationInfoModelStateEnum;
 }
 /**
  * @export
@@ -188,9 +200,17 @@ export declare const CyberArkVaultIntegrationInfoModelTemplateTypeEnum: {
 };
 export type CyberArkVaultIntegrationInfoModelTemplateTypeEnum = typeof CyberArkVaultIntegrationInfoModelTemplateTypeEnum[keyof typeof CyberArkVaultIntegrationInfoModelTemplateTypeEnum];
 /**
+ * @export
+ */
+export declare const CyberArkVaultIntegrationInfoModelStateEnum: {
+    readonly Active: "Active";
+    readonly Suspended: "Suspended";
+};
+export type CyberArkVaultIntegrationInfoModelStateEnum = typeof CyberArkVaultIntegrationInfoModelStateEnum[keyof typeof CyberArkVaultIntegrationInfoModelStateEnum];
+/**
  * Check if a given object implements the CyberArkVaultIntegrationInfoModel interface.
  */
 export declare function instanceOfCyberArkVaultIntegrationInfoModel(value: object): boolean;
 export declare function CyberArkVaultIntegrationInfoModelFromJSON(json: any): CyberArkVaultIntegrationInfoModel;
 export declare function CyberArkVaultIntegrationInfoModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): CyberArkVaultIntegrationInfoModel;
-export declare function CyberArkVaultIntegrationInfoModelToJSON(value?: CyberArkVaultIntegrationInfoModel | null): any;
+export declare function CyberArkVaultIntegrationInfoModelToJSON(value?: Omit<CyberArkVaultIntegrationInfoModel, 'Type' | 'GenericErrorMessage' | 'Identifier' | 'TestMessageBody' | 'TestMessageTitle' | 'WebhookUrl'> | null): any;

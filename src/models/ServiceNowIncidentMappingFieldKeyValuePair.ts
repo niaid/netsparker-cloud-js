@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 import type { ServiceNowIncidentFieldPairValue } from './ServiceNowIncidentFieldPairValue';
 import {
     ServiceNowIncidentFieldPairValueFromJSON,
@@ -44,9 +44,7 @@ export interface ServiceNowIncidentMappingFieldKeyValuePair {
  * Check if a given object implements the ServiceNowIncidentMappingFieldKeyValuePair interface.
  */
 export function instanceOfServiceNowIncidentMappingFieldKeyValuePair(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function ServiceNowIncidentMappingFieldKeyValuePairFromJSON(json: any): ServiceNowIncidentMappingFieldKeyValuePair {
@@ -54,27 +52,24 @@ export function ServiceNowIncidentMappingFieldKeyValuePairFromJSON(json: any): S
 }
 
 export function ServiceNowIncidentMappingFieldKeyValuePairFromJSONTyped(json: any, ignoreDiscriminator: boolean): ServiceNowIncidentMappingFieldKeyValuePair {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'serviceNowField': !exists(json, 'ServiceNowField') ? undefined : json['ServiceNowField'],
-        'serviceNowValue': !exists(json, 'ServiceNowValue') ? undefined : ServiceNowIncidentFieldPairValueFromJSON(json['ServiceNowValue']),
+        'serviceNowField': json['ServiceNowField'] == null ? undefined : json['ServiceNowField'],
+        'serviceNowValue': json['ServiceNowValue'] == null ? undefined : ServiceNowIncidentFieldPairValueFromJSON(json['ServiceNowValue']),
     };
 }
 
 export function ServiceNowIncidentMappingFieldKeyValuePairToJSON(value?: ServiceNowIncidentMappingFieldKeyValuePair | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'ServiceNowField': value.serviceNowField,
-        'ServiceNowValue': ServiceNowIncidentFieldPairValueToJSON(value.serviceNowValue),
+        'ServiceNowField': value['serviceNowField'],
+        'ServiceNowValue': ServiceNowIncidentFieldPairValueToJSON(value['serviceNowValue']),
     };
 }
 

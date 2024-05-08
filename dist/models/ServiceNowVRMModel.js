@@ -13,11 +13,11 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.ServiceNowVRMModelToJSON = exports.ServiceNowVRMModelFromJSONTyped = exports.ServiceNowVRMModelFromJSON = exports.instanceOfServiceNowVRMModel = exports.ServiceNowVRMModelTemplateTypeEnum = exports.ServiceNowVRMModelTypeEnum = void 0;
+exports.ServiceNowVRMModelToJSON = exports.ServiceNowVRMModelFromJSONTyped = exports.ServiceNowVRMModelFromJSON = exports.instanceOfServiceNowVRMModel = exports.ServiceNowVRMModelStateEnum = exports.ServiceNowVRMModelTemplateTypeEnum = exports.ServiceNowVRMModelTypeEnum = void 0;
 const runtime_1 = require("../runtime");
 const FieldPairValue_1 = require("./FieldPairValue");
-const IntegrationCustomFieldVm_1 = require("./IntegrationCustomFieldVm");
 const IntegrationWizardResultModel_1 = require("./IntegrationWizardResultModel");
+const IntegrationCustomFieldVm_1 = require("./IntegrationCustomFieldVm");
 /**
  * @export
  */
@@ -64,16 +64,27 @@ exports.ServiceNowVRMModelTemplateTypeEnum = {
     Detailed: 'Detailed'
 };
 /**
+ * @export
+ */
+exports.ServiceNowVRMModelStateEnum = {
+    Active: 'Active',
+    Suspended: 'Suspended'
+};
+/**
  * Check if a given object implements the ServiceNowVRMModel interface.
  */
 function instanceOfServiceNowVRMModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "username" in value;
-    isInstance = isInstance && "url" in value;
-    isInstance = isInstance && "password" in value;
-    isInstance = isInstance && "summaryFormat" in value;
-    isInstance = isInstance && "titleFormat" in value;
-    return isInstance;
+    if (!('username' in value))
+        return false;
+    if (!('url' in value))
+        return false;
+    if (!('password' in value))
+        return false;
+    if (!('summaryFormat' in value))
+        return false;
+    if (!('titleFormat' in value))
+        return false;
+    return true;
 }
 exports.instanceOfServiceNowVRMModel = instanceOfServiceNowVRMModel;
 function ServiceNowVRMModelFromJSON(json) {
@@ -81,59 +92,60 @@ function ServiceNowVRMModelFromJSON(json) {
 }
 exports.ServiceNowVRMModelFromJSON = ServiceNowVRMModelFromJSON;
 function ServiceNowVRMModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         'username': json['Username'],
         'url': json['Url'],
-        'webhookUrl': !(0, runtime_1.exists)(json, 'WebhookUrl') ? undefined : json['WebhookUrl'],
+        'webhookUrl': json['WebhookUrl'] == null ? undefined : json['WebhookUrl'],
         'password': json['Password'],
-        'fieldPairs': !(0, runtime_1.exists)(json, 'FieldPairs') ? undefined : ((0, runtime_1.mapValues)(json['FieldPairs'], FieldPairValue_1.FieldPairValueFromJSON)),
-        'resolvedStatus': !(0, runtime_1.exists)(json, 'ResolvedStatus') ? undefined : json['ResolvedStatus'],
-        'reopenStatus': !(0, runtime_1.exists)(json, 'ReopenStatus') ? undefined : json['ReopenStatus'],
-        'falsePositiveStatus': !(0, runtime_1.exists)(json, 'FalsePositiveStatus') ? undefined : json['FalsePositiveStatus'],
-        'acceptedRiskStatus': !(0, runtime_1.exists)(json, 'AcceptedRiskStatus') ? undefined : json['AcceptedRiskStatus'],
+        'fieldPairs': json['FieldPairs'] == null ? undefined : ((0, runtime_1.mapValues)(json['FieldPairs'], FieldPairValue_1.FieldPairValueFromJSON)),
+        'resolvedStatus': json['ResolvedStatus'] == null ? undefined : json['ResolvedStatus'],
+        'reopenStatus': json['ReopenStatus'] == null ? undefined : json['ReopenStatus'],
+        'falsePositiveStatus': json['FalsePositiveStatus'] == null ? undefined : json['FalsePositiveStatus'],
+        'acceptedRiskStatus': json['AcceptedRiskStatus'] == null ? undefined : json['AcceptedRiskStatus'],
         'summaryFormat': json['SummaryFormat'],
-        'cIMatchingColumn': !(0, runtime_1.exists)(json, 'CIMatchingColumn') ? undefined : json['CIMatchingColumn'],
-        'cIMatchingColumnText': !(0, runtime_1.exists)(json, 'CIMatchingColumnText') ? undefined : json['CIMatchingColumnText'],
-        'type': !(0, runtime_1.exists)(json, 'Type') ? undefined : json['Type'],
-        'genericErrorMessage': !(0, runtime_1.exists)(json, 'GenericErrorMessage') ? undefined : json['GenericErrorMessage'],
-        'identifier': !(0, runtime_1.exists)(json, 'Identifier') ? undefined : json['Identifier'],
-        'testMessageBody': !(0, runtime_1.exists)(json, 'TestMessageBody') ? undefined : json['TestMessageBody'],
-        'testMessageTitle': !(0, runtime_1.exists)(json, 'TestMessageTitle') ? undefined : json['TestMessageTitle'],
-        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
-        'integrationVersion': !(0, runtime_1.exists)(json, 'IntegrationVersion') ? undefined : json['IntegrationVersion'],
-        'accountID': !(0, runtime_1.exists)(json, 'AccountID') ? undefined : json['AccountID'],
-        'customFields': !(0, runtime_1.exists)(json, 'CustomFields') ? undefined : (json['CustomFields'].map(IntegrationCustomFieldVm_1.IntegrationCustomFieldVmFromJSON)),
-        'templateType': !(0, runtime_1.exists)(json, 'TemplateType') ? undefined : json['TemplateType'],
+        'cIMatchingColumn': json['CIMatchingColumn'] == null ? undefined : json['CIMatchingColumn'],
+        'cIMatchingColumnText': json['CIMatchingColumnText'] == null ? undefined : json['CIMatchingColumnText'],
+        'type': json['Type'] == null ? undefined : json['Type'],
+        'genericErrorMessage': json['GenericErrorMessage'] == null ? undefined : json['GenericErrorMessage'],
+        'identifier': json['Identifier'] == null ? undefined : json['Identifier'],
+        'testMessageBody': json['TestMessageBody'] == null ? undefined : json['TestMessageBody'],
+        'testMessageTitle': json['TestMessageTitle'] == null ? undefined : json['TestMessageTitle'],
+        'name': json['Name'] == null ? undefined : json['Name'],
+        'integrationVersion': json['IntegrationVersion'] == null ? undefined : json['IntegrationVersion'],
+        'accountID': json['AccountID'] == null ? undefined : json['AccountID'],
+        'customFields': json['CustomFields'] == null ? undefined : (json['CustomFields'].map(IntegrationCustomFieldVm_1.IntegrationCustomFieldVmFromJSON)),
+        'templateType': json['TemplateType'] == null ? undefined : json['TemplateType'],
         'titleFormat': json['TitleFormat'],
-        'integrationWizardResultModel': !(0, runtime_1.exists)(json, 'IntegrationWizardResultModel') ? undefined : (0, IntegrationWizardResultModel_1.IntegrationWizardResultModelFromJSON)(json['IntegrationWizardResultModel']),
+        'integrationWizardResultModel': json['IntegrationWizardResultModel'] == null ? undefined : (0, IntegrationWizardResultModel_1.IntegrationWizardResultModelFromJSON)(json['IntegrationWizardResultModel']),
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'state': json['State'] == null ? undefined : json['State'],
     };
 }
 exports.ServiceNowVRMModelFromJSONTyped = ServiceNowVRMModelFromJSONTyped;
 function ServiceNowVRMModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Username': value.username,
-        'Url': value.url,
-        'Password': value.password,
-        'FieldPairs': value.fieldPairs === undefined ? undefined : ((0, runtime_1.mapValues)(value.fieldPairs, FieldPairValue_1.FieldPairValueToJSON)),
-        'SummaryFormat': value.summaryFormat,
-        'CIMatchingColumn': value.cIMatchingColumn,
-        'CIMatchingColumnText': value.cIMatchingColumnText,
-        'Name': value.name,
-        'IntegrationVersion': value.integrationVersion,
-        'AccountID': value.accountID,
-        'CustomFields': value.customFields === undefined ? undefined : (value.customFields.map(IntegrationCustomFieldVm_1.IntegrationCustomFieldVmToJSON)),
-        'TemplateType': value.templateType,
-        'TitleFormat': value.titleFormat,
-        'IntegrationWizardResultModel': (0, IntegrationWizardResultModel_1.IntegrationWizardResultModelToJSON)(value.integrationWizardResultModel),
+        'Username': value['username'],
+        'Url': value['url'],
+        'Password': value['password'],
+        'FieldPairs': value['fieldPairs'] == null ? undefined : ((0, runtime_1.mapValues)(value['fieldPairs'], FieldPairValue_1.FieldPairValueToJSON)),
+        'SummaryFormat': value['summaryFormat'],
+        'CIMatchingColumn': value['cIMatchingColumn'],
+        'CIMatchingColumnText': value['cIMatchingColumnText'],
+        'Name': value['name'],
+        'IntegrationVersion': value['integrationVersion'],
+        'AccountID': value['accountID'],
+        'CustomFields': value['customFields'] == null ? undefined : (value['customFields'].map(IntegrationCustomFieldVm_1.IntegrationCustomFieldVmToJSON)),
+        'TemplateType': value['templateType'],
+        'TitleFormat': value['titleFormat'],
+        'IntegrationWizardResultModel': (0, IntegrationWizardResultModel_1.IntegrationWizardResultModelToJSON)(value['integrationWizardResultModel']),
+        'Id': value['id'],
+        'State': value['state'],
     };
 }
 exports.ServiceNowVRMModelToJSON = ServiceNowVRMModelToJSON;

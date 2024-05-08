@@ -10,8 +10,8 @@
  * Do not edit the class manually.
  */
 import type { FieldPairValue } from './FieldPairValue';
-import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
 import type { IntegrationWizardResultModel } from './IntegrationWizardResultModel';
+import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
 /**
  *
  * @export
@@ -164,6 +164,18 @@ export interface ServiceNowVRMModel {
      * @memberof ServiceNowVRMModel
      */
     integrationWizardResultModel?: IntegrationWizardResultModel;
+    /**
+     *
+     * @type {string}
+     * @memberof ServiceNowVRMModel
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof ServiceNowVRMModel
+     */
+    state?: ServiceNowVRMModelStateEnum;
 }
 /**
  * @export
@@ -213,9 +225,17 @@ export declare const ServiceNowVRMModelTemplateTypeEnum: {
 };
 export type ServiceNowVRMModelTemplateTypeEnum = typeof ServiceNowVRMModelTemplateTypeEnum[keyof typeof ServiceNowVRMModelTemplateTypeEnum];
 /**
+ * @export
+ */
+export declare const ServiceNowVRMModelStateEnum: {
+    readonly Active: "Active";
+    readonly Suspended: "Suspended";
+};
+export type ServiceNowVRMModelStateEnum = typeof ServiceNowVRMModelStateEnum[keyof typeof ServiceNowVRMModelStateEnum];
+/**
  * Check if a given object implements the ServiceNowVRMModel interface.
  */
 export declare function instanceOfServiceNowVRMModel(value: object): boolean;
 export declare function ServiceNowVRMModelFromJSON(json: any): ServiceNowVRMModel;
 export declare function ServiceNowVRMModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): ServiceNowVRMModel;
-export declare function ServiceNowVRMModelToJSON(value?: ServiceNowVRMModel | null): any;
+export declare function ServiceNowVRMModelToJSON(value?: Omit<ServiceNowVRMModel, 'WebhookUrl' | 'ResolvedStatus' | 'ReopenStatus' | 'FalsePositiveStatus' | 'AcceptedRiskStatus' | 'Type' | 'GenericErrorMessage' | 'Identifier' | 'TestMessageBody' | 'TestMessageTitle'> | null): any;

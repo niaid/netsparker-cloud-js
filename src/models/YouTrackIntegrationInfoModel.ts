@@ -12,19 +12,19 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
-import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
-import {
-    IntegrationCustomFieldVmFromJSON,
-    IntegrationCustomFieldVmFromJSONTyped,
-    IntegrationCustomFieldVmToJSON,
-} from './IntegrationCustomFieldVm';
+import { mapValues } from '../runtime';
 import type { IntegrationWizardResultModel } from './IntegrationWizardResultModel';
 import {
     IntegrationWizardResultModelFromJSON,
     IntegrationWizardResultModelFromJSONTyped,
     IntegrationWizardResultModelToJSON,
 } from './IntegrationWizardResultModel';
+import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
+import {
+    IntegrationCustomFieldVmFromJSON,
+    IntegrationCustomFieldVmFromJSONTyped,
+    IntegrationCustomFieldVmToJSON,
+} from './IntegrationCustomFieldVm';
 
 /**
  * The YouTrack integration info
@@ -146,6 +146,18 @@ export interface YouTrackIntegrationInfoModel {
      * @memberof YouTrackIntegrationInfoModel
      */
     integrationWizardResultModel?: IntegrationWizardResultModel;
+    /**
+     * 
+     * @type {string}
+     * @memberof YouTrackIntegrationInfoModel
+     */
+    id?: string;
+    /**
+     * 
+     * @type {string}
+     * @memberof YouTrackIntegrationInfoModel
+     */
+    state?: YouTrackIntegrationInfoModelStateEnum;
 }
 
 
@@ -153,39 +165,39 @@ export interface YouTrackIntegrationInfoModel {
  * @export
  */
 export const YouTrackIntegrationInfoModelTypeEnum = {
-    Jira: 'Jira',
-    GitHub: 'GitHub',
-    Tfs: 'TFS',
-    FogBugz: 'FogBugz',
-    ServiceNow: 'ServiceNow',
-    Slack: 'Slack',
-    GitLab: 'GitLab',
-    Bitbucket: 'Bitbucket',
-    Unfuddle: 'Unfuddle',
-    Zapier: 'Zapier',
-    AzureDevOps: 'AzureDevOps',
-    Redmine: 'Redmine',
-    Bugzilla: 'Bugzilla',
-    Kafka: 'Kafka',
-    PagerDuty: 'PagerDuty',
-    MicrosoftTeams: 'MicrosoftTeams',
-    Clubhouse: 'Clubhouse',
-    Trello: 'Trello',
-    Asana: 'Asana',
-    Webhook: 'Webhook',
-    Kenna: 'Kenna',
-    Freshservice: 'Freshservice',
-    YouTrack: 'YouTrack',
     NetsparkerEnterprise: 'NetsparkerEnterprise',
-    Splunk: 'Splunk',
+    Webhook: 'Webhook',
+    Zapier: 'Zapier',
+    Slack: 'Slack',
     Mattermost: 'Mattermost',
-    Hashicorp: 'Hashicorp',
-    PivotalTracker: 'PivotalTracker',
-    CyberArk: 'CyberArk',
+    MicrosoftTeams: 'MicrosoftTeams',
+    AzureDevOps: 'AzureDevOps',
+    Bitbucket: 'Bitbucket',
+    Bugzilla: 'Bugzilla',
+    Clubhouse: 'Clubhouse',
     DefectDojo: 'DefectDojo',
+    PivotalTracker: 'PivotalTracker',
+    Jira: 'Jira',
+    FogBugz: 'FogBugz',
+    GitHub: 'GitHub',
+    PagerDuty: 'PagerDuty',
+    Kafka: 'Kafka',
+    Kenna: 'Kenna',
+    Redmine: 'Redmine',
+    ServiceNow: 'ServiceNow',
+    Tfs: 'TFS',
+    Unfuddle: 'Unfuddle',
+    YouTrack: 'YouTrack',
+    Freshservice: 'Freshservice',
+    Splunk: 'Splunk',
     JazzTeam: 'JazzTeam',
+    ServiceNowVrm: 'ServiceNowVRM',
+    Asana: 'Asana',
+    Trello: 'Trello',
+    Hashicorp: 'Hashicorp',
+    CyberArk: 'CyberArk',
     AzureKeyVault: 'AzureKeyVault',
-    ServiceNowVrm: 'ServiceNowVRM'
+    GitLab: 'GitLab'
 } as const;
 export type YouTrackIntegrationInfoModelTypeEnum = typeof YouTrackIntegrationInfoModelTypeEnum[keyof typeof YouTrackIntegrationInfoModelTypeEnum];
 
@@ -198,18 +210,25 @@ export const YouTrackIntegrationInfoModelTemplateTypeEnum = {
 } as const;
 export type YouTrackIntegrationInfoModelTemplateTypeEnum = typeof YouTrackIntegrationInfoModelTemplateTypeEnum[keyof typeof YouTrackIntegrationInfoModelTemplateTypeEnum];
 
+/**
+ * @export
+ */
+export const YouTrackIntegrationInfoModelStateEnum = {
+    Active: 'Active',
+    Suspended: 'Suspended'
+} as const;
+export type YouTrackIntegrationInfoModelStateEnum = typeof YouTrackIntegrationInfoModelStateEnum[keyof typeof YouTrackIntegrationInfoModelStateEnum];
+
 
 /**
  * Check if a given object implements the YouTrackIntegrationInfoModel interface.
  */
 export function instanceOfYouTrackIntegrationInfoModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "serverUrl" in value;
-    isInstance = isInstance && "token" in value;
-    isInstance = isInstance && "projectId" in value;
-    isInstance = isInstance && "titleFormat" in value;
-
-    return isInstance;
+    if (!('serverUrl' in value)) return false;
+    if (!('token' in value)) return false;
+    if (!('projectId' in value)) return false;
+    if (!('titleFormat' in value)) return false;
+    return true;
 }
 
 export function YouTrackIntegrationInfoModelFromJSON(json: any): YouTrackIntegrationInfoModel {
@@ -217,7 +236,7 @@ export function YouTrackIntegrationInfoModelFromJSON(json: any): YouTrackIntegra
 }
 
 export function YouTrackIntegrationInfoModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): YouTrackIntegrationInfoModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -225,47 +244,48 @@ export function YouTrackIntegrationInfoModelFromJSONTyped(json: any, ignoreDiscr
         'serverUrl': json['ServerUrl'],
         'token': json['Token'],
         'projectId': json['ProjectId'],
-        'tags': !exists(json, 'Tags') ? undefined : json['Tags'],
-        'type': !exists(json, 'Type') ? undefined : json['Type'],
-        'genericErrorMessage': !exists(json, 'GenericErrorMessage') ? undefined : json['GenericErrorMessage'],
-        'identifier': !exists(json, 'Identifier') ? undefined : json['Identifier'],
-        'testMessageBody': !exists(json, 'TestMessageBody') ? undefined : json['TestMessageBody'],
-        'testMessageTitle': !exists(json, 'TestMessageTitle') ? undefined : json['TestMessageTitle'],
-        'webhookUrl': !exists(json, 'WebhookUrl') ? undefined : json['WebhookUrl'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'integrationVersion': !exists(json, 'IntegrationVersion') ? undefined : json['IntegrationVersion'],
-        'accountID': !exists(json, 'AccountID') ? undefined : json['AccountID'],
-        'customFields': !exists(json, 'CustomFields') ? undefined : ((json['CustomFields'] as Array<any>).map(IntegrationCustomFieldVmFromJSON)),
-        'templateType': !exists(json, 'TemplateType') ? undefined : json['TemplateType'],
-        'reopenStatus': !exists(json, 'ReopenStatus') ? undefined : json['ReopenStatus'],
-        'resolvedStatus': !exists(json, 'ResolvedStatus') ? undefined : json['ResolvedStatus'],
+        'tags': json['Tags'] == null ? undefined : json['Tags'],
+        'type': json['Type'] == null ? undefined : json['Type'],
+        'genericErrorMessage': json['GenericErrorMessage'] == null ? undefined : json['GenericErrorMessage'],
+        'identifier': json['Identifier'] == null ? undefined : json['Identifier'],
+        'testMessageBody': json['TestMessageBody'] == null ? undefined : json['TestMessageBody'],
+        'testMessageTitle': json['TestMessageTitle'] == null ? undefined : json['TestMessageTitle'],
+        'webhookUrl': json['WebhookUrl'] == null ? undefined : json['WebhookUrl'],
+        'name': json['Name'] == null ? undefined : json['Name'],
+        'integrationVersion': json['IntegrationVersion'] == null ? undefined : json['IntegrationVersion'],
+        'accountID': json['AccountID'] == null ? undefined : json['AccountID'],
+        'customFields': json['CustomFields'] == null ? undefined : ((json['CustomFields'] as Array<any>).map(IntegrationCustomFieldVmFromJSON)),
+        'templateType': json['TemplateType'] == null ? undefined : json['TemplateType'],
+        'reopenStatus': json['ReopenStatus'] == null ? undefined : json['ReopenStatus'],
+        'resolvedStatus': json['ResolvedStatus'] == null ? undefined : json['ResolvedStatus'],
         'titleFormat': json['TitleFormat'],
-        'integrationWizardResultModel': !exists(json, 'IntegrationWizardResultModel') ? undefined : IntegrationWizardResultModelFromJSON(json['IntegrationWizardResultModel']),
+        'integrationWizardResultModel': json['IntegrationWizardResultModel'] == null ? undefined : IntegrationWizardResultModelFromJSON(json['IntegrationWizardResultModel']),
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'state': json['State'] == null ? undefined : json['State'],
     };
 }
 
-export function YouTrackIntegrationInfoModelToJSON(value?: YouTrackIntegrationInfoModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+export function YouTrackIntegrationInfoModelToJSON(value?: Omit<YouTrackIntegrationInfoModel, 'Type'|'GenericErrorMessage'|'Identifier'|'TestMessageBody'|'TestMessageTitle'|'WebhookUrl'> | null): any {
+    if (value == null) {
+        return value;
     }
     return {
         
-        'ServerUrl': value.serverUrl,
-        'Token': value.token,
-        'ProjectId': value.projectId,
-        'Tags': value.tags,
-        'Name': value.name,
-        'IntegrationVersion': value.integrationVersion,
-        'AccountID': value.accountID,
-        'CustomFields': value.customFields === undefined ? undefined : ((value.customFields as Array<any>).map(IntegrationCustomFieldVmToJSON)),
-        'TemplateType': value.templateType,
-        'ReopenStatus': value.reopenStatus,
-        'ResolvedStatus': value.resolvedStatus,
-        'TitleFormat': value.titleFormat,
-        'IntegrationWizardResultModel': IntegrationWizardResultModelToJSON(value.integrationWizardResultModel),
+        'ServerUrl': value['serverUrl'],
+        'Token': value['token'],
+        'ProjectId': value['projectId'],
+        'Tags': value['tags'],
+        'Name': value['name'],
+        'IntegrationVersion': value['integrationVersion'],
+        'AccountID': value['accountID'],
+        'CustomFields': value['customFields'] == null ? undefined : ((value['customFields'] as Array<any>).map(IntegrationCustomFieldVmToJSON)),
+        'TemplateType': value['templateType'],
+        'ReopenStatus': value['reopenStatus'],
+        'ResolvedStatus': value['resolvedStatus'],
+        'TitleFormat': value['titleFormat'],
+        'IntegrationWizardResultModel': IntegrationWizardResultModelToJSON(value['integrationWizardResultModel']),
+        'Id': value['id'],
+        'State': value['state'],
     };
 }
 

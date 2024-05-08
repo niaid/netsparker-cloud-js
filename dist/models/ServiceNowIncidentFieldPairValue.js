@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ServiceNowIncidentFieldPairValueToJSON = exports.ServiceNowIncidentFieldPairValueFromJSONTyped = exports.ServiceNowIncidentFieldPairValueFromJSON = exports.instanceOfServiceNowIncidentFieldPairValue = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the ServiceNowIncidentFieldPairValue interface.
  */
 function instanceOfServiceNowIncidentFieldPairValue(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfServiceNowIncidentFieldPairValue = instanceOfServiceNowIncidentFieldPairValue;
 function ServiceNowIncidentFieldPairValueFromJSON(json) {
@@ -28,25 +26,22 @@ function ServiceNowIncidentFieldPairValueFromJSON(json) {
 }
 exports.ServiceNowIncidentFieldPairValueFromJSON = ServiceNowIncidentFieldPairValueFromJSON;
 function ServiceNowIncidentFieldPairValueFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
-        'text': !(0, runtime_1.exists)(json, 'Text') ? undefined : json['Text'],
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'text': json['Text'] == null ? undefined : json['Text'],
     };
 }
 exports.ServiceNowIncidentFieldPairValueFromJSONTyped = ServiceNowIncidentFieldPairValueFromJSONTyped;
 function ServiceNowIncidentFieldPairValueToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Id': value.id,
-        'Text': value.text,
+        'Id': value['id'],
+        'Text': value['text'],
     };
 }
 exports.ServiceNowIncidentFieldPairValueToJSON = ServiceNowIncidentFieldPairValueToJSON;

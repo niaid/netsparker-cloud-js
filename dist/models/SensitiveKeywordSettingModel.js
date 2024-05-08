@@ -18,9 +18,9 @@ exports.SensitiveKeywordSettingModelToJSON = exports.SensitiveKeywordSettingMode
  * Check if a given object implements the SensitiveKeywordSettingModel interface.
  */
 function instanceOfSensitiveKeywordSettingModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "pattern" in value;
-    return isInstance;
+    if (!('pattern' in value))
+        return false;
+    return true;
 }
 exports.instanceOfSensitiveKeywordSettingModel = instanceOfSensitiveKeywordSettingModel;
 function SensitiveKeywordSettingModelFromJSON(json) {
@@ -28,7 +28,7 @@ function SensitiveKeywordSettingModelFromJSON(json) {
 }
 exports.SensitiveKeywordSettingModelFromJSON = SensitiveKeywordSettingModelFromJSON;
 function SensitiveKeywordSettingModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -37,14 +37,11 @@ function SensitiveKeywordSettingModelFromJSONTyped(json, ignoreDiscriminator) {
 }
 exports.SensitiveKeywordSettingModelFromJSONTyped = SensitiveKeywordSettingModelFromJSONTyped;
 function SensitiveKeywordSettingModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Pattern': value.pattern,
+        'Pattern': value['pattern'],
     };
 }
 exports.SensitiveKeywordSettingModelToJSON = SensitiveKeywordSettingModelToJSON;

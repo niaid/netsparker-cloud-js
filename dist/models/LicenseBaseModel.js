@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.LicenseBaseModelToJSON = exports.LicenseBaseModelFromJSONTyped = exports.LicenseBaseModelFromJSON = exports.instanceOfLicenseBaseModel = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the LicenseBaseModel interface.
  */
 function instanceOfLicenseBaseModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfLicenseBaseModel = instanceOfLicenseBaseModel;
 function LicenseBaseModelFromJSON(json) {
@@ -28,29 +26,26 @@ function LicenseBaseModelFromJSON(json) {
 }
 exports.LicenseBaseModelFromJSON = LicenseBaseModelFromJSON;
 function LicenseBaseModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
-        'isActive': !(0, runtime_1.exists)(json, 'IsActive') ? undefined : json['IsActive'],
-        'key': !(0, runtime_1.exists)(json, 'Key') ? undefined : json['Key'],
-        'accountCanCreateSharkScanTask': !(0, runtime_1.exists)(json, 'AccountCanCreateSharkScanTask') ? undefined : json['AccountCanCreateSharkScanTask'],
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'isActive': json['IsActive'] == null ? undefined : json['IsActive'],
+        'key': json['Key'] == null ? undefined : json['Key'],
+        'accountCanCreateSharkScanTask': json['AccountCanCreateSharkScanTask'] == null ? undefined : json['AccountCanCreateSharkScanTask'],
     };
 }
 exports.LicenseBaseModelFromJSONTyped = LicenseBaseModelFromJSONTyped;
 function LicenseBaseModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Id': value.id,
-        'IsActive': value.isActive,
-        'Key': value.key,
-        'AccountCanCreateSharkScanTask': value.accountCanCreateSharkScanTask,
+        'Id': value['id'],
+        'IsActive': value['isActive'],
+        'Key': value['key'],
+        'AccountCanCreateSharkScanTask': value['accountCanCreateSharkScanTask'],
     };
 }
 exports.LicenseBaseModelToJSON = LicenseBaseModelToJSON;

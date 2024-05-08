@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 import type { CustomHttpHeaderModel } from './CustomHttpHeaderModel';
 import {
     CustomHttpHeaderModelFromJSON,
@@ -44,9 +44,7 @@ export interface HeaderAuthenticationModel {
  * Check if a given object implements the HeaderAuthenticationModel interface.
  */
 export function instanceOfHeaderAuthenticationModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function HeaderAuthenticationModelFromJSON(json: any): HeaderAuthenticationModel {
@@ -54,27 +52,24 @@ export function HeaderAuthenticationModelFromJSON(json: any): HeaderAuthenticati
 }
 
 export function HeaderAuthenticationModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): HeaderAuthenticationModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'headers': !exists(json, 'Headers') ? undefined : ((json['Headers'] as Array<any>).map(CustomHttpHeaderModelFromJSON)),
-        'isEnabled': !exists(json, 'IsEnabled') ? undefined : json['IsEnabled'],
+        'headers': json['Headers'] == null ? undefined : ((json['Headers'] as Array<any>).map(CustomHttpHeaderModelFromJSON)),
+        'isEnabled': json['IsEnabled'] == null ? undefined : json['IsEnabled'],
     };
 }
 
 export function HeaderAuthenticationModelToJSON(value?: HeaderAuthenticationModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Headers': value.headers === undefined ? undefined : ((value.headers as Array<any>).map(CustomHttpHeaderModelToJSON)),
-        'IsEnabled': value.isEnabled,
+        'Headers': value['headers'] == null ? undefined : ((value['headers'] as Array<any>).map(CustomHttpHeaderModelToJSON)),
+        'IsEnabled': value['isEnabled'],
     };
 }
 

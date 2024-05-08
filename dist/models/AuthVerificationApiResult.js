@@ -14,7 +14,6 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AuthVerificationApiResultToJSON = exports.AuthVerificationApiResultFromJSONTyped = exports.AuthVerificationApiResultFromJSON = exports.instanceOfAuthVerificationApiResult = exports.AuthVerificationApiResultLogoutSignatureTypeEnum = void 0;
-const runtime_1 = require("../runtime");
 /**
  * @export
  */
@@ -27,8 +26,7 @@ exports.AuthVerificationApiResultLogoutSignatureTypeEnum = {
  * Check if a given object implements the AuthVerificationApiResult interface.
  */
 function instanceOfAuthVerificationApiResult(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfAuthVerificationApiResult = instanceOfAuthVerificationApiResult;
 function AuthVerificationApiResultFromJSON(json) {
@@ -36,29 +34,26 @@ function AuthVerificationApiResultFromJSON(json) {
 }
 exports.AuthVerificationApiResultFromJSON = AuthVerificationApiResultFromJSON;
 function AuthVerificationApiResultFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'keywords': !(0, runtime_1.exists)(json, 'Keywords') ? undefined : json['Keywords'],
-        'loginRequiredUrl': !(0, runtime_1.exists)(json, 'LoginRequiredUrl') ? undefined : json['LoginRequiredUrl'],
-        'logoutSignatureType': !(0, runtime_1.exists)(json, 'LogoutSignatureType') ? undefined : json['LogoutSignatureType'],
-        'redirectLocation': !(0, runtime_1.exists)(json, 'RedirectLocation') ? undefined : json['RedirectLocation'],
+        'keywords': json['Keywords'] == null ? undefined : json['Keywords'],
+        'loginRequiredUrl': json['LoginRequiredUrl'] == null ? undefined : json['LoginRequiredUrl'],
+        'logoutSignatureType': json['LogoutSignatureType'] == null ? undefined : json['LogoutSignatureType'],
+        'redirectLocation': json['RedirectLocation'] == null ? undefined : json['RedirectLocation'],
     };
 }
 exports.AuthVerificationApiResultFromJSONTyped = AuthVerificationApiResultFromJSONTyped;
 function AuthVerificationApiResultToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Keywords': value.keywords,
-        'LoginRequiredUrl': value.loginRequiredUrl,
-        'LogoutSignatureType': value.logoutSignatureType,
-        'RedirectLocation': value.redirectLocation,
+        'Keywords': value['keywords'],
+        'LoginRequiredUrl': value['loginRequiredUrl'],
+        'LogoutSignatureType': value['logoutSignatureType'],
+        'RedirectLocation': value['redirectLocation'],
     };
 }
 exports.AuthVerificationApiResultToJSON = AuthVerificationApiResultToJSON;

@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Get or Set user agent for scan policy
  * @export
@@ -37,9 +37,7 @@ export interface ScanPolicyUserAgentModel {
  * Check if a given object implements the ScanPolicyUserAgentModel interface.
  */
 export function instanceOfScanPolicyUserAgentModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function ScanPolicyUserAgentModelFromJSON(json: any): ScanPolicyUserAgentModel {
@@ -47,27 +45,24 @@ export function ScanPolicyUserAgentModelFromJSON(json: any): ScanPolicyUserAgent
 }
 
 export function ScanPolicyUserAgentModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): ScanPolicyUserAgentModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'value': !exists(json, 'Value') ? undefined : json['Value'],
+        'name': json['Name'] == null ? undefined : json['Name'],
+        'value': json['Value'] == null ? undefined : json['Value'],
     };
 }
 
 export function ScanPolicyUserAgentModelToJSON(value?: ScanPolicyUserAgentModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Name': value.name,
-        'Value': value.value,
+        'Name': value['name'],
+        'Value': value['value'],
     };
 }
 

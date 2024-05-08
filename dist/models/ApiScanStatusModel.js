@@ -14,7 +14,6 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ApiScanStatusModelToJSON = exports.ApiScanStatusModelFromJSONTyped = exports.ApiScanStatusModelFromJSON = exports.instanceOfApiScanStatusModel = exports.ApiScanStatusModelStateEnum = void 0;
-const runtime_1 = require("../runtime");
 /**
  * @export
  */
@@ -35,8 +34,7 @@ exports.ApiScanStatusModelStateEnum = {
  * Check if a given object implements the ApiScanStatusModel interface.
  */
 function instanceOfApiScanStatusModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfApiScanStatusModel = instanceOfApiScanStatusModel;
 function ApiScanStatusModelFromJSON(json) {
@@ -44,29 +42,26 @@ function ApiScanStatusModelFromJSON(json) {
 }
 exports.ApiScanStatusModelFromJSON = ApiScanStatusModelFromJSON;
 function ApiScanStatusModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'completedSteps': !(0, runtime_1.exists)(json, 'CompletedSteps') ? undefined : json['CompletedSteps'],
-        'estimatedLaunchTime': !(0, runtime_1.exists)(json, 'EstimatedLaunchTime') ? undefined : json['EstimatedLaunchTime'],
-        'estimatedSteps': !(0, runtime_1.exists)(json, 'EstimatedSteps') ? undefined : json['EstimatedSteps'],
-        'state': !(0, runtime_1.exists)(json, 'State') ? undefined : json['State'],
+        'completedSteps': json['CompletedSteps'] == null ? undefined : json['CompletedSteps'],
+        'estimatedLaunchTime': json['EstimatedLaunchTime'] == null ? undefined : json['EstimatedLaunchTime'],
+        'estimatedSteps': json['EstimatedSteps'] == null ? undefined : json['EstimatedSteps'],
+        'state': json['State'] == null ? undefined : json['State'],
     };
 }
 exports.ApiScanStatusModelFromJSONTyped = ApiScanStatusModelFromJSONTyped;
 function ApiScanStatusModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'CompletedSteps': value.completedSteps,
-        'EstimatedLaunchTime': value.estimatedLaunchTime,
-        'EstimatedSteps': value.estimatedSteps,
-        'State': value.state,
+        'CompletedSteps': value['completedSteps'],
+        'EstimatedLaunchTime': value['estimatedLaunchTime'],
+        'EstimatedSteps': value['estimatedSteps'],
+        'State': value['state'],
     };
 }
 exports.ApiScanStatusModelToJSON = ApiScanStatusModelToJSON;

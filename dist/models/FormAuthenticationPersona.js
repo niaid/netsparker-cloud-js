@@ -14,7 +14,6 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.FormAuthenticationPersonaToJSON = exports.FormAuthenticationPersonaFromJSONTyped = exports.FormAuthenticationPersonaFromJSON = exports.instanceOfFormAuthenticationPersona = exports.FormAuthenticationPersonaVersionEnum = exports.FormAuthenticationPersonaFormAuthTypeEnum = exports.FormAuthenticationPersonaAlgorithmEnum = exports.FormAuthenticationPersonaOtpTypeEnum = void 0;
-const runtime_1 = require("../runtime");
 /**
  * @export
  */
@@ -48,8 +47,7 @@ exports.FormAuthenticationPersonaVersionEnum = {
  * Check if a given object implements the FormAuthenticationPersona interface.
  */
 function instanceOfFormAuthenticationPersona(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfFormAuthenticationPersona = instanceOfFormAuthenticationPersona;
 function FormAuthenticationPersonaFromJSON(json) {
@@ -57,81 +55,78 @@ function FormAuthenticationPersonaFromJSON(json) {
 }
 exports.FormAuthenticationPersonaFromJSON = FormAuthenticationPersonaFromJSON;
 function FormAuthenticationPersonaFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'isActive': !(0, runtime_1.exists)(json, 'IsActive') ? undefined : json['IsActive'],
-        'password': !(0, runtime_1.exists)(json, 'Password') ? undefined : json['Password'],
-        'userName': !(0, runtime_1.exists)(json, 'UserName') ? undefined : json['UserName'],
-        'otpType': !(0, runtime_1.exists)(json, 'OtpType') ? undefined : json['OtpType'],
-        'secretKey': !(0, runtime_1.exists)(json, 'SecretKey') ? undefined : json['SecretKey'],
-        'digit': !(0, runtime_1.exists)(json, 'Digit') ? undefined : json['Digit'],
-        'period': !(0, runtime_1.exists)(json, 'Period') ? undefined : json['Period'],
-        'algorithm': !(0, runtime_1.exists)(json, 'Algorithm') ? undefined : json['Algorithm'],
-        'formAuthType': !(0, runtime_1.exists)(json, 'FormAuthType') ? undefined : json['FormAuthType'],
-        'integrationId': !(0, runtime_1.exists)(json, 'IntegrationId') ? undefined : json['IntegrationId'],
-        'version': !(0, runtime_1.exists)(json, 'Version') ? undefined : json['Version'],
-        'secretEngine': !(0, runtime_1.exists)(json, 'SecretEngine') ? undefined : json['SecretEngine'],
-        'secret': !(0, runtime_1.exists)(json, 'Secret') ? undefined : json['Secret'],
-        'useStaticUsername': !(0, runtime_1.exists)(json, 'UseStaticUsername') ? undefined : json['UseStaticUsername'],
-        'staticUsername': !(0, runtime_1.exists)(json, 'StaticUsername') ? undefined : json['StaticUsername'],
-        'usernameKey': !(0, runtime_1.exists)(json, 'UsernameKey') ? undefined : json['UsernameKey'],
-        'passwordKey': !(0, runtime_1.exists)(json, 'PasswordKey') ? undefined : json['PasswordKey'],
-        'cyberArkUseStaticUsername': !(0, runtime_1.exists)(json, 'CyberArkUseStaticUsername') ? undefined : json['CyberArkUseStaticUsername'],
-        'cyberArkStaticUsername': !(0, runtime_1.exists)(json, 'CyberArkStaticUsername') ? undefined : json['CyberArkStaticUsername'],
-        'cyberArkUserNameQuery': !(0, runtime_1.exists)(json, 'CyberArkUserNameQuery') ? undefined : json['CyberArkUserNameQuery'],
-        'cyberArkPasswordQuery': !(0, runtime_1.exists)(json, 'CyberArkPasswordQuery') ? undefined : json['CyberArkPasswordQuery'],
-        'azureUseStaticUsername': !(0, runtime_1.exists)(json, 'AzureUseStaticUsername') ? undefined : json['AzureUseStaticUsername'],
-        'azureStaticUsername': !(0, runtime_1.exists)(json, 'AzureStaticUsername') ? undefined : json['AzureStaticUsername'],
-        'azureSecret': !(0, runtime_1.exists)(json, 'AzureSecret') ? undefined : json['AzureSecret'],
-        'azureVaultName': !(0, runtime_1.exists)(json, 'AzureVaultName') ? undefined : json['AzureVaultName'],
-        'azureUsernameKey': !(0, runtime_1.exists)(json, 'AzureUsernameKey') ? undefined : json['AzureUsernameKey'],
-        'azurePasswordKey': !(0, runtime_1.exists)(json, 'AzurePasswordKey') ? undefined : json['AzurePasswordKey'],
-        'originalUserName': !(0, runtime_1.exists)(json, 'OriginalUserName') ? undefined : json['OriginalUserName'],
-        'isReplacedCredentials': !(0, runtime_1.exists)(json, 'IsReplacedCredentials') ? undefined : json['IsReplacedCredentials'],
-        'index': !(0, runtime_1.exists)(json, 'Index') ? undefined : json['Index'],
+        'isActive': json['IsActive'] == null ? undefined : json['IsActive'],
+        'password': json['Password'] == null ? undefined : json['Password'],
+        'userName': json['UserName'] == null ? undefined : json['UserName'],
+        'otpType': json['OtpType'] == null ? undefined : json['OtpType'],
+        'secretKey': json['SecretKey'] == null ? undefined : json['SecretKey'],
+        'digit': json['Digit'] == null ? undefined : json['Digit'],
+        'period': json['Period'] == null ? undefined : json['Period'],
+        'algorithm': json['Algorithm'] == null ? undefined : json['Algorithm'],
+        'formAuthType': json['FormAuthType'] == null ? undefined : json['FormAuthType'],
+        'integrationId': json['IntegrationId'] == null ? undefined : json['IntegrationId'],
+        'version': json['Version'] == null ? undefined : json['Version'],
+        'secretEngine': json['SecretEngine'] == null ? undefined : json['SecretEngine'],
+        'secret': json['Secret'] == null ? undefined : json['Secret'],
+        'useStaticUsername': json['UseStaticUsername'] == null ? undefined : json['UseStaticUsername'],
+        'staticUsername': json['StaticUsername'] == null ? undefined : json['StaticUsername'],
+        'usernameKey': json['UsernameKey'] == null ? undefined : json['UsernameKey'],
+        'passwordKey': json['PasswordKey'] == null ? undefined : json['PasswordKey'],
+        'cyberArkUseStaticUsername': json['CyberArkUseStaticUsername'] == null ? undefined : json['CyberArkUseStaticUsername'],
+        'cyberArkStaticUsername': json['CyberArkStaticUsername'] == null ? undefined : json['CyberArkStaticUsername'],
+        'cyberArkUserNameQuery': json['CyberArkUserNameQuery'] == null ? undefined : json['CyberArkUserNameQuery'],
+        'cyberArkPasswordQuery': json['CyberArkPasswordQuery'] == null ? undefined : json['CyberArkPasswordQuery'],
+        'azureUseStaticUsername': json['AzureUseStaticUsername'] == null ? undefined : json['AzureUseStaticUsername'],
+        'azureStaticUsername': json['AzureStaticUsername'] == null ? undefined : json['AzureStaticUsername'],
+        'azureSecret': json['AzureSecret'] == null ? undefined : json['AzureSecret'],
+        'azureVaultName': json['AzureVaultName'] == null ? undefined : json['AzureVaultName'],
+        'azureUsernameKey': json['AzureUsernameKey'] == null ? undefined : json['AzureUsernameKey'],
+        'azurePasswordKey': json['AzurePasswordKey'] == null ? undefined : json['AzurePasswordKey'],
+        'originalUserName': json['OriginalUserName'] == null ? undefined : json['OriginalUserName'],
+        'isReplacedCredentials': json['IsReplacedCredentials'] == null ? undefined : json['IsReplacedCredentials'],
+        'index': json['Index'] == null ? undefined : json['Index'],
     };
 }
 exports.FormAuthenticationPersonaFromJSONTyped = FormAuthenticationPersonaFromJSONTyped;
 function FormAuthenticationPersonaToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'IsActive': value.isActive,
-        'Password': value.password,
-        'UserName': value.userName,
-        'OtpType': value.otpType,
-        'SecretKey': value.secretKey,
-        'Digit': value.digit,
-        'Period': value.period,
-        'Algorithm': value.algorithm,
-        'FormAuthType': value.formAuthType,
-        'IntegrationId': value.integrationId,
-        'Version': value.version,
-        'SecretEngine': value.secretEngine,
-        'Secret': value.secret,
-        'UseStaticUsername': value.useStaticUsername,
-        'StaticUsername': value.staticUsername,
-        'UsernameKey': value.usernameKey,
-        'PasswordKey': value.passwordKey,
-        'CyberArkUseStaticUsername': value.cyberArkUseStaticUsername,
-        'CyberArkStaticUsername': value.cyberArkStaticUsername,
-        'CyberArkUserNameQuery': value.cyberArkUserNameQuery,
-        'CyberArkPasswordQuery': value.cyberArkPasswordQuery,
-        'AzureUseStaticUsername': value.azureUseStaticUsername,
-        'AzureStaticUsername': value.azureStaticUsername,
-        'AzureSecret': value.azureSecret,
-        'AzureVaultName': value.azureVaultName,
-        'AzureUsernameKey': value.azureUsernameKey,
-        'AzurePasswordKey': value.azurePasswordKey,
-        'OriginalUserName': value.originalUserName,
-        'IsReplacedCredentials': value.isReplacedCredentials,
-        'Index': value.index,
+        'IsActive': value['isActive'],
+        'Password': value['password'],
+        'UserName': value['userName'],
+        'OtpType': value['otpType'],
+        'SecretKey': value['secretKey'],
+        'Digit': value['digit'],
+        'Period': value['period'],
+        'Algorithm': value['algorithm'],
+        'FormAuthType': value['formAuthType'],
+        'IntegrationId': value['integrationId'],
+        'Version': value['version'],
+        'SecretEngine': value['secretEngine'],
+        'Secret': value['secret'],
+        'UseStaticUsername': value['useStaticUsername'],
+        'StaticUsername': value['staticUsername'],
+        'UsernameKey': value['usernameKey'],
+        'PasswordKey': value['passwordKey'],
+        'CyberArkUseStaticUsername': value['cyberArkUseStaticUsername'],
+        'CyberArkStaticUsername': value['cyberArkStaticUsername'],
+        'CyberArkUserNameQuery': value['cyberArkUserNameQuery'],
+        'CyberArkPasswordQuery': value['cyberArkPasswordQuery'],
+        'AzureUseStaticUsername': value['azureUseStaticUsername'],
+        'AzureStaticUsername': value['azureStaticUsername'],
+        'AzureSecret': value['azureSecret'],
+        'AzureVaultName': value['azureVaultName'],
+        'AzureUsernameKey': value['azureUsernameKey'],
+        'AzurePasswordKey': value['azurePasswordKey'],
+        'OriginalUserName': value['originalUserName'],
+        'IsReplacedCredentials': value['isReplacedCredentials'],
+        'Index': value['index'],
     };
 }
 exports.FormAuthenticationPersonaToJSON = FormAuthenticationPersonaToJSON;

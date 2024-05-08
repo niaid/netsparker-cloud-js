@@ -72,7 +72,7 @@ export interface ScansListScheduledRequest {
     pageSize?: number;
 }
 export interface ScansNewRequest {
-    model: NewScanTaskApiModel;
+    model: Omit<NewScanTaskApiModel, 'IsTargetUrlRequired'>;
 }
 export interface ScansNewFromScanRequest {
     id: string;
@@ -107,7 +107,7 @@ export interface ScansRetestRequest {
     model: BaseScanApiModel;
 }
 export interface ScansScheduleRequest {
-    model: NewScheduledScanApiModel;
+    model: Omit<NewScheduledScanApiModel, 'IsTargetUrlRequired'>;
 }
 export interface ScansScheduleIncrementalRequest {
     model: NewScheduledIncrementalScanApiModel;
@@ -125,7 +125,7 @@ export interface ScansUnscheduleRequest {
     id: string;
 }
 export interface ScansUpdateScheduledRequest {
-    model: UpdateScheduledScanApiModel;
+    model: Omit<UpdateScheduledScanApiModel, 'IsTargetUrlRequired'>;
 }
 export interface ScansUpdateScheduledIncrementalRequest {
     model: UpdateScheduledIncrementalScanApiModel;

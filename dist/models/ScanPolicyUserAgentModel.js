@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ScanPolicyUserAgentModelToJSON = exports.ScanPolicyUserAgentModelFromJSONTyped = exports.ScanPolicyUserAgentModelFromJSON = exports.instanceOfScanPolicyUserAgentModel = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the ScanPolicyUserAgentModel interface.
  */
 function instanceOfScanPolicyUserAgentModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfScanPolicyUserAgentModel = instanceOfScanPolicyUserAgentModel;
 function ScanPolicyUserAgentModelFromJSON(json) {
@@ -28,25 +26,22 @@ function ScanPolicyUserAgentModelFromJSON(json) {
 }
 exports.ScanPolicyUserAgentModelFromJSON = ScanPolicyUserAgentModelFromJSON;
 function ScanPolicyUserAgentModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
-        'value': !(0, runtime_1.exists)(json, 'Value') ? undefined : json['Value'],
+        'name': json['Name'] == null ? undefined : json['Name'],
+        'value': json['Value'] == null ? undefined : json['Value'],
     };
 }
 exports.ScanPolicyUserAgentModelFromJSONTyped = ScanPolicyUserAgentModelFromJSONTyped;
 function ScanPolicyUserAgentModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Name': value.name,
-        'Value': value.value,
+        'Name': value['name'],
+        'Value': value['value'],
     };
 }
 exports.ScanPolicyUserAgentModelToJSON = ScanPolicyUserAgentModelToJSON;

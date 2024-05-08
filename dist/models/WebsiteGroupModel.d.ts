@@ -52,4 +52,4 @@ export interface WebsiteGroupModel {
 export declare function instanceOfWebsiteGroupModel(value: object): boolean;
 export declare function WebsiteGroupModelFromJSON(json: any): WebsiteGroupModel;
 export declare function WebsiteGroupModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): WebsiteGroupModel;
-export declare function WebsiteGroupModelToJSON(value?: WebsiteGroupModel | null): any;
+export declare function WebsiteGroupModelToJSON(value?: Omit<WebsiteGroupModel, 'DisplayName'> | null): any;

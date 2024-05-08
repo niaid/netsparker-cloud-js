@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 import type { OtpSettings } from './OtpSettings';
 import {
     OtpSettingsFromJSON,
@@ -62,13 +62,11 @@ export interface FormAuthenticationVerificationApiModel {
  * Check if a given object implements the FormAuthenticationVerificationApiModel interface.
  */
 export function instanceOfFormAuthenticationVerificationApiModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "loginFormUrl" in value;
-    isInstance = isInstance && "password" in value;
-    isInstance = isInstance && "scanTargetUrl" in value;
-    isInstance = isInstance && "username" in value;
-
-    return isInstance;
+    if (!('loginFormUrl' in value)) return false;
+    if (!('password' in value)) return false;
+    if (!('scanTargetUrl' in value)) return false;
+    if (!('username' in value)) return false;
+    return true;
 }
 
 export function FormAuthenticationVerificationApiModelFromJSON(json: any): FormAuthenticationVerificationApiModel {
@@ -76,7 +74,7 @@ export function FormAuthenticationVerificationApiModelFromJSON(json: any): FormA
 }
 
 export function FormAuthenticationVerificationApiModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): FormAuthenticationVerificationApiModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -85,24 +83,21 @@ export function FormAuthenticationVerificationApiModelFromJSONTyped(json: any, i
         'password': json['Password'],
         'scanTargetUrl': json['ScanTargetUrl'],
         'username': json['Username'],
-        'otpSettings': !exists(json, 'OtpSettings') ? undefined : OtpSettingsFromJSON(json['OtpSettings']),
+        'otpSettings': json['OtpSettings'] == null ? undefined : OtpSettingsFromJSON(json['OtpSettings']),
     };
 }
 
 export function FormAuthenticationVerificationApiModelToJSON(value?: FormAuthenticationVerificationApiModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'LoginFormUrl': value.loginFormUrl,
-        'Password': value.password,
-        'ScanTargetUrl': value.scanTargetUrl,
-        'Username': value.username,
-        'OtpSettings': OtpSettingsToJSON(value.otpSettings),
+        'LoginFormUrl': value['loginFormUrl'],
+        'Password': value['password'],
+        'ScanTargetUrl': value['scanTargetUrl'],
+        'Username': value['username'],
+        'OtpSettings': OtpSettingsToJSON(value['otpSettings']),
     };
 }
 

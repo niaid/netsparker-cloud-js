@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Scan Policy web storage settings
  * @export
@@ -60,12 +60,10 @@ export type WebStorageSettingTypeEnum = typeof WebStorageSettingTypeEnum[keyof t
  * Check if a given object implements the WebStorageSetting interface.
  */
 export function instanceOfWebStorageSetting(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "key" in value;
-    isInstance = isInstance && "type" in value;
-    isInstance = isInstance && "value" in value;
-
-    return isInstance;
+    if (!('key' in value)) return false;
+    if (!('type' in value)) return false;
+    if (!('value' in value)) return false;
+    return true;
 }
 
 export function WebStorageSettingFromJSON(json: any): WebStorageSetting {
@@ -73,31 +71,28 @@ export function WebStorageSettingFromJSON(json: any): WebStorageSetting {
 }
 
 export function WebStorageSettingFromJSONTyped(json: any, ignoreDiscriminator: boolean): WebStorageSetting {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
         'key': json['Key'],
-        'origin': !exists(json, 'Origin') ? undefined : json['Origin'],
+        'origin': json['Origin'] == null ? undefined : json['Origin'],
         'type': json['Type'],
         'value': json['Value'],
     };
 }
 
 export function WebStorageSettingToJSON(value?: WebStorageSetting | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Key': value.key,
-        'Origin': value.origin,
-        'Type': value.type,
-        'Value': value.value,
+        'Key': value['key'],
+        'Origin': value['origin'],
+        'Type': value['type'],
+        'Value': value['value'],
     };
 }
 

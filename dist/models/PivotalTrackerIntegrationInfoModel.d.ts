@@ -9,8 +9,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
 import type { IntegrationWizardResultModel } from './IntegrationWizardResultModel';
+import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
 /**
  * The Pivotal integration info
  * @export
@@ -137,6 +137,18 @@ export interface PivotalTrackerIntegrationInfoModel {
      * @memberof PivotalTrackerIntegrationInfoModel
      */
     integrationWizardResultModel?: IntegrationWizardResultModel;
+    /**
+     *
+     * @type {string}
+     * @memberof PivotalTrackerIntegrationInfoModel
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof PivotalTrackerIntegrationInfoModel
+     */
+    state?: PivotalTrackerIntegrationInfoModelStateEnum;
 }
 /**
  * @export
@@ -196,9 +208,17 @@ export declare const PivotalTrackerIntegrationInfoModelTemplateTypeEnum: {
 };
 export type PivotalTrackerIntegrationInfoModelTemplateTypeEnum = typeof PivotalTrackerIntegrationInfoModelTemplateTypeEnum[keyof typeof PivotalTrackerIntegrationInfoModelTemplateTypeEnum];
 /**
+ * @export
+ */
+export declare const PivotalTrackerIntegrationInfoModelStateEnum: {
+    readonly Active: "Active";
+    readonly Suspended: "Suspended";
+};
+export type PivotalTrackerIntegrationInfoModelStateEnum = typeof PivotalTrackerIntegrationInfoModelStateEnum[keyof typeof PivotalTrackerIntegrationInfoModelStateEnum];
+/**
  * Check if a given object implements the PivotalTrackerIntegrationInfoModel interface.
  */
 export declare function instanceOfPivotalTrackerIntegrationInfoModel(value: object): boolean;
 export declare function PivotalTrackerIntegrationInfoModelFromJSON(json: any): PivotalTrackerIntegrationInfoModel;
 export declare function PivotalTrackerIntegrationInfoModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): PivotalTrackerIntegrationInfoModel;
-export declare function PivotalTrackerIntegrationInfoModelToJSON(value?: PivotalTrackerIntegrationInfoModel | null): any;
+export declare function PivotalTrackerIntegrationInfoModelToJSON(value?: Omit<PivotalTrackerIntegrationInfoModel, 'Type' | 'GenericErrorMessage' | 'Identifier' | 'TestMessageBody' | 'TestMessageTitle' | 'WebhookUrl'> | null): any;

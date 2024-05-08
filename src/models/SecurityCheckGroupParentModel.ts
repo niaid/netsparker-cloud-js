@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 import type { SecurityCheckGroupModel } from './SecurityCheckGroupModel';
 import {
     SecurityCheckGroupModelFromJSON,
@@ -44,9 +44,7 @@ export interface SecurityCheckGroupParentModel {
  * Check if a given object implements the SecurityCheckGroupParentModel interface.
  */
 export function instanceOfSecurityCheckGroupParentModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function SecurityCheckGroupParentModelFromJSON(json: any): SecurityCheckGroupParentModel {
@@ -54,27 +52,24 @@ export function SecurityCheckGroupParentModelFromJSON(json: any): SecurityCheckG
 }
 
 export function SecurityCheckGroupParentModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): SecurityCheckGroupParentModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'title': !exists(json, 'Title') ? undefined : json['Title'],
-        'securityCheckGroups': !exists(json, 'SecurityCheckGroups') ? undefined : ((json['SecurityCheckGroups'] as Array<any>).map(SecurityCheckGroupModelFromJSON)),
+        'title': json['Title'] == null ? undefined : json['Title'],
+        'securityCheckGroups': json['SecurityCheckGroups'] == null ? undefined : ((json['SecurityCheckGroups'] as Array<any>).map(SecurityCheckGroupModelFromJSON)),
     };
 }
 
 export function SecurityCheckGroupParentModelToJSON(value?: SecurityCheckGroupParentModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Title': value.title,
-        'SecurityCheckGroups': value.securityCheckGroups === undefined ? undefined : ((value.securityCheckGroups as Array<any>).map(SecurityCheckGroupModelToJSON)),
+        'Title': value['title'],
+        'SecurityCheckGroups': value['securityCheckGroups'] == null ? undefined : ((value['securityCheckGroups'] as Array<any>).map(SecurityCheckGroupModelToJSON)),
     };
 }
 

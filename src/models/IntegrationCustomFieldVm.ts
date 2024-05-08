@@ -12,13 +12,13 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
-import type { FileCache } from './FileCache';
+import { mapValues } from '../runtime';
+import type { CachedFile } from './CachedFile';
 import {
-    FileCacheFromJSON,
-    FileCacheFromJSONTyped,
-    FileCacheToJSON,
-} from './FileCache';
+    CachedFileFromJSON,
+    CachedFileFromJSONTyped,
+    CachedFileToJSON,
+} from './CachedFile';
 
 /**
  * 
@@ -28,10 +28,10 @@ import {
 export interface IntegrationCustomFieldVm {
     /**
      * 
-     * @type {FileCache}
+     * @type {CachedFile}
      * @memberof IntegrationCustomFieldVm
      */
-    file?: FileCache;
+    file?: CachedFile;
     /**
      * 
      * @type {string}
@@ -70,10 +70,8 @@ export type IntegrationCustomFieldVmInputTypeEnum = typeof IntegrationCustomFiel
  * Check if a given object implements the IntegrationCustomFieldVm interface.
  */
 export function instanceOfIntegrationCustomFieldVm(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "name" in value;
-
-    return isInstance;
+    if (!('name' in value)) return false;
+    return true;
 }
 
 export function IntegrationCustomFieldVmFromJSON(json: any): IntegrationCustomFieldVm {
@@ -81,31 +79,28 @@ export function IntegrationCustomFieldVmFromJSON(json: any): IntegrationCustomFi
 }
 
 export function IntegrationCustomFieldVmFromJSONTyped(json: any, ignoreDiscriminator: boolean): IntegrationCustomFieldVm {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'file': !exists(json, 'File') ? undefined : FileCacheFromJSON(json['File']),
+        'file': json['File'] == null ? undefined : CachedFileFromJSON(json['File']),
         'name': json['Name'],
-        'value': !exists(json, 'Value') ? undefined : json['Value'],
-        'inputType': !exists(json, 'InputType') ? undefined : json['InputType'],
+        'value': json['Value'] == null ? undefined : json['Value'],
+        'inputType': json['InputType'] == null ? undefined : json['InputType'],
     };
 }
 
 export function IntegrationCustomFieldVmToJSON(value?: IntegrationCustomFieldVm | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'File': FileCacheToJSON(value.file),
-        'Name': value.name,
-        'Value': value.value,
-        'InputType': value.inputType,
+        'File': CachedFileToJSON(value['file']),
+        'Name': value['name'],
+        'Value': value['value'],
+        'InputType': value['inputType'],
     };
 }
 

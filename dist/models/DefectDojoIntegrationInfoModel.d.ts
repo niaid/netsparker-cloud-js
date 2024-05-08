@@ -9,8 +9,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
 import type { IntegrationWizardResultModel } from './IntegrationWizardResultModel';
+import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
 /**
  * The DefectDojo integration info
  * @export
@@ -137,6 +137,18 @@ export interface DefectDojoIntegrationInfoModel {
      * @memberof DefectDojoIntegrationInfoModel
      */
     integrationWizardResultModel?: IntegrationWizardResultModel;
+    /**
+     *
+     * @type {string}
+     * @memberof DefectDojoIntegrationInfoModel
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof DefectDojoIntegrationInfoModel
+     */
+    state?: DefectDojoIntegrationInfoModelStateEnum;
 }
 /**
  * @export
@@ -186,9 +198,17 @@ export declare const DefectDojoIntegrationInfoModelTemplateTypeEnum: {
 };
 export type DefectDojoIntegrationInfoModelTemplateTypeEnum = typeof DefectDojoIntegrationInfoModelTemplateTypeEnum[keyof typeof DefectDojoIntegrationInfoModelTemplateTypeEnum];
 /**
+ * @export
+ */
+export declare const DefectDojoIntegrationInfoModelStateEnum: {
+    readonly Active: "Active";
+    readonly Suspended: "Suspended";
+};
+export type DefectDojoIntegrationInfoModelStateEnum = typeof DefectDojoIntegrationInfoModelStateEnum[keyof typeof DefectDojoIntegrationInfoModelStateEnum];
+/**
  * Check if a given object implements the DefectDojoIntegrationInfoModel interface.
  */
 export declare function instanceOfDefectDojoIntegrationInfoModel(value: object): boolean;
 export declare function DefectDojoIntegrationInfoModelFromJSON(json: any): DefectDojoIntegrationInfoModel;
 export declare function DefectDojoIntegrationInfoModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): DefectDojoIntegrationInfoModel;
-export declare function DefectDojoIntegrationInfoModelToJSON(value?: DefectDojoIntegrationInfoModel | null): any;
+export declare function DefectDojoIntegrationInfoModelToJSON(value?: Omit<DefectDojoIntegrationInfoModel, 'Type' | 'GenericErrorMessage' | 'Identifier' | 'TestMessageBody' | 'TestMessageTitle' | 'WebhookUrl'> | null): any;

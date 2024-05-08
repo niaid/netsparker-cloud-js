@@ -64,8 +64,11 @@ export class TeamApi extends runtime.BaseAPI {
      * Deletes a team
      */
     async teamDeleteRaw(requestParameters: TeamDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>> {
-        if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling teamDelete.');
+        if (requestParameters['id'] == null) {
+            throw new runtime.RequiredError(
+                'id',
+                'Required parameter "id" was null or undefined when calling teamDelete().'
+            );
         }
 
         const queryParameters: any = {};
@@ -73,7 +76,7 @@ export class TeamApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/api/1.0/team/delete/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
+            path: `/api/1.0/team/delete/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -98,8 +101,11 @@ export class TeamApi extends runtime.BaseAPI {
      * Gets the team by the specified id.
      */
     async teamGetRaw(requestParameters: TeamGetRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TeamApiViewModel>> {
-        if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling teamGet.');
+        if (requestParameters['id'] == null) {
+            throw new runtime.RequiredError(
+                'id',
+                'Required parameter "id" was null or undefined when calling teamGet().'
+            );
         }
 
         const queryParameters: any = {};
@@ -107,7 +113,7 @@ export class TeamApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/api/1.0/team/get/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
+            path: `/api/1.0/team/get/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -130,12 +136,12 @@ export class TeamApi extends runtime.BaseAPI {
     async teamListRaw(requestParameters: TeamListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TeamApiModelListApiResult>> {
         const queryParameters: any = {};
 
-        if (requestParameters.page !== undefined) {
-            queryParameters['page'] = requestParameters.page;
+        if (requestParameters['page'] != null) {
+            queryParameters['page'] = requestParameters['page'];
         }
 
-        if (requestParameters.pageSize !== undefined) {
-            queryParameters['pageSize'] = requestParameters.pageSize;
+        if (requestParameters['pageSize'] != null) {
+            queryParameters['pageSize'] = requestParameters['pageSize'];
         }
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -162,8 +168,11 @@ export class TeamApi extends runtime.BaseAPI {
      * Creates a new team
      */
     async teamNewRaw(requestParameters: TeamNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TeamApiViewModel>> {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling teamNew.');
+        if (requestParameters['model'] == null) {
+            throw new runtime.RequiredError(
+                'model',
+                'Required parameter "model" was null or undefined when calling teamNew().'
+            );
         }
 
         const queryParameters: any = {};
@@ -177,7 +186,7 @@ export class TeamApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: NewTeamApiModelToJSON(requestParameters.model),
+            body: NewTeamApiModelToJSON(requestParameters['model']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => TeamApiViewModelFromJSON(jsonValue));
@@ -195,8 +204,11 @@ export class TeamApi extends runtime.BaseAPI {
      * Updates a team
      */
     async teamUpdateRaw(requestParameters: TeamUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<TeamApiViewModel>> {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling teamUpdate.');
+        if (requestParameters['model'] == null) {
+            throw new runtime.RequiredError(
+                'model',
+                'Required parameter "model" was null or undefined when calling teamUpdate().'
+            );
         }
 
         const queryParameters: any = {};
@@ -210,7 +222,7 @@ export class TeamApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: UpdateTeamApiModelToJSON(requestParameters.model),
+            body: UpdateTeamApiModelToJSON(requestParameters['model']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => TeamApiViewModelFromJSON(jsonValue));

@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a model for carrying out ignored parameter patterns.
  * @export
@@ -58,12 +58,10 @@ export type IgnorePatternSettingModelParameterTypeEnum = typeof IgnorePatternSet
  * Check if a given object implements the IgnorePatternSettingModel interface.
  */
 export function instanceOfIgnorePatternSettingModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "name" in value;
-    isInstance = isInstance && "parameterType" in value;
-    isInstance = isInstance && "pattern" in value;
-
-    return isInstance;
+    if (!('name' in value)) return false;
+    if (!('parameterType' in value)) return false;
+    if (!('pattern' in value)) return false;
+    return true;
 }
 
 export function IgnorePatternSettingModelFromJSON(json: any): IgnorePatternSettingModel {
@@ -71,7 +69,7 @@ export function IgnorePatternSettingModelFromJSON(json: any): IgnorePatternSetti
 }
 
 export function IgnorePatternSettingModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): IgnorePatternSettingModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -83,17 +81,14 @@ export function IgnorePatternSettingModelFromJSONTyped(json: any, ignoreDiscrimi
 }
 
 export function IgnorePatternSettingModelToJSON(value?: IgnorePatternSettingModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Name': value.name,
-        'ParameterType': value.parameterType,
-        'Pattern': value.pattern,
+        'Name': value['name'],
+        'ParameterType': value['parameterType'],
+        'Pattern': value['pattern'],
     };
 }
 

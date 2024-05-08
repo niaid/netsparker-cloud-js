@@ -12,13 +12,13 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
-import type { ApiFileModel } from './ApiFileModel';
+import { mapValues } from '../runtime';
+import type { ApiFile } from './ApiFile';
 import {
-    ApiFileModelFromJSON,
-    ApiFileModelFromJSONTyped,
-    ApiFileModelToJSON,
-} from './ApiFileModel';
+    ApiFileFromJSON,
+    ApiFileFromJSONTyped,
+    ApiFileToJSON,
+} from './ApiFile';
 
 /**
  * Represents a model for carrying out client certificate authentication settings.
@@ -28,10 +28,10 @@ import {
 export interface ClientCertificateAuthenticationApiModel {
     /**
      * 
-     * @type {ApiFileModel}
+     * @type {ApiFile}
      * @memberof ClientCertificateAuthenticationApiModel
      */
-    file?: ApiFileModel;
+    file?: ApiFile;
     /**
      * Gets or sets a value indicating whether client certificate authentication is enabled.
      * @type {boolean}
@@ -50,9 +50,7 @@ export interface ClientCertificateAuthenticationApiModel {
  * Check if a given object implements the ClientCertificateAuthenticationApiModel interface.
  */
 export function instanceOfClientCertificateAuthenticationApiModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function ClientCertificateAuthenticationApiModelFromJSON(json: any): ClientCertificateAuthenticationApiModel {
@@ -60,29 +58,26 @@ export function ClientCertificateAuthenticationApiModelFromJSON(json: any): Clie
 }
 
 export function ClientCertificateAuthenticationApiModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): ClientCertificateAuthenticationApiModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'file': !exists(json, 'File') ? undefined : ApiFileModelFromJSON(json['File']),
-        'isEnabled': !exists(json, 'IsEnabled') ? undefined : json['IsEnabled'],
-        'password': !exists(json, 'Password') ? undefined : json['Password'],
+        'file': json['File'] == null ? undefined : ApiFileFromJSON(json['File']),
+        'isEnabled': json['IsEnabled'] == null ? undefined : json['IsEnabled'],
+        'password': json['Password'] == null ? undefined : json['Password'],
     };
 }
 
 export function ClientCertificateAuthenticationApiModelToJSON(value?: ClientCertificateAuthenticationApiModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'File': ApiFileModelToJSON(value.file),
-        'IsEnabled': value.isEnabled,
-        'Password': value.password,
+        'File': ApiFileToJSON(value['file']),
+        'IsEnabled': value['isEnabled'],
+        'Password': value['password'],
     };
 }
 

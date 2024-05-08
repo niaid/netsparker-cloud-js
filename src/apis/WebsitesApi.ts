@@ -102,8 +102,11 @@ export class WebsitesApi extends runtime.BaseAPI {
      * Deletes a website.
      */
     async websitesDeleteRaw(requestParameters: WebsitesDeleteRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>> {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling websitesDelete.');
+        if (requestParameters['model'] == null) {
+            throw new runtime.RequiredError(
+                'model',
+                'Required parameter "model" was null or undefined when calling websitesDelete().'
+            );
         }
 
         const queryParameters: any = {};
@@ -117,7 +120,7 @@ export class WebsitesApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: DeleteWebsiteApiModelToJSON(requestParameters.model),
+            body: DeleteWebsiteApiModelToJSON(requestParameters['model']),
         }, initOverrides);
 
         if (this.isJsonMime(response.headers.get('content-type'))) {
@@ -139,8 +142,11 @@ export class WebsitesApi extends runtime.BaseAPI {
      * Gets website by id.
      */
     async websitesGetByIdRaw(requestParameters: WebsitesGetByIdRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteApiModel>> {
-        if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id','Required parameter requestParameters.id was null or undefined when calling websitesGetById.');
+        if (requestParameters['id'] == null) {
+            throw new runtime.RequiredError(
+                'id',
+                'Required parameter "id" was null or undefined when calling websitesGetById().'
+            );
         }
 
         const queryParameters: any = {};
@@ -148,7 +154,7 @@ export class WebsitesApi extends runtime.BaseAPI {
         const headerParameters: runtime.HTTPHeaders = {};
 
         const response = await this.request({
-            path: `/api/1.0/websites/get/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
+            path: `/api/1.0/websites/get/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -169,14 +175,17 @@ export class WebsitesApi extends runtime.BaseAPI {
      * Gets website by name or URL.
      */
     async websitesGetByQueryRaw(requestParameters: WebsitesGetByQueryRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteApiModel>> {
-        if (requestParameters.query === null || requestParameters.query === undefined) {
-            throw new runtime.RequiredError('query','Required parameter requestParameters.query was null or undefined when calling websitesGetByQuery.');
+        if (requestParameters['query'] == null) {
+            throw new runtime.RequiredError(
+                'query',
+                'Required parameter "query" was null or undefined when calling websitesGetByQuery().'
+            );
         }
 
         const queryParameters: any = {};
 
-        if (requestParameters.query !== undefined) {
-            queryParameters['query'] = requestParameters.query;
+        if (requestParameters['query'] != null) {
+            queryParameters['query'] = requestParameters['query'];
         }
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -203,22 +212,25 @@ export class WebsitesApi extends runtime.BaseAPI {
      * Gets the list of websites by group name or id.
      */
     async websitesGetWebsitesByGroupRaw(requestParameters: WebsitesGetWebsitesByGroupRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteListApiResult>> {
-        if (requestParameters.query === null || requestParameters.query === undefined) {
-            throw new runtime.RequiredError('query','Required parameter requestParameters.query was null or undefined when calling websitesGetWebsitesByGroup.');
+        if (requestParameters['query'] == null) {
+            throw new runtime.RequiredError(
+                'query',
+                'Required parameter "query" was null or undefined when calling websitesGetWebsitesByGroup().'
+            );
         }
 
         const queryParameters: any = {};
 
-        if (requestParameters.query !== undefined) {
-            queryParameters['query'] = requestParameters.query;
+        if (requestParameters['query'] != null) {
+            queryParameters['query'] = requestParameters['query'];
         }
 
-        if (requestParameters.page !== undefined) {
-            queryParameters['page'] = requestParameters.page;
+        if (requestParameters['page'] != null) {
+            queryParameters['page'] = requestParameters['page'];
         }
 
-        if (requestParameters.pageSize !== undefined) {
-            queryParameters['pageSize'] = requestParameters.pageSize;
+        if (requestParameters['pageSize'] != null) {
+            queryParameters['pageSize'] = requestParameters['pageSize'];
         }
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -247,12 +259,12 @@ export class WebsitesApi extends runtime.BaseAPI {
     async websitesListRaw(requestParameters: WebsitesListRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteListApiResult>> {
         const queryParameters: any = {};
 
-        if (requestParameters.page !== undefined) {
-            queryParameters['page'] = requestParameters.page;
+        if (requestParameters['page'] != null) {
+            queryParameters['page'] = requestParameters['page'];
         }
 
-        if (requestParameters.pageSize !== undefined) {
-            queryParameters['pageSize'] = requestParameters.pageSize;
+        if (requestParameters['pageSize'] != null) {
+            queryParameters['pageSize'] = requestParameters['pageSize'];
         }
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -279,8 +291,11 @@ export class WebsitesApi extends runtime.BaseAPI {
      * Creates a new website.
      */
     async websitesNewRaw(requestParameters: WebsitesNewRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteApiModel>> {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling websitesNew.');
+        if (requestParameters['model'] == null) {
+            throw new runtime.RequiredError(
+                'model',
+                'Required parameter "model" was null or undefined when calling websitesNew().'
+            );
         }
 
         const queryParameters: any = {};
@@ -294,7 +309,7 @@ export class WebsitesApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: NewWebsiteApiModelToJSON(requestParameters.model),
+            body: NewWebsiteApiModelToJSON(requestParameters['model']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => WebsiteApiModelFromJSON(jsonValue));
@@ -312,8 +327,11 @@ export class WebsitesApi extends runtime.BaseAPI {
      * Sends the verification email if verification limit not exceeded yet.
      */
     async websitesSendVerificationEmailRaw(requestParameters: WebsitesSendVerificationEmailRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<SendVerificationEmailModel>> {
-        if (requestParameters.websiteUrl === null || requestParameters.websiteUrl === undefined) {
-            throw new runtime.RequiredError('websiteUrl','Required parameter requestParameters.websiteUrl was null or undefined when calling websitesSendVerificationEmail.');
+        if (requestParameters['websiteUrl'] == null) {
+            throw new runtime.RequiredError(
+                'websiteUrl',
+                'Required parameter "websiteUrl" was null or undefined when calling websitesSendVerificationEmail().'
+            );
         }
 
         const queryParameters: any = {};
@@ -327,7 +345,7 @@ export class WebsitesApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: requestParameters.websiteUrl as any,
+            body: requestParameters['websiteUrl'] as any,
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => SendVerificationEmailModelFromJSON(jsonValue));
@@ -345,8 +363,11 @@ export class WebsitesApi extends runtime.BaseAPI {
      * Starts the verification with specified method.
      */
     async websitesStartVerificationRaw(requestParameters: WebsitesStartVerificationRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<StartVerificationResult>> {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling websitesStartVerification.');
+        if (requestParameters['model'] == null) {
+            throw new runtime.RequiredError(
+                'model',
+                'Required parameter "model" was null or undefined when calling websitesStartVerification().'
+            );
         }
 
         const queryParameters: any = {};
@@ -360,7 +381,7 @@ export class WebsitesApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: StartVerificationApiModelToJSON(requestParameters.model),
+            body: StartVerificationApiModelToJSON(requestParameters['model']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => StartVerificationResultFromJSON(jsonValue));
@@ -378,8 +399,11 @@ export class WebsitesApi extends runtime.BaseAPI {
      * Updates a website.
      */
     async websitesUpdateRaw(requestParameters: WebsitesUpdateRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<WebsiteApiModel>> {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling websitesUpdate.');
+        if (requestParameters['model'] == null) {
+            throw new runtime.RequiredError(
+                'model',
+                'Required parameter "model" was null or undefined when calling websitesUpdate().'
+            );
         }
 
         const queryParameters: any = {};
@@ -393,7 +417,7 @@ export class WebsitesApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: UpdateWebsiteApiModelToJSON(requestParameters.model),
+            body: UpdateWebsiteApiModelToJSON(requestParameters['model']),
         }, initOverrides);
 
         return new runtime.JSONApiResponse(response, (jsonValue) => WebsiteApiModelFromJSON(jsonValue));
@@ -411,14 +435,17 @@ export class WebsitesApi extends runtime.BaseAPI {
      * Renders verification file.
      */
     async websitesVerificationFileRaw(requestParameters: WebsitesVerificationFileRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<void>> {
-        if (requestParameters.websiteUrl === null || requestParameters.websiteUrl === undefined) {
-            throw new runtime.RequiredError('websiteUrl','Required parameter requestParameters.websiteUrl was null or undefined when calling websitesVerificationFile.');
+        if (requestParameters['websiteUrl'] == null) {
+            throw new runtime.RequiredError(
+                'websiteUrl',
+                'Required parameter "websiteUrl" was null or undefined when calling websitesVerificationFile().'
+            );
         }
 
         const queryParameters: any = {};
 
-        if (requestParameters.websiteUrl !== undefined) {
-            queryParameters['websiteUrl'] = requestParameters.websiteUrl;
+        if (requestParameters['websiteUrl'] != null) {
+            queryParameters['websiteUrl'] = requestParameters['websiteUrl'];
         }
 
         const headerParameters: runtime.HTTPHeaders = {};
@@ -444,8 +471,11 @@ export class WebsitesApi extends runtime.BaseAPI {
      * Executes verification process.
      */
     async websitesVerifyRaw(requestParameters: WebsitesVerifyRequest, initOverrides?: RequestInit | runtime.InitOverrideFunction): Promise<runtime.ApiResponse<string>> {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model','Required parameter requestParameters.model was null or undefined when calling websitesVerify.');
+        if (requestParameters['model'] == null) {
+            throw new runtime.RequiredError(
+                'model',
+                'Required parameter "model" was null or undefined when calling websitesVerify().'
+            );
         }
 
         const queryParameters: any = {};
@@ -459,7 +489,7 @@ export class WebsitesApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: VerifyApiModelToJSON(requestParameters.model),
+            body: VerifyApiModelToJSON(requestParameters['model']),
         }, initOverrides);
 
         if (this.isJsonMime(response.headers.get('content-type'))) {

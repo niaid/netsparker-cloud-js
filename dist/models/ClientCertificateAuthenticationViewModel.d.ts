@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { FileCache } from './FileCache';
+import type { CachedFile } from './CachedFile';
 /**
  * Represents a model for carrying out client certificate authentication settings.
  * @export
@@ -24,10 +24,10 @@ export interface ClientCertificateAuthenticationViewModel {
     isReplacedCredentials?: boolean;
     /**
      *
-     * @type {FileCache}
+     * @type {CachedFile}
      * @memberof ClientCertificateAuthenticationViewModel
      */
-    file?: FileCache;
+    file?: CachedFile;
     /**
      * Gets or sets a value indicating whether client certificate authentication is enabled.
      * @type {boolean}

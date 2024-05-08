@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * 
  * @export
@@ -56,11 +56,9 @@ export type CustomScriptRequestApiModelTypeEnum = typeof CustomScriptRequestApiM
  * Check if a given object implements the CustomScriptRequestApiModel interface.
  */
 export function instanceOfCustomScriptRequestApiModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "name" in value;
-    isInstance = isInstance && "content" in value;
-
-    return isInstance;
+    if (!('name' in value)) return false;
+    if (!('content' in value)) return false;
+    return true;
 }
 
 export function CustomScriptRequestApiModelFromJSON(json: any): CustomScriptRequestApiModel {
@@ -68,29 +66,26 @@ export function CustomScriptRequestApiModelFromJSON(json: any): CustomScriptRequ
 }
 
 export function CustomScriptRequestApiModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): CustomScriptRequestApiModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'type': !exists(json, 'Type') ? undefined : json['Type'],
+        'type': json['Type'] == null ? undefined : json['Type'],
         'name': json['Name'],
         'content': json['Content'],
     };
 }
 
 export function CustomScriptRequestApiModelToJSON(value?: CustomScriptRequestApiModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Type': value.type,
-        'Name': value.name,
-        'Content': value.content,
+        'Type': value['type'],
+        'Name': value['name'],
+        'Content': value['content'],
     };
 }
 

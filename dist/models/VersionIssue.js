@@ -14,7 +14,6 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.VersionIssueToJSON = exports.VersionIssueFromJSONTyped = exports.VersionIssueFromJSON = exports.instanceOfVersionIssue = exports.VersionIssueOwnerVulnerabilityTypeEnum = exports.VersionIssueSeverityEnum = void 0;
-const runtime_1 = require("../runtime");
 /**
  * @export
  */
@@ -1480,6 +1479,7 @@ exports.VersionIssueOwnerVulnerabilityTypeEnum = {
     WordpressThemeGeneratePressVersionDisclosure: 'WordpressThemeGeneratePressVersionDisclosure',
     WordpressThemeInspiroVersionDisclosure: 'WordpressThemeInspiroVersionDisclosure',
     WordpressThemeGoVersionDisclosure: 'WordpressThemeGoVersionDisclosure',
+    WordpressPluginUltimateMemberIdentified: 'WordpressPluginUltimateMemberIdentified',
     WordpressPluginLoginWithPhoneNumberIdentified: 'WordpressPluginLoginWithPhoneNumberIdentified',
     WordpressPluginInstagramFeedIdentified: 'WordpressPluginInstagramFeedIdentified',
     WordpressPluginContactFormSevenIdentified: 'WordpressPluginContactFormSevenIdentified',
@@ -1498,6 +1498,7 @@ exports.VersionIssueOwnerVulnerabilityTypeEnum = {
     WordpressPluginLiteSpeedCacheIdentified: 'WordpressPluginLiteSpeedCacheIdentified',
     WordpressPluginUpdraftPlusIdentified: 'WordpressPluginUpdraftPlusIdentified',
     WordpressPluginJupiterXIdentified: 'WordpressPluginJupiterXIdentified',
+    WordpressPluginUltimateMemberOutOfDate: 'WordpressPluginUltimateMemberOutOfDate',
     WordpressPluginLoginWithPhoneNumberOutOfDate: 'WordpressPluginLoginWithPhoneNumberOutOfDate',
     WordpressPluginInstagramFeedOutOfDate: 'WordpressPluginInstagramFeedOutOfDate',
     WordpressPluginContactFormSevenOutOfDate: 'WordpressPluginContactFormSevenOutOfDate',
@@ -1519,6 +1520,7 @@ exports.VersionIssueOwnerVulnerabilityTypeEnum = {
     WordpressPluginInstagramFeedVersionDisclosure: 'WordpressPluginInstagramFeedVersionDisclosure',
     WordpressPluginContactFormSevenVersionDisclosure: 'WordpressPluginContactFormSevenVersionDisclosure',
     WordpressPluginYoastSeoVersionDisclosure: 'WordpressPluginYoastSeoVersionDisclosure',
+    WordpressPluginUltimateMemberVersionDisclosure: 'WordpressPluginUltimateMemberVersionDisclosure',
     WordpressPluginLoginWithPhoneNumberVersionDisclosure: 'WordpressPluginLoginWithPhoneNumberVersionDisclosure',
     WordpressPluginElementorVersionDisclosure: 'WordpressPluginElementorVersionDisclosure',
     WordpressPluginClassicEditorVersionDisclosure: 'WordpressPluginClassicEditorVersionDisclosure',
@@ -1551,14 +1553,40 @@ exports.VersionIssueOwnerVulnerabilityTypeEnum = {
     MovEitTransferVersionDisclosure: 'MOVEitTransferVersionDisclosure',
     MovEitTransferIdentified: 'MOVEitTransferIdentified',
     DianaJlIdentified: 'DianaJlIdentified',
-    MissingXContentTypeOptionsHeader: 'MissingXContentTypeOptionsHeader'
+    MissingXContentTypeOptionsHeader: 'MissingXContentTypeOptionsHeader',
+    JwkIdentified: 'JwkIdentified',
+    PrivateJwkIdentified: 'PrivateJwkIdentified',
+    DotCmsOutOfDate: 'DotCMSOutOfDate',
+    DotCmsVersionDisclosure: 'DotCMSVersionDisclosure',
+    DotCmsIdentified: 'DotCMSIdentified',
+    WordpressPluginBackupMigrationIdentified: 'WordpressPluginBackupMigrationIdentified',
+    WordpressPluginBackupMigrationOutOfDate: 'WordpressPluginBackupMigrationOutOfDate',
+    WordpressPluginBackupMigrationVersionDisclosure: 'WordpressPluginBackupMigrationVersionDisclosure',
+    TinyMceVersionDisclosure: 'TinyMCEVersionDisclosure',
+    TinyMceIdentified: 'TinyMCEIdentified',
+    TinyMceOutOfDate: 'TinyMCEOutOfDate',
+    PossiblePrototypePollution: 'PossiblePrototypePollution',
+    PhpStackTraceDisclosure: 'PhpStackTraceDisclosure',
+    ActiveMqRce: 'ActiveMqRCE',
+    TorchServeApiIdentified: 'TorchServeApiIdentified',
+    TorchServeApiSsrf: 'TorchServeApiSsrf',
+    VmWareAriaRce: 'VmWareAriaRCE',
+    WordPressConfigDisclosure: 'WordPressConfigDisclosure',
+    AuthenticationBypassIvanti: 'AuthenticationBypassIvanti',
+    RceIvanti: 'RceIvanti',
+    PrototypePollution: 'PrototypePollution',
+    SmallSslKeyLength: 'SmallSSLKeyLength',
+    WpadminDetected: 'WpadminDetected',
+    OracleEbsRce: 'OracleEbsRce',
+    AngularVersionDisclosure: 'AngularVersionDisclosure',
+    AngularIdentified: 'AngularIdentified',
+    AngularOutOfDate: 'AngularOutOfDate'
 };
 /**
  * Check if a given object implements the VersionIssue interface.
  */
 function instanceOfVersionIssue(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfVersionIssue = instanceOfVersionIssue;
 function VersionIssueFromJSON(json) {
@@ -1566,55 +1594,52 @@ function VersionIssueFromJSON(json) {
 }
 exports.VersionIssueFromJSON = VersionIssueFromJSON;
 function VersionIssueFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'exploit': !(0, runtime_1.exists)(json, 'Exploit') ? undefined : json['Exploit'],
-        'externalReferences': !(0, runtime_1.exists)(json, 'ExternalReferences') ? undefined : json['ExternalReferences'],
-        'fromVersionOrdinal': !(0, runtime_1.exists)(json, 'FromVersionOrdinal') ? undefined : json['FromVersionOrdinal'],
-        'fromVersion': !(0, runtime_1.exists)(json, 'FromVersion') ? undefined : json['FromVersion'],
-        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
-        'impact': !(0, runtime_1.exists)(json, 'Impact') ? undefined : json['Impact'],
-        'remedy': !(0, runtime_1.exists)(json, 'Remedy') ? undefined : json['Remedy'],
-        'severity': !(0, runtime_1.exists)(json, 'Severity') ? undefined : json['Severity'],
-        'summary': !(0, runtime_1.exists)(json, 'Summary') ? undefined : json['Summary'],
-        'title': !(0, runtime_1.exists)(json, 'Title') ? undefined : json['Title'],
-        'toVersionOrdinal': !(0, runtime_1.exists)(json, 'ToVersionOrdinal') ? undefined : json['ToVersionOrdinal'],
-        'toVersion': !(0, runtime_1.exists)(json, 'ToVersion') ? undefined : json['ToVersion'],
-        'vulnerability': !(0, runtime_1.exists)(json, 'Vulnerability') ? undefined : json['Vulnerability'],
-        'application': !(0, runtime_1.exists)(json, 'Application') ? undefined : json['Application'],
-        'bdu': !(0, runtime_1.exists)(json, 'Bdu') ? undefined : json['Bdu'],
-        'cvss': !(0, runtime_1.exists)(json, 'Cvss') ? undefined : json['Cvss'],
-        'ownerVulnerabilityType': !(0, runtime_1.exists)(json, 'OwnerVulnerabilityType') ? undefined : json['OwnerVulnerabilityType'],
+        'exploit': json['Exploit'] == null ? undefined : json['Exploit'],
+        'externalReferences': json['ExternalReferences'] == null ? undefined : json['ExternalReferences'],
+        'fromVersionOrdinal': json['FromVersionOrdinal'] == null ? undefined : json['FromVersionOrdinal'],
+        'fromVersion': json['FromVersion'] == null ? undefined : json['FromVersion'],
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'impact': json['Impact'] == null ? undefined : json['Impact'],
+        'remedy': json['Remedy'] == null ? undefined : json['Remedy'],
+        'severity': json['Severity'] == null ? undefined : json['Severity'],
+        'summary': json['Summary'] == null ? undefined : json['Summary'],
+        'title': json['Title'] == null ? undefined : json['Title'],
+        'toVersionOrdinal': json['ToVersionOrdinal'] == null ? undefined : json['ToVersionOrdinal'],
+        'toVersion': json['ToVersion'] == null ? undefined : json['ToVersion'],
+        'vulnerability': json['Vulnerability'] == null ? undefined : json['Vulnerability'],
+        'application': json['Application'] == null ? undefined : json['Application'],
+        'bdu': json['Bdu'] == null ? undefined : json['Bdu'],
+        'cvss': json['Cvss'] == null ? undefined : json['Cvss'],
+        'ownerVulnerabilityType': json['OwnerVulnerabilityType'] == null ? undefined : json['OwnerVulnerabilityType'],
     };
 }
 exports.VersionIssueFromJSONTyped = VersionIssueFromJSONTyped;
 function VersionIssueToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Exploit': value.exploit,
-        'ExternalReferences': value.externalReferences,
-        'FromVersionOrdinal': value.fromVersionOrdinal,
-        'FromVersion': value.fromVersion,
-        'Id': value.id,
-        'Impact': value.impact,
-        'Remedy': value.remedy,
-        'Severity': value.severity,
-        'Summary': value.summary,
-        'Title': value.title,
-        'ToVersionOrdinal': value.toVersionOrdinal,
-        'ToVersion': value.toVersion,
-        'Vulnerability': value.vulnerability,
-        'Application': value.application,
-        'Bdu': value.bdu,
-        'Cvss': value.cvss,
-        'OwnerVulnerabilityType': value.ownerVulnerabilityType,
+        'Exploit': value['exploit'],
+        'ExternalReferences': value['externalReferences'],
+        'FromVersionOrdinal': value['fromVersionOrdinal'],
+        'FromVersion': value['fromVersion'],
+        'Id': value['id'],
+        'Impact': value['impact'],
+        'Remedy': value['remedy'],
+        'Severity': value['severity'],
+        'Summary': value['summary'],
+        'Title': value['title'],
+        'ToVersionOrdinal': value['toVersionOrdinal'],
+        'ToVersion': value['toVersion'],
+        'Vulnerability': value['vulnerability'],
+        'Application': value['application'],
+        'Bdu': value['bdu'],
+        'Cvss': value['cvss'],
+        'OwnerVulnerabilityType': value['ownerVulnerabilityType'],
     };
 }
 exports.VersionIssueToJSON = VersionIssueToJSON;

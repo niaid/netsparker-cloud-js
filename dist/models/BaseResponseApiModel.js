@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BaseResponseApiModelToJSON = exports.BaseResponseApiModelFromJSONTyped = exports.BaseResponseApiModelFromJSON = exports.instanceOfBaseResponseApiModel = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the BaseResponseApiModel interface.
  */
 function instanceOfBaseResponseApiModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfBaseResponseApiModel = instanceOfBaseResponseApiModel;
 function BaseResponseApiModelFromJSON(json) {
@@ -28,23 +26,20 @@ function BaseResponseApiModelFromJSON(json) {
 }
 exports.BaseResponseApiModelFromJSON = BaseResponseApiModelFromJSON;
 function BaseResponseApiModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'message': !(0, runtime_1.exists)(json, 'Message') ? undefined : json['Message'],
+        'message': json['Message'] == null ? undefined : json['Message'],
     };
 }
 exports.BaseResponseApiModelFromJSONTyped = BaseResponseApiModelFromJSONTyped;
 function BaseResponseApiModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Message': value.message,
+        'Message': value['message'],
     };
 }
 exports.BaseResponseApiModelToJSON = BaseResponseApiModelToJSON;

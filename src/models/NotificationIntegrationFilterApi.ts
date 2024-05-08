@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * 
  * @export
@@ -78,9 +78,7 @@ export type NotificationIntegrationFilterApiStateEnum = typeof NotificationInteg
  * Check if a given object implements the NotificationIntegrationFilterApi interface.
  */
 export function instanceOfNotificationIntegrationFilterApi(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function NotificationIntegrationFilterApiFromJSON(json: any): NotificationIntegrationFilterApi {
@@ -88,31 +86,28 @@ export function NotificationIntegrationFilterApiFromJSON(json: any): Notificatio
 }
 
 export function NotificationIntegrationFilterApiFromJSONTyped(json: any, ignoreDiscriminator: boolean): NotificationIntegrationFilterApi {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'isConfirmed': !exists(json, 'IsConfirmed') ? undefined : json['IsConfirmed'],
-        'severity': !exists(json, 'Severity') ? undefined : json['Severity'],
-        'state': !exists(json, 'State') ? undefined : json['State'],
-        'certainty': !exists(json, 'Certainty') ? undefined : json['Certainty'],
+        'isConfirmed': json['IsConfirmed'] == null ? undefined : json['IsConfirmed'],
+        'severity': json['Severity'] == null ? undefined : json['Severity'],
+        'state': json['State'] == null ? undefined : json['State'],
+        'certainty': json['Certainty'] == null ? undefined : json['Certainty'],
     };
 }
 
 export function NotificationIntegrationFilterApiToJSON(value?: NotificationIntegrationFilterApi | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'IsConfirmed': value.isConfirmed,
-        'Severity': value.severity,
-        'State': value.state,
-        'Certainty': value.certainty,
+        'IsConfirmed': value['isConfirmed'],
+        'Severity': value['severity'],
+        'State': value['state'],
+        'Certainty': value['certainty'],
     };
 }
 

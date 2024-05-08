@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents an URL Rewrite rule.
  * @export
@@ -37,9 +37,7 @@ export interface UrlRewriteRuleModel {
  * Check if a given object implements the UrlRewriteRuleModel interface.
  */
 export function instanceOfUrlRewriteRuleModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function UrlRewriteRuleModelFromJSON(json: any): UrlRewriteRuleModel {
@@ -47,27 +45,24 @@ export function UrlRewriteRuleModelFromJSON(json: any): UrlRewriteRuleModel {
 }
 
 export function UrlRewriteRuleModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): UrlRewriteRuleModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'placeholderPattern': !exists(json, 'PlaceholderPattern') ? undefined : json['PlaceholderPattern'],
-        'regexPattern': !exists(json, 'RegexPattern') ? undefined : json['RegexPattern'],
+        'placeholderPattern': json['PlaceholderPattern'] == null ? undefined : json['PlaceholderPattern'],
+        'regexPattern': json['RegexPattern'] == null ? undefined : json['RegexPattern'],
     };
 }
 
 export function UrlRewriteRuleModelToJSON(value?: UrlRewriteRuleModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'PlaceholderPattern': value.placeholderPattern,
-        'RegexPattern': value.regexPattern,
+        'PlaceholderPattern': value['placeholderPattern'],
+        'RegexPattern': value['regexPattern'],
     };
 }
 

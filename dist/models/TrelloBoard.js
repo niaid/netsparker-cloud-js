@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TrelloBoardToJSON = exports.TrelloBoardFromJSONTyped = exports.TrelloBoardFromJSON = exports.instanceOfTrelloBoard = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the TrelloBoard interface.
  */
 function instanceOfTrelloBoard(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfTrelloBoard = instanceOfTrelloBoard;
 function TrelloBoardFromJSON(json) {
@@ -28,30 +26,27 @@ function TrelloBoardFromJSON(json) {
 }
 exports.TrelloBoardFromJSON = TrelloBoardFromJSON;
 function TrelloBoardFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'closed': !(0, runtime_1.exists)(json, 'closed') ? undefined : json['closed'],
-        'id': !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
-        'isActive': !(0, runtime_1.exists)(json, 'IsActive') ? undefined : json['IsActive'],
-        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        'shortUrl': !(0, runtime_1.exists)(json, 'shortUrl') ? undefined : json['shortUrl'],
+        'closed': json['closed'] == null ? undefined : json['closed'],
+        'id': json['id'] == null ? undefined : json['id'],
+        'isActive': json['IsActive'] == null ? undefined : json['IsActive'],
+        'name': json['name'] == null ? undefined : json['name'],
+        'shortUrl': json['shortUrl'] == null ? undefined : json['shortUrl'],
     };
 }
 exports.TrelloBoardFromJSONTyped = TrelloBoardFromJSONTyped;
 function TrelloBoardToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'closed': value.closed,
-        'id': value.id,
-        'name': value.name,
-        'shortUrl': value.shortUrl,
+        'closed': value['closed'],
+        'id': value['id'],
+        'name': value['name'],
+        'shortUrl': value['shortUrl'],
     };
 }
 exports.TrelloBoardToJSON = TrelloBoardToJSON;

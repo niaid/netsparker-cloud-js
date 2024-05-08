@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a model for deleting a website group.
  * @export
@@ -31,10 +31,8 @@ export interface DeleteWebsiteGroupApiModel {
  * Check if a given object implements the DeleteWebsiteGroupApiModel interface.
  */
 export function instanceOfDeleteWebsiteGroupApiModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "name" in value;
-
-    return isInstance;
+    if (!('name' in value)) return false;
+    return true;
 }
 
 export function DeleteWebsiteGroupApiModelFromJSON(json: any): DeleteWebsiteGroupApiModel {
@@ -42,7 +40,7 @@ export function DeleteWebsiteGroupApiModelFromJSON(json: any): DeleteWebsiteGrou
 }
 
 export function DeleteWebsiteGroupApiModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): DeleteWebsiteGroupApiModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -52,15 +50,12 @@ export function DeleteWebsiteGroupApiModelFromJSONTyped(json: any, ignoreDiscrim
 }
 
 export function DeleteWebsiteGroupApiModelToJSON(value?: DeleteWebsiteGroupApiModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Name': value.name,
+        'Name': value['name'],
     };
 }
 

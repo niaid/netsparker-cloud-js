@@ -12,13 +12,13 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
-import type { FileCache } from './FileCache';
+import { mapValues } from '../runtime';
+import type { CachedFile } from './CachedFile';
 import {
-    FileCacheFromJSON,
-    FileCacheFromJSONTyped,
-    FileCacheToJSON,
-} from './FileCache';
+    CachedFileFromJSON,
+    CachedFileFromJSONTyped,
+    CachedFileToJSON,
+} from './CachedFile';
 
 /**
  * Represents a model for carrying out client certificate authentication settings.
@@ -34,10 +34,10 @@ export interface ClientCertificateAuthenticationViewModel {
     isReplacedCredentials?: boolean;
     /**
      * 
-     * @type {FileCache}
+     * @type {CachedFile}
      * @memberof ClientCertificateAuthenticationViewModel
      */
-    file?: FileCache;
+    file?: CachedFile;
     /**
      * Gets or sets a value indicating whether client certificate authentication is enabled.
      * @type {boolean}
@@ -56,9 +56,7 @@ export interface ClientCertificateAuthenticationViewModel {
  * Check if a given object implements the ClientCertificateAuthenticationViewModel interface.
  */
 export function instanceOfClientCertificateAuthenticationViewModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function ClientCertificateAuthenticationViewModelFromJSON(json: any): ClientCertificateAuthenticationViewModel {
@@ -66,31 +64,28 @@ export function ClientCertificateAuthenticationViewModelFromJSON(json: any): Cli
 }
 
 export function ClientCertificateAuthenticationViewModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): ClientCertificateAuthenticationViewModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'isReplacedCredentials': !exists(json, 'IsReplacedCredentials') ? undefined : json['IsReplacedCredentials'],
-        'file': !exists(json, 'File') ? undefined : FileCacheFromJSON(json['File']),
-        'isEnabled': !exists(json, 'IsEnabled') ? undefined : json['IsEnabled'],
-        'password': !exists(json, 'Password') ? undefined : json['Password'],
+        'isReplacedCredentials': json['IsReplacedCredentials'] == null ? undefined : json['IsReplacedCredentials'],
+        'file': json['File'] == null ? undefined : CachedFileFromJSON(json['File']),
+        'isEnabled': json['IsEnabled'] == null ? undefined : json['IsEnabled'],
+        'password': json['Password'] == null ? undefined : json['Password'],
     };
 }
 
 export function ClientCertificateAuthenticationViewModelToJSON(value?: ClientCertificateAuthenticationViewModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'IsReplacedCredentials': value.isReplacedCredentials,
-        'File': FileCacheToJSON(value.file),
-        'IsEnabled': value.isEnabled,
-        'Password': value.password,
+        'IsReplacedCredentials': value['isReplacedCredentials'],
+        'File': CachedFileToJSON(value['file']),
+        'IsEnabled': value['isEnabled'],
+        'Password': value['password'],
     };
 }
 

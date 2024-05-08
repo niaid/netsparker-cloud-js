@@ -14,7 +14,6 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ScopeSettingToJSON = exports.ScopeSettingFromJSONTyped = exports.ScopeSettingFromJSON = exports.instanceOfScopeSetting = exports.ScopeSettingScopeEnum = exports.ScopeSettingDisallowedHttpMethodsEnum = void 0;
-const runtime_1 = require("../runtime");
 const ExcludedLinkModel_1 = require("./ExcludedLinkModel");
 const ExcludedUsageTrackerModel_1 = require("./ExcludedUsageTrackerModel");
 /**
@@ -47,8 +46,7 @@ exports.ScopeSettingScopeEnum = {
  * Check if a given object implements the ScopeSetting interface.
  */
 function instanceOfScopeSetting(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfScopeSetting = instanceOfScopeSetting;
 function ScopeSettingFromJSON(json) {
@@ -56,35 +54,32 @@ function ScopeSettingFromJSON(json) {
 }
 exports.ScopeSettingFromJSON = ScopeSettingFromJSON;
 function ScopeSettingFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'excludedLinks': !(0, runtime_1.exists)(json, 'ExcludedLinks') ? undefined : (json['ExcludedLinks'].map(ExcludedLinkModel_1.ExcludedLinkModelFromJSON)),
-        'excludeLinks': !(0, runtime_1.exists)(json, 'ExcludeLinks') ? undefined : json['ExcludeLinks'],
-        'excludedUsageTrackers': !(0, runtime_1.exists)(json, 'ExcludedUsageTrackers') ? undefined : (json['ExcludedUsageTrackers'].map(ExcludedUsageTrackerModel_1.ExcludedUsageTrackerModelFromJSON)),
-        'excludeAuthenticationPages': !(0, runtime_1.exists)(json, 'ExcludeAuthenticationPages') ? undefined : json['ExcludeAuthenticationPages'],
-        'disallowedHttpMethods': !(0, runtime_1.exists)(json, 'DisallowedHttpMethods') ? undefined : json['DisallowedHttpMethods'],
-        'scope': !(0, runtime_1.exists)(json, 'Scope') ? undefined : json['Scope'],
-        'doNotDifferentiateProtocols': !(0, runtime_1.exists)(json, 'DoNotDifferentiateProtocols') ? undefined : json['DoNotDifferentiateProtocols'],
+        'excludedLinks': json['ExcludedLinks'] == null ? undefined : (json['ExcludedLinks'].map(ExcludedLinkModel_1.ExcludedLinkModelFromJSON)),
+        'excludeLinks': json['ExcludeLinks'] == null ? undefined : json['ExcludeLinks'],
+        'excludedUsageTrackers': json['ExcludedUsageTrackers'] == null ? undefined : (json['ExcludedUsageTrackers'].map(ExcludedUsageTrackerModel_1.ExcludedUsageTrackerModelFromJSON)),
+        'excludeAuthenticationPages': json['ExcludeAuthenticationPages'] == null ? undefined : json['ExcludeAuthenticationPages'],
+        'disallowedHttpMethods': json['DisallowedHttpMethods'] == null ? undefined : json['DisallowedHttpMethods'],
+        'scope': json['Scope'] == null ? undefined : json['Scope'],
+        'doNotDifferentiateProtocols': json['DoNotDifferentiateProtocols'] == null ? undefined : json['DoNotDifferentiateProtocols'],
     };
 }
 exports.ScopeSettingFromJSONTyped = ScopeSettingFromJSONTyped;
 function ScopeSettingToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'ExcludedLinks': value.excludedLinks === undefined ? undefined : (value.excludedLinks.map(ExcludedLinkModel_1.ExcludedLinkModelToJSON)),
-        'ExcludeLinks': value.excludeLinks,
-        'ExcludedUsageTrackers': value.excludedUsageTrackers === undefined ? undefined : (value.excludedUsageTrackers.map(ExcludedUsageTrackerModel_1.ExcludedUsageTrackerModelToJSON)),
-        'ExcludeAuthenticationPages': value.excludeAuthenticationPages,
-        'DisallowedHttpMethods': value.disallowedHttpMethods,
-        'Scope': value.scope,
-        'DoNotDifferentiateProtocols': value.doNotDifferentiateProtocols,
+        'ExcludedLinks': value['excludedLinks'] == null ? undefined : (value['excludedLinks'].map(ExcludedLinkModel_1.ExcludedLinkModelToJSON)),
+        'ExcludeLinks': value['excludeLinks'],
+        'ExcludedUsageTrackers': value['excludedUsageTrackers'] == null ? undefined : (value['excludedUsageTrackers'].map(ExcludedUsageTrackerModel_1.ExcludedUsageTrackerModelToJSON)),
+        'ExcludeAuthenticationPages': value['excludeAuthenticationPages'],
+        'DisallowedHttpMethods': value['disallowedHttpMethods'],
+        'Scope': value['scope'],
+        'DoNotDifferentiateProtocols': value['doNotDifferentiateProtocols'],
     };
 }
 exports.ScopeSettingToJSON = ScopeSettingToJSON;

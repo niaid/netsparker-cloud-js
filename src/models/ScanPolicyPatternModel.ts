@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a model for carrying out pattern settings.
  * @export
@@ -55,9 +55,7 @@ export interface ScanPolicyPatternModel {
  * Check if a given object implements the ScanPolicyPatternModel interface.
  */
 export function instanceOfScanPolicyPatternModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function ScanPolicyPatternModelFromJSON(json: any): ScanPolicyPatternModel {
@@ -65,33 +63,30 @@ export function ScanPolicyPatternModelFromJSON(json: any): ScanPolicyPatternMode
 }
 
 export function ScanPolicyPatternModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): ScanPolicyPatternModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'customScriptId': !exists(json, 'CustomScriptId') ? undefined : json['CustomScriptId'],
-        'description': !exists(json, 'Description') ? undefined : json['Description'],
-        'enabled': !exists(json, 'Enabled') ? undefined : json['Enabled'],
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
+        'customScriptId': json['CustomScriptId'] == null ? undefined : json['CustomScriptId'],
+        'description': json['Description'] == null ? undefined : json['Description'],
+        'enabled': json['Enabled'] == null ? undefined : json['Enabled'],
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'name': json['Name'] == null ? undefined : json['Name'],
     };
 }
 
 export function ScanPolicyPatternModelToJSON(value?: ScanPolicyPatternModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'CustomScriptId': value.customScriptId,
-        'Description': value.description,
-        'Enabled': value.enabled,
-        'Id': value.id,
-        'Name': value.name,
+        'CustomScriptId': value['customScriptId'],
+        'Description': value['description'],
+        'Enabled': value['enabled'],
+        'Id': value['id'],
+        'Name': value['name'],
     };
 }
 

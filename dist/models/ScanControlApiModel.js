@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ScanControlApiModelToJSON = exports.ScanControlApiModelFromJSONTyped = exports.ScanControlApiModelFromJSON = exports.instanceOfScanControlApiModel = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the ScanControlApiModel interface.
  */
 function instanceOfScanControlApiModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfScanControlApiModel = instanceOfScanControlApiModel;
 function ScanControlApiModelFromJSON(json) {
@@ -28,23 +26,20 @@ function ScanControlApiModelFromJSON(json) {
 }
 exports.ScanControlApiModelFromJSON = ScanControlApiModelFromJSON;
 function ScanControlApiModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'isScansSuspended': !(0, runtime_1.exists)(json, 'IsScansSuspended') ? undefined : json['IsScansSuspended'],
+        'isScansSuspended': json['IsScansSuspended'] == null ? undefined : json['IsScansSuspended'],
     };
 }
 exports.ScanControlApiModelFromJSONTyped = ScanControlApiModelFromJSONTyped;
 function ScanControlApiModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'IsScansSuspended': value.isScansSuspended,
+        'IsScansSuspended': value['isScansSuspended'],
     };
 }
 exports.ScanControlApiModelToJSON = ScanControlApiModelToJSON;

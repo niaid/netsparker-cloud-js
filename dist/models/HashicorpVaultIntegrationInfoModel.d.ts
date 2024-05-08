@@ -10,8 +10,8 @@
  * Do not edit the class manually.
  */
 import type { CertificateInfoModel } from './CertificateInfoModel';
-import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
 import type { IntegrationWizardResultModel } from './IntegrationWizardResultModel';
+import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
 /**
  * The Vault integration info
  * @export
@@ -174,6 +174,18 @@ export interface HashicorpVaultIntegrationInfoModel {
      * @memberof HashicorpVaultIntegrationInfoModel
      */
     integrationWizardResultModel?: IntegrationWizardResultModel;
+    /**
+     *
+     * @type {string}
+     * @memberof HashicorpVaultIntegrationInfoModel
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof HashicorpVaultIntegrationInfoModel
+     */
+    state?: HashicorpVaultIntegrationInfoModelStateEnum;
 }
 /**
  * @export
@@ -239,9 +251,17 @@ export declare const HashicorpVaultIntegrationInfoModelTemplateTypeEnum: {
 };
 export type HashicorpVaultIntegrationInfoModelTemplateTypeEnum = typeof HashicorpVaultIntegrationInfoModelTemplateTypeEnum[keyof typeof HashicorpVaultIntegrationInfoModelTemplateTypeEnum];
 /**
+ * @export
+ */
+export declare const HashicorpVaultIntegrationInfoModelStateEnum: {
+    readonly Active: "Active";
+    readonly Suspended: "Suspended";
+};
+export type HashicorpVaultIntegrationInfoModelStateEnum = typeof HashicorpVaultIntegrationInfoModelStateEnum[keyof typeof HashicorpVaultIntegrationInfoModelStateEnum];
+/**
  * Check if a given object implements the HashicorpVaultIntegrationInfoModel interface.
  */
 export declare function instanceOfHashicorpVaultIntegrationInfoModel(value: object): boolean;
 export declare function HashicorpVaultIntegrationInfoModelFromJSON(json: any): HashicorpVaultIntegrationInfoModel;
 export declare function HashicorpVaultIntegrationInfoModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): HashicorpVaultIntegrationInfoModel;
-export declare function HashicorpVaultIntegrationInfoModelToJSON(value?: HashicorpVaultIntegrationInfoModel | null): any;
+export declare function HashicorpVaultIntegrationInfoModelToJSON(value?: Omit<HashicorpVaultIntegrationInfoModel, 'Type' | 'GenericErrorMessage' | 'Identifier' | 'TestMessageBody' | 'TestMessageTitle' | 'WebhookUrl'> | null): any;

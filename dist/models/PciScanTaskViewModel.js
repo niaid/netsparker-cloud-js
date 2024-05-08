@@ -14,7 +14,6 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.PciScanTaskViewModelToJSON = exports.PciScanTaskViewModelFromJSONTyped = exports.PciScanTaskViewModelFromJSON = exports.instanceOfPciScanTaskViewModel = exports.PciScanTaskViewModelComplianceStatusEnum = exports.PciScanTaskViewModelScanStateEnum = void 0;
-const runtime_1 = require("../runtime");
 /**
  * @export
  */
@@ -37,8 +36,7 @@ exports.PciScanTaskViewModelComplianceStatusEnum = {
  * Check if a given object implements the PciScanTaskViewModel interface.
  */
 function instanceOfPciScanTaskViewModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfPciScanTaskViewModel = instanceOfPciScanTaskViewModel;
 function PciScanTaskViewModelFromJSON(json) {
@@ -46,31 +44,28 @@ function PciScanTaskViewModelFromJSON(json) {
 }
 exports.PciScanTaskViewModelFromJSON = PciScanTaskViewModelFromJSON;
 function PciScanTaskViewModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
-        'progress': !(0, runtime_1.exists)(json, 'Progress') ? undefined : json['Progress'],
-        'scanState': !(0, runtime_1.exists)(json, 'ScanState') ? undefined : json['ScanState'],
-        'complianceStatus': !(0, runtime_1.exists)(json, 'ComplianceStatus') ? undefined : json['ComplianceStatus'],
-        'endDate': !(0, runtime_1.exists)(json, 'EndDate') ? undefined : (new Date(json['EndDate'])),
+        'name': json['Name'] == null ? undefined : json['Name'],
+        'progress': json['Progress'] == null ? undefined : json['Progress'],
+        'scanState': json['ScanState'] == null ? undefined : json['ScanState'],
+        'complianceStatus': json['ComplianceStatus'] == null ? undefined : json['ComplianceStatus'],
+        'endDate': json['EndDate'] == null ? undefined : (new Date(json['EndDate'])),
     };
 }
 exports.PciScanTaskViewModelFromJSONTyped = PciScanTaskViewModelFromJSONTyped;
 function PciScanTaskViewModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Name': value.name,
-        'Progress': value.progress,
-        'ScanState': value.scanState,
-        'ComplianceStatus': value.complianceStatus,
-        'EndDate': value.endDate === undefined ? undefined : (value.endDate.toISOString()),
+        'Name': value['name'],
+        'Progress': value['progress'],
+        'ScanState': value['scanState'],
+        'ComplianceStatus': value['complianceStatus'],
+        'EndDate': value['endDate'] == null ? undefined : ((value['endDate']).toISOString()),
     };
 }
 exports.PciScanTaskViewModelToJSON = PciScanTaskViewModelToJSON;

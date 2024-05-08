@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * Represents a model for exclude/include link setting.
  * @export
@@ -31,10 +31,8 @@ export interface ExcludedUsageTrackerModel {
  * Check if a given object implements the ExcludedUsageTrackerModel interface.
  */
 export function instanceOfExcludedUsageTrackerModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "url" in value;
-
-    return isInstance;
+    if (!('url' in value)) return false;
+    return true;
 }
 
 export function ExcludedUsageTrackerModelFromJSON(json: any): ExcludedUsageTrackerModel {
@@ -42,7 +40,7 @@ export function ExcludedUsageTrackerModelFromJSON(json: any): ExcludedUsageTrack
 }
 
 export function ExcludedUsageTrackerModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): ExcludedUsageTrackerModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -52,15 +50,12 @@ export function ExcludedUsageTrackerModelFromJSONTyped(json: any, ignoreDiscrimi
 }
 
 export function ExcludedUsageTrackerModelToJSON(value?: ExcludedUsageTrackerModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Url': value.url,
+        'Url': value['url'],
     };
 }
 

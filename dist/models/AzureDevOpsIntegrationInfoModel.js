@@ -13,10 +13,9 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.AzureDevOpsIntegrationInfoModelToJSON = exports.AzureDevOpsIntegrationInfoModelFromJSONTyped = exports.AzureDevOpsIntegrationInfoModelFromJSON = exports.instanceOfAzureDevOpsIntegrationInfoModel = exports.AzureDevOpsIntegrationInfoModelTemplateTypeEnum = exports.AzureDevOpsIntegrationInfoModelTypeEnum = void 0;
-const runtime_1 = require("../runtime");
-const IntegrationCustomFieldVm_1 = require("./IntegrationCustomFieldVm");
+exports.AzureDevOpsIntegrationInfoModelToJSON = exports.AzureDevOpsIntegrationInfoModelFromJSONTyped = exports.AzureDevOpsIntegrationInfoModelFromJSON = exports.instanceOfAzureDevOpsIntegrationInfoModel = exports.AzureDevOpsIntegrationInfoModelStateEnum = exports.AzureDevOpsIntegrationInfoModelTemplateTypeEnum = exports.AzureDevOpsIntegrationInfoModelTypeEnum = void 0;
 const IntegrationWizardResultModel_1 = require("./IntegrationWizardResultModel");
+const IntegrationCustomFieldVm_1 = require("./IntegrationCustomFieldVm");
 /**
  * @export
  */
@@ -63,15 +62,25 @@ exports.AzureDevOpsIntegrationInfoModelTemplateTypeEnum = {
     Detailed: 'Detailed'
 };
 /**
+ * @export
+ */
+exports.AzureDevOpsIntegrationInfoModelStateEnum = {
+    Active: 'Active',
+    Suspended: 'Suspended'
+};
+/**
  * Check if a given object implements the AzureDevOpsIntegrationInfoModel interface.
  */
 function instanceOfAzureDevOpsIntegrationInfoModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "password" in value;
-    isInstance = isInstance && "projectUri" in value;
-    isInstance = isInstance && "workItemTypeName" in value;
-    isInstance = isInstance && "titleFormat" in value;
-    return isInstance;
+    if (!('password' in value))
+        return false;
+    if (!('projectUri' in value))
+        return false;
+    if (!('workItemTypeName' in value))
+        return false;
+    if (!('titleFormat' in value))
+        return false;
+    return true;
 }
 exports.instanceOfAzureDevOpsIntegrationInfoModel = instanceOfAzureDevOpsIntegrationInfoModel;
 function AzureDevOpsIntegrationInfoModelFromJSON(json) {
@@ -79,59 +88,60 @@ function AzureDevOpsIntegrationInfoModelFromJSON(json) {
 }
 exports.AzureDevOpsIntegrationInfoModelFromJSON = AzureDevOpsIntegrationInfoModelFromJSON;
 function AzureDevOpsIntegrationInfoModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         'password': json['Password'],
-        'username': !(0, runtime_1.exists)(json, 'Username') ? undefined : json['Username'],
-        'assignedTo': !(0, runtime_1.exists)(json, 'AssignedTo') ? undefined : json['AssignedTo'],
-        'domain': !(0, runtime_1.exists)(json, 'Domain') ? undefined : json['Domain'],
+        'username': json['Username'] == null ? undefined : json['Username'],
+        'assignedTo': json['AssignedTo'] == null ? undefined : json['AssignedTo'],
+        'domain': json['Domain'] == null ? undefined : json['Domain'],
         'projectUri': json['ProjectUri'],
-        'tags': !(0, runtime_1.exists)(json, 'Tags') ? undefined : json['Tags'],
+        'tags': json['Tags'] == null ? undefined : json['Tags'],
         'workItemTypeName': json['WorkItemTypeName'],
-        'webhookUrl': !(0, runtime_1.exists)(json, 'WebhookUrl') ? undefined : json['WebhookUrl'],
-        'type': !(0, runtime_1.exists)(json, 'Type') ? undefined : json['Type'],
-        'genericErrorMessage': !(0, runtime_1.exists)(json, 'GenericErrorMessage') ? undefined : json['GenericErrorMessage'],
-        'identifier': !(0, runtime_1.exists)(json, 'Identifier') ? undefined : json['Identifier'],
-        'testMessageBody': !(0, runtime_1.exists)(json, 'TestMessageBody') ? undefined : json['TestMessageBody'],
-        'testMessageTitle': !(0, runtime_1.exists)(json, 'TestMessageTitle') ? undefined : json['TestMessageTitle'],
-        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
-        'integrationVersion': !(0, runtime_1.exists)(json, 'IntegrationVersion') ? undefined : json['IntegrationVersion'],
-        'accountID': !(0, runtime_1.exists)(json, 'AccountID') ? undefined : json['AccountID'],
-        'customFields': !(0, runtime_1.exists)(json, 'CustomFields') ? undefined : (json['CustomFields'].map(IntegrationCustomFieldVm_1.IntegrationCustomFieldVmFromJSON)),
-        'templateType': !(0, runtime_1.exists)(json, 'TemplateType') ? undefined : json['TemplateType'],
-        'reopenStatus': !(0, runtime_1.exists)(json, 'ReopenStatus') ? undefined : json['ReopenStatus'],
-        'resolvedStatus': !(0, runtime_1.exists)(json, 'ResolvedStatus') ? undefined : json['ResolvedStatus'],
+        'webhookUrl': json['WebhookUrl'] == null ? undefined : json['WebhookUrl'],
+        'type': json['Type'] == null ? undefined : json['Type'],
+        'genericErrorMessage': json['GenericErrorMessage'] == null ? undefined : json['GenericErrorMessage'],
+        'identifier': json['Identifier'] == null ? undefined : json['Identifier'],
+        'testMessageBody': json['TestMessageBody'] == null ? undefined : json['TestMessageBody'],
+        'testMessageTitle': json['TestMessageTitle'] == null ? undefined : json['TestMessageTitle'],
+        'name': json['Name'] == null ? undefined : json['Name'],
+        'integrationVersion': json['IntegrationVersion'] == null ? undefined : json['IntegrationVersion'],
+        'accountID': json['AccountID'] == null ? undefined : json['AccountID'],
+        'customFields': json['CustomFields'] == null ? undefined : (json['CustomFields'].map(IntegrationCustomFieldVm_1.IntegrationCustomFieldVmFromJSON)),
+        'templateType': json['TemplateType'] == null ? undefined : json['TemplateType'],
+        'reopenStatus': json['ReopenStatus'] == null ? undefined : json['ReopenStatus'],
+        'resolvedStatus': json['ResolvedStatus'] == null ? undefined : json['ResolvedStatus'],
         'titleFormat': json['TitleFormat'],
-        'integrationWizardResultModel': !(0, runtime_1.exists)(json, 'IntegrationWizardResultModel') ? undefined : (0, IntegrationWizardResultModel_1.IntegrationWizardResultModelFromJSON)(json['IntegrationWizardResultModel']),
+        'integrationWizardResultModel': json['IntegrationWizardResultModel'] == null ? undefined : (0, IntegrationWizardResultModel_1.IntegrationWizardResultModelFromJSON)(json['IntegrationWizardResultModel']),
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'state': json['State'] == null ? undefined : json['State'],
     };
 }
 exports.AzureDevOpsIntegrationInfoModelFromJSONTyped = AzureDevOpsIntegrationInfoModelFromJSONTyped;
 function AzureDevOpsIntegrationInfoModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Password': value.password,
-        'Username': value.username,
-        'AssignedTo': value.assignedTo,
-        'Domain': value.domain,
-        'ProjectUri': value.projectUri,
-        'Tags': value.tags,
-        'WorkItemTypeName': value.workItemTypeName,
-        'Name': value.name,
-        'IntegrationVersion': value.integrationVersion,
-        'AccountID': value.accountID,
-        'CustomFields': value.customFields === undefined ? undefined : (value.customFields.map(IntegrationCustomFieldVm_1.IntegrationCustomFieldVmToJSON)),
-        'TemplateType': value.templateType,
-        'ReopenStatus': value.reopenStatus,
-        'ResolvedStatus': value.resolvedStatus,
-        'TitleFormat': value.titleFormat,
-        'IntegrationWizardResultModel': (0, IntegrationWizardResultModel_1.IntegrationWizardResultModelToJSON)(value.integrationWizardResultModel),
+        'Password': value['password'],
+        'Username': value['username'],
+        'AssignedTo': value['assignedTo'],
+        'Domain': value['domain'],
+        'ProjectUri': value['projectUri'],
+        'Tags': value['tags'],
+        'WorkItemTypeName': value['workItemTypeName'],
+        'Name': value['name'],
+        'IntegrationVersion': value['integrationVersion'],
+        'AccountID': value['accountID'],
+        'CustomFields': value['customFields'] == null ? undefined : (value['customFields'].map(IntegrationCustomFieldVm_1.IntegrationCustomFieldVmToJSON)),
+        'TemplateType': value['templateType'],
+        'ReopenStatus': value['reopenStatus'],
+        'ResolvedStatus': value['resolvedStatus'],
+        'TitleFormat': value['titleFormat'],
+        'IntegrationWizardResultModel': (0, IntegrationWizardResultModel_1.IntegrationWizardResultModelToJSON)(value['integrationWizardResultModel']),
+        'Id': value['id'],
+        'State': value['state'],
     };
 }
 exports.AzureDevOpsIntegrationInfoModelToJSON = AzureDevOpsIntegrationInfoModelToJSON;

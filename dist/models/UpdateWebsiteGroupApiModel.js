@@ -14,15 +14,15 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UpdateWebsiteGroupApiModelToJSON = exports.UpdateWebsiteGroupApiModelFromJSONTyped = exports.UpdateWebsiteGroupApiModelFromJSON = exports.instanceOfUpdateWebsiteGroupApiModel = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the UpdateWebsiteGroupApiModel interface.
  */
 function instanceOfUpdateWebsiteGroupApiModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "id" in value;
-    isInstance = isInstance && "name" in value;
-    return isInstance;
+    if (!('id' in value))
+        return false;
+    if (!('name' in value))
+        return false;
+    return true;
 }
 exports.instanceOfUpdateWebsiteGroupApiModel = instanceOfUpdateWebsiteGroupApiModel;
 function UpdateWebsiteGroupApiModelFromJSON(json) {
@@ -30,29 +30,26 @@ function UpdateWebsiteGroupApiModelFromJSON(json) {
 }
 exports.UpdateWebsiteGroupApiModelFromJSON = UpdateWebsiteGroupApiModelFromJSON;
 function UpdateWebsiteGroupApiModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         'id': json['Id'],
         'name': json['Name'],
-        'description': !(0, runtime_1.exists)(json, 'Description') ? undefined : json['Description'],
-        'tags': !(0, runtime_1.exists)(json, 'Tags') ? undefined : json['Tags'],
+        'description': json['Description'] == null ? undefined : json['Description'],
+        'tags': json['Tags'] == null ? undefined : json['Tags'],
     };
 }
 exports.UpdateWebsiteGroupApiModelFromJSONTyped = UpdateWebsiteGroupApiModelFromJSONTyped;
 function UpdateWebsiteGroupApiModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Id': value.id,
-        'Name': value.name,
-        'Description': value.description,
-        'Tags': value.tags,
+        'Id': value['id'],
+        'Name': value['name'],
+        'Description': value['description'],
+        'Tags': value['tags'],
     };
 }
 exports.UpdateWebsiteGroupApiModelToJSON = UpdateWebsiteGroupApiModelToJSON;

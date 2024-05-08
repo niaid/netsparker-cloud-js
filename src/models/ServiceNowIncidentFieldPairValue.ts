@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * 
  * @export
@@ -37,9 +37,7 @@ export interface ServiceNowIncidentFieldPairValue {
  * Check if a given object implements the ServiceNowIncidentFieldPairValue interface.
  */
 export function instanceOfServiceNowIncidentFieldPairValue(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function ServiceNowIncidentFieldPairValueFromJSON(json: any): ServiceNowIncidentFieldPairValue {
@@ -47,27 +45,24 @@ export function ServiceNowIncidentFieldPairValueFromJSON(json: any): ServiceNowI
 }
 
 export function ServiceNowIncidentFieldPairValueFromJSONTyped(json: any, ignoreDiscriminator: boolean): ServiceNowIncidentFieldPairValue {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'text': !exists(json, 'Text') ? undefined : json['Text'],
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'text': json['Text'] == null ? undefined : json['Text'],
     };
 }
 
 export function ServiceNowIncidentFieldPairValueToJSON(value?: ServiceNowIncidentFieldPairValue | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Id': value.id,
-        'Text': value.text,
+        'Id': value['id'],
+        'Text': value['text'],
     };
 }
 

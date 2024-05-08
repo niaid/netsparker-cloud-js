@@ -14,7 +14,6 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.DiscoveryConnectionsViewModelToJSON = exports.DiscoveryConnectionsViewModelFromJSONTyped = exports.DiscoveryConnectionsViewModelFromJSON = exports.instanceOfDiscoveryConnectionsViewModel = exports.DiscoveryConnectionsViewModelTypeEnum = void 0;
-const runtime_1 = require("../runtime");
 const AwsConnectionInfoModel_1 = require("./AwsConnectionInfoModel");
 /**
  * @export
@@ -26,9 +25,9 @@ exports.DiscoveryConnectionsViewModelTypeEnum = {
  * Check if a given object implements the DiscoveryConnectionsViewModel interface.
  */
 function instanceOfDiscoveryConnectionsViewModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "name" in value;
-    return isInstance;
+    if (!('name' in value))
+        return false;
+    return true;
 }
 exports.instanceOfDiscoveryConnectionsViewModel = instanceOfDiscoveryConnectionsViewModel;
 function DiscoveryConnectionsViewModelFromJSON(json) {
@@ -36,29 +35,26 @@ function DiscoveryConnectionsViewModelFromJSON(json) {
 }
 exports.DiscoveryConnectionsViewModelFromJSON = DiscoveryConnectionsViewModelFromJSON;
 function DiscoveryConnectionsViewModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         'name': json['Name'],
-        'type': !(0, runtime_1.exists)(json, 'Type') ? undefined : json['Type'],
-        'id': !(0, runtime_1.exists)(json, 'Id') ? undefined : json['Id'],
-        'awsConnectionInfo': !(0, runtime_1.exists)(json, 'AwsConnectionInfo') ? undefined : (0, AwsConnectionInfoModel_1.AwsConnectionInfoModelFromJSON)(json['AwsConnectionInfo']),
+        'type': json['Type'] == null ? undefined : json['Type'],
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'awsConnectionInfo': json['AwsConnectionInfo'] == null ? undefined : (0, AwsConnectionInfoModel_1.AwsConnectionInfoModelFromJSON)(json['AwsConnectionInfo']),
     };
 }
 exports.DiscoveryConnectionsViewModelFromJSONTyped = DiscoveryConnectionsViewModelFromJSONTyped;
 function DiscoveryConnectionsViewModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Name': value.name,
-        'Type': value.type,
-        'Id': value.id,
-        'AwsConnectionInfo': (0, AwsConnectionInfoModel_1.AwsConnectionInfoModelToJSON)(value.awsConnectionInfo),
+        'Name': value['name'],
+        'Type': value['type'],
+        'Id': value['id'],
+        'AwsConnectionInfo': (0, AwsConnectionInfoModel_1.AwsConnectionInfoModelToJSON)(value['awsConnectionInfo']),
     };
 }
 exports.DiscoveryConnectionsViewModelToJSON = DiscoveryConnectionsViewModelToJSON;

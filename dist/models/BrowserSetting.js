@@ -14,14 +14,13 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.BrowserSettingToJSON = exports.BrowserSettingFromJSONTyped = exports.BrowserSettingFromJSON = exports.instanceOfBrowserSetting = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the BrowserSetting interface.
  */
 function instanceOfBrowserSetting(value) {
-    let isInstance = true;
-    isInstance = isInstance && "name" in value;
-    return isInstance;
+    if (!('name' in value))
+        return false;
+    return true;
 }
 exports.instanceOfBrowserSetting = instanceOfBrowserSetting;
 function BrowserSettingFromJSON(json) {
@@ -29,27 +28,24 @@ function BrowserSettingFromJSON(json) {
 }
 exports.BrowserSettingFromJSON = BrowserSettingFromJSON;
 function BrowserSettingFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'enabled': !(0, runtime_1.exists)(json, 'Enabled') ? undefined : json['Enabled'],
+        'enabled': json['Enabled'] == null ? undefined : json['Enabled'],
         'name': json['Name'],
-        'readOnly': !(0, runtime_1.exists)(json, 'ReadOnly') ? undefined : json['ReadOnly'],
+        'readOnly': json['ReadOnly'] == null ? undefined : json['ReadOnly'],
     };
 }
 exports.BrowserSettingFromJSONTyped = BrowserSettingFromJSONTyped;
 function BrowserSettingToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Enabled': value.enabled,
-        'Name': value.name,
-        'ReadOnly': value.readOnly,
+        'Enabled': value['enabled'],
+        'Name': value['name'],
+        'ReadOnly': value['readOnly'],
     };
 }
 exports.BrowserSettingToJSON = BrowserSettingToJSON;

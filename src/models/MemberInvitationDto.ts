@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 import type { ReducedTeamDto } from './ReducedTeamDto';
 import {
     ReducedTeamDtoFromJSON,
@@ -116,9 +116,7 @@ export interface MemberInvitationDto {
  * Check if a given object implements the MemberInvitationDto interface.
  */
 export function instanceOfMemberInvitationDto(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function MemberInvitationDtoFromJSON(json: any): MemberInvitationDto {
@@ -126,49 +124,46 @@ export function MemberInvitationDtoFromJSON(json: any): MemberInvitationDto {
 }
 
 export function MemberInvitationDtoFromJSONTyped(json: any, ignoreDiscriminator: boolean): MemberInvitationDto {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'accountId': !exists(json, 'AccountId') ? undefined : json['AccountId'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
-        'email': !exists(json, 'Email') ? undefined : json['Email'],
-        'isApiAccessEnabled': !exists(json, 'IsApiAccessEnabled') ? undefined : json['IsApiAccessEnabled'],
-        'phoneNumber': !exists(json, 'PhoneNumber') ? undefined : json['PhoneNumber'],
-        'allowedWebsiteLimit': !exists(json, 'AllowedWebsiteLimit') ? undefined : json['AllowedWebsiteLimit'],
-        'alternateLoginEmail': !exists(json, 'AlternateLoginEmail') ? undefined : json['AlternateLoginEmail'],
-        'inUse': !exists(json, 'InUse') ? undefined : json['InUse'],
-        'teams': !exists(json, 'Teams') ? undefined : ((json['Teams'] as Array<any>).map(ReducedTeamDtoFromJSON)),
-        'roleWebsiteGroupMappings': !exists(json, 'RoleWebsiteGroupMappings') ? undefined : ((json['RoleWebsiteGroupMappings'] as Array<any>).map(RoleWebsiteGroupMappingDtoFromJSON)),
-        'isAlternateLoginEmail': !exists(json, 'IsAlternateLoginEmail') ? undefined : json['IsAlternateLoginEmail'],
-        'onlySsoLogin': !exists(json, 'OnlySsoLogin') ? undefined : json['OnlySsoLogin'],
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'accountId': json['AccountId'] == null ? undefined : json['AccountId'],
+        'name': json['Name'] == null ? undefined : json['Name'],
+        'email': json['Email'] == null ? undefined : json['Email'],
+        'isApiAccessEnabled': json['IsApiAccessEnabled'] == null ? undefined : json['IsApiAccessEnabled'],
+        'phoneNumber': json['PhoneNumber'] == null ? undefined : json['PhoneNumber'],
+        'allowedWebsiteLimit': json['AllowedWebsiteLimit'] == null ? undefined : json['AllowedWebsiteLimit'],
+        'alternateLoginEmail': json['AlternateLoginEmail'] == null ? undefined : json['AlternateLoginEmail'],
+        'inUse': json['InUse'] == null ? undefined : json['InUse'],
+        'teams': json['Teams'] == null ? undefined : ((json['Teams'] as Array<any>).map(ReducedTeamDtoFromJSON)),
+        'roleWebsiteGroupMappings': json['RoleWebsiteGroupMappings'] == null ? undefined : ((json['RoleWebsiteGroupMappings'] as Array<any>).map(RoleWebsiteGroupMappingDtoFromJSON)),
+        'isAlternateLoginEmail': json['IsAlternateLoginEmail'] == null ? undefined : json['IsAlternateLoginEmail'],
+        'onlySsoLogin': json['OnlySsoLogin'] == null ? undefined : json['OnlySsoLogin'],
     };
 }
 
 export function MemberInvitationDtoToJSON(value?: MemberInvitationDto | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Id': value.id,
-        'AccountId': value.accountId,
-        'Name': value.name,
-        'Email': value.email,
-        'IsApiAccessEnabled': value.isApiAccessEnabled,
-        'PhoneNumber': value.phoneNumber,
-        'AllowedWebsiteLimit': value.allowedWebsiteLimit,
-        'AlternateLoginEmail': value.alternateLoginEmail,
-        'InUse': value.inUse,
-        'Teams': value.teams === undefined ? undefined : ((value.teams as Array<any>).map(ReducedTeamDtoToJSON)),
-        'RoleWebsiteGroupMappings': value.roleWebsiteGroupMappings === undefined ? undefined : ((value.roleWebsiteGroupMappings as Array<any>).map(RoleWebsiteGroupMappingDtoToJSON)),
-        'IsAlternateLoginEmail': value.isAlternateLoginEmail,
-        'OnlySsoLogin': value.onlySsoLogin,
+        'Id': value['id'],
+        'AccountId': value['accountId'],
+        'Name': value['name'],
+        'Email': value['email'],
+        'IsApiAccessEnabled': value['isApiAccessEnabled'],
+        'PhoneNumber': value['phoneNumber'],
+        'AllowedWebsiteLimit': value['allowedWebsiteLimit'],
+        'AlternateLoginEmail': value['alternateLoginEmail'],
+        'InUse': value['inUse'],
+        'Teams': value['teams'] == null ? undefined : ((value['teams'] as Array<any>).map(ReducedTeamDtoToJSON)),
+        'RoleWebsiteGroupMappings': value['roleWebsiteGroupMappings'] == null ? undefined : ((value['roleWebsiteGroupMappings'] as Array<any>).map(RoleWebsiteGroupMappingDtoToJSON)),
+        'IsAlternateLoginEmail': value['isAlternateLoginEmail'],
+        'OnlySsoLogin': value['onlySsoLogin'],
     };
 }
 

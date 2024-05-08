@@ -14,7 +14,6 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UpdateScheduledIncrementalScanApiModelToJSON = exports.UpdateScheduledIncrementalScanApiModelFromJSONTyped = exports.UpdateScheduledIncrementalScanApiModelFromJSON = exports.instanceOfUpdateScheduledIncrementalScanApiModel = exports.UpdateScheduledIncrementalScanApiModelScheduleRunTypeEnum = void 0;
-const runtime_1 = require("../runtime");
 /**
  * @export
  */
@@ -32,13 +31,17 @@ exports.UpdateScheduledIncrementalScanApiModelScheduleRunTypeEnum = {
  * Check if a given object implements the UpdateScheduledIncrementalScanApiModel interface.
  */
 function instanceOfUpdateScheduledIncrementalScanApiModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "id" in value;
-    isInstance = isInstance && "name" in value;
-    isInstance = isInstance && "nextExecutionTime" in value;
-    isInstance = isInstance && "scheduleRunType" in value;
-    isInstance = isInstance && "baseScanId" in value;
-    return isInstance;
+    if (!('id' in value))
+        return false;
+    if (!('name' in value))
+        return false;
+    if (!('nextExecutionTime' in value))
+        return false;
+    if (!('scheduleRunType' in value))
+        return false;
+    if (!('baseScanId' in value))
+        return false;
+    return true;
 }
 exports.instanceOfUpdateScheduledIncrementalScanApiModel = instanceOfUpdateScheduledIncrementalScanApiModel;
 function UpdateScheduledIncrementalScanApiModelFromJSON(json) {
@@ -46,41 +49,38 @@ function UpdateScheduledIncrementalScanApiModelFromJSON(json) {
 }
 exports.UpdateScheduledIncrementalScanApiModelFromJSON = UpdateScheduledIncrementalScanApiModelFromJSON;
 function UpdateScheduledIncrementalScanApiModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'disabled': !(0, runtime_1.exists)(json, 'Disabled') ? undefined : json['Disabled'],
+        'disabled': json['Disabled'] == null ? undefined : json['Disabled'],
         'id': json['Id'],
-        'isMaxScanDurationEnabled': !(0, runtime_1.exists)(json, 'IsMaxScanDurationEnabled') ? undefined : json['IsMaxScanDurationEnabled'],
-        'maxScanDuration': !(0, runtime_1.exists)(json, 'MaxScanDuration') ? undefined : json['MaxScanDuration'],
+        'isMaxScanDurationEnabled': json['IsMaxScanDurationEnabled'] == null ? undefined : json['IsMaxScanDurationEnabled'],
+        'maxScanDuration': json['MaxScanDuration'] == null ? undefined : json['MaxScanDuration'],
         'name': json['Name'],
         'nextExecutionTime': json['NextExecutionTime'],
         'scheduleRunType': json['ScheduleRunType'],
-        'tags': !(0, runtime_1.exists)(json, 'Tags') ? undefined : json['Tags'],
-        'agentName': !(0, runtime_1.exists)(json, 'AgentName') ? undefined : json['AgentName'],
+        'tags': json['Tags'] == null ? undefined : json['Tags'],
+        'agentName': json['AgentName'] == null ? undefined : json['AgentName'],
         'baseScanId': json['BaseScanId'],
     };
 }
 exports.UpdateScheduledIncrementalScanApiModelFromJSONTyped = UpdateScheduledIncrementalScanApiModelFromJSONTyped;
 function UpdateScheduledIncrementalScanApiModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Disabled': value.disabled,
-        'Id': value.id,
-        'IsMaxScanDurationEnabled': value.isMaxScanDurationEnabled,
-        'MaxScanDuration': value.maxScanDuration,
-        'Name': value.name,
-        'NextExecutionTime': value.nextExecutionTime,
-        'ScheduleRunType': value.scheduleRunType,
-        'Tags': value.tags,
-        'AgentName': value.agentName,
-        'BaseScanId': value.baseScanId,
+        'Disabled': value['disabled'],
+        'Id': value['id'],
+        'IsMaxScanDurationEnabled': value['isMaxScanDurationEnabled'],
+        'MaxScanDuration': value['maxScanDuration'],
+        'Name': value['name'],
+        'NextExecutionTime': value['nextExecutionTime'],
+        'ScheduleRunType': value['scheduleRunType'],
+        'Tags': value['tags'],
+        'AgentName': value['agentName'],
+        'BaseScanId': value['baseScanId'],
     };
 }
 exports.UpdateScheduledIncrementalScanApiModelToJSON = UpdateScheduledIncrementalScanApiModelToJSON;

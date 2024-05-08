@@ -9,8 +9,8 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
 import type { IntegrationWizardResultModel } from './IntegrationWizardResultModel';
+import type { IntegrationCustomFieldVm } from './IntegrationCustomFieldVm';
 /**
  * The Clubhouse integration info
  * @export
@@ -167,6 +167,18 @@ export interface ClubhouseIntegrationInfoModel {
      * @memberof ClubhouseIntegrationInfoModel
      */
     integrationWizardResultModel?: IntegrationWizardResultModel;
+    /**
+     *
+     * @type {string}
+     * @memberof ClubhouseIntegrationInfoModel
+     */
+    id?: string;
+    /**
+     *
+     * @type {string}
+     * @memberof ClubhouseIntegrationInfoModel
+     */
+    state?: ClubhouseIntegrationInfoModelStateEnum;
 }
 /**
  * @export
@@ -225,9 +237,17 @@ export declare const ClubhouseIntegrationInfoModelTemplateTypeEnum: {
 };
 export type ClubhouseIntegrationInfoModelTemplateTypeEnum = typeof ClubhouseIntegrationInfoModelTemplateTypeEnum[keyof typeof ClubhouseIntegrationInfoModelTemplateTypeEnum];
 /**
+ * @export
+ */
+export declare const ClubhouseIntegrationInfoModelStateEnum: {
+    readonly Active: "Active";
+    readonly Suspended: "Suspended";
+};
+export type ClubhouseIntegrationInfoModelStateEnum = typeof ClubhouseIntegrationInfoModelStateEnum[keyof typeof ClubhouseIntegrationInfoModelStateEnum];
+/**
  * Check if a given object implements the ClubhouseIntegrationInfoModel interface.
  */
 export declare function instanceOfClubhouseIntegrationInfoModel(value: object): boolean;
 export declare function ClubhouseIntegrationInfoModelFromJSON(json: any): ClubhouseIntegrationInfoModel;
 export declare function ClubhouseIntegrationInfoModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): ClubhouseIntegrationInfoModel;
-export declare function ClubhouseIntegrationInfoModelToJSON(value?: ClubhouseIntegrationInfoModel | null): any;
+export declare function ClubhouseIntegrationInfoModelToJSON(value?: Omit<ClubhouseIntegrationInfoModel, 'Type' | 'GenericErrorMessage' | 'Identifier' | 'TestMessageBody' | 'TestMessageTitle' | 'WebhookUrl'> | null): any;

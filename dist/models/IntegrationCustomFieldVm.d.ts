@@ -9,7 +9,7 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { FileCache } from './FileCache';
+import type { CachedFile } from './CachedFile';
 /**
  *
  * @export
@@ -18,10 +18,10 @@ import type { FileCache } from './FileCache';
 export interface IntegrationCustomFieldVm {
     /**
      *
-     * @type {FileCache}
+     * @type {CachedFile}
      * @memberof IntegrationCustomFieldVm
      */
-    file?: FileCache;
+    file?: CachedFile;
     /**
      *
      * @type {string}

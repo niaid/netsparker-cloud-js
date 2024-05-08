@@ -14,16 +14,16 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UpdateTeamApiModelToJSON = exports.UpdateTeamApiModelFromJSONTyped = exports.UpdateTeamApiModelFromJSON = exports.instanceOfUpdateTeamApiModel = void 0;
-const runtime_1 = require("../runtime");
 const RoleWebsiteGroupMappingApiModel_1 = require("./RoleWebsiteGroupMappingApiModel");
 /**
  * Check if a given object implements the UpdateTeamApiModel interface.
  */
 function instanceOfUpdateTeamApiModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "id" in value;
-    isInstance = isInstance && "name" in value;
-    return isInstance;
+    if (!('id' in value))
+        return false;
+    if (!('name' in value))
+        return false;
+    return true;
 }
 exports.instanceOfUpdateTeamApiModel = instanceOfUpdateTeamApiModel;
 function UpdateTeamApiModelFromJSON(json) {
@@ -31,29 +31,26 @@ function UpdateTeamApiModelFromJSON(json) {
 }
 exports.UpdateTeamApiModelFromJSON = UpdateTeamApiModelFromJSON;
 function UpdateTeamApiModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'roleWebsiteGroupMappings': !(0, runtime_1.exists)(json, 'RoleWebsiteGroupMappings') ? undefined : (json['RoleWebsiteGroupMappings'].map(RoleWebsiteGroupMappingApiModel_1.RoleWebsiteGroupMappingApiModelFromJSON)),
+        'roleWebsiteGroupMappings': json['RoleWebsiteGroupMappings'] == null ? undefined : (json['RoleWebsiteGroupMappings'].map(RoleWebsiteGroupMappingApiModel_1.RoleWebsiteGroupMappingApiModelFromJSON)),
         'id': json['Id'],
         'name': json['Name'],
-        'members': !(0, runtime_1.exists)(json, 'Members') ? undefined : json['Members'],
+        'members': json['Members'] == null ? undefined : json['Members'],
     };
 }
 exports.UpdateTeamApiModelFromJSONTyped = UpdateTeamApiModelFromJSONTyped;
 function UpdateTeamApiModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'RoleWebsiteGroupMappings': value.roleWebsiteGroupMappings === undefined ? undefined : (value.roleWebsiteGroupMappings.map(RoleWebsiteGroupMappingApiModel_1.RoleWebsiteGroupMappingApiModelToJSON)),
-        'Id': value.id,
-        'Name': value.name,
-        'Members': value.members,
+        'RoleWebsiteGroupMappings': value['roleWebsiteGroupMappings'] == null ? undefined : (value['roleWebsiteGroupMappings'].map(RoleWebsiteGroupMappingApiModel_1.RoleWebsiteGroupMappingApiModelToJSON)),
+        'Id': value['id'],
+        'Name': value['name'],
+        'Members': value['members'],
     };
 }
 exports.UpdateTeamApiModelToJSON = UpdateTeamApiModelToJSON;

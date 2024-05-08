@@ -14,7 +14,6 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ScanTimeWindowItemModelToJSON = exports.ScanTimeWindowItemModelFromJSONTyped = exports.ScanTimeWindowItemModelFromJSON = exports.instanceOfScanTimeWindowItemModel = exports.ScanTimeWindowItemModelDayEnum = void 0;
-const runtime_1 = require("../runtime");
 /**
  * @export
  */
@@ -31,8 +30,7 @@ exports.ScanTimeWindowItemModelDayEnum = {
  * Check if a given object implements the ScanTimeWindowItemModel interface.
  */
 function instanceOfScanTimeWindowItemModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfScanTimeWindowItemModel = instanceOfScanTimeWindowItemModel;
 function ScanTimeWindowItemModelFromJSON(json) {
@@ -40,29 +38,26 @@ function ScanTimeWindowItemModelFromJSON(json) {
 }
 exports.ScanTimeWindowItemModelFromJSON = ScanTimeWindowItemModelFromJSON;
 function ScanTimeWindowItemModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'day': !(0, runtime_1.exists)(json, 'Day') ? undefined : json['Day'],
-        'from': !(0, runtime_1.exists)(json, 'From') ? undefined : json['From'],
-        'scanningAllowed': !(0, runtime_1.exists)(json, 'ScanningAllowed') ? undefined : json['ScanningAllowed'],
-        'to': !(0, runtime_1.exists)(json, 'To') ? undefined : json['To'],
+        'day': json['Day'] == null ? undefined : json['Day'],
+        'from': json['From'] == null ? undefined : json['From'],
+        'scanningAllowed': json['ScanningAllowed'] == null ? undefined : json['ScanningAllowed'],
+        'to': json['To'] == null ? undefined : json['To'],
     };
 }
 exports.ScanTimeWindowItemModelFromJSONTyped = ScanTimeWindowItemModelFromJSONTyped;
 function ScanTimeWindowItemModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Day': value.day,
-        'From': value.from,
-        'ScanningAllowed': value.scanningAllowed,
-        'To': value.to,
+        'Day': value['day'],
+        'From': value['from'],
+        'ScanningAllowed': value['scanningAllowed'],
+        'To': value['to'],
     };
 }
 exports.ScanTimeWindowItemModelToJSON = ScanTimeWindowItemModelToJSON;

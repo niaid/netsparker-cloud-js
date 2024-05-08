@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AsanaProjectToJSON = exports.AsanaProjectFromJSONTyped = exports.AsanaProjectFromJSON = exports.instanceOfAsanaProject = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the AsanaProject interface.
  */
 function instanceOfAsanaProject(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfAsanaProject = instanceOfAsanaProject;
 function AsanaProjectFromJSON(json) {
@@ -28,27 +26,24 @@ function AsanaProjectFromJSON(json) {
 }
 exports.AsanaProjectFromJSON = AsanaProjectFromJSON;
 function AsanaProjectFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'gid': !(0, runtime_1.exists)(json, 'gid') ? undefined : json['gid'],
-        'name': !(0, runtime_1.exists)(json, 'name') ? undefined : json['name'],
-        'url': !(0, runtime_1.exists)(json, 'Url') ? undefined : json['Url'],
+        'gid': json['gid'] == null ? undefined : json['gid'],
+        'name': json['name'] == null ? undefined : json['name'],
+        'url': json['Url'] == null ? undefined : json['Url'],
     };
 }
 exports.AsanaProjectFromJSONTyped = AsanaProjectFromJSONTyped;
 function AsanaProjectToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'gid': value.gid,
-        'name': value.name,
-        'Url': value.url,
+        'gid': value['gid'],
+        'name': value['name'],
+        'Url': value['url'],
     };
 }
 exports.AsanaProjectToJSON = AsanaProjectToJSON;

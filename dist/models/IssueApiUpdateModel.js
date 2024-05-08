@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.IssueApiUpdateModelToJSON = exports.IssueApiUpdateModelFromJSONTyped = exports.IssueApiUpdateModelFromJSON = exports.instanceOfIssueApiUpdateModel = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the IssueApiUpdateModel interface.
  */
 function instanceOfIssueApiUpdateModel(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfIssueApiUpdateModel = instanceOfIssueApiUpdateModel;
 function IssueApiUpdateModelFromJSON(json) {
@@ -28,31 +26,28 @@ function IssueApiUpdateModelFromJSON(json) {
 }
 exports.IssueApiUpdateModelFromJSON = IssueApiUpdateModelFromJSON;
 function IssueApiUpdateModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'issueId': !(0, runtime_1.exists)(json, 'IssueId') ? undefined : json['IssueId'],
-        'state': !(0, runtime_1.exists)(json, 'State') ? undefined : json['State'],
-        'assigneeId': !(0, runtime_1.exists)(json, 'AssigneeId') ? undefined : json['AssigneeId'],
-        'note': !(0, runtime_1.exists)(json, 'Note') ? undefined : json['Note'],
-        'tags': !(0, runtime_1.exists)(json, 'Tags') ? undefined : json['Tags'],
+        'issueId': json['IssueId'] == null ? undefined : json['IssueId'],
+        'state': json['State'] == null ? undefined : json['State'],
+        'assigneeId': json['AssigneeId'] == null ? undefined : json['AssigneeId'],
+        'note': json['Note'] == null ? undefined : json['Note'],
+        'tags': json['Tags'] == null ? undefined : json['Tags'],
     };
 }
 exports.IssueApiUpdateModelFromJSONTyped = IssueApiUpdateModelFromJSONTyped;
 function IssueApiUpdateModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'IssueId': value.issueId,
-        'State': value.state,
-        'AssigneeId': value.assigneeId,
-        'Note': value.note,
-        'Tags': value.tags,
+        'IssueId': value['issueId'],
+        'State': value['state'],
+        'AssigneeId': value['assigneeId'],
+        'Note': value['note'],
+        'Tags': value['tags'],
     };
 }
 exports.IssueApiUpdateModelToJSON = IssueApiUpdateModelToJSON;

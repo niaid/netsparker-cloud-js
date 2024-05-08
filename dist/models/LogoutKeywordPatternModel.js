@@ -14,14 +14,13 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.LogoutKeywordPatternModelToJSON = exports.LogoutKeywordPatternModelFromJSONTyped = exports.LogoutKeywordPatternModelFromJSON = exports.instanceOfLogoutKeywordPatternModel = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the LogoutKeywordPatternModel interface.
  */
 function instanceOfLogoutKeywordPatternModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "pattern" in value;
-    return isInstance;
+    if (!('pattern' in value))
+        return false;
+    return true;
 }
 exports.instanceOfLogoutKeywordPatternModel = instanceOfLogoutKeywordPatternModel;
 function LogoutKeywordPatternModelFromJSON(json) {
@@ -29,25 +28,22 @@ function LogoutKeywordPatternModelFromJSON(json) {
 }
 exports.LogoutKeywordPatternModelFromJSON = LogoutKeywordPatternModelFromJSON;
 function LogoutKeywordPatternModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         'pattern': json['Pattern'],
-        'regex': !(0, runtime_1.exists)(json, 'Regex') ? undefined : json['Regex'],
+        'regex': json['Regex'] == null ? undefined : json['Regex'],
     };
 }
 exports.LogoutKeywordPatternModelFromJSONTyped = LogoutKeywordPatternModelFromJSONTyped;
 function LogoutKeywordPatternModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Pattern': value.pattern,
-        'Regex': value.regex,
+        'Pattern': value['pattern'],
+        'Regex': value['regex'],
     };
 }
 exports.LogoutKeywordPatternModelToJSON = LogoutKeywordPatternModelToJSON;

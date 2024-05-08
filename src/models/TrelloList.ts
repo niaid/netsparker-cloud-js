@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * 
  * @export
@@ -49,9 +49,7 @@ export interface TrelloList {
  * Check if a given object implements the TrelloList interface.
  */
 export function instanceOfTrelloList(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function TrelloListFromJSON(json: any): TrelloList {
@@ -59,30 +57,27 @@ export function TrelloListFromJSON(json: any): TrelloList {
 }
 
 export function TrelloListFromJSONTyped(json: any, ignoreDiscriminator: boolean): TrelloList {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'closed': !exists(json, 'closed') ? undefined : json['closed'],
-        'id': !exists(json, 'id') ? undefined : json['id'],
-        'isActive': !exists(json, 'IsActive') ? undefined : json['IsActive'],
-        'name': !exists(json, 'name') ? undefined : json['name'],
+        'closed': json['closed'] == null ? undefined : json['closed'],
+        'id': json['id'] == null ? undefined : json['id'],
+        'isActive': json['IsActive'] == null ? undefined : json['IsActive'],
+        'name': json['name'] == null ? undefined : json['name'],
     };
 }
 
-export function TrelloListToJSON(value?: TrelloList | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+export function TrelloListToJSON(value?: Omit<TrelloList, 'IsActive'> | null): any {
+    if (value == null) {
+        return value;
     }
     return {
         
-        'closed': value.closed,
-        'id': value.id,
-        'name': value.name,
+        'closed': value['closed'],
+        'id': value['id'],
+        'name': value['name'],
     };
 }
 

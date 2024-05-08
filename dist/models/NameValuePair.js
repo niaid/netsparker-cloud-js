@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.NameValuePairToJSON = exports.NameValuePairFromJSONTyped = exports.NameValuePairFromJSON = exports.instanceOfNameValuePair = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the NameValuePair interface.
  */
 function instanceOfNameValuePair(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfNameValuePair = instanceOfNameValuePair;
 function NameValuePairFromJSON(json) {
@@ -28,29 +26,26 @@ function NameValuePairFromJSON(json) {
 }
 exports.NameValuePairFromJSON = NameValuePairFromJSON;
 function NameValuePairFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
-        'value': !(0, runtime_1.exists)(json, 'Value') ? undefined : json['Value'],
-        'isEncoded': !(0, runtime_1.exists)(json, 'IsEncoded') ? undefined : json['IsEncoded'],
-        'isEncrypted': !(0, runtime_1.exists)(json, 'IsEncrypted') ? undefined : json['IsEncrypted'],
+        'name': json['Name'] == null ? undefined : json['Name'],
+        'value': json['Value'] == null ? undefined : json['Value'],
+        'isEncoded': json['IsEncoded'] == null ? undefined : json['IsEncoded'],
+        'isEncrypted': json['IsEncrypted'] == null ? undefined : json['IsEncrypted'],
     };
 }
 exports.NameValuePairFromJSONTyped = NameValuePairFromJSONTyped;
 function NameValuePairToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Name': value.name,
-        'Value': value.value,
-        'IsEncoded': value.isEncoded,
-        'IsEncrypted': value.isEncrypted,
+        'Name': value['name'],
+        'Value': value['value'],
+        'IsEncoded': value['isEncoded'],
+        'IsEncrypted': value['isEncrypted'],
     };
 }
 exports.NameValuePairToJSON = NameValuePairToJSON;

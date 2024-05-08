@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 import type { AwsConnectionInfoModel } from './AwsConnectionInfoModel';
 import {
     AwsConnectionInfoModelFromJSON,
@@ -66,10 +66,8 @@ export type DiscoveryConnectionsViewModelTypeEnum = typeof DiscoveryConnectionsV
  * Check if a given object implements the DiscoveryConnectionsViewModel interface.
  */
 export function instanceOfDiscoveryConnectionsViewModel(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "name" in value;
-
-    return isInstance;
+    if (!('name' in value)) return false;
+    return true;
 }
 
 export function DiscoveryConnectionsViewModelFromJSON(json: any): DiscoveryConnectionsViewModel {
@@ -77,31 +75,28 @@ export function DiscoveryConnectionsViewModelFromJSON(json: any): DiscoveryConne
 }
 
 export function DiscoveryConnectionsViewModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): DiscoveryConnectionsViewModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
         'name': json['Name'],
-        'type': !exists(json, 'Type') ? undefined : json['Type'],
-        'id': !exists(json, 'Id') ? undefined : json['Id'],
-        'awsConnectionInfo': !exists(json, 'AwsConnectionInfo') ? undefined : AwsConnectionInfoModelFromJSON(json['AwsConnectionInfo']),
+        'type': json['Type'] == null ? undefined : json['Type'],
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'awsConnectionInfo': json['AwsConnectionInfo'] == null ? undefined : AwsConnectionInfoModelFromJSON(json['AwsConnectionInfo']),
     };
 }
 
 export function DiscoveryConnectionsViewModelToJSON(value?: DiscoveryConnectionsViewModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Name': value.name,
-        'Type': value.type,
-        'Id': value.id,
-        'AwsConnectionInfo': AwsConnectionInfoModelToJSON(value.awsConnectionInfo),
+        'Name': value['name'],
+        'Type': value['type'],
+        'Id': value['id'],
+        'AwsConnectionInfo': AwsConnectionInfoModelToJSON(value['awsConnectionInfo']),
     };
 }
 

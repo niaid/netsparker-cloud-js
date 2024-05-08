@@ -14,7 +14,6 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ScanPolicyOptimizerOptionsToJSON = exports.ScanPolicyOptimizerOptionsFromJSONTyped = exports.ScanPolicyOptimizerOptionsFromJSON = exports.instanceOfScanPolicyOptimizerOptions = exports.ScanPolicyOptimizerOptionsWebServerEnum = exports.ScanPolicyOptimizerOptionsSuggestionStatusEnum = exports.ScanPolicyOptimizerOptionsOperatingSystemEnum = exports.ScanPolicyOptimizerOptionsDomParserPresetEnum = exports.ScanPolicyOptimizerOptionsDatabaseServerEnum = exports.ScanPolicyOptimizerOptionsAppServerEnum = void 0;
-const runtime_1 = require("../runtime");
 /**
  * @export
  */
@@ -84,8 +83,7 @@ exports.ScanPolicyOptimizerOptionsWebServerEnum = {
  * Check if a given object implements the ScanPolicyOptimizerOptions interface.
  */
 function instanceOfScanPolicyOptimizerOptions(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfScanPolicyOptimizerOptions = instanceOfScanPolicyOptimizerOptions;
 function ScanPolicyOptimizerOptionsFromJSON(json) {
@@ -93,47 +91,44 @@ function ScanPolicyOptimizerOptionsFromJSON(json) {
 }
 exports.ScanPolicyOptimizerOptionsFromJSON = ScanPolicyOptimizerOptionsFromJSON;
 function ScanPolicyOptimizerOptionsFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'appServer': !(0, runtime_1.exists)(json, 'AppServer') ? undefined : json['AppServer'],
-        'databaseServer': !(0, runtime_1.exists)(json, 'DatabaseServer') ? undefined : json['DatabaseServer'],
-        'directoryNameLimit': !(0, runtime_1.exists)(json, 'DirectoryNameLimit') ? undefined : json['DirectoryNameLimit'],
-        'domParserPreset': !(0, runtime_1.exists)(json, 'DomParserPreset') ? undefined : json['DomParserPreset'],
-        'hosts': !(0, runtime_1.exists)(json, 'Hosts') ? undefined : json['Hosts'],
-        'isSharkEnabled': !(0, runtime_1.exists)(json, 'IsSharkEnabled') ? undefined : json['IsSharkEnabled'],
-        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
-        'netsparkerHawkBaseUrl': !(0, runtime_1.exists)(json, 'NetsparkerHawkBaseUrl') ? undefined : json['NetsparkerHawkBaseUrl'],
-        'operatingSystem': !(0, runtime_1.exists)(json, 'OperatingSystem') ? undefined : json['OperatingSystem'],
-        'optimized': !(0, runtime_1.exists)(json, 'Optimized') ? undefined : json['Optimized'],
-        'resourceFinders': !(0, runtime_1.exists)(json, 'ResourceFinders') ? undefined : json['ResourceFinders'],
-        'suggestionStatus': !(0, runtime_1.exists)(json, 'SuggestionStatus') ? undefined : json['SuggestionStatus'],
-        'webServer': !(0, runtime_1.exists)(json, 'WebServer') ? undefined : json['WebServer'],
+        'appServer': json['AppServer'] == null ? undefined : json['AppServer'],
+        'databaseServer': json['DatabaseServer'] == null ? undefined : json['DatabaseServer'],
+        'directoryNameLimit': json['DirectoryNameLimit'] == null ? undefined : json['DirectoryNameLimit'],
+        'domParserPreset': json['DomParserPreset'] == null ? undefined : json['DomParserPreset'],
+        'hosts': json['Hosts'] == null ? undefined : json['Hosts'],
+        'isSharkEnabled': json['IsSharkEnabled'] == null ? undefined : json['IsSharkEnabled'],
+        'name': json['Name'] == null ? undefined : json['Name'],
+        'netsparkerHawkBaseUrl': json['NetsparkerHawkBaseUrl'] == null ? undefined : json['NetsparkerHawkBaseUrl'],
+        'operatingSystem': json['OperatingSystem'] == null ? undefined : json['OperatingSystem'],
+        'optimized': json['Optimized'] == null ? undefined : json['Optimized'],
+        'resourceFinders': json['ResourceFinders'] == null ? undefined : json['ResourceFinders'],
+        'suggestionStatus': json['SuggestionStatus'] == null ? undefined : json['SuggestionStatus'],
+        'webServer': json['WebServer'] == null ? undefined : json['WebServer'],
     };
 }
 exports.ScanPolicyOptimizerOptionsFromJSONTyped = ScanPolicyOptimizerOptionsFromJSONTyped;
 function ScanPolicyOptimizerOptionsToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'AppServer': value.appServer,
-        'DatabaseServer': value.databaseServer,
-        'DirectoryNameLimit': value.directoryNameLimit,
-        'DomParserPreset': value.domParserPreset,
-        'Hosts': value.hosts,
-        'IsSharkEnabled': value.isSharkEnabled,
-        'Name': value.name,
-        'NetsparkerHawkBaseUrl': value.netsparkerHawkBaseUrl,
-        'OperatingSystem': value.operatingSystem,
-        'Optimized': value.optimized,
-        'ResourceFinders': value.resourceFinders,
-        'SuggestionStatus': value.suggestionStatus,
-        'WebServer': value.webServer,
+        'AppServer': value['appServer'],
+        'DatabaseServer': value['databaseServer'],
+        'DirectoryNameLimit': value['directoryNameLimit'],
+        'DomParserPreset': value['domParserPreset'],
+        'Hosts': value['hosts'],
+        'IsSharkEnabled': value['isSharkEnabled'],
+        'Name': value['name'],
+        'NetsparkerHawkBaseUrl': value['netsparkerHawkBaseUrl'],
+        'OperatingSystem': value['operatingSystem'],
+        'Optimized': value['optimized'],
+        'ResourceFinders': value['resourceFinders'],
+        'SuggestionStatus': value['suggestionStatus'],
+        'WebServer': value['webServer'],
     };
 }
 exports.ScanPolicyOptimizerOptionsToJSON = ScanPolicyOptimizerOptionsToJSON;

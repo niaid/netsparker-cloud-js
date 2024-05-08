@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 import type { DiscoveryApiModel } from './DiscoveryApiModel';
 import {
     DiscoveryApiModelFromJSON,
@@ -98,9 +98,7 @@ export interface DiscoveryServiceListApiResult {
  * Check if a given object implements the DiscoveryServiceListApiResult interface.
  */
 export function instanceOfDiscoveryServiceListApiResult(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function DiscoveryServiceListApiResultFromJSON(json: any): DiscoveryServiceListApiResult {
@@ -108,45 +106,42 @@ export function DiscoveryServiceListApiResultFromJSON(json: any): DiscoveryServi
 }
 
 export function DiscoveryServiceListApiResultFromJSONTyped(json: any, ignoreDiscriminator: boolean): DiscoveryServiceListApiResult {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'firstItemOnPage': !exists(json, 'FirstItemOnPage') ? undefined : json['FirstItemOnPage'],
-        'hasNextPage': !exists(json, 'HasNextPage') ? undefined : json['HasNextPage'],
-        'hasPreviousPage': !exists(json, 'HasPreviousPage') ? undefined : json['HasPreviousPage'],
-        'isFirstPage': !exists(json, 'IsFirstPage') ? undefined : json['IsFirstPage'],
-        'isLastPage': !exists(json, 'IsLastPage') ? undefined : json['IsLastPage'],
-        'lastItemOnPage': !exists(json, 'LastItemOnPage') ? undefined : json['LastItemOnPage'],
-        'list': !exists(json, 'List') ? undefined : ((json['List'] as Array<any>).map(DiscoveryApiModelFromJSON)),
-        'pageCount': !exists(json, 'PageCount') ? undefined : json['PageCount'],
-        'pageNumber': !exists(json, 'PageNumber') ? undefined : json['PageNumber'],
-        'pageSize': !exists(json, 'PageSize') ? undefined : json['PageSize'],
-        'totalItemCount': !exists(json, 'TotalItemCount') ? undefined : json['TotalItemCount'],
+        'firstItemOnPage': json['FirstItemOnPage'] == null ? undefined : json['FirstItemOnPage'],
+        'hasNextPage': json['HasNextPage'] == null ? undefined : json['HasNextPage'],
+        'hasPreviousPage': json['HasPreviousPage'] == null ? undefined : json['HasPreviousPage'],
+        'isFirstPage': json['IsFirstPage'] == null ? undefined : json['IsFirstPage'],
+        'isLastPage': json['IsLastPage'] == null ? undefined : json['IsLastPage'],
+        'lastItemOnPage': json['LastItemOnPage'] == null ? undefined : json['LastItemOnPage'],
+        'list': json['List'] == null ? undefined : ((json['List'] as Array<any>).map(DiscoveryApiModelFromJSON)),
+        'pageCount': json['PageCount'] == null ? undefined : json['PageCount'],
+        'pageNumber': json['PageNumber'] == null ? undefined : json['PageNumber'],
+        'pageSize': json['PageSize'] == null ? undefined : json['PageSize'],
+        'totalItemCount': json['TotalItemCount'] == null ? undefined : json['TotalItemCount'],
     };
 }
 
 export function DiscoveryServiceListApiResultToJSON(value?: DiscoveryServiceListApiResult | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'FirstItemOnPage': value.firstItemOnPage,
-        'HasNextPage': value.hasNextPage,
-        'HasPreviousPage': value.hasPreviousPage,
-        'IsFirstPage': value.isFirstPage,
-        'IsLastPage': value.isLastPage,
-        'LastItemOnPage': value.lastItemOnPage,
-        'List': value.list === undefined ? undefined : ((value.list as Array<any>).map(DiscoveryApiModelToJSON)),
-        'PageCount': value.pageCount,
-        'PageNumber': value.pageNumber,
-        'PageSize': value.pageSize,
-        'TotalItemCount': value.totalItemCount,
+        'FirstItemOnPage': value['firstItemOnPage'],
+        'HasNextPage': value['hasNextPage'],
+        'HasPreviousPage': value['hasPreviousPage'],
+        'IsFirstPage': value['isFirstPage'],
+        'IsLastPage': value['isLastPage'],
+        'LastItemOnPage': value['lastItemOnPage'],
+        'List': value['list'] == null ? undefined : ((value['list'] as Array<any>).map(DiscoveryApiModelToJSON)),
+        'PageCount': value['pageCount'],
+        'PageNumber': value['pageNumber'],
+        'PageSize': value['pageSize'],
+        'TotalItemCount': value['totalItemCount'],
     };
 }
 

@@ -14,7 +14,6 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.ImportLinksValidationApiModelToJSON = exports.ImportLinksValidationApiModelFromJSONTyped = exports.ImportLinksValidationApiModelFromJSON = exports.instanceOfImportLinksValidationApiModel = exports.ImportLinksValidationApiModelImportTypeEnum = void 0;
-const runtime_1 = require("../runtime");
 /**
  * @export
  */
@@ -40,9 +39,9 @@ exports.ImportLinksValidationApiModelImportTypeEnum = {
  * Check if a given object implements the ImportLinksValidationApiModel interface.
  */
 function instanceOfImportLinksValidationApiModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "siteUrl" in value;
-    return isInstance;
+    if (!('siteUrl' in value))
+        return false;
+    return true;
 }
 exports.instanceOfImportLinksValidationApiModel = instanceOfImportLinksValidationApiModel;
 function ImportLinksValidationApiModelFromJSON(json) {
@@ -50,25 +49,22 @@ function ImportLinksValidationApiModelFromJSON(json) {
 }
 exports.ImportLinksValidationApiModelFromJSON = ImportLinksValidationApiModelFromJSON;
 function ImportLinksValidationApiModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         'siteUrl': json['SiteUrl'],
-        'importType': !(0, runtime_1.exists)(json, 'ImportType') ? undefined : json['ImportType'],
+        'importType': json['ImportType'] == null ? undefined : json['ImportType'],
     };
 }
 exports.ImportLinksValidationApiModelFromJSONTyped = ImportLinksValidationApiModelFromJSONTyped;
 function ImportLinksValidationApiModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'SiteUrl': value.siteUrl,
-        'ImportType': value.importType,
+        'SiteUrl': value['siteUrl'],
+        'ImportType': value['importType'],
     };
 }
 exports.ImportLinksValidationApiModelToJSON = ImportLinksValidationApiModelToJSON;

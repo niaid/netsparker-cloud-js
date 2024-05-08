@@ -12,19 +12,19 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
-import type { UrlRewriteExcludedPathModel } from './UrlRewriteExcludedPathModel';
-import {
-    UrlRewriteExcludedPathModelFromJSON,
-    UrlRewriteExcludedPathModelFromJSONTyped,
-    UrlRewriteExcludedPathModelToJSON,
-} from './UrlRewriteExcludedPathModel';
+import { mapValues } from '../runtime';
 import type { UrlRewriteRuleModel } from './UrlRewriteRuleModel';
 import {
     UrlRewriteRuleModelFromJSON,
     UrlRewriteRuleModelFromJSONTyped,
     UrlRewriteRuleModelToJSON,
 } from './UrlRewriteRuleModel';
+import type { UrlRewriteExcludedPathModel } from './UrlRewriteExcludedPathModel';
+import {
+    UrlRewriteExcludedPathModelFromJSON,
+    UrlRewriteExcludedPathModelFromJSONTyped,
+    UrlRewriteExcludedPathModelToJSON,
+} from './UrlRewriteExcludedPathModel';
 
 /**
  * Represents a class that carries out url rewrite settings.
@@ -99,12 +99,10 @@ export type UrlRewriteSettingUrlRewriteModeEnum = typeof UrlRewriteSettingUrlRew
  * Check if a given object implements the UrlRewriteSetting interface.
  */
 export function instanceOfUrlRewriteSetting(value: object): boolean {
-    let isInstance = true;
-    isInstance = isInstance && "maxDynamicSignatures" in value;
-    isInstance = isInstance && "subPathMaxDynamicSignatures" in value;
-    isInstance = isInstance && "urlRewriteBlockSeparators" in value;
-
-    return isInstance;
+    if (!('maxDynamicSignatures' in value)) return false;
+    if (!('subPathMaxDynamicSignatures' in value)) return false;
+    if (!('urlRewriteBlockSeparators' in value)) return false;
+    return true;
 }
 
 export function UrlRewriteSettingFromJSON(json: any): UrlRewriteSetting {
@@ -112,39 +110,36 @@ export function UrlRewriteSettingFromJSON(json: any): UrlRewriteSetting {
 }
 
 export function UrlRewriteSettingFromJSONTyped(json: any, ignoreDiscriminator: boolean): UrlRewriteSetting {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'enableHeuristicChecksInCustomUrlRewrite': !exists(json, 'EnableHeuristicChecksInCustomUrlRewrite') ? undefined : json['EnableHeuristicChecksInCustomUrlRewrite'],
+        'enableHeuristicChecksInCustomUrlRewrite': json['EnableHeuristicChecksInCustomUrlRewrite'] == null ? undefined : json['EnableHeuristicChecksInCustomUrlRewrite'],
         'maxDynamicSignatures': json['MaxDynamicSignatures'],
         'subPathMaxDynamicSignatures': json['SubPathMaxDynamicSignatures'],
-        'urlRewriteAnalyzableExtensions': !exists(json, 'UrlRewriteAnalyzableExtensions') ? undefined : json['UrlRewriteAnalyzableExtensions'],
+        'urlRewriteAnalyzableExtensions': json['UrlRewriteAnalyzableExtensions'] == null ? undefined : json['UrlRewriteAnalyzableExtensions'],
         'urlRewriteBlockSeparators': json['UrlRewriteBlockSeparators'],
-        'urlRewriteMode': !exists(json, 'UrlRewriteMode') ? undefined : json['UrlRewriteMode'],
-        'urlRewriteRules': !exists(json, 'UrlRewriteRules') ? undefined : ((json['UrlRewriteRules'] as Array<any>).map(UrlRewriteRuleModelFromJSON)),
-        'urlRewriteExcludedLinks': !exists(json, 'UrlRewriteExcludedLinks') ? undefined : ((json['UrlRewriteExcludedLinks'] as Array<any>).map(UrlRewriteExcludedPathModelFromJSON)),
+        'urlRewriteMode': json['UrlRewriteMode'] == null ? undefined : json['UrlRewriteMode'],
+        'urlRewriteRules': json['UrlRewriteRules'] == null ? undefined : ((json['UrlRewriteRules'] as Array<any>).map(UrlRewriteRuleModelFromJSON)),
+        'urlRewriteExcludedLinks': json['UrlRewriteExcludedLinks'] == null ? undefined : ((json['UrlRewriteExcludedLinks'] as Array<any>).map(UrlRewriteExcludedPathModelFromJSON)),
     };
 }
 
 export function UrlRewriteSettingToJSON(value?: UrlRewriteSetting | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'EnableHeuristicChecksInCustomUrlRewrite': value.enableHeuristicChecksInCustomUrlRewrite,
-        'MaxDynamicSignatures': value.maxDynamicSignatures,
-        'SubPathMaxDynamicSignatures': value.subPathMaxDynamicSignatures,
-        'UrlRewriteAnalyzableExtensions': value.urlRewriteAnalyzableExtensions,
-        'UrlRewriteBlockSeparators': value.urlRewriteBlockSeparators,
-        'UrlRewriteMode': value.urlRewriteMode,
-        'UrlRewriteRules': value.urlRewriteRules === undefined ? undefined : ((value.urlRewriteRules as Array<any>).map(UrlRewriteRuleModelToJSON)),
-        'UrlRewriteExcludedLinks': value.urlRewriteExcludedLinks === undefined ? undefined : ((value.urlRewriteExcludedLinks as Array<any>).map(UrlRewriteExcludedPathModelToJSON)),
+        'EnableHeuristicChecksInCustomUrlRewrite': value['enableHeuristicChecksInCustomUrlRewrite'],
+        'MaxDynamicSignatures': value['maxDynamicSignatures'],
+        'SubPathMaxDynamicSignatures': value['subPathMaxDynamicSignatures'],
+        'UrlRewriteAnalyzableExtensions': value['urlRewriteAnalyzableExtensions'],
+        'UrlRewriteBlockSeparators': value['urlRewriteBlockSeparators'],
+        'UrlRewriteMode': value['urlRewriteMode'],
+        'UrlRewriteRules': value['urlRewriteRules'] == null ? undefined : ((value['urlRewriteRules'] as Array<any>).map(UrlRewriteRuleModelToJSON)),
+        'UrlRewriteExcludedLinks': value['urlRewriteExcludedLinks'] == null ? undefined : ((value['urlRewriteExcludedLinks'] as Array<any>).map(UrlRewriteExcludedPathModelToJSON)),
     };
 }
 

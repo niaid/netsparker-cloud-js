@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * 
  * @export
@@ -52,9 +52,7 @@ export type JiraPriorityMappingIcSeverityEnum = typeof JiraPriorityMappingIcSeve
  * Check if a given object implements the JiraPriorityMapping interface.
  */
 export function instanceOfJiraPriorityMapping(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function JiraPriorityMappingFromJSON(json: any): JiraPriorityMapping {
@@ -62,27 +60,24 @@ export function JiraPriorityMappingFromJSON(json: any): JiraPriorityMapping {
 }
 
 export function JiraPriorityMappingFromJSONTyped(json: any, ignoreDiscriminator: boolean): JiraPriorityMapping {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'priority': !exists(json, 'Priority') ? undefined : json['Priority'],
-        'icSeverity': !exists(json, 'IcSeverity') ? undefined : json['IcSeverity'],
+        'priority': json['Priority'] == null ? undefined : json['Priority'],
+        'icSeverity': json['IcSeverity'] == null ? undefined : json['IcSeverity'],
     };
 }
 
 export function JiraPriorityMappingToJSON(value?: JiraPriorityMapping | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Priority': value.priority,
-        'IcSeverity': value.icSeverity,
+        'Priority': value['priority'],
+        'IcSeverity': value['icSeverity'],
     };
 }
 

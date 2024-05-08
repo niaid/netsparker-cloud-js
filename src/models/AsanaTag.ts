@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * 
  * @export
@@ -37,9 +37,7 @@ export interface AsanaTag {
  * Check if a given object implements the AsanaTag interface.
  */
 export function instanceOfAsanaTag(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function AsanaTagFromJSON(json: any): AsanaTag {
@@ -47,27 +45,24 @@ export function AsanaTagFromJSON(json: any): AsanaTag {
 }
 
 export function AsanaTagFromJSONTyped(json: any, ignoreDiscriminator: boolean): AsanaTag {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'gid': !exists(json, 'Gid') ? undefined : json['Gid'],
-        'name': !exists(json, 'Name') ? undefined : json['Name'],
+        'gid': json['Gid'] == null ? undefined : json['Gid'],
+        'name': json['Name'] == null ? undefined : json['Name'],
     };
 }
 
 export function AsanaTagToJSON(value?: AsanaTag | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Gid': value.gid,
-        'Name': value.name,
+        'Gid': value['gid'],
+        'Name': value['name'],
     };
 }
 

@@ -9,25 +9,25 @@
  * https://openapi-generator.tech
  * Do not edit the class manually.
  */
-import type { AttackingSettingModel } from './AttackingSettingModel';
-import type { AutoCompleteSettingModel } from './AutoCompleteSettingModel';
-import type { BrowserSetting } from './BrowserSetting';
+import type { SslTlsSettingModel } from './SslTlsSettingModel';
+import type { Custom404SettingModel } from './Custom404SettingModel';
 import type { BruteForceSettingModel } from './BruteForceSettingModel';
 import type { CrawlingSettingModel } from './CrawlingSettingModel';
-import type { CsrfSettingModel } from './CsrfSettingModel';
-import type { Custom404SettingModel } from './Custom404SettingModel';
-import type { CustomHttpHeaderSetting } from './CustomHttpHeaderSetting';
-import type { EmailPatternSetting } from './EmailPatternSetting';
-import type { ExtensionSettingModel } from './ExtensionSettingModel';
-import type { FormValueSettingModel } from './FormValueSettingModel';
-import type { HttpRequestSettingModel } from './HttpRequestSettingModel';
-import type { IgnorePatternSettingModel } from './IgnorePatternSettingModel';
 import type { JavaScriptSettingsModel } from './JavaScriptSettingsModel';
-import type { ProxySettingsModel } from './ProxySettingsModel';
-import type { ScopeSettingModel } from './ScopeSettingModel';
-import type { SecurityCheckGroupParentModel } from './SecurityCheckGroupParentModel';
 import type { SensitiveKeywordSettingModel } from './SensitiveKeywordSettingModel';
-import type { SslTlsSettingModel } from './SslTlsSettingModel';
+import type { AutoCompleteSettingModel } from './AutoCompleteSettingModel';
+import type { FormValueSettingModel } from './FormValueSettingModel';
+import type { IgnorePatternSettingModel } from './IgnorePatternSettingModel';
+import type { SecurityCheckGroupParentModel } from './SecurityCheckGroupParentModel';
+import type { CustomHttpHeaderSetting } from './CustomHttpHeaderSetting';
+import type { CsrfSettingModel } from './CsrfSettingModel';
+import type { ExtensionSettingModel } from './ExtensionSettingModel';
+import type { EmailPatternSetting } from './EmailPatternSetting';
+import type { AttackingSettingModel } from './AttackingSettingModel';
+import type { HttpRequestSettingModel } from './HttpRequestSettingModel';
+import type { ProxySettingsModel } from './ProxySettingsModel';
+import type { BrowserSetting } from './BrowserSetting';
+import type { ScopeSettingModel } from './ScopeSettingModel';
 import type { WebStorageSetting } from './WebStorageSetting';
 /**
  * Represents a model for carrying out scan policy settings.
@@ -46,7 +46,7 @@ export interface ScanPolicySettingApiModel {
      * @type {string}
      * @memberof ScanPolicySettingApiModel
      */
-    id?: string;
+    id: string;
     /**
      * Gets or sets a value indicating whether this scan policy is shared.
      * @type {boolean}

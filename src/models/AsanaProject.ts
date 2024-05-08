@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 /**
  * 
  * @export
@@ -43,9 +43,7 @@ export interface AsanaProject {
  * Check if a given object implements the AsanaProject interface.
  */
 export function instanceOfAsanaProject(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function AsanaProjectFromJSON(json: any): AsanaProject {
@@ -53,29 +51,26 @@ export function AsanaProjectFromJSON(json: any): AsanaProject {
 }
 
 export function AsanaProjectFromJSONTyped(json: any, ignoreDiscriminator: boolean): AsanaProject {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'gid': !exists(json, 'gid') ? undefined : json['gid'],
-        'name': !exists(json, 'name') ? undefined : json['name'],
-        'url': !exists(json, 'Url') ? undefined : json['Url'],
+        'gid': json['gid'] == null ? undefined : json['gid'],
+        'name': json['name'] == null ? undefined : json['name'],
+        'url': json['Url'] == null ? undefined : json['Url'],
     };
 }
 
 export function AsanaProjectToJSON(value?: AsanaProject | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'gid': value.gid,
-        'name': value.name,
-        'Url': value.url,
+        'gid': value['gid'],
+        'name': value['name'],
+        'Url': value['url'],
     };
 }
 

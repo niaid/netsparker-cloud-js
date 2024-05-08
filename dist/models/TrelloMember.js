@@ -14,13 +14,11 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.TrelloMemberToJSON = exports.TrelloMemberFromJSONTyped = exports.TrelloMemberFromJSON = exports.instanceOfTrelloMember = void 0;
-const runtime_1 = require("../runtime");
 /**
  * Check if a given object implements the TrelloMember interface.
  */
 function instanceOfTrelloMember(value) {
-    let isInstance = true;
-    return isInstance;
+    return true;
 }
 exports.instanceOfTrelloMember = instanceOfTrelloMember;
 function TrelloMemberFromJSON(json) {
@@ -28,33 +26,30 @@ function TrelloMemberFromJSON(json) {
 }
 exports.TrelloMemberFromJSON = TrelloMemberFromJSON;
 function TrelloMemberFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'confirmed': !(0, runtime_1.exists)(json, 'confirmed') ? undefined : json['confirmed'],
-        'email': !(0, runtime_1.exists)(json, 'email') ? undefined : json['email'],
-        'fullname': !(0, runtime_1.exists)(json, 'fullname') ? undefined : json['fullname'],
-        'id': !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
-        'shortUrl': !(0, runtime_1.exists)(json, 'shortUrl') ? undefined : json['shortUrl'],
-        'username': !(0, runtime_1.exists)(json, 'username') ? undefined : json['username'],
+        'confirmed': json['confirmed'] == null ? undefined : json['confirmed'],
+        'email': json['email'] == null ? undefined : json['email'],
+        'fullname': json['fullname'] == null ? undefined : json['fullname'],
+        'id': json['id'] == null ? undefined : json['id'],
+        'shortUrl': json['shortUrl'] == null ? undefined : json['shortUrl'],
+        'username': json['username'] == null ? undefined : json['username'],
     };
 }
 exports.TrelloMemberFromJSONTyped = TrelloMemberFromJSONTyped;
 function TrelloMemberToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'confirmed': value.confirmed,
-        'email': value.email,
-        'fullname': value.fullname,
-        'id': value.id,
-        'shortUrl': value.shortUrl,
-        'username': value.username,
+        'confirmed': value['confirmed'],
+        'email': value['email'],
+        'fullname': value['fullname'],
+        'id': value['id'],
+        'shortUrl': value['shortUrl'],
+        'username': value['username'],
     };
 }
 exports.TrelloMemberToJSON = TrelloMemberToJSON;

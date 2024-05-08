@@ -14,7 +14,6 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.UpdateWebsiteApiModelToJSON = exports.UpdateWebsiteApiModelFromJSONTyped = exports.UpdateWebsiteApiModelFromJSON = exports.instanceOfUpdateWebsiteApiModel = exports.UpdateWebsiteApiModelLicenseTypeEnum = exports.UpdateWebsiteApiModelAgentModeEnum = exports.UpdateWebsiteApiModelDefaultProtocolEnum = void 0;
-const runtime_1 = require("../runtime");
 /**
  * @export
  */
@@ -40,11 +39,13 @@ exports.UpdateWebsiteApiModelLicenseTypeEnum = {
  * Check if a given object implements the UpdateWebsiteApiModel interface.
  */
 function instanceOfUpdateWebsiteApiModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "rootUrl" in value;
-    isInstance = isInstance && "licenseType" in value;
-    isInstance = isInstance && "name" in value;
-    return isInstance;
+    if (!('rootUrl' in value))
+        return false;
+    if (!('licenseType' in value))
+        return false;
+    if (!('name' in value))
+        return false;
+    return true;
 }
 exports.instanceOfUpdateWebsiteApiModel = instanceOfUpdateWebsiteApiModel;
 function UpdateWebsiteApiModelFromJSON(json) {
@@ -52,39 +53,36 @@ function UpdateWebsiteApiModelFromJSON(json) {
 }
 exports.UpdateWebsiteApiModelFromJSON = UpdateWebsiteApiModelFromJSON;
 function UpdateWebsiteApiModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'defaultProtocol': !(0, runtime_1.exists)(json, 'DefaultProtocol') ? undefined : json['DefaultProtocol'],
-        'agentMode': !(0, runtime_1.exists)(json, 'AgentMode') ? undefined : json['AgentMode'],
+        'defaultProtocol': json['DefaultProtocol'] == null ? undefined : json['DefaultProtocol'],
+        'agentMode': json['AgentMode'] == null ? undefined : json['AgentMode'],
         'rootUrl': json['RootUrl'],
-        'groups': !(0, runtime_1.exists)(json, 'Groups') ? undefined : json['Groups'],
+        'groups': json['Groups'] == null ? undefined : json['Groups'],
         'licenseType': json['LicenseType'],
         'name': json['Name'],
-        'description': !(0, runtime_1.exists)(json, 'Description') ? undefined : json['Description'],
-        'technicalContactEmail': !(0, runtime_1.exists)(json, 'TechnicalContactEmail') ? undefined : json['TechnicalContactEmail'],
-        'tags': !(0, runtime_1.exists)(json, 'Tags') ? undefined : json['Tags'],
+        'description': json['Description'] == null ? undefined : json['Description'],
+        'technicalContactEmail': json['TechnicalContactEmail'] == null ? undefined : json['TechnicalContactEmail'],
+        'tags': json['Tags'] == null ? undefined : json['Tags'],
     };
 }
 exports.UpdateWebsiteApiModelFromJSONTyped = UpdateWebsiteApiModelFromJSONTyped;
 function UpdateWebsiteApiModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'DefaultProtocol': value.defaultProtocol,
-        'AgentMode': value.agentMode,
-        'RootUrl': value.rootUrl,
-        'Groups': value.groups,
-        'LicenseType': value.licenseType,
-        'Name': value.name,
-        'Description': value.description,
-        'TechnicalContactEmail': value.technicalContactEmail,
-        'Tags': value.tags,
+        'DefaultProtocol': value['defaultProtocol'],
+        'AgentMode': value['agentMode'],
+        'RootUrl': value['rootUrl'],
+        'Groups': value['groups'],
+        'LicenseType': value['licenseType'],
+        'Name': value['name'],
+        'Description': value['description'],
+        'TechnicalContactEmail': value['technicalContactEmail'],
+        'Tags': value['tags'],
     };
 }
 exports.UpdateWebsiteApiModelToJSON = UpdateWebsiteApiModelToJSON;

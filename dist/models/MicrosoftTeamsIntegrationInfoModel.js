@@ -13,47 +13,46 @@
  * Do not edit the class manually.
  */
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MicrosoftTeamsIntegrationInfoModelToJSON = exports.MicrosoftTeamsIntegrationInfoModelFromJSONTyped = exports.MicrosoftTeamsIntegrationInfoModelFromJSON = exports.instanceOfMicrosoftTeamsIntegrationInfoModel = exports.MicrosoftTeamsIntegrationInfoModelTemplateTypeEnum = exports.MicrosoftTeamsIntegrationInfoModelTypeEnum = void 0;
-const runtime_1 = require("../runtime");
-const IntegrationCustomFieldVm_1 = require("./IntegrationCustomFieldVm");
+exports.MicrosoftTeamsIntegrationInfoModelToJSON = exports.MicrosoftTeamsIntegrationInfoModelFromJSONTyped = exports.MicrosoftTeamsIntegrationInfoModelFromJSON = exports.instanceOfMicrosoftTeamsIntegrationInfoModel = exports.MicrosoftTeamsIntegrationInfoModelStateEnum = exports.MicrosoftTeamsIntegrationInfoModelTemplateTypeEnum = exports.MicrosoftTeamsIntegrationInfoModelTypeEnum = void 0;
 const IntegrationWizardResultModel_1 = require("./IntegrationWizardResultModel");
+const IntegrationCustomFieldVm_1 = require("./IntegrationCustomFieldVm");
 /**
  * @export
  */
 exports.MicrosoftTeamsIntegrationInfoModelTypeEnum = {
-    NetsparkerEnterprise: 'NetsparkerEnterprise',
-    Webhook: 'Webhook',
-    Zapier: 'Zapier',
-    Slack: 'Slack',
-    Mattermost: 'Mattermost',
-    MicrosoftTeams: 'MicrosoftTeams',
-    AzureDevOps: 'AzureDevOps',
-    Bitbucket: 'Bitbucket',
-    Bugzilla: 'Bugzilla',
-    Clubhouse: 'Clubhouse',
-    DefectDojo: 'DefectDojo',
-    PivotalTracker: 'PivotalTracker',
     Jira: 'Jira',
-    FogBugz: 'FogBugz',
     GitHub: 'GitHub',
-    PagerDuty: 'PagerDuty',
-    Kafka: 'Kafka',
-    Kenna: 'Kenna',
-    Redmine: 'Redmine',
-    ServiceNow: 'ServiceNow',
     Tfs: 'TFS',
+    FogBugz: 'FogBugz',
+    ServiceNow: 'ServiceNow',
+    Slack: 'Slack',
+    GitLab: 'GitLab',
+    Bitbucket: 'Bitbucket',
     Unfuddle: 'Unfuddle',
-    YouTrack: 'YouTrack',
-    Freshservice: 'Freshservice',
-    Splunk: 'Splunk',
-    JazzTeam: 'JazzTeam',
-    ServiceNowVrm: 'ServiceNowVRM',
-    Asana: 'Asana',
+    Zapier: 'Zapier',
+    AzureDevOps: 'AzureDevOps',
+    Redmine: 'Redmine',
+    Bugzilla: 'Bugzilla',
+    Kafka: 'Kafka',
+    PagerDuty: 'PagerDuty',
+    MicrosoftTeams: 'MicrosoftTeams',
+    Clubhouse: 'Clubhouse',
     Trello: 'Trello',
+    Asana: 'Asana',
+    Webhook: 'Webhook',
+    Kenna: 'Kenna',
+    Freshservice: 'Freshservice',
+    YouTrack: 'YouTrack',
+    NetsparkerEnterprise: 'NetsparkerEnterprise',
+    Splunk: 'Splunk',
+    Mattermost: 'Mattermost',
     Hashicorp: 'Hashicorp',
+    PivotalTracker: 'PivotalTracker',
     CyberArk: 'CyberArk',
+    DefectDojo: 'DefectDojo',
+    JazzTeam: 'JazzTeam',
     AzureKeyVault: 'AzureKeyVault',
-    GitLab: 'GitLab'
+    ServiceNowVrm: 'ServiceNowVRM'
 };
 /**
  * @export
@@ -63,13 +62,21 @@ exports.MicrosoftTeamsIntegrationInfoModelTemplateTypeEnum = {
     Detailed: 'Detailed'
 };
 /**
+ * @export
+ */
+exports.MicrosoftTeamsIntegrationInfoModelStateEnum = {
+    Active: 'Active',
+    Suspended: 'Suspended'
+};
+/**
  * Check if a given object implements the MicrosoftTeamsIntegrationInfoModel interface.
  */
 function instanceOfMicrosoftTeamsIntegrationInfoModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "webhookUrl" in value;
-    isInstance = isInstance && "titleFormat" in value;
-    return isInstance;
+    if (!('webhookUrl' in value))
+        return false;
+    if (!('titleFormat' in value))
+        return false;
+    return true;
 }
 exports.instanceOfMicrosoftTeamsIntegrationInfoModel = instanceOfMicrosoftTeamsIntegrationInfoModel;
 function MicrosoftTeamsIntegrationInfoModelFromJSON(json) {
@@ -77,48 +84,49 @@ function MicrosoftTeamsIntegrationInfoModelFromJSON(json) {
 }
 exports.MicrosoftTeamsIntegrationInfoModelFromJSON = MicrosoftTeamsIntegrationInfoModelFromJSON;
 function MicrosoftTeamsIntegrationInfoModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         'webhookUrl': json['WebhookUrl'],
-        'color': !(0, runtime_1.exists)(json, 'Color') ? undefined : json['Color'],
-        'type': !(0, runtime_1.exists)(json, 'Type') ? undefined : json['Type'],
-        'genericErrorMessage': !(0, runtime_1.exists)(json, 'GenericErrorMessage') ? undefined : json['GenericErrorMessage'],
-        'identifier': !(0, runtime_1.exists)(json, 'Identifier') ? undefined : json['Identifier'],
-        'testMessageBody': !(0, runtime_1.exists)(json, 'TestMessageBody') ? undefined : json['TestMessageBody'],
-        'testMessageTitle': !(0, runtime_1.exists)(json, 'TestMessageTitle') ? undefined : json['TestMessageTitle'],
-        'name': !(0, runtime_1.exists)(json, 'Name') ? undefined : json['Name'],
-        'integrationVersion': !(0, runtime_1.exists)(json, 'IntegrationVersion') ? undefined : json['IntegrationVersion'],
-        'accountID': !(0, runtime_1.exists)(json, 'AccountID') ? undefined : json['AccountID'],
-        'customFields': !(0, runtime_1.exists)(json, 'CustomFields') ? undefined : (json['CustomFields'].map(IntegrationCustomFieldVm_1.IntegrationCustomFieldVmFromJSON)),
-        'templateType': !(0, runtime_1.exists)(json, 'TemplateType') ? undefined : json['TemplateType'],
-        'reopenStatus': !(0, runtime_1.exists)(json, 'ReopenStatus') ? undefined : json['ReopenStatus'],
-        'resolvedStatus': !(0, runtime_1.exists)(json, 'ResolvedStatus') ? undefined : json['ResolvedStatus'],
+        'color': json['Color'] == null ? undefined : json['Color'],
+        'type': json['Type'] == null ? undefined : json['Type'],
+        'genericErrorMessage': json['GenericErrorMessage'] == null ? undefined : json['GenericErrorMessage'],
+        'identifier': json['Identifier'] == null ? undefined : json['Identifier'],
+        'testMessageBody': json['TestMessageBody'] == null ? undefined : json['TestMessageBody'],
+        'testMessageTitle': json['TestMessageTitle'] == null ? undefined : json['TestMessageTitle'],
+        'name': json['Name'] == null ? undefined : json['Name'],
+        'integrationVersion': json['IntegrationVersion'] == null ? undefined : json['IntegrationVersion'],
+        'accountID': json['AccountID'] == null ? undefined : json['AccountID'],
+        'customFields': json['CustomFields'] == null ? undefined : (json['CustomFields'].map(IntegrationCustomFieldVm_1.IntegrationCustomFieldVmFromJSON)),
+        'templateType': json['TemplateType'] == null ? undefined : json['TemplateType'],
+        'reopenStatus': json['ReopenStatus'] == null ? undefined : json['ReopenStatus'],
+        'resolvedStatus': json['ResolvedStatus'] == null ? undefined : json['ResolvedStatus'],
         'titleFormat': json['TitleFormat'],
-        'integrationWizardResultModel': !(0, runtime_1.exists)(json, 'IntegrationWizardResultModel') ? undefined : (0, IntegrationWizardResultModel_1.IntegrationWizardResultModelFromJSON)(json['IntegrationWizardResultModel']),
+        'integrationWizardResultModel': json['IntegrationWizardResultModel'] == null ? undefined : (0, IntegrationWizardResultModel_1.IntegrationWizardResultModelFromJSON)(json['IntegrationWizardResultModel']),
+        'id': json['Id'] == null ? undefined : json['Id'],
+        'state': json['State'] == null ? undefined : json['State'],
     };
 }
 exports.MicrosoftTeamsIntegrationInfoModelFromJSONTyped = MicrosoftTeamsIntegrationInfoModelFromJSONTyped;
 function MicrosoftTeamsIntegrationInfoModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'WebhookUrl': value.webhookUrl,
-        'Color': value.color,
-        'Name': value.name,
-        'IntegrationVersion': value.integrationVersion,
-        'AccountID': value.accountID,
-        'CustomFields': value.customFields === undefined ? undefined : (value.customFields.map(IntegrationCustomFieldVm_1.IntegrationCustomFieldVmToJSON)),
-        'TemplateType': value.templateType,
-        'ReopenStatus': value.reopenStatus,
-        'ResolvedStatus': value.resolvedStatus,
-        'TitleFormat': value.titleFormat,
-        'IntegrationWizardResultModel': (0, IntegrationWizardResultModel_1.IntegrationWizardResultModelToJSON)(value.integrationWizardResultModel),
+        'WebhookUrl': value['webhookUrl'],
+        'Color': value['color'],
+        'Name': value['name'],
+        'IntegrationVersion': value['integrationVersion'],
+        'AccountID': value['accountID'],
+        'CustomFields': value['customFields'] == null ? undefined : (value['customFields'].map(IntegrationCustomFieldVm_1.IntegrationCustomFieldVmToJSON)),
+        'TemplateType': value['templateType'],
+        'ReopenStatus': value['reopenStatus'],
+        'ResolvedStatus': value['resolvedStatus'],
+        'TitleFormat': value['titleFormat'],
+        'IntegrationWizardResultModel': (0, IntegrationWizardResultModel_1.IntegrationWizardResultModelToJSON)(value['integrationWizardResultModel']),
+        'Id': value['id'],
+        'State': value['state'],
     };
 }
 exports.MicrosoftTeamsIntegrationInfoModelToJSON = MicrosoftTeamsIntegrationInfoModelToJSON;

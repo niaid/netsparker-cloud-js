@@ -12,7 +12,7 @@
  * Do not edit the class manually.
  */
 
-import { exists, mapValues } from '../runtime';
+import { mapValues } from '../runtime';
 import type { ScanTimeWindowItemModel } from './ScanTimeWindowItemModel';
 import {
     ScanTimeWindowItemModelFromJSON,
@@ -38,9 +38,7 @@ export interface ScanTimeWindowModel {
  * Check if a given object implements the ScanTimeWindowModel interface.
  */
 export function instanceOfScanTimeWindowModel(value: object): boolean {
-    let isInstance = true;
-
-    return isInstance;
+    return true;
 }
 
 export function ScanTimeWindowModelFromJSON(json: any): ScanTimeWindowModel {
@@ -48,25 +46,22 @@ export function ScanTimeWindowModelFromJSON(json: any): ScanTimeWindowModel {
 }
 
 export function ScanTimeWindowModelFromJSONTyped(json: any, ignoreDiscriminator: boolean): ScanTimeWindowModel {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
         
-        'items': !exists(json, 'Items') ? undefined : ((json['Items'] as Array<any>).map(ScanTimeWindowItemModelFromJSON)),
+        'items': json['Items'] == null ? undefined : ((json['Items'] as Array<any>).map(ScanTimeWindowItemModelFromJSON)),
     };
 }
 
 export function ScanTimeWindowModelToJSON(value?: ScanTimeWindowModel | null): any {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
         
-        'Items': value.items === undefined ? undefined : ((value.items as Array<any>).map(ScanTimeWindowItemModelToJSON)),
+        'Items': value['items'] == null ? undefined : ((value['items'] as Array<any>).map(ScanTimeWindowItemModelToJSON)),
     };
 }
 

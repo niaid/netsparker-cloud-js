@@ -18,10 +18,11 @@ exports.AgentGroupApiNewModelToJSON = exports.AgentGroupApiNewModelFromJSONTyped
  * Check if a given object implements the AgentGroupApiNewModel interface.
  */
 function instanceOfAgentGroupApiNewModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "agents" in value;
-    isInstance = isInstance && "name" in value;
-    return isInstance;
+    if (!('agents' in value))
+        return false;
+    if (!('name' in value))
+        return false;
+    return true;
 }
 exports.instanceOfAgentGroupApiNewModel = instanceOfAgentGroupApiNewModel;
 function AgentGroupApiNewModelFromJSON(json) {
@@ -29,7 +30,7 @@ function AgentGroupApiNewModelFromJSON(json) {
 }
 exports.AgentGroupApiNewModelFromJSON = AgentGroupApiNewModelFromJSON;
 function AgentGroupApiNewModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
@@ -39,15 +40,12 @@ function AgentGroupApiNewModelFromJSONTyped(json, ignoreDiscriminator) {
 }
 exports.AgentGroupApiNewModelFromJSONTyped = AgentGroupApiNewModelFromJSONTyped;
 function AgentGroupApiNewModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'Agents': value.agents,
-        'Name': value.name,
+        'Agents': value['agents'],
+        'Name': value['name'],
     };
 }
 exports.AgentGroupApiNewModelToJSON = AgentGroupApiNewModelToJSON;

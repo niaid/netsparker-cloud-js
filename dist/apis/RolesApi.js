@@ -47,13 +47,13 @@ class RolesApi extends runtime.BaseAPI {
      * Deletes a role.
      */
     async rolesDeleteRaw(requestParameters, initOverrides) {
-        if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling rolesDelete.');
+        if (requestParameters['id'] == null) {
+            throw new runtime.RequiredError('id', 'Required parameter "id" was null or undefined when calling rolesDelete().');
         }
         const queryParameters = {};
         const headerParameters = {};
         const response = await this.request({
-            path: `/api/1.0/roles/delete/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
+            path: `/api/1.0/roles/delete/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
@@ -76,13 +76,13 @@ class RolesApi extends runtime.BaseAPI {
      * Gets the role by the specified id.
      */
     async rolesGetRaw(requestParameters, initOverrides) {
-        if (requestParameters.id === null || requestParameters.id === undefined) {
-            throw new runtime.RequiredError('id', 'Required parameter requestParameters.id was null or undefined when calling rolesGet.');
+        if (requestParameters['id'] == null) {
+            throw new runtime.RequiredError('id', 'Required parameter "id" was null or undefined when calling rolesGet().');
         }
         const queryParameters = {};
         const headerParameters = {};
         const response = await this.request({
-            path: `/api/1.0/roles/get/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters.id))),
+            path: `/api/1.0/roles/get/{id}`.replace(`{${"id"}}`, encodeURIComponent(String(requestParameters['id']))),
             method: 'GET',
             headers: headerParameters,
             query: queryParameters,
@@ -101,11 +101,11 @@ class RolesApi extends runtime.BaseAPI {
      */
     async rolesListRaw(requestParameters, initOverrides) {
         const queryParameters = {};
-        if (requestParameters.page !== undefined) {
-            queryParameters['page'] = requestParameters.page;
+        if (requestParameters['page'] != null) {
+            queryParameters['page'] = requestParameters['page'];
         }
-        if (requestParameters.pageSize !== undefined) {
-            queryParameters['pageSize'] = requestParameters.pageSize;
+        if (requestParameters['pageSize'] != null) {
+            queryParameters['pageSize'] = requestParameters['pageSize'];
         }
         const headerParameters = {};
         const response = await this.request({
@@ -148,8 +148,8 @@ class RolesApi extends runtime.BaseAPI {
      * Creates a new role
      */
     async rolesNewRaw(requestParameters, initOverrides) {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model', 'Required parameter requestParameters.model was null or undefined when calling rolesNew.');
+        if (requestParameters['model'] == null) {
+            throw new runtime.RequiredError('model', 'Required parameter "model" was null or undefined when calling rolesNew().');
         }
         const queryParameters = {};
         const headerParameters = {};
@@ -159,7 +159,7 @@ class RolesApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: (0, index_1.NewRoleApiModelToJSON)(requestParameters.model),
+            body: (0, index_1.NewRoleApiModelToJSON)(requestParameters['model']),
         }, initOverrides);
         return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.RoleApiViewModelFromJSON)(jsonValue));
     }
@@ -174,8 +174,8 @@ class RolesApi extends runtime.BaseAPI {
      * Updates a role
      */
     async rolesUpdateRaw(requestParameters, initOverrides) {
-        if (requestParameters.model === null || requestParameters.model === undefined) {
-            throw new runtime.RequiredError('model', 'Required parameter requestParameters.model was null or undefined when calling rolesUpdate.');
+        if (requestParameters['model'] == null) {
+            throw new runtime.RequiredError('model', 'Required parameter "model" was null or undefined when calling rolesUpdate().');
         }
         const queryParameters = {};
         const headerParameters = {};
@@ -185,7 +185,7 @@ class RolesApi extends runtime.BaseAPI {
             method: 'POST',
             headers: headerParameters,
             query: queryParameters,
-            body: (0, index_1.UpdateRoleApiModelToJSON)(requestParameters.model),
+            body: (0, index_1.UpdateRoleApiModelToJSON)(requestParameters['model']),
         }, initOverrides);
         return new runtime.JSONApiResponse(response, (jsonValue) => (0, index_1.RoleApiViewModelFromJSON)(jsonValue));
     }

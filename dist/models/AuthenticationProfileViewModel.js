@@ -14,18 +14,20 @@
  */
 Object.defineProperty(exports, "__esModule", { value: true });
 exports.AuthenticationProfileViewModelToJSON = exports.AuthenticationProfileViewModelFromJSONTyped = exports.AuthenticationProfileViewModelFromJSON = exports.instanceOfAuthenticationProfileViewModel = void 0;
-const runtime_1 = require("../runtime");
 const CustomScriptPageViewModel_1 = require("./CustomScriptPageViewModel");
 /**
  * Check if a given object implements the AuthenticationProfileViewModel interface.
  */
 function instanceOfAuthenticationProfileViewModel(value) {
-    let isInstance = true;
-    isInstance = isInstance && "name" in value;
-    isInstance = isInstance && "triggeredUrl" in value;
-    isInstance = isInstance && "loginUrl" in value;
-    isInstance = isInstance && "customScripts" in value;
-    return isInstance;
+    if (!('name' in value))
+        return false;
+    if (!('triggeredUrl' in value))
+        return false;
+    if (!('loginUrl' in value))
+        return false;
+    if (!('customScripts' in value))
+        return false;
+    return true;
 }
 exports.instanceOfAuthenticationProfileViewModel = instanceOfAuthenticationProfileViewModel;
 function AuthenticationProfileViewModelFromJSON(json) {
@@ -33,11 +35,11 @@ function AuthenticationProfileViewModelFromJSON(json) {
 }
 exports.AuthenticationProfileViewModelFromJSON = AuthenticationProfileViewModelFromJSON;
 function AuthenticationProfileViewModelFromJSONTyped(json, ignoreDiscriminator) {
-    if ((json === undefined) || (json === null)) {
+    if (json == null) {
         return json;
     }
     return {
-        'id': !(0, runtime_1.exists)(json, 'id') ? undefined : json['id'],
+        'id': json['id'] == null ? undefined : json['id'],
         'name': json['name'],
         'triggeredUrl': json['triggeredUrl'],
         'loginUrl': json['loginUrl'],
@@ -46,18 +48,15 @@ function AuthenticationProfileViewModelFromJSONTyped(json, ignoreDiscriminator) 
 }
 exports.AuthenticationProfileViewModelFromJSONTyped = AuthenticationProfileViewModelFromJSONTyped;
 function AuthenticationProfileViewModelToJSON(value) {
-    if (value === undefined) {
-        return undefined;
-    }
-    if (value === null) {
-        return null;
+    if (value == null) {
+        return value;
     }
     return {
-        'id': value.id,
-        'name': value.name,
-        'triggeredUrl': value.triggeredUrl,
-        'loginUrl': value.loginUrl,
-        'customScripts': (value.customScripts.map(CustomScriptPageViewModel_1.CustomScriptPageViewModelToJSON)),
+        'id': value['id'],
+        'name': value['name'],
+        'triggeredUrl': value['triggeredUrl'],
+        'loginUrl': value['loginUrl'],
+        'customScripts': (value['customScripts'].map(CustomScriptPageViewModel_1.CustomScriptPageViewModelToJSON)),
     };
 }
 exports.AuthenticationProfileViewModelToJSON = AuthenticationProfileViewModelToJSON;
