@@ -30,8 +30,5 @@
   "homepage": "https://github.com/niaid/netsparker-cloud-js#readme",
   "devDependencies": {
     "typescript": "^4.9.5"
-  },
-  "dependencies": {
-    "url-parse": "^1.5.1"
   }
 }
